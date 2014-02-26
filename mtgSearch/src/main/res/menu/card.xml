@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dbottillo.mtgsearch.MainActivity" >
+    
+    <item android:id="@+id/action_image"
+        android:icon="@drawable/image_off"
+        android:title="image"
+        android:showAsAction="always" />
+</menu>

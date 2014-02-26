@@ -1,21 +1,22 @@
 package com.dbottillo.mtgsearch;
 
-import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity implements ActionBar.OnNavigationListener {
+import com.dbottillo.adapters.MTGSetSpinnerAdapter;
+import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.resources.MTGSet;
+import com.dbottillo.view.SlidingUpPanelLayout;
+
+import java.util.ArrayList;
+import java.util.logging.Filter;
+
+public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener {
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -23,29 +24,39 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
      */
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 
+    private ArrayList<MTGSet> sets;
+    private MTGSetSpinnerAdapter setAdapter;
+
+    private SlidingUpPanelLayout slidingPanel;
+
+    private FilterFragment filterFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        slidingPanel.setPanelSlideListener(this);
 
         // Set up the action bar to show a dropdown list.
         final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
+        sets = new ArrayList<MTGSet>();
+        setAdapter = new MTGSetSpinnerAdapter(this, sets);
+
+        showLoadingInActionBar();
+        new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+
         // Set up the dropdown list navigation in the action bar.
-        actionBar.setListNavigationCallbacks(
-                // Specify a SpinnerAdapter to populate the dropdown list.
-                new ArrayAdapter<String>(
-                        actionBar.getThemedContext(),
-                        android.R.layout.simple_list_item_1,
-                        android.R.id.text1,
-                        new String[] {
-                                getString(R.string.title_section1),
-                                getString(R.string.title_section2),
-                                getString(R.string.title_section3),
-                        }),
-                this);
+        actionBar.setListNavigationCallbacks(setAdapter,  this);
+
+        filterFragment = new FilterFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.filter, filterFragment)
+                .commit();
     }
 
     @Override
@@ -64,70 +75,67 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
                 getActionBar().getSelectedNavigationIndex());
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     @Override
     public boolean onNavigationItemSelected(int position, long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.
-        getFragmentManager().beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(position)))
                 .commit();
         return true;
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
+    @Override
+    public void onTaskFinished(ArrayList<?> result) {
+        sets.clear();
+        for (Object set : result){
+            sets.add((MTGSet) set);
         }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }
+        setAdapter.notifyDataSetChanged();
+        result.clear();
     }
 
+    @Override
+    public void onTaskEndWithError(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+    }
+
+    public SlidingUpPanelLayout getSlidingPanel(){
+        return slidingPanel;
+    }
+
+    @Override
+    public void onPanelSlide(View panel, float slideOffset) {
+
+    }
+
+    @Override
+    public void onPanelCollapsed(View panel) {
+        MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+        setFragment.refreshUI();
+    }
+
+    @Override
+    public void onPanelExpanded(View panel) {
+
+    }
+
+    @Override
+    public void onPanelAnchored(View panel) {
+
+    }
+
+    public void onToggleClicked(View view) {
+        filterFragment.onToggleClicked(view);
+    }
+
+    @Override
+    public void onBackPressed(){
+        if (slidingPanel.isExpanded()){
+            slidingPanel.collapsePane();
+        }else{
+            super.onBackPressed();
+        }
+    }
 }
