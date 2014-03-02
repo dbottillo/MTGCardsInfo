@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearch;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -37,6 +41,8 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     private CardsPagerAdapter adapter;
 
     private int position;
+
+    MenuItem actionImage;
 
     public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String setName) {
         MTGCardsFragment fragment = new MTGCardsFragment();
@@ -69,6 +75,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         tabs.setViewPager(viewPager);
 
         setActionBarTitle(getArguments().getString(SET_NAME));
+        setHasOptionsMenu(true);
 
         return rootView;
     }
@@ -104,8 +111,50 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         }
 
         @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
+        }
+
+        @Override
         public CharSequence getPageTitle(int position) {
             return cards.get(position).getName();
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.card, menu);
+
+        actionImage = menu.findItem(R.id.action_image);
+
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)){
+            actionImage.setIcon(R.drawable.image_off);
+        }else{
+            actionImage.setIcon(R.drawable.image_on);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_image:
+                boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
+                SharedPreferences.Editor editor = getSharedPreferences().edit();
+                editor.putBoolean(PREF_SHOW_IMAGE, !showImage);
+                editor.commit();
+                adapter.notifyDataSetChanged();
+                viewPager.invalidate();
+                if (!showImage){
+                    actionImage.setIcon(R.drawable.image_off);
+                }else{
+                    actionImage.setIcon(R.drawable.image_on);
+                }
+                return true;
+            default:
+                break;
+        }
+
+        return false;
     }
 }

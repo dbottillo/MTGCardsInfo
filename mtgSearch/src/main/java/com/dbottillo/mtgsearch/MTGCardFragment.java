@@ -1,6 +1,12 @@
 package com.dbottillo.mtgsearch;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -9,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -43,29 +50,67 @@ public class MTGCardFragment extends DBFragment{
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.card, menu);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_card, container, false);
 
         card = getArguments().getParcelable(CARD);
 
-        ImageView cardImage = (ImageView) rootView.findViewById(R.id.image_card);
-        String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
-        Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage);
-
-        TextView cardName = (TextView) rootView.findViewById(R.id.detail_card);
-        cardName.setText(card.getType()+"\n"+card.getPower()+"/"+card.getToughness()+", "+card.getManaCost()+" ("+card.getCmc()+")");
-
-        TextView cardText = (TextView) rootView.findViewById(R.id.text_card);
-        cardText.setText(card.getText());
-
         setHasOptionsMenu(true);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+        refreshUI();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
+
+    private void refreshUI(){
+        TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
+        cardName.setText(card.getType()+"\n"+card.getPower()+"/"+card.getToughness()+", "+card.getManaCost()+" ("+card.getCmc()+")");
+
+        TextView cardText = (TextView) getView().findViewById(R.id.text_card);
+        cardText.setText(card.getText());
+
+        View cardImageContainer = getView().findViewById(R.id.image_card_container);
+        ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getMultiVerseId() > 0){
+            cardImageContainer.setVisibility(View.VISIBLE);
+            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
+            Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage);
+        }else{
+            cardImageContainer.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.share, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_share:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
+                String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
+                i.putExtra(Intent.EXTRA_TEXT, image);
+                startActivity(Intent.createChooser(i, "Share Card"));
+                return true;
+            default:
+                break;
+        }
+
+        return false;
     }
 }

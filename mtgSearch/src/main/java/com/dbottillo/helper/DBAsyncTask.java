@@ -67,7 +67,29 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         if (type == TASK_SET_LIST){
             toLoad = R.raw.set_list;
         }else{
-            toLoad = context.getResources().getIdentifier(params[0].toLowerCase()+"_x", "raw", packageName);
+            String stringToLoad = params[0].toLowerCase();
+            if (stringToLoad.equalsIgnoreCase("10e")){
+                stringToLoad = "e10";
+            }else if (stringToLoad.equalsIgnoreCase("9ed")){
+                stringToLoad = "ed9";
+            }else if (stringToLoad.equalsIgnoreCase("5dn")){
+                stringToLoad = "dn5";
+            }else if (stringToLoad.equalsIgnoreCase("8ed")){
+                stringToLoad = "ed8";
+            }else if (stringToLoad.equalsIgnoreCase("7ed")){
+                stringToLoad = "ed7";
+            }else if (stringToLoad.equalsIgnoreCase("6ed")){
+                stringToLoad = "ed6";
+            }else if (stringToLoad.equalsIgnoreCase("5ed")){
+                stringToLoad = "ed5";
+            }else if (stringToLoad.equalsIgnoreCase("4ed")){
+                stringToLoad = "ed4";
+            }else if (stringToLoad.equalsIgnoreCase("3ed")){
+                stringToLoad = "ed3";
+            }else if (stringToLoad.equalsIgnoreCase("2ed")){
+                stringToLoad = "ed2";
+            }
+            toLoad = context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
         }
 
         String jsonString = loadFile(toLoad);

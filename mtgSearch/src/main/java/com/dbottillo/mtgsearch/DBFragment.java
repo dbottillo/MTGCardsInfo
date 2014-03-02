@@ -11,6 +11,8 @@ public class DBFragment extends Fragment {
 
     public static final String PREFS_NAME = "Filter";
 
+    public static final String PREF_SHOW_IMAGE = "show_image";
+
     public SharedPreferences getSharedPreferences(){
         return getActivity().getSharedPreferences(PREFS_NAME, 0);
     }

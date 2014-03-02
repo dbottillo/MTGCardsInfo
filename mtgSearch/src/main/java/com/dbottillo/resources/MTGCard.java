@@ -39,6 +39,8 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
     public static final int RED = 3;
     public static final int GREEN = 4;
 
+    public static final int CONDITIONAL_POWER = 100000000;
+
     /*{"layout":"normal","type":"Creature â€” Elemental","types":["Creature"],"colors":["Blue"],"multiverseid":94,
             "name":"Air Elemental","subtypes":["Elemental"],"cmc":5,"rarity":"Uncommon","artist":"Richard Thomas","power":"4",
             "toughness":"4","manaCost":"{3}{U}{U}","text":"Flying",
@@ -85,9 +87,11 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
             card.setAsALand(true);
         }
 
-        JSONArray typesJ = jsonObject.getJSONArray("types");
-        for (int k =0; k<typesJ.length(); k++){
-            card.addType(typesJ.getString(k));
+        if (jsonObject.has("types")){
+            JSONArray typesJ = jsonObject.getJSONArray("types");
+            for (int k =0; k<typesJ.length(); k++){
+                card.addType(typesJ.getString(k));
+            }
         }
 
         if (card.getType().contains("Artifact")){
@@ -101,17 +105,30 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
             card.setAsALand(false);
         }
         card.setRarity(jsonObject.getString("rarity"));
-        card.setMultiVerseId(jsonObject.getInt("multiverseid"));
+
+        if (jsonObject.has("multiverseid")){
+            card.setMultiVerseId(jsonObject.getInt("multiverseid"));
+        }
 
         card.setType(jsonObject.getString("type"));
 
         if (jsonObject.has("power")){
-            card.setPower(jsonObject.getInt("power"));
+            if (jsonObject.get("power") instanceof String){
+                // value is *
+                card.setPower(CONDITIONAL_POWER);
+            }else{
+                card.setPower(jsonObject.getInt("power"));
+            }
         }else{
             card.setPower(-1);
         }
         if (jsonObject.has("toughness")){
-            card.setToughness(jsonObject.getInt("toughness"));
+            if (jsonObject.get("toughness") instanceof String){
+                // value is *
+                card.setToughness(CONDITIONAL_POWER);
+            }else{
+                card.setToughness(jsonObject.getInt("toughness"));
+            }
         }else{
             card.setToughness(-1);
         }
@@ -339,7 +356,7 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
     }
 
     private int getSingleColor(){
-        if (isMultiColor) return -1;
+        if (isMultiColor || getColors().size() == 0) return -1;
         return getColors().get(0);
     }
 

@@ -1,9 +1,12 @@
 package com.dbottillo.mtgsearch;
 
 import android.app.ActionBar;
-import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -44,11 +47,16 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
-        sets = new ArrayList<MTGSet>();
-        setAdapter = new MTGSetSpinnerAdapter(this, sets);
+        if (savedInstanceState == null){
+            sets = new ArrayList<MTGSet>();
 
-        showLoadingInActionBar();
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+            showLoadingInActionBar();
+            new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+        }else{
+            sets = savedInstanceState.getParcelableArrayList("SET");
+        }
+
+        setAdapter = new MTGSetSpinnerAdapter(this, sets);
 
         // Set up the dropdown list navigation in the action bar.
         actionBar.setListNavigationCallbacks(setAdapter,  this);
@@ -73,18 +81,25 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         // Serialize the current dropdown position.
         outState.putInt(STATE_SELECTED_NAVIGATION_ITEM,
                 getActionBar().getSelectedNavigationIndex());
+        outState.putParcelableArrayList("SET", sets);
     }
 
     @Override
     public boolean onNavigationItemSelected(int position, long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(position)))
-                .commit();
+        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        editor.putInt("setPosition", position);
+        editor.commit();
+        loadSet();
         return true;
     }
 
+    private void loadSet(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition",0))))
+                .commit();
+    }
 
     @Override
     public void onTaskFinished(ArrayList<?> result) {
@@ -94,6 +109,8 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         }
         setAdapter.notifyDataSetChanged();
         result.clear();
+
+        getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
     }
 
     @Override
@@ -136,6 +153,33 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             slidingPanel.collapsePane();
         }else{
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                Fragment prev = getSupportFragmentManager().findFragmentByTag("dialog");
+                if (prev != null) {
+                    ft.remove(prev);
+                }
+                ft.addToBackStack(null);
+
+                AboutFragment newFragment = new AboutFragment();
+                newFragment.show(ft, "dialog");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

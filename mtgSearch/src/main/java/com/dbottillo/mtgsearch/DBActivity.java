@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearch;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 
 /**
@@ -14,5 +15,9 @@ public class DBActivity extends ActionBarActivity {
 
     public void hideLoadingFromActionBar(){
         setSupportProgressBarIndeterminateVisibility(false);
+    }
+
+    public SharedPreferences getSharedPreferences(){
+        return getSharedPreferences(DBFragment.PREFS_NAME, 0);
     }
 }

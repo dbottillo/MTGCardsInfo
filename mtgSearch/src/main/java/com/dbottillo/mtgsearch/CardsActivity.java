@@ -23,11 +23,13 @@ public class CardsActivity extends DBActivity{
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportFragmentManager().beginTransaction()
+        if (savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGCardsFragment.newInstance(getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
                         getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
                         getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
                 .commit();
+        }
 
     }
 

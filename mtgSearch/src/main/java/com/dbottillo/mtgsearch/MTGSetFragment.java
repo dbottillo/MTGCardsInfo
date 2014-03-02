@@ -1,10 +1,12 @@
 package com.dbottillo.mtgsearch;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -49,7 +51,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        mtgSet = (MTGSet) getArguments().getParcelable(SET_CHOSEN);
+        mtgSet = getArguments().getParcelable(SET_CHOSEN);
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
         cards = new ArrayList<MTGCard>();
@@ -61,11 +63,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         return rootView;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.main, menu);
-    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
@@ -139,4 +136,5 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     public void refreshUI() {
         populateCardsWithFilter();
     }
+
 }
