@@ -1,16 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.dbottillo.mtgsearch.MainActivity$PlaceholderFragment">
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        app:spb_color="#155B88"
+        android:layout_marginTop="-2dp"
+        app:spb_speed="1.2"
+        android:indeterminate="true"/>
 
     <ListView
         android:id="@+id/set_list"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:cacheColorHint="@android:color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_weight="1"
+        android:layout_height="0dp" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -25,14 +25,13 @@ public class AboutFragment extends DialogFragment implements View.OnClickListene
         try {
             String versionName = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName;
             TextView version = (TextView) v.findViewById(R.id.about_version);
-            version.setText("Version: "+versionName);
+            version.setText(getString(R.string.version)+": "+versionName);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
 
         Button sendFeedback = (Button) v.findViewById(R.id.send_feedback);
         sendFeedback.setOnClickListener(this);
-
 
         return v;
     }
@@ -49,7 +48,7 @@ public class AboutFragment extends DialogFragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback "+getActivity().getString(R.string.app_name));
-        startActivity(Intent.createChooser(emailIntent, "Send Feedback"));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback)+" "+getActivity().getString(R.string.app_name));
+        startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));
     }
 }

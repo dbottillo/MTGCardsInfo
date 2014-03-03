@@ -99,6 +99,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition",0))))
                 .commit();
+        slidingPanel.collapsePane();
     }
 
     @Override

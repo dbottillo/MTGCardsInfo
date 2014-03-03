@@ -63,7 +63,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
-        int toLoad = -1;
+        int toLoad;
         if (type == TASK_SET_LIST){
             toLoad = R.raw.set_list;
         }else{

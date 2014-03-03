@@ -30,9 +30,7 @@ public class CardsActivity extends DBActivity{
                         getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
                 .commit();
         }
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

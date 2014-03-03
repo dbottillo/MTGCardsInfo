@@ -7,6 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress"
+            app:spb_color="#155B88"
+            android:layout_marginTop="-2dp"
+            app:spb_speed="1.2"
+            android:indeterminate="true"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

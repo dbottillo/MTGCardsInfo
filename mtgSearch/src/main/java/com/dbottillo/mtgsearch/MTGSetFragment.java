@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
+
 /**
  * Created by danielebottillo on 23/02/2014.
  */
@@ -35,6 +37,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private ListView listView;
     private ArrayList<MTGCard> cards;
     private MTGCardListAdapter adapter;
+    private SmoothProgressBar progressBar;
 
     public static MTGSetFragment newInstance(MTGSet set) {
         MTGSetFragment fragment = new MTGSetFragment();
@@ -60,6 +63,8 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
         listView.setOnItemClickListener(this);
 
+        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
+
         return rootView;
     }
 
@@ -70,7 +75,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
         setHasOptionsMenu(true);
 
-        showRefresh();
         String packageName = getActivity().getApplication().getPackageName();
         new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET).setPackageName(packageName).execute(mtgSet.getCode());
     }
@@ -83,6 +87,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         }
         result.clear();
         populateCardsWithFilter();
+        progressBar.setVisibility(View.GONE);
     }
 
     private void populateCardsWithFilter(){

@@ -6,12 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.mtgsearch.R;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -56,21 +61,62 @@ public class MTGCardListAdapter extends BaseAdapter {
 
         MTGCard card = getItem(position);
         holder.name.setText(card.getName());
+
+        int rarityColor = R.color.common;
+        if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)){
+            rarityColor = R.color.uncommon;
+        }else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)){
+            rarityColor = R.color.rare;
+        }else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)){
+            rarityColor = R.color.mythic;
+        }
         holder.rarity.setText(card.getRarity().substring(0,1));
-        holder.cost.setText(card.getManaCost());
+        holder.rarity.setTextColor(context.getResources().getColor(rarityColor));
+
+        if (card.getManaCost() != null){
+            holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
+        }
+
+        holder.position.setText(position+"");
+
+        if (position % 2 == 0){
+            if (card.isMultiColor() || card.isAnArtifact() || card.isALand()){
+                holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
+            }else{
+                if (card.getColors().contains(MTGCard.WHITE)){
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_white);
+                }else if (card.getColors().contains(MTGCard.BLUE)){
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_blue);
+                }else if (card.getColors().contains(MTGCard.BLACK)){
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_black);
+                }else if (card.getColors().contains(MTGCard.RED)){
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_red);
+                }else if (card.getColors().contains(MTGCard.GREEN)){
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_green);
+                }else{
+                    holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
+                }
+            }
+        }else{
+            holder.parent.setBackgroundResource(R.drawable.bg_row_base);
+        }
 
         return convertView;
     }
 
     class CardHolder {
+        View     parent;
         TextView name;
         TextView rarity;
         TextView cost;
+        TextView position;
 
         CardHolder(View row){
+            parent = row.findViewById(R.id.card_parent);
             name = (TextView) row.findViewById(R.id.card_name);
             rarity = (TextView) row.findViewById(R.id.card_rarity);
             cost = (TextView) row.findViewById(R.id.card_cost);
+            position = (TextView) row.findViewById(R.id.card_position);
         }
     }
 

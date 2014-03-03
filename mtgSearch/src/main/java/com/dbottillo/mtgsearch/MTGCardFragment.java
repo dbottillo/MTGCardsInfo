@@ -20,12 +20,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGCardListAdapter;
 import com.dbottillo.resources.MTGCard;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -36,7 +40,7 @@ public class MTGCardFragment extends DBFragment{
 
     private MTGCard card;
 
-    private int position;
+    private SmoothProgressBar progressBar;
 
     public static MTGCardFragment newInstance(MTGCard card) {
         MTGCardFragment fragment = new MTGCardFragment();
@@ -54,6 +58,8 @@ public class MTGCardFragment extends DBFragment{
         View rootView = inflater.inflate(R.layout.fragment_card, container, false);
 
         card = getArguments().getParcelable(CARD);
+
+        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
         setHasOptionsMenu(true);
 
@@ -79,13 +85,28 @@ public class MTGCardFragment extends DBFragment{
         TextView cardText = (TextView) getView().findViewById(R.id.text_card);
         cardText.setText(card.getText());
 
-        View cardImageContainer = getView().findViewById(R.id.image_card_container);
+        final View cardImageContainer = getView().findViewById(R.id.image_card_container);
         ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getMultiVerseId() > 0){
             cardImageContainer.setVisibility(View.VISIBLE);
-            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
-            Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage);
+            final String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
+            progressBar.setVisibility(View.VISIBLE);
+            Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage,new Callback() {
+
+                @Override
+                public void onSuccess() {
+                    progressBar.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onError() {
+                    progressBar.setVisibility(View.GONE);
+                    cardImageContainer.setVisibility(View.GONE);
+                    Toast.makeText(getActivity(), getString(R.string.error_image), Toast.LENGTH_SHORT).show();
+                }
+            });
         }else{
+            progressBar.setVisibility(View.GONE);
             cardImageContainer.setVisibility(View.GONE);
         }
     }
@@ -105,7 +126,7 @@ public class MTGCardFragment extends DBFragment{
                 i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
                 String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
                 i.putExtra(Intent.EXTRA_TEXT, image);
-                startActivity(Intent.createChooser(i, "Share Card"));
+                startActivity(Intent.createChooser(i, getString(R.id.share_card)));
                 return true;
             default:
                 break;

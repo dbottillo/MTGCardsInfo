@@ -17,17 +17,6 @@ public class DBFragment extends Fragment {
         return getActivity().getSharedPreferences(PREFS_NAME, 0);
     }
 
-
-    public void showRefresh(){
-        DBActivity act = (DBActivity) getActivity();
-        act.showLoadingInActionBar();
-    }
-
-    public void hideRefresh(){
-        DBActivity act = (DBActivity) getActivity();
-        act.hideLoadingFromActionBar();
-    }
-
     protected void setActionBarTitle(String title) {
         DBActivity act = (DBActivity) getActivity();
         act.getSupportActionBar().setTitle(title);

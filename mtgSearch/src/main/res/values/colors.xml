@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFF</color>
+    <color name="grey">#F2F2F2</color>
+    <color name="base_pressed">#DDD</color>
+
+    <color name="grey_white">#FDF9DF</color>
+    <color name="grey_white_pressed">#FDF1A2</color>
+    <color name="grey_blue">#DFF0FD</color>
+    <color name="grey_blue_pressed">#7FC3F8</color>
+    <color name="grey_black">#DEDEDE</color>
+    <color name="grey_black_pressed">#AAA8A8</color>
+    <color name="grey_red">#FBE9E1</color>
+    <color name="grey_red_pressed">#FCBCA0</color>
+    <color name="grey_green">#E5FBE1</color>
+    <color name="grey_green_pressed">#B1FCA3</color>
+
+    <color name="common">#000</color>
+    <color name="uncommon">#AAA</color>
+    <color name="rare">#BD9723</color>
+    <color name="mythic">#D46805</color>
+</resources>

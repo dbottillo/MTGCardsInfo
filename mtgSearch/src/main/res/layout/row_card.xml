@@ -2,11 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/card_parent"
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/card_name"
+        android:id="@+id/card_position"
         android:textColor="#222"
+        android:textStyle="bold"
+        android:layout_gravity="center_vertical"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/card_name"
+        android:layout_marginLeft="8dp"
+        android:textColor="#222"
+        android:layout_gravity="center_vertical"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content" />
@@ -14,7 +26,8 @@
     <TextView
         android:id="@+id/card_cost"
         android:textColor="#222"
-        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -22,6 +35,7 @@
         android:id="@+id/card_rarity"
         android:textColor="#222"
         android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
