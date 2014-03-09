@@ -1,10 +1,19 @@
 package com.dbottillo.mtgsearch;
 
 import android.app.ActionBar;
+import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,14 +21,23 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
+import com.dbottillo.database.CardContract;
+import com.dbottillo.database.DatabaseHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
+import com.dbottillo.database.SetContract;
+import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.logging.Filter;
 
-public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener {
+public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener{
+
+    private static final int DATABASE_VERSION = 1;
+    private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -33,6 +51,8 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     private SlidingUpPanelLayout slidingPanel;
 
     private FilterFragment filterFragment;
+
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +85,44 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.filter, filterFragment)
                 .commit();
+
+        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != DATABASE_VERSION){
+            Log.e("MTG", "wrong database version");
+            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+            file.delete();
+            SharedPreferences.Editor editor = getSharedPreferences().edit();
+            editor.putInt(PREFERENCE_DATABASE_VERSION, DATABASE_VERSION);
+            editor.commit();
+        }
+
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            handleIntent(intent);
+        }
+
+
+        // NB: WARNING, FOR RECREATE DATABASE
+        //String packageName = getApplication().getPackageName();
+        //new CreateDBAsyncTask(this,packageName).execute();
+
+        /*
+        Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearch cat /data/data/com.dbottillo.mtgsearch/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
+        Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
+         */
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        setIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent){
+        String query = intent.getStringExtra(SearchManager.QUERY);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, MTGSetFragment.newInstance(query))
+                .commit();
+        slidingPanel.collapsePane();
     }
 
     @Override
@@ -86,8 +144,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public boolean onNavigationItemSelected(int position, long id) {
-        // When the given dropdown item is selected, show its contents in the
-        // container view.
         SharedPreferences.Editor editor = getSharedPreferences().edit();
         editor.putInt("setPosition", position);
         editor.commit();
@@ -96,10 +152,10 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     }
 
     private void loadSet(){
+        slidingPanel.collapsePane();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition",0))))
                 .commit();
-        slidingPanel.collapsePane();
     }
 
     @Override
@@ -161,6 +217,35 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView = (SearchView) searchItem.getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
+        MenuItemCompat.setOnActionExpandListener(searchItem,
+                new MenuItemCompat.OnActionExpandListener() {
+
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        slidingPanel.collapsePane();
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        loadSet();
+                        return true;
+                    }
+                });
+
+        SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        searchAutoComplete.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.search_text_size));
+
         return true;
     }
 
@@ -179,8 +264,20 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
                 AboutFragment newFragment = new AboutFragment();
                 newFragment.show(ft, "dialog");
                 return true;
+            case R.id.action_update_database:
+                // NB: WARNING, FOR DELETE DATABASE
+                // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
+                sets.clear();
+                setAdapter.notifyDataSetChanged();
+                File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+                file.delete();
+                MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
+                Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
+                new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

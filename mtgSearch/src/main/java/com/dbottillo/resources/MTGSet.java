@@ -1,7 +1,12 @@
 package com.dbottillo.resources;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+
+import com.dbottillo.database.SetContract.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +31,20 @@ public class MTGSet implements Parcelable {
     public MTGSet(Parcel in){
         this.cards = new ArrayList<MTGCard>();
         readFromParcel(in);
+    }
+
+    public static MTGSet createMagicSetFromCursor(Cursor cursor) {
+        MTGSet set = new MTGSet(cursor.getInt(cursor.getColumnIndex(SetEntry._ID)));
+        set.setCode(cursor.getString(cursor.getColumnIndex(SetEntry.COLUMN_NAME_CODE)));
+        set.setName(cursor.getString(cursor.getColumnIndex(SetEntry.COLUMN_NAME_NAME)));
+        return set;
+    }
+
+    public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException{
+        ContentValues values = new ContentValues();
+        values.put(SetEntry.COLUMN_NAME_CODE, object.getString("code"));
+        values.put(SetEntry.COLUMN_NAME_NAME, object.getString("name"));
+        return values;
     }
 
     public static MTGSet createMagicSetFromJson(int id, JSONObject object) throws JSONException{
@@ -100,4 +119,6 @@ public class MTGSet implements Parcelable {
             return new MTGSet[size];
         }
     };
+
+
 }

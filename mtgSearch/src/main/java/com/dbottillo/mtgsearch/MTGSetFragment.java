@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearch;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGCardListAdapter;
@@ -31,6 +34,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, AdapterView.OnItemClickListener {
 
     private static final String SET_CHOSEN = "set_chosen";
+    private static final String SEARCH = "search";
 
     private MTGSet mtgSet;
 
@@ -39,10 +43,21 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private MTGCardListAdapter adapter;
     private SmoothProgressBar progressBar;
 
+    boolean isASearch = false;
+    private String query;
+
     public static MTGSetFragment newInstance(MTGSet set) {
         MTGSetFragment fragment = new MTGSetFragment();
         Bundle args = new Bundle();
         args.putParcelable(SET_CHOSEN, set);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static Fragment newInstance(String query) {
+        MTGSetFragment fragment = new MTGSetFragment();
+        Bundle args = new Bundle();
+        args.putString(SEARCH, query);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,15 +70,28 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         mtgSet = getArguments().getParcelable(SET_CHOSEN);
+        if (mtgSet == null){
+            isASearch = true;
+            query = getArguments().getString(SEARCH);
+            mtgSet = new MTGSet(-1);
+            mtgSet.setName(query);
+        }
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
         cards = new ArrayList<MTGCard>();
-        adapter = new MTGCardListAdapter(getActivity(), cards);
+        adapter = new MTGCardListAdapter(getActivity(), cards, isASearch);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(this);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
+
+        if (isASearch){
+            View header = inflater.inflate(R.layout.search_header, null);
+            TextView searchQueryText = (TextView) header.findViewById(R.id.search_query);
+            searchQueryText.setText(query);
+            listView.addHeaderView(header);
+        }
 
         return rootView;
     }
@@ -75,8 +103,12 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
         setHasOptionsMenu(true);
 
-        String packageName = getActivity().getApplication().getPackageName();
-        new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET).setPackageName(packageName).execute(mtgSet.getCode());
+        if (isASearch){
+            new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SEARCH).execute(query);
+        }else{
+            String packageName = getActivity().getApplication().getPackageName();
+            new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET).execute(mtgSet.getId() + "");
+        }
     }
 
     @Override
@@ -122,6 +154,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             }
         });
         adapter.notifyDataSetChanged();
+        listView.smoothScrollToPosition(0);
     }
 
     @Override

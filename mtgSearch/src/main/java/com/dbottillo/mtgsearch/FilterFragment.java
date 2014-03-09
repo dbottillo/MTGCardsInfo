@@ -121,6 +121,6 @@ public class FilterFragment extends DBFragment {
         ((ToggleButton)getView().findViewById(R.id.toggle_myhtic)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true));
 
         TextView textFilter = (TextView) getView().findViewById(R.id.filter_text);
-        textFilter.setText(filterString);
+        textFilter.setText(getString(R.string.filter)+": "+filterString);
     }
 }

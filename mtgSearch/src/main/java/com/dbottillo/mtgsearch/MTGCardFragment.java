@@ -85,6 +85,9 @@ public class MTGCardFragment extends DBFragment{
         TextView cardText = (TextView) getView().findViewById(R.id.text_card);
         cardText.setText(card.getText());
 
+        TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
+        setCardText.setText(card.getSetName());
+
         final View cardImageContainer = getView().findViewById(R.id.image_card_container);
         ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getMultiVerseId() > 0){

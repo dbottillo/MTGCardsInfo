@@ -1,13 +1,20 @@
 package com.dbottillo.helper;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.dbottillo.database.CardContract;
+import com.dbottillo.database.DatabaseHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearch.R;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
-
+import com.dbottillo.database.SetContract.*;
+import com.dbottillo.database.CardContract.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,13 +52,17 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     public static final int TASK_SET_LIST = 0;
     public static final int TASK_SINGLE_SET = 1;
+    public static final int TASK_SEARCH = 2;
 
     private int type;
+
+    MTGDatabaseHelper mDbHelper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type){
         this.context = context;
         this.listener = listener;
         this.type = type;
+        this.mDbHelper= new MTGDatabaseHelper(context);
     }
 
     public DBAsyncTask setPackageName(String packageName){
@@ -60,6 +71,78 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     }
 
     @Override
+    protected ArrayList<Object> doInBackground(String... params) {
+        ArrayList<Object> result = new ArrayList<Object>();
+
+        if (type == TASK_SET_LIST){
+
+            Cursor cursor = mDbHelper.getSets();
+
+            if (cursor.moveToFirst()){
+                while(!cursor.isAfterLast()){
+                    result.add(MTGSet.createMagicSetFromCursor(cursor));
+                    cursor.moveToNext();
+                }
+            }
+            cursor.close();
+        }else{
+
+            Cursor cursor = null;
+            if (type == TASK_SINGLE_SET){
+                cursor = mDbHelper.getSet(params[0]);
+            }else{
+                cursor = mDbHelper.searchCard(params[0]);
+            }
+
+            if (cursor.moveToFirst()){
+                while(!cursor.isAfterLast()){
+                    result.add(MTGCard.createCardFromCursor(cursor));
+                    cursor.moveToNext();
+                }
+            }
+            cursor.close();
+
+            Collections.sort(result, new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    MTGCard card = (MTGCard) o1;
+                    MTGCard card2 = (MTGCard) o2;
+                    return card.compareTo(card2);
+                }
+            });
+        }
+
+        mDbHelper.close();
+
+        return result;
+    }
+
+    private int setToLoad(String code){
+        String stringToLoad = code.toLowerCase();
+        if (stringToLoad.equalsIgnoreCase("10e")){
+            stringToLoad = "e10";
+        }else if (stringToLoad.equalsIgnoreCase("9ed")){
+            stringToLoad = "ed9";
+        }else if (stringToLoad.equalsIgnoreCase("5dn")){
+            stringToLoad = "dn5";
+        }else if (stringToLoad.equalsIgnoreCase("8ed")){
+            stringToLoad = "ed8";
+        }else if (stringToLoad.equalsIgnoreCase("7ed")){
+            stringToLoad = "ed7";
+        }else if (stringToLoad.equalsIgnoreCase("6ed")){
+            stringToLoad = "ed6";
+        }else if (stringToLoad.equalsIgnoreCase("5ed")){
+            stringToLoad = "ed5";
+        }else if (stringToLoad.equalsIgnoreCase("4ed")){
+            stringToLoad = "ed4";
+        }else if (stringToLoad.equalsIgnoreCase("3ed")){
+            stringToLoad = "ed3";
+        }else if (stringToLoad.equalsIgnoreCase("2ed")){
+            stringToLoad = "ed2";
+        }
+        return context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
+    }
+
+    /*@Override
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
@@ -126,7 +209,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         }
 
         return result;
-    }
+    }*/
 
     public class MTGCardComparator implements Comparator<MTGCard> {
         @Override

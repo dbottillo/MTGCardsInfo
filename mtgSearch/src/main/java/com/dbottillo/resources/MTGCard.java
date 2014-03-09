@@ -1,8 +1,13 @@
 package com.dbottillo.resources;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+
+import com.dbottillo.database.CardContract.*;
+import com.dbottillo.database.SetContract.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,14 +29,16 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
     ArrayList<Integer> colors;
     int cmc;
     String rarity;
-    int power;
-    int toughness;
+    String power;
+    String toughness;
     String manaCost;
     String text;
     boolean isMultiColor;
     boolean isALand;
     boolean isAnArtifact;
     int multiVerseId;
+    int idSet;
+    String setName;
 
     public static final int WHITE = 0;
     public static final int BLUE = 1;
@@ -39,7 +46,8 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
     public static final int RED = 3;
     public static final int GREEN = 4;
 
-    public static final int CONDITIONAL_POWER = 100000000;
+    public static final int CONDITIONAL_POWER = -2;
+    public static final int ONE_PLUS_POWER = -3;
 
     /*{"layout":"normal","type":"Creature â€” Elemental","types":["Creature"],"colors":["Blue"],"multiverseid":94,
             "name":"Air Elemental","subtypes":["Elemental"],"cmc":5,"rarity":"Uncommon","artist":"Richard Thomas","power":"4",
@@ -62,6 +70,150 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
     public MTGCard(Parcel in){
         this();
         readFromParcel(in);
+    }
+
+    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException{
+        ContentValues values = new ContentValues();
+        values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
+        values.put(CardEntry.COLUMN_NAME_TYPE, jsonObject.getString("type"));
+
+        values.put(CardEntry.COLUMN_NAME_SET_ID, setId);
+        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
+
+        int multicolor = 0;
+        int land = 0;
+        int artifact = 0;
+
+        if (jsonObject.has("colors")){
+            JSONArray colorsJ = jsonObject.getJSONArray("colors");
+            String colors = "";
+            for (int k =0; k<colorsJ.length(); k++){
+                String color = colorsJ.getString(k);
+                colors += color;
+                if (k < colorsJ.length()-1){
+                    colors +=",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_COLORS, colors);
+
+            if (colorsJ.length()>1){
+                multicolor = 1;
+            }else{
+                multicolor = 0;
+            }
+            land = 0;
+        }else{
+            multicolor = 0;
+            land = 1;
+        }
+
+        if (jsonObject.has("types")){
+            JSONArray typesJ = jsonObject.getJSONArray("types");
+            String types = "";
+            for (int k =0; k<typesJ.length(); k++){
+                types += typesJ.getString(k);
+                if (k < typesJ.length()-1){
+                    types +=",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_TYPES, types);
+        }
+
+        if (jsonObject.getString("type").contains("Artifact")){
+            artifact = 1;
+        }else{
+            artifact = 0;
+        }
+
+        if (jsonObject.has("manaCost")){
+            values.put(CardEntry.COLUMN_NAME_MANACOST, jsonObject.getString("manaCost"));
+            land = 0;
+        }
+        values.put(CardEntry.COLUMN_NAME_RARITY, jsonObject.getString("rarity"));
+
+        if (jsonObject.has("multiverseid")){
+            values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, jsonObject.getInt("multiverseid"));
+        }
+
+        String power = "";
+        if (jsonObject.has("power")){
+            power = jsonObject.getString("power");
+        }
+        values.put(CardEntry.COLUMN_NAME_POWER, power);
+
+        String toughness = "";
+        if (jsonObject.has("toughness")){
+            toughness = jsonObject.getString("toughness");
+        }
+        values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
+
+        if (jsonObject.has("text")){
+            values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("text"));
+        }
+
+        int cmc = -1;
+        if (jsonObject.has("cmc")){
+            cmc = jsonObject.getInt("cmc");
+        }
+        values.put(CardEntry.COLUMN_NAME_CMC, cmc);
+
+        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, multicolor);
+        values.put(CardEntry.COLUMN_NAME_LAND, land);
+        values.put(CardEntry.COLUMN_NAME_ARTIFACT, artifact);
+
+        return values;
+    }
+
+    public static MTGCard createCardFromCursor(Cursor cursor) {
+        MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex(CardEntry._ID)));
+        card.setType(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPE)));
+        card.setName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NAME)));
+
+        card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_ID)));
+        card.setSetName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1){
+            String colors = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS));
+            if (colors != null){
+                String[] splitted = colors.split(",");
+                for (int i=0; i<splitted.length; i++){
+                    card.addColor(MTGCard.mapIntColor(splitted[i]));
+                }
+            }
+        }
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES) != -1){
+            String types = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES));
+            String[] splitted = types.split(",");
+            for (int i=0; i<splitted.length; i++){
+                card.addType(splitted[i]);
+            }
+        }
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST) != -1){
+            card.setManaCost(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST)));
+        }
+
+        card.setRarity(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RARITY)));
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1){
+            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
+        }
+
+        card.setPower(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_POWER)));
+        card.setToughness(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TOUGHNESS)));
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT) != -1){
+            card.setText(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT)));
+        }
+
+        card.setCmc(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_CMC)));
+
+        card.setMultiColor(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTICOLOR)) == 1);
+        card.setAsALand(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAND)) == 1);
+        card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_ARTIFACT)) == 1);
+
+        return card;
     }
 
     public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
@@ -113,24 +265,14 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         card.setType(jsonObject.getString("type"));
 
         if (jsonObject.has("power")){
-            if (jsonObject.get("power") instanceof String){
-                // value is *
-                card.setPower(CONDITIONAL_POWER);
-            }else{
-                card.setPower(jsonObject.getInt("power"));
-            }
+            card.setPower(jsonObject.getString("power"));
         }else{
-            card.setPower(-1);
+            card.setPower("");
         }
         if (jsonObject.has("toughness")){
-            if (jsonObject.get("toughness") instanceof String){
-                // value is *
-                card.setToughness(CONDITIONAL_POWER);
-            }else{
-                card.setToughness(jsonObject.getInt("toughness"));
-            }
+            card.setToughness(jsonObject.getString("toughness"));
         }else{
-            card.setToughness(-1);
+            card.setToughness("");
         }
         if (jsonObject.has("text")){
             card.setText(jsonObject.getString("text"));
@@ -168,14 +310,16 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         dest.writeList(colors);
         dest.writeInt(cmc);
         dest.writeString(rarity);
-        dest.writeInt(power);
-        dest.writeInt(toughness);
+        dest.writeString(power);
+        dest.writeString(toughness);
         dest.writeString(manaCost);
         dest.writeString(text);
         dest.writeInt(isMultiColor ? 0 : 1);
         dest.writeInt(isALand ? 0 : 1);
         dest.writeInt(isAnArtifact ? 0 : 1);
         dest.writeInt(multiVerseId);
+        dest.writeInt(idSet);
+        dest.writeString(setName);
     }
 
     private void readFromParcel(Parcel in){
@@ -187,14 +331,16 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         in.readList(colors, Integer.class.getClassLoader());
         cmc = in.readInt();
         rarity = in.readString();
-        power = in.readInt();
-        toughness = in.readInt();
+        power = in.readString();
+        toughness = in.readString();
         manaCost = in.readString();
         text = in.readString();
         isMultiColor = in.readInt() == 1;
         isALand = in.readInt() == 1;
         isAnArtifact = in.readInt() == 1;
         multiVerseId = in.readInt();
+        idSet = in.readInt();
+        setName = in.readString();
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -269,19 +415,19 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         this.rarity = rarity;
     }
 
-    public int getPower() {
+    public String getPower() {
         return power;
     }
 
-    public void setPower(int power) {
+    public void setPower(String power) {
         this.power = power;
     }
 
-    public int getToughness() {
+    public String getToughness() {
         return toughness;
     }
 
-    public void setToughness(int toughness) {
+    public void setToughness(String toughness) {
         this.toughness = toughness;
     }
 
@@ -331,6 +477,22 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
 
     public void setMultiVerseId(int multiVerseId) {
         this.multiVerseId = multiVerseId;
+    }
+
+    public String getSetName() {
+        return setName;
+    }
+
+    public void setSetName(String setName) {
+        this.setName = setName;
+    }
+
+    public int getIdSet() {
+        return idSet;
+    }
+
+    public void setIdSet(int idSet) {
+        this.idSet = idSet;
     }
 
     public String toString(){

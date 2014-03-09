@@ -9,12 +9,34 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/collapsedHeight"
         android:id="@+id/filter_draggable"
-        android:orientation="horizontal">
+        android:background="#333"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/filter_text" />
+            android:padding="4dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:text="@string/filter_panel"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:id="@+id/filter_text" />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

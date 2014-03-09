@@ -26,11 +26,13 @@ public class MTGCardListAdapter extends BaseAdapter {
     private List<MTGCard> cards;
     private Context context;
     private LayoutInflater inflater;
+    private boolean isASearch;
 
-    public MTGCardListAdapter(Context context, List<MTGCard> cards) {
+    public MTGCardListAdapter(Context context, List<MTGCard> cards, boolean isASearch) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
+        this.isASearch = isASearch;
     }
 
     @Override
@@ -79,6 +81,11 @@ public class MTGCardListAdapter extends BaseAdapter {
 
         holder.position.setText(position+"");
 
+        if (isASearch){
+            holder.setName.setVisibility(View.VISIBLE);
+            holder.setName.setText(card.getSetName());
+        }
+
         if (position % 2 == 0){
             if (card.isMultiColor() || card.isAnArtifact() || card.isALand()){
                 holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
@@ -107,6 +114,7 @@ public class MTGCardListAdapter extends BaseAdapter {
     class CardHolder {
         View     parent;
         TextView name;
+        TextView setName;
         TextView rarity;
         TextView cost;
         TextView position;
@@ -114,6 +122,7 @@ public class MTGCardListAdapter extends BaseAdapter {
         CardHolder(View row){
             parent = row.findViewById(R.id.card_parent);
             name = (TextView) row.findViewById(R.id.card_name);
+            setName = (TextView) row.findViewById(R.id.card_set_name);
             rarity = (TextView) row.findViewById(R.id.card_rarity);
             cost = (TextView) row.findViewById(R.id.card_cost);
             position = (TextView) row.findViewById(R.id.card_position);
