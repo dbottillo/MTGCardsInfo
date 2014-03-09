@@ -1,1 +1,1 @@
-include ':mtgSearch'
+include ':MTGSearchLib', ':MTGSearchFree', ':MTGSearch'

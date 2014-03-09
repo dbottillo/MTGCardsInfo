@@ -1,4 +1,4 @@
-apply plugin: 'android'
+apply plugin: 'android-library'
 
 android {
     compileSdkVersion 19
@@ -19,6 +19,11 @@ android {
 }
 
 dependencies {
-    compile project(':MTGSearchLib')
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile "com.android.support:appcompat-v7:19.0.+"
+    compile 'com.android.support:support-v4:19.0.+'
+    compile 'com.google.android.gms:play-services:4.0.30'
+    compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 }

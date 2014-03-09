@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">MTG Cards Info</string>
-
-    <string name="action_about">About</string>
-    <string name="copyright">The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This application is not produced, endorsed, supported, or affiliated with Wizards of the Coast.</string>
-    <string name="send_feedback">Send Feedback</string>
-    <string name="email">mtg@danielebottillo.com</string>
-    <string name="feedback">Feedback </string>
-    <string name="version">Version</string>
-    <string name="error_image">Error loading image</string>
-    <string name="action_update_database">Force update</string>
-    <string name="set_loaded">%s set loaded</string>
-    <string name="search_hint">Search for a magic card</string>
-    <string name="action_search">Search</string>
-    <string name="search_result">Search result for:</string>
-    <string name="filter">Current filter</string>
-    <string name="filter_panel">Filter Panel</string>
-
 </resources>
