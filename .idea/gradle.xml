@@ -8,7 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/MTGSearch" />
             <option value="$PROJECT_DIR$/MTGSearchFree" />
+            <option value="$PROJECT_DIR$/MTGSearchLib" />
           </set>
         </option>
       </GradleProjectSettings>
