@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.mtgsearch.R;
 import com.dbottillo.resources.MTGCard;
 
@@ -88,6 +90,11 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     }
 
+    @Override
+    public String getPageTrack() {
+        return "/cards_viewpager";
+    }
+
     private class CardsPagerAdapter extends FragmentStatePagerAdapter {
         public CardsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -132,6 +139,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
         if (i == R.id.action_image) {
+            getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "image_on_off");
             boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putBoolean(PREF_SHOW_IMAGE, !showImage);

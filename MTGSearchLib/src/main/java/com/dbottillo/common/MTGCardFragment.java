@@ -8,12 +8,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.mtgsearch.R;
 import com.dbottillo.resources.MTGCard;
+import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -22,7 +26,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class MTGCardFragment extends DBFragment{
+public class MTGCardFragment extends DBFragment {
 
     public static final String CARD = "card";
 
@@ -51,8 +55,25 @@ public class MTGCardFragment extends DBFragment{
 
         setHasOptionsMenu(true);
 
+        if (!getResources().getBoolean(R.bool.premium)) {
+            createAdView("ca-app-pub-8119815713373556/8777882818");
+            getAdView().setAdListener(new AdListener() {
+                @Override
+                public void onAdOpened() {
+                    // Save app state before going to the ad overlay.
+                }
+            });
+
+            FrameLayout layout = (FrameLayout)rootView.findViewById(R.id.banner_container);
+            layout.addView(getAdView());
+
+            getAdView().loadAd(createAdRequest());
+        }
+
         return rootView;
     }
+
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
@@ -61,10 +82,6 @@ public class MTGCardFragment extends DBFragment{
         refreshUI();
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-    }
 
     private void refreshUI(){
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
@@ -112,6 +129,7 @@ public class MTGCardFragment extends DBFragment{
     public boolean onOptionsItemSelected(MenuItem item) {
         int i1 = item.getItemId();
         if (i1 == R.id.action_share) {
+            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_OPEN, "share");
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
@@ -123,5 +141,10 @@ public class MTGCardFragment extends DBFragment{
         }
 
         return false;
+    }
+
+    @Override
+    public String getPageTrack() {
+        return "/card/"+card.getMultiVerseId();
     }
 }

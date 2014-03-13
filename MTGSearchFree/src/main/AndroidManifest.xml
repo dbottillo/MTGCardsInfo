@@ -1,11 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dbottillo.mtgsearchfree">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:name="com.dbottillo.base.MTGApp"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -29,6 +31,9 @@
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
+
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

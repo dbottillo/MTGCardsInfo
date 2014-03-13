@@ -3,7 +3,6 @@ package com.dbottillo.common;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGCardListAdapter;
+import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
@@ -95,6 +96,12 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         return rootView;
     }
 
+
+    @Override
+    public String getPageTrack() {
+        if (isASearch) return "/search";
+        return "/set/"+mtgSet.getCode();
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -207,6 +214,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()){
             return;
         }
+        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "card_at_pos:"+position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);

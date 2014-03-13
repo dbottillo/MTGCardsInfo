@@ -1,16 +1,14 @@
 package com.dbottillo.common;
 
 import android.app.Dialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 
+import com.dbottillo.base.DBFragment;
 import com.dbottillo.mtgsearch.R;
 
 /**
@@ -40,5 +38,10 @@ public class GoToPremiumFragment extends DBFragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
        openPlayStore();
+    }
+
+    @Override
+    public String getPageTrack() {
+        return "/premium";
     }
 }

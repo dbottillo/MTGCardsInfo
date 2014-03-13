@@ -3,13 +3,14 @@ package com.dbottillo.common;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.dbottillo.base.DBActivity;
 import com.dbottillo.mtgsearch.R;
 import com.dbottillo.resources.MTGCard;
 
-public class CardsActivity extends DBActivity{
+public class CardsActivity extends DBActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
@@ -23,6 +24,11 @@ public class CardsActivity extends DBActivity{
                         getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
                 .commit();
         }
+    }
+
+    @Override
+    public String getPageTrack() {
+        return getString(R.string.analytics_cards_activity);
     }
 
     @Override

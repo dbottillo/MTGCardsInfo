@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
+import com.dbottillo.base.DBActivity;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.mtgsearch.R;
@@ -51,7 +53,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     SearchView searchView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -112,6 +114,11 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     }
 
     @Override
+    public String getPageTrack() {
+        return getString(R.string.analytics_main_activity);
+    }
+
+    @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
         handleIntent(intent);
@@ -119,6 +126,11 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     private void handleIntent(Intent intent){
         String query = intent.getStringExtra(SearchManager.QUERY);
+        getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "done", query);
+        if (query.length() < 3){
+            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
+            return;
+        }
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(query))
                 .commit();
@@ -148,6 +160,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             showGoToPremium();
             return false;
         }
+        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "spinner_selected", sets.get(position).getCode());
         SharedPreferences.Editor editor = getSharedPreferences().edit();
         editor.putInt("setPosition", position);
         editor.commit();
@@ -190,13 +203,14 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public void onPanelCollapsed(View panel) {
+        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "collapsed");
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         setFragment.refreshUI();
     }
 
     @Override
     public void onPanelExpanded(View panel) {
-
+        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "expanded");
     }
 
     @Override
@@ -262,6 +276,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             return true;
         } else if (i == R.id.action_update_database) {// NB: WARNING, FOR DELETE DATABASE
             // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
+            getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "reset_db", "");
             sets.clear();
             setAdapter.notifyDataSetChanged();
             File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");

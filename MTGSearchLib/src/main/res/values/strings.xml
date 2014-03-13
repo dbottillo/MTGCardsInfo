@@ -22,5 +22,11 @@
     <string name="more_result">There are %d more result</string>
     <string name="search_limit">There is a limit of %d result, try to refine the query</string>
     <string name="apply_filter">Apply filter</string>
+    <string name="analytics" />
+    <string name="minimum_search">At least three chars</string>
+
+    <!-- analytics -->
+    <string name="analytics_main_activity">/main</string>
+    <string name="analytics_cards_activity">/cards</string>
 
 </resources>

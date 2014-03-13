@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,14 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.mtgsearch.R;
 
 /**
  * Created by danielebottillo on 02/03/2014.
  */
-public class AboutFragment extends DialogFragment implements View.OnClickListener {
+public class AboutFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,8 +50,14 @@ public class AboutFragment extends DialogFragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "feedback");
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback)+" "+getActivity().getString(R.string.app_name));
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));
+    }
+
+    @Override
+    public String getPageTrack() {
+        return "/about";
     }
 }

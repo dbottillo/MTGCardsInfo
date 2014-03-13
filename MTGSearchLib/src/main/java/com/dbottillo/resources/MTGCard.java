@@ -75,7 +75,24 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
 
     public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException{
         ContentValues values = new ContentValues();
-        values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
+
+        boolean isASplit = false;
+        if (jsonObject.getString("layout").equalsIgnoreCase("split")) isASplit = true;
+
+        if (!isASplit) {
+            values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
+        }else{
+            JSONArray namesJ = jsonObject.getJSONArray("names");
+            String names = "";
+            for (int k =0; k<namesJ.length(); k++){
+                String name = namesJ.getString(k);
+                names += name;
+                if (k < namesJ.length()-1){
+                    names +="/";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_NAME, names);
+        }
         values.put(CardEntry.COLUMN_NAME_TYPE, jsonObject.getString("type"));
 
         values.put(CardEntry.COLUMN_NAME_SET_ID, setId);
@@ -148,8 +165,12 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         }
         values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
 
-        if (jsonObject.has("text")){
+        if (!isASplit && jsonObject.has("text")){
             values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("text"));
+        }
+
+        if (isASplit && jsonObject.has("originalText")){
+            values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("originalText"));
         }
 
         int cmc = -1;

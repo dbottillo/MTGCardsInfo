@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile project(':MTGSearchLib')
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':MTGSearchLib')
 }

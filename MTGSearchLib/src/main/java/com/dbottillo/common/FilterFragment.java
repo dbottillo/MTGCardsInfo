@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.mtgsearch.R;
 
@@ -26,7 +29,17 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
         MainActivity main = (MainActivity) getActivity();
         main.getSlidingPanel().setDragView(getView().findViewById(R.id.filter_draggable));
+
+        if (!getResources().getBoolean(R.bool.premium)) {
+            createAdView("ca-app-pub-8119815713373556/7301149617");
+
+            LinearLayout layout = (LinearLayout) getView().findViewById(R.id.filter_container);
+            layout.addView(getAdView());
+
+            getAdView().loadAd(createAdRequest());
+        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,47 +58,52 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         updateFilterUI();
     }
 
+
     public void onToggleClicked(View view) {
         boolean on = ((ToggleButton) view).isChecked();
 
         SharedPreferences.Editor editor = getSharedPreferences().edit();
 
+        String label = "";
+
         int i = view.getId();
         if (i == R.id.toggle_white) {
             editor.putBoolean(FilterHelper.FILTER_WHITE, on);
-
+            label = "white";
         } else if (i == R.id.toggle_blue) {
             editor.putBoolean(FilterHelper.FILTER_BLUE, on);
-
+            label = "blue";
         } else if (i == R.id.toggle_black) {
             editor.putBoolean(FilterHelper.FILTER_BLACK, on);
-
+            label = "black";
         } else if (i == R.id.toggle_red) {
             editor.putBoolean(FilterHelper.FILTER_RED, on);
-
+            label = "red";
         } else if (i == R.id.toggle_green) {
             editor.putBoolean(FilterHelper.FILTER_GREEN, on);
-
+            label = "green";
         } else if (i == R.id.toggle_artifact) {
             editor.putBoolean(FilterHelper.FILTER_ARTIFACT, on);
-
+            label = "artifact";
         } else if (i == R.id.toggle_land) {
             editor.putBoolean(FilterHelper.FILTER_LAND, on);
-
+            label = "land";
         } else if (i == R.id.toggle_common) {
             editor.putBoolean(FilterHelper.FILTER_COMMON, on);
-
+            label = "common";
         } else if (i == R.id.toggle_uncommon) {
             editor.putBoolean(FilterHelper.FILTER_UNCOMMON, on);
-
+            label = "uncommon";
         } else if (i == R.id.toggle_rare) {
             editor.putBoolean(FilterHelper.FILTER_RARE, on);
-
+            label = "rare";
         } else if (i == R.id.toggle_myhtic) {
             editor.putBoolean(FilterHelper.FILTER_MYHTIC, on);
-
+            label = "mythic";
         } else {
         }
+
+        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_TOGGLE, label);
 
         editor.commit();
 
@@ -93,6 +111,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     }
 
     private void updateFilterUI() {
+        trackEvent(MTGApp.UA_CATEGORY_UI, "update_filter", "");
         String filterString = "";
         if (getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true)) filterString += "W";
         if (getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true)) filterString += "B";
@@ -125,7 +144,13 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "close_filter");
         MainActivity main = (MainActivity) getActivity();
         main.getSlidingPanel().collapsePane();
+    }
+
+    @Override
+    public String getPageTrack() {
+        return "/filter";
     }
 }
