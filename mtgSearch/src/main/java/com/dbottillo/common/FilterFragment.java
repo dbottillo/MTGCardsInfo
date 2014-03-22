@@ -2,10 +2,13 @@ package com.dbottillo.common;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -33,7 +36,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         if (!getApp().isPremium()) {
             createAdView("ca-app-pub-8119815713373556/7301149617");
 
-            LinearLayout layout = (LinearLayout) getView().findViewById(R.id.filter_container);
+            FrameLayout layout = (FrameLayout) getView().findViewById(R.id.ad_container);
             layout.addView(getAdView());
 
             getAdView().loadAd(createAdRequest());
@@ -113,18 +116,25 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     private void updateFilterUI() {
         trackEvent(MTGApp.UA_CATEGORY_UI, "update_filter", "");
         String filterString = "";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true)) filterString += "W";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true)) filterString += "B";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_BLACK, true)) filterString += "B";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true)) filterString += "R";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true)) filterString += "G";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true)) filterString += "A";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true)) filterString += "L";
+
+        String colorActive = "#FFF";
+        String colorInactive = "#CCC";
+
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true), "W", "#FFFFFF");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true), "U", "#0044FF");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLACK, true), "B", "#000000");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true), "R", "#FF0000");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true), "G", "#7ED321");
+
         filterString +=" - ";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true)) filterString += "C";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true)) filterString += "U";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true)) filterString += "R";
-        if (getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true)) filterString += "M";
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true), "A", "#CCCCCC");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true), "L", "#E6FF00");
+        filterString +="  - ";
+
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true), "C", "#000000");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true), "U", "#AAAAAA");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true), "R", "#BD9723");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true), "M", "#D46805");
 
         ((ToggleButton)getView().findViewById(R.id.toggle_white)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true));
         ((ToggleButton)getView().findViewById(R.id.toggle_blue)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true));
@@ -139,7 +149,19 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         ((ToggleButton)getView().findViewById(R.id.toggle_myhtic)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true));
 
         TextView textFilter = (TextView) getView().findViewById(R.id.filter_text);
-        textFilter.setText(getString(R.string.filter)+": "+filterString);
+        Log.e("MTG", "string: " + filterString);
+        textFilter.setText(Html.fromHtml(filterString));
+    }
+
+    public String addEntryFilterString(boolean active, String text, String colorActive){
+        String filterString = "";
+        if (active){
+            filterString += "<font color=\""+colorActive+"\">"+text+"</font>";
+        }else{
+            filterString += "<font color=\"#12212F\">"+text+"</font>";
+        }
+        filterString += "&nbsp;";
+        return filterString;
     }
 
     @Override

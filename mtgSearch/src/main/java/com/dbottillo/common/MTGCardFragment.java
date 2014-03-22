@@ -2,6 +2,7 @@ package com.dbottillo.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -85,13 +86,15 @@ public class MTGCardFragment extends DBFragment {
 
     private void refreshUI(){
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
-        cardName.setText(card.getType()+"\n"+card.getPower()+"/"+card.getToughness()+", "+card.getManaCost()+" ("+card.getCmc()+")");
+        String typeHtml = "<b>Type:</b> "+card.getType()+" <br/><br/> <b>P/T</b>: "+card.getPower()+"/"+card.getToughness()+" <br/><br/>";
+        typeHtml += "<b>Mana Cost</b>: "+card.getManaCost()+" ("+card.getCmc()+")";
+        cardName.setText(Html.fromHtml(typeHtml));
 
         TextView cardText = (TextView) getView().findViewById(R.id.text_card);
         cardText.setText(card.getText());
 
         TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-        setCardText.setText(card.getSetName());
+        setCardText.setText(Html.fromHtml("<b>Set:</b> "+card.getSetName()));
 
         final View cardImageContainer = getView().findViewById(R.id.image_card_container);
         ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);

@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
@@ -51,6 +52,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     private FilterFragment filterFragment;
 
     SearchView searchView;
+    ImageView arrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -198,7 +200,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
-
+        setRotationArrow(180 - (180*slideOffset));
     }
 
     @Override
@@ -206,16 +208,25 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "collapsed");
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         setFragment.refreshUI();
+
+        setRotationArrow(0);;
     }
 
     @Override
     public void onPanelExpanded(View panel) {
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "expanded");
+        setRotationArrow(180);
+
     }
 
     @Override
     public void onPanelAnchored(View panel) {
 
+    }
+
+    private void setRotationArrow(float angle){
+        if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
+        else if (arrow != null) arrow.setRotation(angle);
     }
 
     public void onToggleClicked(View view) {
