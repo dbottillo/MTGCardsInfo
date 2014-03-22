@@ -10,15 +10,45 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        debugConfig {
+            keyAlias 'androiddebugkey'
+            storeFile file('../debug.keystore')
+            keyPassword 'android'
+            storePassword 'android'
+        }
+    }
+
     buildTypes {
+        debug {
+            packageNameSuffix ".debug"
+            versionNameSuffix "_dev"
+            signingConfig signingConfigs.debugConfig
+        }
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    productFlavors {
+        free {
+            packageName "com.dbottillo.mtgsearchfree"
+        }
+
+        paid {
+            packageName "com.dbottillo.mtgsearch"
         }
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':MTGSearchLib')
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile "com.android.support:appcompat-v7:19.0.+"
+    compile 'com.android.support:support-v4:19.0.+'
+    compile 'com.google.android.gms:play-services:4.0.30'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
 }
