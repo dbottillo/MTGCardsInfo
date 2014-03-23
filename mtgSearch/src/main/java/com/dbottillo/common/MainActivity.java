@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -56,6 +57,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -186,6 +188,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         setAdapter.notifyDataSetChanged();
         result.clear();
 
+        hideLoadingFromActionBar();
         getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
     }
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.R;
@@ -22,6 +23,9 @@ public class GoToPremiumFragment extends DBFragment implements View.OnClickListe
 
         Button openPlayStore = (Button) v.findViewById(R.id.open_play_store);
         openPlayStore.setOnClickListener(this);
+
+        TextView title = (TextView) v.findViewById(R.id.title_dialog);
+        title.setText(getString(R.string.need_premium));
 
         return v;
     }

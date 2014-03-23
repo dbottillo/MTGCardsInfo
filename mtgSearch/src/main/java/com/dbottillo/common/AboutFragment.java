@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,13 +29,16 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
         try {
             String versionName = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName;
             TextView version = (TextView) v.findViewById(R.id.about_version);
-            version.setText(getString(R.string.version)+": "+versionName);
+            version.setText(Html.fromHtml("<b>"+getString(R.string.version)+"</b>: "+versionName));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
 
         Button sendFeedback = (Button) v.findViewById(R.id.send_feedback);
         sendFeedback.setOnClickListener(this);
+
+        TextView title = (TextView) v.findViewById(R.id.title_dialog);
+        title.setText(getString(R.string.action_about));
 
         return v;
     }

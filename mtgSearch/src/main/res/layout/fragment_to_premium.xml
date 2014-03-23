@@ -1,20 +1,30 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/title_dialog" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:textColor="#555"
+        android:textSize="14sp"
+        android:text="@string/sets_open_play"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="@string/to_premium"
-        android:id="@+id/to_premium"/>
+        android:layout_width="wrap_content" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_common"
+        android:textColor="#FFF"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/open_play_store"
         android:text="@string/to_premium_btn"/>
 
