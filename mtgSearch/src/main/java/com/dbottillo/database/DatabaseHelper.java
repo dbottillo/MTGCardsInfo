@@ -60,14 +60,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.e("MTG", "on create database");
         db.execSQL(SQL_CREATE_SET);
         db.execSQL(SQL_CREATE_CARD);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.e("MTG", "on upgrade database");
         db.execSQL(SQL_DELETE_SET);
         db.execSQL(SQL_DELETE_CARD);
         onCreate(db);

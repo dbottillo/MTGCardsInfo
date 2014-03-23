@@ -149,7 +149,6 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         ((ToggleButton)getView().findViewById(R.id.toggle_myhtic)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true));
 
         TextView textFilter = (TextView) getView().findViewById(R.id.filter_text);
-        Log.e("MTG", "string: " + filterString);
         textFilter.setText(Html.fromHtml(filterString));
     }
 

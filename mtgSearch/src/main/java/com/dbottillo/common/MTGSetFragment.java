@@ -133,7 +133,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         }
         populateCardsWithFilter();
         int more = result.size() - 3;
-        //Log.e("MTG", MTGDatabaseHelper.LIMIT+" more result: " + result.size());
         if (result.size() == MTGDatabaseHelper.LIMIT || isASearch && more > 0) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
@@ -187,8 +186,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             if (!toAdd && card.isAnEldrazi()){
                 toAdd = true;
             }
-
-            //Log.e("MTG", card+"to add: "+toAdd);
 
             if (toAdd) cards.add(card);
         }

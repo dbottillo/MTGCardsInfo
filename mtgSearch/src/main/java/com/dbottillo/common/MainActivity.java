@@ -69,6 +69,19 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
+        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != DATABASE_VERSION){
+            Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+DATABASE_VERSION);
+            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+            if (file != null){
+                file.delete();
+            }
+            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
+            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
+            SharedPreferences.Editor editor = getSharedPreferences().edit();
+            editor.putInt(PREFERENCE_DATABASE_VERSION, DATABASE_VERSION);
+            editor.commit();
+        }
+
         if (savedInstanceState == null){
             sets = new ArrayList<MTGSet>();
 
@@ -87,19 +100,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.filter, filterFragment)
                 .commit();
-
-        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != DATABASE_VERSION){
-            Log.e("MTG", "wrong database version");
-            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
-            if (file != null){
-                file.delete();
-            }
-            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
-            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
-            SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putInt(PREFERENCE_DATABASE_VERSION, DATABASE_VERSION);
-            editor.commit();
-        }
 
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
@@ -124,7 +124,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     protected void onNewIntent(Intent intent) {
-        Log.e("MTG", "action intent "+intent.getAction());
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             setIntent(intent);
             handleIntent(intent);

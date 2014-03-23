@@ -3,6 +3,7 @@ package com.dbottillo.base;
 import android.app.Application;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.google.analytics.tracking.android.Fields;
@@ -23,6 +24,8 @@ public class MTGApp extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
+        Crashlytics.start(this);
+
 
         GoogleAnalytics.getInstance(this).getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
         tracker = GoogleAnalytics.getInstance(this).getTracker(getString(R.string.analytics));
