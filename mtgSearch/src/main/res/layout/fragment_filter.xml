@@ -259,8 +259,6 @@
             android:id="@+id/btn_apply_filter"
             android:background="@drawable/btn_common"
             android:textColor="#FFF"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:layout_marginBottom="15dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

@@ -12,4 +12,10 @@
         android:topLeftRadius="3dp"
         android:topRightRadius="3dp" />
 
+    <padding
+        android:bottom="5dp"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="5dp" />
+
 </shape>

@@ -53,6 +53,7 @@ public abstract class DBFragment extends DialogFragment {
                 .setGender(AdRequest.GENDER_MALE)
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .addTestDevice("512F56FD659AA867F7F67C7066A85F33")
+                .addTestDevice("81CB49F53C9C0C74241CB8BD3383E1C7")
                 .build();
         return adRequest;
     }
