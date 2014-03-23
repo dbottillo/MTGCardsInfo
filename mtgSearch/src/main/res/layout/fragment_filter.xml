@@ -35,14 +35,14 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-                android:src="@drawable/filter"/>
+                android:src="@drawable/filter" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textColor="#FFF"
-                android:text=":"/>
+                android:text=":" />
 
             <TextView
                 android:layout_width="0dp"
@@ -70,201 +70,205 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
         android:background="@drawable/bg_filter"
-        android:id="@+id/filter_container"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_above="@+id/filter_artifact"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/filter_container"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_divisor_filter"
+                android:layout_above="@+id/filter_artifact"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filter_three"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_white"
+                        android:layout_toLeftOf="@+id/toggle_blue"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@drawable/toggle_text_color"
+                        android:textOn="White"
+                        android:textOff="White"
+                        android:onClick="onToggleClicked" />
+
+                    <ToggleButton
+                        android:id="@id/toggle_blue"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@drawable/toggle_text_color"
+                        android:textOn="Blue"
+                        android:textOff="Blue"
+                        android:onClick="onToggleClicked" />
+
+                    <ToggleButton
+                        android:id="@+id/toggle_black"
+                        android:layout_toRightOf="@id/toggle_blue"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@drawable/toggle_text_color"
+                        android:textOn="Black"
+                        android:textOff="Black"
+                        android:onClick="onToggleClicked" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/filter_three"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_red"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@drawable/toggle_text_color"
+                        android:textOn="Red"
+                        android:textOff="Red"
+                        android:onClick="onToggleClicked" />
+
+                    <ToggleButton
+                        android:id="@+id/toggle_green"
+                        android:layout_toRightOf="@id/toggle_red"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@drawable/toggle_text_color"
+                        android:textOn="Green"
+                        android:textOff="Green"
+                        android:onClick="onToggleClicked" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/filter_three"
-                android:weightSum="3"
-                android:orientation="horizontal">
-
-            <ToggleButton
-                android:id="@+id/toggle_white"
-                android:layout_toLeftOf="@+id/toggle_blue"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="White"
-                android:textOff="White"
-                android:onClick="onToggleClicked" />
-
-            <ToggleButton
-                android:id="@id/toggle_blue"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="Blue"
-                android:textOff="Blue"
-                android:onClick="onToggleClicked" />
-
-            <ToggleButton
-                android:id="@+id/toggle_black"
-                android:layout_toRightOf="@id/toggle_blue"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="Black"
-                android:textOff="Black"
-                android:onClick="onToggleClicked" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/filter_three"
+                android:layout_marginTop="@dimen/margin_divisor_filter"                android:id="@+id/filter_artifact"
+                android:layout_above="@+id/filter_common"
                 android:weightSum="2"
                 android:orientation="horizontal">
 
-            <ToggleButton
-                android:id="@+id/toggle_red"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="Red"
-                android:textOff="Red"
-                android:onClick="onToggleClicked" />
+                <ToggleButton
+                    android:id="@+id/toggle_artifact"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:textOn="Artifact"
+                    android:textOff="Artifact"
+                    android:onClick="onToggleClicked" />
 
-            <ToggleButton
-                android:id="@+id/toggle_green"
-                android:layout_toRightOf="@id/toggle_red"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="Green"
-                android:textOff="Green"
-                android:onClick="onToggleClicked" />
-
+                <ToggleButton
+                    android:id="@+id/toggle_land"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:layout_height="wrap_content"
+                    android:textOn="Land"
+                    android:textOff="Land"
+                    android:onClick="onToggleClicked" />
             </LinearLayout>
 
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/filter_artifact"
-            android:layout_above="@+id/filter_common"
-            android:weightSum="2"
-            android:orientation="horizontal">
-
-            <ToggleButton
-                android:id="@+id/toggle_artifact"
-                android:layout_weight="1"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOn="Artifact"
-                android:textOff="Artifact"
-                android:onClick="onToggleClicked" />
+                android:layout_marginTop="@dimen/margin_divisor_filter"                android:id="@+id/filter_common"
+                android:weightSum="2"
+                android:layout_above="@+id/filter_rare"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ToggleButton
-                android:id="@+id/toggle_land"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:textColor="@drawable/toggle_text_color"
+                <ToggleButton
+                    android:id="@+id/toggle_common"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textOn="Common"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:textOff="Common"
+                    android:onClick="onToggleClicked" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_uncommon"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:layout_height="wrap_content"
+                    android:textOn="Uncommon"
+                    android:textOff="Uncommon"
+                    android:onClick="onToggleClicked" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textOn="Land"
-                android:textOff="Land"
-                android:onClick="onToggleClicked" />
+                android:id="@+id/filter_rare"
+                android:layout_marginBottom="10dp"
+                android:layout_above="@+id/btn_apply_filter"
+                android:weightSum="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/toggle_rare"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textOn="Rare"
+                    android:textOff="Rare"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:onClick="onToggleClicked" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_myhtic"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textOn="Myhtic Rare"
+                    android:textOff="Myhtic Rare"
+                    android:textColor="@drawable/toggle_text_color"
+                    android:onClick="onToggleClicked" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:layout_height="40dp"
+                android:id="@+id/btn_apply_filter"
+                android:background="@drawable/btn_common"
+                android:textColor="#FFF"
+                android:layout_marginTop="@dimen/margin_divisor_filter"                android:layout_marginBottom="15dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/apply_filter" />
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/filter_common"
-            android:weightSum="2"
-            android:layout_above="@+id/filter_rare"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ToggleButton
-                android:id="@+id/toggle_common"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textOn="Common"
-                android:textColor="@drawable/toggle_text_color"
-                android:textOff="Common"
-                android:onClick="onToggleClicked" />
-
-            <ToggleButton
-                android:id="@+id/toggle_uncommon"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:textColor="@drawable/toggle_text_color"
-                android:layout_height="wrap_content"
-                android:textOn="Uncommon"
-                android:textOff="Uncommon"
-                android:onClick="onToggleClicked" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/filter_rare"
-            android:layout_marginBottom="10dp"
-            android:layout_above="@+id/btn_apply_filter"
-            android:weightSum="2"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ToggleButton
-                android:id="@+id/toggle_rare"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textOn="Rare"
-                android:textOff="Rare"
-                android:textColor="@drawable/toggle_text_color"
-                android:onClick="onToggleClicked" />
-
-            <ToggleButton
-                android:id="@+id/toggle_myhtic"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textOn="Myhtic Rare"
-                android:textOff="Myhtic Rare"
-                android:textColor="@drawable/toggle_text_color"
-                android:onClick="onToggleClicked" />
-        </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_apply_filter"
-            android:background="@drawable/btn_common"
-            android:textColor="#FFF"
-            android:layout_marginBottom="15dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="@string/apply_filter" />
-
-    </RelativeLayout>
+    </ScrollView>
 
     <FrameLayout
         android:layout_width="match_parent"
