@@ -123,12 +123,12 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         int i = 0;
         boolean premium = getApp().isPremium();
         for (Object set : result) {
-            if (premium  || !isASearch || (!premium && i < 3)) {
+            //if (premium  || !isASearch || (!premium && i < 3)) {
                 mtgSet.getCards().add((MTGCard) set);
-            }
-            if (isASearch && !premium && i >= 3) {
-                break;
-            }
+            //}
+            //if (isASearch && !premium && i >= 3) {
+            //    break;
+            //}
             i++;
         }
         populateCardsWithFilter();
@@ -137,13 +137,14 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             Button openPlayStore = (Button) footer.findViewById(R.id.open_play_store);
-            if (!premium && isASearch && more > 0) {
+            /*if (!premium && isASearch && more > 0) {
                 moreResult.setText(getString(R.string.more_result, more));
                 openPlayStore.setOnClickListener(this);
-            }else{
+            }else{*/
                 moreResult.setText(getString(R.string.search_limit, MTGDatabaseHelper.LIMIT));
                 openPlayStore.setVisibility(View.GONE);
-            }
+                footer.findViewById(R.id.open_play_store_text).setVisibility(View.GONE);
+            //}
             listView.addFooterView(footer);
         }
         result.clear();

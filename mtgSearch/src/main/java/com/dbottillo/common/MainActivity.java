@@ -162,10 +162,10 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public boolean onNavigationItemSelected(int position, long id) {
-        if (!getApp().isPremium() && position > 2){
+        /*if (!getApp().isPremium() && position > 2){
             showGoToPremium();
             return false;
-        }
+        }*/
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "spinner_selected", sets.get(position).getCode());
         SharedPreferences.Editor editor = getSharedPreferences().edit();
         editor.putInt("setPosition", position);

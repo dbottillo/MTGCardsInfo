@@ -100,7 +100,8 @@ public class MTGCardFragment extends DBFragment {
         ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getMultiVerseId() > 0){
             cardImageContainer.setVisibility(View.VISIBLE);
-            final String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
+            //final String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
+            final String image = "http://mtgimage.com/multiverseid/"+card.getMultiVerseId()+".jpg";
             progressBar.setVisibility(View.VISIBLE);
             Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage,new Callback() {
 
