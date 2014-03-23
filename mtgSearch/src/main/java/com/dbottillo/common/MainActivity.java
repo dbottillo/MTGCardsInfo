@@ -124,8 +124,11 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     protected void onNewIntent(Intent intent) {
-        setIntent(intent);
-        handleIntent(intent);
+        Log.e("MTG", "action intent "+intent.getAction());
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            setIntent(intent);
+            handleIntent(intent);
+        }
     }
 
     private void handleIntent(Intent intent){
