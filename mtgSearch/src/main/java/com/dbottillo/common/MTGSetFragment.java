@@ -78,13 +78,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         }
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
-        cards = new ArrayList<MTGCard>();
-        adapter = new MTGCardListAdapter(getActivity(), cards, isASearch);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(this);
-
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
         if (isASearch) {
             View header = inflater.inflate(R.layout.search_header, null);
@@ -92,6 +85,14 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             searchQueryText.setText(query);
             listView.addHeaderView(header);
         }
+
+        cards = new ArrayList<MTGCard>();
+        adapter = new MTGCardListAdapter(getActivity(), cards, isASearch);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(this);
+
+        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
         return rootView;
     }
@@ -166,9 +167,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             if (card.getColors().contains(MTGCard.GREEN) && getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true))
                 toAdd = true;
 
-            if (card.isALand() && getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true))
+            if (card.isALand() && getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true))
                 toAdd = true;
-            if (card.isAnArtifact() && getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true))
+            if (card.isAnArtifact() && getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true))
                 toAdd = true;
 
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
