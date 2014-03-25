@@ -53,7 +53,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         db.delete(SetEntry.TABLE_NAME, null, null);
         db.delete(CardEntry.TABLE_NAME, null, null);
         try{
-            String jsonString = loadFile(R.raw.set_list);
+            String jsonString = "";
+            //String jsonString = loadFile(R.raw.set_list);
             JSONArray json = new JSONArray(jsonString);
             for (int i=json.length()-1; i>=0; i--){
             //for (int i=0; i<1; i++){
