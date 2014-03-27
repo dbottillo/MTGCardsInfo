@@ -114,7 +114,7 @@ public class MTGCardFragment extends DBFragment {
                 public void onError() {
                     progressBar.setVisibility(View.GONE);
                     cardImageContainer.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), getString(R.string.error_image), Toast.LENGTH_SHORT).show();
+                    if (isVisible()) Toast.makeText(getActivity(), getString(R.string.error_image), Toast.LENGTH_SHORT).show();
                 }
             });
         }else{
