@@ -52,6 +52,16 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         this.mDbHelper= new MTGDatabaseHelper(context);
     }
 
+    public void attach(Context context, DBAsyncTaskListener listener){
+        this.listener = listener;
+        this.context =  context;
+    }
+
+    public void detach(){
+        this.context = null;
+        this.listener = null;
+    }
+
     public DBAsyncTask setPackageName(String packageName){
         this.packageName = packageName;
         return this;
@@ -239,10 +249,12 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     @Override
     protected void onPostExecute(ArrayList<Object> result) {
-        if (error) {
-            listener.onTaskEndWithError(errorMessage);
-        }else{
-            listener.onTaskFinished(result);
+        if (listener != null) {
+            if (error) {
+                listener.onTaskEndWithError(errorMessage);
+            } else {
+                listener.onTaskFinished(result);
+            }
         }
     }
 

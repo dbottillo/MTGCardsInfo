@@ -4,6 +4,7 @@ package com.dbottillo.base;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import com.google.android.gms.ads.AdRequest;
@@ -20,6 +21,12 @@ public abstract class DBFragment extends DialogFragment {
     public static final String PREF_SHOW_IMAGE = "show_image";
 
     private AdView adView;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     public SharedPreferences getSharedPreferences(){
         return getActivity().getSharedPreferences(PREFS_NAME, 0);

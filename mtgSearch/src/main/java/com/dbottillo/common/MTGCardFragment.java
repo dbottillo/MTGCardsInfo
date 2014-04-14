@@ -86,7 +86,8 @@ public class MTGCardFragment extends DBFragment {
 
     private void refreshUI(){
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
-        String typeHtml = "<b>Type:</b> "+card.getType()+" <br/><br/> <b>P/T</b>: "+card.getPower()+"/"+card.getToughness()+" <br/><br/>";
+        String typeHtml = "<b>"+getString(R.string.type_card)+":</b> "+card.getType()+" <br/><br/> " +
+                "<b>"+getString(R.string.pt_card)+"</b>: "+card.getPower()+"/"+card.getToughness()+" <br/><br/>";
         typeHtml += "<b>Mana Cost</b>: "+card.getManaCost()+" ("+card.getCmc()+")";
         cardName.setText(Html.fromHtml(typeHtml));
 
@@ -94,7 +95,7 @@ public class MTGCardFragment extends DBFragment {
         cardText.setText(card.getText());
 
         TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-        setCardText.setText(Html.fromHtml("<b>Set:</b> "+card.getSetName()));
+        setCardText.setText(Html.fromHtml("<b>"+getString(R.string.set_card)+"</b> "+card.getSetName()));
 
         final View cardImageContainer = getView().findViewById(R.id.image_card_container);
         ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
