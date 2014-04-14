@@ -1,8 +1,10 @@
 package com.dbottillo.common;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,8 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     boolean isASearch = false;
     private String query;
 
+    private static DBAsyncTask currentTask = null;
+
     public static MTGSetFragment newInstance(MTGSet set) {
         MTGSetFragment fragment = new MTGSetFragment();
         Bundle args = new Bundle();
@@ -54,7 +58,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         return fragment;
     }
 
-    public static Fragment newInstance(String query) {
+    public static MTGSetFragment newInstance(String query) {
         MTGSetFragment fragment = new MTGSetFragment();
         Bundle args = new Bundle();
         args.putString(SEARCH, query);
@@ -97,6 +101,23 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         return rootView;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        if (currentTask != null){
+            currentTask.attach(getActivity(), this);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        if (currentTask != null){
+            currentTask.detach();
+        }
+    }
 
     @Override
     public String getPageTrack() {
@@ -111,10 +132,11 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         setHasOptionsMenu(true);
 
         if (isASearch) {
-            new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SEARCH).execute(query);
+            currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SEARCH);
+            currentTask.execute(query);
         } else {
-            String packageName = getActivity().getApplication().getPackageName();
-            new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET).execute(mtgSet.getId() + "");
+            currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET);
+            currentTask.execute(mtgSet.getId() + "");
         }
     }
 
@@ -123,9 +145,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         mtgSet.getCards().clear();
         int i = 0;
         boolean premium = getApp().isPremium();
-        for (Object set : result) {
+        for (Object card : result) {
             //if (premium  || !isASearch || (!premium && i < 3)) {
-                mtgSet.getCards().add((MTGCard) set);
+                mtgSet.getCards().add((MTGCard) card);
             //}
             //if (isASearch && !premium && i >= 3) {
             //    break;
@@ -133,8 +155,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             i++;
         }
         populateCardsWithFilter();
-        int more = result.size() - 3;
-        if (result.size() == MTGDatabaseHelper.LIMIT || isASearch && more > 0) {
+        //int more = result.size() - 3;
+        //if (result.size() == MTGDatabaseHelper.LIMIT || (isASearch && more > 0 && !premium)) {
+        if (result.size() == MTGDatabaseHelper.LIMIT) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             Button openPlayStore = (Button) footer.findViewById(R.id.open_play_store);
@@ -154,35 +177,36 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
     private void populateCardsWithFilter() {
         cards.clear();
+        SharedPreferences sharedPreferences = getSharedPreferences();
         for (MTGCard card : mtgSet.getCards()) {
             boolean toAdd = false;
-            if (card.getColors().contains(MTGCard.WHITE) && getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true))
+            if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true))
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.BLUE) && getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true))
+            if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true))
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.BLACK) && getSharedPreferences().getBoolean(FilterHelper.FILTER_BLACK, true))
+            if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true))
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.RED) && getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true))
+            if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true))
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.GREEN) && getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true))
+            if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true))
                 toAdd = true;
 
-            if (card.isALand() && getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true))
+            if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true))
                 toAdd = true;
-            if (card.isAnArtifact() && getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true))
+            if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true))
                 toAdd = true;
 
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                    !getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
                 toAdd = false;
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON) &&
-                    !getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true))
                 toAdd = false;
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
-                    !getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true))
                 toAdd = false;
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                    !getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
                 toAdd = false;
 
             if (!toAdd && card.isAnEldrazi()){

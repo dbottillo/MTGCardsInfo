@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_about">About</string>
+    <string name="copyright">Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast.</string>
+    <string name="send_feedback">Invia Feedback</string>
+    <string name="version">Versione</string>
+    <string name="error_image">Errore nel caricare l\'immagine</string>
+    <string name="action_update_database">Aggiorna Database</string>
+    <string name="set_loaded">%s set caricato</string>
+    <string name="search_hint">Cerca tra le carte di Magic</string>
+    <string name="action_search">Cerca</string>
+    <string name="search_result">Risultati per:</string>
+    <string name="filter">Filtro corrente</string>
+    <string name="filter_panel">Filtro</string>
+    <string name="to_premium">Accedi a premium</string>
+    <string name="to_premium_btn">Apri Play Store</string>
+    <string name="more_result">Ci sono %d altri risultati</string>
+    <string name="search_limit">C\'e un limite di %d risultati, prova ad affinare la ricerca!</string>
+    <string name="apply_filter">Applica Filtro</string>
+    <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
+    <string name="search_open_play">Se vuoi vedere tutti i risultati hai bisogno della versione premium di MTG Cards</string>
+    <string name="sets_open_play">Nella versione gratis di MTG Cards solo i primi tre set sono visibili, se vuoi vedere tutti i sei hai bisogno della versione premium di MTG Cards</string>
+    <string name="need_premium">Premium richiesto</string>
+
+    <!-- filter panel -->
+    <string name="mtg_color_white">Bianco</string>
+    <string name="mtg_color_blue">Blu</string>
+    <string name="mtg_color_black">Nero</string>
+    <string name="mtg_color_red">Rosso</string>
+    <string name="mtg_color_green">Verde</string>
+    <string name="mtg_type_artifact">Artefatto</string>
+    <string name="mtg_type_land">Terra</string>
+    <string name="mtg_common">Comune</string>
+    <string name="mtg_uncommon">Non comune</string>
+    <string name="mtg_rare">Rara</string>
+    <string name="mtg_mythic_rare">Rara Mitica</string>
+
+    <!-- card fragment -->
+    <string name="type_card">Tipo</string>
+    <string name="pt_card">F/C</string>
+
+</resources>
