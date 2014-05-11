@@ -61,7 +61,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 JSONObject setJ = json.getJSONObject(i);
 
                 long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
-                Log.e("MTG", "row id "+newRowId);
+                Log.e("MTG", "row id "+newRowId+" -> "+setJ.getString("code"));
 
                 String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
                 JSONObject jsonCards = new JSONObject(jsonSetString);

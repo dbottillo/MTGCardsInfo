@@ -26,6 +26,7 @@ import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
+import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.R;
 import com.dbottillo.resources.MTGSet;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener{
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
 
     /**
@@ -112,7 +113,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         //new CreateDBAsyncTask(this,packageName).execute();
 
         /*
-        Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearch cat /data/data/com.dbottillo.mtgsearch/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
+        Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
         Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
          */
     }
@@ -214,7 +215,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         setFragment.refreshUI();
 
-        setRotationArrow(0);;
+        setRotationArrow(0);
     }
 
     @Override
