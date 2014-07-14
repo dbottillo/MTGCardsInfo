@@ -3,7 +3,9 @@
     <style name="MTGSearchTheme" parent="@style/Theme.AppCompat.Light">
 
 	    <item name="android:windowNoTitle">true</item>
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/black</item>
 
     </style>
 
