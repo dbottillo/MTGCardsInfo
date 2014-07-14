@@ -4,12 +4,15 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
@@ -20,10 +23,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
+import com.dbottillo.adapters.LeftMenuAdapter;
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
@@ -37,7 +43,7 @@ import com.dbottillo.view.SlidingUpPanelLayout;
 import java.io.File;
 import java.util.ArrayList;
 
-public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener{
+public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
     private static final int DATABASE_VERSION = 3;
     private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
@@ -52,6 +58,9 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     private MTGSetSpinnerAdapter setAdapter;
 
     private SlidingUpPanelLayout slidingPanel;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private ListView mDrawerList;
 
     private FilterFragment filterFragment;
 
@@ -63,6 +72,8 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setupDrawerLayout();
 
         slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         slidingPanel.setPanelSlideListener(this);
@@ -108,6 +119,62 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             handleIntent(intent);
         }
+    }
+
+    private void setupDrawerLayout() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close) {
+
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+                getSupportActionBar().setTitle("");
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+                getSupportActionBar().setTitle(getString(R.string.app_name));
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            @Override
+            public void onDrawerSlide(final View view, final float slideOffset) {
+                super.onDrawerSlide(view, slideOffset);
+                float value = 0.9f + 0.1f * (1.0f - slideOffset);
+                findViewById(R.id.sliding_layout).setScaleX(value);
+                findViewById(R.id.sliding_layout).setScaleY(value);
+            }
+        };
+
+        // Set the drawer toggle as the DrawerListener
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        mDrawerList.setAdapter(new LeftMenuAdapter(this));
+        // Set the list's click listener
+        mDrawerList.setOnItemClickListener(this);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
@@ -184,7 +251,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         result.clear();
 
         hideLoadingFromActionBar();
-        getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
+        //getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
     }
 
     @Override
@@ -273,43 +340,17 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
         searchAutoComplete.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.search_text_size));
 
-        if (BuildConfig.DEBUG && BuildConfig.FLAVOR.equalsIgnoreCase("free")){
-            menu.add(0, 2, 0, "Create DB");
-        }
+        searchItem.setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
 
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        int i = item.getItemId();
-        if (i == R.id.action_about) {
-            openDialog("about");
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
-        } else if (i == R.id.action_update_database) {// NB: WARNING, FOR DELETE DATABASE
-            // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
-            getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "reset_db", "");
-            sets.clear();
-            setAdapter.notifyDataSetChanged();
-            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
-            file.delete();
-            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
-            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
-            return true;
-        } else if (i == 2) {
-            // NB: WARNING, FOR RECREATE DATABASE
-            String packageName = getApplication().getPackageName();
-            new CreateDBAsyncTask(this,packageName).execute();
-            /*
-            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
-            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
-            */
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -335,4 +376,33 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         newFragment.show(ft, tag);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mDrawerLayout.closeDrawer(mDrawerList);
+        if (position == LeftMenuAdapter.LeftMenuItem.FAVOURITE.getPosition()){
+
+        }else if (position == LeftMenuAdapter.LeftMenuItem.ABOUT.getPosition()){
+            openDialog("about");
+
+        }else if (position == LeftMenuAdapter.LeftMenuItem.FORCE_UPDATE.getPosition()){
+            // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
+            getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "reset_db", "");
+            sets.clear();
+            setAdapter.notifyDataSetChanged();
+            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+            file.delete();
+            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
+            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
+            new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+
+        }else if (position == LeftMenuAdapter.LeftMenuItem.CREATE_DB.getPosition()){
+            // NB: WARNING, FOR RECREATE DATABASE
+            String packageName = getApplication().getPackageName();
+            new CreateDBAsyncTask(this,packageName).execute();
+            /*
+            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
+            */
+        }
+    }
 }
