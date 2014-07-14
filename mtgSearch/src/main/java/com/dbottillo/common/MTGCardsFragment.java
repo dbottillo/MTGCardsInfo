@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,10 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.astuetz.PagerSlidingTabStrip;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
+import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -66,11 +66,12 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         viewPager.setOnPageChangeListener(this);
 
-        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) rootView.findViewById(R.id.tabs);
-        tabs.setViewPager(viewPager);
-
         setActionBarTitle(getArguments().getString(SET_NAME));
         setHasOptionsMenu(true);
+
+        PagerTabStrip pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.main));
+        pagerTabStrip.setTextColor(getResources().getColor(R.color.dark_grey));
 
         return rootView;
     }
@@ -82,7 +83,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     @Override
     public void onPageSelected(int position) {
-        ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(cards.get(position).getName());
     }
 
     @Override
@@ -124,7 +124,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.card, menu);
+        inflater.inflate(R.menu.cards, menu);
 
         actionImage = menu.findItem(R.id.action_image);
 

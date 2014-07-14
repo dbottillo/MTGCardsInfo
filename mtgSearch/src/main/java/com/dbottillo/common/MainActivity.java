@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -22,6 +23,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
@@ -37,7 +39,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener{
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
 
     /**
@@ -106,16 +108,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             handleIntent(intent);
         }
-
-
-        // NB: WARNING, FOR RECREATE DATABASE
-        //String packageName = getApplication().getPackageName();
-        //new CreateDBAsyncTask(this,packageName).execute();
-
-        /*
-        Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
-        Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
-         */
     }
 
     @Override
@@ -281,6 +273,10 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
         searchAutoComplete.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.search_text_size));
 
+        if (BuildConfig.DEBUG && BuildConfig.FLAVOR.equalsIgnoreCase("free")){
+            menu.add(0, 2, 0, "Create DB");
+        }
+
         return true;
     }
 
@@ -301,6 +297,15 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
             Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+            return true;
+        } else if (i == 2) {
+            // NB: WARNING, FOR RECREATE DATABASE
+            String packageName = getApplication().getPackageName();
+            new CreateDBAsyncTask(this,packageName).execute();
+            /*
+            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
+            */
             return true;
         } else {
             return super.onOptionsItemSelected(item);

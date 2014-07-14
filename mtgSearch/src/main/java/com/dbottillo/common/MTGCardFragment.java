@@ -1,8 +1,10 @@
 package com.dbottillo.common;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
+import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.MTGCard;
 import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
@@ -29,11 +32,21 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
  */
 public class MTGCardFragment extends DBFragment {
 
+    private static final String TAG = MTGCardFragment.class.getName();
+
+    public interface DatabaseConnector {
+        boolean isCardSaved(MTGCard card);
+        void saveCard(MTGCard card);
+        void removeCard(MTGCard card);
+    }
+
     public static final String CARD = "card";
 
     private MTGCard card;
 
     private SmoothProgressBar progressBar;
+
+    private DatabaseConnector databaseConnector;
 
     public static MTGCardFragment newInstance(MTGCard card) {
         MTGCardFragment fragment = new MTGCardFragment();
@@ -74,7 +87,16 @@ public class MTGCardFragment extends DBFragment {
         return rootView;
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
 
+        try {
+            databaseConnector = (DatabaseConnector) activity;
+        }catch (ClassCastException e){
+            Log.e(TAG, "activity must implement databaseconnector interface");
+        }
+    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
@@ -124,10 +146,23 @@ public class MTGCardFragment extends DBFragment {
         }
     }
 
+    private boolean isSavedOffline = false;
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.share, menu);
+        inflater.inflate(R.menu.card, menu);
+
+        MenuItem item = menu.findItem(R.id.action_fav);
+        if (databaseConnector.isCardSaved(card)){
+            item.setTitle(getString(R.string.favourite_remove));
+            item.setIcon(R.drawable.ab_star_colored);
+            isSavedOffline = true;
+        }else{
+            item.setTitle(getString(R.string.favourite_add));
+            item.setIcon(R.drawable.ab_star);
+            isSavedOffline = false;
+        }
     }
 
     @Override
@@ -142,7 +177,13 @@ public class MTGCardFragment extends DBFragment {
             i.putExtra(Intent.EXTRA_TEXT, image);
             startActivity(Intent.createChooser(i, getString(R.id.share_card)));
             return true;
-        } else {
+        } else if (i1 == R.id.action_fav) {
+            if (isSavedOffline){
+                databaseConnector.removeCard(card);
+            }else{
+                databaseConnector.saveCard(card);
+            }
+            getActivity().invalidateOptionsMenu();
         }
 
         return false;
