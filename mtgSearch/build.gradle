@@ -7,7 +7,7 @@ buildscript {
         classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
     }
 }
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 apply plugin: 'crashlytics'
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
@@ -16,13 +16,13 @@ repositories {
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.1"
+    buildToolsVersion '19.1.0'
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
-        versionCode 6
-        versionName "1.1"
+        versionCode 7
+        versionName "1.5"
     }
 
     signingConfigs {
@@ -43,7 +43,7 @@ android {
 
     buildTypes {
         debug {
-            packageNameSuffix ".debug"
+            applicationIdSuffix ".debug"
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
@@ -58,11 +58,11 @@ android {
 
     productFlavors {
         free {
-            packageName "com.dbottillo.mtgsearchfree"
+            applicationId "com.dbottillo.mtgsearchfree"
         }
 
         paid {
-            packageName "com.dbottillo.mtgsearch"
+            applicationId "com.dbottillo.mtgsearch"
         }
     }
 }
@@ -85,10 +85,9 @@ tasks.whenTaskAdded { task ->
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile "com.android.support:appcompat-v7:19.0.+"
     compile 'com.android.support:support-v4:19.0.+'
-    compile 'com.google.android.gms:play-services:4.0.30'
+    compile 'com.google.android.gms:play-services:5.0.77'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
     compile 'com.crashlytics.android:crashlytics:1.+'

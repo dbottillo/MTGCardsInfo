@@ -5,9 +5,12 @@ import android.view.MenuItem;
 
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.R;
+import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.MTGCard;
 
-public class CardsActivity extends DBActivity {
+public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector {
+
+    private DB40Helper db40Helper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,16 @@ public class CardsActivity extends DBActivity {
                         getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
                 .commit();
         }
+
+        db40Helper = new DB40Helper(this);
+        db40Helper.openDb();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db40Helper.closeDb();
+        db40Helper = null;
     }
 
     @Override
@@ -41,4 +54,18 @@ public class CardsActivity extends DBActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean isCardSaved(MTGCard card) {
+        return db40Helper.isCardStored(card);
+    }
+
+    @Override
+    public void saveCard(MTGCard card) {
+        db40Helper.storeCard(card);
+    }
+
+    @Override
+    public void removeCard(MTGCard card) {
+        db40Helper.removeCard(card);
+    }
 }
