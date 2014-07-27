@@ -1,5 +1,6 @@
 package com.dbottillo.common;
 
+import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +14,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -26,6 +25,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
@@ -79,7 +79,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         slidingPanel.setPanelSlideListener(this);
 
         // Set up the action bar to show a dropdown list.
-        final ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
@@ -131,16 +131,16 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-                getSupportActionBar().setTitle("");
+                getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+                getActionBar().setTitle("");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-                getSupportActionBar().setTitle(getString(R.string.app_name));
+                getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+                getActionBar().setTitle(getString(R.string.app_name));
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
@@ -156,8 +156,8 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         mDrawerList.setAdapter(new LeftMenuAdapter(this));
         // Set the list's click listener
@@ -207,8 +207,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         // Restore the previously serialized current dropdown position.
         if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
-            getActionBar().setSelectedNavigationItem(
-                    savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
+            getActionBar().setSelectedNavigationItem(savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
         }
     }
 
@@ -291,7 +290,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     private void setRotationArrow(float angle){
         if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
-        else if (arrow != null) arrow.setRotation(angle);
+        else arrow.setRotation(angle);
     }
 
     public void onToggleClicked(View view) {
@@ -337,9 +336,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
                     }
                 });
 
-        SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
-        searchAutoComplete.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.search_text_size));
-
         searchItem.setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
 
         return true;
@@ -366,7 +362,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         }
         ft.addToBackStack(null);
 
-        DialogFragment newFragment = null;
+        DialogFragment newFragment;
         if (tag.equalsIgnoreCase("about")) {
             newFragment = new AboutFragment();
         }else{
@@ -380,6 +376,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mDrawerLayout.closeDrawer(mDrawerList);
         if (position == LeftMenuAdapter.LeftMenuItem.FAVOURITE.getPosition()){
+            startActivity(new Intent(this, SavedActivity.class));
 
         }else if (position == LeftMenuAdapter.LeftMenuItem.ABOUT.getPosition()){
             openDialog("about");

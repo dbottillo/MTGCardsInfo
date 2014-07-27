@@ -2,19 +2,19 @@ package com.dbottillo.base;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public abstract class DBActivity extends ActionBarActivity {
+public abstract class DBActivity extends FragmentActivity {
 
     public void showLoadingInActionBar(){
-        setSupportProgressBarIndeterminateVisibility(true);
+        setProgressBarIndeterminateVisibility(true);
     }
 
     public void hideLoadingFromActionBar(){
-        setSupportProgressBarIndeterminateVisibility(false);
+        setProgressBarIndeterminateVisibility(false);
     }
 
     public SharedPreferences getSharedPreferences(){

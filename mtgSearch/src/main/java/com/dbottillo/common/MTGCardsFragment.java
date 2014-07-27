@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
-import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -143,7 +142,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
             boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putBoolean(PREF_SHOW_IMAGE, !showImage);
-            editor.commit();
+            editor.apply();
             adapter.notifyDataSetChanged();
             viewPager.invalidate();
             if (!showImage) {

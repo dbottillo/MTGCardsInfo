@@ -1,18 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:mtgsearch="http://schemas.android.com/apk/res-auto"
     tools:context="com.dbottillo.common.MainActivity">
 
     <item
         android:id="@+id/action_fav"
         android:icon="@drawable/ab_star"
         android:title="@string/favourite_add"
-        mtgsearch:showAsAction="always" />
+        android:showAsAction="always" />
 
     <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_menu_share"
         android:title="@string/share"
-        mtgsearch:showAsAction="always" />
+        android:showAsAction="always" />
 
 </menu>

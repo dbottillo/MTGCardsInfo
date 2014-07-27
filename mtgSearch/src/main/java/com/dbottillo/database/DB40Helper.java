@@ -33,7 +33,7 @@ public class DB40Helper {
     }
 
 
-    public DB40Helper(Context ctx){
+    private DB40Helper(Context ctx){
         this.ctx = ctx;
     }
 
