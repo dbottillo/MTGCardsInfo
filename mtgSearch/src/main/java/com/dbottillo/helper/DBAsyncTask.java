@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
 
+import com.dbottillo.database.DB40Helper;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
@@ -40,6 +41,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     public static final int TASK_SET_LIST = 0;
     public static final int TASK_SINGLE_SET = 1;
     public static final int TASK_SEARCH = 2;
+    public static final int TASK_SAVED = 3;
 
     private int type;
 
@@ -82,7 +84,16 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
                 }
             }
             cursor.close();
-        }else{
+
+        } else if (type == TASK_SAVED) {
+            DB40Helper db40Helper = DB40Helper.getInstance(context);
+            db40Helper.openDb();
+            ArrayList<MTGCard> cards = db40Helper.getCards();
+            for (MTGCard card : cards) {
+                result.add(card);
+            }
+            db40Helper.closeDb();
+        } else {
 
             Cursor cursor = null;
             if (type == TASK_SINGLE_SET){

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
+import com.dbottillo.base.DBFragment;
 
 /**
  * Created by danielebottillo on 14/07/2014.
@@ -17,24 +18,39 @@ import com.dbottillo.R;
 public class LeftMenuAdapter extends BaseAdapter {
 
     public enum LeftMenuItem {
-        HOME(0, R.string.action_home, R.drawable.left_home),
-        FAVOURITE(1, R.string.action_saved, R.drawable.left_saved),
-        FORCE_UPDATE(2, R.string.action_update_database, R.drawable.left_update),
-        ABOUT(3, R.string.action_about, R.drawable.left_info),
-        CREATE_DB(4, R.string.action_create_db, -1);
+        HOME(0, R.string.action_home, R.drawable.left_home, "home"),
+        FAVOURITE(1, R.string.action_saved, R.drawable.left_saved, "saved"),
+        FORCE_UPDATE(2, R.string.action_update_database, R.drawable.left_update, null),
+        ABOUT(3, R.string.action_about, R.drawable.left_info, null),
+        CREATE_DB(4, R.string.action_create_db, -1, null);
 
         private int id;
         private int title;
         private int icon;
+        private String tag;
 
-        LeftMenuItem(int id, int title, int icon){
+        LeftMenuItem(int id, int title, int icon, String tag){
             this.id = id;
             this.title = title;
             this.icon =  icon;
+            this.tag = tag;
         }
 
         public int getPosition(){
             return id;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public static LeftMenuItem getItemAtPosition(int position) {
+            for (LeftMenuItem leftMenuItem : values()){
+                if (leftMenuItem.id == position){
+                    return leftMenuItem;
+                }
+            }
+            return null;
         }
     }
 

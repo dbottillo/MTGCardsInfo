@@ -17,8 +17,8 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
@@ -28,7 +28,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
                 .commit();
         }
 
-        db40Helper = new DB40Helper(this);
+        db40Helper = DB40Helper.getInstance(this);
         db40Helper.openDb();
     }
 

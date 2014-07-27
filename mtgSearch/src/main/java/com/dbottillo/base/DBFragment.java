@@ -34,7 +34,7 @@ public abstract class DBFragment extends DialogFragment {
 
     protected void setActionBarTitle(String title) {
         DBActivity act = (DBActivity) getActivity();
-        act.getSupportActionBar().setTitle(title);
+        act.getActionBar().setTitle(title);
     }
 
     protected void openPlayStore(){

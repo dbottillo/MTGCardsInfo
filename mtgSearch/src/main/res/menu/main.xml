@@ -1,12 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.dbottillo.common.MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    tools:context="com.dbottillo.common.MainActivity" >
 
     <item android:id="@+id/action_search"
         android:title="@string/action_search"
         android:icon="@drawable/ic_search"
         android:orderInCategory="100"
-        app:showAsAction="always|collapseActionView"
-        app:actionViewClass="android.support.v7.widget.SearchView" />
+        android:showAsAction="always|collapseActionView"
+        android:actionViewClass="android.widget.SearchView" />
 </menu>

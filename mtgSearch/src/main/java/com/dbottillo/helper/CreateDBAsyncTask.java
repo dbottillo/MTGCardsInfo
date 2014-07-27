@@ -53,7 +53,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         db.delete(SetEntry.TABLE_NAME, null, null);
         db.delete(CardEntry.TABLE_NAME, null, null);
         try{
-            String jsonString = loadFile(R.raw.set_list);
+            int set_list = context.getResources().getIdentifier("set_list", "raw", packageName);
+            String jsonString = loadFile(set_list);
             JSONArray json = new JSONArray(jsonString);
             for (int i=json.length()-1; i>=0; i--){
             //for (int i=0; i<1; i++){
@@ -68,14 +69,15 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 //for (int k=0; k<1; k++){
                 for (int k=0; k<cards.length(); k++){
                     JSONObject cardJ = cards.getJSONObject(k);
-                    Log.e("BBM", "cardJ "+cardJ);
+                    //Log.e("BBM", "cardJ "+cardJ);
 
                     long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
-                    Log.e("MTG", "row id card"+newRowId2);
+                    //Log.e("MTG", "row id card"+newRowId2);
                     result.add(MTGCard.createCardFromJson(i, cardJ));
                 }
             }
         }catch (JSONException e) {
+            Log.e("MTG", "error create db async task: "+e.getLocalizedMessage());
             error = true;
             errorMessage = e.getLocalizedMessage();
             e.printStackTrace();
