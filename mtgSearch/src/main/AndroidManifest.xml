@@ -13,7 +13,6 @@
         android:theme="@style/MTGSearchTheme" >
         <activity
             android:name=".common.MainActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:theme="@style/MTGSearchTheme.ActionBar"
             android:label="@string/app_name" >
@@ -30,13 +29,11 @@
 
         <activity
             android:name=".common.CardsActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/MTGSearchTheme.ActionBar">
         </activity>
 
         <activity
             android:name=".common.SavedActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/MTGSearchTheme.ActionBar" >
         </activity>
 
