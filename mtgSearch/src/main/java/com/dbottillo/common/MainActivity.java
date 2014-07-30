@@ -86,14 +86,12 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != DATABASE_VERSION){
             Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+DATABASE_VERSION);
             File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
-            if (file != null){
-                file.delete();
-            }
+            file.delete();
             MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
             Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putInt(PREFERENCE_DATABASE_VERSION, DATABASE_VERSION);
-            editor.commit();
+            editor.apply();
         }
 
         if (savedInstanceState == null){
