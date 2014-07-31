@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/player_name"
+                android:textColor="#222"
+                android:layout_marginLeft="5dp"
+                tools:text="Player 1"
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/player_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="@color/divisor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/player_life"
+                    android:gravity="center"
+                    tools:text="20"
+                    android:textSize="50sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                </FrameLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_life_plus_one"
+                    android:text="@string/plus_one"
+                    style="@style/BtnLifeCounter.Life" />
+                <Button
+                    android:id="@+id/btn_life_minus_one"
+                    android:text="@string/minus_one"
+                    style="@style/BtnLifeCounter.Life" />
+                <Button
+                    android:id="@+id/btn_poison_plus_one"
+                    android:text="@string/plus_one"
+                    style="@style/BtnLifeCounter.Poison"/>
+                <Button
+                    android:id="@+id/btn_poison_minus_one"
+                    android:text="@string/minus_one"
+                    style="@style/BtnLifeCounter.Poison" />
+
+
+                </GridLayout>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

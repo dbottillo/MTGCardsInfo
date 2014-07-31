@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_filter"
+    tools:context="com.dbottillo.lifecounter.LifeCounterActivity">
+
+    <ListView
+        android:id="@+id/life_counter_list"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        style="@style/MTGProgressBar"
+        android:id="@+id/progress" />
+
+</RelativeLayout>

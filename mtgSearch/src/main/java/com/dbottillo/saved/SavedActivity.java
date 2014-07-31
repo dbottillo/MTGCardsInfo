@@ -1,12 +1,10 @@
-package com.dbottillo.common;
+package com.dbottillo.saved;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
-import com.dbottillo.database.DB40Helper;
-import com.dbottillo.resources.MTGCard;
 
 public class SavedActivity extends DBActivity{
 
@@ -27,13 +25,8 @@ public class SavedActivity extends DBActivity{
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
     public String getPageTrack() {
-        return "/saved";
+        return null;
     }
 
     @Override

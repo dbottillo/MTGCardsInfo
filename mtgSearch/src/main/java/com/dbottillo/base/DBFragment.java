@@ -71,7 +71,7 @@ public abstract class DBFragment extends DialogFragment {
         if (adView != null) {
             adView.resume();
         }
-        if (getApp() != null) {
+        if (getApp() != null && getPageTrack() != null) {
             getApp().trackPage(getPageTrack());
         }
     }
