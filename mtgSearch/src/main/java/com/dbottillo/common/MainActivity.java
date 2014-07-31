@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -15,7 +14,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,7 +26,6 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.adapters.LeftMenuAdapter;
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
@@ -37,7 +34,9 @@ import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.R;
+import com.dbottillo.lifecounter.LifeCounterActivity;
 import com.dbottillo.resources.MTGSet;
+import com.dbottillo.saved.SavedActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.io.File;
@@ -375,6 +374,9 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         mDrawerLayout.closeDrawer(mDrawerList);
         if (position == LeftMenuAdapter.LeftMenuItem.FAVOURITE.getPosition()){
             startActivity(new Intent(this, SavedActivity.class));
+
+        } else if (position == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER.getPosition()){
+            startActivity(new Intent(this, LifeCounterActivity.class));
 
         }else if (position == LeftMenuAdapter.LeftMenuItem.ABOUT.getPosition()){
             openDialog("about");

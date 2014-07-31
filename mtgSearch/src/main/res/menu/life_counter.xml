@@ -3,9 +3,9 @@
     tools:context="com.dbottillo.saved.SavedActivity">
 
     <item
-        android:id="@+id/action_refresh"
-        android:icon="@drawable/refresh"
-        android:title="@string/refresh"
+        android:id="@+id/action_add"
+        android:icon="@drawable/ab_star"
+        android:title="@string/add_player"
         android:showAsAction="always" />
 
 </menu>

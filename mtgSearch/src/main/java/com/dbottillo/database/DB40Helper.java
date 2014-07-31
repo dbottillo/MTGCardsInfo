@@ -8,6 +8,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.resources.Player;
 
 import java.util.ArrayList;
 
@@ -75,6 +76,11 @@ public class DB40Helper {
         Log.e(TAG, "[DBELPER] database cleared");
     }
 
+    public void commit(boolean close){
+        db.commit();
+        if (close) closeDb();
+    }
+
     public void storeCard(MTGCard card){
         db.store(card);
         db.commit();
@@ -89,11 +95,6 @@ public class DB40Helper {
         }
     }
 
-    public void commit(boolean close){
-        db.commit();
-        if (close) closeDb();
-    }
-
     public ArrayList<MTGCard> getCards(){
         ArrayList<MTGCard> cards = new ArrayList<MTGCard>();
         ObjectSet<MTGCard> result = db.query(MTGCard.class);
@@ -106,5 +107,28 @@ public class DB40Helper {
     public boolean isCardStored(MTGCard card){
         ObjectSet<MTGCard> result = db.queryByExample(card);
         return !result.isEmpty();
+    }
+
+    public void storePlayer(Player player){
+        db.store(player);
+        db.commit();
+        Log.e(TAG, "[DBELPER] player " + player.toString() + " saved inside database");
+    }
+
+    public void removePlayer(Player player){
+        ObjectSet<Player> result = db.queryByExample(player);
+        if (result.hasNext()) {
+            db.delete(result.next());
+            db.commit();
+        }
+    }
+
+    public ArrayList<Player> getPlayers() {
+        ArrayList<Player> players = new ArrayList<Player>();
+        ObjectSet<Player> result = db.query(Player.class);
+        while (result.hasNext()){
+            players.add(result.next());
+        }
+        return players;
     }
 }

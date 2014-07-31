@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.saved;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,8 @@ import com.dbottillo.R;
 import com.dbottillo.adapters.MTGCardListAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.common.CardsActivity;
+import com.dbottillo.common.MTGCardsFragment;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.MTGCard;
 
@@ -93,11 +95,12 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
             savedCards.add((MTGCard) card);
         }
         adapter.notifyDataSetChanged();
-        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void onTaskEndWithError(String error) {
+        progressBar.setVisibility(View.GONE);
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
     }
 

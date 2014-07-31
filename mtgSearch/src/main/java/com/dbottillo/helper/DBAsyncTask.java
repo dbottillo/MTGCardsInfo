@@ -8,6 +8,7 @@ import com.dbottillo.database.DB40Helper;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
+import com.dbottillo.resources.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,6 +43,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     public static final int TASK_SINGLE_SET = 1;
     public static final int TASK_SEARCH = 2;
     public static final int TASK_SAVED = 3;
+    public static final int TASK_PLAYER = 4;
 
     private int type;
 
@@ -91,6 +93,15 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
             ArrayList<MTGCard> cards = db40Helper.getCards();
             for (MTGCard card : cards) {
                 result.add(card);
+            }
+            db40Helper.closeDb();
+
+        } else if (type == TASK_PLAYER) {
+            DB40Helper db40Helper = DB40Helper.getInstance(context);
+            db40Helper.openDb();
+            ArrayList<Player> players = db40Helper.getPlayers();
+            for (Player player : players) {
+                result.add(player);
             }
             db40Helper.closeDb();
         } else {

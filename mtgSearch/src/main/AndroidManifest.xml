@@ -33,7 +33,12 @@
         </activity>
 
         <activity
-            android:name=".common.SavedActivity"
+            android:name=".saved.SavedActivity"
+            android:theme="@style/MTGSearchTheme.ActionBar" >
+        </activity>
+
+        <activity
+            android:name=".lifecounter.LifeCounterActivity"
             android:theme="@style/MTGSearchTheme.ActionBar" >
         </activity>
 

@@ -34,7 +34,7 @@ public abstract class DBActivity extends FragmentActivity {
     public void onResume(){
         super.onResume();
 
-        if (app != null) {
+        if (app != null && getPageTrack() != null) {
             app.trackPage(getPageTrack());
         }
     }
