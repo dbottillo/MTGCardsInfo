@@ -48,12 +48,14 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     private int type;
 
     MTGDatabaseHelper mDbHelper;
+    DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type){
         this.context = context;
         this.listener = listener;
         this.type = type;
         this.mDbHelper= new MTGDatabaseHelper(context);
+        this.db40Helper = DB40Helper.getInstance(context);
     }
 
     public void attach(Context context, DBAsyncTaskListener listener){
@@ -88,22 +90,16 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
             cursor.close();
 
         } else if (type == TASK_SAVED) {
-            DB40Helper db40Helper = DB40Helper.getInstance(context);
-            db40Helper.openDb();
             ArrayList<MTGCard> cards = db40Helper.getCards();
             for (MTGCard card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
 
         } else if (type == TASK_PLAYER) {
-            DB40Helper db40Helper = DB40Helper.getInstance(context);
-            db40Helper.openDb();
             ArrayList<Player> players = db40Helper.getPlayers();
             for (Player player : players) {
                 result.add(player);
             }
-            db40Helper.closeDb();
         } else {
 
             Cursor cursor = null;

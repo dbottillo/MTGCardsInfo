@@ -48,7 +48,8 @@
     <string name="action_create_db">Ricrea db</string>
     <string name="refresh">Refresh</string>
     <string name="action_life_counter">Punti vita</string>
-    <string name="player">Giocatore %d</string>
+    <string name="player">Giocatore %s</string>
     <string name="add_player">Aggiungi</string>
+    <string name="maximum_player">Raggiunto il numero massimo di giocatori</string>
 
 </resources>
