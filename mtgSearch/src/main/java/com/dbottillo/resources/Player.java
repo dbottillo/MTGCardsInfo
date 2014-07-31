@@ -26,7 +26,7 @@ public class Player implements Parcelable {
     public Player(int id, String name){
         this.id = id;
         this.life = 20;
-        this.poisonCount = 0;
+        this.poisonCount = 10;
         this.name = name;
     }
 

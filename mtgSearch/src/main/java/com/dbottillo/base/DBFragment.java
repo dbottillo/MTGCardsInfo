@@ -28,6 +28,8 @@ public abstract class DBFragment extends DialogFragment {
         setRetainInstance(true);
     }
 
+
+
     public SharedPreferences getSharedPreferences(){
         return getActivity().getSharedPreferences(PREFS_NAME, 0);
     }

@@ -69,6 +69,7 @@ public class LifeCounterAdapter extends BaseAdapter {
         Player player = getItem(position);
         holder.name.setText(player.getName());
         holder.life.setText(player.getLife()+"");
+        holder.poison.setText(player.getPoisonCount()+"");
 
         holder.remove.setTag(position);
         holder.remove.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +103,6 @@ public class LifeCounterAdapter extends BaseAdapter {
         holder.poisonMinusOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View remove) {
-                listener.onRemovePlayer((Integer)remove.getTag());
                 listener.onPoisonCountChange((Integer)remove.getTag(), -1);
             }
         });
@@ -112,8 +112,9 @@ public class LifeCounterAdapter extends BaseAdapter {
     }
 
     class PlayerHolder {
-        EditText name;
+        TextView name;
         TextView life;
+        TextView poison;
         ImageButton remove;
         Button lifePlusOne;
         Button lifeMinusOne;
@@ -121,8 +122,9 @@ public class LifeCounterAdapter extends BaseAdapter {
         Button poisonMinusOne;
 
         PlayerHolder(View row){
-            name = (EditText) row.findViewById(R.id.player_name);
+            name = (TextView) row.findViewById(R.id.player_name);
             life = (TextView) row.findViewById(R.id.player_life);
+            poison = (TextView) row.findViewById(R.id.player_poison);
             remove = (ImageButton) row.findViewById(R.id.player_remove);
             lifePlusOne = (Button) row.findViewById(R.id.btn_life_plus_one);
             lifeMinusOne = (Button) row.findViewById(R.id.btn_life_minus_one);

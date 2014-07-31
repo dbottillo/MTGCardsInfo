@@ -1,5 +1,6 @@
 package com.dbottillo.saved;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.common.CardsActivity;
 import com.dbottillo.common.MTGCardsFragment;
+import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.MTGCard;
 
@@ -32,6 +34,8 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     private ListView listView;
     private MTGCardListAdapter adapter;
     private SmoothProgressBar progressBar;
+
+    private DB40Helper db40Helper;
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
@@ -57,9 +61,22 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        db40Helper = DB40Helper.getInstance(activity);
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
+        db40Helper.openDb();
         loadCards();
+    }
+
+    @Override
+    public void onPause() {
+        db40Helper.closeDb();
+        super.onPause();
     }
 
     private void loadCards() {

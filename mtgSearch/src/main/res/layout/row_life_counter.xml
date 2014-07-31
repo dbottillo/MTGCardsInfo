@@ -13,9 +13,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#EEE"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/player_name"
                 android:textColor="#222"
                 android:layout_marginLeft="5dp"
@@ -42,9 +43,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:layout_marginRight="5dp"
                 android:layout_height="match_parent">
 
                 <TextView
@@ -52,11 +54,21 @@
                     android:gravity="center"
                     tools:text="20"
                     android:textSize="50sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                </FrameLayout>
+                <TextView
+                    android:id="@+id/player_poison"
+                    android:gravity="center"
+                    tools:text="10"
+                    android:textSize="20sp"
+                    android:layout_toRightOf="@+id/player_life"
+                    android:layout_alignBaseline="@+id/player_life"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
 
             <GridLayout
                 android:layout_width="wrap_content"
@@ -69,23 +81,26 @@
                     android:id="@+id/btn_life_plus_one"
                     android:text="@string/plus_one"
                     style="@style/BtnLifeCounter.Life" />
+
                 <Button
                     android:id="@+id/btn_life_minus_one"
                     android:text="@string/minus_one"
                     style="@style/BtnLifeCounter.Life" />
+
                 <Button
                     android:id="@+id/btn_poison_plus_one"
                     android:text="@string/plus_one"
-                    style="@style/BtnLifeCounter.Poison"/>
+                    style="@style/BtnLifeCounter.Poison" />
+
                 <Button
                     android:id="@+id/btn_poison_minus_one"
                     android:text="@string/minus_one"
                     style="@style/BtnLifeCounter.Poison" />
 
 
-                </GridLayout>
+            </GridLayout>
 
-            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
