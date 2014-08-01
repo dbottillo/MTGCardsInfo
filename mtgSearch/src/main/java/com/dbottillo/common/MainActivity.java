@@ -371,7 +371,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mDrawerLayout.closeDrawer(mDrawerList);
         if (position == LeftMenuAdapter.LeftMenuItem.FAVOURITE.getPosition()){
             startActivity(new Intent(this, SavedActivity.class));
 
@@ -401,5 +400,6 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
             */
         }
+        mDrawerLayout.closeDrawer(mDrawerList);
     }
 }

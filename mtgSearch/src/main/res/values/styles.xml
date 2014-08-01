@@ -62,17 +62,37 @@
     </style>
 
     <style name="BtnLifeCounter">
-        <item name="android:layout_width">80dp</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="BtnLifeCounter.Life">
-        <item name="android:background">@drawable/btn_life_counter</item>
+        <item name="android:layout_height">55dp</item>
     </style>
 
     <style name="BtnLifeCounter.Poison">
-        <item name="android:background">@drawable/btn_poison_counter</item>
-        </style>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="BtnLifeCounter.Life.Plus">
+        <item name="android:background">@drawable/btn_plus_counter</item>
+        <item name="android:textColor">@color/btn_plus</item>
+    </style>
+
+    <style name="BtnLifeCounter.Life.Minus">
+        <item name="android:background">@drawable/btn_minus_counter</item>
+        <item name="android:textColor">@color/btn_minus</item>
+    </style>
+
+    <style name="BtnLifeCounter.Poison.Plus">
+        <item name="android:background">@drawable/btn_plus_counter</item>
+        <item name="android:textColor">@color/btn_plus</item>
+    </style>
+
+    <style name="BtnLifeCounter.Poison.Minus">
+        <item name="android:background">@drawable/btn_minus_counter</item>
+        <item name="android:textColor">@color/btn_minus</item>
+    </style>
 
 </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="action_bar">#39627E</color>
     <color name="main">#2C4E6B</color>
     <color name="sub_main">#294259</color>
 
@@ -30,4 +31,10 @@
     <color name="left_menu_item_bg_pressed">#444</color>
     <color name="left_drawer_divisor">#333</color>
     <color name="divisor">#CCC</color>
+    <color name="btn_grey">#F8F8F8</color>
+    <color name="btn_border_grey">#D4CFCF</color>
+    <color name="life_counter_green">#23B152</color>
+    <color name="life_counter_red">#FF0000</color>
+    <color name="life_counter_middle">#B17023</color>
+
 </resources>
