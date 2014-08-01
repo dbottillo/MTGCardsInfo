@@ -1,6 +1,8 @@
 package com.dbottillo.lifecounter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -90,7 +93,6 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         super.onStop();
 
         db40Helper.closeDb();
-        db40Helper = null;
     }
 
     @Override
@@ -124,7 +126,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             Toast.makeText(getActivity(), R.string.maximum_player, Toast.LENGTH_SHORT).show();
             return;
         }
-        Player player = new Player(getUniqueIdForPlayer(), getString(R.string.player, getUniqueNameForPlayer()));
+        Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         db40Helper.storePlayer(player);
         scrollDownAfterLoad = true;
         loadPlayers();
@@ -167,7 +169,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         } else {
             players.clear();
             for (Object player : objects) {
-                Log.e("magic", "loaded: "+((Player)player).getId()+" - "+((Player)player).toString());
+                //Log.e("magic", "loaded: "+((Player)player).getId()+" - "+((Player)player).toString());
                 players.add((Player) player);
             }
         }
@@ -188,6 +190,35 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public void onRemovePlayer(int position) {
         db40Helper.removePlayer(players.get(position));
         loadPlayers();
+    }
+
+    @Override
+    public void onEditPlayer(final int position) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+        alert.setTitle(getString(R.string.edit_player));
+
+        final EditText input = new EditText(getActivity());
+        input.setText(players.get(position).getName());
+        alert.setView(input);
+
+        alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                 players.get(position).setName(value);
+                db40Helper.storePlayer(players.get(position));
+                loadPlayers();
+            }
+        });
+
+        alert.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+            }
+        });
+
+        alert.show();
+
     }
 
     @Override
