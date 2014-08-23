@@ -219,8 +219,10 @@ public class MTGCardFragment extends DBFragment {
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline){
                 databaseConnector.removeCard(card);
+                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_SAVED, card.getId()+"");
             }else{
                 databaseConnector.saveCard(card);
+                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_UNSAVED, card.getId()+"");
             }
             getActivity().invalidateOptionsMenu();
         }

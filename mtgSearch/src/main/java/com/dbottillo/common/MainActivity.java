@@ -113,10 +113,14 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         // Set up the dropdown list navigation in the action bar.
         actionBar.setListNavigationCallbacks(setAdapter,  this);
 
-        filterFragment = new FilterFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.filter, filterFragment)
-                .commit();
+        if (BuildConfig.magic) {
+            filterFragment = new FilterFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.filter, filterFragment)
+                    .commit();
+        } else {
+            slidingPanel.setPanelHeight(0);
+        }
 
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {

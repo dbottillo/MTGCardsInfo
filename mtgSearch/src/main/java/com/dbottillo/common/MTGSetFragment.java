@@ -3,19 +3,18 @@ package com.dbottillo.common;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
-import com.dbottillo.adapters.MTGCardListAdapter;
+import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
@@ -24,8 +23,10 @@ import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.R;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.GameSet;
+import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
+import com.google.android.gms.ads.AdListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,10 +43,10 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private static final String SEARCH = "search";
     private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
-    private GameSet mtgSet;
+    private GameSet gameSet;
     private ListView listView;
     private ArrayList<GameCard> cards;
-    private MTGCardListAdapter adapter;
+    private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
     private String query;
 
@@ -70,14 +71,18 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_set, container, false);
 
-        mtgSet = getArguments().getParcelable(SET_CHOSEN);
-        if (mtgSet == null) {
+        gameSet = getArguments().getParcelable(SET_CHOSEN);
+        if (gameSet == null) {
             isASearch = true;
             query = getArguments().getString(SEARCH);
-            mtgSet = new MTGSet(-1);
-            mtgSet.setName(query);
+            if (BuildConfig.magic) {
+                gameSet = new MTGSet(-1);
+            } else {
+                gameSet = new HSSet(-1);
+            }
+            gameSet.setName(query);
         }
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
@@ -90,12 +95,27 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         }
 
         cards = new ArrayList<GameCard>();
-        adapter = new MTGCardListAdapter(getActivity(), cards, isASearch);
+        adapter = new CardListAdapter(getActivity(), cards, isASearch);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(this);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
+
+        if (!getApp().isPremium() && !BuildConfig.magic) {
+            createAdView("ca-app-pub-8119815713373556/4408152412");
+            getAdView().setAdListener(new AdListener() {
+                @Override
+                public void onAdOpened() {
+                    // Save app state before going to the ad overlay.
+                }
+            });
+
+            FrameLayout layout = (FrameLayout)rootView.findViewById(R.id.banner_container);
+            layout.addView(getAdView());
+
+            getAdView().loadAd(createAdRequest());
+        }
 
         return rootView;
     }
@@ -121,7 +141,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     @Override
     public String getPageTrack() {
         if (isASearch) return "/search";
-        return "/set/" + mtgSet.getCode();
+        return "/set/" + gameSet.getCode();
     }
 
     @Override
@@ -135,18 +155,18 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             currentTask.execute(query);
         } else {
             currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET);
-            currentTask.execute(mtgSet.getId() + "");
+            currentTask.execute(gameSet.getId() + "");
         }
     }
 
     @Override
     public void onTaskFinished(ArrayList<?> result) {
-        mtgSet.clear();
+        gameSet.clear();
         int i = 0;
         boolean premium = getApp().isPremium();
         for (Object card : result) {
             //if (premium  || !isASearch || (!premium && i < 3)) {
-            mtgSet.addCard((GameCard) card);
+            gameSet.addCard((GameCard) card);
             //}
             //if (isASearch && !premium && i >= 3) {
             //    break;
@@ -177,7 +197,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private void populateCardsWithFilter() {
         cards.clear();
         SharedPreferences sharedPreferences = getSharedPreferences();
-        for (GameCard c : mtgSet.getCards()) {
+        for (GameCard c : gameSet.getCards()) {
             boolean toAdd = false;
             if (BuildConfig.magic) {
                 MTGCard card = (MTGCard) c;
@@ -246,7 +266,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
-        cardsView.putExtra(MTGCardsFragment.SET_NAME, mtgSet.getName());
+        cardsView.putExtra(MTGCardsFragment.SET_NAME, gameSet.getName());
         startActivity(cardsView);
     }
 
