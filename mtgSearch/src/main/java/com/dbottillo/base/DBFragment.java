@@ -63,6 +63,7 @@ public abstract class DBFragment extends DialogFragment {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .addTestDevice("BFD58A83B8C287B36B78CD9A74E164E4")
                 .addTestDevice("81CB49F53C9C0C74241CB8BD3383E1C7")
+                .addTestDevice("050BC3B5E5E1DF487D93014199FBB3CD")
                 .build();
         return adRequest;
     }

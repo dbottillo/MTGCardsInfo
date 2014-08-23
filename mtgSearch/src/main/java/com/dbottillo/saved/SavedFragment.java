@@ -3,7 +3,6 @@ package com.dbottillo.saved;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,7 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
-import com.dbottillo.adapters.MTGCardListAdapter;
+import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.common.CardsActivity;
@@ -23,7 +22,6 @@ import com.dbottillo.common.MTGCardsFragment;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
@@ -33,7 +31,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     private ArrayList<GameCard> savedCards;
     private ListView listView;
-    private MTGCardListAdapter adapter;
+    private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
 
     private DB40Helper db40Helper;
@@ -44,7 +42,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_set, container, false);
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
 
@@ -52,7 +50,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
         savedCards = new ArrayList<GameCard>();
 
-        adapter = new MTGCardListAdapter(getActivity(), savedCards, false);
+        adapter = new CardListAdapter(getActivity(), savedCards, false);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 

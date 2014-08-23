@@ -18,14 +18,14 @@ import java.util.List;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class MTGCardListAdapter extends BaseAdapter {
+public class CardListAdapter extends BaseAdapter {
 
     private List<GameCard> cards;
     private Context context;
     private LayoutInflater inflater;
     private boolean isASearch;
 
-    public MTGCardListAdapter(Context context, List<GameCard> cards, boolean isASearch) {
+    public CardListAdapter(Context context, List<GameCard> cards, boolean isASearch) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);

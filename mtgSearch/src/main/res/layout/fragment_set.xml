@@ -10,11 +10,18 @@
         android:divider="@null"
         android:dividerHeight="0dp"
         android:cacheColorHint="@android:color/transparent"
+        android:layout_above="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         style="@style/MTGProgressBar"
         android:id="@+id/progress" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/banner_container" />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.util.Log;
 
 import com.dbottillo.database.HSCardContract.HSCardEntry;
 import com.dbottillo.database.HSSetContract.HSSetEntry;
@@ -46,7 +47,7 @@ public class HSDatabaseHelper extends CardDatabaseHelper {
 
         String query = "SELECT * FROM " + HSCardEntry.TABLE_NAME + " WHERE "+ HSCardEntry.COLUMN_NAME_NAME+" LIKE ? LIMIT "+LIMIT;
 
-        //Log.d("MTG", "query: "+query+" with id: "+search);
+        Log.d("MTG", "query: " + query + " with id: " + search);
 
         return db.rawQuery(query, new String[] {"%"+search+"%"});
     }

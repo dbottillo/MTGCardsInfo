@@ -26,7 +26,6 @@ public class MTGApp extends Application {
         super.onCreate();
         Crashlytics.start(this);
 
-
         GoogleAnalytics.getInstance(this).getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
         tracker = GoogleAnalytics.getInstance(this).getTracker(getString(R.string.analytics));
     }
@@ -35,22 +34,21 @@ public class MTGApp extends Application {
         HashMap<String, String> hitParameters = new HashMap<String, String>();
         hitParameters.put(Fields.HIT_TYPE, "appview");
         hitParameters.put(Fields.SCREEN_NAME, page);
-        if (!BuildConfig.DEBUG) {
-            tracker.send(hitParameters);
-        }
+        tracker.send(hitParameters);
     }
 
     public static final String UA_CATEGORY_UI = "ui";
     public static final String UA_CATEGORY_SEARCH = "search";
+    public static final String UA_CATEGORY_FAVOURITE = "favourite";
     public static final String UA_ACTION_CLICK = "click";
     public static final String UA_ACTION_TOGGLE = "toggle";
     public static final String UA_ACTION_OPEN = "open";
+    public static final String UA_ACTION_SAVED = "saved";
+    public static final String UA_ACTION_UNSAVED = "unsaved";
 
 
     public void trackEvent(String category, String action, String label){
-        if (!BuildConfig.DEBUG) {
-            tracker.send(MapBuilder.createEvent(category, action, label, null).build());
-        }
+        tracker.send(MapBuilder.createEvent(category, action, label, null).build());
     }
 
     public static boolean isPremium(){
