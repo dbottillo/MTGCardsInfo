@@ -4,8 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
 
+import com.dbottillo.BuildConfig;
+import com.dbottillo.database.CardDatabaseHelper;
 import com.dbottillo.database.DB40Helper;
+import com.dbottillo.database.HSDatabaseHelper;
 import com.dbottillo.database.MTGDatabaseHelper;
+import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.HSCard;
+import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.resources.Player;
@@ -47,14 +53,14 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     private int type;
 
-    MTGDatabaseHelper mDbHelper;
+    CardDatabaseHelper mDbHelper;
     DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type){
         this.context = context;
         this.listener = listener;
         this.type = type;
-        this.mDbHelper= new MTGDatabaseHelper(context);
+        this.mDbHelper = CardDatabaseHelper.getDatabaseHelper(context);
         this.db40Helper = DB40Helper.getInstance(context);
     }
 
@@ -83,15 +89,19 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
             if (cursor.moveToFirst()){
                 while(!cursor.isAfterLast()){
-                    result.add(MTGSet.createMagicSetFromCursor(cursor));
+                    if (BuildConfig.magic) {
+                        result.add(MTGSet.createMagicSetFromCursor(cursor));
+                    }else{
+                        result.add(HSSet.createHearthstoneSetFromCursor(cursor));
+                    }
                     cursor.moveToNext();
                 }
             }
             cursor.close();
 
         } else if (type == TASK_SAVED) {
-            ArrayList<MTGCard> cards = db40Helper.getCards();
-            for (MTGCard card : cards) {
+            ArrayList<GameCard> cards = db40Helper.getCards();
+            for (Object card : cards) {
                 result.add(card);
             }
 
@@ -111,19 +121,26 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
             if (cursor.moveToFirst()){
                 while(!cursor.isAfterLast()){
-                    result.add(MTGCard.createCardFromCursor(cursor));
+                    if (BuildConfig.magic) {
+                        result.add(MTGCard.createCardFromCursor(cursor));
+                    }else{
+                        result.add(HSCard.createCardFromCursor(cursor));
+                    }
+
                     cursor.moveToNext();
                 }
             }
             cursor.close();
 
-            Collections.sort(result, new Comparator<Object>() {
-                public int compare(Object o1, Object o2) {
-                    MTGCard card = (MTGCard) o1;
-                    MTGCard card2 = (MTGCard) o2;
-                    return card.compareTo(card2);
-                }
-            });
+            if (BuildConfig.magic) {
+                Collections.sort(result, new Comparator<Object>() {
+                    public int compare(Object o1, Object o2) {
+                        MTGCard card = (MTGCard) o1;
+                        MTGCard card2 = (MTGCard) o2;
+                        return card.compareTo(card2);
+                    }
+                });
+            }
         }
 
         mDbHelper.close();

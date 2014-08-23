@@ -26,15 +26,19 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.adapters.LeftMenuAdapter;
 import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.database.CardDatabaseHelper;
+import com.dbottillo.database.DatabaseHelper;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.R;
 import com.dbottillo.lifecounter.LifeCounterActivity;
+import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.saved.SavedActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
@@ -44,7 +48,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
-    private static final int DATABASE_VERSION = 3;
     private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
 
     /**
@@ -53,13 +56,14 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
      */
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 
-    private ArrayList<MTGSet> sets;
+    private ArrayList<GameSet> sets;
     private MTGSetSpinnerAdapter setAdapter;
 
     private SlidingUpPanelLayout slidingPanel;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
+    private LeftMenuAdapter leftMenuAdapter;
 
     private FilterFragment filterFragment;
 
@@ -82,19 +86,19 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
-        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != DATABASE_VERSION){
-            Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+DATABASE_VERSION);
-            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != BuildConfig.DATABASE_VERSION){
+            Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+BuildConfig.DATABASE_VERSION);
+            File file = new File(getApplicationInfo().dataDir + "/databases/"+ DatabaseHelper.DATABASE_NAME);
             file.delete();
-            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
+            CardDatabaseHelper dbHelper = CardDatabaseHelper.getDatabaseHelper(this);
             Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putInt(PREFERENCE_DATABASE_VERSION, DATABASE_VERSION);
+            editor.putInt(PREFERENCE_DATABASE_VERSION, BuildConfig.DATABASE_VERSION);
             editor.apply();
         }
 
         if (savedInstanceState == null){
-            sets = new ArrayList<MTGSet>();
+            sets = new ArrayList<GameSet>();
 
             showLoadingInActionBar();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
@@ -156,7 +160,18 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
-        mDrawerList.setAdapter(new LeftMenuAdapter(this));
+        final ArrayList<LeftMenuAdapter.LeftMenuItem> items = new ArrayList<LeftMenuAdapter.LeftMenuItem>();
+        for (LeftMenuAdapter.LeftMenuItem leftMenuItem : LeftMenuAdapter.LeftMenuItem.values()){
+            boolean skip = false;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.CREATE_DB && !BuildConfig.DEBUG) skip = true;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER && !BuildConfig.magic) skip = true;
+            if (!skip) {
+                items.add(leftMenuItem);
+            }
+        }
+
+        leftMenuAdapter = new LeftMenuAdapter(this, items);
+        mDrawerList.setAdapter(leftMenuAdapter);
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(this);
     }
@@ -211,8 +226,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     @Override
     public void onSaveInstanceState(Bundle outState) {
         // Serialize the current dropdown position.
-        outState.putInt(STATE_SELECTED_NAVIGATION_ITEM,
-                getActionBar().getSelectedNavigationIndex());
+        outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar().getSelectedNavigationIndex());
         outState.putParcelableArrayList("SET", sets);
     }
 
@@ -233,7 +247,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     private void loadSet(){
         slidingPanel.collapsePane();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition",0))))
+                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition", 0))))
                 .commit();
     }
 
@@ -241,13 +255,13 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     public void onTaskFinished(ArrayList<?> result) {
         sets.clear();
         for (Object set : result){
-            sets.add((MTGSet) set);
+            sets.add((GameSet) set);
         }
         setAdapter.notifyDataSetChanged();
         result.clear();
 
         hideLoadingFromActionBar();
-        //getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
+        getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
     }
 
     @Override
@@ -371,34 +385,31 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (position == LeftMenuAdapter.LeftMenuItem.FAVOURITE.getPosition()){
+        LeftMenuAdapter.LeftMenuItem item = leftMenuAdapter.getItem(position);
+        if (item == LeftMenuAdapter.LeftMenuItem.FAVOURITE){
             startActivity(new Intent(this, SavedActivity.class));
 
-        } else if (position == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER.getPosition()){
+        } else if (item == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER){
             startActivity(new Intent(this, LifeCounterActivity.class));
 
-        }else if (position == LeftMenuAdapter.LeftMenuItem.ABOUT.getPosition()){
+        }else if (item == LeftMenuAdapter.LeftMenuItem.ABOUT){
             openDialog("about");
 
-        }else if (position == LeftMenuAdapter.LeftMenuItem.FORCE_UPDATE.getPosition()){
+        }else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_UPDATE){
             // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
             getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "reset_db", "");
             sets.clear();
             setAdapter.notifyDataSetChanged();
-            File file = new File(getApplicationInfo().dataDir + "/databases/mtgsearch.db");
+            File file = new File(getApplicationInfo().dataDir + "/databases/"+ DatabaseHelper.DATABASE_NAME);
             file.delete();
-            MTGDatabaseHelper dbHelper = new MTGDatabaseHelper(this);
+            CardDatabaseHelper dbHelper = CardDatabaseHelper.getDatabaseHelper(this);
             Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
 
-        }else if (position == LeftMenuAdapter.LeftMenuItem.CREATE_DB.getPosition()){
+        }else if (item == LeftMenuAdapter.LeftMenuItem.CREATE_DB){
             // NB: WARNING, FOR RECREATE DATABASE
             String packageName = getApplication().getPackageName();
             new CreateDBAsyncTask(this,packageName).execute();
-            /*
-            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/dbname.sqlite'
-            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/dbname.sqlite
-            */
         }
         mDrawerLayout.closeDrawer(mDrawerList);
     }

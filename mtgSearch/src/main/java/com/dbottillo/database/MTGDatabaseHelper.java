@@ -13,7 +13,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 /**
  * Created by danielebottillo on 05/03/2014.
  */
-public class MTGDatabaseHelper extends SQLiteAssetHelper {
+public class MTGDatabaseHelper extends CardDatabaseHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
     public static final int LIMIT = 400;

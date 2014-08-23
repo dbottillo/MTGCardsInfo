@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class MTGSet implements Parcelable {
+public class MTGSet extends GameSet{
 
     int id;
     String code;
@@ -80,8 +80,23 @@ public class MTGSet implements Parcelable {
         this.name = name;
     }
 
-    public ArrayList<MTGCard> getCards() {
-        return cards;
+    @Override
+    public void addCard(GameCard card) {
+        cards.add((MTGCard) card);
+    }
+
+    @Override
+    public void clear() {
+        cards.clear();
+    }
+
+    @Override
+    public ArrayList<GameCard> getCards() {
+        ArrayList<GameCard> gameCards = new ArrayList<GameCard>();
+        for (MTGCard card : cards){
+            gameCards.add(card);
+        }
+        return gameCards;
     }
 
     public void addCard(MTGCard card) {

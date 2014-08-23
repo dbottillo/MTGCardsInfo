@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.R;
 import com.dbottillo.database.DB40Helper;
+import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector {
@@ -22,7 +23,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
 
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGCardsFragment.newInstance(getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
+                .replace(R.id.container, MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
                         getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
                         getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
                 .commit();
@@ -55,17 +56,17 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
     }
 
     @Override
-    public boolean isCardSaved(MTGCard card) {
+    public boolean isCardSaved(GameCard card) {
         return db40Helper.isCardStored(card);
     }
 
     @Override
-    public void saveCard(MTGCard card) {
+    public void saveCard(GameCard card) {
         db40Helper.storeCard(card);
     }
 
     @Override
-    public void removeCard(MTGCard card) {
+    public void removeCard(GameCard card) {
         db40Helper.removeCard(card);
     }
 }
