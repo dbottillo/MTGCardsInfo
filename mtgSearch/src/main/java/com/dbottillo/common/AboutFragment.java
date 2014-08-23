@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
@@ -40,6 +41,12 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
         TextView title = (TextView) v.findViewById(R.id.title_dialog);
         title.setText(getString(R.string.action_about));
 
+        TextView copyright = (TextView) v.findViewById(R.id.copyright);
+        if (BuildConfig.magic) {
+            copyright.setText(getString(R.string.copyright));
+        } else {
+            copyright.setText(getString(R.string.copyright_hs));
+        }
         return v;
     }
 

@@ -14,12 +14,12 @@
         android:id="@+id/about_version"/>
 
     <TextView
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/copyright"/>
+        android:layout_marginTop="10dp"/>
     <Button
         android:layout_width="wrap_content"
         android:textSize="16sp"

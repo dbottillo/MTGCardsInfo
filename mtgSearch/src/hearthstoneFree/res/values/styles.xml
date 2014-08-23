@@ -1,14 +1,5 @@
 <resources>
 
-    <style name="MTGProgressBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">4dp</item>
-        <item name="android:indeterminate">true</item>
-        <item name="spb_color">@color/sub_main</item>
-        <item name="spb_speed">1.2</item>
-    </style>
-
-
     <style name="MTGSearchTheme.ActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_example</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Example</item>
@@ -19,6 +10,7 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_example</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_example</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Example</item>
+
     </style>
 
     <style name="ActionBar.Solid.Example" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
@@ -59,38 +51,10 @@
         <item name="android:background">@drawable/btn_cab_done_example</item>
     </style>
 
-    <style name="BtnLifeCounter">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_margin">5dp</item>
-        <item name="android:textSize">20sp</item>
-    </style>
-
-    <style name="BtnLifeCounter.Life">
-        <item name="android:layout_height">55dp</item>
-    </style>
-
-    <style name="BtnLifeCounter.Poison">
-        <item name="android:layout_height">40dp</item>
-    </style>
-
-    <style name="BtnLifeCounter.Life.Plus">
-        <item name="android:background">@drawable/btn_plus_counter</item>
-        <item name="android:textColor">@color/btn_plus</item>
-    </style>
-
-    <style name="BtnLifeCounter.Life.Minus">
-        <item name="android:background">@drawable/btn_minus_counter</item>
-        <item name="android:textColor">@color/btn_minus</item>
-    </style>
-
-    <style name="BtnLifeCounter.Poison.Plus">
-        <item name="android:background">@drawable/btn_plus_counter</item>
-        <item name="android:textColor">@color/btn_plus</item>
-    </style>
-
-    <style name="BtnLifeCounter.Poison.Minus">
-        <item name="android:background">@drawable/btn_minus_counter</item>
-        <item name="android:textColor">@color/btn_minus</item>
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Example.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Example</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>
     </style>
 
 </resources>
