@@ -22,6 +22,7 @@ import com.dbottillo.common.CardsActivity;
 import com.dbottillo.common.MTGCardsFragment;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, DBAsyncTask.DBAsyncTaskListener {
 
-    private ArrayList<MTGCard> savedCards;
+    private ArrayList<GameCard> savedCards;
     private ListView listView;
     private MTGCardListAdapter adapter;
     private SmoothProgressBar progressBar;
@@ -49,7 +50,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
-        savedCards = new ArrayList<MTGCard>();
+        savedCards = new ArrayList<GameCard>();
 
         adapter = new MTGCardListAdapter(getActivity(), savedCards, false);
         listView.setAdapter(adapter);
@@ -80,7 +81,6 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     }
 
     private void loadCards() {
-        Log.e("card", "load cards called");
         progressBar.setVisibility(View.VISIBLE);
         new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SAVED).execute();
     }
@@ -109,7 +109,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onTaskFinished(ArrayList<?> objects) {
         savedCards.clear();
         for (Object card : objects){
-            savedCards.add((MTGCard) card);
+            savedCards.add((GameCard) card);
         }
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(View.GONE);

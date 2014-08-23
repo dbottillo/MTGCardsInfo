@@ -14,9 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
+import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -31,14 +33,14 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public static final String SET_NAME = "set_name";
 
     private ViewPager viewPager;
-    private ArrayList<MTGCard> cards;
+    private ArrayList<GameCard> cards;
     private CardsPagerAdapter adapter;
 
     private int position;
 
     MenuItem actionImage;
 
-    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String setName) {
+    public static MTGCardsFragment newInstance(ArrayList<GameCard> cards, int position, String setName) {
         MTGCardsFragment fragment = new MTGCardsFragment();
         Bundle args = new Bundle();
         args.putParcelableArrayList(CARDS, cards);

@@ -19,7 +19,7 @@ import java.util.Comparator;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
+public class MTGCard extends GameCard implements Comparable<MTGCard>{
 
     int id;
     String name;
@@ -245,7 +245,7 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         return card;
     }
 
-    public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
+    /*public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
         MTGCard card = new MTGCard(id);
         card.setName(jsonObject.getString("name"));
         card.setType(jsonObject.getString("type"));
@@ -313,7 +313,7 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         }
 
         return card;
-    }
+    }*/
 
     private static int mapIntColor(String color){
         if (color.equalsIgnoreCase("Black")) return BLACK;
@@ -386,7 +386,7 @@ public class MTGCard extends Object implements Parcelable, Comparable<MTGCard>{
         }
     };
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

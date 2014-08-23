@@ -6,10 +6,15 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.DatabaseHelper;
+import com.dbottillo.database.HSSetContract.HSSetEntry;
+import com.dbottillo.database.HSCardContract.HSCardEntry;
 import com.dbottillo.database.SetContract.SetEntry;
 import com.dbottillo.R;
+import com.dbottillo.resources.HSCard;
+import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 
@@ -50,31 +55,61 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         ArrayList<Object> result = new ArrayList<Object>();
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        db.delete(SetEntry.TABLE_NAME, null, null);
-        db.delete(CardEntry.TABLE_NAME, null, null);
+        if (BuildConfig.magic) {
+            db.delete(SetEntry.TABLE_NAME, null, null);
+            db.delete(CardEntry.TABLE_NAME, null, null);
+        }else{
+            db.delete(HSSetEntry.TABLE_NAME, null, null);
+            db.delete(HSCardEntry.TABLE_NAME, null, null);
+        }
         try{
             int set_list = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(set_list);
             JSONArray json = new JSONArray(jsonString);
             for (int i=json.length()-1; i>=0; i--){
-            //for (int i=0; i<1; i++){
-                JSONObject setJ = json.getJSONObject(i);
 
-                long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
-                Log.e("MTG", "row id "+newRowId+" -> "+setJ.getString("code"));
+                if (BuildConfig.magic) {
+                    JSONObject setJ = json.getJSONObject(i);
+                    long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
+                    Log.e("MTG", "row id " + newRowId + " -> " + setJ.getString("code"));
 
-                String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
-                JSONObject jsonCards = new JSONObject(jsonSetString);
-                JSONArray cards = jsonCards.getJSONArray("cards");
-                //for (int k=0; k<1; k++){
-                for (int k=0; k<cards.length(); k++){
-                    JSONObject cardJ = cards.getJSONObject(k);
-                    //Log.e("BBM", "cardJ "+cardJ);
+                    String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
+                    JSONObject jsonCards = new JSONObject(jsonSetString);
+                    JSONArray cards = jsonCards.getJSONArray("cards");
+                    //for (int k=0; k<1; k++){
+                    for (int k = 0; k < cards.length(); k++) {
+                        JSONObject cardJ = cards.getJSONObject(k);
+                        //Log.e("BBM", "cardJ "+cardJ);
 
-                    long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
-                    //Log.e("MTG", "row id card"+newRowId2);
-                    result.add(MTGCard.createCardFromJson(i, cardJ));
+                        long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
+                        //Log.e("MTG", "row id card"+newRowId2);
+                        //result.add(MTGCard.createCardFromJson(i, cardJ));
+                    }
+                }else{
+                    String setJ = json.getString(i);
+                    long newRowId = db.insert(HSSetEntry.TABLE_NAME, null, HSSet.createContentValueFromJSON(setJ));
+                    Log.e("MTG", "row id " + newRowId + " -> " + setJ);
+
+                    String jsonSetString = loadFile(hsSetToLoad(setJ));
+                    JSONArray jsonCards = new JSONArray(jsonSetString);
+
+                    for (int k = 0; k < jsonCards.length(); k++) {
+                        JSONObject cardJ = jsonCards.getJSONObject(k);
+                        //Log.e("BBM", "cardJ "+cardJ);
+
+                        long newRowId2 = db.insert(HSCardEntry.TABLE_NAME, null, HSCard.createContentValueFromJSON(cardJ, newRowId, setJ));
+                        //Log.e("MTG", "row id card"+newRowId2);
+                        //result.add(HSCard.createCardFromJson(i, cardJ));
+                    }
                 }
+
+                /*
+            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/db_mtg.sqlite'
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/db_mtg.sqlite
+
+            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.hssearchfree.debug cat /data/data/com.dbottillo.hssearchfree.debug/databases/HSCardsInfo.db > /sdcard/db_hs.sqlite'
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/db_hs.sqlite
+            */
             }
         }catch (JSONException e) {
             Log.e("MTG", "error create db async task: "+e.getLocalizedMessage());
@@ -110,6 +145,11 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             stringToLoad = "ed2";
         }
         return context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
+    }
+
+    private int hsSetToLoad(String code){
+        String stringToLoad = code.toLowerCase().replace(" ","_");
+        return context.getResources().getIdentifier(stringToLoad+"", "raw", packageName);
     }
 
 

@@ -21,8 +21,6 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
-        versionCode 7
-        versionName "1.5"
     }
 
     signingConfigs {
@@ -57,12 +55,36 @@ android {
     }
 
     productFlavors {
-        free {
+        magicFree {
             applicationId "com.dbottillo.mtgsearchfree"
+            buildConfigField 'boolean', 'magic', 'true'
+            buildConfigField 'int', 'DATABASE_VERSION', '3'
+            versionCode 7
+            versionName "1.5"
         }
 
-        paid {
+        magicPaid {
             applicationId "com.dbottillo.mtgsearch"
+            buildConfigField "Boolean", "magic", "true"
+            buildConfigField 'int', 'DATABASE_VERSION', '3'
+            versionCode 7
+            versionName "1.5"
+        }
+
+        hearthstoneFree {
+            applicationId "com.dbottillo.hssearchfree"
+            buildConfigField "Boolean", "magic", "false"
+            buildConfigField 'int', 'DATABASE_VERSION', '1'
+            versionCode 1
+            versionName "1.0"
+        }
+
+        hearthstonePaid {
+            applicationId "com.dbottillo.hssearch"
+            buildConfigField "Boolean", "magic", "false"
+            buildConfigField 'int', 'DATABASE_VERSION', '1'
+            versionCode 1
+            versionName "1.0"
         }
     }
 }

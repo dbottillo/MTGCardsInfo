@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.R;
+import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.List;
@@ -18,12 +20,12 @@ import java.util.List;
  */
 public class MTGCardListAdapter extends BaseAdapter {
 
-    private List<MTGCard> cards;
+    private List<GameCard> cards;
     private Context context;
     private LayoutInflater inflater;
     private boolean isASearch;
 
-    public MTGCardListAdapter(Context context, List<MTGCard> cards, boolean isASearch) {
+    public MTGCardListAdapter(Context context, List<GameCard> cards, boolean isASearch) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -36,7 +38,7 @@ public class MTGCardListAdapter extends BaseAdapter {
     }
 
     @Override
-    public MTGCard getItem(int i) {
+    public GameCard getItem(int i) {
         return cards.get(i);
     }
 
@@ -56,51 +58,70 @@ public class MTGCardListAdapter extends BaseAdapter {
             holder = (CardHolder) convertView.getTag();
         }
 
-        MTGCard card = getItem(position);
+        GameCard card = getItem(position);
         holder.name.setText(card.getName());
 
-        int rarityColor = R.color.common;
-        if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)){
-            rarityColor = R.color.uncommon;
-        }else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)){
-            rarityColor = R.color.rare;
-        }else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)){
-            rarityColor = R.color.mythic;
+        if (BuildConfig.magic) {
+            int rarityColor = R.color.common;
+            if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {
+                rarityColor = R.color.uncommon;
+            } else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)) {
+                rarityColor = R.color.rare;
+            } else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)) {
+                rarityColor = R.color.mythic;
+            }
+            holder.rarity.setTextColor(context.getResources().getColor(rarityColor));
         }
-        holder.rarity.setText(card.getRarity().substring(0,1));
-        holder.rarity.setTextColor(context.getResources().getColor(rarityColor));
-
-        if (card.getManaCost() != null){
-            holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
+        if (card.getRarity().length()>0) {
+            holder.rarity.setText(card.getRarity().substring(0, 1));
+        }else{
+            holder.rarity.setText("");
         }
 
-        holder.position.setText(position+"");
+        if (card.getManaCost() != null) {
+            if (BuildConfig.magic) {
+                holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
+            } else {
+                holder.cost.setText(card.getManaCost());
+            }
+        }
 
-        if (isASearch){
+        holder.position.setText(position + "");
+
+        if (isASearch) {
             holder.setName.setVisibility(View.VISIBLE);
             holder.setName.setText(card.getSetName());
         }
 
-        if (position % 2 == 0){
-            if (card.isMultiColor() || card.isAnArtifact() || card.isALand()){
-                holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
-            }else{
-                if (card.getColors().contains(MTGCard.WHITE)){
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_white);
-                }else if (card.getColors().contains(MTGCard.BLUE)){
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_blue);
-                }else if (card.getColors().contains(MTGCard.BLACK)){
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_black);
-                }else if (card.getColors().contains(MTGCard.RED)){
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_red);
-                }else if (card.getColors().contains(MTGCard.GREEN)){
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_green);
-                }else{
+        if (BuildConfig.magic){
+            MTGCard mtgCard = (MTGCard) card;
+            if (position % 2 == 0) {
+                if (mtgCard.isMultiColor() || mtgCard.isAnArtifact() || mtgCard.isALand()) {
                     holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
+                } else {
+                    if (mtgCard.getColors().contains(MTGCard.WHITE)) {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_white);
+                    } else if (mtgCard.getColors().contains(MTGCard.BLUE)) {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_blue);
+                    } else if (mtgCard.getColors().contains(MTGCard.BLACK)) {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_black);
+                    } else if (mtgCard.getColors().contains(MTGCard.RED)) {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_red);
+                    } else if (mtgCard.getColors().contains(MTGCard.GREEN)) {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_green);
+                    } else {
+                        holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
+                    }
                 }
+            } else {
+                holder.parent.setBackgroundResource(R.drawable.bg_row_base);
             }
-        }else{
-            holder.parent.setBackgroundResource(R.drawable.bg_row_base);
+        } else{
+            if (position % 2 == 0) {
+                holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
+            }else {
+                holder.parent.setBackgroundResource(R.drawable.bg_row_base);
+            }
         }
 
         return convertView;

@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.dbottillo.R;
+import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.MTGSet;
 
 import java.util.List;
@@ -17,11 +18,11 @@ import java.util.List;
  */
 public class MTGSetSpinnerAdapter extends BaseAdapter {
 
-    private List<MTGSet> mtgSets;
+    private List<GameSet> mtgSets;
     private Context context;
     private LayoutInflater inflater;
 
-    public MTGSetSpinnerAdapter(Context context, List<MTGSet> mtgSets) {
+    public MTGSetSpinnerAdapter(Context context, List<GameSet> mtgSets) {
         this.mtgSets = mtgSets;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -33,7 +34,7 @@ public class MTGSetSpinnerAdapter extends BaseAdapter {
     }
 
     @Override
-    public MTGSet getItem(int i) {
+    public GameSet getItem(int i) {
         return mtgSets.get(i);
     }
 
@@ -53,7 +54,7 @@ public class MTGSetSpinnerAdapter extends BaseAdapter {
             holder = (SetHolder) convertView.getTag();
         }
 
-        MTGSet set = getItem(position);
+        GameSet set = getItem(position);
         holder.name.setText(set.getName());
 
         return convertView;
@@ -71,7 +72,7 @@ public class MTGSetSpinnerAdapter extends BaseAdapter {
             holder = (SetHolder) convertView.getTag();
         }
 
-        MTGSet set = getItem(position);
+        GameSet set = getItem(position);
         holder.name.setText(set.getName());
 
         return convertView;

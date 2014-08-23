@@ -16,10 +16,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
 import com.dbottillo.database.DB40Helper;
+import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
@@ -35,20 +38,20 @@ public class MTGCardFragment extends DBFragment {
     private static final String TAG = MTGCardFragment.class.getName();
 
     public interface DatabaseConnector {
-        boolean isCardSaved(MTGCard card);
-        void saveCard(MTGCard card);
-        void removeCard(MTGCard card);
+        boolean isCardSaved(GameCard card);
+        void saveCard(GameCard card);
+        void removeCard(GameCard card);
     }
 
     public static final String CARD = "card";
 
-    private MTGCard card;
+    private GameCard card;
 
     private SmoothProgressBar progressBar;
 
     private DatabaseConnector databaseConnector;
 
-    public static MTGCardFragment newInstance(MTGCard card) {
+    public static MTGCardFragment newInstance(GameCard card) {
         MTGCardFragment fragment = new MTGCardFragment();
         Bundle args = new Bundle();
         args.putParcelable(CARD, card);
@@ -107,26 +110,59 @@ public class MTGCardFragment extends DBFragment {
 
 
     private void refreshUI(){
-        TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
-        String typeHtml = "<b>"+getString(R.string.type_card)+":</b> "+card.getType()+" <br/><br/> " +
-                "<b>"+getString(R.string.pt_card)+"</b>: "+card.getPower()+"/"+card.getToughness()+" <br/><br/>";
-        typeHtml += "<b>Mana Cost</b>: "+card.getManaCost()+" ("+card.getCmc()+")";
-        cardName.setText(Html.fromHtml(typeHtml));
-
-        TextView cardText = (TextView) getView().findViewById(R.id.text_card);
-        cardText.setText(card.getText());
-
-        TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-        setCardText.setText(Html.fromHtml("<b>"+getString(R.string.set_card)+"</b> "+card.getSetName()));
-
         final View cardImageContainer = getView().findViewById(R.id.image_card_container);
-        ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
-        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getMultiVerseId() > 0){
+        TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
+
+        String urlImage = null;
+
+        if (BuildConfig.magic) {
+            MTGCard mtgCard = (MTGCard) card;
+
+            String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + mtgCard.getType() + " <br/><br/> " +
+                    "<b>" + getString(R.string.pt_card) + "</b>: " + mtgCard.getPower() + "/" + mtgCard.getToughness() + " <br/><br/>";
+            typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: " + card.getManaCost() + " (" + mtgCard.getCmc() + ")";
+            cardName.setText(Html.fromHtml(typeHtml));
+
+            TextView cardText = (TextView) getView().findViewById(R.id.text_card);
+            cardText.setText(mtgCard.getText());
+
+            TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
+            setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + "</b> " + card.getSetName()));
+
+            if (mtgCard.getMultiVerseId() > 0) {
+                urlImage = "http://mtgimage.com/multiverseid/" + mtgCard.getMultiVerseId() + ".jpg";
+            }
+        }else{
+
+            HSCard hearthstoneCard = (HSCard) card;
+
+            String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + hearthstoneCard.getType() + " <br/><br/> " +
+                    "<b>" + getString(R.string.ah_card) + "</b>: " + hearthstoneCard.getAttack() + "/" + hearthstoneCard.getHealth() + " <br/><br/>"+
+                    "<b>" + getString(R.string.cost_card) + "</b>: " + card.getManaCost()+ " <br/><br/>"+
+                    "<b>" + getString(R.string.rarity_card) + "</b>: " + card.getRarity();/*+ " <br/><br/>"+
+                    "<b>" + getString(R.string.faction_card) + "</b>: " + ((HSCard) card).getFaction();*/
+            cardName.setText(Html.fromHtml(typeHtml));
+
+            TextView cardText = (TextView) getView().findViewById(R.id.text_card);
+            cardText.setText(Html.fromHtml(hearthstoneCard.getText()));
+
+            TextView mechanics = (TextView) getView().findViewById(R.id.set_card);
+            if (hearthstoneCard.getMechanics().length() != 0) {
+                mechanics.setText(Html.fromHtml("<b>" + getString(R.string.mechanics_card) + "</b> " + hearthstoneCard.getMechanics()));
+            }else{
+                mechanics.setText("");
+            }
+
+            if (hearthstoneCard.getHearthstoneId() != null) {
+                urlImage = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/" + hearthstoneCard.getHearthstoneId() + ".png";
+            }
+        }
+
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && urlImage != null) {
             cardImageContainer.setVisibility(View.VISIBLE);
-            //final String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+card.getMultiVerseId()+"&type=card";
-            final String image = "http://mtgimage.com/multiverseid/"+card.getMultiVerseId()+".jpg";
             progressBar.setVisibility(View.VISIBLE);
-            Picasso.with(getActivity()).load(image).placeholder(R.drawable.card_placeholder).into(cardImage,new Callback() {
+            ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
+            Picasso.with(getActivity()).load(urlImage).placeholder(R.drawable.card_placeholder).into(cardImage, new Callback() {
 
                 @Override
                 public void onSuccess() {
@@ -137,10 +173,9 @@ public class MTGCardFragment extends DBFragment {
                 public void onError() {
                     progressBar.setVisibility(View.GONE);
                     cardImageContainer.setVisibility(View.GONE);
-                    if (isVisible()) Toast.makeText(getActivity(), getString(R.string.error_image), Toast.LENGTH_SHORT).show();
                 }
             });
-        }else{
+        } else {
             progressBar.setVisibility(View.GONE);
             cardImageContainer.setVisibility(View.GONE);
         }
@@ -163,6 +198,10 @@ public class MTGCardFragment extends DBFragment {
             item.setIcon(R.drawable.ab_star);
             isSavedOffline = false;
         }
+
+        MenuItem share = menu.findItem(R.id.action_share);
+        share.setVisible(BuildConfig.magic);
+
     }
 
     @Override
@@ -173,7 +212,7 @@ public class MTGCardFragment extends DBFragment {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
-            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + card.getMultiVerseId() + "&type=card";
+            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + ((MTGCard)card).getMultiVerseId() + "&type=card";
             i.putExtra(Intent.EXTRA_TEXT, image);
             startActivity(Intent.createChooser(i, getString(R.id.share_card)));
             return true;
@@ -191,6 +230,7 @@ public class MTGCardFragment extends DBFragment {
 
     @Override
     public String getPageTrack() {
-        return "/card/"+card.getMultiVerseId();
+        if (BuildConfig.magic) return "/card/"+((MTGCard)card).getMultiVerseId();
+        return "/card/"+card.getId();
     }
 }

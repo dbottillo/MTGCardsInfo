@@ -12,6 +12,8 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 
+import java.util.ArrayList;
+
 /**
  * Created by danielebottillo on 14/07/2014.
  */
@@ -56,23 +58,26 @@ public class LeftMenuAdapter extends BaseAdapter {
     }
 
     private Context context;
+    private ArrayList<LeftMenuItem> items;
 
-    public LeftMenuAdapter(Context context){
+    public LeftMenuAdapter(Context context, ArrayList<LeftMenuItem> items){
         this.context = context;
+        this.items = items;
     }
 
     @Override
     public int getCount() {
-        int total = LeftMenuItem.values().length - 1;
+        return items.size();
+        /*int total = LeftMenuItem.values().length - 1;
         if (BuildConfig.DEBUG && BuildConfig.FLAVOR.equalsIgnoreCase("free")){
             total++;
         }
-        return total;
+        return total;*/
     }
 
     @Override
     public LeftMenuItem getItem(int position) {
-        return LeftMenuItem.values()[position];
+        return items.get(position);
     }
 
     @Override

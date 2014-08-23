@@ -20,8 +20,9 @@
                 android:id="@+id/image_card_container">
 
                 <com.dbottillo.view.AdaptImageView
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="@dimen/padding_card_image"
+                    android:paddingRight="@dimen/padding_card_image"
+                    android:layout_marginTop="@dimen/margin_top_card_image"
                     android:src="@drawable/card_placeholder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
