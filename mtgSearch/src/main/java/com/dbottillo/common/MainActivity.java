@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
@@ -24,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
@@ -330,6 +332,14 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         // Assumes current activity is the searchable activity
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
+        try {
+            int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+            TextView textView = (TextView) searchView.findViewById(id);
+            textView.setHintTextColor(getResources().getColor(R.color.main));
+        } catch (Exception e){
+
+        }
 
         MenuItemCompat.setOnActionExpandListener(searchItem,
                 new MenuItemCompat.OnActionExpandListener() {
