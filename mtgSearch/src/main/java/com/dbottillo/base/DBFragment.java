@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
+import com.dbottillo.BuildConfig;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -29,8 +30,7 @@ public abstract class DBFragment extends DialogFragment {
     }
 
 
-
-    public SharedPreferences getSharedPreferences(){
+    public SharedPreferences getSharedPreferences() {
         return getActivity().getSharedPreferences(PREFS_NAME, 0);
     }
 
@@ -39,7 +39,7 @@ public abstract class DBFragment extends DialogFragment {
         act.getActionBar().setTitle(title);
     }
 
-    protected void openPlayStore(){
+    protected void openPlayStore() {
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_OPEN, "play_store");
         String appPackageName = "com.dbottillo.mtgsearch";
         try {
@@ -58,14 +58,15 @@ public abstract class DBFragment extends DialogFragment {
     }
 
     protected AdRequest createAdRequest() {
-        AdRequest adRequest = new AdRequest.Builder()
+        AdRequest.Builder builder = new AdRequest.Builder()
                 .setGender(AdRequest.GENDER_MALE)
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("BFD58A83B8C287B36B78CD9A74E164E4")
-                .addTestDevice("81CB49F53C9C0C74241CB8BD3383E1C7")
-                .addTestDevice("050BC3B5E5E1DF487D93014199FBB3CD")
-                .build();
-        return adRequest;
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
+        if (BuildConfig.DEBUG) {
+            builder.addTestDevice("BFD58A83B8C287B36B78CD9A74E164E4")
+                    .addTestDevice("81CB49F53C9C0C74241CB8BD3383E1C7")
+                    .addTestDevice("050BC3B5E5E1DF487D93014199FBB3CD");
+        }
+        return builder.build();
     }
 
     @Override
@@ -87,7 +88,9 @@ public abstract class DBFragment extends DialogFragment {
         super.onPause();
     }
 
-    /** Called before the activity is destroyed. */
+    /**
+     * Called before the activity is destroyed.
+     */
     @Override
     public void onDestroy() {
         // Destroy the AdView.
@@ -99,25 +102,25 @@ public abstract class DBFragment extends DialogFragment {
 
     public abstract String getPageTrack();
 
-    public AdView getAdView(){
+    public AdView getAdView() {
         return adView;
     }
 
-    public void trackPage(String page){
+    public void trackPage(String page) {
         MTGApp app = (MTGApp) getActivity().getApplication();
         app.trackPage(page);
     }
 
-    public MTGApp getApp(){
-        if (getActivity() != null){
+    public MTGApp getApp() {
+        if (getActivity() != null) {
             return ((DBActivity) getActivity()).getApp();
         }
         return null;
     }
 
-    protected void trackEvent(String category, String action, String label){
-        if (getApp() != null){
-            getApp().trackEvent(category,action,label);
+    protected void trackEvent(String category, String action, String label) {
+        if (getApp() != null) {
+            getApp().trackEvent(category, action, label);
         }
     }
 

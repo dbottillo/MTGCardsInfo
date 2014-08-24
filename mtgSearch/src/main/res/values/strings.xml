@@ -57,8 +57,8 @@
     <string name="action_life_counter">Life counter</string>
     <string name="player">Player %s</string>
     <string name="add_player">Add</string>
-    <string name="plus_one">+ 1</string>
-    <string name="minus_one">- 1</string>
+    <string name="plus_one" translatable="false">+ 1</string>
+    <string name="minus_one" translatable="false">- 1</string>
     <string name="maximum_player">You\'ve reached the maximum number of players</string>
     <string name="edit_player">Edit name player</string>
     <string name="save">Save</string>
