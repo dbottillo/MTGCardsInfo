@@ -101,7 +101,7 @@ task readPasswordFromInput << {
 }
 
 tasks.whenTaskAdded { task ->
-    if (task.name == 'packageFreeRelease')
+    if (task.name == 'assembleHearthstoneFreeRelease')
         task.dependsOn readPasswordFromInput
 }
 
