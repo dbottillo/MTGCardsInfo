@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/image_card_container">
@@ -23,11 +23,42 @@
                     android:paddingLeft="@dimen/padding_card_image"
                     android:paddingRight="@dimen/padding_card_image"
                     android:layout_marginTop="@dimen/margin_top_card_image"
-                    android:src="@drawable/card_placeholder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/image_card" />
-            </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/image_card_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error_load_image"/>
+
+                    <Button
+                        android:id="@+id/image_card_retry_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/image_retry"
+                        style="@style/BtnGeneric"
+                        />
+                    </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_card_loader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/card_loader"/>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,10 +85,6 @@
                     android:id="@+id/set_card" />
 
             </LinearLayout>
-
-            <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-                android:id="@+id/progress"
-                style="@style/MTGProgressBar" />
 
         </RelativeLayout>
     </ScrollView>

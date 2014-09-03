@@ -2,6 +2,7 @@ package com.dbottillo.common;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -46,8 +47,11 @@ public class MTGCardFragment extends DBFragment {
     public static final String CARD = "card";
 
     private GameCard card;
+    ImageView cardLoader;
+    View retry;
+    View cardImageContainer;
 
-    private SmoothProgressBar progressBar;
+    String urlImage = null;
 
     private DatabaseConnector databaseConnector;
 
@@ -67,8 +71,9 @@ public class MTGCardFragment extends DBFragment {
         View rootView = inflater.inflate(R.layout.fragment_card, container, false);
 
         card = getArguments().getParcelable(CARD);
-
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
+        cardImageContainer = rootView.findViewById(R.id.image_card_container);
+        cardLoader = (ImageView) rootView.findViewById(R.id.image_card_loader);
+        retry = rootView.findViewById(R.id.image_card_retry);
 
         setHasOptionsMenu(true);
 
@@ -110,10 +115,7 @@ public class MTGCardFragment extends DBFragment {
 
 
     private void refreshUI(){
-        final View cardImageContainer = getView().findViewById(R.id.image_card_container);
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
-
-        String urlImage = null;
 
         if (BuildConfig.magic) {
             MTGCard mtgCard = (MTGCard) card;
@@ -127,7 +129,7 @@ public class MTGCardFragment extends DBFragment {
             cardText.setText(mtgCard.getText());
 
             TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-            setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + "</b> " + card.getSetName()));
+            setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
 
             if (mtgCard.getMultiVerseId() > 0) {
                 urlImage = "http://mtgimage.com/multiverseid/" + mtgCard.getMultiVerseId() + ".jpg";
@@ -158,27 +160,67 @@ public class MTGCardFragment extends DBFragment {
             }
         }
 
+        retry.setVisibility(View.GONE);
+
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && urlImage != null) {
-            cardImageContainer.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.VISIBLE);
-            ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
-            Picasso.with(getActivity()).load(urlImage).placeholder(R.drawable.card_placeholder).into(cardImage, new Callback() {
-
-                @Override
-                public void onSuccess() {
-                    progressBar.setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onError() {
-                    progressBar.setVisibility(View.GONE);
-                    cardImageContainer.setVisibility(View.GONE);
-                }
-            });
+            loadImage();
         } else {
-            progressBar.setVisibility(View.GONE);
+            cardLoader.setVisibility(View.GONE);
             cardImageContainer.setVisibility(View.GONE);
         }
+
+        getView().findViewById(R.id.image_card_retry_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadImage();
+            }
+        });
+    }
+
+    private void loadImage(){
+        retry.setVisibility(View.GONE);
+        cardImageContainer.setVisibility(View.VISIBLE);
+        final ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
+
+        cardImage.setVisibility(View.GONE);
+
+        startCardLoader();
+        Picasso.with(getActivity()).load(urlImage).into(cardImage, new Callback() {
+
+            @Override
+            public void onSuccess() {
+                cardImage.setVisibility(View.VISIBLE);
+                stopCardLoader();
+            }
+
+            @Override
+            public void onError() {
+                stopCardLoader();
+                cardImage.setVisibility(View.GONE);
+                retry.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    private void startCardLoader(){
+        cardLoader.setVisibility(View.VISIBLE);
+        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
+        cardLoader.post(new Runnable() {
+            public void run() {
+                frameAnimation.start();
+            }
+        });
+    }
+
+    private void stopCardLoader(){
+        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
+        cardLoader.post(new Runnable() {
+            public void run() {
+                frameAnimation.stop();
+                cardLoader.setVisibility(View.GONE);
+            }
+        });
     }
 
     private boolean isSavedOffline = false;

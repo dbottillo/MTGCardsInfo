@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/card_load1" android:duration="150" />
+    <item android:drawable="@drawable/card_load2" android:duration="150" />
+    <item android:drawable="@drawable/card_load3" android:duration="150" />
+    <item android:drawable="@drawable/card_load4" android:duration="150" />
+    <item android:drawable="@drawable/card_load5" android:duration="150" />
+</animation-list>
