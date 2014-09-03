@@ -33,12 +33,18 @@ public class LifeCounterAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private OnLifeCounterListener listener;
+    private boolean showPoison;
 
-    public LifeCounterAdapter(Context context, List<Player> players, OnLifeCounterListener listener) {
+    public LifeCounterAdapter(Context context, List<Player> players, OnLifeCounterListener listener, boolean showPoison) {
         this.players = players;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.listener = listener;
+        this.showPoison = showPoison;
+    }
+
+    public void setShowPoison(boolean showPoison) {
+        this.showPoison = showPoison;
     }
 
     @Override
@@ -130,6 +136,9 @@ public class LifeCounterAdapter extends BaseAdapter {
             }
         });
 
+        holder.poisonPlusOne.setVisibility(showPoison ? View.VISIBLE : View.GONE);
+        holder.poisonMinusOne.setVisibility(showPoison ? View.VISIBLE : View.GONE);
+        holder.poison.setVisibility(showPoison ? View.VISIBLE : View.GONE);
 
         return convertView;
     }
