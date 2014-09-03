@@ -340,7 +340,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         try {
             int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
             TextView textView = (TextView) searchView.findViewById(id);
-            textView.setHintTextColor(getResources().getColor(R.color.main));
+            textView.setHintTextColor(getResources().getColor(R.color.light_grey));
         } catch (Exception e){
 
         }

@@ -45,6 +45,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     boolean isASearch = false;
     private GameSet gameSet;
     private ListView listView;
+    private TextView emptyView;
     private ArrayList<GameCard> cards;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
@@ -72,6 +73,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_set, container, false);
+
+        emptyView = (TextView) rootView.findViewById(R.id.empty_view);
+        emptyView.setText(R.string.empty_search);
 
         gameSet = getArguments().getParcelable(SET_CHOSEN);
         if (gameSet == null) {
@@ -192,6 +196,8 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         }
         result.clear();
         progressBar.setVisibility(View.GONE);
+
+        emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
     }
 
     private void populateCardsWithFilter() {

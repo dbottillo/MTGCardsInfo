@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
@@ -23,6 +24,8 @@ import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.GameCard;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
@@ -33,6 +36,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     private ListView listView;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
+    private TextView emptyView;
 
     private DB40Helper db40Helper;
 
@@ -45,6 +49,8 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         View rootView = inflater.inflate(R.layout.fragment_set, container, false);
 
         listView = (ListView) rootView.findViewById(R.id.set_list);
+        emptyView = (TextView) rootView.findViewById(R.id.empty_view);
+        emptyView.setText(R.string.empty_saved);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
@@ -111,6 +117,8 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         }
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(View.GONE);
+
+        emptyView.setVisibility(objects.size() == 0 ? View.VISIBLE : View.GONE);
     }
 
     @Override
