@@ -89,7 +89,7 @@ public class DB40Helper {
     }
 
     public void removeCard(GameCard card){
-        ObjectSet<MTGCard> result = db.queryByExample(card);
+        ObjectSet<GameCard> result = db.queryByExample(card);
         if (result.hasNext()) {
             db.delete(result.next());
             db.commit();
@@ -106,7 +106,7 @@ public class DB40Helper {
     }
 
     public boolean isCardStored(GameCard card){
-        ObjectSet<MTGCard> result = db.queryByExample(card);
+        ObjectSet<GameCard> result = db.queryByExample(card);
         return !result.isEmpty();
     }
 

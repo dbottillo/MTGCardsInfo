@@ -4,14 +4,19 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
@@ -20,6 +25,7 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.Player;
+import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -32,6 +38,9 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         return new LifeCounterFragment();
     }
 
+    private ScrollView diceScrollView;
+    private LinearLayout diceContainer;
+    private ListView lifeListView;
     private ArrayList<Player> players;
     private LifeCounterAdapter lifeCounterAdapter;
     private SmoothProgressBar progressBar;
@@ -40,6 +49,9 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     private boolean scrollDownAfterLoad = false;
 
+    private boolean showPoison = false;
+    private boolean diceShowed = false;
+
     String[] names = { "Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin" };
 
@@ -47,7 +59,11 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_life_counter, container, false);
 
+        diceScrollView = (ScrollView) rootView.findViewById(R.id.life_counter_dice_scrolliew);
+        diceContainer = (LinearLayout) rootView.findViewById(R.id.life_counter_dice_container);
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
+        lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
+        showPoison = getSharedPreferences().getBoolean("poison", false);
 
         /*if (savedInstanceState == null) {
             players = new ArrayList<Player>();
@@ -57,8 +73,8 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         }*/
         players = new ArrayList<Player>();
 
-        lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this);
-        ((ListView)rootView.findViewById(R.id.life_counter_list)).setAdapter(lifeCounterAdapter);
+        lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
+        lifeListView.setAdapter(lifeCounterAdapter);
 
         setHasOptionsMenu(true);
 
@@ -87,21 +103,13 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         db40Helper.closeDb();
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.life_counter, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int i1 = item.getItemId();
-        if (i1 == R.id.action_add) {
-            addPlayer();
-            return true;
+    private void resetLifeCounter() {
+        for (Player player : players){
+            player.setLife(20);
+            player.setPoisonCount(10);
+            db40Helper.storePlayer(player);
         }
-
-        return false;
+        loadPlayers();
     }
 
     @Override
@@ -225,5 +233,102 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         players.get(position).changePoisonCount(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
+    }
+
+    private View.OnClickListener tapOnDice = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            hideDice();
+        }
+    };
+
+    private void launchDice(){
+        diceScrollView.setVisibility(View.VISIBLE);
+        diceContainer.removeAllViews();
+        int heightRow = lifeListView.getChildAt(0).getHeight();
+        ArrayList<TextView> playerResults = new ArrayList<TextView>(players.size());
+        int[] results = new int[players.size()];
+        for (int i=0; i<players.size(); i++){
+            Player player = players.get(i);
+            Random rand = new Random();
+            results[i] = rand.nextInt(20) + 1;
+            View dice = LayoutInflater.from(getActivity()).inflate(R.layout.life_counter_dice, null);
+            dice.setLayoutParams(new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, heightRow));
+            TextView playerName = (TextView) dice.findViewById(R.id.player_name);
+            playerName.setText(player.getName());
+            playerResults.add((TextView) dice.findViewById(R.id.player_result));
+            diceContainer.addView(dice);
+            dice.setOnClickListener(tapOnDice);
+        }
+        Button closeBtn = new Button(getActivity(), null, R.style.BtnGeneric);
+        closeBtn.setBackgroundResource(R.drawable.btn_common);
+        closeBtn.setTextColor(getResources().getColor(android.R.color.white));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.topMargin = 20;
+        params.gravity = Gravity.CENTER_HORIZONTAL;
+        closeBtn.setLayoutParams(params);
+        closeBtn.setText(getString(R.string.dice_close));
+        closeBtn.setPadding(20, 20, 20, 20);
+        closeBtn.setOnClickListener(tapOnDice);
+        diceContainer.addView(closeBtn);
+        for (int i=0; i<players.size(); i++){
+            playerResults.get(i).setText(results[i]+"");
+        }
+        diceShowed = true;
+    }
+
+    private void hideDice(){
+        diceContainer.removeAllViews();
+        diceScrollView.setVisibility(View.GONE);
+        diceShowed = false;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.life_counter, menu);
+
+        MenuItem poison = menu.findItem(R.id.action_poison);
+        if (showPoison){
+            poison.setChecked(true);
+        } else {
+            poison.setChecked(false);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i1 = item.getItemId();
+        if (i1 == R.id.action_add) {
+            addPlayer();
+            return true;
+        }
+        if (i1 == R.id.action_reset) {
+            resetLifeCounter();
+            return true;
+        }
+        if (i1 == R.id.action_dice) {
+            launchDice();
+            return true;
+        }
+        if (i1 == R.id.action_poison) {
+            getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
+            showPoison = !showPoison;
+            getActivity().invalidateOptionsMenu();
+            lifeCounterAdapter.setShowPoison(showPoison);
+            lifeCounterAdapter.notifyDataSetChanged();
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public boolean onBackPressed() {
+        if (diceShowed){
+            hideDice();
+            return true;
+        }
+        return false;
     }
 }

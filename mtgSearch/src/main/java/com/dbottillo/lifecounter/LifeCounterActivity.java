@@ -9,6 +9,8 @@ import com.dbottillo.saved.SavedFragment;
 
 public class LifeCounterActivity extends DBActivity{
 
+    private LifeCounterFragment lifeCounterFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +21,12 @@ public class LifeCounterActivity extends DBActivity{
         getActionBar().setTitle(R.string.action_life_counter);
 
         if (savedInstanceState == null){
+            lifeCounterFragment = LifeCounterFragment.newInstance();
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, LifeCounterFragment.newInstance())
+                .replace(R.id.container, lifeCounterFragment)
                 .commit();
+        } else {
+            lifeCounterFragment = (LifeCounterFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         }
     }
 
@@ -40,4 +45,10 @@ public class LifeCounterActivity extends DBActivity{
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (!lifeCounterFragment.onBackPressed()){
+            super.onBackPressed();
+        }
+    }
 }

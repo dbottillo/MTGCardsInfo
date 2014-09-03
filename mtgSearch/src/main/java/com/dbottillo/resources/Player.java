@@ -58,6 +58,14 @@ public class Player implements Parcelable {
         this.poisonCount += value;
     }
 
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public void setPoisonCount(int poisonCount) {
+        this.poisonCount = poisonCount;
+    }
+
     @Override
     public int describeContents() {
         return 0;

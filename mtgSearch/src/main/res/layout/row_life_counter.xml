@@ -9,10 +9,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
+        android:paddingBottom="15dp"
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/row_life_counter_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -110,11 +111,13 @@
                 <Button
                     android:id="@+id/btn_poison_plus_one"
                     android:text="@string/plus_one"
+                    android:visibility="gone"
                     style="@style/BtnLifeCounter.Poison.Plus" />
 
                 <Button
                     android:id="@+id/btn_poison_minus_one"
                     android:text="@string/minus_one"
+                    android:visibility="gone"
                     style="@style/BtnLifeCounter.Poison.Minus" />
 
 
@@ -126,7 +129,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="1dp"
         android:background="#979797" />
 
 </LinearLayout>

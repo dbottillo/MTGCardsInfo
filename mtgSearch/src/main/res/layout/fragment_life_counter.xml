@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg_filter"
+    android:id="@+id/life_counter_container"
     tools:context="com.dbottillo.lifecounter.LifeCounterActivity">
 
     <ListView
@@ -13,6 +14,19 @@
         android:cacheColorHint="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <ScrollView
+        android:id="@+id/life_counter_dice_scrolliew"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/life_counter_dice_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         style="@style/MTGProgressBar"
