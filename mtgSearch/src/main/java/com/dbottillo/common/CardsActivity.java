@@ -1,6 +1,7 @@
 package com.dbottillo.common;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.dbottillo.base.DBActivity;
@@ -57,9 +58,6 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
 
     @Override
     public boolean isCardSaved(GameCard card) {
-        if (card instanceof MTGCard){
-            return db40Helper.isMtgCardStored((MTGCard)card);
-        }
         return db40Helper.isCardStored(card);
     }
 

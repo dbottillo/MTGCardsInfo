@@ -9,6 +9,7 @@ import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.diagnostic.DiagnosticToConsole;
 import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
 
@@ -61,7 +62,8 @@ public class DB40Helper {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
-        configuration.common().objectClass(MTGCard.class).indexed(false);
+        configuration.common().objectClass(HSCard.class).indexed(true);
+        configuration.common().objectClass(MTGCard.class).indexed(true);
         return configuration;
     }
 
@@ -105,11 +107,6 @@ public class DB40Helper {
             cards.add(result.next());
         }
         return cards;
-    }
-
-    public boolean isMtgCardStored(MTGCard card){
-        ObjectSet<MTGCard> result = db.queryByExample(card);
-        return !result.isEmpty();
     }
 
     public boolean isCardStored(GameCard card){

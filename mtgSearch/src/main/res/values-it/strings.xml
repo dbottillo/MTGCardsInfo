@@ -16,7 +16,7 @@
     <string name="to_premium">Accedi a premium</string>
     <string name="to_premium_btn">Apri Play Store</string>
     <string name="more_result">Ci sono %d altri risultati</string>
-    <string name="search_limit">C\'e un limite di %d risultati, prova ad affinare la ricerca!</string>
+    <string name="search_limit">C\'é un limite di %d risultati, prova ad affinare la ricerca!</string>
     <string name="apply_filter">Applica Filtro</string>
     <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
     <string name="search_open_play">Se vuoi vedere tutti i risultati hai bisogno della versione premium di MTG Cards</string>
@@ -65,5 +65,7 @@
     <string name="life_dice">Lancia dado</string>
     <string name="menu_life_poison">Poison</string>
     <string name="dice_close">Togli dadi</string>
+    <string name="empty_saved">Non hai ancora nessuna carta preferita, usa il pulsante stella nella pagina delle carte per aggiungerle ai preferiti.</string>
+    <string name="empty_search">Nessuna carta trovata con quel termine, perché non provi un\'altra ricerca?</string>
 
 </resources>

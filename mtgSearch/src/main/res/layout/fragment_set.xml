@@ -14,6 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <TextView
+        android:id="@+id/empty_view"
+        android:visibility="gone"
+        android:paddingTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:padding="40dp"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         style="@style/MTGProgressBar"
         android:id="@+id/progress" />
