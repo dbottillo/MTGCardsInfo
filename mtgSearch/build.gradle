@@ -59,8 +59,8 @@ android {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
             buildConfigField 'int', 'DATABASE_VERSION', '3'
-            versionCode 7
-            versionName "1.5"
+            versionCode 8
+            versionName "1.6"
         }
 
         magicPaid {
@@ -101,7 +101,7 @@ task readPasswordFromInput << {
 }
 
 tasks.whenTaskAdded { task ->
-    if (task.name == 'assembleHearthstoneFreeRelease')
+    if (task.name == 'assembleHearthstoneFreeRelease' || task.name == 'assembleMagicFreeRelease')
         task.dependsOn readPasswordFromInput
 }
 
