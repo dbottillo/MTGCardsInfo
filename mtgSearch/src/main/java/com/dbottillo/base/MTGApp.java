@@ -45,6 +45,7 @@ public class MTGApp extends Application {
     public static final String UA_ACTION_OPEN = "open";
     public static final String UA_ACTION_SAVED = "saved";
     public static final String UA_ACTION_UNSAVED = "unsaved";
+    public static final String UA_ACTION_LIFE_COUNTER = "lifeCounter";
 
 
     public void trackEvent(String category, String action, String label){
