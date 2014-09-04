@@ -55,6 +55,7 @@ public class DB40Helper {
     }
 
     public void closeDb(){
+        Log.e(TAG, "close db!");
         if (db != null) db.close();
     }
 
@@ -62,8 +63,8 @@ public class DB40Helper {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
-        configuration.common().objectClass(HSCard.class).indexed(true);
-        configuration.common().objectClass(MTGCard.class).indexed(true);
+        configuration.common().objectClass(HSCard.class).objectField("id").indexed(true);
+        configuration.common().objectClass(MTGCard.class).objectField("id").indexed(true);
         return configuration;
     }
 

@@ -3,10 +3,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:id="@+id/progress"
-        style="@style/MTGProgressBar" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_weight="1"
@@ -39,6 +35,28 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/card_loader"/>
+
+                <LinearLayout
+                    android:id="@+id/image_card_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error_load_image" />
+
+                    <Button
+                        android:id="@+id/image_card_retry_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/image_retry"
+                        style="@style/BtnGeneric" />
+                </LinearLayout>
 
             </RelativeLayout>
 

@@ -31,13 +31,23 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         }
 
         db40Helper = DB40Helper.getInstance(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         db40Helper.openDb();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        db40Helper.closeDb();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db40Helper.closeDb();
         db40Helper = null;
     }
 
