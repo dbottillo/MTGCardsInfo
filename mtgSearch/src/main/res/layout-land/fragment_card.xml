@@ -84,6 +84,12 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/set_card" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/price_card" />
+
             </LinearLayout>
 
 

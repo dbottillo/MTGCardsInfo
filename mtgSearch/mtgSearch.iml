@@ -13,6 +13,7 @@
         <option name="COMPILE_JAVA_TASK_NAME" value="compileMagicFreeDebugJava" />
         <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleMagicFreeDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateMagicFreeDebugSources" />
+        <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateMagicFreeDebugTestSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
@@ -108,6 +109,7 @@
     <orderEntry type="library" exported="" name="libGoogleAnalyticsServices" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="volley" level="project" />
     <orderEntry type="library" exported="" name="crashlytics-1.1.11" level="project" />
   </component>
 </module>
