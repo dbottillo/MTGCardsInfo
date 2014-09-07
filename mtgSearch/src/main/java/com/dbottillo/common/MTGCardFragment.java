@@ -1,6 +1,7 @@
 package com.dbottillo.common;
 
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -17,6 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
@@ -27,7 +34,14 @@ import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
+import com.squareup.picasso.Downloader;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.xml.transform.ErrorListener;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -50,6 +64,7 @@ public class MTGCardFragment extends DBFragment {
     ImageView cardLoader;
     View retry;
     View cardImageContainer;
+    TextView priceCard;
 
     String urlImage = null;
 
@@ -74,6 +89,7 @@ public class MTGCardFragment extends DBFragment {
         cardImageContainer = rootView.findViewById(R.id.image_card_container);
         cardLoader = (ImageView) rootView.findViewById(R.id.image_card_loader);
         retry = rootView.findViewById(R.id.image_card_retry);
+        priceCard = (TextView) rootView.findViewById(R.id.price_card);
 
         setHasOptionsMenu(true);
 
@@ -134,6 +150,34 @@ public class MTGCardFragment extends DBFragment {
             if (mtgCard.getMultiVerseId() > 0) {
                 urlImage = "http://mtgimage.com/multiverseid/" + mtgCard.getMultiVerseId() + ".jpg";
             }
+
+            // Instantiate the RequestQueue.
+            RequestQueue queue = Volley.newRequestQueue(getActivity());
+            String url ="http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname="+card.getName().replace(" ","%20");
+            Log.e("check","url: "+url);
+            updatePriceCard("Loading");
+
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                    new Response.Listener() {
+                        @Override
+                        public void onResponse(Object response) {
+                            try {
+                                JSONArray price = new JSONArray(response.toString());
+                                updatePriceCard(price.get(0).toString());
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            Log.e("check","response: "+response.toString());
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    updatePriceCard(error.getLocalizedMessage());
+                }
+            });
+            // Add the request to the RequestQueue.
+            queue.add(stringRequest);
+
         }else{
 
             HSCard hearthstoneCard = (HSCard) card;
@@ -175,6 +219,10 @@ public class MTGCardFragment extends DBFragment {
                 loadImage();
             }
         });
+    }
+
+    private void updatePriceCard(String message){
+        priceCard.setText(Html.fromHtml("<b>Price</b>: "+message));
     }
 
     private void loadImage(){
