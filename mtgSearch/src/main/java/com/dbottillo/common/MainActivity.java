@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
@@ -21,56 +20,57 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
+import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.adapters.LeftMenuAdapter;
-import com.dbottillo.adapters.MTGSetSpinnerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.CardDatabaseHelper;
 import com.dbottillo.database.DatabaseHelper;
-import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.R;
 import com.dbottillo.lifecounter.LifeCounterActivity;
 import com.dbottillo.resources.GameSet;
-import com.dbottillo.resources.MTGSet;
 import com.dbottillo.saved.SavedActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.io.File;
 import java.util.ArrayList;
 
-public class MainActivity extends DBActivity implements ActionBar.OnNavigationListener, DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
+public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
     private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
 
-    /**
-     * The serialization (saved instance state) Bundle key representing the
-     * current dropdown position.
-     */
-    private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
-
     private ArrayList<GameSet> sets;
-    private MTGSetSpinnerAdapter setAdapter;
+    private GameSetAdapter setAdapter;
 
     private SlidingUpPanelLayout slidingPanel;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
     private LeftMenuAdapter leftMenuAdapter;
+    private ImageView setArrow;
+    private View setListBg;
+    private ListView setList;
+    private View container;
 
     private FilterFragment filterFragment;
 
     SearchView searchView;
     ImageView arrow;
+
+    private int currentSetPosition = -1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,11 +82,23 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
 
         slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         slidingPanel.setPanelSlideListener(this);
+        container = findViewById(R.id.container);
+        setListBg = findViewById(R.id.set_list_bg);
+        setList = (ListView) findViewById(R.id.set_list);
+        setArrow = (ImageView) findViewById(R.id.set_arrow);
+
+        setListBg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (setList.getHeight() > 0){
+                    showHideSetList(false);
+                }
+            }
+        });
 
         // Set up the action bar to show a dropdown list.
         final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+        getActionBar().setTitle(R.string.app_name);
 
         if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != BuildConfig.DATABASE_VERSION){
             Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+BuildConfig.DATABASE_VERSION);
@@ -106,12 +118,24 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
         }else{
             sets = savedInstanceState.getParcelableArrayList("SET");
+            currentSetPosition = savedInstanceState.getInt("currentSetPosition");
+            loadSet();
         }
 
-        setAdapter = new MTGSetSpinnerAdapter(this, sets);
-
-        // Set up the dropdown list navigation in the action bar.
-        actionBar.setListNavigationCallbacks(setAdapter,  this);
+        setAdapter = new GameSetAdapter(this, sets);
+        setAdapter.setCurrent(currentSetPosition);
+        setList.setAdapter(setAdapter);
+        setList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (currentSetPosition != position) {
+                    currentSetPosition = position;
+                    showHideSetList(true);
+                } else {
+                    showHideSetList(false);
+                }
+            }
+        });
 
         if (BuildConfig.magic) {
             filterFragment = new FilterFragment();
@@ -122,10 +146,77 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             slidingPanel.setPanelHeight(0);
         }
 
+        findViewById(R.id.set_chooser).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHideSetList(false);
+            }
+        });
+
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             handleIntent(intent);
         }
+    }
+
+    private void showHideSetList(final boolean loadSet) {
+        final int startHeight = setList.getHeight();
+        final int targetHeight = (startHeight == 0) ? container.getHeight() : 0;
+        final float startRotation = setArrow.getRotation();
+        Animation animation = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                super.applyTransformation(interpolatedTime, t);
+                if (targetHeight > startHeight){
+                    int newHeight = (int) (startHeight + (interpolatedTime * targetHeight));
+                    setHeightView(setList, newHeight);
+                    setHeightView(setListBg, newHeight);
+                    setArrow.setRotation(startRotation + (180 * interpolatedTime));
+                } else {
+                    int newHeight = (int) (startHeight - startHeight*interpolatedTime);
+                    setHeightView(setList, newHeight);
+                    setHeightView(setListBg, newHeight);
+                    setArrow.setRotation( startRotation - (180 * interpolatedTime));
+                }
+            }
+        };
+        animation.setDuration(200);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (loadSet){
+                    /*if (!getApp().isPremium() && position > 2){
+                        showGoToPremium();
+                        return false;
+                    }*/
+                    getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "spinner_selected", sets.get(currentSetPosition).getCode());
+                    SharedPreferences.Editor editor = getSharedPreferences().edit();
+                    editor.putInt("setPosition", currentSetPosition);
+                    editor.apply();
+                    setAdapter.setCurrent(currentSetPosition);
+                    setAdapter.notifyDataSetChanged();
+                    loadSet();
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        slidingPanel.startAnimation(animation);
+
+    }
+
+    private void setHeightView(View view, int value){
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+        params.height = value;
+        view.setLayoutParams(params);
     }
 
     private void setupDrawerLayout() {
@@ -138,16 +229,12 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-                getActionBar().setTitle("");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-                getActionBar().setTitle(getString(R.string.app_name));
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
@@ -222,43 +309,24 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        // Restore the previously serialized current dropdown position.
-        if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
-            getActionBar().setSelectedNavigationItem(savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
-        }
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
-        // Serialize the current dropdown position.
-        outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar().getSelectedNavigationIndex());
+        outState.putInt("currentSetPosition",currentSetPosition);
         outState.putParcelableArrayList("SET", sets);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(int position, long id) {
-        /*if (!getApp().isPremium() && position > 2){
-            showGoToPremium();
-            return false;
-        }*/
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "spinner_selected", sets.get(position).getCode());
-        SharedPreferences.Editor editor = getSharedPreferences().edit();
-        editor.putInt("setPosition", position);
-        editor.commit();
-        loadSet();
-        return true;
     }
 
     private void loadSet(){
         slidingPanel.collapsePane();
+        ((TextView)findViewById(R.id.set_chooser_name)).setText(sets.get(currentSetPosition).getName());
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(getSharedPreferences().getInt("setPosition", 0))))
+                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
                 .commit();
     }
 
     @Override
     public void onTaskFinished(ArrayList<?> result) {
+        currentSetPosition = getSharedPreferences().getInt("setPosition",0);
+        setAdapter.setCurrent(currentSetPosition);
+
         sets.clear();
         for (Object set : result){
             sets.add((GameSet) set);
@@ -267,7 +335,7 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
         result.clear();
 
         hideLoadingFromActionBar();
-        getActionBar().setSelectedNavigationItem(getSharedPreferences().getInt("setPosition", 0));
+        loadSet();
     }
 
     @Override
@@ -426,5 +494,14 @@ public class MainActivity extends DBActivity implements ActionBar.OnNavigationLi
             new CreateDBAsyncTask(this,packageName).execute();
         }
         mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (setList.getHeight() > 0){
+            showHideSetList(false);
+        }else {
+            super.onBackPressed();
+        }
     }
 }

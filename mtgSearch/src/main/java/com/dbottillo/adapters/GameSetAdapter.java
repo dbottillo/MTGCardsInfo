@@ -1,6 +1,7 @@
 package com.dbottillo.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +17,14 @@ import java.util.List;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class MTGSetSpinnerAdapter extends BaseAdapter {
+public class GameSetAdapter extends BaseAdapter {
 
     private List<GameSet> mtgSets;
     private Context context;
     private LayoutInflater inflater;
+    private int current = -1;
 
-    public MTGSetSpinnerAdapter(Context context, List<GameSet> mtgSets) {
+    public GameSetAdapter(Context context, List<GameSet> mtgSets) {
         this.mtgSets = mtgSets;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -43,6 +45,10 @@ public class MTGSetSpinnerAdapter extends BaseAdapter {
         return getItem(i).getId();
     }
 
+    public void setCurrent(int current){
+        this.current = current;
+    }
+
     public View getView(int position, View convertView, ViewGroup parent) {
         final SetHolder holder;
         if (convertView == null) {
@@ -55,24 +61,8 @@ public class MTGSetSpinnerAdapter extends BaseAdapter {
         }
 
         GameSet set = getItem(position);
-        holder.name.setText(set.getName());
-
-        return convertView;
-    }
-
-
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        final SetHolder holder;
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_set, null);
-            holder = new SetHolder(convertView);
-            convertView.setTag(holder);
-            convertView.setId(position);
-        } else {
-            holder = (SetHolder) convertView.getTag();
-        }
-
-        GameSet set = getItem(position);
+        holder.name.setTextColor(context.getResources().getColor(position == current ? R.color.main : R.color.dark_grey));
+        holder.name.setTypeface(null, position == current ? Typeface.BOLD : Typeface.NORMAL);
         holder.name.setText(set.getName());
 
         return convertView;
