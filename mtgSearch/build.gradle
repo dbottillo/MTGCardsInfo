@@ -59,8 +59,8 @@ android {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
             buildConfigField 'int', 'DATABASE_VERSION', '3'
-            versionCode 8
-            versionName "1.6"
+            versionCode 9
+            versionName "1.6.1"
         }
 
         magicPaid {
