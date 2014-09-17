@@ -3,6 +3,7 @@ package com.dbottillo.common;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -232,8 +233,8 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
                 if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
                         !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true))
                     toAdd = false;
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                        !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
+                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC) &&
+                        !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true))
                     toAdd = false;
 
                 if (!toAdd && card.isAnEldrazi()) {
