@@ -69,5 +69,9 @@
     <string name="empty_search">Nessuna carta trovata con quel termine, perché non provi un\'altra ricerca?</string>
     <string name="error_load_image">Impossibile caricare l\'immagine al momento.</string>
     <string name="image_retry">Carica immagine</string>
+    <string name="loading">Caricamento…</string>
+    <string name="price_error">Impossibile ottenere il prezzo della carta al momento</string>
+    <string name="price_info">Il prezzo é reso disponibile dal sito web: https://github.com/bedoherty/MagicTCGPriceAPI e richiede una connessione ad internet.\n\nIl prezzo é solo indicativo del reale prezzo e MTG Cards Info non é responsabile riguardo l\'uso di questo valore e della sua veridicità.</string>
+    <string name="price_info_title">Price card</string>
 
 </resources>

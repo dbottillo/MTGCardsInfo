@@ -444,25 +444,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
 
     private void showGoToPremium() {
-        openDialog("toPremium");
-    }
-
-    private void openDialog(String tag){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
-        if (prev != null) {
-            ft.remove(prev);
-        }
-        ft.addToBackStack(null);
-
-        DialogFragment newFragment;
-        if (tag.equalsIgnoreCase("about")) {
-            newFragment = new AboutFragment();
-        }else{
-            newFragment = new GoToPremiumFragment();
-        }
-
-        newFragment.show(ft, tag);
+        openDialog(DBDialog.PREMIUM);
     }
 
     @Override
@@ -475,7 +457,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
             startActivity(new Intent(this, LifeCounterActivity.class));
 
         }else if (item == LeftMenuAdapter.LeftMenuItem.ABOUT){
-            openDialog("about");
+            openDialog(DBDialog.ABOUT);
 
         }else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_UPDATE){
             // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db

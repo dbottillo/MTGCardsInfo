@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
