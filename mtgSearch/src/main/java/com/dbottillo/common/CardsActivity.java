@@ -34,14 +34,14 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         db40Helper.openDb();
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         db40Helper.closeDb();
     }
 

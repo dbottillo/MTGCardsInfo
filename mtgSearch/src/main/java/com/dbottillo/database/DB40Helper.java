@@ -110,7 +110,7 @@ public class DB40Helper {
         return cards;
     }
 
-    public boolean isCardStored(GameCard card){
+    public synchronized boolean isCardStored(GameCard card){
         ObjectSet<GameCard> result = db.queryByExample(card);
         return !result.isEmpty();
     }
