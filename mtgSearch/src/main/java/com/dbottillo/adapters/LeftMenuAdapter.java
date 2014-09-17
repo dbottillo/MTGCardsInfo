@@ -22,10 +22,10 @@ public class LeftMenuAdapter extends BaseAdapter {
     public enum LeftMenuItem {
         HOME(0, R.string.action_home, R.drawable.left_home, "home"),
         FAVOURITE(1, R.string.action_saved, R.drawable.left_saved, "saved"),
-        LIFE_COUNTER(2, R.string.action_life_counter, R.drawable.left_saved, "life_counter"),
+        LIFE_COUNTER(2, R.string.action_life_counter, R.drawable.left_life_counter, "life_counter"),
         FORCE_UPDATE(3, R.string.action_update_database, R.drawable.left_update, null),
         ABOUT(4, R.string.action_about, R.drawable.left_info, null),
-        CREATE_DB(5, R.string.action_create_db, -1, null);
+        CREATE_DB(5, R.string.action_create_db,  R.drawable.left_info, null);
 
         private int id;
         private int title;
