@@ -25,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dbottillo.BuildConfig;
+import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
@@ -91,6 +92,13 @@ public class MTGCardFragment extends DBFragment {
         retry = rootView.findViewById(R.id.image_card_retry);
         priceCard = (TextView) rootView.findViewById(R.id.price_card);
 
+        rootView.findViewById(R.id.price_card_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((DBActivity) getActivity()).openDialog(DBActivity.DBDialog.PRICE_INFO);
+            }
+        });
+
         setHasOptionsMenu(true);
 
         if (!getApp().isPremium()) {
@@ -154,8 +162,8 @@ public class MTGCardFragment extends DBFragment {
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(getActivity());
             String url ="http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname="+card.getName().replace(" ","%20");
-            Log.e("check","url: "+url);
-            updatePriceCard("Loading");
+            //Log.e("check","url: "+url);
+            updatePriceCard(getString(R.string.loading));
 
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     new Response.Listener() {
@@ -165,14 +173,14 @@ public class MTGCardFragment extends DBFragment {
                                 JSONArray price = new JSONArray(response.toString());
                                 updatePriceCard(price.get(0).toString());
                             } catch (JSONException e) {
+                                updatePriceCard(getString(R.string.price_error));
                                 e.printStackTrace();
                             }
-                            Log.e("check","response: "+response.toString());
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    updatePriceCard(error.getLocalizedMessage());
+                    updatePriceCard(getString(R.string.price_error));
                 }
             });
             // Add the request to the RequestQueue.
