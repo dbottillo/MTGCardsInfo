@@ -130,9 +130,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         actionImage = menu.findItem(R.id.action_image);
 
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)){
-            actionImage.setIcon(R.drawable.image_off);
+            actionImage.setChecked(true);
         }else{
-            actionImage.setIcon(R.drawable.image_on);
+            actionImage.setChecked(false);
         }
     }
 
@@ -148,9 +148,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
             adapter.notifyDataSetChanged();
             viewPager.invalidate();
             if (!showImage) {
-                actionImage.setIcon(R.drawable.image_off);
+                actionImage.setChecked(false);
             } else {
-                actionImage.setIcon(R.drawable.image_on);
+                actionImage.setChecked(true);
             }
             return true;
         } else {
