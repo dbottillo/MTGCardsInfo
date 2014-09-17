@@ -1,9 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dbottillo.common.MainActivity" >
-    
-    <item android:id="@+id/action_image"
-        android:icon="@drawable/image_off"
-        android:title="Image"
-        android:showAsAction="always" />
+    <item
+        android:id="@+id/action_image"
+        android:icon="@null"
+        android:title="@string/menu_image"
+        android:orderInCategory="103"
+        android:checkable="true"
+        android:showAsAction="never" />
 </menu>
