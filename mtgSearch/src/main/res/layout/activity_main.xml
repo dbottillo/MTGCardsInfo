@@ -1,10 +1,10 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <!-- The main content view -->
     <com.dbottillo.view.SlidingUpPanelLayout
         android:id="@+id/sliding_layout"
@@ -13,12 +13,63 @@
         sothree:collapsedHeight="@dimen/collapsedHeight"
         android:gravity="bottom">
 
-        <FrameLayout
-            android:id="@+id/container"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="com.dbottillo.common.MainActivity"
-            tools:ignore="MergeRootFrame" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/set_chooser"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="@color/icon"
+                android:padding="5dp"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/set_chooser_name"
+                    android:layout_width="0dp"
+                    android:textColor="@android:color/white"
+                    tools:text="Theros"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/set_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:rotation="180"
+                    android:src="@drawable/arrow_up" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_below="@+id/set_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.dbottillo.common.MainActivity" />
+
+            <View
+                android:id="@+id/set_list_bg"
+                android:clickable="true"
+                android:layout_below="@+id/set_chooser"
+                android:layout_width="match_parent"
+                android:background="@color/bg_grey_opaque"
+                android:layout_height="0dp" />
+
+            <ListView
+                android:id="@+id/set_list"
+                android:layout_below="@+id/set_chooser"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:layout_height="0dp" />
+
+        </RelativeLayout>
 
         <FrameLayout
             android:id="@+id/filter"
