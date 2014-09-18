@@ -67,7 +67,7 @@ android {
             applicationId "com.dbottillo.hssearchfree"
             buildConfigField "Boolean", "magic", "false"
             buildConfigField 'int', 'DATABASE_VERSION', '2'
-            versionCode 2
+            versionCode 3
             versionName "1.1"
         }
     }
