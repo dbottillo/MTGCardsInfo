@@ -24,7 +24,8 @@ public class LeftMenuAdapter extends BaseAdapter {
         FAVOURITE(1, R.string.action_saved, R.drawable.left_saved, "saved"),
         LIFE_COUNTER(2, R.string.action_life_counter, R.drawable.left_life_counter, "life_counter"),
         ABOUT(3, R.string.action_about, R.drawable.left_info, null),
-        CREATE_DB(4, R.string.action_create_db,  R.drawable.left_info, null);
+        CREATE_DB(4, R.string.action_create_db,  R.drawable.left_info, null),
+        FORCE_CRASH(5, R.string.action_crash,  R.drawable.left_info, null);
 
         private int id;
         private int title;
