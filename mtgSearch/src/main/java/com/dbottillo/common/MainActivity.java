@@ -50,8 +50,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
-    private static final String PREFERENCE_DATABASE_VERSION = "databaseVersion";
-
     private ArrayList<GameSet> sets;
     private GameSetAdapter setAdapter;
 
@@ -98,17 +96,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         // Set up the action bar to show a dropdown list.
         final ActionBar actionBar = getActionBar();
         getActionBar().setTitle(R.string.app_name);
-
-        if (getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1) != BuildConfig.DATABASE_VERSION){
-            Log.e("MTG", getSharedPreferences().getInt(PREFERENCE_DATABASE_VERSION, -1)+" <-- wrong database version --> "+BuildConfig.DATABASE_VERSION);
-            File file = new File(getApplicationInfo().dataDir + "/databases/"+ DatabaseHelper.DATABASE_NAME);
-            file.delete();
-            CardDatabaseHelper dbHelper = CardDatabaseHelper.getDatabaseHelper(this);
-            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
-            SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putInt(PREFERENCE_DATABASE_VERSION, BuildConfig.DATABASE_VERSION);
-            editor.apply();
-        }
 
         if (savedInstanceState == null){
             sets = new ArrayList<GameSet>();
@@ -457,17 +444,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
         }else if (item == LeftMenuAdapter.LeftMenuItem.ABOUT){
             openDialog(DBDialog.ABOUT);
-
-        }else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_UPDATE){
-            // /data/data/com.dbottillo.mtgsearch/databases/mtgsearch.db
-            getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "reset_db", "");
-            sets.clear();
-            setAdapter.notifyDataSetChanged();
-            File file = new File(getApplicationInfo().dataDir + "/databases/"+ DatabaseHelper.DATABASE_NAME);
-            file.delete();
-            CardDatabaseHelper dbHelper = CardDatabaseHelper.getDatabaseHelper(this);
-            Toast.makeText(this, getString(R.string.set_loaded, dbHelper.getSets().getCount()), Toast.LENGTH_SHORT).show();
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
 
         }else if (item == LeftMenuAdapter.LeftMenuItem.CREATE_DB){
             // NB: WARNING, FOR RECREATE DATABASE
