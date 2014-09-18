@@ -244,6 +244,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
             boolean skip = false;
             if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.CREATE_DB && !BuildConfig.DEBUG) skip = true;
             if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER && !BuildConfig.magic) skip = true;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH && !BuildConfig.DEBUG) skip = true;
             if (!skip) {
                 items.add(leftMenuItem);
             }
@@ -449,6 +450,9 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
             // NB: WARNING, FOR RECREATE DATABASE
             String packageName = getApplication().getPackageName();
             new CreateDBAsyncTask(this,packageName).execute();
+
+        }else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH){
+            throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawer(mDrawerList);
     }
