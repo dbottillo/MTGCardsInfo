@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.database.SetContract.*;
 import com.dbottillo.database.CardContract.*;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
@@ -17,10 +18,10 @@ public class MTGDatabaseHelper extends CardDatabaseHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
     public static final int LIMIT = 400;
-    private static final int DATABASE_VERSION = 1;
 
     public MTGDatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
+        setForcedUpgrade();
     }
 
     public Cursor getSets() {

@@ -3,6 +3,7 @@ package com.dbottillo.helper;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardDatabaseHelper;
@@ -92,7 +93,8 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
                     if (BuildConfig.magic) {
                         result.add(MTGSet.createMagicSetFromCursor(cursor));
                     }else{
-                        result.add(HSSet.createHearthstoneSetFromCursor(cursor));
+                        HSSet set = HSSet.createHearthstoneSetFromCursor(cursor);
+                        result.add(set);
                     }
                     cursor.moveToNext();
                 }

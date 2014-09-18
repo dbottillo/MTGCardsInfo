@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
 
+import com.dbottillo.BuildConfig;
 import com.dbottillo.database.HSCardContract.HSCardEntry;
 import com.dbottillo.database.HSSetContract.HSSetEntry;
 
@@ -16,16 +17,18 @@ public class HSDatabaseHelper extends CardDatabaseHelper {
 
     private static final String DATABASE_NAME = "hssearch.db";
     public static final int LIMIT = 400;
-    private static final int DATABASE_VERSION = 1;
 
     public HSDatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
+        setForcedUpgrade();
     }
 
     public Cursor getSets() {
         SQLiteDatabase db = getReadableDatabase();
 
         String query = "SELECT * FROM " + HSSetEntry.TABLE_NAME;
+
+        //Log.d("check", "query: "+query);
 
         return db.rawQuery(query, null);
     }
