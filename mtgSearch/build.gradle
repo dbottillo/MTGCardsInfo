@@ -55,7 +55,7 @@ android {
     }
 
     productFlavors {
-        magicFree {
+        magic {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
             buildConfigField 'int', 'DATABASE_VERSION', '3'
@@ -63,24 +63,8 @@ android {
             versionName "1.6.2"
         }
 
-        magicPaid {
-            applicationId "com.dbottillo.mtgsearch"
-            buildConfigField "Boolean", "magic", "true"
-            buildConfigField 'int', 'DATABASE_VERSION', '3'
-            versionCode 7
-            versionName "1.5"
-        }
-
-        hearthstoneFree {
+        hearthstone {
             applicationId "com.dbottillo.hssearchfree"
-            buildConfigField "Boolean", "magic", "false"
-            buildConfigField 'int', 'DATABASE_VERSION', '1'
-            versionCode 1
-            versionName "1.0"
-        }
-
-        hearthstonePaid {
-            applicationId "com.dbottillo.hssearch"
             buildConfigField "Boolean", "magic", "false"
             buildConfigField 'int', 'DATABASE_VERSION', '1'
             versionCode 1
@@ -101,7 +85,7 @@ task readPasswordFromInput << {
 }
 
 tasks.whenTaskAdded { task ->
-    if (task.name == 'assembleHearthstoneFreeRelease' || task.name == 'assembleMagicFreeRelease')
+    if (task.name == 'assembleHearthstoneRelease' || task.name == 'assembleMagicRelease')
         task.dependsOn readPasswordFromInput
 }
 
