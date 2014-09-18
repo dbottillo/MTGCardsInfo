@@ -173,14 +173,18 @@ public class MTGCardFragment extends DBFragment {
                                 JSONArray price = new JSONArray(response.toString());
                                 updatePriceCard(price.get(0).toString());
                             } catch (JSONException e) {
-                                updatePriceCard(getString(R.string.price_error));
+                                if (isAdded()) {
+                                    updatePriceCard(getString(R.string.price_error));
+                                }
                                 e.printStackTrace();
                             }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    updatePriceCard(getString(R.string.price_error));
+                    if (isAdded()) {
+                        updatePriceCard(getString(R.string.price_error));
+                    }
                 }
             });
             // Add the request to the RequestQueue.
