@@ -21,7 +21,7 @@
                 android:id="@+id/set_chooser"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:background="#344d62"
+                android:background="@color/set_spinner_bg"
                 android:padding="5dp"
                 android:layout_height="40dp">
 
