@@ -95,7 +95,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
         // Set up the action bar to show a dropdown list.
         final ActionBar actionBar = getActionBar();
-        getActionBar().setTitle(R.string.app_name);
+        getActionBar().setTitle(R.string.app_long_name);
 
         if (savedInstanceState == null){
             sets = new ArrayList<GameSet>();
