@@ -1,40 +1,32 @@
 package com.dbottillo.base;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
-import com.google.analytics.tracking.android.Fields;
-import com.google.analytics.tracking.android.GoogleAnalytics;
-import com.google.analytics.tracking.android.Logger;
-import com.google.analytics.tracking.android.MapBuilder;
-import com.google.analytics.tracking.android.Tracker;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Logger;
+import com.google.android.gms.analytics.Tracker;
 
-import java.util.HashMap;
-
-/**
- * Created by danielebottillo on 09/03/2014.
- */
 public class MTGApp extends Application {
 
     Tracker tracker;
 
     @Override
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
         Crashlytics.start(this);
 
         GoogleAnalytics.getInstance(this).getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
-        tracker = GoogleAnalytics.getInstance(this).getTracker(getString(R.string.analytics));
+        tracker = GoogleAnalytics.getInstance(this).newTracker(getString(R.string.analytics));
+        tracker.enableAdvertisingIdCollection(true);
     }
 
-    public void trackPage(String page){
-        HashMap<String, String> hitParameters = new HashMap<String, String>();
-        hitParameters.put(Fields.HIT_TYPE, "appview");
-        hitParameters.put(Fields.SCREEN_NAME, page);
-        tracker.send(hitParameters);
+    public void trackPage(String page) {
+        tracker.setScreenName(page);
+        tracker.send(new HitBuilders.AppViewBuilder().build());
     }
 
     public static final String UA_CATEGORY_UI = "ui";
@@ -48,11 +40,15 @@ public class MTGApp extends Application {
     public static final String UA_ACTION_LIFE_COUNTER = "lifeCounter";
 
 
-    public void trackEvent(String category, String action, String label){
-        tracker.send(MapBuilder.createEvent(category, action, label, null).build());
+    public void trackEvent(String category, String action, String label) {
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory(category)
+                .setAction(action)
+                .setLabel(label)
+                .build());
     }
 
-    public static boolean isPremium(){
+    public static boolean isPremium() {
         return BuildConfig.FLAVOR.equalsIgnoreCase("paid");
     }
 }
