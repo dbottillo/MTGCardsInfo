@@ -1,9 +1,13 @@
 package com.dbottillo.common;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,26 +20,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -124,6 +120,24 @@ public class MTGCardFragment extends DBFragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+        if (card instanceof MTGCard) {
+            IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
+            LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (card instanceof MTGCard) {
+            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
+        }
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -152,43 +166,14 @@ public class MTGCardFragment extends DBFragment {
                 urlImage = "http://mtgimage.com/multiverseid/" + mtgCard.getMultiVerseId() + ".jpg";
             }
 
-            // Instantiate the RequestQueue.
-            RequestQueue queue = Volley.newRequestQueue(getActivity());
-            String url = "http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=" + card.getName().replace(" ", "%20");
-            //Log.e("check","url: "+url);
             updatePriceCard(getString(R.string.loading));
 
-            /*Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+            Intent intent = new Intent(getActivity(), NetworkIntentService.class);
             Bundle params = new Bundle();
             params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
             params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
             intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
-            getActivity().startService(intent);*/
-
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                    new Response.Listener() {
-                        @Override
-                        public void onResponse(Object response) {
-                            try {
-                                JSONArray price = new JSONArray(response.toString());
-                                updatePriceCard(price.get(0).toString());
-                            } catch (JSONException e) {
-                                if (isAdded()) {
-                                    updatePriceCard(getString(R.string.price_error));
-                                }
-                                e.printStackTrace();
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    if (isAdded()) {
-                        updatePriceCard(getString(R.string.price_error));
-                    }
-                }
-            });
-            // Add the request to the RequestQueue.
-            queue.add(stringRequest);
+            getActivity().startService(intent);
 
         } else {
 
@@ -232,6 +217,14 @@ public class MTGCardFragment extends DBFragment {
             }
         });
     }
+
+    private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String price = intent.getStringExtra(NetworkIntentService.REST_RESULT);
+            updatePriceCard(price);
+        }
+    };
 
     private void updatePriceCard(String message) {
         priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
