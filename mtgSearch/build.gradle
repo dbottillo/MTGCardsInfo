@@ -96,8 +96,6 @@ dependencies {
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
     compile 'com.squareup.picasso:picasso:2.3.4'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
 
 }
