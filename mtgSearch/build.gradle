@@ -59,8 +59,8 @@ android {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
             buildConfigField 'int', 'DATABASE_VERSION', '4'
-            versionCode 10
-            versionName "1.6.2"
+            versionCode 11
+            versionName "1.7"
         }
 
         hearthstone {
