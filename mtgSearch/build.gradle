@@ -58,7 +58,7 @@ android {
         magic {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
-            buildConfigField 'int', 'DATABASE_VERSION', '3'
+            buildConfigField 'int', 'DATABASE_VERSION', '4'
             versionCode 10
             versionName "1.6.2"
         }
@@ -92,9 +92,12 @@ tasks.whenTaskAdded { task ->
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:20.0.0'
-    compile 'com.google.android.gms:play-services:5.0.77'
+    compile 'com.google.android.gms:play-services:5.2.08'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
+    compile 'com.squareup.picasso:picasso:2.3.4'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
 
 }
