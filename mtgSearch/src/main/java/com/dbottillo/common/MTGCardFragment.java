@@ -1,7 +1,6 @@
 package com.dbottillo.common;
 
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,26 +23,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dbottillo.BuildConfig;
+import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
-import com.dbottillo.R;
-import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
-import com.squareup.picasso.Downloader;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import javax.xml.transform.ErrorListener;
-
-import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -55,7 +46,9 @@ public class MTGCardFragment extends DBFragment {
 
     public interface DatabaseConnector {
         boolean isCardSaved(GameCard card);
+
         void saveCard(GameCard card);
+
         void removeCard(GameCard card);
     }
 
@@ -110,7 +103,7 @@ public class MTGCardFragment extends DBFragment {
                 }
             });
 
-            FrameLayout layout = (FrameLayout)rootView.findViewById(R.id.banner_container);
+            FrameLayout layout = (FrameLayout) rootView.findViewById(R.id.banner_container);
             layout.addView(getAdView());
 
             getAdView().loadAd(createAdRequest());
@@ -125,20 +118,20 @@ public class MTGCardFragment extends DBFragment {
 
         try {
             databaseConnector = (DatabaseConnector) activity;
-        }catch (ClassCastException e){
+        } catch (ClassCastException e) {
             Log.e(TAG, "activity must implement databaseconnector interface");
         }
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         refreshUI();
     }
 
 
-    private void refreshUI(){
+    private void refreshUI() {
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
 
         if (BuildConfig.magic) {
@@ -161,9 +154,16 @@ public class MTGCardFragment extends DBFragment {
 
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(getActivity());
-            String url ="http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname="+card.getName().replace(" ","%20");
+            String url = "http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=" + card.getName().replace(" ", "%20");
             //Log.e("check","url: "+url);
             updatePriceCard(getString(R.string.loading));
+
+            /*Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+            Bundle params = new Bundle();
+            params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
+            params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
+            intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
+            getActivity().startService(intent);*/
 
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     new Response.Listener() {
@@ -190,13 +190,13 @@ public class MTGCardFragment extends DBFragment {
             // Add the request to the RequestQueue.
             queue.add(stringRequest);
 
-        }else{
+        } else {
 
             HSCard hearthstoneCard = (HSCard) card;
 
             String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + hearthstoneCard.getType() + " <br/><br/> " +
-                    "<b>" + getString(R.string.ah_card) + "</b>: " + hearthstoneCard.getAttack() + "/" + hearthstoneCard.getHealth() + " <br/><br/>"+
-                    "<b>" + getString(R.string.cost_card) + "</b>: " + card.getManaCost()+ " <br/><br/>"+
+                    "<b>" + getString(R.string.ah_card) + "</b>: " + hearthstoneCard.getAttack() + "/" + hearthstoneCard.getHealth() + " <br/><br/>" +
+                    "<b>" + getString(R.string.cost_card) + "</b>: " + card.getManaCost() + " <br/><br/>" +
                     "<b>" + getString(R.string.rarity_card) + "</b>: " + card.getRarity();/*+ " <br/><br/>"+
                     "<b>" + getString(R.string.faction_card) + "</b>: " + ((HSCard) card).getFaction();*/
             cardName.setText(Html.fromHtml(typeHtml));
@@ -207,7 +207,7 @@ public class MTGCardFragment extends DBFragment {
             TextView mechanics = (TextView) getView().findViewById(R.id.set_card);
             if (hearthstoneCard.getMechanics().length() != 0) {
                 mechanics.setText(Html.fromHtml("<b>" + getString(R.string.mechanics_card) + "</b> " + hearthstoneCard.getMechanics()));
-            }else{
+            } else {
                 mechanics.setText("");
             }
 
@@ -233,11 +233,11 @@ public class MTGCardFragment extends DBFragment {
         });
     }
 
-    private void updatePriceCard(String message){
-        priceCard.setText(Html.fromHtml("<b>Price</b>: "+message));
+    private void updatePriceCard(String message) {
+        priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
     }
 
-    private void loadImage(){
+    private void loadImage() {
         retry.setVisibility(View.GONE);
         cardImageContainer.setVisibility(View.VISIBLE);
         final ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
@@ -263,7 +263,7 @@ public class MTGCardFragment extends DBFragment {
     }
 
 
-    private void startCardLoader(){
+    private void startCardLoader() {
         cardLoader.setVisibility(View.VISIBLE);
         final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
         cardLoader.post(new Runnable() {
@@ -273,7 +273,7 @@ public class MTGCardFragment extends DBFragment {
         });
     }
 
-    private void stopCardLoader(){
+    private void stopCardLoader() {
         final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
         cardLoader.post(new Runnable() {
             public void run() {
@@ -291,11 +291,11 @@ public class MTGCardFragment extends DBFragment {
         inflater.inflate(R.menu.card, menu);
 
         MenuItem item = menu.findItem(R.id.action_fav);
-        if (databaseConnector.isCardSaved(card)){
+        if (databaseConnector.isCardSaved(card)) {
             item.setTitle(getString(R.string.favourite_remove));
             item.setIcon(R.drawable.ab_star_colored);
             isSavedOffline = true;
-        }else{
+        } else {
             item.setTitle(getString(R.string.favourite_add));
             item.setIcon(R.drawable.ab_star);
             isSavedOffline = false;
@@ -314,17 +314,17 @@ public class MTGCardFragment extends DBFragment {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
-            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + ((MTGCard)card).getMultiVerseId() + "&type=card";
+            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + ((MTGCard) card).getMultiVerseId() + "&type=card";
             i.putExtra(Intent.EXTRA_TEXT, image);
             startActivity(Intent.createChooser(i, getString(R.id.share_card)));
             return true;
         } else if (i1 == R.id.action_fav) {
-            if (isSavedOffline){
+            if (isSavedOffline) {
                 databaseConnector.removeCard(card);
-                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_SAVED, card.getId()+"");
-            }else{
+                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_SAVED, card.getId() + "");
+            } else {
                 databaseConnector.saveCard(card);
-                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_UNSAVED, card.getId()+"");
+                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_UNSAVED, card.getId() + "");
             }
             getActivity().invalidateOptionsMenu();
         }
@@ -334,7 +334,7 @@ public class MTGCardFragment extends DBFragment {
 
     @Override
     public String getPageTrack() {
-        if (BuildConfig.magic) return "/card/"+((MTGCard)card).getMultiVerseId();
-        return "/card/"+card.getId();
+        if (BuildConfig.magic) return "/card/" + ((MTGCard) card).getMultiVerseId();
+        return "/card/" + card.getId();
     }
 }

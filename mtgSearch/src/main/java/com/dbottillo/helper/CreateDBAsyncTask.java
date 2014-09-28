@@ -1,6 +1,7 @@
 package com.dbottillo.helper;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -9,10 +10,9 @@ import android.widget.Toast;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.DatabaseHelper;
-import com.dbottillo.database.HSSetContract.HSSetEntry;
 import com.dbottillo.database.HSCardContract.HSCardEntry;
+import com.dbottillo.database.HSSetContract.HSSetEntry;
 import com.dbottillo.database.SetContract.SetEntry;
-import com.dbottillo.R;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
@@ -44,10 +44,10 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
 
     DatabaseHelper mDbHelper;
 
-    public CreateDBAsyncTask(Context context, String packageName){
+    public CreateDBAsyncTask(Context context, String packageName) {
         this.context = context;
         this.packageName = packageName;
-        this.mDbHelper= new DatabaseHelper(context);
+        this.mDbHelper = new DatabaseHelper(context);
     }
 
     @Override
@@ -58,34 +58,39 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         if (BuildConfig.magic) {
             db.delete(SetEntry.TABLE_NAME, null, null);
             db.delete(CardEntry.TABLE_NAME, null, null);
-        }else{
+        } else {
             db.delete(HSSetEntry.TABLE_NAME, null, null);
             db.delete(HSCardEntry.TABLE_NAME, null, null);
         }
-        try{
+        try {
             int set_list = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(set_list);
             JSONArray json = new JSONArray(jsonString);
-            for (int i=json.length()-1; i>=0; i--){
+            for (int i = json.length() - 1; i >= 0; i--) {
 
                 if (BuildConfig.magic) {
                     JSONObject setJ = json.getJSONObject(i);
-                    long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
-                    Log.e("MTG", "row id " + newRowId + " -> " + setJ.getString("code"));
+                    try {
+                        String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
 
-                    String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
-                    JSONObject jsonCards = new JSONObject(jsonSetString);
-                    JSONArray cards = jsonCards.getJSONArray("cards");
-                    //for (int k=0; k<1; k++){
-                    for (int k = 0; k < cards.length(); k++) {
-                        JSONObject cardJ = cards.getJSONObject(k);
-                        //Log.e("BBM", "cardJ "+cardJ);
+                        long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
+                        Log.e("MTG", "row id " + newRowId + " -> " + setJ.getString("code"));
 
-                        long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
-                        //Log.e("MTG", "row id card"+newRowId2);
-                        //result.add(MTGCard.createCardFromJson(i, cardJ));
+                        JSONObject jsonCards = new JSONObject(jsonSetString);
+                        JSONArray cards = jsonCards.getJSONArray("cards");
+                        //for (int k=0; k<1; k++){
+                        for (int k = 0; k < cards.length(); k++) {
+                            JSONObject cardJ = cards.getJSONObject(k);
+                            //Log.e("BBM", "cardJ "+cardJ);
+
+                            long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
+                            //Log.e("MTG", "row id card"+newRowId2);
+                            //result.add(MTGCard.createCardFromJson(i, cardJ));
+                        }
+                    } catch (Resources.NotFoundException e) {
+                        Log.e("MTG", setJ.getString("code") + " file not found");
                     }
-                }else{
+                } else {
                     String setJ = json.getString(i);
                     long newRowId = db.insert(HSSetEntry.TABLE_NAME, null, HSSet.createContentValueFromJSON(setJ));
                     Log.e("MTG", "row id " + newRowId + " -> " + setJ);
@@ -104,15 +109,15 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 }
 
                 /*
-            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/db_mtg.sqlite'
-            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/db_mtg.sqlite
+            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/mtgsearch.db'
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/mtgsearch.db
 
             Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.hssearchfree.debug cat /data/data/com.dbottillo.hssearchfree.debug/databases/HSCardsInfo.db > /sdcard/db_hs.sqlite'
             Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/db_hs.sqlite
             */
             }
-        }catch (JSONException e) {
-            Log.e("MTG", "error create db async task: "+e.getLocalizedMessage());
+        } catch (JSONException e) {
+            Log.e("MTG", "error create db async task: " + e.getLocalizedMessage());
             error = true;
             errorMessage = e.getLocalizedMessage();
             e.printStackTrace();
@@ -121,39 +126,39 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         return result;
     }
 
-    private int setToLoad(String code){
+    private int setToLoad(String code) {
         String stringToLoad = code.toLowerCase();
-        if (stringToLoad.equalsIgnoreCase("10e")){
+        if (stringToLoad.equalsIgnoreCase("10e")) {
             stringToLoad = "e10";
-        }else if (stringToLoad.equalsIgnoreCase("9ed")){
+        } else if (stringToLoad.equalsIgnoreCase("9ed")) {
             stringToLoad = "ed9";
-        }else if (stringToLoad.equalsIgnoreCase("5dn")){
+        } else if (stringToLoad.equalsIgnoreCase("5dn")) {
             stringToLoad = "dn5";
-        }else if (stringToLoad.equalsIgnoreCase("8ed")){
+        } else if (stringToLoad.equalsIgnoreCase("8ed")) {
             stringToLoad = "ed8";
-        }else if (stringToLoad.equalsIgnoreCase("7ed")){
+        } else if (stringToLoad.equalsIgnoreCase("7ed")) {
             stringToLoad = "ed7";
-        }else if (stringToLoad.equalsIgnoreCase("6ed")){
+        } else if (stringToLoad.equalsIgnoreCase("6ed")) {
             stringToLoad = "ed6";
-        }else if (stringToLoad.equalsIgnoreCase("5ed")){
+        } else if (stringToLoad.equalsIgnoreCase("5ed")) {
             stringToLoad = "ed5";
-        }else if (stringToLoad.equalsIgnoreCase("4ed")){
+        } else if (stringToLoad.equalsIgnoreCase("4ed")) {
             stringToLoad = "ed4";
-        }else if (stringToLoad.equalsIgnoreCase("3ed")){
+        } else if (stringToLoad.equalsIgnoreCase("3ed")) {
             stringToLoad = "ed3";
-        }else if (stringToLoad.equalsIgnoreCase("2ed")){
+        } else if (stringToLoad.equalsIgnoreCase("2ed")) {
             stringToLoad = "ed2";
         }
-        return context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
+        return context.getResources().getIdentifier(stringToLoad + "_x", "raw", packageName);
     }
 
-    private int hsSetToLoad(String code){
-        String stringToLoad = code.toLowerCase().replace(" ","_");
-        return context.getResources().getIdentifier(stringToLoad+"", "raw", packageName);
+    private int hsSetToLoad(String code) {
+        String stringToLoad = code.toLowerCase().replace(" ", "_");
+        return context.getResources().getIdentifier(stringToLoad + "", "raw", packageName);
     }
 
 
-    private String loadFile(int file){
+    private String loadFile(int file) throws Resources.NotFoundException {
         InputStream is = context.getResources().openRawResource(file);
 
         Writer writer = new StringWriter();
@@ -189,7 +194,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
     protected void onPostExecute(ArrayList<Object> result) {
         if (error) {
             Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(context, "finished", Toast.LENGTH_SHORT).show();
         }
     }
