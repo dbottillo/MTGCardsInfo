@@ -3,7 +3,6 @@ package com.dbottillo.common;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
+import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
-import com.dbottillo.R;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.HSSet;
@@ -116,7 +115,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
                 }
             });
 
-            FrameLayout layout = (FrameLayout)rootView.findViewById(R.id.banner_container);
+            FrameLayout layout = (FrameLayout) rootView.findViewById(R.id.banner_container);
             layout.addView(getAdView());
 
             getAdView().loadAd(createAdRequest());
@@ -166,6 +165,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
     @Override
     public void onTaskFinished(ArrayList<?> result) {
+        if (getActivity() == null) {
+            return;
+        }
         gameSet.clear();
         int i = 0;
         boolean premium = getApp().isPremium();
