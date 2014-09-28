@@ -39,7 +39,7 @@ public class NetworkIntentService extends IntentService {
                     .url(url)
                     .build();
             Response response = client.newCall(request).execute();
-            JSONArray price = new JSONArray(response.toString());
+            JSONArray price = new JSONArray(response.body().string());
             res = price.get(0).toString();
         } catch (Exception e) {
             res = getApplicationContext().getString(R.string.price_error);
