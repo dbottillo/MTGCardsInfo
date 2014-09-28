@@ -4,13 +4,20 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import com.dbottillo.R;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 
 import org.json.JSONArray;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class NetworkIntentService extends IntentService {
 
@@ -25,8 +32,6 @@ public class NetworkIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        OkHttpClient client = new OkHttpClient();
-
         String res;
         Bundle extras = intent.getExtras();
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
@@ -35,18 +40,56 @@ public class NetworkIntentService extends IntentService {
 
         String url = "http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=" + cardName;
         try {
-            Request request = new Request.Builder()
-                    .url(url)
-                    .build();
-            Response response = client.newCall(request).execute();
-            JSONArray price = new JSONArray(response.body().string());
-            res = price.get(0).toString();
+            res = doNetworkRequest(url);
         } catch (Exception e) {
+            Log.e("Price Card Error", e.getClass() + " - " + e.getLocalizedMessage());
             res = getApplicationContext().getString(R.string.price_error);
         }
 
         Intent intentRes = new Intent(idRequest);
         intentRes.putExtra(REST_RESULT, res);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intentRes);
+    }
+
+    private String doNetworkRequest(String url) throws Exception {
+        URL uri = new URL(url);
+        HttpURLConnection urlConnection = (HttpURLConnection) uri.openConnection();
+        urlConnection.setRequestMethod("GET");
+
+        if (urlConnection.getResponseCode() == 200) {
+            InputStream in = urlConnection.getInputStream();
+            String res = getEntityAsString(in, urlConnection.getContentEncoding());
+            JSONArray price = new JSONArray(res);
+            return price.get(0).toString();
+        } else {
+            return getApplicationContext().getString(R.string.price_error);
+        }
+    }
+
+    private String getEntityAsString(InputStream responseEntity, String encoding) throws Exception {
+        String r = null;
+        InputStream istream = null;
+        Writer writer = null;
+        Reader reader = null;
+        try {
+            // Stream length could be greater than the response Content-Length,
+            // because the stream will unzip content transparently
+            reader = new BufferedReader(new InputStreamReader(responseEntity, encoding == null ? "UTF-8" : encoding), 8192);
+            writer = new StringWriter();
+            int l;
+            char[] buf = new char[8192];
+            while ((l = reader.read(buf)) != -1) {
+                writer.write(buf, 0, l);
+            }
+            r = writer.toString();
+        } finally {
+            if (writer != null)
+                writer.close();
+            if (reader != null)
+                reader.close();
+            if (istream != null)
+                istream.close();
+        }
+        return r;
     }
 }
