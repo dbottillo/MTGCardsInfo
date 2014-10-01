@@ -3,13 +3,10 @@ package com.dbottillo.helper;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardDatabaseHelper;
 import com.dbottillo.database.DB40Helper;
-import com.dbottillo.database.HSDatabaseHelper;
-import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.HSSet;
@@ -34,8 +31,9 @@ import java.util.Comparator;
  */
 public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
-    public interface DBAsyncTaskListener{
+    public interface DBAsyncTaskListener {
         public void onTaskFinished(ArrayList<?> objects);
+
         public void onTaskEndWithError(String error);
     }
 
@@ -57,7 +55,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     CardDatabaseHelper mDbHelper;
     DB40Helper db40Helper;
 
-    public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type){
+    public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type) {
         this.context = context;
         this.listener = listener;
         this.type = type;
@@ -65,17 +63,17 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         this.db40Helper = DB40Helper.getInstance(context);
     }
 
-    public void attach(Context context, DBAsyncTaskListener listener){
+    public void attach(Context context, DBAsyncTaskListener listener) {
         this.listener = listener;
-        this.context =  context;
+        this.context = context;
     }
 
-    public void detach(){
+    public void detach() {
         this.context = null;
         this.listener = null;
     }
 
-    public DBAsyncTask setPackageName(String packageName){
+    public DBAsyncTask setPackageName(String packageName) {
         this.packageName = packageName;
         return this;
     }
@@ -84,15 +82,15 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
-        if (type == TASK_SET_LIST){
+        if (type == TASK_SET_LIST) {
 
             Cursor cursor = mDbHelper.getSets();
 
-            if (cursor.moveToFirst()){
-                while(!cursor.isAfterLast()){
+            if (cursor.moveToFirst()) {
+                while (!cursor.isAfterLast()) {
                     if (BuildConfig.magic) {
                         result.add(MTGSet.createMagicSetFromCursor(cursor));
-                    }else{
+                    } else {
                         HSSet set = HSSet.createHearthstoneSetFromCursor(cursor);
                         result.add(set);
                     }
@@ -102,10 +100,12 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
             cursor.close();
 
         } else if (type == TASK_SAVED) {
+            db40Helper.openDb();
             ArrayList<GameCard> cards = db40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
+            db40Helper.closeDb();
 
         } else if (type == TASK_PLAYER) {
             ArrayList<Player> players = db40Helper.getPlayers();
@@ -115,17 +115,17 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         } else {
 
             Cursor cursor = null;
-            if (type == TASK_SINGLE_SET){
+            if (type == TASK_SINGLE_SET) {
                 cursor = mDbHelper.getSet(params[0]);
-            }else{
+            } else {
                 cursor = mDbHelper.searchCard(params[0]);
             }
 
-            if (cursor.moveToFirst()){
-                while(!cursor.isAfterLast()){
+            if (cursor.moveToFirst()) {
+                while (!cursor.isAfterLast()) {
                     if (BuildConfig.magic) {
                         result.add(MTGCard.createCardFromCursor(cursor));
-                    }else{
+                    } else {
                         result.add(HSCard.createCardFromCursor(cursor));
                     }
 
@@ -150,30 +150,30 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         return result;
     }
 
-    private int setToLoad(String code){
+    private int setToLoad(String code) {
         String stringToLoad = code.toLowerCase();
-        if (stringToLoad.equalsIgnoreCase("10e")){
+        if (stringToLoad.equalsIgnoreCase("10e")) {
             stringToLoad = "e10";
-        }else if (stringToLoad.equalsIgnoreCase("9ed")){
+        } else if (stringToLoad.equalsIgnoreCase("9ed")) {
             stringToLoad = "ed9";
-        }else if (stringToLoad.equalsIgnoreCase("5dn")){
+        } else if (stringToLoad.equalsIgnoreCase("5dn")) {
             stringToLoad = "dn5";
-        }else if (stringToLoad.equalsIgnoreCase("8ed")){
+        } else if (stringToLoad.equalsIgnoreCase("8ed")) {
             stringToLoad = "ed8";
-        }else if (stringToLoad.equalsIgnoreCase("7ed")){
+        } else if (stringToLoad.equalsIgnoreCase("7ed")) {
             stringToLoad = "ed7";
-        }else if (stringToLoad.equalsIgnoreCase("6ed")){
+        } else if (stringToLoad.equalsIgnoreCase("6ed")) {
             stringToLoad = "ed6";
-        }else if (stringToLoad.equalsIgnoreCase("5ed")){
+        } else if (stringToLoad.equalsIgnoreCase("5ed")) {
             stringToLoad = "ed5";
-        }else if (stringToLoad.equalsIgnoreCase("4ed")){
+        } else if (stringToLoad.equalsIgnoreCase("4ed")) {
             stringToLoad = "ed4";
-        }else if (stringToLoad.equalsIgnoreCase("3ed")){
+        } else if (stringToLoad.equalsIgnoreCase("3ed")) {
             stringToLoad = "ed3";
-        }else if (stringToLoad.equalsIgnoreCase("2ed")){
+        } else if (stringToLoad.equalsIgnoreCase("2ed")) {
             stringToLoad = "ed2";
         }
-        return context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
+        return context.getResources().getIdentifier(stringToLoad + "_x", "raw", packageName);
     }
 
     /*@Override
@@ -252,7 +252,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
         }
     }
 
-    private String loadFile(int file){
+    private String loadFile(int file) {
         InputStream is = context.getResources().openRawResource(file);
 
         Writer writer = new StringWriter();
