@@ -8,18 +8,13 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
@@ -31,21 +26,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.BuildConfig;
+import com.dbottillo.R;
 import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.adapters.LeftMenuAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
-import com.dbottillo.database.CardDatabaseHelper;
-import com.dbottillo.database.DatabaseHelper;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
-import com.dbottillo.R;
 import com.dbottillo.lifecounter.LifeCounterActivity;
 import com.dbottillo.resources.GameSet;
 import com.dbottillo.saved.SavedActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
@@ -87,7 +79,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         setListBg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (setList.getHeight() > 0){
+                if (setList.getHeight() > 0) {
                     showHideSetList(false);
                 }
             }
@@ -97,15 +89,18 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         final ActionBar actionBar = getActionBar();
         getActionBar().setTitle(R.string.app_long_name);
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             sets = new ArrayList<GameSet>();
-
-            showLoadingInActionBar();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
-        }else{
+
+        } else {
             sets = savedInstanceState.getParcelableArrayList("SET");
             currentSetPosition = savedInstanceState.getInt("currentSetPosition");
-            loadSet();
+            if (currentSetPosition < 0) {
+                new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
+            } else {
+                loadSet();
+            }
         }
 
         setAdapter = new GameSetAdapter(this, sets);
@@ -153,16 +148,16 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
                 super.applyTransformation(interpolatedTime, t);
-                if (targetHeight > startHeight){
+                if (targetHeight > startHeight) {
                     int newHeight = (int) (startHeight + (interpolatedTime * targetHeight));
                     setHeightView(setList, newHeight);
                     setHeightView(setListBg, newHeight);
                     setArrow.setRotation(startRotation + (180 * interpolatedTime));
                 } else {
-                    int newHeight = (int) (startHeight - startHeight*interpolatedTime);
+                    int newHeight = (int) (startHeight - startHeight * interpolatedTime);
                     setHeightView(setList, newHeight);
                     setHeightView(setListBg, newHeight);
-                    setArrow.setRotation( startRotation - (180 * interpolatedTime));
+                    setArrow.setRotation(startRotation - (180 * interpolatedTime));
                 }
             }
         };
@@ -175,7 +170,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                if (loadSet){
+                if (loadSet) {
                     /*if (!getApp().isPremium() && position > 2){
                         showGoToPremium();
                         return false;
@@ -199,7 +194,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     }
 
-    private void setHeightView(View view, int value){
+    private void setHeightView(View view, int value) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
         params.height = value;
         view.setLayoutParams(params);
@@ -240,11 +235,14 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         getActionBar().setHomeButtonEnabled(true);
 
         final ArrayList<LeftMenuAdapter.LeftMenuItem> items = new ArrayList<LeftMenuAdapter.LeftMenuItem>();
-        for (LeftMenuAdapter.LeftMenuItem leftMenuItem : LeftMenuAdapter.LeftMenuItem.values()){
+        for (LeftMenuAdapter.LeftMenuItem leftMenuItem : LeftMenuAdapter.LeftMenuItem.values()) {
             boolean skip = false;
-            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.CREATE_DB && !BuildConfig.DEBUG) skip = true;
-            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER && !BuildConfig.magic) skip = true;
-            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH && !BuildConfig.DEBUG) skip = true;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.CREATE_DB && !BuildConfig.DEBUG)
+                skip = true;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER && !BuildConfig.magic)
+                skip = true;
+            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH && !BuildConfig.DEBUG)
+                skip = true;
             if (!skip) {
                 items.add(leftMenuItem);
             }
@@ -282,10 +280,10 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         }
     }
 
-    private void handleIntent(Intent intent){
+    private void handleIntent(Intent intent) {
         String query = intent.getStringExtra(SearchManager.QUERY);
         getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "done", query);
-        if (query.length() < 3){
+        if (query.length() < 3) {
             Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
             return;
         }
@@ -297,13 +295,13 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putInt("currentSetPosition",currentSetPosition);
+        outState.putInt("currentSetPosition", currentSetPosition);
         outState.putParcelableArrayList("SET", sets);
     }
 
-    private void loadSet(){
+    private void loadSet() {
         slidingPanel.collapsePane();
-        ((TextView)findViewById(R.id.set_chooser_name)).setText(sets.get(currentSetPosition).getName());
+        ((TextView) findViewById(R.id.set_chooser_name)).setText(sets.get(currentSetPosition).getName());
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
                 .commit();
@@ -311,17 +309,16 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     @Override
     public void onTaskFinished(ArrayList<?> result) {
-        currentSetPosition = getSharedPreferences().getInt("setPosition",0);
+        currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
         setAdapter.setCurrent(currentSetPosition);
 
         sets.clear();
-        for (Object set : result){
+        for (Object set : result) {
             sets.add((GameSet) set);
         }
         setAdapter.notifyDataSetChanged();
         result.clear();
 
-        hideLoadingFromActionBar();
         loadSet();
     }
 
@@ -330,13 +327,13 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 
-    public SlidingUpPanelLayout getSlidingPanel(){
+    public SlidingUpPanelLayout getSlidingPanel() {
         return slidingPanel;
     }
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
-        setRotationArrow(180 - (180*slideOffset));
+        setRotationArrow(180 - (180 * slideOffset));
     }
 
     @Override
@@ -360,7 +357,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     }
 
-    private void setRotationArrow(float angle){
+    private void setRotationArrow(float angle) {
         if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
         else arrow.setRotation(angle);
     }
@@ -371,7 +368,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (slidingPanel.isExpanded()){
+        if (slidingPanel.isExpanded()) {
             slidingPanel.collapsePane();
             return false;
         }
@@ -396,7 +393,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
             int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
             TextView textView = (TextView) searchView.findViewById(id);
             textView.setHintTextColor(getResources().getColor(R.color.light_grey));
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
@@ -437,21 +434,21 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         LeftMenuAdapter.LeftMenuItem item = leftMenuAdapter.getItem(position);
-        if (item == LeftMenuAdapter.LeftMenuItem.FAVOURITE){
+        if (item == LeftMenuAdapter.LeftMenuItem.FAVOURITE) {
             startActivity(new Intent(this, SavedActivity.class));
 
-        } else if (item == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER){
+        } else if (item == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER) {
             startActivity(new Intent(this, LifeCounterActivity.class));
 
-        }else if (item == LeftMenuAdapter.LeftMenuItem.ABOUT){
+        } else if (item == LeftMenuAdapter.LeftMenuItem.ABOUT) {
             openDialog(DBDialog.ABOUT);
 
-        }else if (item == LeftMenuAdapter.LeftMenuItem.CREATE_DB){
+        } else if (item == LeftMenuAdapter.LeftMenuItem.CREATE_DB) {
             // NB: WARNING, FOR RECREATE DATABASE
             String packageName = getApplication().getPackageName();
-            new CreateDBAsyncTask(this,packageName).execute();
+            new CreateDBAsyncTask(this, packageName).execute();
 
-        }else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH){
+        } else if (item == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH) {
             throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawer(mDrawerList);
@@ -459,9 +456,9 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     @Override
     public void onBackPressed() {
-        if (setList.getHeight() > 0){
+        if (setList.getHeight() > 0) {
             showHideSetList(false);
-        }else {
+        } else {
             super.onBackPressed();
         }
     }
