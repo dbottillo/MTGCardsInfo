@@ -20,11 +20,8 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.common.CardsActivity;
 import com.dbottillo.common.MTGCardsFragment;
-import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.resources.GameCard;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -38,7 +35,6 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     private SmoothProgressBar progressBar;
     private TextView emptyView;
 
-    private DB40Helper db40Helper;
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
@@ -68,20 +64,12 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        db40Helper = DB40Helper.getInstance(activity);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        db40Helper.openDb();
         loadCards();
-    }
-
-    @Override
-    public void onPause() {
-        db40Helper.closeDb();
-        super.onPause();
     }
 
     private void loadCards() {
@@ -101,7 +89,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "saved_card_at_pos:"+position);
+        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "saved_card_at_pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
@@ -112,7 +100,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onTaskFinished(ArrayList<?> objects) {
         savedCards.clear();
-        for (Object card : objects){
+        for (Object card : objects) {
             savedCards.add((GameCard) card);
         }
         adapter.notifyDataSetChanged();
