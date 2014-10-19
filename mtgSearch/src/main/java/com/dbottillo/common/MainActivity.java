@@ -175,7 +175,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
                         showGoToPremium();
                         return false;
                     }*/
-                    getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "spinner_selected", sets.get(currentSetPosition).getCode());
+                    getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "set_selected", sets.get(currentSetPosition).getCode());
                     SharedPreferences.Editor editor = getSharedPreferences().edit();
                     editor.putInt("setPosition", currentSetPosition);
                     editor.apply();
