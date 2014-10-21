@@ -5,7 +5,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
@@ -16,8 +18,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
@@ -48,9 +52,19 @@ public class MTGCardFragment extends DBFragment {
         void removeCard(GameCard card);
     }
 
+    private static final float RATIO_CARD = 1.39622641509434f;
+
+    private int widthAvailable;
+    private int heightAvailable;
+
     public static final String CARD = "card";
 
+    View mainContainer;
+
+    boolean isLandscape;
+
     private GameCard card;
+    ImageView cardImage;
     ImageView cardLoader;
     View retry;
     View cardImageContainer;
@@ -73,9 +87,11 @@ public class MTGCardFragment extends DBFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_card, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_card, container, false);
 
         card = getArguments().getParcelable(CARD);
+        mainContainer = rootView.findViewById(R.id.fragment_card_container);
+        cardImage = (ImageView) rootView.findViewById(R.id.image_card);
         cardImageContainer = rootView.findViewById(R.id.image_card_container);
         cardLoader = (ImageView) rootView.findViewById(R.id.image_card_loader);
         retry = rootView.findViewById(R.id.image_card_retry);
@@ -105,6 +121,24 @@ public class MTGCardFragment extends DBFragment {
             getAdView().loadAd(createAdRequest());
         }
 
+        mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+                widthAvailable = mainContainer.getWidth() - paddingCard * 2;
+                if (isLandscape) {
+                    widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
+                }
+                heightAvailable = mainContainer.getHeight() - paddingCard * 2;
+                updateSizeImage();
+                if (Build.VERSION.SDK_INT < 16) {
+                    mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                } else {
+                    mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            }
+        });
+
         return rootView;
     }
 
@@ -114,6 +148,8 @@ public class MTGCardFragment extends DBFragment {
 
         try {
             databaseConnector = (DatabaseConnector) activity;
+            isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
         } catch (ClassCastException e) {
             Log.e(TAG, "activity must implement databaseconnector interface");
         }
@@ -230,10 +266,29 @@ public class MTGCardFragment extends DBFragment {
         priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
     }
 
+    private void updateSizeImage() {
+        float ratioScreen = (float) heightAvailable / (float) widthAvailable;
+        // screen taller than magic card, we can take the width
+        int wImage = widthAvailable;
+        int hImage = (int) (widthAvailable * RATIO_CARD);
+        if (!isLandscape && (ratioScreen > RATIO_CARD || hImage > heightAvailable)) {
+            // screen wider than magic card, we need to calculate from the size
+            hImage = heightAvailable;
+            wImage = (int) (heightAvailable / RATIO_CARD);
+        }
+        if (getResources().getBoolean(R.bool.isTablet)) {
+            wImage = (int) (wImage * 0.8);
+            hImage = (int) (hImage * 0.8);
+        }
+        RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) cardImage.getLayoutParams();
+        par.width = wImage;
+        par.height = hImage;
+        cardImage.setLayoutParams(par);
+    }
+
     private void loadImage() {
         retry.setVisibility(View.GONE);
         cardImageContainer.setVisibility(View.VISIBLE);
-        final ImageView cardImage = (ImageView) getView().findViewById(R.id.image_card);
 
         cardImage.setVisibility(View.GONE);
 
