@@ -1,16 +1,12 @@
 package com.dbottillo.common;
 
-import android.app.ActionBar;
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,23 +24,22 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.adapters.LeftMenuAdapter;
-import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.lifecounter.LifeCounterActivity;
 import com.dbottillo.resources.GameSet;
 import com.dbottillo.saved.SavedActivity;
+import com.dbottillo.search.SearchActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 
-public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
+public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
     private ArrayList<GameSet> sets;
     private GameSetAdapter setAdapter;
 
-    private SlidingUpPanelLayout slidingPanel;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
@@ -55,11 +49,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
     private ListView setList;
     private View container;
 
-    private FilterFragment filterFragment;
-
-    SearchView searchView;
-    ImageView arrow;
-
     private int currentSetPosition = -1;
 
     @Override
@@ -68,9 +57,8 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         setContentView(R.layout.activity_main);
 
         setupDrawerLayout();
+        setupSlidingPanel(this);
 
-        slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        slidingPanel.setPanelSlideListener(this);
         container = findViewById(R.id.container);
         setListBg = findViewById(R.id.set_list_bg);
         setList = (ListView) findViewById(R.id.set_list);
@@ -86,7 +74,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         });
 
         // Set up the action bar to show a dropdown list.
-        final ActionBar actionBar = getActionBar();
         getActionBar().setTitle(R.string.app_long_name);
 
         if (savedInstanceState == null) {
@@ -117,15 +104,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
                 }
             }
         });
-
-        if (BuildConfig.magic) {
-            filterFragment = new FilterFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.filter, filterFragment)
-                    .commit();
-        } else {
-            slidingPanel.setPanelHeight(0);
-        }
 
         findViewById(R.id.set_chooser).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,7 +168,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
             }
         });
-        slidingPanel.startAnimation(animation);
+        startAnimation(animation);
 
     }
 
@@ -290,7 +268,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(query))
                 .commit();
-        slidingPanel.collapsePane();
+        collapseSlidingPanel();
     }
 
     @Override
@@ -300,7 +278,7 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
     }
 
     private void loadSet() {
-        slidingPanel.collapsePane();
+        collapseSlidingPanel();
         ((TextView) findViewById(R.id.set_chooser_name)).setText(sets.get(currentSetPosition).getName());
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
@@ -327,9 +305,6 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 
-    public SlidingUpPanelLayout getSlidingPanel() {
-        return slidingPanel;
-    }
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
@@ -357,61 +332,12 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
 
     }
 
-    private void setRotationArrow(float angle) {
-        if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
-        else arrow.setRotation(angle);
-    }
-
-    public void onToggleClicked(View view) {
-        filterFragment.onToggleClicked(view);
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (slidingPanel.isExpanded()) {
-            slidingPanel.collapsePane();
-            return false;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        // Get the SearchView and set the searchable configuration
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) searchItem.getActionView();
-        // Assumes current activity is the searchable activity
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
-
-        try {
-            int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-            TextView textView = (TextView) searchView.findViewById(id);
-            textView.setHintTextColor(getResources().getColor(R.color.light_grey));
-        } catch (Exception e) {
-
-        }
-
-        MenuItemCompat.setOnActionExpandListener(searchItem,
-                new MenuItemCompat.OnActionExpandListener() {
-
-                    @Override
-                    public boolean onMenuItemActionExpand(MenuItem item) {
-                        slidingPanel.collapsePane();
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onMenuItemActionCollapse(MenuItem item) {
-                        loadSet();
-                        return true;
-                    }
-                });
 
         searchItem.setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
 
@@ -421,6 +347,10 @@ public class MainActivity extends DBActivity implements DBAsyncTask.DBAsyncTaskL
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        if (item.getItemId() == R.id.action_search) {
+            startActivity(new Intent(this, SearchActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

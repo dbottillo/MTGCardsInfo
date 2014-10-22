@@ -20,17 +20,20 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
         </activity>
 
         <activity
             android:name=".common.CardsActivity"
             android:theme="@style/MTGSearchTheme.ActionBar" />
+
+        <activity
+            android:name=".search.SearchActivity"
+            android:theme="@style/MTGSearchTheme.ActionBar">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
 
         <activity
             android:name=".saved.SavedActivity"
