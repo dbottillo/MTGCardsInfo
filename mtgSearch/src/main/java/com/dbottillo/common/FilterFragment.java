@@ -30,8 +30,8 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        MainActivity main = (MainActivity) getActivity();
-        main.getSlidingPanel().setDragView(getView().findViewById(R.id.filter_draggable));
+        FilterActivity filterActivity = (FilterActivity) getActivity();
+        filterActivity.getSlidingPanel().setDragView(getView().findViewById(R.id.filter_draggable));
 
         if (!getApp().isPremium()) {
             createAdView("ca-app-pub-8119815713373556/7301149617");
@@ -166,8 +166,8 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "close_filter");
-        MainActivity main = (MainActivity) getActivity();
-        main.getSlidingPanel().collapsePane();
+        FilterActivity filterActivity = (FilterActivity) getActivity();
+        filterActivity.getSlidingPanel().collapsePane();
     }
 
     @Override

@@ -1,10 +1,12 @@
 package com.dbottillo.base;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.dialog.GoToPremiumFragment;
@@ -74,5 +76,16 @@ public abstract class DBActivity extends FragmentActivity {
         }
         ft.addToBackStack(null);
         dbDialog.getFragment().show(ft, dbDialog.getTag());
+    }
+
+    protected void hideIme() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), 0);
+        }
+
+        if (getCurrentFocus() != null) {
+            getCurrentFocus().clearFocus();
+        }
     }
 }
