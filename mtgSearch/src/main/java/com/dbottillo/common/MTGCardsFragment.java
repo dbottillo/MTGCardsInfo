@@ -14,12 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dbottillo.BuildConfig;
+import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
-import com.dbottillo.R;
 import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
@@ -129,9 +127,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         actionImage = menu.findItem(R.id.action_image);
 
-        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)){
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)) {
             actionImage.setChecked(true);
-        }else{
+        } else {
             actionImage.setChecked(false);
         }
     }
@@ -140,7 +138,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
         if (i == R.id.action_image) {
-            getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "image_on_off");
+            getApp().trackEvent(MTGApp.UA_CATEGORY_CARD, "image_on_off", "");
             boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putBoolean(PREF_SHOW_IMAGE, !showImage);

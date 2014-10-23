@@ -3,20 +3,18 @@ package com.dbottillo.common;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.FilterHelper;
-import com.dbottillo.R;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -55,7 +53,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         updateFilterUI();
@@ -106,7 +104,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         } else {
         }
 
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_TOGGLE, label);
+        getApp().trackEvent(MTGApp.UA_CATEGORY_FILTER, MTGApp.UA_ACTION_TOGGLE, label);
 
         editor.commit();
 
@@ -114,7 +112,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     }
 
     public void updateFilterUI() {
-        trackEvent(MTGApp.UA_CATEGORY_UI, "update_filter", "");
+        trackEvent(MTGApp.UA_CATEGORY_FILTER, "update", "");
         String filterString = "";
 
         String colorActive = "#FFF";
@@ -126,38 +124,38 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true), "R", "#FF0000");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true), "G", "#7ED321");
 
-        filterString +=" - ";
+        filterString += " - ";
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true), "A", "#CCCCCC");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true), "L", "#E6FF00");
-        filterString +="  - ";
+        filterString += "  - ";
 
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true), "C", "#000000");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true), "U", "#AAAAAA");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true), "R", "#BD9723");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true), "M", "#D46805");
 
-        ((ToggleButton)getView().findViewById(R.id.toggle_white)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_blue)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_black)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLACK, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_red)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_green)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_artifact)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_land)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_common)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_uncommon)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_rare)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true));
-        ((ToggleButton)getView().findViewById(R.id.toggle_myhtic)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_white)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_blue)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLUE, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_black)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_BLACK, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_red)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_RED, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_green)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_artifact)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_land)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_common)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_uncommon)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_rare)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_myhtic)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_MYHTIC, true));
 
         TextView textFilter = (TextView) getView().findViewById(R.id.filter_text);
         textFilter.setText(Html.fromHtml(filterString));
     }
 
-    public String addEntryFilterString(boolean active, String text, String colorActive){
+    public String addEntryFilterString(boolean active, String text, String colorActive) {
         String filterString = "";
-        if (active){
-            filterString += "<font color=\""+colorActive+"\">"+text+"</font>";
-        }else{
-            filterString += "<font color=\"#12212F\">"+text+"</font>";
+        if (active) {
+            filterString += "<font color=\"" + colorActive + "\">" + text + "</font>";
+        } else {
+            filterString += "<font color=\"#12212F\">" + text + "</font>";
         }
         filterString += "&nbsp;";
         return filterString;
@@ -165,7 +163,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "close_filter");
+        trackEvent(MTGApp.UA_CATEGORY_FILTER, MTGApp.UA_ACTION_CLOSE, "");
         FilterActivity filterActivity = (FilterActivity) getActivity();
         filterActivity.getSlidingPanel().collapsePane();
     }

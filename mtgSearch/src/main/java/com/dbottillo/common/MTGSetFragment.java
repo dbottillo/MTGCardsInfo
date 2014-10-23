@@ -271,7 +271,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "card_at_pos:" + position);
+        trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);

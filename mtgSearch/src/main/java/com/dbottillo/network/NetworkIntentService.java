@@ -4,9 +4,9 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.dbottillo.R;
+import com.dbottillo.helper.LOG;
 
 import org.json.JSONArray;
 
@@ -25,6 +25,7 @@ public class NetworkIntentService extends IntentService {
     public static final String EXTRA_ID = "NetworkIntentService.EXTRA_ID";
     public static final String EXTRA_CARD_NAME = "NetworkIntentService.EXTRA_CARD_NAME";
     public static final String REST_RESULT = "com.dbottillo.network..REST_RESULT";
+    public static final String REST_ERROR = "com.dbottillo.network..REST_ERROR";
 
     public NetworkIntentService() {
         super("NetworkIntentService");
@@ -37,17 +38,20 @@ public class NetworkIntentService extends IntentService {
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
         String cardName = params.getString(EXTRA_CARD_NAME);
         String idRequest = params.getString(EXTRA_ID);
+        String stringError = null;
 
         String url = "http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=" + cardName;
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
-            Log.e("Price Card Error", e.getClass() + " - " + e.getLocalizedMessage());
+            LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
             res = getApplicationContext().getString(R.string.price_error);
+            stringError = url;
         }
 
         Intent intentRes = new Intent(idRequest);
         intentRes.putExtra(REST_RESULT, res);
+        intentRes.putExtra(REST_ERROR, stringError);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intentRes);
     }
 

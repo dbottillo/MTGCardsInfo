@@ -149,7 +149,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                         showGoToPremium();
                         return false;
                     }*/
-                    getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "set_selected", sets.get(currentSetPosition).getCode());
+                    getApp().trackEvent(MTGApp.UA_CATEGORY_SET, MTGApp.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
                     SharedPreferences.Editor editor = getSharedPreferences().edit();
                     editor.putInt("setPosition", currentSetPosition);
                     editor.apply();

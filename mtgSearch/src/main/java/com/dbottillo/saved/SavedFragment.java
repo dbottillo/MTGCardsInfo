@@ -89,7 +89,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_CLICK, "saved_card_at_pos:" + position);
+        trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
