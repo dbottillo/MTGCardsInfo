@@ -113,7 +113,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         updateFilterUI();
     }
 
-    private void updateFilterUI() {
+    public void updateFilterUI() {
         trackEvent(MTGApp.UA_CATEGORY_UI, "update_filter", "");
         String filterString = "";
 
