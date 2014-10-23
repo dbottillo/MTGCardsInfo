@@ -2,6 +2,7 @@ package com.dbottillo.search;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +22,7 @@ import com.dbottillo.view.SlidingUpPanelLayout;
 public class SearchActivity extends FilterActivity implements SlidingUpPanelLayout.PanelSlideListener, SearchView.OnQueryTextListener {
 
     SearchView searchView;
+    EditText searchEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,52 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setTitle(R.string.action_search);
 
+        if (savedInstanceState != null) {
+            query = savedInstanceState.getString("query");
+        }
+
         setupSlidingPanel(this);
+
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            handleIntent(intent);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("query", query);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            setIntent(intent);
+            handleIntent(intent);
+        }
+    }
+
+    private boolean pendingSearch = false;
+    private String query = "";
+
+    private void handleIntent(Intent intent) {
+        pendingSearch = true;
+        query = intent.getStringExtra(SearchManager.QUERY);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        if (pendingSearch) {
+            doSearch();
+            pendingSearch = false;
+        }
     }
 
     @Override
@@ -81,13 +128,13 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
-        searchView.setOnQueryTextListener(this);
+        //searchView.setOnQueryTextListener(this);
 
         try {
             int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-            EditText textView = (EditText) searchView.findViewById(id);
-            textView.setHint(R.string.search_hint);
-            textView.setHintTextColor(getResources().getColor(R.color.light_grey));
+            searchEditText = (EditText) searchView.findViewById(id);
+            searchEditText.setText(query);
+            searchEditText.setHintTextColor(getResources().getColor(R.color.light_grey));
         } catch (Exception e) {
             LOG.e(e.getLocalizedMessage());
         }
@@ -147,17 +194,24 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        doSearch();
+        return true;
+    }
+
+    private void doSearch() {
         getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "done", query);
         if (query.length() < 3) {
             Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
-            return true;
+            return;
+        }
+        if (searchEditText != null) {
+            searchEditText.setText(query);
         }
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, MTGSetFragment.newInstance(query))
                 .commit();
         collapseSlidingPanel();
         hideIme();
-        return true;
     }
 
     @Override
