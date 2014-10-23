@@ -190,7 +190,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onRemovePlayer(int position) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "removePlayer");
+        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
         db40Helper.removePlayer(players.get(position));
         loadPlayers();
     }
@@ -211,7 +211,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
                  players.get(position).setName(value);
                 db40Helper.storePlayer(players.get(position));
                 loadPlayers();
-                trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "editPlayer");
+                trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
         });
 
@@ -227,7 +227,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onLifeCountChange(int position, int value) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "lifeCountChanged");
+        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -235,7 +235,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onPoisonCountChange(int position, int value) {
-        trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "poisonCountChange");
+        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -307,21 +307,21 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         int i1 = item.getItemId();
         if (i1 == R.id.action_add) {
             addPlayer();
-            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "addPlayer");
+            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
             return true;
         }
         if (i1 == R.id.action_reset) {
             resetLifeCounter();
-            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "resetLifeCounter");
+            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER,  "resetLifeCounter");
             return true;
         }
         if (i1 == R.id.action_dice) {
             launchDice();
-            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "launchDice");
+            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "launchDice");
             return true;
         }
         if (i1 == R.id.action_poison) {
-            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_LIFE_COUNTER, "poisonSetting");
+            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER,  "poisonSetting");
             getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();

@@ -263,7 +263,11 @@ public class MTGCardFragment extends DBFragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             String price = intent.getStringExtra(NetworkIntentService.REST_RESULT);
+            String error = intent.getStringExtra(NetworkIntentService.REST_ERROR);
             updatePriceCard(price);
+            if (error != null) {
+                getApp().trackEvent(MTGApp.UA_CATEGORY_ERROR, "price", error);
+            }
         }
     };
 
@@ -311,6 +315,7 @@ public class MTGCardFragment extends DBFragment {
                 stopCardLoader();
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
+                getApp().trackEvent(MTGApp.UA_CATEGORY_ERROR, "image", urlImage);
             }
         });
     }
@@ -363,7 +368,7 @@ public class MTGCardFragment extends DBFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int i1 = item.getItemId();
         if (i1 == R.id.action_share) {
-            trackEvent(MTGApp.UA_CATEGORY_UI, MTGApp.UA_ACTION_OPEN, "share");
+            trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_SHARE, card.getName());
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
