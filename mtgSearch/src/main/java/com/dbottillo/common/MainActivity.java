@@ -1,6 +1,5 @@
 package com.dbottillo.common;
 
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -111,11 +110,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                 showHideSetList(false);
             }
         });
-
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            handleIntent(intent);
-        }
     }
 
     private void showHideSetList(final boolean loadSet) {
@@ -250,26 +244,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         return "/main";
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            setIntent(intent);
-            handleIntent(intent);
-        }
-    }
-
-    private void handleIntent(Intent intent) {
-        String query = intent.getStringExtra(SearchManager.QUERY);
-        getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "done", query);
-        if (query.length() < 3) {
-            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
-            return;
-        }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(query))
-                .commit();
-        collapseSlidingPanel();
-    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -336,11 +310,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        searchItem.setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
-
+        menu.findItem(R.id.action_search).setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
         return true;
     }
 
