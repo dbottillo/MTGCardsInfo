@@ -189,7 +189,12 @@ public class MTGCardFragment extends DBFragment {
 
             String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + mtgCard.getType() + " <br/><br/> " +
                     "<b>" + getString(R.string.pt_card) + "</b>: " + mtgCard.getPower() + "/" + mtgCard.getToughness() + " <br/><br/>";
-            typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: " + card.getManaCost() + " (" + mtgCard.getCmc() + ")";
+            typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: ";
+            if (card.getManaCost() != null) {
+                typeHtml += card.getManaCost() + " (" + mtgCard.getCmc() + ")";
+            } else {
+                typeHtml += " - ";
+            }
             cardName.setText(Html.fromHtml(typeHtml));
 
             TextView cardText = (TextView) getView().findViewById(R.id.text_card);

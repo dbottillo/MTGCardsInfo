@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
-import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.R;
+import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
@@ -72,9 +72,9 @@ public class CardListAdapter extends BaseAdapter {
             }
             holder.rarity.setTextColor(context.getResources().getColor(rarityColor));
         }
-        if (card.getRarity().length()>0) {
+        if (card.getRarity().length() > 0) {
             holder.rarity.setText(card.getRarity().substring(0, 1));
-        }else{
+        } else {
             holder.rarity.setText("");
         }
 
@@ -84,6 +84,8 @@ public class CardListAdapter extends BaseAdapter {
             } else {
                 holder.cost.setText(card.getManaCost());
             }
+        } else {
+            holder.cost.setText("");
         }
 
         holder.position.setText(position + "");
@@ -93,7 +95,7 @@ public class CardListAdapter extends BaseAdapter {
             holder.setName.setText(card.getSetName());
         }
 
-        if (BuildConfig.magic){
+        if (BuildConfig.magic) {
             MTGCard mtgCard = (MTGCard) card;
             if (position % 2 == 0) {
                 if (mtgCard.isMultiColor() || mtgCard.isAnArtifact() || mtgCard.isALand()) {
@@ -116,10 +118,10 @@ public class CardListAdapter extends BaseAdapter {
             } else {
                 holder.parent.setBackgroundResource(R.drawable.bg_row_base);
             }
-        } else{
+        } else {
             if (position % 2 == 0) {
                 holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
-            }else {
+            } else {
                 holder.parent.setBackgroundResource(R.drawable.bg_row_base);
             }
         }
@@ -128,14 +130,14 @@ public class CardListAdapter extends BaseAdapter {
     }
 
     class CardHolder {
-        View     parent;
+        View parent;
         TextView name;
         TextView setName;
         TextView rarity;
         TextView cost;
         TextView position;
 
-        CardHolder(View row){
+        CardHolder(View row) {
             parent = row.findViewById(R.id.card_parent);
             name = (TextView) row.findViewById(R.id.card_name);
             setName = (TextView) row.findViewById(R.id.card_set_name);
