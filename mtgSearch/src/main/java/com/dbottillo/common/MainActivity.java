@@ -36,6 +36,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener, AdapterView.OnItemClickListener {
 
+    private static final int SEARCH_REQUEST_CODE = 100;
+
     private ArrayList<GameSet> sets;
     private GameSetAdapter setAdapter;
 
@@ -288,9 +290,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     @Override
     public void onPanelCollapsed(View panel) {
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "collapsed");
-        MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
-        setFragment.refreshUI();
-
+        updateSetFragment();
         setRotationArrow(0);
     }
 
@@ -298,7 +298,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     public void onPanelExpanded(View panel) {
         getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "expanded");
         setRotationArrow(180);
-
     }
 
     @Override
@@ -320,12 +319,24 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
             return true;
         }
         if (item.getItemId() == R.id.action_search) {
-            startActivity(new Intent(this, SearchActivity.class));
+            startActivityForResult(new Intent(this, SearchActivity.class), SEARCH_REQUEST_CODE);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SEARCH_REQUEST_CODE) {
+            getFilterFragment().updateFilterUI();
+            updateSetFragment();
+        }
+    }
+
+    private void updateSetFragment() {
+        MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+        setFragment.refreshUI();
+    }
 
     private void showGoToPremium() {
         openDialog(DBDialog.PREMIUM);
