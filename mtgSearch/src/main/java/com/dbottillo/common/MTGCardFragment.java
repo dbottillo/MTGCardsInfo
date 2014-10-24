@@ -266,7 +266,7 @@ public class MTGCardFragment extends DBFragment {
             String error = intent.getStringExtra(NetworkIntentService.REST_ERROR);
             updatePriceCard(price);
             if (error != null) {
-                getApp().trackEvent(MTGApp.UA_CATEGORY_ERROR, "price", error);
+                trackEvent(MTGApp.UA_CATEGORY_ERROR, "price", error);
             }
         }
     };
@@ -315,7 +315,7 @@ public class MTGCardFragment extends DBFragment {
                 stopCardLoader();
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
-                getApp().trackEvent(MTGApp.UA_CATEGORY_ERROR, "image", urlImage);
+                trackEvent(MTGApp.UA_CATEGORY_ERROR, "image", urlImage);
             }
         });
     }
