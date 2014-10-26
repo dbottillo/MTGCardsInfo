@@ -21,6 +21,7 @@ import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.HSSet;
@@ -271,7 +272,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }
-        trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);

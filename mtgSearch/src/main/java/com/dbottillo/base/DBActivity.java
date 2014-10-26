@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.dialog.GoToPremiumFragment;
 import com.dbottillo.dialog.PriceInfoFragment;
+import com.dbottillo.helper.TrackingHelper;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -57,8 +58,8 @@ public abstract class DBActivity extends FragmentActivity {
     public void onResume() {
         super.onResume();
 
-        if (app != null && getPageTrack() != null) {
-            app.trackPage(getPageTrack());
+        if (getPageTrack() != null) {
+            TrackingHelper.trackPage(getPageTrack());
         }
     }
 

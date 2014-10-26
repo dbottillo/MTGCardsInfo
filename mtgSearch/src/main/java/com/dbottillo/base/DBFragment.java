@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import com.dbottillo.BuildConfig;
+import com.dbottillo.helper.TrackingHelper;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -40,7 +41,7 @@ public abstract class DBFragment extends DialogFragment {
     }
 
     protected void openPlayStore() {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_POPUP, MTGApp.UA_ACTION_OPEN, "play_store");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
         String appPackageName = "com.dbottillo.mtgsearch";
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
@@ -75,8 +76,8 @@ public abstract class DBFragment extends DialogFragment {
         if (adView != null) {
             adView.resume();
         }
-        if (getApp() != null && getPageTrack() != null) {
-            getApp().trackPage(getPageTrack());
+        if (getPageTrack() != null) {
+            TrackingHelper.trackPage(getPageTrack());
         }
     }
 
@@ -106,28 +107,11 @@ public abstract class DBFragment extends DialogFragment {
         return adView;
     }
 
-    public void trackPage(String page) {
-        MTGApp app = (MTGApp) getActivity().getApplication();
-        app.trackPage(page);
-    }
-
     public MTGApp getApp() {
         if (getActivity() != null) {
             return ((DBActivity) getActivity()).getApp();
         }
         return null;
-    }
-
-    protected void trackEvent(String category, String action) {
-        if (getApp() != null) {
-            getApp().trackEvent(category, action, "");
-        }
-    }
-
-    protected void trackEvent(String category, String action, String label) {
-        if (getApp() != null) {
-            getApp().trackEvent(category, action, label);
-        }
     }
 
 

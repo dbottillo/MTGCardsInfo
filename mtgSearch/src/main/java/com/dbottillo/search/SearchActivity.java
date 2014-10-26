@@ -17,6 +17,7 @@ import com.dbottillo.base.MTGApp;
 import com.dbottillo.common.FilterActivity;
 import com.dbottillo.common.MTGSetFragment;
 import com.dbottillo.helper.LOG;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 public class SearchActivity extends FilterActivity implements SlidingUpPanelLayout.PanelSlideListener, SearchView.OnQueryTextListener {
@@ -93,7 +94,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelCollapsed(View panel) {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "collapsed");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         if (setFragment != null) {
             setFragment.refreshUI();
@@ -104,7 +105,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelExpanded(View panel) {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "expanded");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
         setRotationArrow(180);
 
     }
@@ -199,7 +200,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
     }
 
     private void doSearch() {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_SEARCH, "done", query);
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
         if (query.length() < 3) {
             Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
             return;

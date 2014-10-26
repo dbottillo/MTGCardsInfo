@@ -26,6 +26,7 @@ import com.dbottillo.adapters.LeftMenuAdapter;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterActivity;
 import com.dbottillo.resources.GameSet;
 import com.dbottillo.saved.SavedActivity;
@@ -149,7 +150,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                         showGoToPremium();
                         return false;
                     }*/
-                    getApp().trackEvent(MTGApp.UA_CATEGORY_SET, MTGApp.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
+                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
                     SharedPreferences.Editor editor = getSharedPreferences().edit();
                     editor.putInt("setPosition", currentSetPosition);
                     editor.apply();
@@ -289,14 +290,14 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     @Override
     public void onPanelCollapsed(View panel) {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "collapsed");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
         updateSetFragment();
         setRotationArrow(0);
     }
 
     @Override
     public void onPanelExpanded(View panel) {
-        getApp().trackEvent(MTGApp.UA_CATEGORY_UI, "panel", "expanded");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
         setRotationArrow(180);
     }
 

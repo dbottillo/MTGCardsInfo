@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 
 import java.util.ArrayList;
@@ -138,7 +139,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
         if (i == R.id.action_image) {
-            getApp().trackEvent(MTGApp.UA_CATEGORY_CARD, "image_on_off", "");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "image_on_off", "");
             boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putBoolean(PREF_SHOW_IMAGE, !showImage);
