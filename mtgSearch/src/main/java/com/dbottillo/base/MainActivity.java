@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.base;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +23,8 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.adapters.LeftMenuAdapter;
-import com.dbottillo.base.MTGApp;
+import com.dbottillo.cards.MTGSetFragment;
+import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;

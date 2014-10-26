@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.filter;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.ToggleButton;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
 
