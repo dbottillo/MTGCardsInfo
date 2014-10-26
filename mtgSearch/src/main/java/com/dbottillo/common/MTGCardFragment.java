@@ -28,7 +28,6 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
@@ -373,8 +372,8 @@ public class MTGCardFragment extends DBFragment {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
-            String image = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + ((MTGCard) card).getMultiVerseId() + "&type=card";
-            i.putExtra(Intent.EXTRA_TEXT, image);
+            String url = "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=" + ((MTGCard) card).getMultiVerseId();
+            i.putExtra(Intent.EXTRA_TEXT, url);
             startActivity(Intent.createChooser(i, getString(R.id.share_card)));
             return true;
         } else if (i1 == R.id.action_fav) {
