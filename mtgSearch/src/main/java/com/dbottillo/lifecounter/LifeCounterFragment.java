@@ -25,6 +25,7 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Player;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
@@ -190,7 +191,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onRemovePlayer(int position) {
-        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
         db40Helper.removePlayer(players.get(position));
         loadPlayers();
     }
@@ -211,7 +212,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
                  players.get(position).setName(value);
                 db40Helper.storePlayer(players.get(position));
                 loadPlayers();
-                trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
         });
 
@@ -227,7 +228,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onLifeCountChange(int position, int value) {
-        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -235,7 +236,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onPoisonCountChange(int position, int value) {
-        trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -307,21 +308,21 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         int i1 = item.getItemId();
         if (i1 == R.id.action_add) {
             addPlayer();
-            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
             return true;
         }
         if (i1 == R.id.action_reset) {
             resetLifeCounter();
-            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER,  "resetLifeCounter");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER,  "resetLifeCounter");
             return true;
         }
         if (i1 == R.id.action_dice) {
             launchDice();
-            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER, "launchDice");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "launchDice");
             return true;
         }
         if (i1 == R.id.action_poison) {
-            trackEvent(MTGApp.UA_CATEGORY_LIFE_COUNTER,  "poisonSetting");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER,  "poisonSetting");
             getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();

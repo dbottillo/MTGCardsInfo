@@ -21,6 +21,7 @@ import com.dbottillo.base.MTGApp;
 import com.dbottillo.common.CardsActivity;
 import com.dbottillo.common.MTGCardsFragment;
 import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 
 import java.util.ArrayList;
@@ -89,7 +90,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_OPEN, "saved pos:" + position);
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);

@@ -29,6 +29,7 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
@@ -266,7 +267,7 @@ public class MTGCardFragment extends DBFragment {
             String error = intent.getStringExtra(NetworkIntentService.REST_ERROR);
             updatePriceCard(price);
             if (error != null) {
-                trackEvent(MTGApp.UA_CATEGORY_ERROR, "price", error);
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", error);
             }
         }
     };
@@ -315,7 +316,7 @@ public class MTGCardFragment extends DBFragment {
                 stopCardLoader();
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
-                trackEvent(MTGApp.UA_CATEGORY_ERROR, "image", urlImage);
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", urlImage);
             }
         });
     }
@@ -368,7 +369,7 @@ public class MTGCardFragment extends DBFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int i1 = item.getItemId();
         if (i1 == R.id.action_share) {
-            trackEvent(MTGApp.UA_CATEGORY_CARD, MTGApp.UA_ACTION_SHARE, card.getName());
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SHARE, card.getName());
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
@@ -379,10 +380,10 @@ public class MTGCardFragment extends DBFragment {
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline) {
                 databaseConnector.removeCard(card);
-                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_SAVED, card.getId() + "");
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVED, card.getId() + "");
             } else {
                 databaseConnector.saveCard(card);
-                trackEvent(MTGApp.UA_CATEGORY_FAVOURITE, MTGApp.UA_ACTION_UNSAVED, card.getId() + "");
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");
             }
             getActivity().invalidateOptionsMenu();
         }

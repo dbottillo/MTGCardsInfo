@@ -15,6 +15,7 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.FilterHelper;
+import com.dbottillo.helper.TrackingHelper;
 
 /**
  * Created by danielebottillo on 23/02/2014.
@@ -104,7 +105,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         } else {
         }
 
-        getApp().trackEvent(MTGApp.UA_CATEGORY_FILTER, MTGApp.UA_ACTION_TOGGLE, label);
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_TOGGLE, label);
 
         editor.commit();
 
@@ -112,7 +113,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     }
 
     public void updateFilterUI() {
-        trackEvent(MTGApp.UA_CATEGORY_FILTER, "update", "");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, "update", "");
         String filterString = "";
 
         String colorActive = "#FFF";
@@ -163,7 +164,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        trackEvent(MTGApp.UA_CATEGORY_FILTER, MTGApp.UA_ACTION_CLOSE, "");
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_CLOSE, "");
         FilterActivity filterActivity = (FilterActivity) getActivity();
         filterActivity.getSlidingPanel().collapsePane();
     }
