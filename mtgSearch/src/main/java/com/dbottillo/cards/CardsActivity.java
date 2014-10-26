@@ -1,14 +1,12 @@
-package com.dbottillo.common;
+package com.dbottillo.cards;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.R;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.MTGCard;
 
 public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector {
 

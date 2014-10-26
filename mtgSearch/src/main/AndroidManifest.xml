@@ -12,7 +12,7 @@
         android:name=".base.MTGApp"
         android:theme="@style/MTGSearchTheme">
         <activity
-            android:name=".common.MainActivity"
+            android:name=".base.MainActivity"
             android:theme="@style/MTGSearchTheme.ActionBar"
             android:label="@string/app_name">
             <intent-filter>
@@ -23,7 +23,11 @@
         </activity>
 
         <activity
-            android:name=".common.CardsActivity"
+            android:name=".cards.CardsActivity"
+            android:theme="@style/MTGSearchTheme.ActionBar" />
+
+        <activity
+            android:name=".cards.FullScreenImageActivity"
             android:theme="@style/MTGSearchTheme.ActionBar" />
 
         <activity

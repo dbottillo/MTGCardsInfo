@@ -52,7 +52,7 @@
                 android:layout_below="@+id/set_chooser"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.dbottillo.common.MainActivity" />
+                tools:context="com.dbottillo.base.MainActivity" />
 
             <View
                 android:id="@+id/set_list_bg"

@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.filter;
 
 import android.view.KeyEvent;
 import android.view.View;

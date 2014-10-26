@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.cards;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 

@@ -13,9 +13,8 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
-import com.dbottillo.base.MTGApp;
-import com.dbottillo.common.FilterActivity;
-import com.dbottillo.common.MTGSetFragment;
+import com.dbottillo.filter.FilterActivity;
+import com.dbottillo.cards.MTGSetFragment;
 import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;

@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.cards;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

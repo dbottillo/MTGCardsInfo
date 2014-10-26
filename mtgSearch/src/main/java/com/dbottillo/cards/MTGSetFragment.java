@@ -1,4 +1,4 @@
-package com.dbottillo.common;
+package com.dbottillo.cards;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +17,6 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
