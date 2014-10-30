@@ -2,9 +2,6 @@ package com.dbottillo.cards;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -15,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dbottillo.R;
+import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
@@ -60,6 +58,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         viewPager = (ViewPager) rootView.findViewById(R.id.pager);
 
         adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager());
+        adapter.setCards(cards);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(position);
 
@@ -94,32 +93,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         return "/cards_viewpager";
     }
 
-    private class CardsPagerAdapter extends FragmentStatePagerAdapter {
-        public CardsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return MTGCardFragment.newInstance(cards.get(position));
-        }
-
-        @Override
-        public int getCount() {
-            return cards.size();
-        }
-
-        @Override
-        public int getItemPosition(Object object) {
-            return POSITION_NONE;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return cards.get(position).getName();
-        }
-    }
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -127,8 +100,13 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         actionImage = menu.findItem(R.id.action_image);
 
+        MenuItem fullScreenImage = menu.findItem(R.id.action_fullscreen_image);
+
+        fullScreenImage.setVisible(false);
+
         if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)) {
             actionImage.setChecked(true);
+            fullScreenImage.setVisible(!getResources().getBoolean(R.bool.isTablet));
         } else {
             actionImage.setChecked(false);
         }
@@ -151,9 +129,25 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
                 actionImage.setChecked(true);
             }
             return true;
-        } else {
+        } else if (i == R.id.action_fullscreen_image) {
+            openFullscreen();
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "actionbar");
         }
 
         return false;
+    }
+
+    private void openFullscreen() {
+        if (getActivity() != null) {
+            ((CardsActivity) getActivity()).openFullScreen(viewPager.getCurrentItem());
+        }
+    }
+
+    public void goTo(int position) {
+        viewPager.setCurrentItem(position, false);
+    }
+
+    public ArrayList<GameCard> getCards() {
+        return cards;
     }
 }

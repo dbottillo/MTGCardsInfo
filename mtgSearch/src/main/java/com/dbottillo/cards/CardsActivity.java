@@ -1,16 +1,21 @@
 package com.dbottillo.cards;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.dbottillo.base.DBActivity;
 import com.dbottillo.R;
+import com.dbottillo.base.DBActivity;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.GameCard;
 
 public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector {
 
     private DB40Helper db40Helper;
+
+    public static final int FULLSCREEN_CODE = 100;
+
+    MTGCardsFragment cardsFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,12 +25,15 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (savedInstanceState == null){
+        cardsFragment = (MTGCardsFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+
+        if (cardsFragment == null) {
+            cardsFragment = MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
+                    getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
+                    getIntent().getStringExtra(MTGCardsFragment.SET_NAME));
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
-                        getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
-                        getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
-                .commit();
+                    .replace(R.id.container, cardsFragment)
+                    .commit();
         }
 
         db40Helper = DB40Helper.getInstance(this);
@@ -65,6 +73,15 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FULLSCREEN_CODE && resultCode == RESULT_OK) {
+            cardsFragment.goTo(data.getIntExtra(MTGCardsFragment.POSITION, 0));
+        }
+    }
+
+    @Override
     public boolean isCardSaved(GameCard card) {
         return db40Helper.isCardStored(card);
     }
@@ -77,5 +94,12 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
     @Override
     public void removeCard(GameCard card) {
         db40Helper.removeCard(card);
+    }
+
+    public void openFullScreen(int currentItem) {
+        Intent fullScreen = new Intent(this, FullScreenImageActivity.class);
+        fullScreen.putExtra(MTGCardsFragment.CARDS, cardsFragment.getCards());
+        fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem);
+        startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE);
     }
 }

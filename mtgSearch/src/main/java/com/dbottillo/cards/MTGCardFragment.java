@@ -58,10 +58,13 @@ public class MTGCardFragment extends DBFragment {
     private int heightAvailable;
 
     public static final String CARD = "card";
+    public static final String FULLSCREEN = "fullscreen";
+    public static final String POSITION = "position";
 
     View mainContainer;
 
     boolean isLandscape;
+    boolean fullscreenMode = false;
 
     private GameCard card;
     ImageView cardImage;
@@ -72,12 +75,16 @@ public class MTGCardFragment extends DBFragment {
 
     String urlImage = null;
 
+    private int position;
+
     private DatabaseConnector databaseConnector;
 
-    public static MTGCardFragment newInstance(GameCard card) {
+    public static MTGCardFragment newInstance(GameCard card, int position, boolean fullscreen) {
         MTGCardFragment fragment = new MTGCardFragment();
         Bundle args = new Bundle();
         args.putParcelable(CARD, card);
+        args.putBoolean(FULLSCREEN, fullscreen);
+        args.putInt(POSITION, position);
         fragment.setArguments(args);
         return fragment;
     }
@@ -90,6 +97,8 @@ public class MTGCardFragment extends DBFragment {
         final View rootView = inflater.inflate(R.layout.fragment_card, container, false);
 
         card = getArguments().getParcelable(CARD);
+        position = getArguments().getInt(POSITION);
+        fullscreenMode = getArguments().getBoolean(FULLSCREEN);
         mainContainer = rootView.findViewById(R.id.fragment_card_container);
         cardImage = (ImageView) rootView.findViewById(R.id.image_card);
         cardImageContainer = rootView.findViewById(R.id.image_card_container);
@@ -125,6 +134,9 @@ public class MTGCardFragment extends DBFragment {
             @Override
             public void onGlobalLayout() {
                 int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+                if (fullscreenMode) {
+                    paddingCard = 0;
+                }
                 widthAvailable = mainContainer.getWidth() - paddingCard * 2;
                 if (isLandscape) {
                     widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
@@ -135,6 +147,16 @@ public class MTGCardFragment extends DBFragment {
                     mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 } else {
                     mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            }
+        });
+
+        cardImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getActivity() != null) {
+                    ((CardsActivity) getActivity()).openFullScreen(position);
+                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
                 }
             }
         });
@@ -171,6 +193,12 @@ public class MTGCardFragment extends DBFragment {
         if (card instanceof MTGCard) {
             LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().invalidateOptionsMenu();
     }
 
     @Override
@@ -292,6 +320,12 @@ public class MTGCardFragment extends DBFragment {
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) cardImage.getLayoutParams();
         par.width = wImage;
         par.height = hImage;
+        if (fullscreenMode) {
+            par.topMargin = 0;
+            par.leftMargin = 0;
+            par.rightMargin = 0;
+            par.bottomMargin = 0;
+        }
         cardImage.setLayoutParams(par);
     }
 

@@ -1,9 +1,15 @@
 package com.dbottillo.cards;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.dbottillo.R;
+import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.GameCard;
@@ -12,21 +18,28 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
 
     private DB40Helper db40Helper;
 
+    private ViewPager viewPager;
+    private CardsPagerAdapter adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cards);
+        setContentView(R.layout.activity_fullscreen_cards);
 
         getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setTitle("");
+        getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55222222")));
 
-        if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
-                        getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
-                        getIntent().getStringExtra(MTGCardsFragment.SET_NAME)))
-                .commit();
-        }
+        viewPager = (ViewPager) findViewById(R.id.pager);
+
+        adapter = new CardsPagerAdapter(getSupportFragmentManager());
+        adapter.setCards(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS));
+        adapter.setFullScreen(true);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(getIntent().getIntExtra(MTGCardsFragment.POSITION, 0));
 
         db40Helper = DB40Helper.getInstance(this);
     }
@@ -51,14 +64,14 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
 
     @Override
     public String getPageTrack() {
-        return "/cards";
+        return "/fullscreen_cards";
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            finish();
+            finishWithResult();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -77,5 +90,17 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     @Override
     public void removeCard(GameCard card) {
         db40Helper.removeCard(card);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishWithResult();
+    }
+
+    private void finishWithResult() {
+        Intent res = new Intent();
+        res.putExtra(MTGCardsFragment.POSITION, viewPager.getCurrentItem());
+        setResult(RESULT_OK, res);
+        finish();
     }
 }

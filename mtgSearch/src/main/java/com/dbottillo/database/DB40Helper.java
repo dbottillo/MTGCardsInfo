@@ -22,44 +22,44 @@ public class DB40Helper {
 
     private static final String TAG = DB40Helper.class.getName();
 
-    public static final String name ="mtg_hs_database";
+    public static final String name = "mtg_hs_database";
 
     private ObjectContainer db;
     private Context ctx;
 
     private static DB40Helper dbh;
 
-    public static DB40Helper getInstance(Context ctx){
-        if (dbh == null){
+    public static DB40Helper getInstance(Context ctx) {
+        if (dbh == null) {
             dbh = new DB40Helper(ctx);
         }
         return dbh;
     }
 
 
-    private DB40Helper(Context ctx){
+    private DB40Helper(Context ctx) {
         this.ctx = ctx;
     }
 
-    public boolean openDb(){
+    public synchronized boolean openDb() {
         Log.e(TAG, "open db!");
         try {
-            if (db == null || db.ext().isClosed()){
+            if (db == null || db.ext().isClosed()) {
                 db = Db4oEmbedded.openFile(dbConfig(), db4oDBFullPath(ctx));
             }
             return true;
-        } catch (Exception ie){
+        } catch (Exception ie) {
             Log.e(TAG, "[DBHELPER] " + ie.toString());
             return false;
         }
     }
 
-    public void closeDb(){
+    public void closeDb() {
         Log.e(TAG, "close db!");
         if (db != null) db.close();
     }
 
-    private EmbeddedConfiguration dbConfig(){
+    private EmbeddedConfiguration dbConfig() {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
@@ -68,32 +68,32 @@ public class DB40Helper {
         return configuration;
     }
 
-    private String db4oDBFullPath (Context ctx){
-        return ctx.getDir("data",0)+"/"+name+".db40";
+    private String db4oDBFullPath(Context ctx) {
+        return ctx.getDir("data", 0) + "/" + name + ".db40";
     }
 
     @SuppressWarnings("rawtypes")
-    public void emptyDB(){
+    public void emptyDB() {
         openDb();
         ObjectSet result = db.queryByExample(new Object());
-        while (result.hasNext()){
+        while (result.hasNext()) {
             db.delete(result.next());
         }
         Log.e(TAG, "[DBELPER] database cleared");
     }
 
-    public void commit(boolean close){
+    public void commit(boolean close) {
         db.commit();
         if (close) closeDb();
     }
 
-    public void storeCard(GameCard card){
+    public void storeCard(GameCard card) {
         db.store(card);
         db.commit();
         Log.e(TAG, "[DBELPER] card " + card.getName() + " saved inside database");
     }
 
-    public void removeCard(GameCard card){
+    public void removeCard(GameCard card) {
         ObjectSet<GameCard> result = db.queryByExample(card);
         if (result.hasNext()) {
             db.delete(result.next());
@@ -101,27 +101,33 @@ public class DB40Helper {
         }
     }
 
-    public ArrayList<GameCard> getCards(){
+    public ArrayList<GameCard> getCards() {
+        if (db.ext().isClosed()) {
+            openDb();
+        }
         ArrayList<GameCard> cards = new ArrayList<GameCard>();
         ObjectSet<GameCard> result = db.query(GameCard.class);
-        while (result.hasNext()){
+        while (result.hasNext()) {
             cards.add(result.next());
         }
         return cards;
     }
 
-    public synchronized boolean isCardStored(GameCard card){
+    public synchronized boolean isCardStored(GameCard card) {
+        if (db.ext().isClosed()) {
+            openDb();
+        }
         ObjectSet<GameCard> result = db.queryByExample(card);
         return !result.isEmpty();
     }
 
-    public void storePlayer(Player player){
+    public void storePlayer(Player player) {
         db.store(player);
         db.commit();
         Log.e(TAG, "[DBELPER] player " + player.toString() + " saved inside database");
     }
 
-    public void removePlayer(Player player){
+    public void removePlayer(Player player) {
         ObjectSet<Player> result = db.queryByExample(player);
         if (result.hasNext()) {
             db.delete(result.next());
@@ -132,7 +138,7 @@ public class DB40Helper {
     public ArrayList<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<Player>();
         ObjectSet<Player> result = db.query(Player.class);
-        while (result.hasNext()){
+        while (result.hasNext()) {
             players.add(result.next());
         }
         return players;
