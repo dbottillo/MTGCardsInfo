@@ -3,15 +3,19 @@ package com.dbottillo.cards;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
-import com.dbottillo.database.DB40Helper;
+import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 
-public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector {
+import java.util.ArrayList;
 
-    private DB40Helper db40Helper;
+public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector, DBAsyncTask.DBAsyncTaskListener {
+
+    private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
 
     public static final int FULLSCREEN_CODE = 100;
 
@@ -35,26 +39,12 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
                     .replace(R.id.container, cardsFragment)
                     .commit();
         }
-
-        db40Helper = DB40Helper.getInstance(this);
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        db40Helper.openDb();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        db40Helper.closeDb();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        db40Helper = null;
+    public void onResume() {
+        super.onResume();
+        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVED).execute();
     }
 
     @Override
@@ -83,17 +73,33 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
 
     @Override
     public boolean isCardSaved(GameCard card) {
-        return db40Helper.isCardStored(card);
+        boolean isSaved = false;
+        for (GameCard savedCard : savedCards) {
+            if (savedCard.getId() == card.getId()) {
+                isSaved = true;
+                break;
+            }
+        }
+        return isSaved;
     }
 
     @Override
     public void saveCard(GameCard card) {
-        db40Helper.storeCard(card);
+        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
+        savedCards.add(card);
+        invalidateOptionsMenu();
     }
 
     @Override
     public void removeCard(GameCard card) {
-        db40Helper.removeCard(card);
+        new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+        for (GameCard savedCard : savedCards) {
+            if (savedCard.getId() == card.getId()) {
+                savedCards.remove(savedCard);
+                break;
+            }
+        }
+        invalidateOptionsMenu();
     }
 
     public void openFullScreen(int currentItem) {
@@ -101,5 +107,20 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         fullScreen.putExtra(MTGCardsFragment.CARDS, cardsFragment.getCards());
         fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem);
         startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE);
+    }
+
+    @Override
+    public void onTaskFinished(int type, ArrayList<?> objects) {
+        savedCards.clear();
+        for (Object card : objects) {
+            savedCards.add((GameCard) card);
+        }
+        invalidateOptionsMenu();
+    }
+
+    @Override
+    public void onTaskEndWithError(int type, String error) {
+        Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", error);
     }
 }

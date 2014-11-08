@@ -29,12 +29,12 @@ import java.util.Comparator;
 /**
  * Created by danielebottillo on 23/02/2014.
  */
-public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
+public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
     public interface DBAsyncTaskListener {
-        public void onTaskFinished(ArrayList<?> objects);
+        public void onTaskFinished(int type, ArrayList<?> objects);
 
-        public void onTaskEndWithError(String error);
+        public void onTaskEndWithError(int type, String error);
     }
 
     private boolean error = false;
@@ -49,6 +49,8 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     public static final int TASK_SEARCH = 2;
     public static final int TASK_SAVED = 3;
     public static final int TASK_PLAYER = 4;
+    public static final int TASK_SAVE_CARD = 5;
+    public static final int TASK_REMOVE_CARD = 6;
 
     private int type;
 
@@ -79,7 +81,7 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     }
 
     @Override
-    protected ArrayList<Object> doInBackground(String... params) {
+    protected ArrayList<Object> doInBackground(Object... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
         if (type == TASK_SET_LIST) {
@@ -107,6 +109,24 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
             }
             db40Helper.closeDb();
 
+        } else if (type == TASK_SAVE_CARD) {
+            db40Helper.openDb();
+            db40Helper.storeCard((GameCard) params[0]);
+            ArrayList<GameCard> cards = db40Helper.getCards();
+            for (Object card : cards) {
+                result.add(card);
+            }
+            db40Helper.closeDb();
+
+        }else if (type == TASK_REMOVE_CARD) {
+            db40Helper.openDb();
+            db40Helper.removeCard((GameCard) params[0]);
+            ArrayList<GameCard> cards = db40Helper.getCards();
+            for (Object card : cards) {
+                result.add(card);
+            }
+            db40Helper.closeDb();
+
         } else if (type == TASK_PLAYER) {
             ArrayList<Player> players = db40Helper.getPlayers();
             for (Player player : players) {
@@ -116,9 +136,9 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
             Cursor cursor = null;
             if (type == TASK_SINGLE_SET) {
-                cursor = mDbHelper.getSet(params[0]);
+                cursor = mDbHelper.getSet((String)params[0]);
             } else {
-                cursor = mDbHelper.searchCard(params[0]);
+                cursor = mDbHelper.searchCard((String)params[0]);
             }
 
             if (cursor.moveToFirst()) {
@@ -288,9 +308,9 @@ public class DBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
     protected void onPostExecute(ArrayList<Object> result) {
         if (listener != null) {
             if (error) {
-                listener.onTaskEndWithError(errorMessage);
+                listener.onTaskEndWithError(type, errorMessage);
             } else {
-                listener.onTaskFinished(result);
+                listener.onTaskFinished(type, result);
             }
         }
     }

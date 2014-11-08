@@ -164,7 +164,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     }
 
     @Override
-    public void onTaskFinished(ArrayList<?> objects) {
+    public void onTaskFinished(int type, ArrayList<?> objects) {
         progressBar.setVisibility(View.GONE);
         if (objects.size() == 0) {
             // need at least one player
@@ -184,7 +184,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     }
 
     @Override
-    public void onTaskEndWithError(String error) {
+    public void onTaskEndWithError(int type, String error) {
         progressBar.setVisibility(View.GONE);
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
     }
