@@ -133,20 +133,22 @@ public class MTGCardFragment extends DBFragment {
         mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
-                if (fullscreenMode) {
-                    paddingCard = 0;
-                }
-                widthAvailable = mainContainer.getWidth() - paddingCard * 2;
-                if (isLandscape) {
-                    widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
-                }
-                heightAvailable = mainContainer.getHeight() - paddingCard * 2;
-                updateSizeImage();
-                if (Build.VERSION.SDK_INT < 16) {
-                    mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                    mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                if (isAttached) {
+                    int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+                    if (fullscreenMode) {
+                        paddingCard = 0;
+                    }
+                    widthAvailable = mainContainer.getWidth() - paddingCard * 2;
+                    if (isLandscape) {
+                        widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
+                    }
+                    heightAvailable = mainContainer.getHeight() - paddingCard * 2;
+                    updateSizeImage();
+                    if (Build.VERSION.SDK_INT < 16) {
+                        mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    } else {
+                        mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
                 }
             }
         });
@@ -154,7 +156,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getActivity() != null) {
+                if (getActivity() != null && !fullscreenMode) {
                     ((CardsActivity) getActivity()).openFullScreen(position);
                     TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
                 }
@@ -164,9 +166,13 @@ public class MTGCardFragment extends DBFragment {
         return rootView;
     }
 
+    private boolean isAttached = false;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+
+        isAttached = true;
 
         try {
             databaseConnector = (DatabaseConnector) activity;
@@ -175,6 +181,12 @@ public class MTGCardFragment extends DBFragment {
         } catch (ClassCastException e) {
             Log.e(TAG, "activity must implement databaseconnector interface");
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        isAttached = false;
     }
 
     @Override

@@ -164,7 +164,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     }
 
     @Override
-    public void onTaskFinished(ArrayList<?> result) {
+    public void onTaskFinished(int type, ArrayList<?> result) {
         if (getActivity() == null) {
             return;
         }
@@ -261,8 +261,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     }
 
     @Override
-    public void onTaskEndWithError(String error) {
+    public void onTaskEndWithError(int type, String error) {
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
     }
 
     @Override

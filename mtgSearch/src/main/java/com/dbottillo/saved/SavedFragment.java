@@ -98,7 +98,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     }
 
     @Override
-    public void onTaskFinished(ArrayList<?> objects) {
+    public void onTaskFinished(int type, ArrayList<?> objects) {
         savedCards.clear();
         for (Object card : objects) {
             savedCards.add((GameCard) card);
@@ -110,9 +110,10 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     }
 
     @Override
-    public void onTaskEndWithError(String error) {
+    public void onTaskEndWithError(int type, String error) {
         progressBar.setVisibility(View.GONE);
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", error);
     }
 
     @Override

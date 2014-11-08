@@ -256,15 +256,18 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     }
 
     private void loadSet() {
-        collapseSlidingPanel();
-        ((TextView) findViewById(R.id.set_chooser_name)).setText(sets.get(currentSetPosition).getName());
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
-                .commit();
+        TextView chooserName = ((TextView) findViewById(R.id.set_chooser_name));
+        if (!isFinishing() && chooserName != null) {
+            collapseSlidingPanel();
+            chooserName.setText(sets.get(currentSetPosition).getName());
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
+                    .commit();
+        }
     }
 
     @Override
-    public void onTaskFinished(ArrayList<?> result) {
+    public void onTaskFinished(int type, ArrayList<?> result) {
         currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
         setAdapter.setCurrent(currentSetPosition);
 
@@ -279,8 +282,9 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     }
 
     @Override
-    public void onTaskEndWithError(String error) {
+    public void onTaskEndWithError(int type, String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
     }
 
 

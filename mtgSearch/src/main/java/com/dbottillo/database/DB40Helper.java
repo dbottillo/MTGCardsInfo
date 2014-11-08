@@ -12,6 +12,7 @@ import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
+import com.google.android.gms.games.Game;
 
 import java.util.ArrayList;
 
@@ -88,17 +89,27 @@ public class DB40Helper {
     }
 
     public void storeCard(GameCard card) {
+        if (db.ext().isClosed()) {
+            openDb();
+        }
         db.store(card);
         db.commit();
         Log.e(TAG, "[DBELPER] card " + card.getName() + " saved inside database");
     }
 
     public void removeCard(GameCard card) {
-        ObjectSet<GameCard> result = db.queryByExample(card);
-        if (result.hasNext()) {
-            db.delete(result.next());
-            db.commit();
+        if (db.ext().isClosed()) {
+            openDb();
         }
+        db.delete(card);
+        ObjectSet<GameCard> result = db.query(GameCard.class);
+        while (result.hasNext()) {
+            GameCard next = result.next();
+            if (next.getId() == card.getId()) {
+                db.delete(next);
+            }
+        }
+        db.commit();
     }
 
     public ArrayList<GameCard> getCards() {
