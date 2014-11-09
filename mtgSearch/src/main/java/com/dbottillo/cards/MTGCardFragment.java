@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
@@ -363,10 +365,20 @@ public class MTGCardFragment extends DBFragment {
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
                 TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", urlImage);
+                if (isNetworkAvailable()){
+                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", urlImage);
+                }
             }
         });
     }
 
+    private boolean isNetworkAvailable() {
+        if (getActivity() == null) return false;
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
     private void startCardLoader() {
         cardLoader.setVisibility(View.VISIBLE);
