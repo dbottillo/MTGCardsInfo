@@ -3,9 +3,15 @@
     tools:context="com.dbottillo.base.MainActivity">
 
     <item
+        android:id="@+id/action_lucky"
+        android:icon="@drawable/ic_action_lucky"
+        android:title="@string/action_lucky"
+        android:showAsAction="always" />
+
+    <item
         android:id="@+id/action_search"
         android:title="@string/action_search"
         android:icon="@drawable/ic_search"
         android:showAsAction="always"
-        android:orderInCategory="100" />
+        android:orderInCategory="101" />
 </menu>

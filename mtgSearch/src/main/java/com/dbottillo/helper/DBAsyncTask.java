@@ -51,6 +51,7 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
     public static final int TASK_PLAYER = 4;
     public static final int TASK_SAVE_CARD = 5;
     public static final int TASK_REMOVE_CARD = 6;
+    public static final int TASK_RANDOM_CARD = 7;
 
     private int type;
 
@@ -101,6 +102,13 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
             }
             cursor.close();
 
+        } else if (type == TASK_RANDOM_CARD) {
+            Cursor cursor = mDbHelper.getRandomCard();
+            if (cursor.moveToFirst()) {
+                result.add(MTGCard.createCardFromCursor(cursor));
+            }
+            cursor.close();
+
         } else if (type == TASK_SAVED) {
             db40Helper.openDb();
             ArrayList<GameCard> cards = db40Helper.getCards();
@@ -118,7 +126,7 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
             }
             db40Helper.closeDb();
 
-        }else if (type == TASK_REMOVE_CARD) {
+        } else if (type == TASK_REMOVE_CARD) {
             db40Helper.openDb();
             db40Helper.removeCard((GameCard) params[0]);
             ArrayList<GameCard> cards = db40Helper.getCards();

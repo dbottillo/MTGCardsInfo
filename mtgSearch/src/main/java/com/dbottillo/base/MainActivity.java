@@ -23,6 +23,7 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.adapters.LeftMenuAdapter;
+import com.dbottillo.cards.CardLuckyActivity;
 import com.dbottillo.cards.MTGSetFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
@@ -327,6 +328,9 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         if (item.getItemId() == R.id.action_search) {
             startActivityForResult(new Intent(this, SearchActivity.class), SEARCH_REQUEST_CODE);
             return true;
+        }
+        if (item.getItemId() == R.id.action_lucky) {
+            startActivity(new Intent(this, CardLuckyActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
