@@ -22,8 +22,10 @@ public abstract class CardDatabaseHelper extends SQLiteAssetHelper {
 
     public abstract Cursor searchCard(String search);
 
+    public abstract Cursor getRandomCard();
 
-    public static CardDatabaseHelper getDatabaseHelper(Context context){
+
+    public static CardDatabaseHelper getDatabaseHelper(Context context) {
         if (BuildConfig.magic) {
             return new MTGDatabaseHelper(context);
         } else {

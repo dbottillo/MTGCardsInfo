@@ -156,7 +156,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getActivity() != null && !fullscreenMode) {
+                if (getActivity() != null && getActivity() instanceof CardsActivity) {
                     ((CardsActivity) getActivity()).openFullScreen(position);
                     TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
                 }

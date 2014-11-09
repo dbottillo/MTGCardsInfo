@@ -55,4 +55,9 @@ public class HSDatabaseHelper extends CardDatabaseHelper {
         return db.rawQuery(query, new String[] {"%"+search+"%"});
     }
 
+    @Override
+    public Cursor getRandomCard() {
+        return null;
+    }
+
 }
