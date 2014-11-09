@@ -8,9 +8,6 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.SetContract.SetEntry;
 
-/**
- * Created by danielebottillo on 05/03/2014.
- */
 public class MTGDatabaseHelper extends CardDatabaseHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
