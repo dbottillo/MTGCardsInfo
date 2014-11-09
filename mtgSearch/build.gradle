@@ -58,7 +58,7 @@ android {
         magic {
             applicationId "com.dbottillo.mtgsearchfree"
             buildConfigField 'boolean', 'magic', 'true'
-            buildConfigField 'int', 'DATABASE_VERSION', '4'
+            buildConfigField 'int', 'DATABASE_VERSION', '5'
             versionCode 15
             versionName "1.8.5"
         }

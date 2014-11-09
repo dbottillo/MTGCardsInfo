@@ -32,9 +32,6 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     private boolean error = false;
