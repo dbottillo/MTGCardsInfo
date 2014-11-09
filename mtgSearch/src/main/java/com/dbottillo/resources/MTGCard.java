@@ -16,10 +16,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
-public class MTGCard extends GameCard implements Comparable<MTGCard>{
+public class MTGCard extends GameCard implements Comparable<MTGCard> {
 
     int id;
     String name;
@@ -536,6 +533,14 @@ public class MTGCard extends GameCard implements Comparable<MTGCard>{
 
     public String toString(){
         return "[MTGCard] "+name;
+    }
+
+    @Override
+    public String getImage() {
+        if (getMultiVerseId() > 0) {
+            return "http://mtgimage.com/multiverseid/" + getMultiVerseId() + ".jpg";
+        }
+        return null;
     }
 
     @Override

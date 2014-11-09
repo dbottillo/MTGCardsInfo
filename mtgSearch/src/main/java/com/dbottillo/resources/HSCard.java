@@ -3,7 +3,6 @@ package com.dbottillo.resources;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Parcel;
-import android.util.Log;
 
 import com.dbottillo.database.HSCardContract.HSCardEntry;
 
@@ -12,10 +11,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
-public class HSCard extends GameCard implements Comparable<HSCard>{
+public class HSCard extends GameCard implements Comparable<HSCard> {
 
     int id;
     String name;
@@ -37,21 +33,21 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
     {"id":"XXX_048","name":"-1 Durability","type":"Spell","rarity":"Common","cost":0,"text":"Give a player's weapon -1 Durability."}
      */
 
-    public HSCard(){
+    public HSCard() {
         this.mechanics = new ArrayList<String>();
     }
 
-    public HSCard(int id){
+    public HSCard(int id) {
         this();
         this.id = id;
     }
 
-    public HSCard(Parcel in){
+    public HSCard(Parcel in) {
         this();
         readFromParcel(in);
     }
 
-    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException{
+    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException {
         ContentValues values = new ContentValues();
 
         values.put(HSCardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
@@ -76,24 +72,24 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
         values.put(HSCardEntry.COLUMN_NAME_TEXT, text);
 
         String attack = "";
-        if (jsonObject.has("attack")){
+        if (jsonObject.has("attack")) {
             attack = jsonObject.getString("attack");
         }
         values.put(HSCardEntry.COLUMN_NAME_ATTACK, attack);
 
         String health = "";
-        if (jsonObject.has("health")){
+        if (jsonObject.has("health")) {
             health = jsonObject.getString("health");
         }
         values.put(HSCardEntry.COLUMN_NAME_HEALTH, health);
 
         boolean collectible = false;
-        if (jsonObject.has("collectible")){
+        if (jsonObject.has("collectible")) {
             collectible = jsonObject.getBoolean("collectible");
         }
 
         boolean elite = false;
-        if (jsonObject.has("elite")){
+        if (jsonObject.has("elite")) {
             elite = jsonObject.getBoolean("elite");
         }
 
@@ -116,7 +112,7 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
         card.setName(cursor.getString(cursor.getColumnIndex(HSCardEntry.COLUMN_NAME_NAME)));
         card.setText(cursor.getString(cursor.getColumnIndex(HSCardEntry.COLUMN_NAME_TEXT)));
 
-        if (cursor.getColumnIndex(HSCardEntry.COLUMN_NAME_COST) != -1){
+        if (cursor.getColumnIndex(HSCardEntry.COLUMN_NAME_COST) != -1) {
             card.setCost(cursor.getInt(cursor.getColumnIndex(HSCardEntry.COLUMN_NAME_COST)));
         }
 
@@ -163,7 +159,7 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
         dest.writeString(hearthstoneId);
     }
 
-    private void readFromParcel(Parcel in){
+    private void readFromParcel(Parcel in) {
         id = in.readInt();
         name = in.readString();
         type = in.readString();
@@ -220,7 +216,7 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
 
     @Override
     public String getManaCost() {
-        return cost+"";
+        return cost + "";
     }
 
     public void setRarity(String rarity) {
@@ -262,7 +258,7 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
     }
 
     public String getFaction() {
-        if (faction == null){
+        if (faction == null) {
             return "-";
         }
         return faction;
@@ -274,8 +270,8 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
 
     public String getMechanics() {
         String res = "";
-        for (String mechanic : mechanics){
-            res += mechanic+" ";
+        for (String mechanic : mechanics) {
+            res += mechanic + " ";
         }
         return res;
     }
@@ -324,12 +320,20 @@ public class HSCard extends GameCard implements Comparable<HSCard>{
         this.hearthstoneId = hearthstoneId;
     }
 
-    public String toString(){
-        return "[HSCard] "+name;
+    public String toString() {
+        return "[HSCard] " + name;
     }
 
     @Override
-    public int compareTo(HSCard card){
+    public String getImage() {
+        if (getHearthstoneId() != null) {
+            return "http://wow.zamimg.com/images/hearthstone/cards/enus/original/" + getHearthstoneId() + ".png";
+        }
+        return null;
+    }
+
+    @Override
+    public int compareTo(HSCard card) {
         /*if (isALand && card.isALand) return 0;
         if (!isALand && card.isALand) return -1;
         if (isALand) return 1;

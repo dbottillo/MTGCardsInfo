@@ -11,6 +11,7 @@ import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -18,9 +19,12 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
 
     private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
 
+    private ArrayList<GameCard> luckyCards;
+
     MTGCardFragment cardFragment;
 
     private boolean isLoading = false;
+    private boolean loadCardAfterDatabase = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,8 +35,6 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        cardFragment = (MTGCardFragment) getSupportFragmentManager().findFragmentById(R.id.container);
-
         findViewById(R.id.btn_lucky_again).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,14 +42,30 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
             }
         });
 
-        if (cardFragment == null) {
+        if (savedInstanceState == null) {
+            luckyCards = new ArrayList<GameCard>();
             loadRandomCard();
+        } else {
+            luckyCards = savedInstanceState.getParcelableArrayList("luckyCards");
+
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("luckyCards", luckyCards);
+    }
+
     private void loadRandomCard() {
+        if (luckyCards.size() > 0) {
+            // load from memory
+            loadCard();
+            return;
+        }
         if (!isLoading) {
             isLoading = true;
+            loadCardAfterDatabase = true;
             new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute();
         }
     }
@@ -114,17 +132,33 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
             invalidateOptionsMenu();
         } else {
             isLoading = false;
-            loadCard((MTGCard) objects.get(0));
+            for (Object obj : objects) {
+                MTGCard card = (MTGCard) obj;
+                luckyCards.add(card);
+                if (card.getImage() != null) {
+                    // pre-fetch images
+                    Picasso.with(this).load(card.getImage()).fetch();
+                }
+            }
+            if (loadCardAfterDatabase) {
+                loadCard();
+            }
         }
     }
 
-    private void loadCard(MTGCard mtgCard) {
-        cardFragment = MTGCardFragment.newInstance(mtgCard, 0, false);
+    private void loadCard() {
+        GameCard card = luckyCards.remove(0);
+        cardFragment = MTGCardFragment.newInstance(card, 0, false);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, cardFragment)
                 .commit();
-        getActionBar().setTitle(mtgCard.getName());
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, mtgCard.getName());
+        getActionBar().setTitle(card.getName());
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, card.getName());
+        if (luckyCards.size() == 2) {
+            // pre-fetch more
+            loadCardAfterDatabase = false;
+            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute();
+        }
     }
 
     @Override

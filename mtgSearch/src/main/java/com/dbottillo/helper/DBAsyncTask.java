@@ -105,7 +105,10 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
         } else if (type == TASK_RANDOM_CARD) {
             Cursor cursor = mDbHelper.getRandomCard();
             if (cursor.moveToFirst()) {
-                result.add(MTGCard.createCardFromCursor(cursor));
+                while (!cursor.isAfterLast()) {
+                    result.add(MTGCard.createCardFromCursor(cursor));
+                    cursor.moveToNext();
+                }
             }
             cursor.close();
 
@@ -144,9 +147,9 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
             Cursor cursor = null;
             if (type == TASK_SINGLE_SET) {
-                cursor = mDbHelper.getSet((String)params[0]);
+                cursor = mDbHelper.getSet((String) params[0]);
             } else {
-                cursor = mDbHelper.searchCard((String)params[0]);
+                cursor = mDbHelper.searchCard((String) params[0]);
             }
 
             if (cursor.moveToFirst()) {
