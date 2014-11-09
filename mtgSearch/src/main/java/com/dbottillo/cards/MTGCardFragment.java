@@ -4,14 +4,12 @@ import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,8 +72,6 @@ public class MTGCardFragment extends DBFragment {
     View retry;
     View cardImageContainer;
     TextView priceCard;
-
-    String urlImage = null;
 
     private int position;
 
@@ -158,7 +154,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getActivity() != null && getActivity() instanceof CardsActivity) {
+                if (getActivity() != null && getActivity() instanceof CardsActivity && !getResources().getBoolean(R.bool.isTablet)) {
                     ((CardsActivity) getActivity()).openFullScreen(position);
                     TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
                 }
@@ -245,10 +241,6 @@ public class MTGCardFragment extends DBFragment {
             TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
             setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
 
-            if (mtgCard.getMultiVerseId() > 0) {
-                urlImage = "http://mtgimage.com/multiverseid/" + mtgCard.getMultiVerseId() + ".jpg";
-            }
-
             updatePriceCard(getString(R.string.loading));
 
             /*Intent intent = new Intent(getActivity(), NetworkIntentService.class);
@@ -278,15 +270,11 @@ public class MTGCardFragment extends DBFragment {
             } else {
                 mechanics.setText("");
             }
-
-            if (hearthstoneCard.getHearthstoneId() != null) {
-                urlImage = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/" + hearthstoneCard.getHearthstoneId() + ".png";
-            }
         }
 
         retry.setVisibility(View.GONE);
 
-        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && urlImage != null) {
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getImage() != null) {
             loadImage();
         } else {
             cardLoader.setVisibility(View.GONE);
@@ -351,7 +339,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setVisibility(View.GONE);
 
         startCardLoader();
-        Picasso.with(getActivity()).load(urlImage).into(cardImage, new Callback() {
+        Picasso.with(getActivity()).load(card.getImage()).into(cardImage, new Callback() {
 
             @Override
             public void onSuccess() {
@@ -364,9 +352,9 @@ public class MTGCardFragment extends DBFragment {
                 stopCardLoader();
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", urlImage);
-                if (isNetworkAvailable()){
-                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", urlImage);
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", card.getImage());
+                if (isNetworkAvailable()) {
+                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", card.getImage());
                 }
             }
         });
