@@ -193,18 +193,18 @@ public class MTGCardFragment extends DBFragment {
     public void onStart() {
         super.onStart();
 
-        if (card instanceof MTGCard) {
+        /*if (card instanceof MTGCard) {
             IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
             LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
-        }
+        }*/
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (card instanceof MTGCard) {
+        /*if (card instanceof MTGCard) {
             LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
-        }
+        }*/
     }
 
     @Override
@@ -249,12 +249,12 @@ public class MTGCardFragment extends DBFragment {
 
             updatePriceCard(getString(R.string.loading));
 
-            Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+            /*Intent intent = new Intent(getActivity(), NetworkIntentService.class);
             Bundle params = new Bundle();
             params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
             params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
             intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
-            getActivity().startService(intent);
+            getActivity().startService(intent);*/
 
         } else {
 
@@ -312,7 +312,8 @@ public class MTGCardFragment extends DBFragment {
     };
 
     private void updatePriceCard(String message) {
-        priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
+        //priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
+        priceCard.setVisibility(View.GONE);
     }
 
     private void updateSizeImage() {

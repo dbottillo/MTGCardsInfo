@@ -63,6 +63,7 @@ public class NetworkIntentService extends IntentService {
         if (urlConnection.getResponseCode() == 200) {
             InputStream in = urlConnection.getInputStream();
             String res = getEntityAsString(in, urlConnection.getContentEncoding());
+            LOG.e(url + " \n result: " + res);
             JSONArray price = new JSONArray(res);
             return price.get(0).toString();
         } else {
