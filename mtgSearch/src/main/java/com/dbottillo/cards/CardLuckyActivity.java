@@ -140,7 +140,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
                     Picasso.with(this).load(card.getImage()).fetch();
                 }
             }
-            if (loadCardAfterDatabase) {
+            if (loadCardAfterDatabase && !isFinishing()) {
                 loadCard();
             }
         }
