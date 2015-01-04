@@ -4,17 +4,17 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
-import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.cards.MTGSetFragment;
+import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;
@@ -29,9 +29,9 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setTitle(R.string.action_search);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.action_search);
 
         if (savedInstanceState != null) {
             query = savedInstanceState.getString("query");

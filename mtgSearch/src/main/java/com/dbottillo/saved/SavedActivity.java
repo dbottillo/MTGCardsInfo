@@ -6,21 +6,21 @@ import android.view.MenuItem;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 
-public class SavedActivity extends DBActivity{
+public class SavedActivity extends DBActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setTitle(R.string.action_saved);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.action_saved);
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, SavedFragment.newInstance())
-                .commit();
+                    .replace(R.id.container, SavedFragment.newInstance())
+                    .commit();
         }
     }
 

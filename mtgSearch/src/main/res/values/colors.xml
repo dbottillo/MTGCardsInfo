@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--
-    100% — FF
-    95% — F2
-    90% — E6
-    85% — D9
-    80% — CC
-    75% — BF
-    70% — B3
-    65% — A6
-    60% — 99
-    55% — 8C
-    50% — 80
-    45% — 73
-    40% — 66
-    35% — 59
-    30% — 4D
-    25% — 40
-    20% — 33
-    15% — 26
-    10% — 1A
-    5% — 0D
-    0% — 00-->
+    <!--
+        100% — FF
+        95% — F2
+        90% — E6
+        85% — D9
+        80% — CC
+        75% — BF
+        70% — B3
+        65% — A6
+        60% — 99
+        55% — 8C
+        50% — 80
+        45% — 73
+        40% — 66
+        35% — 59
+        30% — 4D
+        25% — 40
+        20% — 33
+        15% — 26
+        10% — 1A
+        5% — 0D
+        0% — 00-->
+
+    <color name="color_primary">#00a7f7</color>
+    <color name="color_primary_middle_dark">#0086d4</color>
+    <color name="color_primary_almost_dark">#0075bf</color>
+    <color name="color_primary_dark">#00559d</color>
+    <color name="color_accent">@color/icon</color>
 
     <color name="action_bar">#39627E</color>
     <color name="main">#2C4E6B</color>
@@ -32,35 +38,30 @@
     <color name="grey">#F2F2F2</color>
     <color name="light_grey">#999</color>
     <color name="dark_grey">#555</color>
-    <color name="base_pressed">#DDD</color>
+    <color name="base_pressed">#DDD</color>s
 
-    <color name="bg_grey_opaque">#B3555555</color>
+    <color name="mtg_white">#a5a504</color>
+    <color name="mtg_blue">#00a8ff</color>
+    <color name="mtg_black">#000000</color>
+    <color name="mtg_red">#ff0000</color>
+    <color name="mtg_green">#319c1f</color>
+    <color name="mtg_multi">#b727af</color>
+    <color name="mtg_other">#aab4ba</color>
 
-    <color name="grey_white">#FDF9DF</color>
-    <color name="grey_white_pressed">#FDF1A2</color>
-    <color name="grey_blue">#DFF0FD</color>
-    <color name="grey_blue_pressed">#7FC3F8</color>
-    <color name="grey_black">#DEDEDE</color>
-    <color name="grey_black_pressed">#AAA8A8</color>
-    <color name="grey_red">#FBE9E1</color>
-    <color name="grey_red_pressed">#FCBCA0</color>
-    <color name="grey_green">#E5FBE1</color>
-    <color name="grey_green_pressed">#B1FCA3</color>
 
-    <color name="common">#000</color>
-    <color name="uncommon">#AAA</color>
+    <color name="common">#222</color>
+    <color name="uncommon">#888</color>
     <color name="rare">#BD9723</color>
     <color name="mythic">#D46805</color>
-    <color name="left_drawer_bg">#111</color>
-    <color name="left_menu_item_bg">#222</color>
-    <color name="left_menu_item_bg_pressed">#444</color>
-    <color name="left_drawer_divisor">#333</color>
+    <color name="left_drawer_bg">@color/color_primary_dark</color>
+    <color name="left_menu_item_bg">@color/white</color>
+    <color name="left_menu_item_bg_pressed">#e1f5ff</color>
+    <color name="left_drawer_divisor">@color/white</color>
     <color name="divisor">#CCC</color>
     <color name="btn_grey">#F8F8F8</color>
     <color name="btn_border_grey">#D4CFCF</color>
     <color name="life_counter_green">#23B152</color>
     <color name="life_counter_red">#FF0000</color>
     <color name="life_counter_middle">#B17023</color>
-    <color name="set_spinner_bg">#344d62</color>
 
 </resources>

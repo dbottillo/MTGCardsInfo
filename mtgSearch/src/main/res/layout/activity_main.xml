@@ -21,15 +21,16 @@
                 android:id="@+id/set_chooser"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:background="@color/set_spinner_bg"
+                android:background="@color/color_primary_dark"
                 android:padding="5dp"
-                android:layout_height="40dp">
+                android:layout_height="50dp">
 
                 <TextView
                     android:id="@+id/set_chooser_name"
                     android:layout_width="0dp"
                     android:textColor="@android:color/white"
                     tools:text="Theros"
+                    android:textSize="16sp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center_vertical"
@@ -59,15 +60,14 @@
                 android:clickable="true"
                 android:layout_below="@+id/set_chooser"
                 android:layout_width="match_parent"
-                android:background="@color/bg_grey_opaque"
+                android:background="@color/color_primary_dark"
                 android:layout_height="0dp" />
 
             <ListView
                 android:id="@+id/set_list"
                 android:layout_below="@+id/set_chooser"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:background="@android:color/white"
                 android:layout_height="0dp" />
@@ -77,7 +77,7 @@
         <FrameLayout
             android:id="@+id/filter"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:gravity="center|top" />
 
     </com.dbottillo.view.SlidingUpPanelLayout>
@@ -88,7 +88,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:choiceMode="singleChoice"
-        android:divider="@color/left_drawer_divisor"
-        android:dividerHeight="1dp"
-        android:background="@color/left_drawer_bg" />
+        android:divider="@color/color_primary"
+        android:dividerHeight="1px"
+        android:background="@color/color_primary_dark" />
 </android.support.v4.widget.DrawerLayout>

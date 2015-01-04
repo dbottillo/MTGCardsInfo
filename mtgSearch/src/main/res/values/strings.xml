@@ -30,17 +30,17 @@
     <string name="need_premium">Need Premium</string>
 
     <!-- filter panel -->
-    <string name="mtg_color_white">White</string>
-    <string name="mtg_color_blue">Blue</string>
-    <string name="mtg_color_black">Black</string>
-    <string name="mtg_color_red">Red</string>
-    <string name="mtg_color_green">Green</string>
+    <string name="mtg_color_white">W</string>
+    <string name="mtg_color_blue">U</string>
+    <string name="mtg_color_black">B</string>
+    <string name="mtg_color_red">R</string>
+    <string name="mtg_color_green">G</string>
     <string name="mtg_type_artifact">Artifact</string>
     <string name="mtg_type_land">Land</string>
-    <string name="mtg_common">Common</string>
-    <string name="mtg_uncommon">Uncommon</string>
-    <string name="mtg_rare">Rare</string>
-    <string name="mtg_mythic_rare">Myhtic Rare</string>
+    <string name="mtg_common">Co</string>
+    <string name="mtg_uncommon">U</string>
+    <string name="mtg_rare">R</string>
+    <string name="mtg_mythic_rare">M</string>
 
     <!-- card fragment -->
     <string name="type_card">Type</string>

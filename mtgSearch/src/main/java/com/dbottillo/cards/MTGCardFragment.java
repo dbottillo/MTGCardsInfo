@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,7 +32,6 @@ import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
-import com.google.android.gms.ads.AdListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -112,21 +110,6 @@ public class MTGCardFragment extends DBFragment {
         });
 
         setHasOptionsMenu(true);
-
-        if (!getApp().isPremium()) {
-            createAdView("ca-app-pub-8119815713373556/8777882818");
-            getAdView().setAdListener(new AdListener() {
-                @Override
-                public void onAdOpened() {
-                    // Save app state before going to the ad overlay.
-                }
-            });
-
-            FrameLayout layout = (FrameLayout) rootView.findViewById(R.id.banner_container);
-            layout.addView(getAdView());
-
-            getAdView().loadAd(createAdRequest());
-        }
 
         mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override

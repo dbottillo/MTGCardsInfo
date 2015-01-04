@@ -5,9 +5,8 @@ import android.view.MenuItem;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
-import com.dbottillo.saved.SavedFragment;
 
-public class LifeCounterActivity extends DBActivity{
+public class LifeCounterActivity extends DBActivity {
 
     private LifeCounterFragment lifeCounterFragment;
 
@@ -16,15 +15,15 @@ public class LifeCounterActivity extends DBActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_counter);
 
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setTitle(R.string.action_life_counter);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.action_life_counter);
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             lifeCounterFragment = LifeCounterFragment.newInstance();
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, lifeCounterFragment)
-                .commit();
+                    .replace(R.id.container, lifeCounterFragment)
+                    .commit();
         } else {
             lifeCounterFragment = (LifeCounterFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         }
@@ -47,7 +46,7 @@ public class LifeCounterActivity extends DBActivity{
 
     @Override
     public void onBackPressed() {
-        if (!lifeCounterFragment.onBackPressed()){
+        if (!lifeCounterFragment.onBackPressed()) {
             super.onBackPressed();
         }
     }

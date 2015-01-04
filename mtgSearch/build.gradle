@@ -15,12 +15,12 @@ repositories {
 
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.1.1'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
 
     signingConfigs {
@@ -48,7 +48,7 @@ android {
         }
         release {
             debuggable false
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
         }
@@ -91,10 +91,11 @@ tasks.whenTaskAdded { task ->
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:20.0.0'
-    compile 'com.google.android.gms:play-services:5.0.89'
+    compile 'com.android.support:support-v4:21.0.2'
+    compile 'com.google.android.gms:play-services-base:6.5.87'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
+    compile "com.android.support:appcompat-v7:21.0.2"
     compile 'com.squareup.picasso:picasso:2.3.4'
     compile 'com.crashlytics.android:crashlytics:1.+'
 

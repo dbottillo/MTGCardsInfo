@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -78,7 +78,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         });
 
         // Set up the action bar to show a dropdown list.
-        getActionBar().setTitle(R.string.app_long_name);
+        getSupportActionBar().setTitle(R.string.app_long_name);
 
         if (savedInstanceState == null) {
             sets = new ArrayList<GameSet>();
@@ -181,16 +181,41 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close) {
-
-            /** Called when a drawer has settled in a completely closed state. */
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.app_name, R.string.app_name) {
+            /* Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
-            /** Called when a drawer has settled in a completely open state. */
+            /* Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            @Override
+            public void onDrawerSlide(final View view, final float slideOffset) {
+                super.onDrawerSlide(view, slideOffset);
+                /*float value = 0.9f + 0.1f * (1.0f - slideOffset);
+                findViewById(R.id.sliding_layout).setScaleX(value);
+                findViewById(R.id.sliding_layout).setScaleY(value);*/
+            }
+        };
+
+        /*mDrawerToggle.
+
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close) {
+
+            *//** Called when a drawer has settled in a completely closed state. *//*
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            *//** Called when a drawer has settled in a completely open state. *//*
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
@@ -203,13 +228,13 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                 findViewById(R.id.sliding_layout).setScaleX(value);
                 findViewById(R.id.sliding_layout).setScaleY(value);
             }
-        };
+        };*/
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         final ArrayList<LeftMenuAdapter.LeftMenuItem> items = new ArrayList<LeftMenuAdapter.LeftMenuItem>();
         for (LeftMenuAdapter.LeftMenuItem leftMenuItem : LeftMenuAdapter.LeftMenuItem.values()) {
@@ -315,8 +340,9 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-        menu.findItem(R.id.action_search).setVisible(!mDrawerLayout.isDrawerOpen(mDrawerList));
+        if (!mDrawerLayout.isDrawerOpen(mDrawerList)) {
+            inflater.inflate(R.menu.main, menu);
+        }
         return true;
     }
 

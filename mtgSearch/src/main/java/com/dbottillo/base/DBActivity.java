@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.dialog.AboutFragment;
@@ -13,10 +13,7 @@ import com.dbottillo.dialog.GoToPremiumFragment;
 import com.dbottillo.dialog.PriceInfoFragment;
 import com.dbottillo.helper.TrackingHelper;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
-public abstract class DBActivity extends FragmentActivity {
+public abstract class DBActivity extends ActionBarActivity {
 
     public enum DBDialog {
         ABOUT("about"),
