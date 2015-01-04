@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +25,6 @@ import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
-import com.google.android.gms.ads.AdListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,9 +32,6 @@ import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, AdapterView.OnItemClickListener, View.OnClickListener {
 
     private static final String SET_CHOSEN = "set_chosen";
@@ -105,21 +100,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         listView.setOnItemClickListener(this);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-
-        if (!getApp().isPremium() && !BuildConfig.magic) {
-            createAdView("ca-app-pub-8119815713373556/4408152412");
-            getAdView().setAdListener(new AdListener() {
-                @Override
-                public void onAdOpened() {
-                    // Save app state before going to the ad overlay.
-                }
-            });
-
-            FrameLayout layout = (FrameLayout) rootView.findViewById(R.id.banner_container);
-            layout.addView(getAdView());
-
-            getAdView().loadAd(createAdRequest());
-        }
 
         return rootView;
     }

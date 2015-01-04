@@ -31,11 +31,11 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen_cards);
 
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setTitle("");
-        getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55222222")));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55222222")));
 
         viewPager = (ViewPager) findViewById(R.id.pager);
 

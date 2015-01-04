@@ -7,22 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.helper.TrackingHelper;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public abstract class DBFragment extends DialogFragment {
 
     public static final String PREFS_NAME = "Filter";
-
     public static final String PREF_SHOW_IMAGE = "show_image";
-
-    private AdView adView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,7 +27,7 @@ public abstract class DBFragment extends DialogFragment {
 
     protected void setActionBarTitle(String title) {
         DBActivity act = (DBActivity) getActivity();
-        act.getActionBar().setTitle(title);
+        act.getSupportActionBar().setTitle(title);
     }
 
     protected void openPlayStore() {
@@ -50,62 +40,15 @@ public abstract class DBFragment extends DialogFragment {
         }
     }
 
-
-    protected AdView createAdView(String unitID) {
-        adView = new AdView(getActivity());
-        adView.setAdSize(AdSize.SMART_BANNER);
-        adView.setAdUnitId(unitID);
-        return adView;
-    }
-
-    protected AdRequest createAdRequest() {
-        AdRequest.Builder builder = new AdRequest.Builder()
-                .setGender(AdRequest.GENDER_MALE)
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
-        if (BuildConfig.DEBUG) {
-            builder.addTestDevice("BFD58A83B8C287B36B78CD9A74E164E4")
-                    .addTestDevice("81CB49F53C9C0C74241CB8BD3383E1C7")
-                    .addTestDevice("050BC3B5E5E1DF487D93014199FBB3CD");
-        }
-        return builder.build();
-    }
-
     @Override
     public void onResume() {
         super.onResume();
-        if (adView != null) {
-            adView.resume();
-        }
         if (getPageTrack() != null) {
             TrackingHelper.trackPage(getPageTrack());
         }
     }
 
-    @Override
-    public void onPause() {
-        if (adView != null) {
-            adView.pause();
-        }
-        super.onPause();
-    }
-
-    /**
-     * Called before the activity is destroyed.
-     */
-    @Override
-    public void onDestroy() {
-        // Destroy the AdView.
-        if (adView != null) {
-            adView.destroy();
-        }
-        super.onDestroy();
-    }
-
     public abstract String getPageTrack();
-
-    public AdView getAdView() {
-        return adView;
-    }
 
     public MTGApp getApp() {
         if (getActivity() != null) {

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/collapsedHeight"
         android:id="@+id/filter_draggable"
-        android:background="@color/sub_main">
+        android:background="@color/color_primary_dark">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,20 +21,13 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:src="@drawable/filter" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:textColor="#FFF"
-                android:text=":" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_height="match_parent"
                 android:lines="1"
                 android:textSize="18sp"
@@ -60,107 +53,75 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/bg_filter"
+        android:background="@color/white"
         android:layout_weight="1">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:id="@+id/filter_container"
-            android:orientation="vertical">
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="@dimen/margin_divisor_filter">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="@dimen/margin_divisor_filter"
-                android:layout_above="@+id/filter_artifact"
-                android:layout_gravity="center_horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/filter_three"
-                    android:weightSum="3"
-                    android:orientation="horizontal">
+            <ToggleButton
+                android:id="@+id/toggle_white"
+                android:layout_toLeftOf="@+id/toggle_blue"
+                android:layout_width="@dimen/filter_toggle_size"
+                android:layout_height="@dimen/filter_toggle_size"
+                android:textColor="@drawable/toggle_text_color"
+                android:textOn="@string/mtg_color_white"
+                android:textOff="@string/mtg_color_white"
+                android:onClick="onToggleClicked" />
 
-                    <ToggleButton
-                        android:id="@+id/toggle_white"
-                        android:layout_toLeftOf="@+id/toggle_blue"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textColor="@drawable/toggle_text_color"
-                        android:textOn="@string/mtg_color_white"
-                        android:textOff="@string/mtg_color_white"
-                        android:onClick="onToggleClicked" />
+            <ToggleButton
+                android:id="@id/toggle_blue"
+                android:layout_toLeftOf="@+id/toggle_black"
+                android:layout_width="@dimen/filter_toggle_size"
+                android:layout_height="@dimen/filter_toggle_size"
+                android:textColor="@drawable/toggle_text_color"
+                android:textOn="@string/mtg_color_blue"
+                android:textOff="@string/mtg_color_blue"
+                android:onClick="onToggleClicked" />
 
-                    <ToggleButton
-                        android:id="@id/toggle_blue"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="@drawable/toggle_text_color"
-                        android:textOn="@string/mtg_color_blue"
-                        android:textOff="@string/mtg_color_blue"
-                        android:onClick="onToggleClicked" />
+            <ToggleButton
+                android:id="@+id/toggle_black"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/filter_toggle_size"
+                android:layout_height="@dimen/filter_toggle_size"
+                android:textColor="@drawable/toggle_text_color"
+                android:textOn="@string/mtg_color_black"
+                android:textOff="@string/mtg_color_black"
+                android:onClick="onToggleClicked" />
 
-                    <ToggleButton
-                        android:id="@+id/toggle_black"
-                        android:layout_toRightOf="@id/toggle_blue"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textColor="@drawable/toggle_text_color"
-                        android:textOn="@string/mtg_color_black"
-                        android:textOff="@string/mtg_color_black"
-                        android:onClick="onToggleClicked" />
-                </LinearLayout>
+            <ToggleButton
+                android:id="@+id/toggle_red"
+                android:layout_width="@dimen/filter_toggle_size"
+                android:layout_height="@dimen/filter_toggle_size"
+                android:layout_toRightOf="@+id/toggle_black"
+                android:textColor="@drawable/toggle_text_color"
+                android:textOn="@string/mtg_color_red"
+                android:textOff="@string/mtg_color_red"
+                android:onClick="onToggleClicked" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/filter_three"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
-
-                    <ToggleButton
-                        android:id="@+id/toggle_red"
-                        android:layout_centerHorizontal="true"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textColor="@drawable/toggle_text_color"
-                        android:textOn="@string/mtg_color_red"
-                        android:textOff="@string/mtg_color_red"
-                        android:onClick="onToggleClicked" />
-
-                    <ToggleButton
-                        android:id="@+id/toggle_green"
-                        android:layout_toRightOf="@id/toggle_red"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textColor="@drawable/toggle_text_color"
-                        android:textOn="@string/mtg_color_green"
-                        android:textOff="@string/mtg_color_green"
-                        android:onClick="onToggleClicked" />
-
-                </LinearLayout>
-
-            </RelativeLayout>
+            <ToggleButton
+                android:id="@+id/toggle_green"
+                android:layout_toRightOf="@id/toggle_red"
+                android:layout_width="@dimen/filter_toggle_size"
+                android:layout_height="@dimen/filter_toggle_size"
+                android:textColor="@drawable/toggle_text_color"
+                android:textOn="@string/mtg_color_green"
+                android:textOff="@string/mtg_color_green"
+                android:onClick="onToggleClicked" />
 
             <LinearLayout
+                android:layout_below="@+id/toggle_black"
+                android:id="@+id/filter_artifact_land"
+                android:layout_alignLeft="@+id/toggle_white"
+                android:layout_alignRight="@+id/toggle_green"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_divisor_filter"
-                android:id="@+id/filter_artifact"
-                android:layout_above="@+id/filter_common"
-                android:weightSum="2"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <ToggleButton
                     android:id="@+id/toggle_artifact"
@@ -186,18 +147,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_divisor_filter"
-                android:id="@+id/filter_common"
-                android:weightSum="2"
-                android:layout_above="@+id/filter_rare"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_below="@+id/filter_artifact_land"
+                android:layout_alignLeft="@+id/toggle_white"
+                android:layout_alignRight="@+id/toggle_green"
+                android:weightSum="4">
 
                 <ToggleButton
                     android:id="@+id/toggle_common"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/filter_toggle_size"
                     android:textOn="@string/mtg_common"
                     android:textColor="@drawable/toggle_text_color"
                     android:textOff="@string/mtg_common"
@@ -205,30 +164,19 @@
 
                 <ToggleButton
                     android:id="@+id/toggle_uncommon"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/filter_toggle_size"
                     android:textColor="@drawable/toggle_text_color"
-                    android:layout_height="wrap_content"
                     android:textOn="@string/mtg_uncommon"
                     android:textOff="@string/mtg_uncommon"
                     android:onClick="onToggleClicked" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/filter_rare"
-                android:layout_marginBottom="10dp"
-                android:layout_above="@+id/btn_apply_filter"
-                android:weightSum="2"
-                android:gravity="center"
-                android:orientation="horizontal">
 
                 <ToggleButton
                     android:id="@+id/toggle_rare"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/filter_toggle_size"
                     android:textOn="@string/mtg_rare"
                     android:textOff="@string/mtg_rare"
                     android:textColor="@drawable/toggle_text_color"
@@ -236,32 +184,26 @@
 
                 <ToggleButton
                     android:id="@+id/toggle_myhtic"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/filter_toggle_size"
                     android:textOn="@string/mtg_mythic_rare"
                     android:textOff="@string/mtg_mythic_rare"
                     android:textColor="@drawable/toggle_text_color"
                     android:onClick="onToggleClicked" />
+
             </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:textSize="16sp"
-                android:layout_height="40dp"
-                android:id="@+id/btn_apply_filter"
-                style="@style/BtnGeneric"
-                android:layout_marginTop="@dimen/margin_divisor_filter"
-                android:layout_marginBottom="15dp"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/apply_filter" />
-
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
-    <FrameLayout
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ad_container" />
+        android:textSize="16sp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_apply_filter"
+        style="@style/BtnGeneric"
+        android:gravity="center"
+        android:text="@string/apply_filter" />
 
 </LinearLayout>

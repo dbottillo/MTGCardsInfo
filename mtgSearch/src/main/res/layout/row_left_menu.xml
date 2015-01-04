@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,14 +12,17 @@
 
     <ImageView
         android:id="@+id/left_menu_icon"
+        android:tint="@color/white"
+        tools:src="@drawable/left_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/left_menu_title"
         android:layout_marginLeft="5dp"
-        android:textColor="@android:color/white"
+        android:textColor="@color/white"
         android:layout_gravity="center_vertical"
+        tools:text="Sets"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

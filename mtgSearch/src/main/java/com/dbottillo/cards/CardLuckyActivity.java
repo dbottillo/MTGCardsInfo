@@ -31,9 +31,9 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lucky_card);
 
-        getActionBar().setTitle("");
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.btn_lucky_again).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +152,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, cardFragment)
                 .commit();
-        getActionBar().setTitle(card.getName());
+        getSupportActionBar().setTitle(card.getName());
         TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, card.getName());
         if (luckyCards.size() == 2) {
             // pre-fetch more

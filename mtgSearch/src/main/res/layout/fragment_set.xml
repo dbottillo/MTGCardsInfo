@@ -7,8 +7,8 @@
 
     <ListView
         android:id="@+id/set_list"
-        android:divider="@null"
-        android:dividerHeight="0dp"
+        android:divider="#e6e6e6"
+        android:dividerHeight="1dp"
         android:cacheColorHint="@android:color/transparent"
         android:layout_above="@+id/banner_container"
         android:layout_width="match_parent"

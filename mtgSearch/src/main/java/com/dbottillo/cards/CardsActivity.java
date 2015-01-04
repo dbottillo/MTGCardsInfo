@@ -26,8 +26,8 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         cardsFragment = (MTGCardsFragment) getSupportFragmentManager().findFragmentById(R.id.container);
 

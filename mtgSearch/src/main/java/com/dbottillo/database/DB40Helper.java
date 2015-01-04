@@ -12,13 +12,9 @@ import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
-import com.google.android.gms.games.Game;
 
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 13/07/2014.
- */
 public class DB40Helper {
 
     private static final String TAG = DB40Helper.class.getName();
