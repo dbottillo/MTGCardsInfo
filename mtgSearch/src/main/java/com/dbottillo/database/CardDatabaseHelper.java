@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.dbottillo.BuildConfig;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-/**
- * Created by danielebottillo on 02/08/2014.
- */
 public abstract class CardDatabaseHelper extends SQLiteAssetHelper {
 
     public CardDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

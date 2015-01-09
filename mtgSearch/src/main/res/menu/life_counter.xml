@@ -1,5 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.dbottillo.saved.SavedActivity">
 
     <item
@@ -7,21 +8,21 @@
         android:icon="@drawable/ic_reset"
         android:title="@string/life_reset"
         android:orderInCategory="100"
-        android:showAsAction="always" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_dice"
         android:icon="@drawable/ic_dice"
         android:title="@string/life_dice"
         android:orderInCategory="101"
-        android:showAsAction="always" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_add"
         android:icon="@drawable/ic_add_player"
         android:title="@string/add_player"
         android:orderInCategory="102"
-        android:showAsAction="always" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_poison"
@@ -29,6 +30,6 @@
         android:title="@string/menu_life_poison"
         android:orderInCategory="103"
         android:checkable="true"
-        android:showAsAction="never" />
+        app:showAsAction="never" />
 
 </menu>
