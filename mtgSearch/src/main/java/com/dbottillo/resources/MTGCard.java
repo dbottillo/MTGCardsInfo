@@ -4,17 +4,14 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
-import com.dbottillo.database.CardContract.*;
-import com.dbottillo.database.SetContract.*;
+import com.dbottillo.database.CardContract.CardEntry;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class MTGCard extends GameCard implements Comparable<MTGCard> {
 
@@ -54,23 +51,23 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
             ", they often substitute whimsy for strategy, delighting in mischief and mayhem.","imageName":"air elemental"},
     */
 
-    public MTGCard(){
+    public MTGCard() {
         this.colors = new ArrayList<Integer>();
         this.types = new ArrayList<String>();
         this.subTypes = new ArrayList<String>();
     }
 
-    public MTGCard(int id){
+    public MTGCard(int id) {
         this();
         this.id = id;
     }
 
-    public MTGCard(Parcel in){
+    public MTGCard(Parcel in) {
         this();
         readFromParcel(in);
     }
 
-    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException{
+    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, long setId, String setName) throws JSONException {
         ContentValues values = new ContentValues();
 
         boolean isASplit = false;
@@ -78,14 +75,14 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
 
         if (!isASplit) {
             values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
-        }else{
+        } else {
             JSONArray namesJ = jsonObject.getJSONArray("names");
             String names = "";
-            for (int k =0; k<namesJ.length(); k++){
+            for (int k = 0; k < namesJ.length(); k++) {
                 String name = namesJ.getString(k);
                 names += name;
-                if (k < namesJ.length()-1){
-                    names +="/";
+                if (k < namesJ.length() - 1) {
+                    names += "/";
                 }
             }
             values.put(CardEntry.COLUMN_NAME_NAME, names);
@@ -99,79 +96,79 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         int land = 0;
         int artifact = 0;
 
-        if (jsonObject.has("colors")){
+        if (jsonObject.has("colors")) {
             JSONArray colorsJ = jsonObject.getJSONArray("colors");
             String colors = "";
-            for (int k =0; k<colorsJ.length(); k++){
+            for (int k = 0; k < colorsJ.length(); k++) {
                 String color = colorsJ.getString(k);
                 colors += color;
-                if (k < colorsJ.length()-1){
-                    colors +=",";
+                if (k < colorsJ.length() - 1) {
+                    colors += ",";
                 }
             }
             values.put(CardEntry.COLUMN_NAME_COLORS, colors);
 
-            if (colorsJ.length()>1){
+            if (colorsJ.length() > 1) {
                 multicolor = 1;
-            }else{
+            } else {
                 multicolor = 0;
             }
             land = 0;
-        }else{
+        } else {
             multicolor = 0;
             land = 1;
         }
 
-        if (jsonObject.has("types")){
+        if (jsonObject.has("types")) {
             JSONArray typesJ = jsonObject.getJSONArray("types");
             String types = "";
-            for (int k =0; k<typesJ.length(); k++){
+            for (int k = 0; k < typesJ.length(); k++) {
                 types += typesJ.getString(k);
-                if (k < typesJ.length()-1){
-                    types +=",";
+                if (k < typesJ.length() - 1) {
+                    types += ",";
                 }
             }
             values.put(CardEntry.COLUMN_NAME_TYPES, types);
         }
 
-        if (jsonObject.getString("type").contains("Artifact")){
+        if (jsonObject.getString("type").contains("Artifact")) {
             artifact = 1;
-        }else{
+        } else {
             artifact = 0;
         }
 
-        if (jsonObject.has("manaCost")){
+        if (jsonObject.has("manaCost")) {
             values.put(CardEntry.COLUMN_NAME_MANACOST, jsonObject.getString("manaCost"));
             land = 0;
         }
         values.put(CardEntry.COLUMN_NAME_RARITY, jsonObject.getString("rarity"));
 
-        if (jsonObject.has("multiverseid")){
+        if (jsonObject.has("multiverseid")) {
             values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, jsonObject.getInt("multiverseid"));
         }
 
         String power = "";
-        if (jsonObject.has("power")){
+        if (jsonObject.has("power")) {
             power = jsonObject.getString("power");
         }
         values.put(CardEntry.COLUMN_NAME_POWER, power);
 
         String toughness = "";
-        if (jsonObject.has("toughness")){
+        if (jsonObject.has("toughness")) {
             toughness = jsonObject.getString("toughness");
         }
         values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
 
-        if (!isASplit && jsonObject.has("text")){
+        if (!isASplit && jsonObject.has("text")) {
             values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("text"));
         }
 
-        if (isASplit && jsonObject.has("originalText")){
+        if (isASplit && jsonObject.has("originalText")) {
             values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("originalText"));
         }
 
         int cmc = -1;
-        if (jsonObject.has("cmc")){
+        if (jsonObject.has("cmc")) {
             cmc = jsonObject.getInt("cmc");
         }
         values.put(CardEntry.COLUMN_NAME_CMC, cmc);
@@ -191,17 +188,17 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_ID)));
         card.setSetName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
 
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1){
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1) {
             String colors = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS));
-            if (colors != null){
+            if (colors != null) {
                 String[] splitted = colors.split(",");
-                for (int i=0; i<splitted.length; i++){
+                for (int i = 0; i < splitted.length; i++) {
                     card.addColor(MTGCard.mapIntColor(splitted[i]));
                 }
             }
         }
 
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES) != -1){
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES) != -1) {
             String types = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES));
             if (types != null) {
                 String[] splitted = types.split(",");
@@ -211,20 +208,20 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
             }
         }
 
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST) != -1){
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST) != -1) {
             card.setManaCost(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST)));
         }
 
         card.setRarity(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RARITY)));
 
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1){
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
             card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
         }
 
         card.setPower(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_POWER)));
         card.setToughness(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TOUGHNESS)));
 
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT) != -1){
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT) != -1) {
             card.setText(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT)));
         }
 
@@ -235,7 +232,7 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_ARTIFACT)) == 1);
 
         card.setAsEldrazi(false);
-        if (!card.isMultiColor() && !card.isALand() && !card.isAnArtifact() && card.getColors().size() == 0){
+        if (!card.isMultiColor() && !card.isALand() && !card.isAnArtifact() && card.getColors().size() == 0) {
             card.setAsEldrazi(true);
         }
 
@@ -312,7 +309,7 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         return card;
     }*/
 
-    private static int mapIntColor(String color){
+    private static int mapIntColor(String color) {
         if (color.equalsIgnoreCase("Black")) return BLACK;
         if (color.equalsIgnoreCase("Blue")) return BLUE;
         if (color.equalsIgnoreCase("White")) return WHITE;
@@ -340,16 +337,16 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         dest.writeString(toughness);
         dest.writeString(manaCost);
         dest.writeString(text);
-        dest.writeInt(isMultiColor ? 0 : 1);
-        dest.writeInt(isALand ? 0 : 1);
-        dest.writeInt(isAnArtifact ? 0 : 1);
-        dest.writeInt(isAnEldrazi ? 0 : 1);
+        dest.writeInt(isMultiColor ? 1 : 0);
+        dest.writeInt(isALand ? 1 : 0);
+        dest.writeInt(isAnArtifact ? 1 : 0);
+        dest.writeInt(isAnEldrazi ? 1 : 0);
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
         dest.writeString(setName);
     }
 
-    private void readFromParcel(Parcel in){
+    private void readFromParcel(Parcel in) {
         id = in.readInt();
         name = in.readString();
         type = in.readString();
@@ -531,8 +528,8 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         this.idSet = idSet;
     }
 
-    public String toString(){
-        return "[MTGCard] "+name;
+    public String toString() {
+        return "[MTGCard] " + name;
     }
 
     @Override
@@ -544,7 +541,7 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
     }
 
     @Override
-    public int compareTo(MTGCard card){
+    public int compareTo(MTGCard card) {
         if (isALand && card.isALand) return 0;
         if (!isALand && card.isALand) return -1;
         if (isALand) return 1;
@@ -561,7 +558,7 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         return 1;
     }
 
-    private int getSingleColor(){
+    private int getSingleColor() {
         if (isMultiColor || getColors().size() == 0) return -1;
         return getColors().get(0);
     }

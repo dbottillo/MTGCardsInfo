@@ -50,7 +50,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
-        savedCards = new ArrayList<GameCard>();
+        savedCards = new ArrayList<>();
 
         adapter = new CardListAdapter(getActivity(), savedCards, false);
         listView.setAdapter(adapter);

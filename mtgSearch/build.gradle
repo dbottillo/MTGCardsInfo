@@ -9,10 +9,10 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 apply plugin: 'crashlytics'
+
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
 }
-
 
 android {
     compileSdkVersion 21
