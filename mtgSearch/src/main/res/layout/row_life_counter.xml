@@ -2,134 +2,139 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingTop="5dp"
-    android:background="@android:color/white">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/life_counter_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
-        android:orientation="vertical">
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        tools:background="#FF9900">
 
         <LinearLayout
-            android:id="@+id/row_life_counter_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="4dp"
+            android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/row_life_counter_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/player_name"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
                     android:layout_gravity="center_vertical"
-                    android:padding="5dp"
-                    android:background="@drawable/bg_label">
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textSize="24sp"
+                    tools:text="Ajani"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/player_name"
-                        android:textColor="@color/action_bar"
-                        android:singleLine="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:textSize="18sp"
-                        tools:text="Player 1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </FrameLayout>
-            </FrameLayout>
+                <ImageButton
+                    android:id="@+id/player_edit"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/sel_edit_grey"
+                    android:tint="@color/white"
+                    android:scaleType="fitXY"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
 
-            <ImageButton
-                android:id="@+id/player_edit"
-                android:background="@android:color/transparent"
-                android:src="@drawable/sel_edit_grey"
-                android:scaleType="fitXY"
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
-
-            <ImageButton
-                android:id="@+id/player_remove"
-                android:background="@android:color/transparent"
-                android:src="@drawable/sel_trash_grey"
-                android:scaleType="fitXY"
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/player_remove"
+                    android:background="@android:color/transparent"
+                    android:tint="@color/white"
+                    android:src="@drawable/sel_trash_grey"
+                    android:scaleType="fitXY"
+                    android:layout_marginRight="4dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+            </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="5dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_life_minus_five"
+                    style="@style/BtnLifeCounter.Life"
+                    android:text="@string/minus_five"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/btn_life_minus_one" />
+
+                <Button
+                    android:id="@+id/btn_life_minus_one"
+                    android:layout_toLeftOf="@+id/player_life"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center|right"
+                    android:text="@string/minus_one"
+                    style="@style/BtnLifeCounter.Life" />
 
                 <TextView
                     android:id="@+id/player_life"
-                    android:gravity="center"
                     tools:text="20"
                     android:textSize="60sp"
+                    android:textColor="@color/white"
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/player_poison"
-                    android:gravity="center"
-                    tools:text="10"
-                    android:textSize="20sp"
-                    android:layout_toRightOf="@+id/player_life"
-                    android:layout_alignBaseline="@+id/player_life"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-
-            <GridLayout
-                android:layout_width="wrap_content"
-                android:rowCount="@integer/life_counter_row"
-                android:columnCount="@integer/life_counter_column"
-                android:layout_height="wrap_content">
-
                 <Button
                     android:id="@+id/btn_life_plus_one"
+                    style="@style/BtnLifeCounter.Life"
                     android:text="@string/plus_one"
-                    style="@style/BtnLifeCounter.Life.Plus" />
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center|left"
+                    android:layout_toRightOf="@+id/player_life" />
 
                 <Button
-                    android:id="@+id/btn_life_minus_one"
-                    android:text="@string/minus_one"
-                    style="@style/BtnLifeCounter.Life.Minus" />
+                    android:id="@+id/btn_life_plus_five"
+                    style="@style/BtnLifeCounter.Life"
+                    android:text="@string/plus_five"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/btn_life_plus_one" />
+            </RelativeLayout>
 
-                <Button
-                    android:id="@+id/btn_poison_plus_one"
-                    android:text="@string/plus_one"
-                    android:visibility="gone"
-                    style="@style/BtnLifeCounter.Poison.Plus" />
+            <RelativeLayout
+                android:id="@+id/life_counter_poison_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/btn_poison_minus_one"
                     android:text="@string/minus_one"
-                    android:visibility="gone"
-                    style="@style/BtnLifeCounter.Poison.Minus" />
+                    android:layout_marginRight="10dp"
+                    android:gravity="center|right"
+                    android:layout_toLeftOf="@+id/player_poison"
+                    style="@style/BtnLifeCounter.Poison" />
 
+                <TextView
+                    android:id="@+id/player_poison"
+                    tools:text="10"
+                    android:textSize="40sp"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-            </GridLayout>
+                <Button
+                    android:id="@+id/btn_poison_plus_one"
+                    android:text="@string/plus_one"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center|left"
+                    android:layout_toRightOf="@+id/player_poison"
+                    style="@style/BtnLifeCounter.Poison" />
+            </RelativeLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#979797" />
-
+    </FrameLayout>
 </LinearLayout>

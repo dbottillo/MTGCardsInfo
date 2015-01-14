@@ -27,7 +27,8 @@
     <color name="color_primary_middle_dark">#0086d4</color>
     <color name="color_primary_almost_dark">#0075bf</color>
     <color name="color_primary_dark">#00559d</color>
-    <color name="color_accent">@color/icon</color>
+    <color name="color_accent">#FF41B4</color>
+    <color name="color_accent_dark">#C1147D</color>
 
     <color name="main_bg">#FAFAFA</color>
     <color name="action_bar">#39627E</color>
@@ -64,5 +65,11 @@
     <color name="life_counter_green">#23B152</color>
     <color name="life_counter_red">#FF0000</color>
     <color name="life_counter_middle">#B17023</color>
+
+    <color name="player_1">#716BBE</color>
+    <color name="player_2">#FF9900</color>
+    <color name="player_3">#46B446</color>
+    <color name="player_4">#FF1C1C</color>
+    <color name="player_5">#1CACFF</color>
 
 </resources>

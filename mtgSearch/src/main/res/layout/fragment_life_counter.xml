@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg_filter"
+    android:background="@color/white"
     android:id="@+id/life_counter_container"
     tools:context="com.dbottillo.lifecounter.LifeCounterActivity">
 
@@ -12,6 +12,7 @@
         android:divider="@null"
         android:dividerHeight="0dp"
         android:cacheColorHint="@android:color/transparent"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -31,5 +32,16 @@
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         style="@style/MTGProgressBar"
         android:id="@+id/progress" />
+
+    <Button
+        android:id="@+id/new_player"
+        style="@style/FabButton"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="15dp"
+        android:text="+" />
 
 </RelativeLayout>

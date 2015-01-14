@@ -8,7 +8,7 @@
         android:id="@+id/fragment_card_container"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:background="@drawable/bg_filter"
+        android:background="@color/white"
         android:layout_height="0dp">
 
         <RelativeLayout
@@ -19,6 +19,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:minHeight="200dp"
                 android:id="@+id/image_card_container">
 
                 <ImageView
@@ -42,6 +44,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
                         android:text="@string/error_load_image" />
 
                     <Button

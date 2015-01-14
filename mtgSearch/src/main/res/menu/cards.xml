@@ -1,17 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.dbottillo.base.MainActivity" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.dbottillo.base.MainActivity">
     <item
         android:id="@+id/action_fullscreen_image"
         android:icon="@drawable/ic_fullscreen"
         android:title="@string/menu_fullscreen_image"
         android:orderInCategory="103"
-        android:showAsAction="always" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_image"
         android:icon="@null"
         android:title="@string/menu_image"
         android:orderInCategory="104"
         android:checkable="true"
-        android:showAsAction="never" />
+        app:showAsAction="never" />
 </menu>

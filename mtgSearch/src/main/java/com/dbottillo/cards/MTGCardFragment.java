@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,9 +36,6 @@ import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class MTGCardFragment extends DBFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();
@@ -68,6 +66,7 @@ public class MTGCardFragment extends DBFragment {
     ImageView cardImage;
     ImageView cardLoader;
     View retry;
+    Button retryBtn;
     View cardImageContainer;
     TextView priceCard;
 
@@ -100,6 +99,7 @@ public class MTGCardFragment extends DBFragment {
         cardImageContainer = rootView.findViewById(R.id.image_card_container);
         cardLoader = (ImageView) rootView.findViewById(R.id.image_card_loader);
         retry = rootView.findViewById(R.id.image_card_retry);
+        retryBtn = (Button) rootView.findViewById(R.id.image_card_retry_btn);
         priceCard = (TextView) rootView.findViewById(R.id.price_card);
 
         rootView.findViewById(R.id.price_card_info).setOnClickListener(new View.OnClickListener() {
@@ -131,6 +131,15 @@ public class MTGCardFragment extends DBFragment {
                         mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 }
+            }
+        });
+
+        //cardImageContainer.setBackgroundColor(((MTGCard) card).getMtgColor(getActivity()))
+        //retryBtn.setBackgroundColor(((MTGCard) card).getMtgColor(getActivity()));
+        retryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadImage();
             }
         });
 
@@ -263,13 +272,6 @@ public class MTGCardFragment extends DBFragment {
             cardLoader.setVisibility(View.GONE);
             cardImageContainer.setVisibility(View.GONE);
         }
-
-        getView().findViewById(R.id.image_card_retry_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadImage();
-            }
-        });
     }
 
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {

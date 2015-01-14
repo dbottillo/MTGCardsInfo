@@ -1,36 +1,25 @@
 package com.dbottillo.resources;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.dbottillo.database.SetContract.SetEntry;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class Player implements Parcelable {
 
     int id;
     int life;
     int poisonCount;
     String name;
+    int diceResult;
 
-    public Player(int id, String name){
+    public Player(int id, String name) {
         this.id = id;
         this.life = 20;
         this.poisonCount = 10;
         this.name = name;
+        this.diceResult = 0;
     }
 
-    public Player(Parcel in){
+    public Player(Parcel in) {
         readFromParcel(in);
     }
 
@@ -66,6 +55,14 @@ public class Player implements Parcelable {
         this.poisonCount = poisonCount;
     }
 
+    public int getDiceResult() {
+        return diceResult;
+    }
+
+    public void setDiceResult(int diceResult) {
+        this.diceResult = diceResult;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -77,13 +74,15 @@ public class Player implements Parcelable {
         dest.writeString(name);
         dest.writeInt(life);
         dest.writeInt(poisonCount);
+        dest.writeInt(diceResult);
     }
 
-    private void readFromParcel(Parcel in){
+    private void readFromParcel(Parcel in) {
         id = in.readInt();
         name = in.readString();
         life = in.readInt();
         poisonCount = in.readInt();
+        diceResult = in.readInt();
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
@@ -98,7 +97,7 @@ public class Player implements Parcelable {
         }
     };
 
-    public String toString(){
+    public String toString() {
         return name;
     }
 

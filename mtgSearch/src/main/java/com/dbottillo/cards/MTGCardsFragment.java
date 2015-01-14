@@ -2,6 +2,7 @@ package com.dbottillo.cards;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -16,12 +17,10 @@ import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChangeListener {
 
     public static final String CARDS = "cards";
@@ -33,6 +32,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     private CardsPagerAdapter adapter;
 
     private int position;
+    PagerTabStrip pagerTabStrip;
 
     MenuItem actionImage;
 
@@ -67,11 +67,18 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         setActionBarTitle(getArguments().getString(SET_NAME));
         setHasOptionsMenu(true);
 
-        PagerTabStrip pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
-        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.main));
-        pagerTabStrip.setTextColor(getResources().getColor(R.color.dark_grey));
+        pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
+        pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
+        pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        refreshColor(position);
     }
 
     @Override
@@ -81,11 +88,18 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     @Override
     public void onPageSelected(int position) {
+        refreshColor(position);
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    private void refreshColor(int pos) {
+        MTGCard card = (MTGCard) cards.get(pos);
+        pagerTabStrip.setBackgroundColor(card.getMtgColor(getActivity()));
+        ((CardsActivity)getActivity()).setBackgroundToolbar(card.getMtgColor(getActivity()));
     }
 
     @Override

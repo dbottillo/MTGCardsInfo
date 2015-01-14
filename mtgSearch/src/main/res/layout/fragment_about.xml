@@ -1,6 +1,7 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/color_primary_dark"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,6 +12,9 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:textSize="14sp"
+        tools:text="Version: 1.8.5_dev"
+        android:textColor="@color/white"
         android:id="@+id/about_version"/>
 
     <TextView
@@ -19,6 +23,9 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:gravity="left"
+        android:textColor="@color/white"
+        tools:text="@string/copyright"
         android:layout_marginTop="10dp"/>
     <Button
         android:layout_width="wrap_content"
@@ -26,8 +33,10 @@
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_common"
-        android:textColor="#FFF"
+        android:background="@drawable/btn_accent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
         android:id="@+id/send_feedback"
         android:text="@string/send_feedback"/>

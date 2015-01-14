@@ -10,8 +10,7 @@
 
         <android.support.v4.view.PagerTabStrip
             android:id="@+id/pager_tab_strip"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="15dp"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:layout_width="match_parent"

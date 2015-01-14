@@ -20,6 +20,14 @@
         <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
     </style>
 
+    <style name="FabButton">
+        <item name="android:layout_width">@dimen/fab_button_size</item>
+        <item name="android:layout_height">@dimen/fab_button_size</item>
+        <item name="android:background">@drawable/bg_fab_button</item>
+        <item name="android:elevation">@dimen/fab_button_elevation</item>
+        <item name="android:stateListAnimator">@anim/fab_button_anim</item>
+    </style>
+
     <style name="PopupMenu.Example" parent="@android:style/Widget.PopupMenu">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>
     </style>
@@ -46,63 +54,43 @@
         <item name="android:background">@drawable/btn_cab_done_example</item>
     </style>
 
-    <style name="FabButton">
-        <item name="android:layout_width">@dimen/fab_button_size</item>
-        <item name="android:layout_height">@dimen/fab_button_size</item>
-        <item name="android:background">@drawable/bg_fab_button</item>
-    </style>
+    <!-- <style name="BtnLifeCounter">
+         <item name="android:layout_width">70dp</item>
+         <item name="android:layout_margin">5dp</item>
+         <item name="android:textSize">20sp</item>
+     </style>
 
-    <style name="BtnLifeCounter">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:textColor">@color/btn_life_counter_poison</item>
-        <item name="android:layout_centerVertical">true</item>
-    </style>
+     <style name="BtnLifeCounter.Life">
+         <item name="android:layout_height">55dp</item>
+     </style>
 
-    <style name="BtnLifeCounter.Life">
-        <item name="android:textSize">30sp</item>
-        <item name="android:layout_width">55dp</item>
-        <item name="android:layout_height">55dp</item>
-    </style>
+     <style name="BtnLifeCounter.Poison">
+         <item name="android:layout_height">40dp</item>
+     </style>
 
-    <style name="BtnLifeCounter.Poison">
-        <item name="android:textSize">20sp</item>
-        <item name="android:layout_width">40dp</item>
-        <item name="android:layout_height">40dp</item>
-    </style>
-    <!--
-        <style name="BtnLifeCounter.Life.Plus">
-            <item name="android:background">@drawable/btn_plus_counter</item>
-            <item name="android:textColor">@color/btn_plus</item>
-        </style>
+     <style name="BtnLifeCounter.Life.Plus">
+         <item name="android:background">@drawable/btn_plus_counter</item>
+         <item name="android:textColor">@color/btn_plus</item>
+     </style>
 
-        <style name="BtnLifeCounter.Life.Minus">
-            <item name="android:background">@drawable/btn_minus_counter</item>
-            <item name="android:textColor">@color/btn_minus</item>
-        </style>
+     <style name="BtnLifeCounter.Life.Minus">
+         <item name="android:background">@drawable/btn_minus_counter</item>
+         <item name="android:textColor">@color/btn_minus</item>
+     </style>
 
-        <style name="BtnLifeCounter.Poison.Plus">
-            <item name="android:background">@drawable/btn_plus_counter</item>
-            <item name="android:textColor">@color/btn_plus</item>
-        </style>
+     <style name="BtnLifeCounter.Poison.Plus">
+         <item name="android:background">@drawable/btn_plus_counter</item>
+         <item name="android:textColor">@color/btn_plus</item>
+     </style>
 
-        <style name="BtnLifeCounter.Poison.Minus">
-            <item name="android:background">@drawable/btn_minus_counter</item>
-            <item name="android:textColor">@color/btn_minus</item>
-        </style>-->
+     <style name="BtnLifeCounter.Poison.Minus">
+         <item name="android:background">@drawable/btn_minus_counter</item>
+         <item name="android:textColor">@color/btn_minus</item>
+     </style>-->
 
     <style name="BtnGeneric">
         <item name="android:background">@drawable/btn_common</item>
         <item name="android:textColor">#FFF</item>
-    </style>
-
-    <style name="mtg_toolbar" parent="Widget.AppCompat.ActionBar">
-        <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
-    </style>
-
-    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:background">@color/color_primary</item>
-        <item name="windowActionBar">false</item>
     </style>
 
 </resources>

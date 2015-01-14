@@ -13,6 +13,8 @@ public class SavedActivity extends DBActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
+        setupToolbar();
+
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.action_saved);

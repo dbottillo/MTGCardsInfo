@@ -58,8 +58,10 @@
     <string name="action_life_counter">Life counter</string>
     <string name="player">Player %s</string>
     <string name="add_player">Add</string>
-    <string name="plus_one" translatable="false">+ 1</string>
-    <string name="minus_one" translatable="false">- 1</string>
+    <string name="plus_one" translatable="false">+</string>
+    <string name="minus_one" translatable="false">-</string>
+    <string name="plus_five" translatable="false">+5</string>
+    <string name="minus_five" translatable="false">-5</string>
     <string name="maximum_player">You\'ve reached the maximum number of players</string>
     <string name="edit_player">Edit name player</string>
     <string name="save">Save</string>
@@ -88,6 +90,5 @@
     <string name="error_favourites">Impossible to load saved cards at the moment</string>
     <string name="action_lucky">I feel lucky</string>
     <string name="lucky_again">I\'m feeling lucky again</string>
-
 
 </resources>

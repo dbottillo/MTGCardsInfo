@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".cards.CardsActivity" />
+        <activity
+            android:theme="@style/mtg.NoActionBar"
+            android:name=".cards.CardsActivity" />
 
         <activity android:name=".cards.CardLuckyActivity" />
 
@@ -38,7 +40,9 @@
                 android:resource="@xml/searchable" />
         </activity>
 
-        <activity android:name=".saved.SavedActivity" />
+        <activity
+            android:theme="@style/mtg.NoActionBar"
+            android:name=".saved.SavedActivity" />
 
         <activity android:name=".lifecounter.LifeCounterActivity" />
 
