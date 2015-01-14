@@ -18,17 +18,10 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_add"
-        android:icon="@drawable/ic_add_player"
-        android:title="@string/add_player"
-        android:orderInCategory="102"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/action_poison"
         android:icon="@null"
         android:title="@string/menu_life_poison"
-        android:orderInCategory="103"
+        android:orderInCategory="102"
         android:checkable="true"
         app:showAsAction="never" />
 

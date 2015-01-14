@@ -1,10 +1,12 @@
 package com.dbottillo.resources;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.dbottillo.R;
 import com.dbottillo.database.CardContract.CardEntry;
 
 import org.json.JSONArray;
@@ -563,4 +565,21 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         return getColors().get(0);
     }
 
+    public int getMtgColor(Context context) {
+        int mtgColor = context.getResources().getColor(R.color.mtg_other);
+        if (isMultiColor()) {
+            mtgColor = context.getResources().getColor(R.color.mtg_multi);
+        } else if (getColors().contains(MTGCard.WHITE)) {
+            mtgColor = context.getResources().getColor(R.color.mtg_white);
+        } else if (getColors().contains(MTGCard.BLUE)) {
+            mtgColor = context.getResources().getColor(R.color.mtg_blue);
+        } else if (getColors().contains(MTGCard.BLACK)) {
+            mtgColor = context.getResources().getColor(R.color.mtg_black);
+        } else if (getColors().contains(MTGCard.RED)) {
+            mtgColor = context.getResources().getColor(R.color.mtg_red);
+        } else if (getColors().contains(MTGCard.GREEN)) {
+            mtgColor = context.getResources().getColor(R.color.mtg_green);
+        }
+        return mtgColor;
+    }
 }

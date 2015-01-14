@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:background="@drawable/bg_title_dialog">
+    android:padding="5dp"
+    android:background="@color/color_primary_dark">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         android:padding="5dp"
         android:gravity="center_horizontal"
         tools:text="ciao"

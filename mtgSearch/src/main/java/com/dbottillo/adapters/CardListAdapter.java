@@ -58,21 +58,8 @@ public class CardListAdapter extends BaseAdapter {
         GameCard card = getItem(position);
         holder.name.setText(card.getName());
 
-        int mtgColor = context.getResources().getColor(R.color.mtg_other);
+
         MTGCard mtgCard = (MTGCard) card;
-        if (mtgCard.isMultiColor()) {
-            mtgColor = context.getResources().getColor(R.color.mtg_multi);
-        } else if (mtgCard.getColors().contains(MTGCard.WHITE)) {
-            mtgColor = context.getResources().getColor(R.color.mtg_white);
-        } else if (mtgCard.getColors().contains(MTGCard.BLUE)) {
-            mtgColor = context.getResources().getColor(R.color.mtg_blue);
-        } else if (mtgCard.getColors().contains(MTGCard.BLACK)) {
-            mtgColor = context.getResources().getColor(R.color.mtg_black);
-        } else if (mtgCard.getColors().contains(MTGCard.RED)) {
-            mtgColor = context.getResources().getColor(R.color.mtg_red);
-        } else if (mtgCard.getColors().contains(MTGCard.GREEN)) {
-            mtgColor = context.getResources().getColor(R.color.mtg_green);
-        }
 
         int rarityColor = R.color.common;
         if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {
@@ -91,7 +78,7 @@ public class CardListAdapter extends BaseAdapter {
 
         if (card.getManaCost() != null) {
             holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
-            holder.cost.setTextColor(mtgColor);
+            holder.cost.setTextColor(mtgCard.getMtgColor(context));
         } else {
             holder.cost.setText("-");
         }
@@ -104,7 +91,7 @@ public class CardListAdapter extends BaseAdapter {
         }
 
         GradientDrawable indicator = (GradientDrawable) holder.indicator.getBackground();
-        indicator.setColor(mtgColor);
+        indicator.setColor(mtgCard.getMtgColor(context));
 
 
         /*if (BuildConfig.magic) {

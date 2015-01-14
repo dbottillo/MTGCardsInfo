@@ -2,6 +2,7 @@ package com.dbottillo.cards;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -26,8 +27,11 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
+        setupToolbar();
+
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
 
         cardsFragment = (MTGCardsFragment) getSupportFragmentManager().findFragmentById(R.id.container);
 
@@ -122,5 +126,9 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
         TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", error);
+    }
+
+    public void setBackgroundToolbar(int mtgColor) {
+        toolbar.setBackgroundColor(mtgColor);
     }
 }

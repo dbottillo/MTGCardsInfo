@@ -1,40 +1,40 @@
 package com.dbottillo.lifecounter;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Outline;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.adapters.LifeCounterAdapter;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Player;
-import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, LifeCounterAdapter.OnLifeCounterListener {
+public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener {
 
     public static LifeCounterFragment newInstance() {
         return new LifeCounterFragment();
@@ -46,6 +46,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     private ArrayList<Player> players;
     private LifeCounterAdapter lifeCounterAdapter;
     private SmoothProgressBar progressBar;
+    private Button newPlayerButton;
 
     private DB40Helper db40Helper;
 
@@ -54,8 +55,8 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     private boolean showPoison = false;
     private boolean diceShowed = false;
 
-    String[] names = { "Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck",
-            "Chandra", "Venser", "Doran", "Sorin" };
+    String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck",
+            "Chandra", "Venser", "Doran", "Sorin"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,13 +68,32 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = getSharedPreferences().getBoolean("poison", false);
 
+        View footerView = inflater.inflate(R.layout.life_counter_list_footer, null, false);
+        lifeListView.addFooterView(footerView);
+
+        newPlayerButton = (Button) rootView.findViewById(R.id.new_player);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+                @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    // Or read size directly from the view's width/height
+                    int size = getResources().getDimensionPixelSize(R.dimen.fab_button_size);
+                    outline.setOval(0, 0, size, size);
+                }
+            };
+            newPlayerButton.setOutlineProvider(viewOutlineProvider);
+            newPlayerButton.setClipToOutline(true);
+        }
+        newPlayerButton.setOnClickListener(this);
+
         /*if (savedInstanceState == null) {
             players = new ArrayList<Player>();
             loadPlayers();
         } else {
             progressBar.setVisibility(View.GONE);
         }*/
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
 
         lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
         lifeListView.setAdapter(lifeCounterAdapter);
@@ -106,7 +126,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     }
 
     private void resetLifeCounter() {
-        for (Player player : players){
+        for (Player player : players) {
             player.setLife(20);
             player.setPoisonCount(10);
             db40Helper.storePlayer(player);
@@ -120,12 +140,12 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         return "/life_counter";
     }
 
-    private void loadPlayers(){
+    private void loadPlayers() {
         new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_PLAYER).execute();
     }
 
-    private void addPlayer(){
-        if (players.size() == 10){
+    private void addPlayer() {
+        if (players.size() == 10) {
             Toast.makeText(getActivity(), R.string.maximum_player, Toast.LENGTH_SHORT).show();
             return;
         }
@@ -135,7 +155,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         loadPlayers();
     }
 
-    private String getUniqueNameForPlayer(){
+    private String getUniqueNameForPlayer() {
         boolean unique = false;
         int pickedNumber = 0;
         while (!unique) {
@@ -153,10 +173,10 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         return names[pickedNumber];
     }
 
-    private int getUniqueIdForPlayer(){
+    private int getUniqueIdForPlayer() {
         int id = 0;
-        for (Player player : players){
-            if (id == player.getId()){
+        for (Player player : players) {
+            if (id == player.getId()) {
                 id++;
             }
         }
@@ -177,8 +197,8 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             }
         }
         lifeCounterAdapter.notifyDataSetChanged();
-        if (scrollDownAfterLoad){
-            ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size()-1);
+        if (scrollDownAfterLoad) {
+            ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
         }
         scrollDownAfterLoad = false;
     }
@@ -209,7 +229,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
-                 players.get(position).setName(value);
+                players.get(position).setName(value);
                 db40Helper.storePlayer(players.get(position));
                 loadPlayers();
                 TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
@@ -242,32 +262,33 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         loadPlayers();
     }
 
-    private View.OnClickListener tapOnDice = new View.OnClickListener(){
+    private View.OnClickListener tapOnDice = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             hideDice();
         }
     };
 
-    private void launchDice(){
-        diceScrollView.setVisibility(View.VISIBLE);
+    private void launchDice() {
+        /*diceScrollView.setVisibility(View.VISIBLE);
         diceContainer.removeAllViews();
         int heightRow = lifeListView.getChildAt(0).getHeight();
-        ArrayList<TextView> playerResults = new ArrayList<TextView>(players.size());
-        int[] results = new int[players.size()];
-        for (int i=0; i<players.size(); i++){
+        ArrayList<TextView> playerResults = new ArrayList<TextView>(players.size());*/
+        //int[] results = new int[players.size()];
+        for (int i = 0; i < players.size(); i++) {
             Player player = players.get(i);
             Random rand = new Random();
-            results[i] = rand.nextInt(20) + 1;
-            View dice = LayoutInflater.from(getActivity()).inflate(R.layout.life_counter_dice, null);
-            dice.setLayoutParams(new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, heightRow));
+            //results[i] = rand.nextInt(20) + 1;
+            player.setDiceResult(rand.nextInt(20) + 1);
+           /* View dice = LayoutInflater.from(getActivity()).inflate(R.layout.life_counter_dice, null);
+            dice.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, heightRow));
             TextView playerName = (TextView) dice.findViewById(R.id.player_name);
             playerName.setText(player.getName());
             playerResults.add((TextView) dice.findViewById(R.id.player_result));
             diceContainer.addView(dice);
-            dice.setOnClickListener(tapOnDice);
+            dice.setOnClickListener(tapOnDice);*/
         }
-        Button closeBtn = new Button(getActivity(), null, R.style.BtnGeneric);
+       /* Button closeBtn = new Button(getActivity(), null, R.style.BtnGeneric);
         closeBtn.setBackgroundResource(R.drawable.btn_common);
         closeBtn.setTextColor(getResources().getColor(android.R.color.white));
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -278,16 +299,23 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         closeBtn.setPadding(20, 20, 20, 20);
         closeBtn.setOnClickListener(tapOnDice);
         diceContainer.addView(closeBtn);
-        for (int i=0; i<players.size(); i++){
-            playerResults.get(i).setText(results[i]+"");
+        for (int i = 0; i < players.size(); i++) {
+            playerResults.get(i).setText(results[i] + "");
         }
-        diceShowed = true;
+        diceShowed = true;*/
+        lifeCounterAdapter.notifyDataSetChanged();
     }
 
-    private void hideDice(){
+    private void hideDice() {
         diceContainer.removeAllViews();
         diceScrollView.setVisibility(View.GONE);
         diceShowed = false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        addPlayer();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
     }
 
     @Override
@@ -296,7 +324,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         inflater.inflate(R.menu.life_counter, menu);
 
         MenuItem poison = menu.findItem(R.id.action_poison);
-        if (showPoison){
+        if (showPoison) {
             poison.setChecked(true);
         } else {
             poison.setChecked(false);
@@ -306,14 +334,9 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int i1 = item.getItemId();
-        if (i1 == R.id.action_add) {
-            addPlayer();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
-            return true;
-        }
         if (i1 == R.id.action_reset) {
             resetLifeCounter();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER,  "resetLifeCounter");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "resetLifeCounter");
             return true;
         }
         if (i1 == R.id.action_dice) {
@@ -322,7 +345,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             return true;
         }
         if (i1 == R.id.action_poison) {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER,  "poisonSetting");
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonSetting");
             getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
@@ -336,7 +359,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
 
     public boolean onBackPressed() {
-        if (diceShowed){
+        if (diceShowed) {
             hideDice();
             return true;
         }

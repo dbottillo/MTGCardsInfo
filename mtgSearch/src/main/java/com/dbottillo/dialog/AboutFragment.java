@@ -19,9 +19,6 @@ import com.dbottillo.base.MTGApp;
 import com.dbottillo.R;
 import com.dbottillo.helper.TrackingHelper;
 
-/**
- * Created by danielebottillo on 02/03/2014.
- */
 public class AboutFragment extends DBFragment implements View.OnClickListener {
 
     @Override

@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
 
+import com.dbottillo.R;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.dialog.GoToPremiumFragment;
 import com.dbottillo.dialog.PriceInfoFragment;
 import com.dbottillo.helper.TrackingHelper;
+import com.dbottillo.util.MaterialWrapper;
 
 public abstract class DBActivity extends ActionBarActivity {
 
@@ -43,6 +46,7 @@ public abstract class DBActivity extends ActionBarActivity {
     }
 
     MTGApp app;
+    protected Toolbar toolbar;
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -86,4 +90,12 @@ public abstract class DBActivity extends ActionBarActivity {
             getCurrentFocus().clearFocus();
         }
     }
+
+    protected void setupToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_dark);
+        //toolbar.setNavigationIcon(android.R.drawable.sym_def_app_icon);
+        setSupportActionBar(toolbar);
+        MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+    }
+
 }
