@@ -7,8 +7,10 @@ import android.support.v4.content.LocalBroadcastManager;
 
 import com.dbottillo.R;
 import com.dbottillo.helper.LOG;
+import com.dbottillo.resources.TCGPrice;
 
-import org.json.JSONArray;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -33,19 +35,21 @@ public class NetworkIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        String res;
+        TCGPrice res;
         Bundle extras = intent.getExtras();
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
         String cardName = params.getString(EXTRA_CARD_NAME);
         String idRequest = params.getString(EXTRA_ID);
         String stringError = null;
 
-        String url = "http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=" + cardName;
+        String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
-            res = getApplicationContext().getString(R.string.price_error);
+            res = new TCGPrice();
+            res.isAnError();
+            res.setErrorPrice(getApplicationContext().getString(R.string.price_error));
             stringError = url;
         }
 
@@ -55,20 +59,63 @@ public class NetworkIntentService extends IntentService {
         LocalBroadcastManager.getInstance(this).sendBroadcast(intentRes);
     }
 
-    private String doNetworkRequest(String url) throws Exception {
+    private TCGPrice doNetworkRequest(String url) throws Exception {
+        TCGPrice tcgPrice = new TCGPrice();
         URL uri = new URL(url);
         HttpURLConnection urlConnection = (HttpURLConnection) uri.openConnection();
         urlConnection.setRequestMethod("GET");
 
         if (urlConnection.getResponseCode() == 200) {
             InputStream in = urlConnection.getInputStream();
-            String res = getEntityAsString(in, urlConnection.getContentEncoding());
-            LOG.e(url + " \n result: " + res);
-            JSONArray price = new JSONArray(res);
-            return price.get(0).toString();
+
+            XmlPullParserFactory xmlFactoryObject = XmlPullParserFactory.newInstance();
+            XmlPullParser myparser = xmlFactoryObject.newPullParser();
+            myparser.setInput(in, null);
+            int event = myparser.getEventType();
+            boolean isHiPrice = false;
+            boolean isLowPrice = false;
+            boolean isAvgPrice = false;
+            while (event != XmlPullParser.END_DOCUMENT) {
+                String name = myparser.getName();
+                switch (event) {
+                    case XmlPullParser.START_TAG:
+                        isHiPrice = false;
+                        isLowPrice = false;
+                        isAvgPrice = false;
+                        if (name.equals("hiprice")) {
+                            isHiPrice = true;
+                        }
+                        if (name.equals("avgprice")) {
+                            isAvgPrice = true;
+                        }
+                        if (name.equals("lowprice")) {
+                            isLowPrice = true;
+                        }
+                        break;
+                    case XmlPullParser.TEXT:
+                        if (isHiPrice) {
+                            tcgPrice.setHiPrice(myparser.getText());
+                        }
+                        if (isLowPrice) {
+                            tcgPrice.setLowprice(myparser.getText());
+                        }
+                        if (isAvgPrice) {
+                            tcgPrice.setAvgPrice(myparser.getText());
+                        }
+                    case XmlPullParser.END_TAG:
+                        isHiPrice = false;
+                        isLowPrice = false;
+                        isAvgPrice = false;
+
+                        break;
+                }
+                event = myparser.next();
+            }
         } else {
-            return getApplicationContext().getString(R.string.price_error);
+            tcgPrice.setErrorPrice(getApplicationContext().getString(R.string.price_error));
+            tcgPrice.isAnError();
         }
+        return tcgPrice;
     }
 
     private String getEntityAsString(InputStream responseEntity, String encoding) throws Exception {

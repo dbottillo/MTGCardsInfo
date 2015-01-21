@@ -1,0 +1,100 @@
+package com.dbottillo.resources;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class TCGPrice implements Parcelable {
+
+    private String hiPrice;
+    private String lowprice;
+    private String avgPrice;
+    private String errorPrice;
+    private boolean error;
+
+    public TCGPrice() {
+
+    }
+
+    public TCGPrice(Parcel in) {
+        readFromParcel(in);
+    }
+
+    public String getHiPrice() {
+        return hiPrice;
+    }
+
+    public void setHiPrice(String hiPrice) {
+        this.hiPrice = hiPrice;
+    }
+
+    public String getLowprice() {
+        return lowprice;
+    }
+
+    public void setLowprice(String lowprice) {
+        this.lowprice = lowprice;
+    }
+
+    public String getAvgPrice() {
+        return avgPrice;
+    }
+
+    public void setAvgPrice(String avgPrice) {
+        this.avgPrice = avgPrice;
+    }
+
+    public boolean isAnError() {
+        return error;
+    }
+
+    public void setError() {
+        error = true;
+    }
+
+    public String getErrorPrice() {
+        return errorPrice;
+    }
+
+    public void setErrorPrice(String errorPrice) {
+        this.errorPrice = errorPrice;
+    }
+
+    public String toString() {
+        return "[TCGPrice] H:" + hiPrice + " - A:" + avgPrice + " - L:" + lowprice;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(hiPrice);
+        dest.writeString(avgPrice);
+        dest.writeString(lowprice);
+        dest.writeString(errorPrice);
+        dest.writeInt(error ? 1 : 0);
+    }
+
+    public void readFromParcel(Parcel in) {
+        hiPrice = in.readString();
+        avgPrice = in.readString();
+        lowprice = in.readString();
+        errorPrice = in.readString();
+        error = in.readInt() == 1;
+    }
+
+    public static final Parcelable.Creator<TCGPrice> CREATOR = new Parcelable.Creator<TCGPrice>() {
+        @Override
+        public TCGPrice createFromParcel(Parcel source) {
+            return new TCGPrice(source);
+        }
+
+        @Override
+        public TCGPrice[] newArray(int size) {
+            return new TCGPrice[size];
+        }
+    };
+
+}
