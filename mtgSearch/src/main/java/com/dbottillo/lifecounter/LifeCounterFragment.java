@@ -270,16 +270,22 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     };
 
     private void launchDice() {
+        if (diceShowed) {
+            for (int i = 0; i < players.size(); i++) {
+                Player player = players.get(i);
+                player.setDiceResult(-1);
+            }
+        } else {
         /*diceScrollView.setVisibility(View.VISIBLE);
         diceContainer.removeAllViews();
         int heightRow = lifeListView.getChildAt(0).getHeight();
         ArrayList<TextView> playerResults = new ArrayList<TextView>(players.size());*/
-        //int[] results = new int[players.size()];
-        for (int i = 0; i < players.size(); i++) {
-            Player player = players.get(i);
-            Random rand = new Random();
-            //results[i] = rand.nextInt(20) + 1;
-            player.setDiceResult(rand.nextInt(20) + 1);
+            //int[] results = new int[players.size()];
+            for (int i = 0; i < players.size(); i++) {
+                Player player = players.get(i);
+                Random rand = new Random();
+                //results[i] = rand.nextInt(20) + 1;
+                player.setDiceResult(rand.nextInt(20) + 1);
            /* View dice = LayoutInflater.from(getActivity()).inflate(R.layout.life_counter_dice, null);
             dice.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, heightRow));
             TextView playerName = (TextView) dice.findViewById(R.id.player_name);
@@ -287,6 +293,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             playerResults.add((TextView) dice.findViewById(R.id.player_result));
             diceContainer.addView(dice);
             dice.setOnClickListener(tapOnDice);*/
+            }
         }
        /* Button closeBtn = new Button(getActivity(), null, R.style.BtnGeneric);
         closeBtn.setBackgroundResource(R.drawable.btn_common);
@@ -303,6 +310,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             playerResults.get(i).setText(results[i] + "");
         }
         diceShowed = true;*/
+        diceShowed = !diceShowed;
         lifeCounterAdapter.notifyDataSetChanged();
     }
 
@@ -357,12 +365,4 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         return false;
     }
 
-
-    public boolean onBackPressed() {
-        if (diceShowed) {
-            hideDice();
-            return true;
-        }
-        return false;
-    }
 }

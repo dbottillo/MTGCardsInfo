@@ -13,7 +13,7 @@
         android:id="@+id/btn_lucky_again"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@drawable/btn_common_no_radius">
+        android:background="@drawable/btn_accent">
 
         <TextView
             android:layout_width="wrap_content"

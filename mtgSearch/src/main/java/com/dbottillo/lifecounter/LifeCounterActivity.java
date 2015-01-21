@@ -46,8 +46,8 @@ public class LifeCounterActivity extends DBActivity {
 
     @Override
     public void onBackPressed() {
-        if (!lifeCounterFragment.onBackPressed()) {
+        //if (!lifeCounterFragment.onBackPressed()) {
             super.onBackPressed();
-        }
+        //}
     }
 }

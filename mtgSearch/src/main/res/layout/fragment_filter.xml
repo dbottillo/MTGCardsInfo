@@ -59,8 +59,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:layout_marginBottom="@dimen/margin_divisor_filter"
             android:layout_marginTop="@dimen/margin_divisor_filter">
 
 

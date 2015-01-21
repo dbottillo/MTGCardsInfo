@@ -27,7 +27,8 @@
 
         <activity android:name=".cards.CardLuckyActivity" />
 
-        <activity android:name=".cards.FullScreenImageActivity" />
+        <activity android:theme="@style/mtg.NoActionBar"
+            android:name=".cards.FullScreenImageActivity" />
 
         <activity
             android:name=".search.SearchActivity"

@@ -1,8 +1,8 @@
 package com.dbottillo.cards;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -14,13 +14,14 @@ import com.dbottillo.resources.GameCard;
 
 import java.util.ArrayList;
 
-public class CardsActivity extends DBActivity implements MTGCardFragment.DatabaseConnector, DBAsyncTask.DBAsyncTaskListener {
+public class CardsActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
 
     private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
 
     public static final int FULLSCREEN_CODE = 100;
 
     MTGCardsFragment cardsFragment;
+    String setName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,14 +32,17 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setElevation(0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getSupportActionBar().setElevation(0);
+        }
 
         cardsFragment = (MTGCardsFragment) getSupportFragmentManager().findFragmentById(R.id.container);
 
         if (cardsFragment == null) {
+            setName = getIntent().getStringExtra(MTGCardsFragment.SET_NAME);
             cardsFragment = MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
                     getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
-                    getIntent().getStringExtra(MTGCardsFragment.SET_NAME));
+                   setName);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, cardsFragment)
                     .commit();
@@ -106,10 +110,17 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.Databas
         invalidateOptionsMenu();
     }
 
+    @Override
+    public void tapOnImage(int position) {
+        openFullScreen(position);
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
+    }
+
     public void openFullScreen(int currentItem) {
         Intent fullScreen = new Intent(this, FullScreenImageActivity.class);
         fullScreen.putExtra(MTGCardsFragment.CARDS, cardsFragment.getCards());
         fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem);
+        fullScreen.putExtra(MTGCardsFragment.SET_NAME, setName);
         startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE);
     }
 
