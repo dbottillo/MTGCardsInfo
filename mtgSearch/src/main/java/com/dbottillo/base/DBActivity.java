@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import com.dbottillo.R;
 import com.dbottillo.dialog.AboutFragment;
@@ -93,9 +94,12 @@ public abstract class DBActivity extends ActionBarActivity {
 
     protected void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar_dark);
-        //toolbar.setNavigationIcon(android.R.drawable.sym_def_app_icon);
         setSupportActionBar(toolbar);
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+    }
+
+    public void setToolbarColor(int color){
+        toolbar.setBackgroundColor(color);
     }
 
 }

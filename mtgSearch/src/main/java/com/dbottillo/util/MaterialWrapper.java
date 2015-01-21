@@ -27,4 +27,11 @@ public class MaterialWrapper {
             activity.getWindow().setStatusBarColor(color);
         }
     }
+
+    public static void setNavigationBarColor(Activity activity, int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            activity.getWindow().setNavigationBarColor(color);
+        }
+    }
+
 }

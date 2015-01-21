@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CardLuckyActivity extends DBActivity implements MTGCardFragment.DatabaseConnector, DBAsyncTask.DBAsyncTaskListener {
+public class CardLuckyActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
 
     private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
 
@@ -43,7 +43,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
         });
 
         if (savedInstanceState == null) {
-            luckyCards = new ArrayList<GameCard>();
+            luckyCards = new ArrayList<>();
             loadRandomCard();
         } else {
             luckyCards = savedInstanceState.getParcelableArrayList("luckyCards");
@@ -120,6 +120,12 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Dat
             }
         }
         invalidateOptionsMenu();
+    }
+
+    @Override
+    public void tapOnImage(int position) {
+        loadRandomCard();
+        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, "tap_on_image");
     }
 
     @Override

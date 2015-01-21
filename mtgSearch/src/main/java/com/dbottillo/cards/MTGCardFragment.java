@@ -40,12 +40,14 @@ public class MTGCardFragment extends DBFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();
 
-    public interface DatabaseConnector {
+    public interface CardConnector {
         boolean isCardSaved(GameCard card);
 
         void saveCard(GameCard card);
 
         void removeCard(GameCard card);
+
+        void tapOnImage(int position);
     }
 
     private static final float RATIO_CARD = 1.39622641509434f;
@@ -72,7 +74,7 @@ public class MTGCardFragment extends DBFragment {
 
     private int position;
 
-    private DatabaseConnector databaseConnector;
+    private CardConnector cardConnector;
 
     public static MTGCardFragment newInstance(GameCard card, int position, boolean fullscreen) {
         MTGCardFragment fragment = new MTGCardFragment();
@@ -146,10 +148,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getActivity() != null && getActivity() instanceof CardsActivity && !getResources().getBoolean(R.bool.isTablet)) {
-                    ((CardsActivity) getActivity()).openFullScreen(position);
-                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
-                }
+                cardConnector.tapOnImage(position);
             }
         });
 
@@ -165,7 +164,7 @@ public class MTGCardFragment extends DBFragment {
         isAttached = true;
 
         try {
-            databaseConnector = (DatabaseConnector) activity;
+            cardConnector = (CardConnector) activity;
             isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
         } catch (ClassCastException e) {
@@ -381,7 +380,7 @@ public class MTGCardFragment extends DBFragment {
         inflater.inflate(R.menu.card, menu);
 
         MenuItem item = menu.findItem(R.id.action_fav);
-        if (databaseConnector.isCardSaved(card)) {
+        if (cardConnector.isCardSaved(card)) {
             item.setTitle(getString(R.string.favourite_remove));
             item.setIcon(R.drawable.ab_star_colored);
             isSavedOffline = true;
@@ -410,10 +409,10 @@ public class MTGCardFragment extends DBFragment {
             return true;
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline) {
-                databaseConnector.removeCard(card);
+                cardConnector.removeCard(card);
                 TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVED, card.getId() + "");
             } else {
-                databaseConnector.saveCard(card);
+                cardConnector.saveCard(card);
                 TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");
             }
             getActivity().invalidateOptionsMenu();

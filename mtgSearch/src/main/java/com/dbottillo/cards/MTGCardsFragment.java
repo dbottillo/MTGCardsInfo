@@ -98,8 +98,10 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     private void refreshColor(int pos) {
         MTGCard card = (MTGCard) cards.get(pos);
-        pagerTabStrip.setBackgroundColor(card.getMtgColor(getActivity()));
-        ((CardsActivity)getActivity()).setBackgroundToolbar(card.getMtgColor(getActivity()));
+        //pagerTabStrip.setBackgroundColor(card.getMtgColor(getActivity()));
+        //MaterialWrapper.setStatusBarColor(getActivity(), card.getMtgColor(getActivity()));
+        //MaterialWrapper.setNavigationBarColor(getActivity(), card.getMtgColor(getActivity()));
+        //((CardsActivity) getActivity()).setToolbarColor(card.getMtgColor(getActivity()));
     }
 
     @Override

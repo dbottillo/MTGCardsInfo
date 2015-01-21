@@ -12,7 +12,7 @@
         android:divider="@null"
         android:dividerHeight="0dp"
         android:cacheColorHint="@android:color/transparent"
-        android:layout_marginTop="8dp"
+        android:paddingTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -95,14 +95,15 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <style name="mtg_toolbar" parent="Widget.AppCompat.ActionBar">
-        <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
+    <style name="mtg_toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/color_primary</item>
+        <item name="popupTheme">@style/popupNew</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 
-    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:background">@color/color_primary</item>
-        <item name="windowActionBar">false</item>
+    <style name="popupNew" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/white</item>
     </style>
+
 
 </resources>
