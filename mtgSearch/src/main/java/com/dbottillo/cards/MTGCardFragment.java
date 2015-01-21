@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,11 +30,13 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.resources.TCGPrice;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -182,18 +186,14 @@ public class MTGCardFragment extends DBFragment {
     public void onStart() {
         super.onStart();
 
-        /*if (card instanceof MTGCard) {
-            IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
-            LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
-        }*/
+        IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        /*if (card instanceof MTGCard) {
-            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
-        }*/
+        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
     }
 
     @Override
@@ -234,12 +234,12 @@ public class MTGCardFragment extends DBFragment {
 
             updatePriceCard(getString(R.string.loading));
 
-            /*Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+            Intent intent = new Intent(getActivity(), NetworkIntentService.class);
             Bundle params = new Bundle();
             params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
             params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
             intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
-            getActivity().startService(intent);*/
+            getActivity().startService(intent);
 
         } else {
 
@@ -276,12 +276,13 @@ public class MTGCardFragment extends DBFragment {
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String price = intent.getStringExtra(NetworkIntentService.REST_RESULT);
+            TCGPrice price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
             String error = intent.getStringExtra(NetworkIntentService.REST_ERROR);
-            updatePriceCard(price);
+            LOG.e("price: "+price);
+            /*updatePriceCard(price);
             if (error != null) {
                 TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", error);
-            }
+            }*/
         }
     };
 
