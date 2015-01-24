@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
@@ -22,7 +21,6 @@ import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.GameSet;
-import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 
@@ -76,11 +74,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (gameSet == null) {
             isASearch = true;
             query = getArguments().getString(SEARCH);
-            if (BuildConfig.magic) {
-                gameSet = new MTGSet(-1);
-            } else {
-                gameSet = new HSSet(-1);
-            }
+            gameSet = new MTGSet(-1);
             gameSet.setName(query);
         }
 
@@ -188,53 +182,49 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         SharedPreferences sharedPreferences = getSharedPreferences();
         for (GameCard c : gameSet.getCards()) {
             boolean toAdd = false;
-            if (BuildConfig.magic) {
-                MTGCard card = (MTGCard) c;
-                if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true))
-                    toAdd = true;
-                if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true))
-                    toAdd = true;
-                if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true))
-                    toAdd = true;
-                if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true))
-                    toAdd = true;
-                if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true))
-                    toAdd = true;
 
-                if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true))
-                    toAdd = true;
-                if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true))
-                    toAdd = true;
+            MTGCard card = (MTGCard) c;
+            if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true))
+                toAdd = true;
+            if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true))
+                toAdd = true;
+            if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true))
+                toAdd = true;
+            if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true))
+                toAdd = true;
+            if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true))
+                toAdd = true;
 
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                        !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
-                    toAdd = false;
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON) &&
-                        !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true))
-                    toAdd = false;
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
-                        !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true))
-                    toAdd = false;
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC) &&
-                        !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true))
-                    toAdd = false;
+            if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true))
+                toAdd = true;
+            if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true))
+                toAdd = true;
 
-                if (!toAdd && card.isAnEldrazi()) {
-                    toAdd = true;
-                }
-            } else {
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
+                toAdd = false;
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON) &&
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true))
+                toAdd = false;
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true))
+                toAdd = false;
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC) &&
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true))
+                toAdd = false;
+
+            if (!toAdd && card.isAnEldrazi()) {
                 toAdd = true;
             }
+
             if (toAdd) cards.add(c);
-            if (BuildConfig.magic) {
-                Collections.sort(cards, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.compareTo(card2);
-                    }
-                });
-            }
+            Collections.sort(cards, new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    MTGCard card = (MTGCard) o1;
+                    MTGCard card2 = (MTGCard) o2;
+                    return card.compareTo(card2);
+                }
+            });
         }
         adapter.notifyDataSetChanged();
         listView.smoothScrollToPosition(0);

@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
@@ -21,14 +20,10 @@ public class FilterActivity extends DBActivity {
         slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         slidingPanel.setPanelSlideListener(listener);
 
-        if (BuildConfig.magic) {
-            filterFragment = new FilterFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.filter, filterFragment)
-                    .commit();
-        } else {
-            hideSlidingPanel();
-        }
+        filterFragment = new FilterFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.filter, filterFragment)
+                .commit();
 
     }
 

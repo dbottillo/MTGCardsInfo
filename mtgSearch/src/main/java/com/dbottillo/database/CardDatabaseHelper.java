@@ -23,10 +23,6 @@ public abstract class CardDatabaseHelper extends SQLiteAssetHelper {
 
 
     public static CardDatabaseHelper getDatabaseHelper(Context context) {
-        if (BuildConfig.magic) {
-            return new MTGDatabaseHelper(context);
-        } else {
-            return new HSDatabaseHelper(context);
-        }
+        return new MTGDatabaseHelper(context);
     }
 }
