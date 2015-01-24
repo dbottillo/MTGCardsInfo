@@ -241,8 +241,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
             boolean skip = false;
             if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.CREATE_DB && !BuildConfig.DEBUG)
                 skip = true;
-            if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.LIFE_COUNTER && !BuildConfig.magic)
-                skip = true;
             if (leftMenuItem == LeftMenuAdapter.LeftMenuItem.FORCE_CRASH && !BuildConfig.DEBUG)
                 skip = true;
             if (!skip) {

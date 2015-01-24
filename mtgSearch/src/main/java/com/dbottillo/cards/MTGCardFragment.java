@@ -27,13 +27,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.TCGPrice;
 import com.squareup.picasso.Callback;
@@ -230,59 +228,36 @@ public class MTGCardFragment extends DBFragment {
     private void refreshUI() {
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
 
-        if (BuildConfig.magic) {
-            MTGCard mtgCard = (MTGCard) card;
+        MTGCard mtgCard = (MTGCard) card;
 
-            String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + mtgCard.getType() + " <br/><br/> " +
-                    "<b>" + getString(R.string.pt_card) + "</b>: " + mtgCard.getPower() + "/" + mtgCard.getToughness() + " <br/><br/>";
-            typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: ";
-            if (card.getManaCost() != null) {
-                typeHtml += card.getManaCost() + " (" + mtgCard.getCmc() + ")";
-            } else {
-                typeHtml += " - ";
-            }
-            cardName.setText(Html.fromHtml(typeHtml));
-
-            TextView cardText = (TextView) getView().findViewById(R.id.text_card);
-            cardText.setText(mtgCard.getText());
-
-            TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-            setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
-
-            if (price == null) {
-                priceCard.setText(R.string.loading);
-            } else {
-                updatePrice();
-            }
-
-            Intent intent = new Intent(getActivity(), NetworkIntentService.class);
-            Bundle params = new Bundle();
-            params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
-            params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
-            intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
-            getActivity().startService(intent);
-
+        String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + mtgCard.getType() + " <br/><br/> " +
+                "<b>" + getString(R.string.pt_card) + "</b>: " + mtgCard.getPower() + "/" + mtgCard.getToughness() + " <br/><br/>";
+        typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: ";
+        if (card.getManaCost() != null) {
+            typeHtml += card.getManaCost() + " (" + mtgCard.getCmc() + ")";
         } else {
-
-            HSCard hearthstoneCard = (HSCard) card;
-
-            String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + hearthstoneCard.getType() + " <br/><br/> " +
-                    "<b>" + getString(R.string.ah_card) + "</b>: " + hearthstoneCard.getAttack() + "/" + hearthstoneCard.getHealth() + " <br/><br/>" +
-                    "<b>" + getString(R.string.cost_card) + "</b>: " + card.getManaCost() + " <br/><br/>" +
-                    "<b>" + getString(R.string.rarity_card) + "</b>: " + card.getRarity();/*+ " <br/><br/>"+
-                    "<b>" + getString(R.string.faction_card) + "</b>: " + ((HSCard) card).getFaction();*/
-            cardName.setText(Html.fromHtml(typeHtml));
-
-            TextView cardText = (TextView) getView().findViewById(R.id.text_card);
-            cardText.setText(Html.fromHtml(hearthstoneCard.getText()));
-
-            TextView mechanics = (TextView) getView().findViewById(R.id.set_card);
-            if (hearthstoneCard.getMechanics().length() != 0) {
-                mechanics.setText(Html.fromHtml("<b>" + getString(R.string.mechanics_card) + "</b> " + hearthstoneCard.getMechanics()));
-            } else {
-                mechanics.setText("");
-            }
+            typeHtml += " - ";
         }
+        cardName.setText(Html.fromHtml(typeHtml));
+
+        TextView cardText = (TextView) getView().findViewById(R.id.text_card);
+        cardText.setText(mtgCard.getText());
+
+        TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
+        setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
+
+        if (price == null) {
+            priceCard.setText(R.string.loading);
+        } else {
+            updatePrice();
+        }
+
+        Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+        Bundle params = new Bundle();
+        params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
+        params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
+        intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
+        getActivity().startService(intent);
 
         retry.setVisibility(View.GONE);
 
@@ -414,9 +389,6 @@ public class MTGCardFragment extends DBFragment {
             isSavedOffline = false;
         }
 
-        MenuItem share = menu.findItem(R.id.action_share);
-        share.setVisible(BuildConfig.magic);
-
     }
 
     @Override
@@ -447,7 +419,6 @@ public class MTGCardFragment extends DBFragment {
 
     @Override
     public String getPageTrack() {
-        if (BuildConfig.magic) return "/card/" + ((MTGCard) card).getMultiVerseId();
-        return "/card/" + card.getId();
+        return "/card/" + ((MTGCard) card).getMultiVerseId();
     }
 }

@@ -40,11 +40,7 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
         title.setText(getString(R.string.action_about));
 
         TextView copyright = (TextView) v.findViewById(R.id.copyright);
-        if (BuildConfig.magic) {
-            copyright.setText(getString(R.string.copyright));
-        } else {
-            copyright.setText(getString(R.string.copyright_hs));
-        }
+        copyright.setText(getString(R.string.copyright));
         return v;
     }
 

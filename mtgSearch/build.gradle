@@ -21,6 +21,10 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 21
+        versionCode 16
+        versionName "1.8.5"
+        applicationId "com.dbottillo.mtgsearchfree"
+        buildConfigField 'int', 'DATABASE_VERSION', '5'
     }
 
     signingConfigs {
@@ -54,23 +58,6 @@ android {
         }
     }
 
-    productFlavors {
-        magic {
-            applicationId "com.dbottillo.mtgsearchfree"
-            buildConfigField 'boolean', 'magic', 'true'
-            buildConfigField 'int', 'DATABASE_VERSION', '5'
-            versionCode 16
-            versionName "1.8.5"
-        }
-
-        hearthstone {
-            applicationId "com.dbottillo.hssearchfree"
-            buildConfigField "Boolean", "magic", "false"
-            buildConfigField 'int', 'DATABASE_VERSION', '2'
-            versionCode 3
-            versionName "1.1"
-        }
-    }
 }
 
 task readPasswordFromInput << {

@@ -4,12 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardDatabaseHelper;
 import com.dbottillo.database.DB40Helper;
 import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.HSCard;
-import com.dbottillo.resources.HSSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.resources.Player;
@@ -91,12 +88,7 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
-                    if (BuildConfig.magic) {
-                        result.add(MTGSet.createMagicSetFromCursor(cursor));
-                    } else {
-                        HSSet set = HSSet.createHearthstoneSetFromCursor(cursor);
-                        result.add(set);
-                    }
+                    result.add(MTGSet.createMagicSetFromCursor(cursor));
                     cursor.moveToNext();
                 }
             }
@@ -154,26 +146,20 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
-                    if (BuildConfig.magic) {
-                        result.add(MTGCard.createCardFromCursor(cursor));
-                    } else {
-                        result.add(HSCard.createCardFromCursor(cursor));
-                    }
+                    result.add(MTGCard.createCardFromCursor(cursor));
 
                     cursor.moveToNext();
                 }
             }
             cursor.close();
 
-            if (BuildConfig.magic) {
-                Collections.sort(result, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.compareTo(card2);
-                    }
-                });
-            }
+            Collections.sort(result, new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    MTGCard card = (MTGCard) o1;
+                    MTGCard card2 = (MTGCard) o2;
+                    return card.compareTo(card2);
+                }
+            });
         }
 
         mDbHelper.close();

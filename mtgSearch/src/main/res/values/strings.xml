@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name" translatable="false"></string>
-    <string name="app_long_name" translatable="false"></string>
+    <string name="app_name" translatable="false">MTG Cards Info</string>
+    <string name="app_long_name" translatable="false">MTG Cards Info</string>
+    <string name="analytics" translatable="false">UA-48823803-2</string>
 
     <string name="action_about">About</string>
     <string name="copyright">The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This application is not produced, endorsed, supported, or affiliated with Wizards of the Coast.</string>
-    <string name="copyright_hs">The information presented on this site about Hearthstone: Heroes of Warcraft, both literal and graphical, is copyrighted by Blizzard. This application is not produced, endorsed, supported, or affiliated with Blizzard.</string>
     <string name="send_feedback">Send Feedback</string>
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
@@ -23,7 +23,6 @@
     <string name="more_result">There are %d more result</string>
     <string name="search_limit">There is a limit of %d results, what about a more specific search?</string>
     <string name="apply_filter">Apply Filter</string>
-    <string name="analytics" translatable="false" />
     <string name="minimum_search">Search requires at least three letters</string>
     <string name="search_open_play">If you want to see all the results you need to buy the full version of MTG Cards</string>
     <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
