@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/price_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/price_height_container"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true"
+    android:clickable="true"
+    android:background="@drawable/btn_primary_dark"
+    tools:showIn="@layout/fragment_card">
+
+    <TextView
+        android:id="@+id/price_card"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        tools:text="HI: Avg: Low:" />
+
+    <TextView
+        android:id="@+id/price_on_tcg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="2dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        tools:text="TCG" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:rotation="90"
+        android:src="@drawable/arrow_up" />
+</LinearLayout>

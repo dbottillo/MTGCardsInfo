@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
@@ -28,9 +29,7 @@ import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
-import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.GameCard;
@@ -67,7 +66,6 @@ public class MTGCardFragment extends DBFragment {
 
     boolean isLandscape;
     boolean fullscreenMode = false;
-
     private GameCard card;
     ImageView cardImage;
     ImageView cardLoader;
@@ -75,6 +73,7 @@ public class MTGCardFragment extends DBFragment {
     Button retryBtn;
     View cardImageContainer;
     TextView priceCard;
+    TCGPrice price;
 
     private int position;
 
@@ -108,14 +107,10 @@ public class MTGCardFragment extends DBFragment {
         retryBtn = (Button) rootView.findViewById(R.id.image_card_retry_btn);
         priceCard = (TextView) rootView.findViewById(R.id.price_card);
 
-        rootView.findViewById(R.id.price_card_info).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((DBActivity) getActivity()).openDialog(DBActivity.DBDialog.PRICE_INFO);
-            }
-        });
-
         setHasOptionsMenu(true);
+
+        TextView priceTcg = (TextView) rootView.findViewById(R.id.price_on_tcg);
+        priceTcg.setText(Html.fromHtml("<i><u>TCG</i></u>"));
 
         mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -129,13 +124,26 @@ public class MTGCardFragment extends DBFragment {
                     if (isLandscape) {
                         widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
                     }
-                    heightAvailable = mainContainer.getHeight() - paddingCard * 2;
+                    heightAvailable = mainContainer.getHeight() - paddingCard;
+/*                    if (!isLandscape) {
+                        heightAvailable -= getResources().getDimensionPixelSize(R.dimen.price_height_container);
+                    }*/
                     updateSizeImage();
                     if (Build.VERSION.SDK_INT < 16) {
                         mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                     } else {
                         mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
+                }
+            }
+        });
+
+        rootView.findViewById(R.id.price_container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (price != null) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(price.getLink()));
+                    startActivity(browserIntent);
                 }
             }
         });
@@ -177,6 +185,12 @@ public class MTGCardFragment extends DBFragment {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("price", price);
+    }
+
+    @Override
     public void onDetach() {
         super.onDetach();
         isAttached = false;
@@ -206,6 +220,9 @@ public class MTGCardFragment extends DBFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if (savedInstanceState != null) {
+            price = savedInstanceState.getParcelable("price");
+        }
         refreshUI();
     }
 
@@ -232,7 +249,11 @@ public class MTGCardFragment extends DBFragment {
             TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
             setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
 
-            updatePriceCard(getString(R.string.loading));
+            if (price == null) {
+                priceCard.setText(R.string.loading);
+            } else {
+                updatePrice();
+            }
 
             Intent intent = new Intent(getActivity(), NetworkIntentService.class);
             Bundle params = new Bundle();
@@ -276,19 +297,21 @@ public class MTGCardFragment extends DBFragment {
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            TCGPrice price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
-            String error = intent.getStringExtra(NetworkIntentService.REST_ERROR);
-            LOG.e("price: "+price);
-            /*updatePriceCard(price);
-            if (error != null) {
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", error);
-            }*/
+            price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
+            updatePrice();
+            if (price.isAnError()) {
+                String url = intent.getStringExtra(NetworkIntentService.REST_URL);
+                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url);
+            }
         }
     };
 
-    private void updatePriceCard(String message) {
-        //priceCard.setText(Html.fromHtml("<b>Price</b>: " + message));
-        priceCard.setVisibility(View.GONE);
+    private void updatePrice() {
+        if (price.isAnError()) {
+            priceCard.setText(price.getErrorPrice());
+        } else {
+            priceCard.setText(price.toDisplay(isLandscape));
+        }
     }
 
     private void updateSizeImage() {
