@@ -26,8 +26,8 @@ public class NetworkIntentService extends IntentService {
     public static final String EXTRA_PARAMS = "NetworkIntentService.EXTRA_PARAMS";
     public static final String EXTRA_ID = "NetworkIntentService.EXTRA_ID";
     public static final String EXTRA_CARD_NAME = "NetworkIntentService.EXTRA_CARD_NAME";
-    public static final String REST_RESULT = "com.dbottillo.network..REST_RESULT";
-    public static final String REST_ERROR = "com.dbottillo.network..REST_ERROR";
+    public static final String REST_RESULT = "com.dbottillo.network.REST_RESULT";
+    public static final String REST_URL = "com.dbottillo.network.REST_URL";
 
     public NetworkIntentService() {
         super("NetworkIntentService");
@@ -40,9 +40,9 @@ public class NetworkIntentService extends IntentService {
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
         String cardName = params.getString(EXTRA_CARD_NAME);
         String idRequest = params.getString(EXTRA_ID);
-        String stringError = null;
 
         String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
+        LOG.d("loading: " + url);
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
@@ -50,12 +50,11 @@ public class NetworkIntentService extends IntentService {
             res = new TCGPrice();
             res.isAnError();
             res.setErrorPrice(getApplicationContext().getString(R.string.price_error));
-            stringError = url;
         }
 
         Intent intentRes = new Intent(idRequest);
         intentRes.putExtra(REST_RESULT, res);
-        intentRes.putExtra(REST_ERROR, stringError);
+        intentRes.putExtra(REST_URL, url);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intentRes);
     }
 
@@ -75,6 +74,7 @@ public class NetworkIntentService extends IntentService {
             boolean isHiPrice = false;
             boolean isLowPrice = false;
             boolean isAvgPrice = false;
+            boolean isLink = false;
             while (event != XmlPullParser.END_DOCUMENT) {
                 String name = myparser.getName();
                 switch (event) {
@@ -82,6 +82,7 @@ public class NetworkIntentService extends IntentService {
                         isHiPrice = false;
                         isLowPrice = false;
                         isAvgPrice = false;
+                        isLink = false;
                         if (name.equals("hiprice")) {
                             isHiPrice = true;
                         }
@@ -90,6 +91,9 @@ public class NetworkIntentService extends IntentService {
                         }
                         if (name.equals("lowprice")) {
                             isLowPrice = true;
+                        }
+                        if (name.equals("link")) {
+                            isLink = true;
                         }
                         break;
                     case XmlPullParser.TEXT:
@@ -102,14 +106,21 @@ public class NetworkIntentService extends IntentService {
                         if (isAvgPrice) {
                             tcgPrice.setAvgPrice(myparser.getText());
                         }
+                        if (isLink) {
+                            tcgPrice.setLink(myparser.getText());
+                        }
                     case XmlPullParser.END_TAG:
                         isHiPrice = false;
                         isLowPrice = false;
                         isAvgPrice = false;
-
+                        isLink = false;
                         break;
                 }
                 event = myparser.next();
+            }
+            if (tcgPrice.getHiPrice() == null) {
+                tcgPrice.setErrorPrice(getApplicationContext().getString(R.string.price_error));
+                tcgPrice.isAnError();
             }
         } else {
             tcgPrice.setErrorPrice(getApplicationContext().getString(R.string.price_error));

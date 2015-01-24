@@ -8,6 +8,7 @@ public class TCGPrice implements Parcelable {
     private String hiPrice;
     private String lowprice;
     private String avgPrice;
+    private String link;
     private String errorPrice;
     private boolean error;
 
@@ -43,6 +44,14 @@ public class TCGPrice implements Parcelable {
         this.avgPrice = avgPrice;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public boolean isAnError() {
         return error;
     }
@@ -60,7 +69,14 @@ public class TCGPrice implements Parcelable {
     }
 
     public String toString() {
-        return "[TCGPrice] H:" + hiPrice + " - A:" + avgPrice + " - L:" + lowprice;
+        return "[TCGPrice] H:" + hiPrice + " - A:" + avgPrice + " - L:" + lowprice + " - " + link;
+    }
+
+    public String toDisplay(boolean isLandscape) {
+        if (hiPrice.length() > 5 && !isLandscape) {
+            return " H:" + hiPrice + "$  L:" + lowprice + "$";
+        }
+        return " H:" + hiPrice + "$   A:" + avgPrice + "$   L:" + lowprice + "$";
     }
 
     @Override
@@ -73,6 +89,7 @@ public class TCGPrice implements Parcelable {
         dest.writeString(hiPrice);
         dest.writeString(avgPrice);
         dest.writeString(lowprice);
+        dest.writeString(link);
         dest.writeString(errorPrice);
         dest.writeInt(error ? 1 : 0);
     }
@@ -81,6 +98,7 @@ public class TCGPrice implements Parcelable {
         hiPrice = in.readString();
         avgPrice = in.readString();
         lowprice = in.readString();
+        link = in.readString();
         errorPrice = in.readString();
         error = in.readInt() == 1;
     }
