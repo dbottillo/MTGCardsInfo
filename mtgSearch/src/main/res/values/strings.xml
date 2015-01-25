@@ -80,7 +80,7 @@
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
     <string name="loading">Loading…</string>
-    <string name="price_error">Impossible to get the price of the card at the moment</string>
+    <string name="price_error">Error retrieving price</string>
     <string name="price_info">The card price is provided from the website: https://github.com/bedoherty/MagicTCGPriceAPI and requires an internet connection. \n\nThe price is just an indication of the real price, MTG Cards Info is not responsible for the use of this value and it doesn\'t ensure any accuracy of this information.</string>
     <string name="price_info_title">Price card</string>
     <string name="menu_image">Show image</string>

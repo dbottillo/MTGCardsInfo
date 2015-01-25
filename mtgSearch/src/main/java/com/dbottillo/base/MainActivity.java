@@ -55,6 +55,8 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     private int currentSetPosition = -1;
 
+    private boolean onSaveInstanceStateCalled = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -272,11 +274,12 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         return "/main";
     }
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putInt("currentSetPosition", currentSetPosition);
         outState.putParcelableArrayList("SET", sets);
+        onSaveInstanceStateCalled = true;
     }
 
     private void loadSet() {
@@ -292,17 +295,19 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     @Override
     public void onTaskFinished(int type, ArrayList<?> result) {
-        currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
-        setAdapter.setCurrent(currentSetPosition);
+        if (!onSaveInstanceStateCalled) {
+            currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
+            setAdapter.setCurrent(currentSetPosition);
 
-        sets.clear();
-        for (Object set : result) {
-            sets.add((MTGSet) set);
+            sets.clear();
+            for (Object set : result) {
+                sets.add((MTGSet) set);
+            }
+            setAdapter.notifyDataSetChanged();
+            result.clear();
+
+            loadSet();
         }
-        setAdapter.notifyDataSetChanged();
-        result.clear();
-
-        loadSet();
     }
 
     @Override

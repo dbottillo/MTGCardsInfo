@@ -56,16 +56,13 @@ public class TCGPrice implements Parcelable {
         return error;
     }
 
-    public void setError() {
+    public void setError(String errorPrice) {
         error = true;
+        this.errorPrice = errorPrice;
     }
 
     public String getErrorPrice() {
         return errorPrice;
-    }
-
-    public void setErrorPrice(String errorPrice) {
-        this.errorPrice = errorPrice;
     }
 
     public String toString() {

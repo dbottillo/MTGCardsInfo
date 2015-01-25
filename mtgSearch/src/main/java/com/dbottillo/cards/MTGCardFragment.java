@@ -138,7 +138,7 @@ public class MTGCardFragment extends DBFragment {
         rootView.findViewById(R.id.price_container).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (price != null) {
+                if (price != null && !price.isAnError()) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(price.getLink()));
                     startActivity(browserIntent);
                 }
