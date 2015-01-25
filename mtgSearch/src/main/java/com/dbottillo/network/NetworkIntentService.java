@@ -48,8 +48,7 @@ public class NetworkIntentService extends IntentService {
         } catch (Exception e) {
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
             res = new TCGPrice();
-            res.isAnError();
-            res.setErrorPrice(getApplicationContext().getString(R.string.price_error));
+            res.setError(getApplicationContext().getString(R.string.price_error));
         }
 
         Intent intentRes = new Intent(idRequest);
@@ -119,12 +118,10 @@ public class NetworkIntentService extends IntentService {
                 event = myparser.next();
             }
             if (tcgPrice.getHiPrice() == null) {
-                tcgPrice.setErrorPrice(getApplicationContext().getString(R.string.price_error));
-                tcgPrice.isAnError();
+                tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
             }
         } else {
-            tcgPrice.setErrorPrice(getApplicationContext().getString(R.string.price_error));
-            tcgPrice.isAnError();
+            tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
         }
         return tcgPrice;
     }
