@@ -23,18 +23,12 @@
     <string name="need_premium">Premium richiesto</string>
 
     <!-- filter panel -->
-    <!--<string name="mtg_color_white">Bianco</string>
-    <string name="mtg_color_blue">Blu</string>
-    <string name="mtg_color_black">Nero</string>
-    <string name="mtg_color_red">Rosso</string>
-    <string name="mtg_color_green">Verde</string>
-    -->
     <string name="mtg_type_artifact">Artefatto</string>
     <string name="mtg_type_land">Terra</string>
-    <!--<string name="mtg_common">Comune</string>
-    <string name="mtg_uncommon">Non comune</string>
-    <string name="mtg_rare">Rara</string>
-    <string name="mtg_mythic_rare">Rara Mitica</string>-->
+    <string name="mtg_common">Co</string>
+    <string name="mtg_uncommon">N</string>
+    <string name="mtg_rare">R</string>
+    <string name="mtg_mythic_rare">M</string>
 
     <!-- card fragment -->
     <string name="type_card">Tipo</string>

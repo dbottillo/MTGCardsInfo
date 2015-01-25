@@ -1,6 +1,7 @@
 package com.dbottillo.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,7 +81,7 @@ public class LifeCounterAdapter extends BaseAdapter {
         holder.poison.setText(player.getPoisonCount() + "");
 
         int color = getColorOfPosition(position);
-        holder.card.setBackgroundColor(color);
+        holder.card.setCardBackgroundColor(color);
 
         /*int color = R.color.life_counter_red;
         if (player.getLife() > 12) {
@@ -169,7 +170,7 @@ public class LifeCounterAdapter extends BaseAdapter {
     }
 
     class PlayerHolder {
-        View card;
+        CardView card;
         TextView name;
         TextView life;
         TextView poison;
@@ -184,7 +185,7 @@ public class LifeCounterAdapter extends BaseAdapter {
         Button poisonMinusOne;
 
         PlayerHolder(View row) {
-            card = row.findViewById(R.id.life_counter_card);
+            card = (CardView) row.findViewById(R.id.life_counter_card);
             name = (TextView) row.findViewById(R.id.player_name);
             life = (TextView) row.findViewById(R.id.player_life);
             poison = (TextView) row.findViewById(R.id.player_poison);

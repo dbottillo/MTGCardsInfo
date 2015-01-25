@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.cards.MTGSetFragment;
 import com.dbottillo.filter.FilterActivity;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
@@ -139,7 +138,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
             searchEditText.setText(query);
             searchEditText.setHintTextColor(getResources().getColor(R.color.light_grey));
         } catch (Exception e) {
-            LOG.e(e.getLocalizedMessage());
+            //LOG.e(e.getLocalizedMessage());
         }
 
         searchView.requestFocus();
