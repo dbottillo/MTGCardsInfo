@@ -26,7 +26,8 @@
                 <ImageView
                     android:layout_marginLeft="@dimen/padding_card_image"
                     android:layout_marginRight="@dimen/padding_card_image"
-                    android:layout_marginTop="@dimen/padding_card_image"
+                    android:layout_marginTop="@dimen/padding_card_image_half"
+                    android:layout_marginBottom="@dimen/padding_card_image_half"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_width="wrap_content"
