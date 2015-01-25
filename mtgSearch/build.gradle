@@ -72,9 +72,15 @@ task readPasswordFromInput << {
     android.signingConfigs.releaseConfig.keyPassword = ext.keystorePassword
 }
 
-tasks.whenTaskAdded { task ->
+/*tasks.whenTaskAdded { task ->
     if (task.name == 'assembleHearthstoneRelease' || task.name == 'assembleMagicRelease')
         task.dependsOn readPasswordFromInput
+}*/
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'validateReleaseConfigSigning') {
+        task.dependsOn readPasswordFromInput
+    }
 }
 
 dependencies {

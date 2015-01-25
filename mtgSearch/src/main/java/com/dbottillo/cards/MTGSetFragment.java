@@ -238,7 +238,11 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
+        if (isASearch) {
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, "search pos:" + position);
+        } else {
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
+        }
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
