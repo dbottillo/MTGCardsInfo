@@ -7,7 +7,7 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:gravity="center_vertical"
-    android:background="@color/white">
+    android:background="@drawable/bg_card">
 
     <LinearLayout
         android:layout_width="0dp"

@@ -10,6 +10,7 @@
         android:divider="#e6e6e6"
         android:dividerHeight="1dp"
         android:cacheColorHint="@android:color/transparent"
+        android:drawSelectorOnTop="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
