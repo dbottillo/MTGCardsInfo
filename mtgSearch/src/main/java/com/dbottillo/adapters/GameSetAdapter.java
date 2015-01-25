@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.dbottillo.R;
-import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.MTGSet;
 
 import java.util.List;
@@ -19,12 +18,12 @@ import java.util.List;
  */
 public class GameSetAdapter extends BaseAdapter {
 
-    private List<GameSet> mtgSets;
+    private List<MTGSet> mtgSets;
     private Context context;
     private LayoutInflater inflater;
     private int current = -1;
 
-    public GameSetAdapter(Context context, List<GameSet> mtgSets) {
+    public GameSetAdapter(Context context, List<MTGSet> mtgSets) {
         this.mtgSets = mtgSets;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -36,7 +35,7 @@ public class GameSetAdapter extends BaseAdapter {
     }
 
     @Override
-    public GameSet getItem(int i) {
+    public MTGSet getItem(int i) {
         return mtgSets.get(i);
     }
 
@@ -45,7 +44,7 @@ public class GameSetAdapter extends BaseAdapter {
         return getItem(i).getId();
     }
 
-    public void setCurrent(int current){
+    public void setCurrent(int current) {
         this.current = current;
     }
 
@@ -60,7 +59,7 @@ public class GameSetAdapter extends BaseAdapter {
             holder = (SetHolder) convertView.getTag();
         }
 
-        GameSet set = getItem(position);
+        MTGSet set = getItem(position);
         holder.name.setTextColor(context.getResources().getColor(position == current ? R.color.main : R.color.dark_grey));
         holder.name.setTypeface(null, position == current ? Typeface.BOLD : Typeface.NORMAL);
         holder.name.setText(set.getName());
@@ -71,7 +70,7 @@ public class GameSetAdapter extends BaseAdapter {
     class SetHolder {
         TextView name;
 
-        SetHolder(View row){
+        SetHolder(View row) {
             name = (TextView) row.findViewById(R.id.set_name);
         }
     }

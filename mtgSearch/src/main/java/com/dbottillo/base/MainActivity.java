@@ -30,7 +30,7 @@ import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterActivity;
-import com.dbottillo.resources.GameSet;
+import com.dbottillo.resources.MTGSet;
 import com.dbottillo.saved.SavedActivity;
 import com.dbottillo.search.SearchActivity;
 import com.dbottillo.view.SlidingUpPanelLayout;
@@ -41,7 +41,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     private static final int SEARCH_REQUEST_CODE = 100;
 
-    private ArrayList<GameSet> sets;
+    private ArrayList<MTGSet> sets;
     private GameSetAdapter setAdapter;
 
     private DrawerLayout mDrawerLayout;
@@ -81,7 +81,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         getSupportActionBar().setTitle(R.string.app_long_name);
 
         if (savedInstanceState == null) {
-            sets = new ArrayList<GameSet>();
+            sets = new ArrayList<MTGSet>();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
 
         } else {
@@ -297,7 +297,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
         sets.clear();
         for (Object set : result) {
-            sets.add((GameSet) set);
+            sets.add((MTGSet) set);
         }
         setAdapter.notifyDataSetChanged();
         result.clear();

@@ -31,7 +31,6 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
-import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.TCGPrice;
 import com.squareup.picasso.Callback;
@@ -42,11 +41,11 @@ public class MTGCardFragment extends DBFragment {
     private static final String TAG = MTGCardFragment.class.getName();
 
     public interface CardConnector {
-        boolean isCardSaved(GameCard card);
+        boolean isCardSaved(MTGCard card);
 
-        void saveCard(GameCard card);
+        void saveCard(MTGCard card);
 
-        void removeCard(GameCard card);
+        void removeCard(MTGCard card);
 
         void tapOnImage(int position);
     }
@@ -64,7 +63,7 @@ public class MTGCardFragment extends DBFragment {
 
     boolean isLandscape;
     boolean fullscreenMode = false;
-    private GameCard card;
+    private MTGCard card;
     ImageView cardImage;
     ImageView cardLoader;
     View retry;
@@ -77,7 +76,7 @@ public class MTGCardFragment extends DBFragment {
 
     private CardConnector cardConnector;
 
-    public static MTGCardFragment newInstance(GameCard card, int position, boolean fullscreen) {
+    public static MTGCardFragment newInstance(MTGCard card, int position, boolean fullscreen) {
         MTGCardFragment fragment = new MTGCardFragment();
         Bundle args = new Bundle();
         args.putParcelable(CARD, card);
@@ -228,20 +227,18 @@ public class MTGCardFragment extends DBFragment {
     private void refreshUI() {
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
 
-        MTGCard mtgCard = (MTGCard) card;
-
-        String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + mtgCard.getType() + " <br/><br/> " +
-                "<b>" + getString(R.string.pt_card) + "</b>: " + mtgCard.getPower() + "/" + mtgCard.getToughness() + " <br/><br/>";
+        String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + card.getType() + " <br/><br/> " +
+                "<b>" + getString(R.string.pt_card) + "</b>: " + card.getPower() + "/" + card.getToughness() + " <br/><br/>";
         typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: ";
         if (card.getManaCost() != null) {
-            typeHtml += card.getManaCost() + " (" + mtgCard.getCmc() + ")";
+            typeHtml += card.getManaCost() + " (" + card.getCmc() + ")";
         } else {
             typeHtml += " - ";
         }
         cardName.setText(Html.fromHtml(typeHtml));
 
         TextView cardText = (TextView) getView().findViewById(R.id.text_card);
-        cardText.setText(mtgCard.getText());
+        cardText.setText(card.getText());
 
         TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
         setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
@@ -254,7 +251,7 @@ public class MTGCardFragment extends DBFragment {
 
         Intent intent = new Intent(getActivity(), NetworkIntentService.class);
         Bundle params = new Bundle();
-        params.putString(NetworkIntentService.EXTRA_ID, mtgCard.getMultiVerseId() + "");
+        params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
         params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
         intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
         getActivity().startService(intent);

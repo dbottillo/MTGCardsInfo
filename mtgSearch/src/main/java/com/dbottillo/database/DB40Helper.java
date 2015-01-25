@@ -8,8 +8,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.diagnostic.DiagnosticToConsole;
-import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.HSCard;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
 
@@ -60,7 +58,6 @@ public class DB40Helper {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
-        configuration.common().objectClass(HSCard.class).objectField("id").indexed(true);
         configuration.common().objectClass(MTGCard.class).objectField("id").indexed(true);
         return configuration;
     }
@@ -84,7 +81,7 @@ public class DB40Helper {
         if (close) closeDb();
     }
 
-    public void storeCard(GameCard card) {
+    public void storeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -93,14 +90,14 @@ public class DB40Helper {
         Log.e(TAG, "[DBELPER] card " + card.getName() + " saved inside database");
     }
 
-    public void removeCard(GameCard card) {
+    public void removeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
         db.delete(card);
-        ObjectSet<GameCard> result = db.query(GameCard.class);
+        ObjectSet<MTGCard> result = db.query(MTGCard.class);
         while (result.hasNext()) {
-            GameCard next = result.next();
+            MTGCard next = result.next();
             if (next.getId() == card.getId()) {
                 db.delete(next);
             }
@@ -108,23 +105,23 @@ public class DB40Helper {
         db.commit();
     }
 
-    public ArrayList<GameCard> getCards() {
+    public ArrayList<MTGCard> getCards() {
         if (db.ext().isClosed()) {
             openDb();
         }
-        ArrayList<GameCard> cards = new ArrayList<GameCard>();
-        ObjectSet<GameCard> result = db.query(GameCard.class);
+        ArrayList<MTGCard> cards = new ArrayList<MTGCard>();
+        ObjectSet<MTGCard> result = db.query(MTGCard.class);
         while (result.hasNext()) {
             cards.add(result.next());
         }
         return cards;
     }
 
-    public synchronized boolean isCardStored(GameCard card) {
+    public synchronized boolean isCardStored(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
-        ObjectSet<GameCard> result = db.queryByExample(card);
+        ObjectSet<MTGCard> result = db.queryByExample(card);
         return !result.isEmpty();
     }
 

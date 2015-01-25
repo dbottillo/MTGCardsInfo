@@ -4,32 +4,28 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
-import com.dbottillo.database.SetContract.*;
+import com.dbottillo.database.SetContract.SetEntry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
-public class MTGSet extends GameSet{
+public class MTGSet implements Parcelable {
 
     int id;
     String code;
     String name;
     ArrayList<MTGCard> cards;
 
-    public MTGSet(int id){
+    public MTGSet(int id) {
         this.id = id;
-        this.cards = new ArrayList<MTGCard>();
+        this.cards = new ArrayList<>();
     }
 
-    public MTGSet(Parcel in){
-        this.cards = new ArrayList<MTGCard>();
+    public MTGSet(Parcel in) {
+        this.cards = new ArrayList<>();
         readFromParcel(in);
     }
 
@@ -40,14 +36,14 @@ public class MTGSet extends GameSet{
         return set;
     }
 
-    public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException{
+    public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException {
         ContentValues values = new ContentValues();
         values.put(SetEntry.COLUMN_NAME_CODE, object.getString("code"));
         values.put(SetEntry.COLUMN_NAME_NAME, object.getString("name"));
         return values;
     }
 
-    public static MTGSet createMagicSetFromJson(int id, JSONObject object) throws JSONException{
+    public static MTGSet createMagicSetFromJson(int id, JSONObject object) throws JSONException {
         MTGSet set = new MTGSet(id);
         set.setCode(object.getString("code"));
         set.setName(object.getString("name"));
@@ -80,20 +76,13 @@ public class MTGSet extends GameSet{
         this.name = name;
     }
 
-    @Override
-    public void addCard(GameCard card) {
-        cards.add((MTGCard) card);
-    }
-
-    @Override
     public void clear() {
         cards.clear();
     }
 
-    @Override
-    public ArrayList<GameCard> getCards() {
-        ArrayList<GameCard> gameCards = new ArrayList<GameCard>();
-        for (MTGCard card : cards){
+    public ArrayList<MTGCard> getCards() {
+        ArrayList<MTGCard> gameCards = new ArrayList<MTGCard>();
+        for (MTGCard card : cards) {
             gameCards.add(card);
         }
         return gameCards;
@@ -116,7 +105,7 @@ public class MTGSet extends GameSet{
         dest.writeTypedList(cards);
     }
 
-    private void readFromParcel(Parcel in){
+    private void readFromParcel(Parcel in) {
         id = in.readInt();
         name = in.readString();
         code = in.readString();
