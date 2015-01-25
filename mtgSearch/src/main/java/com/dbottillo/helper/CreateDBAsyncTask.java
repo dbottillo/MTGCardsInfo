@@ -4,20 +4,20 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.DatabaseHelper;
-import com.dbottillo.database.SetContract.SetEntry;
-import com.dbottillo.resources.MTGCard;
-import com.dbottillo.resources.MTGSet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,6 +25,7 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 
 public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
@@ -47,8 +48,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         ArrayList<Object> result = new ArrayList<Object>();
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        db.delete(SetEntry.TABLE_NAME, null, null);
-        db.delete(CardEntry.TABLE_NAME, null, null);
+        /*db.delete(SetEntry.TABLE_NAME, null, null);
+        db.delete(CardEntry.TABLE_NAME, null, null);*/
         try {
             int set_list = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(set_list);
@@ -59,7 +60,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 try {
                     String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
 
-                    long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
+                    /*long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
                     Log.e("MTG", "row id " + newRowId + " -> " + setJ.getString("code"));
 
                     JSONObject jsonCards = new JSONObject(jsonSetString);
@@ -72,16 +73,20 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                         long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
                         //Log.e("MTG", "row id card"+newRowId2);
                         //result.add(MTGCard.createCardFromJson(i, cardJ));
-                    }
+                    }*/
                 } catch (Resources.NotFoundException e) {
                     Log.e("MTG", setJ.getString("code") + " file not found");
                 }
 
                 /*
+                adb shell "run-as com.dbottillo.mtgsearchfree.debug chmod 666 /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db"
+                adb pull /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db .
+
             Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/mtgsearch.db'
             Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/mtgsearch.db
             */
             }
+            copyDbToSdcard();
         } catch (JSONException e) {
             Log.e("MTG", "error create db async task: " + e.getLocalizedMessage());
             error = true;
@@ -90,6 +95,36 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         }
 
         return result;
+    }
+
+    public void copyDbToSdcard() {
+        try {
+            File sd = Environment.getExternalStorageDirectory();
+            File data = Environment.getDataDirectory();
+
+            if (sd.canWrite()) {
+                String currentDBPath = "//data//com.dbottillo.mtgsearchfree.debug//databases//MTGCardsInfo.db";
+                String backupDBPath = "MTGCardsInfo.db";
+                File currentDB = new File(data, currentDBPath);
+                File backupDB = new File(sd, backupDBPath);
+
+                if (currentDB.exists()) {
+                    FileChannel src = new FileInputStream(currentDB)
+                            .getChannel();
+                    FileChannel dst = new FileOutputStream(backupDB)
+                            .getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                } else {
+                    LOG.e("current db dont exist");
+                }
+            } else {
+                LOG.e("sd card cannot be write");
+            }
+        } catch (Exception e) {
+            LOG.e("exception copy db: " + e.getLocalizedMessage());
+        }
     }
 
     private int setToLoad(String code) {

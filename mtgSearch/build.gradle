@@ -24,7 +24,6 @@ android {
         versionCode 16
         versionName "1.8.5"
         applicationId "com.dbottillo.mtgsearchfree"
-        buildConfigField 'int', 'DATABASE_VERSION', '5'
     }
 
     signingConfigs {
@@ -49,12 +48,14 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
+            buildConfigField 'int', 'DATABASE_VERSION', '6'
         }
         release {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
+            buildConfigField 'int', 'DATABASE_VERSION', '6'
         }
     }
 
