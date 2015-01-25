@@ -30,7 +30,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lucky_card);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(getString(R.string.lucky_title));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -46,7 +46,6 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
             loadRandomCard();
         } else {
             luckyCards = savedInstanceState.getParcelableArrayList("luckyCards");
-
         }
     }
 
@@ -157,7 +156,6 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, cardFragment)
                 .commit();
-        getSupportActionBar().setTitle(card.getName());
         TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, card.getName());
         if (luckyCards.size() == 2) {
             // pre-fetch more

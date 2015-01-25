@@ -59,6 +59,7 @@ public class DB40Helper {
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
         configuration.common().objectClass(MTGCard.class).objectField("id").indexed(true);
+        configuration.common().objectClass(Player.class).objectField("id").indexed(true);
         return configuration;
     }
 
