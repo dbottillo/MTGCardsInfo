@@ -21,7 +21,7 @@ import com.dbottillo.cards.CardsActivity;
 import com.dbottillo.cards.MTGCardsFragment;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, DBAsyncTask.DBAsyncTaskListener {
 
-    private ArrayList<GameCard> savedCards;
+    private ArrayList<MTGCard> savedCards;
     private ListView listView;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
@@ -101,7 +101,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onTaskFinished(int type, ArrayList<?> objects) {
         savedCards.clear();
         for (Object card : objects) {
-            savedCards.add((GameCard) card);
+            savedCards.add((MTGCard) card);
         }
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(View.GONE);

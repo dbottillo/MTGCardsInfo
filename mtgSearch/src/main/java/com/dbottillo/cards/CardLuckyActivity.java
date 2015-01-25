@@ -9,7 +9,6 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;
 
@@ -17,9 +16,9 @@ import java.util.ArrayList;
 
 public class CardLuckyActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
 
-    private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
+    private ArrayList<MTGCard> savedCards = new ArrayList<MTGCard>();
 
-    private ArrayList<GameCard> luckyCards;
+    private ArrayList<MTGCard> luckyCards;
 
     MTGCardFragment cardFragment;
 
@@ -92,9 +91,9 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
     }
 
     @Override
-    public boolean isCardSaved(GameCard card) {
+    public boolean isCardSaved(MTGCard card) {
         boolean isSaved = false;
-        for (GameCard savedCard : savedCards) {
+        for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 isSaved = true;
                 break;
@@ -104,16 +103,16 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
     }
 
     @Override
-    public void saveCard(GameCard card) {
+    public void saveCard(MTGCard card) {
         new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
         savedCards.add(card);
         invalidateOptionsMenu();
     }
 
     @Override
-    public void removeCard(GameCard card) {
+    public void removeCard(MTGCard card) {
         new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
-        for (GameCard savedCard : savedCards) {
+        for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 savedCards.remove(savedCard);
                 break;
@@ -133,7 +132,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         if (type != DBAsyncTask.TASK_RANDOM_CARD) {
             savedCards.clear();
             for (Object card : objects) {
-                savedCards.add((GameCard) card);
+                savedCards.add((MTGCard) card);
             }
             invalidateOptionsMenu();
         } else {
@@ -153,7 +152,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
     }
 
     private void loadCard() {
-        GameCard card = luckyCards.remove(0);
+        MTGCard card = luckyCards.remove(0);
         cardFragment = MTGCardFragment.newInstance(card, 0, false);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, cardFragment)

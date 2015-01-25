@@ -4,9 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
 
-import com.dbottillo.database.CardDatabaseHelper;
 import com.dbottillo.database.DB40Helper;
-import com.dbottillo.resources.GameCard;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.resources.Player;
@@ -23,9 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
     public interface DBAsyncTaskListener {
@@ -52,14 +48,14 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
     private int type;
 
-    CardDatabaseHelper mDbHelper;
+    MTGDatabaseHelper mDbHelper;
     DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type) {
         this.context = context;
         this.listener = listener;
         this.type = type;
-        this.mDbHelper = CardDatabaseHelper.getDatabaseHelper(context);
+        this.mDbHelper = new MTGDatabaseHelper(context);
         this.db40Helper = DB40Helper.getInstance(context);
     }
 
@@ -106,7 +102,7 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
         } else if (type == TASK_SAVED) {
             db40Helper.openDb();
-            ArrayList<GameCard> cards = db40Helper.getCards();
+            ArrayList<MTGCard> cards = db40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
@@ -114,8 +110,8 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
         } else if (type == TASK_SAVE_CARD) {
             db40Helper.openDb();
-            db40Helper.storeCard((GameCard) params[0]);
-            ArrayList<GameCard> cards = db40Helper.getCards();
+            db40Helper.storeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = db40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
@@ -123,8 +119,8 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
         } else if (type == TASK_REMOVE_CARD) {
             db40Helper.openDb();
-            db40Helper.removeCard((GameCard) params[0]);
-            ArrayList<GameCard> cards = db40Helper.getCards();
+            db40Helper.removeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = db40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }

@@ -8,15 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
-import com.dbottillo.base.DBFragment;
 
 import java.util.ArrayList;
 
-/**
- * Created by danielebottillo on 14/07/2014.
- */
 public class LeftMenuAdapter extends BaseAdapter {
 
     public enum LeftMenuItem {
@@ -24,22 +19,22 @@ public class LeftMenuAdapter extends BaseAdapter {
         FAVOURITE(1, R.string.action_saved, R.drawable.left_saved, "saved"),
         LIFE_COUNTER(2, R.string.action_life_counter, R.drawable.left_life_counter, "life_counter"),
         ABOUT(3, R.string.action_about, R.drawable.left_info, null),
-        CREATE_DB(4, R.string.action_create_db,  R.drawable.left_info, null),
-        FORCE_CRASH(5, R.string.action_crash,  R.drawable.left_info, null);
+        CREATE_DB(4, R.string.action_create_db, R.drawable.left_info, null),
+        FORCE_CRASH(5, R.string.action_crash, R.drawable.left_info, null);
 
         private int id;
         private int title;
         private int icon;
         private String tag;
 
-        LeftMenuItem(int id, int title, int icon, String tag){
+        LeftMenuItem(int id, int title, int icon, String tag) {
             this.id = id;
             this.title = title;
-            this.icon =  icon;
+            this.icon = icon;
             this.tag = tag;
         }
 
-        public int getPosition(){
+        public int getPosition() {
             return id;
         }
 
@@ -48,8 +43,8 @@ public class LeftMenuAdapter extends BaseAdapter {
         }
 
         public static LeftMenuItem getItemAtPosition(int position) {
-            for (LeftMenuItem leftMenuItem : values()){
-                if (leftMenuItem.id == position){
+            for (LeftMenuItem leftMenuItem : values()) {
+                if (leftMenuItem.id == position) {
                     return leftMenuItem;
                 }
             }
@@ -60,7 +55,7 @@ public class LeftMenuAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<LeftMenuItem> items;
 
-    public LeftMenuAdapter(Context context, ArrayList<LeftMenuItem> items){
+    public LeftMenuAdapter(Context context, ArrayList<LeftMenuItem> items) {
         this.context = context;
         this.items = items;
     }
@@ -103,10 +98,10 @@ public class LeftMenuAdapter extends BaseAdapter {
     }
 
     class LeftMenuHolder {
-        TextView     title;
-        ImageView   icon;
+        TextView title;
+        ImageView icon;
 
-        public LeftMenuHolder(View row){
+        public LeftMenuHolder(View row) {
             title = (TextView) row.findViewById(R.id.left_menu_title);
             icon = (ImageView) row.findViewById(R.id.left_menu_icon);
         }

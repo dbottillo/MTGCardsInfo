@@ -7,14 +7,19 @@ import android.database.sqlite.SQLiteDatabase;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.SetContract.SetEntry;
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-public class MTGDatabaseHelper extends CardDatabaseHelper {
+public class MTGDatabaseHelper extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
     public static final int LIMIT = 400;
 
+    public MTGDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
     public MTGDatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
+        this(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
         setForcedUpgrade();
     }
 
@@ -46,7 +51,6 @@ public class MTGDatabaseHelper extends CardDatabaseHelper {
         return db.rawQuery(query, new String[]{"%" + search + "%"});
     }
 
-    @Override
     public Cursor getRandomCard() {
         SQLiteDatabase db = getReadableDatabase();
 

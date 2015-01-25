@@ -19,8 +19,6 @@ import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.resources.GameCard;
-import com.dbottillo.resources.GameSet;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 
@@ -36,10 +34,10 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private static final String SEARCH = "search";
     private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
-    private GameSet gameSet;
+    private MTGSet gameSet;
     private ListView listView;
     private TextView emptyView;
-    private ArrayList<GameCard> cards;
+    private ArrayList<MTGCard> cards;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
     private String query;
@@ -47,7 +45,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     public MTGSetFragment() {
     }
 
-    public static MTGSetFragment newInstance(GameSet set) {
+    public static MTGSetFragment newInstance(MTGSet set) {
         MTGSetFragment fragment = new MTGSetFragment();
         Bundle args = new Bundle();
         args.putParcelable(SET_CHOSEN, set);
@@ -87,7 +85,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             listView.addHeaderView(header);
         }
 
-        cards = new ArrayList<GameCard>();
+        cards = new ArrayList<>();
         adapter = new CardListAdapter(getActivity(), cards, isASearch);
         listView.setAdapter(adapter);
 
@@ -147,7 +145,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         boolean premium = getApp().isPremium();
         for (Object card : result) {
             //if (premium  || !isASearch || (!premium && i < 3)) {
-            gameSet.addCard((GameCard) card);
+            gameSet.addCard((MTGCard) card);
             //}
             //if (isASearch && !premium && i >= 3) {
             //    break;
@@ -180,10 +178,8 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private void populateCardsWithFilter() {
         cards.clear();
         SharedPreferences sharedPreferences = getSharedPreferences();
-        for (GameCard c : gameSet.getCards()) {
+        for (MTGCard card : gameSet.getCards()) {
             boolean toAdd = false;
-
-            MTGCard card = (MTGCard) c;
             if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true))
                 toAdd = true;
             if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true))
@@ -217,7 +213,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
                 toAdd = true;
             }
 
-            if (toAdd) cards.add(c);
+            if (toAdd) cards.add(card);
             Collections.sort(cards, new Comparator<Object>() {
                 public int compare(Object o1, Object o2) {
                     MTGCard card = (MTGCard) o1;

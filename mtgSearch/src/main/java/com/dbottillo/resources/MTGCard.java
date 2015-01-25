@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MTGCard extends GameCard implements Comparable<MTGCard> {
+public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     int id;
     String name;
@@ -534,7 +534,6 @@ public class MTGCard extends GameCard implements Comparable<MTGCard> {
         return "[MTGCard] " + name;
     }
 
-    @Override
     public String getImage() {
         if (getMultiVerseId() > 0) {
             return "http://mtgimage.com/multiverseid/" + getMultiVerseId() + ".jpg";

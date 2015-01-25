@@ -10,13 +10,13 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
 public class CardsActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
 
-    private ArrayList<GameCard> savedCards = new ArrayList<GameCard>();
+    private ArrayList<MTGCard> savedCards = new ArrayList<MTGCard>();
 
     public static final int FULLSCREEN_CODE = 100;
 
@@ -40,9 +40,9 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
 
         if (cardsFragment == null) {
             setName = getIntent().getStringExtra(MTGCardsFragment.SET_NAME);
-            cardsFragment = MTGCardsFragment.newInstance(getIntent().<GameCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
+            cardsFragment = MTGCardsFragment.newInstance(getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
                     getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
-                   setName);
+                    setName);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, cardsFragment)
                     .commit();
@@ -80,9 +80,9 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     }
 
     @Override
-    public boolean isCardSaved(GameCard card) {
+    public boolean isCardSaved(MTGCard card) {
         boolean isSaved = false;
-        for (GameCard savedCard : savedCards) {
+        for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 isSaved = true;
                 break;
@@ -92,16 +92,16 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     }
 
     @Override
-    public void saveCard(GameCard card) {
+    public void saveCard(MTGCard card) {
         new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
         savedCards.add(card);
         invalidateOptionsMenu();
     }
 
     @Override
-    public void removeCard(GameCard card) {
+    public void removeCard(MTGCard card) {
         new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
-        for (GameCard savedCard : savedCards) {
+        for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 savedCards.remove(savedCard);
                 break;
@@ -128,7 +128,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     public void onTaskFinished(int type, ArrayList<?> objects) {
         savedCards.clear();
         for (Object card : objects) {
-            savedCards.add((GameCard) card);
+            savedCards.add((MTGCard) card);
         }
         invalidateOptionsMenu();
     }

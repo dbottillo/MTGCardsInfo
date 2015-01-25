@@ -16,7 +16,6 @@ import com.dbottillo.R;
 import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public static final String SET_NAME = "set_name";
 
     private ViewPager viewPager;
-    private ArrayList<GameCard> cards;
+    private ArrayList<MTGCard> cards;
     private CardsPagerAdapter adapter;
 
     private int position;
@@ -36,7 +35,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     MenuItem actionImage;
 
-    public static MTGCardsFragment newInstance(ArrayList<GameCard> cards, int position, String setName) {
+    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String setName) {
         MTGCardsFragment fragment = new MTGCardsFragment();
         Bundle args = new Bundle();
         args.putParcelableArrayList(CARDS, cards);
@@ -163,7 +162,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         viewPager.setCurrentItem(position, false);
     }
 
-    public ArrayList<GameCard> getCards() {
+    public ArrayList<MTGCard> getCards() {
         return cards;
     }
 }

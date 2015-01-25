@@ -2,14 +2,10 @@ package com.dbottillo.database;
 
 import android.provider.BaseColumns;
 
-import java.util.ArrayList;
-
-/**
- * Created by danielebottillo on 04/03/2014.
- */
 public final class CardContract {
 
-    public CardContract() {}
+    public CardContract() {
+    }
 
     /* Inner class that defines the table contents */
     public static abstract class CardEntry implements BaseColumns {

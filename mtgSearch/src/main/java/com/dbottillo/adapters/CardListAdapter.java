@@ -10,19 +10,18 @@ import android.widget.TextView;
 
 import com.dbottillo.R;
 import com.dbottillo.helper.FilterHelper;
-import com.dbottillo.resources.GameCard;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.List;
 
 public class CardListAdapter extends BaseAdapter {
 
-    private List<GameCard> cards;
+    private List<MTGCard> cards;
     private Context context;
     private LayoutInflater inflater;
     private boolean isASearch;
 
-    public CardListAdapter(Context context, List<GameCard> cards, boolean isASearch) {
+    public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -35,7 +34,7 @@ public class CardListAdapter extends BaseAdapter {
     }
 
     @Override
-    public GameCard getItem(int i) {
+    public MTGCard getItem(int i) {
         return cards.get(i);
     }
 
@@ -55,11 +54,8 @@ public class CardListAdapter extends BaseAdapter {
             holder = (CardHolder) convertView.getTag();
         }
 
-        GameCard card = getItem(position);
+        MTGCard card = getItem(position);
         holder.name.setText(card.getName());
-
-
-        MTGCard mtgCard = (MTGCard) card;
 
         int rarityColor = R.color.common;
         if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {
@@ -78,7 +74,7 @@ public class CardListAdapter extends BaseAdapter {
 
         if (card.getManaCost() != null) {
             holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
-            holder.cost.setTextColor(mtgCard.getMtgColor(context));
+            holder.cost.setTextColor(card.getMtgColor(context));
         } else {
             holder.cost.setText("-");
         }
@@ -91,7 +87,7 @@ public class CardListAdapter extends BaseAdapter {
         }
 
         GradientDrawable indicator = (GradientDrawable) holder.indicator.getBackground();
-        indicator.setColor(mtgCard.getMtgColor(context));
+        indicator.setColor(card.getMtgColor(context));
 
 
         /*if (BuildConfig.magic) {

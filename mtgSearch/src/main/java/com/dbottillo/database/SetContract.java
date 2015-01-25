@@ -2,12 +2,10 @@ package com.dbottillo.database;
 
 import android.provider.BaseColumns;
 
-/**
- * Created by danielebottillo on 04/03/2014.
- */
 public final class SetContract {
 
-    public SetContract() {}
+    public SetContract() {
+    }
 
     /* Inner class that defines the table contents */
     public static abstract class SetEntry implements BaseColumns {

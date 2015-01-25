@@ -5,20 +5,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.dbottillo.cards.MTGCardFragment;
-import com.dbottillo.resources.GameCard;
+import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
 public class CardsPagerAdapter extends FragmentStatePagerAdapter {
 
-    private ArrayList<GameCard> cards;
+    private ArrayList<MTGCard> cards;
     private boolean fullScreen = false;
 
     public CardsPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public void setCards(ArrayList<GameCard> cards) {
+    public void setCards(ArrayList<MTGCard> cards) {
         this.cards = cards;
     }
 
