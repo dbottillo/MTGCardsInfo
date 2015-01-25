@@ -13,9 +13,6 @@ import com.dbottillo.resources.MTGSet;
 
 import java.util.List;
 
-/**
- * Created by danielebottillo on 23/02/2014.
- */
 public class GameSetAdapter extends BaseAdapter {
 
     private List<MTGSet> mtgSets;
