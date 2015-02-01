@@ -96,7 +96,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     }
 
     private void refreshColor(int pos) {
-        MTGCard card = (MTGCard) cards.get(pos);
+        //MTGCard card = (MTGCard) cards.get(pos);
         //pagerTabStrip.setBackgroundColor(card.getMtgColor(getActivity()));
         //MaterialWrapper.setStatusBarColor(getActivity(), card.getMtgColor(getActivity()));
         //MaterialWrapper.setNavigationBarColor(getActivity(), card.getMtgColor(getActivity()));
@@ -119,7 +119,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         fullScreenImage.setVisible(false);
 
-        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)) {
+        if (getActivity() != null && getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)) {
             actionImage.setChecked(true);
             fullScreenImage.setVisible(!getResources().getBoolean(R.bool.isTablet));
         } else {

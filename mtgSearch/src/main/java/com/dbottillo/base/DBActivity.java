@@ -48,11 +48,13 @@ public abstract class DBActivity extends ActionBarActivity {
 
     MTGApp app;
     protected Toolbar toolbar;
+    protected boolean onSaveInstanceStateCalled = false;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
+        onSaveInstanceStateCalled = false;
         app = (MTGApp) getApplication();
     }
 
@@ -63,6 +65,12 @@ public abstract class DBActivity extends ActionBarActivity {
         if (getPageTrack() != null) {
             TrackingHelper.trackPage(getPageTrack());
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        onSaveInstanceStateCalled = true;
+        super.onSaveInstanceState(outState);
     }
 
     public abstract String getPageTrack();
