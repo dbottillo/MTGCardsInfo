@@ -128,24 +128,26 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
 
     @Override
     public void onTaskFinished(int type, ArrayList<?> objects) {
-        if (type != DBAsyncTask.TASK_RANDOM_CARD) {
-            savedCards.clear();
-            for (Object card : objects) {
-                savedCards.add((MTGCard) card);
-            }
-            invalidateOptionsMenu();
-        } else {
-            isLoading = false;
-            for (Object obj : objects) {
-                MTGCard card = (MTGCard) obj;
-                luckyCards.add(card);
-                if (card.getImage() != null) {
-                    // pre-fetch images
-                    Picasso.with(this).load(card.getImage()).fetch();
+        if (!onSaveInstanceStateCalled) {
+            if (type != DBAsyncTask.TASK_RANDOM_CARD) {
+                savedCards.clear();
+                for (Object card : objects) {
+                    savedCards.add((MTGCard) card);
                 }
-            }
-            if (loadCardAfterDatabase && !isFinishing()) {
-                loadCard();
+                invalidateOptionsMenu();
+            } else {
+                isLoading = false;
+                for (Object obj : objects) {
+                    MTGCard card = (MTGCard) obj;
+                    luckyCards.add(card);
+                    if (card.getImage() != null) {
+                        // pre-fetch images
+                        Picasso.with(this).load(card.getImage()).fetch();
+                    }
+                }
+                if (loadCardAfterDatabase && !isFinishing()) {
+                    loadCard();
+                }
             }
         }
     }

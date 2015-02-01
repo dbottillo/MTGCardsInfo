@@ -55,8 +55,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     private int currentSetPosition = -1;
 
-    private boolean onSaveInstanceStateCalled = false;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -279,7 +277,6 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         super.onSaveInstanceState(outState);
         outState.putInt("currentSetPosition", currentSetPosition);
         outState.putParcelableArrayList("SET", sets);
-        onSaveInstanceStateCalled = true;
     }
 
     private void loadSet() {
@@ -374,7 +371,9 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     private void updateSetFragment() {
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
-        setFragment.refreshUI();
+        if (setFragment != null) {
+            setFragment.refreshUI();
+        }
     }
 
     private void showGoToPremium() {

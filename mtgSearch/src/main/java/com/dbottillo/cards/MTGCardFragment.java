@@ -375,17 +375,18 @@ public class MTGCardFragment extends DBFragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.card, menu);
 
-        MenuItem item = menu.findItem(R.id.action_fav);
-        if (cardConnector.isCardSaved(card)) {
-            item.setTitle(getString(R.string.favourite_remove));
-            item.setIcon(R.drawable.ab_star_colored);
-            isSavedOffline = true;
-        } else {
-            item.setTitle(getString(R.string.favourite_add));
-            item.setIcon(R.drawable.ab_star);
-            isSavedOffline = false;
+        if (isAttached) {
+            MenuItem item = menu.findItem(R.id.action_fav);
+            if (cardConnector.isCardSaved(card)) {
+                item.setTitle(getString(R.string.favourite_remove));
+                item.setIcon(R.drawable.ab_star_colored);
+                isSavedOffline = true;
+            } else {
+                item.setTitle(getString(R.string.favourite_add));
+                item.setIcon(R.drawable.ab_star);
+                isSavedOffline = false;
+            }
         }
-
     }
 
     @Override
