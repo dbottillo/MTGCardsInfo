@@ -21,8 +21,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 19
-        versionName "2.0.1"
+        versionCode 20
+        versionName "2.0.2"
         applicationId "com.dbottillo.mtgsearchfree"
     }
 
