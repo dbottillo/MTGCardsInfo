@@ -536,7 +536,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public String getImage() {
         if (getMultiVerseId() > 0) {
-            return "http://mtgimage.com/multiverseid/" + getMultiVerseId() + ".jpg";
+            return "http://api.mtgdb.info/content/card_images/" + getMultiVerseId() + ".jpeg";
         }
         return null;
     }
