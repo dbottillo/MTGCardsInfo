@@ -417,6 +417,6 @@ public class MTGCardFragment extends DBFragment {
 
     @Override
     public String getPageTrack() {
-        return "/card/" + ((MTGCard) card).getMultiVerseId();
+        return "/card/" + card.getMultiVerseId();
     }
 }

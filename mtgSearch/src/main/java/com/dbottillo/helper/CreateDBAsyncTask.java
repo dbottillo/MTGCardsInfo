@@ -8,7 +8,11 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.dbottillo.database.CardContract;
 import com.dbottillo.database.DatabaseHelper;
+import com.dbottillo.database.SetContract;
+import com.dbottillo.resources.MTGCard;
+import com.dbottillo.resources.MTGSet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +64,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 try {
                     String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
 
-                    /*long newRowId = db.insert(SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
+                    long newRowId = db.insert(SetContract.SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
                     Log.e("MTG", "row id " + newRowId + " -> " + setJ.getString("code"));
 
                     JSONObject jsonCards = new JSONObject(jsonSetString);
@@ -70,10 +74,10 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                         JSONObject cardJ = cards.getJSONObject(k);
                         //Log.e("BBM", "cardJ "+cardJ);
 
-                        long newRowId2 = db.insert(CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
+                        long newRowId2 = db.insert(CardContract.CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
                         //Log.e("MTG", "row id card"+newRowId2);
                         //result.add(MTGCard.createCardFromJson(i, cardJ));
-                    }*/
+                    }
                 } catch (Resources.NotFoundException e) {
                     Log.e("MTG", setJ.getString("code") + " file not found");
                 }
