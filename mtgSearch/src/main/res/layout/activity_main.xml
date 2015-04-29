@@ -42,9 +42,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="15dp"
                     android:rotation="180"
                     android:src="@drawable/arrow_up" />
+
+                <ImageButton
+                    android:id="@+id/cards_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:tint="@android:color/white"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/card_order" />
 
             </LinearLayout>
 

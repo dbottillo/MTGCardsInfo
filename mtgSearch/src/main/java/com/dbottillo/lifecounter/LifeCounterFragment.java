@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Outline;
 import android.os.Build;
 import android.os.Bundle;
@@ -54,6 +55,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     private boolean showPoison = false;
     private boolean diceShowed = false;
+    private boolean twoHGEnabled = false;
 
     String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
@@ -70,6 +72,8 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
         View footerView = inflater.inflate(R.layout.life_counter_list_footer, null, false);
         lifeListView.addFooterView(footerView);
+
+        twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);
 
         newPlayerButton = (Button) rootView.findViewById(R.id.new_player);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -125,10 +129,22 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         db40Helper.closeDb();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setScreenOn(getSharedPreferences().getBoolean(PREF_SCREEN_ON, false));
+    }
+
+    private void setScreenOn(boolean screenOn) {
+        if (getView() != null) {
+            getView().setKeepScreenOn(screenOn);
+        }
+    }
+
     private void resetLifeCounter() {
         for (Player player : players) {
-            player.setLife(20);
-            player.setPoisonCount(10);
+            player.setLife(twoHGEnabled ? 30 : 20);
+            player.setPoisonCount(twoHGEnabled ? 15 : 10);
             db40Helper.storePlayer(player);
         }
         loadPlayers();
@@ -337,6 +353,12 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         } else {
             poison.setChecked(false);
         }
+
+        MenuItem screenOn = menu.findItem(R.id.action_screen_on);
+        screenOn.setChecked(getSharedPreferences().getBoolean(PREF_SCREEN_ON, false));
+
+        MenuItem twoHg = menu.findItem(R.id.action_two_hg);
+        twoHg.setChecked(twoHGEnabled);
     }
 
     @Override
@@ -360,6 +382,22 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             lifeCounterAdapter.setShowPoison(showPoison);
             lifeCounterAdapter.notifyDataSetChanged();
             return true;
+        }
+        if (i1 == R.id.action_screen_on) {
+            boolean screenOn = getSharedPreferences().getBoolean(PREF_SCREEN_ON, false);
+            SharedPreferences.Editor editor = getSharedPreferences().edit();
+            editor.putBoolean(PREF_SCREEN_ON, !screenOn);
+            editor.apply();
+            getActivity().invalidateOptionsMenu();
+            setScreenOn(!screenOn);
+        }
+        if (i1 == R.id.action_two_hg) {
+            twoHGEnabled = !twoHGEnabled;
+            SharedPreferences.Editor editor = getSharedPreferences().edit();
+            editor.putBoolean(PREF_TWO_HG_ENABLED, twoHGEnabled);
+            editor.apply();
+            getActivity().invalidateOptionsMenu();
+            resetLifeCounter();
         }
 
         return false;

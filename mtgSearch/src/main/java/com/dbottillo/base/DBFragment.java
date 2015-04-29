@@ -13,6 +13,9 @@ public abstract class DBFragment extends DialogFragment {
 
     public static final String PREFS_NAME = "Filter";
     public static final String PREF_SHOW_IMAGE = "show_image";
+    public static final String PREF_SCREEN_ON = "screen_on";
+    public static final String PREF_TWO_HG_ENABLED = "two_hg";
+    public static final String PREF_SORT_WUBRG = "sort_wubrg";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
