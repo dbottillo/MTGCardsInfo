@@ -214,13 +214,25 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             }
 
             if (toAdd) cards.add(card);
-            Collections.sort(cards, new Comparator<Object>() {
-                public int compare(Object o1, Object o2) {
-                    MTGCard card = (MTGCard) o1;
-                    MTGCard card2 = (MTGCard) o2;
-                    return card.compareTo(card2);
-                }
-            });
+
+            boolean wubrgSort = getSharedPreferences().getBoolean(PREF_SORT_WUBRG, true);
+            if (wubrgSort) {
+                Collections.sort(cards, new Comparator<Object>() {
+                    public int compare(Object o1, Object o2) {
+                        MTGCard card = (MTGCard) o1;
+                        MTGCard card2 = (MTGCard) o2;
+                        return card.compareTo(card2);
+                    }
+                });
+            } else {
+                Collections.sort(cards, new Comparator<Object>() {
+                    public int compare(Object o1, Object o2) {
+                        MTGCard card = (MTGCard) o1;
+                        MTGCard card2 = (MTGCard) o2;
+                        return card.getName().compareTo(card2.getName());
+                    }
+                });
+            }
         }
         adapter.notifyDataSetChanged();
         listView.smoothScrollToPosition(0);

@@ -1,5 +1,7 @@
 package com.dbottillo.base;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -77,11 +79,18 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
             }
         });
 
+        findViewById(R.id.cards_sort).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseSortDialog();
+            }
+        });
+
         // Set up the action bar to show a dropdown list.
         getSupportActionBar().setTitle(R.string.app_long_name);
 
         if (savedInstanceState == null) {
-            sets = new ArrayList<MTGSet>();
+            sets = new ArrayList<>();
             new DBAsyncTask(this, this, DBAsyncTask.TASK_SET_LIST).execute();
 
         } else {
@@ -401,6 +410,22 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
             throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    private void chooseSortDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.pick_sort_option)
+                .setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // The 'which' argument contains the index position
+                        // of the selected item
+                        SharedPreferences.Editor editor = getSharedPreferences().edit();
+                        editor.putBoolean(DBFragment.PREF_SORT_WUBRG, which == 1);
+                        editor.apply();
+                        updateSetFragment();
+                    }
+                });
+        builder.create().show();
     }
 
     @Override

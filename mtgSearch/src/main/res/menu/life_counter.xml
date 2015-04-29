@@ -25,4 +25,21 @@
         android:checkable="true"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_screen_on"
+        android:icon="@null"
+        android:title="@string/menu_life_screen_on"
+        android:orderInCategory="103"
+        android:checkable="true"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_two_hg"
+        android:icon="@null"
+        android:title="@string/menu_life_two_hg"
+        android:orderInCategory="104"
+        android:checkable="true"
+        app:showAsAction="never" />
+
 </menu>

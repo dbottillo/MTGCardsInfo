@@ -71,7 +71,7 @@ public class TCGPrice implements Parcelable {
 
     public String toDisplay(boolean isLandscape) {
         if (hiPrice.length() > 5 && !isLandscape) {
-            return " H:" + hiPrice + "$  L:" + lowprice + "$";
+            return " A:" + avgPrice + "$  L:" + lowprice + "$";
         }
         return " H:" + hiPrice + "$   A:" + avgPrice + "$   L:" + lowprice + "$";
     }
