@@ -17,6 +17,7 @@ import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.util.UIUtil;
 
 import java.util.ArrayList;
 
@@ -153,9 +154,10 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     }
 
     private void openFullscreen() {
-        if (getActivity() != null) {
+        /*if (getActivity() != null) {
             ((CardsActivity) getActivity()).openFullScreen(viewPager.getCurrentItem());
-        }
+        }*/
+        UIUtil.setHeight(pagerTabStrip, 0);
     }
 
     public void goTo(int position) {
