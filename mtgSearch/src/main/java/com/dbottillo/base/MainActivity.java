@@ -412,17 +412,17 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
-    private void chooseSortDialog(){
+    private void chooseSortDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.pick_sort_option)
                 .setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // The 'which' argument contains the index position
-                        // of the selected item
                         SharedPreferences.Editor editor = getSharedPreferences().edit();
                         editor.putBoolean(DBFragment.PREF_SORT_WUBRG, which == 1);
                         editor.apply();
                         updateSetFragment();
+                        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
+                                which == 1 ? "wubrg" : "alphabetically");
                     }
                 });
         builder.create().show();
