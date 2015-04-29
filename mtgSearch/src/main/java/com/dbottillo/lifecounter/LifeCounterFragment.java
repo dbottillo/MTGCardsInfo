@@ -390,6 +390,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             editor.apply();
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "screenOn");
         }
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
@@ -398,6 +399,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             editor.apply();
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();
+            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "two_hg");
         }
 
         return false;
