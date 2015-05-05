@@ -34,7 +34,7 @@ public abstract class DBFragment extends DialogFragment {
     }
 
     protected void openPlayStore() {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
         String appPackageName = "com.dbottillo.mtgsearch";
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
@@ -47,7 +47,7 @@ public abstract class DBFragment extends DialogFragment {
     public void onResume() {
         super.onResume();
         if (getPageTrack() != null) {
-            TrackingHelper.trackPage(getPageTrack());
+            TrackingHelper.getInstance(getActivity()).trackPage(getPageTrack());
         }
     }
 

@@ -55,7 +55,7 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback");
+        TrackingHelper.getInstance(v.getContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback");
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback)+" "+getActivity().getString(R.string.app_name));
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));

@@ -161,7 +161,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                         showGoToPremium();
                         return false;
                     }*/
-                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
+                    TrackingHelper.getInstance(MainActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
                     SharedPreferences.Editor editor = getSharedPreferences().edit();
                     editor.putInt("setPosition", currentSetPosition);
                     editor.apply();
@@ -319,7 +319,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
     @Override
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
     }
 
 
@@ -330,14 +330,14 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
 
     @Override
     public void onPanelCollapsed(View panel) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
         updateSetFragment();
         setRotationArrow(0);
     }
 
     @Override
     public void onPanelExpanded(View panel) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
         setRotationArrow(180);
     }
 
@@ -421,7 +421,7 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
                         editor.putBoolean(DBFragment.PREF_SORT_WUBRG, which == 1);
                         editor.apply();
                         updateSetFragment();
-                        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
+                        TrackingHelper.getInstance(MainActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
                                 which == 1 ? "wubrg" : "alphabetically");
                     }
                 });

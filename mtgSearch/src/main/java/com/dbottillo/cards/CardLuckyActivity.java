@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;
@@ -15,6 +16,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CardLuckyActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
+
+    public static final String CARD = "CARD";
 
     private ArrayList<MTGCard> savedCards = new ArrayList<MTGCard>();
 
@@ -43,7 +46,12 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
 
         if (savedInstanceState == null) {
             luckyCards = new ArrayList<>();
-            loadRandomCard();
+            if (getIntent().getExtras() != null && getIntent().getExtras().getParcelable(CARD) != null) {
+                luckyCards.add((MTGCard) getIntent().getExtras().getParcelable(CARD));
+                loadCard();
+            } else {
+                loadRandomCard();
+            }
         } else {
             luckyCards = savedInstanceState.getParcelableArrayList("luckyCards");
         }
@@ -64,7 +72,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         if (!isLoading) {
             isLoading = true;
             loadCardAfterDatabase = true;
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute();
+            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute(4);
         }
     }
 
@@ -123,7 +131,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
     @Override
     public void tapOnImage(int position) {
         loadRandomCard();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, "tap_on_image");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, "tap_on_image");
     }
 
     @Override
@@ -158,11 +166,11 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, cardFragment)
                 .commit();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, card.getName());
-        if (luckyCards.size() == 2) {
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, card.getName());
+        if (luckyCards.size() <= 2) {
             // pre-fetch more
             loadCardAfterDatabase = false;
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute();
+            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute(4);
         }
     }
 
@@ -172,6 +180,6 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
             isLoading = false;
         }
         Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, type != DBAsyncTask.TASK_RANDOM_CARD ? "saved-card-lucky" : "get-lucky", error);
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, type != DBAsyncTask.TASK_RANDOM_CARD ? "saved-card-lucky" : "get-lucky", error);
     }
 }

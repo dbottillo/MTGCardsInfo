@@ -91,7 +91,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         } else {
         }
 
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_TOGGLE, label);
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_TOGGLE, label);
 
         editor.commit();
 
@@ -99,7 +99,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
     }
 
     public void updateFilterUI() {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, "update", "");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, "update", "");
         String filterString = "";
 
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_WHITE, true), "W");
@@ -147,7 +147,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_CLOSE, "");
+        TrackingHelper.getInstance(v.getContext()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_CLOSE, "");
         FilterActivity filterActivity = (FilterActivity) getActivity();
         filterActivity.getSlidingPanel().collapsePane();
     }

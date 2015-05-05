@@ -241,7 +241,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     @Override
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
     }
 
     @Override
@@ -251,9 +251,9 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             return;
         }
         if (isASearch) {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, "search pos:" + position);
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, "search pos:" + position);
         } else {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         }
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
