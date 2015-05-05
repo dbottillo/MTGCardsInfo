@@ -107,7 +107,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     @Override
     public void tapOnImage(int position) {
         finishWithResult();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image_close");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image_close");
     }
 
     @Override
@@ -134,7 +134,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     @Override
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards-fullscreen", error);
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards-fullscreen", error);
     }
 
     @Override

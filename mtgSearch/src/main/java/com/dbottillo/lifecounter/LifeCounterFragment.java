@@ -227,7 +227,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onRemovePlayer(int position) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
         db40Helper.removePlayer(players.get(position));
         loadPlayers();
     }
@@ -248,7 +248,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
                 players.get(position).setName(value);
                 db40Helper.storePlayer(players.get(position));
                 loadPlayers();
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
         });
 
@@ -264,7 +264,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onLifeCountChange(int position, int value) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -272,7 +272,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     @Override
     public void onPoisonCountChange(int position, int value) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
         db40Helper.storePlayer(players.get(position));
         loadPlayers();
@@ -339,7 +339,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     @Override
     public void onClick(View v) {
         addPlayer();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
     }
 
     @Override
@@ -366,16 +366,16 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         int i1 = item.getItemId();
         if (i1 == R.id.action_reset) {
             resetLifeCounter();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "resetLifeCounter");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "resetLifeCounter");
             return true;
         }
         if (i1 == R.id.action_dice) {
             launchDice();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "launchDice");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "launchDice");
             return true;
         }
         if (i1 == R.id.action_poison) {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonSetting");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonSetting");
             getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
@@ -390,7 +390,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             editor.apply();
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "screenOn");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "screenOn");
         }
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
@@ -399,7 +399,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             editor.apply();
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "two_hg");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "two_hg");
         }
 
         return false;

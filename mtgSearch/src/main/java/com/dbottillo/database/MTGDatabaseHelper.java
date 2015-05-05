@@ -51,10 +51,10 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
         return db.rawQuery(query, new String[]{"%" + search + "%"});
     }
 
-    public Cursor getRandomCard() {
+    public Cursor getRandomCard(int number) {
         SQLiteDatabase db = getReadableDatabase();
 
-        String query = "SELECT * FROM " + CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT 4";
+        String query = "SELECT * FROM " + CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT "+number;
 
         //Log.e("MTG", "query: " + query);
 

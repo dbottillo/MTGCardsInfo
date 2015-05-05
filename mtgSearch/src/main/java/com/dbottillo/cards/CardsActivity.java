@@ -113,7 +113,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     @Override
     public void tapOnImage(int position) {
         openFullScreen(position);
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image");
     }
 
     public void openFullScreen(int currentItem) {
@@ -136,7 +136,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     @Override
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", error);
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", error);
     }
 
     public void setBackgroundToolbar(int mtgColor) {
