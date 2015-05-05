@@ -63,7 +63,7 @@ public abstract class DBActivity extends ActionBarActivity {
         super.onResume();
 
         if (getPageTrack() != null) {
-            TrackingHelper.trackPage(getPageTrack());
+            TrackingHelper.getInstance(this).trackPage(getPageTrack());
         }
     }
 

@@ -91,7 +91,7 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
             cursor.close();
 
         } else if (type == TASK_RANDOM_CARD) {
-            Cursor cursor = mDbHelper.getRandomCard();
+            Cursor cursor = mDbHelper.getRandomCard((Integer) params[0]);
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
                     result.add(MTGCard.createCardFromCursor(cursor));

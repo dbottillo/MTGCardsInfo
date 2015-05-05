@@ -50,7 +50,7 @@ public class MTGCardFragment extends DBFragment {
         void tapOnImage(int position);
     }
 
-    private static final float RATIO_CARD = 1.39622641509434f;
+    public static final float RATIO_CARD = 1.39622641509434f;
 
     private int widthAvailable;
     private int heightAvailable;
@@ -273,7 +273,7 @@ public class MTGCardFragment extends DBFragment {
             updatePrice();
             if (price.isAnError()) {
                 String url = intent.getStringExtra(NetworkIntentService.REST_URL);
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url);
             }
         }
     };
@@ -332,9 +332,9 @@ public class MTGCardFragment extends DBFragment {
                 stopCardLoader();
                 cardImage.setVisibility(View.GONE);
                 retry.setVisibility(View.VISIBLE);
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", card.getImage());
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", card.getImage());
                 if (isNetworkAvailable()) {
-                    TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", card.getImage());
+                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", card.getImage());
                 }
             }
         });
@@ -393,7 +393,7 @@ public class MTGCardFragment extends DBFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int i1 = item.getItemId();
         if (i1 == R.id.action_share) {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SHARE, card.getName());
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SHARE, card.getName());
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
@@ -404,10 +404,10 @@ public class MTGCardFragment extends DBFragment {
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline) {
                 cardConnector.removeCard(card);
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVED, card.getId() + "");
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVED, card.getId() + "");
             } else {
                 cardConnector.saveCard(card);
-                TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");
             }
             getActivity().invalidateOptionsMenu();
         }

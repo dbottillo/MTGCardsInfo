@@ -93,7 +93,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelCollapsed(View panel) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         if (setFragment != null) {
             setFragment.refreshUI();
@@ -104,7 +104,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelExpanded(View panel) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
         setRotationArrow(180);
 
     }
@@ -201,7 +201,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
     }
 
     private void doSearch() {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
         if (query.length() < 3) {
             Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
             return;
