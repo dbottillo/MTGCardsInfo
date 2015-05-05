@@ -132,7 +132,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
         if (i == R.id.action_image) {
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "image_on_off", "");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "image_on_off", "");
             boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
             editor.putBoolean(PREF_SHOW_IMAGE, !showImage);
@@ -147,7 +147,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
             return true;
         } else if (i == R.id.action_fullscreen_image) {
             openFullscreen();
-            TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "actionbar");
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "actionbar");
         }
 
         return false;

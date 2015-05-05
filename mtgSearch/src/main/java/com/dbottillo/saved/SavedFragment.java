@@ -89,7 +89,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
@@ -113,7 +113,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onTaskEndWithError(int type, String error) {
         progressBar.setVisibility(View.GONE);
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", error);
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", error);
     }
 
     @Override

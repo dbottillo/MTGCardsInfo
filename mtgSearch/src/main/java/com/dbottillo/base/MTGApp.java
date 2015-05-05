@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
-import com.dbottillo.helper.TrackingHelper;
 
 public class MTGApp extends Application {
 
@@ -12,9 +11,6 @@ public class MTGApp extends Application {
     public void onCreate() {
         super.onCreate();
         Crashlytics.start(this);
-
-        TrackingHelper.init(this);
-
     }
 
     public static boolean isPremium() {

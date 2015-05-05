@@ -54,6 +54,24 @@
             android:value="f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8" />
 
         <service android:name=".network.NetworkIntentService" />
+
+        <service android:name=".widget.UpdateLuckyWidgetService" />
+
+        <receiver
+            android:icon="@drawable/ic_launcher"
+            android:label="Lucky Widget"
+            android:name=".widget.LuckyWidgetProvider" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/lucky_widget_info" />
+        </receiver>
+
+        <receiver android:name=".widget.LuckyWidgetReceiver" />
+
     </application>
 
 

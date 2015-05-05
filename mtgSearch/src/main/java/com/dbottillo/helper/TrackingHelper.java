@@ -19,6 +19,7 @@ public class TrackingHelper {
     public static final String UA_CATEGORY_FAVOURITE = "favourite";
     public static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
     public static final String UA_CATEGORY_ERROR = "error";
+    public static final String UA_CATEGORY_APP_WIDGET = "appWidget";
 
     public static final String UA_ACTION_CLICK = "click";
     public static final String UA_ACTION_TOGGLE = "toggle";
@@ -40,36 +41,27 @@ public class TrackingHelper {
         tracker.enableAdvertisingIdCollection(true);
     }
 
-    public static void init(Context context) {
-        instance = new TrackingHelper(context);
-    }
-
-    /*public static TrackingHelper getInstance(Context context) {
+    public static TrackingHelper getInstance(Context context) {
         if (instance == null) {
             instance = new TrackingHelper(context);
         }
         return instance;
-    }*/
-
-    public static void trackPage(String page) {
-        if (tracker != null) {
-            tracker.setScreenName(page);
-            tracker.send(new HitBuilders.AppViewBuilder().build());
-        }
     }
 
-    public static void trackEvent(String category, String action) {
-        TrackingHelper.trackEvent(category, action, "");
+    public void trackPage(String page) {
+        tracker.setScreenName(page);
+        tracker.send(new HitBuilders.AppViewBuilder().build());
     }
 
+    public void trackEvent(String category, String action) {
+        trackEvent(category, action, "");
+    }
 
-    public static void trackEvent(String category, String action, String label) {
-        if (tracker != null) {
-            tracker.send(new HitBuilders.EventBuilder()
-                    .setCategory(category)
-                    .setAction(action)
-                    .setLabel(label)
-                    .build());
-        }
+    public void trackEvent(String category, String action, String label) {
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory(category)
+                .setAction(action)
+                .setLabel(label)
+                .build());
     }
 }
