@@ -25,9 +25,9 @@
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Example</item>
         <item name="android:windowContentOverlay">@null</item>-->
 
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
     </style>
 
-    <style name="mtg.NoActionBar" parent="MTGSearchTheme">
-        <item name="windowActionBar">false</item>
-    </style>
 </resources>

@@ -33,6 +33,8 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lucky_card);
 
+        setupToolbar();
+
         getSupportActionBar().setTitle(getString(R.string.lucky_title));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

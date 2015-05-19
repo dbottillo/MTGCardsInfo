@@ -17,10 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <include layout="@layout/mtg_toolbar" />
+
             <LinearLayout
                 android:id="@+id/set_chooser"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
+                android:layout_below="@+id/toolbar_dark"
                 android:background="@color/color_primary_dark"
                 android:padding="5dp"
                 android:layout_height="50dp">

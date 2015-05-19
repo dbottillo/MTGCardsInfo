@@ -62,6 +62,8 @@ public class MainActivity extends FilterActivity implements DBAsyncTask.DBAsyncT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupToolbar();
+
         setupDrawerLayout();
         setupSlidingPanel(this);
 

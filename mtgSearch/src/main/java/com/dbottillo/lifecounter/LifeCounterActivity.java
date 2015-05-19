@@ -15,6 +15,8 @@ public class LifeCounterActivity extends DBActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_counter);
 
+        setupToolbar();
+
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.action_life_counter);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ import com.dbottillo.dialog.PriceInfoFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.util.MaterialWrapper;
 
-public abstract class DBActivity extends ActionBarActivity {
+public abstract class DBActivity extends AppCompatActivity {
 
     public enum DBDialog {
         ABOUT("about"),

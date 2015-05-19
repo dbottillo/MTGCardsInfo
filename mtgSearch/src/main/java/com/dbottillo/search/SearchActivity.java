@@ -29,6 +29,8 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        setupToolbar();
+
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.action_search);

@@ -1,19 +1,24 @@
 <!-- The main content view -->
 <com.dbottillo.view.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    sothree:collapsedHeight="@dimen/collapsedHeight"
-    android:gravity="bottom">
+    android:gravity="bottom"
+    sothree:collapsedHeight="@dimen/collapsedHeight">
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_below="@+id/set_chooser"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.dbottillo.search.SearchActivity" />
+        android:orientation="vertical">
+
+        <include layout="@layout/mtg_toolbar" />
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/filter"
