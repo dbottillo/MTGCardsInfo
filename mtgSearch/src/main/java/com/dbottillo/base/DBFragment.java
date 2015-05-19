@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import com.dbottillo.helper.TrackingHelper;
+import com.squareup.leakcanary.RefWatcher;
 
 public abstract class DBFragment extends DialogFragment {
 
@@ -23,6 +24,11 @@ public abstract class DBFragment extends DialogFragment {
         setRetainInstance(true);
     }
 
+    @Override public void onDestroy() {
+        super.onDestroy();
+        RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
+        refWatcher.watch(this);
+    }
 
     public SharedPreferences getSharedPreferences() {
         return getActivity().getSharedPreferences(PREFS_NAME, 0);
