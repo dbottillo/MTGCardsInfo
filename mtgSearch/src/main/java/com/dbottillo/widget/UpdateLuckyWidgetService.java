@@ -6,7 +6,6 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.IBinder;
-import android.view.View;
 import android.widget.RemoteViews;
 
 import com.dbottillo.R;
@@ -24,8 +23,10 @@ public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBA
 
     @Override
     public void onStart(Intent intent, int startId) {
-        allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-        new DBAsyncTask(getApplicationContext(), this, DBAsyncTask.TASK_RANDOM_CARD).execute(allWidgetIds.length);
+        if (intent != null) {
+            allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+            new DBAsyncTask(getApplicationContext(), this, DBAsyncTask.TASK_RANDOM_CARD).execute(allWidgetIds.length);
+        }
         super.onStart(intent, startId);
     }
 
@@ -48,7 +49,9 @@ public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBA
 
                 MTGCard card = (MTGCard) objects.get(index);
 
-                Picasso.with(getApplicationContext()).load(card.getImage()).into(remoteViews, R.id.image_card, new int[]{widgetId});
+                if (card.getImage() != null) {
+                    Picasso.with(getApplicationContext()).load(card.getImage()).into(remoteViews, R.id.image_card, new int[]{widgetId});
+                }
                 index++;
 
                 Intent openIntent = new Intent(getApplicationContext(), CardLuckyActivity.class);

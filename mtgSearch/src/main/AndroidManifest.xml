@@ -23,13 +23,11 @@
         </activity>
 
         <activity
-            android:theme="@style/mtg.NoActionBar"
             android:name=".cards.CardsActivity" />
 
         <activity android:name=".cards.CardLuckyActivity" />
 
         <activity
-            android:theme="@style/mtg.NoActionBar"
             android:name=".cards.FullScreenImageActivity" />
 
         <activity
@@ -44,7 +42,6 @@
         </activity>
 
         <activity
-            android:theme="@style/mtg.NoActionBar"
             android:name=".saved.SavedActivity" />
 
         <activity android:name=".lifecounter.LifeCounterActivity" />
