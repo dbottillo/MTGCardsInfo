@@ -1,22 +1,22 @@
 buildscript {
     repositories {
-        maven { url 'http://download.crashlytics.com/maven' }
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
-        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'crashlytics'
+apply plugin: 'io.fabric'
 
 repositories {
-    maven { url 'http://download.crashlytics.com/maven' }
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '21.1.2'
+    buildToolsVersion '22.0.1'
 
     defaultConfig {
         minSdkVersion 14
@@ -58,7 +58,6 @@ android {
             buildConfigField 'int', 'DATABASE_VERSION', '8'
         }
     }
-
 }
 
 task readPasswordFromInput << {
@@ -85,14 +84,18 @@ tasks.whenTaskAdded { task ->
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:22.1.1'
-    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.google.android.gms:play-services-analytics:7.5.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
-    compile "com.android.support:appcompat-v7:22.1.1"
+    compile "com.android.support:appcompat-v7:22.2.0"
     compile 'com.squareup.picasso:picasso:2.3.4'
-    compile 'com.crashlytics.android:crashlytics:1.+'
-    compile 'com.android.support:cardview-v7:22.1.1'
+    compile 'com.android.support:cardview-v7:22.2.0'
+
+    // Crashlytics Kit
+    compile('com.crashlytics.sdk.android:crashlytics:2.3.2@aar') {
+        transitive = true
+    }
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'

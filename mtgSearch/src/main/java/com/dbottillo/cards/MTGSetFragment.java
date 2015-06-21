@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -141,32 +140,15 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             return;
         }
         gameSet.clear();
-        int i = 0;
-        boolean premium = getApp().isPremium();
         for (Object card : result) {
-            //if (premium  || !isASearch || (!premium && i < 3)) {
             gameSet.addCard((MTGCard) card);
-            //}
-            //if (isASearch && !premium && i >= 3) {
-            //    break;
-            //}
-            i++;
         }
         populateCardsWithFilter();
-        //int more = result.size() - 3;
-        //if (result.size() == MTGDatabaseHelper.LIMIT || (isASearch && more > 0 && !premium)) {
         if (result.size() == MTGDatabaseHelper.LIMIT) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            Button openPlayStore = (Button) footer.findViewById(R.id.open_play_store);
-            /*if (!premium && isASearch && more > 0) {
-                moreResult.setText(getString(R.string.more_result, more));
-                openPlayStore.setOnClickListener(this);
-            }else{*/
             moreResult.setText(getString(R.string.search_limit, MTGDatabaseHelper.LIMIT));
-            openPlayStore.setVisibility(View.GONE);
             footer.findViewById(R.id.open_play_store_text).setVisibility(View.GONE);
-            //}
             listView.addFooterView(footer);
         }
         result.clear();
