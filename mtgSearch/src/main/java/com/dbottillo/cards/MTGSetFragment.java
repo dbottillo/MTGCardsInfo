@@ -27,7 +27,7 @@ import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, AdapterView.OnItemClickListener, View.OnClickListener {
+public class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     private static final String SET_CHOSEN = "set_chosen";
     private static final String SEARCH = "search";
@@ -60,25 +60,24 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         return fragment;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_set, container, false);
-
+    protected void setupSetFragment(View rootView, boolean isASearch){
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_search);
 
-        gameSet = getArguments().getParcelable(SET_CHOSEN);
+        this.isASearch = isASearch;
+
+        /*gameSet = getArguments().getParcelable(SET_CHOSEN);
         if (gameSet == null) {
             isASearch = true;
             query = getArguments().getString(SEARCH);
             gameSet = new MTGSet(-1);
             gameSet.setName(query);
-        }
+        }*/
 
-        listView = (ListView) rootView.findViewById(R.id.set_list);
+        listView = (ListView) rootView.findViewById(R.id.card_list);
 
         if (isASearch) {
-            View header = inflater.inflate(R.layout.search_header, null);
+            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, null);
             TextView searchQueryText = (TextView) header.findViewById(R.id.search_query);
             searchQueryText.setText(query);
             listView.addHeaderView(header);
@@ -90,9 +89,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
 
         listView.setOnItemClickListener(this);
 
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-
-        return rootView;
+        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);;
     }
 
     @Override
@@ -100,7 +97,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         super.onStart();
 
         if (currentTask != null) {
-            currentTask.attach(getActivity(), this);
+            currentTask.attach(getActivity(), taskListener);
         }
     }
 
@@ -118,7 +115,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch) return "/search";
         return "/set/" + gameSet.getCode();
     }
-
+/*
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -132,10 +129,27 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET);
             currentTask.execute(gameSet.getId() + "");
         }
+    }*/
+
+    private DBAsyncTask.DBAsyncTaskListener taskListener = new DBAsyncTask.DBAsyncTaskListener() {
+        @Override
+        public void onTaskFinished(int type, ArrayList<?> objects) {
+            taskFinished(type, objects);
+        }
+
+        @Override
+        public void onTaskEndWithError(int type, String error) {
+            taskEndWithError(type, error);
+        }
+    };
+
+    protected void loadSet(MTGSet set){
+        this.gameSet = set;
+        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
+        currentTask.execute(gameSet.getId() + "");
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> result) {
+    public void taskFinished(int type, ArrayList<?> result) {
         if (getActivity() == null) {
             return;
         }
@@ -148,7 +162,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             moreResult.setText(getString(R.string.search_limit, MTGDatabaseHelper.LIMIT));
-            footer.findViewById(R.id.open_play_store_text).setVisibility(View.GONE);
             listView.addFooterView(footer);
         }
         result.clear();
@@ -220,8 +233,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         listView.smoothScrollToPosition(0);
     }
 
-    @Override
-    public void onTaskEndWithError(int type, String error) {
+    public void taskEndWithError(int type, String error) {
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
     }
@@ -244,7 +256,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         startActivity(cardsView);
     }
 
-    public void refreshUI() {
+    public void updateSetFragment() {
         populateCardsWithFilter();
     }
 

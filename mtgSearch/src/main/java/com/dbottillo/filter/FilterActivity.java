@@ -7,18 +7,20 @@ import android.widget.ImageView;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
-public class FilterActivity extends DBActivity {
+public class FilterActivity extends DBActivity implements SlidingUpPanelLayout.PanelSlideListener {
 
     ImageView arrow;
     private SlidingUpPanelLayout slidingPanel;
 
     private FilterFragment filterFragment;
+    private SlidingUpPanelLayout.PanelSlideListener secondListener;
 
-    protected void setupSlidingPanel(SlidingUpPanelLayout.PanelSlideListener listener) {
+    protected void setupSlidingPanel() {
         slidingPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        slidingPanel.setPanelSlideListener(listener);
+        slidingPanel.setPanelSlideListener(this);
 
         filterFragment = new FilterFragment();
         getSupportFragmentManager().beginTransaction()
@@ -39,7 +41,7 @@ public class FilterActivity extends DBActivity {
         slidingPanel.startAnimation(animation);
     }
 
-    protected void collapseSlidingPanel() {
+    public void collapseSlidingPanel() {
         slidingPanel.collapsePane();
     }
 
@@ -47,10 +49,6 @@ public class FilterActivity extends DBActivity {
         slidingPanel.expandPane();
     }
 
-    protected void setRotationArrow(float angle) {
-        if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
-        arrow.setRotation(angle);
-    }
 
     public SlidingUpPanelLayout getSlidingPanel() {
         return slidingPanel;
@@ -72,5 +70,47 @@ public class FilterActivity extends DBActivity {
     @Override
     public String getPageTrack() {
         return null;
+    }
+
+    public void addPanelSlideListener(SlidingUpPanelLayout.PanelSlideListener listener) {
+        secondListener = listener;
+    }
+
+    protected void setRotationArrow(float angle) {
+        if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
+        arrow.setRotation(angle);
+    }
+
+    @Override
+    public void onPanelSlide(View panel, float slideOffset) {
+        if (secondListener != null) {
+            secondListener.onPanelSlide(panel, slideOffset);
+        }
+        setRotationArrow(180 - (180 * slideOffset));
+    }
+
+    @Override
+    public void onPanelCollapsed(View panel) {
+        if (secondListener != null) {
+            secondListener.onPanelCollapsed(panel);
+        }
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
+        setRotationArrow(0);
+    }
+
+    @Override
+    public void onPanelExpanded(View panel) {
+        if (secondListener != null) {
+            secondListener.onPanelExpanded(panel);
+        }
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
+        setRotationArrow(180);
+    }
+
+    @Override
+    public void onPanelAnchored(View panel) {
+        if (secondListener != null) {
+            secondListener.onPanelAnchored(panel);
+        }
     }
 }

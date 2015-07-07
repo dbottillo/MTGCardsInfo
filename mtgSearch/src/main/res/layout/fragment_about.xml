@@ -1,45 +1,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <include layout="@layout/title_dialog" />
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/about_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="14sp"
-        tools:text="Version: 1.8.5_dev"
         android:textColor="@color/color_primary_dark"
-        android:id="@+id/about_version"/>
+        android:textSize="14sp"
+        tools:text="Version: 1.8.5_dev" />
 
     <TextView
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:gravity="left"
         android:textColor="@color/color_primary_dark"
-        tools:text="@string/copyright"
-        android:layout_marginTop="10dp"/>
+        tools:text="@string/copyright" />
+
     <Button
+        android:id="@+id/send_feedback"
         android:layout_width="wrap_content"
-        android:textSize="16sp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/btn_common"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:text="@string/send_feedback"
         android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/send_feedback"
-        android:text="@string/send_feedback"/>
+        android:textSize="16sp" />
 
 
 </LinearLayout>

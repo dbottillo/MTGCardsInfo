@@ -64,6 +64,8 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_life_counter, container, false);
 
+        setActionBarTitle(getString(R.string.action_life_counter));
+
         diceScrollView = (ScrollView) rootView.findViewById(R.id.life_counter_dice_scrolliew);
         diceContainer = (LinearLayout) rootView.findViewById(R.id.life_counter_dice_container);
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);

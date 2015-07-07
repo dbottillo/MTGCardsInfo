@@ -25,9 +25,9 @@ import java.util.Comparator;
 public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
     public interface DBAsyncTaskListener {
-        public void onTaskFinished(int type, ArrayList<?> objects);
+        void onTaskFinished(int type, ArrayList<?> objects);
 
-        public void onTaskEndWithError(int type, String error);
+        void onTaskEndWithError(int type, String error);
     }
 
     private boolean error = false;

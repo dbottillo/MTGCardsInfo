@@ -80,7 +80,7 @@ public abstract class DBActivity extends AppCompatActivity {
         return app;
     }
 
-    public void openDialog(DBDialog dbDialog) {
+    /*public void openDialog(DBDialog dbDialog) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         Fragment prev = getSupportFragmentManager().findFragmentByTag(dbDialog.getTag());
         if (prev != null) {
@@ -88,7 +88,7 @@ public abstract class DBActivity extends AppCompatActivity {
         }
         ft.addToBackStack(null);
         dbDialog.getFragment().show(ft, dbDialog.getTag());
-    }
+    }*/
 
     protected void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -102,13 +102,22 @@ public abstract class DBActivity extends AppCompatActivity {
     }
 
     protected void setupToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar_dark);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     }
 
     public void setToolbarColor(int color){
         toolbar.setBackgroundColor(color);
+    }
+
+    public void changeFragment(DBFragment fragment, String tag, boolean addToBackStack) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        if (addToBackStack) {
+            fragmentTransaction.addToBackStack(tag);
+        }
+        fragmentTransaction.commit();
     }
 
 }
