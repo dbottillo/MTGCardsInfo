@@ -39,7 +39,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
             query = savedInstanceState.getString("query");
         }
 
-        setupSlidingPanel(this);
+        setupSlidingPanel();
 
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
@@ -95,11 +95,11 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelCollapsed(View panel) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
+        /*TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
         MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
         if (setFragment != null) {
             setFragment.refreshUI();
-        }
+        }*/
 
         setRotationArrow(0);
     }
