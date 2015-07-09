@@ -30,6 +30,7 @@ public class TrackingHelper {
     public static final String UA_ACTION_SAVED = "saved";
     public static final String UA_ACTION_UNSAVED = "unsaved";
     public static final String UA_ACTION_LUCKY = "lucky";
+    public static final String UA_ACTION_RATE = "rate";
 
     private static TrackingHelper instance;
 
