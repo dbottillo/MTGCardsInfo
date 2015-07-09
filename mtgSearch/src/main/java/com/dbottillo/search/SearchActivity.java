@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dbottillo.R;
-import com.dbottillo.cards.MTGSetFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.view.SlidingUpPanelLayout;
@@ -30,16 +29,17 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         setContentView(R.layout.activity_search);
 
         setupToolbar();
+        setupSlidingPanel();
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.action_search);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.action_search);
+        }
 
         if (savedInstanceState != null) {
             query = savedInstanceState.getString("query");
         }
-
-        setupSlidingPanel();
 
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
@@ -95,12 +95,11 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
 
     @Override
     public void onPanelCollapsed(View panel) {
-        /*TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
-        MTGSetFragment setFragment = (MTGSetFragment) getSupportFragmentManager().findFragmentById(R.id.container);
-        if (setFragment != null) {
-            setFragment.refreshUI();
-        }*/
-
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
+        SearchFragment searchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (searchFragment != null) {
+            searchFragment.updateSetFragment();
+        }
         setRotationArrow(0);
     }
 
@@ -211,9 +210,7 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         if (searchEditText != null) {
             searchEditText.setText(query);
         }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, MTGSetFragment.newInstance(query))
-                .commit();
+        changeFragment(SearchFragment.newInstance(query), "search", false);
         collapseSlidingPanel();
         hideIme();
     }

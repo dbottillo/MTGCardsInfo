@@ -94,7 +94,7 @@
     <string name="menu_life_two_hg">2HG game</string>
     <string name="pick_sort_option">Sorting cards:</string>
 
-    <string-array name="header_title_flavor">
+    <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
         <item>Pacifism</item>
         <item>Sizzle</item>
@@ -109,13 +109,13 @@
         <item>Spire Barrage</item>
     </string-array>
 
-    <string-array name="header_text_flavor">
+    <string-array name="header_text_flavor" translatable="false">
         <item>(Z–>)90º—(E–N²W)90ºt = 1</item>
         <item>For the first time in his life, Grakk felt a little warm and fuzzy inside.</item>
         <item>Of course you should fight fire with fire. You should fight everything with fire. \n - Jaya Ballard, task mage</item>
         <item>Day 31: I have succeeded in my time reversal experiment.\nDay 30: I might have a problem here.</item>
         <item>Don\'t underestimate the aerodynamic qualities of the common goblin.</item>
-        <item>Step 1: Find your cousin. \n Step 2: Get your cousin in the cannon. \n Step 3: Find another cousin.</item>
+        <item>Step 1: Find your cousin. \nStep 2: Get your cousin in the cannon. \nStep 3: Find another cousin.</item>
         <item>The enemy is getting too close! Quick! Inflate the toad!</item>
         <item>I don\'t know why people say a double-edged sword is bad. It\'s a sword. With two edges. \n - Kamahl, pit fighter</item>
         <item>He raged at the world, at his family, at his life. But mostly he just raged.</item>
