@@ -33,7 +33,8 @@ public abstract class DBFragment extends DialogFragment {
         setHasOptionsMenu(true);
     }
 
-    @Override public void onDestroy() {
+    @Override
+    public void onDestroy() {
         super.onDestroy();
         RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
         refWatcher.watch(this);
@@ -67,7 +68,7 @@ public abstract class DBFragment extends DialogFragment {
     }
 
     protected void setupToolbar(int title) {
-        if (getView() != null){
+        if (getView() != null) {
             setupToolbar(getView(), title);
         }
     }
@@ -83,7 +84,7 @@ public abstract class DBFragment extends DialogFragment {
             }
         });
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
-        AppCompatActivity appCompactActivity  = (AppCompatActivity) getActivity();
+        AppCompatActivity appCompactActivity = (AppCompatActivity) getActivity();
         appCompactActivity.setSupportActionBar(toolbar);
         if (appCompactActivity.getSupportActionBar() != null) {
             appCompactActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
