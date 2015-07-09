@@ -88,8 +88,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-analytics:7.5.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
-    compile "com.android.support:appcompat-v7:22.2.0"
     compile 'com.squareup.picasso:picasso:2.3.4'
+    compile "com.android.support:appcompat-v7:22.2.0"
     compile 'com.android.support:cardview-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
 

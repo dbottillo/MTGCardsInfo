@@ -31,6 +31,7 @@ public class TrackingHelper {
     public static final String UA_ACTION_UNSAVED = "unsaved";
     public static final String UA_ACTION_LUCKY = "lucky";
     public static final String UA_ACTION_RATE = "rate";
+    public static final String UA_ACTION_EXTERNAL_LINK= "externalLink";
 
     private static TrackingHelper instance;
 
