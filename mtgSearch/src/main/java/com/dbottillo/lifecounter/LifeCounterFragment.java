@@ -1,5 +1,8 @@
 package com.dbottillo.lifecounter;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -104,9 +107,21 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
         lifeListView.setAdapter(lifeCounterAdapter);
 
+        animateNewPlayerButton();
+
         setHasOptionsMenu(true);
 
         return rootView;
+    }
+
+    private void animateNewPlayerButton() {
+        newPlayerButton.setScaleX(0.0f);
+        newPlayerButton.setScaleY(0.0f);
+        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(newPlayerButton,
+                PropertyValuesHolder.ofFloat("scaleX", 1.0f),
+                PropertyValuesHolder.ofFloat("scaleY", 1.0f));
+        scaleUp.setDuration(300);
+        scaleUp.start();
     }
 
     @Override

@@ -27,10 +27,8 @@ import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
+public abstract class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
-    private static final String SET_CHOSEN = "set_chosen";
-    private static final String SEARCH = "search";
     private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
     private MTGSet gameSet;
@@ -41,38 +39,22 @@ public class MTGSetFragment extends DBFragment implements AdapterView.OnItemClic
     private SmoothProgressBar progressBar;
     private String query;
 
-    public MTGSetFragment() {
-    }
-
-    public static MTGSetFragment newInstance(MTGSet set) {
-        MTGSetFragment fragment = new MTGSetFragment();
-        Bundle args = new Bundle();
-        args.putParcelable(SET_CHOSEN, set);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static MTGSetFragment newInstance(String query) {
-        MTGSetFragment fragment = new MTGSetFragment();
-        Bundle args = new Bundle();
-        args.putString(SEARCH, query);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     protected void setupSetFragment(View rootView, boolean isASearch){
+        setupSetFragment(rootView, isASearch, null);
+    }
+
+    protected void setupSetFragment(View rootView, boolean isASearch, String query){
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_search);
 
         this.isASearch = isASearch;
 
-        /*gameSet = getArguments().getParcelable(SET_CHOSEN);
-        if (gameSet == null) {
-            isASearch = true;
-            query = getArguments().getString(SEARCH);
+        if (isASearch){
+            this.query = query;
             gameSet = new MTGSet(-1);
             gameSet.setName(query);
-        }*/
+            loadSearch();
+        }
 
         listView = (ListView) rootView.findViewById(R.id.card_list);
 
@@ -89,7 +71,7 @@ public class MTGSetFragment extends DBFragment implements AdapterView.OnItemClic
 
         listView.setOnItemClickListener(this);
 
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);;
+        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
     }
 
     @Override
@@ -147,6 +129,11 @@ public class MTGSetFragment extends DBFragment implements AdapterView.OnItemClic
         this.gameSet = set;
         currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
         currentTask.execute(gameSet.getId() + "");
+    }
+
+    protected void loadSearch(){
+        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SEARCH);
+        currentTask.execute(query);
     }
 
     public void taskFinished(int type, ArrayList<?> result) {

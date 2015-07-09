@@ -180,13 +180,6 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
         ((FilterActivity) getActivity()).collapseSlidingPanel();
         chooserName.setText(sets.get(currentSetPosition).getName());
         loadSet(sets.get(currentSetPosition));
-        /*if (!getActivity().isFinishing() && chooserName != null) {
-            ((FilterActivity) getActivity()).collapseSlidingPanel();
-            chooserName.setText(sets.get(currentSetPosition).getName());
-            getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MTGSetFragment.newInstance(sets.get(currentSetPosition)))
-                    .commit();
-        }*/
     }
 
     private void setHeightView(View view, int value) {
@@ -238,7 +231,6 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
     @Override
     public void onPanelCollapsed(View panel) {
         updateSetFragment();
-
     }
 
     @Override
