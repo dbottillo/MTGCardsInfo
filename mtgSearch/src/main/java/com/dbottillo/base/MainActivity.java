@@ -18,6 +18,7 @@ import com.dbottillo.cards.CardLuckyActivity;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterFragment;
 import com.dbottillo.saved.SavedFragment;
 import com.dbottillo.search.SearchActivity;
@@ -200,9 +201,13 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
                 AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
+            } else if (menuItem.getItemId() == R.id.drawer_rate) {
+                openRateTheApp();
+
             } else if (menuItem.getItemId() == R.id.drawer_about) {
                 changeFragment(new AboutFragment(), "about_fragment", true);
                 AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+
             } else if (menuItem.getItemId() == 100) {
 
                 // NB: WARNING, FOR RECREATE DATABASE

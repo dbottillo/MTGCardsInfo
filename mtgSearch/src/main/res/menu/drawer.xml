@@ -18,5 +18,9 @@
             android:id="@+id/drawer_about"
             android:icon="@drawable/left_info"
             android:title="@string/action_about" />
+        <item
+            android:id="@+id/drawer_rate"
+            android:icon="@drawable/left_rate"
+            android:title="@string/action_rate" />
     </group>
 </menu>
