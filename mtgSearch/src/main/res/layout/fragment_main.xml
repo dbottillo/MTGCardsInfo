@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/set_chooser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary_dark"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/set_chooser_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="Theros" />
+
+        <ImageView
+            android:id="@+id/set_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:rotation="180"
+            android:src="@drawable/arrow_up" />
+
+        <ImageButton
+            android:id="@+id/cards_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/card_order"
+            android:tint="@android:color/white" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/set_chooser">
+
+        <include layout="@layout/fragment_set" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/set_list_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/set_chooser"
+        android:background="@color/color_primary_dark"
+        android:clickable="true" />
+
+    <ListView
+        android:id="@+id/set_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/set_chooser"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/white" />
+
+</RelativeLayout>

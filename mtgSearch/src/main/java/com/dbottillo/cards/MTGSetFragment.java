@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,10 +27,8 @@ import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, AdapterView.OnItemClickListener, View.OnClickListener {
+public abstract class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
-    private static final String SET_CHOSEN = "set_chosen";
-    private static final String SEARCH = "search";
     private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
     private MTGSet gameSet;
@@ -42,44 +39,27 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
     private SmoothProgressBar progressBar;
     private String query;
 
-    public MTGSetFragment() {
+    protected void setupSetFragment(View rootView, boolean isASearch){
+        setupSetFragment(rootView, isASearch, null);
     }
 
-    public static MTGSetFragment newInstance(MTGSet set) {
-        MTGSetFragment fragment = new MTGSetFragment();
-        Bundle args = new Bundle();
-        args.putParcelable(SET_CHOSEN, set);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static MTGSetFragment newInstance(String query) {
-        MTGSetFragment fragment = new MTGSetFragment();
-        Bundle args = new Bundle();
-        args.putString(SEARCH, query);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_set, container, false);
-
+    protected void setupSetFragment(View rootView, boolean isASearch, String query){
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_search);
 
-        gameSet = getArguments().getParcelable(SET_CHOSEN);
-        if (gameSet == null) {
-            isASearch = true;
-            query = getArguments().getString(SEARCH);
+        this.isASearch = isASearch;
+
+        if (isASearch){
+            this.query = query;
             gameSet = new MTGSet(-1);
             gameSet.setName(query);
+            loadSearch();
         }
 
-        listView = (ListView) rootView.findViewById(R.id.set_list);
+        listView = (ListView) rootView.findViewById(R.id.card_list);
 
         if (isASearch) {
-            View header = inflater.inflate(R.layout.search_header, null);
+            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, null);
             TextView searchQueryText = (TextView) header.findViewById(R.id.search_query);
             searchQueryText.setText(query);
             listView.addHeaderView(header);
@@ -92,8 +72,6 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         listView.setOnItemClickListener(this);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-
-        return rootView;
     }
 
     @Override
@@ -101,7 +79,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         super.onStart();
 
         if (currentTask != null) {
-            currentTask.attach(getActivity(), this);
+            currentTask.attach(getActivity(), taskListener);
         }
     }
 
@@ -119,7 +97,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         if (isASearch) return "/search";
         return "/set/" + gameSet.getCode();
     }
-
+/*
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -133,40 +111,44 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
             currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET);
             currentTask.execute(gameSet.getId() + "");
         }
+    }*/
+
+    private DBAsyncTask.DBAsyncTaskListener taskListener = new DBAsyncTask.DBAsyncTaskListener() {
+        @Override
+        public void onTaskFinished(int type, ArrayList<?> objects) {
+            taskFinished(type, objects);
+        }
+
+        @Override
+        public void onTaskEndWithError(int type, String error) {
+            taskEndWithError(type, error);
+        }
+    };
+
+    protected void loadSet(MTGSet set){
+        this.gameSet = set;
+        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
+        currentTask.execute(gameSet.getId() + "");
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> result) {
+    protected void loadSearch(){
+        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SEARCH);
+        currentTask.execute(query);
+    }
+
+    public void taskFinished(int type, ArrayList<?> result) {
         if (getActivity() == null) {
             return;
         }
         gameSet.clear();
-        int i = 0;
-        boolean premium = getApp().isPremium();
         for (Object card : result) {
-            //if (premium  || !isASearch || (!premium && i < 3)) {
             gameSet.addCard((MTGCard) card);
-            //}
-            //if (isASearch && !premium && i >= 3) {
-            //    break;
-            //}
-            i++;
         }
         populateCardsWithFilter();
-        //int more = result.size() - 3;
-        //if (result.size() == MTGDatabaseHelper.LIMIT || (isASearch && more > 0 && !premium)) {
         if (result.size() == MTGDatabaseHelper.LIMIT) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            Button openPlayStore = (Button) footer.findViewById(R.id.open_play_store);
-            /*if (!premium && isASearch && more > 0) {
-                moreResult.setText(getString(R.string.more_result, more));
-                openPlayStore.setOnClickListener(this);
-            }else{*/
             moreResult.setText(getString(R.string.search_limit, MTGDatabaseHelper.LIMIT));
-            openPlayStore.setVisibility(View.GONE);
-            footer.findViewById(R.id.open_play_store_text).setVisibility(View.GONE);
-            //}
             listView.addFooterView(footer);
         }
         result.clear();
@@ -238,8 +220,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         listView.smoothScrollToPosition(0);
     }
 
-    @Override
-    public void onTaskEndWithError(int type, String error) {
+    public void taskEndWithError(int type, String error) {
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
     }
@@ -262,7 +243,7 @@ public class MTGSetFragment extends DBFragment implements DBAsyncTask.DBAsyncTas
         startActivity(cardsView);
     }
 
-    public void refreshUI() {
+    public void updateSetFragment() {
         populateCardsWithFilter();
     }
 

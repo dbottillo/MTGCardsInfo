@@ -1,6 +1,6 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,82 +10,21 @@
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        sothree:collapsedHeight="@dimen/collapsedHeight"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        sothree:collapsedHeight="@dimen/collapsedHeight">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <include layout="@layout/mtg_toolbar" />
 
-            <LinearLayout
-                android:id="@+id/set_chooser"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_below="@+id/toolbar_dark"
-                android:background="@color/color_primary_dark"
-                android:padding="5dp"
-                android:layout_height="50dp">
-
-                <TextView
-                    android:id="@+id/set_chooser_name"
-                    android:layout_width="0dp"
-                    android:textColor="@android:color/white"
-                    tools:text="Theros"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/set_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="15dp"
-                    android:rotation="180"
-                    android:src="@drawable/arrow_up" />
-
-                <ImageButton
-                    android:id="@+id/cards_sort"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="5dp"
-                    android:tint="@android:color/white"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/card_order" />
-
-            </LinearLayout>
-
             <FrameLayout
-                android:id="@+id/container"
-                android:layout_below="@+id/set_chooser"
+                android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.dbottillo.base.MainActivity" />
-
-            <View
-                android:id="@+id/set_list_bg"
-                android:clickable="true"
-                android:layout_below="@+id/set_chooser"
-                android:layout_width="match_parent"
-                android:background="@color/color_primary_dark"
-                android:layout_height="0dp" />
-
-            <ListView
-                android:id="@+id/set_list"
-                android:layout_below="@+id/set_chooser"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_width="match_parent"
-                android:background="@android:color/white"
-                android:layout_height="0dp" />
-
-        </RelativeLayout>
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/filter"
@@ -94,14 +33,15 @@
             android:gravity="center|top" />
 
     </com.dbottillo.view.SlidingUpPanelLayout>
-    <!-- The navigation drawer -->
-    <ListView
-        android:id="@+id/left_drawer"
-        android:layout_width="240dp"
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:choiceMode="singleChoice"
-        android:divider="@color/color_primary"
-        android:dividerHeight="1px"
-        android:background="@color/color_primary_dark" />
+        app:itemIconTint="@color/drawer_selector"
+        app:itemTextColor="@color/drawer_selector"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer" />
+
 </android.support.v4.widget.DrawerLayout>
