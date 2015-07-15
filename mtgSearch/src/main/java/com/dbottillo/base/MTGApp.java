@@ -8,17 +8,15 @@ import com.dbottillo.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
+import io.fabric.sdk.android.Fabric;
+
 public class MTGApp extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Crashlytics.start(this);
+        Fabric.with(this, new Crashlytics());
         refWatcher = LeakCanary.install(this);
-    }
-
-    public static boolean isPremium() {
-        return BuildConfig.FLAVOR.equalsIgnoreCase("paid");
     }
 
     public static RefWatcher getRefWatcher(Context context) {

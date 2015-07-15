@@ -6,8 +6,14 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Toast;
 
+import com.dbottillo.R;
 import com.dbottillo.helper.TrackingHelper;
+import com.dbottillo.util.MaterialWrapper;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class DBFragment extends DialogFragment {
@@ -18,13 +24,17 @@ public abstract class DBFragment extends DialogFragment {
     public static final String PREF_TWO_HG_ENABLED = "two_hg";
     public static final String PREF_SORT_WUBRG = "sort_wubrg";
 
+    Toolbar toolbar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+
+        setHasOptionsMenu(true);
     }
 
-    @Override public void onDestroy() {
+    @Override
+    public void onDestroy() {
         super.onDestroy();
         RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
         refWatcher.watch(this);
@@ -54,6 +64,31 @@ public abstract class DBFragment extends DialogFragment {
         super.onResume();
         if (getPageTrack() != null) {
             TrackingHelper.getInstance(getActivity()).trackPage(getPageTrack());
+        }
+    }
+
+    protected void setupToolbar(int title) {
+        if (getView() != null) {
+            setupToolbar(getView(), title);
+        }
+    }
+
+    protected void setupToolbar(View view, int title) {
+        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(title);
+
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "bla bla", Toast.LENGTH_SHORT).show();
+            }
+        });
+        MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+        AppCompatActivity appCompactActivity = (AppCompatActivity) getActivity();
+        appCompactActivity.setSupportActionBar(toolbar);
+        if (appCompactActivity.getSupportActionBar() != null) {
+            appCompactActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            appCompactActivity.getSupportActionBar().setHomeButtonEnabled(true);
         }
     }
 

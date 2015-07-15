@@ -44,7 +44,9 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_set, container, false);
 
-        listView = (ListView) rootView.findViewById(R.id.set_list);
+        setActionBarTitle(getString(R.string.action_saved));
+
+        listView = (ListView) rootView.findViewById(R.id.card_list);
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_saved);
 

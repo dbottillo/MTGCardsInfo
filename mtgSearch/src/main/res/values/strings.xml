@@ -54,7 +54,7 @@
     <string name="action_home">Sets</string>
     <string name="action_create_db">Create db</string>
     <string name="refresh">Refresh</string>
-    <string name="action_life_counter">Life counter</string>
+    <string name="action_life_counter">Life Counter</string>
     <string name="player">Player %s</string>
     <string name="add_player">Add</string>
     <string name="plus_one" translatable="false">+</string>
@@ -93,5 +93,38 @@
     <string name="menu_life_screen_on">Keep screen on</string>
     <string name="menu_life_two_hg">2HG game</string>
     <string name="pick_sort_option">Sorting cards:</string>
+    <string name="action_rate">Rate the app</string>
+    <string name="share_app">Share App</string>
+    <string name="libraries">Libraries</string>
+
+    <string-array name="header_title_flavor" translatable="false">
+        <item>Niv-Mizzet, the Firemind</item>
+        <item>Pacifism</item>
+        <item>Sizzle</item>
+        <item>Inspiration</item>
+        <item>Goblin Grenade</item>
+        <item>Fodder Cannon</item>
+        <item>Goblin Balloon Brigade</item>
+        <item>Manabarbs</item>
+        <item>Raging Goblin</item>
+        <item>Llanowar Elves</item>
+        <item>Lightmine Field</item>
+        <item>Spire Barrage</item>
+    </string-array>
+
+    <string-array name="header_text_flavor" translatable="false">
+        <item>(Z–>)90º—(E–N²W)90ºt = 1</item>
+        <item>For the first time in his life, Grakk felt a little warm and fuzzy inside.</item>
+        <item>Of course you should fight fire with fire. You should fight everything with fire. \n - Jaya Ballard, task mage</item>
+        <item>Day 31: I have succeeded in my time reversal experiment.\nDay 30: I might have a problem here.</item>
+        <item>Don\'t underestimate the aerodynamic qualities of the common goblin.</item>
+        <item>Step 1: Find your cousin. \nStep 2: Get your cousin in the cannon. \nStep 3: Find another cousin.</item>
+        <item>The enemy is getting too close! Quick! Inflate the toad!</item>
+        <item>I don\'t know why people say a double-edged sword is bad. It\'s a sword. With two edges. \n - Kamahl, pit fighter</item>
+        <item>He raged at the world, at his family, at his life. But mostly he just raged.</item>
+        <item>One bone broken for every twig snapped underfoot.</item>
+        <item>If you want to kill a lot of goblins, just make sure your defenses look like fun.</item>
+        <item>Goblin lessons include the 2,071 tips for survival. Frek only remembered 2,070.</item>
+    </string-array>
 
 </resources>
