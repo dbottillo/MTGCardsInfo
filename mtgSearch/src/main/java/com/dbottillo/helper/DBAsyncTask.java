@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 
 import com.dbottillo.database.DB40Helper;
-import com.dbottillo.database.MTGDatabaseHelper;
+import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.resources.Player;
@@ -48,14 +48,14 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
 
     private int type;
 
-    MTGDatabaseHelper mDbHelper;
+    CardsDatabaseHelper mDbHelper;
     DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type) {
         this.context = context;
         this.listener = listener;
         this.type = type;
-        this.mDbHelper = new MTGDatabaseHelper(context);
+        this.mDbHelper = new CardsDatabaseHelper(context);
         this.db40Helper = DB40Helper.getInstance(context);
     }
 

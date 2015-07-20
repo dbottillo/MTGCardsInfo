@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.SetContract.SetEntry;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class CreateDatabaseHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "MTGCardsInfo.db";
@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_CARD =
             "DROP TABLE IF EXISTS " + CardEntry.TABLE_NAME;
 
-    public DatabaseHelper(Context context) {
+    public CreateDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
