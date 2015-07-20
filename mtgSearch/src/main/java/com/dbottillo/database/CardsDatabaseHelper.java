@@ -9,16 +9,16 @@ import com.dbottillo.database.CardContract.CardEntry;
 import com.dbottillo.database.SetContract.SetEntry;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-public class MTGDatabaseHelper extends SQLiteAssetHelper {
+public class CardsDatabaseHelper extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
     public static final int LIMIT = 400;
 
-    public MTGDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public CardsDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
-    public MTGDatabaseHelper(Context context) {
+    public CardsDatabaseHelper(Context context) {
         this(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
         setForcedUpgrade();
     }
