@@ -195,6 +195,9 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
 
     @Override
     public void onTaskFinished(int type, ArrayList<?> result) {
+        if (getActivity() == null){
+            return;
+        }
         currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
         setAdapter.setCurrent(currentSetPosition);
 

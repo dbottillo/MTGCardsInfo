@@ -2,10 +2,8 @@ package com.dbottillo.cards;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,7 +12,7 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.database.MTGDatabaseHelper;
+import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
@@ -145,10 +143,10 @@ public abstract class MTGSetFragment extends DBFragment implements AdapterView.O
             gameSet.addCard((MTGCard) card);
         }
         populateCardsWithFilter();
-        if (result.size() == MTGDatabaseHelper.LIMIT) {
+        if (result.size() == CardsDatabaseHelper.LIMIT) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            moreResult.setText(getString(R.string.search_limit, MTGDatabaseHelper.LIMIT));
+            moreResult.setText(getString(R.string.search_limit, CardsDatabaseHelper.LIMIT));
             listView.addFooterView(footer);
         }
         result.clear();
