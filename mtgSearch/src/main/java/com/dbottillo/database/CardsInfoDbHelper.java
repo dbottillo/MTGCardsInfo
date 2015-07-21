@@ -25,6 +25,7 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
+        db.execSQL(DeckDataSource.CREATE_DECKS_TABLE);
     }
 
     @Override

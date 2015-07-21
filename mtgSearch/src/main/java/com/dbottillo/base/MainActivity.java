@@ -15,10 +15,10 @@ import android.widget.TextView;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.cards.CardLuckyActivity;
+import com.dbottillo.decks.DecksFragment;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
-import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterFragment;
 import com.dbottillo.saved.SavedFragment;
 import com.dbottillo.search.SearchActivity;
@@ -201,6 +201,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
                 AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
+            } else if (menuItem.getItemId() == R.id.drawer_decks) {
+                changeFragment(DecksFragment.newInstance(), "decks", true);
+                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+
             } else if (menuItem.getItemId() == R.id.drawer_rate) {
                 openRateTheApp();
 
@@ -228,7 +232,11 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             mDrawerLayout.closeDrawer(GravityCompat.START);
             return;
         }
-        boolean isMainFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container) instanceof MainFragment;
+        DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (currentFragment.onBackPressed()){
+            return;
+        }
+        boolean isMainFragment =  currentFragment instanceof MainFragment;
         if (!isMainFragment) {
             changeFragment(new MainFragment(), "main", false);
             for (int i = 0; i < navigationView.getMenu().size(); i++) {

@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.graphics.Outline;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,6 +33,7 @@ import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Player;
+import com.dbottillo.util.AnimationUtil;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -50,7 +52,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     private ArrayList<Player> players;
     private LifeCounterAdapter lifeCounterAdapter;
     private SmoothProgressBar progressBar;
-    private Button newPlayerButton;
+    private FloatingActionButton newPlayerButton;
 
     private DB40Helper db40Helper;
 
@@ -75,53 +77,24 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = getSharedPreferences().getBoolean("poison", false);
 
-        View footerView = inflater.inflate(R.layout.life_counter_list_footer, null, false);
+        View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
         lifeListView.addFooterView(footerView);
 
         twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);
 
-        newPlayerButton = (Button) rootView.findViewById(R.id.new_player);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
-                @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-                @Override
-                public void getOutline(View view, Outline outline) {
-                    // Or read size directly from the view's width/height
-                    int size = getResources().getDimensionPixelSize(R.dimen.fab_button_size);
-                    outline.setOval(0, 0, size, size);
-                }
-            };
-            newPlayerButton.setOutlineProvider(viewOutlineProvider);
-            newPlayerButton.setClipToOutline(true);
-        }
+        newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
         newPlayerButton.setOnClickListener(this);
 
-        /*if (savedInstanceState == null) {
-            players = new ArrayList<Player>();
-            loadPlayers();
-        } else {
-            progressBar.setVisibility(View.GONE);
-        }*/
         players = new ArrayList<>();
 
         lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
         lifeListView.setAdapter(lifeCounterAdapter);
 
-        animateNewPlayerButton();
+        AnimationUtil.growView(newPlayerButton);
 
         setHasOptionsMenu(true);
 
         return rootView;
-    }
-
-    private void animateNewPlayerButton() {
-        newPlayerButton.setScaleX(0.0f);
-        newPlayerButton.setScaleY(0.0f);
-        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(newPlayerButton,
-                PropertyValuesHolder.ofFloat("scaleX", 1.0f),
-                PropertyValuesHolder.ofFloat("scaleY", 1.0f));
-        scaleUp.setDuration(300);
-        scaleUp.start();
     }
 
     @Override

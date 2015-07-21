@@ -102,4 +102,7 @@ public abstract class DBFragment extends DialogFragment {
     }
 
 
+    public boolean onBackPressed() {
+        return false;
+    }
 }

@@ -1,6 +1,9 @@
 package com.dbottillo.util;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.view.View;
 
 import com.dbottillo.view.SlidingUpPanelLayout;
 
@@ -23,4 +26,25 @@ public class AnimationUtil {
         anim.setDuration(DEFALT_DURATION);
         anim.start();
     }
+
+    public static void growView(View view) {
+        view.setScaleX(0.0f);
+        view.setScaleY(0.0f);
+        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(view,
+                PropertyValuesHolder.ofFloat("scaleX", 1.0f),
+                PropertyValuesHolder.ofFloat("scaleY", 1.0f));
+        scaleUp.setDuration(250);
+        scaleUp.start();
+    }
+
+    public static void shrinkView(View view) {
+        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(view,
+                PropertyValuesHolder.ofFloat("scaleX", 0.0f),
+                PropertyValuesHolder.ofFloat("scaleY", 0.0f));
+        scaleUp.setDuration(250);
+        scaleUp.start();
+    }
+
+
+
 }
