@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.dbottillo.database.CardContract;
-import com.dbottillo.database.DatabaseHelper;
+import com.dbottillo.database.CreateDatabaseHelper;
 import com.dbottillo.database.SetContract;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
@@ -39,12 +39,12 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
     private Context context;
     private String packageName;
 
-    DatabaseHelper mDbHelper;
+    CreateDatabaseHelper mDbHelper;
 
     public CreateDBAsyncTask(Context context, String packageName) {
         this.context = context;
         this.packageName = packageName;
-        this.mDbHelper = new DatabaseHelper(context);
+        this.mDbHelper = new CreateDatabaseHelper(context);
     }
 
     @Override
