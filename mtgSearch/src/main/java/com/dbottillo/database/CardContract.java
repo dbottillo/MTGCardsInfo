@@ -32,23 +32,23 @@ public final class CardContract {
     protected static final String SQL_CREATE_CARDS_TABLE =
             "CREATE TABLE " + CardContract.CardEntry.TABLE_NAME + " (" +
                     CardContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
-                    CardContract.CardEntry.COLUMN_NAME_NAME + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_TYPE + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_TYPES + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_SUBTYPES + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_COLORS + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_CMC + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_RARITY + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_POWER + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_TOUGHNESS + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_MANACOST + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_TEXT + "TEXT ," +
-                    CardContract.CardEntry.COLUMN_NAME_MULTICOLOR + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_LAND + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_ARTIFACT + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_SET_ID + "INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_SET_NAME + "TEXT )";
+                    CardContract.CardEntry.COLUMN_NAME_NAME + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_TYPE + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_TYPES + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_SUBTYPES + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_COLORS + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_CMC + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_RARITY + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_POWER + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_TOUGHNESS + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_MANACOST + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_TEXT + " TEXT ," +
+                    CardContract.CardEntry.COLUMN_NAME_MULTICOLOR + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_LAND + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_ARTIFACT + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_SET_ID + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_SET_NAME + " TEXT )";
 
 
     protected static final String SQL_DELETE_CARDS_TABLE =
