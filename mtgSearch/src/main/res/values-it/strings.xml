@@ -66,7 +66,7 @@
     <string name="loading">Caricamento…</string>
     <string name="price_error">Impossibile caricare il prezzo</string>
     <string name="price_info">Il prezzo é reso disponibile dal sito web: https://github.com/bedoherty/MagicTCGPriceAPI e richiede una connessione ad internet.\n\nIl prezzo é solo indicativo del reale prezzo e MTG Cards Info non é responsabile riguardo l\'uso di questo valore e della sua veridicità.</string>
-    <string name="price_info_title">Price card</string>
+    <string name="add_to_deck_title">Aggiungi al mazzo</string>
     <string name="menu_image">Mostra immagine</string>
     <string name="action_crash">Crash!</string>
     <string name="error_favourites">Impossibile caricare i preferiti al momento</string>
@@ -79,5 +79,6 @@
     <string name="action_rate">Lascia Recensione</string>
     <string name="share_app">Condividi App</string>
     <string name="libraries">Librerie</string>
+    <string name="Save">Salva</string>
 
 </resources>

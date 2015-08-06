@@ -82,7 +82,7 @@
     <string name="loading">Loading…</string>
     <string name="price_error">Error retrieving price</string>
     <string name="price_info">The card price is provided from the website: https://github.com/bedoherty/MagicTCGPriceAPI and requires an internet connection. \n\nThe price is just an indication of the real price, MTG Cards Info is not responsible for the use of this value and it doesn\'t ensure any accuracy of this information.</string>
-    <string name="price_info_title">Price card</string>
+    <string name="add_to_deck_title">Add to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
     <string name="menu_fullscreen_image" translatable="false">Full screen</string>
@@ -98,6 +98,8 @@
     <string name="libraries">Libraries</string>
     <string name="action_decks">Decks</string>
     <string name="new_deck_hint">Insert name deck</string>
+    <string name="Save">Save</string>
+    <string name="sideboard" translatable="false">Sideboard</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
