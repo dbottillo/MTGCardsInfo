@@ -101,6 +101,9 @@ public abstract class DBFragment extends DialogFragment {
         return null;
     }
 
+    protected DBActivity getDBActivity() {
+        return (DBActivity) getActivity();
+    }
 
     public boolean onBackPressed() {
         return false;

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.dbottillo.R;
@@ -16,16 +17,25 @@ import java.util.List;
 
 public class CardListAdapter extends BaseAdapter {
 
+    public interface OnCardListener{
+        void onAddToDeck(MTGCard card);
+    }
+
     private List<MTGCard> cards;
     private Context context;
     private LayoutInflater inflater;
     private boolean isASearch;
+    private OnCardListener onCardListener;
 
     public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.isASearch = isASearch;
+    }
+
+    public void setOnCardListener(OnCardListener onCardListener) {
+        this.onCardListener = onCardListener;
     }
 
     @Override
@@ -54,7 +64,7 @@ public class CardListAdapter extends BaseAdapter {
             holder = (CardHolder) convertView.getTag();
         }
 
-        MTGCard card = getItem(position);
+        final MTGCard card = getItem(position);
         holder.name.setText(card.getName());
 
         int rarityColor = R.color.common;
@@ -121,6 +131,16 @@ public class CardListAdapter extends BaseAdapter {
             }
         }*/
 
+        holder.addToDeck.setTag(card);
+        holder.addToDeck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onCardListener != null){
+                    onCardListener.onAddToDeck((MTGCard) v.getTag());
+                }
+            }
+        });
+
         return convertView;
     }
 
@@ -131,6 +151,7 @@ public class CardListAdapter extends BaseAdapter {
         TextView rarity;
         TextView cost;
         View indicator;
+        ImageButton addToDeck;
 
         CardHolder(View row) {
             parent = row.findViewById(R.id.card_parent);
@@ -139,6 +160,7 @@ public class CardListAdapter extends BaseAdapter {
             rarity = (TextView) row.findViewById(R.id.card_rarity);
             cost = (TextView) row.findViewById(R.id.card_cost);
             indicator = row.findViewById(R.id.card_indicator);
+            addToDeck = (ImageButton) row.findViewById(R.id.card_add_deck);
         }
     }
 

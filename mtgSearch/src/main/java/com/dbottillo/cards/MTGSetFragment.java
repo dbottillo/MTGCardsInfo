@@ -11,10 +11,13 @@ import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
+import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
@@ -25,7 +28,7 @@ import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public abstract class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
+public abstract class MTGSetFragment extends DBFragment implements AdapterView.OnItemClickListener, View.OnClickListener, CardListAdapter.OnCardListener {
 
     private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
@@ -65,6 +68,7 @@ public abstract class MTGSetFragment extends DBFragment implements AdapterView.O
 
         cards = new ArrayList<>();
         adapter = new CardListAdapter(getActivity(), cards, isASearch);
+        adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(this);
@@ -251,4 +255,12 @@ public abstract class MTGSetFragment extends DBFragment implements AdapterView.O
             openPlayStore();
         }
     }
+
+    @Override
+    public void onAddToDeck(MTGCard card) {
+        LOG.e("adding card: "+card.toString());
+        getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+    }
+
+
 }
