@@ -51,9 +51,9 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
     private View newDeckContainer;
     private AppCompatEditText newDeckName;
 
-    private boolean newDeckViewOpen = false;
-
     private int heightNewDeckContainer = -1;
+
+    private boolean newDeckViewOpen = false;
 
     private Loader decksLoader;
 
@@ -108,13 +108,6 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
 
-        if (savedInstanceState == null) {
-
-        } else {
-            newDeckViewOpen = savedInstanceState.getBoolean("newDeckViewOpen");
-        }
-
-
         return rootView;
     }
 
@@ -129,12 +122,6 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
     public void onStop() {
         super.onStop();
         decksLoader.stopLoading();
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putBoolean("newDeckViewOpen", newDeckViewOpen);
     }
 
     @Override
@@ -209,6 +196,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
                 newDeckOverlay.setVisibility(View.GONE);
                 newDeckName.setText("");
                 InputUtil.hideKeyboard(getActivity(), newDeckName.getWindowToken());
+                newDeckViewOpen = false;
             }
 
             @Override
@@ -236,7 +224,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
     }
 
     @Override
-    public Loader onCreateLoader(int id, Bundle args) {
+    public Loader<ArrayList<Deck>> onCreateLoader(int id, Bundle args) {
         return new DecksLoader(getActivity());
     }
 
@@ -256,9 +244,11 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(getActivity(), DeckActivity.class);
-        intent.putExtra("deck", decks.get(position));
-        startActivity(intent);
+        if (position < decks.size()) {
+            Intent intent = new Intent(getActivity(), DeckActivity.class);
+            intent.putExtra("deck", decks.get(position));
+            startActivity(intent);
+        }
     }
 
     static class DecksLoader extends AsyncTaskLoader<ArrayList<Deck>> {

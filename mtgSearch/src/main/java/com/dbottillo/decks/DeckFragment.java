@@ -86,7 +86,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     }
 
     @Override
-    public Loader onCreateLoader(int id, Bundle args) {
+    public Loader<ArrayList<MTGCard>> onCreateLoader(int id, Bundle args) {
         return new DeckLoader(getActivity(), deck);
     }
 
