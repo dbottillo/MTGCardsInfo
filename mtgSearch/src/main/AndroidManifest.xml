@@ -7,10 +7,10 @@
     <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
 
     <application
+        android:name=".base.MTGApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name=".base.MTGApp"
         android:theme="@style/MTGSearchTheme">
         <activity
             android:name=".base.MainActivity"
@@ -22,13 +22,11 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".cards.CardsActivity" />
+        <activity android:name=".cards.CardsActivity" />
 
         <activity android:name=".cards.CardLuckyActivity" />
 
-        <activity
-            android:name=".cards.FullScreenImageActivity" />
+        <activity android:name=".cards.FullScreenImageActivity" />
 
         <activity
             android:name=".search.SearchActivity"
@@ -41,10 +39,9 @@
                 android:resource="@xml/searchable" />
         </activity>
 
-        <activity
-            android:name=".saved.SavedActivity" />
+        <activity android:name=".saved.SavedActivity" />
 
-        <activity android:name=".lifecounter.LifeCounterActivity" />
+        <activity android:name=".decks.DeckActivity" />
 
         <meta-data
             android:name="com.crashlytics.ApiKey"
@@ -55,10 +52,10 @@
         <service android:name=".widget.UpdateLuckyWidgetService" />
 
         <receiver
+            android:name=".widget.LuckyWidgetProvider"
             android:icon="@drawable/ic_launcher"
-            android:label="Lucky Widget"
-            android:name=".widget.LuckyWidgetProvider" >
-            <intent-filter >
+            android:label="Lucky Widget">
+            <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 

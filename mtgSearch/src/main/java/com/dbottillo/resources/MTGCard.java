@@ -241,6 +241,47 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return card;
     }
 
+    public ContentValues createContentValue() {
+        ContentValues values = new ContentValues();
+        boolean isASplit = false;
+        values.put(CardEntry.COLUMN_NAME_NAME, name);
+        values.put(CardEntry.COLUMN_NAME_TYPE, type);
+        values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
+        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
+        if (colors.size() > 0) {
+            String col = "";
+            for (int k = 0; k < colors.size(); k++) {
+                String color = mapStringColor(colors.get(k));
+                col += color;
+                if (k < colors.size() - 1) {
+                    col += ",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_COLORS, col);
+        }
+        if (types.size() > 0){
+            String typ = "";
+            for (int k = 0; k < types.size(); k++) {
+                typ += types.get(k);
+                if (k < types.size() - 1) {
+                    typ += ",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_TYPES, typ);
+        }
+        values.put(CardEntry.COLUMN_NAME_MANACOST, manaCost);
+        values.put(CardEntry.COLUMN_NAME_RARITY, rarity);
+        values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, multiVerseId);
+        values.put(CardEntry.COLUMN_NAME_POWER, power);
+        values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
+        values.put(CardEntry.COLUMN_NAME_TEXT, text);
+        values.put(CardEntry.COLUMN_NAME_CMC, cmc);
+        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isMultiColor);
+        values.put(CardEntry.COLUMN_NAME_LAND, isALand);
+        values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
+        return values;
+    }
+
     /*public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
         MTGCard card = new MTGCard(id);
         card.setName(jsonObject.getString("name"));
@@ -318,6 +359,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         if (color.equalsIgnoreCase("Red")) return RED;
         if (color.equalsIgnoreCase("Green")) return GREEN;
         return -1;
+    }
+
+    private static String mapStringColor(int color) {
+        if (color == BLACK) return "Black";
+        if (color == BLUE) return "Blue";
+        if (color == WHITE) return "White";
+        if (color == RED) return "Red";
+        if (color == GREEN) return "Green";
+        return "";
     }
 
     @Override
