@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,7 +35,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends DBFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>> {
+public class DecksFragment extends DBFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, AdapterView.OnItemClickListener {
 
     public static DecksFragment newInstance() {
         return new DecksFragment();
@@ -101,7 +103,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
         View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
         listView.addFooterView(footerView);
         listView.setAdapter(deckListAdapter);
-        //listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
 
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
@@ -250,6 +252,13 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
     @Override
     public void onLoaderReset(Loader loader) {
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(getActivity(), DeckActivity.class);
+        intent.putExtra("deck", decks.get(position));
+        startActivity(intent);
     }
 
     static class DecksLoader extends AsyncTaskLoader<ArrayList<Deck>> {

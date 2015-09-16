@@ -102,4 +102,17 @@ public final class DeckDataSource {
         database.insert(TABLE_DECK_CARD, null, values);
     }
 
+    public ArrayList<MTGCard> getCards(Deck deck) {
+        ArrayList<MTGCard> cards = new ArrayList<>();
+        Cursor cursor = database.rawQuery("select P.* from MTGCard P inner join deck_card H on (H.card_id = P._id and H.deck_id = ?)", new String[]{deck.getId() + ""});
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            MTGCard card = MTGCard.createCardFromCursor(cursor);
+            cards.add(card);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return cards;
+    }
 }

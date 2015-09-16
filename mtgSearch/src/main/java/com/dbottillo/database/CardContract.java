@@ -46,7 +46,7 @@ public final class CardContract {
                     CardContract.CardEntry.COLUMN_NAME_MULTICOLOR + " INTEGER ," +
                     CardContract.CardEntry.COLUMN_NAME_LAND + " INTEGER ," +
                     CardContract.CardEntry.COLUMN_NAME_ARTIFACT + " INTEGER ," +
-                    CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + " INTEGER ," +
+                    CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + " INTEGER UNIQUE," +
                     CardContract.CardEntry.COLUMN_NAME_SET_ID + " INTEGER ," +
                     CardContract.CardEntry.COLUMN_NAME_SET_NAME + " TEXT )";
 
