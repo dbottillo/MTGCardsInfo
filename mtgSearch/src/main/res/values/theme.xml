@@ -43,6 +43,13 @@
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@android:color/white</item>
         <item name="colorAccent">@android:color/white</item>
+        <!-- bottom line color -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- text color -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- hint text color -->
+        <item name="android:textColorHint">@android:color/white</item>
+
     </style>
 
 </resources>
