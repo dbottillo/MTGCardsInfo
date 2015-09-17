@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.helper.LOG;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
 
@@ -72,13 +73,27 @@ public final class DeckDataSource {
     public ArrayList<Deck> getDecks() {
         ArrayList<Deck> decks = new ArrayList<>();
 
-        Cursor cursor = database.query(TABLE_DECKS,
-                allColumnsDecks, null, null, null, null, null);
+        Cursor deckCursor = database.rawQuery("Select * from decks", null);
+        deckCursor.moveToFirst();
+        while (!deckCursor.isAfterLast()) {
+            Deck newDeck = cursorToDeck(deckCursor);
+            decks.add(newDeck);
+            deckCursor.moveToNext();
+        }
+        deckCursor.close();
+
+        // need to load cards now
+        Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Deck deck = cursorToDeck(cursor);
-            decks.add(deck);
+            Deck newDeck = new Deck(cursor.getInt(cursor.getColumnIndex(COLUMN_DECK_ID)));
+            for (Deck deck : decks) {
+                if (deck.getId() == newDeck.getId()) {
+                    deck.addNumberOfCards(cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY)));
+                    break;
+                }
+            }
             cursor.moveToNext();
         }
         cursor.close();
@@ -140,5 +155,11 @@ public final class DeckDataSource {
         int sid = sideboard ? 1 : 0;
         String[] args = new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""};
         database.rawQuery("DELETE FROM deck_card where deck_id=? and card_id=? and side =?", args).moveToFirst();
+    }
+
+    public void deleteDeck(Deck deck) {
+        String[] args = new String[]{deck.getId() + ""};
+        database.rawQuery("DELETE FROM deck_card where deck_id=? ", args).moveToFirst();
+        database.rawQuery("DELETE FROM decks where _id=? ", args).moveToFirst();
     }
 }

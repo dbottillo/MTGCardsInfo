@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -35,7 +37,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends DBFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, AdapterView.OnItemClickListener {
+public class DecksFragment extends DBFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, DeckListAdapter.OnDeckListener {
 
     public static DecksFragment newInstance() {
         return new DecksFragment();
@@ -99,11 +101,10 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         decks = new ArrayList<>();
 
-        deckListAdapter = new DeckListAdapter(getActivity(), decks);
+        deckListAdapter = new DeckListAdapter(getActivity(), decks, this);
         View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
         listView.addFooterView(footerView);
         listView.setAdapter(deckListAdapter);
-        listView.setOnItemClickListener(this);
 
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
@@ -243,11 +244,30 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (position < decks.size()) {
-            Intent intent = new Intent(getActivity(), DeckActivity.class);
-            intent.putExtra("deck", decks.get(position));
-            startActivity(intent);
+    public void onDeckSelected(Deck deck) {
+        Intent intent = new Intent(getActivity(), DeckActivity.class);
+        intent.putExtra("deck", deck);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onDeckDelete(final Deck deck) {
+        if (deck.getNumberOfCards() > 0){
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.deck_delete_title)
+                    .setMessage(R.string.deck_delete_text)
+                    .setPositiveButton(R.string.deck_delete_confirmation, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
+                        }
+
+                    })
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
+
+        } else {
+            new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
         }
     }
 
@@ -277,6 +297,29 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
             DeckDataSource deckDataSource = new DeckDataSource(context);
             deckDataSource.open();
             deckDataSource.addDeck(params[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            decksLoader.forceLoad();
+        }
+    }
+
+    private class DeleteDeckTask extends AsyncTask<Deck, Void, Void> {
+
+        private Context context;
+
+        public DeleteDeckTask(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected Void doInBackground(Deck... params) {
+            DeckDataSource deckDataSource = new DeckDataSource(context);
+            deckDataSource.open();
+            deckDataSource.deleteDeck(params[0]);
             return null;
         }
 
