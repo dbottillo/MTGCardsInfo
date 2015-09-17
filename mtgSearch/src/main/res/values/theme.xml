@@ -44,18 +44,6 @@
         <item name="color">@android:color/white</item>
     </style>
 
-    <style name="EditTextWhite" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorPrimaryDark">@android:color/white</item>
-        <item name="colorAccent">@android:color/white</item>
-        <!-- bottom line color -->
-        <item name="colorControlNormal">@android:color/white</item>
-        <!-- text color -->
-        <item name="android:textColor">@android:color/white</item>
-        <!-- hint text color -->
-        <item name="android:textColorHint">@android:color/white</item>
-    </style>
-
     <style name="PopupMenu" parent="@style/Widget.AppCompat.Light.PopupMenu">
         <item name="android:background">@color/color_primary_dark</item>
     </style>

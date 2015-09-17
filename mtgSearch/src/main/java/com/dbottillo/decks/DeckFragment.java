@@ -86,11 +86,11 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             @Override
             public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
                 if (menuItem.getItemId() == R.id.action_add_one_more) {
-                    deckDataSource.addCardToDeck(deck, card, 1, card.isSideboard());
+                    deckDataSource.addCardToDeck(deck.getId(), card, 1, card.isSideboard());
                 } else if (menuItem.getItemId() == R.id.action_remove_one) {
-                    deckDataSource.addCardToDeck(deck, card, -1, card.isSideboard());
+                    deckDataSource.addCardToDeck(deck.getId(), card, -1, card.isSideboard());
                 } else {
-                    deckDataSource.removeCardFromDeck(deck, card, card.isSideboard());
+                    deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
                 }
                 forceReload();
             }

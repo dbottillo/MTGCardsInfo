@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Deck implements Parcelable {
 
-    int id;
+    long id;
     String name;
     boolean archived;
     int numberOfCards = 0;
@@ -15,11 +15,11 @@ public class Deck implements Parcelable {
         readFromParcel(in);
     }
 
-    public Deck(int id) {
+    public Deck(long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -77,7 +77,7 @@ public class Deck implements Parcelable {
     }
 
     public void readFromParcel(Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readLong();
         this.name = in.readString();
         this.archived = in.readInt() == 1;
         this.numberOfCards = in.readInt();
@@ -86,7 +86,7 @@ public class Deck implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
+        dest.writeLong(id);
         dest.writeString(name);
         dest.writeInt(archived ? 1 : 0);
         dest.writeInt(numberOfCards);

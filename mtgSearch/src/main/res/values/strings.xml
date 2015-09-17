@@ -113,6 +113,11 @@
     <string name="deck_delete_title">Delete deck</string>
     <string name="deck_delete_text">There are cards in this deck. Are you sure?</string>
     <string name="deck_delete_confirmation">Delete</string>
+    <string name="new_deck_quantity_hint">How many (max 30)</string>
+    <string name="deck_choose">Choose deck</string>
+    <string name="deck_choose_quantity">Choose quantity</string>
+    <string name="deck_new">New deck</string>
+    <string name="deck_specify">Specify</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
