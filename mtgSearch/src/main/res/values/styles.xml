@@ -102,4 +102,28 @@
     </style>
 
 
+    <style name="EditTextWhite" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <!-- bottom line color -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- text color -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- hint text color -->
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+    <style name="EditTextPrimary" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary</item>
+        <item name="colorAccent">@color/color_primary</item>
+        <!-- bottom line color -->
+        <item name="colorControlNormal">@color/color_primary</item>
+        <!-- text color -->
+        <item name="android:textColor">@color/color_primary</item>
+        <!-- hint text color -->
+        <item name="android:textColorHint">@color/color_primary</item>
+    </style>
+
 </resources>
