@@ -109,6 +109,10 @@
     <string name="action_add_one_more">Add one more</string>
     <string name="action_remove_one">Remove one</string>
     <string name="action_remove_all">Remove all</string>
+    <string name="deck_subtitle">%1s cards</string>
+    <string name="deck_delete_title">Delete deck</string>
+    <string name="deck_delete_text">There are cards in this deck. Are you sure?</string>
+    <string name="deck_delete_confirmation">Delete</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

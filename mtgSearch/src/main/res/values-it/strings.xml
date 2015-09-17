@@ -89,5 +89,9 @@
     <string name="action_add_one_more">Aggiungi un\'altra</string>
     <string name="action_remove_one">Rimuovi una</string>
     <string name="action_remove_all">Rimuovi tutte</string>
+    <string name="deck_subtitle">%1s carte</string>
+    <string name="deck_delete_title">Cancellazione mazzo</string>
+    <string name="deck_delete_text">Ci sono carte in questo mazzo. Sei sicuro?</string>
+    <string name="deck_delete_confirmation">Cancella</string>
 
 </resources>

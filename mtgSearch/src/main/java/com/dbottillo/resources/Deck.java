@@ -8,6 +8,8 @@ public class Deck implements Parcelable {
     int id;
     String name;
     boolean archived;
+    int numberOfCards = 0;
+    int sizeOfSideboard = 0;
 
     public Deck(Parcel in) {
         readFromParcel(in);
@@ -37,6 +39,26 @@ public class Deck implements Parcelable {
         this.archived = archived;
     }
 
+    public int getNumberOfCards() {
+        return numberOfCards;
+    }
+
+    public void setNumberOfCards(int numberOfCards) {
+        this.numberOfCards = numberOfCards;
+    }
+
+    public void addNumberOfCards(int numberOfCards){
+        this.numberOfCards += numberOfCards;
+    }
+
+    public int getSizeOfSideboard() {
+        return sizeOfSideboard;
+    }
+
+    public void setSizeOfSideboard(int sizeOfSideboard) {
+        this.sizeOfSideboard = sizeOfSideboard;
+    }
+
     public static final Parcelable.Creator<Deck> CREATOR = new Parcelable.Creator<Deck>() {
         @Override
         public Deck createFromParcel(Parcel source) {
@@ -58,6 +80,8 @@ public class Deck implements Parcelable {
         this.id = in.readInt();
         this.name = in.readString();
         this.archived = in.readInt() == 1;
+        this.numberOfCards = in.readInt();
+        this.sizeOfSideboard = in.readInt();
     }
 
     @Override
@@ -65,6 +89,8 @@ public class Deck implements Parcelable {
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeInt(archived ? 1 : 0);
+        dest.writeInt(numberOfCards);
+        dest.writeInt(sizeOfSideboard);
     }
 
     @Override
