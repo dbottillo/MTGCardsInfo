@@ -16,9 +16,11 @@ import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
+import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.cards.CardsActivity;
 import com.dbottillo.cards.MTGCardsFragment;
+import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
@@ -27,7 +29,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, DBAsyncTask.DBAsyncTaskListener {
+public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, DBAsyncTask.DBAsyncTaskListener, OnCardListener {
 
     private ArrayList<MTGCard> savedCards;
     private ListView listView;
@@ -54,7 +56,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
         savedCards = new ArrayList<>();
 
-        adapter = new CardListAdapter(getActivity(), savedCards, false);
+        adapter = new CardListAdapter(getActivity(), savedCards, false, R.menu.card_saved_option, this);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
@@ -95,7 +97,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
-        cardsView.putExtra(MTGCardsFragment.SET_NAME, getString(R.string.action_saved));
+        cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);
     }
 
@@ -133,5 +135,19 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         }
 
         return false;
+    }
+
+    @Override
+    public void onCardSelected(MTGCard card, int position) {
+
+    }
+
+    @Override
+    public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
+        if (menuItem.getItemId() == R.id.action_add_to_deck) {
+            getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        } else {
+            new DBAsyncTask(getActivity(), SavedFragment.this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+        }
     }
 }

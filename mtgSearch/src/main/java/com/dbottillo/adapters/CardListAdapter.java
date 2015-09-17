@@ -7,30 +7,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.dbottillo.R;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.List;
 
 public class CardListAdapter extends BaseAdapter {
 
-    public interface OnCardListener {
-        void onAddToDeck(MTGCard card);
-    }
-
     private List<MTGCard> cards;
     private Context context;
     private LayoutInflater inflater;
     private boolean isASearch;
     private OnCardListener onCardListener;
+    private int menuRes;
 
-    public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch) {
+    public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch, int menuRes, OnCardListener onCardListener) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.isASearch = isASearch;
-    }
-
-    public void setOnCardListener(OnCardListener onCardListener) {
+        this.menuRes = menuRes;
         this.onCardListener = onCardListener;
     }
 
@@ -49,7 +45,7 @@ public class CardListAdapter extends BaseAdapter {
         return getItem(i).getId();
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final CardViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.row_card, null);
@@ -62,17 +58,13 @@ public class CardListAdapter extends BaseAdapter {
 
         final MTGCard card = getItem(position);
         CardAdapterHelper.bindView(context, card, holder, isASearch);
-
-        holder.addToDeck.setTag(card);
-        holder.addToDeck.setOnClickListener(new View.OnClickListener() {
+        CardAdapterHelper.setupMore(holder, context, card, position, menuRes, onCardListener);
+        holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onCardListener != null) {
-                    onCardListener.onAddToDeck((MTGCard) v.getTag());
-                }
+                onCardListener.onCardSelected(card, position);
             }
         });
-
         return convertView;
     }
 

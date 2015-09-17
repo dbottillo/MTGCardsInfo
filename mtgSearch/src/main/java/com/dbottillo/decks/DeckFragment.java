@@ -1,6 +1,7 @@
 package com.dbottillo.decks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -8,6 +9,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -15,7 +17,10 @@ import android.widget.TextView;
 import com.dbottillo.R;
 import com.dbottillo.adapters.DeckCardAdapter;
 import com.dbottillo.adapters.DeckCardSectionAdapter;
+import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.cards.CardsActivity;
+import com.dbottillo.cards.MTGCardsFragment;
 import com.dbottillo.database.DeckDataSource;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
@@ -43,6 +48,8 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
 
     private Loader deckLoader;
 
+    private DeckDataSource deckDataSource;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_deck, container, false);
@@ -62,7 +69,32 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         listView.setHasFixedSize(true);
         listView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        DeckCardAdapter deckCardAdapter = new DeckCardAdapter(getContext(), cards);
+        deckDataSource = new DeckDataSource(getActivity());
+        deckDataSource.open();
+
+        DeckCardAdapter deckCardAdapter = new DeckCardAdapter(getContext(), cards, R.menu.deck_card, new OnCardListener() {
+            @Override
+            public void onCardSelected(MTGCard card, int position) {
+                Intent cardsView = new Intent(getActivity(), CardsActivity.class);
+                cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
+                cardsView.putExtra(MTGCardsFragment.POSITION, position);
+                cardsView.putExtra(MTGCardsFragment.TITLE, deck.getName());
+                cardsView.putExtra(MTGCardsFragment.DECK, true);
+                startActivity(cardsView);
+            }
+
+            @Override
+            public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
+                if (menuItem.getItemId() == R.id.action_add_one_more) {
+                    deckDataSource.addCardToDeck(deck, card, 1, card.isSideboard());
+                } else if (menuItem.getItemId() == R.id.action_remove_one) {
+                    deckDataSource.addCardToDeck(deck, card, -1, card.isSideboard());
+                } else {
+                    deckDataSource.removeCardFromDeck(deck, card, card.isSideboard());
+                }
+                forceReload();
+            }
+        });
         deckCardSectionAdapter = new DeckCardSectionAdapter(getContext(), deckCardAdapter);
         listView.setAdapter(deckCardSectionAdapter);
 
@@ -72,6 +104,10 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     @Override
     public void onStart() {
         super.onStart();
+        forceReload();
+    }
+
+    private void forceReload() {
         deckLoader = getLoaderManager().initLoader(102, null, this);
         deckLoader.forceLoad();
     }
@@ -100,8 +136,11 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     @Override
     public void onLoadFinished(Loader<ArrayList<MTGCard>> loader, ArrayList<MTGCard> data) {
         progressBar.setVisibility(View.GONE);
+        List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
         if (data.size() == 0) {
+            cards.clear();
             emptyView.setVisibility(View.VISIBLE);
+            setActionBarTitle(deck.getName());
         } else {
             cards.clear();
             ArrayList<MTGCard> creatures = new ArrayList<>();
@@ -128,7 +167,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
                     other.add(card);
                 }
             }
-            List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
             int startingPoint = 0;
             if (creatures.size() > 0) {
                 sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + nCreatures + ")"));
@@ -155,11 +193,11 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
                 cards.addAll(side);
             }
 
-            DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
-            deckCardSectionAdapter.setSections(sections.toArray(dummy));
-            deckCardSectionAdapter.notifyDataSetChanged();
             setActionBarTitle(deck.getName() + " (" + (nCreatures + nInstanceSorceries + nOther + nLands) + "/" + nSide + ")");
         }
+        DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
+        deckCardSectionAdapter.setSections(sections.toArray(dummy));
+        deckCardSectionAdapter.notifyDataSetChanged();
     }
 
     @Override

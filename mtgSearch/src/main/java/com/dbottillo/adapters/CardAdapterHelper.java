@@ -2,6 +2,9 @@ package com.dbottillo.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
+import android.support.v7.widget.PopupMenu;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.dbottillo.R;
@@ -79,5 +82,29 @@ public class CardAdapterHelper {
                 holder.parent.setBackgroundResource(R.drawable.bg_row_base);
             }
         }*/
+    }
+
+    public static void setupMore(final CardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
+        if (menuRes > 0 && onCardListener != null) {
+            holder.more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final PopupMenu popupMenu = new PopupMenu(context, holder.more);
+                    final Menu menu = popupMenu.getMenu();
+
+                    popupMenu.getMenuInflater().inflate(menuRes, menu);
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            onCardListener.onOptionSelected(item, card, position);
+                            return false;
+                        }
+                    });
+                    popupMenu.show();
+                }
+            });
+        } else {
+            holder.more.setVisibility(View.GONE);
+        }
     }
 }

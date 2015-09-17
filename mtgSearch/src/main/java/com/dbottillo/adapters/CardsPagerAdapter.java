@@ -13,9 +13,11 @@ public class CardsPagerAdapter extends FragmentStatePagerAdapter {
 
     private ArrayList<MTGCard> cards;
     private boolean fullScreen = false;
+    private boolean deck = false;
 
-    public CardsPagerAdapter(FragmentManager fm) {
+    public CardsPagerAdapter(FragmentManager fm,  boolean deck) {
         super(fm);
+        this.deck = deck;
     }
 
     public void setCards(ArrayList<MTGCard> cards) {
@@ -43,6 +45,10 @@ public class CardsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return cards.get(position).getName();
+        MTGCard card = cards.get(position);
+        if (deck){
+            return card.getName() + " ("+card.getQuantity()+")";
+        }
+        return card.getName();
     }
 }

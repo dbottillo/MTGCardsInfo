@@ -93,6 +93,10 @@ public final class DeckDataSource {
     }
 
     public void addCardToDeck(Deck deck, MTGCard card, int quantity, boolean side) {
+        if (card.getQuantity() == 1 && quantity < 0) {
+            removeCardFromDeck(deck, card, side);
+            return;
+        }
         int sid = side ? 1 : 0;
         Cursor cardsCursor = database.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
@@ -102,6 +106,7 @@ public final class DeckDataSource {
             ContentValues values = new ContentValues();
             values.put(COLUMN_QUANTITY, currentQuantity + quantity);
             database.update(TABLE_DECK_CARD, values, COLUMN_DECK_ID + " = ? and " + COLUMN_CARD_ID + " = ? and " + COLUMN_SIDE + " = ?", new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""});
+            cardsCursor.close();
             return;
         }
         CardDataSource.saveCard(database, card);
@@ -129,5 +134,11 @@ public final class DeckDataSource {
         }
         cursor.close();
         return cards;
+    }
+
+    public void removeCardFromDeck(Deck deck, MTGCard card, boolean sideboard) {
+        int sid = sideboard ? 1 : 0;
+        String[] args = new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""};
+        database.rawQuery("DELETE FROM deck_card where deck_id=? and card_id=? and side =?", args).moveToFirst();
     }
 }
