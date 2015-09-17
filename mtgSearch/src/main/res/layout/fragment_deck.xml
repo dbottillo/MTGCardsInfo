@@ -5,14 +5,10 @@
     android:orientation="vertical"
     tools:context="com.dbottillo.base.MainFragment">
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="#e6e6e6"
-        android:dividerHeight="1dp"
-        android:drawSelectorOnTop="true" />
+        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/empty_view"

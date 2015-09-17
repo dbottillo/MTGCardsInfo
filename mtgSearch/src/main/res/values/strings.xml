@@ -77,6 +77,7 @@
     <string name="dice_close">Remove dices</string>
     <string name="empty_saved">You don\'t have any favourite cards yet, use the star button on the card page to add it as a favourite.</string>
     <string name="empty_search">No cards found with that term, why don\'t you try something else??</string>
+    <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
     <string name="loading">Loading…</string>
@@ -100,6 +101,11 @@
     <string name="new_deck_hint">Insert name deck</string>
     <string name="Save">Save</string>
     <string name="sideboard" translatable="false">Sideboard</string>
+    <string name="deck_header_creatures">Creatures</string>
+    <string name="deck_header_instant_sorceries">Instant and Sorceries</string>
+    <string name="deck_header_other">Other</string>
+    <string name="deck_header_lands">Lands</string>
+    <string name="deck_header_sideboard">Sideboard</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

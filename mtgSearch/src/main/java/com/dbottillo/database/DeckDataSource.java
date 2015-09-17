@@ -93,9 +93,20 @@ public final class DeckDataSource {
     }
 
     public void addCardToDeck(Deck deck, MTGCard card, int quantity, boolean side) {
-        long id = CardDataSource.saveCard(database, card);
+        int sid = side ? 1 : 0;
+        Cursor cardsCursor = database.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""});
+        if (cardsCursor.getCount() > 0) {
+            // there is already some cards there! just need to add the quantity
+            cardsCursor.moveToFirst();
+            int currentQuantity = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMN_QUANTITY));
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_QUANTITY, currentQuantity + quantity);
+            database.update(TABLE_DECK_CARD, values, COLUMN_DECK_ID + " = ? and " + COLUMN_CARD_ID + " = ? and " + COLUMN_SIDE + " = ?", new String[]{deck.getId() + "", card.getMultiVerseId() + "", sid + ""});
+            return;
+        }
+        CardDataSource.saveCard(database, card);
         ContentValues values = new ContentValues();
-        values.put(COLUMN_CARD_ID, id);
+        values.put(COLUMN_CARD_ID, card.getMultiVerseId());
         values.put(COLUMN_DECK_ID, deck.getId());
         values.put(COLUMN_QUANTITY, quantity);
         values.put(COLUMN_SIDE, side ? 1 : 0);
@@ -104,11 +115,15 @@ public final class DeckDataSource {
 
     public ArrayList<MTGCard> getCards(Deck deck) {
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = database.rawQuery("select P.* from MTGCard P inner join deck_card H on (H.card_id = P._id and H.deck_id = ?)", new String[]{deck.getId() + ""});
+        Cursor cursor = database.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", new String[]{deck.getId() + ""});
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             MTGCard card = MTGCard.createCardFromCursor(cursor);
+            int quantity = cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY));
+            card.setQuantity(quantity);
+            int sideboard = cursor.getInt(cursor.getColumnIndex(COLUMN_SIDE));
+            card.setSideboard(sideboard == 1);
             cards.add(card);
             cursor.moveToNext();
         }

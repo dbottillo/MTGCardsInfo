@@ -5,20 +5,23 @@ import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dbottillo.R;
-import com.dbottillo.adapters.CardListAdapter;
+import com.dbottillo.adapters.DeckCardAdapter;
+import com.dbottillo.adapters.DeckCardSectionAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.database.DeckDataSource;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -33,11 +36,10 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     }
 
     private ArrayList<MTGCard> cards;
-    private CardListAdapter cardListAdapter;
     private Deck deck;
-    private ListView listView;
     private TextView emptyView;
     private SmoothProgressBar progressBar;
+    private DeckCardSectionAdapter deckCardSectionAdapter;
 
     private Loader deckLoader;
 
@@ -50,14 +52,19 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         setActionBarTitle(deck.getName());
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-        listView = (ListView) rootView.findViewById(R.id.card_list);
+        RecyclerView listView = (RecyclerView) rootView.findViewById(R.id.card_list);
+
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
-        emptyView.setText(R.string.empty_saved);
+        emptyView.setText(R.string.empty_deck);
 
         cards = new ArrayList<>();
 
-        cardListAdapter = new CardListAdapter(getActivity(), cards, false);
-        listView.setAdapter(cardListAdapter);
+        listView.setHasFixedSize(true);
+        listView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        DeckCardAdapter deckCardAdapter = new DeckCardAdapter(getContext(), cards);
+        deckCardSectionAdapter = new DeckCardSectionAdapter(getContext(), deckCardAdapter);
+        listView.setAdapter(deckCardSectionAdapter);
 
         return rootView;
     }
@@ -92,12 +99,67 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
 
     @Override
     public void onLoadFinished(Loader<ArrayList<MTGCard>> loader, ArrayList<MTGCard> data) {
-        cards.clear();
-        for (MTGCard card : data) {
-            cards.add(card);
-        }
-        cardListAdapter.notifyDataSetChanged();
         progressBar.setVisibility(View.GONE);
+        if (data.size() == 0) {
+            emptyView.setVisibility(View.VISIBLE);
+        } else {
+            cards.clear();
+            ArrayList<MTGCard> creatures = new ArrayList<>();
+            ArrayList<MTGCard> instantAndSorceries = new ArrayList<>();
+            ArrayList<MTGCard> other = new ArrayList<>();
+            ArrayList<MTGCard> lands = new ArrayList<>();
+            ArrayList<MTGCard> side = new ArrayList<>();
+            int nCreatures = 0, nInstanceSorceries = 0, nOther = 0, nLands = 0, nSide = 0;
+            for (MTGCard card : data) {
+                if (card.isSideboard()) {
+                    nSide += card.getQuantity();
+                    side.add(card);
+                } else if (card.isALand()) {
+                    nLands += card.getQuantity();
+                    lands.add(card);
+                } else if (card.getTypes().contains("Creature")) {
+                    nCreatures += card.getQuantity();
+                    creatures.add(card);
+                } else if (card.getTypes().contains("Instant") || card.getTypes().contains("Sorcery")) {
+                    nInstanceSorceries += card.getQuantity();
+                    instantAndSorceries.add(card);
+                } else {
+                    nOther += card.getQuantity();
+                    other.add(card);
+                }
+            }
+            List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
+            int startingPoint = 0;
+            if (creatures.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + nCreatures + ")"));
+                startingPoint += creatures.size();
+                cards.addAll(creatures);
+            }
+            if (instantAndSorceries.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + nInstanceSorceries + ")"));
+                startingPoint += instantAndSorceries.size();
+                cards.addAll(instantAndSorceries);
+            }
+            if (other.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + nOther + ")"));
+                startingPoint += other.size();
+                cards.addAll(other);
+            }
+            if (lands.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + nLands + ")"));
+                startingPoint += lands.size();
+                cards.addAll(lands);
+            }
+            if (side.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + nSide + ")"));
+                cards.addAll(side);
+            }
+
+            DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
+            deckCardSectionAdapter.setSections(sections.toArray(dummy));
+            deckCardSectionAdapter.notifyDataSetChanged();
+            setActionBarTitle(deck.getName() + " (" + (nCreatures + nInstanceSorceries + nOther + nLands) + "/" + nSide + ")");
+        }
     }
 
     @Override
