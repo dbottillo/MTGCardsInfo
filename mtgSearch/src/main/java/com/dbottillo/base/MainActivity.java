@@ -186,41 +186,37 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
-        if (!menuItem.isChecked()) {
-            menuItem.setChecked(true);
+        DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
+            changeFragment(new MainFragment(), "main", false);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
 
-            if (menuItem.getItemId() == R.id.drawer_home) {
-                changeFragment(new MainFragment(), "main", false);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
+        } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
+            changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_saved) {
-                changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {
+            changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_life_counter) {
-                changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
+            changeFragment(DecksFragment.newInstance(), "decks", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_decks) {
-                changeFragment(DecksFragment.newInstance(), "decks", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_rate) {
+            openRateTheApp();
 
-            } else if (menuItem.getItemId() == R.id.drawer_rate) {
-                openRateTheApp();
+        } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
+            changeFragment(new AboutFragment(), "about_fragment", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_about) {
-                changeFragment(new AboutFragment(), "about_fragment", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == 100) {
+            // NB: WARNING, FOR RECREATE DATABASE
+            String packageName = getApplication().getPackageName();
+            new CreateDBAsyncTask(this, packageName).execute();
 
-            } else if (menuItem.getItemId() == 100) {
-
-                // NB: WARNING, FOR RECREATE DATABASE
-                String packageName = getApplication().getPackageName();
-                new CreateDBAsyncTask(this, packageName).execute();
-
-            } else if (menuItem.getItemId() == 101) {
-                throw new RuntimeException("This is a crash");
-            }
+        } else if (menuItem.getItemId() == 101) {
+            throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawers();
         return true;
@@ -233,10 +229,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             return;
         }
         DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if (currentFragment.onBackPressed()){
+        if (currentFragment.onBackPressed()) {
             return;
         }
-        boolean isMainFragment =  currentFragment instanceof MainFragment;
+        boolean isMainFragment = currentFragment instanceof MainFragment;
         if (!isMainFragment) {
             changeFragment(new MainFragment(), "main", false);
             for (int i = 0; i < navigationView.getMenu().size(); i++) {

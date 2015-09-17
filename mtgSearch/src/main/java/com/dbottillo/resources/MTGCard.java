@@ -36,6 +36,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     int multiVerseId;
     int idSet;
     String setName;
+    int quantity = 1;
+    boolean sideboard = false;
 
     public static final int WHITE = 0;
     public static final int BLUE = 1;
@@ -396,6 +398,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
         dest.writeString(setName);
+        dest.writeInt(quantity);
+        dest.writeInt(sideboard ? 1 : 0);
     }
 
     private void readFromParcel(Parcel in) {
@@ -418,6 +422,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         multiVerseId = in.readInt();
         idSet = in.readInt();
         setName = in.readString();
+        quantity = in.readInt();
+        sideboard = in.readInt() == 1;
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -578,6 +584,22 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public void setIdSet(int idSet) {
         this.idSet = idSet;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public boolean isSideboard() {
+        return sideboard;
+    }
+
+    public void setSideboard(boolean sideboard) {
+        this.sideboard = sideboard;
     }
 
     public String toString() {
