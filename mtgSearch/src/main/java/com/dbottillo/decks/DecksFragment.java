@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +28,7 @@ import com.dbottillo.R;
 import com.dbottillo.adapters.DeckListAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.database.DeckDataSource;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.util.AnimationUtil;
 import com.dbottillo.util.InputUtil;
@@ -219,6 +219,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
             String text = newDeckName.getText().toString();
             closeNewDeck();
             new NewDeckTask(getActivity().getApplicationContext()).execute(text);
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, text);
             return true;
         }
         return false;
@@ -260,6 +261,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
+                            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
                         }
 
                     })
@@ -268,6 +270,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         } else {
             new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
         }
     }
 

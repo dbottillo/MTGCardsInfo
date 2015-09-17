@@ -44,6 +44,6 @@ public class DeckActivity extends DBActivity {
 
     @Override
     public String getPageTrack() {
-        return "deck/"+deck.getName();
+        return null;
     }
 }

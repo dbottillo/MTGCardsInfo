@@ -22,6 +22,7 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.cards.CardsActivity;
 import com.dbottillo.cards.MTGCardsFragment;
 import com.dbottillo.database.DeckDataSource;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
 
@@ -86,10 +87,15 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             @Override
             public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
                 if (menuItem.getItemId() == R.id.action_add_one_more) {
+                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ONE_MORE);
                     deckDataSource.addCardToDeck(deck.getId(), card, 1, card.isSideboard());
+
                 } else if (menuItem.getItemId() == R.id.action_remove_one) {
+                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ONE);
                     deckDataSource.addCardToDeck(deck.getId(), card, -1, card.isSideboard());
+
                 } else {
+                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ALL);
                     deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
                 }
                 forceReload();
@@ -125,7 +131,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
 
     @Override
     public String getPageTrack() {
-        return "/deck";
+        return "deck/" + deck.getName();
     }
 
     @Override
@@ -206,7 +212,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     }
 
     static class DeckLoader extends AsyncTaskLoader<ArrayList<MTGCard>> {
-
         Deck deck;
 
         public DeckLoader(Context context, Deck deck) {

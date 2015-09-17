@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.database.DeckDataSource;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
 
@@ -185,6 +186,7 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             }
         };
         thread.start();
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - existing");
     }
 
     private void saveCard(final int quantity, final String deck, final boolean side) {
@@ -197,6 +199,8 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             }
         };
         thread.start();
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity+" - new");
     }
 
     private class LoadDecks extends AsyncTask<Void, Void, ArrayList<Deck>> {
