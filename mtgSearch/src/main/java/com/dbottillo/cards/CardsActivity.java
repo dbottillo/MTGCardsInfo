@@ -16,12 +16,13 @@ import java.util.ArrayList;
 
 public class CardsActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
 
-    private ArrayList<MTGCard> savedCards = new ArrayList<MTGCard>();
+    private ArrayList<MTGCard> savedCards = new ArrayList<>();
 
     public static final int FULLSCREEN_CODE = 100;
 
     MTGCardsFragment cardsFragment;
-    String setName;
+    String title;
+    boolean deck;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,19 +31,22 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
 
         setupToolbar();
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getSupportActionBar().setElevation(0);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getSupportActionBar().setElevation(0);
+            }
         }
-
         cardsFragment = (MTGCardsFragment) getSupportFragmentManager().findFragmentById(R.id.container);
 
         if (cardsFragment == null) {
-            setName = getIntent().getStringExtra(MTGCardsFragment.SET_NAME);
+            title = getIntent().getStringExtra(MTGCardsFragment.TITLE);
+            deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
             cardsFragment = MTGCardsFragment.newInstance(getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
                     getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
-                    setName);
+                    title, deck
+            );
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, cardsFragment)
                     .commit();
@@ -120,7 +124,8 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
         Intent fullScreen = new Intent(this, FullScreenImageActivity.class);
         fullScreen.putExtra(MTGCardsFragment.CARDS, cardsFragment.getCards());
         fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem);
-        fullScreen.putExtra(MTGCardsFragment.SET_NAME, setName);
+        fullScreen.putExtra(MTGCardsFragment.TITLE, title);
+        fullScreen.putExtra(MTGCardsFragment.DECK, deck);
         startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE);
     }
 

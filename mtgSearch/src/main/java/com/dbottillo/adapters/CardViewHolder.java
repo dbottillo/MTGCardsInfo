@@ -15,7 +15,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     TextView rarity;
     TextView cost;
     View indicator;
-    ImageButton addToDeck;
+    ImageButton more;
 
     public CardViewHolder(View row) {
         super(row);
@@ -25,6 +25,6 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
         rarity = (TextView) row.findViewById(R.id.card_rarity);
         cost = (TextView) row.findViewById(R.id.card_cost);
         indicator = row.findViewById(R.id.card_indicator);
-        addToDeck = (ImageButton) row.findViewById(R.id.card_add_deck);
+        more = (ImageButton) row.findViewById(R.id.card_more_option);
     }
 }

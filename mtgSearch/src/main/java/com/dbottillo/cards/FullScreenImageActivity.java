@@ -33,15 +33,19 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
 
         setupToolbar();
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle(getIntent().getStringExtra(MTGCardsFragment.SET_NAME));
-        getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setTitle(getIntent().getStringExtra(MTGCardsFragment.TITLE));
+            getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         viewPager = (ViewPager) findViewById(R.id.pager);
 
-        adapter = new CardsPagerAdapter(getSupportFragmentManager());
-        cards = getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS);
+        boolean deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
+
+        adapter = new CardsPagerAdapter(getSupportFragmentManager(), deck);
+        cards = getIntent().getParcelableArrayListExtra(MTGCardsFragment.CARDS);
         adapter.setCards(cards);
         adapter.setFullScreen(true);
         viewPager.setAdapter(adapter);

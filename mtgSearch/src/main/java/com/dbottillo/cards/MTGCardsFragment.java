@@ -25,23 +25,26 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     public static final String CARDS = "cards";
     public static final String POSITION = "position";
-    public static final String SET_NAME = "set_name";
+    public static final String TITLE = "set_name";
+    public static final String DECK = "deck";
 
     private ViewPager viewPager;
     private ArrayList<MTGCard> cards;
     private CardsPagerAdapter adapter;
 
     private int position;
+    private boolean deck = false;
     PagerTabStrip pagerTabStrip;
 
     MenuItem actionImage;
 
-    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String setName) {
+    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String title, boolean deck) {
         MTGCardsFragment fragment = new MTGCardsFragment();
         Bundle args = new Bundle();
         args.putParcelableArrayList(CARDS, cards);
         args.putInt(POSITION, position);
-        args.putString(SET_NAME, setName);
+        args.putString(TITLE, title);
+        args.putBoolean(DECK, deck);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,21 +59,22 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         position = getArguments().getInt(POSITION);
         cards = getArguments().getParcelableArrayList(CARDS);
         viewPager = (ViewPager) rootView.findViewById(R.id.pager);
-
-        adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.setCards(cards);
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(position);
-
-        viewPager.setOnPageChangeListener(this);
-
-        setActionBarTitle(getArguments().getString(SET_NAME));
-        setHasOptionsMenu(true);
+        deck = getArguments().getBoolean(DECK);
 
         pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+
+        viewPager.addOnPageChangeListener(this);
+
+        adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
+        adapter.setCards(cards);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(position);
+
+        setActionBarTitle(getArguments().getString(TITLE));
+        setHasOptionsMenu(true);
 
         return rootView;
     }
