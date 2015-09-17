@@ -1,8 +1,11 @@
 package com.dbottillo.base;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -25,6 +28,15 @@ public abstract class DBFragment extends DialogFragment {
     public static final String PREF_SORT_WUBRG = "sort_wubrg";
 
     Toolbar toolbar;
+
+    protected boolean isPortrait;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        Resources res = activity.getResources();
+        isPortrait = res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
