@@ -61,6 +61,9 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
 
     @Override
     public String getPageTrack() {
+        if (deck){
+            return "/deck";
+        }
         return "/cards";
     }
 
