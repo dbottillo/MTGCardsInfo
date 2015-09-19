@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name" translatable="false">MTG Cards Info</string>
-    <string name="app_long_name" translatable="false">MTG Cards Info</string>
+    <string name="app_name">MTG Cards Info</string>
+    <string name="app_long_name">MTG Cards Info</string>
     <string name="analytics" translatable="false">UA-48823803-2</string>
 
     <string name="action_about">About</string>
@@ -20,8 +20,10 @@
     <string name="filter">Current filter</string>
     <string name="to_premium">Go to Premium</string>
     <string name="to_premium_btn">Open Play Store</string>
-    <string name="more_result">There are %d more result</string>
-    <string name="search_limit">There is a limit of %d results, what about a more specific search?</string>
+    <plurals name="search_limit">
+        <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
+        <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
+    </plurals>
     <string name="apply_filter">Apply Filter</string>
     <string name="minimum_search">Search requires at least three letters</string>
     <string name="search_open_play">If you want to see all the results you need to buy the full version of MTG Cards</string>
@@ -119,7 +121,7 @@
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
     <string name="release_note_title">What\'s new</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="release_note_text">
         <b>Version 2.5.0:</b> \n
         - NEW: now you can create decks! :) \n\n

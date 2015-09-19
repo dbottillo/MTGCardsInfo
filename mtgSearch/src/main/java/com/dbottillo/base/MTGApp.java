@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.crashlytics.android.Crashlytics;
+import com.dbottillo.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -15,6 +16,7 @@ public class MTGApp extends Application {
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
+        Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
         refWatcher = LeakCanary.install(this);
     }
 

@@ -150,7 +150,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         if (result.size() == CardsDatabaseHelper.LIMIT) {
             View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            moreResult.setText(getString(R.string.search_limit, CardsDatabaseHelper.LIMIT));
+            moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
             listView.addFooterView(footer);
         }
         result.clear();

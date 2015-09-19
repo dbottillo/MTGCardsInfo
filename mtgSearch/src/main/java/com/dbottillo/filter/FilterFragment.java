@@ -93,7 +93,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
 
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_TOGGLE, label);
 
-        editor.commit();
+        editor.apply();
 
         updateFilterUI();
     }
