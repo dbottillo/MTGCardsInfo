@@ -128,7 +128,7 @@
         - better navigation menu
     </string>
     <string name="action_release_note">Release Note</string>
-    <string name="action_fill_decks">Create random decks</string>
+    <string name="action_fill_decks" translatable="false">Create random decks</string>
     <string name="empty_cards">No cards available with the current filters.</string>
 
     <string-array name="header_title_flavor" translatable="false">
