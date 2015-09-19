@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.MTGCard;
@@ -319,8 +320,8 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setVisibility(View.GONE);
 
         startCardLoader();
+        LOG.e("card image: "+cardImage);
         Picasso.with(getActivity()).load(card.getImage()).into(cardImage, new Callback() {
-
             @Override
             public void onSuccess() {
                 cardImage.setVisibility(View.VISIBLE);
@@ -404,7 +405,7 @@ public class MTGCardFragment extends DBFragment {
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline) {
                 cardConnector.removeCard(card);
-                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVED, card.getId() + "");
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVE, card.getId() + "");
             } else {
                 cardConnector.saveCard(card);
                 TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");

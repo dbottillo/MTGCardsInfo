@@ -20,14 +20,6 @@
         <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
     </style>
 
-    <style name="FabButton">
-        <item name="android:layout_width">@dimen/fab_button_size</item>
-        <item name="android:layout_height">@dimen/fab_button_size</item>
-        <item name="android:background">@drawable/bg_fab_button</item>
-        <item name="android:elevation">@dimen/fab_button_elevation</item>
-        <item name="android:stateListAnimator">@anim/fab_button_anim</item>
-    </style>
-
     <style name="PopupMenu.Example" parent="@android:style/Widget.PopupMenu">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>
     </style>

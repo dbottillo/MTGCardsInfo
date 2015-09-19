@@ -36,6 +36,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     int multiVerseId;
     int idSet;
     String setName;
+    int quantity = 1;
+    boolean sideboard = false;
 
     public static final int WHITE = 0;
     public static final int BLUE = 1;
@@ -241,6 +243,47 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return card;
     }
 
+    public ContentValues createContentValue() {
+        ContentValues values = new ContentValues();
+        boolean isASplit = false;
+        values.put(CardEntry.COLUMN_NAME_NAME, name);
+        values.put(CardEntry.COLUMN_NAME_TYPE, type);
+        values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
+        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
+        if (colors.size() > 0) {
+            String col = "";
+            for (int k = 0; k < colors.size(); k++) {
+                String color = mapStringColor(colors.get(k));
+                col += color;
+                if (k < colors.size() - 1) {
+                    col += ",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_COLORS, col);
+        }
+        if (types.size() > 0){
+            String typ = "";
+            for (int k = 0; k < types.size(); k++) {
+                typ += types.get(k);
+                if (k < types.size() - 1) {
+                    typ += ",";
+                }
+            }
+            values.put(CardEntry.COLUMN_NAME_TYPES, typ);
+        }
+        values.put(CardEntry.COLUMN_NAME_MANACOST, manaCost);
+        values.put(CardEntry.COLUMN_NAME_RARITY, rarity);
+        values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, multiVerseId);
+        values.put(CardEntry.COLUMN_NAME_POWER, power);
+        values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
+        values.put(CardEntry.COLUMN_NAME_TEXT, text);
+        values.put(CardEntry.COLUMN_NAME_CMC, cmc);
+        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isMultiColor);
+        values.put(CardEntry.COLUMN_NAME_LAND, isALand);
+        values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
+        return values;
+    }
+
     /*public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
         MTGCard card = new MTGCard(id);
         card.setName(jsonObject.getString("name"));
@@ -320,6 +363,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return -1;
     }
 
+    private static String mapStringColor(int color) {
+        if (color == BLACK) return "Black";
+        if (color == BLUE) return "Blue";
+        if (color == WHITE) return "White";
+        if (color == RED) return "Red";
+        if (color == GREEN) return "Green";
+        return "";
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -346,6 +398,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
         dest.writeString(setName);
+        dest.writeInt(quantity);
+        dest.writeInt(sideboard ? 1 : 0);
     }
 
     private void readFromParcel(Parcel in) {
@@ -368,6 +422,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         multiVerseId = in.readInt();
         idSet = in.readInt();
         setName = in.readString();
+        quantity = in.readInt();
+        sideboard = in.readInt() == 1;
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -528,6 +584,22 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public void setIdSet(int idSet) {
         this.idSet = idSet;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public boolean isSideboard() {
+        return sideboard;
+    }
+
+    public void setSideboard(boolean sideboard) {
+        this.sideboard = sideboard;
     }
 
     public String toString() {

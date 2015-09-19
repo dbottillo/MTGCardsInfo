@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
     android:id="@+id/life_counter_container"
@@ -33,15 +34,18 @@
         style="@style/MTGProgressBar"
         android:id="@+id/progress" />
 
-    <Button
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/new_player"
-        style="@style/FabButton"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="15dp"
-        android:text="+" />
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/plus"
+        android:tint="@android:color/white"
+        myapp:borderWidth="0dp"
+        myapp:elevation="4dp"
+        myapp:pressedTranslationZ="8dp"/>
 
 </RelativeLayout>
