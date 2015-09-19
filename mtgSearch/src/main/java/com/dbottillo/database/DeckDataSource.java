@@ -83,14 +83,16 @@ public final class DeckDataSource {
         deckCursor.close();
 
         // need to load cards now
-        Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
+        //select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
+        //Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
+        Cursor cursor = database.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Deck newDeck = new Deck(cursor.getInt(cursor.getColumnIndex(COLUMN_DECK_ID)));
             for (Deck deck : decks) {
-                if (deck.getId() == newDeck.getId()) {
-                    deck.addNumberOfCards(cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY)));
+                if (deck.getId() == cursor.getInt(1)) {
+                    //deck.addNumberOfCards(cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY)));
+                    deck.setNumberOfCards(cursor.getInt(0));
                     break;
                 }
             }
