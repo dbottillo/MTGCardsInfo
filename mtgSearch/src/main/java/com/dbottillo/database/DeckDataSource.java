@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.helper.LOG;
 import com.dbottillo.resources.Deck;
 import com.dbottillo.resources.MTGCard;
 
@@ -131,6 +130,10 @@ public final class DeckDataSource {
             cardsCursor.close();
             return;
         }
+        addCardToDeckWithoutCheck(deckId, card, quantity, side);
+    }
+
+    public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity, boolean side){
         CardDataSource.saveCard(database, card);
         ContentValues values = new ContentValues();
         values.put(COLUMN_CARD_ID, card.getMultiVerseId());
@@ -168,5 +171,11 @@ public final class DeckDataSource {
         String[] args = new String[]{deck.getId() + ""};
         database.rawQuery("DELETE FROM deck_card where deck_id=? ", args).moveToFirst();
         database.rawQuery("DELETE FROM decks where _id=? ", args).moveToFirst();
+    }
+
+
+    public void deleteAllDecks() {
+        database.rawQuery("DELETE FROM deck_card", null).moveToFirst();
+        database.rawQuery("DELETE FROM decks", null).moveToFirst();
     }
 }

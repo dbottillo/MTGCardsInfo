@@ -22,6 +22,7 @@ import com.dbottillo.decks.DecksFragment;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
+import com.dbottillo.helper.CreateDecksAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterFragment;
 import com.dbottillo.saved.SavedFragment;
@@ -227,6 +228,9 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             new CreateDBAsyncTask(this, packageName).execute();
 
         } else if (menuItem.getItemId() == 101) {
+            new CreateDecksAsyncTask(this.getApplicationContext()).execute();
+
+        } else if (menuItem.getItemId() == 102) {
             throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawers();
