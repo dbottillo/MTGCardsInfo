@@ -2,52 +2,27 @@ package com.dbottillo.base;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
-import com.dbottillo.dialog.AboutFragment;
-import com.dbottillo.dialog.GoToPremiumFragment;
-import com.dbottillo.dialog.PriceInfoFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.util.MaterialWrapper;
 
-import static android.net.Uri.*;
+import static android.net.Uri.parse;
 
 public abstract class DBActivity extends AppCompatActivity {
-
-    public enum DBDialog {
-        ABOUT("about"),
-        PRICE_INFO("price"),
-        PREMIUM("premium");
-
-        private String tag;
-
-        DBDialog(String tag) {
-            this.tag = tag;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public DBFragment getFragment() {
-            if (this == ABOUT) return new AboutFragment();
-            if (this == PRICE_INFO) return new PriceInfoFragment();
-            return new GoToPremiumFragment();
-        }
-
-    }
 
     public SharedPreferences getSharedPreferences() {
         return getSharedPreferences(DBFragment.PREFS_NAME, 0);
@@ -86,15 +61,15 @@ public abstract class DBActivity extends AppCompatActivity {
         return app;
     }
 
-    /*public void openDialog(DBDialog dbDialog) {
+    public void openDialog(String tag, DialogFragment fragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment prev = getSupportFragmentManager().findFragmentByTag(dbDialog.getTag());
+        Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
         if (prev != null) {
             ft.remove(prev);
         }
         ft.addToBackStack(null);
-        dbDialog.getFragment().show(ft, dbDialog.getTag());
-    }*/
+        fragment.show(ft, tag);
+    }
 
     protected void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -113,7 +88,7 @@ public abstract class DBActivity extends AppCompatActivity {
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     }
 
-    public void setToolbarColor(int color){
+    public void setToolbarColor(int color) {
         toolbar.setBackgroundColor(color);
     }
 
@@ -126,7 +101,7 @@ public abstract class DBActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void openRateTheApp(){
+    public void openRateTheApp() {
         String packageName = getPackageName();
         if (BuildConfig.DEBUG) {
             packageName = "com.dbottillo.mtgsearchfree";
@@ -143,5 +118,27 @@ public abstract class DBActivity extends AppCompatActivity {
             startActivity(goToPlay);
         }
         TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google");
+    }
+
+    protected void checkReleaseNote() {
+        int versionCode = getSharedPreferences().getInt("VersionCode", -1);
+        if (versionCode != BuildConfig.VERSION_CODE) {
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
+            showReleaseNote();
+        }
+    }
+
+    protected void showReleaseNote() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.release_note_title)
+                .setMessage(R.string.release_note_text)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getSharedPreferences().edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply();
+                    }
+
+                })
+                .show();
     }
 }

@@ -17,9 +17,11 @@ public class TrackingHelper {
     public static final String UA_CATEGORY_SEARCH = "search";
     public static final String UA_CATEGORY_FILTER = "filter";
     public static final String UA_CATEGORY_FAVOURITE = "favourite";
+    public static final String UA_CATEGORY_DECK = "deck";
     public static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
     public static final String UA_CATEGORY_ERROR = "error";
     public static final String UA_CATEGORY_APP_WIDGET = "appWidget";
+    public static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 
     public static final String UA_ACTION_CLICK = "click";
     public static final String UA_ACTION_TOGGLE = "toggle";
@@ -27,11 +29,16 @@ public class TrackingHelper {
     public static final String UA_ACTION_SELECT = "select";
     public static final String UA_ACTION_OPEN = "open";
     public static final String UA_ACTION_CLOSE = "close";
-    public static final String UA_ACTION_SAVED = "saved";
+    public static final String UA_ACTION_SAVE = "saved";
+    public static final String UA_ACTION_ADD_CARD = "addCard";
     public static final String UA_ACTION_UNSAVED = "unsaved";
     public static final String UA_ACTION_LUCKY = "lucky";
     public static final String UA_ACTION_RATE = "rate";
+    public static final String UA_ACTION_DELETE = "delete";
     public static final String UA_ACTION_EXTERNAL_LINK= "externalLink";
+    public static final String UA_ACTION_ONE_MORE= "oneMore";
+    public static final String UA_ACTION_REMOVE_ONE = "removeOne";
+    public static final String UA_ACTION_REMOVE_ALL = "removeALL";
 
     private static TrackingHelper instance;
 

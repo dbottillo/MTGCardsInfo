@@ -1,12 +1,15 @@
 package com.dbottillo.base;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +18,11 @@ import android.widget.TextView;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.cards.CardLuckyActivity;
+import com.dbottillo.decks.DecksFragment;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
+import com.dbottillo.helper.CreateDecksAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterFragment;
 import com.dbottillo.saved.SavedFragment;
@@ -50,6 +55,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 getSlidingPanel().setPanelHeight(0);
             }
         }
+
+        checkReleaseNote();
 
     }
 
@@ -120,7 +127,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
         if (BuildConfig.DEBUG) {
             navigationView.getMenu().add(0, 100, Menu.NONE, getString(R.string.action_create_db));
-            navigationView.getMenu().add(0, 101, Menu.NONE, getString(R.string.action_crash));
+            navigationView.getMenu().add(0, 101, Menu.NONE, getString(R.string.action_fill_decks));
+            navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_crash));
         }
 
         headerTitle = (TextView) findViewById(R.id.drawer_header_title);
@@ -186,37 +194,44 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
-        if (!menuItem.isChecked()) {
-            menuItem.setChecked(true);
+        DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
+            changeFragment(new MainFragment(), "main", false);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
 
-            if (menuItem.getItemId() == R.id.drawer_home) {
-                changeFragment(new MainFragment(), "main", false);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
+        } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
+            changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_saved) {
-                changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {
+            changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_life_counter) {
-                changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
+            changeFragment(DecksFragment.newInstance(), "decks", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == R.id.drawer_rate) {
-                openRateTheApp();
+        } else if (menuItem.getItemId() == R.id.drawer_rate) {
+            openRateTheApp();
 
-            } else if (menuItem.getItemId() == R.id.drawer_about) {
-                changeFragment(new AboutFragment(), "about_fragment", true);
-                AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+        } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
+            changeFragment(new AboutFragment(), "about_fragment", true);
+            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
-            } else if (menuItem.getItemId() == 100) {
+        } else if (menuItem.getItemId() == R.id.drawer_release_note) {
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
+            showReleaseNote();
 
-                // NB: WARNING, FOR RECREATE DATABASE
-                String packageName = getApplication().getPackageName();
-                new CreateDBAsyncTask(this, packageName).execute();
+        } else if (menuItem.getItemId() == 100) {
+            // NB: WARNING, FOR RECREATE DATABASE
+            String packageName = getApplication().getPackageName();
+            new CreateDBAsyncTask(this, packageName).execute();
 
-            } else if (menuItem.getItemId() == 101) {
-                throw new RuntimeException("This is a crash");
-            }
+        } else if (menuItem.getItemId() == 101) {
+            new CreateDecksAsyncTask(this.getApplicationContext()).execute();
+
+        } else if (menuItem.getItemId() == 102) {
+            throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawers();
         return true;
@@ -228,7 +243,11 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             mDrawerLayout.closeDrawer(GravityCompat.START);
             return;
         }
-        boolean isMainFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container) instanceof MainFragment;
+        DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (currentFragment.onBackPressed()) {
+            return;
+        }
+        boolean isMainFragment = currentFragment instanceof MainFragment;
         if (!isMainFragment) {
             changeFragment(new MainFragment(), "main", false);
             for (int i = 0; i < navigationView.getMenu().size(); i++) {

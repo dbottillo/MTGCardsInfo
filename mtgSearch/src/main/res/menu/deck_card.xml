@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.dbottillo.base.MainActivity">
+
+    <item
+        android:id="@+id/action_add_one_more"
+        android:title="@string/action_add_one_more"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_remove_one"
+        android:title="@string/action_remove_one"
+        app:showAsAction="always"
+        android:orderInCategory="101" />
+
+    <item
+        android:id="@+id/action_remove_all"
+        android:title="@string/action_remove_all"
+        app:showAsAction="always"
+        android:orderInCategory="101" />
+</menu>

@@ -3,6 +3,7 @@ package com.dbottillo.cards;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -11,37 +12,44 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.util.UIUtil;
 
 import java.util.ArrayList;
 
-public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChangeListener {
+public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     public static final String CARDS = "cards";
     public static final String POSITION = "position";
-    public static final String SET_NAME = "set_name";
+    public static final String TITLE = "set_name";
+    public static final String DECK = "deck";
 
     private ViewPager viewPager;
     private ArrayList<MTGCard> cards;
     private CardsPagerAdapter adapter;
 
     private int position;
+    private boolean deck = false;
     PagerTabStrip pagerTabStrip;
 
     MenuItem actionImage;
+    FloatingActionButton addToDeck;
 
-    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String setName) {
+
+    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String title, boolean deck) {
         MTGCardsFragment fragment = new MTGCardsFragment();
         Bundle args = new Bundle();
         args.putParcelableArrayList(CARDS, cards);
         args.putInt(POSITION, position);
-        args.putString(SET_NAME, setName);
+        args.putString(TITLE, title);
+        args.putBoolean(DECK, deck);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,21 +64,33 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         position = getArguments().getInt(POSITION);
         cards = getArguments().getParcelableArrayList(CARDS);
         viewPager = (ViewPager) rootView.findViewById(R.id.pager);
-
-        adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.setCards(cards);
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(position);
-
-        viewPager.setOnPageChangeListener(this);
-
-        setActionBarTitle(getArguments().getString(SET_NAME));
-        setHasOptionsMenu(true);
+        deck = getArguments().getBoolean(DECK);
 
         pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+
+        viewPager.addOnPageChangeListener(this);
+
+        adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
+        adapter.setCards(cards);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(position);
+
+        addToDeck = (FloatingActionButton) rootView.findViewById(R.id.card_add_to_deck);
+        addToDeck.setOnClickListener(this);
+        RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) addToDeck.getLayoutParams();
+        if (isPortrait) {
+            par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+        } else {
+            par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+            par.rightMargin = UIUtil.dpToPx(getActivity(), 16);
+        }
+        addToDeck.setLayoutParams(par);
+
+        setActionBarTitle(getArguments().getString(TITLE));
+        setHasOptionsMenu(true);
 
         return rootView;
     }
@@ -83,7 +103,13 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+        if (positionOffset != 0.0) {
+            if (positionOffset < 0.5) {
+                setFabScale(1.0f - positionOffset);
+            } else {
+                setFabScale(positionOffset);
+            }
+        }
     }
 
     @Override
@@ -93,7 +119,15 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     @Override
     public void onPageScrollStateChanged(int state) {
+        if (state == ViewPager.SCROLL_STATE_IDLE) {
+            setFabScale(1.0f);
+        }
 
+    }
+
+    private void setFabScale(float value) {
+        addToDeck.setScaleX(value);
+        addToDeck.setScaleY(value);
     }
 
     private void refreshColor(int pos) {
@@ -166,5 +200,11 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
     public ArrayList<MTGCard> getCards() {
         return cards;
+    }
+
+    @Override
+    public void onClick(View v) {
+        MTGCard card = cards.get(viewPager.getCurrentItem());
+        getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
     }
 }

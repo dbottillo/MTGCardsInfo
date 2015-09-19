@@ -77,12 +77,13 @@
     <string name="dice_close">Remove dices</string>
     <string name="empty_saved">You don\'t have any favourite cards yet, use the star button on the card page to add it as a favourite.</string>
     <string name="empty_search">No cards found with that term, why don\'t you try something else??</string>
+    <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
     <string name="loading">Loading…</string>
     <string name="price_error">Error retrieving price</string>
     <string name="price_info">The card price is provided from the website: https://github.com/bedoherty/MagicTCGPriceAPI and requires an internet connection. \n\nThe price is just an indication of the real price, MTG Cards Info is not responsible for the use of this value and it doesn\'t ensure any accuracy of this information.</string>
-    <string name="price_info_title">Price card</string>
+    <string name="add_to_deck_title">Add to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
     <string name="menu_fullscreen_image" translatable="false">Full screen</string>
@@ -96,6 +97,39 @@
     <string name="action_rate">Rate the app</string>
     <string name="share_app">Share App</string>
     <string name="libraries">Libraries</string>
+    <string name="action_decks">Decks</string>
+    <string name="new_deck_hint">Insert name deck</string>
+    <string name="Save">Save</string>
+    <string name="sideboard" translatable="false">Sideboard</string>
+    <string name="deck_header_creatures">Creatures</string>
+    <string name="deck_header_instant_sorceries">Instant and Sorceries</string>
+    <string name="deck_header_other">Other</string>
+    <string name="deck_header_lands">Lands</string>
+    <string name="deck_header_sideboard">Sideboard</string>
+    <string name="action_add_one_more">Add one more</string>
+    <string name="action_remove_one">Remove one</string>
+    <string name="action_remove_all">Remove all</string>
+    <string name="deck_subtitle">%1s cards</string>
+    <string name="deck_delete_title">Delete deck</string>
+    <string name="deck_delete_text">There are cards in this deck. Are you sure?</string>
+    <string name="deck_delete_confirmation">Delete</string>
+    <string name="new_deck_quantity_hint">How many (max 30)</string>
+    <string name="deck_choose">Choose deck</string>
+    <string name="deck_choose_quantity">Choose quantity</string>
+    <string name="deck_new">New deck</string>
+    <string name="deck_specify">Specify</string>
+    <string name="release_note_title">What\'s new</string>
+    <string name="ok">Ok</string>
+    <string name="release_note_text">
+        <b>Version 2.5.0:</b> \n
+        - NEW: now you can create decks! :) \n\n
+        <b>Version 2.2.0:</b> \n
+        - NEW: Magic Origins \n
+        - better navigation menu
+    </string>
+    <string name="action_release_note">Release Note</string>
+    <string name="action_fill_decks">Create random decks</string>
+    <string name="empty_cards">No cards available with the current filters.</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
