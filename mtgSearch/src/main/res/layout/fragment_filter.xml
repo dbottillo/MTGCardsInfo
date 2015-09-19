@@ -1,50 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="false"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/filter_draggable"
         android:layout_width="match_parent"
         android:layout_height="@dimen/collapsedHeight"
-        android:id="@+id/filter_draggable"
         android:background="@color/color_primary_dark">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/filter_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
             android:layout_toLeftOf="@+id/arrow_filter"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/filter" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="15dp"
-                android:layout_height="match_parent"
-                android:lines="1"
-                android:textSize="18sp"
-                android:gravity="center"
-                android:textColor="#FFF"
-                android:id="@+id/filter_text" />
-
-        </LinearLayout>
+            android:drawableLeft="@drawable/filter"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            tools:text="WUBRG - AL - CURM" />
 
         <ImageView
+            android:id="@+id/arrow_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/arrow_filter"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:padding="10dp"
             android:layout_gravity="center_vertical"
+            android:padding="10dp"
             android:src="@drawable/arrow_up" />
 
 
@@ -53,146 +41,146 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/white"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/white">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:layout_marginBottom="@dimen/margin_divisor_filter"
-            android:layout_marginTop="@dimen/margin_divisor_filter">
+            android:layout_marginTop="@dimen/margin_divisor_filter"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
 
             <ToggleButton
                 android:id="@+id/toggle_white"
-                android:layout_toLeftOf="@+id/toggle_blue"
                 android:layout_width="@dimen/filter_toggle_size"
                 android:layout_height="@dimen/filter_toggle_size"
+                android:layout_toLeftOf="@+id/toggle_blue"
+                android:onClick="onToggleClicked"
                 android:textColor="@drawable/toggle_text_color"
-                android:textOn="@string/mtg_color_white"
                 android:textOff="@string/mtg_color_white"
-                android:onClick="onToggleClicked" />
+                android:textOn="@string/mtg_color_white" />
 
             <ToggleButton
                 android:id="@id/toggle_blue"
-                android:layout_toLeftOf="@+id/toggle_black"
                 android:layout_width="@dimen/filter_toggle_size"
                 android:layout_height="@dimen/filter_toggle_size"
+                android:layout_toLeftOf="@+id/toggle_black"
+                android:onClick="onToggleClicked"
                 android:textColor="@drawable/toggle_text_color"
-                android:textOn="@string/mtg_color_blue"
                 android:textOff="@string/mtg_color_blue"
-                android:onClick="onToggleClicked" />
+                android:textOn="@string/mtg_color_blue" />
 
             <ToggleButton
                 android:id="@+id/toggle_black"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:layout_width="@dimen/filter_toggle_size"
                 android:layout_height="@dimen/filter_toggle_size"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="onToggleClicked"
                 android:textColor="@drawable/toggle_text_color"
-                android:textOn="@string/mtg_color_black"
                 android:textOff="@string/mtg_color_black"
-                android:onClick="onToggleClicked" />
+                android:textOn="@string/mtg_color_black" />
 
             <ToggleButton
                 android:id="@+id/toggle_red"
                 android:layout_width="@dimen/filter_toggle_size"
                 android:layout_height="@dimen/filter_toggle_size"
                 android:layout_toRightOf="@+id/toggle_black"
+                android:onClick="onToggleClicked"
                 android:textColor="@drawable/toggle_text_color"
-                android:textOn="@string/mtg_color_red"
                 android:textOff="@string/mtg_color_red"
-                android:onClick="onToggleClicked" />
+                android:textOn="@string/mtg_color_red" />
 
             <ToggleButton
                 android:id="@+id/toggle_green"
-                android:layout_toRightOf="@id/toggle_red"
                 android:layout_width="@dimen/filter_toggle_size"
                 android:layout_height="@dimen/filter_toggle_size"
+                android:layout_toRightOf="@id/toggle_red"
+                android:onClick="onToggleClicked"
                 android:textColor="@drawable/toggle_text_color"
-                android:textOn="@string/mtg_color_green"
                 android:textOff="@string/mtg_color_green"
-                android:onClick="onToggleClicked" />
+                android:textOn="@string/mtg_color_green" />
 
             <LinearLayout
-                android:layout_below="@+id/toggle_black"
                 android:id="@+id/filter_artifact_land"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/toggle_white"
                 android:layout_alignRight="@+id/toggle_green"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_below="@+id/toggle_black">
 
                 <ToggleButton
                     android:id="@+id/toggle_artifact"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
                     android:textColor="@drawable/toggle_text_color"
-                    android:textOn="@string/mtg_type_artifact"
                     android:textOff="@string/mtg_type_artifact"
-                    android:onClick="onToggleClicked" />
+                    android:textOn="@string/mtg_type_artifact" />
 
                 <ToggleButton
                     android:id="@+id/toggle_land"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:textColor="@drawable/toggle_text_color"
                     android:layout_height="wrap_content"
-                    android:textOn="@string/mtg_type_land"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
+                    android:textColor="@drawable/toggle_text_color"
                     android:textOff="@string/mtg_type_land"
-                    android:onClick="onToggleClicked" />
+                    android:textOn="@string/mtg_type_land" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/filter_artifact_land"
                 android:layout_alignLeft="@+id/toggle_white"
                 android:layout_alignRight="@+id/toggle_green"
+                android:layout_below="@+id/filter_artifact_land"
                 android:weightSum="4">
 
                 <ToggleButton
                     android:id="@+id/toggle_common"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="@dimen/filter_toggle_size"
-                    android:textOn="@string/mtg_common"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
                     android:textColor="@drawable/toggle_text_color"
                     android:textOff="@string/mtg_common"
-                    android:onClick="onToggleClicked" />
+                    android:textOn="@string/mtg_common" />
 
                 <ToggleButton
                     android:id="@+id/toggle_uncommon"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="@dimen/filter_toggle_size"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
                     android:textColor="@drawable/toggle_text_color"
-                    android:textOn="@string/mtg_uncommon"
                     android:textOff="@string/mtg_uncommon"
-                    android:onClick="onToggleClicked" />
+                    android:textOn="@string/mtg_uncommon" />
 
                 <ToggleButton
                     android:id="@+id/toggle_rare"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="@dimen/filter_toggle_size"
-                    android:textOn="@string/mtg_rare"
-                    android:textOff="@string/mtg_rare"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
                     android:textColor="@drawable/toggle_text_color"
-                    android:onClick="onToggleClicked" />
+                    android:textOff="@string/mtg_rare"
+                    android:textOn="@string/mtg_rare" />
 
                 <ToggleButton
                     android:id="@+id/toggle_myhtic"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="@dimen/filter_toggle_size"
-                    android:textOn="@string/mtg_mythic_rare"
-                    android:textOff="@string/mtg_mythic_rare"
+                    android:layout_weight="1"
+                    android:onClick="onToggleClicked"
                     android:textColor="@drawable/toggle_text_color"
-                    android:onClick="onToggleClicked" />
+                    android:textOff="@string/mtg_mythic_rare"
+                    android:textOn="@string/mtg_mythic_rare" />
 
             </LinearLayout>
 
@@ -200,12 +188,12 @@
     </ScrollView>
 
     <Button
-        android:layout_width="match_parent"
-        android:textSize="16sp"
-        android:layout_height="40dp"
         android:id="@+id/btn_apply_filter"
         style="@style/BtnGeneric"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:gravity="center"
-        android:text="@string/apply_filter" />
+        android:text="@string/apply_filter"
+        android:textSize="16sp" />
 
 </LinearLayout>
