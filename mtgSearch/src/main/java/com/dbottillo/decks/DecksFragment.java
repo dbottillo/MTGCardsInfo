@@ -69,7 +69,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         listView = (ListView) rootView.findViewById(R.id.deck_list);
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
-        emptyView.setText(R.string.empty_saved);
+        emptyView.setText(R.string.empty_decks);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
         progressBar.setVisibility(View.GONE);
