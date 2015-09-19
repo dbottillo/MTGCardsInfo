@@ -45,7 +45,11 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     protected void setupSetFragment(View rootView, boolean isASearch, String query) {
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
-        emptyView.setText(R.string.empty_search);
+        if (isASearch) {
+            emptyView.setText(R.string.empty_search);
+        } else {
+            emptyView.setText(R.string.empty_cards);
+        }
 
         this.isASearch = isASearch;
 
@@ -215,6 +219,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             }
         }
         adapter.notifyDataSetChanged();
+        emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
         listView.smoothScrollToPosition(0);
     }
 

@@ -126,7 +126,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
         if (BuildConfig.DEBUG) {
             navigationView.getMenu().add(0, 100, Menu.NONE, getString(R.string.action_create_db));
-            navigationView.getMenu().add(0, 101, Menu.NONE, getString(R.string.action_crash));
+            navigationView.getMenu().add(0, 101, Menu.NONE, getString(R.string.action_fill_decks));
+            navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_crash));
         }
 
         headerTitle = (TextView) findViewById(R.id.drawer_header_title);
