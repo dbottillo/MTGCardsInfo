@@ -236,6 +236,11 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
         for (Deck deck : data) {
             decks.add(deck);
         }
+        if (decks.size() == 0){
+            emptyView.setVisibility(View.VISIBLE);
+        } else {
+            emptyView.setVisibility(View.GONE);
+        }
         deckListAdapter.notifyDataSetChanged();
     }
 
