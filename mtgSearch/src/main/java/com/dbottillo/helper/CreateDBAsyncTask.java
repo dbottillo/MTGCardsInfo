@@ -31,6 +31,7 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
@@ -132,7 +133,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
     }
 
     private int setToLoad(String code) {
-        String stringToLoad = code.toLowerCase();
+        String stringToLoad = code.toLowerCase(Locale.getDefault());
         if (stringToLoad.equalsIgnoreCase("10e")) {
             stringToLoad = "e10";
         } else if (stringToLoad.equalsIgnoreCase("9ed")) {
@@ -157,12 +158,6 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         return context.getResources().getIdentifier(stringToLoad + "_x", "raw", packageName);
     }
 
-    private int hsSetToLoad(String code) {
-        String stringToLoad = code.toLowerCase().replace(" ", "_");
-        return context.getResources().getIdentifier(stringToLoad + "", "raw", packageName);
-    }
-
-
     private String loadFile(int file) throws Resources.NotFoundException {
         InputStream is = context.getResources().openRawResource(file);
 
@@ -174,10 +169,6 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             while ((n = reader.read(buffer)) != -1) {
                 writer.write(buffer, 0, n);
             }
-        } catch (UnsupportedEncodingException e) {
-            error = true;
-            errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
         } catch (IOException e) {
             error = true;
             errorMessage = e.getLocalizedMessage();

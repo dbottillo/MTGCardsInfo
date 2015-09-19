@@ -36,6 +36,7 @@ import com.dbottillo.resources.Player;
 import com.dbottillo.util.AnimationUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
@@ -169,7 +170,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             pickedNumber = rand.nextInt(names.length);
             boolean founded = false;
             for (Player player : players) {
-                if (player.getName().toLowerCase().contains(names[pickedNumber].toLowerCase())) {
+                if (player.getName().toLowerCase(Locale.getDefault()).contains(names[pickedNumber].toLowerCase(Locale.getDefault()))) {
                     founded = true;
                     break;
                 }

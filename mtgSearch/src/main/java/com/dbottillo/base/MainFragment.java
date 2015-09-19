@@ -250,6 +250,7 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+
     /*@Override
     public boolean onBackPressed() {
         if (setList.getHeight() > 0) {
