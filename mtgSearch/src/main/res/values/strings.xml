@@ -118,6 +118,16 @@
     <string name="deck_choose_quantity">Choose quantity</string>
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
+    <string name="release_note_title">What\'s new</string>
+    <string name="ok">Ok</string>
+    <string name="release_note_text">
+        <b>Version 2.5.0:</b> \n
+        - NEW: now you can create decks! :) \n\n
+        <b>Version 2.2.0:</b> \n
+        - NEW: Magic Origins \n
+        - better navigation menu
+    </string>
+    <string name="action_release_note">Release Note</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

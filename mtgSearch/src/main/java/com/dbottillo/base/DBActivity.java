@@ -2,6 +2,7 @@ package com.dbottillo.base;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
@@ -116,5 +118,27 @@ public abstract class DBActivity extends AppCompatActivity {
             startActivity(goToPlay);
         }
         TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google");
+    }
+
+    protected void checkReleaseNote() {
+        int versionCode = getSharedPreferences().getInt("VersionCode", -1);
+        if (versionCode != BuildConfig.VERSION_CODE) {
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
+            showReleaseNote();
+        }
+    }
+
+    protected void showReleaseNote() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.release_note_title)
+                .setMessage(R.string.release_note_text)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getSharedPreferences().edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply();
+                    }
+
+                })
+                .show();
     }
 }

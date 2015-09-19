@@ -17,7 +17,7 @@
 
         <item
             android:id="@+id/drawer_decks"
-            android:icon="@drawable/left_life_counter"
+            android:icon="@drawable/deck"
             android:title="@string/action_decks" />
         <item
             android:id="@+id/drawer_about"
@@ -27,5 +27,9 @@
             android:id="@+id/drawer_rate"
             android:icon="@drawable/left_rate"
             android:title="@string/action_rate" />
+        <item
+            android:id="@+id/drawer_release_note"
+            android:icon="@drawable/left_release_note"
+            android:title="@string/action_release_note" />
     </group>
 </menu>
