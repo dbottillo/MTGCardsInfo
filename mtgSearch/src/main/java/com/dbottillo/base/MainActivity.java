@@ -1,12 +1,15 @@
 package com.dbottillo.base;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +22,7 @@ import com.dbottillo.decks.DecksFragment;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.CreateDBAsyncTask;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.lifecounter.LifeCounterFragment;
 import com.dbottillo.saved.SavedFragment;
 import com.dbottillo.search.SearchActivity;
@@ -50,6 +54,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 getSlidingPanel().setPanelHeight(0);
             }
         }
+
+        checkReleaseNote();
 
     }
 
@@ -209,6 +215,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
             changeFragment(new AboutFragment(), "about_fragment", true);
             AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+
+        } else if (menuItem.getItemId() == R.id.drawer_release_note) {
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
+            showReleaseNote();
 
         } else if (menuItem.getItemId() == 100) {
             // NB: WARNING, FOR RECREATE DATABASE

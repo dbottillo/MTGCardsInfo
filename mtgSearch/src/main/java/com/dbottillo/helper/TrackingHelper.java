@@ -21,6 +21,7 @@ public class TrackingHelper {
     public static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
     public static final String UA_CATEGORY_ERROR = "error";
     public static final String UA_CATEGORY_APP_WIDGET = "appWidget";
+    public static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 
     public static final String UA_ACTION_CLICK = "click";
     public static final String UA_ACTION_TOGGLE = "toggle";
