@@ -149,7 +149,8 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
     description 'Run pmd'
     group 'verification'
 
-    ruleSets = ["java-basic", "java-braces", "java-design", "java-unusedcode"]
+    ruleSetFiles = files("./config/pmd/pmd-ruleset.xml")
+    ruleSets = []
     source = fileTree('src/main/java')
 
     reports {
@@ -157,3 +158,5 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
         html.enabled = true
     }
 }
+
+check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
