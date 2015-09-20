@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.helper.DBAsyncTask;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;

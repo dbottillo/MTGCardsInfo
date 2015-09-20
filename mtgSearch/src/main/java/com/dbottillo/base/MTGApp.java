@@ -12,7 +12,7 @@ import com.squareup.leakcanary.RefWatcher;
 import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
-    
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -23,8 +23,7 @@ public class MTGApp extends Application {
     }
 
     public static RefWatcher getRefWatcher(Context context) {
-        MTGApp application = (MTGApp) context.getApplicationContext();
-        return application.refWatcher;
+        return ((MTGApp) context.getApplicationContext()).refWatcher;
     }
 
     private RefWatcher refWatcher;

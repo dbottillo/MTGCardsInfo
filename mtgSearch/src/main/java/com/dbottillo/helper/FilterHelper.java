@@ -1,9 +1,10 @@
 package com.dbottillo.helper;
 
-/**
- * Created by danielebottillo on 25/02/2014.
- */
 public class FilterHelper {
+
+    private FilterHelper(){
+
+    }
 
     public static final String FILTER_WHITE = "White";
     public static final String FILTER_BLUE = "Blue";

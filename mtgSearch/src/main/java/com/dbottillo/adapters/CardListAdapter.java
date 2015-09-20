@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.dbottillo.R;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.dbottillo.base;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,14 +8,8 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Toast;
 
-import com.dbottillo.R;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.util.MaterialWrapper;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class DBFragment extends DialogFragment {
