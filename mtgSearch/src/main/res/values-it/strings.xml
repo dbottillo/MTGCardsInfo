@@ -7,14 +7,9 @@
     <string name="copyright">Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast.</string>
     <string name="send_feedback">Invia Feedback</string>
     <string name="version">Versione</string>
-    <string name="error_image">Errore nel caricare l\'immagine</string>
-    <string name="action_update_database">Aggiorna Database</string>
-    <string name="set_loaded">%s set caricato</string>
     <string name="search_hint">Cerca Magic carte</string>
     <string name="action_search">Cerca</string>
     <string name="search_result">Risultati per:</string>
-    <string name="filter">Filtro corrente</string>
-    <string name="to_premium">Accedi a premium</string>
     <string name="to_premium_btn">Apri Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">C\'é un limite di %d risultato,\n prova ad affinare la ricerca!</item>
@@ -23,7 +18,6 @@
     </plurals>
     <string name="apply_filter">Applica Filtro</string>
     <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
-    <string name="search_open_play">Se vuoi vedere tutti i risultati hai bisogno della versione premium di MTG Cards</string>
     <string name="sets_open_play">Nella versione gratis di MTG Cards solo i primi tre set sono visibili, se vuoi vedere tutti i sei hai bisogno della versione premium di MTG Cards</string>
     <string name="need_premium">Premium richiesto</string>
 
@@ -42,28 +36,18 @@
     <string name="favourite_remove">Rimuovi</string>
     <string name="favourite_add">Salva</string>
     <string name="action_saved">Preferiti</string>
-    <string name="drawer_open">drawer aperto</string>
-    <string name="drawer_close">drawer chiuso</string>
     <string name="action_home">Magic Set</string>
     <string name="action_create_db">Ricrea db</string>
     <string name="refresh">Refresh</string>
     <string name="action_life_counter">Punti Vita</string>
-    <string name="player">Giocatore %s</string>
-    <string name="add_player">Aggiungi</string>
     <string name="maximum_player">Raggiunto il numero massimo di giocatori</string>
     <string name="edit_player">Modifica nome</string>
     <string name="save">Salva</string>
     <string name="cancel">Annulla</string>
-    <string name="ah_card">A/C:</string>
     <string name="manacost_card">Costo di mana</string>
-    <string name="cost_card">Costo</string>
-    <string name="rarity_card">Rarita</string>
-    <string name="faction_card">Fazione</string>
-    <string name="mechanics_card">Meccaniche</string>
     <string name="life_reset">Azzera</string>
     <string name="life_dice">Lancia dado</string>
     <string name="menu_life_poison">Poison</string>
-    <string name="dice_close">Togli dadi</string>
     <string name="empty_saved">Non hai ancora nessuna carta preferita, usa il pulsante stella nella pagina delle carte per aggiungerle ai preferiti.</string>
     <string name="empty_search">Nessuna carta trovata con quel termine, perché non provi un\'altra ricerca?</string>
     <string name="empty_deck">Nessuna carta presente nel mazzo, usa la sezione \'Sets\' e la ricerca per aggiungere carte al mazzo.</string>
@@ -71,7 +55,6 @@
     <string name="image_retry">Carica immagine</string>
     <string name="loading">Caricamento…</string>
     <string name="price_error">Impossibile caricare il prezzo</string>
-    <string name="price_info">Il prezzo é reso disponibile dal sito web: https://github.com/bedoherty/MagicTCGPriceAPI e richiede una connessione ad internet.\n\nIl prezzo é solo indicativo del reale prezzo e MTG Cards Info non é responsabile riguardo l\'uso di questo valore e della sua veridicità.</string>
     <string name="add_to_deck_title">Aggiungi al mazzo</string>
     <string name="menu_image">Mostra immagine</string>
     <string name="action_crash">Crash!</string>
@@ -118,7 +101,6 @@
     <string name="action_release_note">Novitá</string>
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
     <string name="empty_decks">Non hai nessun mazzo ancora, usa il pulsante viola per crearne uno.</string>
-    <string name="life_counter_max">/20</string>
 
     <string name="cd_price_go">Guarda Prezzo</string>
     <string name="cd_drawer_header">Planeswalker</string>

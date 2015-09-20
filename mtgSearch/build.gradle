@@ -63,6 +63,10 @@ android {
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
+    lintOptions {
+        xmlReport false
+        lintConfig file("lint.xml")
+    }
 }
 
 task readPasswordFromInput << {
