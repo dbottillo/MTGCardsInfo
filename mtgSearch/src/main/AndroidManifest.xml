@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dbottillo">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +13,8 @@
         android:icon="@drawable/ic_launcher"
         android:fullBackupContent="true"
         android:label="@string/app_name"
-        android:theme="@style/MTGSearchTheme">
+        android:theme="@style/MTGSearchTheme"
+        tools:ignore="UnusedAttribute">
         <activity
             android:name=".base.MainActivity"
             android:label="@string/app_name">

@@ -11,13 +11,9 @@
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
     <string name="version">Version</string>
-    <string name="action_update_database">Force update</string>
-    <string name="set_loaded">%s set loaded</string>
     <string name="search_hint">Search magic card</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results for:</string>
-    <string name="filter">Current filter</string>
-    <string name="to_premium">Go to Premium</string>
     <string name="to_premium_btn">Open Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
@@ -25,7 +21,6 @@
     </plurals>
     <string name="apply_filter">Apply Filter</string>
     <string name="minimum_search">Search requires at least three letters</string>
-    <string name="search_open_play">If you want to see all the results you need to buy the full version of MTG Cards</string>
     <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
     <string name="need_premium">Need Premium</string>
 
@@ -50,14 +45,10 @@
     <string name="favourite_remove">Remove</string>
     <string name="favourite_add">Save</string>
     <string name="action_saved">Favourites</string>
-    <string name="drawer_open">drawer open</string>
-    <string name="drawer_close">drawer close</string>
     <string name="action_home">Sets</string>
     <string name="action_create_db">Create db</string>
     <string name="refresh">Refresh</string>
     <string name="action_life_counter">Life Counter</string>
-    <string name="player">Player %s</string>
-    <string name="add_player">Add</string>
     <string name="plus_one" translatable="false">+</string>
     <string name="minus_one" translatable="false">-</string>
     <string name="plus_five" translatable="false">+5</string>
@@ -66,16 +57,10 @@
     <string name="edit_player">Edit name player</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="ah_card">A/H</string>
     <string name="manacost_card">Mana cost</string>
-    <string name="cost_card">Cost</string>
-    <string name="rarity_card">Rarity</string>
-    <string name="faction_card">Faction</string>
-    <string name="mechanics_card">Mechanics</string>
     <string name="life_reset">Reset</string>
     <string name="life_dice">Roll dice</string>
     <string name="menu_life_poison">Poison count</string>
-    <string name="dice_close">Remove dices</string>
     <string name="empty_saved">You don\'t have any favourite cards yet, use the star button on the card page to add it as a favourite.</string>
     <string name="empty_search">No cards found with that term, why don\'t you try something else??</string>
     <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
@@ -83,7 +68,6 @@
     <string name="image_retry">Load image</string>
     <string name="loading">Loading…</string>
     <string name="price_error">Error retrieving price</string>
-    <string name="price_info">The card price is provided from the website: https://github.com/bedoherty/MagicTCGPriceAPI and requires an internet connection. \n\nThe price is just an indication of the real price, MTG Cards Info is not responsible for the use of this value and it doesn\'t ensure any accuracy of this information.</string>
     <string name="add_to_deck_title">Add to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
@@ -132,7 +116,6 @@
     <string name="action_fill_decks" translatable="false">Create random decks</string>
     <string name="empty_cards">No cards available with the current filters.</string>
     <string name="empty_decks">You don\'t have any decks yet, use the plus button to create a new one.</string>
-    <string name="life_counter_max">/20</string>
 
     <string name="cd_price_go">See price</string>
     <string name="cd_drawer_header">Planeswalker</string>
