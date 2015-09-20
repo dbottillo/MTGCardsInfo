@@ -63,7 +63,7 @@ public class LifeCounterAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final PlayerHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_life_counter, null);
+            convertView = inflater.inflate(R.layout.row_life_counter, parent, false);
             holder = new PlayerHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);

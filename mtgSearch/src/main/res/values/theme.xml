@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MTGSearchTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+    <style name="MTGBasicTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
-        <item name="android:statusBarColor">#0076c0</item>
 
         <item name="android:windowBackground">@color/main_bg</item>
         <item name="android:actionMenuTextColor">@color/white</item>
@@ -21,6 +19,8 @@
 
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
     </style>
+
+    <style name="MTGSearchTheme" parent="MTGBasicTheme" />
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>

@@ -56,7 +56,7 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
 
         LinearLayout cardContainer = (LinearLayout) v.findViewById(R.id.libraries_container);
         for (int i = 0; i < librariesName.length; i++) {
-            View libraryView = inflater.inflate(R.layout.row_library, null);
+            View libraryView = View.inflate(getContext(), R.layout.row_library, null);
             TextView title = (TextView) libraryView.findViewById(R.id.library_name);
             title.setText(librariesName[i]);
             TextView author = (TextView) libraryView.findViewById(R.id.library_author);

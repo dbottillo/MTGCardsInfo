@@ -63,7 +63,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         listView = (ListView) rootView.findViewById(R.id.card_list);
 
         if (isASearch) {
-            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, null);
+            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, listView, false);
             TextView searchQueryText = (TextView) header.findViewById(R.id.search_query);
             searchQueryText.setText(query);
             listView.addHeaderView(header);
@@ -148,7 +148,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         }
         populateCardsWithFilter();
         if (result.size() == CardsDatabaseHelper.LIMIT) {
-            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
+            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
             listView.addFooterView(footer);

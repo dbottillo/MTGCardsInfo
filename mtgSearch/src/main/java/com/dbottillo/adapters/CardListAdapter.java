@@ -48,7 +48,7 @@ public class CardListAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         final CardViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_card, null);
+            convertView = inflater.inflate(R.layout.row_card, parent, false);
             holder = new CardViewHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);

@@ -18,7 +18,8 @@
     <string name="to_premium_btn">Apri Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">C\'é un limite di %d risultato,\n prova ad affinare la ricerca!</item>
-        <item quantity="other">C\'é un limite di %d risultati,\n prova ad affinare la ricerca!</item>i
+        <item quantity="other">C\'é un limite di %d risultati,\n prova ad affinare la ricerca!</item>
+        i
     </plurals>
     <string name="apply_filter">Applica Filtro</string>
     <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
@@ -95,6 +96,7 @@
     <string name="action_add_one_more">Aggiungi un\'altra</string>
     <string name="action_remove_one">Rimuovi una</string>
     <string name="action_remove_all">Rimuovi tutte</string>
+
     <string name="deck_subtitle">%1s carte</string>
     <string name="deck_delete_title">Cancellazione mazzo</string>
     <string name="deck_delete_text">Ci sono carte in questo mazzo. Sei sicuro?</string>
@@ -117,5 +119,20 @@
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
     <string name="empty_decks">Non hai nessun mazzo ancora, usa il pulsante viola per crearne uno.</string>
     <string name="life_counter_max">/20</string>
+
+    <string name="cd_price_go">Guarda Prezzo</string>
+    <string name="cd_drawer_header">Planeswalker</string>
+    <string name="cd_card_image">Immagine Carta</string>
+    <string name="cd_card_image_loader">Immagine Carta Caricamento</string>
+    <string name="cd_filter">Filtri</string>
+    <string name="cd_set_arrow">Sets</string>
+    <string name="cd_cards_sort">Ordinamento carte</string>
+    <string name="cd_again">Ancora</string>
+    <string name="cd_more_options">Altre opzioni</string>
+    <string name="cd_deck_icon">Icona mazzo</string>
+    <string name="cd_delete_deck">Cancella mazzo</string>
+    <string name="cd_library_icon">Icona libreria</string>
+    <string name="cd_edit">Modifica</string>
+    <string name="cd_remove">Rimuovi</string>
 
 </resources>
