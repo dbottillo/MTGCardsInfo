@@ -1,15 +1,12 @@
 package com.dbottillo.base;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -110,10 +107,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             @Override
             public void onDrawerStateChanged(int newState) {
                 super.onDrawerStateChanged(newState);
-                if (newState == DrawerLayout.STATE_SETTLING) {
-                    if (!mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-                        updateHeaderView();
-                    }
+                if (newState == DrawerLayout.STATE_SETTLING && !mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    updateHeaderView();
                 }
             }
         };

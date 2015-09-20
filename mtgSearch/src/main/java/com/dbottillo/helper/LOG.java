@@ -6,6 +6,10 @@ import com.dbottillo.BuildConfig;
 
 public class LOG {
 
+    private LOG(){
+
+    }
+
     private static final String TAG = "MTG_TAG";
 
     public static void d(String message) {

@@ -125,11 +125,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     public String getPageTrack() {
         return "deck/" + deck.getName();
     }

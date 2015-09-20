@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/main_bg"
     tools:context="com.dbottillo.base.MainFragment">
 
     <ListView

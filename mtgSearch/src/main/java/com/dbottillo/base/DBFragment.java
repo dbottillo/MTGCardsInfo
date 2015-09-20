@@ -1,6 +1,5 @@
 package com.dbottillo.base;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,14 +8,8 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Toast;
 
-import com.dbottillo.R;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.util.MaterialWrapper;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class DBFragment extends DialogFragment {
@@ -27,13 +20,13 @@ public abstract class DBFragment extends DialogFragment {
     public static final String PREF_TWO_HG_ENABLED = "two_hg";
     public static final String PREF_SORT_WUBRG = "sort_wubrg";
 
-    Toolbar toolbar;
-
+    private DBActivity activity;
     protected boolean isPortrait;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        this.activity = (DBActivity) activity;
         Resources res = activity.getResources();
         isPortrait = res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
     }
@@ -48,21 +41,22 @@ public abstract class DBFragment extends DialogFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
+        RefWatcher refWatcher = MTGApp.getRefWatcher(activity);
         refWatcher.watch(this);
     }
 
     public SharedPreferences getSharedPreferences() {
-        return getActivity().getSharedPreferences(PREFS_NAME, 0);
+        return activity.getSharedPreferences(PREFS_NAME, 0);
     }
 
     protected void setActionBarTitle(String title) {
-        DBActivity act = (DBActivity) getActivity();
-        act.getSupportActionBar().setTitle(title);
+        if (activity.getSupportActionBar() != null) {
+            activity.getSupportActionBar().setTitle(title);
+        }
     }
 
     protected void openPlayStore() {
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
+        TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
         String appPackageName = "com.dbottillo.mtgsearch";
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
@@ -75,46 +69,18 @@ public abstract class DBFragment extends DialogFragment {
     public void onResume() {
         super.onResume();
         if (getPageTrack() != null) {
-            TrackingHelper.getInstance(getActivity()).trackPage(getPageTrack());
-        }
-    }
-
-    protected void setupToolbar(int title) {
-        if (getView() != null) {
-            setupToolbar(getView(), title);
-        }
-    }
-
-    protected void setupToolbar(View view, int title) {
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setTitle(title);
-
-        toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "bla bla", Toast.LENGTH_SHORT).show();
-            }
-        });
-        MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
-        AppCompatActivity appCompactActivity = (AppCompatActivity) getActivity();
-        appCompactActivity.setSupportActionBar(toolbar);
-        if (appCompactActivity.getSupportActionBar() != null) {
-            appCompactActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            appCompactActivity.getSupportActionBar().setHomeButtonEnabled(true);
+            TrackingHelper.getInstance(activity).trackPage(getPageTrack());
         }
     }
 
     public abstract String getPageTrack();
 
     public MTGApp getApp() {
-        if (getActivity() != null) {
-            return ((DBActivity) getActivity()).getApp();
-        }
-        return null;
+        return activity.getApp();
     }
 
     protected DBActivity getDBActivity() {
-        return (DBActivity) getActivity();
+        return activity;
     }
 
     public boolean onBackPressed() {

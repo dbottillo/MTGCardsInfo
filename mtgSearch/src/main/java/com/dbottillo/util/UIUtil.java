@@ -7,6 +7,10 @@ import android.view.ViewGroup;
 
 public class UIUtil {
 
+    private UIUtil() {
+
+    }
+
     public static int dpToPx(Context context, int value) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
     }

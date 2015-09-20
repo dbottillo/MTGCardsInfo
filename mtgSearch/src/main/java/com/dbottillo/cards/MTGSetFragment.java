@@ -63,7 +63,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         listView = (ListView) rootView.findViewById(R.id.card_list);
 
         if (isASearch) {
-            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, null);
+            View header = LayoutInflater.from(getActivity()).inflate(R.layout.search_header, listView, false);
             TextView searchQueryText = (TextView) header.findViewById(R.id.search_query);
             searchQueryText.setText(query);
             listView.addHeaderView(header);
@@ -81,7 +81,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         super.onStart();
 
         if (currentTask != null) {
-            currentTask.attach(getActivity(), taskListener);
+            currentTask.attach(taskListener);
         }
     }
 
@@ -96,7 +96,9 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     @Override
     public String getPageTrack() {
-        if (isASearch) return "/search";
+        if (isASearch) {
+            return "/search";
+        }
         return "/set/" + gameSet.getCode();
     }
 /*
@@ -118,7 +120,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
     private DBAsyncTask.DBAsyncTaskListener taskListener = new DBAsyncTask.DBAsyncTaskListener() {
         @Override
         public void onTaskFinished(int type, ArrayList<?> objects) {
-            taskFinished(type, objects);
+            taskFinished(objects);
         }
 
         @Override
@@ -129,16 +131,16 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     protected void loadSet(MTGSet set) {
         this.gameSet = set;
-        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
+        currentTask = new DBAsyncTask(getActivity().getApplicationContext(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
         currentTask.execute(gameSet.getId() + "");
     }
 
     protected void loadSearch() {
-        currentTask = new DBAsyncTask(getActivity(), taskListener, DBAsyncTask.TASK_SEARCH);
+        currentTask = new DBAsyncTask(getActivity().getApplicationContext(), taskListener, DBAsyncTask.TASK_SEARCH);
         currentTask.execute(query);
     }
 
-    public void taskFinished(int type, ArrayList<?> result) {
+    public void taskFinished(ArrayList<?> result) {
         if (getActivity() == null) {
             return;
         }
@@ -148,9 +150,9 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         }
         populateCardsWithFilter();
         if (result.size() == CardsDatabaseHelper.LIMIT) {
-            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, null);
+            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            moreResult.setText(getString(R.string.search_limit, CardsDatabaseHelper.LIMIT));
+            moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
             listView.addFooterView(footer);
         }
         result.clear();
@@ -164,40 +166,51 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         SharedPreferences sharedPreferences = getSharedPreferences();
         for (MTGCard card : gameSet.getCards()) {
             boolean toAdd = false;
-            if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true))
+            if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true))
+            }
+            if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true))
+            }
+            if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true))
+            }
+            if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
                 toAdd = true;
-            if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true))
+            }
+            if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
                 toAdd = true;
-
-            if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true))
+            }
+            if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
                 toAdd = true;
-            if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true))
+            }
+            if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
                 toAdd = true;
-
+            }
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
                 toAdd = false;
+            }
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
                 toAdd = false;
+            }
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
                 toAdd = false;
+            }
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true))
+                    !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
                 toAdd = false;
+            }
 
             if (!toAdd && card.isAnEldrazi()) {
                 toAdd = true;
             }
 
-            if (toAdd) cards.add(card);
+            if (toAdd) {
+                cards.add(card);
+            }
 
             boolean wubrgSort = getSharedPreferences().getBoolean(PREF_SORT_WUBRG, true);
             if (wubrgSort) {
@@ -239,10 +252,11 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         }
     }
 
-
     @Override
     public void onCardSelected(MTGCard card, int position) {
-        if (isASearch) position--;
+        if (isASearch) {
+            position--;
+        }
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }

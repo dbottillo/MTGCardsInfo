@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public final class CardContract {
 
-    public CardContract() {
+    private CardContract() {
     }
 
     /* Inner class that defines the table contents */

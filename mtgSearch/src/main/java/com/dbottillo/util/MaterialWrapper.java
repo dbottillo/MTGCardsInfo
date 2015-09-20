@@ -8,6 +8,10 @@ import android.view.View;
 
 public class MaterialWrapper {
 
+    private MaterialWrapper() {
+
+    }
+
     public static void setElevation(View view, float value) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             view.setElevation(value);

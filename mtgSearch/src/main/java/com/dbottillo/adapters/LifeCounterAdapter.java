@@ -63,7 +63,7 @@ public class LifeCounterAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final PlayerHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_life_counter, null);
+            convertView = inflater.inflate(R.layout.row_life_counter, parent, false);
             holder = new PlayerHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);
@@ -162,14 +162,22 @@ public class LifeCounterAdapter extends BaseAdapter {
 
     private int getColorOfPosition(int position) {
         int mod = position % 5;
-        if (mod == 0) return context.getResources().getColor(R.color.player_1);
-        if (mod == 1) return context.getResources().getColor(R.color.player_2);
-        if (mod == 2) return context.getResources().getColor(R.color.player_3);
-        if (mod == 3) return context.getResources().getColor(R.color.player_4);
+        if (mod == 0) {
+            return context.getResources().getColor(R.color.player_1);
+        }
+        if (mod == 1){
+            return context.getResources().getColor(R.color.player_2);
+        }
+        if (mod == 2) {
+            return context.getResources().getColor(R.color.player_3);
+        }
+        if (mod == 3) {
+            return context.getResources().getColor(R.color.player_4);
+        }
         return context.getResources().getColor(R.color.player_5);
     }
 
-    class PlayerHolder {
+    static class PlayerHolder {
         CardView card;
         TextView name;
         TextView life;

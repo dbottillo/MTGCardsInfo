@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public final class SetContract {
 
-    public SetContract() {
+    private SetContract() {
     }
 
     /* Inner class that defines the table contents */

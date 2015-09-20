@@ -48,7 +48,7 @@ public class GameSetAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final SetHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_set, null);
+            convertView = inflater.inflate(R.layout.row_set, parent, false);
             holder = new SetHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);
@@ -64,7 +64,7 @@ public class GameSetAdapter extends BaseAdapter {
         return convertView;
     }
 
-    class SetHolder {
+    static class SetHolder {
         TextView name;
 
         SetHolder(View row) {

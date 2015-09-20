@@ -6,7 +6,7 @@ import com.dbottillo.resources.MTGCard;
 
 public final class CardDataSource {
 
-    public CardDataSource() {
+    private CardDataSource() {
     }
 
     public static long saveCard(SQLiteDatabase database, MTGCard card) {
