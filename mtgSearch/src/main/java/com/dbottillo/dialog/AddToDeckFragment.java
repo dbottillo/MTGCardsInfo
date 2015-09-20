@@ -58,7 +58,7 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         deckName = (EditText) v.findViewById(R.id.new_deck_name);
         cardQuantityInputLayout = (TextInputLayout) v.findViewById(R.id.new_deck_quantity_input_layout);
         cardQuantity = (EditText) v.findViewById(R.id.new_deck_quantity);
-        cardQuantity.setFilters(new InputFilter[]{ new InputFilterMinMax(1,30)});
+        cardQuantity.setFilters(new InputFilter[]{new InputFilterMinMax(1, 30)});
 
         v.findViewById(R.id.add_to_deck_save).setOnClickListener(this);
 
@@ -131,7 +131,7 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             decksChoose[i] = deck.getName();
             i++;
         }
-        decksChoose[decks.size()+1] = getString(R.string.deck_new);
+        decksChoose[decks.size() + 1] = getString(R.string.deck_new);
         final ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), R.layout.add_to_deck_spinner_item, decksChoose);
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item);
         chooseDeck.setAdapter(adapter);
@@ -155,10 +155,10 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         int quantity = -1;
-        if (chooseQuantity.getVisibility() == View.VISIBLE && chooseQuantity.getSelectedItemPosition() > 0){
+        if (chooseQuantity.getVisibility() == View.VISIBLE && chooseQuantity.getSelectedItemPosition() > 0) {
             quantity = Integer.parseInt(quantityChoose[chooseQuantity.getSelectedItemPosition()]);
         }
-        if (chooseQuantity.getVisibility() == View.GONE && cardQuantity.getText().length() > 0){
+        if (chooseQuantity.getVisibility() == View.GONE && cardQuantity.getText().length() > 0) {
             quantity = Integer.parseInt(cardQuantity.getText().toString());
         }
         if (quantity > -1) {
@@ -200,7 +200,7 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         };
         thread.start();
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity+" - new");
+        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - new");
     }
 
     private class LoadDecks extends AsyncTask<Void, Void, ArrayList<Deck>> {
@@ -225,7 +225,7 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         }
     }
 
-    public class InputFilterMinMax implements InputFilter {
+    public static class InputFilterMinMax implements InputFilter {
 
         private int min, max;
 
@@ -238,9 +238,12 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
             try {
                 int input = Integer.parseInt(dest.toString() + source.toString());
-                if (isInRange(min, max, input))
+                if (isInRange(min, max, input)) {
                     return null;
-            } catch (NumberFormatException nfe) { }
+                }
+            } catch (NumberFormatException ignored) {
+                return "";
+            }
             return "";
         }
 

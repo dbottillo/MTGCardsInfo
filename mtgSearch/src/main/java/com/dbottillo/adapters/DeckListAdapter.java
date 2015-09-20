@@ -77,7 +77,7 @@ public class DeckListAdapter extends BaseAdapter {
         return convertView;
     }
 
-    class DeckHolder {
+    static class DeckHolder {
         View parent;
         TextView name;
         TextView number;

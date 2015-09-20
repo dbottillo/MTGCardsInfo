@@ -64,7 +64,7 @@ public class GameSetAdapter extends BaseAdapter {
         return convertView;
     }
 
-    class SetHolder {
+    static class SetHolder {
         TextView name;
 
         SetHolder(View row) {

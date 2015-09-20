@@ -16,17 +16,13 @@ public final class DeckDataSource {
     private SQLiteDatabase database;
     private CardsInfoDbHelper dbHelper;
 
-    public DeckDataSource() {
-    }
-
     public static final String TABLE_DECKS = "decks";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_COLOR = "color";
     public static final String COLUMN_NAME_ARCHIVED = "archived";
 
-    private String[] allColumnsDecks = {COLUMN_ID, COLUMN_NAME, COLUMN_COLOR,
-            COLUMN_COLOR, COLUMN_NAME_ARCHIVED};
+    //private String[] allColumnsDecks = {COLUMN_ID, COLUMN_NAME, COLUMN_COLOR, COLUMN_COLOR, COLUMN_NAME_ARCHIVED};
 
     public static final String TABLE_DECK_CARD = "deck_card";
     public static final String COLUMN_DECK_ID = "deck_id";
@@ -34,8 +30,7 @@ public final class DeckDataSource {
     public static final String COLUMN_QUANTITY = "quantity";
     public static final String COLUMN_SIDE = "side";
 
-    private String[] allColumnsDeckCard = {COLUMN_ID, COLUMN_DECK_ID, COLUMN_CARD_ID,
-            COLUMN_QUANTITY, COLUMN_SIDE};
+    //private String[] allColumnsDeckCard = {COLUMN_ID, COLUMN_DECK_ID, COLUMN_CARD_ID, COLUMN_QUANTITY, COLUMN_SIDE};
 
     protected static final String CREATE_DECKS_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_DECKS + "(" + COLUMN_ID
@@ -133,7 +128,7 @@ public final class DeckDataSource {
         addCardToDeckWithoutCheck(deckId, card, quantity, side);
     }
 
-    public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity, boolean side){
+    public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity, boolean side) {
         CardDataSource.saveCard(database, card);
         ContentValues values = new ContentValues();
         values.put(COLUMN_CARD_ID, card.getMultiVerseId());

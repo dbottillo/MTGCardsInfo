@@ -120,7 +120,7 @@ public class MTGCardFragment extends DBFragment {
                     }
                     widthAvailable = mainContainer.getWidth() - paddingCard * 2;
                     if (isLandscape) {
-                        widthAvailable = (mainContainer.getWidth() / 2) - paddingCard * 2;
+                        widthAvailable = mainContainer.getWidth() / 2 - paddingCard * 2;
                     }
                     heightAvailable = mainContainer.getHeight() - paddingCard;
 /*                    if (!isLandscape) {
@@ -320,7 +320,7 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setVisibility(View.GONE);
 
         startCardLoader();
-        LOG.e("card image: "+cardImage);
+        LOG.e("card image: " + cardImage);
         Picasso.with(getActivity()).load(card.getImage()).into(cardImage, new Callback() {
             @Override
             public void onSuccess() {
@@ -342,7 +342,9 @@ public class MTGCardFragment extends DBFragment {
     }
 
     private boolean isNetworkAvailable() {
-        if (getActivity() == null) return false;
+        if (getActivity() == null) {
+            return false;
+        }
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();

@@ -88,7 +88,6 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         } else if (i == R.id.toggle_myhtic) {
             editor.putBoolean(FilterHelper.FILTER_MYHTIC, on);
             label = "mythic";
-        } else {
         }
 
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_TOGGLE, label);

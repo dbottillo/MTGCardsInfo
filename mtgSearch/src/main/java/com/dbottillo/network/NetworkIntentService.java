@@ -12,12 +12,7 @@ import com.dbottillo.resources.TCGPrice;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -76,44 +71,44 @@ public class NetworkIntentService extends IntentService {
             boolean isLink = false;
             while (event != XmlPullParser.END_DOCUMENT) {
                 String name = myparser.getName();
-                switch (event) {
-                    case XmlPullParser.START_TAG:
-                        isHiPrice = false;
-                        isLowPrice = false;
-                        isAvgPrice = false;
-                        isLink = false;
-                        if (name.equals("hiprice")) {
-                            isHiPrice = true;
-                        }
-                        if (name.equals("avgprice")) {
-                            isAvgPrice = true;
-                        }
-                        if (name.equals("lowprice")) {
-                            isLowPrice = true;
-                        }
-                        if (name.equals("link")) {
-                            isLink = true;
-                        }
-                        break;
-                    case XmlPullParser.TEXT:
-                        if (isHiPrice) {
-                            tcgPrice.setHiPrice(myparser.getText());
-                        }
-                        if (isLowPrice) {
-                            tcgPrice.setLowprice(myparser.getText());
-                        }
-                        if (isAvgPrice) {
-                            tcgPrice.setAvgPrice(myparser.getText());
-                        }
-                        if (isLink) {
-                            tcgPrice.setLink(myparser.getText());
-                        }
-                    case XmlPullParser.END_TAG:
-                        isHiPrice = false;
-                        isLowPrice = false;
-                        isAvgPrice = false;
-                        isLink = false;
-                        break;
+                if (event == XmlPullParser.START_TAG) {
+                    isHiPrice = false;
+                    isLowPrice = false;
+                    isAvgPrice = false;
+                    isLink = false;
+                    if (name.equals("hiprice")) {
+                        isHiPrice = true;
+                    }
+                    if (name.equals("avgprice")) {
+                        isAvgPrice = true;
+                    }
+                    if (name.equals("lowprice")) {
+                        isLowPrice = true;
+                    }
+                    if (name.equals("link")) {
+                        isLink = true;
+                    }
+
+                } else if (event == XmlPullParser.TEXT) {
+                    if (isHiPrice) {
+                        tcgPrice.setHiPrice(myparser.getText());
+                    }
+                    if (isLowPrice) {
+                        tcgPrice.setLowprice(myparser.getText());
+                    }
+                    if (isAvgPrice) {
+                        tcgPrice.setAvgPrice(myparser.getText());
+                    }
+                    if (isLink) {
+                        tcgPrice.setLink(myparser.getText());
+                    }
+
+                } else if (event == XmlPullParser.END_TAG) {
+                    isHiPrice = false;
+                    isLowPrice = false;
+                    isAvgPrice = false;
+                    isLink = false;
+
                 }
                 event = myparser.next();
             }
@@ -124,32 +119,5 @@ public class NetworkIntentService extends IntentService {
             tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
         }
         return tcgPrice;
-    }
-
-    private String getEntityAsString(InputStream responseEntity, String encoding) throws Exception {
-        String r = null;
-        InputStream istream = null;
-        Writer writer = null;
-        Reader reader = null;
-        try {
-            // Stream length could be greater than the response Content-Length,
-            // because the stream will unzip content transparently
-            reader = new BufferedReader(new InputStreamReader(responseEntity, encoding == null ? "UTF-8" : encoding), 8192);
-            writer = new StringWriter();
-            int l;
-            char[] buf = new char[8192];
-            while ((l = reader.read(buf)) != -1) {
-                writer.write(buf, 0, l);
-            }
-            r = writer.toString();
-        } finally {
-            if (writer != null)
-                writer.close();
-            if (reader != null)
-                reader.close();
-            if (istream != null)
-                istream.close();
-        }
-        return r;
     }
 }

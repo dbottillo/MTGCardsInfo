@@ -46,16 +46,14 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
     private int type;
 
     CardsDatabaseHelper mDbHelper;
-    DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type) {
         this.listener = listener;
         this.type = type;
         this.mDbHelper = new CardsDatabaseHelper(context);
-        this.db40Helper = DB40Helper.getInstance(context);
     }
 
-    public void attach(Context context, DBAsyncTaskListener listener) {
+    public void attach(DBAsyncTaskListener listener) {
         this.listener = listener;
     }
 
@@ -90,33 +88,33 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
             cursor.close();
 
         } else if (type == TASK_SAVED) {
-            db40Helper.openDb();
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_SAVE_CARD) {
-            db40Helper.openDb();
-            db40Helper.storeCard((MTGCard) params[0]);
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            DB40Helper.storeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_REMOVE_CARD) {
-            db40Helper.openDb();
-            db40Helper.removeCard((MTGCard) params[0]);
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            DB40Helper.removeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_PLAYER) {
-            ArrayList<Player> players = db40Helper.getPlayers();
+            ArrayList<Player> players = DB40Helper.getPlayers();
             for (Player player : players) {
                 result.add(player);
             }
