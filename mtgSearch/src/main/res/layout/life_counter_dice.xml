@@ -36,7 +36,7 @@
 
     <TextView
         android:textSize="20sp"
-        android:text="/20"
+        android:text="@string/life_counter_max"
         android:layout_toRightOf="@+id/player_result"
         android:layout_alignBaseline="@+id/player_result"
         android:textColor="@color/action_bar"
