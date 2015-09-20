@@ -35,17 +35,15 @@
     <color name="action_bar">#39627E</color>
     <color name="main">#2C4E6B</color>
     <color name="sub_main">#294259</color>
-    <color name="icon">#005288</color>
 
     <color name="white">#FFF</color>
     <color name="grey">#F2F2F2</color>
     <color name="light_grey">#999</color>
     <color name="dark_grey">#555</color>
-    <color name="base_pressed">#DDD</color>
     <color name="black_a5">#26000000</color>
 
     <color name="black_30">#4d000000</color>
-    <color name="black_50">#b3000000</color>
+    <!--<color name="black_50">#b3000000</color>-->
 
     <color name="mtg_white">#a5a504</color>
     <color name="mtg_blue">#00a8ff</color>
@@ -60,16 +58,10 @@
     <color name="uncommon">#888</color>
     <color name="rare">#BD9723</color>
     <color name="mythic">#D46805</color>
-    <color name="left_drawer_bg">@color/color_primary_dark</color>
-    <color name="left_menu_item_bg">@color/white</color>
-    <color name="left_menu_item_bg_pressed">#e1f5ff</color>
-    <color name="left_drawer_divisor">@color/white</color>
-    <color name="divisor">#CCC</color>
     <color name="btn_grey">#F8F8F8</color>
     <color name="btn_border_grey">#D4CFCF</color>
     <color name="life_counter_green">#23B152</color>
     <color name="life_counter_red">#FF0000</color>
-    <color name="life_counter_middle">#B17023</color>
 
     <color name="player_1">#716BBE</color>
     <color name="player_2">#FF9900</color>

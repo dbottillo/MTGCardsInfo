@@ -36,7 +36,6 @@
         <item name="popupTheme">@style/popupNew</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="colorControlNormal">@color/white</item>
-        <item name="android:colorControlNormal">@color/white</item>
     </style>
 
     <style name="popupNew" parent="ThemeOverlay.AppCompat.Light">

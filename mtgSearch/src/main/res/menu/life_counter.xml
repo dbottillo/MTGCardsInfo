@@ -8,7 +8,8 @@
         android:icon="@drawable/ic_reset"
         android:title="@string/life_reset"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
 
     <item
         android:id="@+id/action_dice"

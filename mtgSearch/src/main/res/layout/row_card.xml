@@ -82,5 +82,6 @@
         android:background="@android:color/transparent"
         android:paddingRight="8dp"
         android:paddingLeft="8dp"
-        android:src="@drawable/ic_more_vert_black_24dp" />
+        android:src="@drawable/ic_more_vert_black_24dp"
+        android:contentDescription="@string/cd_more_options" />
 </LinearLayout>

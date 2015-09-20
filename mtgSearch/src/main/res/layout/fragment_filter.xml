@@ -33,7 +33,8 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
-            android:src="@drawable/arrow_up" />
+            android:src="@drawable/arrow_up"
+            android:contentDescription="@string/cd_filter" />
 
 
     </RelativeLayout>

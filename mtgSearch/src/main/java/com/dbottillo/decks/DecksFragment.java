@@ -102,7 +102,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
         decks = new ArrayList<>();
 
         deckListAdapter = new DeckListAdapter(getActivity(), decks, this);
-        View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
+        View footerView = inflater.inflate(R.layout.fab_button_list_footer, listView, false);
         listView.addFooterView(footerView);
         listView.setAdapter(deckListAdapter);
 

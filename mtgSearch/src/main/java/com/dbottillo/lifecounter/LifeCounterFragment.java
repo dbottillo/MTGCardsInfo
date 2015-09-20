@@ -78,7 +78,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = getSharedPreferences().getBoolean("poison", false);
 
-        View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
+        View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
         twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);

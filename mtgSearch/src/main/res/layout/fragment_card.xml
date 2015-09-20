@@ -30,6 +30,7 @@
                     android:layout_marginBottom="@dimen/padding_card_image_half"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
+                    android:contentDescription="@string/cd_card_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/image_card" />
@@ -61,6 +62,7 @@
                     android:id="@+id/image_card_loader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/cd_card_image_loader"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/card_loader" />

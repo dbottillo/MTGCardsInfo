@@ -50,7 +50,7 @@ public class DeckListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final DeckHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_deck, null);
+            convertView = inflater.inflate(R.layout.row_deck, parent, false);
             holder = new DeckHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);
