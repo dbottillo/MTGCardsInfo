@@ -11,14 +11,18 @@ import com.dbottillo.R;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.resources.MTGCard;
 
-public class CardAdapterHelper {
+public final class CardAdapterHelper {
 
-    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch){
+    private CardAdapterHelper(){
+
+    }
+
+    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch) {
         bindView(context, card, holder, isASearch, false);
     }
 
-    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck){
-        holder.name.setText((deck ? card.getQuantity()+" " : "") + card.getName());
+    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck) {
+        holder.name.setText((deck ? card.getQuantity() + " " : "") + card.getName());
 
         int rarityColor = R.color.common;
         if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {

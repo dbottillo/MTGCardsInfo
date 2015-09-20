@@ -8,7 +8,6 @@
     <TextView
         android:textColor="#222"
         android:textSize="14sp"
-        android:text="@string/search_limit"
         android:id="@+id/more_result"
         android:gravity="center"
         android:layout_height="wrap_content"

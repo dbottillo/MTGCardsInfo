@@ -7,7 +7,11 @@ import android.view.View;
 
 import com.dbottillo.view.SlidingUpPanelLayout;
 
-public class AnimationUtil {
+public final class AnimationUtil {
+
+    private AnimationUtil(){
+
+    }
 
     private static final int DEFALT_DURATION = 200;
 

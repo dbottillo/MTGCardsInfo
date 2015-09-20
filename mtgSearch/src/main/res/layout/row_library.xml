@@ -13,7 +13,8 @@
         android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:src="@drawable/library_icon"
-        android:tint="@color/color_primary" />
+        android:tint="@color/color_primary"
+        android:contentDescription="@string/cd_library_icon" />
 
     <TextView
         android:id="@+id/library_name"

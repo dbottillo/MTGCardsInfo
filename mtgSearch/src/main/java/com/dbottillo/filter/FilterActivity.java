@@ -77,7 +77,9 @@ public class FilterActivity extends DBActivity implements SlidingUpPanelLayout.P
     }
 
     protected void setRotationArrow(float angle) {
-        if (arrow == null) arrow = (ImageView) findViewById(R.id.arrow_filter);
+        if (arrow == null) {
+            arrow = (ImageView) findViewById(R.id.arrow_filter);
+        }
         arrow.setRotation(angle);
     }
 

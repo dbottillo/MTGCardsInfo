@@ -1,15 +1,8 @@
 package com.dbottillo.lifecounter;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.graphics.Outline;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
@@ -18,8 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -36,6 +27,7 @@ import com.dbottillo.resources.Player;
 import com.dbottillo.util.AnimationUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
@@ -53,8 +45,6 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     private LifeCounterAdapter lifeCounterAdapter;
     private SmoothProgressBar progressBar;
     private FloatingActionButton newPlayerButton;
-
-    private DB40Helper db40Helper;
 
     private boolean scrollDownAfterLoad = false;
 
@@ -77,7 +67,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = getSharedPreferences().getBoolean("poison", false);
 
-        View footerView = inflater.inflate(R.layout.fab_button_list_footer, null, false);
+        View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
         twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);
@@ -98,16 +88,10 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        db40Helper = DB40Helper.getInstance(activity);
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
 
-        db40Helper.openDb();
+        DB40Helper.openDb();
         progressBar.setVisibility(View.VISIBLE);
         loadPlayers();
     }
@@ -116,7 +100,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public void onStop() {
         super.onStop();
 
-        db40Helper.closeDb();
+        DB40Helper.closeDb();
     }
 
     @Override
@@ -135,7 +119,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         for (Player player : players) {
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
-            db40Helper.storePlayer(player);
+            DB40Helper.storePlayer(player);
         }
         loadPlayers();
     }
@@ -156,7 +140,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             return;
         }
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
-        db40Helper.storePlayer(player);
+        DB40Helper.storePlayer(player);
         scrollDownAfterLoad = true;
         loadPlayers();
     }
@@ -169,12 +153,14 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             pickedNumber = rand.nextInt(names.length);
             boolean founded = false;
             for (Player player : players) {
-                if (player.getName().toLowerCase().contains(names[pickedNumber].toLowerCase())) {
+                if (player.getName().toLowerCase(Locale.getDefault()).contains(names[pickedNumber].toLowerCase(Locale.getDefault()))) {
                     founded = true;
                     break;
                 }
             }
-            if (!founded) unique = true;
+            if (!founded) {
+                unique = true;
+            }
         }
         return names[pickedNumber];
     }
@@ -218,7 +204,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     @Override
     public void onRemovePlayer(int position) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
-        db40Helper.removePlayer(players.get(position));
+        DB40Helper.removePlayer(players.get(position));
         loadPlayers();
     }
 
@@ -236,7 +222,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
                 players.get(position).setName(value);
-                db40Helper.storePlayer(players.get(position));
+                DB40Helper.storePlayer(players.get(position));
                 loadPlayers();
                 TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
@@ -256,7 +242,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public void onLifeCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
-        db40Helper.storePlayer(players.get(position));
+        DB40Helper.storePlayer(players.get(position));
         loadPlayers();
     }
 
@@ -264,16 +250,9 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     public void onPoisonCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
-        db40Helper.storePlayer(players.get(position));
+        DB40Helper.storePlayer(players.get(position));
         loadPlayers();
     }
-
-    private View.OnClickListener tapOnDice = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            hideDice();
-        }
-    };
 
     private void launchDice() {
         if (diceShowed) {

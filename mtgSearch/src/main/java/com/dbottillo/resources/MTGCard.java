@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 import com.dbottillo.R;
 import com.dbottillo.database.CardContract.CardEntry;
@@ -75,21 +76,23 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         ContentValues values = new ContentValues();
 
         boolean isASplit = false;
-        if (jsonObject.getString("layout").equalsIgnoreCase("split")) isASplit = true;
+        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
+            isASplit = true;
+        }
 
         if (!isASplit) {
             values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
         } else {
             JSONArray namesJ = jsonObject.getJSONArray("names");
-            String names = "";
+            StringBuilder names = new StringBuilder();
             for (int k = 0; k < namesJ.length(); k++) {
                 String name = namesJ.getString(k);
-                names += name;
+                names.append(name);
                 if (k < namesJ.length() - 1) {
-                    names += "/";
+                    names.append("/");
                 }
             }
-            values.put(CardEntry.COLUMN_NAME_NAME, names);
+            values.put(CardEntry.COLUMN_NAME_NAME, names.toString());
         }
         values.put(CardEntry.COLUMN_NAME_TYPE, jsonObject.getString("type"));
 
@@ -102,15 +105,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
         if (jsonObject.has("colors")) {
             JSONArray colorsJ = jsonObject.getJSONArray("colors");
-            String colors = "";
+            StringBuilder colors = new StringBuilder();
             for (int k = 0; k < colorsJ.length(); k++) {
                 String color = colorsJ.getString(k);
-                colors += color;
+                colors.append(color);
                 if (k < colorsJ.length() - 1) {
-                    colors += ",";
+                    colors.append(",");
                 }
             }
-            values.put(CardEntry.COLUMN_NAME_COLORS, colors);
+            values.put(CardEntry.COLUMN_NAME_COLORS, colors.toString());
 
             if (colorsJ.length() > 1) {
                 multicolor = 1;
@@ -125,14 +128,14 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
         if (jsonObject.has("types")) {
             JSONArray typesJ = jsonObject.getJSONArray("types");
-            String types = "";
+            StringBuilder types = new StringBuilder();
             for (int k = 0; k < typesJ.length(); k++) {
-                types += typesJ.getString(k);
+                types.append(typesJ.getString(k));
                 if (k < typesJ.length() - 1) {
-                    types += ",";
+                    types.append(",");
                 }
             }
-            values.put(CardEntry.COLUMN_NAME_TYPES, types);
+            values.put(CardEntry.COLUMN_NAME_TYPES, types.toString());
         }
 
         if (jsonObject.getString("type").contains("Artifact")) {
@@ -245,31 +248,30 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public ContentValues createContentValue() {
         ContentValues values = new ContentValues();
-        boolean isASplit = false;
         values.put(CardEntry.COLUMN_NAME_NAME, name);
         values.put(CardEntry.COLUMN_NAME_TYPE, type);
         values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
         values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
         if (colors.size() > 0) {
-            String col = "";
+            StringBuilder col = new StringBuilder();
             for (int k = 0; k < colors.size(); k++) {
                 String color = mapStringColor(colors.get(k));
-                col += color;
+                col.append(color);
                 if (k < colors.size() - 1) {
-                    col += ",";
+                    col.append(",");
                 }
             }
-            values.put(CardEntry.COLUMN_NAME_COLORS, col);
+            values.put(CardEntry.COLUMN_NAME_COLORS, col.toString());
         }
-        if (types.size() > 0){
-            String typ = "";
+        if (types.size() > 0) {
+            StringBuilder typ = new StringBuilder();
             for (int k = 0; k < types.size(); k++) {
-                typ += types.get(k);
+                typ.append(types.get(k));
                 if (k < types.size() - 1) {
-                    typ += ",";
+                    typ.append(",");
                 }
             }
-            values.put(CardEntry.COLUMN_NAME_TYPES, typ);
+            values.put(CardEntry.COLUMN_NAME_TYPES, typ.toString());
         }
         values.put(CardEntry.COLUMN_NAME_MANACOST, manaCost);
         values.put(CardEntry.COLUMN_NAME_RARITY, rarity);
@@ -355,20 +357,40 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }*/
 
     private static int mapIntColor(String color) {
-        if (color.equalsIgnoreCase("Black")) return BLACK;
-        if (color.equalsIgnoreCase("Blue")) return BLUE;
-        if (color.equalsIgnoreCase("White")) return WHITE;
-        if (color.equalsIgnoreCase("Red")) return RED;
-        if (color.equalsIgnoreCase("Green")) return GREEN;
+        if (color.equalsIgnoreCase("Black")) {
+            return BLACK;
+        }
+        if (color.equalsIgnoreCase("Blue")) {
+            return BLUE;
+        }
+        if (color.equalsIgnoreCase("White")) {
+            return WHITE;
+        }
+        if (color.equalsIgnoreCase("Red")) {
+            return RED;
+        }
+        if (color.equalsIgnoreCase("Green")) {
+            return GREEN;
+        }
         return -1;
     }
 
     private static String mapStringColor(int color) {
-        if (color == BLACK) return "Black";
-        if (color == BLUE) return "Blue";
-        if (color == WHITE) return "White";
-        if (color == RED) return "Red";
-        if (color == GREEN) return "Green";
+        if (color == BLACK) {
+            return "Black";
+        }
+        if (color == BLUE) {
+            return "Blue";
+        }
+        if (color == WHITE) {
+            return "White";
+        }
+        if (color == RED) {
+            return "Red";
+        }
+        if (color == GREEN) {
+            return "Green";
+        }
         return "";
     }
 
@@ -608,32 +630,54 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public String getImage() {
         if (getMultiVerseId() > 0) {
-            //return "http://api.mtgdb.info/content/hi_res_card_images/" + getMultiVerseId() + ".jpg";
             return "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + getMultiVerseId() + "&type=card";
         }
         return null;
     }
 
     @Override
-    public int compareTo(MTGCard card) {
-        if (isALand && card.isALand) return 0;
-        if (!isALand && card.isALand) return -1;
-        if (isALand) return 1;
-        if (isAnArtifact && card.isAnArtifact) return 0;
-        if (!isAnArtifact && card.isAnArtifact) return -1;
-        if (isAnArtifact) return 1;
-        if (isMultiColor && card.isMultiColor) return 0;
-        if (!isMultiColor && card.isMultiColor) return -1;
-        if (isMultiColor) return 1;
+    public int compareTo(@NonNull MTGCard card) {
+        if (isALand && card.isALand) {
+            return 0;
+        }
+        if (!isALand && card.isALand) {
+            return -1;
+        }
+        if (isALand) {
+            return 1;
+        }
+        if (isAnArtifact && card.isAnArtifact) {
+            return 0;
+        }
+        if (!isAnArtifact && card.isAnArtifact) {
+            return -1;
+        }
+        if (isAnArtifact) {
+            return 1;
+        }
+        if (isMultiColor && card.isMultiColor) {
+            return 0;
+        }
+        if (!isMultiColor && card.isMultiColor) {
+            return -1;
+        }
+        if (isMultiColor) {
+            return 1;
+        }
 
-        if (card.getSingleColor() == this.getSingleColor()) return 0;
-        if (getSingleColor() < card.getSingleColor()) return -1;
-
+        if (card.getSingleColor() == this.getSingleColor()) {
+            return 0;
+        }
+        if (getSingleColor() < card.getSingleColor()) {
+            return -1;
+        }
         return 1;
     }
 
     private int getSingleColor() {
-        if (isMultiColor || getColors().size() == 0) return -1;
+        if (isMultiColor || getColors().size() == 0) {
+            return -1;
+        }
         return getColors().get(0);
     }
 
@@ -653,5 +697,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             mtgColor = context.getResources().getColor(R.color.mtg_green);
         }
         return mtgColor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return o != null && getClass() == o.getClass() && multiVerseId == ((MTGCard) o).multiVerseId;
+    }
+
+    @Override
+    public int hashCode() {
+        return multiVerseId;
     }
 }

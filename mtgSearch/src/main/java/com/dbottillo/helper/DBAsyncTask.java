@@ -31,9 +31,6 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
     }
 
     private boolean error = false;
-    private String errorMessage;
-    private Context context;
-    private String packageName;
 
     private DBAsyncTaskListener listener;
 
@@ -49,29 +46,19 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
     private int type;
 
     CardsDatabaseHelper mDbHelper;
-    DB40Helper db40Helper;
 
     public DBAsyncTask(Context context, DBAsyncTaskListener listener, int type) {
-        this.context = context;
         this.listener = listener;
         this.type = type;
         this.mDbHelper = new CardsDatabaseHelper(context);
-        this.db40Helper = DB40Helper.getInstance(context);
     }
 
-    public void attach(Context context, DBAsyncTaskListener listener) {
+    public void attach(DBAsyncTaskListener listener) {
         this.listener = listener;
-        this.context = context;
     }
 
     public void detach() {
-        this.context = null;
         this.listener = null;
-    }
-
-    public DBAsyncTask setPackageName(String packageName) {
-        this.packageName = packageName;
-        return this;
     }
 
     @Override
@@ -101,33 +88,33 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
             cursor.close();
 
         } else if (type == TASK_SAVED) {
-            db40Helper.openDb();
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_SAVE_CARD) {
-            db40Helper.openDb();
-            db40Helper.storeCard((MTGCard) params[0]);
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            DB40Helper.storeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_REMOVE_CARD) {
-            db40Helper.openDb();
-            db40Helper.removeCard((MTGCard) params[0]);
-            ArrayList<MTGCard> cards = db40Helper.getCards();
+            DB40Helper.openDb();
+            DB40Helper.removeCard((MTGCard) params[0]);
+            ArrayList<MTGCard> cards = DB40Helper.getCards();
             for (Object card : cards) {
                 result.add(card);
             }
-            db40Helper.closeDb();
+            DB40Helper.closeDb();
 
         } else if (type == TASK_PLAYER) {
-            ArrayList<Player> players = db40Helper.getPlayers();
+            ArrayList<Player> players = DB40Helper.getPlayers();
             for (Player player : players) {
                 result.add(player);
             }
@@ -163,145 +150,11 @@ public class DBAsyncTask extends AsyncTask<Object, Void, ArrayList<Object>> {
         return result;
     }
 
-    private int setToLoad(String code) {
-        String stringToLoad = code.toLowerCase();
-        if (stringToLoad.equalsIgnoreCase("10e")) {
-            stringToLoad = "e10";
-        } else if (stringToLoad.equalsIgnoreCase("9ed")) {
-            stringToLoad = "ed9";
-        } else if (stringToLoad.equalsIgnoreCase("5dn")) {
-            stringToLoad = "dn5";
-        } else if (stringToLoad.equalsIgnoreCase("8ed")) {
-            stringToLoad = "ed8";
-        } else if (stringToLoad.equalsIgnoreCase("7ed")) {
-            stringToLoad = "ed7";
-        } else if (stringToLoad.equalsIgnoreCase("6ed")) {
-            stringToLoad = "ed6";
-        } else if (stringToLoad.equalsIgnoreCase("5ed")) {
-            stringToLoad = "ed5";
-        } else if (stringToLoad.equalsIgnoreCase("4ed")) {
-            stringToLoad = "ed4";
-        } else if (stringToLoad.equalsIgnoreCase("3ed")) {
-            stringToLoad = "ed3";
-        } else if (stringToLoad.equalsIgnoreCase("2ed")) {
-            stringToLoad = "ed2";
-        }
-        return context.getResources().getIdentifier(stringToLoad + "_x", "raw", packageName);
-    }
-
-    /*@Override
-    protected ArrayList<Object> doInBackground(String... params) {
-        ArrayList<Object> result = new ArrayList<Object>();
-
-        int toLoad;
-        if (type == TASK_SET_LIST){
-            toLoad = R.raw.set_list;
-        }else{
-            String stringToLoad = params[0].toLowerCase();
-            if (stringToLoad.equalsIgnoreCase("10e")){
-                stringToLoad = "e10";
-            }else if (stringToLoad.equalsIgnoreCase("9ed")){
-                stringToLoad = "ed9";
-            }else if (stringToLoad.equalsIgnoreCase("5dn")){
-                stringToLoad = "dn5";
-            }else if (stringToLoad.equalsIgnoreCase("8ed")){
-                stringToLoad = "ed8";
-            }else if (stringToLoad.equalsIgnoreCase("7ed")){
-                stringToLoad = "ed7";
-            }else if (stringToLoad.equalsIgnoreCase("6ed")){
-                stringToLoad = "ed6";
-            }else if (stringToLoad.equalsIgnoreCase("5ed")){
-                stringToLoad = "ed5";
-            }else if (stringToLoad.equalsIgnoreCase("4ed")){
-                stringToLoad = "ed4";
-            }else if (stringToLoad.equalsIgnoreCase("3ed")){
-                stringToLoad = "ed3";
-            }else if (stringToLoad.equalsIgnoreCase("2ed")){
-                stringToLoad = "ed2";
-            }
-            toLoad = context.getResources().getIdentifier(stringToLoad+"_x", "raw", packageName);
-        }
-
-        String jsonString = loadFile(toLoad);
-
-        try{
-            if (type == TASK_SET_LIST){
-                JSONArray json = new JSONArray(jsonString);
-                for (int i=json.length()-1; i>=0; i--){
-                    JSONObject setJ = json.getJSONObject(i);
-                    result.add(MTGSet.createMagicSetFromJson(i, setJ));
-                }
-            }else{
-                JSONObject json = new JSONObject(jsonString);
-                JSONArray cards = json.getJSONArray("cards");
-                for (int i=0; i<cards.length(); i++){
-                    JSONObject cardJ = cards.getJSONObject(i);
-                    result.add(MTGCard.createCardFromJson(i, cardJ));
-                }
-            }
-        } catch (JSONException e) {
-            error = true;
-            errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
-        }
-
-        if (type == TASK_SINGLE_SET) {
-            Collections.sort(result, new Comparator<Object>() {
-                public int compare(Object o1, Object o2) {
-                    MTGCard card = (MTGCard) o1;
-                    MTGCard card2 = (MTGCard) o2;
-                    return card.compareTo(card2);
-                }
-            });
-        }
-
-        return result;
-    }*/
-
-    public class MTGCardComparator implements Comparator<MTGCard> {
-        @Override
-        public int compare(MTGCard o1, MTGCard o2) {
-            return 0;
-        }
-    }
-
-    private String loadFile(int file) {
-        InputStream is = context.getResources().openRawResource(file);
-
-        Writer writer = new StringWriter();
-        char[] buffer = new char[1024];
-        try {
-            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            int n;
-            while ((n = reader.read(buffer)) != -1) {
-                writer.write(buffer, 0, n);
-            }
-        } catch (UnsupportedEncodingException e) {
-            error = true;
-            errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
-        } catch (IOException e) {
-            error = true;
-            errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                error = true;
-                errorMessage = e.getLocalizedMessage();
-                e.printStackTrace();
-            }
-        }
-
-        return writer.toString();
-    }
-
     @Override
     protected void onPostExecute(ArrayList<Object> result) {
         if (listener != null) {
             if (error) {
-                listener.onTaskEndWithError(type, errorMessage);
+                listener.onTaskEndWithError(type, "error");
             } else {
                 listener.onTaskFinished(type, result);
             }
