@@ -17,9 +17,11 @@ public class LifeCounterActivity extends DBActivity {
 
         setupToolbar();
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.action_life_counter);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.action_life_counter);
+        }
 
         if (savedInstanceState == null) {
             lifeCounterFragment = LifeCounterFragment.newInstance();
@@ -44,12 +46,5 @@ public class LifeCounterActivity extends DBActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        //if (!lifeCounterFragment.onBackPressed()) {
-            super.onBackPressed();
-        //}
     }
 }

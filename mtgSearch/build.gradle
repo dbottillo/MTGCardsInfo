@@ -10,6 +10,7 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
+apply plugin: 'pmd'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -19,7 +20,7 @@ def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '22.0.1'
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         minSdkVersion 14
@@ -112,18 +113,35 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
 }
 
-/*task findbugs(type: FindBugs) {
-    ignoreFailures = false
-    effort = "default"
-    reportLevel = "medium"
-    classes = files("${project.rootDir}/app/build/intermediates/classes")
-    source = fileTree('src/main/java/')
+task findbugs(type: FindBugs, dependsOn: assembleDebug) {
+
+    description 'Run findbugs'
+    group 'verification'
+
+    classes = fileTree('build/intermediates/classes/debug/')
+    source = fileTree('src/main/java')
     classpath = files()
+
+    effort = 'max'
+
+    excludeFilter = file("./config/findbugs/exclude.xml")
+
     reports {
         xml.enabled = false
         html.enabled = true
-        html {
-            destination "$project.buildDir/findbugs/findbugs-output.html"
-        }
     }
-}*/
+}
+
+task pmd(type: Pmd, dependsOn: assembleDebug) {
+
+    description 'Run pmd'
+    group 'verification'
+
+    ruleSets = ["java-basic", "java-braces", "java-design", "java-unusedcode"]
+    source = fileTree('src/main/java')
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}

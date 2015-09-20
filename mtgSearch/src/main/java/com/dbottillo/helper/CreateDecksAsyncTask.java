@@ -15,7 +15,6 @@ import java.util.Random;
 public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     private boolean error = false;
-    private String errorMessage;
     private Context context;
 
     public CreateDecksAsyncTask(Context context) {
@@ -54,7 +53,7 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
     @Override
     protected void onPostExecute(ArrayList<Object> result) {
         if (error) {
-            Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context, "finished", Toast.LENGTH_SHORT).show();
         }

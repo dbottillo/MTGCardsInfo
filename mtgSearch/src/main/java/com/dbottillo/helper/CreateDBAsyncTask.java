@@ -27,7 +27,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
@@ -169,18 +168,12 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             while ((n = reader.read(buffer)) != -1) {
                 writer.write(buffer, 0, n);
             }
+            reader.close();
+            is.close();
         } catch (IOException e) {
             error = true;
             errorMessage = e.getLocalizedMessage();
             e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                error = true;
-                errorMessage = e.getLocalizedMessage();
-                e.printStackTrace();
-            }
         }
 
         return writer.toString();

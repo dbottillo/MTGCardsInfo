@@ -16,14 +16,11 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private static final int SECTION_TYPE = 0;
 
     private boolean mValid = true;
-    private LayoutInflater mLayoutInflater;
     private RecyclerView.Adapter mBaseAdapter;
-    private SparseArray<Section> mSections = new SparseArray<Section>();
+    private SparseArray<Section> mSections = new SparseArray<>();
 
 
     public DeckCardSectionAdapter(Context context, RecyclerView.Adapter baseAdapter) {
-
-        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mBaseAdapter = baseAdapter;
         mContext = context;
 

@@ -242,7 +242,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 mIsSlidingUp = gravity == Gravity.BOTTOM;
             }
 
-            defAttrs.recycle();
+            if (defAttrs != null) {
+                defAttrs.recycle();
+            }
 
             TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SlidingUpPanelLayout);
 
@@ -256,7 +258,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 mDragViewResId = ta.getResourceId(R.styleable.SlidingUpPanelLayout_dragView, -1);
             }
 
-            ta.recycle();
+            if (ta != null) {
+                ta.recycle();
+            }
         }
 
         final float density = context.getResources().getDisplayMetrics().density;

@@ -8,6 +8,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.diagnostic.DiagnosticToConsole;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
 
@@ -19,12 +20,10 @@ public class DB40Helper {
 
     public static final String name = "mtg_hs_database";
 
-    private ObjectContainer db;
-    private Context ctx;
+    private static ObjectContainer db;
+    private static Context ctx;
 
-    private static DB40Helper dbh;
-
-    public static DB40Helper getInstance(Context ctx) {
+   /* public static DB40Helper getInstance(Context ctx) {
         if (dbh == null) {
             dbh = new DB40Helper(ctx);
         }
@@ -34,9 +33,9 @@ public class DB40Helper {
 
     private DB40Helper(Context ctx) {
         this.ctx = ctx;
-    }
+    }*/
 
-    public synchronized boolean openDb() {
+    public static synchronized boolean openDb() {
         Log.e(TAG, "open db!");
         try {
             if (db == null || db.ext().isClosed()) {
@@ -49,12 +48,14 @@ public class DB40Helper {
         }
     }
 
-    public void closeDb() {
+    public static void closeDb() {
         Log.e(TAG, "close db!");
-        if (db != null) db.close();
+        if (db != null) {
+            db.close();
+        }
     }
 
-    private EmbeddedConfiguration dbConfig() {
+    private static EmbeddedConfiguration dbConfig() {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         configuration.common().messageLevel(3);
         configuration.common().diagnostic().addListener(new DiagnosticToConsole());
@@ -63,7 +64,7 @@ public class DB40Helper {
         return configuration;
     }
 
-    private String db4oDBFullPath(Context ctx) {
+    private static String db4oDBFullPath(Context ctx) {
         return ctx.getDir("data", 0) + "/" + name + ".db40";
     }
 
@@ -79,10 +80,12 @@ public class DB40Helper {
 
     public void commit(boolean close) {
         db.commit();
-        if (close) closeDb();
+        if (close) {
+            closeDb();
+        }
     }
 
-    public void storeCard(MTGCard card) {
+    public static void storeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -91,7 +94,7 @@ public class DB40Helper {
         Log.e(TAG, "[DBELPER] card " + card.getName() + " saved inside database");
     }
 
-    public void removeCard(MTGCard card) {
+    public static void removeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -106,7 +109,7 @@ public class DB40Helper {
         db.commit();
     }
 
-    public ArrayList<MTGCard> getCards() {
+    public static ArrayList<MTGCard> getCards() {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -118,7 +121,7 @@ public class DB40Helper {
         return cards;
     }
 
-    public synchronized boolean isCardStored(MTGCard card) {
+    public static synchronized boolean isCardStored(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -126,13 +129,13 @@ public class DB40Helper {
         return !result.isEmpty();
     }
 
-    public void storePlayer(Player player) {
+    public static void storePlayer(Player player) {
         db.store(player);
         db.commit();
         Log.e(TAG, "[DBELPER] player " + player.toString() + " saved inside database");
     }
 
-    public void removePlayer(Player player) {
+    public static void removePlayer(Player player) {
         ObjectSet<Player> result = db.queryByExample(player);
         if (result.hasNext()) {
             db.delete(result.next());
@@ -140,12 +143,16 @@ public class DB40Helper {
         }
     }
 
-    public ArrayList<Player> getPlayers() {
+    public static ArrayList<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<Player>();
         ObjectSet<Player> result = db.query(Player.class);
         while (result.hasNext()) {
             players.add(result.next());
         }
         return players;
+    }
+
+    public static void init(Context context) {
+        ctx = context;
     }
 }

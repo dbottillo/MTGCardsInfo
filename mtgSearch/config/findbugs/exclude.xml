@@ -1,0 +1,13 @@
+<FindBugsFilter>
+
+    <Match>
+        <Class name="~.*R\$.*" />
+    </Match>
+    <Match>
+        <Class name="~.*Manifest\$.*" />
+    </Match>
+    <Match>
+        <Class name="~.*SlidingUpPanelLayout\$.*" />
+    </Match>
+
+</FindBugsFilter>
