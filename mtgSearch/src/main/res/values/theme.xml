@@ -12,22 +12,7 @@
         <item name="android:actionMenuTextColor">@color/white</item>
 
         <item name="android:textColorPrimary">@android:color/white</item>
-        <!--<item name="android:windowNoTitle">true</item>
-        <item name="android:background">@android:color/black</item>
-        <item name="android:colorBackground">@android:color/black</item>
 
-        <item name="android:actionBarItemBackground">@drawable/selectable_background_example</item>
-        <item name="android:popupMenuStyle">@style/PopupMenu.Example</item>
-        <item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>
-        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Example</item>
-        <item name="android:actionDropDownStyle">@style/DropDownNav.Example</item>
-        <item name="android:actionBarStyle">@style/ActionBar.Solid.Example</item>
-        <item name="android:actionModeBackground">@drawable/cab_background_top_example</item>
-        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_example</item>
-        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Example</item>
-        <item name="android:windowContentOverlay">@null</item>-->
-
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
@@ -35,8 +20,6 @@
         <item name="textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
 
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
-
-
     </style>
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
@@ -47,9 +30,11 @@
     <style name="PopupMenu" parent="@style/Widget.AppCompat.Light.PopupMenu">
         <item name="android:background">@color/color_primary_dark</item>
     </style>
+
     <style name="myPopupMenuTextAppearanceSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
         <item name="android:textColor">@color/color_primary_dark</item>
     </style>
+
     <style name="myPopupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
         <item name="android:textColor">@color/color_primary_dark</item>
     </style>

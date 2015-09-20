@@ -8,44 +8,6 @@
         <item name="spb_speed">1.2</item>
     </style>
 
-    <style name="ActionBar.Solid.Example" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/ab_solid_example</item>
-        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_example</item>
-        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_example</item>
-        <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
-    </style>
-
-    <style name="ActionBar.Transparent.Example" parent="@android:style/Widget.Holo.ActionBar">
-        <item name="android:background">@drawable/ab_transparent_example</item>
-        <item name="android:progressBarStyle">@style/ProgressBar.Example</item>
-    </style>
-
-    <style name="PopupMenu.Example" parent="@android:style/Widget.PopupMenu">
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>
-    </style>
-
-    <style name="DropDownListView.Example" parent="@android:style/Widget.ListView.DropDown">
-        <item name="android:listSelector">@drawable/selectable_background_example</item>
-    </style>
-
-    <style name="ActionBarTabStyle.Example" parent="@android:style/Widget.ActionBar.TabView">
-        <item name="android:background">@drawable/tab_indicator_ab_example</item>
-    </style>
-
-    <style name="DropDownNav.Example" parent="@android:style/Widget.Holo.Spinner">
-        <item name="android:background">@drawable/spinner_background_ab_example</item>
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>
-        <item name="android:dropDownSelector">@drawable/selectable_background_example</item>
-    </style>
-
-    <style name="ProgressBar.Example" parent="@android:style/Widget.ProgressBar.Horizontal">
-        <item name="android:progressDrawable">@drawable/progress_horizontal_example</item>
-    </style>
-
-    <style name="ActionButton.CloseMode.Example" parent="@android:style/Widget.ActionButton.CloseMode">
-        <item name="android:background">@drawable/btn_cab_done_example</item>
-    </style>
-
     <style name="BtnLifeCounter">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@color/btn_life_counter_poison</item>
@@ -63,26 +25,6 @@
         <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">40dp</item>
     </style>
-    <!--
-        <style name="BtnLifeCounter.Life.Plus">
-            <item name="android:background">@drawable/btn_plus_counter</item>
-            <item name="android:textColor">@color/btn_plus</item>
-        </style>
-
-        <style name="BtnLifeCounter.Life.Minus">
-            <item name="android:background">@drawable/btn_minus_counter</item>
-            <item name="android:textColor">@color/btn_minus</item>
-        </style>
-
-        <style name="BtnLifeCounter.Poison.Plus">
-            <item name="android:background">@drawable/btn_plus_counter</item>
-            <item name="android:textColor">@color/btn_plus</item>
-        </style>
-
-        <style name="BtnLifeCounter.Poison.Minus">
-            <item name="android:background">@drawable/btn_minus_counter</item>
-            <item name="android:textColor">@color/btn_minus</item>
-        </style>-->
 
     <style name="BtnGeneric">
         <item name="android:background">@drawable/btn_common</item>

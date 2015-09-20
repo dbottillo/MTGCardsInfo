@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_fullscreen"
         android:title="@string/menu_fullscreen_image"
         android:orderInCategory="103"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_image"
         android:icon="@null"

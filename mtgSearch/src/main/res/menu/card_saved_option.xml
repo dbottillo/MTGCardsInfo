@@ -1,16 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dbottillo.base.MainActivity">
 
     <item
         android:id="@+id/action_add_to_deck"
-        android:title="@string/add_to_deck_title"
-        app:showAsAction="always" />
+        android:title="@string/add_to_deck_title" />
 
     <item
         android:id="@+id/action_remove"
-        android:title="@string/favourite_remove"
-        app:showAsAction="always" />
+        android:title="@string/favourite_remove" />
 
 </menu>

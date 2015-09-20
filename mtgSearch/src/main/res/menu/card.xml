@@ -7,7 +7,7 @@
         android:id="@+id/action_fav"
         android:icon="@drawable/ab_star"
         android:title="@string/favourite_add"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_share"
