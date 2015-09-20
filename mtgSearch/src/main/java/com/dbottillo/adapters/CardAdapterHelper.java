@@ -11,7 +11,11 @@ import com.dbottillo.R;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.resources.MTGCard;
 
-public class CardAdapterHelper {
+public final class CardAdapterHelper {
+
+    private CardAdapterHelper(){
+
+    }
 
     protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch) {
         bindView(context, card, holder, isASearch, false);

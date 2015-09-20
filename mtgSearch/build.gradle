@@ -11,6 +11,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
+apply plugin: 'checkstyle'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -111,6 +112,17 @@ dependencies {
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+}
+
+task checkstyle(type: Checkstyle) {
+    configFile file("./config/checkstyle/checkstyle.xml")
+    // Where my checkstyle config is...
+    configProperties.checkstyleSuppressionsPath = file("${project.rootDir}/config/quality/checkstyle/suppressions.xml").absolutePath
+    // Where is my suppressions file for checkstyle is...
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    classpath = files()
 }
 
 task findbugs(type: FindBugs, dependsOn: assembleDebug) {
