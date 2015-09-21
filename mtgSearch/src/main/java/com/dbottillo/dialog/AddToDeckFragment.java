@@ -223,7 +223,9 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         @Override
         protected void onPostExecute(ArrayList<Deck> decks) {
             super.onPostExecute(decks);
-            setupDecksSpinner(decks);
+            if (getActivity() != null) {
+                setupDecksSpinner(decks);
+            }
         }
     }
 
