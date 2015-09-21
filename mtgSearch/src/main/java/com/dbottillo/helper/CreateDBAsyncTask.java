@@ -55,8 +55,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         /*db.delete(SetEntry.TABLE_NAME, null, null);
         db.delete(CardEntry.TABLE_NAME, null, null);*/
         try {
-            int set_list = context.getResources().getIdentifier("set_list", "raw", packageName);
-            String jsonString = loadFile(set_list);
+            int setList = context.getResources().getIdentifier("set_list", "raw", packageName);
+            String jsonString = loadFile(setList);
             JSONArray json = new JSONArray(jsonString);
             for (int i = json.length() - 1; i >= 0; i--) {
 
@@ -74,7 +74,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                         JSONObject cardJ = cards.getJSONObject(k);
                         //Log.e("BBM", "cardJ "+cardJ);
 
-                        long newRowId2 = db.insert(CardContract.CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("name")));
+                        long newRowId2 = db.insert(CardContract.CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, newRowId, setJ.getString("NAME")));
                         //Log.e("MTG", "row id card"+newRowId2);
                         //result.add(MTGCard.createCardFromJson(i, cardJ));
                     }

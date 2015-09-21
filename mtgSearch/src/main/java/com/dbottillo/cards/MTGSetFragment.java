@@ -187,20 +187,20 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
                 toAdd = true;
             }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
+                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
                 toAdd = false;
             }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
+                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
                 toAdd = false;
             }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
+                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
                 toAdd = false;
             }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC) &&
-                    !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
+            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
+                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
                 toAdd = false;
             }
 

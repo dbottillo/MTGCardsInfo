@@ -55,6 +55,9 @@ android {
             debuggable true
             buildConfigField 'int', 'DATABASE_VERSION', '9'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            lintOptions {
+                abortOnError false
+            }
         }
         release {
             debuggable false
@@ -83,7 +86,7 @@ task readPasswordFromInput << {
 }
 
 /*tasks.whenTaskAdded { task ->
-    if (task.name == 'assembleHearthstoneRelease' || task.name == 'assembleMagicRelease')
+    if (task.NAME == 'assembleHearthstoneRelease' || task.NAME == 'assembleMagicRelease')
         task.dependsOn readPasswordFromInput
 }*/
 
