@@ -18,7 +18,7 @@ public final class DeckDataSource {
 
     public static final String TABLE_DECKS = "decks";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_NAME = "NAME";
+    public static final String COLUMN_NAME = "name";
     public static final String COLUMN_COLOR = "color";
     public static final String COLUMN_NAME_ARCHIVED = "archived";
 
