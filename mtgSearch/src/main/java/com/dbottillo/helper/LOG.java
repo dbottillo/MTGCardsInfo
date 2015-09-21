@@ -4,9 +4,9 @@ import android.util.Log;
 
 import com.dbottillo.BuildConfig;
 
-public class LOG {
+public final class LOG {
 
-    private LOG(){
+    private LOG() {
 
     }
 

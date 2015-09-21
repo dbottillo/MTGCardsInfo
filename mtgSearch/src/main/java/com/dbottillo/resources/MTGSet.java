@@ -39,14 +39,14 @@ public class MTGSet implements Parcelable {
     public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException {
         ContentValues values = new ContentValues();
         values.put(SetEntry.COLUMN_NAME_CODE, object.getString("code"));
-        values.put(SetEntry.COLUMN_NAME_NAME, object.getString("name"));
+        values.put(SetEntry.COLUMN_NAME_NAME, object.getString("NAME"));
         return values;
     }
 
     public static MTGSet createMagicSetFromJson(int id, JSONObject object) throws JSONException {
         MTGSet set = new MTGSet(id);
         set.setCode(object.getString("code"));
-        set.setName(object.getString("name"));
+        set.setName(object.getString("NAME"));
 
         //JSONArray cardsJ = object.getJSONArray("cards");
         //for (int i=0; i<cardsJ.length(); i++){

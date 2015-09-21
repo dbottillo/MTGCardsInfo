@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<!DOCTYPE module PUBLIC
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE module PUBLIC
     "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 
@@ -148,7 +146,7 @@ Severity: EASY
         <module name="NeedBraces">
             <!-- cannot initialize module TreeWalker - Property 'allowSingleLineIf' in module NeedBraces does not exist, please check the documentation -->
             <!-- u wot m8 -->
-            <!--<property name="allowSingleLineIf" value="TRUE" />-->
+            <!--<property NAME="allowSingleLineIf" value="TRUE" />-->
             <property name="severity" value="ignore" />
         </module>
         <module name="RightCurly">
