@@ -32,9 +32,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
+            android:contentDescription="@string/cd_filter"
             android:padding="10dp"
-            android:src="@drawable/arrow_up"
-            android:contentDescription="@string/cd_filter" />
+            android:src="@drawable/arrow_up" />
 
 
     </RelativeLayout>
@@ -112,7 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/toggle_white"
                 android:layout_alignRight="@+id/toggle_green"
-                android:layout_below="@+id/toggle_black">
+                android:layout_below="@+id/toggle_black"
+                tools:ignore="UnusedIds">
 
                 <ToggleButton
                     android:id="@+id/toggle_artifact"

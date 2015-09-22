@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/base_margin"
     android:layout_height="65dp"
+    android:layout_marginTop="@dimen/base_margin"
     android:orientation="horizontal"
     android:padding="10dp">
 
@@ -12,9 +12,10 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_centerVertical="true"
+        android:contentDescription="@string/cd_library_icon"
         android:src="@drawable/library_icon"
         android:tint="@color/color_primary"
-        android:contentDescription="@string/cd_library_icon" />
+        tools:ignore="UnusedIds" />
 
     <TextView
         android:id="@+id/library_name"
@@ -36,11 +37,11 @@
         tools:text="Square" />
 
     <View
-        android:layout_alignParentBottom="true"
-        android:background="@color/color_primary_light"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="36dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp" />
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_primary_light" />
 
 </RelativeLayout>
