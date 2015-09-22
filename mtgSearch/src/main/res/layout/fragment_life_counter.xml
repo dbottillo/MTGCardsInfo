@@ -1,38 +1,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:myapp="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/white"
-    android:id="@+id/life_counter_container"
+    android:orientation="vertical"
     tools:context="com.dbottillo.lifecounter.LifeCounterActivity">
 
     <ListView
         android:id="@+id/life_counter_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
         android:divider="@null"
         android:dividerHeight="0dp"
-        android:cacheColorHint="@android:color/transparent"
-        android:paddingTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:paddingTop="8dp" />
 
     <ScrollView
         android:id="@+id/life_counter_dice_scrolliew"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/life_counter_dice_container"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
     </ScrollView>
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        style="@style/MTGProgressBar"
-        android:id="@+id/progress" />
+        android:id="@+id/progress"
+        style="@style/MTGProgressBar" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/new_player"
@@ -46,6 +45,6 @@
         android:tint="@android:color/white"
         myapp:borderWidth="0dp"
         myapp:elevation="4dp"
-        myapp:pressedTranslationZ="8dp"/>
+        myapp:pressedTranslationZ="8dp" />
 
 </RelativeLayout>
