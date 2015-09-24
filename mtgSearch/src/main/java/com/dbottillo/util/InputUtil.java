@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.IBinder;
 import android.view.inputmethod.InputMethodManager;
 
-public class InputUtil {
+public final class InputUtil {
 
     private InputUtil() {
 

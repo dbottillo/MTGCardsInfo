@@ -1,6 +1,5 @@
 package com.dbottillo.saved;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -145,7 +144,8 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
-        } else {
+
+        } else if (menuItem.getItemId() == R.id.action_remove){
             new DBAsyncTask(getActivity(), SavedFragment.this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
         }
     }

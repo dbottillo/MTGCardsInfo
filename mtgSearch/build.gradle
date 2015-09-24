@@ -26,8 +26,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 26
-        versionName "2.5.0"
+        versionCode 28
+        versionName "2.5.5"
         applicationId "com.dbottillo.mtgsearchfree"
     }
 
@@ -53,21 +53,26 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '9'
+            buildConfigField 'int', 'DATABASE_VERSION', '10'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            lintOptions {
+                abortOnError false
+            }
         }
         release {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '9'
+            buildConfigField 'int', 'DATABASE_VERSION', '10'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
     lintOptions {
         xmlReport false
-        lintConfig file("lint.xml")
+        checkAllWarnings true
+        lintConfig file("config/lint/lint.xml")
+        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText'
     }
 }
 
@@ -83,7 +88,7 @@ task readPasswordFromInput << {
 }
 
 /*tasks.whenTaskAdded { task ->
-    if (task.name == 'assembleHearthstoneRelease' || task.name == 'assembleMagicRelease')
+    if (task.NAME == 'assembleHearthstoneRelease' || task.NAME == 'assembleMagicRelease')
         task.dependsOn readPasswordFromInput
 }*/
 
@@ -98,8 +103,8 @@ dependencies {
     compile 'com.android.support:support-v4:23.0.1'
     compile 'com.google.android.gms:play-services-analytics:7.8.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
-    compile 'com.github.castorflex.smoothprogressbar:library:0.3.3'
-    compile 'com.squareup.picasso:picasso:2.3.4'
+    compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     compile "com.android.support:appcompat-v7:23.0.1"
     compile 'com.android.support:cardview-v7:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'

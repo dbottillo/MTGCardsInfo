@@ -94,7 +94,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
                     TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ONE);
                     deckDataSource.addCardToDeck(deck.getId(), card, -1, card.isSideboard());
 
-                } else {
+                } else if (menuItem.getItemId() == R.id.action_remove_all) {
                     TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ALL);
                     deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
                 }

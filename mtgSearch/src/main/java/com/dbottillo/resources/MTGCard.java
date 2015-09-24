@@ -50,7 +50,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public static final int ONE_PLUS_POWER = -3;
 
     /*{"layout":"normal","type":"Creature â€” Elemental","types":["Creature"],"colors":["Blue"],"multiverseid":94,
-            "name":"Air Elemental","subtypes":["Elemental"],"cmc":5,"rarity":"Uncommon","artist":"Richard Thomas","power":"4",
+            "NAME":"Air Elemental","subtypes":["Elemental"],"cmc":5,"rarity":"Uncommon","artist":"Richard Thomas","power":"4",
             "toughness":"4","manaCost":"{3}{U}{U}","text":"Flying",
             "flavor":"These spirits of the air are winsome and wild and cannot be truly contained. Only marginally intelligent" +
             ", they often substitute whimsy for strategy, delighting in mischief and mayhem.","imageName":"air elemental"},
@@ -288,7 +288,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     /*public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
         MTGCard card = new MTGCard(id);
-        card.setName(jsonObject.getString("name"));
+        card.setName(jsonObject.getString("NAME"));
         card.setType(jsonObject.getString("type"));
 
         if (jsonObject.has("colors")){

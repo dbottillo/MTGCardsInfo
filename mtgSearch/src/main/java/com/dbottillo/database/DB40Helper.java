@@ -8,7 +8,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.diagnostic.DiagnosticToConsole;
-import com.dbottillo.base.MTGApp;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.Player;
 
@@ -18,7 +17,7 @@ public class DB40Helper {
 
     private static final String TAG = DB40Helper.class.getName();
 
-    public static final String name = "mtg_hs_database";
+    public static final String NAME = "mtg_hs_database";
 
     private static ObjectContainer db;
     private static Context ctx;
@@ -65,7 +64,7 @@ public class DB40Helper {
     }
 
     private static String db4oDBFullPath(Context ctx) {
-        return ctx.getDir("data", 0) + "/" + name + ".db40";
+        return ctx.getDir("data", 0) + "/" + NAME + ".db40";
     }
 
     @SuppressWarnings("rawtypes")
