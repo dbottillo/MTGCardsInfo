@@ -81,7 +81,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         }
 
         if (!isASplit) {
-            values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("NAME"));
+            values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
         } else {
             JSONArray namesJ = jsonObject.getJSONArray("names");
             StringBuilder names = new StringBuilder();
