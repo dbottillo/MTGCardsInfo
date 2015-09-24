@@ -17,8 +17,8 @@ public final class SetContract {
     protected static final String SQL_CREATE_SET_TABLE =
             "CREATE TABLE " + SetContract.SetEntry.TABLE_NAME + " ("
                     + SetContract.SetEntry._ID + " INTEGER PRIMARY KEY,"
-                    + SetContract.SetEntry.COLUMN_NAME_CODE + "text ,"
-                    + SetContract.SetEntry.COLUMN_NAME_NAME + "text )";
+                    + SetContract.SetEntry.COLUMN_NAME_CODE + " text ,"
+                    + SetContract.SetEntry.COLUMN_NAME_NAME + " text )";
 
     protected static final String SQL_DELETE_SET_TABLE =
             "DROP TABLE IF EXISTS " + SetContract.SetEntry.TABLE_NAME;
