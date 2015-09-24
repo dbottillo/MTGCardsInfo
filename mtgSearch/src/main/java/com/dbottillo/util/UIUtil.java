@@ -5,7 +5,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class UIUtil {
+public final class UIUtil {
 
     private UIUtil() {
 

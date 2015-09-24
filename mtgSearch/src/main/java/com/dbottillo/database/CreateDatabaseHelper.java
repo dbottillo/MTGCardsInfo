@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.dbottillo.helper.LOG;
+
 public class CreateDatabaseHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
@@ -16,6 +18,7 @@ public class CreateDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        LOG.e("on create");
         db.execSQL(SetContract.SQL_CREATE_SET_TABLE);
         db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
     }

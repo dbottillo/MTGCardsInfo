@@ -165,35 +165,37 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             if (chooseDeck.getVisibility() == View.VISIBLE && chooseDeck.getSelectedItemPosition() > 0) {
                 Deck deck = decks.get(chooseDeck.getSelectedItemPosition() - 1);
                 boolean side = sideboard.isChecked();
-                saveCard(quantity, deck, side);
+                saveCard(getActivity().getApplicationContext(), quantity, deck, side);
                 dismiss();
             }
             if (chooseDeck.getVisibility() == View.GONE && deckName.getText().length() > 0) {
                 boolean side = sideboard.isChecked();
-                saveCard(quantity, deckName.getText().toString(), side);
+                saveCard(getActivity().getApplicationContext(), quantity, deckName.getText().toString(), side);
                 dismiss();
             }
         }
     }
 
-    private void saveCard(final int quantity, final Deck deck, final boolean side) {
+    private void saveCard(final Context context, final int quantity, final Deck deck, final boolean side) {
         Thread thread = new Thread() {
             @Override
             public void run() {
-                DeckDataSource deckDataSource = new DeckDataSource(getActivity().getApplicationContext());
-                deckDataSource.open();
-                deckDataSource.addCardToDeck(deck.getId(), card, quantity, side);
+                if (getActivity() != null) {
+                    DeckDataSource deckDataSource = new DeckDataSource(context);
+                    deckDataSource.open();
+                    deckDataSource.addCardToDeck(deck.getId(), card, quantity, side);
+                }
             }
         };
         thread.start();
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - existing");
     }
 
-    private void saveCard(final int quantity, final String deck, final boolean side) {
+    private void saveCard(final Context context, final int quantity, final String deck, final boolean side) {
         Thread thread = new Thread() {
             @Override
             public void run() {
-                DeckDataSource deckDataSource = new DeckDataSource(getActivity().getApplicationContext());
+                DeckDataSource deckDataSource = new DeckDataSource(context);
                 deckDataSource.open();
                 deckDataSource.addCardToDeck(deck, card, quantity, side);
             }
@@ -221,7 +223,9 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         @Override
         protected void onPostExecute(ArrayList<Deck> decks) {
             super.onPostExecute(decks);
-            setupDecksSpinner(decks);
+            if (getActivity() != null) {
+                setupDecksSpinner(decks);
+            }
         }
     }
 

@@ -1,8 +1,8 @@
 package com.dbottillo.helper;
 
-public class FilterHelper {
+public final class FilterHelper {
 
-    private FilterHelper(){
+    private FilterHelper() {
 
     }
 

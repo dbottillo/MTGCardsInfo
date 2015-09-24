@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.View;
 
-public class MaterialWrapper {
+public final class MaterialWrapper {
 
     private MaterialWrapper() {
 

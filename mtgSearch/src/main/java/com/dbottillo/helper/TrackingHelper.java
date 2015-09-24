@@ -8,7 +8,7 @@ import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Logger;
 import com.google.android.gms.analytics.Tracker;
 
-public class TrackingHelper {
+public final class TrackingHelper {
 
     public static final String UA_CATEGORY_UI = "ui";
     public static final String UA_CATEGORY_POPUP = "popup";
@@ -35,8 +35,8 @@ public class TrackingHelper {
     public static final String UA_ACTION_LUCKY = "lucky";
     public static final String UA_ACTION_RATE = "rate";
     public static final String UA_ACTION_DELETE = "delete";
-    public static final String UA_ACTION_EXTERNAL_LINK= "externalLink";
-    public static final String UA_ACTION_ONE_MORE= "oneMore";
+    public static final String UA_ACTION_EXTERNAL_LINK = "externalLink";
+    public static final String UA_ACTION_ONE_MORE = "oneMore";
     public static final String UA_ACTION_REMOVE_ONE = "removeOne";
     public static final String UA_ACTION_REMOVE_ALL = "removeALL";
 

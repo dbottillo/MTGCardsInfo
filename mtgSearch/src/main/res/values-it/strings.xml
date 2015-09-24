@@ -50,7 +50,7 @@
     <string name="menu_life_poison">Poison</string>
     <string name="empty_saved">Non hai ancora nessuna carta preferita, usa il pulsante stella nella pagina delle carte per aggiungerle ai preferiti.</string>
     <string name="empty_search">Nessuna carta trovata con quel termine, perché non provi un\'altra ricerca?</string>
-    <string name="empty_deck">Nessuna carta presente nel mazzo, usa la sezione \'Sets\' e la ricerca per aggiungere carte al mazzo.</string>
+    <string name="empty_deck">Nessuna carta presente nel mazzo, usa la sezione Magic Set e la ricerca per aggiungere carte al mazzo.</string>
     <string name="error_load_image">Impossibile caricare l\'immagine al momento.</string>
     <string name="image_retry">Carica immagine</string>
     <string name="loading">Caricamento…</string>
@@ -92,11 +92,10 @@
     <string name="release_note_title">Novitá!</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
-        <b>Versione 2.5.0:</b> \n
-        - NUOVO: ora puoi creare mazzi! :) \n\n
-        <b>Versione 2.2.0:</b> \n
-        - NUOVO: Magic Origins \n
-        - migliorato menù di navigazione
+        <b>Versione 2.5:</b> \n
+        - NUOVO: Zendikar Expedition \n
+        - NUOVO: Battle for Zendikar \n
+        - NUOVO: ora puoi creare mazzi! :)
     </string>
     <string name="action_release_note">Novitá</string>
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>

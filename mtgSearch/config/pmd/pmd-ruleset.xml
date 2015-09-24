@@ -26,9 +26,9 @@
 
     <!--<rule ref="rulesets/java/android.xml">
         &lt;!&ndash; Config.LOGD deprecated in API level 4 !&ndash;&gt;
-        <exclude name="ProtectLogD" />
+        <exclude NAME="ProtectLogD" />
         &lt;!&ndash; Config.LOGV deprecated in API level 4 !&ndash;&gt;
-        <exclude name="ProtectLogV" />
+        <exclude NAME="ProtectLogV" />
     </rule>-->
     <rule ref="rulesets/java/clone.xml" />
     <rule ref="rulesets/java/finalizers.xml" />

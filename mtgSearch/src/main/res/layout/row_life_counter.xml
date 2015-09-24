@@ -22,7 +22,6 @@
             android:padding="4dp">
 
             <LinearLayout
-                android:id="@+id/row_life_counter_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -45,10 +44,10 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@android:color/transparent"
+                    android:contentDescription="@string/cd_edit"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_edit_grey"
-                    android:tint="@color/white"
-                    android:contentDescription="@string/cd_edit" />
+                    android:tint="@color/white" />
 
                 <ImageButton
                     android:id="@+id/player_remove"
@@ -56,10 +55,10 @@
                     android:layout_height="40dp"
                     android:layout_marginRight="4dp"
                     android:background="@android:color/transparent"
+                    android:contentDescription="@string/cd_remove"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_trash_grey"
-                    android:tint="@color/white"
-                    android:contentDescription="@string/cd_remove" />
+                    android:tint="@color/white" />
             </LinearLayout>
 
             <RelativeLayout
