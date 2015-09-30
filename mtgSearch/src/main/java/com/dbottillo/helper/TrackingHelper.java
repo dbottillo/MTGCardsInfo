@@ -5,7 +5,6 @@ import android.content.Context;
 import com.dbottillo.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Logger;
 import com.google.android.gms.analytics.Tracker;
 
 public final class TrackingHelper {
@@ -45,12 +44,13 @@ public final class TrackingHelper {
     private static Tracker tracker;
 
     private TrackingHelper(Context context) {
-        GoogleAnalytics.getInstance(context).getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
-        tracker = GoogleAnalytics.getInstance(context).newTracker(context.getString(R.string.analytics));
+        GoogleAnalytics analytics = GoogleAnalytics.getInstance(context);
+        // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+        tracker = analytics.newTracker(R.xml.global_tracker);
         tracker.enableAdvertisingIdCollection(true);
     }
 
-    public static TrackingHelper getInstance(Context context) {
+    public synchronized static TrackingHelper getInstance(Context context) {
         if (instance == null) {
             instance = new TrackingHelper(context);
         }
@@ -59,7 +59,7 @@ public final class TrackingHelper {
 
     public void trackPage(String page) {
         tracker.setScreenName(page);
-        tracker.send(new HitBuilders.AppViewBuilder().build());
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     public void trackEvent(String category, String action) {
