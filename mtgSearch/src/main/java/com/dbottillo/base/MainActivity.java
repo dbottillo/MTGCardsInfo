@@ -214,7 +214,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_release_note) {
-            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
+            TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
             showReleaseNote();
 
         } else if (menuItem.getItemId() == 100) {

@@ -158,7 +158,7 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
                         showGoToPremium();
                         return false;
                     }*/
-                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
+                    TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets.get(currentSetPosition).getCode());
                     SharedPreferences.Editor editor = getSharedPreferences().edit();
                     editor.putInt("setPosition", currentSetPosition);
                     editor.apply();
@@ -195,7 +195,7 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
 
     @Override
     public void onTaskFinished(int type, ArrayList<?> result) {
-        if (getActivity() == null){
+        if (getActivity() == null) {
             return;
         }
         currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
@@ -220,7 +220,7 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
                         editor.putBoolean(DBFragment.PREF_SORT_WUBRG, which == 1);
                         editor.apply();
                         updateSetFragment();
-                        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
+                        TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
                                 which == 1 ? "wubrg" : "alphabetically");
                     }
                 });
@@ -263,6 +263,6 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
     @Override
     public void onTaskEndWithError(int type, String error) {
         Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
+        TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
     }
 }

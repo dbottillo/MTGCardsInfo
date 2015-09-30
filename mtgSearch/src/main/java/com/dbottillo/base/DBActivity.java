@@ -45,7 +45,7 @@ public abstract class DBActivity extends AppCompatActivity {
         super.onResume();
 
         if (getPageTrack() != null) {
-            TrackingHelper.getInstance(this).trackPage(getPageTrack());
+            TrackingHelper.getInstance(getApplicationContext()).trackPage(getPageTrack());
         }
     }
 
@@ -117,13 +117,13 @@ public abstract class DBActivity extends AppCompatActivity {
             goToPlay.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
             startActivity(goToPlay);
         }
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google");
+        TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google");
     }
 
     protected void checkReleaseNote() {
         int versionCode = getSharedPreferences().getInt("VersionCode", -1);
         if (versionCode != BuildConfig.VERSION_CODE) {
-            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
+            TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
             showReleaseNote();
         }
     }
