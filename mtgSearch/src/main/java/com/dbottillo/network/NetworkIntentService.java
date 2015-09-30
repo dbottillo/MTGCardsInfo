@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import com.dbottillo.R;
 import com.dbottillo.helper.LOG;
@@ -21,6 +22,7 @@ public class NetworkIntentService extends IntentService {
     public static final String EXTRA_PARAMS = "NetworkIntentService.EXTRA_PARAMS";
     public static final String EXTRA_ID = "NetworkIntentService.EXTRA_ID";
     public static final String EXTRA_CARD_NAME = "NetworkIntentService.EXTRA_CARD_NAME";
+    public static final String EXTRA_SET_NAME = "NetworkIntentService.EXTRA_SET_NAME";
     public static final String REST_RESULT = "com.dbottillo.network.REST_RESULT";
     public static final String REST_URL = "com.dbottillo.network.REST_URL";
 
@@ -30,18 +32,36 @@ public class NetworkIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        TCGPrice res;
+        TCGPrice res = null;
         Bundle extras = intent.getExtras();
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
-        String cardName = params.getString(EXTRA_CARD_NAME);
+        String cardName = params.getString(EXTRA_CARD_NAME, "");
+        String setName = params.getString(EXTRA_SET_NAME, "");
         String idRequest = params.getString(EXTRA_ID);
 
-        String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
+        boolean error = false;
+
+        String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s="+setName+"&p=" + cardName;
         LOG.d("loading: " + url);
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
+            error = true;
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
+        }
+
+        if (res != null && res.getLowprice() == null && setName != null && setName.length() > 0){
+            url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
+            LOG.d("try again without set: " + url);
+            try {
+                res = doNetworkRequest(url);
+            } catch (Exception e) {
+                error = true;
+                LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
+            }
+        }
+
+        if (error){
             res = new TCGPrice();
             res.setError(getApplicationContext().getString(R.string.price_error));
         }

@@ -29,7 +29,6 @@ import android.widget.TextView;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.network.NetworkIntentService;
 import com.dbottillo.resources.MTGCard;
@@ -254,6 +253,7 @@ public class MTGCardFragment extends DBFragment {
         Bundle params = new Bundle();
         params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
         params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
+        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName().replace(" ", "%20"));
         intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
         getActivity().startService(intent);
 
@@ -320,7 +320,6 @@ public class MTGCardFragment extends DBFragment {
         cardImage.setVisibility(View.GONE);
 
         startCardLoader();
-        LOG.e("card image: " + cardImage);
         Picasso.with(getActivity()).load(card.getImage()).into(cardImage, new Callback() {
             @Override
             public void onSuccess() {
@@ -402,7 +401,7 @@ public class MTGCardFragment extends DBFragment {
             i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
             String url = "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=" + ((MTGCard) card).getMultiVerseId();
             i.putExtra(Intent.EXTRA_TEXT, url);
-            startActivity(Intent.createChooser(i, getString(R.id.share_card)));
+            startActivity(Intent.createChooser(i, getString(R.string.share_card)));
             return true;
         } else if (i1 == R.id.action_fav) {
             if (isSavedOffline) {
