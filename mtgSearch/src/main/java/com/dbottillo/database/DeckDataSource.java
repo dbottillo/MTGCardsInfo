@@ -129,7 +129,24 @@ public final class DeckDataSource {
     }
 
     public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity, boolean side) {
-        CardDataSource.saveCard(database, card);
+        Cursor current = database.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
+        if (current.getCount() > 0) {
+            // card already added
+            if (current.getCount() > 1) {
+                // there is a duplicate
+                current.moveToFirst();
+                current.moveToNext();
+                while (!current.isAfterLast()) {
+                    //LOG.e("deletingL "+current.getString(0));
+                    database.rawQuery("delete from MTGCard where _id=?", new String[]{current.getString(0)}).moveToFirst();
+                    current.moveToNext();
+                }
+            }
+        } else {
+            // need to add the card
+            CardDataSource.saveCard(database, card);
+        }
+        current.close();
         ContentValues values = new ContentValues();
         values.put(COLUMN_CARD_ID, card.getMultiVerseId());
         values.put(COLUMN_DECK_ID, deckId);

@@ -92,6 +92,9 @@
     <string name="release_note_title">Novitá!</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
+        <b>Version 2.6:</b> \n
+        - NUOVO: Il dettaglio carta ora mostra le rulings \n
+        - FIX: Mazzi con multiple uguali carte \n\n
         <b>Versione 2.5:</b> \n
         - NUOVO: Zendikar Expedition \n
         - NUOVO: Battle for Zendikar \n
@@ -116,5 +119,6 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="share_card">Condividi carta</string>
+    <string name="rulings">Rulings</string>
 
 </resources>

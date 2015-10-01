@@ -39,7 +39,7 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
                     MTGCard card = MTGCard.createCardFromCursor(cursor);
                     Random r = new Random();
                     int quantity = r.nextInt(4) + 1;
-                    LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
+                    //LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
                     deckDataSource.addCardToDeckWithoutCheck(deck, card, quantity, quantity == 1);
                     cursor.moveToNext();
                 }
