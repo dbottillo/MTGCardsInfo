@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static CardsInfoDbHelper instance;
 
@@ -31,6 +31,9 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (oldVersion == 1 && newVersion == 2) {
+            db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
+        }
     }
 
     @Override

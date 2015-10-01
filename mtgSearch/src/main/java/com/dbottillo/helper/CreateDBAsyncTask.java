@@ -51,8 +51,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         ArrayList<Object> result = new ArrayList<Object>();
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        /*db.delete(SetEntry.TABLE_NAME, null, null);
-        db.delete(CardEntry.TABLE_NAME, null, null);*/
+        db.delete(SetContract.SetEntry.TABLE_NAME, null, null);
+        db.delete(CardContract.CardEntry.TABLE_NAME, null, null);
         try {
             int setList = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(setList);
@@ -82,11 +82,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                 }
 
                 /*
-                adb shell "run-as com.dbottillo.mtgsearchfree.debug chmod 666 /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db"
-                adb pull /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db .
-
-            Danieles-MacBook-Pro:~ danielebottillo$ adb -d shell 'run-as com.dbottillo.mtgsearchfree.debug cat /data/data/com.dbottillo.mtgsearchfree.debug/databases/MTGCardsInfo.db > /sdcard/mtgsearch.db'
-            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/mtgsearch.db
+            Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/MTGCardsInfo.db
             */
             }
         } catch (JSONException e) {

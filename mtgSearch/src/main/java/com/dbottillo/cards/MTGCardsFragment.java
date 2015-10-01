@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
@@ -26,7 +27,6 @@ import java.util.ArrayList;
 
 public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
-    public static final String CARDS = "cards";
     public static final String POSITION = "position";
     public static final String TITLE = "set_name";
     public static final String DECK = "deck";
@@ -43,10 +43,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     FloatingActionButton addToDeck;
 
 
-    public static MTGCardsFragment newInstance(ArrayList<MTGCard> cards, int position, String title, boolean deck) {
+    public static MTGCardsFragment newInstance(int position, String title, boolean deck) {
         MTGCardsFragment fragment = new MTGCardsFragment();
         Bundle args = new Bundle();
-        args.putParcelableArrayList(CARDS, cards);
         args.putInt(POSITION, position);
         args.putString(TITLE, title);
         args.putBoolean(DECK, deck);
@@ -62,7 +61,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         View rootView = inflater.inflate(R.layout.fragment_cards, container, false);
 
         position = getArguments().getInt(POSITION);
-        cards = getArguments().getParcelableArrayList(CARDS);
+        cards = MTGApp.cardsToDisplay;
         viewPager = (ViewPager) rootView.findViewById(R.id.pager);
         deck = getArguments().getBoolean(DECK);
 

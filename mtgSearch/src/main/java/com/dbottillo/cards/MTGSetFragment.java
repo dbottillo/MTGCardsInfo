@@ -13,6 +13,7 @@ import com.dbottillo.R;
 import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.DBAsyncTask;
@@ -266,7 +267,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         }
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
+        MTGApp.cardsToDisplay = cards;
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, gameSet.getName());
         startActivity(cardsView);
