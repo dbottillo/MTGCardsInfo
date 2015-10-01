@@ -43,8 +43,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
         if (cardsFragment == null) {
             title = getIntent().getStringExtra(MTGCardsFragment.TITLE);
             deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
-            cardsFragment = MTGCardsFragment.newInstance(getIntent().<MTGCard>getParcelableArrayListExtra(MTGCardsFragment.CARDS),
-                    getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
+            cardsFragment = MTGCardsFragment.newInstance(getIntent().getIntExtra(MTGCardsFragment.POSITION, 0),
                     title, deck
             );
             getSupportFragmentManager().beginTransaction()
@@ -125,7 +124,6 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
 
     public void openFullScreen(int currentItem) {
         Intent fullScreen = new Intent(this, FullScreenImageActivity.class);
-        fullScreen.putExtra(MTGCardsFragment.CARDS, cardsFragment.getCards());
         fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem);
         fullScreen.putExtra(MTGCardsFragment.TITLE, title);
         fullScreen.putExtra(MTGCardsFragment.DECK, deck);

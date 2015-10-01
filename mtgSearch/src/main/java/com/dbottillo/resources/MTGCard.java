@@ -15,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
@@ -39,6 +40,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     String setName;
     int quantity = 1;
     boolean sideboard = false;
+    String layout;
+
+    private List<String> rulings;
 
     public static final int WHITE = 0;
     public static final int BLUE = 1;
@@ -46,20 +50,11 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public static final int RED = 3;
     public static final int GREEN = 4;
 
-    public static final int CONDITIONAL_POWER = -2;
-    public static final int ONE_PLUS_POWER = -3;
-
-    /*{"layout":"normal","type":"Creature â€” Elemental","types":["Creature"],"colors":["Blue"],"multiverseid":94,
-            "NAME":"Air Elemental","subtypes":["Elemental"],"cmc":5,"rarity":"Uncommon","artist":"Richard Thomas","power":"4",
-            "toughness":"4","manaCost":"{3}{U}{U}","text":"Flying",
-            "flavor":"These spirits of the air are winsome and wild and cannot be truly contained. Only marginally intelligent" +
-            ", they often substitute whimsy for strategy, delighting in mischief and mayhem.","imageName":"air elemental"},
-    */
-
     public MTGCard() {
-        this.colors = new ArrayList<Integer>();
-        this.types = new ArrayList<String>();
-        this.subTypes = new ArrayList<String>();
+        this.colors = new ArrayList<>();
+        this.types = new ArrayList<>();
+        this.subTypes = new ArrayList<>();
+        this.rulings = new ArrayList<>();
     }
 
     public MTGCard(int id) {
@@ -184,6 +179,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_LAND, land);
         values.put(CardEntry.COLUMN_NAME_ARTIFACT, artifact);
 
+        if (jsonObject.has("rulings")) {
+            JSONArray rulingsJ = jsonObject.getJSONArray("rulings");
+            values.put(CardEntry.COLUMN_NAME_RULINGS, rulingsJ.toString());
+        }
+
+        if (jsonObject.has("layout")) {
+            values.put(CardEntry.COLUMN_NAME_LAYOUT, jsonObject.getString("layout"));
+        }
+
         return values;
     }
 
@@ -243,6 +247,23 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             card.setAsEldrazi(true);
         }
 
+        String rulings = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RULINGS));
+        if (rulings != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(rulings);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject rule = jsonArray.getJSONObject(i);
+                    card.rulings.add(rule.getString("text"));
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAYOUT) != -1) {
+            card.setLayout(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAYOUT)));
+        }
+
         return card;
     }
 
@@ -283,78 +304,22 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isMultiColor);
         values.put(CardEntry.COLUMN_NAME_LAND, isALand);
         values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
+        if (rulings.size() > 0) {
+            JSONArray rules = new JSONArray();
+            for (String rule : rulings) {
+                JSONObject rulJ = new JSONObject();
+                try {
+                    rulJ.put("text", rule);
+                    rules.put(rulJ);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            values.put(CardEntry.COLUMN_NAME_RULINGS, rules.toString());
+        }
         return values;
     }
-
-    /*public static MTGCard createCardFromJson(int id, JSONObject jsonObject) throws JSONException {
-        MTGCard card = new MTGCard(id);
-        card.setName(jsonObject.getString("NAME"));
-        card.setType(jsonObject.getString("type"));
-
-        if (jsonObject.has("colors")){
-            JSONArray colorsJ = jsonObject.getJSONArray("colors");
-            for (int k =0; k<colorsJ.length(); k++){
-                String color = colorsJ.getString(k);
-                card.addColor(MTGCard.mapIntColor(color));
-            }
-
-            if (colorsJ.length()>1){
-                card.setMultiColor(true);
-            }else{
-                card.setMultiColor(false);
-            }
-            card.setAsALand(false);
-        }else{
-            card.setMultiColor(false);
-            card.setAsALand(true);
-        }
-
-        if (jsonObject.has("types")){
-            JSONArray typesJ = jsonObject.getJSONArray("types");
-            for (int k =0; k<typesJ.length(); k++){
-                card.addType(typesJ.getString(k));
-            }
-        }
-
-        if (card.getType().contains("Artifact")){
-            card.setAsArtifact(true);
-        }else{
-            card.setAsArtifact(false);
-        }
-
-        if (jsonObject.has("manaCost")){
-            card.setManaCost(jsonObject.getString("manaCost"));
-            card.setAsALand(false);
-        }
-        card.setRarity(jsonObject.getString("rarity"));
-
-        if (jsonObject.has("multiverseid")){
-            card.setMultiVerseId(jsonObject.getInt("multiverseid"));
-        }
-
-        card.setType(jsonObject.getString("type"));
-
-        if (jsonObject.has("power")){
-            card.setPower(jsonObject.getString("power"));
-        }else{
-            card.setPower("");
-        }
-        if (jsonObject.has("toughness")){
-            card.setToughness(jsonObject.getString("toughness"));
-        }else{
-            card.setToughness("");
-        }
-        if (jsonObject.has("text")){
-            card.setText(jsonObject.getString("text"));
-        }
-        if (jsonObject.has("cmc")){
-            card.setCmc(jsonObject.getInt("cmc"));
-        }else{
-            card.setCmc(-1);
-        }
-
-        return card;
-    }*/
 
     private static int mapIntColor(String color) {
         if (color.equalsIgnoreCase("Black")) {
@@ -422,6 +387,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeString(setName);
         dest.writeInt(quantity);
         dest.writeInt(sideboard ? 1 : 0);
+        dest.writeStringList(rulings);
+        dest.writeString(layout);
     }
 
     private void readFromParcel(Parcel in) {
@@ -446,6 +413,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         setName = in.readString();
         quantity = in.readInt();
         sideboard = in.readInt() == 1;
+        in.readStringList(rulings);
+        layout = in.readString();
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -624,6 +593,14 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.sideboard = sideboard;
     }
 
+    public String getLayout() {
+        return layout;
+    }
+
+    public void setLayout(String layout) {
+        this.layout = layout;
+    }
+
     public String toString() {
         return "[MTGCard] " + name;
     }
@@ -633,6 +610,10 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             return "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + getMultiVerseId() + "&type=card";
         }
         return null;
+    }
+
+    public List<String> getRulings() {
+        return rulings;
     }
 
     @Override

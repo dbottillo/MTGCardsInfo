@@ -27,6 +27,8 @@ public final class CardContract {
         public static final String COLUMN_NAME_MULTIVERSEID = "multiVerseId";
         public static final String COLUMN_NAME_SET_ID = "setId";
         public static final String COLUMN_NAME_SET_NAME = "setName";
+        public static final String COLUMN_NAME_RULINGS = "rulings";
+        public static final String COLUMN_NAME_LAYOUT = "layout";
     }
 
     protected static final String SQL_CREATE_CARDS_TABLE =
@@ -48,8 +50,13 @@ public final class CardContract {
                     + CardContract.CardEntry.COLUMN_NAME_ARTIFACT + " INTEGER ,"
                     + CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + " INTEGER ,"
                     + CardContract.CardEntry.COLUMN_NAME_SET_ID + " INTEGER ,"
-                    + CardContract.CardEntry.COLUMN_NAME_SET_NAME + " TEXT )";
+                    + CardContract.CardEntry.COLUMN_NAME_SET_NAME + " TEXT ,"
+                    + CardContract.CardEntry.COLUMN_NAME_RULINGS + " TEXT ,"
+                    + CardContract.CardEntry.COLUMN_NAME_LAYOUT + " TEXT )";
 
+    protected static final String SQL_ADD_COLUMN_RULINGS = "" +
+            "ALTER TABLE " + CardContract.CardEntry.TABLE_NAME + " ADD COLUMN "
+            + CardContract.CardEntry.COLUMN_NAME_RULINGS+ " TEXT";
 
     protected static final String SQL_DELETE_CARDS_TABLE =
             "DROP TABLE IF EXISTS " + CardContract.CardEntry.TABLE_NAME;

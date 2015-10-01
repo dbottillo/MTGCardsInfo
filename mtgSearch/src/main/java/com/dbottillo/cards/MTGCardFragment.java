@@ -71,6 +71,7 @@ public class MTGCardFragment extends DBFragment {
     View cardImageContainer;
     TextView priceCard;
     TCGPrice price;
+    TextView rulings;
 
     private int position;
 
@@ -103,6 +104,7 @@ public class MTGCardFragment extends DBFragment {
         retry = rootView.findViewById(R.id.image_card_retry);
         retryBtn = (Button) rootView.findViewById(R.id.image_card_retry_btn);
         priceCard = (TextView) rootView.findViewById(R.id.price_card);
+        rulings = (TextView) rootView.findViewById(R.id.rulings_card);
 
         setHasOptionsMenu(true);
 
@@ -223,7 +225,6 @@ public class MTGCardFragment extends DBFragment {
         refreshUI();
     }
 
-
     private void refreshUI() {
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
 
@@ -264,6 +265,17 @@ public class MTGCardFragment extends DBFragment {
         } else {
             cardLoader.setVisibility(View.GONE);
             cardImageContainer.setVisibility(View.GONE);
+        }
+
+        if (card.getRulings().size() > 0) {
+            rulings.setVisibility(View.VISIBLE);
+            String html = "<b>" + getString(R.string.rulings) + ":</b><br/>";
+            for (String rule : card.getRulings()) {
+                html += "- " + rule + "<br/><br/>";
+            }
+            rulings.setText(Html.fromHtml(html));
+        } else {
+            rulings.setVisibility(View.GONE);
         }
     }
 
