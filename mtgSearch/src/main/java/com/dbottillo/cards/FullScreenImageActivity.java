@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBActivity;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
@@ -45,7 +46,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
         boolean deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
 
         adapter = new CardsPagerAdapter(getSupportFragmentManager(), deck);
-        cards = getIntent().getParcelableArrayListExtra(MTGCardsFragment.CARDS);
+        MTGApp.cardsToDisplay = cards;
         adapter.setCards(cards);
         adapter.setFullScreen(true);
         viewPager.setAdapter(adapter);

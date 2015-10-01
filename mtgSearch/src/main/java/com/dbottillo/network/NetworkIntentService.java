@@ -50,7 +50,7 @@ public class NetworkIntentService extends IntentService {
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
         }
 
-        if (res != null && res.getLowprice() == null && setName != null && setName.length() > 0){
+        if (res != null && (res.getLowprice() == null || res.getLowprice().equalsIgnoreCase("0")) && setName != null && setName.length() > 0){
             url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
             LOG.d("try again without set: " + url);
             try {

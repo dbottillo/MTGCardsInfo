@@ -19,6 +19,7 @@ import com.dbottillo.adapters.DeckCardAdapter;
 import com.dbottillo.adapters.DeckCardSectionAdapter;
 import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.base.MTGApp;
 import com.dbottillo.cards.CardsActivity;
 import com.dbottillo.cards.MTGCardsFragment;
 import com.dbottillo.database.DeckDataSource;
@@ -77,7 +78,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             @Override
             public void onCardSelected(MTGCard card, int position) {
                 Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-                cardsView.putParcelableArrayListExtra(MTGCardsFragment.CARDS, cards);
+                MTGApp.cardsToDisplay = cards;
                 cardsView.putExtra(MTGCardsFragment.POSITION, position);
                 cardsView.putExtra(MTGCardsFragment.TITLE, deck.getName());
                 cardsView.putExtra(MTGCardsFragment.DECK, true);

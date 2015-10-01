@@ -27,8 +27,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 29
-        versionName "2.5.5"
+        versionCode 30
+        versionName "2.6.0"
         applicationId "com.dbottillo.mtgsearchfree"
     }
 
@@ -54,7 +54,7 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '10'
+            buildConfigField 'int', 'DATABASE_VERSION', '11'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             lintOptions {
                 abortOnError false
@@ -65,7 +65,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '10'
+            buildConfigField 'int', 'DATABASE_VERSION', '11'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }

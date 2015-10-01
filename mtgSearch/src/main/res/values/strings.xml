@@ -105,6 +105,9 @@
     <string name="release_note_title">What\'s new</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        <b>Version 2.6:</b> \n
+        - NEW: Rulings added to card detail \n
+        - FIX: Bug with multiple same cards in a deck \n\n
         <b>Version 2.5:</b> \n
         - NEW: Zendikar Expedition \n
         - NEW: Battle for Zendikar \n
@@ -130,6 +133,7 @@
     <string name="cd_edit">Edit</string>
     <string name="cd_remove">Remove</string>
     <string name="share_card">Share card</string>
+    <string name="rulings">Rulings</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
