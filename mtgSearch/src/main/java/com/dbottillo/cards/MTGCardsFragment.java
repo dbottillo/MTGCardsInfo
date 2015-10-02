@@ -19,6 +19,7 @@ import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.dialog.AddToDeckFragment;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.util.UIUtil;
@@ -62,34 +63,40 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         position = getArguments().getInt(POSITION);
         cards = MTGApp.cardsToDisplay;
-        viewPager = (ViewPager) rootView.findViewById(R.id.pager);
-        deck = getArguments().getBoolean(DECK);
 
-        pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
-        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
-        pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
-        pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+        if (cards != null) {
+            viewPager = (ViewPager) rootView.findViewById(R.id.pager);
+            deck = getArguments().getBoolean(DECK);
 
-        viewPager.addOnPageChangeListener(this);
+            pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+            pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
+            pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
+            pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
 
-        adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
-        adapter.setCards(cards);
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(position);
+            viewPager.addOnPageChangeListener(this);
 
-        addToDeck = (FloatingActionButton) rootView.findViewById(R.id.card_add_to_deck);
-        addToDeck.setOnClickListener(this);
-        RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) addToDeck.getLayoutParams();
-        if (isPortrait) {
-            par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+            adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
+            LOG.e("cards : " + cards);
+            adapter.setCards(cards);
+            viewPager.setAdapter(adapter);
+            viewPager.setCurrentItem(position);
+
+            addToDeck = (FloatingActionButton) rootView.findViewById(R.id.card_add_to_deck);
+            addToDeck.setOnClickListener(this);
+            RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) addToDeck.getLayoutParams();
+            if (isPortrait) {
+                par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+            } else {
+                par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+                par.rightMargin = UIUtil.dpToPx(getActivity(), 16);
+            }
+            addToDeck.setLayoutParams(par);
+
+            setActionBarTitle(getArguments().getString(TITLE));
+            setHasOptionsMenu(true);
         } else {
-            par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-            par.rightMargin = UIUtil.dpToPx(getActivity(), 16);
+            getActivity().finish();
         }
-        addToDeck.setLayoutParams(par);
-
-        setActionBarTitle(getArguments().getString(TITLE));
-        setHasOptionsMenu(true);
 
         return rootView;
     }
