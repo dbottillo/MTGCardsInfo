@@ -90,7 +90,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.cardsToDisplay = savedCards;
+        MTGApp.setCardsToDisplay(savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);
@@ -135,7 +135,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onCardSelected(MTGCard card, int position) {
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.cardsToDisplay = savedCards;
+        MTGApp.setCardsToDisplay(savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);
@@ -146,7 +146,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
 
-        } else if (menuItem.getItemId() == R.id.action_remove){
+        } else if (menuItem.getItemId() == R.id.action_remove) {
             new DBAsyncTask(getActivity(), SavedFragment.this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
         }
     }

@@ -62,7 +62,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         View rootView = inflater.inflate(R.layout.fragment_cards, container, false);
 
         position = getArguments().getInt(POSITION);
-        cards = MTGApp.cardsToDisplay;
+        MTGApp.setCardsToDisplay(cards);
 
         if (cards != null) {
             viewPager = (ViewPager) rootView.findViewById(R.id.pager);

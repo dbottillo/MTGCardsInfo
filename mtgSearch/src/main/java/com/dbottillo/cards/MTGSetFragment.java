@@ -255,9 +255,9 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
-        if (isASearch) {
+        /*if (isASearch) {
             position--;
-        }
+        }*/
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }
@@ -267,7 +267,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         }
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.cardsToDisplay = cards;
+        MTGApp.setCardsToDisplay(cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, gameSet.getName());
         startActivity(cardsView);
