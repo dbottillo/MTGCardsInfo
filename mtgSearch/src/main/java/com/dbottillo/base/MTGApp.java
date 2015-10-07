@@ -16,7 +16,7 @@ import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
-    public static ArrayList<MTGCard> cardsToDisplay;
+    private static ArrayList<MTGCard> cardsToDisplay;
 
     @Override
     public void onCreate() {
@@ -32,4 +32,12 @@ public class MTGApp extends Application {
     }
 
     private RefWatcher refWatcher;
+
+    public static void setCardsToDisplay(ArrayList<MTGCard> cards) {
+        cardsToDisplay = cards;
+    }
+
+    public static ArrayList<MTGCard> getCardsToDisplay() {
+        return cardsToDisplay;
+    }
 }

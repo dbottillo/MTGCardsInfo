@@ -46,7 +46,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
         boolean deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
 
         adapter = new CardsPagerAdapter(getSupportFragmentManager(), deck);
-        cards = MTGApp.cardsToDisplay;
+        cards = MTGApp.getCardsToDisplay();
         if (cards != null) {
             adapter.setCards(cards);
             adapter.setFullScreen(true);

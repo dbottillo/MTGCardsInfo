@@ -4,7 +4,6 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.dbottillo.R;
 import com.dbottillo.helper.LOG;
@@ -41,7 +40,7 @@ public class NetworkIntentService extends IntentService {
 
         boolean error = false;
 
-        String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s="+setName+"&p=" + cardName;
+        String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=" + setName + "&p=" + cardName;
         LOG.d("loading: " + url);
         try {
             res = doNetworkRequest(url);
@@ -50,7 +49,7 @@ public class NetworkIntentService extends IntentService {
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
         }
 
-        if (res != null && (res.getLowprice() == null || res.getLowprice().equalsIgnoreCase("0")) && setName != null && setName.length() > 0){
+        if (res != null && (res.getLowprice() == null || res.getLowprice().equalsIgnoreCase("0")) && setName != null && setName.length() > 0) {
             url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
             LOG.d("try again without set: " + url);
             try {
@@ -61,7 +60,7 @@ public class NetworkIntentService extends IntentService {
             }
         }
 
-        if (error){
+        if (error) {
             res = new TCGPrice();
             res.setError(getApplicationContext().getString(R.string.price_error));
         }

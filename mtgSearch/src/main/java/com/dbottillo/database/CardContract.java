@@ -54,9 +54,9 @@ public final class CardContract {
                     + CardContract.CardEntry.COLUMN_NAME_RULINGS + " TEXT ,"
                     + CardContract.CardEntry.COLUMN_NAME_LAYOUT + " TEXT )";
 
-    protected static final String SQL_ADD_COLUMN_RULINGS = "" +
-            "ALTER TABLE " + CardContract.CardEntry.TABLE_NAME + " ADD COLUMN "
-            + CardContract.CardEntry.COLUMN_NAME_RULINGS+ " TEXT";
+    protected static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
+            + CardContract.CardEntry.TABLE_NAME + " ADD COLUMN "
+            + CardContract.CardEntry.COLUMN_NAME_RULINGS + " TEXT";
 
     protected static final String SQL_DELETE_CARDS_TABLE =
             "DROP TABLE IF EXISTS " + CardContract.CardEntry.TABLE_NAME;
