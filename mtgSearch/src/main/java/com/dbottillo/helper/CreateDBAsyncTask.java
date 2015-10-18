@@ -89,7 +89,6 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             LOG.e("error create db async task: " + e.getLocalizedMessage());
             error = true;
             errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
         }
 
         copyDbToSdcard();
@@ -170,7 +169,6 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         } catch (IOException e) {
             error = true;
             errorMessage = e.getLocalizedMessage();
-            e.printStackTrace();
         }
 
         return writer.toString();

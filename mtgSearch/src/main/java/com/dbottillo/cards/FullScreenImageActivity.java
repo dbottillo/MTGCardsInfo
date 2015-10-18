@@ -12,19 +12,18 @@ import com.dbottillo.R;
 import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.base.MTGApp;
-import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
-public class FullScreenImageActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener, ViewPager.OnPageChangeListener {
+public class FullScreenImageActivity extends DBActivity implements MTGCardFragment.CardConnector, ViewPager.OnPageChangeListener {
 
     private ArrayList<MTGCard> savedCards = new ArrayList<MTGCard>();
-    private ArrayList<MTGCard> cards;
 
     private ViewPager viewPager;
-    private CardsPagerAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,8 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
 
         boolean deck = getIntent().getBooleanExtra(MTGCardsFragment.DECK, false);
 
-        adapter = new CardsPagerAdapter(getSupportFragmentManager(), deck);
-        cards = MTGApp.getCardsToDisplay();
+        CardsPagerAdapter adapter = new CardsPagerAdapter(getSupportFragmentManager(), deck);
+        ArrayList<MTGCard> cards = MTGApp.getCardsToDisplay();
         if (cards != null) {
             adapter.setCards(cards);
             adapter.setFullScreen(true);
@@ -64,7 +63,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     @Override
     public void onResume() {
         super.onResume();
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVED).execute();
+        DataManager.execute(DataManager.TASK.SAVED_CARDS);
     }
 
     @Override
@@ -96,14 +95,14 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
 
     @Override
     public void saveCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.SAVE_CARD, card);
         savedCards.add(card);
         invalidateOptionsMenu();
     }
 
     @Override
     public void removeCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 savedCards.remove(savedCard);
@@ -131,19 +130,18 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
         finish();
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
-        savedCards.clear();
-        for (Object card : objects) {
-            savedCards.add((MTGCard) card);
+    public void onEventMainThread(SavedCardsEvent event) {
+        if (event.isError()) {
+            Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards-fullscreen", event.getErrorMessage());
+        } else {
+            savedCards.clear();
+            for (MTGCard card : event.getResult()) {
+                savedCards.add(card);
+            }
+            invalidateOptionsMenu();
         }
-        invalidateOptionsMenu();
-    }
-
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards-fullscreen", error);
+        bus.removeStickyEvent(event);
     }
 
     @Override

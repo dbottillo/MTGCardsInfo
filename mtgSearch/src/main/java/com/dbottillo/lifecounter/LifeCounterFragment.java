@@ -20,8 +20,9 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.adapters.LifeCounterAdapter;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.PlayersEvent;
 import com.dbottillo.database.DB40Helper;
-import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Player;
 import com.dbottillo.util.AnimationUtil;
@@ -32,7 +33,7 @@ import java.util.Random;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsyncTaskListener, LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener {
+public class LifeCounterFragment extends DBFragment implements LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener {
 
     public static LifeCounterFragment newInstance() {
         return new LifeCounterFragment();
@@ -40,11 +41,9 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
     private ScrollView diceScrollView;
     private LinearLayout diceContainer;
-    private ListView lifeListView;
     private ArrayList<Player> players;
     private LifeCounterAdapter lifeCounterAdapter;
     private SmoothProgressBar progressBar;
-    private FloatingActionButton newPlayerButton;
 
     private boolean scrollDownAfterLoad = false;
 
@@ -64,7 +63,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         diceScrollView = (ScrollView) rootView.findViewById(R.id.life_counter_dice_scrolliew);
         diceContainer = (LinearLayout) rootView.findViewById(R.id.life_counter_dice_container);
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-        lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
+        ListView lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = getSharedPreferences().getBoolean("poison", false);
 
         View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
@@ -72,7 +71,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
 
         twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);
 
-        newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
+        FloatingActionButton newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
         newPlayerButton.setOnClickListener(this);
 
         players = new ArrayList<>();
@@ -131,7 +130,7 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
     }
 
     private void loadPlayers() {
-        new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_PLAYER).execute();
+        DataManager.execute(DataManager.TASK.PLAYERS);
     }
 
     private void addPlayer() {
@@ -175,30 +174,28 @@ public class LifeCounterFragment extends DBFragment implements DBAsyncTask.DBAsy
         return id;
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
+    public void onEventMainThread(PlayersEvent event) {
         progressBar.setVisibility(View.GONE);
-        if (objects.size() == 0) {
-            // need at least one player
-            addPlayer();
+        if (event.isError()) {
+            Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
         } else {
-            players.clear();
-            for (Object player : objects) {
-                //Log.e("magic", "loaded: "+((Player)player).getId()+" - "+((Player)player).toString());
-                players.add((Player) player);
+            if (event.getResult().size() == 0) {
+                // need at least one player
+                addPlayer();
+            } else {
+                players.clear();
+                for (Player player : event.getResult()) {
+                    //Log.e("magic", "loaded: "+((Player)player).getId()+" - "+((Player)player).toString());
+                    players.add(player);
+                }
             }
+            lifeCounterAdapter.notifyDataSetChanged();
+            if (scrollDownAfterLoad && getView() != null) {
+                ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
+            }
+            scrollDownAfterLoad = false;
         }
-        lifeCounterAdapter.notifyDataSetChanged();
-        if (scrollDownAfterLoad) {
-            ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
-        }
-        scrollDownAfterLoad = false;
-    }
-
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        progressBar.setVisibility(View.GONE);
-        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
+        bus.removeStickyEvent(event);
     }
 
     @Override

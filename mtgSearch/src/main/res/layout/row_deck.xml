@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:ellipsize="end"
-                android:textColor="@color/primary_material_dark"
+                android:textColor="@color/color_primary_almost_dark"
                 android:textSize="18sp"
                 tools:text="U/R aggro" />
 

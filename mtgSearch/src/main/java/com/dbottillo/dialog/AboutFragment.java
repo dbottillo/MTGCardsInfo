@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBFragment;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 
 import static android.net.Uri.parse;
@@ -35,7 +36,7 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
             TextView version = (TextView) v.findViewById(R.id.about_version);
             version.setText(Html.fromHtml("<b>" + getString(R.string.version) + "</b>: " + versionName));
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            LOG.d("[AboutFragment] exception: "+e.getLocalizedMessage());
         }
 
         Button sendFeedback = (Button) v.findViewById(R.id.send_feedback);

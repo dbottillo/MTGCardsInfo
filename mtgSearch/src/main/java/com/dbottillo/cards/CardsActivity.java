@@ -8,13 +8,14 @@ import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
-import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
 
-public class CardsActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
+public class CardsActivity extends DBActivity implements MTGCardFragment.CardConnector {
 
     private ArrayList<MTGCard> savedCards = new ArrayList<>();
 
@@ -55,12 +56,12 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     @Override
     public void onResume() {
         super.onResume();
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVED).execute();
+        DataManager.execute(DataManager.TASK.SAVED_CARDS);
     }
 
     @Override
     public String getPageTrack() {
-        if (deck){
+        if (deck) {
             return "/deck";
         }
         return "/cards";
@@ -99,14 +100,14 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
 
     @Override
     public void saveCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.SAVE_CARD, card);
         savedCards.add(card);
         invalidateOptionsMenu();
     }
 
     @Override
     public void removeCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 savedCards.remove(savedCard);
@@ -130,22 +131,17 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
         startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE);
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
-        savedCards.clear();
-        for (Object card : objects) {
-            savedCards.add((MTGCard) card);
+    public void onEventMainThread(SavedCardsEvent event) {
+        if (event.isError()) {
+            Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", event.getErrorMessage());
+        } else {
+            savedCards.clear();
+            for (MTGCard card : event.getResult()) {
+                savedCards.add(card);
+            }
+            invalidateOptionsMenu();
         }
-        invalidateOptionsMenu();
-    }
-
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", error);
-    }
-
-    public void setBackgroundToolbar(int mtgColor) {
-        toolbar.setBackgroundColor(mtgColor);
+        bus.removeStickyEvent(event);
     }
 }

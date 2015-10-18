@@ -7,14 +7,16 @@ import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
-import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.CardsEvent;
+import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CardLuckyActivity extends DBActivity implements MTGCardFragment.CardConnector, DBAsyncTask.DBAsyncTaskListener {
+public class CardLuckyActivity extends DBActivity implements MTGCardFragment.CardConnector {
 
     public static final String CARD = "CARD";
 
@@ -34,9 +36,11 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
 
         setupToolbar();
 
-        getSupportActionBar().setTitle(getString(R.string.lucky_title));
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getString(R.string.lucky_title));
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         findViewById(R.id.btn_lucky_again).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,21 +70,21 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
 
     private void loadRandomCard() {
         if (luckyCards.size() > 0) {
-            // load from memory
+            // execute from memory
             loadCard();
             return;
         }
         if (!isLoading) {
             isLoading = true;
             loadCardAfterDatabase = true;
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute(4);
+            DataManager.execute(DataManager.TASK.RANDOM_CARDS, 4);
         }
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVED).execute();
+        DataManager.execute(DataManager.TASK.SAVED_CARDS);
     }
 
     @Override
@@ -112,14 +116,14 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
 
     @Override
     public void saveCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_SAVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.SAVE_CARD, card);
         savedCards.add(card);
         invalidateOptionsMenu();
     }
 
     @Override
     public void removeCard(MTGCard card) {
-        new DBAsyncTask(this, this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+        DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         for (MTGCard savedCard : savedCards) {
             if (savedCard.getId() == card.getId()) {
                 savedCards.remove(savedCard);
@@ -135,32 +139,6 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_LUCKY, "tap_on_image");
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
-        if (!onSaveInstanceStateCalled) {
-            if (type != DBAsyncTask.TASK_RANDOM_CARD) {
-                savedCards.clear();
-                for (Object card : objects) {
-                    savedCards.add((MTGCard) card);
-                }
-                invalidateOptionsMenu();
-            } else {
-                isLoading = false;
-                for (Object obj : objects) {
-                    MTGCard card = (MTGCard) obj;
-                    luckyCards.add(card);
-                    if (card.getImage() != null) {
-                        // pre-fetch images
-                        Picasso.with(this).load(card.getImage()).fetch();
-                    }
-                }
-                if (loadCardAfterDatabase && !isFinishing()) {
-                    loadCard();
-                }
-            }
-        }
-    }
-
     private void loadCard() {
         MTGCard card = luckyCards.remove(0);
         cardFragment = MTGCardFragment.newInstance(card, 0, false);
@@ -171,16 +149,41 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         if (luckyCards.size() <= 2) {
             // pre-fetch more
             loadCardAfterDatabase = false;
-            new DBAsyncTask(this, this, DBAsyncTask.TASK_RANDOM_CARD).execute(4);
+            DataManager.execute(DataManager.TASK.RANDOM_CARDS, 4);
         }
     }
 
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        if (type == DBAsyncTask.TASK_RANDOM_CARD) {
-            isLoading = false;
+    public void onEventMainThread(CardsEvent event) {
+        isLoading = false;
+        if (event.isError()) {
+            Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "get-lucky", event.getErrorMessage());
+        } else {
+            for (MTGCard card : event.getResult()) {
+                luckyCards.add(card);
+                if (card.getImage() != null) {
+                    // pre-fetch images
+                    Picasso.with(this).load(card.getImage()).fetch();
+                }
+            }
+            if (loadCardAfterDatabase && !isFinishing()) {
+                loadCard();
+            }
         }
-        Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, type != DBAsyncTask.TASK_RANDOM_CARD ? "saved-card-lucky" : "get-lucky", error);
+        bus.removeStickyEvent(event);
+    }
+
+    public void onEventMainThread(SavedCardsEvent event) {
+        if (event.isError()) {
+            Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-card-lucky", event.getErrorMessage());
+        } else {
+            savedCards.clear();
+            for (MTGCard card : event.getResult()) {
+                savedCards.add(card);
+            }
+            invalidateOptionsMenu();
+        }
+        bus.removeStickyEvent(event);
     }
 }

@@ -20,8 +20,9 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.cards.CardsActivity;
 import com.dbottillo.cards.MTGCardsFragment;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.dialog.AddToDeckFragment;
-import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 
@@ -29,10 +30,9 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, DBAsyncTask.DBAsyncTaskListener, OnCardListener {
+public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, OnCardListener {
 
     private ArrayList<MTGCard> savedCards;
-    private ListView listView;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
     private TextView emptyView;
@@ -48,7 +48,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
         setActionBarTitle(getString(R.string.action_saved));
 
-        listView = (ListView) rootView.findViewById(R.id.card_list);
+        ListView listView = (ListView) rootView.findViewById(R.id.card_list);
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_saved);
 
@@ -68,12 +68,13 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onResume() {
         super.onResume();
-        loadCards();
+        progressBar.setVisibility(View.VISIBLE);
+        DataManager.execute(DataManager.TASK.SAVED_CARDS);
     }
 
     private void loadCards() {
         progressBar.setVisibility(View.VISIBLE);
-        new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SAVED).execute();
+        DataManager.execute(DataManager.TASK.SAVED_CARDS);
     }
 
     @Override
@@ -94,25 +95,6 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);
-    }
-
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
-        savedCards.clear();
-        for (Object card : objects) {
-            savedCards.add((MTGCard) card);
-        }
-        adapter.notifyDataSetChanged();
-        progressBar.setVisibility(View.GONE);
-
-        emptyView.setVisibility(objects.size() == 0 ? View.VISIBLE : View.GONE);
-    }
-
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        progressBar.setVisibility(View.GONE);
-        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", error);
     }
 
     @Override
@@ -147,7 +129,26 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
             getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
 
         } else if (menuItem.getItemId() == R.id.action_remove) {
-            new DBAsyncTask(getActivity(), SavedFragment.this, DBAsyncTask.TASK_REMOVE_CARD).execute(card);
+            DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         }
+    }
+
+    public void onEventMainThread(SavedCardsEvent event) {
+        progressBar.setVisibility(View.GONE);
+        if (event.isError()) {
+            Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", event.getErrorMessage());
+        } else {
+            savedCards.clear();
+            for (Object card : event.getResult()) {
+                savedCards.add((MTGCard) card);
+            }
+            adapter.notifyDataSetChanged();
+            progressBar.setVisibility(View.GONE);
+
+            emptyView.setVisibility(savedCards.size() == 0 ? View.VISIBLE : View.GONE);
+            savedCards.clear();
+        }
+        bus.removeStickyEvent(event);
     }
 }

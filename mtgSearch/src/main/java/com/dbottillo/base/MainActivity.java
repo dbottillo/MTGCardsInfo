@@ -32,6 +32,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
     private static final int SEARCH_REQUEST_CODE = 100;
 
+    private static final String CURRENT_SELECTION = "currentSelection";
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     NavigationView navigationView;
@@ -48,7 +50,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         if (savedInstanceState == null) {
             changeFragment(new MainFragment(), "main", false);
         } else {
-            if (savedInstanceState.getInt("currentSelection") > 0) {
+            if (savedInstanceState.getInt(CURRENT_SELECTION) > 0) {
                 getSlidingPanel().setPanelHeight(0);
             }
         }
@@ -60,15 +62,15 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("currentSelection", findSelectedPosition());
+        outState.putInt(CURRENT_SELECTION, findSelectedPosition());
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState.containsKey("currentSelection")) {
+        if (savedInstanceState.containsKey(CURRENT_SELECTION)) {
             Menu menu = navigationView.getMenu();
-            menu.getItem(savedInstanceState.getInt("currentSelection")).setChecked(true);
+            menu.getItem(savedInstanceState.getInt(CURRENT_SELECTION)).setChecked(true);
         }
     }
 
@@ -126,8 +128,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_crash));
         }
 
-        headerTitle = (TextView) findViewById(R.id.drawer_header_title);
-        headerText = (TextView) findViewById(R.id.drawer_header_text);
+        View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
+
+        headerTitle = (TextView) headerLayout.findViewById(R.id.drawer_header_title);
+        headerText = (TextView) headerLayout.findViewById(R.id.drawer_header_text);
     }
 
     TextView headerTitle;

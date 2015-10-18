@@ -37,9 +37,6 @@
     <string name="mtg_mythic_rare">M</string>
 
     <!-- card fragment -->
-    <string name="type_card">Type</string>
-    <string name="pt_card">P/T</string>
-    <string name="set_card" translatable="false">Set</string>
     <string name="share">Share</string>
     <string name="favourite_remove">Remove</string>
     <string name="favourite_add">Save</string>
@@ -56,7 +53,6 @@
     <string name="edit_player">Edit name player</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="manacost_card">Mana cost</string>
     <string name="life_reset">Reset</string>
     <string name="life_dice">Roll dice</string>
     <string name="menu_life_poison">Poison count</string>
@@ -133,7 +129,18 @@
     <string name="cd_edit">Edit</string>
     <string name="cd_remove">Remove</string>
     <string name="share_card">Share card</string>
-    <string name="rulings">Rulings</string>
+    <string name="row_card_name" translatable="false">%1$s%2$s</string>
+    <string name="row_life_counter_name" translatable="false">%1$s - %2$d/20</string>
+    <string name="card_detail">
+    <![CDATA[
+     <b>Type</b>: %1$s <br/><br/>
+     <b>P/T</b>: %2$s/%3$s <br/><br/>
+     <b>Mana cost</b>: %4$s<br/><br/>
+     %5$s<br/><br/>
+     <b>Set</b>: %6$s<br/><br/>
+     <b>Rulings</b>: <br/>%7$s<br/><br/>
+    ]]>
+    </string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
