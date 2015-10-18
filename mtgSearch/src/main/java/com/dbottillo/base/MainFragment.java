@@ -22,15 +22,16 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.adapters.GameSetAdapter;
 import com.dbottillo.cards.MTGSetFragment;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SetEvent;
 import com.dbottillo.filter.FilterActivity;
-import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 
-public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncTaskListener, SlidingUpPanelLayout.PanelSlideListener {
+public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout.PanelSlideListener {
 
     private ArrayList<MTGSet> sets;
     private GameSetAdapter setAdapter;
@@ -73,13 +74,13 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
 
         if (savedInstanceState == null) {
             sets = new ArrayList<>();
-            new DBAsyncTask(getApp().getApplicationContext(), this, DBAsyncTask.TASK_SET_LIST).execute();
+            DataManager.execute(DataManager.TASK.SET_LIST);
 
         } else {
             sets = savedInstanceState.getParcelableArrayList("SET");
             currentSetPosition = savedInstanceState.getInt("currentSetPosition");
             if (currentSetPosition < 0) {
-                new DBAsyncTask(getApp().getApplicationContext(), this, DBAsyncTask.TASK_SET_LIST).execute();
+                DataManager.execute(DataManager.TASK.SET_LIST);
             } else {
                 loadSet();
             }
@@ -193,22 +194,21 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
         return null;
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> result) {
-        if (getActivity() == null) {
-            return;
+    public void onEventMainThread(SetEvent event) {
+        if (event.isError()) {
+            Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", event.getErrorMessage());
+        } else {
+            currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
+            setAdapter.setCurrent(currentSetPosition);
+            sets.clear();
+            for (MTGSet set : event.getResult()) {
+                sets.add(set);
+            }
+            setAdapter.notifyDataSetChanged();
+            loadSet();
         }
-        currentSetPosition = getSharedPreferences().getInt("setPosition", 0);
-        setAdapter.setCurrent(currentSetPosition);
-
-        sets.clear();
-        for (Object set : result) {
-            sets.add((MTGSet) set);
-        }
-        setAdapter.notifyDataSetChanged();
-        result.clear();
-
-        loadSet();
+        bus.removeStickyEvent(event);
     }
 
     private void chooseSortDialog() {
@@ -250,19 +250,4 @@ public class MainFragment extends MTGSetFragment implements DBAsyncTask.DBAsyncT
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-
-    /*@Override
-    public boolean onBackPressed() {
-        if (setList.getHeight() > 0) {
-            showHideSetList(false);
-        } else {
-            super.onBackPressed();
-        }
-    }*/
-
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", error);
-    }
 }

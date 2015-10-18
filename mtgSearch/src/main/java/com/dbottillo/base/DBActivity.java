@@ -17,8 +17,11 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
+import com.dbottillo.communication.events.BaseEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.util.MaterialWrapper;
+
+import de.greenrobot.event.EventBus;
 
 import static android.net.Uri.parse;
 
@@ -30,14 +33,25 @@ public abstract class DBActivity extends AppCompatActivity {
 
     MTGApp app;
     protected Toolbar toolbar;
-    protected boolean onSaveInstanceStateCalled = false;
+    protected EventBus bus = EventBus.getDefault();
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        onSaveInstanceStateCalled = false;
         app = (MTGApp) getApplication();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        bus.unregister(this);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        bus.registerSticky(this);
     }
 
     @Override
@@ -47,12 +61,6 @@ public abstract class DBActivity extends AppCompatActivity {
         if (getPageTrack() != null) {
             TrackingHelper.getInstance(getApplicationContext()).trackPage(getPageTrack());
         }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        onSaveInstanceStateCalled = true;
-        super.onSaveInstanceState(outState);
     }
 
     public abstract String getPageTrack();
@@ -140,5 +148,9 @@ public abstract class DBActivity extends AppCompatActivity {
 
                 })
                 .show();
+    }
+
+    public void onEvent(BaseEvent event) {
+
     }
 }

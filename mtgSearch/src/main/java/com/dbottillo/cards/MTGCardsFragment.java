@@ -19,7 +19,6 @@ import com.dbottillo.adapters.CardsPagerAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.dialog.AddToDeckFragment;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.util.UIUtil;
@@ -37,7 +36,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     private CardsPagerAdapter adapter;
 
     private int position;
-    private boolean deck = false;
     PagerTabStrip pagerTabStrip;
 
     MenuItem actionImage;
@@ -62,11 +60,11 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         View rootView = inflater.inflate(R.layout.fragment_cards, container, false);
 
         position = getArguments().getInt(POSITION);
-        MTGApp.setCardsToDisplay(cards);
+        cards = MTGApp.getCardsToDisplay();
 
         if (cards != null) {
             viewPager = (ViewPager) rootView.findViewById(R.id.pager);
-            deck = getArguments().getBoolean(DECK);
+            boolean deck = getArguments().getBoolean(DECK);
 
             pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
             pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
@@ -76,7 +74,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
             viewPager.addOnPageChangeListener(this);
 
             adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
-            LOG.e("cards : " + cards);
             adapter.setCards(cards);
             viewPager.setAdapter(adapter);
             viewPager.setCurrentItem(position);

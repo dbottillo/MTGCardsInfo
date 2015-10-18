@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 
 import com.dbottillo.R;
 import com.dbottillo.database.CardContract.CardEntry;
+import com.dbottillo.helper.LOG;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,13 +32,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     String toughness;
     String manaCost;
     String text;
-    boolean isMultiColor;
-    boolean isALand;
-    boolean isAnArtifact;
-    boolean isAnEldrazi;
+    boolean multiColor;
+    boolean land;
+    boolean artifact;
+    boolean eldrazi;
     int multiVerseId;
     int idSet;
-    String setName;
+    String nameSet;
     int quantity = 1;
     boolean sideboard = false;
     String layout;
@@ -84,7 +85,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 String name = namesJ.getString(k);
                 names.append(name);
                 if (k < namesJ.length() - 1) {
-                    names.append("/");
+                    names.append('/');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_NAME, names.toString());
@@ -94,9 +95,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_SET_ID, setId);
         values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
 
-        int multicolor = 0;
-        int land = 0;
-        int artifact = 0;
+        int multicolor;
+        int land;
+        int artifact;
 
         if (jsonObject.has("colors")) {
             JSONArray colorsJ = jsonObject.getJSONArray("colors");
@@ -105,7 +106,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 String color = colorsJ.getString(k);
                 colors.append(color);
                 if (k < colorsJ.length() - 1) {
-                    colors.append(",");
+                    colors.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_COLORS, colors.toString());
@@ -127,7 +128,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             for (int k = 0; k < typesJ.length(); k++) {
                 types.append(typesJ.getString(k));
                 if (k < typesJ.length() - 1) {
-                    types.append(",");
+                    types.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_TYPES, types.toString());
@@ -197,7 +198,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         card.setName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NAME)));
 
         card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_ID)));
-        card.setSetName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
+        card.setNameSet(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
 
         if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1) {
             String colors = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS));
@@ -256,7 +257,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                     card.rulings.add(rule.getString("text"));
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
+                LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
             }
         }
 
@@ -272,14 +273,14 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_NAME, name);
         values.put(CardEntry.COLUMN_NAME_TYPE, type);
         values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
-        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
+        values.put(CardEntry.COLUMN_NAME_SET_NAME, nameSet);
         if (colors.size() > 0) {
             StringBuilder col = new StringBuilder();
             for (int k = 0; k < colors.size(); k++) {
                 String color = mapStringColor(colors.get(k));
                 col.append(color);
                 if (k < colors.size() - 1) {
-                    col.append(",");
+                    col.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_COLORS, col.toString());
@@ -289,7 +290,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             for (int k = 0; k < types.size(); k++) {
                 typ.append(types.get(k));
                 if (k < types.size() - 1) {
-                    typ.append(",");
+                    typ.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_TYPES, typ.toString());
@@ -301,9 +302,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
         values.put(CardEntry.COLUMN_NAME_TEXT, text);
         values.put(CardEntry.COLUMN_NAME_CMC, cmc);
-        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isMultiColor);
-        values.put(CardEntry.COLUMN_NAME_LAND, isALand);
-        values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
+        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, multiColor);
+        values.put(CardEntry.COLUMN_NAME_LAND, land);
+        values.put(CardEntry.COLUMN_NAME_ARTIFACT, artifact);
         if (rulings.size() > 0) {
             JSONArray rules = new JSONArray();
             for (String rule : rulings) {
@@ -312,7 +313,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                     rulJ.put("text", rule);
                     rules.put(rulJ);
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
                 }
 
             }
@@ -378,13 +379,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeString(toughness);
         dest.writeString(manaCost);
         dest.writeString(text);
-        dest.writeInt(isMultiColor ? 1 : 0);
-        dest.writeInt(isALand ? 1 : 0);
-        dest.writeInt(isAnArtifact ? 1 : 0);
-        dest.writeInt(isAnEldrazi ? 1 : 0);
+        dest.writeInt(multiColor ? 1 : 0);
+        dest.writeInt(land ? 1 : 0);
+        dest.writeInt(artifact ? 1 : 0);
+        dest.writeInt(eldrazi ? 1 : 0);
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
-        dest.writeString(setName);
+        dest.writeString(nameSet);
         dest.writeInt(quantity);
         dest.writeInt(sideboard ? 1 : 0);
         dest.writeStringList(rulings);
@@ -404,13 +405,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         toughness = in.readString();
         manaCost = in.readString();
         text = in.readString();
-        isMultiColor = in.readInt() == 1;
-        isALand = in.readInt() == 1;
-        isAnArtifact = in.readInt() == 1;
-        isAnEldrazi = in.readInt() == 1;
+        multiColor = in.readInt() == 1;
+        land = in.readInt() == 1;
+        artifact = in.readInt() == 1;
+        eldrazi = in.readInt() == 1;
         multiVerseId = in.readInt();
         idSet = in.readInt();
-        setName = in.readString();
+        nameSet = in.readString();
         quantity = in.readInt();
         sideboard = in.readInt() == 1;
         in.readStringList(rulings);
@@ -522,35 +523,35 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public boolean isMultiColor() {
-        return isMultiColor;
+        return multiColor;
     }
 
     public void setMultiColor(boolean isMultiColor) {
-        this.isMultiColor = isMultiColor;
+        this.multiColor = isMultiColor;
     }
 
     public boolean isALand() {
-        return isALand;
+        return land;
     }
 
     public void setAsALand(boolean isALand) {
-        this.isALand = isALand;
+        this.land = isALand;
     }
 
     public boolean isAnArtifact() {
-        return isAnArtifact;
+        return artifact;
     }
 
     public void setAsArtifact(boolean isAnArtifact) {
-        this.isAnArtifact = isAnArtifact;
+        this.artifact = isAnArtifact;
     }
 
     public boolean isAnEldrazi() {
-        return isAnEldrazi;
+        return eldrazi;
     }
 
     public void setAsEldrazi(boolean isAnEldrazi) {
-        this.isAnEldrazi = isAnEldrazi;
+        this.eldrazi = isAnEldrazi;
     }
 
     public int getMultiVerseId() {
@@ -561,12 +562,12 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.multiVerseId = multiVerseId;
     }
 
-    public String getSetName() {
-        return setName;
+    public String getNameSet() {
+        return nameSet;
     }
 
-    public void setSetName(String setName) {
-        this.setName = setName;
+    public void setNameSet(String nameSet) {
+        this.nameSet = nameSet;
     }
 
     public int getIdSet() {
@@ -618,31 +619,31 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     @Override
     public int compareTo(@NonNull MTGCard card) {
-        if (isALand && card.isALand) {
+        if (land && card.land) {
             return 0;
         }
-        if (!isALand && card.isALand) {
+        if (!land && card.land) {
             return -1;
         }
-        if (isALand) {
+        if (land) {
             return 1;
         }
-        if (isAnArtifact && card.isAnArtifact) {
+        if (artifact && card.artifact) {
             return 0;
         }
-        if (!isAnArtifact && card.isAnArtifact) {
+        if (!artifact && card.artifact) {
             return -1;
         }
-        if (isAnArtifact) {
+        if (artifact) {
             return 1;
         }
-        if (isMultiColor && card.isMultiColor) {
+        if (multiColor && card.multiColor) {
             return 0;
         }
-        if (!isMultiColor && card.isMultiColor) {
+        if (!multiColor && card.multiColor) {
             return -1;
         }
-        if (isMultiColor) {
+        if (multiColor) {
             return 1;
         }
 
@@ -656,7 +657,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     private int getSingleColor() {
-        if (isMultiColor || getColors().size() == 0) {
+        if (multiColor || getColors().size() == 0) {
             return -1;
         }
         return getColors().get(0);

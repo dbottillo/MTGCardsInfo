@@ -6,6 +6,7 @@ import android.content.Context;
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.DB40Helper;
+import com.dbottillo.communication.DataManager;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -21,6 +22,7 @@ public class MTGApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        DataManager.with(this);
         DB40Helper.init(this);
         Fabric.with(this, new Crashlytics());
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
