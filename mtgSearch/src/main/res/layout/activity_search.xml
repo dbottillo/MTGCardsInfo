@@ -1,30 +1,50 @@
 <!-- The main content view -->
-<com.dbottillo.view.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:sothree="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/sliding_layout"
+<FrameLayout
+    android:id="@+id/main_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
-    android:gravity="bottom"
-    sothree:collapsedHeight="@dimen/collapsedHeight">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include layout="@layout/mtg_toolbar" />
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+    android:background="@color/color_primary">
 
     <FrameLayout
-        android:id="@+id/filter"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:gravity="center|top" />
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"/>
 
-</com.dbottillo.view.SlidingUpPanelLayout>
+    <ScrollView
+        android:id="@+id/search_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.dbottillo.view.MTGSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/action_search"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/anim_search_icon"
+        android:tint="@android:color/white"/>
+
+
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/action_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/plus"
+        android:tint="@android:color/white"
+        myapp:borderWidth="0dp"
+        myapp:elevation="4dp"
+        myapp:pressedTranslationZ="8dp"/>-->
+
+</FrameLayout>
