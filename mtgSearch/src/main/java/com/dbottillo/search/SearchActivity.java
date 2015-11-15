@@ -1,184 +1,101 @@
 package com.dbottillo.search;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
+import android.animation.ArgbEvaluator;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 
 import com.dbottillo.R;
-import com.dbottillo.filter.FilterActivity;
-import com.dbottillo.helper.LOG;
-import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.view.SlidingUpPanelLayout;
+import com.dbottillo.base.DBActivity;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SetEvent;
+import com.dbottillo.util.AnimationUtil;
+import com.dbottillo.util.UIUtil;
+import com.dbottillo.view.MTGSearchView;
 
-public class SearchActivity extends FilterActivity implements SlidingUpPanelLayout.PanelSlideListener, SearchView.OnQueryTextListener {
+import butterknife.ButterKnife;
 
-    SearchView searchView;
-    EditText searchEditText;
+public class SearchActivity extends DBActivity implements View.OnClickListener {
+
+    ImageButton newSearch;
+    AnimationDrawable newSearchAnimation;
+    ScrollView scrollView;
+    boolean searchOpen = false;
+    FrameLayout resultsContainer;
+    ArgbEvaluator argbEvaluator;
+
+    MTGSearchView searchView;
+
+
+    int sizeBig = 0;
+    //int totalHeight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         setContentView(R.layout.activity_search);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_close);
+        toolbar.setTitle(R.string.action_search);
+        setSupportActionBar(toolbar);
+
+        argbEvaluator = new ArgbEvaluator();
+
+        resultsContainer = (FrameLayout) findViewById(R.id.fragment_container);
+        newSearch = (ImageButton) findViewById(R.id.action_search);
+        scrollView = (ScrollView) findViewById(R.id.search_scroll_view);
+        scrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                sizeBig = scrollView.getHeight();
+                //totalHeight = findViewById(R.id.main_container).getHeight();
+                UIUtil.setMarginTop(resultsContainer, sizeBig);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                } else {
+                    scrollView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                }
+            }
+        });
+
+        newSearch.setOnClickListener(this);
+
+        newSearch.setBackgroundResource(R.drawable.anim_search_icon);
+        newSearch.setElevation(6.0f); // TODO: pre-lollipop version
+
+        searchView = (MTGSearchView) findViewById(R.id.search_view);
+
+        DataManager.execute(DataManager.TASK.SET_LIST);
+
+/*
         setupToolbar();
-        setupSlidingPanel();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.action_search);
+            getSupportActionBar().setTitle("");
         }
+*/
 
-        if (savedInstanceState != null) {
-            query = savedInstanceState.getString("query");
-        }
 
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            handleIntent(intent);
-        }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("query", query);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            setIntent(intent);
-            handleIntent(intent);
-        }
-    }
-
-    private boolean pendingSearch = false;
-    private String query = "";
-
-    private void handleIntent(Intent intent) {
-        pendingSearch = true;
-        query = intent.getStringExtra(SearchManager.QUERY);
-    }
-
-    @Override
-    protected void onResumeFragments() {
-        super.onResumeFragments();
-        if (pendingSearch) {
-            doSearch();
-            pendingSearch = false;
-        }
+        /*query = "counter";
+        doSearch();*/
     }
 
     @Override
     public String getPageTrack() {
         return "/search_main";
-    }
-
-    @Override
-    public void onPanelSlide(View panel, float slideOffset) {
-        setRotationArrow(180 - (180 * slideOffset));
-    }
-
-    @Override
-    public void onPanelCollapsed(View panel) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
-        SearchFragment searchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if (searchFragment != null) {
-            searchFragment.updateSetFragment();
-        }
-        setRotationArrow(0);
-    }
-
-    @Override
-    public void onPanelExpanded(View panel) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
-        setRotationArrow(180);
-
-    }
-
-    @Override
-    public void onPanelAnchored(View panel) {
-
-    }
-
-    @Override
-    public final boolean onCreateOptionsMenu(final Menu menu) {
-        final MenuInflater inflater = getMenuInflater();
-
-        inflater.inflate(R.menu.search, menu);
-        //MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        // Get the SearchView and set the searchable configuration
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
-
-        //searchView = (SearchView) searchItem.getActionView();
-        // Assumes current activity is the searchable activity
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
-
-        //searchView.setOnQueryTextListener(this);
-
-        try {
-            int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-            searchEditText = (EditText) searchView.findViewById(id);
-            searchEditText.setText(query);
-            searchEditText.setHintTextColor(getResources().getColor(R.color.light_grey));
-        } catch (Exception e) {
-            LOG.e(e.getLocalizedMessage());
-        }
-
-        searchView.requestFocus();
-
-        /*MenuItemCompat.setOnActionExpandListener(searchItem,
-                new MenuItemCompat.OnActionExpandListener() {
-
-                    @Override
-                    public boolean onMenuItemActionExpand(MenuItem item) {
-                        slidingPanel.collapsePane();
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onMenuItemActionCollapse(MenuItem item) {
-                        loadSet();
-                        return true;
-                    }
-                });*/
-
-
-        /*// Associate searchable configuration with the SearchView
-        final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-
-        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-
-        final SearchView searchView = (SearchView) searchMenuItem.getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconified(false);
-        if (mSearchViewHasFocus) {
-            searchView.requestFocus();
-        } else {
-            searchView.clearFocus();
-            hideIme();
-        }
-
-        final EditText searchText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        searchText.setTextColor(getResources().getColor(R.color.action_bar_title_color));
-        searchText.setHintTextColor(getResources().getColor(R.color.dusty_grey));
-
-        setupMediaRouteView(menu);*/
-
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -191,28 +108,99 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        doSearch();
-        return true;
+    public void onEventMainThread(SetEvent event) {
+        if (!event.isError()){
+            searchView.refreshSets(event.getResult());
+        }
+        bus.removeStickyEvent(event);
     }
 
     private void doSearch() {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
+        // TODO: check minimum information for performing a search
+        /*TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
         if (query.length() < 3) {
             Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
             return;
         }
         if (searchEditText != null) {
             searchEditText.setText(query);
-        }
-        changeFragment(SearchFragment.newInstance(query), "search", false);
-        collapseSlidingPanel();
+        }*/
+        changeFragment(SearchFragment.newInstance(searchView.getSearchParams()), "search", false);
         hideIme();
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
+    public void onClick(View v) {
+        //ValueAnimator anim;
+        final AnimationUtil.LinearInterpolator backgroundInterpolator = AnimationUtil.createLinearInterpolator();
+        if (!searchOpen) {
+            // anim = ValueAnimator.ofInt(sizeBig, sizeToolbar);
+            newSearch.setBackgroundResource(R.drawable.anim_search_icon);
+            backgroundInterpolator.fromValue(sizeBig).toValue(sizeToolbar);
+            doSearch();
+        } else {
+            //  anim = ValueAnimator.ofInt(sizeToolbar, sizeBig);
+            newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse);
+            backgroundInterpolator.fromValue(sizeToolbar).toValue(sizeBig);
+        }
+        newSearchAnimation = (AnimationDrawable) newSearch.getBackground();
+        newSearchAnimation.start();
+       /* anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int val = (Integer) valueAnimator.getAnimatedValue();
+                UIUtil.setHeight(scrollView, val);
+                int margin = totalHeight - (totalHeight - val);
+                UIUtil.setMarginTop(resultsContainer, margin);
+            }
+
+        });*/
+
+        Animation anim = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                super.applyTransformation(interpolatedTime, t);
+                int val = (int) backgroundInterpolator.getInterpolation(interpolatedTime);
+                UIUtil.setHeight(scrollView, val);
+                int margin = sizeBig - (sizeBig - val);
+                UIUtil.setMarginTop(resultsContainer, margin);
+                int color;
+                float alpha;
+                if (searchOpen) {
+                    alpha = 1.0f - interpolatedTime;
+                    color = (Integer) argbEvaluator.evaluate(1.0f - interpolatedTime, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_accent));
+                } else {
+                    alpha = interpolatedTime;
+                    color = (Integer) argbEvaluator.evaluate(1.0f - interpolatedTime, getResources().getColor(R.color.color_accent), getResources().getColor(R.color.color_primary));
+                }
+                if (interpolatedTime < 1.0f) {
+                    scrollView.setBackgroundColor(color);
+                }
+            }
+        };
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (searchOpen) {
+                    toolbar.setTitle(R.string.action_search);
+                } else {
+                    toolbar.setTitle(R.string.search_result);
+                }
+                searchOpen = !searchOpen;
+               // scrollView.smoothScrollTo(0,0);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        anim.setDuration(200);
+        scrollView.startAnimation(anim);
     }
 }

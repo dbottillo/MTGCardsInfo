@@ -142,6 +142,24 @@
      <b>Rulings</b>: <br/>%7$s<br/><br/>
     ]]>
     </string>
+    <string name="search_hint_name">Card name</string>
+    <string name="search_hint_type">Types</string>
+    <string name="search_power_title">P:</string>
+    <string name="search_toughness_title">T:</string>
+    <string name="search_cmc_title">Mana cost converted:</string>
+    <string name="white">White</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="multicolor">Only multicolor</string>
+    <string name="no_multi">No multicolor</string>
+    <string name="search_common">Common</string>
+    <string name="search_uncommon">Uncommon</string>
+    <string name="search_mythic">Mythic</string>
+    <string name="search_rare">Rare</string>
+    <string name="search_set_all">All sets</string>
+    <string name="search_set_standard">Standard</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

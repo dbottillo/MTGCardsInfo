@@ -47,7 +47,7 @@ public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         setActionBarTitle(getString(R.string.app_long_name));
-        setupSetFragment(rootView, false);
+        setupSetFragment(rootView);
 
         this.container = rootView.findViewById(R.id.container);
         setListBg = rootView.findViewById(R.id.set_list_bg);

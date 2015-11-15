@@ -20,7 +20,7 @@
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
     </style>
 
-    <style name="MTGSearchTheme" parent="MTGBasicTheme" />
+    <style name="MTGSearchTheme" parent="MTGBasicTheme"/>
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
@@ -38,5 +38,6 @@
     <style name="myPopupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
         <item name="android:textColor">@color/color_primary_dark</item>
     </style>
+
 
 </resources>
