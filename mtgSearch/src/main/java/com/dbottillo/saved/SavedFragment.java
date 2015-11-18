@@ -68,8 +68,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onResume() {
         super.onResume();
-        progressBar.setVisibility(View.VISIBLE);
-        DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        loadCards();
     }
 
     private void loadCards() {
@@ -140,14 +139,13 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", event.getErrorMessage());
         } else {
             savedCards.clear();
-            for (Object card : event.getResult()) {
-                savedCards.add((MTGCard) card);
+            for (MTGCard card : event.getResult()) {
+                savedCards.add(card);
             }
             adapter.notifyDataSetChanged();
             progressBar.setVisibility(View.GONE);
 
             emptyView.setVisibility(savedCards.size() == 0 ? View.VISIBLE : View.GONE);
-            savedCards.clear();
         }
         bus.removeStickyEvent(event);
     }

@@ -246,7 +246,7 @@ public class MTGCardFragment extends DBFragment {
             rulings = "";
         }
         cardName.setText(Html.fromHtml(getString(R.string.card_detail, card.getType(), card.getPower(), card.getToughness(),
-                manaCost, card.getText(), card.getNameSet(), rulings)));
+                manaCost, card.getText(), card.getSetName(), rulings)));
 
         if (price == null) {
             priceCard.setText(R.string.loading);
@@ -258,7 +258,7 @@ public class MTGCardFragment extends DBFragment {
         Bundle params = new Bundle();
         params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
         params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
-        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getNameSet().replace(" ", "%20"));
+        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName().replace(" ", "%20"));
         intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
         getActivity().startService(intent);
 
