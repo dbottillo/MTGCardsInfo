@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 
 import com.dbottillo.R;
 import com.dbottillo.database.CardContract.CardEntry;
+import com.dbottillo.helper.LOG;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -84,7 +85,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 String name = namesJ.getString(k);
                 names.append(name);
                 if (k < namesJ.length() - 1) {
-                    names.append("/");
+                    names.append('/');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_NAME, names.toString());
@@ -94,9 +95,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_SET_ID, setId);
         values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
 
-        int multicolor = 0;
-        int land = 0;
-        int artifact = 0;
+        int multicolor;
+        int land;
+        int artifact;
 
         if (jsonObject.has("colors")) {
             JSONArray colorsJ = jsonObject.getJSONArray("colors");
@@ -105,7 +106,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 String color = colorsJ.getString(k);
                 colors.append(color);
                 if (k < colorsJ.length() - 1) {
-                    colors.append(",");
+                    colors.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_COLORS, colors.toString());
@@ -127,7 +128,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             for (int k = 0; k < typesJ.length(); k++) {
                 types.append(typesJ.getString(k));
                 if (k < typesJ.length() - 1) {
-                    types.append(",");
+                    types.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_TYPES, types.toString());
@@ -256,7 +257,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                     card.rulings.add(rule.getString("text"));
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
+                LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
             }
         }
 
@@ -279,7 +280,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 String color = mapStringColor(colors.get(k));
                 col.append(color);
                 if (k < colors.size() - 1) {
-                    col.append(",");
+                    col.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_COLORS, col.toString());
@@ -289,7 +290,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             for (int k = 0; k < types.size(); k++) {
                 typ.append(types.get(k));
                 if (k < types.size() - 1) {
-                    typ.append(",");
+                    typ.append(',');
                 }
             }
             values.put(CardEntry.COLUMN_NAME_TYPES, typ.toString());
@@ -312,7 +313,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                     rulJ.put("text", rule);
                     rules.put(rulJ);
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
                 }
 
             }

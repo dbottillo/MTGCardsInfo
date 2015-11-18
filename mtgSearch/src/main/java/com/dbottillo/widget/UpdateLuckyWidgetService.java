@@ -5,27 +5,30 @@ import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.R;
 import com.dbottillo.cards.CardLuckyActivity;
-import com.dbottillo.helper.DBAsyncTask;
+import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBAsyncTaskListener {
+public class UpdateLuckyWidgetService extends Service {
 
     int[] allWidgetIds;
-
+    CardsDatabaseHelper cardsDatabaseHelper;
 
     @Override
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            new DBAsyncTask(getApplicationContext(), this, DBAsyncTask.TASK_RANDOM_CARD).execute(allWidgetIds.length);
+            cardsDatabaseHelper = new CardsDatabaseHelper(getApplicationContext());
+            new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);
     }
@@ -35,8 +38,7 @@ public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBA
         return null;
     }
 
-    @Override
-    public void onTaskFinished(int type, ArrayList<?> objects) {
+    public void onTaskFinished(ArrayList<MTGCard> objects) {
         int index = 0;
 
         AppWidgetManager manager = AppWidgetManager.getInstance(getApplicationContext());
@@ -47,7 +49,7 @@ public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBA
         for (int widgetId : allWidgetIds) {
             if (objects.size() > index) {
 
-                MTGCard card = (MTGCard) objects.get(index);
+                MTGCard card = objects.get(index);
 
                 if (card.getImage() != null) {
                     Picasso.with(getApplicationContext()).load(card.getImage()).into(remoteViews, R.id.image_card, new int[]{widgetId});
@@ -62,13 +64,31 @@ public class UpdateLuckyWidgetService extends Service implements DBAsyncTask.DBA
                 manager.updateAppWidget(thisWidget, remoteViews);
             }
         }
-
-
         stopSelf();
     }
 
-    @Override
-    public void onTaskEndWithError(int type, String error) {
-        stopSelf();
+
+    class LuckyAsyncTask extends AsyncTask<Integer, Void, ArrayList<MTGCard>> {
+
+        @Override
+        protected ArrayList<MTGCard> doInBackground(Integer... params) {
+            ArrayList<MTGCard> result = new ArrayList<>();
+
+            Cursor cursor = cardsDatabaseHelper.getRandomCard(params[0]);
+            if (cursor.moveToFirst()) {
+                while (!cursor.isAfterLast()) {
+                    result.add(MTGCard.createCardFromCursor(cursor));
+                    cursor.moveToNext();
+                }
+            }
+            cursor.close();
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<MTGCard> result) {
+            onTaskFinished(result);
+        }
     }
 }

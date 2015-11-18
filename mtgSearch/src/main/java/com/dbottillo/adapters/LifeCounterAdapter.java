@@ -73,12 +73,12 @@ public class LifeCounterAdapter extends BaseAdapter {
 
         Player player = getItem(position);
         if (player.getDiceResult() > 0) {
-            holder.name.setText(player.getName() + " - " + player.getDiceResult() + "/20");
+            holder.name.setText(context.getString(R.string.row_life_counter_name, player.getName(), player.getDiceResult()));
         } else {
             holder.name.setText(player.getName());
         }
-        holder.life.setText(player.getLife() + "");
-        holder.poison.setText(player.getPoisonCount() + "");
+        holder.life.setText(String.valueOf(player.getLife()));
+        holder.poison.setText(String.valueOf(player.getPoisonCount()));
 
         int color = getColorOfPosition(position);
         holder.card.setCardBackgroundColor(color);

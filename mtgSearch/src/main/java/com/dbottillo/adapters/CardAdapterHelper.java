@@ -22,7 +22,7 @@ public final class CardAdapterHelper {
     }
 
     protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck) {
-        holder.name.setText((deck ? card.getQuantity() + " " : "") + card.getName());
+        holder.name.setText(context.getString(R.string.row_card_name, (deck ? card.getQuantity() + " " : ""), card.getName()));
 
         int rarityColor = R.color.common;
         if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {

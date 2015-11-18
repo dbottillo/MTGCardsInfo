@@ -14,9 +14,10 @@ import com.dbottillo.adapters.CardListAdapter;
 import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.CardsEvent;
 import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.dialog.AddToDeckFragment;
-import com.dbottillo.helper.DBAsyncTask;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
@@ -30,7 +31,6 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public abstract class MTGSetFragment extends DBFragment implements View.OnClickListener, OnCardListener {
 
-    private static DBAsyncTask currentTask = null;
     boolean isASearch = false;
     private MTGSet gameSet;
     private ListView listView;
@@ -78,88 +78,44 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-        if (currentTask != null) {
-            currentTask.attach(taskListener);
-        }
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        if (currentTask != null) {
-            currentTask.detach();
-        }
-    }
-
-    @Override
     public String getPageTrack() {
         if (isASearch) {
             return "/search";
         }
         return "/set/" + gameSet.getCode();
     }
-/*
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-        setHasOptionsMenu(true);
-
-        if (isASearch) {
-            currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SEARCH);
-            currentTask.execute(query);
-        } else {
-            currentTask = new DBAsyncTask(getActivity(), this, DBAsyncTask.TASK_SINGLE_SET);
-            currentTask.execute(gameSet.getId() + "");
-        }
-    }*/
-
-    private DBAsyncTask.DBAsyncTaskListener taskListener = new DBAsyncTask.DBAsyncTaskListener() {
-        @Override
-        public void onTaskFinished(int type, ArrayList<?> objects) {
-            taskFinished(objects);
-        }
-
-        @Override
-        public void onTaskEndWithError(int type, String error) {
-            taskEndWithError(type, error);
-        }
-    };
 
     protected void loadSet(MTGSet set) {
         this.gameSet = set;
-        currentTask = new DBAsyncTask(getActivity().getApplicationContext(), taskListener, DBAsyncTask.TASK_SINGLE_SET);
-        currentTask.execute(gameSet.getId() + "");
+        DataManager.execute(DataManager.TASK.SET_CARDS, gameSet.getId() + "");
     }
 
     protected void loadSearch() {
-        currentTask = new DBAsyncTask(getActivity().getApplicationContext(), taskListener, DBAsyncTask.TASK_SEARCH);
-        currentTask.execute(query);
+        DataManager.execute(DataManager.TASK.SEARCH_CARDS, query);
     }
 
-    public void taskFinished(ArrayList<?> result) {
-        if (getActivity() == null) {
-            return;
-        }
-        gameSet.clear();
-        for (Object card : result) {
-            gameSet.addCard((MTGCard) card);
-        }
-        populateCardsWithFilter();
-        if (result.size() == CardsDatabaseHelper.LIMIT) {
-            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
-            TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
-            listView.addFooterView(footer);
-        }
-        result.clear();
-        progressBar.setVisibility(View.GONE);
+    public void onEventMainThread(CardsEvent event) {
+        if (event.isError()) {
+            Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", event.getErrorMessage());
+        } else {
+            gameSet.clear();
+            for (MTGCard card : event.getResult()) {
+                gameSet.addCard(card);
+            }
+            populateCardsWithFilter();
+            if (gameSet.getCards().size() == CardsDatabaseHelper.LIMIT) {
+                View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
+                TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
+                moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
+                listView.addFooterView(footer);
+            }
+            progressBar.setVisibility(View.GONE);
 
-        emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
+            emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
+        }
+        bus.removeStickyEvent(event);
     }
 
     private void populateCardsWithFilter() {
@@ -237,11 +193,6 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         listView.smoothScrollToPosition(0);
     }
 
-    public void taskEndWithError(int type, String error) {
-        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", error);
-    }
-
     public void updateSetFragment() {
         populateCardsWithFilter();
     }
@@ -255,9 +206,6 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
-        if (isASearch) {
-            position--;
-        }
         if (isASearch && listView.getFooterViewsCount() == 1 && position == cards.size()) {
             return;
         }
@@ -267,7 +215,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
         }
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.cardsToDisplay = cards;
+        MTGApp.setCardsToDisplay(cards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, gameSet.getName());
         startActivity(cardsView);

@@ -30,8 +30,6 @@
     <string name="mtg_mythic_rare">M</string>
 
     <!-- card fragment -->
-    <string name="type_card">Tipo</string>
-    <string name="pt_card">F/C</string>
     <string name="share">Condividi</string>
     <string name="favourite_remove">Rimuovi</string>
     <string name="favourite_add">Salva</string>
@@ -44,7 +42,6 @@
     <string name="edit_player">Modifica nome</string>
     <string name="save">Salva</string>
     <string name="cancel">Annulla</string>
-    <string name="manacost_card">Costo di mana</string>
     <string name="life_reset">Azzera</string>
     <string name="life_dice">Lancia dado</string>
     <string name="menu_life_poison">Poison</string>
@@ -93,6 +90,7 @@
     <string name="ok">Ok</string>
     <string name="release_note_text">
         <b>Version 2.6:</b> \n
+        - NUOVO: Commander 2015 \n
         - NUOVO: Il dettaglio carta ora mostra le rulings \n
         - FIX: Mazzi con multiple uguali carte \n\n
         <b>Versione 2.5:</b> \n
@@ -119,6 +117,15 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="share_card">Condividi carta</string>
-    <string name="rulings">Rulings</string>
+    <string name="card_detail">
+    <![CDATA[
+     <b>Tipo</b>: %1$s <br/><br/>
+     <b>F/C</b>: %2$s/%3$s <br/><br/>
+     <b>Costo di mana</b>: %4$s<br/><br/>
+     %5$s<br/><br/>
+     <b>Set</b>: %6$s<br/><br/>
+     <b>Rulings</b>: <br/>%7$s<br/><br/>
+    ]]>
+    </string>
 
 </resources>
