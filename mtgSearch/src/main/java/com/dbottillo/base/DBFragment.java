@@ -9,8 +9,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
+import com.dbottillo.communication.events.BaseEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.squareup.leakcanary.RefWatcher;
+
+import de.greenrobot.event.EventBus;
 
 public abstract class DBFragment extends DialogFragment {
 
@@ -22,6 +25,8 @@ public abstract class DBFragment extends DialogFragment {
 
     private DBActivity activity;
     protected boolean isPortrait;
+
+    protected EventBus bus = EventBus.getDefault();
 
     @Override
     public void onAttach(Activity activity) {
@@ -36,6 +41,18 @@ public abstract class DBFragment extends DialogFragment {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        bus.unregister(this);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        bus.registerSticky(this);
     }
 
     @Override
@@ -85,5 +102,9 @@ public abstract class DBFragment extends DialogFragment {
 
     public boolean onBackPressed() {
         return false;
+    }
+
+    public void onEvent(BaseEvent event){
+
     }
 }

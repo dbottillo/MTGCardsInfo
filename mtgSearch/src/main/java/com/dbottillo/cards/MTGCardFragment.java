@@ -71,7 +71,6 @@ public class MTGCardFragment extends DBFragment {
     View cardImageContainer;
     TextView priceCard;
     TCGPrice price;
-    TextView rulings;
 
     private int position;
 
@@ -104,7 +103,6 @@ public class MTGCardFragment extends DBFragment {
         retry = rootView.findViewById(R.id.image_card_retry);
         retryBtn = (Button) rootView.findViewById(R.id.image_card_retry_btn);
         priceCard = (TextView) rootView.findViewById(R.id.price_card);
-        rulings = (TextView) rootView.findViewById(R.id.rulings_card);
 
         setHasOptionsMenu(true);
 
@@ -226,23 +224,29 @@ public class MTGCardFragment extends DBFragment {
     }
 
     private void refreshUI() {
+        if (getView() == null){
+            return;
+        }
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
 
-        String typeHtml = "<b>" + getString(R.string.type_card) + ":</b> " + card.getType() + " <br/><br/> "
-                + "<b>" + getString(R.string.pt_card) + "</b>: " + card.getPower() + "/" + card.getToughness() + " <br/><br/>";
-        typeHtml += "<b>" + getString(R.string.manacost_card) + "</b>: ";
+        String manaCost;
+        String rulings;
         if (card.getManaCost() != null) {
-            typeHtml += card.getManaCost() + " (" + card.getCmc() + ")";
+            manaCost = card.getManaCost() + " (" + card.getCmc() + ")";
         } else {
-            typeHtml += " - ";
+            manaCost = " - ";
         }
-        cardName.setText(Html.fromHtml(typeHtml));
-
-        TextView cardText = (TextView) getView().findViewById(R.id.text_card);
-        cardText.setText(card.getText());
-
-        TextView setCardText = (TextView) getView().findViewById(R.id.set_card);
-        setCardText.setText(Html.fromHtml("<b>" + getString(R.string.set_card) + ":</b> " + card.getSetName()));
+        if (card.getRulings().size() > 0) {
+            StringBuilder html = new StringBuilder();
+            for (String rule : card.getRulings()) {
+                html.append("- ").append(rule).append("<br/><br/>");
+            }
+            rulings = html.toString();
+        } else {
+            rulings = "";
+        }
+        cardName.setText(Html.fromHtml(getString(R.string.card_detail, card.getType(), card.getPower(), card.getToughness(),
+                manaCost, card.getText(), card.getSetName(), rulings)));
 
         if (price == null) {
             priceCard.setText(R.string.loading);
@@ -267,16 +271,6 @@ public class MTGCardFragment extends DBFragment {
             cardImageContainer.setVisibility(View.GONE);
         }
 
-        if (card.getRulings().size() > 0) {
-            rulings.setVisibility(View.VISIBLE);
-            String html = "<b>" + getString(R.string.rulings) + ":</b><br/>";
-            for (String rule : card.getRulings()) {
-                html += "- " + rule + "<br/><br/>";
-            }
-            rulings.setText(Html.fromHtml(html));
-        } else {
-            rulings.setVisibility(View.GONE);
-        }
     }
 
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {

@@ -357,8 +357,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
      *                    starting from the top of the layout.
      */
     public void setAnchorPoint(float anchorPoint) {
-        if (anchorPoint > 0 && anchorPoint < 1)
+        if (anchorPoint > 0 && anchorPoint < 1) {
             mAnchorPoint = anchorPoint;
+        }
     }
 
     /**
@@ -708,7 +709,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
     private boolean isDragViewUnder(int x, int y) {
         View dragView = mDragView != null ? mDragView : mSlideableView;
-        if (dragView == null) return false;
+        if (dragView == null) {
+            return false;
+        }
         int[] viewLocation = new int[2];
         dragView.getLocationOnScreen(viewLocation);
         int[] parentLocation = new int[2];
@@ -1132,10 +1135,6 @@ public class SlidingUpPanelLayout extends ViewGroup {
             super(width, height);
         }
 
-        public LayoutParams(android.view.ViewGroup.LayoutParams source) {
-            super(source);
-        }
-
         public LayoutParams(MarginLayoutParams source) {
             super(source);
         }
@@ -1151,6 +1150,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
             a.recycle();
         }
 
+        public LayoutParams(ViewGroup.LayoutParams p) {
+            super(p);
+        }
     }
 
     static class SavedState extends BaseSavedState {

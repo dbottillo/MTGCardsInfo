@@ -2,14 +2,17 @@
 <lint>
     <issue id="UnusedResources">
         <ignore path="src/debug/res/raw"/>
+        <ignore path="build/generated/res/google-services/release/values/values.xml"/>
+        <ignore path="build/generated/res/google-services/debug/values/values.xml"/>
     </issue>
     <issue id="IconDensities">
         <ignore path="src/main/res/drawable-xxxhdpi"/>
     </issue>
     <issue id="InvalidPackage">
-        <ignore path="libs/db4o-8.0.249.16098-all-java5.jar"/>
+        <ignore path="libs/db4o-8.0.276.16149-all-java5.jar"/>
     </issue>
     <issue id="MissingTranslation">
         <ignore path="build/generated/res/google-services/release/values/values.xml"/>
+        <ignore path="build/generated/res/google-services/debug/values/values.xml"/>
     </issue>
 </lint>

@@ -6,6 +6,7 @@ import android.content.Context;
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.DB40Helper;
+import com.dbottillo.communication.DataManager;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -16,11 +17,12 @@ import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
-    public static ArrayList<MTGCard> cardsToDisplay;
+    private static ArrayList<MTGCard> cardsToDisplay;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        DataManager.with(this);
         DB40Helper.init(this);
         Fabric.with(this, new Crashlytics());
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
@@ -32,4 +34,12 @@ public class MTGApp extends Application {
     }
 
     private RefWatcher refWatcher;
+
+    public static void setCardsToDisplay(ArrayList<MTGCard> cards) {
+        cardsToDisplay = cards;
+    }
+
+    public static ArrayList<MTGCard> getCardsToDisplay() {
+        return cardsToDisplay;
+    }
 }

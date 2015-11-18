@@ -22,17 +22,9 @@ public class DB40Helper {
     private static ObjectContainer db;
     private static Context ctx;
 
-   /* public static DB40Helper getInstance(Context ctx) {
-        if (dbh == null) {
-            dbh = new DB40Helper(ctx);
-        }
-        return dbh;
+    public static void init(Context context) {
+        ctx = context;
     }
-
-
-    private DB40Helper(Context ctx) {
-        this.ctx = ctx;
-    }*/
 
     public static synchronized boolean openDb() {
         Log.e(TAG, "open db!");
@@ -149,9 +141,5 @@ public class DB40Helper {
             players.add(result.next());
         }
         return players;
-    }
-
-    public static void init(Context context) {
-        ctx = context;
     }
 }
