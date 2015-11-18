@@ -32,13 +32,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     String toughness;
     String manaCost;
     String text;
-    boolean multiColor;
-    boolean land;
-    boolean artifact;
-    boolean eldrazi;
+    boolean isMultiColor;
+    boolean isALand;
+    boolean isAnArtifact;
+    boolean isAnEldrazi;
     int multiVerseId;
     int idSet;
-    String nameSet;
+    String setName;
     int quantity = 1;
     boolean sideboard = false;
     String layout;
@@ -198,7 +198,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         card.setName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NAME)));
 
         card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_ID)));
-        card.setNameSet(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
+        card.setSetName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
 
         if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1) {
             String colors = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS));
@@ -273,7 +273,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_NAME, name);
         values.put(CardEntry.COLUMN_NAME_TYPE, type);
         values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
-        values.put(CardEntry.COLUMN_NAME_SET_NAME, nameSet);
+        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
         if (colors.size() > 0) {
             StringBuilder col = new StringBuilder();
             for (int k = 0; k < colors.size(); k++) {
@@ -302,9 +302,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
         values.put(CardEntry.COLUMN_NAME_TEXT, text);
         values.put(CardEntry.COLUMN_NAME_CMC, cmc);
-        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, multiColor);
-        values.put(CardEntry.COLUMN_NAME_LAND, land);
-        values.put(CardEntry.COLUMN_NAME_ARTIFACT, artifact);
+        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isMultiColor);
+        values.put(CardEntry.COLUMN_NAME_LAND, isALand);
+        values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
         if (rulings.size() > 0) {
             JSONArray rules = new JSONArray();
             for (String rule : rulings) {
@@ -379,13 +379,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeString(toughness);
         dest.writeString(manaCost);
         dest.writeString(text);
-        dest.writeInt(multiColor ? 1 : 0);
-        dest.writeInt(land ? 1 : 0);
-        dest.writeInt(artifact ? 1 : 0);
-        dest.writeInt(eldrazi ? 1 : 0);
+        dest.writeInt(isMultiColor ? 1 : 0);
+        dest.writeInt(isALand ? 1 : 0);
+        dest.writeInt(isAnArtifact ? 1 : 0);
+        dest.writeInt(isAnEldrazi ? 1 : 0);
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
-        dest.writeString(nameSet);
+        dest.writeString(setName);
         dest.writeInt(quantity);
         dest.writeInt(sideboard ? 1 : 0);
         dest.writeStringList(rulings);
@@ -405,13 +405,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         toughness = in.readString();
         manaCost = in.readString();
         text = in.readString();
-        multiColor = in.readInt() == 1;
-        land = in.readInt() == 1;
-        artifact = in.readInt() == 1;
-        eldrazi = in.readInt() == 1;
+        isMultiColor = in.readInt() == 1;
+        isALand = in.readInt() == 1;
+        isAnArtifact = in.readInt() == 1;
+        isAnEldrazi = in.readInt() == 1;
         multiVerseId = in.readInt();
         idSet = in.readInt();
-        nameSet = in.readString();
+        setName = in.readString();
         quantity = in.readInt();
         sideboard = in.readInt() == 1;
         in.readStringList(rulings);
@@ -523,35 +523,35 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public boolean isMultiColor() {
-        return multiColor;
+        return isMultiColor;
     }
 
     public void setMultiColor(boolean isMultiColor) {
-        this.multiColor = isMultiColor;
+        this.isMultiColor = isMultiColor;
     }
 
     public boolean isALand() {
-        return land;
+        return isALand;
     }
 
     public void setAsALand(boolean isALand) {
-        this.land = isALand;
+        this.isALand = isALand;
     }
 
     public boolean isAnArtifact() {
-        return artifact;
+        return isAnArtifact;
     }
 
     public void setAsArtifact(boolean isAnArtifact) {
-        this.artifact = isAnArtifact;
+        this.isAnArtifact = isAnArtifact;
     }
 
     public boolean isAnEldrazi() {
-        return eldrazi;
+        return isAnEldrazi;
     }
 
     public void setAsEldrazi(boolean isAnEldrazi) {
-        this.eldrazi = isAnEldrazi;
+        this.isAnEldrazi = isAnEldrazi;
     }
 
     public int getMultiVerseId() {
@@ -562,12 +562,12 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.multiVerseId = multiVerseId;
     }
 
-    public String getNameSet() {
-        return nameSet;
+    public String getSetName() {
+        return setName;
     }
 
-    public void setNameSet(String nameSet) {
-        this.nameSet = nameSet;
+    public void setSetName(String setName) {
+        this.setName = setName;
     }
 
     public int getIdSet() {
@@ -619,31 +619,31 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     @Override
     public int compareTo(@NonNull MTGCard card) {
-        if (land && card.land) {
+        if (isALand && card.isALand) {
             return 0;
         }
-        if (!land && card.land) {
+        if (!isALand && card.isALand) {
             return -1;
         }
-        if (land) {
+        if (isALand) {
             return 1;
         }
-        if (artifact && card.artifact) {
+        if (isAnArtifact && card.isAnArtifact) {
             return 0;
         }
-        if (!artifact && card.artifact) {
+        if (!isAnArtifact && card.isAnArtifact) {
             return -1;
         }
-        if (artifact) {
+        if (isAnArtifact) {
             return 1;
         }
-        if (multiColor && card.multiColor) {
+        if (isMultiColor && card.isMultiColor) {
             return 0;
         }
-        if (!multiColor && card.multiColor) {
+        if (!isMultiColor && card.isMultiColor) {
             return -1;
         }
-        if (multiColor) {
+        if (isMultiColor) {
             return 1;
         }
 
@@ -657,7 +657,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     private int getSingleColor() {
-        if (multiColor || getColors().size() == 0) {
+        if (isMultiColor || getColors().size() == 0) {
             return -1;
         }
         return getColors().get(0);

@@ -48,7 +48,7 @@ public final class CardAdapterHelper {
 
         if (isASearch) {
             holder.setName.setVisibility(View.VISIBLE);
-            holder.setName.setText(card.getNameSet());
+            holder.setName.setText(card.getSetName());
         } else {
             holder.setName.setVisibility(View.GONE);
         }
