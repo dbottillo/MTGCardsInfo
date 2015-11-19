@@ -1,5 +1,7 @@
 <resources>
 
+    <style name="MTG"/>
+
     <style name="MTGProgressBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">4dp</item>
@@ -48,7 +50,6 @@
         <item name="android:colorBackground">@color/white</item>
     </style>
 
-
     <style name="EditTextWhite" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@android:color/white</item>
@@ -73,30 +74,17 @@
         <item name="android:textColorHint">@color/color_primary</item>
     </style>
 
-    <style name="MTGTextInputLayout" parent="Widget.Design.TextInputLayout"/>
-
-    <style name="MTGTextInputLayout.Search">
-        <item name="hintTextAppearance">@style/MTGTextAppearance</item>
+    <style name="MTG.EditText">
+        <item name="android:textColorHint">@color/color_primary_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="MTGTextAppearance" parent="TextAppearance.Design.Hint">
-        <item name="android:textColor">@color/mtg_red</item>
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorAccent">@color/white</item>
-    </style>
-
-    <style name="TextLabel" parent="TextAppearance.AppCompat">
-        //hint color And Label Color in False State
-        <item name="android:textColorHint">@color/white</item>
-        <item name="android:textSize">20sp</item>
-        //Label color in True State And Bar Color False And True State
-        <item name="colorAccent">@color/white</item>
-        <item name="colorControlNormal">@color/white</item>
+    <style name="MTG.Search" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/color_primary_light</item>
         <item name="colorControlActivated">@color/white</item>
-    </style>
-
-    <style name="SearchForm" parent="Theme.AppCompat.Light">
-        <item name="colorAccent">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
     </style>
 
 </resources>

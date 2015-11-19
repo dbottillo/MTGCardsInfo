@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.dbottillo.R;
 import com.dbottillo.resources.MTGSet;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class SearchSetAdapter extends ArrayAdapter<MTGSet> {
     public View getView(int position, View convertView, ViewGroup parent) {
         final SetHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_spinner_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_spinner_item, parent, false);
             holder = new SetHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);
@@ -35,7 +36,7 @@ public class SearchSetAdapter extends ArrayAdapter<MTGSet> {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         final SetHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_spinner_dropdown_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_spinner_dropdown_item, parent, false);
             holder = new SetHolder(convertView);
             convertView.setTag(holder);
             convertView.setId(position);
