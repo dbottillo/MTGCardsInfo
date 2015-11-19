@@ -131,6 +131,7 @@ public class CardsDatabaseHelper extends SQLiteAssetHelper {
                 query += composeQueryColor(firstColor, colorOperator);
                 selection.add("%G%");
             }
+            first = false;
             query += ")";
         }
         if (searchParams.atLeastOneRarity()) {

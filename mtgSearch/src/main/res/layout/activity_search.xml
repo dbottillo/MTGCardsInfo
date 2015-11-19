@@ -1,21 +1,40 @@
-<!-- The main content view -->
-<FrameLayout
-    android:id="@+id/main_container"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_primary">
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/mtg_toolbar.Transparent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_primary"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/second_toolbar"
+        style="@style/mtg_toolbar.Transparent"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_accent"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:visibility="gone"
         android:background="@color/main_bg"/>
 
     <ScrollView
         android:id="@+id/search_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:layout_below="@+id/toolbar">
 
         <com.dbottillo.view.MTGSearchView
             android:id="@+id/search_view"
@@ -25,26 +44,14 @@
 
     <ImageButton
         android:id="@+id/action_search"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_gravity="right|bottom"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
+        android:contentDescription="@string/cd_action_search"
         android:background="@drawable/anim_search_icon"
         android:tint="@android:color/white"/>
 
-
-    <!--<android.support.design.widget.FloatingActionButton
-        android:id="@+id/action_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/plus"
-        android:tint="@android:color/white"
-        myapp:borderWidth="0dp"
-        myapp:elevation="4dp"
-        myapp:pressedTranslationZ="8dp"/>-->
-
-</FrameLayout>
+</RelativeLayout>

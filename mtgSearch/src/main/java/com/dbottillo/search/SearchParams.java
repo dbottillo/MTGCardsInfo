@@ -233,4 +233,10 @@ public class SearchParams implements Parcelable {
     public boolean atLeastOneRarity() {
         return common || uncommon || rare || mythic;
     }
+
+    public boolean isValid(){
+        return ((name != null && name.length() > 0) || (types != null && types.length() > 0)
+                || cmc.getValue() > 0 || power.getValue() > 0 || tough.getValue() > 0
+                || atLeastOneColor() || atLeastOneRarity());
+    }
 }

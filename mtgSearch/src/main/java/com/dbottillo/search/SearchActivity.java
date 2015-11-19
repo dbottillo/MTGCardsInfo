@@ -13,11 +13,13 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.SetEvent;
+import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.util.AnimationUtil;
 import com.dbottillo.util.UIUtil;
 import com.dbottillo.view.MTGSearchView;
@@ -31,13 +33,13 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
     ScrollView scrollView;
     boolean searchOpen = false;
     FrameLayout resultsContainer;
+    View mainContainer;
     ArgbEvaluator argbEvaluator;
 
     MTGSearchView searchView;
-
+    Toolbar secondToolbar;
 
     int sizeBig = 0;
-    //int totalHeight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,10 +50,15 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_close);
         toolbar.setTitle(R.string.action_search);
+        secondToolbar = (Toolbar) findViewById(R.id.second_toolbar);
+        secondToolbar.setNavigationIcon(R.drawable.ic_close);
+        secondToolbar.setTitle(R.string.search_result);
+
         setSupportActionBar(toolbar);
 
         argbEvaluator = new ArgbEvaluator();
 
+        mainContainer = findViewById(R.id.main_container);
         resultsContainer = (FrameLayout) findViewById(R.id.fragment_container);
         newSearch = (ImageButton) findViewById(R.id.action_search);
         scrollView = (ScrollView) findViewById(R.id.search_scroll_view);
@@ -59,8 +66,9 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
             @Override
             public void onGlobalLayout() {
                 sizeBig = scrollView.getHeight();
-                //totalHeight = findViewById(R.id.main_container).getHeight();
                 UIUtil.setMarginTop(resultsContainer, sizeBig);
+                secondToolbar.setY(-sizeToolbar);
+                secondToolbar.setVisibility(View.VISIBLE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 } else {
@@ -68,29 +76,32 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
                 }
             }
         });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    computeScrollChanged(scrollY);
+                }
+            });
+        } else {
+            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                @Override
+                public void onScrollChanged() {
+                    computeScrollChanged(scrollView.getScrollY());
+                }
+            });
+        }
 
         newSearch.setOnClickListener(this);
 
         newSearch.setBackgroundResource(R.drawable.anim_search_icon);
-        newSearch.setElevation(6.0f); // TODO: pre-lollipop version
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            newSearch.setElevation(6.0f); // TODO: pre-lollipop version
+        }
 
         searchView = (MTGSearchView) findViewById(R.id.search_view);
 
         DataManager.execute(DataManager.TASK.SET_LIST);
-
-/*
-        setupToolbar();
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("");
-        }
-*/
-
-
-        /*query = "counter";
-        doSearch();*/
     }
 
     @Override
@@ -109,53 +120,38 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
     }
 
     public void onEventMainThread(SetEvent event) {
-        if (!event.isError()){
+        if (!event.isError()) {
             searchView.refreshSets(event.getResult());
         }
         bus.removeStickyEvent(event);
     }
 
-    private void doSearch() {
-        // TODO: check minimum information for performing a search
-        /*TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
-        if (query.length() < 3) {
-            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (searchEditText != null) {
-            searchEditText.setText(query);
-        }*/
-        changeFragment(SearchFragment.newInstance(searchView.getSearchParams()), "search", false);
+    private void doSearch(SearchParams searchParams) {
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", searchParams.toString());
+        changeFragment(SearchFragment.newInstance(searchParams), "search", false);
         hideIme();
     }
 
     @Override
     public void onClick(View v) {
-        //ValueAnimator anim;
+        final SearchParams searchParams = searchView.getSearchParams();
+        if (!searchParams.isValid()) {
+            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
+            return;
+        }
         final AnimationUtil.LinearInterpolator backgroundInterpolator = AnimationUtil.createLinearInterpolator();
+        final AnimationUtil.LinearInterpolator scaleInterpolator = AnimationUtil.createLinearInterpolator();
         if (!searchOpen) {
-            // anim = ValueAnimator.ofInt(sizeBig, sizeToolbar);
             newSearch.setBackgroundResource(R.drawable.anim_search_icon);
-            backgroundInterpolator.fromValue(sizeBig).toValue(sizeToolbar);
-            doSearch();
+            backgroundInterpolator.fromValue(sizeBig).toValue(0);
+            scaleInterpolator.fromValue(0.7f).toValue(1.0f);
         } else {
-            //  anim = ValueAnimator.ofInt(sizeToolbar, sizeBig);
             newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse);
-            backgroundInterpolator.fromValue(sizeToolbar).toValue(sizeBig);
+            backgroundInterpolator.fromValue(0).toValue(sizeBig);
+            scaleInterpolator.fromValue(1.0f).toValue(0.7f);
         }
         newSearchAnimation = (AnimationDrawable) newSearch.getBackground();
         newSearchAnimation.start();
-       /* anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                int val = (Integer) valueAnimator.getAnimatedValue();
-                UIUtil.setHeight(scrollView, val);
-                int margin = totalHeight - (totalHeight - val);
-                UIUtil.setMarginTop(resultsContainer, margin);
-            }
-
-        });*/
-
         Animation anim = new Animation() {
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -164,35 +160,27 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
                 UIUtil.setHeight(scrollView, val);
                 int margin = sizeBig - (sizeBig - val);
                 UIUtil.setMarginTop(resultsContainer, margin);
-                int color;
-                float alpha;
-                if (searchOpen) {
-                    alpha = 1.0f - interpolatedTime;
-                    color = (Integer) argbEvaluator.evaluate(1.0f - interpolatedTime, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_accent));
-                } else {
-                    alpha = interpolatedTime;
-                    color = (Integer) argbEvaluator.evaluate(1.0f - interpolatedTime, getResources().getColor(R.color.color_accent), getResources().getColor(R.color.color_primary));
-                }
-                if (interpolatedTime < 1.0f) {
-                    scrollView.setBackgroundColor(color);
-                }
             }
         };
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                if (!searchOpen) {
+                    resultsContainer.setVisibility(View.VISIBLE);
+                    secondToolbar.animate().setDuration(100).translationY(0).start();
+                } else {
+                    secondToolbar.animate().setDuration(100).translationY(-sizeToolbar).start();
+                }
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
                 if (searchOpen) {
-                    toolbar.setTitle(R.string.action_search);
+                    resultsContainer.setVisibility(View.GONE);
                 } else {
-                    toolbar.setTitle(R.string.search_result);
+                    doSearch(searchParams);
                 }
                 searchOpen = !searchOpen;
-               // scrollView.smoothScrollTo(0,0);
             }
 
             @Override
@@ -202,5 +190,22 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         });
         anim.setDuration(200);
         scrollView.startAnimation(anim);
+    }
+
+    private void computeScrollChanged(int amount) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(amount < 200 ? 12 * ((float) amount / (float) 100) : 0);
+        }
+        int color = (Integer) argbEvaluator.evaluate(amount < 400 ? ((float) amount / (float) 400) : 1, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_primary_slightly_dark));
+        scrollView.setBackgroundColor(color);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (searchOpen) {
+            newSearch.callOnClick();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

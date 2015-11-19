@@ -1,6 +1,7 @@
 package com.dbottillo.view;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
@@ -92,17 +93,20 @@ public class MTGSearchView extends RelativeLayout {
         searchSetAdapter = new SearchSetAdapter(getContext(), sets);
         set.setAdapter(searchSetAdapter);
 
-        ArrayAdapter<CharSequence> cmcAdapter = new ArrayAdapter<CharSequence>(getContext(), android.R.layout.simple_spinner_item, operators);
+        ArrayAdapter<CharSequence> cmcAdapter = new ArrayAdapter<CharSequence>(getContext(), R.layout.row_spinner_item, operators);
         cmcAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cmcOp.setAdapter(cmcAdapter);
+        cmcOp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getContext(), android.R.layout.simple_spinner_item, operators);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getContext(), R.layout.row_spinner_item, operators);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         powerOp.setAdapter(adapter);
+        powerOp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
-        ArrayAdapter<CharSequence> toughAdapter = new ArrayAdapter<CharSequence>(getContext(), android.R.layout.simple_spinner_item, operators);
+        ArrayAdapter<CharSequence> toughAdapter = new ArrayAdapter<CharSequence>(getContext(), R.layout.row_spinner_item, operators);
         toughAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         toughOp.setAdapter(toughAdapter);
+        toughOp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         multi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
