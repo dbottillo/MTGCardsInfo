@@ -107,7 +107,7 @@ public class SearchParams implements Parcelable {
         this.green = green;
     }
 
-    public boolean isMulti() {
+    public boolean onlyMulti() {
         return multi;
     }
 

@@ -12,9 +12,15 @@ public final class MaterialWrapper {
 
     }
 
-    public static void setElevation(View view, float value) {
+    public static void copyElevation(View view, float value) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             view.setElevation(value);
+        }
+    }
+
+    public static void copyElevation(View targetView, View copiedView) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            targetView.setElevation(copiedView.getElevation());
         }
     }
 
