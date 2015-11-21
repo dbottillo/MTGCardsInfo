@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.BuildConfig;
@@ -34,12 +35,17 @@ public abstract class DBActivity extends AppCompatActivity {
     MTGApp app;
     protected Toolbar toolbar;
     protected EventBus bus = EventBus.getDefault();
+    protected int sizeToolbar = 0;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
         app = (MTGApp) getApplication();
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            sizeToolbar = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+        }
     }
 
     @Override

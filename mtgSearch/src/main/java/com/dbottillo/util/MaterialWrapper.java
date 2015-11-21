@@ -18,6 +18,12 @@ public final class MaterialWrapper {
         }
     }
 
+    public static void copyElevation(View targetView, View copiedView) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            targetView.setElevation(copiedView.getElevation());
+        }
+    }
+
     public static Drawable getRippleDrawable(Context context, String drawableName) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             drawableName = "ripple_" + drawableName;

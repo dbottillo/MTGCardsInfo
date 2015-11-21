@@ -24,6 +24,12 @@ public class MTGSet implements Parcelable {
         this.cards = new ArrayList<>();
     }
 
+    public MTGSet(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.cards = new ArrayList<>();
+    }
+
     public MTGSet(Parcel in) {
         this.cards = new ArrayList<>();
         readFromParcel(in);
