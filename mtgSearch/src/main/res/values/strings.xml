@@ -12,14 +12,14 @@
     <string name="version">Version</string>
     <string name="search_hint">Search magic card</string>
     <string name="action_search">Search</string>
-    <string name="search_result">Results for:</string>
+    <string name="search_result">Results:</string>
     <string name="to_premium_btn">Open Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
         <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
     </plurals>
     <string name="apply_filter">Apply Filter</string>
-    <string name="minimum_search">Search requires at least three letters</string>
+    <string name="minimum_search">Search requires at least one condition</string>
     <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
     <string name="need_premium">Need Premium</string>
 
@@ -142,6 +142,31 @@
      <b>Rulings</b>: <br/>%7$s<br/><br/>
     ]]>
     </string>
+    <string name="search_hint_name">Insert any part of the name</string>
+    <string name="search_hint_type">Insert any type or subtype</string>
+    <string name="search_power_title">P</string>
+    <string name="search_toughness_title">T</string>
+    <string name="search_cmc_title">Mana cost converted</string>
+    <string name="white">White</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="multicolor">Only multicolor</string>
+    <string name="no_multi">No multicolor</string>
+    <string name="search_common">Common</string>
+    <string name="search_uncommon">Uncommon</string>
+    <string name="search_mythic">Mythic</string>
+    <string name="search_rare">Rare</string>
+    <string name="search_set_all">All</string>
+    <string name="search_set_standard">Standard</string>
+    <string name="search_color_title">Colors</string>
+    <string name="search_rarity_title">Rarity</string>
+    <string name="search_card_title">Card Name</string>
+    <string name="search_card_types">Card Types</string>
+    <string name="search_set_title">Set</string>
+    <string name="search_hint_numbers">0,1,2,3...</string>
+    <string name="cd_action_search">Perform search</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

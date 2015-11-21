@@ -126,11 +126,7 @@ public class MTGCardFragment extends DBFragment {
                         heightAvailable -= getResources().getDimensionPixelSize(R.dimen.price_height_container);
                     }*/
                     updateSizeImage();
-                    if (Build.VERSION.SDK_INT < 16) {
-                        mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                    } else {
-                        mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    }
+                    mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             }
         });
