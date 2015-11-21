@@ -690,4 +690,28 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public int hashCode() {
         return multiVerseId;
     }
+
+    public boolean isWhite() {
+        return manaCost != null && manaCost.contains("W");
+    }
+
+    public boolean isBlue() {
+        return manaCost != null && manaCost.contains("U");
+    }
+
+    public boolean isBlack() {
+        return manaCost != null && manaCost.contains("B");
+    }
+
+    public boolean isRed() {
+        return manaCost != null && manaCost.contains("R");
+    }
+
+    public boolean isGreen() {
+        return manaCost != null && manaCost.contains("G");
+    }
+
+    public boolean hasNoColor() {
+        return manaCost == null || !manaCost.matches(".*[WUBRG].*");
+    }
 }

@@ -97,7 +97,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         updateFilterUI();
     }
 
-    public void updateFilterUI() {
+    private void updateFilterUI() {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, "update", "");
         String filterString = "";
 

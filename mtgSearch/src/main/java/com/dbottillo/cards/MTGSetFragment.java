@@ -2,7 +2,6 @@ package com.dbottillo.cards;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -114,19 +113,19 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         SharedPreferences sharedPreferences = getSharedPreferences();
         for (MTGCard card : gameSet.getCards()) {
             boolean toAdd = false;
-            if (card.getColors().contains(MTGCard.WHITE) && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
+            if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
                 toAdd = true;
             }
-            if (card.getColors().contains(MTGCard.BLUE) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
+            if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
                 toAdd = true;
             }
-            if (card.getColors().contains(MTGCard.BLACK) && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
+            if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
                 toAdd = true;
             }
-            if (card.getColors().contains(MTGCard.RED) && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
+            if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
                 toAdd = true;
             }
-            if (card.getColors().contains(MTGCard.GREEN) && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
+            if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
                 toAdd = true;
             }
             if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
@@ -151,8 +150,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
                     && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
                 toAdd = false;
             }
-
-            if (!toAdd && card.isAnEldrazi()) {
+            if (!toAdd && card.isAnEldrazi() && card.hasNoColor()) {
                 toAdd = true;
             }
 
@@ -195,7 +193,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         }
     }
 
-    private boolean isASearch(){
+    private boolean isASearch() {
         return searchParams != null;
     }
 
