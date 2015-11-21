@@ -99,7 +99,7 @@ public abstract class DBActivity extends AppCompatActivity {
     protected void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        MaterialWrapper.copyElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+        MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     }
 
     public void setToolbarColor(int color) {
