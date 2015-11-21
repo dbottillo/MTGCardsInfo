@@ -169,8 +169,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             return true;
         }
         if (item.getItemId() == R.id.action_search) {
-            Intent searchIntent = new Intent(this, SearchActivity.class);
-            startActivity(searchIntent);
+            startActivity(new Intent(this, SearchActivity.class));
             return true;
         }
         if (item.getItemId() == R.id.action_lucky) {
