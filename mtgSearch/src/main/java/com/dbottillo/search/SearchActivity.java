@@ -29,6 +29,10 @@ import butterknife.ButterKnife;
 
 public class SearchActivity extends DBActivity implements View.OnClickListener {
 
+    private static final String SEARCH_OPEN = "searchOpen";
+    private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
+    private static final String TOOLBAR_ELEVATION = "toolbarElevation";
+
     ImageButton newSearch;
     AnimationDrawable newSearchAnimation;
     ScrollView scrollView;
@@ -71,29 +75,41 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         resultsContainer = (FrameLayout) findViewById(R.id.fragment_container);
         newSearch = (ImageButton) findViewById(R.id.action_search);
         scrollView = (ScrollView) findViewById(R.id.search_scroll_view);
+
+        if (savedInstanceState != null) {
+            searchOpen = savedInstanceState.getBoolean(SEARCH_OPEN);
+            scrollView.setBackgroundColor(savedInstanceState.getInt(BG_COLOR_SCROLLVIEW));
+            MaterialWrapper.setElevation(toolbar, savedInstanceState.getFloat(TOOLBAR_ELEVATION));
+            MaterialWrapper.setElevation(secondToolbar, savedInstanceState.getFloat(TOOLBAR_ELEVATION));
+            MaterialWrapper.setStatusBarColor(this, searchOpen ? getResources().getColor(R.color.color_accent_dark) : getResources().getColor(R.color.status_bar));
+        } else {
+            MaterialWrapper.setElevation(toolbar, 0);
+        }
+
         scrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 sizeBig = scrollView.getHeight();
                 UIUtil.setMarginTop(resultsContainer, sizeBig);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                } else {
-                    scrollView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                if (searchOpen) {
+                    UIUtil.setHeight(scrollView, 0);
+                    UIUtil.setMarginTop(resultsContainer, 0);
+                    resultsContainer.setVisibility(View.VISIBLE);
                 }
+                scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
         toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 sizeToolbar = toolbar.getHeight();
-                secondToolbar.setY(-sizeToolbar);
                 secondToolbar.setVisibility(View.VISIBLE);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                if (searchOpen) {
+                    secondToolbar.setY(0);
                 } else {
-                    toolbar.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    secondToolbar.setY(-sizeToolbar);
                 }
+                toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -115,7 +131,6 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         argbEvaluator = new ArgbEvaluator();
 
         newSearch.setOnClickListener(this);
-
         newSearch.setBackgroundResource(R.drawable.anim_search_icon);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             newSearch.setElevation(6.0f); // TODO: pre-lollipop version
@@ -124,6 +139,17 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         searchView = (MTGSearchView) findViewById(R.id.search_view);
 
         DataManager.execute(DataManager.TASK.SET_LIST);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(SEARCH_OPEN, searchOpen);
+        int color = (Integer) argbEvaluator.evaluate(scrollView.getScrollY() < 400 ? ((float) scrollView.getScrollY() / (float) 400) : 1, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_primary_slightly_dark));
+        outState.putInt(BG_COLOR_SCROLLVIEW, color);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            outState.putFloat(TOOLBAR_ELEVATION, toolbar.getElevation());
+        }
     }
 
     @Override
@@ -162,12 +188,17 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
             return;
         }
         final AnimationUtil.LinearInterpolator backgroundInterpolator = AnimationUtil.createLinearInterpolator();
+        final int startColor, endColor;
         if (!searchOpen) {
             newSearch.setBackgroundResource(R.drawable.anim_search_icon);
             backgroundInterpolator.fromValue(sizeBig).toValue(0);
+            startColor = getResources().getColor(R.color.status_bar);
+            endColor = getResources().getColor(R.color.color_accent_dark);
         } else {
             newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse);
             backgroundInterpolator.fromValue(0).toValue(sizeBig);
+            startColor = getResources().getColor(R.color.color_accent_dark);
+            endColor = getResources().getColor(R.color.status_bar);
         }
         newSearchAnimation = (AnimationDrawable) newSearch.getBackground();
         newSearchAnimation.start();
@@ -177,8 +208,11 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
                 super.applyTransformation(interpolatedTime, t);
                 int val = (int) backgroundInterpolator.getInterpolation(interpolatedTime);
                 UIUtil.setHeight(scrollView, val);
-                int margin = sizeBig - (sizeBig - val);
-                UIUtil.setMarginTop(resultsContainer, margin);
+                UIUtil.setMarginTop(resultsContainer, val);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    int color = (Integer) argbEvaluator.evaluate(interpolatedTime, startColor, endColor);
+                    SearchActivity.this.getWindow().setStatusBarColor(color);
+                }
             }
         };
         anim.setAnimationListener(new Animation.AnimationListener() {

@@ -16,7 +16,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/second_toolbar"
         style="@style/mtg_toolbar.Transparent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_accent"/>
