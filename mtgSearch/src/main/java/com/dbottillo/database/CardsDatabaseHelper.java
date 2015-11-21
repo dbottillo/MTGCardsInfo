@@ -59,31 +59,38 @@ public class CardsDatabaseHelper extends SQLiteAssetHelper {
             first = false;
         }
         if (searchParams.getTypes().length() > 0) {
-                query += composeQuery(first, CardEntry.COLUMN_NAME_TYPE);
-                first = false;
-                selection.add("%" + searchParams.getTypes().trim() + "%");
-            }
-                if (searchParams.getCmc().getValue() > 0) {
-                    query += composeQuery(first, CardEntry.COLUMN_NAME_CMC, searchParams.getCmc().getOperator());
-                    first = false;
-                    selection.add("" + searchParams.getCmc().getValue());
-                }
-                if (searchParams.getPower().getValue() > 0) {
-                    query += composeQuery(first, CardEntry.COLUMN_NAME_POWER, searchParams.getPower().getOperator());
-                    first = false;
-                    selection.add("" + searchParams.getPower().getValue());
-                }
-                if (searchParams.getTough().getValue() > 0) {
-                    query += composeQuery(first, CardEntry.COLUMN_NAME_TOUGHNESS, searchParams.getTough().getOperator());
-                    first = false;
-                    selection.add("" + searchParams.getTough().getValue());
-                }
-                if (searchParams.isNomulti()) {
-                    if (!first) {
+            query += composeQuery(first, CardEntry.COLUMN_NAME_TYPE);
+            first = false;
+            selection.add("%" + searchParams.getTypes().trim() + "%");
+        }
+        if (searchParams.getCmc().getValue() > 0) {
+            query += composeQuery(first, CardEntry.COLUMN_NAME_CMC, searchParams.getCmc().getOperator());
+            first = false;
+            selection.add("" + searchParams.getCmc().getValue());
+        }
+        if (searchParams.getPower().getValue() > 0) {
+            query += composeQuery(first, CardEntry.COLUMN_NAME_POWER, searchParams.getPower().getOperator());
+            first = false;
+            selection.add("" + searchParams.getPower().getValue());
+        }
+        if (searchParams.getTough().getValue() > 0) {
+            query += composeQuery(first, CardEntry.COLUMN_NAME_TOUGHNESS, searchParams.getTough().getOperator());
+            first = false;
+            selection.add("" + searchParams.getTough().getValue());
+        }
+        if (searchParams.isNomulti()) {
+            if (!first) {
                 query += "AND ";
             }
             first = false;
             query += CardEntry.COLUMN_NAME_MULTICOLOR + " == 0 ";
+        }
+        if (searchParams.onlyMulti()) {
+            if (!first) {
+                query += "AND ";
+            }
+            first = false;
+            query += CardEntry.COLUMN_NAME_MULTICOLOR + " == 1 ";
         }
         if (searchParams.getSetId() > 0) {
             if (!first) {
@@ -105,7 +112,7 @@ public class CardsDatabaseHelper extends SQLiteAssetHelper {
                 query += "AND ";
             }
             query += "(";
-            String colorOperator = searchParams.isMulti() ? "AND " : "OR ";
+            String colorOperator = searchParams.onlyMulti() ? "AND " : "OR ";
             boolean firstColor = true;
             if (searchParams.isWhite()) {
                 query += composeQueryColor(true, colorOperator);

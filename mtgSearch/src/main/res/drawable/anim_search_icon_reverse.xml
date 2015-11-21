@@ -12,6 +12,9 @@
         android:drawable="@drawable/search_icon_anim4"
         android:duration="@integer/search_anim_duration"/>
     <item
+        android:drawable="@drawable/search_icon_anim3"
+        android:duration="@integer/search_anim_duration"/>
+    <item
         android:drawable="@drawable/search_icon_anim2"
         android:duration="@integer/search_anim_duration"/>
     <item
