@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.communication.DataManager;
-import com.dbottillo.communication.events.CardsEvent;
 import com.dbottillo.communication.events.RandomCardsEvent;
 import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.helper.TrackingHelper;

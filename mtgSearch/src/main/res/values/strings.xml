@@ -10,7 +10,6 @@
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
     <string name="version">Version</string>
-    <string name="search_hint">Search magic card</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results:</string>
     <string name="to_premium_btn">Open Play Store</string>
@@ -115,20 +114,6 @@
     <string name="empty_cards">No cards available with the current filters.</string>
     <string name="empty_decks">You don\'t have any decks yet, use the plus button to create a new one.</string>
 
-    <string name="cd_price_go">See price</string>
-    <string name="cd_drawer_header">Planeswalker</string>
-    <string name="cd_card_image">Card Image</string>
-    <string name="cd_card_image_loader">Card Image Loader</string>
-    <string name="cd_filter">Filter</string>
-    <string name="cd_set_arrow">Sets</string>
-    <string name="cd_cards_sort">Sorting cards</string>
-    <string name="cd_again">Again</string>
-    <string name="cd_more_options">More options</string>
-    <string name="cd_deck_icon">Deck icon</string>
-    <string name="cd_delete_deck">Delete deck</string>
-    <string name="cd_library_icon">Library icon</string>
-    <string name="cd_edit">Edit</string>
-    <string name="cd_remove">Remove</string>
     <string name="share_card">Share card</string>
     <string name="row_card_name" translatable="false">%1$s%2$s</string>
     <string name="row_life_counter_name" translatable="false">%1$s - %2$d/20</string>
@@ -165,7 +150,22 @@
     <string name="search_card_title">Card Name</string>
     <string name="search_card_types">Card Types</string>
     <string name="search_set_title">Set</string>
-    <string name="search_hint_numbers">0,1,2,3...</string>
+    <string name="search_hint_numbers" translatable="false">0,1,2,3…</string>
+
+    <string name="cd_price_go">See price</string>
+    <string name="cd_drawer_header">Planeswalker</string>
+    <string name="cd_card_image">Card Image</string>
+    <string name="cd_card_image_loader">Card Image Loader</string>
+    <string name="cd_filter">Filter</string>
+    <string name="cd_set_arrow">Sets</string>
+    <string name="cd_cards_sort">Sorting cards</string>
+    <string name="cd_again">Again</string>
+    <string name="cd_more_options">More options</string>
+    <string name="cd_deck_icon">Deck icon</string>
+    <string name="cd_delete_deck">Delete deck</string>
+    <string name="cd_library_icon">Library icon</string>
+    <string name="cd_edit">Edit</string>
+    <string name="cd_remove">Remove</string>
     <string name="cd_action_search">Perform search</string>
 
     <string-array name="header_title_flavor" translatable="false">

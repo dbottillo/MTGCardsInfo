@@ -128,10 +128,10 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
             if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
                 toAdd = true;
             }
-            if (card.isALand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
+            if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
                 toAdd = true;
             }
-            if (card.isAnArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
+            if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
                 toAdd = true;
             }
             if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
@@ -150,7 +150,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
                     && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
                 toAdd = false;
             }
-            if (!toAdd && card.isAnEldrazi() && card.hasNoColor()) {
+            if (!toAdd && card.isEldrazi() && card.hasNoColor()) {
                 toAdd = true;
             }
 

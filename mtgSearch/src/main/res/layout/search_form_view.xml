@@ -23,14 +23,14 @@
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
-        android:layout_below="@+id/search_name_title"
+        android:layout_below="@id/search_name_title"
         android:hint="@string/search_hint_name"/>
 
     <TextView
         android:id="@+id/search_types_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_name"
+        android:layout_below="@id/search_name"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_types"
@@ -42,7 +42,7 @@
         backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_types_title"
+        android:layout_below="@id/search_types_title"
         android:hint="@string/search_hint_type"
         android:textColor="@color/white"
         android:textColorHint="@color/color_primary_light"/>
@@ -51,7 +51,7 @@
         android:id="@+id/search_set_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_types"
+        android:layout_below="@id/search_types"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
@@ -62,21 +62,21 @@
         android:id="@+id/search_set"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_set_title"
+        android:layout_below="@id/search_set_title"
         android:layout_marginTop="@dimen/base_margin"/>
 
     <View
         android:id="@+id/search_set_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/search_set"
+        android:layout_below="@id/search_set"
         android:background="@color/white"/>
 
     <LinearLayout
         android:id="@+id/search_cmc_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_set_divisor"
+        android:layout_below="@id/search_set_divisor"
         android:layout_marginLeft="@dimen/base_margin"
         android:layout_marginRight="@dimen/base_margin"
         android:layout_marginTop="@dimen/base_margin">
@@ -108,7 +108,7 @@
         android:id="@+id/search_pt_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_cmc_container"
+        android:layout_below="@id/search_cmc_container"
         android:layout_marginLeft="@dimen/base_margin"
         android:layout_marginRight="@dimen/base_margin"
         android:layout_marginTop="@dimen/base_margin"
@@ -164,7 +164,7 @@
         android:id="@+id/search_color_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_pt_container"
+        android:layout_below="@id/search_pt_container"
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_color_title"
@@ -174,7 +174,7 @@
         android:id="@+id/search_color_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/search_color_title"
+        android:layout_below="@id/search_color_title"
         android:layout_marginTop="4dp"
         android:background="@color/white"/>
 
@@ -182,7 +182,7 @@
         android:id="@+id/search_color1_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_color_divisor"
+        android:layout_below="@id/search_color_divisor"
         android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
@@ -208,7 +208,7 @@
         android:id="@+id/search_color2_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_color1_container"
+        android:layout_below="@id/search_color1_container"
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
@@ -234,7 +234,7 @@
         android:id="@+id/search_color3_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_color2_container"
+        android:layout_below="@id/search_color2_container"
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
@@ -260,7 +260,7 @@
         android:id="@+id/search_color4_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_color3_container"
+        android:layout_below="@id/search_color3_container"
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
@@ -278,7 +278,7 @@
         android:id="@+id/search_rarity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_color4_container"
+        android:layout_below="@id/search_color4_container"
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_rarity_title"
@@ -288,15 +288,15 @@
         android:id="@+id/search_rarity_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/search_rarity_title"
+        android:layout_below="@id/search_rarity_title"
         android:layout_marginTop="4dp"
         android:background="@color/white"/>
 
     <LinearLayout
-        android:id="@+id/sarch_rarity1_container"
+        android:id="@+id/search_rarity1_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_rarity_divisor"
+        android:layout_below="@id/search_rarity_divisor"
         android:layout_marginTop="6dp"
         android:orientation="horizontal">
 
@@ -319,10 +319,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/sarch_rarity2_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sarch_rarity1_container"
+        android:layout_below="@id/search_rarity1_container"
         android:layout_marginBottom="100dp"
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">

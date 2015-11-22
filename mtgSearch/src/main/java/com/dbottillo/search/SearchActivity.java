@@ -1,6 +1,7 @@
 package com.dbottillo.search;
 
 import android.animation.ArgbEvaluator;
+import android.annotation.TargetApi;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.dbottillo.util.AnimationUtil;
 import com.dbottillo.util.MaterialWrapper;
 import com.dbottillo.util.UIUtil;
 import com.dbottillo.view.MTGSearchView;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import butterknife.ButterKnife;
 
@@ -46,8 +48,14 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
     ArgbEvaluator argbEvaluator;
 
     int sizeBig = 0;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
+    @TargetApi(23)
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
@@ -262,4 +270,5 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
             super.onBackPressed();
         }
     }
+
 }

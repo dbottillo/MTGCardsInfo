@@ -3,7 +3,6 @@ package com.dbottillo.database;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.database.CardContract.CardEntry;
@@ -178,10 +177,10 @@ public class CardsDatabaseHelper extends SQLiteAssetHelper {
 
         String[] sel = Arrays.copyOf(selection.toArray(), selection.size(), String[].class);
 
-        Log.d("MTG", "query: " + query + " with selection: ");
+        /*Log.d("MTG", "query: " + query + " with selection: ");
         for (String str : sel) {
             Log.d("MTG", "value: " + str);
-        }
+        }*/
 
         return db.rawQuery(query, sel);
     }
