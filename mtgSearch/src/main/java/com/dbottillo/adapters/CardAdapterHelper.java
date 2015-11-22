@@ -6,14 +6,13 @@ import android.support.v7.widget.PopupMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.dbottillo.R;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.resources.MTGCard;
 
 public final class CardAdapterHelper {
 
-    private CardAdapterHelper(){
+    private CardAdapterHelper() {
 
     }
 
@@ -56,36 +55,6 @@ public final class CardAdapterHelper {
         GradientDrawable indicator = (GradientDrawable) holder.indicator.getBackground();
         indicator.setColor(card.getMtgColor(context));
 
-        /*if (BuildConfig.magic) {
-            MTGCard mtgCard = (MTGCard) card;
-            if (position % 2 == 0) {
-                if (mtgCard.isMultiColor() || mtgCard.isAnArtifact() || mtgCard.isALand()) {
-                    holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
-                } else {
-                    if (mtgCard.getColors().contains(MTGCard.WHITE)) {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_white);
-                    } else if (mtgCard.getColors().contains(MTGCard.BLUE)) {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_blue);
-                    } else if (mtgCard.getColors().contains(MTGCard.BLACK)) {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_black);
-                    } else if (mtgCard.getColors().contains(MTGCard.RED)) {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_red);
-                    } else if (mtgCard.getColors().contains(MTGCard.GREEN)) {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_green);
-                    } else {
-                        holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
-                    }
-                }
-            } else {
-                holder.parent.setBackgroundResource(R.drawable.bg_row_base);
-            }
-        } else {
-            if (position % 2 == 0) {
-                holder.parent.setBackgroundResource(R.drawable.bg_row_dark);
-            } else {
-                holder.parent.setBackgroundResource(R.drawable.bg_row_base);
-            }
-        }*/
     }
 
     public static void setupMore(final CardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {

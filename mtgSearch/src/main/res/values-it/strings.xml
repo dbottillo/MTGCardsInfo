@@ -7,7 +7,6 @@
     <string name="copyright">Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast.</string>
     <string name="send_feedback">Invia Feedback</string>
     <string name="version">Versione</string>
-    <string name="search_hint">Cerca Magic carte</string>
     <string name="action_search">Cerca</string>
     <string name="search_result">Risultati per:</string>
     <string name="to_premium_btn">Apri Play Store</string>
@@ -102,6 +101,42 @@
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
     <string name="empty_decks">Non hai nessun mazzo ancora, usa il pulsante viola per crearne uno.</string>
 
+    <string name="share_card">Condividi carta</string>
+    <string name="card_detail">
+    <![CDATA[
+     <b>Tipo</b>: %1$s <br/><br/>
+     <b>F/C</b>: %2$s/%3$s <br/><br/>
+     <b>Costo di mana</b>: %4$s<br/><br/>
+     %5$s<br/><br/>
+     <b>Set</b>: %6$s<br/><br/>
+     <b>Rulings</b>: <br/>%7$s<br/><br/>
+    ]]>
+    </string>
+    <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
+    <string name="search_hint_type">Inserisci qualsiasi tipo e/o sottotipo</string>
+    <string name="search_power_title">F</string>
+    <string name="search_toughness_title">C</string>
+    <string name="search_cmc_title">Costo di mana convertito</string>
+    <string name="white">Bianche</string>
+    <string name="black">Nere</string>
+    <string name="blue">Blu</string>
+    <string name="red">Rosse</string>
+    <string name="green">Verdi</string>
+    <string name="multicolor">Solo multicolore</string>
+    <string name="no_multi">No multicolore</string>
+    <string name="search_common">Comuni</string>
+    <string name="search_uncommon">Non comuni</string>
+    <string name="search_mythic">Mitiche</string>
+    <string name="search_rare">Rare</string>
+    <string name="search_set_all">Tutti</string>
+    <string name="search_set_standard">Standard</string>
+    <string name="search_color_title">Colori</string>
+    <string name="search_rarity_title">Raritá</string>
+    <string name="search_card_title">Nome carta</string>
+    <string name="search_card_types">Tipi carta</string>
+    <string name="search_set_title">Set</string>
+
+
     <string name="cd_price_go">Guarda Prezzo</string>
     <string name="cd_drawer_header">Planeswalker</string>
     <string name="cd_card_image">Immagine Carta</string>
@@ -116,16 +151,7 @@
     <string name="cd_library_icon">Icona libreria</string>
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
-    <string name="share_card">Condividi carta</string>
-    <string name="card_detail">
-    <![CDATA[
-     <b>Tipo</b>: %1$s <br/><br/>
-     <b>F/C</b>: %2$s/%3$s <br/><br/>
-     <b>Costo di mana</b>: %4$s<br/><br/>
-     %5$s<br/><br/>
-     <b>Set</b>: %6$s<br/><br/>
-     <b>Rulings</b>: <br/>%7$s<br/><br/>
-    ]]>
-    </string>
+    <string name="cd_action_search">Effettua ricerca</string>
+
 
 </resources>

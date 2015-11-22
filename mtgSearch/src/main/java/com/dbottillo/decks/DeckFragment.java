@@ -155,7 +155,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
                 if (card.isSideboard()) {
                     nSide += card.getQuantity();
                     side.add(card);
-                } else if (card.isALand()) {
+                } else if (card.isLand()) {
                     nLands += card.getQuantity();
                     lands.add(card);
                 } else if (card.getTypes().contains("Creature")) {
