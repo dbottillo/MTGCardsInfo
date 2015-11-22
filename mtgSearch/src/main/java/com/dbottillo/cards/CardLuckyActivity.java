@@ -9,6 +9,7 @@ import com.dbottillo.R;
 import com.dbottillo.base.DBActivity;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.CardsEvent;
+import com.dbottillo.communication.events.RandomCardsEvent;
 import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
@@ -153,7 +154,7 @@ public class CardLuckyActivity extends DBActivity implements MTGCardFragment.Car
         }
     }
 
-    public void onEventMainThread(CardsEvent event) {
+    public void onEventMainThread(RandomCardsEvent event) {
         isLoading = false;
         if (event.isError()) {
             Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show();
