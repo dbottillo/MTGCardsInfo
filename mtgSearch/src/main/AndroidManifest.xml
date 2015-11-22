@@ -27,7 +27,7 @@
 
         <activity android:name=".cards.CardsActivity"/>
 
-        <activity android:name=".cards.CardLucdkyActivity"/>
+        <activity android:name=".cards.CardLuckyActivity"/>
 
         <activity android:name=".cards.FullScreenImageActivity"/>
 

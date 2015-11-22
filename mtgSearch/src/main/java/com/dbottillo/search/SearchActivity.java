@@ -22,14 +22,14 @@ import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.SetEvent;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.util.AnimationUtil;
+import com.dbottillo.util.DialogUtil;
 import com.dbottillo.util.MaterialWrapper;
 import com.dbottillo.util.UIUtil;
 import com.dbottillo.view.MTGSearchView;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import butterknife.ButterKnife;
 
-public class SearchActivity extends DBActivity implements View.OnClickListener {
+public class SearchActivity extends DBActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, DialogUtil.SortDialogListener {
 
     private static final String SEARCH_OPEN = "searchOpen";
     private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
@@ -48,11 +48,6 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
     ArgbEvaluator argbEvaluator;
 
     int sizeBig = 0;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
     @Override
     @TargetApi(23)
@@ -73,6 +68,8 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
                 onBackPressed();
             }
         });
+        secondToolbar.inflateMenu(R.menu.search_results);
+        secondToolbar.setOnMenuItemClickListener(this);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -271,4 +268,20 @@ public class SearchActivity extends DBActivity implements View.OnClickListener {
         }
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        if (item.getItemId() == R.id.action_sort) {
+            DialogUtil.chooseSortDialog(this, getSharedPreferences(), this);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onSortSelected() {
+        SearchFragment currentFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (currentFragment != null) {
+            currentFragment.updateSetFragment();
+        }
+    }
 }

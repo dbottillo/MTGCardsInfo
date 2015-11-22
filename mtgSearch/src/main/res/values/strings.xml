@@ -100,14 +100,13 @@
     <string name="release_note_title">What\'s new</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        <b>Version 2.7:</b> \n
+        - NEW: Advanced Search, you can search card name, types, color, sets and rarity \n
+        - NEW: Filter Eldrazi cards \n\n
         <b>Version 2.6:</b> \n
         - NEW: Commander 2015 \n
         - NEW: Rulings added to card detail \n
-        - FIX: Bug with multiple same cards in a deck \n\n
-        <b>Version 2.5:</b> \n
-        - NEW: Zendikar Expedition \n
-        - NEW: Battle for Zendikar \n
-        - NEW: now you can create decks! :)
+        - FIX: Bug with multiple same cards in a deck
     </string>
     <string name="action_release_note">Release Note</string>
     <string name="action_fill_decks" translatable="false">Create random decks</string>
@@ -167,6 +166,7 @@
     <string name="cd_edit">Edit</string>
     <string name="cd_remove">Remove</string>
     <string name="cd_action_search">Perform search</string>
+    <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

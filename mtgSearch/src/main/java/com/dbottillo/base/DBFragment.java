@@ -104,7 +104,7 @@ public abstract class DBFragment extends DialogFragment {
         return false;
     }
 
-    public void onEvent(BaseEvent event){
+    public void onEvent(BaseEvent event) {
 
     }
 }

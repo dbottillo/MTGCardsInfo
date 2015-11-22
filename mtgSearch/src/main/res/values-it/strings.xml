@@ -85,17 +85,16 @@
     <string name="deck_choose_quantity">Scegli quantità</string>
     <string name="deck_new">Nuovo mazzo</string>
     <string name="deck_specify">Scelta manuale</string>
-    <string name="release_note_title">Novitá!</string>
+    <string name="release_note_title">Novità!</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
+        <b>Version 2.7:</b> \n
+        - NUOVO: Ricerca avanzata, puoi cercare nomi, tipi, colori, set e rarità\n
+        - NUOVO: Filtri per carte Eldrazi \n\n
         <b>Version 2.6:</b> \n
         - NUOVO: Commander 2015 \n
         - NUOVO: Il dettaglio carta ora mostra le rulings \n
-        - FIX: Mazzi con multiple uguali carte \n\n
-        <b>Versione 2.5:</b> \n
-        - NUOVO: Zendikar Expedition \n
-        - NUOVO: Battle for Zendikar \n
-        - NUOVO: ora puoi creare mazzi! :)
+        - FIX: Mazzi con multiple uguali carte
     </string>
     <string name="action_release_note">Novitá</string>
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
