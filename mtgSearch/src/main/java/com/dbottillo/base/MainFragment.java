@@ -1,8 +1,6 @@
 package com.dbottillo.base;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,11 +25,12 @@ import com.dbottillo.communication.events.SetEvent;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGSet;
+import com.dbottillo.util.DialogUtil;
 import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 
-public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout.PanelSlideListener {
+public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout.PanelSlideListener, DialogUtil.SortDialogListener {
 
     private ArrayList<MTGSet> sets;
     private GameSetAdapter setAdapter;
@@ -67,7 +66,7 @@ public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout
         rootView.findViewById(R.id.cards_sort).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                chooseSortDialog();
+                DialogUtil.chooseSortDialog(getContext(), getSharedPreferences(), MainFragment.this);
             }
         });
 
@@ -211,21 +210,6 @@ public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout
         bus.removeStickyEvent(event);
     }
 
-    private void chooseSortDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.pick_sort_option)
-                .setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        SharedPreferences.Editor editor = getSharedPreferences().edit();
-                        editor.putBoolean(DBFragment.PREF_SORT_WUBRG, which == 1);
-                        editor.apply();
-                        updateSetFragment();
-                        TrackingHelper.getInstance(getActivity().getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
-                                which == 1 ? "wubrg" : "alphabetically");
-                    }
-                });
-        builder.create().show();
-    }
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
@@ -250,4 +234,8 @@ public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    @Override
+    public void onSortSelected() {
+        updateSetFragment();
+    }
 }

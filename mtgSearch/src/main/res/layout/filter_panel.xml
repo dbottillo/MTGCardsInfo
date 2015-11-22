@@ -86,6 +86,16 @@
             android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_type_land"
             android:textOn="@string/mtg_type_land"/>
+
+        <ToggleButton
+            android:id="@+id/toggle_eldrazi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onToggleClicked"
+            android:textColor="@drawable/toggle_text_color"
+            android:textOff="@string/mtg_type_eldrazi"
+            android:textOn="@string/mtg_type_eldrazi"/>
     </LinearLayout>
 
     <LinearLayout

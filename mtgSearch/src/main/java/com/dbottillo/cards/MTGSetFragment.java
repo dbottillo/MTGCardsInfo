@@ -113,44 +113,49 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         SharedPreferences sharedPreferences = getSharedPreferences();
         for (MTGCard card : gameSet.getCards()) {
             boolean toAdd = false;
-            if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
-                toAdd = true;
-            }
-            if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
-                toAdd = true;
-            }
-            if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
-                toAdd = true;
-            }
-            if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
-                toAdd = true;
-            }
-            if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
-                toAdd = true;
-            }
-            if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
-                toAdd = true;
-            }
-            if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
-                toAdd = true;
-            }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
-                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
-                toAdd = false;
-            }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
-                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
-                toAdd = false;
-            }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
-                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
-                toAdd = false;
-            }
-            if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
-                    && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
-                toAdd = false;
-            }
-            if (!toAdd && card.isEldrazi() && card.hasNoColor()) {
+            if (searchParams ==  null) {
+                if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
+                    toAdd = true;
+                }
+                if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
+                    toAdd = true;
+                }
+                if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
+                    toAdd = true;
+                }
+                if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
+                    toAdd = true;
+                }
+                if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
+                    toAdd = true;
+                }
+                if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
+                    toAdd = true;
+                }
+                if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
+                    toAdd = true;
+                }
+                if (card.isEldrazi() && sharedPreferences.getBoolean(FilterHelper.FILTER_ELDRAZI, true)) {
+                    toAdd = true;
+                }
+                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
+                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
+                    toAdd = false;
+                }
+                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
+                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
+                    toAdd = false;
+                }
+                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
+                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
+                    toAdd = false;
+                }
+                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
+                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
+                    toAdd = false;
+                }
+            } else {
+                // for search, filter don't apply
                 toAdd = true;
             }
 
