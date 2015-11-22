@@ -1,184 +1,165 @@
 package com.dbottillo.search;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
+import android.animation.ArgbEvaluator;
+import android.annotation.TargetApi;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.dbottillo.R;
-import com.dbottillo.filter.FilterActivity;
-import com.dbottillo.helper.LOG;
+import com.dbottillo.base.DBActivity;
+import com.dbottillo.communication.DataManager;
+import com.dbottillo.communication.events.SetEvent;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.view.SlidingUpPanelLayout;
+import com.dbottillo.util.AnimationUtil;
+import com.dbottillo.util.DialogUtil;
+import com.dbottillo.util.MaterialWrapper;
+import com.dbottillo.util.UIUtil;
+import com.dbottillo.view.MTGSearchView;
 
-public class SearchActivity extends FilterActivity implements SlidingUpPanelLayout.PanelSlideListener, SearchView.OnQueryTextListener {
+import butterknife.ButterKnife;
 
-    SearchView searchView;
-    EditText searchEditText;
+public class SearchActivity extends DBActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, DialogUtil.SortDialogListener {
+
+    private static final String SEARCH_OPEN = "searchOpen";
+    private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
+    private static final String TOOLBAR_ELEVATION = "toolbarElevation";
+
+    ImageButton newSearch;
+    AnimationDrawable newSearchAnimation;
+    ScrollView scrollView;
+    boolean searchOpen = false;
+    FrameLayout resultsContainer;
+    View mainContainer;
+
+    MTGSearchView searchView;
+    Toolbar secondToolbar;
+
+    ArgbEvaluator argbEvaluator;
+
+    int sizeBig = 0;
 
     @Override
+    @TargetApi(23)
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         setContentView(R.layout.activity_search);
 
-        setupToolbar();
-        setupSlidingPanel();
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_close);
+        toolbar.setTitle(R.string.action_search);
+        secondToolbar = (Toolbar) findViewById(R.id.second_toolbar);
+        secondToolbar.setNavigationIcon(R.drawable.ic_close);
+        secondToolbar.setTitle(R.string.search_result);
+        secondToolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        secondToolbar.inflateMenu(R.menu.search_results);
+        secondToolbar.setOnMenuItemClickListener(this);
 
+        setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.action_search);
         }
+
+        mainContainer = findViewById(R.id.main_container);
+        resultsContainer = (FrameLayout) findViewById(R.id.fragment_container);
+        newSearch = (ImageButton) findViewById(R.id.action_search);
+        scrollView = (ScrollView) findViewById(R.id.search_scroll_view);
 
         if (savedInstanceState != null) {
-            query = savedInstanceState.getString("query");
+            searchOpen = savedInstanceState.getBoolean(SEARCH_OPEN);
+            scrollView.setBackgroundColor(savedInstanceState.getInt(BG_COLOR_SCROLLVIEW));
+            MaterialWrapper.setElevation(toolbar, savedInstanceState.getFloat(TOOLBAR_ELEVATION));
+            MaterialWrapper.setElevation(secondToolbar, savedInstanceState.getFloat(TOOLBAR_ELEVATION));
+            MaterialWrapper.setStatusBarColor(this, searchOpen ? getResources().getColor(R.color.color_accent_dark) : getResources().getColor(R.color.status_bar));
+        } else {
+            MaterialWrapper.setElevation(toolbar, 0);
         }
 
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            handleIntent(intent);
+        scrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                sizeBig = scrollView.getHeight();
+                UIUtil.setMarginTop(resultsContainer, sizeBig);
+                if (searchOpen) {
+                    UIUtil.setHeight(scrollView, 0);
+                    UIUtil.setMarginTop(resultsContainer, 0);
+                    resultsContainer.setVisibility(View.VISIBLE);
+                }
+                scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
+        toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                sizeToolbar = toolbar.getHeight();
+                secondToolbar.setVisibility(View.VISIBLE);
+                if (searchOpen) {
+                    secondToolbar.setY(0);
+                } else {
+                    secondToolbar.setY(-sizeToolbar);
+                }
+                toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    computeScrollChanged(scrollY);
+                }
+            });
+        } else {
+            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                @Override
+                public void onScrollChanged() {
+                    computeScrollChanged(scrollView.getScrollY());
+                }
+            });
         }
+
+        argbEvaluator = new ArgbEvaluator();
+
+        newSearch.setOnClickListener(this);
+        newSearch.setBackgroundResource(R.drawable.anim_search_icon);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            newSearch.setElevation(6.0f); // TODO: pre-lollipop version
+        }
+
+        searchView = (MTGSearchView) findViewById(R.id.search_view);
+
+        DataManager.execute(DataManager.TASK.SET_LIST);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("query", query);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            setIntent(intent);
-            handleIntent(intent);
-        }
-    }
-
-    private boolean pendingSearch = false;
-    private String query = "";
-
-    private void handleIntent(Intent intent) {
-        pendingSearch = true;
-        query = intent.getStringExtra(SearchManager.QUERY);
-    }
-
-    @Override
-    protected void onResumeFragments() {
-        super.onResumeFragments();
-        if (pendingSearch) {
-            doSearch();
-            pendingSearch = false;
+        outState.putBoolean(SEARCH_OPEN, searchOpen);
+        int color = (Integer) argbEvaluator.evaluate(scrollView.getScrollY() < 400 ? ((float) scrollView.getScrollY() / (float) 400) : 1, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_primary_slightly_dark));
+        outState.putInt(BG_COLOR_SCROLLVIEW, color);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            outState.putFloat(TOOLBAR_ELEVATION, toolbar.getElevation());
         }
     }
 
     @Override
     public String getPageTrack() {
         return "/search_main";
-    }
-
-    @Override
-    public void onPanelSlide(View panel, float slideOffset) {
-        setRotationArrow(180 - (180 * slideOffset));
-    }
-
-    @Override
-    public void onPanelCollapsed(View panel) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "collapsed");
-        SearchFragment searchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if (searchFragment != null) {
-            searchFragment.updateSetFragment();
-        }
-        setRotationArrow(0);
-    }
-
-    @Override
-    public void onPanelExpanded(View panel) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_UI, "panel", "expanded");
-        setRotationArrow(180);
-
-    }
-
-    @Override
-    public void onPanelAnchored(View panel) {
-
-    }
-
-    @Override
-    public final boolean onCreateOptionsMenu(final Menu menu) {
-        final MenuInflater inflater = getMenuInflater();
-
-        inflater.inflate(R.menu.search, menu);
-        //MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        // Get the SearchView and set the searchable configuration
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
-
-        //searchView = (SearchView) searchItem.getActionView();
-        // Assumes current activity is the searchable activity
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
-
-        //searchView.setOnQueryTextListener(this);
-
-        try {
-            int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-            searchEditText = (EditText) searchView.findViewById(id);
-            searchEditText.setText(query);
-            searchEditText.setHintTextColor(getResources().getColor(R.color.light_grey));
-        } catch (Exception e) {
-            LOG.e(e.getLocalizedMessage());
-        }
-
-        searchView.requestFocus();
-
-        /*MenuItemCompat.setOnActionExpandListener(searchItem,
-                new MenuItemCompat.OnActionExpandListener() {
-
-                    @Override
-                    public boolean onMenuItemActionExpand(MenuItem item) {
-                        slidingPanel.collapsePane();
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onMenuItemActionCollapse(MenuItem item) {
-                        loadSet();
-                        return true;
-                    }
-                });*/
-
-
-        /*// Associate searchable configuration with the SearchView
-        final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-
-        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-
-        final SearchView searchView = (SearchView) searchMenuItem.getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconified(false);
-        if (mSearchViewHasFocus) {
-            searchView.requestFocus();
-        } else {
-            searchView.clearFocus();
-            hideIme();
-        }
-
-        final EditText searchText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        searchText.setTextColor(getResources().getColor(R.color.action_bar_title_color));
-        searchText.setHintTextColor(getResources().getColor(R.color.dusty_grey));
-
-        setupMediaRouteView(menu);*/
-
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -191,28 +172,116 @@ public class SearchActivity extends FilterActivity implements SlidingUpPanelLayo
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        doSearch();
-        return true;
+    public void onEventMainThread(SetEvent event) {
+        if (!event.isError()) {
+            searchView.refreshSets(event.getResult());
+        }
+        bus.removeStickyEvent(event);
     }
 
-    private void doSearch() {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", query);
-        if (query.length() < 3) {
-            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (searchEditText != null) {
-            searchEditText.setText(query);
-        }
-        changeFragment(SearchFragment.newInstance(query), "search", false);
-        collapseSlidingPanel();
+    private void doSearch(SearchParams searchParams) {
+        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", searchParams.toString());
+        changeFragment(SearchFragment.newInstance(searchParams), "search", false);
         hideIme();
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
+    public void onClick(View v) {
+        final SearchParams searchParams = searchView.getSearchParams();
+        if (!searchParams.isValid()) {
+            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        final AnimationUtil.LinearInterpolator backgroundInterpolator = AnimationUtil.createLinearInterpolator();
+        final int startColor, endColor;
+        if (!searchOpen) {
+            newSearch.setBackgroundResource(R.drawable.anim_search_icon);
+            backgroundInterpolator.fromValue(sizeBig).toValue(0);
+            startColor = getResources().getColor(R.color.status_bar);
+            endColor = getResources().getColor(R.color.color_accent_dark);
+        } else {
+            newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse);
+            backgroundInterpolator.fromValue(0).toValue(sizeBig);
+            startColor = getResources().getColor(R.color.color_accent_dark);
+            endColor = getResources().getColor(R.color.status_bar);
+        }
+        newSearchAnimation = (AnimationDrawable) newSearch.getBackground();
+        newSearchAnimation.start();
+        Animation anim = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                super.applyTransformation(interpolatedTime, t);
+                int val = (int) backgroundInterpolator.getInterpolation(interpolatedTime);
+                UIUtil.setHeight(scrollView, val);
+                UIUtil.setMarginTop(resultsContainer, val);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    int color = (Integer) argbEvaluator.evaluate(interpolatedTime, startColor, endColor);
+                    SearchActivity.this.getWindow().setStatusBarColor(color);
+                }
+            }
+        };
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                if (!searchOpen) {
+                    resultsContainer.setVisibility(View.VISIBLE);
+                    MaterialWrapper.copyElevation(secondToolbar, toolbar);
+                    secondToolbar.animate().setDuration(100).translationY(0).start();
+                } else {
+                    secondToolbar.animate().setDuration(100).translationY(-sizeToolbar).start();
+                }
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (searchOpen) {
+                    resultsContainer.setVisibility(View.GONE);
+                } else {
+                    doSearch(searchParams);
+                }
+                searchOpen = !searchOpen;
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        anim.setDuration(200);
+        scrollView.startAnimation(anim);
+    }
+
+    private void computeScrollChanged(int amount) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(amount < 200 ? 9 * ((float) amount / (float) 200) : 9);
+        }
+        int color = (Integer) argbEvaluator.evaluate(amount < 400 ? ((float) amount / (float) 400) : 1, getResources().getColor(R.color.color_primary), getResources().getColor(R.color.color_primary_slightly_dark));
+        scrollView.setBackgroundColor(color);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (searchOpen) {
+            newSearch.callOnClick();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        if (item.getItemId() == R.id.action_sort) {
+            DialogUtil.chooseSortDialog(this, getSharedPreferences(), this);
+            return true;
+        }
         return false;
+    }
+
+    @Override
+    public void onSortSelected() {
+        SearchFragment currentFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (currentFragment != null) {
+            currentFragment.updateSetFragment();
+        }
     }
 }

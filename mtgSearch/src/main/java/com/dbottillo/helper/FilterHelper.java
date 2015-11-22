@@ -14,6 +14,7 @@ public final class FilterHelper {
 
     public static final String FILTER_ARTIFACT = "Artifact";
     public static final String FILTER_LAND = "Land";
+    public static final String FILTER_ELDRAZI = "Eldrazi";
 
     public static final String FILTER_COMMON = "Common";
     public static final String FILTER_UNCOMMON = "Uncommon";

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import com.dbottillo.communication.events.CardsEvent;
 import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.search.SearchParams;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +18,8 @@ class SearchCardsOperation extends Operation {
     @Override
     protected void execute(CardsDatabaseHelper helper, Object... params) {
         ArrayList<MTGCard> result = new ArrayList<>();
-        Cursor cursor = helper.searchCard((String) params[0]);
+        SearchParams searchParams = (SearchParams) params[0];
+        Cursor cursor = helper.searchCards(searchParams);
 
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {

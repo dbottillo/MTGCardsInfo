@@ -10,7 +10,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
@@ -126,11 +125,7 @@ public class MTGCardFragment extends DBFragment {
                         heightAvailable -= getResources().getDimensionPixelSize(R.dimen.price_height_container);
                     }*/
                     updateSizeImage();
-                    if (Build.VERSION.SDK_INT < 16) {
-                        mainContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                    } else {
-                        mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    }
+                    mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             }
         });
@@ -224,7 +219,7 @@ public class MTGCardFragment extends DBFragment {
     }
 
     private void refreshUI() {
-        if (getView() == null){
+        if (getView() == null) {
             return;
         }
         TextView cardName = (TextView) getView().findViewById(R.id.detail_card);

@@ -30,8 +30,6 @@ import java.util.Random;
 
 public class MainActivity extends FilterActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final int SEARCH_REQUEST_CODE = 100;
-
     private static final String CURRENT_SELECTION = "currentSelection";
 
     private DrawerLayout mDrawerLayout;
@@ -171,24 +169,13 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             return true;
         }
         if (item.getItemId() == R.id.action_search) {
-            startActivityForResult(new Intent(this, SearchActivity.class), SEARCH_REQUEST_CODE);
+            startActivity(new Intent(this, SearchActivity.class));
             return true;
         }
         if (item.getItemId() == R.id.action_lucky) {
             startActivity(new Intent(this, CardLuckyActivity.class));
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SEARCH_REQUEST_CODE) {
-            if (getSupportFragmentManager().findFragmentById(R.id.fragment_container) instanceof MainFragment) {
-                MainFragment mainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-                mainFragment.updateSetFragment();
-            }
-            getFilterFragment().updateFilterUI();
-        }
     }
 
     @Override
