@@ -3,6 +3,7 @@ package com.dbottillo.communication;
 import android.database.Cursor;
 
 import com.dbottillo.communication.events.CardsEvent;
+import com.dbottillo.communication.events.RandomCardsEvent;
 import com.dbottillo.database.CardsDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 
@@ -23,7 +24,7 @@ class RandomCardsOperation extends Operation {
             }
         }
         cursor.close();
-        CardsEvent cardsEvent = new CardsEvent(result);
-        EventBus.getDefault().postSticky(cardsEvent);
+        RandomCardsEvent randomCardsEvent = new RandomCardsEvent(result);
+        EventBus.getDefault().postSticky(randomCardsEvent);
     }
 }
