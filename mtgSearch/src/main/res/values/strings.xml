@@ -10,16 +10,15 @@
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
     <string name="version">Version</string>
-    <string name="search_hint">Search magic card</string>
     <string name="action_search">Search</string>
-    <string name="search_result">Results for:</string>
+    <string name="search_result">Results:</string>
     <string name="to_premium_btn">Open Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
         <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
     </plurals>
     <string name="apply_filter">Apply Filter</string>
-    <string name="minimum_search">Search requires at least three letters</string>
+    <string name="minimum_search">Search requires at least one condition</string>
     <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
     <string name="need_premium">Need Premium</string>
 
@@ -101,19 +100,56 @@
     <string name="release_note_title">What\'s new</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        <b>Version 2.7:</b> \n
+        - NEW: Advanced Search, you can search card name, types, color, sets and rarity \n
+        - NEW: Filter Eldrazi cards \n\n
         <b>Version 2.6:</b> \n
         - NEW: Commander 2015 \n
         - NEW: Rulings added to card detail \n
-        - FIX: Bug with multiple same cards in a deck \n\n
-        <b>Version 2.5:</b> \n
-        - NEW: Zendikar Expedition \n
-        - NEW: Battle for Zendikar \n
-        - NEW: now you can create decks! :)
+        - FIX: Bug with multiple same cards in a deck
     </string>
     <string name="action_release_note">Release Note</string>
     <string name="action_fill_decks" translatable="false">Create random decks</string>
     <string name="empty_cards">No cards available with the current filters.</string>
     <string name="empty_decks">You don\'t have any decks yet, use the plus button to create a new one.</string>
+
+    <string name="share_card">Share card</string>
+    <string name="row_card_name" translatable="false">%1$s%2$s</string>
+    <string name="row_life_counter_name" translatable="false">%1$s - %2$d/20</string>
+    <string name="card_detail">
+    <![CDATA[
+     <b>Type</b>: %1$s <br/><br/>
+     <b>P/T</b>: %2$s/%3$s <br/><br/>
+     <b>Mana cost</b>: %4$s<br/><br/>
+     %5$s<br/><br/>
+     <b>Set</b>: %6$s<br/><br/>
+     <b>Rulings</b>: <br/>%7$s<br/><br/>
+    ]]>
+    </string>
+    <string name="search_hint_name">Insert any part of the name</string>
+    <string name="search_hint_type">Insert any type or subtype</string>
+    <string name="search_power_title">P</string>
+    <string name="search_toughness_title">T</string>
+    <string name="search_cmc_title">Mana cost converted</string>
+    <string name="white">White</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="multicolor">Only multicolor</string>
+    <string name="no_multi">No multicolor</string>
+    <string name="search_common">Common</string>
+    <string name="search_uncommon">Uncommon</string>
+    <string name="search_mythic">Mythic</string>
+    <string name="search_rare">Rare</string>
+    <string name="search_set_all">All</string>
+    <string name="search_set_standard">Standard</string>
+    <string name="search_color_title">Colors</string>
+    <string name="search_rarity_title">Rarity</string>
+    <string name="search_card_title">Card Name</string>
+    <string name="search_card_types">Card Types</string>
+    <string name="search_set_title">Set</string>
+    <string name="search_hint_numbers" translatable="false">0,1,2,3…</string>
 
     <string name="cd_price_go">See price</string>
     <string name="cd_drawer_header">Planeswalker</string>
@@ -129,19 +165,8 @@
     <string name="cd_library_icon">Library icon</string>
     <string name="cd_edit">Edit</string>
     <string name="cd_remove">Remove</string>
-    <string name="share_card">Share card</string>
-    <string name="row_card_name" translatable="false">%1$s%2$s</string>
-    <string name="row_life_counter_name" translatable="false">%1$s - %2$d/20</string>
-    <string name="card_detail">
-    <![CDATA[
-     <b>Type</b>: %1$s <br/><br/>
-     <b>P/T</b>: %2$s/%3$s <br/><br/>
-     <b>Mana cost</b>: %4$s<br/><br/>
-     %5$s<br/><br/>
-     <b>Set</b>: %6$s<br/><br/>
-     <b>Rulings</b>: <br/>%7$s<br/><br/>
-    ]]>
-    </string>
+    <string name="cd_action_search">Perform search</string>
+    <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

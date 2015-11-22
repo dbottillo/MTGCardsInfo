@@ -76,6 +76,9 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         } else if (i == R.id.toggle_land) {
             editor.putBoolean(FilterHelper.FILTER_LAND, on);
             label = "land";
+        } else if (i == R.id.toggle_eldrazi) {
+            editor.putBoolean(FilterHelper.FILTER_ELDRAZI, on);
+            label = "land";
         } else if (i == R.id.toggle_common) {
             editor.putBoolean(FilterHelper.FILTER_COMMON, on);
             label = "common";
@@ -97,7 +100,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         updateFilterUI();
     }
 
-    public void updateFilterUI() {
+    private void updateFilterUI() {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, "update", "");
         String filterString = "";
 
@@ -110,6 +113,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         filterString += " - ";
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true), "A");
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true), "L");
+        filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_ELDRAZI, true), "E");
         filterString += "  - ";
 
         filterString += addEntryFilterString(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true), "C");
@@ -124,6 +128,7 @@ public class FilterFragment extends DBFragment implements View.OnClickListener {
         ((ToggleButton) getView().findViewById(R.id.toggle_green)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_GREEN, true));
         ((ToggleButton) getView().findViewById(R.id.toggle_artifact)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_ARTIFACT, true));
         ((ToggleButton) getView().findViewById(R.id.toggle_land)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_LAND, true));
+        ((ToggleButton) getView().findViewById(R.id.toggle_eldrazi)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_ELDRAZI, true));
         ((ToggleButton) getView().findViewById(R.id.toggle_common)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_COMMON, true));
         ((ToggleButton) getView().findViewById(R.id.toggle_uncommon)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_UNCOMMON, true));
         ((ToggleButton) getView().findViewById(R.id.toggle_rare)).setChecked(getSharedPreferences().getBoolean(FilterHelper.FILTER_RARE, true));

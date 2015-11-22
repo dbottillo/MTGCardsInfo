@@ -60,7 +60,7 @@ public class DB40Helper {
     }
 
     @SuppressWarnings("rawtypes")
-    public void emptyDB() {
+    public synchronized void emptyDB() {
         openDb();
         ObjectSet result = db.queryByExample(new Object());
         while (result.hasNext()) {
@@ -69,14 +69,14 @@ public class DB40Helper {
         Log.e(TAG, "[DBELPER] database cleared");
     }
 
-    public void commit(boolean close) {
+    public synchronized void commit(boolean close) {
         db.commit();
         if (close) {
             closeDb();
         }
     }
 
-    public static void storeCard(MTGCard card) {
+    public static synchronized void storeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -85,7 +85,7 @@ public class DB40Helper {
         Log.e(TAG, "[DBELPER] card " + card.getName() + " saved inside database");
     }
 
-    public static void removeCard(MTGCard card) {
+    public static synchronized void removeCard(MTGCard card) {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -100,7 +100,7 @@ public class DB40Helper {
         db.commit();
     }
 
-    public static ArrayList<MTGCard> getCards() {
+    public static synchronized ArrayList<MTGCard> getCards() {
         if (db.ext().isClosed()) {
             openDb();
         }
@@ -120,13 +120,13 @@ public class DB40Helper {
         return !result.isEmpty();
     }
 
-    public static void storePlayer(Player player) {
+    public static synchronized void storePlayer(Player player) {
         db.store(player);
         db.commit();
         Log.e(TAG, "[DBELPER] player " + player.toString() + " saved inside database");
     }
 
-    public static void removePlayer(Player player) {
+    public static synchronized void removePlayer(Player player) {
         ObjectSet<Player> result = db.queryByExample(player);
         if (result.hasNext()) {
             db.delete(result.next());
@@ -134,7 +134,7 @@ public class DB40Helper {
         }
     }
 
-    public static ArrayList<Player> getPlayers() {
+    public static synchronized ArrayList<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<Player>();
         ObjectSet<Player> result = db.query(Player.class);
         while (result.hasNext()) {

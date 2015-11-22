@@ -22,4 +22,12 @@ public final class UIUtil {
             view.setLayoutParams(lp);
         }
     }
+
+    public static void setMarginTop(View view, int value) {
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        if (lp.topMargin != value) {
+            lp.topMargin = value;
+            view.setLayoutParams(lp);
+        }
+    }
 }

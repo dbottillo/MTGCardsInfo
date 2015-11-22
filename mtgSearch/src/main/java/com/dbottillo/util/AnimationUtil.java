@@ -2,6 +2,7 @@ package com.dbottillo.util;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
@@ -9,11 +10,11 @@ import com.dbottillo.view.SlidingUpPanelLayout;
 
 public final class AnimationUtil {
 
-    private AnimationUtil(){
+    private AnimationUtil() {
 
     }
 
-    private static final int DEFALT_DURATION = 200;
+    private static final int DEFAULT_DURATION = 200;
 
     public static void animteSlidingPanelHeight(final SlidingUpPanelLayout slidingPaneLayout, int target) {
         if (slidingPaneLayout.getPanelHeight() == target) {
@@ -27,7 +28,7 @@ public final class AnimationUtil {
                 slidingPaneLayout.setPanelHeight(val);
             }
         });
-        anim.setDuration(DEFALT_DURATION);
+        anim.setDuration(DEFAULT_DURATION);
         anim.start();
     }
 
@@ -49,6 +50,37 @@ public final class AnimationUtil {
         scaleUp.start();
     }
 
+    public static LinearInterpolator createLinearInterpolator() {
+        return new LinearInterpolator();
+    }
 
+    public static class LinearInterpolator implements TimeInterpolator {
+
+        private float mStartValue;
+        private float mEndValue;
+
+        LinearInterpolator() {
+        }
+
+        public final LinearInterpolator fromValue(final float startValue) {
+            mStartValue = startValue;
+            return this;
+        }
+
+        public final LinearInterpolator toValue(final float endValue) {
+            mEndValue = endValue;
+            return this;
+        }
+
+        @Override
+        public final float getInterpolation(final float input) {
+            final float amount = Math.abs(mEndValue - mStartValue);
+            if (mEndValue > mStartValue) {
+                return mStartValue + (amount * input);
+            } else {
+                return mStartValue - (amount * input);
+            }
+        }
+    }
 
 }
