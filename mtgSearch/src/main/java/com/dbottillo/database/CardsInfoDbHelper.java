@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private static CardsInfoDbHelper instance;
 
@@ -27,12 +27,18 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
         db.execSQL(DeckDataSource.CREATE_DECKS_TABLE);
         db.execSQL(DeckDataSource.CREATE_DECK_CARD_TABLE);
+        db.execSQL(PlayerDataSource.CREATE_PLAYERS_TABLE);
+        db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion == 1 && newVersion == 2) {
             db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
+        }
+        if (oldVersion < 2 && newVersion == 3){
+            db.execSQL(PlayerDataSource.CREATE_PLAYERS_TABLE);
+            db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
         }
     }
 

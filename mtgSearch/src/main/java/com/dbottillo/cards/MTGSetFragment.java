@@ -16,7 +16,7 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.CardsEvent;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.CardDataSource;
 import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
@@ -95,10 +95,10 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
                 gameSet.addCard(card);
             }
             populateCardsWithFilter();
-            if (gameSet.getCards().size() == CardsDatabaseHelper.LIMIT) {
+            if (gameSet.getCards().size() == CardDataSource.LIMIT) {
                 View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
                 TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-                moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
+                moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
                 listView.addFooterView(footer);
             }
             progressBar.setVisibility(View.GONE);
@@ -113,7 +113,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
         SharedPreferences sharedPreferences = getSharedPreferences();
         for (MTGCard card : gameSet.getCards()) {
             boolean toAdd = false;
-            if (searchParams ==  null) {
+            if (searchParams == null) {
                 if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
                     toAdd = true;
                 }

@@ -85,7 +85,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     public boolean isCardSaved(MTGCard card) {
         boolean isSaved = false;
         for (MTGCard savedCard : savedCards) {
-            if (savedCard.getId() == card.getId()) {
+            if (savedCard.getMultiVerseId() == card.getMultiVerseId()) {
                 isSaved = true;
                 break;
             }
@@ -104,7 +104,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     public void removeCard(MTGCard card) {
         DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         for (MTGCard savedCard : savedCards) {
-            if (savedCard.getId() == card.getId()) {
+            if (savedCard.getMultiVerseId() == card.getMultiVerseId()) {
                 savedCards.remove(savedCard);
                 break;
             }
