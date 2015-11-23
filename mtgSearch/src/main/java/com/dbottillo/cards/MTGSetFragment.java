@@ -221,6 +221,10 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
-        getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        if (menuItem.getItemId() == R.id.action_add_to_deck) {
+            getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        } else {
+            DataManager.execute(DataManager.TASK.SAVE_CARD, card);
+        }
     }
 }
