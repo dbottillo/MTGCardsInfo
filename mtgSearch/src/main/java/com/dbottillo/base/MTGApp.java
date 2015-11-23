@@ -3,6 +3,7 @@ package com.dbottillo.base;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.os.StrictMode;
 
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
@@ -29,6 +30,19 @@ public class MTGApp extends Application {
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
         refWatcher = LeakCanary.install(this);
         migrateFavourites();
+
+        if (BuildConfig.DEBUG) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(
+                    .detectAll()
+                    .penaltyDialog()
+                    .build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .penaltyLog()
+                    .penaltyDeath()
+                    .build());
+        }
     }
 
     public static RefWatcher getRefWatcher(Context context) {
