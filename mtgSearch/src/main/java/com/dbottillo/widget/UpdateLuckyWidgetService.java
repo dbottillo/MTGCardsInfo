@@ -12,7 +12,7 @@ import android.widget.RemoteViews;
 
 import com.dbottillo.R;
 import com.dbottillo.cards.CardLuckyActivity;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.squareup.picasso.Picasso;
 
@@ -21,13 +21,13 @@ import java.util.ArrayList;
 public class UpdateLuckyWidgetService extends Service {
 
     int[] allWidgetIds;
-    CardsDatabaseHelper cardsDatabaseHelper;
+    MTGDatabaseHelper mtgDatabaseHelper;
 
     @Override
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            cardsDatabaseHelper = new CardsDatabaseHelper(getApplicationContext());
+            mtgDatabaseHelper = new MTGDatabaseHelper(getApplicationContext());
             new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);
@@ -74,7 +74,7 @@ public class UpdateLuckyWidgetService extends Service {
         protected ArrayList<MTGCard> doInBackground(Integer... params) {
             ArrayList<MTGCard> result = new ArrayList<>();
 
-            Cursor cursor = cardsDatabaseHelper.getRandomCard(params[0]);
+            Cursor cursor = mtgDatabaseHelper.getRandomCard(params[0]);
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
                     result.add(MTGCard.createCardFromCursor(cursor));

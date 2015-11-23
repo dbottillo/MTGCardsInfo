@@ -22,7 +22,6 @@ import com.dbottillo.adapters.LifeCounterAdapter;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.PlayersEvent;
-import com.dbottillo.database.DB40Helper;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.Player;
 import com.dbottillo.util.AnimationUtil;
@@ -90,17 +89,10 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
     public void onStart() {
         super.onStart();
 
-        DB40Helper.openDb();
         progressBar.setVisibility(View.VISIBLE);
         loadPlayers();
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        DB40Helper.closeDb();
-    }
 
     @Override
     public void onResume() {
@@ -118,9 +110,8 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
         for (Player player : players) {
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
-            DB40Helper.storePlayer(player);
+            savePlayer(player);
         }
-        loadPlayers();
     }
 
 
@@ -133,15 +124,22 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
         DataManager.execute(DataManager.TASK.PLAYERS);
     }
 
+    private void savePlayer(Player player){
+        DataManager.execute(DataManager.TASK.SAVE_PLAYER, player);
+    }
+
+    private void removePlayer(Player player){
+        DataManager.execute(DataManager.TASK.REMOVE_PLAYER, player);
+    }
+
     private void addPlayer() {
         if (players.size() == 10) {
             Toast.makeText(getActivity(), R.string.maximum_player, Toast.LENGTH_SHORT).show();
             return;
         }
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
-        DB40Helper.storePlayer(player);
+        savePlayer(player);
         scrollDownAfterLoad = true;
-        loadPlayers();
     }
 
     private String getUniqueNameForPlayer() {
@@ -201,8 +199,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
     @Override
     public void onRemovePlayer(int position) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
-        DB40Helper.removePlayer(players.get(position));
-        loadPlayers();
+        removePlayer(players.get(position));
     }
 
     @Override
@@ -219,8 +216,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
                 players.get(position).setName(value);
-                DB40Helper.storePlayer(players.get(position));
-                loadPlayers();
+                savePlayer(players.get(position));
                 TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
         });
@@ -239,16 +235,14 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
     public void onLifeCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
-        DB40Helper.storePlayer(players.get(position));
-        loadPlayers();
+        savePlayer(players.get(position));
     }
 
     @Override
     public void onPoisonCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
-        DB40Helper.storePlayer(players.get(position));
-        loadPlayers();
+        savePlayer(players.get(position));
     }
 
     private void launchDice() {

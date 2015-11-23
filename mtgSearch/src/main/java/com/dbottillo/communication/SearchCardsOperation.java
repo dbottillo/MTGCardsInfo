@@ -3,7 +3,8 @@ package com.dbottillo.communication;
 import android.database.Cursor;
 
 import com.dbottillo.communication.events.CardsEvent;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.CardsInfoDbHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.search.SearchParams;
 
@@ -16,7 +17,7 @@ import de.greenrobot.event.EventBus;
 class SearchCardsOperation extends Operation {
 
     @Override
-    protected void execute(CardsDatabaseHelper helper, Object... params) {
+    protected void execute(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper, Object... params) {
         ArrayList<MTGCard> result = new ArrayList<>();
         SearchParams searchParams = (SearchParams) params[0];
         Cursor cursor = helper.searchCards(searchParams);

@@ -3,13 +3,15 @@ package com.dbottillo.communication;
 import android.content.Context;
 
 import com.dbottillo.communication.events.ErrorEvent;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.CardsInfoDbHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 
 import de.greenrobot.event.EventBus;
 
 public final class DataManager {
 
-    private static CardsDatabaseHelper cardAdapterHelper;
+    private static MTGDatabaseHelper cardAdapterHelper;
+    private static CardsInfoDbHelper cardsInfoDbHelper;
 
     private DataManager() {
 
@@ -23,7 +25,9 @@ public final class DataManager {
         SAVE_CARD(SaveCardOperation.class),
         UN_SAVE_CARD(UnsaveCardOperation.class),
         RANDOM_CARDS(RandomCardsOperation.class),
-        PLAYERS(PlayersOperation.class);
+        PLAYERS(PlayersOperation.class),
+        SAVE_PLAYER(SavePlayerOperation.class),
+        REMOVE_PLAYER(RemovePlayerOperation.class);
 
         Class<?> operationClass;
 
@@ -37,7 +41,8 @@ public final class DataManager {
     }
 
     public static void with(Context ctx) {
-        cardAdapterHelper = new CardsDatabaseHelper(ctx);
+        cardAdapterHelper = new MTGDatabaseHelper(ctx);
+        cardsInfoDbHelper = CardsInfoDbHelper.getInstance(ctx);
     }
 
     public static void execute(final TASK task, final Object... params) {
@@ -45,7 +50,7 @@ public final class DataManager {
             public void run() {
                 try {
                     Operation operation = (Operation) task.getOperationClass().newInstance();
-                    operation.execute(cardAdapterHelper, params);
+                    operation.execute(cardAdapterHelper, cardsInfoDbHelper, params);
                 } catch (InstantiationException e) {
                     EventBus.getDefault().post(new ErrorEvent(e.getLocalizedMessage()));
                 } catch (IllegalAccessException e) {

@@ -3,7 +3,8 @@ package com.dbottillo.communication;
 import android.database.Cursor;
 
 import com.dbottillo.communication.events.CardsEvent;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.CardsInfoDbHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import de.greenrobot.event.EventBus;
 class SetCardsOperation extends Operation {
 
     @Override
-    protected void execute(CardsDatabaseHelper helper, Object... params) {
+    protected void execute(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper, Object... params) {
         ArrayList<MTGCard> result = new ArrayList<>();
         Cursor cursor = helper.getSet((String) params[0]);
 
