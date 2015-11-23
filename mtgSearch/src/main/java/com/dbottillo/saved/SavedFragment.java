@@ -24,6 +24,7 @@ import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.helper.TrackingHelper;
+import com.dbottillo.persistence.MigrationPreferences;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -72,8 +73,15 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     }
 
     private void loadCards() {
-        progressBar.setVisibility(View.VISIBLE);
-        DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        MigrationPreferences migrationPreferences = new MigrationPreferences(getContext());
+        if (migrationPreferences.migrationInProgress()){
+            emptyView.setText(getString(R.string.favourite_migration_in_progress));
+            emptyView.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.VISIBLE);
+            DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        }
     }
 
     @Override

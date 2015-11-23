@@ -1,7 +1,11 @@
 package com.dbottillo.resources;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.dbottillo.database.PlayerDataSource;
 
 public class Player implements Parcelable {
 
@@ -10,6 +14,10 @@ public class Player implements Parcelable {
     int poisonCount;
     String name;
     int diceResult;
+
+    private Player() {
+
+    }
 
     public Player(int id, String name) {
         this.id = id;
@@ -25,6 +33,10 @@ public class Player implements Parcelable {
 
     public int getId() {
         return id;
+    }
+
+    private void setId(int id) {
+        this.id = id;
     }
 
     public int getLife() {
@@ -103,5 +115,23 @@ public class Player implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ContentValues createContentValue() {
+        ContentValues values = new ContentValues();
+        values.put(PlayerDataSource.PlayerEntry._ID, id);
+        values.put(PlayerDataSource.PlayerEntry.COLUMN_NAME_LIFE, life);
+        values.put(PlayerDataSource.PlayerEntry.COLUMN_NAME_POISON, poisonCount);
+        values.put(PlayerDataSource.PlayerEntry.COLUMN_NAME_NAME, name);
+        return values;
+    }
+
+    public static Player fromCursor(Cursor cursor) {
+        Player player = new Player();
+        player.setId(cursor.getInt(cursor.getColumnIndex(PlayerDataSource.PlayerEntry._ID)));
+        player.setLife(cursor.getInt(cursor.getColumnIndex(PlayerDataSource.PlayerEntry.COLUMN_NAME_LIFE)));
+        player.setPoisonCount(cursor.getInt(cursor.getColumnIndex(PlayerDataSource.PlayerEntry.COLUMN_NAME_POISON)));
+        player.setName(cursor.getString(cursor.getColumnIndex(PlayerDataSource.PlayerEntry.COLUMN_NAME_NAME)));
+        return player;
     }
 }
