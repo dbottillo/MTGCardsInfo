@@ -113,6 +113,7 @@
     </string>
     <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
     <string name="search_hint_type">Inserisci qualsiasi tipo e/o sottotipo</string>
+    <string name="search_hint_text">Inserisci qualsiasi parte del testo</string>
     <string name="search_power_title">F</string>
     <string name="search_toughness_title">C</string>
     <string name="search_cmc_title">Costo di mana convertito</string>
@@ -133,6 +134,7 @@
     <string name="search_rarity_title">Raritá</string>
     <string name="search_card_title">Nome carta</string>
     <string name="search_card_types">Tipi carta</string>
+    <string name="search_card_text">Testo carta</string>
     <string name="search_set_title">Set</string>
     <string name="favourite_migration_in_progress_title">Migrazione preferiti</string>
     <string name="favourite_migration_in_progress">I tuoi preferiti stanno migrando ad un sistema migliore, controlla questa pagina a breve!</string>
@@ -153,6 +155,5 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="cd_action_search">Effettua ricerca</string>
-
 
 </resources>
