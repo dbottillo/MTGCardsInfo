@@ -1,5 +1,6 @@
 package com.dbottillo.saved;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,21 +20,27 @@ import com.dbottillo.adapters.OnCardListener;
 import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.cards.CardsActivity;
+import com.dbottillo.cards.CardsHelper;
 import com.dbottillo.cards.MTGCardsFragment;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.dialog.AddToDeckFragment;
+import com.dbottillo.filter.FilterActivity;
+import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.persistence.MigrationPreferences;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.view.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, OnCardListener {
+
+public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener {
 
     private ArrayList<MTGCard> savedCards;
+    private ArrayList<MTGCard> savedFilteredCards;
     private CardListAdapter adapter;
     private SmoothProgressBar progressBar;
     private TextView emptyView;
@@ -41,6 +48,12 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((FilterActivity) activity).addPanelSlideListener(this);
     }
 
     @Override
@@ -56,8 +69,9 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
 
         savedCards = new ArrayList<>();
+        savedFilteredCards = new ArrayList<>();
 
-        adapter = new CardListAdapter(getActivity(), savedCards, false, R.menu.card_saved_option, this);
+        adapter = new CardListAdapter(getActivity(), savedFilteredCards, false, R.menu.card_saved_option, this);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
@@ -74,13 +88,13 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
 
     private void loadCards() {
         MigrationPreferences migrationPreferences = new MigrationPreferences(getContext());
-        if (migrationPreferences.migrationInProgress()){
+        if (migrationPreferences.migrationInProgress()) {
             emptyView.setText(getString(R.string.favourite_migration_in_progress));
             emptyView.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
         } else {
             progressBar.setVisibility(View.VISIBLE);
-            DataManager.execute(DataManager.TASK.SAVED_CARDS);
+            DataManager.execute(DataManager.TASK.SAVED_CARDS, true);
         }
     }
 
@@ -146,15 +160,37 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
             Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", event.getErrorMessage());
         } else {
-            savedCards.clear();
-            for (MTGCard card : event.getResult()) {
-                savedCards.add(card);
-            }
-            adapter.notifyDataSetChanged();
-            progressBar.setVisibility(View.GONE);
-
-            emptyView.setVisibility(savedCards.size() == 0 ? View.VISIBLE : View.GONE);
+            savedCards = event.getResult();
+            refreshUI();
         }
         bus.removeStickyEvent(event);
+    }
+
+    private void refreshUI(){
+        savedFilteredCards.clear();
+        CardsHelper.filterCards(getSharedPreferences(), null, savedCards, savedFilteredCards);
+        adapter.notifyDataSetChanged();
+        progressBar.setVisibility(View.GONE);
+        emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void onPanelSlide(View panel, float slideOffset) {
+
+    }
+
+    @Override
+    public void onPanelCollapsed(View panel) {
+        refreshUI();
+    }
+
+    @Override
+    public void onPanelExpanded(View panel) {
+
+    }
+
+    @Override
+    public void onPanelAnchored(View panel) {
+
     }
 }

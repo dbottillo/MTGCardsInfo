@@ -193,7 +193,17 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public static MTGCard createCardFromCursor(Cursor cursor) {
+        return createCardFromCursor(cursor, true);
+    }
+
+    public static MTGCard createCardFromCursor(Cursor cursor, boolean fullCard) {
         MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex(CardEntry._ID)));
+        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
+            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
+        }
+        if (!fullCard) {
+            return card;
+        }
         card.setType(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPE)));
         card.setCardName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NAME)));
 
@@ -225,10 +235,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         }
 
         card.setRarity(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RARITY)));
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
-            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
-        }
 
         card.setPower(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_POWER)));
         card.setToughness(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TOUGHNESS)));
@@ -714,4 +720,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public boolean hasNoColor() {
         return manaCost == null || !manaCost.matches(".*[WUBRG].*");
     }
+
+
 }

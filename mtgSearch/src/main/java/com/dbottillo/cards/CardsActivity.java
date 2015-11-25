@@ -56,7 +56,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     @Override
     public void onResume() {
         super.onResume();
-        DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        DataManager.execute(DataManager.TASK.SAVED_CARDS, false);
     }
 
     @Override

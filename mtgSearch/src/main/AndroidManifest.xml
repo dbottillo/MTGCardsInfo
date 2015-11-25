@@ -33,8 +33,6 @@
 
         <activity android:name=".search.SearchActivity"/>
 
-        <activity android:name=".saved.SavedActivity"/>
-
         <activity android:name=".decks.DeckActivity"/>
 
         <meta-data

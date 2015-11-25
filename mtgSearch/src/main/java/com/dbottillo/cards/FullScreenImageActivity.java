@@ -63,7 +63,7 @@ public class FullScreenImageActivity extends DBActivity implements MTGCardFragme
     @Override
     public void onResume() {
         super.onResume();
-        DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        DataManager.execute(DataManager.TASK.SAVED_CARDS, false);
     }
 
     @Override

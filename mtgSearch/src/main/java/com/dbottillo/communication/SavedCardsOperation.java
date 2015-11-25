@@ -11,7 +11,7 @@ class SavedCardsOperation extends Operation {
 
     @Override
     protected void execute(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper, Object... params) {
-        SavedCardsEvent cardsEvent = new SavedCardsEvent(FavouritesDataSource.getCards(cardsInfoDbHelper.getReadableDatabase()));
+        SavedCardsEvent cardsEvent = new SavedCardsEvent(FavouritesDataSource.getCards(cardsInfoDbHelper.getReadableDatabase(), (boolean)params[0]));
         EventBus.getDefault().postSticky(cardsEvent);
     }
 }
