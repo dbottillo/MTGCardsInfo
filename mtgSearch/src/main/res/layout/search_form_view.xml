@@ -23,6 +23,7 @@
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
+        android:singleLine="true"
         android:layout_below="@id/search_name_title"
         android:hint="@string/search_hint_name"/>
 
@@ -42,8 +43,31 @@
         backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:singleLine="true"
         android:layout_below="@id/search_types_title"
         android:hint="@string/search_hint_type"
+        android:textColor="@color/white"
+        android:textColorHint="@color/color_primary_light"/>
+
+    <TextView
+        android:id="@+id/search_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_types"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/search_card_text"
+        android:textColor="@color/white"
+        android:textSize="12sp"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/search_text"
+        backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_below="@id/search_text_title"
+        android:hint="@string/search_hint_text"
         android:textColor="@color/white"
         android:textColorHint="@color/color_primary_light"/>
 
@@ -51,7 +75,7 @@
         android:id="@+id/search_set_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_types"
+        android:layout_below="@id/search_text"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
