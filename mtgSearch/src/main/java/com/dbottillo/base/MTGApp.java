@@ -32,7 +32,7 @@ public class MTGApp extends Application {
         migrateFavourites();
 
         if (BuildConfig.DEBUG) {
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectAll()
                     .penaltyDialog()
                     .build());
@@ -40,7 +40,6 @@ public class MTGApp extends Application {
                     .detectLeakedSqlLiteObjects()
                     .detectLeakedClosableObjects()
                     .penaltyLog()
-                    .penaltyDeath()
                     .build());
         }
     }
