@@ -7,6 +7,7 @@ public class SearchParams implements Parcelable {
 
     private String name;
     private String types;
+    private String text;
     private IntParam cmc;
     private IntParam power;
     private IntParam tough;
@@ -20,6 +21,14 @@ public class SearchParams implements Parcelable {
 
     public SearchParams() {
 
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getName() {
@@ -172,6 +181,7 @@ public class SearchParams implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(types);
+        dest.writeString(text);
         dest.writeParcelable(cmc, flags);
         dest.writeParcelable(power, flags);
         dest.writeParcelable(tough, flags);
@@ -192,6 +202,7 @@ public class SearchParams implements Parcelable {
     private void readFromParcel(Parcel in) {
         name = in.readString();
         types = in.readString();
+        text = in.readString();
         cmc = in.readParcelable(IntParam.class.getClassLoader());
         power = in.readParcelable(IntParam.class.getClassLoader());
         tough = in.readParcelable(IntParam.class.getClassLoader());
@@ -223,7 +234,7 @@ public class SearchParams implements Parcelable {
 
     @Override
     public String toString() {
-        return "[SearchParams] name: " + name + " - types:" + types + " - cmc:" + cmc + " - p/t:" + power + "/" + tough;
+        return "[SearchParams] name: " + name + " - types:" + types + " - text:+ " + text + " - cmc:" + cmc + " - p/t:" + power + "/" + tough;
     }
 
     public boolean atLeastOneColor() {
@@ -234,9 +245,10 @@ public class SearchParams implements Parcelable {
         return common || uncommon || rare || mythic;
     }
 
-    public boolean isValid(){
+    public boolean isValid() {
         return ((name != null && name.length() > 0) || (types != null && types.length() > 0)
-                || cmc.getValue() > 0 || power.getValue() > 0 || tough.getValue() > 0
+                || cmc.getValue() > 0 || power.getValue() > 0 || tough.getValue() > 0 || setId > 0
+                || (text != null && text.length() > 0)
                 || atLeastOneColor() || atLeastOneRarity());
     }
 }

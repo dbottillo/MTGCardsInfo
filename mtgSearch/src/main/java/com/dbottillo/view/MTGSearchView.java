@@ -30,6 +30,8 @@ public class MTGSearchView extends RelativeLayout {
     AppCompatEditText name;
     @Bind(R.id.search_types)
     AppCompatEditText types;
+    @Bind(R.id.search_text)
+    AppCompatEditText text;
     @Bind(R.id.search_cmc)
     AppCompatEditText cmc;
     @Bind(R.id.search_power)
@@ -128,7 +130,9 @@ public class MTGSearchView extends RelativeLayout {
 
     public SearchParams getSearchParams() {
         SearchParams searchParams = new SearchParams();
-        searchParams.setName(name.getText().toString()).setTypes(types.getText().toString());
+        searchParams.setName(name.getText().toString());
+        searchParams.setTypes(types.getText().toString());
+        searchParams.setText(text.getText().toString());
         searchParams.setCmc(new IntParam(operators[cmcOp.getSelectedItemPosition()], parseNumber(cmc.getText().toString())));
         searchParams.setPower(new IntParam(operators[powerOp.getSelectedItemPosition()], parseNumber(power.getText().toString())));
         searchParams.setTough(new IntParam(operators[toughOp.getSelectedItemPosition()], parseNumber(tough.getText().toString())));
