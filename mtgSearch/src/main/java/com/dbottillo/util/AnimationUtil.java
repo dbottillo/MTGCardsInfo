@@ -16,7 +16,7 @@ public final class AnimationUtil {
 
     private static final int DEFAULT_DURATION = 200;
 
-    public static void animteSlidingPanelHeight(final SlidingUpPanelLayout slidingPaneLayout, int target) {
+    public static void animateSlidingPanelHeight(final SlidingUpPanelLayout slidingPaneLayout, int target) {
         if (slidingPaneLayout.getPanelHeight() == target) {
             return;
         }
