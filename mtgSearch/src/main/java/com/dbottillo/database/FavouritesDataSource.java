@@ -35,12 +35,12 @@ public final class FavouritesDataSource {
         return db.insertWithOnConflict(FavouritesEntry.TABLE_NAME, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    public static ArrayList<MTGCard> getCards(SQLiteDatabase db) {
+    public static ArrayList<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
         ArrayList<MTGCard> cards = new ArrayList<>();
         Cursor cursor = db.rawQuery("select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = MTGCard.createCardFromCursor(cursor);
+            MTGCard card = MTGCard.createCardFromCursor(cursor, fullCard);
             cards.add(card);
             cursor.moveToNext();
         }
@@ -51,5 +51,11 @@ public final class FavouritesDataSource {
     public static void removeFavourites(SQLiteDatabase db, MTGCard card) {
         String[] args = new String[]{card.getMultiVerseId() + ""};
         db.rawQuery("DELETE FROM " + FavouritesEntry.TABLE_NAME + " where " + FavouritesEntry._ID + "=? ", args).moveToFirst();
+    }
+
+    public static void clear(SQLiteDatabase db) {
+        Cursor cursor = db.rawQuery("DELETE FROM " + FavouritesEntry.TABLE_NAME, null);
+        cursor.moveToFirst();
+        cursor.close();
     }
 }

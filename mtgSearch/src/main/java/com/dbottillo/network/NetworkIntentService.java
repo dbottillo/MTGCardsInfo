@@ -2,6 +2,7 @@ package com.dbottillo.network;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 
@@ -76,6 +77,9 @@ public class NetworkIntentService extends IntentService {
         URL uri = new URL(url);
         HttpURLConnection urlConnection = (HttpURLConnection) uri.openConnection();
         urlConnection.setRequestMethod("GET");
+        if (Build.VERSION.SDK != null  && Build.VERSION.SDK_INT > 13) {
+            urlConnection.setRequestProperty("Connection", "close");
+        }
 
         if (urlConnection.getResponseCode() == 200) {
             InputStream in = urlConnection.getInputStream();
@@ -137,6 +141,7 @@ public class NetworkIntentService extends IntentService {
         } else {
             tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
         }
+        urlConnection.disconnect();
         return tcgPrice;
     }
 }

@@ -110,78 +110,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     private void populateCardsWithFilter() {
         cards.clear();
-        SharedPreferences sharedPreferences = getSharedPreferences();
-        for (MTGCard card : gameSet.getCards()) {
-            boolean toAdd = false;
-            if (searchParams == null) {
-                if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
-                    toAdd = true;
-                }
-                if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
-                    toAdd = true;
-                }
-                if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
-                    toAdd = true;
-                }
-                if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
-                    toAdd = true;
-                }
-                if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
-                    toAdd = true;
-                }
-                if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
-                    toAdd = true;
-                }
-                if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
-                    toAdd = true;
-                }
-                if (card.isEldrazi() && sharedPreferences.getBoolean(FilterHelper.FILTER_ELDRAZI, true)) {
-                    toAdd = true;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
-                    toAdd = false;
-                }
-            } else {
-                // for search, filter don't apply
-                toAdd = true;
-            }
-
-            if (toAdd) {
-                cards.add(card);
-            }
-
-            boolean wubrgSort = getSharedPreferences().getBoolean(PREF_SORT_WUBRG, true);
-            if (wubrgSort) {
-                Collections.sort(cards, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.compareTo(card2);
-                    }
-                });
-            } else {
-                Collections.sort(cards, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.getName().compareTo(card2.getName());
-                    }
-                });
-            }
-        }
+        CardsHelper.filterCards(getSharedPreferences(), searchParams, gameSet.getCards(), cards);
         adapter.notifyDataSetChanged();
         emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
         listView.smoothScrollToPosition(0);
