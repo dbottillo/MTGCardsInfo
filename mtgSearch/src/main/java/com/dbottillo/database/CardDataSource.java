@@ -48,6 +48,11 @@ public final class CardDataSource {
             first = false;
             selection.add("%" + searchParams.getTypes().trim() + "%");
         }
+        if (searchParams.getText().length() > 0) {
+            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_TEXT);
+            first = false;
+            selection.add("%" + searchParams.getText().trim() + "%");
+        }
         if (searchParams.getCmc().getValue() > 0) {
             query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_CMC, searchParams.getCmc().getOperator());
             first = false;

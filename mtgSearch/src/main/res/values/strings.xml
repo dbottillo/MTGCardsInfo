@@ -130,6 +130,7 @@
     </string>
     <string name="search_hint_name">Insert any part of the name</string>
     <string name="search_hint_type">Insert any type or subtype</string>
+    <string name="search_hint_text">Insert any word of the text</string>
     <string name="search_power_title">P</string>
     <string name="search_toughness_title">T</string>
     <string name="search_cmc_title">Mana cost converted</string>
@@ -171,6 +172,7 @@
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
     <string name="favourite_migration_in_progress_title">Favourites migration</string>
     <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
+    <string name="search_card_text">Card text</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
