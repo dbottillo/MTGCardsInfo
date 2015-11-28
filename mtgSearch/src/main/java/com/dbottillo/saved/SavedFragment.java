@@ -26,7 +26,6 @@ import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.SavedCardsEvent;
 import com.dbottillo.dialog.AddToDeckFragment;
 import com.dbottillo.filter.FilterActivity;
-import com.dbottillo.helper.LOG;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.persistence.MigrationPreferences;
 import com.dbottillo.resources.MTGCard;
@@ -35,7 +34,6 @@ import com.dbottillo.view.SlidingUpPanelLayout;
 import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
-
 
 public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener {
 
@@ -166,7 +164,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
         bus.removeStickyEvent(event);
     }
 
-    private void refreshUI(){
+    private void refreshUI() {
         savedFilteredCards.clear();
         CardsHelper.filterCards(getSharedPreferences(), null, savedCards, savedFilteredCards);
         adapter.notifyDataSetChanged();

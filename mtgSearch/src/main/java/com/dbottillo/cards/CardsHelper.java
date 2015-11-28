@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class CardsHelper {
+public final class CardsHelper {
 
     private CardsHelper() {
 
     }
 
-    public static void filterCards(SharedPreferences sharedPreferences, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output){
+    public static void filterCards(SharedPreferences sharedPreferences, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
         for (MTGCard card : input) {
             boolean toAdd = false;
             if (searchParams == null) {
