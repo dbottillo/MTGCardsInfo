@@ -1,12 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dbottillo.saved.SavedActivity">
+      xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_refresh"
         android:icon="@drawable/refresh"
         android:title="@string/refresh"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
 </menu>

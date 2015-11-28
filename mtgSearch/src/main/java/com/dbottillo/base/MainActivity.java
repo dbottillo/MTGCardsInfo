@@ -18,6 +18,7 @@ import com.dbottillo.cards.CardLuckyActivity;
 import com.dbottillo.decks.DecksFragment;
 import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
+import com.dbottillo.helper.AddFavouritesAsyncTask;
 import com.dbottillo.helper.CreateDBAsyncTask;
 import com.dbottillo.helper.CreateDecksAsyncTask;
 import com.dbottillo.helper.TrackingHelper;
@@ -123,7 +124,8 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         if (BuildConfig.DEBUG) {
             navigationView.getMenu().add(0, 100, Menu.NONE, getString(R.string.action_create_db));
             navigationView.getMenu().add(0, 101, Menu.NONE, getString(R.string.action_fill_decks));
-            navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_crash));
+            navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_create_fav));
+            navigationView.getMenu().add(0, 103, Menu.NONE, getString(R.string.action_crash));
         }
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
@@ -183,26 +185,26 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         DBFragment currentFragment = (DBFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
             changeFragment(new MainFragment(), "main", false);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
 
         } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
             changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
 
         } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {
             changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
             changeFragment(DecksFragment.newInstance(), "decks", true);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_rate) {
             openRateTheApp();
 
         } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
             changeFragment(new AboutFragment(), "about_fragment", true);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), 0);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_release_note) {
             TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
@@ -217,6 +219,9 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             new CreateDecksAsyncTask(this.getApplicationContext()).execute();
 
         } else if (menuItem.getItemId() == 102) {
+            new AddFavouritesAsyncTask(this.getApplicationContext()).execute();
+
+        } else if (menuItem.getItemId() == 103) {
             throw new RuntimeException("This is a crash");
         }
         mDrawerLayout.closeDrawers();
@@ -240,7 +245,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 navigationView.getMenu().getItem(i).setChecked(false);
             }
             navigationView.getMenu().getItem(0).setChecked(true);
-            AnimationUtil.animteSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), getResources().getDimensionPixelSize(R.dimen.collapsedHeight));
         } else {
             finish();
         }

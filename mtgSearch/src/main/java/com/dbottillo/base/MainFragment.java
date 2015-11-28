@@ -74,7 +74,6 @@ public class MainFragment extends MTGSetFragment implements SlidingUpPanelLayout
         if (savedInstanceState == null) {
             sets = new ArrayList<>();
             DataManager.execute(DataManager.TASK.SET_LIST);
-
         } else {
             sets = savedInstanceState.getParcelableArrayList("SET");
             currentSetPosition = savedInstanceState.getInt("currentSetPosition");

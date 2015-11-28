@@ -56,7 +56,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     @Override
     public void onResume() {
         super.onResume();
-        DataManager.execute(DataManager.TASK.SAVED_CARDS);
+        DataManager.execute(DataManager.TASK.SAVED_CARDS, false);
     }
 
     @Override
@@ -90,7 +90,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     public boolean isCardSaved(MTGCard card) {
         boolean isSaved = false;
         for (MTGCard savedCard : savedCards) {
-            if (savedCard.getId() == card.getId()) {
+            if (savedCard.getMultiVerseId() == card.getMultiVerseId()) {
                 isSaved = true;
                 break;
             }
@@ -109,7 +109,7 @@ public class CardsActivity extends DBActivity implements MTGCardFragment.CardCon
     public void removeCard(MTGCard card) {
         DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
         for (MTGCard savedCard : savedCards) {
-            if (savedCard.getId() == card.getId()) {
+            if (savedCard.getMultiVerseId() == card.getMultiVerseId()) {
                 savedCards.remove(savedCard);
                 break;
             }

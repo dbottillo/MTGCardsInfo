@@ -1,7 +1,6 @@
 package com.dbottillo.cards;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,17 +15,14 @@ import com.dbottillo.base.DBFragment;
 import com.dbottillo.base.MTGApp;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.CardsEvent;
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.CardDataSource;
 import com.dbottillo.dialog.AddToDeckFragment;
-import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.search.SearchParams;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -95,10 +91,10 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
                 gameSet.addCard(card);
             }
             populateCardsWithFilter();
-            if (gameSet.getCards().size() == CardsDatabaseHelper.LIMIT) {
+            if (gameSet.getCards().size() == CardDataSource.LIMIT) {
                 View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
                 TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-                moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardsDatabaseHelper.LIMIT, CardsDatabaseHelper.LIMIT));
+                moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
                 listView.addFooterView(footer);
             }
             progressBar.setVisibility(View.GONE);
@@ -110,78 +106,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     private void populateCardsWithFilter() {
         cards.clear();
-        SharedPreferences sharedPreferences = getSharedPreferences();
-        for (MTGCard card : gameSet.getCards()) {
-            boolean toAdd = false;
-            if (searchParams ==  null) {
-                if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
-                    toAdd = true;
-                }
-                if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
-                    toAdd = true;
-                }
-                if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
-                    toAdd = true;
-                }
-                if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
-                    toAdd = true;
-                }
-                if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
-                    toAdd = true;
-                }
-                if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
-                    toAdd = true;
-                }
-                if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
-                    toAdd = true;
-                }
-                if (card.isEldrazi() && sharedPreferences.getBoolean(FilterHelper.FILTER_ELDRAZI, true)) {
-                    toAdd = true;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
-                    toAdd = false;
-                }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
-                    toAdd = false;
-                }
-            } else {
-                // for search, filter don't apply
-                toAdd = true;
-            }
-
-            if (toAdd) {
-                cards.add(card);
-            }
-
-            boolean wubrgSort = getSharedPreferences().getBoolean(PREF_SORT_WUBRG, true);
-            if (wubrgSort) {
-                Collections.sort(cards, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.compareTo(card2);
-                    }
-                });
-            } else {
-                Collections.sort(cards, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.getName().compareTo(card2.getName());
-                    }
-                });
-            }
-        }
+        CardsHelper.filterCards(getSharedPreferences(), searchParams, gameSet.getCards(), cards);
         adapter.notifyDataSetChanged();
         emptyView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
         listView.smoothScrollToPosition(0);
@@ -221,6 +146,10 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
-        getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        if (menuItem.getItemId() == R.id.action_add_to_deck) {
+            getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        } else {
+            DataManager.execute(DataManager.TASK.SAVE_CARD, card);
+        }
     }
 }

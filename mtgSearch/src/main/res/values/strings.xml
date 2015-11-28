@@ -37,11 +37,14 @@
 
     <!-- card fragment -->
     <string name="share">Share</string>
+    <string name="favourite_add_long">Add to favourites</string>
     <string name="favourite_remove">Remove</string>
     <string name="favourite_add">Save</string>
     <string name="action_saved">Favourites</string>
     <string name="action_home">Sets</string>
-    <string name="action_create_db">Create db</string>
+    <string name="action_create_db" translatable="false">Create db</string>
+    <string name="action_fill_decks" translatable="false">Create random decks</string>
+    <string name="action_create_fav" translatable="false">Add random favourites</string>
     <string name="refresh">Refresh</string>
     <string name="action_life_counter">Life Counter</string>
     <string name="plus_one" translatable="false">+</string>
@@ -100,6 +103,10 @@
     <string name="release_note_title">What\'s new</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        <b>Version 2.7.1:</b> \n
+        - NEW: Advanced Search now includes card text (you can search for lifelink, vigilance, …) \n
+        - NEW: Filter added to favourites \n
+        - On the first start, favourites will migrate to a new system \n\n
         <b>Version 2.7:</b> \n
         - NEW: Advanced Search, you can search card name, types, color, sets and rarity \n
         - NEW: Filter Eldrazi cards \n\n
@@ -109,7 +116,6 @@
         - FIX: Bug with multiple same cards in a deck
     </string>
     <string name="action_release_note">Release Note</string>
-    <string name="action_fill_decks" translatable="false">Create random decks</string>
     <string name="empty_cards">No cards available with the current filters.</string>
     <string name="empty_decks">You don\'t have any decks yet, use the plus button to create a new one.</string>
 
@@ -128,6 +134,7 @@
     </string>
     <string name="search_hint_name">Insert any part of the name</string>
     <string name="search_hint_type">Insert any type or subtype</string>
+    <string name="search_hint_text">Insert any word of the text</string>
     <string name="search_power_title">P</string>
     <string name="search_toughness_title">T</string>
     <string name="search_cmc_title">Mana cost converted</string>
@@ -167,6 +174,9 @@
     <string name="cd_remove">Remove</string>
     <string name="cd_action_search">Perform search</string>
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
+    <string name="favourite_migration_in_progress_title">Favourites migration</string>
+    <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
+    <string name="search_card_text">Card text</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
