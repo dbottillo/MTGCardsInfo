@@ -33,8 +33,6 @@
 
         <activity android:name=".search.SearchActivity"/>
 
-        <activity android:name=".saved.SavedActivity"/>
-
         <activity android:name=".decks.DeckActivity"/>
 
         <meta-data
@@ -44,6 +42,8 @@
         <service android:name=".network.NetworkIntentService"/>
 
         <service android:name=".widget.UpdateLuckyWidgetService"/>
+
+        <service android:name=".saved.MigrationService"/>
 
         <receiver
             android:name=".widget.LuckyWidgetProvider"

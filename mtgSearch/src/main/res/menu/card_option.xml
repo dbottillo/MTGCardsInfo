@@ -8,4 +8,9 @@
         android:title="@string/add_to_deck_title"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_add_to_favourites"
+        android:title="@string/favourite_add_long"
+        app:showAsAction="always" />
+
 </menu>

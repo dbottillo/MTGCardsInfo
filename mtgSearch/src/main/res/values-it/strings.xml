@@ -30,11 +30,11 @@
 
     <!-- card fragment -->
     <string name="share">Condividi</string>
+    <string name="favourite_add_long">Aggiungi ai preferiti</string>
     <string name="favourite_remove">Rimuovi</string>
     <string name="favourite_add">Salva</string>
     <string name="action_saved">Preferiti</string>
     <string name="action_home">Magic Set</string>
-    <string name="action_create_db">Ricrea db</string>
     <string name="refresh">Refresh</string>
     <string name="action_life_counter">Punti Vita</string>
     <string name="maximum_player">Raggiunto il numero massimo di giocatori</string>
@@ -88,10 +88,14 @@
     <string name="release_note_title">Novità!</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
-        <b>Version 2.7:</b> \n
+        <b>Versione 2.7.1:</b> \n
+        - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
+        - NUOVO: Aggiunti i filtri ai preferiti \n
+        - Al primo avvio, i favoiriti migreranno ad un nuovo sistema\n\n
+        <b>Versione 2.7:</b> \n
         - NUOVO: Ricerca avanzata, puoi cercare nomi, tipi, colori, set e rarità\n
         - NUOVO: Filtri per carte Eldrazi \n\n
-        <b>Version 2.6:</b> \n
+        <b>Versione 2.6:</b> \n
         - NUOVO: Commander 2015 \n
         - NUOVO: Il dettaglio carta ora mostra le rulings \n
         - FIX: Mazzi con multiple uguali carte
@@ -113,6 +117,7 @@
     </string>
     <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
     <string name="search_hint_type">Inserisci qualsiasi tipo e/o sottotipo</string>
+    <string name="search_hint_text">Inserisci qualsiasi parte del testo</string>
     <string name="search_power_title">F</string>
     <string name="search_toughness_title">C</string>
     <string name="search_cmc_title">Costo di mana convertito</string>
@@ -133,7 +138,10 @@
     <string name="search_rarity_title">Raritá</string>
     <string name="search_card_title">Nome carta</string>
     <string name="search_card_types">Tipi carta</string>
+    <string name="search_card_text">Testo carta</string>
     <string name="search_set_title">Set</string>
+    <string name="favourite_migration_in_progress_title">Migrazione preferiti</string>
+    <string name="favourite_migration_in_progress">I tuoi preferiti stanno migrando ad un sistema migliore, controlla questa pagina a breve!</string>
 
 
     <string name="cd_price_go">Guarda Prezzo</string>
@@ -151,6 +159,5 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="cd_action_search">Effettua ricerca</string>
-
 
 </resources>

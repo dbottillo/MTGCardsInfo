@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.database.CardsDatabaseHelper;
+import com.dbottillo.database.MTGDatabaseHelper;
 import com.dbottillo.database.DeckDataSource;
 import com.dbottillo.resources.MTGCard;
 
@@ -25,7 +25,7 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
-        CardsDatabaseHelper databaseHelper = new CardsDatabaseHelper(context);
+        MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
 
         DeckDataSource deckDataSource = new DeckDataSource(context);
         deckDataSource.open();

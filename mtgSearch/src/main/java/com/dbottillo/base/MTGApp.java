@@ -2,12 +2,15 @@ package com.dbottillo.base;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.os.StrictMode;
 
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.BuildConfig;
-import com.dbottillo.database.DB40Helper;
 import com.dbottillo.communication.DataManager;
+import com.dbottillo.persistence.MigrationPreferences;
 import com.dbottillo.resources.MTGCard;
+import com.dbottillo.saved.MigrationService;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -23,10 +26,22 @@ public class MTGApp extends Application {
     public void onCreate() {
         super.onCreate();
         DataManager.with(this);
-        DB40Helper.init(this);
         Fabric.with(this, new Crashlytics());
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
         refWatcher = LeakCanary.install(this);
+        migrateFavourites();
+
+        if (BuildConfig.DEBUG) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectAll()
+                    .penaltyDialog()
+                    .build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .penaltyLog()
+                    .build());
+        }
     }
 
     public static RefWatcher getRefWatcher(Context context) {
@@ -41,5 +56,14 @@ public class MTGApp extends Application {
 
     public static ArrayList<MTGCard> getCardsToDisplay() {
         return cardsToDisplay;
+    }
+
+    private void migrateFavourites() {
+        MigrationPreferences migrationPreferences = new MigrationPreferences(this);
+        if (migrationPreferences.migrationNotStarted()) {
+            migrationPreferences.setStarted();
+            Intent intent = new Intent(this, MigrationService.class);
+            startService(intent);
+        }
     }
 }
