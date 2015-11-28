@@ -1,7 +1,6 @@
 package com.dbottillo.cards;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,15 +17,12 @@ import com.dbottillo.communication.DataManager;
 import com.dbottillo.communication.events.CardsEvent;
 import com.dbottillo.database.CardDataSource;
 import com.dbottillo.dialog.AddToDeckFragment;
-import com.dbottillo.helper.FilterHelper;
 import com.dbottillo.helper.TrackingHelper;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
 import com.dbottillo.search.SearchParams;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
