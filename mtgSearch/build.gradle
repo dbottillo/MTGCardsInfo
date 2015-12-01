@@ -27,7 +27,7 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 36
+        versionCode 37
         versionName "2.7.2"
         applicationId "com.dbottillo.mtgsearchfree"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
