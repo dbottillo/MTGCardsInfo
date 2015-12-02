@@ -380,14 +380,19 @@ public class MTGCardFragment extends DBFragment {
 
         if (isAttached) {
             MenuItem item = menu.findItem(R.id.action_fav);
-            if (cardConnector.isCardSaved(card)) {
-                item.setTitle(getString(R.string.favourite_remove));
-                item.setIcon(R.drawable.ab_star_colored);
-                isSavedOffline = true;
+            if (card.getMultiVerseId() > 0) {
+                item.setVisible(true);
+                if (cardConnector.isCardSaved(card)) {
+                    item.setTitle(getString(R.string.favourite_remove));
+                    item.setIcon(R.drawable.ab_star_colored);
+                    isSavedOffline = true;
+                } else {
+                    item.setTitle(getString(R.string.favourite_add));
+                    item.setIcon(R.drawable.ab_star);
+                    isSavedOffline = false;
+                }
             } else {
-                item.setTitle(getString(R.string.favourite_add));
-                item.setIcon(R.drawable.ab_star);
-                isSavedOffline = false;
+                item.setVisible(false);
             }
         }
     }
