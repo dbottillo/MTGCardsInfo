@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.widget.Toast;
 
 import com.dbottillo.database.CardContract;
@@ -12,22 +11,19 @@ import com.dbottillo.database.CreateDatabaseHelper;
 import com.dbottillo.database.SetContract;
 import com.dbottillo.resources.MTGCard;
 import com.dbottillo.resources.MTGSet;
+import com.dbottillo.util.FileUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -91,40 +87,9 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             errorMessage = e.getLocalizedMessage();
         }
 
-        copyDbToSdcard();
+        FileUtil.copyDbToSdcard("MTGCardsInfo.db");
 
         return result;
-    }
-
-    public void copyDbToSdcard() {
-        LOG.e("copy db to sd card");
-        try {
-            File sd = Environment.getExternalStorageDirectory();
-            File data = Environment.getDataDirectory();
-
-            if (sd.canWrite()) {
-                String currentDBPath = "//data//com.dbottillo.mtgsearchfree.debug//databases//MTGCardsInfo.db";
-                String backupDBPath = "MTGCardsInfo.db";
-                File currentDB = new File(data, currentDBPath);
-                File backupDB = new File(sd, backupDBPath);
-
-                if (currentDB.exists()) {
-                    FileChannel src = new FileInputStream(currentDB)
-                            .getChannel();
-                    FileChannel dst = new FileOutputStream(backupDB)
-                            .getChannel();
-                    dst.transferFrom(src, 0, src.size());
-                    src.close();
-                    dst.close();
-                } else {
-                    LOG.e("current db dont exist");
-                }
-            } else {
-                LOG.e("sd card cannot be write");
-            }
-        } catch (Exception e) {
-            LOG.e("exception copy db: " + e.getLocalizedMessage());
-        }
     }
 
     private int setToLoad(String code) {
