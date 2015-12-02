@@ -50,7 +50,9 @@ public final class PlayerDataSource {
 
     public static void removePlayer(SQLiteDatabase db, Player player) {
         String[] args = new String[]{player.getId() + ""};
-        db.rawQuery("DELETE FROM deck_card where deck_id=? ", args).moveToFirst();
+        String query = "DELETE FROM " + PlayerEntry.TABLE_NAME + " where " + PlayerEntry._ID + "=? ";
+        LOG.d("[getPlayers] query: " + query + " with args: " + player.getId());
+        db.rawQuery(query, args).moveToFirst();
     }
 
 }
