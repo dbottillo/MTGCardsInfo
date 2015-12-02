@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
+import com.dbottillo.helper.LOG;
 import com.dbottillo.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -37,11 +38,15 @@ public final class FavouritesDataSource {
 
     public static ArrayList<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)", null);
+        String query = "select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)";
+        LOG.d("[getFavourites] query: " + query);
+        Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             MTGCard card = MTGCard.createCardFromCursor(cursor, fullCard);
-            cards.add(card);
+            if (card != null) {
+                cards.add(card);
+            }
             cursor.moveToNext();
         }
         cursor.close();

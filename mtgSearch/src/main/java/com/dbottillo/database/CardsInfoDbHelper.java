@@ -36,7 +36,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         if (oldVersion == 1 && newVersion == 2) {
             db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
         }
-        if (oldVersion < 2 && newVersion == 3){
+        if (oldVersion < 3 && newVersion == 3){
             db.execSQL(PlayerDataSource.CREATE_PLAYERS_TABLE);
             db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
         }
