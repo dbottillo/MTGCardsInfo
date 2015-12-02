@@ -197,6 +197,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public static MTGCard createCardFromCursor(Cursor cursor, boolean fullCard) {
+        if (cursor.getColumnIndex(CardEntry._ID) == -1) {
+            return null;
+        }
         MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex(CardEntry._ID)));
         if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
             card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
