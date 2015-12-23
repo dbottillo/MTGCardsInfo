@@ -17,9 +17,7 @@ import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
 import com.dbottillo.communication.DataManager;
 import com.dbottillo.helper.TrackingHelper;
-import com.dbottillo.persistence.MigrationPreferences;
 import com.dbottillo.resources.MTGCard;
-import com.dbottillo.saved.MigrationService;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -40,7 +38,6 @@ public class MTGApp extends Application {
         Fabric.with(this, new Crashlytics());
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
         refWatcher = LeakCanary.install(this);
-        migrateFavourites();
         checkReleaseNote();
 
         if (BuildConfig.DEBUG) {
@@ -70,14 +67,6 @@ public class MTGApp extends Application {
         return cardsToDisplay;
     }
 
-    private void migrateFavourites() {
-        MigrationPreferences migrationPreferences = new MigrationPreferences(this);
-        if (migrationPreferences.migrationNotStarted()) {
-            migrationPreferences.setStarted();
-            Intent intent = new Intent(this, MigrationService.class);
-            startService(intent);
-        }
-    }
 
     protected void checkReleaseNote() {
         SharedPreferences sharedPreferences = getSharedPreferences(DBFragment.PREFS_NAME, 0);
