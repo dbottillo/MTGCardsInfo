@@ -15,10 +15,11 @@ import android.widget.TextView;
 
 import com.dbottillo.BuildConfig;
 import com.dbottillo.R;
+import com.dbottillo.about.AboutFragment;
+import com.dbottillo.about.ReleaseNoteFragment;
 import com.dbottillo.cards.CardLuckyActivity;
 import com.dbottillo.database.CardsInfoDbHelper;
 import com.dbottillo.decks.DecksFragment;
-import com.dbottillo.dialog.AboutFragment;
 import com.dbottillo.filter.FilterActivity;
 import com.dbottillo.helper.AddFavouritesAsyncTask;
 import com.dbottillo.helper.CreateDBAsyncTask;
@@ -57,8 +58,26 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             }
         }
 
-        checkReleaseNote();
+        checkPushReleaseNoteClicked(getIntent());
+    }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        checkPushReleaseNoteClicked(intent);
+    }
+
+    private void checkPushReleaseNoteClicked(Intent intent) {
+        if (intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)) {
+            if (intent.getBooleanExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH, false)) {
+                TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "push");
+                showReleaseNoteFragment();
+                navigationView.getMenu().getItem(6).setChecked(true);
+                mDrawerToggle.syncState();
+            }
+            intent.removeExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH);
+        }
     }
 
     @Override
@@ -213,8 +232,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_release_note) {
-            TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "drawer");
-            showReleaseNote();
+            showReleaseNoteFragment();
 
         } else if (menuItem.getItemId() == 100) {
             // NB: WARNING, FOR RECREATE DATABASE
@@ -232,16 +250,21 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
         } else if (menuItem.getItemId() == 104) {
             FileUtil.copyDbToSdcard(CardsInfoDbHelper.DATABASE_NAME);
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
             String uri = "file:///sdcard/" + CardsInfoDbHelper.DATABASE_NAME;
             emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(uri));
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
         }
         mDrawerLayout.closeDrawers();
         return true;
+    }
+
+    private void showReleaseNoteFragment() {
+        changeFragment(new ReleaseNoteFragment(), "release_note_fragment", true);
+        AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
     }
 
     @Override

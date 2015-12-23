@@ -9,7 +9,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 
-public class FileUtil {
+public final class FileUtil {
+
+    private FileUtil() {
+    }
+
     public static void copyDbToSdcard(String name) {
         LOG.e("copy db to sd card");
         try {
