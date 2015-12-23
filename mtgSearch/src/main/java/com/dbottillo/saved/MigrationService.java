@@ -7,16 +7,9 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import com.dbottillo.R;
-import com.dbottillo.database.CardsInfoDbHelper;
-import com.dbottillo.database.DB40Helper;
-import com.dbottillo.database.FavouritesDataSource;
-import com.dbottillo.database.PlayerDataSource;
 import com.dbottillo.persistence.MigrationPreferences;
-import com.dbottillo.resources.MTGCard;
-import com.dbottillo.resources.Player;
 
-import java.util.ArrayList;
-
+@Deprecated  // still here just for reference
 public class MigrationService extends IntentService {
 
     private static final int NOTIFICATION_MIGRATION_ID = 899;
@@ -36,8 +29,8 @@ public class MigrationService extends IntentService {
 
         showNotification(mBuilder);
 
-        DB40Helper.init(getApplicationContext());
-        DB40Helper.openDb();
+        /*DB40Helper.init(getApplicationContext());
+        DB40Helper.openDb();*/
 
         // ******** fake loading favourites
         /*ArrayList<MTGCard> result = new ArrayList<>();
@@ -55,16 +48,16 @@ public class MigrationService extends IntentService {
 
 
         // ******** player migration
-        ArrayList<Player> players = DB40Helper.getPlayers();
+        /*ArrayList<Player> players = DB40Helper.getPlayers();
         CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(getApplicationContext());
         for (Player player : players) {
             PlayerDataSource.savePlayer(cardsInfoDbHelper.getWritableDatabase(), player);
-        }
+        }*/
         // ******** end player migration
 
 
         // ******** cards migration
-        ArrayList<MTGCard> cards = DB40Helper.getCards();
+        /*ArrayList<MTGCard> cards = DB40Helper.getCards();
         DB40Helper.closeDb();
         int count = 0;
         for (MTGCard card : cards) {
@@ -72,7 +65,7 @@ public class MigrationService extends IntentService {
             showNotification(mBuilder);
             FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
             count++;
-        }
+        }*/
         // ******** end cards migration
 
         cancelNotification();
