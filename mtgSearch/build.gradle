@@ -27,8 +27,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 38
-        versionName "2.7.2"
+        versionCode 39
+        versionName "2.7.3"
         applicationId "com.dbottillo.mtgsearchfree"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -131,12 +131,16 @@ dependencies {
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'com.android.support:support-annotations:23.1.1'
+    testCompile "com.android.support:appcompat-v7:23.1.1"
+    testCompile 'com.android.support:recyclerview-v7:23.1.1'
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
-    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.1'
     androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile "com.android.support:appcompat-v7:23.1.1"
+    androidTestCompile 'com.android.support:recyclerview-v7:23.1.1'
 }
 
 task checkstyle(type: Checkstyle) {
