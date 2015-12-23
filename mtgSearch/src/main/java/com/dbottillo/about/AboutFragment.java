@@ -3,6 +3,7 @@ package com.dbottillo.about;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -25,18 +26,21 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
     String[] librariesAuthor = new String[]{"Castorflex", "Square", "Square"};
     String[] librariesLink = new String[]{"https://github.com/castorflex/SmoothProgressBar", "http://square.github.io/picasso/", "https://github.com/square/leakcanary"};
 
+    String versionName;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_about, container, false);
 
         setActionBarTitle(getString(R.string.action_about));
 
+        versionName = "";
         try {
-            String versionName = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName;
+            versionName = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName;
             TextView version = (TextView) v.findViewById(R.id.about_version);
             version.setText(Html.fromHtml("<b>" + getString(R.string.version) + "</b>: " + versionName));
         } catch (PackageManager.NameNotFoundException e) {
-            LOG.d("[AboutFragment] exception: "+e.getLocalizedMessage());
+            LOG.d("[AboutFragment] exception: " + e.getLocalizedMessage());
         }
 
         Button sendFeedback = (Button) v.findViewById(R.id.send_feedback);
@@ -86,7 +90,10 @@ public class AboutFragment extends DBFragment implements View.OnClickListener {
     public void onClick(View v) {
         TrackingHelper.getInstance(v.getContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback");
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
+        String text = String.format(getString(R.string.feedback_text), versionName,
+                Build.VERSION.SDK_INT, Build.DEVICE, Build.MODEL, Build.PRODUCT);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getActivity().getString(R.string.app_name));
+        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text));
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));
     }
 

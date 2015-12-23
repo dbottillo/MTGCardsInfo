@@ -9,6 +9,17 @@
     <string name="send_feedback">Send Feedback</string>
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
+    <string name="feedback_text">
+        <![CDATA[
+		| Version: %1$s |<br/>
+		| API Level: %2$s |<br/>
+		| Device: %3$s |<br/>
+		| Model: %4$s |<br/>
+		| Product: %5$s |
+		<br/>
+        <br/>
+		]]>
+	</string>
     <string name="version">Version</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results:</string>
