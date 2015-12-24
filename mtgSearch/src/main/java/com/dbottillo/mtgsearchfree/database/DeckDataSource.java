@@ -56,6 +56,13 @@ public final class DeckDataSource {
         database = dbHelper.getWritableDatabase();
     }
 
+    public static long addDeck(SQLiteDatabase db, String name) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_NAME_ARCHIVED, 0);
+        return db.insert(TABLE_DECKS, null, values);
+    }
+
     public long addDeck(String name) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
@@ -105,31 +112,39 @@ public final class DeckDataSource {
 
     public void addCardToDeck(String newDeck, MTGCard card, int quantity, boolean side) {
         long deckId = addDeck(newDeck);
-        addCardToDeck(deckId, card, quantity, side);
+        addCardToDeck(database, deckId, card, quantity, side);
     }
 
     public void addCardToDeck(long deckId, MTGCard card, int quantity, boolean side) {
+        addCardToDeck(database, deckId, card, quantity, side);
+    }
+
+    public static void addCardToDeck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
         if (card.getQuantity() == 1 && quantity < 0) {
-            removeCardFromDeck(deckId, card, side);
+            removeCardFromDeck(db, deckId, card, side);
             return;
         }
         int sid = side ? 1 : 0;
-        Cursor cardsCursor = database.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
+        Cursor cardsCursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
             // there is already some cards there! just need to add the quantity
             cardsCursor.moveToFirst();
             int currentQuantity = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMN_QUANTITY));
             ContentValues values = new ContentValues();
             values.put(COLUMN_QUANTITY, currentQuantity + quantity);
-            database.update(TABLE_DECK_CARD, values, COLUMN_DECK_ID + " = ? and " + COLUMN_CARD_ID + " = ? and " + COLUMN_SIDE + " = ?", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
+            db.update(TABLE_DECK_CARD, values, COLUMN_DECK_ID + " = ? and " + COLUMN_CARD_ID + " = ? and " + COLUMN_SIDE + " = ?", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
             cardsCursor.close();
             return;
         }
-        addCardToDeckWithoutCheck(deckId, card, quantity, side);
+        addCardToDeckWithoutCheck(db, deckId, card, quantity, side);
     }
 
     public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity, boolean side) {
-        Cursor current = database.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
+        addCardToDeckWithoutCheck(database, deckId, card, quantity, side);
+    }
+
+    private static void addCardToDeckWithoutCheck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
+        Cursor current = db.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() > 0) {
             // card already added
             if (current.getCount() > 1) {
@@ -138,13 +153,13 @@ public final class DeckDataSource {
                 current.moveToNext();
                 while (!current.isAfterLast()) {
                     //LOG.e("deletingL "+current.getString(0));
-                    database.rawQuery("delete from MTGCard where _id=?", new String[]{current.getString(0)}).moveToFirst();
+                    db.rawQuery("delete from MTGCard where _id=?", new String[]{current.getString(0)}).moveToFirst();
                     current.moveToNext();
                 }
             }
         } else {
             // need to add the card
-            CardDataSource.saveCard(database, card);
+            CardDataSource.saveCard(db, card);
         }
         current.close();
         ContentValues values = new ContentValues();
@@ -152,7 +167,7 @@ public final class DeckDataSource {
         values.put(COLUMN_DECK_ID, deckId);
         values.put(COLUMN_QUANTITY, quantity);
         values.put(COLUMN_SIDE, side ? 1 : 0);
-        database.insert(TABLE_DECK_CARD, null, values);
+        db.insert(TABLE_DECK_CARD, null, values);
     }
 
     public ArrayList<MTGCard> getCards(Deck deck) {
@@ -174,9 +189,13 @@ public final class DeckDataSource {
     }
 
     public void removeCardFromDeck(long deckId, MTGCard card, boolean sideboard) {
+        removeCardFromDeck(database, deckId, card, sideboard);
+    }
+
+    public static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card, boolean sideboard) {
         int sid = sideboard ? 1 : 0;
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
-        database.rawQuery("DELETE FROM deck_card where deck_id=? and card_id=? and side =?", args).moveToFirst();
+        db.rawQuery("DELETE FROM deck_card where deck_id=? and card_id=? and side =?", args).moveToFirst();
     }
 
     public void deleteDeck(Deck deck) {
