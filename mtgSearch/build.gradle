@@ -29,7 +29,6 @@ android {
         targetSdkVersion 23
         versionCode 39
         versionName "2.7.3"
-        applicationId "com.dbottillo.mtgsearchfree"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -55,7 +54,7 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '12'
+            buildConfigField 'int', 'DATABASE_VERSION', '13'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             buildConfigField 'boolean', 'COPY_DB', 'true'
             lintOptions {
@@ -67,7 +66,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '12'
+            buildConfigField 'int', 'DATABASE_VERSION', '13'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             buildConfigField 'boolean', 'COPY_DB', 'false'
         }

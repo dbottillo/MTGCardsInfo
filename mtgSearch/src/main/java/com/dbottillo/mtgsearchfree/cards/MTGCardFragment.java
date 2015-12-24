@@ -1,0 +1,435 @@
+package com.dbottillo.mtgsearchfree.cards;
+
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Configuration;
+import android.graphics.drawable.AnimationDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
+import android.text.Html;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
+import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.resources.TCGPrice;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
+public class MTGCardFragment extends DBFragment {
+
+    private static final String TAG = MTGCardFragment.class.getName();
+
+    public interface CardConnector {
+        boolean isCardSaved(MTGCard card);
+
+        void saveCard(MTGCard card);
+
+        void removeCard(MTGCard card);
+
+        void tapOnImage(int position);
+    }
+
+    public static final float RATIO_CARD = 1.39622641509434f;
+
+    private int widthAvailable;
+    private int heightAvailable;
+
+    public static final String CARD = "card";
+    public static final String FULLSCREEN = "fullscreen";
+    public static final String POSITION = "position";
+
+    View mainContainer;
+
+    boolean isLandscape;
+    boolean fullscreenMode = false;
+    private MTGCard card;
+    ImageView cardImage;
+    ImageView cardLoader;
+    View retry;
+    Button retryBtn;
+    View cardImageContainer;
+    TextView priceCard;
+    TCGPrice price;
+
+    private int position;
+
+    private CardConnector cardConnector;
+
+    public static MTGCardFragment newInstance(MTGCard card, int position, boolean fullscreen) {
+        MTGCardFragment fragment = new MTGCardFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(CARD, card);
+        args.putBoolean(FULLSCREEN, fullscreen);
+        args.putInt(POSITION, position);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public MTGCardFragment() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.fragment_card, container, false);
+
+        card = getArguments().getParcelable(CARD);
+        position = getArguments().getInt(POSITION);
+        fullscreenMode = getArguments().getBoolean(FULLSCREEN);
+        mainContainer = rootView.findViewById(R.id.fragment_card_container);
+        cardImage = (ImageView) rootView.findViewById(R.id.image_card);
+        cardImageContainer = rootView.findViewById(R.id.image_card_container);
+        cardLoader = (ImageView) rootView.findViewById(R.id.image_card_loader);
+        retry = rootView.findViewById(R.id.image_card_retry);
+        retryBtn = (Button) rootView.findViewById(R.id.image_card_retry_btn);
+        priceCard = (TextView) rootView.findViewById(R.id.price_card);
+
+        setHasOptionsMenu(true);
+
+        TextView priceTcg = (TextView) rootView.findViewById(R.id.price_on_tcg);
+        priceTcg.setText(Html.fromHtml("<i><u>TCG</i></u>"));
+
+        mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                if (isAttached) {
+                    int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+                    if (fullscreenMode) {
+                        paddingCard = 0;
+                    }
+                    widthAvailable = mainContainer.getWidth() - paddingCard * 2;
+                    if (isLandscape) {
+                        widthAvailable = mainContainer.getWidth() / 2 - paddingCard * 2;
+                    }
+                    heightAvailable = mainContainer.getHeight() - paddingCard;
+/*                    if (!isLandscape) {
+                        heightAvailable -= getResources().getDimensionPixelSize(R.dimen.price_height_container);
+                    }*/
+                    updateSizeImage();
+                    mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            }
+        });
+
+        rootView.findViewById(R.id.price_container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (price != null && !price.isAnError()) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(price.getLink()));
+                    startActivity(browserIntent);
+                }
+            }
+        });
+
+        //cardImageContainer.setBackgroundColor(((MTGCard) card).getMtgColor(getActivity()))
+        //retryBtn.setBackgroundColor(((MTGCard) card).getMtgColor(getActivity()));
+        retryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadImage(false);
+            }
+        });
+
+        cardImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cardConnector.tapOnImage(position);
+            }
+        });
+
+        return rootView;
+    }
+
+    private boolean isAttached = false;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        isAttached = true;
+
+        try {
+            cardConnector = (CardConnector) activity;
+            isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
+        } catch (ClassCastException e) {
+            Log.e(TAG, "activity must implement databaseconnector interface");
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("price", price);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        isAttached = false;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(priceReceiver);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().invalidateOptionsMenu();
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if (savedInstanceState != null) {
+            price = savedInstanceState.getParcelable("price");
+        }
+        refreshUI();
+    }
+
+    private void refreshUI() {
+        if (getView() == null) {
+            return;
+        }
+        TextView cardName = (TextView) getView().findViewById(R.id.detail_card);
+
+        String manaCost;
+        String rulings;
+        if (card.getManaCost() != null) {
+            manaCost = card.getManaCost() + " (" + card.getCmc() + ")";
+        } else {
+            manaCost = " - ";
+        }
+        if (card.getRulings().size() > 0) {
+            StringBuilder html = new StringBuilder();
+            for (String rule : card.getRulings()) {
+                html.append("- ").append(rule).append("<br/><br/>");
+            }
+            rulings = html.toString();
+        } else {
+            rulings = "";
+        }
+        cardName.setText(Html.fromHtml(getString(R.string.card_detail, card.getType(), card.getPower(), card.getToughness(),
+                manaCost, card.getText(), card.getSetName(), rulings)));
+
+        if (price == null) {
+            priceCard.setText(R.string.loading);
+        } else {
+            updatePrice();
+        }
+
+        Intent intent = new Intent(getActivity(), NetworkIntentService.class);
+        Bundle params = new Bundle();
+        params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
+        params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
+        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName().replace(" ", "%20"));
+        intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
+        getActivity().startService(intent);
+
+        retry.setVisibility(View.GONE);
+
+        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getImage() != null) {
+            loadImage(false);
+        } else {
+            cardLoader.setVisibility(View.GONE);
+            cardImageContainer.setVisibility(View.GONE);
+        }
+
+    }
+
+    private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
+            updatePrice();
+            if (price.isAnError()) {
+                String url = intent.getStringExtra(NetworkIntentService.REST_URL);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url);
+            }
+        }
+    };
+
+    private void updatePrice() {
+        if (price.isAnError()) {
+            priceCard.setText(price.getErrorPrice());
+        } else {
+            priceCard.setText(price.toDisplay(isLandscape));
+        }
+    }
+
+    private void updateSizeImage() {
+        float ratioScreen = (float) heightAvailable / (float) widthAvailable;
+        // screen taller than magic card, we can take the width
+        int wImage = widthAvailable;
+        int hImage = (int) (widthAvailable * RATIO_CARD);
+        if (!isLandscape && (ratioScreen > RATIO_CARD || hImage > heightAvailable)) {
+            // screen wider than magic card, we need to calculate from the size
+            hImage = heightAvailable;
+            wImage = (int) (heightAvailable / RATIO_CARD);
+        }
+        if (getResources().getBoolean(R.bool.isTablet)) {
+            wImage = (int) (wImage * 0.8);
+            hImage = (int) (hImage * 0.8);
+        }
+        RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) cardImage.getLayoutParams();
+        par.width = wImage;
+        par.height = hImage;
+        if (fullscreenMode) {
+            par.topMargin = 0;
+            par.leftMargin = 0;
+            par.rightMargin = 0;
+            par.bottomMargin = 0;
+        }
+        cardImage.setLayoutParams(par);
+    }
+
+    private void loadImage(final boolean fallback) {
+        retry.setVisibility(View.GONE);
+        cardImageContainer.setVisibility(View.VISIBLE);
+
+        cardImage.setVisibility(View.GONE);
+
+        startCardLoader();
+        Picasso.with(getActivity()).load(fallback ? card.getImageFromGatherer() : card.getImage()).into(cardImage, new Callback() {
+            @Override
+            public void onSuccess() {
+                cardImage.setVisibility(View.VISIBLE);
+                stopCardLoader();
+            }
+
+            @Override
+            public void onError() {
+                if (!fallback) {
+                    // need to try to load from gatherer
+                    loadImage(true);
+                    return;
+                }
+                stopCardLoader();
+                cardImage.setVisibility(View.GONE);
+                retry.setVisibility(View.VISIBLE);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", card.getImage());
+                if (isNetworkAvailable()) {
+                    TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image-with-connection", card.getImage());
+                }
+            }
+        });
+    }
+
+    private boolean isNetworkAvailable() {
+        if (getActivity() == null) {
+            return false;
+        }
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    private void startCardLoader() {
+        cardLoader.setVisibility(View.VISIBLE);
+        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
+        cardLoader.post(new Runnable() {
+            public void run() {
+                frameAnimation.start();
+            }
+        });
+    }
+
+    private void stopCardLoader() {
+        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
+        cardLoader.post(new Runnable() {
+            public void run() {
+                frameAnimation.stop();
+                cardLoader.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private boolean isSavedOffline = false;
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.card, menu);
+
+        if (isAttached) {
+            MenuItem item = menu.findItem(R.id.action_fav);
+            if (card.getMultiVerseId() > 0) {
+                item.setVisible(true);
+                if (cardConnector.isCardSaved(card)) {
+                    item.setTitle(getString(R.string.favourite_remove));
+                    item.setIcon(R.drawable.ab_star_colored);
+                    isSavedOffline = true;
+                } else {
+                    item.setTitle(getString(R.string.favourite_add));
+                    item.setIcon(R.drawable.ab_star);
+                    isSavedOffline = false;
+                }
+            } else {
+                item.setVisible(false);
+            }
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i1 = item.getItemId();
+        if (i1 == R.id.action_share) {
+            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SHARE, card.getName());
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, card.getName());
+            String url = "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=" + ((MTGCard) card).getMultiVerseId();
+            i.putExtra(Intent.EXTRA_TEXT, url);
+            startActivity(Intent.createChooser(i, getString(R.string.share_card)));
+            return true;
+        } else if (i1 == R.id.action_fav) {
+            if (isSavedOffline) {
+                cardConnector.removeCard(card);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_SAVE, card.getId() + "");
+            } else {
+                cardConnector.saveCard(card);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_FAVOURITE, TrackingHelper.UA_ACTION_UNSAVED, card.getId() + "");
+            }
+            getActivity().invalidateOptionsMenu();
+        }
+
+        return false;
+    }
+
+    @Override
+    public String getPageTrack() {
+        return "/card/" + card.getMultiVerseId();
+    }
+}
