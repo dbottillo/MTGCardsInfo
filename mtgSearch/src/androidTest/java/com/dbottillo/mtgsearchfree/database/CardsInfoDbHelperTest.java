@@ -49,7 +49,7 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
 
     @Test
     public void test_db_upgrade_from_version1_to_version2() {
-        SQLiteDatabase db = dataHelper.getReadableDatabase();
+        SQLiteDatabase db = dataHelper.getWritableDatabase();
         downgradeDb(db, 1);
         Set<String> tables = readTables(dataHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
@@ -57,8 +57,15 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 1, 2);
-        // TODO: check that rulings column has been added
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
     }
 
     @Test
@@ -71,11 +78,18 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 1, 3);
-        // TODO: check that rulings column has been added
         tables = readTables(dataHelper);
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
     }
 
     @Test
@@ -88,12 +102,18 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 1, 4);
-        // TODO: check that rulings column has been added
         tables = readTables(dataHelper);
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
-        // TODO: check that number and setCode column has been added
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(true));
     }
 
     @Test
@@ -106,12 +126,20 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 2, 3);
         tables = readTables(dataHelper);
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
     }
 
     @Test
@@ -124,13 +152,20 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 2, 4);
         tables = readTables(dataHelper);
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(true));
-        // TODO: check that number and setCode column has been added
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(true));
     }
 
     @Test
@@ -143,11 +178,17 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
         assertThat(tables.contains(PlayerDataSource.PlayerEntry.TABLE_NAME), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
+        Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         dataHelper.onUpgrade(db, 3, 4);
         tables = readTables(dataHelper);
-        // TODO: check that number and setCode column has been added
         assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(true));
+        columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(true));
+        assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(true));
+
     }
 
     private void assertRowDatabaseNumber(SQLiteDatabase db, String table, long howMany) {
@@ -155,8 +196,15 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
     }
 
     private Set<String> readColumnTable(SQLiteDatabase db, String table) {
-        // TODO
-        return null;
+        Cursor dbCursor = db.rawQuery("PRAGMA table_info(MTGCard)", null);
+        Set<String> columns = new HashSet<>(dbCursor.getCount());
+        if (dbCursor.moveToFirst()) {
+            do {
+                columns.add(dbCursor.getString(1));
+            } while (dbCursor.moveToNext());
+        }
+        dbCursor.close();
+        return columns;
     }
 
     private Set<String> readTables(CardsInfoDbHelper dataHelper) {

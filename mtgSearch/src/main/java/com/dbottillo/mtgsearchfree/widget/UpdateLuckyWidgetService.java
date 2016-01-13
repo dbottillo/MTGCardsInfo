@@ -12,6 +12,7 @@ import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
+import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.squareup.picasso.Picasso;
@@ -77,7 +78,7 @@ public class UpdateLuckyWidgetService extends Service {
             Cursor cursor = mtgDatabaseHelper.getRandomCard(params[0]);
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
-                    result.add(MTGCard.createCardFromCursor(cursor));
+                    result.add(CardDataSource.fromCursor(cursor));
                     cursor.moveToNext();
                 }
             }
