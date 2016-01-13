@@ -2,14 +2,13 @@ package com.dbottillo.mtgsearchfree.resources;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.database.CardContract.CardEntry;
-import com.dbottillo.mtgsearchfree.helper.LOG;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -199,154 +198,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return values;
     }
 
-    public static MTGCard createCardFromCursor(Cursor cursor) {
-        return createCardFromCursor(cursor, true);
-    }
-
-    public static MTGCard createCardFromCursor(Cursor cursor, boolean fullCard) {
-        if (cursor.getColumnIndex(CardEntry._ID) == -1) {
-            return null;
-        }
-        MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex(CardEntry._ID)));
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
-            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTIVERSEID)));
-        }
-        if (!fullCard) {
-            return card;
-        }
-        card.setType(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPE)));
-        card.setCardName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NAME)));
-
-        card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_ID)));
-        card.setSetName(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_NAME)));
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_CODE) > -1) {
-            card.setSetCode(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_SET_CODE)));
-        } else {
-            card.setSetCode(null);
-        }
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS) != -1) {
-            String colors = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_COLORS));
-            if (colors != null) {
-                String[] splitted = colors.split(",");
-                for (int i = 0; i < splitted.length; i++) {
-                    card.addColor(MTGCard.mapIntColor(splitted[i]));
-                }
-            }
-        }
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES) != -1) {
-            String types = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TYPES));
-            if (types != null) {
-                String[] splitted = types.split(",");
-                for (int i = 0; i < splitted.length; i++) {
-                    card.addType(splitted[i]);
-                }
-            }
-        }
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST) != -1) {
-            card.setManaCost(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MANACOST)));
-        }
-
-        card.setRarity(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RARITY)));
-
-        card.setPower(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_POWER)));
-        card.setToughness(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TOUGHNESS)));
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT) != -1) {
-            card.setText(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_TEXT)));
-        }
-
-        card.setCmc(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_CMC)));
-
-        card.setMultiColor(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_MULTICOLOR)) == 1);
-        card.setAsALand(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAND)) == 1);
-        card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(CardEntry.COLUMN_NAME_ARTIFACT)) == 1);
-
-        card.setAsEldrazi(false);
-        if (!card.isMultiColor() && !card.isLand() && !card.isArtifact() && card.getColors().size() == 0) {
-            card.setAsEldrazi(true);
-        }
-
-        String rulings = cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_RULINGS));
-        if (rulings != null) {
-            try {
-                JSONArray jsonArray = new JSONArray(rulings);
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject rule = jsonArray.getJSONObject(i);
-                    card.rulings.add(rule.getString("text"));
-                }
-            } catch (JSONException e) {
-                LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
-            }
-        }
-
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAYOUT) != -1) {
-            card.setLayout(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_LAYOUT)));
-        }
-        if (cursor.getColumnIndex(CardEntry.COLUMN_NAME_NUMBER) != -1) {
-            card.setNumber(cursor.getString(cursor.getColumnIndex(CardEntry.COLUMN_NAME_NUMBER)));
-        }
-
-        return card;
-    }
-
-    public ContentValues createContentValue() {
-        ContentValues values = new ContentValues();
-        values.put(CardEntry.COLUMN_NAME_NAME, name);
-        values.put(CardEntry.COLUMN_NAME_TYPE, type);
-        values.put(CardEntry.COLUMN_NAME_SET_ID, idSet);
-        values.put(CardEntry.COLUMN_NAME_SET_NAME, setName);
-        if (colors.size() > 0) {
-            StringBuilder col = new StringBuilder();
-            for (int k = 0; k < colors.size(); k++) {
-                String color = mapStringColor(colors.get(k));
-                col.append(color);
-                if (k < colors.size() - 1) {
-                    col.append(',');
-                }
-            }
-            values.put(CardEntry.COLUMN_NAME_COLORS, col.toString());
-        }
-        if (types.size() > 0) {
-            StringBuilder typ = new StringBuilder();
-            for (int k = 0; k < types.size(); k++) {
-                typ.append(types.get(k));
-                if (k < types.size() - 1) {
-                    typ.append(',');
-                }
-            }
-            values.put(CardEntry.COLUMN_NAME_TYPES, typ.toString());
-        }
-        values.put(CardEntry.COLUMN_NAME_MANACOST, manaCost);
-        values.put(CardEntry.COLUMN_NAME_RARITY, rarity);
-        values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, multiVerseId);
-        values.put(CardEntry.COLUMN_NAME_POWER, power);
-        values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
-        values.put(CardEntry.COLUMN_NAME_TEXT, text);
-        values.put(CardEntry.COLUMN_NAME_CMC, cmc);
-        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, isAMultiColor);
-        values.put(CardEntry.COLUMN_NAME_LAND, isALand);
-        values.put(CardEntry.COLUMN_NAME_ARTIFACT, isAnArtifact);
-        if (rulings.size() > 0) {
-            JSONArray rules = new JSONArray();
-            for (String rule : rulings) {
-                JSONObject rulJ = new JSONObject();
-                try {
-                    rulJ.put("text", rule);
-                    rules.put(rulJ);
-                } catch (JSONException e) {
-                    LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
-                }
-
-            }
-            values.put(CardEntry.COLUMN_NAME_RULINGS, rules.toString());
-        }
-        return values;
-    }
-
-    private static int mapIntColor(String color) {
+    public static int mapIntColor(String color) {
         if (color.equalsIgnoreCase("Black")) {
             return BLACK;
         }
@@ -365,7 +217,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return -1;
     }
 
-    private static String mapStringColor(int color) {
+    public static String mapStringColor(int color) {
         if (color == BLACK) {
             return "Black";
         }
@@ -457,6 +309,12 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             return new MTGCard[size];
         }
     };
+
+
+    @VisibleForTesting
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public long getId() {
         return id;
@@ -648,6 +506,10 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public String toString() {
         return "[MTGCard] " + name;
+    }
+
+    public void addRuling(String rule) {
+        this.rulings.add(rule);
     }
 
     public String getImage() {

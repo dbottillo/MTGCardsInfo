@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.communication;
 import android.database.Cursor;
 
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
+import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -24,7 +25,7 @@ class SearchCardsOperation extends Operation {
 
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                result.add(MTGCard.createCardFromCursor(cursor));
+                result.add(CardDataSource.fromCursor(cursor));
                 cursor.moveToNext();
             }
         }

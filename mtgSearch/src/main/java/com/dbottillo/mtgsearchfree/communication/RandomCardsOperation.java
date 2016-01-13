@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.communication;
 import android.database.Cursor;
 
 import com.dbottillo.mtgsearchfree.communication.events.RandomCardsEvent;
+import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -19,7 +20,7 @@ class RandomCardsOperation extends Operation {
         Cursor cursor = helper.getRandomCard((Integer) params[0]);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                result.add(MTGCard.createCardFromCursor(cursor));
+                result.add(CardDataSource.fromCursor(cursor));
                 cursor.moveToNext();
             }
         }

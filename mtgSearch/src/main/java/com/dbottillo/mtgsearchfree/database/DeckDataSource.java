@@ -176,7 +176,7 @@ public final class DeckDataSource {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = MTGCard.createCardFromCursor(cursor);
+            MTGCard card = CardDataSource.fromCursor(cursor);
             int quantity = cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY));
             card.setQuantity(quantity);
             int sideboard = cursor.getInt(cursor.getColumnIndex(COLUMN_SIDE));

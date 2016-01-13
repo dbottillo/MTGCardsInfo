@@ -35,7 +35,8 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion == 1 && newVersion == 2) {
+        db.beginTransaction();
+        if (oldVersion == 1 && newVersion >= 2) {
             db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
         }
         if (oldVersion < 3 && newVersion >= 3) {
@@ -48,6 +49,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
             db.execSQL(DeckDataSource.CREATE_DECKS_TABLE);
             db.execSQL(DeckDataSource.CREATE_DECK_CARD_TABLE);
         }
+
     }
 
     @Override

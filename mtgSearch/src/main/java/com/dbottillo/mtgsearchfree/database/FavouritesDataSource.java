@@ -43,7 +43,7 @@ public final class FavouritesDataSource {
         Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = MTGCard.createCardFromCursor(cursor, fullCard);
+            MTGCard card = CardDataSource.fromCursor(cursor, fullCard);
             if (card != null) {
                 cards.add(card);
             }

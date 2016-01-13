@@ -5,8 +5,9 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
+import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
             Cursor cursor = databaseHelper.getRandomCard(30);
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
-                    MTGCard card = MTGCard.createCardFromCursor(cursor);
+                    MTGCard card = CardDataSource.fromCursor(cursor);
                     Random r = new Random();
                     int quantity = r.nextInt(4) + 1;
                     //LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
