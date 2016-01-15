@@ -36,7 +36,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
         db.execSQL(DeckDataSource.CREATE_DECKS_TABLE);
         db.execSQL(DeckDataSource.CREATE_DECK_CARD_TABLE);
-        db.execSQL(PlayerDataSource.CREATE_PLAYERS_TABLE);
+        db.execSQL(PlayerDataSource.generateCreateTable());
         db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
     }
 
@@ -47,7 +47,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
             db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
         }
         if (oldVersion < 3 && newVersion >= 3) {
-            db.execSQL(PlayerDataSource.CREATE_PLAYERS_TABLE);
+            db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
         }
         if (oldVersion < 4 && newVersion >= 4) {
@@ -68,7 +68,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.delete(CardContract.CardEntry.TABLE_NAME, null, null);
         db.delete(DeckDataSource.TABLE_DECKS, null, null);
         db.delete(DeckDataSource.TABLE_DECK_CARD, null, null);
-        db.delete(PlayerDataSource.PlayerEntry.TABLE_NAME, null, null);
+        db.delete(PlayerDataSource.TABLE, null, null);
         db.delete(FavouritesDataSource.FavouritesEntry.TABLE_NAME, null, null);
     }
 }
