@@ -4,16 +4,23 @@ import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.util.FileHelper;
 
+import org.json.JSONException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+
 import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
 public class SetDataSourceTest extends BaseDatabaseTest {
+
+    private static final int NUMBER_OF_SET = 146;
 
     @Test
     public void test_generate_table_is_correct() {
@@ -24,11 +31,11 @@ public class SetDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_set_can_be_saved_in_database() {
-        MTGSet set = new MTGSet(50);
+        MTGSet set = new MTGSet(5000);
         set.setName("Commander");
         set.setCode("CMX");
-        long id = SetDataSource.saveSet(dataHelper.getWritableDatabase(), set);
-        Cursor cursor = dataHelper.getReadableDatabase().rawQuery("select * from " + SetDataSource.TABLE + " where rowid =?", new String[]{id + ""});
+        long id = SetDataSource.saveSet(mtgDatabaseHelper.getWritableDatabase(), set);
+        Cursor cursor = mtgDatabaseHelper.getReadableDatabase().rawQuery("select * from " + SetDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
@@ -38,50 +45,23 @@ public class SetDataSourceTest extends BaseDatabaseTest {
         assertThat(setFromDb.getName(), is(set.getName()));
         assertThat(setFromDb.getCode(), is(set.getCode()));
         cursor.close();
-    }
-/*
-    @Test
-    public void test_card_are_unique_in_database() {
-        SQLiteDatabase db = dataHelper.getWritableDatabase();
-        int uniqueId = 444;
-        MTGCard card = new MTGCard();
-        card.setId(uniqueId);
-        card.setCardName("one");
-        long id = CardDataSource.saveCard(db, card);
-        MTGCard card2 = new MTGCard();
-        card2.setId(uniqueId);
-        card2.setCardName("two");
-        long id2 = CardDataSource.saveCard(db, card2);
-        assertNotSame(id, id2);
-        Cursor cursor = db.rawQuery("select * from " + CardDataSource.TABLE + " where _id =?", new String[]{uniqueId + ""});
-        assertNotNull(cursor);
-        assertThat(cursor.getCount(), is(1));
-        cursor.moveToFirst();
-        MTGCard cardFromDb = CardDataSource.fromCursor(cursor);
-        assertThat(cardFromDb.getName(), is(card.getName())); // same id are ignored
-        cursor.close();
+        // need to clear up the db:
+        SetDataSource.removeSet(mtgDatabaseHelper.getWritableDatabase(), id);
     }
 
     @Test
-    public void test_cards_can_be_retrieved_from_database() {
-        MTGCard card = new MTGCard();
-        card.setId(101);
-        CardDataSource.saveCard(dataHelper.getWritableDatabase(), card);
-        MTGCard card2 = new MTGCard();
-        card2.setId(102);
-        CardDataSource.saveCard(dataHelper.getWritableDatabase(), card2);
-        Cursor cursor = dataHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE, null);
-        ArrayList<MTGCard> cards = new ArrayList<>(cursor.getCount());
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                cards.add(CardDataSource.fromCursor(cursor));
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
-        assertNotNull(cards);
-        assertThat(cards.size(), is(2));
-        assertThat(cards.get(0).getId(), is(card.getId()));
-        assertThat(cards.get(1).getId(), is(card2.getId()));
-    }*/
+    public void test_sets_can_be_retrieved_from_database() {
+        ArrayList<MTGSet> sets = mtgDatabaseHelper.getSets();
+        assertNotNull(sets);
+        assertThat(sets.size(), is(NUMBER_OF_SET)); // the one added from the previous test
+    }
+
+    @Test
+    public void test_all_set_are_loaded_correctly() throws JSONException {
+        ArrayList<MTGSet> fromJson = FileHelper.readSetListJSON(context);
+        ArrayList<MTGSet> sets = mtgDatabaseHelper.getSets();
+        assertNotNull(fromJson);
+        assertTrue(sets.containsAll(fromJson));
+        assertTrue(fromJson.containsAll(sets));
+    }
 }

@@ -9,19 +9,22 @@ import org.junit.Before;
 
 public class BaseDatabaseTest {
 
-    CardsInfoDbHelper dataHelper;
     protected RenamingDelegatingContext context;
+    CardsInfoDbHelper cardsInfoDbHelper;
+    MTGDatabaseHelper mtgDatabaseHelper;
 
     @Before
     public void create_data_helper() throws Exception {
         context = new RenamingDelegatingContext(InstrumentationRegistry.getInstrumentation().getTargetContext(), "test_");
-        dataHelper = new CardsInfoDbHelper(context);
-        dataHelper.clear();
+        cardsInfoDbHelper = new CardsInfoDbHelper(context);
+        cardsInfoDbHelper.clear();
+        mtgDatabaseHelper = new MTGDatabaseHelper(context);
     }
 
     @After
     public void close_data_helper() throws Exception {
-        dataHelper.close();
+        cardsInfoDbHelper.close();
+        mtgDatabaseHelper.close();
     }
 
     protected SQLiteDatabase getRawDatabase() {

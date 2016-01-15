@@ -1,11 +1,10 @@
 package com.dbottillo.mtgsearchfree.resources;
 
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.dbottillo.mtgsearchfree.database.SetContract.SetEntry;
+import com.dbottillo.mtgsearchfree.database.SetDataSource;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,31 +34,11 @@ public class MTGSet implements Parcelable {
         readFromParcel(in);
     }
 
-    public static MTGSet createMagicSetFromCursor(Cursor cursor) {
-        MTGSet set = new MTGSet(cursor.getInt(cursor.getColumnIndex(SetEntry._ID)));
-        set.setCode(cursor.getString(cursor.getColumnIndex(SetEntry.COLUMN_NAME_CODE)));
-        set.setName(cursor.getString(cursor.getColumnIndex(SetEntry.COLUMN_NAME_NAME)));
-        return set;
-    }
-
     public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException {
         ContentValues values = new ContentValues();
-        values.put(SetEntry.COLUMN_NAME_CODE, object.getString("code"));
-        values.put(SetEntry.COLUMN_NAME_NAME, object.getString("name"));
+        values.put(SetDataSource.COLUMNS.CODE.getName(), object.getString("code"));
+        values.put(SetDataSource.COLUMNS.NAME.getName(), object.getString("name"));
         return values;
-    }
-
-    public static MTGSet createMagicSetFromJson(int id, JSONObject object) throws JSONException {
-        MTGSet set = new MTGSet(id);
-        set.setCode(object.getString("code"));
-        set.setName(object.getString("name"));
-
-        //JSONArray cardsJ = object.getJSONArray("cards");
-        //for (int i=0; i<cardsJ.length(); i++){
-        //    set.addCard(MTGCard.createCardFromJson(i, cardsJ.getJSONObject(i)));
-        //}
-
-        return set;
     }
 
     public int getId() {
@@ -131,4 +110,12 @@ public class MTGSet implements Parcelable {
     };
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MTGSet other = (MTGSet) o;
+        return name.equals(other.getName()) && code.equals(other.getCode());
+    }
 }
