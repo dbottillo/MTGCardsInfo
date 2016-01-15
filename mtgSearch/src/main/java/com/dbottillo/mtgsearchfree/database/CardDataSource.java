@@ -72,12 +72,6 @@ public final class CardDataSource {
         return database.insertWithOnConflict(CardContract.CardEntry.TABLE_NAME, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE);
     }
 
-    public static Cursor getSets(SQLiteDatabase db) {
-        String query = "SELECT * FROM " + SetContract.SetEntry.TABLE_NAME;
-        LOG.d("[getSets] query: " + query);
-        return db.rawQuery(query, null);
-    }
-
     public static Cursor getSet(SQLiteDatabase db, String idSet) {
         String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " WHERE " + CardContract.CardEntry.COLUMN_NAME_SET_ID + " = ?";
         LOG.d("[getSet] query: " + query + " with id: " + idSet);

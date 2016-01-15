@@ -5,9 +5,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
+import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.util.ArrayList;
+
+/**
+ * Helper for access the card database, only on read mode
+ * the database is created from {@link CreateDatabaseHelper}
+ * and then copied to database folder from the library {@link SQLiteAssetHelper}
+ */
 public class MTGDatabaseHelper extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "mtgsearch.db";
@@ -21,9 +29,8 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
         setForcedUpgrade();
     }
 
-    public Cursor getSets() {
-        SQLiteDatabase db = getReadableDatabase();
-        return CardDataSource.getSets(db);
+    public ArrayList<MTGSet> getSets() {
+        return SetDataSource.getSets(getReadableDatabase());
     }
 
     public Cursor getSet(String idSet) {

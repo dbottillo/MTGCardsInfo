@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
+import java.util.ArrayList;
+
 public final class SetDataSource {
 
     public static final String TABLE = "MTGSet";
@@ -46,6 +48,25 @@ public final class SetDataSource {
         values.put(COLUMNS.NAME.getName(), set.getName());
         values.put(COLUMNS.CODE.getName(), set.getCode());
         return db.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+    }
+
+    public static ArrayList<MTGSet> getSets(SQLiteDatabase db) {
+        String query = "SELECT * FROM " + TABLE;
+        Cursor cursor = db.rawQuery(query, null);
+        ArrayList<MTGSet> sets = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                sets.add(fromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return sets;
+    }
+
+    public static void removeSet(SQLiteDatabase database, long id) {
+        String[] args = new String[]{id + ""};
+        database.rawQuery("DELETE FROM " + TABLE + " where _id=? ", args).moveToFirst();
     }
 
     public static MTGSet fromCursor(Cursor cursor) {

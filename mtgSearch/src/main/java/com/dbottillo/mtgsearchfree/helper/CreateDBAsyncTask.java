@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.database.CardContract;
 import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper;
-import com.dbottillo.mtgsearchfree.database.SetContract;
+import com.dbottillo.mtgsearchfree.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
@@ -47,7 +47,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         ArrayList<Object> result = new ArrayList<Object>();
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-        db.delete(SetContract.SetEntry.TABLE_NAME, null, null);
+        db.delete(SetDataSource.TABLE, null, null);
         db.delete(CardContract.CardEntry.TABLE_NAME, null, null);
         try {
             int setList = context.getResources().getIdentifier("set_list", "raw", packageName);
@@ -57,9 +57,9 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
 
                 JSONObject setJ = json.getJSONObject(i);
                 try {
-                    String jsonSetString = loadFile(setToLoad(setJ.getString("code")));
+                    String jsonSetString = loadFile(setToLoad(context, setJ.getString("code")));
 
-                    long newRowId = db.insert(SetContract.SetEntry.TABLE_NAME, null, MTGSet.createContentValueFromJSON(setJ));
+                    long newRowId = db.insert(SetDataSource.TABLE, null, MTGSet.createContentValueFromJSON(setJ));
                     LOG.e("row id " + newRowId + " -> " + setJ.getString("code"));
 
                     JSONObject jsonCards = new JSONObject(jsonSetString);
@@ -96,7 +96,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         return result;
     }
 
-    private int setToLoad(String code) {
+    public static int setToLoad(Context context, String code) {
         String stringToLoad = code.toLowerCase(Locale.getDefault());
         if (stringToLoad.equalsIgnoreCase("10e")) {
             stringToLoad = "e10";
@@ -119,7 +119,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         } else if (stringToLoad.equalsIgnoreCase("2ed")) {
             stringToLoad = "ed2";
         }
-        return context.getResources().getIdentifier(stringToLoad + "_x", "raw", packageName);
+        return context.getResources().getIdentifier(stringToLoad + "_x", "raw", context.getPackageName());
     }
 
     private String loadFile(int file) throws Resources.NotFoundException {

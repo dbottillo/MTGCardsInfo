@@ -5,6 +5,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.VisibleForTesting;
 
+/**
+ * Helper for access the use database that contains:
+ * - cards (that are in decks and favourites)
+ * - decks
+ * - favourites
+ * - players (for life counter)
+ */
 public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";

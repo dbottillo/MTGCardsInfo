@@ -56,8 +56,8 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         card.setNumber("30a");
         card.addRuling("rule");
         card.addRuling("rule2");
-        long id = CardDataSource.saveCard(dataHelper.getWritableDatabase(), card);
-        Cursor cursor = dataHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
+        long id = CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
+        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
@@ -98,7 +98,7 @@ public class CardDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_card_are_unique_in_database() {
-        SQLiteDatabase db = dataHelper.getWritableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         int uniqueId = 444;
         MTGCard card = new MTGCard();
         card.setId(uniqueId);
@@ -122,11 +122,11 @@ public class CardDataSourceTest extends BaseDatabaseTest {
     public void test_cards_can_be_retrieved_from_database() {
         MTGCard card = new MTGCard();
         card.setId(101);
-        CardDataSource.saveCard(dataHelper.getWritableDatabase(), card);
+        CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         MTGCard card2 = new MTGCard();
         card2.setId(102);
-        CardDataSource.saveCard(dataHelper.getWritableDatabase(), card2);
-        Cursor cursor = dataHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE, null);
+        CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card2);
+        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE, null);
         ArrayList<MTGCard> cards = new ArrayList<>(cursor.getCount());
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
