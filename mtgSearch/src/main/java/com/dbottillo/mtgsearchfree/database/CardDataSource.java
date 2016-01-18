@@ -240,10 +240,25 @@ public final class CardDataSource {
         return query;
     }
 
-    public static Cursor getRandomCard(SQLiteDatabase db, int number) {
+    /*public static Cursor getRandomCard(SQLiteDatabase db, int number) {
         String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT " + number;
         LOG.d("[getRandomCard] query: " + query);
         return db.rawQuery(query, null);
+    }*/
+
+    public static ArrayList<MTGCard> getRandomCard(SQLiteDatabase db, int number) {
+        String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT " + number;
+        LOG.d("[getRandomCard] query: " + query);
+        ArrayList<MTGCard> cards = new ArrayList<>(number);
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                cards.add(fromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return cards;
     }
 
     public static ContentValues createContentValue(MTGCard card) {

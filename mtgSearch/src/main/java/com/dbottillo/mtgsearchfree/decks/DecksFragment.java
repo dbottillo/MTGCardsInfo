@@ -27,6 +27,7 @@ import android.widget.TextView;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
 import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
@@ -281,14 +282,15 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
     static class DecksLoader extends AsyncTaskLoader<ArrayList<Deck>> {
 
+        private Context context;
+
         public DecksLoader(Context context) {
             super(context);
         }
 
         public ArrayList<Deck> loadInBackground() {
-            DeckDataSource deckDataSource = new DeckDataSource(getContext());
-            deckDataSource.open();
-            return deckDataSource.getDecks();
+            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
+            return DeckDataSource.getDecks(dbHelper.getReadableDatabase());
         }
     }
 
@@ -302,9 +304,8 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         @Override
         protected Void doInBackground(String... params) {
-            DeckDataSource deckDataSource = new DeckDataSource(context);
-            deckDataSource.open();
-            deckDataSource.addDeck(params[0]);
+            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
+            DeckDataSource.addDeck(dbHelper.getWritableDatabase(), params[0]);
             return null;
         }
 
@@ -325,9 +326,8 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         @Override
         protected Void doInBackground(Deck... params) {
-            DeckDataSource deckDataSource = new DeckDataSource(context);
-            deckDataSource.open();
-            deckDataSource.deleteDeck(params[0]);
+            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
+            DeckDataSource.deleteDeck(dbHelper.getWritableDatabase(), params[0]);
             return null;
         }
 

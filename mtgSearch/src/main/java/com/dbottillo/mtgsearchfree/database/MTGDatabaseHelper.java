@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
+import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
@@ -43,7 +44,7 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
         return CardDataSource.searchCards(db, searchParams);
     }
 
-    public Cursor getRandomCard(int number) {
+    public ArrayList<MTGCard> getRandomCard(int number) {
         SQLiteDatabase db = getReadableDatabase();
         return CardDataSource.getRandomCard(db, number);
     }

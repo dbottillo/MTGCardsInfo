@@ -20,6 +20,8 @@ import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.communication.DataManager;
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
@@ -181,9 +183,11 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             @Override
             public void run() {
                 if (getActivity() != null) {
+                    /*
                     DeckDataSource deckDataSource = new DeckDataSource(context);
                     deckDataSource.open();
-                    deckDataSource.addCardToDeck(deck.getId(), card, quantity, side);
+                    deckDataSource.addCardToDeck(dbdeck.getId(), card, quantity, side);*/
+                    DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, quantity, card.isSideboard());
                 }
             }
         };
@@ -195,9 +199,10 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
         Thread thread = new Thread() {
             @Override
             public void run() {
-                DeckDataSource deckDataSource = new DeckDataSource(context);
+                /*DeckDataSource deckDataSource = new DeckDataSource(context);
                 deckDataSource.open();
-                deckDataSource.addCardToDeck(deck, card, quantity, side);
+                deckDataSource.addCardToDeck(deck, card, quantity, side);*/
+                DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck, card, quantity, card.isSideboard());
             }
         };
         thread.start();
@@ -215,9 +220,8 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
 
         @Override
         protected ArrayList<Deck> doInBackground(Void... params) {
-            DeckDataSource deckDataSource = new DeckDataSource(context);
-            deckDataSource.open();
-            return deckDataSource.getDecks();
+            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
+            return DeckDataSource.getDecks(dbHelper.getReadableDatabase());
         }
 
         @Override

@@ -24,8 +24,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.size(), is(7)); // android_metadata + sqlite_sequence + number of tables required
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(true));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
     }
@@ -35,14 +35,14 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         addDummyData(db);
         assertRowDatabaseNumber(db, CardContract.CardEntry.TABLE_NAME, 1L);
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_DECKS, 1L);
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_DECK_CARD, 1L);
+        assertRowDatabaseNumber(db, DeckDataSource.TABLE, 1L);
+        assertRowDatabaseNumber(db, DeckDataSource.TABLE_JOIN, 1L);
         assertRowDatabaseNumber(db, PlayerDataSource.TABLE, 1L);
         assertRowDatabaseNumber(db, FavouritesDataSource.FavouritesEntry.TABLE_NAME, 1L);
         cardsInfoDbHelper.clear();
         assertRowDatabaseNumber(db, CardContract.CardEntry.TABLE_NAME, 0L);
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_DECKS, 0L);
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_DECK_CARD, 0L);
+        assertRowDatabaseNumber(db, DeckDataSource.TABLE, 0L);
+        assertRowDatabaseNumber(db, DeckDataSource.TABLE_JOIN, 0L);
         assertRowDatabaseNumber(db, PlayerDataSource.TABLE, 0L);
         assertRowDatabaseNumber(db, FavouritesDataSource.FavouritesEntry.TABLE_NAME, 0L);
     }
@@ -53,8 +53,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 1);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -74,8 +74,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 1);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -98,8 +98,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 1);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -122,8 +122,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 2);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -134,8 +134,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(false));
@@ -148,8 +148,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 2);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(false));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -160,8 +160,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(true));
         columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_RULINGS), is(true));
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(true));
@@ -174,8 +174,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         downgradeDb(db, 3);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardContract.CardEntry.TABLE_NAME), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(false));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(false));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.FavouritesEntry.TABLE_NAME), is(true));
         Set<String> columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
@@ -183,8 +183,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(false));
         cardsInfoDbHelper.onUpgrade(db, 3, 4);
         tables = readTables(cardsInfoDbHelper);
-        assertThat(tables.contains(DeckDataSource.TABLE_DECKS), is(true));
-        assertThat(tables.contains(DeckDataSource.TABLE_DECK_CARD), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE), is(true));
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(true));
         columns = readColumnTable(db, CardContract.CardEntry.TABLE_NAME);
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_NUMBER), is(true));
         assertThat(columns.contains(CardContract.CardEntry.COLUMN_NAME_SET_CODE), is(true));
@@ -233,8 +233,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
 
     private void downgradeDb(SQLiteDatabase db, int version) {
         db.execSQL("DROP TABLE " + CardContract.CardEntry.TABLE_NAME);
-        db.execSQL("DROP TABLE " + DeckDataSource.TABLE_DECKS);
-        db.execSQL("DROP TABLE " + DeckDataSource.TABLE_DECK_CARD);
+        db.execSQL("DROP TABLE " + DeckDataSource.TABLE);
+        db.execSQL("DROP TABLE " + DeckDataSource.TABLE_JOIN);
         db.execSQL("DROP TABLE " + FavouritesDataSource.FavouritesEntry.TABLE_NAME);
         db.execSQL("DROP TABLE " + PlayerDataSource.TABLE);
         if (version == 1) {

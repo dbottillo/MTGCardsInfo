@@ -22,6 +22,8 @@ import com.dbottillo.mtgsearchfree.base.DBFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
+import com.dbottillo.mtgsearchfree.communication.DataManager;
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
@@ -50,8 +52,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
 
     private Loader deckLoader;
 
-    private DeckDataSource deckDataSource;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_deck, container, false);
@@ -71,9 +71,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         listView.setHasFixedSize(true);
         listView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        deckDataSource = new DeckDataSource(getActivity());
-        deckDataSource.open();
-
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(getContext(), cards, R.menu.deck_card, new OnCardListener() {
             @Override
             public void onCardSelected(MTGCard card, int position) {
@@ -89,15 +86,18 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
                 if (menuItem.getItemId() == R.id.action_add_one_more) {
                     TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ONE_MORE);
-                    deckDataSource.addCardToDeck(deck.getId(), card, 1, card.isSideboard());
+                    DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, 1, card.isSideboard());
+                    //deckDataSource.addCardToDeck(deck.getId(), card, 1, card.isSideboard());
 
                 } else if (menuItem.getItemId() == R.id.action_remove_one) {
                     TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ONE);
-                    deckDataSource.addCardToDeck(deck.getId(), card, -1, card.isSideboard());
+                    DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, -1, card.isSideboard());
+                    //deckDataSource.addCardToDeck(deck.getId(), card, -1, card.isSideboard());
 
                 } else if (menuItem.getItemId() == R.id.action_remove_all) {
                     TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ALL);
-                    deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
+                    DataManager.execute(DataManager.TASK.EDIT_DECK, false, deck.getId(), card, card.isSideboard());
+                    //deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
                 }
                 forceReload();
             }
@@ -216,9 +216,8 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         }
 
         public ArrayList<MTGCard> loadInBackground() {
-            DeckDataSource deckDataSource = new DeckDataSource(getContext());
-            deckDataSource.open();
-            return deckDataSource.getCards(deck);
+            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(getContext());
+            return DeckDataSource.getCards(dbHelper.getReadableDatabase(), deck);
         }
     }
 
