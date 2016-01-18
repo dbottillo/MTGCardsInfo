@@ -27,7 +27,8 @@ public final class DataManager {
         RANDOM_CARDS(RandomCardsOperation.class),
         PLAYERS(PlayersOperation.class),
         SAVE_PLAYER(SavePlayerOperation.class),
-        REMOVE_PLAYER(RemovePlayerOperation.class);
+        REMOVE_PLAYER(RemovePlayerOperation.class),
+        EDIT_DECK(EditDeckOperation.class);
 
         Class<?> operationClass;
 

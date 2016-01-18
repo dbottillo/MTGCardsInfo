@@ -5,14 +5,12 @@ import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.squareup.picasso.Picasso;
@@ -73,18 +71,7 @@ public class UpdateLuckyWidgetService extends Service {
 
         @Override
         protected ArrayList<MTGCard> doInBackground(Integer... params) {
-            ArrayList<MTGCard> result = new ArrayList<>();
-
-            Cursor cursor = mtgDatabaseHelper.getRandomCard(params[0]);
-            if (cursor.moveToFirst()) {
-                while (!cursor.isAfterLast()) {
-                    result.add(CardDataSource.fromCursor(cursor));
-                    cursor.moveToNext();
-                }
-            }
-            cursor.close();
-
-            return result;
+            return mtgDatabaseHelper.getRandomCard(params[0]);
         }
 
         @Override

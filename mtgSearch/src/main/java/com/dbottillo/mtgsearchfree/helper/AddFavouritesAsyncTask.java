@@ -1,17 +1,16 @@
 package com.dbottillo.mtgsearchfree.helper;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
@@ -30,15 +29,10 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
         CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
 
         FavouritesDataSource.clear(cardsInfoDbHelper.getWritableDatabase());
-        Cursor cursor = databaseHelper.getRandomCard(600);
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                MTGCard card = CardDataSource.fromCursor(cursor);
-                FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
-                cursor.moveToNext();
-            }
+        List<MTGCard> cards = databaseHelper.getRandomCard(600);
+        for (MTGCard card : cards) {
+            FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
         }
-        cursor.close();
 
         return result;
     }

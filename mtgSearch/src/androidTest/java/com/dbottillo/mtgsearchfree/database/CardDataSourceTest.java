@@ -28,34 +28,7 @@ public class CardDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_card_can_be_saved_in_database() {
-        MTGCard card = new MTGCard();
-        card.setId(1);
-        card.setCardName("card");
-        card.setType("Dragon");
-        card.addType("Creature");
-        card.addSubType("Goblin");
-        card.addSubType("Artifact");
-        card.addSubType("Wizard");
-        card.addColor(MTGCard.BLACK);
-        card.addColor(MTGCard.RED);
-        card.setCmc(12);
-        card.setRarity("Rare");
-        card.setPower("4");
-        card.setToughness("12");
-        card.setManaCost("3UU");
-        card.setText("card text");
-        card.setMultiColor(false);
-        card.setAsALand(true);
-        card.setAsArtifact(true);
-        card.setAsEldrazi(false);
-        card.setMultiVerseId(8743);
-        card.setIdSet(3);
-        card.setSetName("COmmander");
-        card.setSetCode("CMX");
-        card.setLayout("split");
-        card.setNumber("30a");
-        card.addRuling("rule");
-        card.addRuling("rule2");
+        MTGCard card = generateCard();
         long id = CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
@@ -139,5 +112,37 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         assertThat(cards.size(), is(2));
         assertThat(cards.get(0).getId(), is(card.getId()));
         assertThat(cards.get(1).getId(), is(card2.getId()));
+    }
+
+    public static MTGCard generateCard(){
+        MTGCard card = new MTGCard();
+        card.setId(1);
+        card.setCardName("card");
+        card.setType("Dragon");
+        card.addType("Creature");
+        card.addSubType("Goblin");
+        card.addSubType("Artifact");
+        card.addSubType("Wizard");
+        card.addColor(MTGCard.BLACK);
+        card.addColor(MTGCard.RED);
+        card.setCmc(12);
+        card.setRarity("Rare");
+        card.setPower("4");
+        card.setToughness("12");
+        card.setManaCost("3UU");
+        card.setText("card text");
+        card.setMultiColor(false);
+        card.setAsALand(true);
+        card.setAsArtifact(true);
+        card.setAsEldrazi(false);
+        card.setMultiVerseId(8743);
+        card.setIdSet(3);
+        card.setSetName("COmmander");
+        card.setSetCode("CMX");
+        card.setLayout("split");
+        card.setNumber("30a");
+        card.addRuling("rule");
+        card.addRuling("rule2");
+        return card;
     }
 }
