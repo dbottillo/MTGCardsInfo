@@ -114,13 +114,17 @@
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        - NEW: Oath of the gatewatch \n
+        - NEW: Export deck \n
+        - Bug fixes
+    </string>
+    <string name="release_note_text_full">
         <b>Version 2.7.3:</b> \n
         - NEW: Oath of the gatewatch \n
         - NEW: Export deck \n
-        - Bug fixes \n
-    </string>
-    <string name="release_note_text_full">
-        \n<b>Version 2.7.2:</b> \n
+        - Fix major issue on One Plus Two
+        - Bug fixes \n\n
+        <b>Version 2.7.2:</b> \n
         - NEW: Advanced Search now includes card text (you can search for lifelink, vigilance, …) \n
         - NEW: Filter added to favourites \n
         - On the first start, favourites will migrate to a new system \n\n

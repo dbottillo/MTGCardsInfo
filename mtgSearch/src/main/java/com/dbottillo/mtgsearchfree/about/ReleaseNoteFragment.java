@@ -15,11 +15,7 @@ import butterknife.ButterKnife;
 public class ReleaseNoteFragment extends DBFragment {
 
     @Bind(R.id.release_note)
-    TextView top;
-
-    @Bind(R.id.release_note_full)
-    TextView bottom;
-
+    TextView releaseNote;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,8 +25,7 @@ public class ReleaseNoteFragment extends DBFragment {
 
         setActionBarTitle(getString(R.string.action_release_note));
 
-        top.setText(getText(R.string.release_note_text));
-        bottom.setText(getText(R.string.release_note_text_full));
+        releaseNote.setText(getText(R.string.release_note_text_full));
 
         return v;
     }
