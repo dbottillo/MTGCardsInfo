@@ -99,13 +99,16 @@
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
+        - NUOVO: Oath of the gatewatch \n
+        - NUOVO: Esporta mazzi \n
+        - Bug fixes
+    </string>
+    <string name="release_note_text_full">
         <b>Version 2.7.3:</b> \n
         - NUOVO: Oath of the gatewatch \n
         - NUOVO: Esporta mazzi \n
-        - Bug fixes \n
-    </string>
-    <string name="release_note_text_full">
-        \n<b>Versione 2.7.2:</b> \n
+        - Bug fixes \n\n
+        <b>Versione 2.7.2:</b> \n
         - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
         - NUOVO: Aggiunti i filtri ai preferiti \n
         - Al primo avvio, i favoiriti migreranno ad un nuovo sistema\n\n
