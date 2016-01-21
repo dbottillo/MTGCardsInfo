@@ -1,14 +1,13 @@
 package com.dbottillo.mtgsearchfree.database;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+import com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
 

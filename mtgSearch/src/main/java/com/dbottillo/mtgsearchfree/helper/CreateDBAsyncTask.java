@@ -44,7 +44,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
 
     @Override
     protected ArrayList<Object> doInBackground(String... params) {
-        ArrayList<Object> result = new ArrayList<Object>();
+        ArrayList<Object> result = new ArrayList<>();
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
         db.delete(SetDataSource.TABLE, null, null);
@@ -57,9 +57,10 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
 
                 JSONObject setJ = json.getJSONObject(i);
                 try {
-                    String jsonSetString = loadFile(setToLoad(context, setJ.getString("code")));
+                    int setToLoad = setToLoad(context, setJ.getString("code"));
+                    String jsonSetString = loadFile(setToLoad);
 
-                    long newRowId = db.insert(SetDataSource.TABLE, null, MTGSet.createContentValueFromJSON(setJ));
+                    long newRowId = db.insert(SetDataSource.TABLE, null, SetDataSource.fromJSON(setJ));
                     LOG.e("row id " + newRowId + " -> " + setJ.getString("code"));
 
                     JSONObject jsonCards = new JSONObject(jsonSetString);

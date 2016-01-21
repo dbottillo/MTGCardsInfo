@@ -1,13 +1,7 @@
 package com.dbottillo.mtgsearchfree.resources;
 
-import android.content.ContentValues;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.dbottillo.mtgsearchfree.database.SetDataSource;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -32,13 +26,6 @@ public class MTGSet implements Parcelable {
     public MTGSet(Parcel in) {
         this.cards = new ArrayList<>();
         readFromParcel(in);
-    }
-
-    public static ContentValues createContentValueFromJSON(JSONObject object) throws JSONException {
-        ContentValues values = new ContentValues();
-        values.put(SetDataSource.COLUMNS.CODE.getName(), object.getString("code"));
-        values.put(SetDataSource.COLUMNS.NAME.getName(), object.getString("name"));
-        return values;
     }
 
     public int getId() {

@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public final class SetDataSource {
@@ -74,5 +77,12 @@ public final class SetDataSource {
         set.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
         set.setCode(cursor.getString(cursor.getColumnIndex(COLUMNS.CODE.getName())));
         return set;
+    }
+
+    public static ContentValues fromJSON(JSONObject object) throws JSONException {
+        ContentValues values = new ContentValues();
+        values.put(COLUMNS.CODE.getName(), object.getString("code"));
+        values.put(COLUMNS.NAME.getName(), object.getString("name"));
+        return values;
     }
 }
