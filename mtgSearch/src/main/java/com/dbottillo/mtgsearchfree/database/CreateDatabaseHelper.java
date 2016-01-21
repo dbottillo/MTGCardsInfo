@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.dbottillo.mtgsearchfree.helper.LOG;
-
 /**
  * Helper for create the database from the json in debug mode
  */
@@ -21,7 +19,6 @@ public class CreateDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        LOG.e("on create");
         db.execSQL(SetDataSource.generateCreateTable());
         db.execSQL(CardDataSource.generateCreateTable());
     }
