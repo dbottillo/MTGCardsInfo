@@ -37,7 +37,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.execSQL(DeckDataSource.generateCreateTable());
         db.execSQL(DeckDataSource.generateCreateTableJoin());
         db.execSQL(PlayerDataSource.generateCreateTable());
-        db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
+        db.execSQL(FavouritesDataSource.generateCreateTable());
     }
 
     @Override
@@ -47,7 +47,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         }
         if (oldVersion < 3 && newVersion >= 3) {
             db.execSQL(PlayerDataSource.generateCreateTable());
-            db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
+            db.execSQL(FavouritesDataSource.generateCreateTable());
         }
         if (oldVersion < 4 && newVersion >= 4) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_SET_CODE);
@@ -68,6 +68,6 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.delete(DeckDataSource.TABLE, null, null);
         db.delete(DeckDataSource.TABLE_JOIN, null, null);
         db.delete(PlayerDataSource.TABLE, null, null);
-        db.delete(FavouritesDataSource.FavouritesEntry.TABLE_NAME, null, null);
+        db.delete(FavouritesDataSource.TABLE, null, null);
     }
 }

@@ -74,7 +74,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
 
     protected void loadSet(MTGSet set) {
         this.gameSet = set;
-        DataManager.execute(DataManager.TASK.SET_CARDS, gameSet.getId() + "");
+        DataManager.execute(DataManager.TASK.SET_CARDS, gameSet);
     }
 
     protected void loadSearch() {
