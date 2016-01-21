@@ -33,7 +33,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
+        db.execSQL(CardDataSource.generateCreateTable());
         db.execSQL(DeckDataSource.generateCreateTable());
         db.execSQL(DeckDataSource.generateCreateTableJoin());
         db.execSQL(PlayerDataSource.generateCreateTable());
@@ -42,17 +42,16 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.beginTransaction();
         if (oldVersion == 1 && newVersion >= 2) {
-            db.execSQL(CardContract.SQL_ADD_COLUMN_RULINGS);
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_RULINGS);
         }
         if (oldVersion < 3 && newVersion >= 3) {
             db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.CREATE_FAVOURITES_TABLE);
         }
         if (oldVersion < 4 && newVersion >= 4) {
-            db.execSQL(CardContract.SQL_ADD_COLUMN_SET_CODE);
-            db.execSQL(CardContract.SQL_ADD_COLUMN_NUMBER);
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SET_CODE);
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
             db.execSQL(DeckDataSource.generateCreateTable());
             db.execSQL(DeckDataSource.generateCreateTableJoin());
         }
@@ -65,7 +64,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public synchronized void clear() {
         SQLiteDatabase db = getWritableDatabase();
-        db.delete(CardContract.CardEntry.TABLE_NAME, null, null);
+        db.delete(CardDataSource.TABLE, null, null);
         db.delete(DeckDataSource.TABLE, null, null);
         db.delete(DeckDataSource.TABLE_JOIN, null, null);
         db.delete(PlayerDataSource.TABLE, null, null);

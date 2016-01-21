@@ -20,7 +20,21 @@ public class SearchParams implements Parcelable {
     }
 
     public SearchParams() {
-
+        this.name = "";
+        this.types = "";
+        this.text = "";
+        white = false;
+        blue = false;
+        black = false;
+        red = false;
+        green = false;
+        multi = false;
+        nomulti = false;
+        common = false;
+        uncommon = false;
+        rare = false;
+        mythic = false;
+        setId = -1;
     }
 
     public String getText() {
@@ -122,6 +136,7 @@ public class SearchParams implements Parcelable {
 
     public void setMulti(boolean multi) {
         this.multi = multi;
+        this.nomulti = false;
     }
 
     public boolean isNomulti() {
@@ -130,6 +145,7 @@ public class SearchParams implements Parcelable {
 
     public void setNomulti(boolean nomulti) {
         this.nomulti = nomulti;
+        this.multi = false;
     }
 
     public boolean isCommon() {

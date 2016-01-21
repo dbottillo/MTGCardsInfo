@@ -1,12 +1,10 @@
 package com.dbottillo.mtgsearchfree.communication;
 
-import android.database.Cursor;
-
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,16 +16,7 @@ class SetCardsOperation extends Operation {
 
     @Override
     protected void execute(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper, Object... params) {
-        ArrayList<MTGCard> result = new ArrayList<>();
-        Cursor cursor = helper.getSet((String) params[0]);
-
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                result.add(CardDataSource.fromCursor(cursor));
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
+        ArrayList<MTGCard> result = helper.getSet((MTGSet) params[0]);
 
         Collections.sort(result, new Comparator<Object>() {
             public int compare(Object o1, Object o2) {

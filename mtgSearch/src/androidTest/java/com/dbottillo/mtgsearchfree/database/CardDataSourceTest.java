@@ -24,11 +24,13 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         String query = CardDataSource.generateCreateTable();
         assertNotNull(query);
         assertThat(query, is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,setCode TEXT,rulings TEXT,layout TEXT,number TEXT)"));
+        assertThat(CardDataSource.generateCreateTable(1), is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,layout TEXT)"));
+        assertThat(CardDataSource.generateCreateTable(2), is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"));
     }
 
     @Test
     public void test_card_can_be_saved_in_database() {
-        MTGCard card = generateCard();
+        MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
         long id = CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
@@ -114,35 +116,4 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         assertThat(cards.get(1).getId(), is(card2.getId()));
     }
 
-    public static MTGCard generateCard(){
-        MTGCard card = new MTGCard();
-        card.setId(1);
-        card.setCardName("card");
-        card.setType("Dragon");
-        card.addType("Creature");
-        card.addSubType("Goblin");
-        card.addSubType("Artifact");
-        card.addSubType("Wizard");
-        card.addColor(MTGCard.BLACK);
-        card.addColor(MTGCard.RED);
-        card.setCmc(12);
-        card.setRarity("Rare");
-        card.setPower("4");
-        card.setToughness("12");
-        card.setManaCost("3UU");
-        card.setText("card text");
-        card.setMultiColor(false);
-        card.setAsALand(true);
-        card.setAsArtifact(true);
-        card.setAsEldrazi(false);
-        card.setMultiVerseId(8743);
-        card.setIdSet(3);
-        card.setSetName("COmmander");
-        card.setSetCode("CMX");
-        card.setLayout("split");
-        card.setNumber("30a");
-        card.addRuling("rule");
-        card.addRuling("rule2");
-        return card;
-    }
 }

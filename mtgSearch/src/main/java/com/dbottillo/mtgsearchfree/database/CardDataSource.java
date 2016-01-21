@@ -3,20 +3,21 @@ package com.dbottillo.mtgsearchfree.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.search.SearchParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public final class CardDataSource {
+
+    public static final int LIMIT = 400;
+    public static final String TABLE = "MTGCard";
 
     public enum COLUMNS {
         NAME("name", "TEXT"),
@@ -52,13 +53,26 @@ public final class CardDataSource {
         public String getName() {
             return name;
         }
-    }
 
-    public static final int LIMIT = 400;
-    public static final String TABLE = "MTGCard";
+        public String getType() {
+            return type;
+        }
+    }
 
     private CardDataSource() {
     }
+
+    protected static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.RULINGS.getName() + " " + COLUMNS.RARITY.getType();
+
+    protected static final String SQL_ADD_COLUMN_SET_CODE = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.SET_CODE.getName() + " " + COLUMNS.SET_CODE.getType();
+
+    protected static final String SQL_ADD_COLUMN_NUMBER = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.NUMBER.getName() + " " + COLUMNS.NUMBER.getType();
 
     public static String generateCreateTable() {
         String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY, ";
@@ -68,197 +82,27 @@ public final class CardDataSource {
         return query.substring(0, query.length() - 1) + ")";
     }
 
+    @VisibleForTesting
+    public static String generateCreateTable(int version) {
+        String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY, ";
+        for (COLUMNS column : COLUMNS.values()) {
+            if (column == COLUMNS.RULINGS) {
+                if (version > 1) {
+                    query += column.name + " " + column.type + ",";
+                }
+            } else if (column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) {
+                if (version > 2) {
+                    query += column.name + " " + column.type + ",";
+                }
+            } else {
+                query += column.name + " " + column.type + ",";
+            }
+        }
+        return query.substring(0, query.length() - 1) + ")";
+    }
+
     public static long saveCard(SQLiteDatabase database, MTGCard card) {
-        return database.insertWithOnConflict(CardContract.CardEntry.TABLE_NAME, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE);
-    }
-
-    public static Cursor getSet(SQLiteDatabase db, String idSet) {
-        String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " WHERE " + CardContract.CardEntry.COLUMN_NAME_SET_ID + " = ?";
-        LOG.d("[getSet] query: " + query + " with id: " + idSet);
-        return db.rawQuery(query, new String[]{idSet});
-    }
-
-    public static Cursor searchCards(SQLiteDatabase db, SearchParams searchParams) {
-        String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " WHERE ";
-        ArrayList<String> selection = new ArrayList<>();
-
-        boolean first = true;
-        if (searchParams.getName().length() > 0) {
-            query += composeQuery(true, CardContract.CardEntry.COLUMN_NAME_NAME);
-            selection.add("%" + searchParams.getName() + "%");
-            first = false;
-        }
-        if (searchParams.getTypes().length() > 0) {
-            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_TYPE);
-            first = false;
-            selection.add("%" + searchParams.getTypes().trim() + "%");
-        }
-        if (searchParams.getText().length() > 0) {
-            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_TEXT);
-            first = false;
-            selection.add("%" + searchParams.getText().trim() + "%");
-        }
-        if (searchParams.getCmc().getValue() > 0) {
-            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_CMC, searchParams.getCmc().getOperator());
-            first = false;
-            selection.add("" + searchParams.getCmc().getValue());
-        }
-        if (searchParams.getPower().getValue() > 0) {
-            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_POWER, searchParams.getPower().getOperator());
-            first = false;
-            selection.add("" + searchParams.getPower().getValue());
-        }
-        if (searchParams.getTough().getValue() > 0) {
-            query += composeQuery(first, CardContract.CardEntry.COLUMN_NAME_TOUGHNESS, searchParams.getTough().getOperator());
-            first = false;
-            selection.add("" + searchParams.getTough().getValue());
-        }
-        if (searchParams.isNomulti()) {
-            if (!first) {
-                query += "AND ";
-            }
-            first = false;
-            query += CardContract.CardEntry.COLUMN_NAME_MULTICOLOR + " == 0 ";
-        }
-        if (searchParams.onlyMulti()) {
-            if (!first) {
-                query += "AND ";
-            }
-            first = false;
-            query += CardContract.CardEntry.COLUMN_NAME_MULTICOLOR + " == 1 ";
-        }
-        if (searchParams.getSetId() > 0) {
-            if (!first) {
-                query += "AND ";
-            }
-            first = false;
-            query += CardContract.CardEntry.COLUMN_NAME_SET_ID + " == " + searchParams.getSetId() + " ";
-        }
-        if (searchParams.getSetId() == -2) {
-            // special case for standard
-            if (!first) {
-                query += "AND ";
-            }
-            first = false;
-            query += "(setId == 3 OR setId == 4 OR setId == 6 OR setId == 8 OR setId == 10) ";
-        }
-        if (searchParams.atLeastOneColor()) {
-            if (!first) {
-                query += "AND ";
-            }
-            query += "(";
-            String colorOperator = searchParams.onlyMulti() ? "AND " : "OR ";
-            boolean firstColor = true;
-            if (searchParams.isWhite()) {
-                query += composeQueryColor(true, colorOperator);
-                firstColor = false;
-                selection.add("%W%");
-            }
-            if (searchParams.isBlue()) {
-                query += composeQueryColor(firstColor, colorOperator);
-                firstColor = false;
-                selection.add("%U%");
-            }
-            if (searchParams.isBlack()) {
-                query += composeQueryColor(firstColor, colorOperator);
-                firstColor = false;
-                selection.add("%B%");
-            }
-            if (searchParams.isRed()) {
-                query += composeQueryColor(firstColor, colorOperator);
-                firstColor = false;
-                selection.add("%R%");
-            }
-            if (searchParams.isGreen()) {
-                query += composeQueryColor(firstColor, colorOperator);
-                selection.add("%G%");
-            }
-            first = false;
-            query += ")";
-        }
-        if (searchParams.atLeastOneRarity()) {
-            if (!first) {
-                query += "AND ";
-            }
-            query += "(";
-            boolean firstRarity = true;
-            if (searchParams.isCommon()) {
-                query += CardContract.CardEntry.COLUMN_NAME_RARITY + "='Common' ";
-                firstRarity = false;
-            }
-            if (searchParams.isUncommon()) {
-                if (!firstRarity) {
-                    query += "OR ";
-                }
-                query += CardContract.CardEntry.COLUMN_NAME_RARITY + "='Uncommon' ";
-                firstRarity = false;
-            }
-            if (searchParams.isRare()) {
-                if (!firstRarity) {
-                    query += "OR ";
-                }
-                query += CardContract.CardEntry.COLUMN_NAME_RARITY + "='Rare' ";
-                firstRarity = false;
-            }
-            if (searchParams.isMythic()) {
-                if (!firstRarity) {
-                    query += "OR ";
-                }
-                query += CardContract.CardEntry.COLUMN_NAME_RARITY + "='Mythic Rare' ";
-            }
-            query += ")";
-        }
-
-        query += " ORDER BY " + CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID + " DESC LIMIT " + LIMIT;
-
-        String[] sel = Arrays.copyOf(selection.toArray(), selection.size(), String[].class);
-
-        LOG.d("[searchCards] query: " + query + " with selection: " + selection);
-
-        return db.rawQuery(query, sel);
-    }
-
-    private static String composeQuery(boolean first, String column, String operator) {
-        String query = "";
-        if (!first) {
-            query += "AND ";
-        }
-        query += column + " " + operator + " ? ";
-        return query;
-    }
-
-    private static String composeQuery(boolean first, String column) {
-        return composeQuery(first, column, "LIKE");
-    }
-
-    private static String composeQueryColor(boolean first, String operator) {
-        String query = "";
-        if (!first) {
-            query += operator;
-        }
-        query += CardContract.CardEntry.COLUMN_NAME_MANACOST + " LIKE ? ";
-        return query;
-    }
-
-    /*public static Cursor getRandomCard(SQLiteDatabase db, int number) {
-        String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT " + number;
-        LOG.d("[getRandomCard] query: " + query);
-        return db.rawQuery(query, null);
-    }*/
-
-    public static ArrayList<MTGCard> getRandomCard(SQLiteDatabase db, int number) {
-        String query = "SELECT * FROM " + CardContract.CardEntry.TABLE_NAME + " ORDER BY RANDOM() LIMIT " + number;
-        LOG.d("[getRandomCard] query: " + query);
-        ArrayList<MTGCard> cards = new ArrayList<>(number);
-        Cursor cursor = db.rawQuery(query, null);
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                cards.add(fromCursor(cursor));
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
-        return cards;
+        return database.insertWithOnConflict(TABLE, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE);
     }
 
     public static ContentValues createContentValue(MTGCard card) {
@@ -266,11 +110,11 @@ public final class CardDataSource {
         if (card.getId() > -1) {
             values.put("_id", card.getId());
         }
-        values.put(CardContract.CardEntry.COLUMN_NAME_NAME, card.getName());
-        values.put(CardContract.CardEntry.COLUMN_NAME_TYPE, card.getType());
-        values.put(CardContract.CardEntry.COLUMN_NAME_SET_ID, card.getIdSet());
-        values.put(CardContract.CardEntry.COLUMN_NAME_SET_NAME, card.getSetName());
-        values.put(CardContract.CardEntry.COLUMN_NAME_SET_CODE, card.getSetCode());
+        values.put(COLUMNS.NAME.getName(), card.getName());
+        values.put(COLUMNS.TYPE.getName(), card.getType());
+        values.put(COLUMNS.SET_ID.getName(), card.getIdSet());
+        values.put(COLUMNS.SET_NAME.getName(), card.getSetName());
+        values.put(COLUMNS.SET_CODE.getName(), card.getSetCode());
         List<Integer> colors = card.getColors();
         if (colors.size() > 0) {
             StringBuilder col = new StringBuilder();
@@ -281,7 +125,7 @@ public final class CardDataSource {
                     col.append(',');
                 }
             }
-            values.put(CardContract.CardEntry.COLUMN_NAME_COLORS, col.toString());
+            values.put(COLUMNS.COLORS.getName(), col.toString());
         }
         List<String> types = card.getTypes();
         if (types.size() > 0) {
@@ -292,7 +136,7 @@ public final class CardDataSource {
                     typ.append(',');
                 }
             }
-            values.put(CardContract.CardEntry.COLUMN_NAME_TYPES, typ.toString());
+            values.put(COLUMNS.TYPES.getName(), typ.toString());
         }
         List<String> subTypes = card.getSubTypes();
         if (subTypes.size() > 0) {
@@ -303,18 +147,18 @@ public final class CardDataSource {
                     typ.append(',');
                 }
             }
-            values.put(CardContract.CardEntry.COLUMN_NAME_SUBTYPES, typ.toString());
+            values.put(COLUMNS.SUB_TYPES.getName(), typ.toString());
         }
-        values.put(CardContract.CardEntry.COLUMN_NAME_MANACOST, card.getManaCost());
-        values.put(CardContract.CardEntry.COLUMN_NAME_RARITY, card.getRarity());
-        values.put(CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID, card.getMultiVerseId());
-        values.put(CardContract.CardEntry.COLUMN_NAME_POWER, card.getPower());
-        values.put(CardContract.CardEntry.COLUMN_NAME_TOUGHNESS, card.getToughness());
-        values.put(CardContract.CardEntry.COLUMN_NAME_TEXT, card.getText());
-        values.put(CardContract.CardEntry.COLUMN_NAME_CMC, card.getCmc());
-        values.put(CardContract.CardEntry.COLUMN_NAME_MULTICOLOR, card.isMultiColor());
-        values.put(CardContract.CardEntry.COLUMN_NAME_LAND, card.isLand());
-        values.put(CardContract.CardEntry.COLUMN_NAME_ARTIFACT, card.isArtifact());
+        values.put(COLUMNS.MANA_COST.getName(), card.getManaCost());
+        values.put(COLUMNS.RARITY.getName(), card.getRarity());
+        values.put(COLUMNS.MULTIVERSE_ID.getName(), card.getMultiVerseId());
+        values.put(COLUMNS.POWER.getName(), card.getPower());
+        values.put(COLUMNS.TOUGHNESS.getName(), card.getToughness());
+        values.put(COLUMNS.TEXT.getName(), card.getText());
+        values.put(COLUMNS.CMC.getName(), card.getCmc());
+        values.put(COLUMNS.MULTICOLOR.getName(), card.isMultiColor());
+        values.put(COLUMNS.LAND.getName(), card.isLand());
+        values.put(COLUMNS.ARTIFACT.getName(), card.isArtifact());
         List<String> rulings = card.getRulings();
         if (rulings.size() > 0) {
             JSONArray rules = new JSONArray();
@@ -327,10 +171,10 @@ public final class CardDataSource {
                     LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
                 }
             }
-            values.put(CardContract.CardEntry.COLUMN_NAME_RULINGS, rules.toString());
+            values.put(COLUMNS.RULINGS.getName(), rules.toString());
         }
-        values.put(CardContract.CardEntry.COLUMN_NAME_LAYOUT, card.getLayout());
-        values.put(CardContract.CardEntry.COLUMN_NAME_NUMBER, card.getNumber());
+        values.put(COLUMNS.LAYOUT.getName(), card.getLayout());
+        values.put(COLUMNS.NUMBER.getName(), card.getNumber());
         return values;
     }
 
@@ -339,29 +183,29 @@ public final class CardDataSource {
     }
 
     public static MTGCard fromCursor(Cursor cursor, boolean fullCard) {
-        if (cursor.getColumnIndex(CardContract.CardEntry._ID) == -1) {
+        if (cursor.getColumnIndex("_id") == -1) {
             return null;
         }
-        MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry._ID)));
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID) != -1) {
-            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_MULTIVERSEID)));
+        MTGCard card = new MTGCard(cursor.getInt(cursor.getColumnIndex("_id")));
+        if (cursor.getColumnIndex(COLUMNS.MULTIVERSE_ID.getName()) != -1) {
+            card.setMultiVerseId(cursor.getInt(cursor.getColumnIndex(COLUMNS.MULTIVERSE_ID.getName())));
         }
         if (!fullCard) {
             return card;
         }
-        card.setType(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TYPE)));
-        card.setCardName(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_NAME)));
+        card.setType(cursor.getString(cursor.getColumnIndex(COLUMNS.TYPE.getName())));
+        card.setCardName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
 
-        card.setIdSet(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SET_ID)));
-        card.setSetName(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SET_NAME)));
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SET_CODE) > -1) {
-            card.setSetCode(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SET_CODE)));
+        card.setIdSet(cursor.getInt(cursor.getColumnIndex(COLUMNS.SET_ID.getName())));
+        card.setSetName(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.getName())));
+        if (cursor.getColumnIndex(COLUMNS.SET_CODE.getName()) > -1) {
+            card.setSetCode(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_CODE.getName())));
         } else {
             card.setSetCode(null);
         }
 
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_COLORS) != -1) {
-            String colors = cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_COLORS));
+        if (cursor.getColumnIndex(COLUMNS.COLORS.getName()) != -1) {
+            String colors = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS.getName()));
             if (colors != null) {
                 String[] splitted = colors.split(",");
                 for (String aSplitted : splitted) {
@@ -369,8 +213,8 @@ public final class CardDataSource {
                 }
             }
         }
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TYPES) != -1) {
-            String types = cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TYPES));
+        if (cursor.getColumnIndex(COLUMNS.TYPES.getName()) != -1) {
+            String types = cursor.getString(cursor.getColumnIndex(COLUMNS.TYPES.getName()));
             if (types != null) {
                 String[] splitted = types.split(",");
                 for (String aSplitted : splitted) {
@@ -378,8 +222,8 @@ public final class CardDataSource {
                 }
             }
         }
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SUBTYPES) != -1) {
-            String subTypes = cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_SUBTYPES));
+        if (cursor.getColumnIndex(COLUMNS.SUB_TYPES.getName()) != -1) {
+            String subTypes = cursor.getString(cursor.getColumnIndex(COLUMNS.SUB_TYPES.getName()));
             if (subTypes != null) {
                 String[] splitted = subTypes.split(",");
                 for (String aSplitted : splitted) {
@@ -388,31 +232,24 @@ public final class CardDataSource {
             }
         }
 
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_MANACOST) != -1) {
-            card.setManaCost(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_MANACOST)));
+        if (cursor.getColumnIndex(COLUMNS.MANA_COST.getName()) != -1) {
+            card.setManaCost(cursor.getString(cursor.getColumnIndex(COLUMNS.MANA_COST.getName())));
         }
 
-        card.setRarity(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_RARITY)));
+        card.setRarity(cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.getName())));
+        card.setPower(cursor.getString(cursor.getColumnIndex(COLUMNS.POWER.getName())));
+        card.setToughness(cursor.getString(cursor.getColumnIndex(COLUMNS.TOUGHNESS.getName())));
 
-        card.setPower(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_POWER)));
-        card.setToughness(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TOUGHNESS)));
-
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TEXT) != -1) {
-            card.setText(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_TEXT)));
+        if (cursor.getColumnIndex(COLUMNS.TEXT.getName()) != -1) {
+            card.setText(cursor.getString(cursor.getColumnIndex(COLUMNS.TEXT.getName())));
         }
 
-        card.setCmc(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_CMC)));
+        card.setCmc(cursor.getInt(cursor.getColumnIndex(COLUMNS.CMC.getName())));
+        card.setMultiColor(cursor.getInt(cursor.getColumnIndex(COLUMNS.MULTICOLOR.getName())) == 1);
+        card.setAsALand(cursor.getInt(cursor.getColumnIndex(COLUMNS.LAND.getName())) == 1);
+        card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(COLUMNS.ARTIFACT.getName())) == 1);
 
-        card.setMultiColor(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_MULTICOLOR)) == 1);
-        card.setAsALand(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_LAND)) == 1);
-        card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_ARTIFACT)) == 1);
-
-        card.setAsEldrazi(false);
-        if (!card.isMultiColor() && !card.isLand() && !card.isArtifact() && card.getColors().size() == 0) {
-            card.setAsEldrazi(true);
-        }
-
-        String rulings = cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_RULINGS));
+        String rulings = cursor.getString(cursor.getColumnIndex(COLUMNS.RULINGS.getName()));
         if (rulings != null) {
             try {
                 JSONArray jsonArray = new JSONArray(rulings);
@@ -425,13 +262,12 @@ public final class CardDataSource {
             }
         }
 
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_LAYOUT) != -1) {
-            card.setLayout(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_LAYOUT)));
+        if (cursor.getColumnIndex(COLUMNS.LAYOUT.getName()) != -1) {
+            card.setLayout(cursor.getString(cursor.getColumnIndex(COLUMNS.LAYOUT.getName())));
         }
-        if (cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_NUMBER) != -1) {
-            card.setNumber(cursor.getString(cursor.getColumnIndex(CardContract.CardEntry.COLUMN_NAME_NUMBER)));
+        if (cursor.getColumnIndex(COLUMNS.NUMBER.getName()) != -1) {
+            card.setNumber(cursor.getString(cursor.getColumnIndex(COLUMNS.NUMBER.getName())));
         }
-
         return card;
     }
 }
