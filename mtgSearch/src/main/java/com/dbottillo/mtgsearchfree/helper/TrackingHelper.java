@@ -38,6 +38,7 @@ public final class TrackingHelper {
     public static final String UA_ACTION_ONE_MORE = "oneMore";
     public static final String UA_ACTION_REMOVE_ONE = "removeOne";
     public static final String UA_ACTION_REMOVE_ALL = "removeALL";
+    public static final String UA_ACTION_EXPORT = "export";
 
     private static TrackingHelper instance;
 
