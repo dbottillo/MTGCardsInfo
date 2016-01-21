@@ -61,7 +61,6 @@ public class SetDataSourceTest extends BaseDatabaseTest {
         ArrayList<MTGSet> fromJson = FileHelper.readSetListJSON(context);
         ArrayList<MTGSet> sets = mtgDatabaseHelper.getSets();
         assertNotNull(fromJson);
-        assertTrue(sets.containsAll(fromJson));
         assertTrue(fromJson.containsAll(sets));
     }
 }

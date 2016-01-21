@@ -1,15 +1,15 @@
 package com.dbottillo.mtgsearchfree.helper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.database.CardContract;
+import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper;
 import com.dbottillo.mtgsearchfree.database.SetDataSource;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
@@ -48,7 +48,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
         db.delete(SetDataSource.TABLE, null, null);
-        db.delete(CardContract.CardEntry.TABLE_NAME, null, null);
+        db.delete(CardDataSource.TABLE, null, null);
         try {
             int setList = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(setList);
@@ -73,7 +73,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                         JSONObject cardJ = cards.getJSONObject(k);
                         //Log.e("BBM", "cardJ "+cardJ);
 
-                        long newRowId2 = db.insert(CardContract.CardEntry.TABLE_NAME, null, MTGCard.createContentValueFromJSON(cardJ, set));
+                        long newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set));
                         //Log.e("MTG", "row id card"+newRowId2);
                         //result.add(MTGCard.createCardFromJson(i, cardJ));
                     }
@@ -150,6 +150,132 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         } else {
             Toast.makeText(context, "finished", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private static ContentValues createContentValueFromJSON(JSONObject jsonObject, MTGSet set) throws JSONException {
+        ContentValues values = new ContentValues();
+
+        boolean isASplit = false;
+        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
+            isASplit = true;
+        }
+
+        if (!isASplit) {
+            values.put(CardDataSource.COLUMNS.NAME.getName(), jsonObject.getString("name"));
+        } else {
+            JSONArray namesJ = jsonObject.getJSONArray("names");
+            StringBuilder names = new StringBuilder();
+            for (int k = 0; k < namesJ.length(); k++) {
+                String name = namesJ.getString(k);
+                names.append(name);
+                if (k < namesJ.length() - 1) {
+                    names.append('/');
+                }
+            }
+            values.put(CardDataSource.COLUMNS.NAME.getName(), names.toString());
+        }
+        values.put(CardDataSource.COLUMNS.TYPE.getName(), jsonObject.getString("type"));
+        values.put(CardDataSource.COLUMNS.SET_ID.getName(), set.getId());
+        values.put(CardDataSource.COLUMNS.SET_NAME.getName(), set.getName());
+        values.put(CardDataSource.COLUMNS.SET_CODE.getName(), set.getCode());
+
+        int multicolor;
+        int land;
+        int artifact;
+
+        if (jsonObject.has("colors")) {
+            JSONArray colorsJ = jsonObject.getJSONArray("colors");
+            StringBuilder colors = new StringBuilder();
+            for (int k = 0; k < colorsJ.length(); k++) {
+                String color = colorsJ.getString(k);
+                colors.append(color);
+                if (k < colorsJ.length() - 1) {
+                    colors.append(',');
+                }
+            }
+            values.put(CardDataSource.COLUMNS.COLORS.getName(), colors.toString());
+
+            if (colorsJ.length() > 1) {
+                multicolor = 1;
+            } else {
+                multicolor = 0;
+            }
+            land = 0;
+        } else {
+            multicolor = 0;
+            land = 1;
+        }
+
+        if (jsonObject.has("types")) {
+            JSONArray typesJ = jsonObject.getJSONArray("types");
+            StringBuilder types = new StringBuilder();
+            for (int k = 0; k < typesJ.length(); k++) {
+                types.append(typesJ.getString(k));
+                if (k < typesJ.length() - 1) {
+                    types.append(',');
+                }
+            }
+            values.put(CardDataSource.COLUMNS.TYPES.getName(), types.toString());
+        }
+
+        if (jsonObject.getString("type").contains("Artifact")) {
+            artifact = 1;
+        } else {
+            artifact = 0;
+        }
+
+        if (jsonObject.has("manaCost")) {
+            values.put(CardDataSource.COLUMNS.MANA_COST.getName(), jsonObject.getString("manaCost"));
+            land = 0;
+        }
+        values.put(CardDataSource.COLUMNS.RARITY.getName(), jsonObject.getString("rarity"));
+
+        if (jsonObject.has("multiverseid")) {
+            values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.getName(), jsonObject.getInt("multiverseid"));
+        }
+
+        String power = "";
+        if (jsonObject.has("power")) {
+            power = jsonObject.getString("power");
+        }
+        values.put(CardDataSource.COLUMNS.POWER.getName(), power);
+
+        String toughness = "";
+        if (jsonObject.has("toughness")) {
+            toughness = jsonObject.getString("toughness");
+        }
+        values.put(CardDataSource.COLUMNS.TOUGHNESS.getName(), toughness);
+
+        if (!isASplit && jsonObject.has("text")) {
+            values.put(CardDataSource.COLUMNS.TEXT.getName(), jsonObject.getString("text"));
+        }
+
+        if (isASplit && jsonObject.has("originalText")) {
+            values.put(CardDataSource.COLUMNS.TEXT.getName(), jsonObject.getString("originalText"));
+        }
+
+        int cmc = -1;
+        if (jsonObject.has("cmc")) {
+            cmc = jsonObject.getInt("cmc");
+        }
+        values.put(CardDataSource.COLUMNS.CMC.getName(), cmc);
+        values.put(CardDataSource.COLUMNS.MULTICOLOR.getName(), multicolor);
+        values.put(CardDataSource.COLUMNS.LAND.getName(), land);
+        values.put(CardDataSource.COLUMNS.ARTIFACT.getName(), artifact);
+
+        if (jsonObject.has("rulings")) {
+            JSONArray rulingsJ = jsonObject.getJSONArray("rulings");
+            values.put(CardDataSource.COLUMNS.RULINGS.getName(), rulingsJ.toString());
+        }
+
+        if (jsonObject.has("layout")) {
+            values.put(CardDataSource.COLUMNS.LAYOUT.getName(), jsonObject.getString("layout"));
+        }
+
+        if (jsonObject.has("number")) {
+            values.put(CardDataSource.COLUMNS.NUMBER.getName(), jsonObject.getString("number"));
+        }
+        return values;
     }
 
 }

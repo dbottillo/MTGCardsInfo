@@ -31,22 +31,23 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
     }
 
     public ArrayList<MTGSet> getSets() {
-        return SetDataSource.getSets(getReadableDatabase());
+        SQLiteDatabase db = getReadableDatabase();
+        return SetDataSource.getSets(db);
     }
 
-    public Cursor getSet(String idSet) {
+    public ArrayList<MTGCard> getSet(MTGSet set) {
         SQLiteDatabase db = getReadableDatabase();
-        return CardDataSource.getSet(db, idSet);
+        return MTGCardDataSource.getSet(db, set);
     }
 
-    public Cursor searchCards(SearchParams searchParams) {
+    public ArrayList<MTGCard> searchCards(SearchParams searchParams) {
         SQLiteDatabase db = getReadableDatabase();
-        return CardDataSource.searchCards(db, searchParams);
+        return MTGCardDataSource.searchCards(db, searchParams);
     }
 
     public ArrayList<MTGCard> getRandomCard(int number) {
         SQLiteDatabase db = getReadableDatabase();
-        return CardDataSource.getRandomCard(db, number);
+        return MTGCardDataSource.getRandomCard(db, number);
     }
 
 }

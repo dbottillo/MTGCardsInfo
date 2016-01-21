@@ -49,7 +49,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     @Test
     public void test_deck_can_be_removed_from_database() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "deck");
-        MTGCard card = CardDataSourceTest.generateCard();
+        MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
         DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
         ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.get(0).getNumberOfCards(), is(2));
@@ -75,7 +75,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     @Test
     public void test_cards_can_be_added_to_deck() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
-        MTGCard card = CardDataSourceTest.generateCard();
+        MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
         DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
         // first check that the card has been saved in the db
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{card.getId() + ""});

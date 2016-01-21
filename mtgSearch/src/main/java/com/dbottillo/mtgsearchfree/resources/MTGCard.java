@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.resources;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -8,11 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.database.CardContract.CardEntry;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +28,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     boolean isAMultiColor;
     boolean isALand;
     boolean isAnArtifact;
-    boolean isAnEldrazi;
     int multiVerseId;
     int idSet;
     String setName;
@@ -68,135 +61,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public MTGCard(Parcel in) {
         this();
         readFromParcel(in);
-    }
-
-    public static ContentValues createContentValueFromJSON(JSONObject jsonObject, MTGSet set) throws JSONException {
-        ContentValues values = new ContentValues();
-
-        boolean isASplit = false;
-        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
-            isASplit = true;
-        }
-
-        if (!isASplit) {
-            values.put(CardEntry.COLUMN_NAME_NAME, jsonObject.getString("name"));
-        } else {
-            JSONArray namesJ = jsonObject.getJSONArray("names");
-            StringBuilder names = new StringBuilder();
-            for (int k = 0; k < namesJ.length(); k++) {
-                String name = namesJ.getString(k);
-                names.append(name);
-                if (k < namesJ.length() - 1) {
-                    names.append('/');
-                }
-            }
-            values.put(CardEntry.COLUMN_NAME_NAME, names.toString());
-        }
-        values.put(CardEntry.COLUMN_NAME_TYPE, jsonObject.getString("type"));
-
-        values.put(CardEntry.COLUMN_NAME_SET_ID, set.id);
-        values.put(CardEntry.COLUMN_NAME_SET_NAME, set.name);
-        values.put(CardEntry.COLUMN_NAME_SET_CODE, set.code);
-
-        int multicolor;
-        int land;
-        int artifact;
-
-        if (jsonObject.has("colors")) {
-            JSONArray colorsJ = jsonObject.getJSONArray("colors");
-            StringBuilder colors = new StringBuilder();
-            for (int k = 0; k < colorsJ.length(); k++) {
-                String color = colorsJ.getString(k);
-                colors.append(color);
-                if (k < colorsJ.length() - 1) {
-                    colors.append(',');
-                }
-            }
-            values.put(CardEntry.COLUMN_NAME_COLORS, colors.toString());
-
-            if (colorsJ.length() > 1) {
-                multicolor = 1;
-            } else {
-                multicolor = 0;
-            }
-            land = 0;
-        } else {
-            multicolor = 0;
-            land = 1;
-        }
-
-        if (jsonObject.has("types")) {
-            JSONArray typesJ = jsonObject.getJSONArray("types");
-            StringBuilder types = new StringBuilder();
-            for (int k = 0; k < typesJ.length(); k++) {
-                types.append(typesJ.getString(k));
-                if (k < typesJ.length() - 1) {
-                    types.append(',');
-                }
-            }
-            values.put(CardEntry.COLUMN_NAME_TYPES, types.toString());
-        }
-
-        if (jsonObject.getString("type").contains("Artifact")) {
-            artifact = 1;
-        } else {
-            artifact = 0;
-        }
-
-        if (jsonObject.has("manaCost")) {
-            values.put(CardEntry.COLUMN_NAME_MANACOST, jsonObject.getString("manaCost"));
-            land = 0;
-        }
-        values.put(CardEntry.COLUMN_NAME_RARITY, jsonObject.getString("rarity"));
-
-        if (jsonObject.has("multiverseid")) {
-            values.put(CardEntry.COLUMN_NAME_MULTIVERSEID, jsonObject.getInt("multiverseid"));
-        }
-
-        String power = "";
-        if (jsonObject.has("power")) {
-            power = jsonObject.getString("power");
-        }
-        values.put(CardEntry.COLUMN_NAME_POWER, power);
-
-        String toughness = "";
-        if (jsonObject.has("toughness")) {
-            toughness = jsonObject.getString("toughness");
-        }
-        values.put(CardEntry.COLUMN_NAME_TOUGHNESS, toughness);
-
-        if (!isASplit && jsonObject.has("text")) {
-            values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("text"));
-        }
-
-        if (isASplit && jsonObject.has("originalText")) {
-            values.put(CardEntry.COLUMN_NAME_TEXT, jsonObject.getString("originalText"));
-        }
-
-        int cmc = -1;
-        if (jsonObject.has("cmc")) {
-            cmc = jsonObject.getInt("cmc");
-        }
-        values.put(CardEntry.COLUMN_NAME_CMC, cmc);
-
-        values.put(CardEntry.COLUMN_NAME_MULTICOLOR, multicolor);
-        values.put(CardEntry.COLUMN_NAME_LAND, land);
-        values.put(CardEntry.COLUMN_NAME_ARTIFACT, artifact);
-
-        if (jsonObject.has("rulings")) {
-            JSONArray rulingsJ = jsonObject.getJSONArray("rulings");
-            values.put(CardEntry.COLUMN_NAME_RULINGS, rulingsJ.toString());
-        }
-
-        if (jsonObject.has("layout")) {
-            values.put(CardEntry.COLUMN_NAME_LAYOUT, jsonObject.getString("layout"));
-        }
-
-        if (jsonObject.has("number")) {
-            values.put(CardEntry.COLUMN_NAME_NUMBER, jsonObject.getString("number"));
-        }
-
-        return values;
     }
 
     public static int mapIntColor(String color) {
@@ -259,7 +123,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeInt(isAMultiColor ? 1 : 0);
         dest.writeInt(isALand ? 1 : 0);
         dest.writeInt(isAnArtifact ? 1 : 0);
-        dest.writeInt(isAnEldrazi ? 1 : 0);
         dest.writeInt(multiVerseId);
         dest.writeInt(idSet);
         dest.writeString(setName);
@@ -287,7 +150,6 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         isAMultiColor = in.readInt() == 1;
         isALand = in.readInt() == 1;
         isAnArtifact = in.readInt() == 1;
-        isAnEldrazi = in.readInt() == 1;
         multiVerseId = in.readInt();
         idSet = in.readInt();
         setName = in.readString();
@@ -434,11 +296,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public boolean isEldrazi() {
-        return isAnEldrazi;
-    }
-
-    public void setAsEldrazi(boolean isAnEldrazi) {
-        this.isAnEldrazi = isAnEldrazi;
+        return !isMultiColor() && !isLand() && !isArtifact() && getColors().size() == 0;
     }
 
     public int getMultiVerseId() {
@@ -511,6 +369,10 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public void addRuling(String rule) {
         this.rulings.add(rule);
+    }
+
+    public void setColors(ArrayList<Integer> colors) {
+        this.colors = colors;
     }
 
     public String getImage() {
@@ -597,7 +459,42 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     @Override
     public boolean equals(Object o) {
-        return o != null && getClass() == o.getClass() && multiVerseId == ((MTGCard) o).multiVerseId;
+        //return o != null && getClass() == o.getClass() && multiVerseId == ((MTGCard) o).multiVerseId;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MTGCard other = (MTGCard) o;
+        /*for (Field field : MTGCard.class.getDeclaredFields()) {
+            if (!Modifier.isStatic(field.getModifiers())) {
+                try {
+                    if (field.get(this) != null && !field.get(this).equals(field.get(other))) {
+                        LOG.e("error on: " + field.getName() + " with values: " + field.get(this) + " vs " + field.get(other));
+                    }
+                } catch (IllegalAccessException e) {
+                    LOG.e("impossible to read value");
+                    e.printStackTrace();
+                }
+            }
+        }*/
+        return name.equals(other.getName())
+                && multiVerseId == other.multiVerseId
+                && type.equals(other.type)
+                && types.equals(other.types)
+                && (subTypes == null && other.subTypes == null || (subTypes != null && other.subTypes != null && subTypes.equals(other.subTypes)))
+                && (colors == null && other.colors == null || (colors != null && other.colors != null && colors.equals(other.colors)))
+                && cmc == other.cmc
+                && rarity.equals(other.rarity)
+                && power.equals(other.power)
+                && toughness.equals(other.toughness)
+                && (manaCost == null && other.manaCost == null || (manaCost != null && other.manaCost != null && manaCost.equals(other.manaCost)))
+                && (text == null && other.text == null || (text != null && other.text != null && text.equals(other.text)))
+                && isAMultiColor == other.isAMultiColor
+                && isALand == other.isALand
+                && idSet == other.idSet
+                && setName.equals(other.setName)
+                && layout.equals(other.layout)
+                && (number == null && other.number == null || (number != null && other.number != null && number.equals(other.number)))
+                && (rulings == null && other.rulings == null || (rulings != null && other.rulings != null && rulings.equals(other.rulings)));
     }
 
     @Override

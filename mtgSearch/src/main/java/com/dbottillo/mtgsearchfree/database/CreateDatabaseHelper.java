@@ -22,14 +22,14 @@ public class CreateDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         LOG.e("on create");
-        db.execSQL(SetDataSource.TABLE);
-        db.execSQL(CardContract.SQL_CREATE_CARDS_TABLE);
+        db.execSQL(SetDataSource.generateCreateTable());
+        db.execSQL(CardDataSource.generateCreateTable());
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(SetDataSource.TABLE);
-        db.execSQL(CardContract.SQL_DELETE_CARDS_TABLE);
+        db.delete(SetDataSource.TABLE, null, null);
+        db.delete(CardDataSource.TABLE, null, null);
         onCreate(db);
     }
 }
