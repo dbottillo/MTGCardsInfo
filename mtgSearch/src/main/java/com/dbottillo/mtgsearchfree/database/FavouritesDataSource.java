@@ -12,17 +12,16 @@ import java.util.ArrayList;
 
 public final class FavouritesDataSource {
 
+    public static final String TABLE = "Favourites";
+
     private FavouritesDataSource() {
 
     }
 
-    public static abstract class FavouritesEntry implements BaseColumns {
-        public static final String TABLE_NAME = "Favourites";
+    public static String generateCreateTable() {
+        return "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY)";
     }
 
-    protected static final String CREATE_FAVOURITES_TABLE =
-            "CREATE TABLE " + FavouritesEntry.TABLE_NAME + " ("
-                    + FavouritesEntry._ID + " INTEGER PRIMARY KEY)";
 
     public static long saveFavourites(SQLiteDatabase db, MTGCard card) {
         Cursor current = db.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
@@ -32,8 +31,8 @@ public final class FavouritesDataSource {
         }
         current.close();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(FavouritesEntry._ID, card.getMultiVerseId());
-        return db.insertWithOnConflict(FavouritesEntry.TABLE_NAME, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
+        contentValues.put("_id", card.getMultiVerseId());
+        return db.insertWithOnConflict(TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
     public static ArrayList<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
@@ -55,11 +54,11 @@ public final class FavouritesDataSource {
 
     public static void removeFavourites(SQLiteDatabase db, MTGCard card) {
         String[] args = new String[]{card.getMultiVerseId() + ""};
-        db.rawQuery("DELETE FROM " + FavouritesEntry.TABLE_NAME + " where " + FavouritesEntry._ID + "=? ", args).moveToFirst();
+        db.rawQuery("DELETE FROM " + TABLE + " where _id=? ", args).moveToFirst();
     }
 
     public static void clear(SQLiteDatabase db) {
-        Cursor cursor = db.rawQuery("DELETE FROM " + FavouritesEntry.TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("DELETE FROM " + TABLE, null);
         cursor.moveToFirst();
         cursor.close();
     }

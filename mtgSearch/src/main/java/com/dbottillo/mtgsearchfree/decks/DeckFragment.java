@@ -23,6 +23,8 @@ import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
+import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
+import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -99,7 +101,6 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
                     DataManager.execute(DataManager.TASK.EDIT_DECK, false, deck.getId(), card, card.isSideboard());
                     //deckDataSource.removeCardFromDeck(deck.getId(), card, card.isSideboard());
                 }
-                forceReload();
             }
         });
         deckCardSectionAdapter = new DeckCardSectionAdapter(getContext(), deckCardAdapter);
@@ -112,6 +113,11 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     public void onStart() {
         super.onStart();
         forceReload();
+    }
+
+    public void onEventMainThread(DeckEvent event) {
+        forceReload();
+        bus.removeStickyEvent(event);
     }
 
     private void forceReload() {
