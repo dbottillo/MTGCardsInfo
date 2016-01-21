@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public final class DeckDataSource {
 
+    private DeckDataSource() {
+
+    }
+
     public static final String TABLE = "decks";
     public static final String TABLE_JOIN = "deck_card";
 
@@ -32,7 +36,7 @@ public final class DeckDataSource {
         }
     }
 
-    public enum COLUMNS_JOIN {
+    public enum COLUMNSJOIN {
         DECK_ID("deck_id", "INT not null"),
         CARD_ID("card_id", "INT not null"),
         QUANTITY("quantity", "INT not null"),
@@ -41,7 +45,7 @@ public final class DeckDataSource {
         private String name;
         private String type;
 
-        COLUMNS_JOIN(String name, String type) {
+        COLUMNSJOIN(String name, String type) {
             this.name = name;
             this.type = type;
         }
@@ -52,19 +56,29 @@ public final class DeckDataSource {
     }
 
     public static String generateCreateTable() {
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, ";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
         for (COLUMNS column : COLUMNS.values()) {
-            query += column.name + " " + column.type + ",";
+            builder.append(column.name).append(' ').append(column.type);
+            if (column != COLUMNS.ARCHIVED) {
+                builder.append(',');
+            }
         }
-        return query.substring(0, query.length() - 1) + ")";
+        builder.append(')');
+        return builder.toString();
     }
 
     public static String generateCreateTableJoin() {
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE_JOIN + " (";
-        for (COLUMNS_JOIN column : COLUMNS_JOIN.values()) {
-            query += column.name + " " + column.type + ",";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE_JOIN).append(" (");
+        for (COLUMNSJOIN column : COLUMNSJOIN.values()) {
+            builder.append(column.name).append(' ').append(column.type);
+            if (column != COLUMNSJOIN.SIDE) {
+                builder.append(',');
+            }
         }
-        return query.substring(0, query.length() - 1) + ")";
+        builder.append(')');
+        return builder.toString();
     }
 
     public static long addDeck(SQLiteDatabase db, String name) {
@@ -80,7 +94,7 @@ public final class DeckDataSource {
         Cursor cardsCursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
             cardsCursor.moveToFirst();
-            currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNS_JOIN.QUANTITY.getName()));
+            currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
         }
         if (currentCard + quantity < 0) {
             removeCardFromDeck(db, deckId, card, side);
@@ -89,8 +103,8 @@ public final class DeckDataSource {
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
             ContentValues values = new ContentValues();
-            values.put(COLUMNS_JOIN.QUANTITY.getName(), currentCard + quantity);
-            db.update(TABLE_JOIN, values, COLUMNS_JOIN.DECK_ID.getName() + " = ? and " + COLUMNS_JOIN.CARD_ID.getName() + " = ? and " + COLUMNS_JOIN.SIDE.getName() + " = ?", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
+            values.put(COLUMNSJOIN.QUANTITY.getName(), currentCard + quantity);
+            db.update(TABLE_JOIN, values, COLUMNSJOIN.DECK_ID.getName() + " = ? and " + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
             cardsCursor.close();
             return;
         }
@@ -117,10 +131,10 @@ public final class DeckDataSource {
         }
         current.close();
         ContentValues values = new ContentValues();
-        values.put(COLUMNS_JOIN.CARD_ID.getName(), card.getMultiVerseId());
-        values.put(COLUMNS_JOIN.DECK_ID.getName(), deckId);
-        values.put(COLUMNS_JOIN.QUANTITY.getName(), quantity);
-        values.put(COLUMNS_JOIN.SIDE.getName(), side ? 1 : 0);
+        values.put(COLUMNSJOIN.CARD_ID.getName(), card.getMultiVerseId());
+        values.put(COLUMNSJOIN.DECK_ID.getName(), deckId);
+        values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
+        values.put(COLUMNSJOIN.SIDE.getName(), side ? 1 : 0);
         db.insert(TABLE_JOIN, null, values);
     }
 
@@ -170,9 +184,9 @@ public final class DeckDataSource {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             MTGCard card = CardDataSource.fromCursor(cursor);
-            int quantity = cursor.getInt(cursor.getColumnIndex(COLUMNS_JOIN.QUANTITY.getName()));
+            int quantity = cursor.getInt(cursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
             card.setQuantity(quantity);
-            int sideboard = cursor.getInt(cursor.getColumnIndex(COLUMNS_JOIN.SIDE.getName()));
+            int sideboard = cursor.getInt(cursor.getColumnIndex(COLUMNSJOIN.SIDE.getName()));
             card.setSideboard(sideboard == 1);
             cards.add(card);
             cursor.moveToNext();

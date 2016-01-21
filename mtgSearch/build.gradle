@@ -19,6 +19,7 @@ repositories {
 }
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
 
 android {
     compileSdkVersion 23
@@ -66,7 +67,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '1$'
+            buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             buildConfigField 'boolean', 'COPY_DB', 'false'
         }
@@ -141,9 +142,8 @@ dependencies {
 }
 
 task checkstyle(type: Checkstyle) {
-    // Where my checkstyle config is...
-    configProperties.checkstyleSuppressionsPath = file("${project.rootDir}/config/quality/checkstyle/suppressions.xml").absolutePath
-    // Where is my suppressions file for checkstyle is...
+    configFile = new File(checkstyleConfigDir, "checkstyle.xml")
+    configProperties.checkstyleConfigDir = checkstyleConfigDir
     source 'src'
     include '**/*.java'
     exclude '**/gen/**'

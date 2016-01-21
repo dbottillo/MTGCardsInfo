@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.BaseColumns;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -19,7 +18,9 @@ public final class FavouritesDataSource {
     }
 
     public static String generateCreateTable() {
-        return "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY)";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY)");
+        return builder.toString();
     }
 
 

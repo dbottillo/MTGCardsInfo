@@ -37,8 +37,9 @@ import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -256,13 +257,18 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     private void exportDeck() {
         File root = new File(Environment.getExternalStorageDirectory(), "MTGSearch");
         if (!root.exists()) {
-            root.mkdirs();
+            boolean created = root.mkdirs();
+            if (!created) {
+                Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
+                TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
+                return;
+            }
         }
         final File deckFile = new File(root, deck.getName().replaceAll("\\s+", "").toLowerCase() + ".dec");
-        FileWriter writer;
+        OutputStreamWriter writer;
         TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
         try {
-            writer = new FileWriter(deckFile);
+            writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
             writer.append("//");
             writer.append(deck.getName());
             writer.append("\n");
@@ -295,7 +301,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             }
         } catch (IOException e) {
             Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] "+e.getLocalizedMessage());
+            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] " + e.getLocalizedMessage());
         }
     }
 

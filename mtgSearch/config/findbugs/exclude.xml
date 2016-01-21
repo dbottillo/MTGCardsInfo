@@ -1,12 +1,15 @@
 <FindBugsFilter>
 
     <Match>
-        <Class name="~.*R\$.*" />
+        <Class name="~.*R\$.*"/>
     </Match>
     <Match>
-        <Class name="~.*Manifest\$.*" />
+        <Class name="~.*Manifest\$.*"/>
     </Match>
     <Match>
-        <Class name="~.*SlidingUpPanelLayout\$.*" />
+        <Class name="~.*SlidingUpPanelLayout\$.*"/>
+    </Match>
+    <Match>
+        <Package name="~com\.dbottillo\.mtgsearchfree\.sqliteasset.*"/>
     </Match>
 </FindBugsFilter>

@@ -22,6 +22,7 @@
     <description>Custom ruleset for Android application</description>
 
     <exclude-pattern>.*/R.java</exclude-pattern>
+    <exclude-pattern>.*/com/dbottillo/mtgsearchfree/sqliteasset/.*</exclude-pattern>
     <exclude-pattern>.*/gen/.*</exclude-pattern>
 
     <!--<rule ref="rulesets/java/android.xml">
@@ -40,6 +41,7 @@
     <rule ref="rulesets/java/braces.xml"/>
     <rule ref="rulesets/java/strings.xml">
         <exclude name="AvoidDuplicateLiterals"/>
+        <exclude name="InsufficientStringBufferDeclaration"/>
     </rule>
     <rule ref="rulesets/java/basic.xml"/>
     <rule ref="rulesets/java/naming.xml">
