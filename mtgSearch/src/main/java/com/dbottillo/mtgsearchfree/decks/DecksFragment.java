@@ -286,6 +286,7 @@ public class DecksFragment extends DBFragment implements View.OnClickListener, T
 
         public DecksLoader(Context context) {
             super(context);
+            this.context = context;
         }
 
         public ArrayList<Deck> loadInBackground() {

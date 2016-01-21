@@ -21,7 +21,11 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-public class FileHelper {
+public final class FileHelper {
+
+    private FileHelper() {
+
+    }
 
     public static ArrayList<MTGSet> readSetListJSON(Context context) throws JSONException {
         int setList = context.getResources().getIdentifier("set_list", "raw", context.getPackageName());

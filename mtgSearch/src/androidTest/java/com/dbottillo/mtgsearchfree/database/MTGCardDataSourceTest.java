@@ -183,8 +183,8 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         cards = MTGCardDataSource.searchCards(mtgDatabaseHelper.getReadableDatabase(), searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue((card.getManaCost().contains("W") && !card.getManaCost().contains("U")) ||
-                    (card.getManaCost().contains("U") && !card.getManaCost().contains("W")));
+            assertTrue((card.getManaCost().contains("W") && !card.getManaCost().contains("U"))
+                    || (card.getManaCost().contains("U") && !card.getManaCost().contains("W")));
         }
     }
 

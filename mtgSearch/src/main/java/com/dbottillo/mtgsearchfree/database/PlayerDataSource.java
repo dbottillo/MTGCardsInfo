@@ -35,11 +35,16 @@ public final class PlayerDataSource {
     }
 
     public static String generateCreateTable() {
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY, ";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         for (COLUMNS column : COLUMNS.values()) {
-            query += column.name + " " + column.type + ",";
+            builder.append(column.name).append(' ').append(column.type);
+            if (column != COLUMNS.POISON) {
+                builder.append(',');
+            }
         }
-        return query.substring(0, query.length() - 1) + ")";
+        builder.append(')');
+        return builder.toString();
     }
 
     public static long savePlayer(SQLiteDatabase db, Player player) {

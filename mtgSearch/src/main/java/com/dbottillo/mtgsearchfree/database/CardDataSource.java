@@ -75,30 +75,40 @@ public final class CardDataSource {
             + COLUMNS.NUMBER.getName() + " " + COLUMNS.NUMBER.getType();
 
     public static String generateCreateTable() {
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY, ";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         for (COLUMNS column : COLUMNS.values()) {
-            query += column.name + " " + column.type + ",";
+            builder.append(column.name).append(' ').append(column.type);
+            if (column != COLUMNS.NUMBER) {
+                builder.append(',');
+            }
         }
-        return query.substring(0, query.length() - 1) + ")";
+        return builder.append(')').toString();
     }
 
     @VisibleForTesting
     public static String generateCreateTable(int version) {
-        String query = "CREATE TABLE IF NOT EXISTS " + TABLE + " (_id INTEGER PRIMARY KEY, ";
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
+        COLUMNS lastColumn = COLUMNS.NUMBER;
+        if (version <= 2) {
+            lastColumn = COLUMNS.LAYOUT;
+        }
         for (COLUMNS column : COLUMNS.values()) {
-            if (column == COLUMNS.RULINGS) {
-                if (version > 1) {
-                    query += column.name + " " + column.type + ",";
+            boolean addColumn = true;
+            if (column == COLUMNS.RULINGS && version <= 1) {
+                addColumn = false;
+            } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
+                addColumn = false;
+            }
+            if (addColumn) {
+                builder.append(column.name).append(' ').append(column.type);
+                if (column != lastColumn) {
+                    builder.append(',');
                 }
-            } else if (column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) {
-                if (version > 2) {
-                    query += column.name + " " + column.type + ",";
-                }
-            } else {
-                query += column.name + " " + column.type + ",";
             }
         }
-        return query.substring(0, query.length() - 1) + ")";
+        return builder.append(')').toString();
     }
 
     public static long saveCard(SQLiteDatabase database, MTGCard card) {

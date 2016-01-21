@@ -4,8 +4,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.test.RenamingDelegatingContext;
 
-import com.dbottillo.mtgsearchfree.helper.LOG;
-
 import org.junit.After;
 import org.junit.Before;
 
