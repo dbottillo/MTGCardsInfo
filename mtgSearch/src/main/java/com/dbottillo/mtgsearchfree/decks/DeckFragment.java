@@ -2,17 +2,23 @@ package com.dbottillo.mtgsearchfree.decks;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
@@ -23,7 +29,6 @@ import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
 import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
@@ -31,6 +36,9 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +69,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         deck = getArguments().getParcelable("deck");
 
         setActionBarTitle(deck.getName());
+        setHasOptionsMenu(true);
 
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
         RecyclerView listView = (RecyclerView) rootView.findViewById(R.id.card_list);
@@ -224,6 +233,69 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         public ArrayList<MTGCard> loadInBackground() {
             CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(getContext());
             return DeckDataSource.getCards(dbHelper.getReadableDatabase(), deck);
+        }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.deck, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i1 = item.getItemId();
+        if (i1 == R.id.action_export) {
+            exportDeck();
+            return true;
+        }
+
+        return false;
+    }
+
+    private void exportDeck() {
+        File root = new File(Environment.getExternalStorageDirectory(), "MTGSearch");
+        if (!root.exists()) {
+            root.mkdirs();
+        }
+        final File deckFile = new File(root, deck.getName().replaceAll("\\s+", "").toLowerCase() + ".dec");
+        FileWriter writer;
+        TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
+        try {
+            writer = new FileWriter(deckFile);
+            writer.append("//");
+            writer.append(deck.getName());
+            writer.append("\n");
+            for (MTGCard card : cards) {
+                if (card.isSideboard()) {
+                    writer.append("SB: ");
+                }
+                writer.append(String.valueOf(card.getQuantity()));
+                writer.append(" ");
+                writer.append(card.getName());
+                writer.append("\n");
+            }
+            writer.flush();
+            writer.close();
+
+            if (this.getView() != null) {
+                Snackbar snackbar = Snackbar
+                        .make(this.getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.share), new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("text/plain");
+                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(deckFile));
+                                startActivity(Intent.createChooser(intent, getString(R.string.share)));
+                                TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SHARE);
+                            }
+                        });
+                snackbar.show();
+            }
+        } catch (IOException e) {
+            Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] "+e.getLocalizedMessage());
         }
     }
 
