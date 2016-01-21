@@ -204,12 +204,13 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
 
     @Override
     public void onEditPlayer(final int position) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MTGDialogTheme);
 
         alert.setTitle(getString(R.string.edit_player));
 
         final EditText input = new EditText(getActivity());
         input.setText(players.get(position).getName());
+        input.setSelection(players.get(position).getName().length());
         alert.setView(input);
 
         alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
