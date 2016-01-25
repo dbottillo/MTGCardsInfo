@@ -57,20 +57,22 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(false));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 1, 2);
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
     }
 
     @Test
     public void test_db_upgrade_from_version1_to_version3() {
-        SQLiteDatabase db = cardsInfoDbHelper.getReadableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 1);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardDataSource.TABLE), is(true));
@@ -78,23 +80,25 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(false));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 1, 3);
         tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(true));
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
     }
 
     @Test
     public void test_db_upgrade_from_version1_to_version4() {
-        SQLiteDatabase db = cardsInfoDbHelper.getReadableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 1);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardDataSource.TABLE), is(true));
@@ -102,23 +106,25 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(false));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 1, 4);
         tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(true));
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
     }
 
     @Test
     public void test_db_upgrade_from_version2_to_version3() {
-        SQLiteDatabase db = cardsInfoDbHelper.getReadableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 2);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardDataSource.TABLE), is(true));
@@ -126,8 +132,9 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(false));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 2, 3);
@@ -136,15 +143,16 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE), is(false));
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
     }
 
     @Test
     public void test_db_upgrade_from_version2_to_version4() {
-        SQLiteDatabase db = cardsInfoDbHelper.getReadableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 2);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardDataSource.TABLE), is(true));
@@ -152,8 +160,9 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(false));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(false));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 2, 4);
@@ -162,15 +171,16 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(true));
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
     }
 
     @Test
     public void test_db_upgrade_from_version3_to_version4() {
-        SQLiteDatabase db = cardsInfoDbHelper.getReadableDatabase();
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 3);
         Set<String> tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(CardDataSource.TABLE), is(true));
@@ -178,33 +188,43 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(false));
         assertThat(tables.contains(PlayerDataSource.TABLE), is(true));
         assertThat(tables.contains(FavouritesDataSource.TABLE), is(true));
-        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
         cardsInfoDbHelper.onUpgrade(db, 3, 4);
         tables = readTables(cardsInfoDbHelper);
         assertThat(tables.contains(DeckDataSource.TABLE), is(true));
         assertThat(tables.contains(DeckDataSource.TABLE_JOIN), is(true));
-        columns = readColumnTable(db, CardDataSource.TABLE);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
+    }
 
+    @Test
+    public void test_db_upgrade_from_version4_to_version5_without_layout() {
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        downgradeDb(db, 4);
+        removeLayoutColumn(db);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(false));
+        cardsInfoDbHelper.onUpgrade(db, 4, 5);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
+    }
+
+    @Test
+    public void test_db_upgrade_from_version4_to_version5_does_not_generate_error() {
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        downgradeDb(db, 4);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
+        cardsInfoDbHelper.onUpgrade(db, 4, 5);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
     }
 
     private void assertRowDatabaseNumber(SQLiteDatabase db, String table, long howMany) {
         assertThat(db.compileStatement("select count(*) from " + table + ";").simpleQueryForLong(), is(howMany));
-    }
-
-    private Set<String> readColumnTable(SQLiteDatabase db, String table) {
-        Cursor dbCursor = db.rawQuery("PRAGMA table_info(MTGCard)", null);
-        Set<String> columns = new HashSet<>(dbCursor.getCount());
-        if (dbCursor.moveToFirst()) {
-            do {
-                columns.add(dbCursor.getString(1));
-            } while (dbCursor.moveToNext());
-        }
-        dbCursor.close();
-        return columns;
     }
 
     private Set<String> readTables(CardsInfoDbHelper cardsInfoDbHelper) {
@@ -248,6 +268,16 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
             db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.generateCreateTable());
         }
+        if (version == 4) {
+            db.execSQL(CardDataSource.generateCreateTable());
+            db.execSQL(PlayerDataSource.generateCreateTable());
+            db.execSQL(FavouritesDataSource.generateCreateTable());
+        }
+    }
+
+    private void removeLayoutColumn(SQLiteDatabase db) {
+        db.execSQL("DROP TABLE " + CardDataSource.TABLE);
+        db.execSQL(CardDataSource.generateCreateTableWithoutLayout());
     }
 
 }

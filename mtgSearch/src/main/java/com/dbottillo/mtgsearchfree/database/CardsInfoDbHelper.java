@@ -1,9 +1,13 @@
 package com.dbottillo.mtgsearchfree.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.VisibleForTesting;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Helper for access the use database that contains:
@@ -15,7 +19,7 @@ import android.support.annotation.VisibleForTesting;
 public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    protected static final int DATABASE_VERSION = 4;
+    protected static final int DATABASE_VERSION = 5;
 
     private static CardsInfoDbHelper instance;
 
@@ -44,6 +48,7 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion == 1 && newVersion >= 2) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_RULINGS);
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LAYOUT);
         }
         if (oldVersion < 3 && newVersion >= 3) {
             db.execSQL(PlayerDataSource.generateCreateTable());
@@ -54,6 +59,12 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
             db.execSQL(DeckDataSource.generateCreateTable());
             db.execSQL(DeckDataSource.generateCreateTableJoin());
+        }
+        if (oldVersion < 5 && newVersion >= 5) {
+            Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+            if (!columns.contains(CardDataSource.COLUMNS.LAYOUT.getName())) {
+                db.execSQL(CardDataSource.SQL_ADD_COLUMN_LAYOUT);
+            }
         }
 
     }
@@ -69,5 +80,17 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.delete(DeckDataSource.TABLE_JOIN, null, null);
         db.delete(PlayerDataSource.TABLE, null, null);
         db.delete(FavouritesDataSource.TABLE, null, null);
+    }
+
+    public Set<String> readColumnTable(SQLiteDatabase db, String table) {
+        Cursor dbCursor = db.rawQuery("PRAGMA table_info(MTGCard)", null);
+        Set<String> columns = new HashSet<>(dbCursor.getCount());
+        if (dbCursor.moveToFirst()) {
+            do {
+                columns.add(dbCursor.getString(1));
+            } while (dbCursor.moveToNext());
+        }
+        dbCursor.close();
+        return columns;
     }
 }

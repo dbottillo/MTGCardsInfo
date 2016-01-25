@@ -37,9 +37,9 @@ public final class CardDataSource {
         MULTIVERSE_ID("multiVerseId", "INTEGER"),
         SET_ID("setId", "INTEGER"),
         SET_NAME("setName", "TEXT"),
-        SET_CODE("setCode", "TEXT"),
         RULINGS("rulings", "TEXT"),
         LAYOUT("layout", "TEXT"),
+        SET_CODE("setCode", "TEXT"),
         NUMBER("number", "TEXT");
 
         private String name;
@@ -64,7 +64,11 @@ public final class CardDataSource {
 
     protected static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
-            + COLUMNS.RULINGS.getName() + " " + COLUMNS.RARITY.getType();
+            + COLUMNS.RULINGS.getName() + " " + COLUMNS.RULINGS.getType();
+
+    protected static final String SQL_ADD_COLUMN_LAYOUT = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.LAYOUT.getName() + " " + COLUMNS.LAYOUT.getType();
 
     protected static final String SQL_ADD_COLUMN_SET_CODE = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
@@ -91,12 +95,14 @@ public final class CardDataSource {
         StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
         builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         COLUMNS lastColumn = COLUMNS.NUMBER;
-        if (version <= 2) {
+        if (version < 2) {
+            lastColumn = COLUMNS.SET_NAME;
+        } else if (version < 3) {
             lastColumn = COLUMNS.LAYOUT;
         }
         for (COLUMNS column : COLUMNS.values()) {
             boolean addColumn = true;
-            if (column == COLUMNS.RULINGS && version <= 1) {
+            if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
                 addColumn = false;
             } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
                 addColumn = false;
@@ -110,6 +116,22 @@ public final class CardDataSource {
         }
         return builder.append(')').toString();
     }
+
+    @VisibleForTesting
+    public static String generateCreateTableWithoutLayout() {
+        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
+        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
+        for (COLUMNS column : COLUMNS.values()) {
+            if (column != COLUMNS.LAYOUT) {
+                builder.append(column.name).append(' ').append(column.type);
+                if (column != COLUMNS.NUMBER) {
+                    builder.append(',');
+                }
+            }
+        }
+        return builder.append(')').toString();
+    }
+
 
     public static long saveCard(SQLiteDatabase database, MTGCard card) {
         return database.insertWithOnConflict(TABLE, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE);
