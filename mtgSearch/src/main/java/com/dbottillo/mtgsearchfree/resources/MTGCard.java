@@ -476,25 +476,29 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 }
             }
         }*/
-        return name.equals(other.getName())
+        return equalOrNull(name, other.name)
                 && multiVerseId == other.multiVerseId
-                && type.equals(other.type)
+                && equalOrNull(type, other.type)
                 && types.equals(other.types)
                 && (subTypes == null && other.subTypes == null || (subTypes != null && other.subTypes != null && subTypes.equals(other.subTypes)))
                 && (colors == null && other.colors == null || (colors != null && other.colors != null && colors.equals(other.colors)))
                 && cmc == other.cmc
                 && rarity.equals(other.rarity)
-                && power.equals(other.power)
-                && toughness.equals(other.toughness)
-                && (manaCost == null && other.manaCost == null || (manaCost != null && other.manaCost != null && manaCost.equals(other.manaCost)))
-                && (text == null && other.text == null || (text != null && other.text != null && text.equals(other.text)))
+                && equalOrNull(power, other.power)
+                && equalOrNull(toughness, other.toughness)
+                && equalOrNull(manaCost, other.manaCost)
+                && equalOrNull(text, other.text)
                 && isAMultiColor == other.isAMultiColor
                 && isALand == other.isALand
                 && idSet == other.idSet
-                && setName.equals(other.setName)
-                && layout.equals(other.layout)
-                && (number == null && other.number == null || (number != null && other.number != null && number.equals(other.number)))
+                && equalOrNull(setName, other.setName)
+                && equalOrNull(layout, other.layout)
+                && equalOrNull(number, other.number)
                 && (rulings == null && other.rulings == null || (rulings != null && other.rulings != null && rulings.equals(other.rulings)));
+    }
+
+    private boolean equalOrNull(String first, String second) {
+        return (first == null && second == null || (first != null && second != null && first.equals(second)));
     }
 
     @Override
