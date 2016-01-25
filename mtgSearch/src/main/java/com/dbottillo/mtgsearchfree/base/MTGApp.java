@@ -72,7 +72,6 @@ public class MTGApp extends Application {
     protected void checkReleaseNote() {
         SharedPreferences sharedPreferences = getSharedPreferences(DBFragment.PREFS_NAME, 0);
         int versionCode = sharedPreferences.getInt("VersionCode", -1);
-        Toast.makeText(this, "versionCode: " + versionCode+" vs "+BuildConfig.VERSION_CODE, Toast.LENGTH_SHORT).show();
         if (versionCode < BuildConfig.VERSION_CODE) {
             TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
             fireReleaseNotePush();
