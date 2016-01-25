@@ -12,24 +12,24 @@ apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
-apply plugin: 'com.google.gms.google-services'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
 
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
 
     defaultConfig {
+        applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 38
-        versionName "2.7.2"
-        applicationId "com.dbottillo.mtgsearchfree"
+        versionCode 40
+        versionName "2.7.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -55,8 +55,9 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '12'
+            buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            buildConfigField 'boolean', 'COPY_DB', 'true'
             lintOptions {
                 abortOnError false
             }
@@ -66,10 +67,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '12'
+            buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            buildConfigField 'boolean', 'COPY_DB', 'false'
         }
     }
+
     lintOptions {
         xmlReport false
         checkAllWarnings true
@@ -101,11 +104,9 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:23.1.1'
     compile "com.android.support:appcompat-v7:23.1.1"
-    compile 'com.google.android.gms:play-services-analytics:8.3.0'
-    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    compile 'com.google.android.gms:play-services-analytics:8.4.0'
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:cardview-v7:23.1.1'
@@ -128,18 +129,21 @@ dependencies {
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'com.android.support:support-annotations:23.1.1'
+    testCompile "com.android.support:appcompat-v7:23.1.1"
+    testCompile 'com.android.support:recyclerview-v7:23.1.1'
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
-    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.1'
     androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile "com.android.support:appcompat-v7:23.1.1"
+    androidTestCompile 'com.android.support:recyclerview-v7:23.1.1'
 }
 
 task checkstyle(type: Checkstyle) {
-    // Where my checkstyle config is...
-    configProperties.checkstyleSuppressionsPath = file("${project.rootDir}/config/quality/checkstyle/suppressions.xml").absolutePath
-    // Where is my suppressions file for checkstyle is...
+    configFile = new File(checkstyleConfigDir, "checkstyle.xml")
+    configProperties.checkstyleConfigDir = checkstyleConfigDir
     source 'src'
     include '**/*.java'
     exclude '**/gen/**'
@@ -181,3 +185,5 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
 }
 
 check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
+
+apply plugin: 'com.google.gms.google-services'
