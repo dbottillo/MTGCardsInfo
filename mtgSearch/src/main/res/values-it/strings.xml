@@ -6,6 +6,17 @@
     <string name="action_about">About</string>
     <string name="copyright">Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast.</string>
     <string name="send_feedback">Invia Feedback</string>
+    <string name="feedback_text">
+        <![CDATA[
+		| Versione: %1$s |<br/>
+		| Livello API: %2$s |<br/>
+		| Dispositivo: %3$s |<br/>
+		| Modello: %4$s |<br/>
+		| Prodotto: %5$s |
+		<br/>
+		<br/>
+		]]>
+	</string>
     <string name="version">Versione</string>
     <string name="action_search">Cerca</string>
     <string name="search_result">Risultati per:</string>
@@ -85,9 +96,18 @@
     <string name="deck_choose_quantity">Scegli quantità</string>
     <string name="deck_new">Nuovo mazzo</string>
     <string name="deck_specify">Scelta manuale</string>
-    <string name="release_note_title">Novità!</string>
+    <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
+        - NUOVO: Oath of the gatewatch \n
+        - NUOVO: Esporta mazzi \n
+        - Bug fixes
+    </string>
+    <string name="release_note_text_full">
+        <b>Version 2.7.3:</b> \n
+        - NUOVO: Oath of the gatewatch \n
+        - NUOVO: Esporta mazzi \n
+        - Bug fixes \n\n
         <b>Versione 2.7.2:</b> \n
         - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
         - NUOVO: Aggiunti i filtri ai preferiti \n
@@ -159,5 +179,9 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="cd_action_search">Effettua ricerca</string>
+    <string name="action_send_db">Send db</string>
+    <string name="export">Esporta</string>
+    <string name="error_export_deck">Impossibile esportare il mazzo, controlla che lo storage esterno sia disponibile e poi riprova.</string>
+    <string name="deck_exported">Mazzo salvato su sdcard</string>
 
 </resources>

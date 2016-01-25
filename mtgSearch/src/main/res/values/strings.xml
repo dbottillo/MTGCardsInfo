@@ -9,6 +9,17 @@
     <string name="send_feedback">Send Feedback</string>
     <string name="email" translatable="false">mtg@danielebottillo.com</string>
     <string name="feedback" translatable="false">Feedback </string>
+    <string name="feedback_text">
+        <![CDATA[
+		| Version: %1$s |<br/>
+		| API Level: %2$s |<br/>
+		| Device: %3$s |<br/>
+		| Model: %4$s |<br/>
+		| Product: %5$s |
+		<br/>
+        <br/>
+		]]>
+	</string>
     <string name="version">Version</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results:</string>
@@ -100,9 +111,19 @@
     <string name="deck_choose_quantity">Choose quantity</string>
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
-    <string name="release_note_title">What\'s new</string>
+    <string name="release_note_title_push">What\'s new in %s</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
+        - NEW: Oath of the gatewatch \n
+        - NEW: Export deck \n
+        - Bug fixes
+    </string>
+    <string name="release_note_text_full">
+        <b>Version 2.7.3:</b> \n
+        - NEW: Oath of the gatewatch \n
+        - NEW: Export deck \n
+        - Fix major issue on One Plus Two \n
+        - Bug fixes \n\n
         <b>Version 2.7.2:</b> \n
         - NEW: Advanced Search now includes card text (you can search for lifelink, vigilance, …) \n
         - NEW: Filter added to favourites \n
@@ -177,6 +198,10 @@
     <string name="favourite_migration_in_progress_title">Favourites migration</string>
     <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
     <string name="search_card_text">Card text</string>
+    <string name="action_send_db">Send db</string>
+    <string name="export">Export</string>
+    <string name="error_export_deck">Impossible to export a deck, check that your external storage is available and try again.</string>
+    <string name="deck_exported">Deck exported on sdcard</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

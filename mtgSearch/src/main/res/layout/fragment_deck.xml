@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_bg"
     android:orientation="vertical"
-    tools:context="com.dbottillo.base.MainFragment">
+    tools:context=".mtgsearch.base.MainFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"

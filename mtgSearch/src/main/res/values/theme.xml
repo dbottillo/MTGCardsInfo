@@ -5,18 +5,13 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
-
         <item name="android:actionMenuTextColor">@color/white</item>
-
         <item name="android:textColorPrimary">@android:color/white</item>
-
         <item name="android:windowBackground">@null</item>
         <item name="windowNoTitle">true</item>
-
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
-
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
     </style>
 
@@ -39,6 +34,13 @@
         <item name="android:textColor">@color/color_primary_dark</item>
     </style>
 
-
     <color name="status_bar">#0076c0</color>
+
+    <style name="MTGDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:background">@color/color_primary_dark</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:windowMinWidthMajor">97%</item>
+        <item name="android:windowMinWidthMinor">97%</item>
+    </style>
 </resources>

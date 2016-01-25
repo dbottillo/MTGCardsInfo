@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.dbottillo.lifecounter.LifeCounterActivity">
+    tools:context=".mtgsearch.lifecounter.LifeCounterActivity">
 
     <ListView
         android:id="@+id/life_counter_list"
