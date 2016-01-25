@@ -44,15 +44,9 @@ public abstract class DBFragment extends DialogFragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onPause() {
+        super.onPause();
         bus.unregister(this);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        bus.registerSticky(this);
     }
 
     @Override
@@ -88,6 +82,7 @@ public abstract class DBFragment extends DialogFragment {
         if (getPageTrack() != null) {
             TrackingHelper.getInstance(activity.getApplicationContext()).trackPage(getPageTrack());
         }
+        bus.registerSticky(this);
     }
 
     public abstract String getPageTrack();
