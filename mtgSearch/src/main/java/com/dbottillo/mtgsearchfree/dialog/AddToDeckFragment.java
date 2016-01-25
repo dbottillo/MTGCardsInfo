@@ -167,45 +167,24 @@ public class AddToDeckFragment extends DBFragment implements View.OnClickListene
             if (chooseDeck.getVisibility() == View.VISIBLE && chooseDeck.getSelectedItemPosition() > 0) {
                 Deck deck = decks.get(chooseDeck.getSelectedItemPosition() - 1);
                 boolean side = sideboard.isChecked();
-                saveCard(getActivity().getApplicationContext(), quantity, deck, side);
+                saveCard(quantity, deck, side);
                 dismiss();
             }
             if (chooseDeck.getVisibility() == View.GONE && deckName.getText().length() > 0) {
                 boolean side = sideboard.isChecked();
-                saveCard(getActivity().getApplicationContext(), quantity, deckName.getText().toString(), side);
+                saveCard(quantity, deckName.getText().toString(), side);
                 dismiss();
             }
         }
     }
 
-    private void saveCard(final Context context, final int quantity, final Deck deck, final boolean side) {
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                if (getActivity() != null) {
-                    /*
-                    DeckDataSource deckDataSource = new DeckDataSource(context);
-                    deckDataSource.open();
-                    deckDataSource.addCardToDeck(dbdeck.getId(), card, quantity, side);*/
-                    DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, quantity, card.isSideboard());
-                }
-            }
-        };
-        thread.start();
+    private void saveCard(final int quantity, final Deck deck, final boolean side) {
+        DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, quantity, side);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - existing");
     }
 
-    private void saveCard(final Context context, final int quantity, final String deck, final boolean side) {
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                /*DeckDataSource deckDataSource = new DeckDataSource(context);
-                deckDataSource.open();
-                deckDataSource.addCardToDeck(deck, card, quantity, side);*/
-                DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck, card, quantity, card.isSideboard());
-            }
-        };
-        thread.start();
+    private void saveCard(final int quantity, final String deck, final boolean side) {
+        DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck, card, quantity, side);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - new");
     }
