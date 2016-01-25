@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.dbottillo.mtgsearchfree.BuildConfig;
