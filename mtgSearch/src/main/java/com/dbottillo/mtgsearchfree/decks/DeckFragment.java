@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -35,11 +34,8 @@ import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -252,53 +248,25 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
     }
 
     private void exportDeck() {
-        File root = new File(Environment.getExternalStorageDirectory(), "MTGSearch");
-        if (!root.exists()) {
-            boolean created = root.mkdirs();
-            if (!created) {
-                Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-                TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
-                return;
-            }
-        }
-        final File deckFile = new File(root, deck.getName().replaceAll("\\s+", "").toLowerCase() + ".dec");
-        OutputStreamWriter writer;
-        TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
-        try {
-            writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
-            writer.append("//");
-            writer.append(deck.getName());
-            writer.append("\n");
-            for (MTGCard card : cards) {
-                if (card.isSideboard()) {
-                    writer.append("SB: ");
-                }
-                writer.append(String.valueOf(card.getQuantity()));
-                writer.append(" ");
-                writer.append(card.getName());
-                writer.append("\n");
-            }
-            writer.flush();
-            writer.close();
-
+        if (FileUtil.downloadDeckToSdCard(getApp(), deck, cards)) {
             if (this.getView() != null) {
                 Snackbar snackbar = Snackbar
-                        .make(this.getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                        .make(getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
                         .setAction(getString(R.string.share), new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 Intent intent = new Intent(Intent.ACTION_SEND);
                                 intent.setType("text/plain");
-                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(deckFile));
+                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
                                 startActivity(Intent.createChooser(intent, getString(R.string.share)));
                                 TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SHARE);
                             }
                         });
                 snackbar.show();
             }
-        } catch (IOException e) {
-            Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] " + e.getLocalizedMessage());
+        } else {
+            Toast.makeText(getContext(), getContext().getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
         }
     }
 

@@ -31,6 +31,7 @@ import com.dbottillo.mtgsearchfree.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
+import java.io.File;
 import java.util.Random;
 
 public class MainActivity extends FilterActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -249,14 +250,15 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             throw new RuntimeException("This is a crash");
 
         } else if (menuItem.getItemId() == 104) {
-            FileUtil.copyDbToSdcard(CardsInfoDbHelper.DATABASE_NAME);
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
-            String uri = "file:///sdcard/" + CardsInfoDbHelper.DATABASE_NAME;
-            emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(uri));
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            File file = FileUtil.copyDbToSdCard(getApp().getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+            if (file != null) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
+                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                startActivity(Intent.createChooser(intent, "Send mail...."));
+            }
         }
         mDrawerLayout.closeDrawers();
         return true;
