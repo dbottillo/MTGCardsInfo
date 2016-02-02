@@ -64,6 +64,15 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     }
 
     @Test
+    public void DeckDataSource_nameDeckCanBeEdited() {
+        long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "deck");
+        int updatedId = DeckDataSource.renameDeck(cardsInfoDbHelper.getWritableDatabase(), id, "New name");
+        assertThat((updatedId > -1), is(true));
+        ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
+        assertThat(decks.get(0).getName(), is("New name"));
+    }
+
+    @Test
     public void test_deck_cards_can_be_retrieved_from_database() {
         generateDeckWithSmallAmountOfCards();
         Deck deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);

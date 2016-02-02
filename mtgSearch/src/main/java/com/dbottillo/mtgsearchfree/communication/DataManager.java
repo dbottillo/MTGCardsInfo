@@ -28,7 +28,8 @@ public final class DataManager {
         PLAYERS(PlayersOperation.class),
         SAVE_PLAYER(SavePlayerOperation.class),
         REMOVE_PLAYER(RemovePlayerOperation.class),
-        EDIT_DECK(EditDeckOperation.class);
+        EDIT_DECK(EditDeckOperation.class),
+        EDIT_DECK_NAME(EditDeckNameOperation.class);
 
         Class<?> operationClass;
 
