@@ -18,6 +18,7 @@ public final class DeckDataSource {
     public static final String TABLE = "decks";
     public static final String TABLE_JOIN = "deck_card";
 
+
     public enum COLUMNS {
         NAME("name", "TEXT not null"),
         COLOR("color", "TEXT"),
@@ -210,6 +211,12 @@ public final class DeckDataSource {
     public static void deleteAllDecks(SQLiteDatabase db) {
         db.rawQuery("DELETE FROM deck_card", null).moveToFirst();
         db.rawQuery("DELETE FROM decks", null).moveToFirst();
+    }
+
+    public static int renameDeck(SQLiteDatabase db, long deckId, String name) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMNS.NAME.getName(), name);
+        return db.update(TABLE, contentValues, "_id="+deckId, null);
     }
 
     protected static Deck fromCursor(Cursor cursor) {

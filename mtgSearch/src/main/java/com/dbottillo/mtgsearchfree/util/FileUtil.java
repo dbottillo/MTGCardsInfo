@@ -56,6 +56,38 @@ public final class FileUtil {
         return null;
     }
 
+    public static boolean copyDbFromSdCard(Context ctx, String name) {
+        LOG.e("copy db to sd card");
+        try {
+            File root = getMTGSearchDirectory();
+            if (root == null) {
+                return false;
+            }
+            if (root.canWrite()) {
+                File currentDB = ctx.getDatabasePath(name);
+                File backupDB = new File(root, name);
+
+                if (backupDB.exists()) {
+                    FileChannel src = new FileInputStream(backupDB)
+                            .getChannel();
+                    FileChannel dst = new FileOutputStream(currentDB)
+                            .getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                    return true;
+                } else {
+                    LOG.e("backup db dont exist");
+                }
+            } else {
+                LOG.e("sd card cannot be write");
+            }
+        } catch (Exception e) {
+            LOG.e("exception copy db: " + e.getLocalizedMessage());
+        }
+        return false;
+    }
+
     private static File getMTGSearchDirectory() {
         File root = new File(Environment.getExternalStorageDirectory(), BuildConfig.DEBUG ? "MTGSearchDebug" : "MTGSearch");
         if (!root.exists()) {

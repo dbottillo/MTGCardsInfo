@@ -2,6 +2,13 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_edit_white"
+        android:title="@string/edit_deck"
+        app:showAsAction="always"/>
+
+
+    <item
         android:id="@+id/action_export"
         android:icon="@drawable/ic_get_app_white_24dp"
         android:title="@string/export"

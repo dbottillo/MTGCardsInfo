@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.decks;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -242,6 +245,9 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         if (i1 == R.id.action_export) {
             exportDeck();
             return true;
+        } else if (i1 == R.id.action_edit) {
+            editDeckName();
+            return true;
         }
 
         return false;
@@ -268,6 +274,35 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             Toast.makeText(getContext(), getContext().getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
             TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
         }
+    }
+
+    private void editDeckName() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MTGDialogTheme);
+
+        alert.setTitle(getString(R.string.edit_deck));
+
+        final EditText input = new EditText(getActivity());
+        input.setText(deck.getName());
+        input.setSelection(deck.getName().length());
+        alert.setView(input);
+
+        alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                DataManager.execute(DataManager.TASK.EDIT_DECK_NAME, deck.getId(), value);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, "editName");
+                deck.setName(value);
+                setActionBarTitle(deck.getName());
+            }
+        });
+
+        alert.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+            }
+        });
+
+        alert.show();
     }
 
 }

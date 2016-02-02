@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
@@ -152,6 +153,7 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         }
         if (BuildConfig.COPY_DB) {
             navigationView.getMenu().add(0, 104, Menu.NONE, getString(R.string.action_send_db));
+            navigationView.getMenu().add(0, 105, Menu.NONE, getString(R.string.action_send_db));
         }
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
@@ -259,7 +261,11 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
                 intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
                 startActivity(Intent.createChooser(intent, "Send mail...."));
             }
+        } else if (menuItem.getItemId() == 105) {
+            boolean copied = FileUtil.copyDbFromSdCard(getApp().getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+            Toast.makeText(this, copied ? "database copied" : "database not copied", Toast.LENGTH_LONG).show();
         }
+
         mDrawerLayout.closeDrawers();
         return true;
     }

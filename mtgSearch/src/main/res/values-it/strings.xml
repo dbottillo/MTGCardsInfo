@@ -180,8 +180,10 @@
     <string name="cd_remove">Rimuovi</string>
     <string name="cd_action_search">Effettua ricerca</string>
     <string name="action_send_db">Send db</string>
+    <string name="action_copy_db">Copy db</string>
     <string name="export">Esporta</string>
     <string name="error_export_deck">Impossibile esportare il mazzo, controlla che lo storage esterno sia disponibile e poi riprova.</string>
     <string name="deck_exported">Mazzo salvato su sdcard</string>
+    <string name="edit_deck">Modifica mazzo</string>
 
 </resources>
