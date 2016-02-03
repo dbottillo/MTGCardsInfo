@@ -38,7 +38,6 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         cursor.moveToFirst();
         MTGCard cardFromDb = CardDataSource.fromCursor(cursor, true);
         assertNotNull(cardFromDb);
-        assertThat(cardFromDb.getId(), is(card.getId()));
         assertThat(cardFromDb.getName(), is(card.getName()));
         assertThat(cardFromDb.getType(), is(card.getType()));
         assertThat(cardFromDb.getSubTypes().size(), is(card.getSubTypes().size()));
@@ -72,34 +71,12 @@ public class CardDataSourceTest extends BaseDatabaseTest {
     }
 
     @Test
-    public void test_card_are_unique_in_database() {
-        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        int uniqueId = 444;
-        MTGCard card = new MTGCard();
-        card.setId(uniqueId);
-        card.setCardName("one");
-        long id = CardDataSource.saveCard(db, card);
-        MTGCard card2 = new MTGCard();
-        card2.setId(uniqueId);
-        card2.setCardName("two");
-        long id2 = CardDataSource.saveCard(db, card2);
-        assertNotSame(id, id2);
-        Cursor cursor = db.rawQuery("select * from " + CardDataSource.TABLE + " where _id =?", new String[]{uniqueId + ""});
-        assertNotNull(cursor);
-        assertThat(cursor.getCount(), is(1));
-        cursor.moveToFirst();
-        MTGCard cardFromDb = CardDataSource.fromCursor(cursor);
-        assertThat(cardFromDb.getName(), is(card.getName())); // same id are ignored
-        cursor.close();
-    }
-
-    @Test
     public void test_cards_can_be_retrieved_from_database() {
         MTGCard card = new MTGCard();
-        card.setId(101);
+        card.setMultiVerseId(101);
         CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         MTGCard card2 = new MTGCard();
-        card2.setId(102);
+        card2.setMultiVerseId(102);
         CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card2);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE, null);
         ArrayList<MTGCard> cards = new ArrayList<>(cursor.getCount());
@@ -112,8 +89,8 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         cursor.close();
         assertNotNull(cards);
         assertThat(cards.size(), is(2));
-        assertThat(cards.get(0).getId(), is(card.getId()));
-        assertThat(cards.get(1).getId(), is(card2.getId()));
+        assertThat(cards.get(0).getMultiVerseId(), is(card.getMultiVerseId()));
+        assertThat(cards.get(1).getMultiVerseId(), is(card2.getMultiVerseId()));
     }
 
 }
