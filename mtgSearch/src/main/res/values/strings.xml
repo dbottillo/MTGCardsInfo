@@ -200,12 +200,13 @@
     <string name="favourite_migration_in_progress_title">Favourites migration</string>
     <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
     <string name="search_card_text">Card text</string>
-    <string name="action_send_db">Send db</string>
-    <string name="action_copy_db">Copy db</string>
+    <string name="action_send_db">Copy db to sdcard</string>
+    <string name="action_copy_db">Replace db from sdcard</string>
     <string name="export">Export</string>
     <string name="error_export_deck">Impossible to export a deck, check that your external storage is available and try again.</string>
     <string name="deck_exported">Deck exported on sdcard</string>
     <string name="edit_deck">Edit deck</string>
+    <string name="debug_mode_active">Debug mode active</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

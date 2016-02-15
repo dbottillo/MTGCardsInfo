@@ -27,6 +27,7 @@ import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.saved.SavedFragment;
 import com.dbottillo.mtgsearchfree.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -151,9 +152,9 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_create_fav));
             navigationView.getMenu().add(0, 103, Menu.NONE, getString(R.string.action_crash));
         }
-        if (BuildConfig.COPY_DB) {
+        if (GeneralPreferences.with(getApplicationContext()).isDebugEnabled()) {
             navigationView.getMenu().add(0, 104, Menu.NONE, getString(R.string.action_send_db));
-            navigationView.getMenu().add(0, 105, Menu.NONE, getString(R.string.action_send_db));
+            navigationView.getMenu().add(0, 105, Menu.NONE, getString(R.string.action_copy_db));
         }
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
