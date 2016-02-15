@@ -57,7 +57,6 @@ android {
             debuggable true
             buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-            buildConfigField 'boolean', 'COPY_DB', 'true'
             lintOptions {
                 abortOnError false
             }
@@ -69,7 +68,6 @@ android {
             signingConfig signingConfigs.releaseConfig
             buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-            buildConfigField 'boolean', 'COPY_DB', 'true'
         }
         release {
             debuggable false
@@ -78,7 +76,6 @@ android {
             signingConfig signingConfigs.releaseConfig
             buildConfigField 'int', 'DATABASE_VERSION', '14'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-            buildConfigField 'boolean', 'COPY_DB', 'false'
         }
     }
 
