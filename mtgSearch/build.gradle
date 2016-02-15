@@ -82,6 +82,15 @@ android {
         }
     }
 
+    productFlavors {
+        dev {
+            minSdkVersion 21
+        }
+        prod {
+            minSdkVersion 14
+        }
+    }
+
     lintOptions {
         xmlReport false
         checkAllWarnings true

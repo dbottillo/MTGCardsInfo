@@ -2,5 +2,5 @@
 
 gradle check
 gradle connectedCheck
-gradle assembleBeta --no-daemon
-cp -r MTGSearch/build/outputs/apk/MTGSearch-beta.apk ~/Google\ Drive/MTGCardsInfo/MTGSearchBeta.apk
+gradle assembleProdBeta --no-daemon
+cp -r MTGSearch/build/outputs/apk/MTGSearch-prod-beta.apk ~/Google\ Drive/MTGCardsInfo/MTGSearchBeta.apk
