@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.about.AboutFragment;
+import com.dbottillo.mtgsearchfree.about.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.about.ReleaseNoteFragment;
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
@@ -230,6 +231,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
 
         } else if (menuItem.getItemId() == R.id.drawer_rate) {
             openRateTheApp();
+
+        } else if (menuItem.getItemId() == R.id.drawer_beta) {
+            changeFragment(new JoinBetaFragment(), "joinbeta_fragment", true);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
 
         } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
             changeFragment(new AboutFragment(), "about_fragment", true);
