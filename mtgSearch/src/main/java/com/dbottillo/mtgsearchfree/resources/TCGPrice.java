@@ -11,6 +11,7 @@ public class TCGPrice implements Parcelable {
     private String link;
     private String errorPrice;
     private boolean error;
+    private boolean notFound;
 
     public TCGPrice() {
 
@@ -65,6 +66,14 @@ public class TCGPrice implements Parcelable {
         return errorPrice;
     }
 
+    public boolean isNotFound() {
+        return notFound;
+    }
+
+    public void setNotFound(boolean notFound) {
+        this.notFound = notFound;
+    }
+
     public String toString() {
         return "[TCGPrice] H:" + hiPrice + " - A:" + avgPrice + " - L:" + lowprice + " - " + link;
     }
@@ -89,6 +98,7 @@ public class TCGPrice implements Parcelable {
         dest.writeString(link);
         dest.writeString(errorPrice);
         dest.writeInt(error ? 1 : 0);
+        dest.writeInt(notFound ? 1 : 0);
     }
 
     public void readFromParcel(Parcel in) {
@@ -98,6 +108,7 @@ public class TCGPrice implements Parcelable {
         link = in.readString();
         errorPrice = in.readString();
         error = in.readInt() == 1;
+        notFound = in.readInt() == 1;
     }
 
     public static final Parcelable.Creator<TCGPrice> CREATOR = new Parcelable.Creator<TCGPrice>() {
