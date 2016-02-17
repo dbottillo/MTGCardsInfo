@@ -187,10 +187,13 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
 
     @Override
     public void onClick(View v) {
-        final SearchParams searchParams = searchView.getSearchParams();
-        if (!searchParams.isValid()) {
-            Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
-            return;
+        SearchParams searchParams = null;
+        if (!searchOpen) {
+            searchParams = searchView.getSearchParams();
+            if (!searchParams.isValid()) {
+                Toast.makeText(this, getString(R.string.minimum_search), Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
         final AnimationUtil.LinearInterpolator backgroundInterpolator = AnimationUtil.createLinearInterpolator();
         final int startColor, endColor;
@@ -220,6 +223,7 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
                 }
             }
         };
+        final SearchParams finalSearchParams = searchParams;
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -237,7 +241,7 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
                 if (searchOpen) {
                     resultsContainer.setVisibility(View.GONE);
                 } else {
-                    doSearch(searchParams);
+                    doSearch(finalSearchParams);
                 }
                 searchOpen = !searchOpen;
             }
