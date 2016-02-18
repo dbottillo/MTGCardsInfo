@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
 
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -23,7 +24,7 @@ public abstract class DBFragment extends DialogFragment {
     public static final String PREF_TWO_HG_ENABLED = "two_hg";
     public static final String PREF_SORT_WUBRG = "sort_wubrg";
 
-    private DBActivity activity;
+    private AppCompatActivity activity;
     protected boolean isPortrait;
 
     protected EventBus bus = EventBus.getDefault();
@@ -31,7 +32,7 @@ public abstract class DBFragment extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        this.activity = (DBActivity) activity;
+        this.activity = (AppCompatActivity) activity;
         Resources res = activity.getResources();
         isPortrait = res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
     }
@@ -88,10 +89,10 @@ public abstract class DBFragment extends DialogFragment {
     public abstract String getPageTrack();
 
     public MTGApp getApp() {
-        return activity.getApp();
+        return (MTGApp) activity.getApplication();
     }
 
-    protected DBActivity getDBActivity() {
+    protected AppCompatActivity getDBActivity() {
         return activity;
     }
 

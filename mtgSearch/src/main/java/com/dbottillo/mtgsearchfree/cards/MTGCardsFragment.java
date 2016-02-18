@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.base.DBFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -208,6 +209,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     @Override
     public void onClick(View v) {
         MTGCard card = cards.get(viewPager.getCurrentItem());
-        getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        DialogHelper.Companion.open(getDBActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
     }
 }
