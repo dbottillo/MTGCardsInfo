@@ -73,14 +73,14 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
     }
 
     private void checkPushReleaseNoteClicked(Intent intent) {
-        if (intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)) {
-            if (intent.getBooleanExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH, false)) {
+        if (intent.hasExtra(MTGApp.Companion.getINTENT_RELEASE_NOTE_PUSH())) {
+            if (intent.getBooleanExtra(MTGApp.Companion.getINTENT_RELEASE_NOTE_PUSH(), false)) {
                 TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "push");
                 showReleaseNoteFragment();
                 navigationView.getMenu().getItem(6).setChecked(true);
                 mDrawerToggle.syncState();
             }
-            intent.removeExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH);
+            intent.removeExtra(MTGApp.Companion.getINTENT_RELEASE_NOTE_PUSH());
         }
     }
 
