@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
 import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
@@ -147,7 +148,7 @@ public abstract class MTGSetFragment extends DBFragment implements View.OnClickL
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
-            getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+            DialogHelper.Companion.open(getDBActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
         } else {
             DataManager.execute(DataManager.TASK.SAVE_CARD, card);
         }

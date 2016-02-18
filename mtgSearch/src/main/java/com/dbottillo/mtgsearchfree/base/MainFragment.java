@@ -22,11 +22,11 @@ import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter;
 import com.dbottillo.mtgsearchfree.cards.MTGSetFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SetEvent;
-import com.dbottillo.mtgsearchfree.filter.FilterActivity;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.activities.FilterActivity;
 
 import java.util.ArrayList;
 

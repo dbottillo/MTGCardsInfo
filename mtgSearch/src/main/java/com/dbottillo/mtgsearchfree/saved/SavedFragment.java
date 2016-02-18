@@ -25,11 +25,12 @@ import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.filter.FilterActivity;
+import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.activities.FilterActivity;
 
 import java.util.ArrayList;
 
@@ -145,7 +146,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
-            getDBActivity().openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+            DialogHelper.Companion.open(getDBActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
 
         } else if (menuItem.getItemId() == R.id.action_remove) {
             DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);

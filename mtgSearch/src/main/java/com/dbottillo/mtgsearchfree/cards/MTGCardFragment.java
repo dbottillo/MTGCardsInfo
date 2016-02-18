@@ -31,7 +31,7 @@ import com.dbottillo.mtgsearchfree.base.DBFragment;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.TCGPrice;
+import com.dbottillo.mtgsearchfree.base.resources.TCGPrice;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

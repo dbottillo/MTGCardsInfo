@@ -13,6 +13,7 @@ import android.support.v4.app.TaskStackBuilder
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard
@@ -63,7 +64,15 @@ class MTGApp : Application() {
         stackBuilder.addNextIntent(intent)
         val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)
 
-        val b = NotificationCompat.Builder(this).setAutoCancel(true).setWhen(System.currentTimeMillis()).setSmallIcon(R.drawable.ic_stat_notification_generic).setPriority(Notification.PRIORITY_LOW).setContentTitle(getString(R.string.release_note_title_push, getString(R.string.app_name))).setContentText(getText(R.string.release_note_text)).setColor(resources.getColor(R.color.color_primary)).setContentIntent(resultPendingIntent)
+        val b = NotificationCompat.Builder(this)
+                .setAutoCancel(true)
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.ic_stat_notification_generic)
+                .setPriority(Notification.PRIORITY_LOW)
+                .setContentTitle(getString(R.string.release_note_title_push, getString(R.string.app_name)))
+                .setContentText(getText(R.string.release_note_text))
+                .setColor(resources.getColor(R.color.color_primary))
+                .setContentIntent(resultPendingIntent)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             b.setCategory(Notification.CATEGORY_RECOMMENDATION)
