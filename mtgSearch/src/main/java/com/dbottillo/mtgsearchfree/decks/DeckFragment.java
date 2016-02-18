@@ -86,7 +86,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
             @Override
             public void onCardSelected(MTGCard card, int position) {
                 Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-                MTGApp.setCardsToDisplay(cards);
+                MTGApp.Companion.setCardsToDisplay(cards);
                 cardsView.putExtra(MTGCardsFragment.POSITION, position);
                 cardsView.putExtra(MTGCardsFragment.TITLE, deck.getName());
                 cardsView.putExtra(MTGCardsFragment.DECK, true);

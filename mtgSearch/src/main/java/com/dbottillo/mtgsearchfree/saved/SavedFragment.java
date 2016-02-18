@@ -110,7 +110,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.setCardsToDisplay(savedCards);
+        MTGApp.Companion.setCardsToDisplay(savedCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);
@@ -136,7 +136,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onCardSelected(MTGCard card, int position) {
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.setCardsToDisplay(savedFilteredCards);
+        MTGApp.Companion.setCardsToDisplay(savedFilteredCards);
         cardsView.putExtra(MTGCardsFragment.POSITION, position);
         cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
         startActivity(cardsView);

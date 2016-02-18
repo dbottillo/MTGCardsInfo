@@ -52,7 +52,7 @@ public abstract class DBFragment extends DialogFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = MTGApp.getRefWatcher(activity);
+        RefWatcher refWatcher = MTGApp.Companion.getRefWatcher();
         refWatcher.watch(this);
     }
 
