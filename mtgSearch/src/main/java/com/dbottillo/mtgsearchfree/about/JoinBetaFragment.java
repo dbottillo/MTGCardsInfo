@@ -13,6 +13,7 @@ import com.dbottillo.mtgsearchfree.base.DBFragment;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
 public class JoinBetaFragment extends DBFragment implements View.OnClickListener {
 
     @Override

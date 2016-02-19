@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
@@ -29,7 +29,7 @@ import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
 import java.util.ArrayList;
 
-public class AddToDeckFragment extends DBFragment implements View.OnClickListener {
+public class AddToDeckFragment extends BasicFragment implements View.OnClickListener {
 
     Spinner chooseDeck;
     Spinner chooseQuantity;

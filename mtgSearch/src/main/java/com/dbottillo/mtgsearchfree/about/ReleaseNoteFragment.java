@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ReleaseNoteFragment extends DBFragment {
+public class ReleaseNoteFragment extends BasicFragment {
 
     @Bind(R.id.release_note)
     TextView releaseNote;

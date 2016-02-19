@@ -13,7 +13,7 @@ import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import de.greenrobot.event.EventBus
 
 abstract class BasicActivity : AppCompatActivity() {
@@ -61,7 +61,7 @@ abstract class BasicActivity : AppCompatActivity() {
         MaterialWrapper.setElevation(toolbar, resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat())
     }
 
-    fun changeFragment(fragment: DBFragment, tag: String, addToBackStack: Boolean) {
+    fun changeFragment(fragment: BasicFragment, tag: String, addToBackStack: Boolean) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container, fragment)
         if (addToBackStack) {

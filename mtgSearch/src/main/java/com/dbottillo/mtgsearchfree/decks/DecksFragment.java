@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends DBFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, DeckListAdapter.OnDeckListener {
+public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, DeckListAdapter.OnDeckListener {
 
     public static DecksFragment newInstance() {
         return new DecksFragment();

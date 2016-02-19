@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
 
 import static android.net.Uri.parse;
 
-public class AboutFragment extends DBFragment implements View.OnClickListener, View.OnTouchListener {
+public class AboutFragment extends BasicFragment implements View.OnClickListener, View.OnTouchListener {
 
     String[] librariesName = new String[]{"Smooth Progress Bar", "Picasso", "LeakMemory"};
     String[] librariesAuthor = new String[]{"Castorflex", "Square", "Square"};

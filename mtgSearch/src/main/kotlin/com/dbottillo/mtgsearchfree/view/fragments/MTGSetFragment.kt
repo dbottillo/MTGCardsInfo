@@ -26,7 +26,7 @@ import com.dbottillo.mtgsearchfree.search.SearchParams
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 
-abstract class MTGSetFragment : DBFragment(), View.OnClickListener, OnCardListener {
+abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardListener {
 
     private var gameSet: MTGSet? = null
     private var listView: ListView? = null

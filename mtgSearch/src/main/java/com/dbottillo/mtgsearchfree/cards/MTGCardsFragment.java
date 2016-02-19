@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
@@ -26,7 +26,7 @@ import com.dbottillo.mtgsearchfree.util.UIUtil;
 
 import java.util.ArrayList;
 
-public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
+public class MTGCardsFragment extends BasicFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     public static final String POSITION = "position";
     public static final String TITLE = "set_name";
@@ -158,7 +158,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         fullScreenImage.setVisible(false);
 
-        if (getActivity() != null && getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true)) {
+        if (getActivity() != null && getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true)) {
             actionImage.setChecked(true);
             fullScreenImage.setVisible(!getResources().getBoolean(R.bool.isTablet));
         } else {
@@ -171,9 +171,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         int i = item.getItemId();
         if (i == R.id.action_image) {
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "image_on_off", "");
-            boolean showImage = getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true);
+            boolean showImage = getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), !showImage);
+            editor.putBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), !showImage);
             editor.apply();
             adapter.notifyDataSetChanged();
             viewPager.invalidate();

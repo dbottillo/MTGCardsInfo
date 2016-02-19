@@ -19,7 +19,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -28,7 +28,7 @@ import static android.net.Uri.parse;
 public abstract class DBActivity extends AppCompatActivity {
 
     public SharedPreferences getSharedPreferences() {
-        return getSharedPreferences(DBFragment.Companion.getPREFS_NAME(), 0);
+        return getSharedPreferences(BasicFragment.Companion.getPREFS_NAME(), 0);
     }
 
     MTGApp app;
@@ -105,7 +105,7 @@ public abstract class DBActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(color);
     }
 
-    public void changeFragment(DBFragment fragment, String tag, boolean addToBackStack) {
+    public void changeFragment(BasicFragment fragment, String tag, boolean addToBackStack) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         if (addToBackStack) {
