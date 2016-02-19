@@ -10,10 +10,20 @@ import android.widget.TextView
 import android.widget.ToggleButton
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.helper.FilterHelper
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
+import com.dbottillo.mtgsearchfree.resources.CardFilter
+import com.dbottillo.mtgsearchfree.view.CardFilterView
 import com.dbottillo.mtgsearchfree.view.activities.FilterActivity
 
-class FilterFragment : BasicFragment(), View.OnClickListener {
+class FilterFragment : BasicFragment, View.OnClickListener, CardFilterView {
+
+    var filterPresenter: CardFilterPresenter? = null
+
+    constructor() {
+        filterPresenter = CardFilterPresenter(this)
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -26,8 +36,7 @@ class FilterFragment : BasicFragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(R.layout.fragment_filter, container, false)
 
-        val applyFilter = rootView.findViewById(R.id.btn_apply_filter) as Button
-        applyFilter.setOnClickListener(this)
+        (rootView.findViewById(R.id.btn_apply_filter) as Button).setOnClickListener(this)
 
         return rootView
     }
@@ -35,17 +44,21 @@ class FilterFragment : BasicFragment(), View.OnClickListener {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        updateFilterUI()
+        LOG.e("on view created " + filterPresenter.toString())
+
+        filterPresenter?.loadFilter()
     }
 
 
     fun onToggleClicked(view: View) {
         val on = (view as ToggleButton).isChecked
 
-        val editor = sharedPreferences!!.edit()
-
         var label = ""
 
+        when(view.id){
+            R.id.toggle_white -> filterPresenter?.update(CardFilter.WHITE, on)
+        }
+/*
         val i = view.getId()
         if (i == R.id.toggle_white) {
             editor?.putBoolean(FilterHelper.FILTER_WHITE, on)
@@ -89,7 +102,8 @@ class FilterFragment : BasicFragment(), View.OnClickListener {
 
         editor?.apply()
 
-        updateFilterUI()
+        updateFilterUI()*/
+        filterPresenter?.loadFilter()
     }
 
     private fun updateFilterUI() {
@@ -145,6 +159,44 @@ class FilterFragment : BasicFragment(), View.OnClickListener {
         TrackingHelper.getInstance(v.context).trackEvent(TrackingHelper.UA_CATEGORY_FILTER, TrackingHelper.UA_ACTION_CLOSE, "")
         val filterActivity = activity as FilterActivity
         filterActivity.slidingPanel?.collapsePane()
+    }
+
+    override fun filterLoaded() {
+        var filterString = ""
+
+        filterString += addEntryFilterString(CardFilter.WHITE.on, "W")
+        filterString += addEntryFilterString(CardFilter.BLUE.on, "U")
+        filterString += addEntryFilterString(CardFilter.BLACK.on, "B")
+        filterString += addEntryFilterString(CardFilter.RED.on, "R")
+        filterString += addEntryFilterString(CardFilter.GREEN.on, "G")
+
+        filterString += " - "
+        filterString += addEntryFilterString(CardFilter.ARTIFACT.on, "A")
+        filterString += addEntryFilterString(CardFilter.LAND.on, "L")
+        filterString += addEntryFilterString(CardFilter.ELDRAZI.on, "E")
+        filterString += " - "
+
+        filterString += addEntryFilterString(CardFilter.COMMON.on, "C")
+        filterString += addEntryFilterString(CardFilter.UNCOMMON.on, "U")
+        filterString += addEntryFilterString(CardFilter.RARE.on, "R")
+        filterString += addEntryFilterString(CardFilter.MYTHIC.on, "M")
+
+        (view!!.findViewById(R.id.toggle_white) as ToggleButton).isChecked = CardFilter.WHITE.on
+        (view!!.findViewById(R.id.toggle_blue) as ToggleButton).isChecked = CardFilter.BLUE.on
+        (view!!.findViewById(R.id.toggle_black) as ToggleButton).isChecked = CardFilter.BLACK.on
+        (view!!.findViewById(R.id.toggle_red) as ToggleButton).isChecked = CardFilter.RED.on
+        (view!!.findViewById(R.id.toggle_green) as ToggleButton).isChecked = CardFilter.GREEN.on
+        (view!!.findViewById(R.id.toggle_artifact) as ToggleButton).isChecked = CardFilter.ARTIFACT.on
+        (view!!.findViewById(R.id.toggle_land) as ToggleButton).isChecked = CardFilter.LAND.on
+        (view!!.findViewById(R.id.toggle_eldrazi) as ToggleButton).isChecked = CardFilter.ELDRAZI.on
+        (view!!.findViewById(R.id.toggle_common) as ToggleButton).isChecked = CardFilter.COMMON.on
+        (view!!.findViewById(R.id.toggle_uncommon) as ToggleButton).isChecked = CardFilter.UNCOMMON.on
+        (view!!.findViewById(R.id.toggle_rare) as ToggleButton).isChecked = CardFilter.RARE.on
+        (view!!.findViewById(R.id.toggle_myhtic) as ToggleButton).isChecked = CardFilter.MYTHIC.on
+
+        val textFilter = view!!.findViewById(R.id.filter_text) as TextView
+        LOG.e(filterString);
+        textFilter.text = Html.fromHtml(filterString)
     }
 
     override fun getPageTrack(): String {
