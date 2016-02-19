@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
@@ -82,7 +82,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
             addToDeck = (FloatingActionButton) rootView.findViewById(R.id.card_add_to_deck);
             addToDeck.setOnClickListener(this);
             RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) addToDeck.getLayoutParams();
-            if (isPortrait) {
+            if (getIsPortrait()) {
                 par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
             } else {
                 par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
@@ -158,7 +158,7 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
 
         fullScreenImage.setVisible(false);
 
-        if (getActivity() != null && getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true)) {
+        if (getActivity() != null && getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true)) {
             actionImage.setChecked(true);
             fullScreenImage.setVisible(!getResources().getBoolean(R.bool.isTablet));
         } else {
@@ -171,9 +171,9 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
         int i = item.getItemId();
         if (i == R.id.action_image) {
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "image_on_off", "");
-            boolean showImage = getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true);
+            boolean showImage = getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(PREF_SHOW_IMAGE, !showImage);
+            editor.putBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), !showImage);
             editor.apply();
             adapter.notifyDataSetChanged();
             viewPager.invalidate();
@@ -209,6 +209,6 @@ public class MTGCardsFragment extends DBFragment implements ViewPager.OnPageChan
     @Override
     public void onClick(View v) {
         MTGCard card = cards.get(viewPager.getCurrentItem());
-        DialogHelper.Companion.open(getDBActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
+        DialogHelper.Companion.open(getDbActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
     }
 }

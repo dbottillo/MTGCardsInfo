@@ -19,12 +19,12 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.LifeCounterAdapter;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.PlayersEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Player;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -68,7 +68,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
         View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
-        twoHGEnabled = getSharedPreferences().getBoolean(PREF_TWO_HG_ENABLED, false);
+        twoHGEnabled = getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_TWO_HG_ENABLED(), false);
 
         FloatingActionButton newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
         newPlayerButton.setOnClickListener(this);
@@ -97,7 +97,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
     @Override
     public void onResume() {
         super.onResume();
-        setScreenOn(getSharedPreferences().getBoolean(PREF_SCREEN_ON, false));
+        setScreenOn(getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SCREEN_ON(), false));
     }
 
     private void setScreenOn(boolean screenOn) {
@@ -193,7 +193,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
             }
             scrollDownAfterLoad = false;
         }
-        bus.removeStickyEvent(event);
+        getBus().removeStickyEvent(event);
     }
 
     @Override
@@ -316,7 +316,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
         }
 
         MenuItem screenOn = menu.findItem(R.id.action_screen_on);
-        screenOn.setChecked(getSharedPreferences().getBoolean(PREF_SCREEN_ON, false));
+        screenOn.setChecked(getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SCREEN_ON(), false));
 
         MenuItem twoHg = menu.findItem(R.id.action_two_hg);
         twoHg.setChecked(twoHGEnabled);
@@ -345,9 +345,9 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
             return true;
         }
         if (i1 == R.id.action_screen_on) {
-            boolean screenOn = getSharedPreferences().getBoolean(PREF_SCREEN_ON, false);
+            boolean screenOn = getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SCREEN_ON(), false);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(PREF_SCREEN_ON, !screenOn);
+            editor.putBoolean(DBFragment.Companion.getPREF_SCREEN_ON(), !screenOn);
             editor.apply();
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
@@ -356,7 +356,7 @@ public class LifeCounterFragment extends DBFragment implements LifeCounterAdapte
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(PREF_TWO_HG_ENABLED, twoHGEnabled);
+            editor.putBoolean(DBFragment.Companion.getPREF_TWO_HG_ENABLED(), twoHGEnabled);
             editor.apply();
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();

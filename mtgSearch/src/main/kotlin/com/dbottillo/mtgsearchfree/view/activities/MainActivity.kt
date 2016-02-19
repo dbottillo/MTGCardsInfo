@@ -18,8 +18,6 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.about.AboutFragment
 import com.dbottillo.mtgsearchfree.about.JoinBetaFragment
 import com.dbottillo.mtgsearchfree.about.ReleaseNoteFragment
-import com.dbottillo.mtgsearchfree.base.DBFragment
-import com.dbottillo.mtgsearchfree.base.MainFragment
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.decks.DecksFragment
@@ -35,6 +33,8 @@ import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.util.AnimationUtil
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.view.MainView
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment
+import com.dbottillo.mtgsearchfree.view.fragments.MainFragment
 import java.util.*
 
 class MainActivity : FilterActivity(), MainView, NavigationView.OnNavigationItemSelectedListener {
@@ -234,5 +234,25 @@ class MainActivity : FilterActivity(), MainView, NavigationView.OnNavigationItem
 
         drawerLayout?.closeDrawers()
         return true
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout?.closeDrawer(GravityCompat.START);
+        }
+        var current = supportFragmentManager.findFragmentById(R.id.fragment_container) as DBFragment
+        if (current.onBackPressed()) {
+            return;
+        }
+        if (current !is MainFragment) {
+            changeFragment(MainFragment(), "main", false)
+            for (i in 1..navigationView!!.menu!!.size()-1) {
+                navigationView!!.menu.getItem(i).isChecked = false
+            }
+            navigationView!!.menu.getItem(0).isChecked = false
+            AnimationUtil.animateSlidingPanelHeight(slidingPanel, resources.getDimensionPixelSize(R.dimen.collapsedHeight));
+        } else {
+            finish();
+        }
     }
 }

@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.cards;
 
 import android.content.SharedPreferences;
 
-import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.dbottillo.mtgsearchfree.helper.FilterHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
@@ -70,7 +70,7 @@ public final class CardsHelper {
                 output.add(card);
             }
 
-            boolean wubrgSort = sharedPreferences.getBoolean(DBFragment.PREF_SORT_WUBRG, true);
+            boolean wubrgSort = sharedPreferences.getBoolean(DBFragment.Companion.getPREF_SORT_WUBRG(), true);
             if (wubrgSort) {
                 Collections.sort(output, new Comparator<Object>() {
                     public int compare(Object o1, Object o2) {

@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
