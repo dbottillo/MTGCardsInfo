@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.CardsHelper;
@@ -146,7 +146,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
-            DialogHelper.Companion.open(getDBActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
+            DialogHelper.Companion.open(getDbActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
 
         } else if (menuItem.getItemId() == R.id.action_remove) {
             DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
@@ -162,7 +162,7 @@ public class SavedFragment extends DBFragment implements AdapterView.OnItemClick
             savedCards = event.getResult();
             refreshUI();
         }
-        bus.removeStickyEvent(event);
+        getBus().removeStickyEvent(event);
     }
 
     private void refreshUI() {

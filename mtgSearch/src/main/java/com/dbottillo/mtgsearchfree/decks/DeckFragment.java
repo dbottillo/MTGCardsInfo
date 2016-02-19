@@ -26,7 +26,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardSectionAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
@@ -123,7 +123,7 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
 
     public void onEventMainThread(DeckEvent event) {
         forceReload();
-        bus.removeStickyEvent(event);
+        getBus().removeStickyEvent(event);
     }
 
     private void forceReload() {

@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -27,7 +28,7 @@ import static android.net.Uri.parse;
 public abstract class DBActivity extends AppCompatActivity {
 
     public SharedPreferences getSharedPreferences() {
-        return getSharedPreferences(DBFragment.PREFS_NAME, 0);
+        return getSharedPreferences(DBFragment.Companion.getPREFS_NAME(), 0);
     }
 
     MTGApp app;

@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import io.fabric.sdk.android.Fabric

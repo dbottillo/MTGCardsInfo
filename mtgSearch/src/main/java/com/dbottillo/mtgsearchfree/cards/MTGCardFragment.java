@@ -27,11 +27,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.base.DBFragment;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.base.resources.TCGPrice;
+import com.dbottillo.mtgsearchfree.resources.TCGPrice;
+import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -259,7 +259,7 @@ public class MTGCardFragment extends DBFragment {
 
         retry.setVisibility(View.GONE);
 
-        if (getSharedPreferences().getBoolean(PREF_SHOW_IMAGE, true) && card.getImage() != null) {
+        if (getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true) && card.getImage() != null) {
             loadImage(false);
         } else {
             cardLoader.setVisibility(View.GONE);

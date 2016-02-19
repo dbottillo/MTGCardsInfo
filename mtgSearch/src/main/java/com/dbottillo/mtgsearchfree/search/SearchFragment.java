@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.cards.MTGSetFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.MTGSetFragment;
 
 public class SearchFragment extends MTGSetFragment {
 
