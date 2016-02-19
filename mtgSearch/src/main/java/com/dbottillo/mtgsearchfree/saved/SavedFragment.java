@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.CardsHelper;
@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends DBFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener {
+public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener {
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;

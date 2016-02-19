@@ -33,7 +33,7 @@ import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.util.AnimationUtil
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.view.MainView
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment
 import java.util.*
 
@@ -172,7 +172,7 @@ class MainActivity : FilterActivity(), MainView, NavigationView.OnNavigationItem
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as DBFragment
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as BasicFragment
         if (menuItem.itemId == R.id.drawer_home && currentFragment !is MainFragment) {
             changeFragment(MainFragment(), "main", false)
             AnimationUtil.animateSlidingPanelHeight(slidingPanel, resources.getDimensionPixelSize(R.dimen.collapsedHeight))
@@ -240,7 +240,7 @@ class MainActivity : FilterActivity(), MainView, NavigationView.OnNavigationItem
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
             drawerLayout?.closeDrawer(GravityCompat.START);
         }
-        var current = supportFragmentManager.findFragmentById(R.id.fragment_container) as DBFragment
+        var current = supportFragmentManager.findFragmentById(R.id.fragment_container) as BasicFragment
         if (current.onBackPressed()) {
             return;
         }

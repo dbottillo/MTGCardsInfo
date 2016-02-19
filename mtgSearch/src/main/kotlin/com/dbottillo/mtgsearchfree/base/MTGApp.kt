@@ -17,7 +17,7 @@ import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import io.fabric.sdk.android.Fabric
@@ -48,7 +48,7 @@ class MTGApp : Application() {
     }
 
     protected fun checkReleaseNote() {
-        val sharedPreferences = getSharedPreferences(DBFragment.PREFS_NAME, 0)
+        val sharedPreferences = getSharedPreferences(BasicFragment.PREFS_NAME, 0)
         val versionCode = sharedPreferences.getInt("VersionCode", -1)
         if (versionCode < BuildConfig.VERSION_CODE) {
             TrackingHelper.getInstance(applicationContext).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update")

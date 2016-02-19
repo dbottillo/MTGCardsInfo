@@ -31,11 +31,11 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.TCGPrice;
-import com.dbottillo.mtgsearchfree.view.fragments.DBFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-public class MTGCardFragment extends DBFragment {
+public class MTGCardFragment extends BasicFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();
 
@@ -259,7 +259,7 @@ public class MTGCardFragment extends DBFragment {
 
         retry.setVisibility(View.GONE);
 
-        if (getSharedPreferences().getBoolean(DBFragment.Companion.getPREF_SHOW_IMAGE(), true) && card.getImage() != null) {
+        if (getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true) && card.getImage() != null) {
             loadImage(false);
         } else {
             cardLoader.setVisibility(View.GONE);
