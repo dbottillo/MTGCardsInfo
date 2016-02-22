@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,5 +36,10 @@ public class ReleaseNoteFragment extends BasicFragment {
     @Override
     public String getPageTrack() {
         return "/release-note";
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
     }
 }

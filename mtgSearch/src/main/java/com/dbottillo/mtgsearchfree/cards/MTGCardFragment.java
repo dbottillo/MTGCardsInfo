@@ -27,6 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -35,9 +36,16 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MTGCardFragment extends BasicFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
+    }
 
     public interface CardConnector {
         boolean isCardSaved(MTGCard card);

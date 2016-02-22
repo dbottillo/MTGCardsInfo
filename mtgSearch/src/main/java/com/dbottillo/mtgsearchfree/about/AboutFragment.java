@@ -16,10 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Calendar;
 
@@ -151,5 +154,10 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
     }
 }

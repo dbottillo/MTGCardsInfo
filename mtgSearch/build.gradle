@@ -1,5 +1,6 @@
 buildscript {
     ext.kotlin_version = '1.0.0'
+    ext.dagger_version = '2.1-SNAPSHOT'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
@@ -12,6 +13,7 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
@@ -138,6 +140,11 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile "com.google.dagger:dagger:$dagger_version"
+    kapt 'com.google.dagger:dagger-compiler:2.0'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 
     // Crashlytics Kit
     compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
@@ -212,3 +219,7 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
 check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
 
 apply plugin: 'com.google.gms.google-services'
+
+kapt {
+    generateStubs = true
+}

@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.SetEvent
+import com.dbottillo.mtgsearchfree.component.AndroidComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.DialogUtil
@@ -18,6 +19,10 @@ import com.dbottillo.mtgsearchfree.view.activities.FilterActivity
 import java.util.*
 
 class MainFragment : MTGSetFragment(), SlidingUpPanelLayout.PanelSlideListener, DialogUtil.SortDialogListener {
+
+    override fun setupComponent(appComponent: AndroidComponent) {
+        throw UnsupportedOperationException()
+    }
 
     private var sets: ArrayList<MTGSet>? = null
     private var setAdapter: GameSetAdapter? = null

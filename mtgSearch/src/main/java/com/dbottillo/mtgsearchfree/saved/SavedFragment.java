@@ -17,26 +17,35 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.CardsHelper;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
+import com.dbottillo.mtgsearchfree.resources.CardFilter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
 import com.dbottillo.mtgsearchfree.view.activities.FilterActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener {
+public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener, CardFilterView {
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;
@@ -44,6 +53,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     private SmoothProgressBar progressBar;
     private TextView emptyView;
 
+    @Inject
+    CardFilterPresenter cardFilterPresenter;
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
@@ -166,11 +177,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     }
 
     private void refreshUI() {
-        savedFilteredCards.clear();
-        CardsHelper.filterCards(getSharedPreferences(), null, savedCards, savedFilteredCards);
-        adapter.notifyDataSetChanged();
-        progressBar.setVisibility(View.GONE);
-        emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
+        cardFilterPresenter.loadFilter();
     }
 
     @Override
@@ -190,6 +197,20 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
 
     @Override
     public void onPanelAnchored(View panel) {
+
+    }
+
+    @Override
+    public void filterLoaded(@NotNull CardFilter filter) {
+        savedFilteredCards.clear();
+        CardsHelper.filterCards(filter, null, savedCards, savedFilteredCards);
+        adapter.notifyDataSetChanged();
+        progressBar.setVisibility(View.GONE);
+        emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
 
     }
 }

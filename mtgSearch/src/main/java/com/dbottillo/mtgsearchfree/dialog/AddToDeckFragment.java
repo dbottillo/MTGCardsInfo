@@ -19,13 +19,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -187,6 +190,11 @@ public class AddToDeckFragment extends BasicFragment implements View.OnClickList
         DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck, card, quantity, side);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - new");
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
     }
 
     private class LoadDecks extends AsyncTask<Void, Void, ArrayList<Deck>> {
