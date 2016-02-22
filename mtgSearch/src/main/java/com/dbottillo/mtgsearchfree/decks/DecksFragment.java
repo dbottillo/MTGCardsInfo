@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
@@ -33,6 +34,8 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -278,6 +281,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
             new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
         }
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
     }
 
     static class DecksLoader extends AsyncTaskLoader<ArrayList<Deck>> {

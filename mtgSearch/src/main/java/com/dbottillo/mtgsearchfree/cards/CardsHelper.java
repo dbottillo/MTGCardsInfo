@@ -1,9 +1,7 @@
 package com.dbottillo.mtgsearchfree.cards;
 
-import android.content.SharedPreferences;
-
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.helper.FilterHelper;
+import com.dbottillo.mtgsearchfree.resources.CardFilter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 
@@ -17,48 +15,48 @@ public final class CardsHelper {
 
     }
 
-    public static void filterCards(SharedPreferences sharedPreferences, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
+    public static void filterCards(CardFilter cardFilter, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
         for (MTGCard card : input) {
             boolean toAdd = false;
             if (searchParams == null) {
-                if (card.isWhite() && sharedPreferences.getBoolean(FilterHelper.FILTER_WHITE, true)) {
+                if (card.isWhite() && cardFilter.getWhite()) {
                     toAdd = true;
                 }
-                if (card.isBlue() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLUE, true)) {
+                if (card.isBlue() && cardFilter.getBlue()) {
                     toAdd = true;
                 }
-                if (card.isBlack() && sharedPreferences.getBoolean(FilterHelper.FILTER_BLACK, true)) {
+                if (card.isBlack() && cardFilter.getBlack()) {
                     toAdd = true;
                 }
-                if (card.isRed() && sharedPreferences.getBoolean(FilterHelper.FILTER_RED, true)) {
+                if (card.isRed() && cardFilter.getRed()) {
                     toAdd = true;
                 }
-                if (card.isGreen() && sharedPreferences.getBoolean(FilterHelper.FILTER_GREEN, true)) {
+                if (card.isGreen() && cardFilter.getGreen()) {
                     toAdd = true;
                 }
-                if (card.isLand() && sharedPreferences.getBoolean(FilterHelper.FILTER_LAND, true)) {
+                if (card.isLand() && cardFilter.getLand()) {
                     toAdd = true;
                 }
-                if (card.isArtifact() && sharedPreferences.getBoolean(FilterHelper.FILTER_ARTIFACT, true)) {
+                if (card.isArtifact() && cardFilter.getArtifact()) {
                     toAdd = true;
                 }
-                if (card.isEldrazi() && sharedPreferences.getBoolean(FilterHelper.FILTER_ELDRAZI, true)) {
+                if (card.isEldrazi() && cardFilter.getEldrazi()) {
                     toAdd = true;
                 }
                 if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_COMMON, true)) {
+                        && !cardFilter.getCommon()) {
                     toAdd = false;
                 }
                 if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_UNCOMMON, true)) {
+                        && !cardFilter.getUncommon()) {
                     toAdd = false;
                 }
                 if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_RARE, true)) {
+                        && !cardFilter.getRare()) {
                     toAdd = false;
                 }
                 if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
-                        && !sharedPreferences.getBoolean(FilterHelper.FILTER_MYHTIC, true)) {
+                        && !cardFilter.getMythic()) {
                     toAdd = false;
                 }
             } else {
@@ -69,25 +67,26 @@ public final class CardsHelper {
             if (toAdd) {
                 output.add(card);
             }
+        }
+    }
 
-            boolean wubrgSort = sharedPreferences.getBoolean(BasicFragment.Companion.getPREF_SORT_WUBRG(), true);
-            if (wubrgSort) {
-                Collections.sort(output, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.compareTo(card2);
-                    }
-                });
-            } else {
-                Collections.sort(output, new Comparator<Object>() {
-                    public int compare(Object o1, Object o2) {
-                        MTGCard card = (MTGCard) o1;
-                        MTGCard card2 = (MTGCard) o2;
-                        return card.getName().compareTo(card2.getName());
-                    }
-                });
-            }
+    public static void sortCards(boolean wubrgSort, ArrayList<MTGCard> cards) {
+        if (wubrgSort) {
+            Collections.sort(cards, new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    MTGCard card = (MTGCard) o1;
+                    MTGCard card2 = (MTGCard) o2;
+                    return card.compareTo(card2);
+                }
+            });
+        } else {
+            Collections.sort(cards, new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    MTGCard card = (MTGCard) o1;
+                    MTGCard card2 = (MTGCard) o2;
+                    return card.getName().compareTo(card2.getName());
+                }
+            });
         }
     }
 

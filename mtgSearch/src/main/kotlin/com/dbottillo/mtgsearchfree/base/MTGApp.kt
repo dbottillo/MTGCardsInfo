@@ -13,11 +13,13 @@ import android.support.v4.app.TaskStackBuilder
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.dbottillo.mtgsearchfree.communication.DataManager
+import com.dbottillo.mtgsearchfree.component.AndroidComponent
+import com.dbottillo.mtgsearchfree.component.DaggerAndroidComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.modules.AndroidModule
 import com.dbottillo.mtgsearchfree.resources.MTGCard
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
+import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import io.fabric.sdk.android.Fabric
@@ -31,10 +33,18 @@ class MTGApp : Application() {
         var cardsToDisplay: ArrayList<MTGCard>? = null
 
         var refWatcher: RefWatcher? = null
+
+        val PREFS_NAME = "Filter"
+
+        @JvmStatic lateinit var graph: AndroidComponent
     }
 
     override fun onCreate() {
         super.onCreate()
+
+        graph = DaggerAndroidComponent.builder().androidModule(AndroidModule(this)).build()
+        graph.inject(this)
+
         DataManager.with(this)
         Fabric.with(this, Crashlytics())
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA)
@@ -48,7 +58,7 @@ class MTGApp : Application() {
     }
 
     protected fun checkReleaseNote() {
-        val sharedPreferences = getSharedPreferences(BasicFragment.PREFS_NAME, 0)
+        val sharedPreferences = getSharedPreferences(PREFS_NAME, 0)
         val versionCode = sharedPreferences.getInt("VersionCode", -1)
         if (versionCode < BuildConfig.VERSION_CODE) {
             TrackingHelper.getInstance(applicationContext).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update")

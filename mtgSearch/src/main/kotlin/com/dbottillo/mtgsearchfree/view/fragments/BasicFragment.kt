@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.component.AndroidComponent
 import de.greenrobot.event.EventBus
 
 abstract class BasicFragment : DialogFragment() {
@@ -21,8 +22,6 @@ abstract class BasicFragment : DialogFragment() {
     protected var bus = EventBus.getDefault()
 
     companion object {
-
-        val PREFS_NAME = "Filter"
         val PREF_SHOW_IMAGE = "show_image"
         val PREF_SCREEN_ON = "screen_on"
         val PREF_TWO_HG_ENABLED = "two_hg"
@@ -39,6 +38,8 @@ abstract class BasicFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setupComponent(MTGApp.Companion.graph);
+
         setHasOptionsMenu(true)
     }
 
@@ -54,7 +55,7 @@ abstract class BasicFragment : DialogFragment() {
     }
 
     val sharedPreferences: SharedPreferences
-        get() = dbActivity!!.getSharedPreferences(PREFS_NAME, 0)
+        get() = dbActivity!!.getSharedPreferences(MTGApp.Companion.PREFS_NAME, 0)
 
     protected fun setActionBarTitle(title: String) {
         if (dbActivity!!.supportActionBar != null) {
@@ -94,8 +95,10 @@ abstract class BasicFragment : DialogFragment() {
 
     }
 
-    fun getIsPortrait(): Boolean{
+    fun getIsPortrait(): Boolean {
         return isPortrait;
     }
+
+    abstract fun setupComponent(appComponent: AndroidComponent)
 
 }

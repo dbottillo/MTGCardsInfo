@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by danielebottillo on 02/03/2014.
@@ -47,5 +50,10 @@ public class GoToPremiumFragment extends BasicFragment implements View.OnClickLi
     @Override
     public String getPageTrack() {
         return "/premium";
+    }
+
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
     }
 }

@@ -21,10 +21,13 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.LifeCounterAdapter;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.PlayersEvent;
+import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Player;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -366,4 +369,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return false;
     }
 
+    @Override
+    public void setupComponent(@NotNull AndroidComponent appComponent) {
+
+    }
 }

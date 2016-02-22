@@ -20,13 +20,17 @@ import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl
+import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.search.SearchParams
+import com.dbottillo.mtgsearchfree.view.CardFilterView
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 
-abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardListener {
+abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardListener, CardFilterView {
 
     private var gameSet: MTGSet? = null
     private var listView: ListView? = null
@@ -35,6 +39,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
     private var adapter: CardListAdapter? = null
     private var progressBar: SmoothProgressBar? = null
     private var searchParams: SearchParams? = null
+    private var filterPresenter: CardFilterPresenter = CardFilterPresenterImpl(this)
 
     @JvmOverloads protected fun setupSetFragment(rootView: View, searchParams: SearchParams? = null) {
         emptyView = rootView.findViewById(R.id.empty_view) as TextView
@@ -88,30 +93,34 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
             for (card in event.result) {
                 gameSet!!.addCard(card)
             }
-            populateCardsWithFilter()
-            if (gameSet!!.cards.size == CardDataSource.LIMIT) {
-                val footer = LayoutInflater.from(activity).inflate(R.layout.search_bottom, listView, false)
-                val moreResult = footer.findViewById(R.id.more_result) as TextView
-                moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)
-                listView!!.addFooterView(footer)
-            }
-            progressBar!!.visibility = View.GONE
-
-            emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
+            filterPresenter.loadFilter();
         }
         bus.removeStickyEvent(event)
     }
 
-    private fun populateCardsWithFilter() {
+    override fun filterLoaded(filter: CardFilter) {
         cards!!.clear()
-        CardsHelper.filterCards(sharedPreferences, searchParams, gameSet!!.cards, cards)
+        CardsHelper.filterCards(filter, searchParams, gameSet!!.cards, cards)
+        val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
+        CardsHelper.sortCards(wubrgSort, cards)
+
         adapter!!.notifyDataSetChanged()
         emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
         listView!!.smoothScrollToPosition(0)
+
+        if (gameSet!!.cards.size == CardDataSource.LIMIT) {
+            val footer = LayoutInflater.from(activity).inflate(R.layout.search_bottom, listView, false)
+            val moreResult = footer.findViewById(R.id.more_result) as TextView
+            moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)
+            listView!!.addFooterView(footer)
+        }
+        progressBar!!.visibility = View.GONE
+
+        emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
     }
 
     fun updateSetFragment() {
-        populateCardsWithFilter()
+        filterPresenter.loadFilter();
     }
 
     override fun onClick(v: View) {

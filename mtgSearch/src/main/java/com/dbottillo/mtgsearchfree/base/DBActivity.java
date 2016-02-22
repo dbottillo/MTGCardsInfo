@@ -28,7 +28,7 @@ import static android.net.Uri.parse;
 public abstract class DBActivity extends AppCompatActivity {
 
     public SharedPreferences getSharedPreferences() {
-        return getSharedPreferences(BasicFragment.Companion.getPREFS_NAME(), 0);
+        return getSharedPreferences(MTGApp.Companion.getPREFS_NAME(), 0);
     }
 
     MTGApp app;
