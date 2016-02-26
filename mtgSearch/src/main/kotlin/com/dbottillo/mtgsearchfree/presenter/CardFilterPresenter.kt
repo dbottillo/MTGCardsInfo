@@ -1,6 +1,10 @@
 package com.dbottillo.mtgsearchfree.presenter
 
+import com.dbottillo.mtgsearchfree.view.CardFilterView
+
 interface CardFilterPresenter {
+
+    fun init(view: CardFilterView)
 
     fun loadFilter()
 

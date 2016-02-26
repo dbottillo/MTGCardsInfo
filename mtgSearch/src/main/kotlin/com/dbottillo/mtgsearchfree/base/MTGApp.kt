@@ -14,10 +14,13 @@ import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.communication.DataManager
-import com.dbottillo.mtgsearchfree.component.AndroidComponent
-import com.dbottillo.mtgsearchfree.component.DaggerAndroidComponent
+import com.dbottillo.mtgsearchfree.component.AppComponent
+import com.dbottillo.mtgsearchfree.component.DaggerAppComponent
+import com.dbottillo.mtgsearchfree.component.DaggerFilterComponent
+import com.dbottillo.mtgsearchfree.component.FilterComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.modules.AndroidModule
+import com.dbottillo.mtgsearchfree.modules.CardFilterModule
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.squareup.leakcanary.LeakCanary
@@ -36,14 +39,20 @@ class MTGApp : Application() {
 
         val PREFS_NAME = "Filter"
 
-        @JvmStatic lateinit var graph: AndroidComponent
+        @JvmStatic lateinit var graph: AppComponent
+
+        @JvmStatic lateinit var filterGraph: FilterComponent
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        graph = DaggerAndroidComponent.builder().androidModule(AndroidModule(this)).build()
+        graph = DaggerAppComponent.builder().androidModule(AndroidModule(this)).build()
         graph.inject(this)
+
+        filterGraph = DaggerFilterComponent.builder()
+                .appComponent(graph)
+                .cardFilterModule(CardFilterModule()).build();
 
         DataManager.with(this)
         Fabric.with(this, Crashlytics())

@@ -23,13 +23,12 @@ import com.dbottillo.mtgsearchfree.cards.CardsHelper;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.resources.CardFilter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
@@ -53,8 +52,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     private SmoothProgressBar progressBar;
     private TextView emptyView;
 
-    @Inject
-    CardFilterPresenter cardFilterPresenter;
+    public @Inject CardFilterPresenter cardFilterPresenter;
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
@@ -210,7 +208,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 }

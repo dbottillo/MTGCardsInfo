@@ -20,8 +20,6 @@ import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
@@ -39,7 +37,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
     private var adapter: CardListAdapter? = null
     private var progressBar: SmoothProgressBar? = null
     private var searchParams: SearchParams? = null
-    private var filterPresenter: CardFilterPresenter = CardFilterPresenterImpl(this)
+    //@Inject lateinit var filterPresenter: CardFilterPresenter
 
     @JvmOverloads protected fun setupSetFragment(rootView: View, searchParams: SearchParams? = null) {
         emptyView = rootView.findViewById(R.id.empty_view) as TextView
@@ -63,6 +61,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
         listView!!.adapter = adapter
 
         progressBar = rootView.findViewById(R.id.progress) as SmoothProgressBar
+
     }
 
     override fun getPageTrack(): String? {
@@ -93,7 +92,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
             for (card in event.result) {
                 gameSet!!.addCard(card)
             }
-            filterPresenter.loadFilter();
+            //            filterPresenter.loadFilter();
         }
         bus.removeStickyEvent(event)
     }
@@ -120,7 +119,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
     }
 
     fun updateSetFragment() {
-        filterPresenter.loadFilter();
+        //filterPresenter.loadFilter();
     }
 
     override fun onClick(v: View) {

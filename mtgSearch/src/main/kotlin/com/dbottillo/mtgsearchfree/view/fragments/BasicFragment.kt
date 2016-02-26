@@ -11,8 +11,9 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
+import com.dbottillo.mtgsearchfree.component.AppComponent
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
-import com.dbottillo.mtgsearchfree.component.AndroidComponent
 import de.greenrobot.event.EventBus
 
 abstract class BasicFragment : DialogFragment() {
@@ -38,7 +39,7 @@ abstract class BasicFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setupComponent(MTGApp.Companion.graph);
+        //setupComponent(MTGApp.Companion.graph);
 
         setHasOptionsMenu(true)
     }
@@ -99,6 +100,6 @@ abstract class BasicFragment : DialogFragment() {
         return isPortrait;
     }
 
-    abstract fun setupComponent(appComponent: AndroidComponent)
+    abstract fun setupComponent(appComponent: AppComponent)
 
 }

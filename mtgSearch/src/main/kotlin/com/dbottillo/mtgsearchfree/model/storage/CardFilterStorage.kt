@@ -3,18 +3,10 @@ package com.dbottillo.mtgsearchfree.model.storage
 import android.content.SharedPreferences
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.CardProperties
-import rx.Observable
-import javax.inject.Inject
 
-class CardFilterStorage(@Inject var preferences: SharedPreferences) {
+class CardFilterStorage(var preferences: SharedPreferences) {
 
-    fun load(): Observable<CardFilter> {
-        return Observable.defer({
-            Observable.just(loadFile())
-        });
-    }
-
-    private fun loadFile(): CardFilter {
+    fun load(): CardFilter {
         var res = CardFilter()
         res.white = preferences.getBoolean(CardProperties.COLOR_WHITE, true)
         res.blue = preferences.getBoolean(CardProperties.COLOR_BLUE, true)
@@ -30,6 +22,7 @@ class CardFilterStorage(@Inject var preferences: SharedPreferences) {
         res.uncommon = preferences.getBoolean(CardProperties.RARITY_UNCOMMON, true)
         res.rare = preferences.getBoolean(CardProperties.RARITY_RARE, true)
         res.mythic = preferences.getBoolean(CardProperties.RARITY_MYHTIC, true)
+
         return res;
     }
 

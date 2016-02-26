@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"/>
         </LinearLayout>
 
-        <FrameLayout
+        <com.dbottillo.mtgsearchfree.view.views.FilterPickerView
             android:id="@+id/filter"
             android:layout_width="match_parent"
             android:layout_height="300dp"
