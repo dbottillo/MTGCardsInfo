@@ -10,17 +10,21 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.SetEvent
-import com.dbottillo.mtgsearchfree.component.AndroidComponent
+import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout
 import com.dbottillo.mtgsearchfree.view.activities.FilterActivity
+import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import java.util.*
 
-class MainFragment : MTGSetFragment(), SlidingUpPanelLayout.PanelSlideListener, DialogUtil.SortDialogListener {
+class MainFragment : MTGSetFragment(), DialogUtil.SortDialogListener, MainActivity.MainActivityListener {
 
-    override fun setupComponent(appComponent: AndroidComponent) {
+    override fun updateContent() {
+        updateSetFragment()
+    }
+
+    override fun setupComponent(appComponent: AppComponent) {
         throw UnsupportedOperationException()
     }
 
@@ -37,7 +41,9 @@ class MainFragment : MTGSetFragment(), SlidingUpPanelLayout.PanelSlideListener, 
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
 
         setActionBarTitle(getString(R.string.app_long_name))
-        setupSetFragment(rootView)
+
+        /*MTGApp.Companion.filterGraph.inject(this)
+        setupSetFragment(rootView)*/
 
         this.container = rootView.findViewById(R.id.container)
         setListBg = rootView.findViewById(R.id.set_list_bg)
@@ -89,7 +95,7 @@ class MainFragment : MTGSetFragment(), SlidingUpPanelLayout.PanelSlideListener, 
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        (context as FilterActivity).addPanelSlideListener(this)
+        (context as MainActivity).setMainActivityListener(this)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -174,20 +180,6 @@ class MainFragment : MTGSetFragment(), SlidingUpPanelLayout.PanelSlideListener, 
             loadSet()
         }
         bus.removeStickyEvent(event)
-    }
-
-
-    override fun onPanelSlide(panel: View, slideOffset: Float) {
-    }
-
-    override fun onPanelCollapsed(panel: View) {
-        updateSetFragment()
-    }
-
-    override fun onPanelExpanded(panel: View) {
-    }
-
-    override fun onPanelAnchored(panel: View) {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {

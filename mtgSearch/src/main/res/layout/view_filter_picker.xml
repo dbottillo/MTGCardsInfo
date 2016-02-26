@@ -1,0 +1,66 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/filter_draggable"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/collapsedHeight"
+        android:background="@color/color_primary_dark">
+
+        <TextView
+            android:id="@+id/filter_text"
+            tools:text="WUBRG - AL - CURM"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toLeftOf="@+id/arrow_filter"
+            android:drawableLeft="@drawable/filter"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="#FFF"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/arrow_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/cd_filter"
+            android:padding="10dp"
+            android:src="@drawable/arrow_up"/>
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_divisor_filter"
+            android:layout_marginTop="@dimen/margin_divisor_filter"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <include
+                layout="@layout/filter_panel"/>
+        </FrameLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_apply_filter"
+        style="@style/BtnGeneric"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@string/apply_filter"
+        android:textSize="16sp"/>
+
+</merge>

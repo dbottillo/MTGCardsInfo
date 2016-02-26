@@ -6,8 +6,9 @@ import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module()
 class InteractorsModule {
+
     @Provides fun provideCardFilterInteractor(filterStorage: CardFilterStorage): CardFilterInteractor {
         return CardFilterInteractorImpl(filterStorage)
     }

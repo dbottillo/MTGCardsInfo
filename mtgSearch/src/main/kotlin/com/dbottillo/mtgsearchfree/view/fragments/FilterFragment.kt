@@ -9,12 +9,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.ToggleButton
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.component.AndroidComponent
-import com.dbottillo.mtgsearchfree.component.DaggerFilterComponent
+import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.helper.FilterHelper
-import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
-import com.dbottillo.mtgsearchfree.modules.CardFilterModule
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.view.CardFilterView
@@ -43,9 +40,20 @@ class FilterFragment : BasicFragment(), View.OnClickListener, CardFilterView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        filterPresenter.loadFilter()
+        /*var component = DaggerFilterComponent.builder()
+                .cardFilterModule(CardFilterModule(this))
+                .build();
+        component.inject(this)*/
+
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
+    override fun toString(): String {
+        return "FilterFragment";
+    }
 
     fun onToggleClicked(view: View) {
         val on = (view as ToggleButton).isChecked
@@ -164,18 +172,17 @@ class FilterFragment : BasicFragment(), View.OnClickListener, CardFilterView {
         (view!!.findViewById(R.id.toggle_myhtic) as ToggleButton).isChecked = filter.mythic
 
         val textFilter = view!!.findViewById(R.id.filter_text) as TextView
-        LOG.e(filterString);
         textFilter.text = Html.fromHtml(filterString)
     }
 
     override fun getPageTrack(): String {
-        return "/filter"
+        return "/filter";
     }
 
-    override fun setupComponent(appComponent: AndroidComponent) {
-        DaggerFilterComponent.builder()
-                .androidComponent(appComponent)
+    override fun setupComponent(appComponent: AppComponent) {
+        /*var component = DaggerFilterComponent.builder()
                 .cardFilterModule(CardFilterModule(this))
                 .build();
+        component.inject(this)*/
     }
 }

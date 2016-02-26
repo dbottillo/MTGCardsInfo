@@ -16,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
 import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
@@ -157,7 +157,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 }

@@ -20,7 +20,7 @@ import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -193,7 +193,7 @@ public class AddToDeckFragment extends BasicFragment implements View.OnClickList
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 

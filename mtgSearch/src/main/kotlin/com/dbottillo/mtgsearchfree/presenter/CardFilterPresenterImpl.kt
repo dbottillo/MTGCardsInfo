@@ -1,20 +1,41 @@
 package com.dbottillo.mtgsearchfree.presenter
 
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.view.CardFilterView
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 
-class CardFilterPresenterImpl constructor(var filterView: CardFilterView, var interactor: CardFilterInteractor) : CardFilterPresenter {
+class CardFilterPresenterImpl : CardFilterPresenter {
 
     var filter = CardFilter()
+    var filterView: CardFilterView? = null
+    var interactor: CardFilterInteractor;
+
+
+    constructor(inter: CardFilterInteractor) {
+        LOG.e("card filter presented created")
+        interactor = inter
+    }
+
+    override fun init(view: CardFilterView) {
+        filterView = view
+    }
+
 
     override fun loadFilter() {
-        //filter = interactor.load()
-        filterLoaded()
+        var obs = interactor.load()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            filter = it
+            filterLoaded()
+        }
     }
 
     private fun filterLoaded() {
-        filterView.filterLoaded(filter)
+        filterView?.filterLoaded(filter)
     }
 
     override fun updateW(on: Boolean) {

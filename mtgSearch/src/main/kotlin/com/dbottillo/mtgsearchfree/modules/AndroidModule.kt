@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module (includes = arrayOf(DataModule::class))
+@Module
 class AndroidModule(private val app: MTGApp) {
 
     @Provides @Singleton fun provideContext(): Context {

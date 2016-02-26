@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
@@ -284,7 +284,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 

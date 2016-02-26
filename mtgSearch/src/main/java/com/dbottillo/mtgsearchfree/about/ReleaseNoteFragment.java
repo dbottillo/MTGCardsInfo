@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +39,7 @@ public class ReleaseNoteFragment extends BasicFragment {
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 }

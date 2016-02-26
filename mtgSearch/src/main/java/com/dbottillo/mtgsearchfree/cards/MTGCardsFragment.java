@@ -17,7 +17,7 @@ import android.widget.RelativeLayout;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -216,7 +216,7 @@ public class MTGCardsFragment extends BasicFragment implements ViewPager.OnPageC
     }
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 }

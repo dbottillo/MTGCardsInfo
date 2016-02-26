@@ -27,7 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.component.AndroidComponent;
+import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -43,7 +43,7 @@ public class MTGCardFragment extends BasicFragment {
     private static final String TAG = MTGCardFragment.class.getName();
 
     @Override
-    public void setupComponent(@NotNull AndroidComponent appComponent) {
+    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 

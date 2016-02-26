@@ -7,7 +7,7 @@ import rx.Observable
 class CardFilterInteractorImpl(var cardFilterStorage: CardFilterStorage) : CardFilterInteractor {
 
     override fun load(): Observable<CardFilter> {
-        return cardFilterStorage.load();
+        return Observable.just(cardFilterStorage.load());
     }
 
 }
