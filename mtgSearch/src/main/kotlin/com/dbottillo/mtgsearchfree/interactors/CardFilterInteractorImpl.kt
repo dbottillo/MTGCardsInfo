@@ -10,4 +10,9 @@ class CardFilterInteractorImpl(var cardFilterStorage: CardFilterStorage) : CardF
         return Observable.just(cardFilterStorage.load());
     }
 
+    override fun sync(filter: CardFilter) {
+        cardFilterStorage.sync(filter)
+    }
+
+
 }

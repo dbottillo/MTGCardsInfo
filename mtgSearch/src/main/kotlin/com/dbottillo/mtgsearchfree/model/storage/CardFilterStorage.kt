@@ -26,6 +26,23 @@ class CardFilterStorage(var preferences: SharedPreferences) {
         return res;
     }
 
+    fun sync(filter: CardFilter) {
+        preferences.edit()
+                .putBoolean(CardProperties.COLOR_WHITE, filter.white)
+                .putBoolean(CardProperties.COLOR_BLUE, filter.blue)
+                .putBoolean(CardProperties.COLOR_BLACK, filter.black)
+                .putBoolean(CardProperties.COLOR_RED, filter.red)
+                .putBoolean(CardProperties.COLOR_GREEN, filter.green)
+                .putBoolean(CardProperties.TYPE_ARTIFACT, filter.artifact)
+                .putBoolean(CardProperties.TYPE_LAND, filter.land)
+                .putBoolean(CardProperties.TYPE_ELDRAZI, filter.eldrazi)
+                .putBoolean(CardProperties.RARITY_COMMON, filter.common)
+                .putBoolean(CardProperties.RARITY_UNCOMMON, filter.uncommon)
+                .putBoolean(CardProperties.RARITY_RARE, filter.rare)
+                .putBoolean(CardProperties.RARITY_MYHTIC, filter.mythic)
+                .apply()
+    }
+
 
 }
 

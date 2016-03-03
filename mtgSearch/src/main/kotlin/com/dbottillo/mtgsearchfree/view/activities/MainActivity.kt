@@ -33,7 +33,8 @@ import com.dbottillo.mtgsearchfree.view.fragments.MainFragment
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
 import javax.inject.Inject
 
-class MainActivity : BasicActivity(), MainView, CardFilterView, NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BasicActivity(), MainView, CardFilterView,
+        NavigationView.OnNavigationItemSelectedListener, FilterPickerView.OnFilterPickerListener {
 
     interface MainActivityListener {
         fun updateContent()
@@ -73,7 +74,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView, NavigationView.O
 
         MTGApp.Companion.filterGraph.inject(this)
         filterPresenter.init(this)
-        filterView.presenter = filterPresenter
+        filterView.setFilterPickerListener(this)
         filterPresenter.loadFilter()
     }
 
@@ -212,5 +213,14 @@ class MainActivity : BasicActivity(), MainView, CardFilterView, NavigationView.O
 
     override fun filterLoaded(filter: CardFilter) {
         filterView.refresh(filter);
+    }
+
+    override fun applyFilter() {
+        slidingPanelHelper?.closePanel()
+        listener?.updateContent()
+    }
+
+    override fun filterUpdated(type: CardFilter.TYPE, on: Boolean) {
+        filterPresenter.update(type, on)
     }
 }

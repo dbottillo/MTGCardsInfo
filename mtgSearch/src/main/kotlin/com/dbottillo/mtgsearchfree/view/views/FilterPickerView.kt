@@ -5,18 +5,21 @@ import android.text.Html
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.ToggleButton
+import android.widget.*
 import butterknife.ButterKnife
 import butterknife.OnClick
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 
 class FilterPickerView : LinearLayout {
+
+    interface OnFilterPickerListener {
+        fun filterUpdated(type: CardFilter.TYPE, on: Boolean)
+
+        fun applyFilter()
+    }
 
     val filterText: TextView by bindView(R.id.filter_text)
     val arrow: ImageView by bindView(R.id.arrow_filter)
@@ -35,8 +38,7 @@ class FilterPickerView : LinearLayout {
     val toggleUncommon: ToggleButton by bindView(R.id.toggle_uncommon)
     val toggleRare: ToggleButton by bindView(R.id.toggle_rare)
     val toggleMythic: ToggleButton by bindView(R.id.toggle_myhtic)
-
-    var presenter: CardFilterPresenter? = null
+    private var listener: OnFilterPickerListener? = null
 
     constructor(ctx: Context) : this(ctx, null)
 
@@ -48,11 +50,16 @@ class FilterPickerView : LinearLayout {
         var inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var view = inflater.inflate(R.layout.view_filter_picker, this, true)
 
+        var btn = view.findViewById(R.id.btn_apply_filter) as Button
+        btn.setOnClickListener {
+            LOG.e("ntnm clci")
+            listener?.applyFilter() }
+
         ButterKnife.bind(this, view)
     }
 
-    fun setFilterPresenter(pres: CardFilterPresenter) {
-        presenter = pres;
+    fun setFilterPickerListener(list: OnFilterPickerListener) {
+        listener = list
     }
 
     fun setRotationArrow(angle: Float) {
@@ -110,18 +117,18 @@ class FilterPickerView : LinearLayout {
     fun onToggleClicked(view: View) {
         val on = (view as ToggleButton).isChecked
         when (view.id) {
-            R.id.toggle_white -> presenter?.updateW(on)
-            R.id.toggle_blue -> presenter?.updateU(on)
-            R.id.toggle_black -> presenter?.updateB(on)
-            R.id.toggle_red -> presenter?.updateR(on)
-            R.id.toggle_green -> presenter?.updateG(on)
-            R.id.toggle_artifact -> presenter?.updateArtifact(on)
-            R.id.toggle_land -> presenter?.updateLand(on)
-            R.id.toggle_eldrazi -> presenter?.updateEldrazi(on)
-            R.id.toggle_common -> presenter?.updateCommon(on)
-            R.id.toggle_uncommon -> presenter?.updateUncommon(on)
-            R.id.toggle_rare -> presenter?.updateRare(on)
-            R.id.toggle_myhtic -> presenter?.updateMythic(on)
+            R.id.toggle_white -> listener?.filterUpdated(CardFilter.TYPE.WHITE, on)
+            R.id.toggle_blue -> listener?.filterUpdated(CardFilter.TYPE.BLUE, on)
+            R.id.toggle_black -> listener?.filterUpdated(CardFilter.TYPE.BLACK, on)
+            R.id.toggle_red -> listener?.filterUpdated(CardFilter.TYPE.RED, on)
+            R.id.toggle_green -> listener?.filterUpdated(CardFilter.TYPE.GREEN, on)
+            R.id.toggle_artifact -> listener?.filterUpdated(CardFilter.TYPE.ARTIFACT, on)
+            R.id.toggle_land -> listener?.filterUpdated(CardFilter.TYPE.LAND, on)
+            R.id.toggle_eldrazi -> listener?.filterUpdated(CardFilter.TYPE.ELDRAZI, on)
+            R.id.toggle_common -> listener?.filterUpdated(CardFilter.TYPE.COMMON, on)
+            R.id.toggle_uncommon -> listener?.filterUpdated(CardFilter.TYPE.UNCOMMON, on)
+            R.id.toggle_rare -> listener?.filterUpdated(CardFilter.TYPE.RARE, on)
+            R.id.toggle_myhtic -> listener?.filterUpdated(CardFilter.TYPE.MYTHIC, on)
         }
     }
 

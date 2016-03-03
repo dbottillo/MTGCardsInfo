@@ -64,6 +64,8 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
 
     }
 
+
+
     override fun getPageTrack(): String? {
         if (isASearch) {
             return "/search"

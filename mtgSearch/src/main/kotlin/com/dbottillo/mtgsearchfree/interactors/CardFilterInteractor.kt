@@ -7,4 +7,6 @@ interface CardFilterInteractor {
 
     fun load(): Observable<CardFilter>
 
+    fun sync(filter: CardFilter)
+
 }
