@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.saved;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -32,8 +32,7 @@ import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.resources.CardFilter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
-import com.dbottillo.mtgsearchfree.view.activities.FilterActivity;
+import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +43,8 @@ import javax.inject.Inject;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener, OnCardListener, SlidingUpPanelLayout.PanelSlideListener, CardFilterView {
+public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener,
+        OnCardListener, CardFilterView, MainActivity.MainActivityListener {
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;
@@ -52,16 +52,18 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     private SmoothProgressBar progressBar;
     private TextView emptyView;
 
-    public @Inject CardFilterPresenter cardFilterPresenter;
+    public
+    @Inject
+    CardFilterPresenter cardFilterPresenter;
 
     public static SavedFragment newInstance() {
         return new SavedFragment();
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        ((FilterActivity) activity).addPanelSlideListener(this);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ((MainActivity) context).setMainActivityListener(this);
     }
 
     @Override
@@ -179,26 +181,6 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     }
 
     @Override
-    public void onPanelSlide(View panel, float slideOffset) {
-
-    }
-
-    @Override
-    public void onPanelCollapsed(View panel) {
-        refreshUI();
-    }
-
-    @Override
-    public void onPanelExpanded(View panel) {
-
-    }
-
-    @Override
-    public void onPanelAnchored(View panel) {
-
-    }
-
-    @Override
     public void filterLoaded(@NotNull CardFilter filter) {
         savedFilteredCards.clear();
         CardsHelper.filterCards(filter, null, savedCards, savedFilteredCards);
@@ -210,5 +192,10 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     @Override
     public void setupComponent(@NotNull AppComponent appComponent) {
 
+    }
+
+    @Override
+    public void updateContent() {
+        refreshUI();
     }
 }

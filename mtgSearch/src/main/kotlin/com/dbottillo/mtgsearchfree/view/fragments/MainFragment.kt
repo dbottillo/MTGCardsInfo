@@ -14,7 +14,6 @@ import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.view.activities.FilterActivity
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import java.util.*
 
@@ -42,8 +41,6 @@ class MainFragment : MTGSetFragment(), DialogUtil.SortDialogListener, MainActivi
 
         setActionBarTitle(getString(R.string.app_long_name))
 
-        /*MTGApp.Companion.filterGraph.inject(this)
-        setupSetFragment(rootView)*/
 
         this.container = rootView.findViewById(R.id.container)
         setListBg = rootView.findViewById(R.id.set_list_bg)
@@ -154,7 +151,6 @@ class MainFragment : MTGSetFragment(), DialogUtil.SortDialogListener, MainActivi
     }
 
     private fun loadSet() {
-        (activity as FilterActivity).collapseSlidingPanel()
         chooserName?.text = sets!!.get(currentSetPosition).name
         loadSet(sets!![currentSetPosition])
     }

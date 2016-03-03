@@ -24,5 +24,9 @@ class SlidingPanelHelper(var slidingPanel: SlidingUpPanelLayout, var resources: 
         AnimationUtil.animateSlidingPanelHeight(slidingPanel, resources.getDimensionPixelSize(R.dimen.collapsedHeight))
     }
 
+    fun closePanel() {
+        slidingPanel.collapsePane()
+    }
+
 
 }
