@@ -31,7 +31,6 @@ import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.resources.CardFilter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
@@ -44,7 +43,7 @@ import javax.inject.Inject;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener,
-        OnCardListener, CardFilterView, MainActivity.MainActivityListener {
+        OnCardListener{
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;
@@ -63,7 +62,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        ((MainActivity) context).setMainActivityListener(this);
+        //((MainActivity) context).setMainActivityListener(this);
     }
 
     @Override
@@ -180,22 +179,27 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
         cardFilterPresenter.loadFilter();
     }
 
-    @Override
+    /*@Override
     public void filterLoaded(@NotNull CardFilter filter) {
         savedFilteredCards.clear();
         CardsHelper.filterCards(filter, null, savedCards, savedFilteredCards);
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(View.GONE);
         emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
-    }
+    }*/
 
     @Override
     public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 
-    @Override
+    /*@Override
+    public void updateContent(@NotNull CardFilter filter) {
+
+    }*/
+
+    /*@Override
     public void updateContent() {
         refreshUI();
-    }
+    }*/
 }

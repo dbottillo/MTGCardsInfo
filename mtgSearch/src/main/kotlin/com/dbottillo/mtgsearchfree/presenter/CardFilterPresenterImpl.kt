@@ -8,7 +8,6 @@ import rx.schedulers.Schedulers
 
 class CardFilterPresenterImpl(var interactor: CardFilterInteractor) : CardFilterPresenter {
 
-    var filter = CardFilter()
     var filterView: CardFilterView? = null
 
     override fun init(view: CardFilterView) {
@@ -16,35 +15,39 @@ class CardFilterPresenterImpl(var interactor: CardFilterInteractor) : CardFilter
     }
 
     override fun loadFilter() {
-        var obs = interactor.load()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        obs.subscribe {
-            filter = it
+        if (CardFilterMemoryStorage.instance.filter != null) {
             filterLoaded()
+        } else {
+            var obs = interactor.load()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io());
+            obs.subscribe {
+                CardFilterMemoryStorage.instance.filter = it
+                filterLoaded()
+            }
         }
     }
 
     private fun filterLoaded() {
-        filterView?.filterLoaded(filter)
+        filterView?.filterLoaded(CardFilterMemoryStorage.instance.filter!!)
     }
 
     override fun update(type: CardFilter.TYPE, on: Boolean) {
         when (type) {
-            CardFilter.TYPE.WHITE -> filter.white = on
-            CardFilter.TYPE.BLUE -> filter.blue = on
-            CardFilter.TYPE.BLACK -> filter.black = on
-            CardFilter.TYPE.RED -> filter.red = on
-            CardFilter.TYPE.GREEN -> filter.green = on
-            CardFilter.TYPE.LAND -> filter.land = on
-            CardFilter.TYPE.ELDRAZI -> filter.eldrazi = on
-            CardFilter.TYPE.ARTIFACT -> filter.artifact = on
-            CardFilter.TYPE.COMMON -> filter.common = on
-            CardFilter.TYPE.UNCOMMON -> filter.uncommon = on
-            CardFilter.TYPE.RARE -> filter.rare = on
-            CardFilter.TYPE.MYTHIC -> filter.eldrazi = on
+            CardFilter.TYPE.WHITE -> CardFilterMemoryStorage.instance.filter?.white = on
+            CardFilter.TYPE.BLUE -> CardFilterMemoryStorage.instance.filter?.blue = on
+            CardFilter.TYPE.BLACK -> CardFilterMemoryStorage.instance.filter?.black = on
+            CardFilter.TYPE.RED -> CardFilterMemoryStorage.instance.filter?.red = on
+            CardFilter.TYPE.GREEN -> CardFilterMemoryStorage.instance.filter?.green = on
+            CardFilter.TYPE.LAND -> CardFilterMemoryStorage.instance.filter?.land = on
+            CardFilter.TYPE.ELDRAZI -> CardFilterMemoryStorage.instance.filter?.eldrazi = on
+            CardFilter.TYPE.ARTIFACT -> CardFilterMemoryStorage.instance.filter?.artifact = on
+            CardFilter.TYPE.COMMON -> CardFilterMemoryStorage.instance.filter?.common = on
+            CardFilter.TYPE.UNCOMMON -> CardFilterMemoryStorage.instance.filter?.uncommon = on
+            CardFilter.TYPE.RARE -> CardFilterMemoryStorage.instance.filter?.rare = on
+            CardFilter.TYPE.MYTHIC -> CardFilterMemoryStorage.instance.filter?.eldrazi = on
         }
-        interactor.sync(filter)
+        interactor.sync(CardFilterMemoryStorage.instance.filter!!)
         filterLoaded()
     }
 }

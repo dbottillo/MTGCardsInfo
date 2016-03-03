@@ -9,7 +9,6 @@
 
         <TextView
             android:id="@+id/filter_text"
-            tools:text="WUBRG - AL - CURM"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
@@ -18,7 +17,8 @@
             android:gravity="center"
             android:lines="1"
             android:textColor="#FFF"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            tools:text="WUBRG - AL - CURM"/>
 
         <ImageView
             android:id="@+id/arrow_filter"
@@ -53,14 +53,5 @@
                 layout="@layout/filter_panel"/>
         </FrameLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btn_apply_filter"
-        style="@style/BtnGeneric"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@string/apply_filter"
-        android:textSize="16sp"/>
 
 </merge>

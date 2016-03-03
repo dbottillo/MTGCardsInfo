@@ -19,16 +19,16 @@ import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.search.SearchParams
-import com.dbottillo.mtgsearchfree.view.CardFilterView
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 
-abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardListener, CardFilterView {
+abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardListener {
 
     private var gameSet: MTGSet? = null
     private var listView: ListView? = null
@@ -37,7 +37,6 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
     private var adapter: CardListAdapter? = null
     private var progressBar: SmoothProgressBar? = null
     private var searchParams: SearchParams? = null
-    //@Inject lateinit var filterPresenter: CardFilterPresenter
 
     @JvmOverloads protected fun setupSetFragment(rootView: View, searchParams: SearchParams? = null) {
         emptyView = rootView.findViewById(R.id.empty_view) as TextView
@@ -64,8 +63,6 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
 
     }
 
-
-
     override fun getPageTrack(): String? {
         if (isASearch) {
             return "/search"
@@ -86,6 +83,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
     }
 
     fun onEventMainThread(event: CardsEvent) {
+        LOG.e("on event main thread cards")
         if (event.isError) {
             Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
             TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", event.errorMessage)
@@ -99,7 +97,8 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
         bus.removeStickyEvent(event)
     }
 
-    override fun filterLoaded(filter: CardFilter) {
+    /*fun updateContent(filter: CardFilter) {
+        LOG.e("update content")
         cards!!.clear()
         CardsHelper.filterCards(filter, searchParams, gameSet!!.cards, cards)
         val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
@@ -118,7 +117,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
         progressBar!!.visibility = View.GONE
 
         emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
-    }
+    }*/
 
     fun updateSetFragment() {
         //filterPresenter.loadFilter();
