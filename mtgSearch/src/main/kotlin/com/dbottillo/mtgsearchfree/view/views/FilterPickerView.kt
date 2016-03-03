@@ -5,20 +5,20 @@ import android.text.Html
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.ToggleButton
 import butterknife.ButterKnife
 import butterknife.OnClick
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.resources.CardFilter
 
 class FilterPickerView : LinearLayout {
 
     interface OnFilterPickerListener {
         fun filterUpdated(type: CardFilter.TYPE, on: Boolean)
-
-        fun applyFilter()
     }
 
     val filterText: TextView by bindView(R.id.filter_text)
@@ -49,11 +49,6 @@ class FilterPickerView : LinearLayout {
 
         var inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var view = inflater.inflate(R.layout.view_filter_picker, this, true)
-
-        var btn = view.findViewById(R.id.btn_apply_filter) as Button
-        btn.setOnClickListener {
-            LOG.e("ntnm clci")
-            listener?.applyFilter() }
 
         ButterKnife.bind(this, view)
     }
@@ -113,7 +108,10 @@ class FilterPickerView : LinearLayout {
         return filterString
     }
 
-    @OnClick(R.id.toggle_white, R.id.toggle_blue)
+    @OnClick(R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_blue,
+            R.id.toggle_red, R.id.toggle_blue, R.id.toggle_green, R.id.toggle_artifact,
+            R.id.toggle_land, R.id.toggle_eldrazi, R.id.toggle_common, R.id.toggle_uncommon,
+            R.id.toggle_rare, R.id.toggle_myhtic)
     fun onToggleClicked(view: View) {
         val on = (view as ToggleButton).isChecked
         when (view.id) {
@@ -130,6 +128,10 @@ class FilterPickerView : LinearLayout {
             R.id.toggle_rare -> listener?.filterUpdated(CardFilter.TYPE.RARE, on)
             R.id.toggle_myhtic -> listener?.filterUpdated(CardFilter.TYPE.MYTHIC, on)
         }
+    }
+
+    fun onPanelSlide(offset: Float) {
+        setRotationArrow(180 - (180 * offset));
     }
 
 }

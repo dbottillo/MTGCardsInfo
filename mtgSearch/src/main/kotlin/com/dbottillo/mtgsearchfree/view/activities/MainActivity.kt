@@ -34,10 +34,11 @@ import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
 import javax.inject.Inject
 
 class MainActivity : BasicActivity(), MainView, CardFilterView,
-        NavigationView.OnNavigationItemSelectedListener, FilterPickerView.OnFilterPickerListener {
+        NavigationView.OnNavigationItemSelectedListener, FilterPickerView.OnFilterPickerListener,
+        SlidingPanelHelper.SlidingPanelHelperListener {
 
     interface MainActivityListener {
-        fun updateContent()
+        fun updateContent(filter: CardFilter)
     }
 
     val CURRENT_SELECTION = "currentSelection"
@@ -47,6 +48,9 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
     var navDrawerHelper: NavDrawerHelper? = null
     var listener: MainActivityListener? = null
     val filterView: FilterPickerView by bindView(R.id.filter)
+    var filterLoaded: Boolean = false
+    var initialBundle: Bundle? = null
+    var currentFilter: CardFilter? = null
 
     @Inject lateinit var filterPresenter: CardFilterPresenter
 
@@ -57,25 +61,36 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
         ButterKnife.bind(this)
 
         setupToolbar();
-        slidingPanelHelper = SlidingPanelHelper(findViewById(R.id.sliding_layout) as SlidingUpPanelLayout, resources)
-        slidingPanelHelper?.setDragView(filterView.findViewById(R.id.filter_draggable))
+        slidingPanelHelper = SlidingPanelHelper(findViewById(R.id.sliding_layout) as SlidingUpPanelLayout, resources, this)
+        slidingPanelHelper?.init(filterView.findViewById(R.id.filter_draggable))
         navDrawerHelper = NavDrawerHelper(this, toolbar!!, this)
 
-        if (bundle == null) {
-            changeFragment(MainFragment(), "main", false);
-        } else {
-            if (bundle.getInt(CURRENT_SELECTION) > 0) {
-                slidingPanelHelper?.hidePanel(true)
-            }
-        }
+        initialBundle = bundle
+
+        MTGApp.Companion.filterGraph.inject(this)
+        filterPresenter.init(this)
+        filterPresenter.loadFilter()
 
         mainPresenter = MainActivityPresenter(this)
         mainPresenter?.checkReleaseNote(intent);
 
-        MTGApp.Companion.filterGraph.inject(this)
-        filterPresenter.init(this)
         filterView.setFilterPickerListener(this)
-        filterPresenter.loadFilter()
+
+        if (bundle != null && bundle.getInt(CURRENT_SELECTION) > 0) {
+            slidingPanelHelper?.hidePanel(true)
+        }
+    }
+
+    override fun filterLoaded(filter: CardFilter) {
+        currentFilter = filter
+        if (!filterLoaded) {
+            if (initialBundle == null) {
+                changeFragment(MainFragment(), "main", false);
+            }
+        } else {
+            listener?.updateContent(filter)
+        }
+        filterView.refresh(filter);
     }
 
     override fun getPageTrack(): String {
@@ -193,6 +208,9 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
     }
 
     override fun onBackPressed() {
+        if (slidingPanelHelper!!.onBackPressed()){
+            return;
+        }
         navDrawerHelper?.onBackPressed()
         var current = supportFragmentManager.findFragmentById(R.id.fragment_container) as BasicFragment
         if (current.onBackPressed()) {
@@ -211,16 +229,11 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
         listener = list;
     }
 
-    override fun filterLoaded(filter: CardFilter) {
-        filterView.refresh(filter);
-    }
-
-    override fun applyFilter() {
-        slidingPanelHelper?.closePanel()
-        listener?.updateContent()
-    }
-
     override fun filterUpdated(type: CardFilter.TYPE, on: Boolean) {
         filterPresenter.update(type, on)
+    }
+
+    override fun onPanelChangeOffset(offset: Float) {
+        filterView.onPanelSlide(offset)
     }
 }

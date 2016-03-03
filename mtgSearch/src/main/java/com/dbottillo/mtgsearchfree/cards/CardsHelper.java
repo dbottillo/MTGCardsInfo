@@ -15,6 +15,10 @@ public final class CardsHelper {
 
     }
 
+    public static void filterCards(CardFilter cardFilter, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
+        filterCards(cardFilter, null, input, output);
+    }
+
     public static void filterCards(CardFilter cardFilter, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
         for (MTGCard card : input) {
             boolean toAdd = false;
