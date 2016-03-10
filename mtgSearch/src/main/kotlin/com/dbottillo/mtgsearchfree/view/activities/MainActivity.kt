@@ -10,7 +10,7 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.about.AboutFragment
+import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment
 import com.dbottillo.mtgsearchfree.about.JoinBetaFragment
 import com.dbottillo.mtgsearchfree.about.ReleaseNoteFragment
 import com.dbottillo.mtgsearchfree.base.MTGApp
