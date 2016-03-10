@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.modules
 
+import android.content.Context
 import android.content.SharedPreferences
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage
@@ -26,13 +27,13 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideCardsStorage(): CardsStorage {
-        return CardsStorage();
+    fun provideCardsStorage(context: Context): CardsStorage {
+        return CardsStorage(context);
     }
 
     @Provides
     @Singleton
-    fun provideSetsStrorage(): SetsStorage {
-        return SetsStorage();
+    fun provideSetsStorage(context: Context): SetsStorage {
+        return SetsStorage(context);
     }
 }

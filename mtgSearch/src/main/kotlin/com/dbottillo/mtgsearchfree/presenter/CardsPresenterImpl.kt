@@ -1,18 +1,31 @@
 package com.dbottillo.mtgsearchfree.presenter
 
-import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.view.CardsView
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 
 class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
 
-    override fun loadCards(set: MTGSet) {
+    var cardsView: CardsView? = null
 
+    override fun loadCards(set: MTGSet) {
+        if (CardsMemoryStorage.isValid(set.name)) {
+            cardsView?.cardLoaded(CardsMemoryStorage.cards)
+            return;
+        }
+        var obs = interactor.load(set)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            CardsMemoryStorage.update(set.name, it)
+            cardsView?.cardLoaded(it)
+        }
     }
 
     override fun init(view: CardsView) {
-        LOG.e("init called with "+view.toString());
+        cardsView = view
     }
 
 }
