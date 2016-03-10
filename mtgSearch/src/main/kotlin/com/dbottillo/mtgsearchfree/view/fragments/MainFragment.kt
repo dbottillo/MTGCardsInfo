@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
@@ -18,32 +19,27 @@ import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
-import com.dbottillo.mtgsearchfree.resources.CardFilter
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
+import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.DialogUtil
+import com.dbottillo.mtgsearchfree.view.CardsView
+import com.dbottillo.mtgsearchfree.view.SetsView
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
+import javax.inject.Inject
 
 class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
-        MainActivity.MainActivityListener, OnCardListener {
+        MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView {
 
-    override fun onCardSelected(card: MTGCard?, position: Int) {
+    override fun cardLoaded(cards: List<MTGCard>) {
         throw UnsupportedOperationException()
     }
 
-    override fun onOptionSelected(menuItem: MenuItem?, card: MTGCard?, position: Int) {
-        throw UnsupportedOperationException()
-    }
-
-    override fun getPageTrack(): String? {
-        return "/set";
-    }
-
-    override fun setupComponent(appComponent: AppComponent) {
-        throw UnsupportedOperationException()
-    }
+    @Inject lateinit var cardsPresenter: CardsPresenter
+    @Inject lateinit var setsPresenter: SetsPresenter
 
     private var gameSet: MTGSet? = null
     private var sets: ArrayList<MTGSet>? = null
@@ -92,8 +88,14 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
             DialogUtil.chooseSortDialog(context, sharedPreferences, this@MainFragment)
         })
 
+        MTGApp.Companion.dataGraph.inject(this)
+        cardsPresenter.init(this)
+        setsPresenter.init(this)
 
-        if (savedInstanceState == null) {
+        sets = ArrayList<MTGSet>()
+        setsPresenter.loadSets();
+
+        /*if (savedInstanceState == null) {
             sets = ArrayList<MTGSet>()
             DataManager.execute(DataManager.TASK.SET_LIST)
         } else {
@@ -104,7 +106,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
             } else {
                 loadSet()
             }
-        }
+        }*/
 
         setAdapter = GameSetAdapter(activity.applicationContext, sets)
         setAdapter!!.setCurrent(currentSetPosition)
@@ -191,6 +193,14 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         view.layoutParams = params
     }
 
+    override fun setsLoaded(sets: List<MTGSet>) {
+        throw UnsupportedOperationException()
+    }
+
+    override fun showError(message: String) {
+        throw UnsupportedOperationException()
+    }
+
     fun onEventMainThread(event: SetEvent) {
         if (event.isError) {
             Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
@@ -260,4 +270,21 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     override fun onSortSelected() {
         loadSet()
     }
+
+    override fun onCardSelected(card: MTGCard?, position: Int) {
+        throw UnsupportedOperationException()
+    }
+
+    override fun onOptionSelected(menuItem: MenuItem?, card: MTGCard?, position: Int) {
+        throw UnsupportedOperationException()
+    }
+
+    override fun getPageTrack(): String? {
+        return "/set";
+    }
+
+    override fun setupComponent(appComponent: AppComponent) {
+        throw UnsupportedOperationException()
+    }
+
 }

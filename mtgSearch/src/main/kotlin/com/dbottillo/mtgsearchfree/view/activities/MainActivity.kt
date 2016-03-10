@@ -20,12 +20,15 @@ import com.dbottillo.mtgsearchfree.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.helper.*
 import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter
 import com.dbottillo.mtgsearchfree.resources.CardFilter
+import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.view.CardFilterView
+import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.MainView
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
@@ -67,7 +70,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
 
         initialBundle = bundle
 
-        MTGApp.Companion.filterGraph.inject(this)
+        MTGApp.Companion.dataGraph.inject(this)
         filterPresenter.init(this)
         if (bundle == null) {
             filterPresenter.loadFilter()
@@ -89,13 +92,11 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
 
     override fun filterLoaded(filter: CardFilter) {
         currentFilter = filter
-        LOG.e("filter loaded")
         if (!filterLoaded) {
             if (initialBundle == null) {
                 changeFragment(MainFragment(), "main", false);
             }
         } else {
-            LOG.e("needs to update the content")
             listener?.updateContent()
         }
         filterView.refresh(filter);
