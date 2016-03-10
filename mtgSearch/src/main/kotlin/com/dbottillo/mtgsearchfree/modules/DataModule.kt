@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.modules
 import android.content.SharedPreferences
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.model.storage.SetsStorage
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -22,4 +24,15 @@ class DataModule {
         return CardFilterStorage(pref);
     }
 
+    @Provides
+    @Singleton
+    fun provideCardsStorage(): CardsStorage {
+        return CardsStorage();
+    }
+
+    @Provides
+    @Singleton
+    fun provideSetsStrorage(): SetsStorage {
+        return SetsStorage();
+    }
 }
