@@ -6,18 +6,17 @@ import android.view.*
 import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.*
+import butterknife.ButterKnife
+import butterknife.OnClick
+import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
-import com.dbottillo.mtgsearchfree.communication.DataManager
-import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
-import com.dbottillo.mtgsearchfree.communication.events.SetEvent
 import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
-import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
@@ -34,84 +33,52 @@ import javax.inject.Inject
 class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView {
 
-    override fun cardLoaded(cards: List<MTGCard>) {
-        throw UnsupportedOperationException()
-    }
-
     @Inject lateinit var cardsPresenter: CardsPresenter
     @Inject lateinit var setsPresenter: SetsPresenter
 
     private var gameSet: MTGSet? = null
-    private var sets: ArrayList<MTGSet>? = null
-    private var cards: ArrayList<MTGCard>? = null
+    private var sets: ArrayList<MTGSet> = ArrayList()
+    private var cards: ArrayList<MTGCard> = ArrayList()
     private var adapter: CardListAdapter? = null
     private var setAdapter: GameSetAdapter? = null
-    private var listView: ListView? = null
-    private var emptyView: TextView? = null
-    private var setArrow: ImageView? = null
-    private var setListBg: View? = null
-    private var setList: ListView? = null
     private var currentSetPosition = -1
-    private var container: View? = null
-    private var progressBar: SmoothProgressBar? = null
-    var chooserName: TextView? = null
     var mainActivity: MainActivity? = null
+
+    val listView: ListView by bindView(R.id.card_list)
+    val emptyView: TextView by bindView(R.id.empty_view)
+    val setArrow: ImageView by bindView(R.id.set_arrow)
+    val setListBg: View by bindView(R.id.set_list_bg)
+    val setList: ListView by bindView(R.id.set_list)
+    val container: View by bindView(R.id.container)
+    val progressBar: SmoothProgressBar by bindView(R.id.progress)
+    val chooserName: TextView by bindView(R.id.set_chooser_name)
+
+    override fun setupComponent(appComponent: AppComponent) {
+    }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
+        ButterKnife.bind(this, rootView)
+        return rootView
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setActionBarTitle(getString(R.string.app_long_name))
-
-        this.container = rootView.findViewById(R.id.container)
-        setListBg = rootView.findViewById(R.id.set_list_bg)
-        setList = rootView.findViewById(R.id.set_list) as ListView
-        setArrow = rootView.findViewById(R.id.set_arrow) as ImageView
-        chooserName = rootView.findViewById(R.id.set_chooser_name) as TextView
-
-        emptyView = rootView.findViewById(R.id.empty_view) as TextView
-        emptyView?.setText(R.string.empty_cards)
-        listView = rootView.findViewById(R.id.card_list) as ListView
-
-        cards = ArrayList<MTGCard>()
+        
         adapter = CardListAdapter(activity, cards, false, R.menu.card_option, this)
-        listView!!.adapter = adapter
-
-        progressBar = rootView.findViewById(R.id.progress) as SmoothProgressBar
-
-        setListBg!!.setOnClickListener({
-            if (setList!!.height > 0) {
-                showHideSetList(false)
-            }
-        })
-
-        rootView.findViewById(R.id.cards_sort).setOnClickListener({
-            DialogUtil.chooseSortDialog(context, sharedPreferences, this@MainFragment)
-        })
+        listView.adapter = adapter
 
         MTGApp.Companion.dataGraph.inject(this)
         cardsPresenter.init(this)
         setsPresenter.init(this)
-
-        sets = ArrayList<MTGSet>()
         setsPresenter.loadSets();
-
-        /*if (savedInstanceState == null) {
-            sets = ArrayList<MTGSet>()
-            DataManager.execute(DataManager.TASK.SET_LIST)
-        } else {
-            sets = savedInstanceState.getParcelableArrayList<MTGSet>("SET")
-            currentSetPosition = savedInstanceState.getInt("currentSetPosition")
-            if (currentSetPosition < 0) {
-                DataManager.execute(DataManager.TASK.SET_LIST)
-            } else {
-                loadSet()
-            }
-        }*/
 
         setAdapter = GameSetAdapter(activity.applicationContext, sets)
         setAdapter!!.setCurrent(currentSetPosition)
-        setList!!.adapter = setAdapter
-        setList!!.onItemClickListener = AdapterView.OnItemClickListener {
+        setList.adapter = setAdapter
+        setList.onItemClickListener = AdapterView.OnItemClickListener {
             parent, view, position, id ->
             if (currentSetPosition != position) {
                 currentSetPosition = position
@@ -121,9 +88,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
             }
         }
 
-        rootView.findViewById(R.id.set_chooser).setOnClickListener({ showHideSetList(false) })
-
-        return rootView
+        view?.findViewById(R.id.set_chooser)?.setOnClickListener({ showHideSetList(false) })
     }
 
     override fun onAttach(context: Context?) {
@@ -132,29 +97,41 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         mainActivity?.setMainActivityListener(this)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState!!.putInt("currentSetPosition", currentSetPosition)
+        outState.putInt("currentSetPosition", currentSetPosition)
         outState.putParcelableArrayList("SET", sets)
     }
 
+    @OnClick(R.id.cards_sort)
+    fun onSortClicked(view: View) {
+        DialogUtil.chooseSortDialog(context, sharedPreferences, this)
+    }
+
+    @OnClick(R.id.set_list_bg)
+    fun onSetListBgClicked(view: View) {
+        if (setList.height > 0) {
+            showHideSetList(false)
+        }
+    }
+
     private fun showHideSetList(loadSet: Boolean) {
-        val startHeight = setList!!.height
-        val targetHeight = if ((startHeight == 0)) container!!.height else 0
-        val startRotation = setArrow!!.rotation
+        val startHeight = setList.height
+        val targetHeight = if ((startHeight == 0)) container.height else 0
+        val startRotation = setArrow.rotation
         val animation = object : Animation() {
             override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
                 super.applyTransformation(interpolatedTime, t)
                 if (targetHeight > startHeight) {
                     val newHeight = (startHeight + (interpolatedTime * targetHeight)).toInt()
-                    setHeightView(setList!!, newHeight)
-                    setHeightView(setListBg!!, newHeight)
-                    setArrow!!.rotation = startRotation + (180 * interpolatedTime)
+                    setHeightView(setList, newHeight)
+                    setHeightView(setListBg, newHeight)
+                    setArrow.rotation = startRotation + (180 * interpolatedTime)
                 } else {
                     val newHeight = (startHeight - startHeight * interpolatedTime).toInt()
-                    setHeightView(setList!!, newHeight)
-                    setHeightView(setListBg!!, newHeight)
-                    setArrow!!.rotation = startRotation - (180 * interpolatedTime)
+                    setHeightView(setList, newHeight)
+                    setHeightView(setListBg, newHeight)
+                    setArrow.rotation = startRotation - (180 * interpolatedTime)
                 }
             }
         }
@@ -194,76 +171,57 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     }
 
     override fun setsLoaded(sets: List<MTGSet>) {
-        throw UnsupportedOperationException()
+        currentSetPosition = sharedPreferences.getInt("setPosition", 0)
+        setAdapter?.setCurrent(currentSetPosition)
+        this.sets.clear()
+        for (set in sets) {
+            this.sets.add(set)
+        }
+        setAdapter?.notifyDataSetChanged()
+        loadSet()
     }
 
     override fun showError(message: String) {
-        throw UnsupportedOperationException()
-    }
-
-    fun onEventMainThread(event: SetEvent) {
-        if (event.isError) {
-            Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
-            TrackingHelper.getInstance(activity.applicationContext).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "set-main", event.getErrorMessage())
-        } else {
-            currentSetPosition = sharedPreferences.getInt("setPosition", 0)
-            setAdapter!!.setCurrent(currentSetPosition)
-            sets!!.clear()
-            for (set in event.getResult()) {
-                sets!!.add(set)
-            }
-            setAdapter!!.notifyDataSetChanged()
-            loadSet()
-        }
-        bus.removeStickyEvent(event)
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun loadSet() {
-        gameSet = sets!!.get(currentSetPosition)
-        chooserName?.text = gameSet?.name
-        DataManager.execute(DataManager.TASK.SET_CARDS, gameSet)
+        gameSet = sets[currentSetPosition]
+        chooserName.text = gameSet?.name
+        cardsPresenter.loadCards(gameSet!!)
     }
 
-    fun onEventMainThread(event: CardsEvent) {
-        LOG.e("on event main thread cards")
-        if (event.isError) {
-            Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
-            TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", event.errorMessage)
-        } else {
-            gameSet!!.clear()
-            for (card in event.result) {
-                gameSet!!.addCard(card)
-            }
-            LOG.e("cards loaded")
-            updateContent()
+    override fun cardLoaded(cards: List<MTGCard>) {
+        gameSet?.clear()
+        for (card in cards) {
+            gameSet?.addCard(card)
         }
-        bus.removeStickyEvent(event)
+        updateContent()
     }
 
     override fun updateContent() {
-        LOG.e("update content called")
-        cards!!.clear()
-        CardsHelper.filterCards(mainActivity?.currentFilter!!, gameSet!!.cards, cards)
+        cards.clear()
+        CardsHelper.filterCards(mainActivity?.currentFilter!!, gameSet?.cards, cards)
         val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         CardsHelper.sortCards(wubrgSort, cards)
 
-        adapter!!.notifyDataSetChanged()
-        emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
-        listView!!.smoothScrollToPosition(0)
+        adapter?.notifyDataSetChanged()
+        emptyView.visibility = if (adapter?.count == 0) View.VISIBLE else View.GONE
+        listView.smoothScrollToPosition(0)
 
-        if (gameSet!!.cards.size == CardDataSource.LIMIT) {
+        if (gameSet?.cards?.size == CardDataSource.LIMIT) {
             val footer = LayoutInflater.from(activity).inflate(R.layout.search_bottom, listView, false)
             val moreResult = footer.findViewById(R.id.more_result) as TextView
             moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)
-            listView!!.addFooterView(footer)
+            listView.addFooterView(footer)
         }
-        progressBar!!.visibility = View.GONE
+        progressBar.visibility = View.GONE
 
-        emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
+        emptyView.visibility = if (adapter?.count == 0) View.VISIBLE else View.GONE
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.main, menu)
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
@@ -281,10 +239,6 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
 
     override fun getPageTrack(): String? {
         return "/set";
-    }
-
-    override fun setupComponent(appComponent: AppComponent) {
-        throw UnsupportedOperationException()
     }
 
 }
