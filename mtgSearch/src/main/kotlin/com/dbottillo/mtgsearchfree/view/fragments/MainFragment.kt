@@ -18,7 +18,6 @@ import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
-import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment

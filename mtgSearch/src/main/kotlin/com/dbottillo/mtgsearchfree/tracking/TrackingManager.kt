@@ -23,9 +23,11 @@ object TrackingManager {
         trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet!!.name + " pos:" + position)
     }
 
-    fun trackPage(page: String) {
-        tracker?.setScreenName(page)
-        tracker?.send(HitBuilders.ScreenViewBuilder().build())
+    fun trackPage(page: String?) {
+        if (page != null) {
+            tracker?.setScreenName(page)
+            tracker?.send(HitBuilders.ScreenViewBuilder().build())
+        }
     }
 
     fun trackEvent(category: String, action: String) {
@@ -38,6 +40,18 @@ object TrackingManager {
 
     fun trackSet(gameSet: MTGSet?, mtgSet: MTGSet) {
         trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, mtgSet.code)
+    }
+
+    fun trackShareApp() {
+        trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_SHARE, "app")
+    }
+
+    fun trackAboutLibrary(libraryLink: String) {
+        trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_EXTERNAL_LINK, libraryLink)
+    }
+
+    fun trackFeedback() {
+        trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback")
     }
 
 }

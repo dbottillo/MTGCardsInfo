@@ -13,6 +13,7 @@ import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
 import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import de.greenrobot.event.EventBus
 
 abstract class BasicFragment : DialogFragment() {
@@ -20,6 +21,7 @@ abstract class BasicFragment : DialogFragment() {
     protected var dbActivity: AppCompatActivity? = null
     protected var isPortrait: Boolean = false
     protected var bus = EventBus.getDefault()
+    val app: MTGApp get() = dbActivity!!.application as MTGApp
 
     companion object {
         val PREF_SHOW_IMAGE = "show_image"
@@ -74,16 +76,12 @@ abstract class BasicFragment : DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-        if (getPageTrack() != null) {
-            TrackingHelper.getInstance(dbActivity!!.applicationContext).trackPage(getPageTrack())
-        }
+        TrackingManager.trackPage(getPageTrack())
         bus.registerSticky(this)
     }
 
     abstract fun getPageTrack(): String?
 
-    val app: MTGApp
-        get() = dbActivity!!.application as MTGApp
 
     open fun onBackPressed(): Boolean {
         return false
