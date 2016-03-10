@@ -38,7 +38,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
         SlidingPanelHelper.SlidingPanelHelperListener {
 
     interface MainActivityListener {
-        fun updateContent(filter: CardFilter)
+        fun updateContent()
     }
 
     val CURRENT_SELECTION = "currentSelection"
@@ -69,7 +69,13 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
 
         MTGApp.Companion.filterGraph.inject(this)
         filterPresenter.init(this)
-        filterPresenter.loadFilter()
+        if (bundle == null) {
+            filterPresenter.loadFilter()
+        } else {
+            currentFilter = bundle.getParcelable("currentFilter")
+            filterView.refresh(currentFilter!!);
+            filterLoaded = true
+        }
 
         mainPresenter = MainActivityPresenter(this)
         mainPresenter?.checkReleaseNote(intent);
@@ -83,12 +89,14 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
 
     override fun filterLoaded(filter: CardFilter) {
         currentFilter = filter
+        LOG.e("filter loaded")
         if (!filterLoaded) {
             if (initialBundle == null) {
                 changeFragment(MainFragment(), "main", false);
             }
         } else {
-            listener?.updateContent(filter)
+            LOG.e("needs to update the content")
+            listener?.updateContent()
         }
         filterView.refresh(filter);
     }
@@ -105,6 +113,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
         outState?.putInt(CURRENT_SELECTION, navDrawerHelper!!.getCurrentSelection())
+        outState?.putParcelable("currentFilter", currentFilter)
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -208,7 +217,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
     }
 
     override fun onBackPressed() {
-        if (slidingPanelHelper!!.onBackPressed()){
+        if (slidingPanelHelper!!.onBackPressed()) {
             return;
         }
         navDrawerHelper?.onBackPressed()

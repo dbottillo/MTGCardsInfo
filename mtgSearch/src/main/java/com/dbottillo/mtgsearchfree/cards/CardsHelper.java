@@ -20,6 +20,9 @@ public final class CardsHelper {
     }
 
     public static void filterCards(CardFilter cardFilter, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
+        if (cardFilter == null){
+            return;
+        }
         for (MTGCard card : input) {
             boolean toAdd = false;
             if (searchParams == null) {
