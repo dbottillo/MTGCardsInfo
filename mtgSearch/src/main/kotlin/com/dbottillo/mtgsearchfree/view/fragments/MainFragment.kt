@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.view.animation.Animation
@@ -14,14 +15,19 @@ import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.base.MTGApp
+import com.dbottillo.mtgsearchfree.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
+import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
+import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
+import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.SetsView
@@ -66,7 +72,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         super.onViewCreated(view, savedInstanceState)
 
         setActionBarTitle(getString(R.string.app_long_name))
-        
+
         adapter = CardListAdapter(activity, cards, false, R.menu.card_option, this)
         listView.adapter = adapter
 
@@ -143,11 +149,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
 
             override fun onAnimationEnd(animation: Animation) {
                 if (loadSet) {
-                    /*if (!getApp().isPremium() && position > 2){
-                                            showGoToPremium();
-                                            return false;
-                                        }*/
-                    TrackingHelper.getInstance(activity.applicationContext).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_SELECT, sets!![currentSetPosition].code)
+                    TrackingManager.trackSet(gameSet, sets[currentSetPosition])
                     val editor = sharedPreferences.edit()
                     editor.putInt("setPosition", currentSetPosition)
                     editor.apply()
@@ -230,11 +232,20 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     }
 
     override fun onCardSelected(card: MTGCard?, position: Int) {
-        throw UnsupportedOperationException()
+        TrackingManager.trackCard(gameSet, position)
+        val cardsView = Intent(activity, CardsActivity::class.java)
+        MTGApp.cardsToDisplay = cards
+        cardsView.putExtra(MTGCardsFragment.POSITION, position)
+        cardsView.putExtra(MTGCardsFragment.TITLE, gameSet?.name)
+        startActivity(cardsView)
     }
 
-    override fun onOptionSelected(menuItem: MenuItem?, card: MTGCard?, position: Int) {
-        throw UnsupportedOperationException()
+    override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
+        if (menuItem.itemId == R.id.action_add_to_deck) {
+            DialogHelper.open(dbActivity!!, "add_to_deck", AddToDeckFragment.newInstance(card))
+        } else {
+            cardsPresenter.saveAsFavourite(card)
+        }
     }
 
     override fun getPageTrack(): String? {

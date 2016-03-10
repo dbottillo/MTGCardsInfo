@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.modules.AndroidModule
 import com.dbottillo.mtgsearchfree.modules.PresentersModule
 import com.dbottillo.mtgsearchfree.resources.MTGCard
+import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
@@ -51,6 +52,7 @@ class MTGApp : Application() {
                 .appComponent(graph)
                 .presentersModule(PresentersModule()).build();
 
+        TrackingManager.init(applicationContext)
         DataManager.with(this)
         Fabric.with(this, Crashlytics())
         Crashlytics.setString("git_sha", BuildConfig.GIT_SHA)

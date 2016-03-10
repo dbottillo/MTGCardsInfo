@@ -7,4 +7,6 @@ import rx.Observable
 interface CardsInteractor {
 
     fun load(set: MTGSet): Observable<List<MTGCard>>
+
+    fun saveAsFavourite(card: MTGCard)
 }
