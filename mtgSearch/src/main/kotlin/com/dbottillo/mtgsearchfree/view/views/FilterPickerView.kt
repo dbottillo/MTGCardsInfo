@@ -108,9 +108,9 @@ class FilterPickerView : LinearLayout {
         return filterString
     }
 
-    @OnClick(R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_blue,
-            R.id.toggle_red, R.id.toggle_blue, R.id.toggle_green, R.id.toggle_artifact,
-            R.id.toggle_land, R.id.toggle_eldrazi, R.id.toggle_common, R.id.toggle_uncommon,
+    @OnClick(R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_red,
+            R.id.toggle_green, R.id.toggle_artifact, R.id.toggle_land, R.id.toggle_eldrazi,
+            R.id.toggle_common, R.id.toggle_uncommon,
             R.id.toggle_rare, R.id.toggle_myhtic)
     fun onToggleClicked(view: View) {
         val on = (view as ToggleButton).isChecked

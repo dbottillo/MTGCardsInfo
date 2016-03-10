@@ -59,7 +59,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     private var container: View? = null
     private var progressBar: SmoothProgressBar? = null
     var chooserName: TextView? = null
-    var currentFilter: CardFilter? = null
+    var mainActivity: MainActivity? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
@@ -126,8 +126,8 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        (context as MainActivity).setMainActivityListener(this)
-        currentFilter = context.currentFilter
+        mainActivity = context as MainActivity
+        mainActivity?.setMainActivityListener(this)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -224,15 +224,16 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
             for (card in event.result) {
                 gameSet!!.addCard(card)
             }
+            LOG.e("cards loaded")
             updateContent()
         }
         bus.removeStickyEvent(event)
     }
 
-    fun updateContent() {
-        LOG.e("update content")
+    override fun updateContent() {
+        LOG.e("update content called")
         cards!!.clear()
-        CardsHelper.filterCards(currentFilter, gameSet!!.cards, cards)
+        CardsHelper.filterCards(mainActivity?.currentFilter!!, gameSet!!.cards, cards)
         val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         CardsHelper.sortCards(wubrgSort, cards)
 
@@ -249,11 +250,6 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         progressBar!!.visibility = View.GONE
 
         emptyView!!.visibility = if (adapter!!.count == 0) View.VISIBLE else View.GONE
-    }
-
-    override fun updateContent(filter: CardFilter) {
-        currentFilter = filter
-        updateContent()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
