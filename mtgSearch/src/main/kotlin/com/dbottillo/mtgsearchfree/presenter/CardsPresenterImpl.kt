@@ -35,4 +35,19 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
         cardsView = view
     }
 
+    override fun loadIdFavourites() {
+        var currentFav = CardsMemoryStorage.favourites
+        if (currentFav != null) {
+            cardsView?.favIdLoaded(currentFav)
+            return;
+        }
+        var obs = interactor.loadIdFav()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            CardsMemoryStorage.favourites = it
+            cardsView?.favIdLoaded(it)
+        }
+    }
+
 }

@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
-import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
@@ -169,6 +168,11 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         view.layoutParams = params
     }
 
+    override fun favIdLoaded(favourites: IntArray) {
+        // favourites are not needed in this fragment
+        throw UnsupportedOperationException()
+    }
+
     override fun setsLoaded(sets: List<MTGSet>) {
         currentSetPosition = sharedPreferences.getInt("setPosition", 0)
         setAdapter?.setCurrent(currentSetPosition)
@@ -228,9 +232,8 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     override fun onCardSelected(card: MTGCard?, position: Int) {
         TrackingManager.trackCard(gameSet, position)
         val cardsView = Intent(activity, CardsActivity::class.java)
-        MTGApp.cardsToDisplay = cards
-        cardsView.putExtra(MTGCardsFragment.POSITION, position)
-        cardsView.putExtra(MTGCardsFragment.TITLE, gameSet?.name)
+        cardsView.putExtra(CardsActivity.POSITION, position)
+        cardsView.putExtra(CardsActivity.KEY_SET, gameSet)
         startActivity(cardsView)
     }
 

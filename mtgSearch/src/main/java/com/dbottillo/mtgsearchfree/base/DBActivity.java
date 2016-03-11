@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -35,12 +36,14 @@ public abstract class DBActivity extends AppCompatActivity {
     protected Toolbar toolbar;
     protected EventBus bus = EventBus.getDefault();
     protected int sizeToolbar = 0;
+    protected boolean isPortrait = false;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
         app = (MTGApp) getApplication();
+        isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
         TypedValue tv = new TypedValue();
         if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
             sizeToolbar = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());

@@ -10,4 +10,6 @@ interface CardsInteractor {
     fun load(set: MTGSet): Observable<ArrayList<MTGCard>>
 
     fun saveAsFavourite(card: MTGCard)
+
+    fun loadIdFav(): Observable<IntArray>
 }

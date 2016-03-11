@@ -6,4 +6,6 @@ object CardsMemoryStorage {
 
     var bucket: CardsBucket? = null
 
+    var favourites: IntArray? = null
+
 }
