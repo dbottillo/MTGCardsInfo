@@ -42,11 +42,6 @@ public class MTGCardFragment extends BasicFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();
 
-    @Override
-    public void setupComponent(@NotNull AppComponent appComponent) {
-
-    }
-
     public interface CardConnector {
         boolean isCardSaved(MTGCard card);
 
