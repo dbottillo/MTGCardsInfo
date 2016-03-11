@@ -54,4 +54,12 @@ object TrackingManager {
         trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback")
     }
 
+    fun trackPriceError(url: String) {
+        trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url)
+    }
+
+    fun trackImageError(image: String) {
+        trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", image)
+    }
+
 }

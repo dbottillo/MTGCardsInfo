@@ -10,7 +10,6 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
@@ -26,10 +25,7 @@ import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.view.CardFilterView
 import com.dbottillo.mtgsearchfree.view.MainView
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout
-import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
-import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment
-import com.dbottillo.mtgsearchfree.view.fragments.MainFragment
+import com.dbottillo.mtgsearchfree.view.fragments.*
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
 import javax.inject.Inject
 

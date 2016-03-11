@@ -1,35 +1,82 @@
 package com.dbottillo.mtgsearchfree.view.activities
 
-import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
+import android.support.v4.view.PagerTabStrip
+import android.support.v4.view.ViewPager
 import android.view.MenuItem
+import android.widget.RelativeLayout
 import android.widget.Toast
+import butterknife.ButterKnife
+import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.base.DBActivity
-import com.dbottillo.mtgsearchfree.cards.FullScreenImageActivity
-import com.dbottillo.mtgsearchfree.cards.MTGCardFragment
-import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
-import com.dbottillo.mtgsearchfree.communication.DataManager
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
+import com.dbottillo.mtgsearchfree.resources.CardsBucket
+import com.dbottillo.mtgsearchfree.resources.Deck
 import com.dbottillo.mtgsearchfree.resources.MTGCard
+import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
+import com.dbottillo.mtgsearchfree.util.UIUtil
+import com.dbottillo.mtgsearchfree.view.CardsView
+import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter
 import java.util.*
+import javax.inject.Inject
 
-class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
+class CardsActivity : DBActivity(), CardsView, ViewPager.OnPageChangeListener {
+
+    companion object {
+        val FULLSCREEN_CODE = 100
+        val CARD_POSITION = "Search"
+        val KEY_SEARCH = "Search"
+        val KEY_SET = "Set"
+        val KEY_DECK = "Deck"
+        val POSITION = "Position"
+    }
+
+    private var set: MTGSet? = null
+    private var deck: Deck? = null
+    private var search: String? = null
+    private var startPosition: Int = 0
+    private var idFavourites: IntArray? = null
+
+    val viewPager: ViewPager by bindView(R.id.cards_view_pager)
+    val pagerTabStrip: PagerTabStrip by bindView(R.id.cards_tab_strip)
+    val fabButton: FloatingActionButton by bindView(R.id.card_add_to_deck)
 
     private val savedCards = ArrayList<MTGCard>()
 
-    internal var deck: Boolean = false
+    @Inject lateinit var cardsPresenter: CardsPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cards)
 
-        setupToolbar()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        MaterialWrapper.setElevation(toolbar, 0f)
+        ButterKnife.bind(this)
+
+        setupView()
+
+        MTGApp.Companion.dataGraph.inject(this)
+        cardsPresenter.init(this)
+
+        if (intent != null) {
+            if (intent.hasExtra(KEY_SET)) {
+                set = intent.getParcelableExtra(KEY_SET)
+                supportActionBar?.title = set?.name
+
+            } else if (intent.hasExtra(KEY_SEARCH)) {
+                search = intent.getStringExtra(KEY_SEARCH)
+
+            } else if (intent.hasExtra(KEY_DECK)) {
+                deck = intent.getParcelableExtra(KEY_DECK)
+            }
+        }
+        startPosition = intent.getIntExtra(POSITION, 0)
+
+        cardsPresenter.loadIdFavourites()
 
         /*cardsFragment = supportFragmentManager.findFragmentById(R.id.container) as MTGCardsFragment
 
@@ -47,8 +94,29 @@ class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
         DataManager.execute(DataManager.TASK.SAVED_CARDS, false)
     }
 */
+
+    fun setupView() {
+        setupToolbar()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        MaterialWrapper.setElevation(toolbar, 0f)
+
+        pagerTabStrip.tabIndicatorColor = resources.getColor(R.color.white)
+        pagerTabStrip.setBackgroundColor(resources.getColor(R.color.color_primary))
+        pagerTabStrip.setTextColor(resources.getColor(R.color.white))
+        var par = fabButton.layoutParams as RelativeLayout.LayoutParams
+        if (isPortrait) {
+            par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE)
+        } else {
+            par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE)
+            par.rightMargin = UIUtil.dpToPx(this, 16)
+        }
+        fabButton.layoutParams = par
+        viewPager.addOnPageChangeListener(this)
+    }
+
     override fun getPageTrack(): String {
-        if (deck) {
+        if (deck != null) {
             return "/deck"
         }
         return "/cards"
@@ -63,6 +131,28 @@ class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun favIdLoaded(favourites: IntArray) {
+        idFavourites = favourites
+        if (set != null) {
+            cardsPresenter.loadCards(set!!)
+        } else if (search != null) {
+            // load search
+        } else {
+            // something very bad happened here
+            throw UnsupportedOperationException()
+        }
+    }
+
+    override fun cardLoaded(bucket: CardsBucket) {
+        var adapter = CardsPagerAdapter(this, deck != null, bucket.cards)
+        viewPager.adapter = adapter
+        viewPager.currentItem = startPosition
+    }
+
+    override fun showError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -71,7 +161,7 @@ class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
         }
     }*/
 
-    override fun isCardSaved(card: MTGCard): Boolean {
+    /*override fun isCardSaved(card: MTGCard): Boolean {
         var isSaved = false
         for (savedCard in savedCards) {
             if (savedCard.multiVerseId == card.multiVerseId) {
@@ -102,15 +192,15 @@ class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
     override fun tapOnImage(position: Int) {
         openFullScreen(position)
         TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image")
-    }
+    }*/
 
-    fun openFullScreen(currentItem: Int) {
+    /*fun openFullScreen(currentItem: Int) {
         val fullScreen = Intent(this, FullScreenImageActivity::class.java)
         fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem)
         fullScreen.putExtra(MTGCardsFragment.TITLE, title)
         fullScreen.putExtra(MTGCardsFragment.DECK, deck)
         startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE)
-    }
+    }*/
 
     fun onEventMainThread(event: SavedCardsEvent) {
         if (event.isError) {
@@ -126,8 +216,28 @@ class CardsActivity : DBActivity(), MTGCardFragment.CardConnector {
         bus.removeStickyEvent(event)
     }
 
-    companion object {
-
-        val FULLSCREEN_CODE = 100
+    override fun onPageScrollStateChanged(state: Int) {
+        if (state == ViewPager.SCROLL_STATE_IDLE) {
+            setFabScale(1.0f)
+        }
     }
+
+    override fun onPageSelected(position: Int) {
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+        if (positionOffset.toDouble() != 0.0) {
+            if (positionOffset < 0.5) {
+                setFabScale(1.0f - positionOffset)
+            } else {
+                setFabScale(positionOffset)
+            }
+        }
+    }
+
+    fun setFabScale(value: Float) {
+        fabButton.scaleX = value
+        fabButton.scaleY = value
+    }
+
 }

@@ -31,8 +31,6 @@
 
         <activity android:name=".cards.CardLuckyActivity"/>
 
-        <activity android:name=".cards.FullScreenImageActivity"/>
-
         <activity android:name=".search.SearchActivity"/>
 
         <activity android:name=".decks.DeckActivity"/>

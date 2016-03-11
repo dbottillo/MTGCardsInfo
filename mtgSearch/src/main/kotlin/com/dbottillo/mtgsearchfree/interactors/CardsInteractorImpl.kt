@@ -17,4 +17,8 @@ class CardsInteractorImpl(var storage: CardsStorage) : CardsInteractor {
         return Observable.just(storage.load(set));
     }
 
+    override fun loadIdFav(): Observable<IntArray> {
+        return Observable.just(storage.loadIdFav());
+    }
+
 }

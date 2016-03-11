@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
@@ -74,10 +74,10 @@ public class MTGCardsFragment extends BasicFragment implements ViewPager.OnPageC
 
             viewPager.addOnPageChangeListener(this);
 
-            adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
+            /*adapter = new CardsPagerAdapter(getActivity().getSupportFragmentManager(), deck);
             adapter.setCards(cards);
             viewPager.setAdapter(adapter);
-            viewPager.setCurrentItem(position);
+            viewPager.setCurrentItem(position);*/
 
             addToDeck = (FloatingActionButton) rootView.findViewById(R.id.card_add_to_deck);
             addToDeck.setOnClickListener(this);

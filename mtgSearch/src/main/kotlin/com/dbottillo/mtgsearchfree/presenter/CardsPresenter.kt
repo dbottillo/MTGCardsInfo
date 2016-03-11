@@ -10,5 +10,7 @@ interface CardsPresenter {
 
     fun loadCards(set: MTGSet)
 
+    fun loadIdFavourites()
+
     fun saveAsFavourite(card: MTGCard)
 }
