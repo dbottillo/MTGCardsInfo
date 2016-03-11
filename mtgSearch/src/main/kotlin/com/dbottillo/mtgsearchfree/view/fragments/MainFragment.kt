@@ -15,21 +15,21 @@ import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
-import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
+import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.SetsView
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
@@ -43,6 +43,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
 
     private var gameSet: MTGSet? = null
     private var sets: ArrayList<MTGSet> = ArrayList()
+    private var cardBucket: CardsBucket? = null
     private var cards: ArrayList<MTGCard> = ArrayList()
     private var adapter: CardListAdapter? = null
     private var setAdapter: GameSetAdapter? = null
@@ -189,17 +190,14 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         cardsPresenter.loadCards(gameSet!!)
     }
 
-    override fun cardLoaded(cards: List<MTGCard>) {
-        gameSet?.clear()
-        for (card in cards) {
-            gameSet?.addCard(card)
-        }
+    override fun cardLoaded(bucket: CardsBucket) {
+        cardBucket = bucket
         updateContent()
     }
 
     override fun updateContent() {
         cards.clear()
-        CardsHelper.filterCards(mainActivity?.currentFilter!!, gameSet?.cards, cards)
+        CardsHelper.filterCards(mainActivity?.currentFilter!!, cardBucket?.cards, cards)
         val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         CardsHelper.sortCards(wubrgSort, cards)
 
@@ -207,7 +205,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         emptyView.visibility = if (adapter?.count == 0) View.VISIBLE else View.GONE
         listView.smoothScrollToPosition(0)
 
-        if (gameSet?.cards?.size == CardDataSource.LIMIT) {
+        if (cards.size == CardDataSource.LIMIT) {
             val footer = LayoutInflater.from(activity).inflate(R.layout.search_bottom, listView, false)
             val moreResult = footer.findViewById(R.id.more_result) as TextView
             moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)

@@ -3,10 +3,11 @@ package com.dbottillo.mtgsearchfree.interactors
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import rx.Observable
+import java.util.*
 
 interface CardsInteractor {
 
-    fun load(set: MTGSet): Observable<List<MTGCard>>
+    fun load(set: MTGSet): Observable<ArrayList<MTGCard>>
 
     fun saveAsFavourite(card: MTGCard)
 }

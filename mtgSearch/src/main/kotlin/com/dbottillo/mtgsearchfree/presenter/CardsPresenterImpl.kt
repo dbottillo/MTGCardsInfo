@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.presenter
 
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
+import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.view.CardsView
@@ -16,16 +17,17 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
     var cardsView: CardsView? = null
 
     override fun loadCards(set: MTGSet) {
-        if (CardsMemoryStorage.isValid(set.name)) {
-            cardsView?.cardLoaded(CardsMemoryStorage.cards)
+        var currentBucket = CardsMemoryStorage.bucket
+        if (currentBucket != null && currentBucket.isValid(set.name)) {
+            cardsView?.cardLoaded(currentBucket)
             return;
         }
         var obs = interactor.load(set)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe {
-            CardsMemoryStorage.update(set.name, it)
-            cardsView?.cardLoaded(it)
+            CardsMemoryStorage.bucket = CardsBucket(set, it)
+            cardsView?.cardLoaded(CardsMemoryStorage.bucket!!)
         }
     }
 

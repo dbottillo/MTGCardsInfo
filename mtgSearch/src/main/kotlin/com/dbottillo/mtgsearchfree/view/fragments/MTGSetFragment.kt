@@ -11,7 +11,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
 import com.dbottillo.mtgsearchfree.communication.DataManager
@@ -88,10 +88,10 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
             Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
             TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", event.errorMessage)
         } else {
-            gameSet!!.clear()
+           /* gameSet!!.clear()
             for (card in event.result) {
                 gameSet!!.addCard(card)
-            }
+            }*/
             //            filterPresenter.loadFilter();
         }
         bus.removeStickyEvent(event)

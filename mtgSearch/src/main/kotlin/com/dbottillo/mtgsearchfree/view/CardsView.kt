@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.view
 
-import com.dbottillo.mtgsearchfree.resources.MTGCard
+import com.dbottillo.mtgsearchfree.resources.CardsBucket
 
 interface CardsView : BasicView {
 
-    fun cardLoaded(cards: List<MTGCard>)
+    fun cardLoaded(bucket: CardsBucket)
 }

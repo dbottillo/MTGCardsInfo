@@ -28,5 +28,5 @@ public class SearchFragment extends MTGSetFragment {
 
         return rootView;
     }
-    
+
 }
