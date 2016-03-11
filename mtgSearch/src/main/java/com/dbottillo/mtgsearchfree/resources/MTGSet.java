@@ -3,28 +3,22 @@ package com.dbottillo.mtgsearchfree.resources;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-
 public class MTGSet implements Parcelable {
 
     int id;
     String code;
     String name;
-    ArrayList<MTGCard> cards;
 
     public MTGSet(int id) {
         this.id = id;
-        this.cards = new ArrayList<>();
     }
 
     public MTGSet(int id, String name) {
         this.id = id;
         this.name = name;
-        this.cards = new ArrayList<>();
     }
 
     public MTGSet(Parcel in) {
-        this.cards = new ArrayList<>();
         readFromParcel(in);
     }
 
@@ -48,22 +42,6 @@ public class MTGSet implements Parcelable {
         this.name = name;
     }
 
-    public void clear() {
-        cards.clear();
-    }
-
-    public ArrayList<MTGCard> getCards() {
-        ArrayList<MTGCard> gameCards = new ArrayList<MTGCard>();
-        for (MTGCard card : cards) {
-            gameCards.add(card);
-        }
-        return gameCards;
-    }
-
-    public void addCard(MTGCard card) {
-        this.cards.add(card);
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -74,14 +52,12 @@ public class MTGSet implements Parcelable {
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeString(code);
-        dest.writeTypedList(cards);
     }
 
     private void readFromParcel(Parcel in) {
         id = in.readInt();
         name = in.readString();
         code = in.readString();
-        in.readTypedList(cards, MTGCard.CREATOR);
     }
 
     public static final Parcelable.Creator<MTGSet> CREATOR = new Parcelable.Creator<MTGSet>() {

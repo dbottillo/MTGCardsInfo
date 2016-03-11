@@ -6,10 +6,11 @@ import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
+import java.util.*
 
 class CardsStorage(var context: Context) {
 
-    fun load(set: MTGSet): List<MTGCard> {
+    fun load(set: MTGSet): ArrayList<MTGCard> {
         var helper = MTGDatabaseHelper(context)
         return helper.getSet(set)
     }

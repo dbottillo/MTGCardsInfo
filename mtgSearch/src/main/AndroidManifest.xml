@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".cards.CardsActivity"/>
+        <activity android:name=".view.activities.CardsActivity"/>
 
         <activity android:name=".cards.CardLuckyActivity"/>
 
