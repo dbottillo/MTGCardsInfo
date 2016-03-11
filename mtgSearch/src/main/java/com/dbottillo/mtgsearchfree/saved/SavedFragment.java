@@ -43,7 +43,7 @@ import javax.inject.Inject;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class SavedFragment extends BasicFragment implements AdapterView.OnItemClickListener,
-        OnCardListener{
+        OnCardListener {
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;
@@ -188,10 +188,6 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
         emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
     }*/
 
-    @Override
-    public void setupComponent(@NotNull AppComponent appComponent) {
-
-    }
 
     /*@Override
     public void updateContent(@NotNull CardFilter filter) {

@@ -58,9 +58,6 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
     val progressBar: SmoothProgressBar by bindView(R.id.progress)
     val chooserName: TextView by bindView(R.id.set_chooser_name)
 
-    override fun setupComponent(appComponent: AppComponent) {
-    }
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
         ButterKnife.bind(this, rootView)

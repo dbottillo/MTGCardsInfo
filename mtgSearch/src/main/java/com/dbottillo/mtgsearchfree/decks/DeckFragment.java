@@ -31,7 +31,6 @@ import com.dbottillo.mtgsearchfree.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
-import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -39,8 +38,6 @@ import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -219,11 +216,6 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
 
     @Override
     public void onLoaderReset(Loader loader) {
-
-    }
-
-    @Override
-    public void setupComponent(@NotNull AppComponent appComponent) {
 
     }
 

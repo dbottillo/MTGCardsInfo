@@ -11,7 +11,6 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
 import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
-import com.dbottillo.mtgsearchfree.component.AppComponent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import de.greenrobot.event.EventBus
@@ -94,7 +93,5 @@ abstract class BasicFragment : DialogFragment() {
     fun getIsPortrait(): Boolean {
         return isPortrait;
     }
-
-    abstract fun setupComponent(appComponent: AppComponent)
 
 }

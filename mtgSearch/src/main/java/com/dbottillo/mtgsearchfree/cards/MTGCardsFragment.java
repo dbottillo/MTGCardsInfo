@@ -17,15 +17,12 @@ import android.widget.RelativeLayout;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
-import com.dbottillo.mtgsearchfree.component.AppComponent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -215,8 +212,4 @@ public class MTGCardsFragment extends BasicFragment implements ViewPager.OnPageC
         DialogHelper.Companion.open(getDbActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
     }
 
-    @Override
-    public void setupComponent(@NotNull AppComponent appComponent) {
-
-    }
 }
