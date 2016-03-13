@@ -1,9 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.view.PagerTabStrip
 import android.support.v4.view.ViewPager
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.RelativeLayout
 import android.widget.Toast
@@ -12,25 +14,21 @@ import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.base.DBActivity
 import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.Deck
-import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
+import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.util.UIUtil
 import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter
-import java.util.*
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import javax.inject.Inject
 
 class CardsActivity : DBActivity(), CardsView, ViewPager.OnPageChangeListener {
 
     companion object {
-        val FULLSCREEN_CODE = 100
-        val CARD_POSITION = "Search"
         val KEY_SEARCH = "Search"
         val KEY_SET = "Set"
         val KEY_DECK = "Deck"
@@ -41,13 +39,15 @@ class CardsActivity : DBActivity(), CardsView, ViewPager.OnPageChangeListener {
     private var deck: Deck? = null
     private var search: String? = null
     private var startPosition: Int = 0
-    private var idFavourites: IntArray? = null
+    private lateinit var idFavourites: IntArray
+    private lateinit var bucket: CardsBucket
+    private var favMenuItem: MenuItem? = null
+    private var imageMenuItem: MenuItem? = null
 
     val viewPager: ViewPager by bindView(R.id.cards_view_pager)
     val pagerTabStrip: PagerTabStrip by bindView(R.id.cards_tab_strip)
     val fabButton: FloatingActionButton by bindView(R.id.card_add_to_deck)
-
-    private val savedCards = ArrayList<MTGCard>()
+    var adapter: CardsPagerAdapter? = null
 
     @Inject lateinit var cardsPresenter: CardsPresenter
 
@@ -78,22 +78,7 @@ class CardsActivity : DBActivity(), CardsView, ViewPager.OnPageChangeListener {
 
         cardsPresenter.loadIdFavourites()
 
-        /*cardsFragment = supportFragmentManager.findFragmentById(R.id.container) as MTGCardsFragment
-
-        if (cardsFragment == null) {
-            title = intent.getStringExtra(MTGCardsFragment.TITLE)
-            deck = intent.getBooleanExtra(MTGCardsFragment.DECK, false)
-            cardsFragment = MTGCardsFragment.newInstance(intent.getIntExtra(MTGCardsFragment.POSITION, 0),
-                    title, deck)
-            supportFragmentManager.beginTransaction().replace(R.id.container, cardsFragment).commit()
-        }*/
     }
-
-    /*override fun onResume() {
-        super.onResume()
-        DataManager.execute(DataManager.TASK.SAVED_CARDS, false)
-    }
-*/
 
     fun setupView() {
         setupToolbar()
@@ -122,107 +107,121 @@ class CardsActivity : DBActivity(), CardsView, ViewPager.OnPageChangeListener {
         return "/cards"
     }
 
+    private fun updateMenu() {
+        var currentCard = adapter?.getItem(viewPager.currentItem)
+        if (currentCard != null && currentCard.multiVerseId.toInt() > 0) {
+            favMenuItem?.isVisible = true
+            if (idFavourites.contains(currentCard.multiVerseId)) {
+                favMenuItem?.title = getString(R.string.favourite_remove)
+                favMenuItem?.setIcon(R.drawable.ab_star_colored)
+            } else {
+                favMenuItem?.title = getString(R.string.favourite_add)
+                favMenuItem?.setIcon(R.drawable.ab_star)
+            }
+        } else {
+            favMenuItem?.isVisible = false
+        }
+        if (sharedPreferences.getBoolean(BasicFragment.PREF_SHOW_IMAGE, true)) {
+            imageMenuItem?.isChecked = true
+        } else {
+            imageMenuItem?.isChecked = false
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.cards, menu)
+        favMenuItem = menu.findItem(R.id.action_fav)
+        imageMenuItem = menu.findItem(R.id.action_image)
+        menu.findItem(R.id.action_fullscreen_image)?.isVisible = false
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == android.R.id.home) {
             finish()
             return true
         }
+        if (id == R.id.action_fav) {
+            favClicked()
+            return true
+        }
+        if (id == R.id.action_share) {
+            var currentCard = adapter?.getItem(viewPager.currentItem)
+            TrackingManager.trackShareCard(currentCard);
+            val i = Intent(Intent.ACTION_SEND)
+            i.type = "text/plain"
+            i.putExtra(Intent.EXTRA_SUBJECT, currentCard?.name)
+            val url = "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=" + currentCard?.multiVerseId
+            i.putExtra(Intent.EXTRA_TEXT, url)
+            startActivity(Intent.createChooser(i, getString(R.string.share_card)))
+            return true
+        }
+        if (id == R.id.action_image) {
+            val showImage = sharedPreferences.getBoolean(BasicFragment.PREF_SHOW_IMAGE, true)
+            val editor = sharedPreferences.edit()
+            editor.putBoolean(BasicFragment.PREF_SHOW_IMAGE, !showImage)
+            editor.apply()
+            reloadAdapter()
+            return true
+        }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun reloadAdapter() {
+        val showImage = sharedPreferences.getBoolean(BasicFragment.PREF_SHOW_IMAGE, true)
+        adapter = CardsPagerAdapter(this, deck != null, showImage, bucket.cards)
+        viewPager.adapter = adapter
+        viewPager.currentItem = startPosition
+        updateMenu()
+    }
+
+    private fun favClicked() {
+        var currentCard = adapter?.getItem(viewPager.currentItem)!!
+        if (idFavourites.contains(currentCard.multiVerseId)) {
+            cardsPresenter.removeFromFavourite(currentCard)
+        } else {
+            cardsPresenter.saveAsFavourite(currentCard)
+        }
     }
 
     override fun favIdLoaded(favourites: IntArray) {
         idFavourites = favourites
-        if (set != null) {
-            cardsPresenter.loadCards(set!!)
-        } else if (search != null) {
-            // load search
+
+        if (adapter == null) {
+            // first time needs to load cards
+            if (set != null) {
+                cardsPresenter.loadCards(set!!)
+            } else if (search != null) {
+                // load search
+            } else {
+                // something very bad happened here
+                throw UnsupportedOperationException()
+            }
         } else {
-            // something very bad happened here
-            throw UnsupportedOperationException()
+            updateMenu()
         }
     }
 
     override fun cardLoaded(bucket: CardsBucket) {
-        var adapter = CardsPagerAdapter(this, deck != null, bucket.cards)
-        viewPager.adapter = adapter
-        viewPager.currentItem = startPosition
+        this.bucket = bucket
+        reloadAdapter()
     }
 
     override fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == FULLSCREEN_CODE && resultCode == Activity.RESULT_OK) {
-            cardsFragment!!.goTo(data.getIntExtra(MTGCardsFragment.POSITION, 0))
-        }
-    }*/
-
-    /*override fun isCardSaved(card: MTGCard): Boolean {
-        var isSaved = false
-        for (savedCard in savedCards) {
-            if (savedCard.multiVerseId == card.multiVerseId) {
-                isSaved = true
-                break
-            }
-        }
-        return isSaved
-    }
-
-    override fun saveCard(card: MTGCard) {
-        DataManager.execute(DataManager.TASK.SAVE_CARD, card)
-        savedCards.add(card)
-        invalidateOptionsMenu()
-    }
-
-    override fun removeCard(card: MTGCard) {
-        DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card)
-        for (savedCard in savedCards) {
-            if (savedCard.multiVerseId == card.multiVerseId) {
-                savedCards.remove(savedCard)
-                break
-            }
-        }
-        invalidateOptionsMenu()
-    }
-
-    override fun tapOnImage(position: Int) {
-        openFullScreen(position)
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_CARD, "fullscreen", "tap_on_image")
-    }*/
-
-    /*fun openFullScreen(currentItem: Int) {
-        val fullScreen = Intent(this, FullScreenImageActivity::class.java)
-        fullScreen.putExtra(MTGCardsFragment.POSITION, currentItem)
-        fullScreen.putExtra(MTGCardsFragment.TITLE, title)
-        fullScreen.putExtra(MTGCardsFragment.DECK, deck)
-        startActivityForResult(fullScreen, CardsActivity.FULLSCREEN_CODE)
-    }*/
-
-    fun onEventMainThread(event: SavedCardsEvent) {
-        if (event.isError) {
-            Toast.makeText(this, R.string.error_favourites, Toast.LENGTH_SHORT).show()
-            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-cards", event.errorMessage)
-        } else {
-            savedCards.clear()
-            for (card in event.result) {
-                savedCards.add(card)
-            }
-            invalidateOptionsMenu()
-        }
-        bus.removeStickyEvent(event)
-    }
 
     override fun onPageScrollStateChanged(state: Int) {
         if (state == ViewPager.SCROLL_STATE_IDLE) {
             setFabScale(1.0f)
+            updateMenu()
         }
     }
 
     override fun onPageSelected(position: Int) {
+        updateMenu()
     }
 
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {

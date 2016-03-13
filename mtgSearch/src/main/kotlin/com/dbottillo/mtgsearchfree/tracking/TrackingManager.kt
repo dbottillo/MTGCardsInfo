@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.tracking
 import android.content.Context
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
+import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.google.android.gms.analytics.GoogleAnalytics
 import com.google.android.gms.analytics.HitBuilders
@@ -60,6 +61,12 @@ object TrackingManager {
 
     fun trackImageError(image: String) {
         trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "image", image)
+    }
+
+    fun trackShareCard(card: MTGCard?) {
+        if (card != null) {
+            trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SHARE, card.name)
+        }
     }
 
 }

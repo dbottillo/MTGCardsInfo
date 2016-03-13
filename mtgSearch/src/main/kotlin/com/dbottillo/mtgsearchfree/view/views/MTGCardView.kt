@@ -72,12 +72,6 @@ class MTGCardView : RelativeLayout {
                 mainContainer.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })
-
-        retry.setOnClickListener {
-            View.OnClickListener {
-                loadImage(false)
-            }
-        }
     }
 
     override fun onAttachedToWindow() {

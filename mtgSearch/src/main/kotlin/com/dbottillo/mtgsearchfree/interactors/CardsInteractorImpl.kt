@@ -9,8 +9,12 @@ import java.util.*
 
 class CardsInteractorImpl(var storage: CardsStorage) : CardsInteractor {
 
-    override fun saveAsFavourite(card: MTGCard) {
-        Observable.just(storage.saveAsFavourite(card)).subscribeOn(Schedulers.io()).subscribe()
+    override fun saveAsFavourite(card: MTGCard): Observable<IntArray> {
+        return Observable.just(storage.saveAsFavourite(card));
+    }
+
+    override fun removeFromFavourite(card: MTGCard): Observable<IntArray> {
+        return Observable.just(storage.removeFromFavourite(card));
     }
 
     override fun load(set: MTGSet): Observable<ArrayList<MTGCard>> {

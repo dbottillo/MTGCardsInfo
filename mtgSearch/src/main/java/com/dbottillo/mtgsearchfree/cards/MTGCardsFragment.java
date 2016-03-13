@@ -26,6 +26,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class MTGCardsFragment extends BasicFragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     public static final String POSITION = "position";

@@ -51,6 +51,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.subTypes = new ArrayList<>();
         this.rulings = new ArrayList<>();
         this.quantity = -1;
+        this.multiVerseId = -1;
     }
 
     public MTGCard(int id) {
