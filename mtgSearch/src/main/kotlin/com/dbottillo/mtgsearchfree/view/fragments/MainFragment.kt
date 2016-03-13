@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
 import com.dbottillo.mtgsearchfree.resources.CardsBucket
@@ -149,8 +150,8 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
                     val editor = sharedPreferences.edit()
                     editor.putInt("setPosition", currentSetPosition)
                     editor.apply()
-                    setAdapter!!.setCurrent(currentSetPosition)
-                    setAdapter!!.notifyDataSetChanged()
+                    setAdapter?.setCurrent(currentSetPosition)
+                    setAdapter?.notifyDataSetChanged()
                     loadSet()
                 }
             }

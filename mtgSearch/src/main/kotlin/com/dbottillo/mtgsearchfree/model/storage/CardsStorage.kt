@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.content.Context
-import android.util.SparseArray
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
@@ -16,8 +15,9 @@ class CardsStorage(var context: Context) {
         return helper.getSet(set)
     }
 
-    fun saveAsFavourite(card: MTGCard) {
+    fun saveAsFavourite(card: MTGCard): IntArray {
         FavouritesDataSource.saveFavourites(CardsInfoDbHelper.getInstance(context).writableDatabase, card)
+        return loadIdFav()
     }
 
     fun loadIdFav(): IntArray {
@@ -30,6 +30,11 @@ class CardsStorage(var context: Context) {
             index++
         }
         return result
+    }
+
+    fun removeFromFavourite(card: MTGCard) : IntArray {
+        FavouritesDataSource.removeFavourites(CardsInfoDbHelper.getInstance(context).writableDatabase, card)
+        return loadIdFav()
     }
 
 }

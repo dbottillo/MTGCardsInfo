@@ -10,8 +10,24 @@ import rx.schedulers.Schedulers
 
 class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
 
+    override fun removeFromFavourite(card: MTGCard) {
+        var obs = interactor.removeFromFavourite(card)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            CardsMemoryStorage.favourites = it
+            cardsView?.favIdLoaded(it)
+        }
+    }
+
     override fun saveAsFavourite(card: MTGCard) {
-        interactor.saveAsFavourite(card)
+        var obs = interactor.saveAsFavourite(card)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            CardsMemoryStorage.favourites = it
+            cardsView?.favIdLoaded(it)
+        }
     }
 
     var cardsView: CardsView? = null

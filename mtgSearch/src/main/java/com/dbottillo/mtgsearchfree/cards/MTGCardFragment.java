@@ -38,6 +38,7 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
+@Deprecated
 public class MTGCardFragment extends BasicFragment {
 
     private static final String TAG = MTGCardFragment.class.getName();

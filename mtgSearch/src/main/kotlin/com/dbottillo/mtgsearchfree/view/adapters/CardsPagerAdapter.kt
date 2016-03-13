@@ -8,7 +8,7 @@ import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView
 import java.util.*
 
-class CardsPagerAdapter(var context: Context, var deck: Boolean, var cards: ArrayList<MTGCard>) : PagerAdapter() {
+class CardsPagerAdapter(var context: Context, var deck: Boolean, var showImage: Boolean, var cards: ArrayList<MTGCard>) : PagerAdapter() {
 
     override fun getCount(): Int {
         return cards.size
@@ -20,7 +20,7 @@ class CardsPagerAdapter(var context: Context, var deck: Boolean, var cards: Arra
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
         var view = MTGCardView(context)
-        view.load(cards.get(position), true)
+        view.load(cards[position], showImage)
         collection.addView(view)
         return view
     }
@@ -36,4 +36,9 @@ class CardsPagerAdapter(var context: Context, var deck: Boolean, var cards: Arra
         }
         return card.name
     }
+
+    fun getItem(currentItem: Int): MTGCard {
+        return cards[currentItem]
+    }
+
 }

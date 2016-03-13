@@ -18,11 +18,7 @@ class CardsBucket {
         this.set.name = search
     }
 
-    fun getKey(): String {
-        return set.name
-    }
-
     fun isValid(key: String?): Boolean {
-        return true
+        return set.name.equals(key);
     }
 }
