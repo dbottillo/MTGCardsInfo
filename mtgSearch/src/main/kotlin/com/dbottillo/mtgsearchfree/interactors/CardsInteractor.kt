@@ -14,4 +14,6 @@ interface CardsInteractor {
     fun removeFromFavourite(card: MTGCard): Observable<IntArray>
 
     fun loadIdFav(): Observable<IntArray>
+
+    fun getLuckyCards(howMany: Int): Observable<ArrayList<MTGCard>>
 }

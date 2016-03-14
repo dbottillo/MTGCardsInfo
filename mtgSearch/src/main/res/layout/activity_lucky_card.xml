@@ -5,9 +5,11 @@
 
     <include layout="@layout/mtg_toolbar" />
 
-    <FrameLayout
-        android:id="@+id/container"
+    <com.dbottillo.mtgsearchfree.view.views.MTGCardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
         android:layout_weight="1"
         android:layout_height="0dp" />
 

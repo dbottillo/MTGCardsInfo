@@ -11,7 +11,7 @@ import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity
+import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.helper.*

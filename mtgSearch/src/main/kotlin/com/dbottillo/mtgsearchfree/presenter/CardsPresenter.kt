@@ -15,4 +15,6 @@ interface CardsPresenter {
     fun saveAsFavourite(card: MTGCard)
 
     fun removeFromFavourite(card: MTGCard)
+
+    fun getLuckyCards(howMany: Int)
 }

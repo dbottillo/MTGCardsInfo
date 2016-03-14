@@ -27,8 +27,6 @@ import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardSectionAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
-import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
@@ -37,6 +35,7 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
@@ -87,9 +86,8 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
             public void onCardSelected(MTGCard card, int position) {
                 Intent cardsView = new Intent(getActivity(), CardsActivity.class);
                 MTGApp.Companion.setCardsToDisplay(cards);
-                cardsView.putExtra(MTGCardsFragment.POSITION, position);
-                cardsView.putExtra(MTGCardsFragment.TITLE, deck.getName());
-                cardsView.putExtra(MTGCardsFragment.DECK, true);
+                cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
+                cardsView.putExtra(CardsActivity.Companion.getKEY_DECK(), deck);
                 startActivity(cardsView);
             }
 

@@ -10,6 +10,15 @@ import rx.schedulers.Schedulers
 
 class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
 
+    override fun getLuckyCards(howMany: Int) {
+        var obs = interactor.getLuckyCards(howMany)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        obs.subscribe {
+            cardsView?.luckyCardsLoaded(it)
+        }
+    }
+
     override fun removeFromFavourite(card: MTGCard) {
         var obs = interactor.removeFromFavourite(card)
                 .observeOn(AndroidSchedulers.mainThread())

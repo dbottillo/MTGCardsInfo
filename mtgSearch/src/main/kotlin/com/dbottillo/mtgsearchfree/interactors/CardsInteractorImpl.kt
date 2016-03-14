@@ -8,6 +8,9 @@ import rx.schedulers.Schedulers
 import java.util.*
 
 class CardsInteractorImpl(var storage: CardsStorage) : CardsInteractor {
+    override fun getLuckyCards(howMany: Int): Observable<ArrayList<MTGCard>> {
+        return Observable.just(storage.getLuckyCards(howMany));
+    }
 
     override fun saveAsFavourite(card: MTGCard): Observable<IntArray> {
         return Observable.just(storage.saveAsFavourite(card));

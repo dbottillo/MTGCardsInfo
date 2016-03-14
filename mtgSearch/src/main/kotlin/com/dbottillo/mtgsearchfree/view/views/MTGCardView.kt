@@ -22,6 +22,7 @@ import butterknife.ButterKnife
 import butterknife.OnClick
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.TCGPrice
@@ -53,7 +54,7 @@ class MTGCardView : RelativeLayout {
 
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
         var inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var view = inflater.inflate(R.layout.fragment_card, this, true)
+        var view = inflater.inflate(R.layout.view_mtg_card, this, true)
         ButterKnife.bind(this, view)
 
         priceOnTcg.text = Html.fromHtml("<i><u>TCG</i></u>")
@@ -74,15 +75,10 @@ class MTGCardView : RelativeLayout {
         })
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        val cardFilter = IntentFilter(card?.multiVerseId.toString())
-        LocalBroadcastManager.getInstance(context).registerReceiver(priceReceiver, cardFilter)
-    }
-
     private val priceReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             price = intent.getParcelableExtra<TCGPrice>(NetworkIntentService.REST_RESULT)
+            LOG.e("price received: "+price.toString())
             updatePrice()
             if (price != null && price!!.isNotFound && isNetworkAvailable()) {
                 val url = intent.getStringExtra(NetworkIntentService.REST_URL)
@@ -133,6 +129,10 @@ class MTGCardView : RelativeLayout {
             cardLoader.visibility = View.GONE
             cardImageContainer.visibility = View.GONE
         }
+
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(priceReceiver)
+        val cardFilter = IntentFilter(card.multiVerseId.toString())
+        LocalBroadcastManager.getInstance(context).registerReceiver(priceReceiver, cardFilter)
     }
 
     private fun updatePrice() {
@@ -223,6 +223,15 @@ class MTGCardView : RelativeLayout {
         if (price != null && !price!!.isAnError) {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(price?.link))
             context.startActivity(browserIntent)
+        }
+    }
+
+    fun toggleImage(showImage: Boolean) {
+        if (showImage && card?.image != null) {
+            loadImage(false)
+        } else {
+            cardLoader.visibility = View.GONE
+            cardImageContainer.visibility = View.GONE
         }
     }
 

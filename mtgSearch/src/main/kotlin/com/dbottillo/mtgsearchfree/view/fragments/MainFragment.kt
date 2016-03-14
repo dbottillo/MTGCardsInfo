@@ -19,7 +19,6 @@ import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
-import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
 import com.dbottillo.mtgsearchfree.resources.CardsBucket
@@ -195,6 +194,10 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         cardsPresenter.loadCards(gameSet!!)
     }
 
+    override fun luckyCardsLoaded(cards: ArrayList<MTGCard>) {
+        throw UnsupportedOperationException()
+    }
+
     override fun cardLoaded(bucket: CardsBucket) {
         cardBucket = bucket
         updateContent()
@@ -202,7 +205,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
 
     override fun updateContent() {
         cards.clear()
-        CardsHelper.filterCards(mainActivity?.currentFilter!!, cardBucket?.cards, cards)
+        CardsHelper.filterCards(mainActivity?.currentFilter!!, cardBucket?.cards!!, cards)
         val wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         CardsHelper.sortCards(wubrgSort, cards)
 

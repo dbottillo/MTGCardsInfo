@@ -29,7 +29,7 @@
 
         <activity android:name=".view.activities.CardsActivity"/>
 
-        <activity android:name=".cards.CardLuckyActivity"/>
+        <activity android:name=".view.activities.CardLuckyActivity"/>
 
         <activity android:name=".search.SearchActivity"/>
 
