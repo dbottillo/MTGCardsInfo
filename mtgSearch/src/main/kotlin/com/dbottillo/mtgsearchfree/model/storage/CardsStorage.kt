@@ -32,9 +32,14 @@ class CardsStorage(var context: Context) {
         return result
     }
 
-    fun removeFromFavourite(card: MTGCard) : IntArray {
+    fun removeFromFavourite(card: MTGCard): IntArray {
         FavouritesDataSource.removeFavourites(CardsInfoDbHelper.getInstance(context).writableDatabase, card)
         return loadIdFav()
+    }
+
+    fun getLuckyCards(howMany: Int): ArrayList<MTGCard>? {
+        var helper = MTGDatabaseHelper(context)
+        return helper.getRandomCard(howMany)
     }
 
 }

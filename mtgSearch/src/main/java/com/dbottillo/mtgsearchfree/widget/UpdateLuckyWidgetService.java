@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
+import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.squareup.picasso.Picasso;
@@ -56,7 +56,7 @@ public class UpdateLuckyWidgetService extends Service {
                 index++;
 
                 Intent openIntent = new Intent(getApplicationContext(), CardLuckyActivity.class);
-                openIntent.putExtra(CardLuckyActivity.CARD, card);
+                openIntent.putExtra(CardLuckyActivity.Companion.getCARD(), card);
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 remoteViews.setOnClickPendingIntent(R.id.image_card, pendingIntent);
 

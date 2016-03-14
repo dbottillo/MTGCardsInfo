@@ -2,6 +2,8 @@ package com.dbottillo.mtgsearchfree.view.activities
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -22,10 +24,12 @@ abstract class BasicActivity : AppCompatActivity() {
     var sizeToolbar = 0
     var bus: EventBus = EventBus.getDefault()
     var toolbar: Toolbar? = null
+    protected var isPortrait = false
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle);
         app = application as MTGApp?;
+        isPortrait = resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
         val tv = TypedValue()
         if (theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
@@ -87,5 +91,9 @@ abstract class BasicActivity : AppCompatActivity() {
             startActivity(goToPlay)
         }
         TrackingHelper.getInstance(applicationContext).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google")
+    }
+
+    fun getSharedPreferences(): SharedPreferences {
+        return getSharedPreferences(MTGApp.PREFS_NAME, 0)
     }
 }

@@ -18,8 +18,6 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
-import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
@@ -28,6 +26,7 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
@@ -116,8 +115,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.Companion.setCardsToDisplay(savedCards);
-        cardsView.putExtra(MTGCardsFragment.POSITION, position);
-        cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
+        cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
+        cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
         startActivity(cardsView);
     }
 
@@ -142,8 +141,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     public void onCardSelected(MTGCard card, int position) {
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.Companion.setCardsToDisplay(savedFilteredCards);
-        cardsView.putExtra(MTGCardsFragment.POSITION, position);
-        cardsView.putExtra(MTGCardsFragment.TITLE, getString(R.string.action_saved));
+        cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
+        cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
         startActivity(cardsView);
     }
 
