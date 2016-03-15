@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.cards
 
 import com.dbottillo.mtgsearchfree.helper.FilterHelper
-import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.search.SearchParams
 

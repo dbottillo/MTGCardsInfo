@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
-
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;

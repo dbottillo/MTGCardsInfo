@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.content.SharedPreferences
-import com.dbottillo.mtgsearchfree.resources.CardFilter
-import com.dbottillo.mtgsearchfree.resources.CardProperties
+import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.model.CardProperties
 
 class CardFilterStorage(var preferences: SharedPreferences) {
 

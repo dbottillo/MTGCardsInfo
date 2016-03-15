@@ -18,8 +18,6 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
-import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
-import com.dbottillo.mtgsearchfree.dagger.DaggerDataComponent;
 import com.dbottillo.mtgsearchfree.dagger.DataComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
@@ -34,24 +32,24 @@ import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
-    AppComponent graph;
-    DataComponent dataGraph;
-    ArrayList<MTGCard> cardsToDisplay = null;
+    /*public static AppComponent graph;
+    public static DataComponent dataGraph;*/
+    public static ArrayList<MTGCard> cardsToDisplay = null;
 
-    private String INTENT_RELEASE_NOTE_PUSH = "Release push note";
+    public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     public static String PREFS_NAME = "Filter";
-    private static RefWatcher refWatcher;
+    public static RefWatcher refWatcher;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        graph = DaggerAppComponent.builder().androidModule(new AndroidModule(this)).build();
+        /*graph = DaggerAppComponent.builder().androidModule(new AndroidModule(this)).build();
         graph.inject(this);
 
         dataGraph = DaggerDataComponent.builder()
                 .appComponent(graph)
-                .presentersModule(new PresentersModule()).build();
+                .presentersModule(new PresentersModule()).build();*/
 
         //TrackingManager.init(getApplicationContext());
         DataManager.with(this);
