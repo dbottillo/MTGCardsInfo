@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
@@ -113,7 +114,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.Companion.setCardsToDisplay(savedCards);
+        MTGApp.cardsToDisplay = savedCards;
         cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
         cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
         startActivity(cardsView);
@@ -139,7 +140,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     @Override
     public void onCardSelected(MTGCard card, int position) {
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        MTGApp.Companion.setCardsToDisplay(savedFilteredCards);
+        MTGApp.cardsToDisplay = savedFilteredCards;
         cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
         cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
         startActivity(cardsView);

@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
@@ -136,7 +137,7 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
             TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_SELECT, gameSet!!.name + " pos:" + position)
         }
         val cardsView = Intent(activity, CardsActivity::class.java)
-        MTGApp.cardsToDisplay = cards
+        MTGApp.cardsToDisplay= cards;
         /*cardsView.putExtra(MTGCardsFragment.POSITION, position)
         cardsView.putExtra(MTGCardsFragment.TITLE, gameSet!!.name)*/
         startActivity(cardsView)

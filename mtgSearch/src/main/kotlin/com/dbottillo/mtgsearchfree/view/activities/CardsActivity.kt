@@ -9,14 +9,12 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
-import com.dbottillo.mtgsearchfree.resources.CardsBucket
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.resources.Deck
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.util.UIUtil
-import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import java.util.*
@@ -52,7 +50,7 @@ class CardsActivity : CommonCardsActivity(), CardsView, ViewPager.OnPageChangeLi
 
         setupView()
 
-        MTGApp.Companion.dataGraph.inject(this)
+        MTGApp.dataGraph.inject(this)
         cardsPresenter.init(this)
 
         if (intent != null) {

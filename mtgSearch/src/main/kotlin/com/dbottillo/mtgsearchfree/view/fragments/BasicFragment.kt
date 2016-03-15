@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager
@@ -53,7 +54,7 @@ abstract class BasicFragment : DialogFragment() {
     }
 
     val sharedPreferences: SharedPreferences
-        get() = dbActivity!!.getSharedPreferences(MTGApp.Companion.PREFS_NAME, 0)
+        get() = dbActivity!!.getSharedPreferences(MTGApp.PREFS_NAME, 0)
 
     protected fun setActionBarTitle(title: String) {
         if (dbActivity!!.supportActionBar != null) {

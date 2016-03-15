@@ -14,19 +14,15 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
-import com.dbottillo.mtgsearchfree.presenter.SetsPresenter
-import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.view.CardsView
-import com.dbottillo.mtgsearchfree.view.SetsView
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
@@ -71,7 +67,7 @@ class MainFragment : BasicFragment(), DialogUtil.SortDialogListener,
         adapter = CardListAdapter(activity, cards, false, R.menu.card_option, this)
         listView.adapter = adapter
 
-        MTGApp.Companion.dataGraph.inject(this)
+        MTGApp.dataGraph.inject(this)
         cardsPresenter.init(this)
         setsPresenter.init(this)
         setsPresenter.loadSets();

@@ -6,10 +6,8 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
-import com.dbottillo.mtgsearchfree.resources.CardsBucket
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.resources.MTGCard
-import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView
 import com.squareup.picasso.Picasso
@@ -39,7 +37,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsView {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        MTGApp.Companion.dataGraph.inject(this)
+        MTGApp.dataGraph.inject(this)
         cardsPresenter.init(this)
 
         findViewById(R.id.btn_lucky_again)?.setOnClickListener({

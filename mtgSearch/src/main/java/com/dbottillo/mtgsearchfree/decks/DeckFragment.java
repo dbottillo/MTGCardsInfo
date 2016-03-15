@@ -26,6 +26,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardSectionAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
@@ -84,7 +85,7 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
             @Override
             public void onCardSelected(MTGCard card, int position) {
                 Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-                MTGApp.Companion.setCardsToDisplay(cards);
+                MTGApp.cardsToDisplay = cards;
                 cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
                 cardsView.putExtra(CardsActivity.Companion.getKEY_DECK(), deck);
                 startActivity(cardsView);

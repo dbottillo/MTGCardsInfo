@@ -10,18 +10,14 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
+import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.helper.*
 import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
-import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter
-import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.view.CardFilterView
 import com.dbottillo.mtgsearchfree.view.MainView
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout
 import com.dbottillo.mtgsearchfree.view.fragments.*
@@ -62,7 +58,7 @@ class MainActivity : BasicActivity(), MainView, CardFilterView,
 
         initialBundle = bundle
 
-        MTGApp.Companion.dataGraph.inject(this)
+        MTGApp.dataGraph.inject(this)
         filterPresenter.init(this)
         if (bundle == null) {
             filterPresenter.loadFilter()
