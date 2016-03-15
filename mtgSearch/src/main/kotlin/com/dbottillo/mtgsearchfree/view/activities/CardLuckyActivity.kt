@@ -6,8 +6,6 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.MTGCard
@@ -65,9 +63,13 @@ class CardLuckyActivity : CommonCardsActivity(), CardsView {
         outState.putParcelableArrayList("luckyCards", luckyCards)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        cardsPresenter.detachView()
+    }
+
     override fun onResume() {
         super.onResume()
-        DataManager.execute(DataManager.TASK.SAVED_CARDS, false)
     }
 
     override fun getPageTrack(): String {

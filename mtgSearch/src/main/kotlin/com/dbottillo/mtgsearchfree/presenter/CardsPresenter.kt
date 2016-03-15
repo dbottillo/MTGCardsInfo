@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.view.CardsView
 
-interface CardsPresenter {
+interface CardsPresenter : BasicPresenter {
 
     fun init(view: CardsView)
 

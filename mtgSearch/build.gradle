@@ -146,8 +146,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
     compile "com.google.dagger:dagger:$dagger_version"
-    kapt 'com.google.dagger:dagger-compiler:2.0'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     // Crashlytics Kit
     compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {

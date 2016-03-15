@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.fragments
 
 import android.content.Intent
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ListView
@@ -10,21 +9,16 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
-import com.dbottillo.mtgsearchfree.base.MTGApp
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
-import com.dbottillo.mtgsearchfree.cards.CardsHelper
-import com.dbottillo.mtgsearchfree.cards.MTGCardsFragment
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
-import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
-import com.dbottillo.mtgsearchfree.resources.CardFilter
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.search.SearchParams
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 
@@ -88,10 +82,10 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
             Toast.makeText(activity, event.errorMessage, Toast.LENGTH_SHORT).show()
             TrackingHelper.getInstance(activity).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "card-main", event.errorMessage)
         } else {
-           /* gameSet!!.clear()
-            for (card in event.result) {
-                gameSet!!.addCard(card)
-            }*/
+            /* gameSet!!.clear()
+             for (card in event.result) {
+                 gameSet!!.addCard(card)
+             }*/
             //            filterPresenter.loadFilter();
         }
         bus.removeStickyEvent(event)
@@ -143,8 +137,8 @@ abstract class MTGSetFragment : BasicFragment(), View.OnClickListener, OnCardLis
         }
         val cardsView = Intent(activity, CardsActivity::class.java)
         MTGApp.cardsToDisplay = cards
-        cardsView.putExtra(MTGCardsFragment.POSITION, position)
-        cardsView.putExtra(MTGCardsFragment.TITLE, gameSet!!.name)
+        /*cardsView.putExtra(MTGCardsFragment.POSITION, position)
+        cardsView.putExtra(MTGCardsFragment.TITLE, gameSet!!.name)*/
         startActivity(cardsView)
     }
 
