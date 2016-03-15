@@ -14,7 +14,6 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener
-import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.cards.CardsHelper
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment

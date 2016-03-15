@@ -5,16 +5,19 @@ import com.dbottillo.mtgsearchfree.resources.CardsBucket
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.view.CardsView
+import rx.Subscription
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
 
+    var subscription: Subscription? = null
+
     override fun getLuckyCards(howMany: Int) {
         var obs = interactor.getLuckyCards(howMany)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        obs.subscribe {
+        subscription = obs.subscribe {
             cardsView?.luckyCardsLoaded(it)
         }
     }
@@ -23,7 +26,7 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
         var obs = interactor.removeFromFavourite(card)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        obs.subscribe {
+        subscription = obs.subscribe {
             CardsMemoryStorage.favourites = it
             cardsView?.favIdLoaded(it)
         }
@@ -33,7 +36,7 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
         var obs = interactor.saveAsFavourite(card)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        obs.subscribe {
+        subscription = obs.subscribe {
             CardsMemoryStorage.favourites = it
             cardsView?.favIdLoaded(it)
         }
@@ -50,7 +53,7 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
         var obs = interactor.load(set)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        obs.subscribe {
+        subscription = obs.subscribe {
             CardsMemoryStorage.bucket = CardsBucket(set, it)
             cardsView?.cardLoaded(CardsMemoryStorage.bucket!!)
         }
@@ -69,10 +72,14 @@ class CardsPresenterImpl(var interactor: CardsInteractor) : CardsPresenter {
         var obs = interactor.loadIdFav()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        obs.subscribe {
+        subscription = obs.subscribe {
             CardsMemoryStorage.favourites = it
             cardsView?.favIdLoaded(it)
         }
+    }
+
+    override fun detachView() {
+        subscription?.unsubscribe()
     }
 
 }
