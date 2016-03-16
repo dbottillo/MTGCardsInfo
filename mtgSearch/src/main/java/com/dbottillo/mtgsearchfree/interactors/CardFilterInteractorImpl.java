@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 
 import rx.Observable;
 

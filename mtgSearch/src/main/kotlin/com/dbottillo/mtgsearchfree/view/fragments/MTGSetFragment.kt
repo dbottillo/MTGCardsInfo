@@ -13,7 +13,6 @@ import com.dbottillo.mtgsearchfree.base.MTGApp
 import com.dbottillo.mtgsearchfree.communication.DataManager
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.helper.DialogHelper
 import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard

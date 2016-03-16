@@ -20,7 +20,6 @@ import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.helper.LOG
 import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager
 import java.util.*
 
 class AboutFragment : BasicFragment(), View.OnClickListener, View.OnTouchListener {
