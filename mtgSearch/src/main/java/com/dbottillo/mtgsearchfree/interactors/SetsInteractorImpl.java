@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
-import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
 import java.util.ArrayList;
