@@ -32,8 +32,8 @@ import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
-    /*public static AppComponent graph;
-    public static DataComponent dataGraph;*/
+    public static AppComponent graph;
+    public static DataComponent dataGraph;
     public static ArrayList<MTGCard> cardsToDisplay = null;
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
