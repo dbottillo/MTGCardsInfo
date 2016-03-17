@@ -21,6 +21,14 @@ public class CardsBucket {
         this.set.setName(search);
     }
 
+    public MTGSet getSet() {
+        return set;
+    }
+
+    public ArrayList<MTGCard> getCards() {
+        return cards;
+    }
+
     public boolean isValid(String key) {
         return set.getName().equals(key);
     }

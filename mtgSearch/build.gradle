@@ -1,5 +1,4 @@
 buildscript {
-    ext.kotlin_version = '1.0.0'
     ext.dagger_version = '2.1'
     ext.support_library_version = '23.2.0'
     repositories {
@@ -10,13 +9,10 @@ buildscript {
     dependencies {
         classpath 'io.fabric.tools:gradle:1.20.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
@@ -142,9 +138,6 @@ dependencies {
     compile "com.android.support:design:$support_library_version"
     compile 'de.greenrobot:eventbus:2.4.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    kapt 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
     compile "com.google.dagger:dagger:$dagger_version"
@@ -175,6 +168,7 @@ dependencies {
     androidTestCompile "com.android.support:support-annotations:$support_library_version"
     androidTestCompile "com.android.support:appcompat-v7:$support_library_version"
     androidTestCompile "com.android.support:recyclerview-v7:$support_library_version"
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
 
 task checkstyle(type: Checkstyle) {
@@ -223,7 +217,3 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
 check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
 
 apply plugin: 'com.google.gms.google-services'
-
-kapt {
-    generateStubs = true
-}

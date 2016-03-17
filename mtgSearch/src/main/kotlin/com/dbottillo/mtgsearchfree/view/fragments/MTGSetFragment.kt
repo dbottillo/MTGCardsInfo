@@ -18,7 +18,6 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.search.SearchParams
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 
