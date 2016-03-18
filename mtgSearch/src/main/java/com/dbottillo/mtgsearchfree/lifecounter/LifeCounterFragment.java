@@ -24,7 +24,6 @@ import com.dbottillo.mtgsearchfree.communication.events.PlayersEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Player;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
