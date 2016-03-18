@@ -10,10 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
-/**
- * Created by danielebottillo on 02/03/2014.
- */
 public class GoToPremiumFragment extends BasicFragment implements View.OnClickListener {
 
     @Override

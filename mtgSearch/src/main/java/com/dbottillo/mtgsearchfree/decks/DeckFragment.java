@@ -35,6 +35,8 @@ import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,8 +86,8 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
             public void onCardSelected(MTGCard card, int position) {
                 Intent cardsView = new Intent(getActivity(), CardsActivity.class);
                 MTGApp.cardsToDisplay = cards;
-                cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
-                cardsView.putExtra(CardsActivity.Companion.getKEY_DECK(), deck);
+                cardsView.putExtra(CardsActivity.POSITION, position);
+                cardsView.putExtra(CardsActivity.KEY_DECK, deck);
                 startActivity(cardsView);
             }
 
@@ -119,7 +121,7 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
 
     public void onEventMainThread(DeckEvent event) {
         forceReload();
-        getBus().removeStickyEvent(event);
+        bus.removeStickyEvent(event);
     }
 
     private void forceReload() {
@@ -250,7 +252,7 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
     }
 
     private void exportDeck() {
-        if (FileUtil.downloadDeckToSdCard(getApp(), deck, cards)) {
+        if (FileUtil.downloadDeckToSdCard(app, deck, cards)) {
             if (this.getView() != null) {
                 Snackbar snackbar = Snackbar
                         .make(getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)

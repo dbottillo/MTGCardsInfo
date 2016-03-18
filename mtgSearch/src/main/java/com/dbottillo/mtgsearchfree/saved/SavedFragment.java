@@ -21,10 +21,13 @@ import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.helper.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 
@@ -112,8 +115,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.cardsToDisplay = savedCards;
-        cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
-        cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
+        cardsView.putExtra(CardsActivity.POSITION, position);
+        cardsView.putExtra(CardsActivity.KEY_SEARCH, getString(R.string.action_saved));
         startActivity(cardsView);
     }
 
@@ -138,15 +141,15 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     public void onCardSelected(MTGCard card, int position) {
         Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.cardsToDisplay = savedFilteredCards;
-        cardsView.putExtra(CardsActivity.Companion.getPOSITION(), position);
-        cardsView.putExtra(CardsActivity.Companion.getKEY_SEARCH(), getString(R.string.action_saved));
+        cardsView.putExtra(CardsActivity.POSITION, position);
+        cardsView.putExtra(CardsActivity.KEY_SEARCH, getString(R.string.action_saved));
         startActivity(cardsView);
     }
 
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
-            DialogHelper.Companion.open(getDbActivity(), "add_to_deck", AddToDeckFragment.newInstance(card));
+            DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card));
 
         } else if (menuItem.getItemId() == R.id.action_remove) {
             DataManager.execute(DataManager.TASK.UN_SAVE_CARD, card);
@@ -162,7 +165,7 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
             savedCards = event.getResult();
             refreshUI();
         }
-        getBus().removeStickyEvent(event);
+        bus.removeStickyEvent(event);
     }
 
     private void refreshUI() {

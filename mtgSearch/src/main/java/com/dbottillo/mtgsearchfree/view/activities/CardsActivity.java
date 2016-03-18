@@ -17,6 +17,8 @@ import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,10 +28,10 @@ import butterknife.ButterKnife;
 
 public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener {
 
-    private static final String KEY_SEARCH = "Search";
-    private static final String KEY_SET = "Set";
-    private static final String KEY_DECK = "Deck";
-    private static final String POSITION = "Position";
+    public static final String KEY_SEARCH = "Search";
+    public static final String KEY_SET = "Set";
+    public static final String KEY_DECK = "Deck";
+    public static final String POSITION = "Position";
 
     private MTGSet set = null;
     private Deck deck = null;
@@ -105,7 +107,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     private void reloadAdapter() {
-        boolean showImage = getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true);
+        boolean showImage = getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(startPosition);

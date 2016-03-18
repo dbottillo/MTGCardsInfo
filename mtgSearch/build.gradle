@@ -100,9 +100,6 @@ android {
         lintConfig file("config/lint/lint.xml")
         ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText'
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
 }
 
 task readPasswordFromInput << {

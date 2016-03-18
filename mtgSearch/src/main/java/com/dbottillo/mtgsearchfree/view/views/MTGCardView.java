@@ -56,6 +56,11 @@ public class MTGCardView extends RelativeLayout {
     int widthAvailable = 0;
     int heightAvailable = 0;
     boolean isLandscape = false;
+
+    public MTGCard getCard() {
+        return card;
+    }
+
     MTGCard card;
     TCGPrice price;
 

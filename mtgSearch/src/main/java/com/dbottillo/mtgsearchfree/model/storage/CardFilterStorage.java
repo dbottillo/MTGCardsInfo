@@ -9,7 +9,7 @@ public class CardFilterStorage {
 
     SharedPreferences preferences;
 
-    CardFilterStorage(SharedPreferences preferences) {
+    public CardFilterStorage(SharedPreferences preferences) {
         this.preferences = preferences;
     }
 

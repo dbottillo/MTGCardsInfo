@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 

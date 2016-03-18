@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.dagger.AppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DataComponent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 

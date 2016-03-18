@@ -28,7 +28,12 @@ import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
+import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
 
 import java.io.File;
 
@@ -59,6 +64,11 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     boolean filterLoaded;
     Bundle initialBundle;
+
+    public CardFilter getCurrentFilter() {
+        return currentFilter;
+    }
+
     CardFilter currentFilter;
 
     CardFilterPresenter filterPresenter;
@@ -203,7 +213,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             new AddFavouritesAsyncTask(getApplicationContext()).execute();
 
         } else if (menuItem.getItemId() == 103) {
-            throw RuntimeException("This is a crash");
+            throw new RuntimeException("This is a crash");
 
         } else if (menuItem.getItemId() == 104) {
             File file = FileUtil.copyDbToSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);

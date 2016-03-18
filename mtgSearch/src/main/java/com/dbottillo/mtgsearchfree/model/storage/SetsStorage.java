@@ -11,7 +11,7 @@ public class SetsStorage {
 
     private Context context;
 
-    SetsStorage(Context context) {
+    public SetsStorage(Context context) {
         this.context = context;
     }
 

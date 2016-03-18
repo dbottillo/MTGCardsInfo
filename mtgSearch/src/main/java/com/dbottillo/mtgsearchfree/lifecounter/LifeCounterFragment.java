@@ -24,6 +24,7 @@ import com.dbottillo.mtgsearchfree.communication.events.PlayersEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Player;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -62,12 +63,12 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         diceContainer = (LinearLayout) rootView.findViewById(R.id.life_counter_dice_container);
         progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
         ListView lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
-        showPoison = getSharedPreferences().getBoolean("poison", false);
+        showPoison = sharedPreferences.getBoolean("poison", false);
 
         View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
-        twoHGEnabled = getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_TWO_HG_ENABLED(), false);
+        twoHGEnabled = sharedPreferences.getBoolean(BasicFragment.PREF_TWO_HG_ENABLED, false);
 
         FloatingActionButton newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
         newPlayerButton.setOnClickListener(this);
@@ -96,7 +97,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     @Override
     public void onResume() {
         super.onResume();
-        setScreenOn(getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SCREEN_ON(), false));
+        setScreenOn(sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false));
     }
 
     private void setScreenOn(boolean screenOn) {
@@ -192,7 +193,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             }
             scrollDownAfterLoad = false;
         }
-        getBus().removeStickyEvent(event);
+        bus.removeStickyEvent(event);
     }
 
     @Override
@@ -315,7 +316,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
 
         MenuItem screenOn = menu.findItem(R.id.action_screen_on);
-        screenOn.setChecked(getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SCREEN_ON(), false));
+        screenOn.setChecked(sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false));
 
         MenuItem twoHg = menu.findItem(R.id.action_two_hg);
         twoHg.setChecked(twoHGEnabled);
@@ -336,7 +337,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
         if (i1 == R.id.action_poison) {
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonSetting");
-            getSharedPreferences().edit().putBoolean("poison", !showPoison).apply();
+            sharedPreferences.edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
             lifeCounterAdapter.setShowPoison(showPoison);
@@ -344,9 +345,9 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             return true;
         }
         if (i1 == R.id.action_screen_on) {
-            boolean screenOn = getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SCREEN_ON(), false);
-            SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(BasicFragment.Companion.getPREF_SCREEN_ON(), !screenOn);
+            boolean screenOn = sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(BasicFragment.PREF_SCREEN_ON, !screenOn);
             editor.apply();
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
@@ -354,8 +355,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
-            SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(BasicFragment.Companion.getPREF_TWO_HG_ENABLED(), twoHGEnabled);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(BasicFragment.PREF_TWO_HG_ENABLED, twoHGEnabled);
             editor.apply();
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();

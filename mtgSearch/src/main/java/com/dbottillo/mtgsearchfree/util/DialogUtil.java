@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 public final class DialogUtil {
 
@@ -24,7 +25,7 @@ public final class DialogUtil {
                 .setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putBoolean(BasicFragment.Companion.getPREF_SORT_WUBRG(), which == 1);
+                        editor.putBoolean(BasicFragment.PREF_SORT_WUBRG, which == 1);
                         editor.apply();
                         listener.onSortSelected();
                         TrackingHelper.getInstance(context.getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,

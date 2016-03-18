@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class CardsPagerAdapter extends PagerAdapter {
     boolean showImage;
     ArrayList<MTGCard> cards;
 
-    CardsPagerAdapter(Context context, boolean deck, boolean showImage, ArrayList<MTGCard> cards) {
+    public CardsPagerAdapter(Context context, boolean deck, boolean showImage, ArrayList<MTGCard> cards) {
         this.context = context;
         this.deck = deck;
         this.showImage = showImage;

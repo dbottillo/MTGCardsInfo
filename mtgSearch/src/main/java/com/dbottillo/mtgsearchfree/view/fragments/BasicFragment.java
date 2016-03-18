@@ -22,8 +22,8 @@ public abstract class BasicFragment extends DialogFragment {
     protected AppCompatActivity dbActivity;
     protected boolean isPortrait = false;
     protected EventBus bus = EventBus.getDefault();
-    MTGApp app;
-    SharedPreferences sharedPreferences;
+    protected MTGApp app;
+    protected SharedPreferences sharedPreferences;
 
     public static final String PREF_SHOW_IMAGE = "show_image";
     public static final String PREF_SCREEN_ON = "screen_on";
@@ -79,7 +79,7 @@ public abstract class BasicFragment extends DialogFragment {
         bus.registerSticky(this);
     }
 
-    abstract String getPageTrack();
+    public abstract String getPageTrack();
 
 
     public boolean onBackPressed() {
