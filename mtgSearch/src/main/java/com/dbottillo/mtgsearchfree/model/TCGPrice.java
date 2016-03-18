@@ -116,4 +116,8 @@ public class TCGPrice implements Parcelable {
     public void setNotFound(boolean notFound) {
         mNotFound = notFound;
     }
+
+    public boolean isNotFound() {
+        return mNotFound;
+    }
 }
