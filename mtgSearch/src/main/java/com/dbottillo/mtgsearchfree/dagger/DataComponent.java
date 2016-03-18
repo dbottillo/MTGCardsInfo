@@ -4,6 +4,7 @@ import com.dbottillo.mtgsearchfree.ActivityScope;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 
 import dagger.Component;
 
