@@ -9,7 +9,7 @@ import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
 
 public class SlidingPanelHelper implements SlidingUpPanelLayout.PanelSlideListener {
 
-    interface SlidingPanelHelperListener {
+    public interface SlidingPanelHelperListener {
         void onPanelChangeOffset(float Float);
     }
 
@@ -17,9 +17,9 @@ public class SlidingPanelHelper implements SlidingUpPanelLayout.PanelSlideListen
     Resources resources;
     SlidingPanelHelperListener listener;
 
-    SlidingPanelHelper(SlidingUpPanelLayout slidingPanel,
-                       Resources resources,
-                       SlidingPanelHelperListener listener) {
+    public SlidingPanelHelper(SlidingUpPanelLayout slidingPanel,
+                              Resources resources,
+                              SlidingPanelHelperListener listener) {
         this.slidingPanel = slidingPanel;
         this.resources = resources;
         this.listener = listener;

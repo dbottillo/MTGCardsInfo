@@ -25,7 +25,6 @@ import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 

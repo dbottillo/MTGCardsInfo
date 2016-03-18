@@ -13,6 +13,7 @@ import butterknife.ButterKnife
 import butterknife.OnClick
 import butterknife.bindView
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.model.CardFilter
 
 class FilterPickerView : LinearLayout {
 

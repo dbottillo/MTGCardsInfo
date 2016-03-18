@@ -21,7 +21,6 @@ import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.resources.MTGCard
 import com.dbottillo.mtgsearchfree.resources.MTGSet
 import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.view.activities.MainActivity
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 import javax.inject.Inject
