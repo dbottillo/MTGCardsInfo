@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.Arrays;
 
@@ -54,9 +55,9 @@ public abstract class CommonCardsActivity extends BasicActivity {
             return true;
         }
         if (id == R.id.action_image) {
-            boolean showImage = getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true);
+            boolean showImage = getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
             SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), !showImage);
+            editor.putBoolean(BasicFragment.PREF_SHOW_IMAGE, !showImage);
             editor.apply();
             toggleImage(!showImage);
             updateMenu();
@@ -79,7 +80,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         } else {
             favMenuItem.setVisible(false);
         }
-        if (getSharedPreferences().getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true)) {
+        if (getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true)) {
             imageMenuItem.setChecked(true);
         } else {
             imageMenuItem.setChecked(false);

@@ -11,6 +11,8 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -123,7 +125,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         }
         MTGCard card = luckyCards.remove(0);
         SharedPreferences sharedPreferences = getSharedPreferences(MTGApp.PREFS_NAME, 0);
-        boolean showImage = sharedPreferences.getBoolean(BasicFragment.Companion.getPREF_SHOW_IMAGE(), true);
+        boolean showImage = sharedPreferences.getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
         cardView.load(card, showImage);
         if (luckyCards.size() <= 2) {
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);

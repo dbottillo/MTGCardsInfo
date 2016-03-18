@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import de.greenrobot.event.EventBus;
 

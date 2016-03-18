@@ -14,11 +14,11 @@ public class CardsStorage {
 
     private Context context;
 
-    CardsStorage(Context context) {
+    public CardsStorage(Context context) {
         this.context = context;
     }
 
-    ArrayList<MTGCard> load(MTGSet set) {
+    public ArrayList<MTGCard> load(MTGSet set) {
         MTGDatabaseHelper helper = new MTGDatabaseHelper(context);
         return helper.getSet(set);
     }
