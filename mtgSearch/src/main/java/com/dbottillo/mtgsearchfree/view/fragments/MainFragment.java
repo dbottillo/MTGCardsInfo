@@ -59,9 +59,9 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     SetsPresenter setsPresenter;
 
     private MTGSet gameSet;
-    private ArrayList<MTGSet> sets;
+    private ArrayList<MTGSet> sets = new ArrayList<>();
     private CardsBucket cardBucket;
-    private ArrayList<MTGCard> cards;
+    private ArrayList<MTGCard> cards = new ArrayList<>();
     private CardListAdapter adapter;
     private GameSetAdapter setAdapter;
     private int currentSetPosition = -1;

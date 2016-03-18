@@ -56,15 +56,15 @@ public class FilterPickerView extends LinearLayout {
 
     private OnFilterPickerListener listener;
 
-    FilterPickerView(Context ctx) {
+    public FilterPickerView(Context ctx) {
         this(ctx, null);
     }
 
-    FilterPickerView(Context ctx, AttributeSet attrs) {
+    public FilterPickerView(Context ctx, AttributeSet attrs) {
         this(ctx, attrs, -1);
     }
 
-    FilterPickerView(Context context, AttributeSet attrs, int defStyle) {
+    public FilterPickerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setOrientation(LinearLayout.VERTICAL);
 

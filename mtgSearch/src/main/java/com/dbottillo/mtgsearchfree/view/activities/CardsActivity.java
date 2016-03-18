@@ -23,6 +23,8 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -48,6 +50,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     CardsPagerAdapter adapter;
 
+    @Inject
     CardsPresenter cardsPresenter;
 
     public void onCreate(Bundle bundle) {

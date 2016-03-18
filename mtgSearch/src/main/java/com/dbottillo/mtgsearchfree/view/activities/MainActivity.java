@@ -37,6 +37,8 @@ import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
 
 import java.io.File;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -61,7 +63,6 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     @Bind(R.id.sliding_layout)
     SlidingUpPanelLayout slidingUpPanelLayout;
 
-
     boolean filterLoaded;
     Bundle initialBundle;
 
@@ -71,6 +72,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     CardFilter currentFilter;
 
+    @Inject
     CardFilterPresenter filterPresenter;
 
     public void onCreate(Bundle bundle) {
@@ -88,6 +90,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         MTGApp.dataGraph.inject(this);
         filterPresenter.init(this);
+
         if (bundle == null) {
             filterPresenter.loadFilter();
         } else {
@@ -103,7 +106,6 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         if (bundle != null && bundle.getInt(CURRENT_SELECTION) > 0) {
             slidingPanelHelper.hidePanel(true);
-            ;
         }
     }
 
