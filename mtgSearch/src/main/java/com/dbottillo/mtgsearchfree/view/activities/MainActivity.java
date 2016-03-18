@@ -29,7 +29,6 @@ import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
-import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
 
 import java.io.File;
 
