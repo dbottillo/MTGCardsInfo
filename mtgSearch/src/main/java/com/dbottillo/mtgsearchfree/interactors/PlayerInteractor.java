@@ -15,5 +15,7 @@ public interface PlayerInteractor {
 
     Observable<ArrayList<Player>> editPlayer(Player player);
 
+    Observable<ArrayList<Player>> editPlayers(ArrayList<Player> players);
+
     Observable<ArrayList<Player>> removePlayer(Player player);
 }

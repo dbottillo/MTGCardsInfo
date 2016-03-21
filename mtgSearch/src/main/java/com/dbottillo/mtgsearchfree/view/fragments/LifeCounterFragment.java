@@ -20,8 +20,6 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.LifeCounterAdapter;
-import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
@@ -29,11 +27,12 @@ import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Random;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 
@@ -43,14 +42,21 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return new LifeCounterFragment();
     }
 
-    private ScrollView diceScrollView;
-    private LinearLayout diceContainer;
+    @Bind(R.id.life_counter_dice_scrolliew)
+    ScrollView diceScrollView;
+    @Bind(R.id.life_counter_dice_container)
+    LinearLayout diceContainer;
+    @Bind(R.id.progress)
+    SmoothProgressBar progressBar;
+    @Bind(R.id.life_counter_list)
+    ListView lifeListView;
+    @Bind(R.id.new_player)
+    FloatingActionButton newPlayerButton;
+
     private ArrayList<Player> players;
     private LifeCounterAdapter lifeCounterAdapter;
-    private SmoothProgressBar progressBar;
 
     private boolean scrollDownAfterLoad = false;
-
     private boolean showPoison = false;
     private boolean diceShowed = false;
     private boolean twoHGEnabled = false;
@@ -61,21 +67,22 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_life_counter, container, false);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle bundle) {
 
         setActionBarTitle(getString(R.string.action_life_counter));
 
-        diceScrollView = (ScrollView) rootView.findViewById(R.id.life_counter_dice_scrolliew);
-        diceContainer = (LinearLayout) rootView.findViewById(R.id.life_counter_dice_container);
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
-        ListView lifeListView = (ListView) rootView.findViewById(R.id.life_counter_list);
         showPoison = sharedPreferences.getBoolean("poison", false);
 
-        View footerView = inflater.inflate(R.layout.fab_button_list_footer, lifeListView, false);
+        View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
         twoHGEnabled = sharedPreferences.getBoolean(BasicFragment.PREF_TWO_HG_ENABLED, false);
 
-        FloatingActionButton newPlayerButton = (FloatingActionButton) rootView.findViewById(R.id.new_player);
         newPlayerButton.setOnClickListener(this);
 
         players = new ArrayList<>();
@@ -90,15 +97,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         MTGApp.dataGraph.inject(this);
         playerPresenter.init(this);
 
-        return rootView;
+        playerPresenter.loadPlayers();
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        loadPlayers();
-    }
-
 
     @Override
     public void onResume() {
@@ -116,8 +116,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         for (Player player : players) {
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
-            playerPresenter.editPlayer(player);
         }
+        playerPresenter.editPlayer(players);
     }
 
 
@@ -126,9 +126,6 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return "/life_counter";
     }
 
-    private void loadPlayers() {
-        playerPresenter.loadPlayers();
-    }
 
     private void addPlayer() {
         if (players.size() == 10) {

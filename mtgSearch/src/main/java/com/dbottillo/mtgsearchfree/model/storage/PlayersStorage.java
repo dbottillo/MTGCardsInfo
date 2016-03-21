@@ -32,6 +32,14 @@ public class PlayersStorage {
         return load();
     }
 
+    public ArrayList<Player> editPlayers(ArrayList<Player> players) {
+        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
+        for (Player player : players) {
+            PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
+        }
+        return load();
+    }
+
     public ArrayList<Player> removePlayer(Player player) {
         CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         PlayerDataSource.removePlayer(helper.getWritableDatabase(), player);

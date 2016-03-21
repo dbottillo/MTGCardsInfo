@@ -30,6 +30,11 @@ public class PlayerInteractorImpl implements PlayerInteractor {
     }
 
     @Override
+    public Observable<ArrayList<Player>> editPlayers(ArrayList<Player> players) {
+        return Observable.just(storage.editPlayers(players));
+    }
+
+    @Override
     public Observable<ArrayList<Player>> removePlayer(Player player) {
         return Observable.just(storage.removePlayer(player));
     }
