@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.model;
 
+import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
@@ -11,6 +12,7 @@ public class CardsBucket {
     ArrayList<MTGCard> cards;
 
     public CardsBucket(MTGSet set, ArrayList<MTGCard> cards) {
+        LOG.e("creating bucket with key: " + set.getName());
         this.set = set;
         this.cards = cards;
     }
@@ -30,6 +32,11 @@ public class CardsBucket {
     }
 
     public boolean isValid(String key) {
+        LOG.e("current bucket contains " + set.getName() + " an key required is: " + key);
         return set.getName().equals(key);
+    }
+
+    public void setCards(ArrayList<MTGCard> cards) {
+        this.cards = cards;
     }
 }

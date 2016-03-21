@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
@@ -9,13 +11,17 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.cards.CardsHelper;
+import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
@@ -28,18 +34,40 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener {
+public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener, CardFilterView {
 
-    public static final String KEY_SEARCH = "Search";
-    public static final String KEY_SET = "Set";
-    public static final String KEY_DECK = "Deck";
-    public static final String POSITION = "Position";
+    private static final String KEY_SEARCH = "Search";
+    private static final String KEY_SET = "Set";
+    private static final String KEY_DECK = "Deck";
+    private static final String POSITION = "Position";
+
+    public static Intent newInstance(Context context, MTGSet gameSet, int position) {
+        Intent intent = new Intent(context, CardsActivity.class);
+        intent.putExtra(CardsActivity.POSITION, position);
+        intent.putExtra(CardsActivity.KEY_SET, gameSet);
+        return intent;
+    }
+
+    public static Intent newInstance(Context context, Deck deck, int position) {
+        Intent intent = new Intent(context, CardsActivity.class);
+        intent.putExtra(CardsActivity.POSITION, position);
+        intent.putExtra(CardsActivity.KEY_DECK, deck);
+        return intent;
+    }
+
+    public static Intent newInstance(Context context, String search, int position) {
+        Intent intent = new Intent(context, CardsActivity.class);
+        intent.putExtra(CardsActivity.POSITION, position);
+        intent.putExtra(CardsActivity.KEY_SEARCH, search);
+        return intent;
+    }
 
     private MTGSet set = null;
     private Deck deck = null;
     private String search = null;
     private int startPosition = 0;
     private CardsBucket bucket;
+    private CardFilter currentFilter;
 
     @Bind(R.id.cards_view_pager)
     ViewPager viewPager;
@@ -52,6 +80,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     @Inject
     CardsPresenter cardsPresenter;
+    @Inject
+    CardFilterPresenter filterPresenter;
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -63,6 +93,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         MTGApp.dataGraph.inject(this);
         cardsPresenter.init(this);
+        filterPresenter.init(this);
 
         if (getIntent() != null) {
             if (getIntent().hasExtra(KEY_SET)) {
@@ -158,7 +189,12 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     public void cardLoaded(CardsBucket bucket) {
         this.bucket = bucket;
-        reloadAdapter();
+        if (set != null) {
+            // needs to load filters first
+            filterPresenter.loadFilter();
+        } else {
+            reloadAdapter();
+        }
     }
 
     public void showError(String message) {
@@ -191,4 +227,12 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         fabButton.setScaleY(value);
     }
 
+    @Override
+    public void filterLoaded(CardFilter filter) {
+        ArrayList<MTGCard> allCards = bucket.getCards();
+        ArrayList<MTGCard> filteredCards = new ArrayList<>();
+        CardsHelper.filterCards(filter, allCards, filteredCards);
+        bucket.setCards(filteredCards);
+        reloadAdapter();
+    }
 }

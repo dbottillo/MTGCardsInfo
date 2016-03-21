@@ -84,11 +84,8 @@ public class DeckFragment extends BasicFragment implements LoaderManager.LoaderC
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(getContext(), cards, R.menu.deck_card, new OnCardListener() {
             @Override
             public void onCardSelected(MTGCard card, int position) {
-                Intent cardsView = new Intent(getActivity(), CardsActivity.class);
                 MTGApp.cardsToDisplay = cards;
-                cardsView.putExtra(CardsActivity.POSITION, position);
-                cardsView.putExtra(CardsActivity.KEY_DECK, deck);
-                startActivity(cardsView);
+                startActivity(CardsActivity.newInstance(getContext(), deck, position));
             }
 
             @Override
