@@ -121,9 +121,9 @@ public class FilterPickerView extends LinearLayout {
     public String addEntryFilterString(boolean active, String text) {
         String filterString = "";
         if (active) {
-            filterString += "<font color=\"#FFFFFF\">$text</font>";
+            filterString += "<font color=\"#FFFFFF\">" + text + "</font>";
         } else {
-            filterString += "<font color=\"#777777\">$text</font>";
+            filterString += "<font color=\"#777777\">" + text + "</font>";
         }
         filterString += "&nbsp;";
         return filterString;
