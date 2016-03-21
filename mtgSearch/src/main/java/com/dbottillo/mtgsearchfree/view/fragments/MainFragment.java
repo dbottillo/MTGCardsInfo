@@ -83,12 +83,14 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     @Bind(R.id.set_chooser_name)
     TextView chooserName;
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, rootView);
         return rootView;
     }
 
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 

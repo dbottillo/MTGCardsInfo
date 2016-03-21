@@ -113,6 +113,30 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     }
 
     @Override
+    public void editPlayer(ArrayList<Player> players) {
+        playerView.showLoading();
+        Observable<ArrayList<Player>> obs = interactor.editPlayers(players)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(ArrayList<Player> players) {
+                playersLoaded(players);
+            }
+        });
+    }
+
+    @Override
     public void removePlayer(Player player) {
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.removePlayer(player)
