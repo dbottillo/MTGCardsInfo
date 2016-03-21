@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.view;
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;
 

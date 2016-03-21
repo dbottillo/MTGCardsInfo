@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;

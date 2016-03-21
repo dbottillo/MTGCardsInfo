@@ -3,8 +3,8 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import java.util.ArrayList;

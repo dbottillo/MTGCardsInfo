@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.base;
+package com.dbottillo.mtgsearchfree;
 
 import android.app.Application;
 import android.app.Notification;
@@ -13,8 +13,6 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
 import com.crashlytics.android.Crashlytics;
-import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
@@ -23,7 +21,7 @@ import com.dbottillo.mtgsearchfree.dagger.DaggerDataComponent;
 import com.dbottillo.mtgsearchfree.dagger.DataComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;

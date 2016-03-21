@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,16 +22,16 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.base.MTGApp;
-import com.dbottillo.mtgsearchfree.cards.CardsHelper;
+import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.helper.DialogHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.view.CardsView;
@@ -101,7 +100,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         MTGApp.dataGraph.inject(this);
         cardsPresenter.init(this);
         setsPresenter.init(this);
-        setsPresenter.loadSets();
 
         setAdapter = new GameSetAdapter(getActivity().getApplicationContext(), sets);
         setAdapter.setCurrent(currentSetPosition);
@@ -124,6 +122,8 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
                 showHideSetList(false);
             }
         });
+
+        setsPresenter.loadSets();
     }
 
     public void onAttach(Context context) {

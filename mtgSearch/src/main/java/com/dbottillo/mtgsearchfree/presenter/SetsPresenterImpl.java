@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
 import java.util.ArrayList;

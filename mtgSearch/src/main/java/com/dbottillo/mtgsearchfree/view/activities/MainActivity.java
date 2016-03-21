@@ -8,17 +8,15 @@ import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.base.MTGApp;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDecksAsyncTask;
-import com.dbottillo.mtgsearchfree.helper.NavDrawerHelper;
-import com.dbottillo.mtgsearchfree.helper.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
@@ -33,6 +31,8 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
+import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
 
 import java.io.File;
@@ -56,6 +56,9 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     SlidingPanelHelper slidingPanelHelper;
     NavDrawerHelper navDrawerHelper;
     MainActivityListener listener;
+
+    @Bind(R.id.navigation_view)
+    NavigationView navigationView;
 
     @Bind(R.id.filter)
     FilterPickerView filterView;
@@ -84,7 +87,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         setupToolbar();
         slidingPanelHelper = new SlidingPanelHelper(slidingUpPanelLayout, getResources(), this);
         slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
-        navDrawerHelper = new NavDrawerHelper(this, toolbar, this);
+        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this);
 
         initialBundle = bundle;
 
@@ -176,29 +179,29 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         BasicFragment currentFragment = (BasicFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if (menuItem.getItemId() == R.id.drawer_home && currentFragment instanceof MainFragment) {
+        if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
             changeFragment(new MainFragment(), "main", false);
             slidingPanelHelper.showPanel();
-        } else if (menuItem.getItemId() == R.id.drawer_saved && currentFragment instanceof SavedFragment) {
+        } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
             changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
             slidingPanelHelper.showPanel();
 
-        } else if (menuItem.getItemId() == R.id.drawer_life_counter && currentFragment instanceof LifeCounterFragment) {
+        } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {
             changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
             slidingPanelHelper.hidePanel(true);
 
-        } else if (menuItem.getItemId() == R.id.drawer_decks && currentFragment instanceof DecksFragment) {
+        } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
             changeFragment(DecksFragment.newInstance(), "decks", true);
             slidingPanelHelper.hidePanel(true);
 
         } else if (menuItem.getItemId() == R.id.drawer_rate) {
             openRateTheApp();
 
-        } else if (menuItem.getItemId() == R.id.drawer_beta) {
+        } else if (menuItem.getItemId() == R.id.drawer_beta && !(currentFragment instanceof JoinBetaFragment)) {
             changeFragment(new JoinBetaFragment(), "joinbeta_fragment", true);
             slidingPanelHelper.hidePanel(true);
 
-        } else if (menuItem.getItemId() == R.id.drawer_about && currentFragment instanceof AboutFragment) {
+        } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
             changeFragment(new AboutFragment(), "about_fragment", true);
             slidingPanelHelper.hidePanel(true);
 
@@ -246,7 +249,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         if (current.onBackPressed()) {
             return;
         }
-        if (current instanceof MainFragment) {
+        if (!(current instanceof MainFragment)) {
             changeFragment(new MainFragment(), "main", false);
             navDrawerHelper.resetSelection();
             slidingPanelHelper.showPanel();

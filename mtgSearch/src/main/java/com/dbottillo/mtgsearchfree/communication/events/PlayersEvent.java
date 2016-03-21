@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.communication.events;
 
-import com.dbottillo.mtgsearchfree.resources.Player;
+import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.ArrayList;
 

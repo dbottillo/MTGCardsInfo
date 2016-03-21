@@ -8,8 +8,8 @@ import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.Deck;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.io.File;
 import java.io.FileInputStream;

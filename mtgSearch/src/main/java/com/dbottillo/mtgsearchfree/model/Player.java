@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.resources;
+package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

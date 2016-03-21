@@ -16,15 +16,15 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
 import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.helper.DialogHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 

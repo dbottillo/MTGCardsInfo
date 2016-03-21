@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.model;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
 
 import java.util.ArrayList;
 

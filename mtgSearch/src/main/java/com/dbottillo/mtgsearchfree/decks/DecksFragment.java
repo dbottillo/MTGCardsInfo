@@ -29,7 +29,7 @@ import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.Deck;
+import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;

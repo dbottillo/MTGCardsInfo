@@ -16,6 +16,7 @@ import android.util.TypedValue;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;

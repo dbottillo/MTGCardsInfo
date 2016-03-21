@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.helper;
+package com.dbottillo.mtgsearchfree.view.helpers;
 
 import android.content.res.Resources;
 import android.view.View;

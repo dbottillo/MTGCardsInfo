@@ -24,7 +24,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

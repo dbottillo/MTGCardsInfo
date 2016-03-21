@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.FilterHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 public final class CardAdapterHelper {
 

@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.content.Intent;
 
-import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.view.MainView;
 
 public class MainActivityPresenter {

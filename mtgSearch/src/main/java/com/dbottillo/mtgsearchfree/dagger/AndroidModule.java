@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.dagger;
 
 import android.content.Context;
 
-import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.MTGApp;
 
 import javax.inject.Singleton;
 

@@ -12,7 +12,7 @@ import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.SearchSetAdapter;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.search.IntParam;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 

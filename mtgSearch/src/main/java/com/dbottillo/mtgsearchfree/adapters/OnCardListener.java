@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.adapters;
 
 import android.view.MenuItem;
 
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 public interface OnCardListener {
     void onCardSelected(MTGCard card, int position);

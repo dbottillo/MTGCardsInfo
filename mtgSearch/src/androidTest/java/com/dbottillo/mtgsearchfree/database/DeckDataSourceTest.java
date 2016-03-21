@@ -4,8 +4,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.dbottillo.mtgsearchfree.resources.Deck;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

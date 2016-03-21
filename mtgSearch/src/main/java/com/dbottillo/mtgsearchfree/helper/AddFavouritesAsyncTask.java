@@ -7,7 +7,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;
 import java.util.List;

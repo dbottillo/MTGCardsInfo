@@ -5,7 +5,7 @@ import android.view.MenuItem;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.base.DBActivity;
-import com.dbottillo.mtgsearchfree.resources.Deck;
+import com.dbottillo.mtgsearchfree.model.Deck;
 
 public class DeckActivity extends DBActivity {
 
