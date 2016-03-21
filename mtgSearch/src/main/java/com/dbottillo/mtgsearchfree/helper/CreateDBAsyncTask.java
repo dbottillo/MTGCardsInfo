@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper;
 import com.dbottillo.mtgsearchfree.database.SetDataSource;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import org.json.JSONArray;

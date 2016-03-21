@@ -3,9 +3,10 @@ package com.dbottillo.mtgsearchfree.dagger;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 
 import javax.inject.Singleton;
@@ -38,5 +39,11 @@ class DataModule {
     @Singleton
     SetsStorage provideSetsStorage(Context context) {
         return new SetsStorage(context);
+    }
+
+    @Provides
+    @Singleton
+    PlayersStorage providePlayerStorage(Context context) {
+        return new PlayersStorage(context);
     }
 }

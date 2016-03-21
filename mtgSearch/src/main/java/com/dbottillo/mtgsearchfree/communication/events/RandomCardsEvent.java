@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.communication.events;
 
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;
 

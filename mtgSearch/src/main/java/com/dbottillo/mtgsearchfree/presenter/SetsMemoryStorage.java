@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 
 import java.util.ArrayList;
 

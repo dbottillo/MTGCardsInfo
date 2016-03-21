@@ -11,7 +11,7 @@ import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.squareup.picasso.Picasso;
 

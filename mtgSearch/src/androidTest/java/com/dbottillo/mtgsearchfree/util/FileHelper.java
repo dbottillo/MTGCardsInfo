@@ -5,8 +5,8 @@ import android.content.res.Resources;
 
 import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 
 import org.json.JSONArray;
 import org.json.JSONException;

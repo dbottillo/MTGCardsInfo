@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.resources.Player;
+import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.resources;
+package com.dbottillo.mtgsearchfree.model;
 
 import android.content.Context;
 import android.os.Parcel;

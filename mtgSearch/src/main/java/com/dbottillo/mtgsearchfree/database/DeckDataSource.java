@@ -5,8 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.resources.Deck;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;
 
@@ -130,7 +130,7 @@ public final class DeckDataSource {
         } else {
             // need to add the card
             long cardId = CardDataSource.saveCard(db, card);
-            LOG.e("cardId: "+cardId);
+            LOG.e("cardId: " + cardId);
         }
         current.close();
         ContentValues values = new ContentValues();
@@ -218,7 +218,7 @@ public final class DeckDataSource {
     public static int renameDeck(SQLiteDatabase db, long deckId, String name) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMNS.NAME.getName(), name);
-        return db.update(TABLE, contentValues, "_id="+deckId, null);
+        return db.update(TABLE, contentValues, "_id=" + deckId, null);
     }
 
     protected static Deck fromCursor(Cursor cursor) {

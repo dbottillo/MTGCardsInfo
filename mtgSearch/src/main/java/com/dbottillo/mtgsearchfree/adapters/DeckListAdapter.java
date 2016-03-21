@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.resources.Deck;
+import com.dbottillo.mtgsearchfree.model.Deck;
 
 import java.util.List;
 

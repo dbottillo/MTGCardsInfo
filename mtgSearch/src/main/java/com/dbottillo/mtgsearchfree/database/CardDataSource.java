@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import org.json.JSONArray;
 import org.json.JSONException;

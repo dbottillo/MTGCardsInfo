@@ -4,8 +4,8 @@ import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.search.IntParam;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 import com.dbottillo.mtgsearchfree.util.FileHelper;

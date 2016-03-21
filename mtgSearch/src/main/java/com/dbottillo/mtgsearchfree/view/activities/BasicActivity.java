@@ -13,7 +13,7 @@ import android.util.TypedValue;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.base.MTGApp;
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;

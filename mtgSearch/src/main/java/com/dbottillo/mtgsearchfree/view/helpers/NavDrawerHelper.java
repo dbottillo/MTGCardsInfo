@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.helper;
+package com.dbottillo.mtgsearchfree.view.helpers;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -27,8 +27,9 @@ public class NavDrawerHelper {
     TextView headerText;
     Resources resources;
 
-    public NavDrawerHelper(final MainActivity activity, Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener) {
-        Resources resources = activity.getResources();
+    public NavDrawerHelper(final MainActivity activity, NavigationView navigationView, Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener) {
+        this.navigationView = navigationView;
+        this.resources = activity.getResources();
         drawerLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
             /* Called when a drawer has settled in a completely closed state. */
@@ -55,9 +56,8 @@ public class NavDrawerHelper {
             }
         };
 
-        drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.addDrawerListener(drawerToggle);
 
-        navigationView = (NavigationView) activity.findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(listener);
         navigationView.setSaveEnabled(true);
 
@@ -76,6 +76,7 @@ public class NavDrawerHelper {
 
         headerTitle = (TextView) headerLayout.findViewById(R.id.drawer_header_title);
         headerText = (TextView) headerLayout.findViewById(R.id.drawer_header_text);
+        updateHeaderView();
     }
 
     public void syncState() {
@@ -87,7 +88,7 @@ public class NavDrawerHelper {
     }
 
     private void updateHeaderView() {
-        int random = new Random().nextInt();
+        int random = new Random().nextInt(12);
         headerTitle.setText(resources.getStringArray(R.array.header_title_flavor)[random]);
         headerText.setText(resources.getStringArray(R.array.header_text_flavor)[random]);
     }

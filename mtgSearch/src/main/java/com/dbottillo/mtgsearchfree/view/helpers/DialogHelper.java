@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.helper;
+package com.dbottillo.mtgsearchfree.view.helpers;
 
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;

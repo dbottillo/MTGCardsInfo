@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.base.DBActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 
 public class LifeCounterActivity extends DBActivity {
 

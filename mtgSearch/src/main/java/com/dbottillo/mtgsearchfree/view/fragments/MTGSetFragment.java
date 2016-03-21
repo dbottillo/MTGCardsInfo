@@ -10,8 +10,8 @@ import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.search.SearchParams;
 
 import java.util.ArrayList;

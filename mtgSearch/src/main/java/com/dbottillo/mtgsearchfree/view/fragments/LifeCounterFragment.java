@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.lifecounter;
+package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,22 +17,27 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.LifeCounterAdapter;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.communication.events.PlayersEvent;
+import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.Player;
+import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
+import javax.inject.Inject;
+
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class LifeCounterFragment extends BasicFragment implements LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener {
+
+public class LifeCounterFragment extends BasicFragment implements LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener, PlayersView {
 
     public static LifeCounterFragment newInstance() {
         return new LifeCounterFragment();
@@ -50,8 +55,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     private boolean diceShowed = false;
     private boolean twoHGEnabled = false;
 
-    String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck",
-            "Chandra", "Venser", "Doran", "Sorin"};
+    @Inject
+    PlayerPresenter playerPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -82,14 +87,15 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         setHasOptionsMenu(true);
 
+        MTGApp.dataGraph.inject(this);
+        playerPresenter.init(this);
+
         return rootView;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
-        progressBar.setVisibility(View.VISIBLE);
         loadPlayers();
     }
 
@@ -110,7 +116,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         for (Player player : players) {
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
-            savePlayer(player);
+            playerPresenter.editPlayer(player);
         }
     }
 
@@ -121,15 +127,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     }
 
     private void loadPlayers() {
-        DataManager.execute(DataManager.TASK.PLAYERS);
-    }
-
-    private void savePlayer(Player player) {
-        DataManager.execute(DataManager.TASK.SAVE_PLAYER, player);
-    }
-
-    private void removePlayer(Player player) {
-        DataManager.execute(DataManager.TASK.REMOVE_PLAYER, player);
+        playerPresenter.loadPlayers();
     }
 
     private void addPlayer() {
@@ -137,69 +135,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             Toast.makeText(getActivity(), R.string.maximum_player, Toast.LENGTH_SHORT).show();
             return;
         }
-        Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
-        savePlayer(player);
+        playerPresenter.addPlayer();
         scrollDownAfterLoad = true;
-    }
-
-    private String getUniqueNameForPlayer() {
-        boolean unique = false;
-        int pickedNumber = 0;
-        while (!unique) {
-            Random rand = new Random();
-            pickedNumber = rand.nextInt(names.length);
-            boolean founded = false;
-            for (Player player : players) {
-                if (player.getName().toLowerCase(Locale.getDefault()).contains(names[pickedNumber].toLowerCase(Locale.getDefault()))) {
-                    founded = true;
-                    break;
-                }
-            }
-            if (!founded) {
-                unique = true;
-            }
-        }
-        return names[pickedNumber];
-    }
-
-    private int getUniqueIdForPlayer() {
-        int id = 0;
-        for (Player player : players) {
-            if (id == player.getId()) {
-                id++;
-            }
-        }
-        return id;
-    }
-
-    public void onEventMainThread(PlayersEvent event) {
-        progressBar.setVisibility(View.GONE);
-        if (event.isError()) {
-            Toast.makeText(getActivity(), event.getErrorMessage(), Toast.LENGTH_SHORT).show();
-        } else {
-            if (event.getResult().size() == 0) {
-                // need at least one player
-                addPlayer();
-            } else {
-                players.clear();
-                for (Player player : event.getResult()) {
-                    //Log.e("magic", "loaded: "+((Player)player).getId()+" - "+((Player)player).toString());
-                    players.add(player);
-                }
-            }
-            lifeCounterAdapter.notifyDataSetChanged();
-            if (scrollDownAfterLoad && getView() != null) {
-                ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
-            }
-            scrollDownAfterLoad = false;
-        }
-        bus.removeStickyEvent(event);
     }
 
     @Override
     public void onRemovePlayer(int position) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
-        removePlayer(players.get(position));
+        playerPresenter.removePlayer(players.get(position));
     }
 
     @Override
@@ -217,7 +160,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
                 players.get(position).setName(value);
-                savePlayer(players.get(position));
+                playerPresenter.editPlayer(players.get(position));
                 TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
             }
         });
@@ -236,14 +179,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     public void onLifeCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
         players.get(position).changeLife(value);
-        savePlayer(players.get(position));
+        playerPresenter.editPlayer(players.get(position));
     }
 
     @Override
     public void onPoisonCountChange(int position, int value) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
         players.get(position).changePoisonCount(value);
-        savePlayer(players.get(position));
+        playerPresenter.editPlayer(players.get(position));
     }
 
     private void launchDice() {
@@ -366,4 +309,31 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return false;
     }
 
+    @Override
+    public void playersLoaded(ArrayList<Player> players) {
+        progressBar.setVisibility(View.GONE);
+        if (players.size() == 0) {
+            // need at least one player
+            addPlayer();
+        } else {
+            this.players.clear();
+            this.players.addAll(players);
+        }
+        lifeCounterAdapter.notifyDataSetChanged();
+        if (scrollDownAfterLoad && getView() != null) {
+            ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
+        }
+        scrollDownAfterLoad = false;
+    }
+
+    @Override
+    public void showLoading() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showError(String message) {
+        progressBar.setVisibility(View.VISIBLE);
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
 }

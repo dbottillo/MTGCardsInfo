@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.database;
 import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.dbottillo.mtgsearchfree.resources.MTGSet;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 
 import org.json.JSONException;

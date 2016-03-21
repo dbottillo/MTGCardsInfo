@@ -6,7 +6,7 @@ import com.dbottillo.mtgsearchfree.communication.events.DeckEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import de.greenrobot.event.EventBus;
 

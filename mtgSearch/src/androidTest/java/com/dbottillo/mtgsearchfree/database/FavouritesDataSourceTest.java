@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.database;
 
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import org.junit.Test;
 
