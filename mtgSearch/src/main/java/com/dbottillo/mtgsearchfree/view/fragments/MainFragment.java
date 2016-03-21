@@ -268,10 +268,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     public void onCardSelected(MTGCard card, int position) {
         TrackingManager.trackCard(gameSet, position);
-        Intent cardsView = new Intent(getActivity(), CardsActivity.class);
-        cardsView.putExtra(CardsActivity.POSITION, position);
-        cardsView.putExtra(CardsActivity.KEY_SET, gameSet);
-        startActivity(cardsView);
+        startActivity(CardsActivity.newInstance(getContext(), gameSet, position));
     }
 
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {

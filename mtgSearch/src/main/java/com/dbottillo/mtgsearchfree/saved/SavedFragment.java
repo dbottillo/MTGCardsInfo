@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.saved;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -113,11 +112,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
-        Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.cardsToDisplay = savedCards;
-        cardsView.putExtra(CardsActivity.POSITION, position);
-        cardsView.putExtra(CardsActivity.KEY_SEARCH, getString(R.string.action_saved));
-        startActivity(cardsView);
+        startActivity(CardsActivity.newInstance(getContext(), getString(R.string.action_saved), position));
     }
 
     @Override
@@ -139,11 +135,8 @@ public class SavedFragment extends BasicFragment implements AdapterView.OnItemCl
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
-        Intent cardsView = new Intent(getActivity(), CardsActivity.class);
         MTGApp.cardsToDisplay = savedFilteredCards;
-        cardsView.putExtra(CardsActivity.POSITION, position);
-        cardsView.putExtra(CardsActivity.KEY_SEARCH, getString(R.string.action_saved));
-        startActivity(cardsView);
+        startActivity(CardsActivity.newInstance(getContext(), getString(R.string.action_saved), position));
     }
 
     @Override

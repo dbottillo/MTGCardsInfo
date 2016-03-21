@@ -30,6 +30,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         favMenuItem = menu.findItem(R.id.action_fav);
         imageMenuItem = menu.findItem(R.id.action_image);
         menu.findItem(R.id.action_fullscreen_image).setVisible(false);
+        syncMenu();
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -67,6 +68,14 @@ public abstract class CommonCardsActivity extends BasicActivity {
     }
 
     protected void updateMenu() {
+        syncMenu();
+    }
+
+    private void syncMenu() {
+        if (favMenuItem == null) {
+            // too early
+            return;
+        }
         MTGCard currentCard = getCurrentCard();
         if (currentCard != null && currentCard.getMultiVerseId() > 0) {
             favMenuItem.setVisible(true);
