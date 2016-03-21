@@ -42,9 +42,8 @@ public class CardsPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        super.destroyItem(container, position, object);
-        container.removeView((View) object);
+    public void destroyItem(ViewGroup container, int position, Object view) {
+        container.removeView((View) view);
     }
 
     public CharSequence getPageTitle(int position) {

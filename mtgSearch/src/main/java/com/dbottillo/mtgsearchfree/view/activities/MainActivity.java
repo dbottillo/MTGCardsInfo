@@ -114,6 +114,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         if (!filterLoaded) {
             if (initialBundle == null) {
                 changeFragment(new MainFragment(), "main", false);
+                filterLoaded = true;
             }
         } else {
             listener.updateContent();
