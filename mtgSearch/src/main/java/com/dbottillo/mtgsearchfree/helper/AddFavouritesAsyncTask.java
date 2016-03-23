@@ -25,7 +25,7 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<>();
 
-        MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
+        MTGDatabaseHelper databaseHelper = MTGDatabaseHelper.getInstance(context);
         CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
 
         FavouritesDataSource.clear(cardsInfoDbHelper.getWritableDatabase());

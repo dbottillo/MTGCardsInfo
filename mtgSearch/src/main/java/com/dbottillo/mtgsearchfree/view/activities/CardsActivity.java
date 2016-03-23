@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -28,13 +31,15 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener, CardFilterView {
+public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener, CardFilterView, DecksView {
 
     private static final String KEY_SEARCH = "Search";
     private static final String KEY_SET = "Set";
@@ -67,7 +72,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     private String search = null;
     private int startPosition = 0;
     private CardsBucket bucket;
-    private CardFilter currentFilter;
 
     @Bind(R.id.cards_view_pager)
     ViewPager viewPager;
@@ -98,7 +102,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         if (getIntent() != null) {
             if (getIntent().hasExtra(KEY_SET)) {
                 set = getIntent().getParcelableExtra(KEY_SET);
-                getSupportActionBar().setTitle(set.getName());
+                setTitle(set.getName());
 
             } else if (getIntent().hasExtra(KEY_SEARCH)) {
                 search = getIntent().getStringExtra(KEY_SEARCH);
@@ -115,8 +119,10 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     public void setupView() {
         setupToolbar();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         MaterialWrapper.setElevation(toolbar, 0f);
 
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
@@ -234,5 +240,21 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         CardsHelper.filterCards(filter, allCards, filteredCards);
         bucket.setCards(filteredCards);
         reloadAdapter();
+    }
+
+    @OnClick(R.id.card_add_to_deck)
+    public void addToDeck(View view){
+        MTGCard card = bucket.getCards().get(viewPager.getCurrentItem());
+        openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+    }
+
+    @Override
+    public void decksLoaded(List<Deck> decks) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deckLoaded(List<MTGCard> cards) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 
@@ -45,5 +46,11 @@ class DataModule {
     @Singleton
     PlayersStorage providePlayerStorage(Context context) {
         return new PlayersStorage(context);
+    }
+
+    @Provides
+    @Singleton
+    DecksStorage provideDecksStorage(Context context) {
+        return new DecksStorage(context);
     }
 }

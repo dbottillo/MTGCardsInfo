@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.decks.DecksFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDecksAsyncTask;
@@ -191,7 +191,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             slidingPanelHelper.hidePanel(true);
 
         } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
-            changeFragment(DecksFragment.newInstance(), "decks", true);
+            changeFragment(new DecksFragment(), "decks", true);
             slidingPanelHelper.hidePanel(true);
 
         } else if (menuItem.getItemId() == R.id.drawer_rate) {

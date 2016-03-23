@@ -26,7 +26,7 @@ public class UpdateLuckyWidgetService extends Service {
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            mtgDatabaseHelper = new MTGDatabaseHelper(getApplicationContext());
+            mtgDatabaseHelper = MTGDatabaseHelper.getInstance(getApplicationContext());
             new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);

@@ -50,6 +50,8 @@ public class JoinBetaFragment extends BasicFragment implements View.OnClickListe
     @Bind(R.id.libraries_container)
     LinearLayout cardContainer;
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_about, container, false);

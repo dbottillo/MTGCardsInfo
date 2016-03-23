@@ -24,9 +24,7 @@ public final class DataManager {
         SAVED_CARDS(SavedCardsOperation.class),
         SAVE_CARD(SaveCardOperation.class),
         UN_SAVE_CARD(UnsaveCardOperation.class),
-        RANDOM_CARDS(RandomCardsOperation.class),
-        EDIT_DECK(EditDeckOperation.class),
-        EDIT_DECK_NAME(EditDeckNameOperation.class);
+        RANDOM_CARDS(RandomCardsOperation.class);
 
         Class<?> operationClass;
 
@@ -40,7 +38,7 @@ public final class DataManager {
     }
 
     public static void with(Context ctx) {
-        cardAdapterHelper = new MTGDatabaseHelper(ctx);
+        cardAdapterHelper = MTGDatabaseHelper.getInstance(ctx);
         cardsInfoDbHelper = CardsInfoDbHelper.getInstance(ctx);
     }
 

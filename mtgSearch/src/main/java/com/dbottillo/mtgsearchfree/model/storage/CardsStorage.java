@@ -19,8 +19,7 @@ public class CardsStorage {
     }
 
     public ArrayList<MTGCard> load(MTGSet set) {
-        MTGDatabaseHelper helper = new MTGDatabaseHelper(context);
-        return helper.getSet(set);
+        return MTGDatabaseHelper.getInstance(context).getSet(set);
     }
 
     public int[] saveAsFavourite(MTGCard card) {
@@ -44,8 +43,7 @@ public class CardsStorage {
     }
 
     public ArrayList<MTGCard> getLuckyCards(int howMany) {
-        MTGDatabaseHelper helper = new MTGDatabaseHelper(context);
-        return helper.getRandomCard(howMany);
+        return MTGDatabaseHelper.getInstance(context).getRandomCard(howMany);
     }
 
 }

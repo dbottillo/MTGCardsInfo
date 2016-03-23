@@ -2,12 +2,15 @@ package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
+import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
+import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
@@ -37,5 +40,10 @@ public class PresentersModule {
     @Provides
     PlayerPresenter providePlayerPresenter(PlayerInteractor interactor) {
         return new PlayerPresenterImpl(interactor);
+    }
+
+    @Provides
+    DecksPresenter provideDeksPresenter(DecksInteractor interactor) {
+        return new DecksPresenterImpl(interactor);
     }
 }

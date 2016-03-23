@@ -19,7 +19,7 @@ import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.communication.events.SavedCardsEvent;
-import com.dbottillo.mtgsearchfree.dialog.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.persistence.MigrationPreferences;
