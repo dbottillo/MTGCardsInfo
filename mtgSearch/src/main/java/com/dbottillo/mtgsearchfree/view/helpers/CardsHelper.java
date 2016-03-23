@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.view.helpers;
 import com.dbottillo.mtgsearchfree.helper.FilterHelper;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.search.SearchParams;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
 import java.util.Collections;

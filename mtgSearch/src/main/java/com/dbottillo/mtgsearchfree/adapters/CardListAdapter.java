@@ -20,12 +20,15 @@ public class CardListAdapter extends BaseAdapter {
     private OnCardListener onCardListener;
     private int menuRes;
 
-    public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch, int menuRes, OnCardListener onCardListener) {
+    public CardListAdapter(Context context, List<MTGCard> cards, boolean isASearch, int menuRes) {
         this.cards = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.isASearch = isASearch;
         this.menuRes = menuRes;
+    }
+
+    public void setOnCardListener(OnCardListener onCardListener) {
         this.onCardListener = onCardListener;
     }
 
@@ -61,7 +64,9 @@ public class CardListAdapter extends BaseAdapter {
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCardListener.onCardSelected(card, position);
+                if (onCardListener != null) {
+                    onCardListener.onCardSelected(card, position);
+                }
             }
         });
         return convertView;

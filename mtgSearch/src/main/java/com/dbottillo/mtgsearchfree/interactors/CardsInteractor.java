@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.interactors;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
 
@@ -23,4 +24,6 @@ public interface CardsInteractor {
     Observable<ArrayList<MTGCard>> getFavourites();
 
     Observable<ArrayList<MTGCard>> loadDeck(Deck deck);
+
+    Observable<ArrayList<MTGCard>> doSearch(SearchParams searchParams);
 }

@@ -21,7 +21,6 @@ import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
-import com.dbottillo.mtgsearchfree.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;

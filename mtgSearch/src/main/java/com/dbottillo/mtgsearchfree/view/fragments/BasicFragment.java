@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.squareup.leakcanary.RefWatcher;
 
 import de.greenrobot.event.EventBus;
 
@@ -53,7 +54,8 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onDestroy() {
         super.onDestroy();
-        MTGApp.refWatcher.watch(this);
+        RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
+        refWatcher.watch(this);
     }
 
     protected void setActionBarTitle(String title) {

@@ -13,10 +13,11 @@ import android.widget.Spinner;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.SearchSetAdapter;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.search.IntParam;
-import com.dbottillo.mtgsearchfree.search.SearchParams;
+import com.dbottillo.mtgsearchfree.model.IntParam;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -158,7 +159,7 @@ public class MTGSearchView extends RelativeLayout {
         return Integer.parseInt(text);
     }
 
-    public void refreshSets(ArrayList<MTGSet> sets) {
+    public void refreshSets(List<MTGSet> sets) {
         this.sets.addAll(sets);
         searchSetAdapter.notifyDataSetChanged();
     }

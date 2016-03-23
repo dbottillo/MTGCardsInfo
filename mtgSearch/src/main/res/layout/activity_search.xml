@@ -21,13 +21,12 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_accent"/>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.dbottillo.mtgsearchfree.view.views.MTGCardListView
+        android:id="@+id/cards_list_view"
+        android:background="@color/main_bg"
         android:layout_below="@+id/toolbar"
-        android:visibility="gone"
-        android:background="@color/main_bg"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ScrollView
         android:id="@+id/search_scroll_view"

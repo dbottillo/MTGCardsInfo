@@ -78,7 +78,8 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
         savedCards = new ArrayList<>();
         savedFilteredCards = new ArrayList<>();
 
-        adapter = new CardListAdapter(getActivity(), savedFilteredCards, false, R.menu.card_saved_option, this);
+        adapter = new CardListAdapter(getActivity(), savedFilteredCards, false, R.menu.card_saved_option);
+        adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
 
         setHasOptionsMenu(true);
