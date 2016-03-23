@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.search.SearchParams;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
 import java.util.Arrays;

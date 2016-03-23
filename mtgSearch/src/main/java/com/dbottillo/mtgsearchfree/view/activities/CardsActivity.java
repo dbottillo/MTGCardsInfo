@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
@@ -61,7 +62,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         return intent;
     }
 
-    public static Intent newInstance(Context context, String search, int position) {
+    public static Intent newInstance(Context context, SearchParams search, int position) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SEARCH, search);
@@ -77,7 +78,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     private MTGSet set = null;
     private Deck deck = null;
-    private String search = null;
+    private SearchParams search = null;
     private int startPosition = 0;
     private CardsBucket bucket;
     private boolean favs = false;
@@ -114,8 +115,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 setTitle(set.getName());
 
             } else if (getIntent().hasExtra(KEY_SEARCH)) {
-                search = getIntent().getStringExtra(KEY_SEARCH);
-                setTitle(search);
+                search = getIntent().getParcelableExtra(KEY_SEARCH);
+                setTitle(getString(R.string.action_search));
 
             } else if (getIntent().hasExtra(KEY_DECK)) {
                 deck = getIntent().getParcelableExtra(KEY_DECK);
@@ -196,6 +197,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 cardsPresenter.loadCards(set);
             } else if (search != null) {
                 // load search
+                cardsPresenter.doSearch(search);
 
             } else if (deck != null) {
                 cardsPresenter.loadDeck(deck);

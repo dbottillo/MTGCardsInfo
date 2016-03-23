@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.communication.events.CardsEvent;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.search.SearchParams;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
 import java.util.Collections;

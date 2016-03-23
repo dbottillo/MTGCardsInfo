@@ -70,7 +70,9 @@ public final class CardAdapterHelper {
                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
-                            onCardListener.onOptionSelected(item, card, position);
+                            if (onCardListener != null) {
+                                onCardListener.onOptionSelected(item, card, position);
+                            }
                             return false;
                         }
                     });

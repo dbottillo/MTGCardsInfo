@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -45,6 +46,11 @@ public class CardsInteractorImpl implements CardsInteractor {
     @Override
     public Observable<ArrayList<MTGCard>> loadDeck(Deck deck) {
         return Observable.just(storage.loadDeck(deck));
+    }
+
+    @Override
+    public Observable<ArrayList<MTGCard>> doSearch(SearchParams searchParams) {
+        return Observable.just(storage.doSearch(searchParams));
     }
 }
 

@@ -20,8 +20,6 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.adapters.DeckCardSectionAdapter;
 import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.base.DBActivity;
-import com.dbottillo.mtgsearchfree.communication.DataManager;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -38,7 +36,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DeckActivity extends DBActivity implements DecksView {
+public class DeckActivity extends BasicActivity implements DecksView {
 
     @Inject
     DecksPresenter decksPresenter;

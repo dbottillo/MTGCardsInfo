@@ -37,6 +37,7 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,28 +60,20 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     private MTGSet gameSet;
     private ArrayList<MTGSet> sets = new ArrayList<>();
     private CardsBucket cardBucket;
-    private ArrayList<MTGCard> cards = new ArrayList<>();
-    private CardListAdapter adapter;
     private GameSetAdapter setAdapter;
     private int currentSetPosition = -1;
     MainActivity mainActivity;
 
-    @Bind(R.id.card_list)
-    ListView listView;
-    @Bind(R.id.empty_view)
-    TextView emptyView;
     @Bind(R.id.set_arrow)
     ImageView setArrow;
     @Bind(R.id.set_list_bg)
     View setListBg;
     @Bind(R.id.set_list)
     ListView setList;
-    @Bind(R.id.container)
-    View container;
-    @Bind(R.id.progress)
-    SmoothProgressBar progressBar;
     @Bind(R.id.set_chooser_name)
     TextView chooserName;
+    @Bind(R.id.cards_list_view)
+    MTGCardListView mtgCardListView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,9 +87,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         super.onViewCreated(view, savedInstanceState);
 
         setActionBarTitle(getString(R.string.app_long_name));
-
-        adapter = new CardListAdapter(getActivity(), cards, false, R.menu.card_option, this);
-        listView.setAdapter(adapter);
 
         MTGApp.dataGraph.inject(this);
         cardsPresenter.init(this);
@@ -153,7 +143,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     private void showHideSetList(final boolean loadSet) {
         final int startHeight = setList.getHeight();
-        final int targetHeight = ((startHeight == 0)) ? container.getHeight() : 0;
+        final int targetHeight = ((startHeight == 0)) ? mtgCardListView.getHeight() : 0;
         final float startRotation = setArrow.getRotation();
         final Animation animation = new Animation() {
             public void applyTransformation(float interpolatedTime, Transformation t) {
@@ -234,24 +224,11 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     public void updateContent() {
-        cards.clear();
+        ArrayList<MTGCard> cards = new ArrayList<>();
         CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket.getCards(), cards);
         boolean wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
         CardsHelper.sortCards(wubrgSort, cards);
-
-        adapter.notifyDataSetChanged();
-        emptyView.setVisibility((adapter.getCount() == 0) ? View.VISIBLE : View.GONE);
-        listView.smoothScrollToPosition(0);
-
-        if (cards.size() == CardDataSource.LIMIT) {
-            View footer = LayoutInflater.from(getActivity()).inflate(R.layout.search_bottom, listView, false);
-            TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
-            moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
-            listView.addFooterView(footer);
-        }
-        progressBar.setVisibility(View.GONE);
-
-        emptyView.setVisibility((adapter.getCount() == 0) ? View.VISIBLE : View.GONE);
+        mtgCardListView.loadCards(cards, this);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -263,11 +240,13 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         loadSet();
     }
 
+    @Override
     public void onCardSelected(MTGCard card, int position) {
         TrackingManager.trackCard(gameSet, position);
         startActivity(CardsActivity.newInstance(getContext(), gameSet, position));
     }
 
+    @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card));

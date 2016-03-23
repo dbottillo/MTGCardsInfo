@@ -5,12 +5,16 @@ import android.content.Context;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource;
+import com.dbottillo.mtgsearchfree.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardsStorage {
 
@@ -54,5 +58,18 @@ public class CardsStorage {
 
     public ArrayList<MTGCard> loadDeck(Deck deck) {
         return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
+    }
+
+    public ArrayList<MTGCard> doSearch(SearchParams searchParams) {
+        ArrayList<MTGCard> result = MTGCardDataSource.searchCards(MTGDatabaseHelper.getInstance(context).getReadableDatabase(), searchParams);
+
+        Collections.sort(result, new Comparator<Object>() {
+            public int compare(Object o1, Object o2) {
+                MTGCard card = (MTGCard) o1;
+                MTGCard card2 = (MTGCard) o2;
+                return card.compareTo(card2);
+            }
+        });
+        return result;
     }
 }

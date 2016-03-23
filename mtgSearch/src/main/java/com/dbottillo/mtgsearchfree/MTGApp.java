@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.StrictMode;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
@@ -39,7 +40,7 @@ public class MTGApp extends Application {
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     public static String PREFS_NAME = "Filter";
-    public static RefWatcher refWatcher;
+    private RefWatcher refWatcher;
 
     @Override
     public void onCreate() {
@@ -101,5 +102,10 @@ public class MTGApp extends Application {
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1, b.build());
+    }
+
+    public static RefWatcher getRefWatcher(Context context) {
+        MTGApp application = (MTGApp) context.getApplicationContext();
+        return application.refWatcher;
     }
 }

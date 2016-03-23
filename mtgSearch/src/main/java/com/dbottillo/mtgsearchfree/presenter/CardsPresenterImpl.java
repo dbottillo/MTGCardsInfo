@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import java.util.ArrayList;
@@ -91,6 +92,30 @@ public class CardsPresenterImpl implements CardsPresenter {
             @Override
             public void onNext(ArrayList<MTGCard> cards) {
                 CardsMemoryStorage.bucket = new CardsBucket(deck.getName(), cards);
+                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+            }
+        });
+    }
+
+    @Override
+    public void doSearch(final SearchParams searchParams) {
+        Observable<ArrayList<MTGCard>> obs = interactor.doSearch(searchParams)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        subscription = obs.subscribe(new Subscriber<ArrayList<MTGCard>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(ArrayList<MTGCard> cards) {
+                CardsMemoryStorage.bucket = new CardsBucket(searchParams.toString(), cards);
                 cardsView.cardLoaded(CardsMemoryStorage.bucket);
             }
         });

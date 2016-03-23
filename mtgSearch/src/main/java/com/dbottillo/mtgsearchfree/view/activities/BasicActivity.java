@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.inputmethod.InputMethodManager;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
@@ -27,7 +29,6 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     MTGApp app = null;
     int sizeToolbar = 0;
-    EventBus bus = EventBus.getDefault();
     Toolbar toolbar = null;
     protected boolean isPortrait = false;
 
@@ -52,19 +53,16 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public abstract String getPageTrack();
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        bus.unregister(this);
-    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        bus.registerSticky(this);
-    }
+    protected void hideIme() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), 0);
+        }
 
-    public void onEvent(BaseEvent event) {
+        if (getCurrentFocus() != null) {
+            getCurrentFocus().clearFocus();
+        }
     }
 
     protected void setupToolbar() {

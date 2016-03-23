@@ -1,7 +1,6 @@
-package com.dbottillo.mtgsearchfree.search;
+package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.animation.ArgbEvaluator;
-import android.annotation.TargetApi;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,55 +10,83 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.base.DBActivity;
-import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.communication.events.SetEvent;
+import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.MTGSearchView;
+import com.dbottillo.mtgsearchfree.view.SetsView;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SearchActivity extends DBActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, DialogUtil.SortDialogListener {
+public class SearchActivity extends BasicActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, DialogUtil.SortDialogListener, SetsView, CardsView, OnCardListener {
 
     private static final String SEARCH_OPEN = "searchOpen";
     private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
     private static final String TOOLBAR_ELEVATION = "toolbarElevation";
 
+    @Bind(R.id.action_search)
     ImageButton newSearch;
-    AnimationDrawable newSearchAnimation;
-    ScrollView scrollView;
-    boolean searchOpen = false;
-    FrameLayout resultsContainer;
-    View mainContainer;
 
+    @Bind(R.id.search_scroll_view)
+    ScrollView scrollView;
+
+    @Bind(R.id.cards_list_view)
+    MTGCardListView mtgCardListView;
+
+    @Bind(R.id.search_view)
     MTGSearchView searchView;
+
+    @Bind(R.id.second_toolbar)
     Toolbar secondToolbar;
 
+    AnimationDrawable newSearchAnimation;
     ArgbEvaluator argbEvaluator;
 
     int sizeBig = 0;
+    boolean searchOpen = false;
+    private CardsBucket currentBucket;
+
+    @Inject
+    SetsPresenter setsPresenter;
+
+    @Inject
+    CardsPresenter cardsPresenter;
 
     @Override
-    @TargetApi(23)
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
         setContentView(R.layout.activity_search);
+        ButterKnife.bind(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_close);
         toolbar.setTitle(R.string.action_search);
-        secondToolbar = (Toolbar) findViewById(R.id.second_toolbar);
         secondToolbar.setNavigationIcon(R.drawable.ic_close);
         secondToolbar.setTitle(R.string.search_result);
         secondToolbar.setOnClickListener(new View.OnClickListener() {
@@ -76,11 +103,6 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        mainContainer = findViewById(R.id.main_container);
-        resultsContainer = (FrameLayout) findViewById(R.id.fragment_container);
-        newSearch = (ImageButton) findViewById(R.id.action_search);
-        scrollView = (ScrollView) findViewById(R.id.search_scroll_view);
-
         if (savedInstanceState != null) {
             searchOpen = savedInstanceState.getBoolean(SEARCH_OPEN);
             scrollView.setBackgroundColor(savedInstanceState.getInt(BG_COLOR_SCROLLVIEW));
@@ -95,11 +117,11 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
             @Override
             public void onGlobalLayout() {
                 sizeBig = scrollView.getHeight();
-                UIUtil.setMarginTop(resultsContainer, sizeBig);
+                UIUtil.setMarginTop(mtgCardListView, sizeBig);
                 if (searchOpen) {
                     UIUtil.setHeight(scrollView, 0);
-                    UIUtil.setMarginTop(resultsContainer, 0);
-                    resultsContainer.setVisibility(View.VISIBLE);
+                    UIUtil.setMarginTop(mtgCardListView, 0);
+                    mtgCardListView.setVisibility(View.VISIBLE);
                 }
                 scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
@@ -141,9 +163,10 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
             newSearch.setElevation(6.0f); // TODO: pre-lollipop version
         }
 
-        searchView = (MTGSearchView) findViewById(R.id.search_view);
-
-        DataManager.execute(DataManager.TASK.SET_LIST);
+        MTGApp.dataGraph.inject(this);
+        setsPresenter.init(this);
+        cardsPresenter.init(this);
+        setsPresenter.loadSets();
     }
 
     @Override
@@ -172,16 +195,9 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
         return super.onOptionsItemSelected(item);
     }
 
-    public void onEventMainThread(SetEvent event) {
-        if (!event.isError()) {
-            searchView.refreshSets(event.getResult());
-        }
-        bus.removeStickyEvent(event);
-    }
-
     private void doSearch(SearchParams searchParams) {
         TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", searchParams.toString());
-        changeFragment(SearchFragment.newInstance(searchParams), "search", false);
+        cardsPresenter.doSearch(searchParams);
         hideIme();
     }
 
@@ -216,7 +232,7 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
                 super.applyTransformation(interpolatedTime, t);
                 int val = (int) backgroundInterpolator.getInterpolation(interpolatedTime);
                 UIUtil.setHeight(scrollView, val);
-                UIUtil.setMarginTop(resultsContainer, val);
+                UIUtil.setMarginTop(mtgCardListView, val);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     int color = (Integer) argbEvaluator.evaluate(interpolatedTime, startColor, endColor);
                     SearchActivity.this.getWindow().setStatusBarColor(color);
@@ -228,7 +244,7 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
             @Override
             public void onAnimationStart(Animation animation) {
                 if (!searchOpen) {
-                    resultsContainer.setVisibility(View.VISIBLE);
+                    mtgCardListView.setVisibility(View.VISIBLE);
                     MaterialWrapper.copyElevation(secondToolbar, toolbar);
                     secondToolbar.animate().setDuration(100).translationY(0).start();
                 } else {
@@ -239,7 +255,7 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
             @Override
             public void onAnimationEnd(Animation animation) {
                 if (searchOpen) {
-                    resultsContainer.setVisibility(View.GONE);
+                    mtgCardListView.setVisibility(View.GONE);
                 } else {
                     doSearch(finalSearchParams);
                 }
@@ -283,9 +299,47 @@ public class SearchActivity extends DBActivity implements View.OnClickListener, 
 
     @Override
     public void onSortSelected() {
-        SearchFragment currentFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if (currentFragment != null) {
-            currentFragment.updateSetFragment();
+        refreshList();
+    }
+
+    @Override
+    public void setsLoaded(List<MTGSet> sets) {
+        searchView.refreshSets(sets);
+    }
+
+    @Override
+    public void showError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void cardLoaded(CardsBucket bucket) {
+        currentBucket = bucket;
+        refreshList();
+    }
+
+    private void refreshList() {
+        boolean wubrgSort = getSharedPreferences().getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
+        CardsHelper.sortCards(wubrgSort, currentBucket.getCards());
+        mtgCardListView.loadCards(currentBucket.getCards(), this);
+    }
+
+    @Override
+    public void favIdLoaded(int[] favourites) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void onCardSelected(MTGCard card, int position) {
+        startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position));
+    }
+
+    @Override
+    public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
+        if (menuItem.getItemId() == R.id.action_add_to_deck) {
+            DialogHelper.open(this, "add_to_deck", AddToDeckFragment.newInstance(card));
+        } else {
+            cardsPresenter.saveAsFavourite(card);
         }
     }
 }
