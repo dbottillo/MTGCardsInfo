@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 
 import dagger.Component;
 
@@ -24,6 +25,8 @@ public interface DataComponent {
     void inject(DeckActivity deckActivity);
 
     void inject(MainFragment mainFragment);
+
+    void inject(SavedFragment savedFragment);
 
     void inject(LifeCounterFragment lifeCounterFragment);
 

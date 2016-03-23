@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.persistence;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+@Deprecated
 public class MigrationPreferences {
 
     public static final String PREFS_NAME = "Migration";

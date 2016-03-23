@@ -3,8 +3,10 @@ package com.dbottillo.mtgsearchfree.model.storage;
 import android.content.Context;
 
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 
@@ -46,4 +48,11 @@ public class CardsStorage {
         return MTGDatabaseHelper.getInstance(context).getRandomCard(howMany);
     }
 
+    public ArrayList<MTGCard> getFavourites() {
+        return FavouritesDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), true);
+    }
+
+    public ArrayList<MTGCard> loadDeck(Deck deck) {
+        return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
+    }
 }

@@ -20,11 +20,7 @@ public final class DataManager {
     public enum TASK {
         SET_LIST(SetListOperation.class),
         SET_CARDS(SetCardsOperation.class),
-        SEARCH_CARDS(SearchCardsOperation.class),
-        SAVED_CARDS(SavedCardsOperation.class),
-        SAVE_CARD(SaveCardOperation.class),
-        UN_SAVE_CARD(UnsaveCardOperation.class),
-        RANDOM_CARDS(RandomCardsOperation.class);
+        SEARCH_CARDS(SearchCardsOperation.class);
 
         Class<?> operationClass;
 
