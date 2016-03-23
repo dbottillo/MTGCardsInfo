@@ -6,6 +6,11 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
+import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

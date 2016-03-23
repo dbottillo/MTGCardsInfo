@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
-import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper;
-import com.dbottillo.mtgsearchfree.database.SetDataSource;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
+import com.dbottillo.mtgsearchfree.model.database.CreateDatabaseHelper;
+import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 

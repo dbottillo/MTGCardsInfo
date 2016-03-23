@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.persistence;
+package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;

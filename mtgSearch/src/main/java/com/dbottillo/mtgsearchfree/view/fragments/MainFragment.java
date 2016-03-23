@@ -19,12 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
-import com.dbottillo.mtgsearchfree.adapters.GameSetAdapter;
-import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.view.adapters.GameSetAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;

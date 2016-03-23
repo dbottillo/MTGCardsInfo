@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.adapters;
+package com.dbottillo.mtgsearchfree.view.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

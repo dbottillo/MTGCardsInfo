@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 
 import java.util.Random;

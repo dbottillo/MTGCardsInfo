@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.database.FavouritesDataSource;
-import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;

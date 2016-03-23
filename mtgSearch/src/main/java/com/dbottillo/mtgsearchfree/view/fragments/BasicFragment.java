@@ -11,18 +11,14 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.communication.events.BaseEvent;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
 import com.squareup.leakcanary.RefWatcher;
-
-import de.greenrobot.event.EventBus;
 
 public abstract class BasicFragment extends DialogFragment {
 
     protected AppCompatActivity dbActivity;
     protected boolean isPortrait = false;
-    protected EventBus bus = EventBus.getDefault();
     protected MTGApp app;
     protected SharedPreferences sharedPreferences;
 
@@ -47,10 +43,6 @@ public abstract class BasicFragment extends DialogFragment {
         setHasOptionsMenu(true);
     }
 
-    public void onPause() {
-        super.onPause();
-        bus.unregister(this);
-    }
 
     public void onDestroy() {
         super.onDestroy();
@@ -78,7 +70,6 @@ public abstract class BasicFragment extends DialogFragment {
     public void onResume() {
         super.onResume();
         TrackingManager.trackPage(getPageTrack());
-        bus.registerSticky(this);
     }
 
     public abstract String getPageTrack();
@@ -86,10 +77,6 @@ public abstract class BasicFragment extends DialogFragment {
 
     public boolean onBackPressed() {
         return false;
-    }
-
-    public void onEvent(BaseEvent event) {
-
     }
 
     public boolean getIsPortrait() {

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.network;
+package com.dbottillo.mtgsearchfree.model.network;
 
 import android.app.IntentService;
 import android.content.Intent;

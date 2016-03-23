@@ -2,8 +2,8 @@ package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.content.Context;
 
-import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.database.DeckDataSource;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 

@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.SearchSetAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.SearchSetAdapter;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.SearchParams;

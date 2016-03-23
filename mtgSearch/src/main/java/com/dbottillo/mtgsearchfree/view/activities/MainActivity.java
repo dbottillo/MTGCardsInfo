@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;

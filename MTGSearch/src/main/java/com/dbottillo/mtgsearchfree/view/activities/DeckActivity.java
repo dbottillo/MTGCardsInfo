@@ -17,9 +17,9 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.DeckCardAdapter;
-import com.dbottillo.mtgsearchfree.adapters.DeckCardSectionAdapter;
-import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.DeckCardSectionAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;

@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 
 import java.util.Calendar;
 
