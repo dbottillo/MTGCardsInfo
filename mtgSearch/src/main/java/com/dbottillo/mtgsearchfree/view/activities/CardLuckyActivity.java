@@ -40,8 +40,10 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         ButterKnife.bind(this);
 
         setupToolbar();
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         MTGApp.dataGraph.inject(this);
         cardsPresenter.init(this);

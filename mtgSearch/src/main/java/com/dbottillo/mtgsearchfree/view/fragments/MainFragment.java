@@ -228,10 +228,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         cardsPresenter.loadCards(gameSet);
     }
 
-    public void luckyCardsLoaded(ArrayList<MTGCard> cards) {
-        throw new UnsupportedOperationException();
-    }
-
     public void cardLoaded(CardsBucket bucket) {
         cardBucket = bucket;
         updateContent();

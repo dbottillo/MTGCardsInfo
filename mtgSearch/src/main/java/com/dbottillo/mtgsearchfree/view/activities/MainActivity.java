@@ -20,7 +20,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
-import com.dbottillo.mtgsearchfree.saved.SavedFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
@@ -183,7 +183,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             changeFragment(new MainFragment(), "main", false);
             slidingPanelHelper.showPanel();
         } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
-            changeFragment(SavedFragment.newInstance(), "saved_fragment", true);
+            changeFragment(new SavedFragment(), "saved_fragment", true);
             slidingPanelHelper.showPanel();
 
         } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {

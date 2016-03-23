@@ -10,24 +10,24 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.DecksView;
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +43,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     private static final String KEY_SEARCH = "Search";
     private static final String KEY_SET = "Set";
+    private static final String KEY_FAV = "Fav";
     private static final String KEY_DECK = "Deck";
     private static final String POSITION = "Position";
 
@@ -67,11 +68,19 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         return intent;
     }
 
+    public static Intent newFavInstance(Context context, int position) {
+        Intent intent = new Intent(context, CardsActivity.class);
+        intent.putExtra(CardsActivity.POSITION, position);
+        intent.putExtra(CardsActivity.KEY_FAV, true);
+        return intent;
+    }
+
     private MTGSet set = null;
     private Deck deck = null;
     private String search = null;
     private int startPosition = 0;
     private CardsBucket bucket;
+    private boolean favs = false;
 
     @Bind(R.id.cards_view_pager)
     ViewPager viewPager;
@@ -106,15 +115,19 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
             } else if (getIntent().hasExtra(KEY_SEARCH)) {
                 search = getIntent().getStringExtra(KEY_SEARCH);
+                setTitle(search);
 
             } else if (getIntent().hasExtra(KEY_DECK)) {
                 deck = getIntent().getParcelableExtra(KEY_DECK);
+                setTitle(deck.getName());
+
+            } else if (getIntent().hasExtra(KEY_FAV)) {
+                favs = true;
+                setTitle(getString(R.string.action_saved));
             }
         }
         startPosition = getIntent().getIntExtra(POSITION, 0);
-
         cardsPresenter.loadIdFavourites();
-
     }
 
     public void setupView() {
@@ -164,6 +177,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     public MTGCard getCurrentCard() {
+        if (adapter == null) {
+            return null;
+        }
         return adapter.getItem(viewPager.getCurrentItem());
     }
 
@@ -180,22 +196,25 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 cardsPresenter.loadCards(set);
             } else if (search != null) {
                 // load search
-            } else {
-                // something very bad happened here
+
+            } else if (deck != null) {
+                cardsPresenter.loadDeck(deck);
+
+            } else if (favs) {
+                cardsPresenter.loadFavourites();
+
+            } else {// something very bad happened here
                 throw new UnsupportedOperationException();
             }
         } else {
             updateMenu();
         }
-    }
 
-    public void luckyCardsLoaded(ArrayList<MTGCard> cards) {
-        throw new UnsupportedOperationException();
     }
 
     public void cardLoaded(CardsBucket bucket) {
         this.bucket = bucket;
-        if (set != null) {
+        if (set != null || favs || search != null) {
             // needs to load filters first
             filterPresenter.loadFilter();
         } else {
@@ -243,7 +262,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     @OnClick(R.id.card_add_to_deck)
-    public void addToDeck(View view){
+    public void addToDeck(View view) {
         MTGCard card = bucket.getCards().get(viewPager.getCurrentItem());
         openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
     }
