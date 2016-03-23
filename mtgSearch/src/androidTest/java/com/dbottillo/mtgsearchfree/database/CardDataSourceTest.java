@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

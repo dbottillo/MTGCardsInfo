@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.LifeCounterAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;

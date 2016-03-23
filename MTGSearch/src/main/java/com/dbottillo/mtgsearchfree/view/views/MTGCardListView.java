@@ -1,45 +1,25 @@
 package com.dbottillo.mtgsearchfree.view.views;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.res.Configuration;
-import android.graphics.drawable.AnimationDrawable;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
-import android.text.Html;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.adapters.CardListAdapter;
-import com.dbottillo.mtgsearchfree.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.database.CardDataSource;
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.TCGPrice;
-import com.dbottillo.mtgsearchfree.network.NetworkIntentService;
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class MTGCardListView extends RelativeLayout implements OnCardListener {

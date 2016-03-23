@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 
 import org.junit.Test;
 

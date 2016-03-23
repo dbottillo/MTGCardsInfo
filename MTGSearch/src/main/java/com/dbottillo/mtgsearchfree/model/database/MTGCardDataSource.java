@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.database;
+package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
