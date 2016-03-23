@@ -99,6 +99,7 @@ public final class DeckDataSource {
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
         }
         if (currentCard + quantity < 0) {
+            cardsCursor.close();
             removeCardFromDeck(db, deckId, card, side);
             return;
         }
@@ -110,6 +111,7 @@ public final class DeckDataSource {
             cardsCursor.close();
             return;
         }
+        cardsCursor.close();
         addCardToDeckWithoutCheck(db, deckId, card, quantity, side);
     }
 
@@ -181,8 +183,12 @@ public final class DeckDataSource {
     }
 
     public static ArrayList<MTGCard> getCards(SQLiteDatabase db, Deck deck) {
+        return getCards(db, deck.getId());
+    }
+
+    public static ArrayList<MTGCard> getCards(SQLiteDatabase db, long deckId) {
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", new String[]{deck.getId() + ""});
+        Cursor cursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", new String[]{deckId + ""});
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

@@ -17,8 +17,7 @@ public class SetsStorage {
 
 
     public ArrayList<MTGSet> load() {
-        MTGDatabaseHelper helper = new MTGDatabaseHelper(context);
-        return helper.getSets();
+        return MTGDatabaseHelper.getInstance(context).getSets();
     }
 
 }

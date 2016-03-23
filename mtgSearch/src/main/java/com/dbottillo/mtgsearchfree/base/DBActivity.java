@@ -78,15 +78,7 @@ public abstract class DBActivity extends AppCompatActivity {
         return app;
     }
 
-    public void openDialog(String tag, DialogFragment fragment) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
-        if (prev != null) {
-            ft.remove(prev);
-        }
-        ft.addToBackStack(null);
-        fragment.show(ft, tag);
-    }
+
 
     protected void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -103,6 +95,12 @@ public abstract class DBActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+    }
+
+    protected void setTitle(String name) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(name);
+        }
     }
 
     public void setToolbarColor(int color) {

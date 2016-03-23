@@ -1,9 +1,8 @@
-package com.dbottillo.mtgsearchfree.dialog;
+package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.app.Dialog;
-import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.DialogFragment;
 import android.text.InputFilter;
@@ -17,68 +16,78 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.communication.DataManager;
-import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
+import com.dbottillo.mtgsearchfree.view.DecksView;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class AddToDeckFragment extends BasicFragment implements View.OnClickListener {
+import javax.inject.Inject;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class AddToDeckFragment extends BasicFragment implements DecksView {
+
+    @Bind(R.id.choose_deck)
     Spinner chooseDeck;
+    @Bind(R.id.choose_quantity)
     Spinner chooseQuantity;
+    @Bind(R.id.add_to_deck_sideboard)
     CheckBox sideboard;
 
     String[] decksChoose;
     String[] quantityChoose;
 
+    @Bind(R.id.new_deck_name_input_layout)
     TextInputLayout cardNameInputLayout;
+    @Bind(R.id.new_deck_name)
     EditText deckName;
+    @Bind(R.id.new_deck_quantity_input_layout)
     TextInputLayout cardQuantityInputLayout;
+    @Bind(R.id.new_deck_quantity)
     EditText cardQuantity;
 
-    ArrayList<Deck> decks;
+    List<Deck> decks;
     MTGCard card;
+
+    @Inject
+    DecksPresenter decksPresenter;
+
+    public static DialogFragment newInstance(MTGCard card) {
+        AddToDeckFragment instance = new AddToDeckFragment();
+        Bundle args = new Bundle();
+        args.putParcelable("card", card);
+        instance.setArguments(args);
+        return instance;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_add_to_deck, container, false);
-
-        card = getArguments().getParcelable("card");
-
-        chooseDeck = (Spinner) v.findViewById(R.id.choose_deck);
-        chooseQuantity = (Spinner) v.findViewById(R.id.choose_quantity);
-        sideboard = (CheckBox) v.findViewById(R.id.add_to_deck_sideboard);
-
-        cardNameInputLayout = (TextInputLayout) v.findViewById(R.id.new_deck_name_input_layout);
-        deckName = (EditText) v.findViewById(R.id.new_deck_name);
-        cardQuantityInputLayout = (TextInputLayout) v.findViewById(R.id.new_deck_quantity_input_layout);
-        cardQuantity = (EditText) v.findViewById(R.id.new_deck_quantity);
-        cardQuantity.setFilters(new InputFilter[]{new InputFilterMinMax(1, 30)});
-
-        v.findViewById(R.id.add_to_deck_save).setOnClickListener(this);
-
-        setupQuantitySpinner();
-
-        if (savedInstanceState == null) {
-            new LoadDecks(getActivity().getApplicationContext()).execute();
-        } else {
-            decks = savedInstanceState.getParcelableArrayList("decks");
-        }
-
+        ButterKnife.bind(this, v);
         return v;
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList("decks", decks);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        card = getArguments().getParcelable("card");
+        cardQuantity.setFilters(new InputFilter[]{new InputFilterMinMax(1, 30)});
+
+        setupQuantitySpinner();
+
+        MTGApp.dataGraph.inject(this);
+        decksPresenter.init(this);
+        decksPresenter.loadDecks();
     }
 
     private void setupQuantitySpinner() {
@@ -116,15 +125,7 @@ public class AddToDeckFragment extends BasicFragment implements View.OnClickList
         return "/add_to_deck";
     }
 
-    public static DialogFragment newInstance(MTGCard card) {
-        AddToDeckFragment instance = new AddToDeckFragment();
-        Bundle args = new Bundle();
-        args.putParcelable("card", card);
-        instance.setArguments(args);
-        return instance;
-    }
-
-    private void setupDecksSpinner(final ArrayList<Deck> decks) {
+    private void setupDecksSpinner(final List<Deck> decks) {
         this.decks = decks;
         decksChoose = new String[decks.size() + 2];
         decksChoose[0] = getString(R.string.deck_choose);
@@ -154,8 +155,8 @@ public class AddToDeckFragment extends BasicFragment implements View.OnClickList
         });
     }
 
-    @Override
-    public void onClick(View v) {
+    @OnClick(R.id.add_to_deck_save)
+    public void addToDeck(View view) {
         int quantity = -1;
         if (chooseQuantity.getVisibility() == View.VISIBLE && chooseQuantity.getSelectedItemPosition() > 0) {
             quantity = Integer.parseInt(quantityChoose[chooseQuantity.getSelectedItemPosition()]);
@@ -179,37 +180,30 @@ public class AddToDeckFragment extends BasicFragment implements View.OnClickList
     }
 
     private void saveCard(final int quantity, final Deck deck, final boolean side) {
-        DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck.getId(), card, quantity, side);
+        card.setSideboard(side);
+        decksPresenter.addCardToDeck(deck, card, quantity);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - existing");
     }
 
     private void saveCard(final int quantity, final String deck, final boolean side) {
-        DataManager.execute(DataManager.TASK.EDIT_DECK, true, deck, card, quantity, side);
+        card.setSideboard(side);
+        decksPresenter.addCardToDeck(deck, card, quantity);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
         TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - new");
     }
 
-    private class LoadDecks extends AsyncTask<Void, Void, ArrayList<Deck>> {
+    @Override
+    public void decksLoaded(List<Deck> decks) {
+        setupDecksSpinner(decks);
+    }
 
-        private Context context;
+    @Override
+    public void deckLoaded(List<MTGCard> cards) {
+    }
 
-        public LoadDecks(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected ArrayList<Deck> doInBackground(Void... params) {
-            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
-            return DeckDataSource.getDecks(dbHelper.getReadableDatabase());
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Deck> decks) {
-            super.onPostExecute(decks);
-            if (getActivity() != null) {
-                setupDecksSpinner(decks);
-            }
-        }
+    @Override
+    public void showError(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     public static class InputFilterMinMax implements InputFilter {

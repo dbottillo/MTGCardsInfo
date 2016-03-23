@@ -1,18 +1,14 @@
-package com.dbottillo.mtgsearchfree.decks;
+package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.AsyncTaskLoader;
-import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.KeyEvent;
@@ -23,63 +19,77 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.adapters.DeckListAdapter;
-import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.DecksView;
+import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.inject.Inject;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, LoaderManager.LoaderCallbacks<ArrayList<Deck>>, DeckListAdapter.OnDeckListener {
-
-    public static DecksFragment newInstance() {
-        return new DecksFragment();
-    }
+public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, DecksView, DeckListAdapter.OnDeckListener {
 
     private ArrayList<Deck> decks;
     private DeckListAdapter deckListAdapter;
-    private ListView listView;
-    private SmoothProgressBar progressBar;
-    private TextView emptyView;
-    private FloatingActionButton newDeck;
-    private View newDeckOverlay;
-    private View newDeckContainer;
-    private AppCompatEditText newDeckName;
 
     private int heightNewDeckContainer = -1;
-
     private boolean newDeckViewOpen = false;
 
-    private Loader decksLoader;
+    @Bind(R.id.add_new_deck)
+    FloatingActionButton newDeck;
+
+    @Bind(R.id.deck_list)
+    ListView listView;
+
+    @Bind(R.id.progress)
+    SmoothProgressBar progressBar;
+
+    @Bind(R.id.empty_view)
+    TextView emptyView;
+
+    @Bind(R.id.new_deck_overlay)
+    View newDeckOverlay;
+
+    @Bind(R.id.new_deck_name_container)
+    View newDeckContainer;
+
+    @Bind(R.id.new_deck_name)
+    AppCompatEditText newDeckName;
+
+    @Inject
+    DecksPresenter decksPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_decks, container, false);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         setActionBarTitle(getString(R.string.action_decks));
-
-        newDeck = (FloatingActionButton) rootView.findViewById(R.id.add_new_deck);
-
-        listView = (ListView) rootView.findViewById(R.id.deck_list);
-        emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         emptyView.setText(R.string.empty_decks);
-
-        progressBar = (SmoothProgressBar) rootView.findViewById(R.id.progress);
         progressBar.setVisibility(View.GONE);
-
-        newDeckName = (AppCompatEditText) rootView.findViewById(R.id.new_deck_name);
         newDeckName.setImeOptions(EditorInfo.IME_ACTION_DONE);
         newDeckName.setOnEditorActionListener(this);
-
-        newDeckOverlay = rootView.findViewById(R.id.new_deck_overlay);
         newDeckOverlay.setAlpha(0.0f);
         newDeckOverlay.setVisibility(View.GONE);
         newDeckOverlay.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +98,6 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
                 closeNewDeck();
             }
         });
-
-        newDeckContainer = rootView.findViewById(R.id.new_deck_name_container);
         newDeckContainer.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
@@ -103,27 +111,21 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         decks = new ArrayList<>();
 
         deckListAdapter = new DeckListAdapter(getActivity(), decks, this);
-        View footerView = inflater.inflate(R.layout.fab_button_list_footer, listView, false);
+        View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, listView, false);
         listView.addFooterView(footerView);
         listView.setAdapter(deckListAdapter);
 
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
 
-        return rootView;
+        MTGApp.dataGraph.inject(this);
+        decksPresenter.init(this);
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        decksLoader = getLoaderManager().initLoader(101, null, this);
-        decksLoader.forceLoad();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        decksLoader.stopLoading();
+    public void onResume() {
+        super.onResume();
+        decksPresenter.loadDecks();
     }
 
     @Override
@@ -213,41 +215,16 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         }).start();
     }
 
-
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_DONE) {
             String text = newDeckName.getText().toString();
             closeNewDeck();
-            new NewDeckTask(getActivity().getApplicationContext()).execute(text);
+            decksPresenter.addDeck(text);
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, text);
             return true;
         }
         return false;
-    }
-
-    @Override
-    public Loader<ArrayList<Deck>> onCreateLoader(int id, Bundle args) {
-        return new DecksLoader(getActivity());
-    }
-
-    @Override
-    public void onLoadFinished(Loader<ArrayList<Deck>> loader, ArrayList<Deck> data) {
-        decks.clear();
-        for (Deck deck : data) {
-            decks.add(deck);
-        }
-        if (decks.size() == 0) {
-            emptyView.setVisibility(View.VISIBLE);
-        } else {
-            emptyView.setVisibility(View.GONE);
-        }
-        deckListAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onLoaderReset(Loader loader) {
-
     }
 
     @Override
@@ -266,7 +243,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
                     .setPositiveButton(R.string.deck_delete_confirmation, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
+                            decksPresenter.deleteDeck(deck);
                             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
                         }
 
@@ -275,67 +252,33 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
                     .show();
 
         } else {
-            new DeleteDeckTask(getActivity().getApplicationContext()).execute(deck);
+            decksPresenter.deleteDeck(deck);
             TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
         }
     }
 
-    static class DecksLoader extends AsyncTaskLoader<ArrayList<Deck>> {
-
-        private Context context;
-
-        public DecksLoader(Context context) {
-            super(context);
-            this.context = context;
+    @Override
+    public void decksLoaded(List<Deck> newDecks) {
+        decks.clear();
+        for (Deck deck : newDecks) {
+            decks.add(deck);
         }
-
-        public ArrayList<Deck> loadInBackground() {
-            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
-            return DeckDataSource.getDecks(dbHelper.getReadableDatabase());
+        if (decks.size() == 0) {
+            emptyView.setVisibility(View.VISIBLE);
+        } else {
+            emptyView.setVisibility(View.GONE);
         }
+        deckListAdapter.notifyDataSetChanged();
     }
 
-    private class NewDeckTask extends AsyncTask<String, Void, Void> {
-
-        private Context context;
-
-        public NewDeckTask(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected Void doInBackground(String... params) {
-            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
-            DeckDataSource.addDeck(dbHelper.getWritableDatabase(), params[0]);
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            decksLoader.forceLoad();
-        }
+    @Override
+    public void deckLoaded(List<MTGCard> cards) {
+        throw new UnsupportedOperationException();
     }
 
-    private class DeleteDeckTask extends AsyncTask<Deck, Void, Void> {
-
-        private Context context;
-
-        public DeleteDeckTask(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected Void doInBackground(Deck... params) {
-            CardsInfoDbHelper dbHelper = CardsInfoDbHelper.getInstance(context);
-            DeckDataSource.deleteDeck(dbHelper.getWritableDatabase(), params[0]);
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            decksLoader.forceLoad();
-        }
+    @Override
+    public void showError(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
+
 }

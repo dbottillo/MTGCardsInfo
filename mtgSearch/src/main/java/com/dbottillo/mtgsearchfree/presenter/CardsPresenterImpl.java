@@ -98,14 +98,11 @@ public class CardsPresenterImpl implements CardsPresenter {
 
 
     public void loadCards(final MTGSet set) {
-        LOG.e("load cards for set: "+set.getName());
         CardsBucket currentBucket = CardsMemoryStorage.bucket;
         if (currentBucket != null && currentBucket.isValid(set.getName())) {
-            LOG.e("cards in memory, just returned");
             cardsView.cardLoaded(currentBucket);
             return;
         }
-        LOG.e("loading cards from database");
         Observable<ArrayList<MTGCard>> obs = interactor.load(set)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());

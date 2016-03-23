@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -101,5 +103,15 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public SharedPreferences getSharedPreferences() {
         return getSharedPreferences(MTGApp.PREFS_NAME, 0);
+    }
+
+    public void openDialog(String tag, DialogFragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        fragment.show(ft, tag);
     }
 }

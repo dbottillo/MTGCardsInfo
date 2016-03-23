@@ -5,10 +5,12 @@ import android.content.SharedPreferences;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
@@ -36,6 +38,10 @@ public interface AppComponent {
     PlayerInteractor getPlayerInteractor();
 
     PlayersStorage getPlayerStorage();
+
+    DecksInteractor getDecksInteractor();
+
+    DecksStorage getDecksStorage();
 
     SharedPreferences getSharedPreferences();
 

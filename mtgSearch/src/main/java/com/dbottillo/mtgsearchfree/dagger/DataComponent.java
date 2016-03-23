@@ -3,7 +3,10 @@ package com.dbottillo.mtgsearchfree.dagger;
 import com.dbottillo.mtgsearchfree.ActivityScope;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
+import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 
@@ -18,8 +21,14 @@ public interface DataComponent {
 
     void inject(CardLuckyActivity luckyActivity);
 
+    void inject(DeckActivity deckActivity);
+
     void inject(MainFragment mainFragment);
 
     void inject(LifeCounterFragment lifeCounterFragment);
+
+    void inject(DecksFragment decksFragment);
+
+    void inject(AddToDeckFragment addToDeckFragment);
 
 }
