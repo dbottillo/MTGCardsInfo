@@ -55,7 +55,7 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '14'
+            buildConfigField 'int', 'DATABASE_VERSION', '15'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             lintOptions {
                 abortOnError false
@@ -66,7 +66,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '14'
+            buildConfigField 'int', 'DATABASE_VERSION', '15'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
         release {
@@ -74,7 +74,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '14'
+            buildConfigField 'int', 'DATABASE_VERSION', '15'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
