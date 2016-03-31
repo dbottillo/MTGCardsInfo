@@ -3,13 +3,13 @@ package com.dbottillo.mtgsearchfree.database;
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.json.JSONException;
 import org.junit.Test;
