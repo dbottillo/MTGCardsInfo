@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.database;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
@@ -12,7 +11,6 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 
 import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNotSame;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
