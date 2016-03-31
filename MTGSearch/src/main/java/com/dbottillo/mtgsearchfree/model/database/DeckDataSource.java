@@ -227,7 +227,7 @@ public final class DeckDataSource {
         return db.update(TABLE, contentValues, "_id=" + deckId, null);
     }
 
-    protected static Deck fromCursor(Cursor cursor) {
+    public static Deck fromCursor(Cursor cursor) {
         Deck deck = new Deck(cursor.getLong(cursor.getColumnIndex("_id")));
         deck.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
         deck.setArchived(cursor.getInt(cursor.getColumnIndex(COLUMNS.ARCHIVED.getName())) == 1);

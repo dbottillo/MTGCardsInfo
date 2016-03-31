@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -196,7 +196,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     }
 
     private void doSearch(SearchParams searchParams) {
-        TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_SEARCH, "done", searchParams.toString());
+        TrackingManager.trackSearch(searchParams);
         cardsPresenter.doSearch(searchParams);
         hideIme();
     }

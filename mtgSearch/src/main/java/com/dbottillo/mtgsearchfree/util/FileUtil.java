@@ -6,8 +6,6 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
@@ -113,7 +111,7 @@ public final class FileUtil {
             return false;
         }
         OutputStreamWriter writer;
-        TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
+        TrackingManager.trackDatabaseExport();
         try {
             writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
             writer.append("//");
@@ -133,7 +131,7 @@ public final class FileUtil {
             return true;
         } catch (IOException e) {
             Toast.makeText(context, context.getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] " + e.getLocalizedMessage());
+            TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
     }

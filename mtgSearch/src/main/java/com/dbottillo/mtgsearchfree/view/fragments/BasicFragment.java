@@ -1,18 +1,14 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class BasicFragment extends DialogFragment {
@@ -54,17 +50,6 @@ public abstract class BasicFragment extends DialogFragment {
         if (dbActivity.getSupportActionBar() != null) {
             dbActivity.getSupportActionBar().setTitle(title);
         }
-    }
-
-    protected void openPlayStore() {
-        TrackingHelper.getInstance(dbActivity.getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_POPUP, TrackingHelper.UA_ACTION_OPEN, "play_store");
-        String appPackageName = "com.dbottillo.mtgsearch";
-        try {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-        } catch (ActivityNotFoundException anfe) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appPackageName)));
-        }
-
     }
 
     public void onResume() {

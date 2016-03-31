@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -138,8 +138,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onRemovePlayer(int position) {
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "removePlayer");
         playerPresenter.removePlayer(players.get(position));
+        TrackingManager.trackRemovePlayer();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
                 String value = input.getText().toString();
                 players.get(position).setName(value);
                 playerPresenter.editPlayer(players.get(position));
-                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "editPlayer");
+                TrackingManager.trackEditPlayer();
             }
         });
 
@@ -174,14 +174,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onLifeCountChange(int position, int value) {
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "lifeCountChanged");
+        TrackingManager.trackLifeCountChanged();
         players.get(position).changeLife(value);
         playerPresenter.editPlayer(players.get(position));
     }
 
     @Override
     public void onPoisonCountChange(int position, int value) {
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonCountChange");
+        TrackingManager.trackPoisonCountChanged();
         players.get(position).changePoisonCount(value);
         playerPresenter.editPlayer(players.get(position));
     }
@@ -240,7 +240,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     @Override
     public void onClick(View v) {
         addPlayer();
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "addPlayer");
+        TrackingManager.trackAddPlayer();
     }
 
     @Override
@@ -267,16 +267,16 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         int i1 = item.getItemId();
         if (i1 == R.id.action_reset) {
             resetLifeCounter();
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "resetLifeCounter");
+            TrackingManager.trackResetLifeCounter();
             return true;
         }
         if (i1 == R.id.action_dice) {
             launchDice();
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "launchDice");
+            TrackingManager.trackLunchDice();
             return true;
         }
         if (i1 == R.id.action_poison) {
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "poisonSetting");
+            TrackingManager.trackChangePoisonSetting();
             sharedPreferences.edit().putBoolean("poison", !showPoison).apply();
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
@@ -291,7 +291,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             editor.apply();
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "screenOn");
+            TrackingManager.trackScreenOn();
         }
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
@@ -300,7 +300,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             editor.apply();
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_LIFE_COUNTER, "two_hg");
+            TrackingManager.trackHGLifeCounter();
         }
 
         return false;

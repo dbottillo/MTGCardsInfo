@@ -18,8 +18,8 @@ import android.view.inputmethod.InputMethodManager;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 public abstract class BasicActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public abstract class BasicActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         if (getPageTrack() != null) {
-            TrackingHelper.getInstance(getApplicationContext()).trackPage(getPageTrack());
+            TrackingManager.trackPage(getPageTrack());
         }
     }
 
@@ -93,7 +93,7 @@ public abstract class BasicActivity extends AppCompatActivity {
             goToPlay.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
             startActivity(goToPlay);
         }
-        TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_RATE, "google");
+        TrackingManager.trackOpenRateApp();
     }
 
     public SharedPreferences getSharedPreferences() {

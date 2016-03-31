@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.FilterHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 public final class CardAdapterHelper {
