@@ -139,9 +139,6 @@ public final class CardDataSource {
 
     public static ContentValues createContentValue(MTGCard card) {
         ContentValues values = new ContentValues();
-        if (card.getId() > -1) {
-            values.put("_id", card.getId());
-        }
         values.put(COLUMNS.NAME.getName(), card.getName());
         values.put(COLUMNS.TYPE.getName(), card.getType());
         values.put(COLUMNS.SET_ID.getName(), card.getIdSet());

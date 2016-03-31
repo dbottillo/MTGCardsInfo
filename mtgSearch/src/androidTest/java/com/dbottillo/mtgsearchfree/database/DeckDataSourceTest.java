@@ -64,6 +64,15 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     }
 
     @Test
+    public void DeckDataSource_nameDeckCanBeEdited() {
+        long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "deck");
+        int updatedId = DeckDataSource.renameDeck(cardsInfoDbHelper.getWritableDatabase(), id, "New name");
+        assertThat((updatedId > -1), is(true));
+        ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
+        assertThat(decks.get(0).getName(), is("New name"));
+    }
+
+    @Test
     public void test_deck_cards_can_be_retrieved_from_database() {
         generateDeckWithSmallAmountOfCards();
         Deck deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);
@@ -78,13 +87,13 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
         DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
         // first check that the card has been saved in the db
-        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{card.getId() + ""});
+        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", new String[]{card.getMultiVerseId() + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
         MTGCard cardFromDb = CardDataSource.fromCursor(cursor, true);
         assertNotNull(cardFromDb);
-        assertThat(cardFromDb.getId(), is(card.getId()));
+        assertThat(cardFromDb.getMultiVerseId(), is(card.getMultiVerseId()));
         // then check that the decks contain at least one card
         ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.size(), is(1));

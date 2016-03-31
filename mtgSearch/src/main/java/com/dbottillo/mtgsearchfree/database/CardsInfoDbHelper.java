@@ -19,7 +19,7 @@ import java.util.Set;
 public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    protected static final int DATABASE_VERSION = 5;
+    protected static final int DATABASE_VERSION = 6;
 
     private static CardsInfoDbHelper instance;
 
@@ -46,25 +46,26 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion == 1 && newVersion >= 2) {
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_RULINGS);
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LAYOUT);
-        }
         if (oldVersion < 3 && newVersion >= 3) {
             db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.generateCreateTable());
         }
         if (oldVersion < 4 && newVersion >= 4) {
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SET_CODE);
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
             db.execSQL(DeckDataSource.generateCreateTable());
             db.execSQL(DeckDataSource.generateCreateTableJoin());
         }
-        if (oldVersion < 5 && newVersion >= 5) {
-            Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
-            if (!columns.contains(CardDataSource.COLUMNS.LAYOUT.getName())) {
-                db.execSQL(CardDataSource.SQL_ADD_COLUMN_LAYOUT);
-            }
+        Set<String> columns = readColumnTable(db, CardDataSource.TABLE);
+        if (!columns.contains(CardDataSource.COLUMNS.LAYOUT.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LAYOUT);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.RULINGS.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_RULINGS);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.SET_CODE.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SET_CODE);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.NUMBER.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
         }
 
     }

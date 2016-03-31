@@ -35,18 +35,22 @@ public class NetworkIntentService extends IntentService {
         TCGPrice res = null;
         Bundle extras = intent.getExtras();
         Bundle params = extras.getParcelable(EXTRA_PARAMS);
-        String cardName = params.getString(EXTRA_CARD_NAME, "");
-        String setName = params.getString(EXTRA_SET_NAME, "");
-        String idRequest = params.getString(EXTRA_ID);
+        String cardName = "";
+        String setName = "";
+        String idRequest = "";
 
-        boolean error = false;
+        if (params != null) {
+            cardName = params.getString(EXTRA_CARD_NAME, "");
+            setName = params.getString(EXTRA_SET_NAME, "").replace(" ", "%20");
+            idRequest = params.getString(EXTRA_ID);
+            cardName = cardName.replace(" ", "%20").replace("Æ", "ae");
+        }
 
         String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=" + setName + "&p=" + cardName;
         LOG.d("loading: " + url);
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
-            error = true;
             LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
         }
 
@@ -56,12 +60,11 @@ public class NetworkIntentService extends IntentService {
             try {
                 res = doNetworkRequest(url);
             } catch (Exception e) {
-                error = true;
                 LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
             }
         }
 
-        if (error) {
+        if (res == null) {
             res = new TCGPrice();
             res.setError(getApplicationContext().getString(R.string.price_error));
         }
@@ -139,6 +142,9 @@ public class NetworkIntentService extends IntentService {
                 tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
             }
         } else {
+            if (urlConnection.getResponseCode() == 500) {
+                tcgPrice.setNotFound(true);
+            }
             tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
         }
         urlConnection.disconnect();

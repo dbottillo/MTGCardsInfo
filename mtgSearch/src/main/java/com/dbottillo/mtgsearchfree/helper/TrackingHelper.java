@@ -22,7 +22,6 @@ public final class TrackingHelper {
     public static final String UA_CATEGORY_APP_WIDGET = "appWidget";
     public static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 
-    public static final String UA_ACTION_CLICK = "click";
     public static final String UA_ACTION_TOGGLE = "toggle";
     public static final String UA_ACTION_SHARE = "share";
     public static final String UA_ACTION_SELECT = "select";

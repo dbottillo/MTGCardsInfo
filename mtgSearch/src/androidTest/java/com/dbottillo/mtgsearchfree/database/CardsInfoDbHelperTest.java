@@ -66,8 +66,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
     }
 
     @Test
@@ -92,8 +92,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
     }
 
     @Test
@@ -146,8 +146,8 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.getName()), is(true));
         assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(false));
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.getName()), is(true));
     }
 
     @Test

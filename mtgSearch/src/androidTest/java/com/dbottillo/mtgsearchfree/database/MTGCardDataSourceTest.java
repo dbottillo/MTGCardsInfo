@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.database;
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 import com.dbottillo.mtgsearchfree.resources.MTGSet;
 import com.dbottillo.mtgsearchfree.search.IntParam;
@@ -272,6 +273,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getManaCost().contains("U"));
+            LOG.e("check " + card.getSetName());
             assertTrue(MTGCardDataSource.STANDARD.contains(card.getSetName()));
         }
     }

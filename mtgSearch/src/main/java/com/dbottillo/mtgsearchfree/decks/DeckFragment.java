@@ -1,10 +1,11 @@
 package com.dbottillo.mtgsearchfree.decks;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -17,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,11 +37,8 @@ import com.dbottillo.mtgsearchfree.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -246,60 +245,64 @@ public class DeckFragment extends DBFragment implements LoaderManager.LoaderCall
         if (i1 == R.id.action_export) {
             exportDeck();
             return true;
+        } else if (i1 == R.id.action_edit) {
+            editDeckName();
+            return true;
         }
 
         return false;
     }
 
     private void exportDeck() {
-        File root = new File(Environment.getExternalStorageDirectory(), "MTGSearch");
-        if (!root.exists()) {
-            boolean created = root.mkdirs();
-            if (!created) {
-                Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-                TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
-                return;
-            }
-        }
-        final File deckFile = new File(root, deck.getName().replaceAll("\\s+", "").toLowerCase() + ".dec");
-        OutputStreamWriter writer;
-        TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
-        try {
-            writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
-            writer.append("//");
-            writer.append(deck.getName());
-            writer.append("\n");
-            for (MTGCard card : cards) {
-                if (card.isSideboard()) {
-                    writer.append("SB: ");
-                }
-                writer.append(String.valueOf(card.getQuantity()));
-                writer.append(" ");
-                writer.append(card.getName());
-                writer.append("\n");
-            }
-            writer.flush();
-            writer.close();
-
+        if (FileUtil.downloadDeckToSdCard(getApp(), deck, cards)) {
             if (this.getView() != null) {
                 Snackbar snackbar = Snackbar
-                        .make(this.getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                        .make(getView(), getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
                         .setAction(getString(R.string.share), new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 Intent intent = new Intent(Intent.ACTION_SEND);
                                 intent.setType("text/plain");
-                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(deckFile));
+                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
                                 startActivity(Intent.createChooser(intent, getString(R.string.share)));
                                 TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SHARE);
                             }
                         });
                 snackbar.show();
             }
-        } catch (IOException e) {
-            Toast.makeText(getApp(), getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] " + e.getLocalizedMessage());
+        } else {
+            Toast.makeText(getContext(), getContext().getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
+            TrackingHelper.getInstance(getContext()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
         }
+    }
+
+    private void editDeckName() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MTGDialogTheme);
+
+        alert.setTitle(getString(R.string.edit_deck));
+
+        final EditText input = new EditText(getActivity());
+        input.setText(deck.getName());
+        input.setSelection(deck.getName().length());
+        alert.setView(input);
+
+        alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                DataManager.execute(DataManager.TASK.EDIT_DECK_NAME, deck.getId(), value);
+                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, "editName");
+                deck.setName(value);
+                setActionBarTitle(deck.getName());
+            }
+        });
+
+        alert.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+            }
+        });
+
+        alert.show();
     }
 
 }

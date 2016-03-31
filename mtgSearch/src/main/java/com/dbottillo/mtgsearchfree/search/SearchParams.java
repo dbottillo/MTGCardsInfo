@@ -136,7 +136,9 @@ public class SearchParams implements Parcelable {
 
     public void setMulti(boolean multi) {
         this.multi = multi;
-        this.nomulti = false;
+        if (multi) {
+            this.nomulti = false;
+        }
     }
 
     public boolean isNomulti() {
@@ -145,7 +147,9 @@ public class SearchParams implements Parcelable {
 
     public void setNomulti(boolean nomulti) {
         this.nomulti = nomulti;
-        this.multi = false;
+        if (nomulti) {
+            this.multi = false;
+        }
     }
 
     public boolean isCommon() {

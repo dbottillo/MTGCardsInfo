@@ -16,7 +16,7 @@ public final class MTGCardDataSource {
 
     public static final int LIMIT = 400;
 
-    public static final List<String> STANDARD = Arrays.asList("Khans of Tarkir", "Fate Reforged", "Dragons of Tarkir", "Magic Origins", "Battle for Zendikar");
+    public static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins", "Battle for Zendikar", "Oath of the Gatewatch", "Shadows over Innistrad");
 
     private MTGCardDataSource() {
     }
@@ -119,7 +119,7 @@ public final class MTGCardDataSource {
                 query += "AND ";
             }
             first = false;
-            query += "(setId == 4 OR setId == 5 OR setId == 7 OR setId == 9 OR setId == 11) ";
+            query += "(setId == 1 OR setId == 3 OR setId == 6 OR setId == 7 OR setId == 9) ";
         }
         if (searchParams.atLeastOneColor()) {
             if (!first) {

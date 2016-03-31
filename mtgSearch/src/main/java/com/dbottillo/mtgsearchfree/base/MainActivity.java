@@ -12,10 +12,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.about.AboutFragment;
+import com.dbottillo.mtgsearchfree.about.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.about.ReleaseNoteFragment;
 import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper;
@@ -26,11 +28,13 @@ import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.persistence.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.saved.SavedFragment;
 import com.dbottillo.mtgsearchfree.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
+import java.io.File;
 import java.util.Random;
 
 public class MainActivity extends FilterActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -149,8 +153,9 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             navigationView.getMenu().add(0, 102, Menu.NONE, getString(R.string.action_create_fav));
             navigationView.getMenu().add(0, 103, Menu.NONE, getString(R.string.action_crash));
         }
-        if (BuildConfig.COPY_DB) {
+        if (GeneralPreferences.with(getApplicationContext()).isDebugEnabled()) {
             navigationView.getMenu().add(0, 104, Menu.NONE, getString(R.string.action_send_db));
+            navigationView.getMenu().add(0, 105, Menu.NONE, getString(R.string.action_copy_db));
         }
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
@@ -227,6 +232,10 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
         } else if (menuItem.getItemId() == R.id.drawer_rate) {
             openRateTheApp();
 
+        } else if (menuItem.getItemId() == R.id.drawer_beta) {
+            changeFragment(new JoinBetaFragment(), "joinbeta_fragment", true);
+            AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
+
         } else if (menuItem.getItemId() == R.id.drawer_about && !(currentFragment instanceof AboutFragment)) {
             changeFragment(new AboutFragment(), "about_fragment", true);
             AnimationUtil.animateSlidingPanelHeight(getSlidingPanel(), 0);
@@ -249,15 +258,20 @@ public class MainActivity extends FilterActivity implements NavigationView.OnNav
             throw new RuntimeException("This is a crash");
 
         } else if (menuItem.getItemId() == 104) {
-            FileUtil.copyDbToSdcard(CardsInfoDbHelper.DATABASE_NAME);
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
-            String uri = "file:///sdcard/" + CardsInfoDbHelper.DATABASE_NAME;
-            emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(uri));
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            File file = FileUtil.copyDbToSdCard(getApp().getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+            if (file != null) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
+                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                startActivity(Intent.createChooser(intent, "Send mail...."));
+            }
+        } else if (menuItem.getItemId() == 105) {
+            boolean copied = FileUtil.copyDbFromSdCard(getApp().getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+            Toast.makeText(this, copied ? "database copied" : "database not copied", Toast.LENGTH_LONG).show();
         }
+
         mDrawerLayout.closeDrawers();
         return true;
     }

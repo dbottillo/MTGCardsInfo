@@ -99,14 +99,19 @@
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="ok">Ok</string>
     <string name="release_note_text">
-        - NUOVO: Oath of the gatewatch \n
-        - NUOVO: Esporta mazzi \n
-        - Bug fixes
+        - NUOVO: Shadows over Innistrad \n
+        - NUOVO: Duel Decks: Blessed vs. Cursed \n
+        - Sistemata la ricerca multicolore
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.7.4:</b> \n
+        - NUOVO: Shadows over Innistrad \n
+        - NUOVO: Duel Decks: Blessed vs. Cursed \n
+        - Sistemata la ricerca multicolore \n\n
         <b>Version 2.7.3:</b> \n
         - NUOVO: Oath of the gatewatch \n
         - NUOVO: Esporta mazzi \n
+        - NUOVO: Modifica nome mazzo \n
         - Bug fixes \n\n
         <b>Versione 2.7.2:</b> \n
         - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
@@ -179,9 +184,15 @@
     <string name="cd_edit">Modifica</string>
     <string name="cd_remove">Rimuovi</string>
     <string name="cd_action_search">Effettua ricerca</string>
-    <string name="action_send_db">Send db</string>
+    <string name="action_send_db">Copia db su sdcard</string>
+    <string name="action_copy_db">Sostituisci db da sdcard</string>
     <string name="export">Esporta</string>
     <string name="error_export_deck">Impossibile esportare il mazzo, controlla che lo storage esterno sia disponibile e poi riprova.</string>
     <string name="deck_exported">Mazzo salvato su sdcard</string>
+    <string name="edit_deck">Modifica mazzo</string>
+    <string name="debug_mode_active">Modalitá debug attiva</string>
+    <string name="action_join_beta">Partecipa alla Beta</string>
+    <string name="join_beta_text">Partecipa al programma Beta su Google+ in modo da fornire feedback, richiedere nuove funzionalità e avere accesso a nuove versioni con rapidità. È necessario un account Google.</string>
+    <string name="join_beta_action">Join</string>
 
 </resources>

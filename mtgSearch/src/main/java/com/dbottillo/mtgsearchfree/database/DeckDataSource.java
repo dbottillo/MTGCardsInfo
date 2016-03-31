@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
@@ -17,6 +18,7 @@ public final class DeckDataSource {
 
     public static final String TABLE = "decks";
     public static final String TABLE_JOIN = "deck_card";
+
 
     public enum COLUMNS {
         NAME("name", "TEXT not null"),
@@ -127,7 +129,8 @@ public final class DeckDataSource {
             }
         } else {
             // need to add the card
-            CardDataSource.saveCard(db, card);
+            long cardId = CardDataSource.saveCard(db, card);
+            LOG.e("cardId: "+cardId);
         }
         current.close();
         ContentValues values = new ContentValues();
@@ -210,6 +213,12 @@ public final class DeckDataSource {
     public static void deleteAllDecks(SQLiteDatabase db) {
         db.rawQuery("DELETE FROM deck_card", null).moveToFirst();
         db.rawQuery("DELETE FROM decks", null).moveToFirst();
+    }
+
+    public static int renameDeck(SQLiteDatabase db, long deckId, String name) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMNS.NAME.getName(), name);
+        return db.update(TABLE, contentValues, "_id="+deckId, null);
     }
 
     protected static Deck fromCursor(Cursor cursor) {
