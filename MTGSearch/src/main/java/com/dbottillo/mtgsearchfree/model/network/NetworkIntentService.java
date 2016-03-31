@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 
 import org.xmlpull.v1.XmlPullParser;

@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.ArrayList;

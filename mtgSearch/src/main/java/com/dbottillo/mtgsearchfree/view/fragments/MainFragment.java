@@ -29,7 +29,7 @@ import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
@@ -45,7 +45,6 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class MainFragment extends BasicFragment implements DialogUtil.SortDialogListener,
         MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView {

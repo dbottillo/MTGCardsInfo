@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.view.helpers;
 
-import com.dbottillo.mtgsearchfree.helper.FilterHelper;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.SearchParams;

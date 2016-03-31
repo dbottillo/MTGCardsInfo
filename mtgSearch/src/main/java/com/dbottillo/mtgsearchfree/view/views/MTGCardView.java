@@ -21,11 +21,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

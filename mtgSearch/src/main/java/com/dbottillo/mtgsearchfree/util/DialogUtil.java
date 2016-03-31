@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 public final class DialogUtil {
@@ -28,8 +27,7 @@ public final class DialogUtil {
                         editor.putBoolean(BasicFragment.PREF_SORT_WUBRG, which == 1);
                         editor.apply();
                         listener.onSortSelected();
-                        TrackingHelper.getInstance(context.getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_SET, TrackingHelper.UA_ACTION_TOGGLE,
-                                which == 1 ? "wubrg" : "alphabetically");
+                        TrackingManager.trackSortCard(which);
                     }
                 });
         builder.create().show();

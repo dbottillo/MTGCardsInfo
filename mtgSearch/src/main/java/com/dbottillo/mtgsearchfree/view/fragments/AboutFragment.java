@@ -15,8 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
 import static android.net.Uri.parse;
 
@@ -49,7 +49,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
         v.findViewById(R.id.share_app).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_SHARE, "app");
+                TrackingManager.trackShareApp();
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
@@ -76,7 +76,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     startActivity(intent);
-                    TrackingHelper.getInstance(v.getContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_EXTERNAL_LINK, librariesLink[0]);
+                    TrackingManager.trackAboutLibrary(librariesLink[0]);
                 }
             });
         }
@@ -88,7 +88,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        TrackingHelper.getInstance(v.getContext()).trackEvent(TrackingHelper.UA_CATEGORY_UI, TrackingHelper.UA_ACTION_OPEN, "feedback");
+        TrackingManager.trackOpenFeedback();
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         String text = String.format(getString(R.string.feedback_text), versionName,
                 Build.VERSION.SDK_INT, Build.DEVICE, Build.MODEL, Build.PRODUCT);

@@ -3,8 +3,7 @@ package com.dbottillo.mtgsearchfree.util;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 

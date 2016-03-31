@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
@@ -120,7 +120,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_CARD, TrackingHelper.UA_ACTION_OPEN, "saved pos:" + position);
+        TrackingManager.trackOpenCard(position);
         startActivity(CardsActivity.newFavInstance(getContext(), position));
     }
 
@@ -159,7 +159,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     @Override
     public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "saved-main", message);
+        TrackingManager.trackSearchError(message);
     }
 
 }

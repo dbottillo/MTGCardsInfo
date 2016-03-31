@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.model;
 
-import com.dbottillo.mtgsearchfree.helper.LOG;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
 

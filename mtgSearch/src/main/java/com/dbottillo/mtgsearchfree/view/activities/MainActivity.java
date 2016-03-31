@@ -10,26 +10,25 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
-import com.dbottillo.mtgsearchfree.helper.AddFavouritesAsyncTask;
-import com.dbottillo.mtgsearchfree.helper.CreateDBAsyncTask;
-import com.dbottillo.mtgsearchfree.helper.CreateDecksAsyncTask;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
+import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
+import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
-import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
 import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
@@ -150,10 +149,8 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void showReleaseNote() {
-        TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "push");
         changeFragment(new ReleaseNoteFragment(), "release_note_fragment", true);
         slidingPanelHelper.hidePanel(true);
-        ;
         navDrawerHelper.select(6);
     }
 

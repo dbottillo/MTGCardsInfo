@@ -17,10 +17,10 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardSectionAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
@@ -91,15 +91,15 @@ public class DeckActivity extends BasicActivity implements DecksView {
             @Override
             public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
                 if (menuItem.getItemId() == R.id.action_add_one_more) {
-                    TrackingHelper.getInstance(DeckActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ONE_MORE);
+                    TrackingManager.trackAddCardToDeck();
                     decksPresenter.addCardToDeck(deck, card, 1);
 
                 } else if (menuItem.getItemId() == R.id.action_remove_one) {
-                    TrackingHelper.getInstance(DeckActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ONE);
+                    TrackingManager.trackRemoveCardFromDeck();
                     decksPresenter.removeCardFromDeck(deck, card);
 
                 } else if (menuItem.getItemId() == R.id.action_remove_all) {
-                    TrackingHelper.getInstance(DeckActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_REMOVE_ALL);
+                    TrackingManager.trackRemoveAllCardsFromDeck();
                     decksPresenter.removeAllCardFromDeck(deck, card);
                 }
             }
@@ -228,13 +228,13 @@ public class DeckActivity extends BasicActivity implements DecksView {
                             intent.setType("text/plain");
                             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
                             startActivity(Intent.createChooser(intent, getString(R.string.share)));
-                            TrackingHelper.getInstance(DeckActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SHARE);
+                            TrackingManager.trackDeckExport();
                         }
                     });
             snackbar.show();
         } else {
             Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(this).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] impossible to create folder");
+            TrackingManager.trackDeckExportError();
         }
     }
 
@@ -252,7 +252,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String value = input.getText().toString();
                 decksPresenter.editDeck(deck, value);
-                TrackingHelper.getInstance(DeckActivity.this).trackEvent(TrackingHelper.UA_CATEGORY_DECK, "editName");
+                TrackingManager.trackEditDeck();
                 deck.setName(value);
                 setTitle(deck.getName());
             }

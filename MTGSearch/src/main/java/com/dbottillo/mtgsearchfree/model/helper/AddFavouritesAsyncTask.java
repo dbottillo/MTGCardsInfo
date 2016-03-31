@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.helper;
+package com.dbottillo.mtgsearchfree.model.helper;
 
 import android.content.Context;
 import android.os.AsyncTask;

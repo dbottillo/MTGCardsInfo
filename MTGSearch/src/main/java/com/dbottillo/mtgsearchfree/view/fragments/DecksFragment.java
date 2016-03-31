@@ -23,15 +23,15 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.adapters.DeckListAdapter;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
+import com.dbottillo.mtgsearchfree.view.adapters.DeckListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -221,7 +221,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
             String text = newDeckName.getText().toString();
             closeNewDeck();
             decksPresenter.addDeck(text);
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, text);
+            TrackingManager.trackNewDeck(text);
             return true;
         }
         return false;
@@ -244,7 +244,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             decksPresenter.deleteDeck(deck);
-                            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
+                            TrackingManager.trackDeleteDeck(deck.getName());
                         }
 
                     })
@@ -253,7 +253,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
 
         } else {
             decksPresenter.deleteDeck(deck);
-            TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_DELETE, deck.getName());
+            TrackingManager.trackDeleteDeck(deck.getName());
         }
     }
 

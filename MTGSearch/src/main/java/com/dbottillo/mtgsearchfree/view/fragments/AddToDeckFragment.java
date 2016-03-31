@@ -20,10 +20,10 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
 import java.util.List;
@@ -182,14 +182,14 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
     private void saveCard(final int quantity, final Deck deck, final boolean side) {
         card.setSideboard(side);
         decksPresenter.addCardToDeck(deck, card, quantity);
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - existing");
+        TrackingManager.trackAddCardToDeck(quantity + " - existing");
     }
 
     private void saveCard(final int quantity, final String deck, final boolean side) {
         card.setSideboard(side);
         decksPresenter.addCardToDeck(deck, card, quantity);
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_SAVE, deck);
-        TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_ADD_CARD, quantity + " - new");
+        TrackingManager.trackNewDeck(deck);
+        TrackingManager.trackAddCardToDeck(quantity + " - existing");
     }
 
     @Override

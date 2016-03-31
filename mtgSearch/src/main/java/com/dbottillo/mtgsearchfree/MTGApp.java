@@ -19,9 +19,8 @@ import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerDataComponent;
 import com.dbottillo.mtgsearchfree.dagger.DataComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.tracking.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -67,7 +66,7 @@ public class MTGApp extends Application {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         int versionCode = sharedPreferences.getInt("VersionCode", -1);
         if (versionCode < BuildConfig.VERSION_CODE) {
-            TrackingHelper.getInstance(getApplicationContext()).trackEvent(TrackingHelper.UA_CATEGORY_RELEASE_NOTE, TrackingHelper.UA_ACTION_OPEN, "update");
+            TrackingManager.trackReleaseNote();
             fireReleaseNotePush();
             sharedPreferences.edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply();
         }

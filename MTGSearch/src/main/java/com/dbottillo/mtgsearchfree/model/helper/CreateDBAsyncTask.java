@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.helper;
+package com.dbottillo.mtgsearchfree.model.helper;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CreateDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
@@ -157,7 +158,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         ContentValues values = new ContentValues();
 
         boolean isASplit = false;
-        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
+        if (jsonObject.getString("build/intermediates/exploded-aar/com.android.support/design/23.2.0/res/layout").equalsIgnoreCase("split")) {
             isASplit = true;
         }
 
@@ -269,8 +270,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             values.put(CardDataSource.COLUMNS.RULINGS.getName(), rulingsJ.toString());
         }
 
-        if (jsonObject.has("layout")) {
-            values.put(CardDataSource.COLUMNS.LAYOUT.getName(), jsonObject.getString("layout"));
+        if (jsonObject.has("build/intermediates/exploded-aar/com.android.support/design/23.2.0/res/layout")) {
+            values.put(CardDataSource.COLUMNS.LAYOUT.getName(), jsonObject.getString("build/intermediates/exploded-aar/com.android.support/design/23.2.0/res/layout"));
         }
 
         if (jsonObject.has("number")) {
