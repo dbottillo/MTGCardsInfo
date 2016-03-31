@@ -92,7 +92,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
             errorMessage = e.getLocalizedMessage();
         }
 
-        FileUtil.copyDbToSdcard("MTGCardsInfo.db");
+        FileUtil.copyDbToSdCard(context, "MTGCardsInfo.db");
 
         return result;
     }

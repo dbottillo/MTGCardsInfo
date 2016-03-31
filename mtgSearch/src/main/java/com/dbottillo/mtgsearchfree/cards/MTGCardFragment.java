@@ -192,7 +192,7 @@ public class MTGCardFragment extends DBFragment {
     public void onStart() {
         super.onStart();
 
-        IntentFilter cardFilter = new IntentFilter(((MTGCard) card).getMultiVerseId() + "");
+        IntentFilter cardFilter = new IntentFilter(card.getMultiVerseId() + "");
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(priceReceiver, cardFilter);
     }
 
@@ -252,8 +252,8 @@ public class MTGCardFragment extends DBFragment {
         Intent intent = new Intent(getActivity(), NetworkIntentService.class);
         Bundle params = new Bundle();
         params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
-        params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName().replace(" ", "%20"));
-        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName().replace(" ", "%20"));
+        params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName());
+        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName());
         intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
         getActivity().startService(intent);
 
@@ -273,7 +273,7 @@ public class MTGCardFragment extends DBFragment {
         public void onReceive(Context context, Intent intent) {
             price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
             updatePrice();
-            if (price.isAnError()) {
+            if (price.isNotFound()) {
                 String url = intent.getStringExtra(NetworkIntentService.REST_URL);
                 TrackingHelper.getInstance(getActivity()).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, "price", url);
             }

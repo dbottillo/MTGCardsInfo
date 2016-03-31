@@ -483,7 +483,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 && (subTypes == null && other.subTypes == null || (subTypes != null && other.subTypes != null && subTypes.equals(other.subTypes)))
                 && (colors == null && other.colors == null || (colors != null && other.colors != null && colors.equals(other.colors)))
                 && cmc == other.cmc
-                && rarity.equals(other.rarity)
+                && equalOrNull(rarity, other.rarity)
                 && equalOrNull(power, other.power)
                 && equalOrNull(toughness, other.toughness)
                 && equalOrNull(manaCost, other.manaCost)
