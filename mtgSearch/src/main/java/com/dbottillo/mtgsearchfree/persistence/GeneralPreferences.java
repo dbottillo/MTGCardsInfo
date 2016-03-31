@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.persistence;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class GeneralPreferences {
+public final class GeneralPreferences {
 
     public static final String PREFS_NAME = "General";
 

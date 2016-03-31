@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.helper.LOG;
 import com.dbottillo.mtgsearchfree.resources.Deck;
 import com.dbottillo.mtgsearchfree.resources.MTGCard;
 
@@ -128,7 +129,8 @@ public final class DeckDataSource {
             }
         } else {
             // need to add the card
-            CardDataSource.saveCard(db, card);
+            long cardId = CardDataSource.saveCard(db, card);
+            LOG.e("cardId: "+cardId);
         }
         current.close();
         ContentValues values = new ContentValues();

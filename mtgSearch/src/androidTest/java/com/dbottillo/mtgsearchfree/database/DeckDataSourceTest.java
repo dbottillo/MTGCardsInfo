@@ -87,13 +87,13 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
         DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
         // first check that the card has been saved in the db
-        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{card.getId() + ""});
+        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", new String[]{card.getMultiVerseId() + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
         MTGCard cardFromDb = CardDataSource.fromCursor(cursor, true);
         assertNotNull(cardFromDb);
-        assertThat(cardFromDb.getId(), is(card.getId()));
+        assertThat(cardFromDb.getMultiVerseId(), is(card.getMultiVerseId()));
         // then check that the decks contain at least one card
         ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.size(), is(1));
