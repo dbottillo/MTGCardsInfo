@@ -93,7 +93,9 @@ public final class DeckDataSource {
     public static void addCardToDeck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
         int sid = side ? 1 : 0;
         int currentCard = 0;
-        Cursor cardsCursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
+        String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)";
+        LOG.query(query, deckId+"", card.getMultiVerseId()+"", sid+"");
+        Cursor cardsCursor = db.rawQuery(query, new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
             cardsCursor.moveToFirst();
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
@@ -116,7 +118,9 @@ public final class DeckDataSource {
     }
 
     public static void addCardToDeckWithoutCheck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
-        Cursor current = db.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
+        String query = "select * from MTGCard where multiVerseId=?";
+        LOG.query(query, card.getMultiVerseId()+"");
+        Cursor current = db.rawQuery(query, new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() > 0) {
             // card already added
             if (current.getCount() > 1) {
@@ -124,15 +128,15 @@ public final class DeckDataSource {
                 current.moveToFirst();
                 current.moveToNext();
                 while (!current.isAfterLast()) {
-                    //LOG.e("deletingL "+current.getString(0));
-                    db.rawQuery("delete from MTGCard where _id=?", new String[]{current.getString(0)}).moveToFirst();
+                    String query2 = "delete from MTGCard where _id=?";
+                    LOG.query(query2, current.getString(0));
+                    db.rawQuery(query2, new String[]{current.getString(0)}).moveToFirst();
                     current.moveToNext();
                 }
             }
         } else {
             // need to add the card
             long cardId = CardDataSource.saveCard(db, card);
-            LOG.e("cardId: " + cardId);
         }
         current.close();
         ContentValues values = new ContentValues();
@@ -145,8 +149,9 @@ public final class DeckDataSource {
 
     public static ArrayList<Deck> getDecks(SQLiteDatabase db) {
         ArrayList<Deck> decks = new ArrayList<>();
-
-        Cursor deckCursor = db.rawQuery("Select * from decks", null);
+        String query = "Select * from decks";
+        LOG.query(query);
+        Cursor deckCursor = db.rawQuery(query, null);
         deckCursor.moveToFirst();
         while (!deckCursor.isAfterLast()) {
             Deck newDeck = fromCursor(deckCursor);
@@ -164,7 +169,9 @@ public final class DeckDataSource {
         //select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
         //Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
         //Cursor cursor = db.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
-        Cursor cursor = db.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (side ? 1 : 0) + " group by DC.deck_id", null);
+        String query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (side ? 1 : 0) + " group by DC.deck_id";
+        LOG.query(query);
+        Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             for (Deck deck : decks) {
@@ -188,7 +195,9 @@ public final class DeckDataSource {
 
     public static ArrayList<MTGCard> getCards(SQLiteDatabase db, long deckId) {
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", new String[]{deckId + ""});
+        String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)";
+        LOG.query(query, deckId+"");
+        Cursor cursor = db.rawQuery(query, new String[]{deckId + ""});
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -207,18 +216,27 @@ public final class DeckDataSource {
     public static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card, boolean sideboard) {
         int sid = sideboard ? 1 : 0;
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
-        db.rawQuery("DELETE FROM deck_card where deck_id=? and card_id=? and side =?", args).moveToFirst();
+        String query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?";
+        LOG.query(query, args);
+        db.rawQuery(query, args).moveToFirst();
     }
 
     public static void deleteDeck(SQLiteDatabase db, Deck deck) {
         String[] args = new String[]{deck.getId() + ""};
-        db.rawQuery("DELETE FROM deck_card where deck_id=? ", args).moveToFirst();
-        db.rawQuery("DELETE FROM decks where _id=? ", args).moveToFirst();
+        String query = "DELETE FROM deck_card where deck_id=? ";
+        LOG.query(query, args);
+        db.rawQuery(query, args).moveToFirst();
+        String query2 = "DELETE FROM decks where _id=? ";
+        db.rawQuery(query2, args).moveToFirst();
     }
 
     public static void deleteAllDecks(SQLiteDatabase db) {
-        db.rawQuery("DELETE FROM deck_card", null).moveToFirst();
-        db.rawQuery("DELETE FROM decks", null).moveToFirst();
+        String query = "DELETE FROM deck_card";
+        LOG.query(query);
+        db.rawQuery(query, null).moveToFirst();
+        String query2 = "DELETE FROM decks";
+        LOG.query(query2);
+        db.rawQuery(query2, null).moveToFirst();
     }
 
     public static int renameDeck(SQLiteDatabase db, long deckId, String name) {

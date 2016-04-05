@@ -14,9 +14,9 @@ public interface CardsPresenter extends BasicPresenter {
 
     void loadIdFavourites();
 
-    void saveAsFavourite(MTGCard card);
+    void saveAsFavourite(MTGCard card, boolean reload);
 
-    void removeFromFavourite(MTGCard card);
+    void removeFromFavourite(MTGCard card, boolean reload);
 
     void getLuckyCards(int howMany);
 

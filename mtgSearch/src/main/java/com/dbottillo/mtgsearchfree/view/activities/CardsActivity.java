@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
@@ -161,6 +162,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     private void reloadAdapter() {
+        LOG.d();
         boolean showImage = getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
         viewPager.setAdapter(adapter);
@@ -169,15 +171,17 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     public void favClicked() {
+        LOG.d();
         MTGCard currentCard = adapter.getItem(viewPager.getCurrentItem());
         if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
-            cardsPresenter.removeFromFavourite(currentCard);
+            cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
-            cardsPresenter.saveAsFavourite(currentCard);
+            cardsPresenter.saveAsFavourite(currentCard, true);
         }
     }
 
     public MTGCard getCurrentCard() {
+        LOG.d();
         if (adapter == null) {
             return null;
         }
@@ -185,10 +189,12 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     public void toggleImage(boolean show) {
+        LOG.d();
         reloadAdapter();
     }
 
     public void favIdLoaded(int[] favourites) {
+        LOG.d();
         idFavourites = favourites;
 
         if (adapter == null) {
@@ -215,6 +221,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     public void cardLoaded(CardsBucket bucket) {
+        LOG.d();
         this.bucket = bucket;
         if (set != null || favs || search != null) {
             // needs to load filters first
@@ -256,6 +263,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     @Override
     public void filterLoaded(CardFilter filter) {
+        LOG.d();
         ArrayList<MTGCard> allCards = bucket.getCards();
         ArrayList<MTGCard> filteredCards = new ArrayList<>();
         CardsHelper.filterCards(filter, allCards, filteredCards);
@@ -265,6 +273,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     @OnClick(R.id.card_add_to_deck)
     public void addToDeck(View view) {
+        LOG.d();
         MTGCard card = bucket.getCards().get(viewPager.getCurrentItem());
         openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
     }

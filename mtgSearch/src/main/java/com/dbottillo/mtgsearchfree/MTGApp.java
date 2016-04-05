@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.dagger.DaggerDataComponent;
 import com.dbottillo.mtgsearchfree.dagger.DataComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
@@ -43,6 +44,10 @@ public class MTGApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        LOG.d("============================================");
+        LOG.d("            MTGApp created");
+        LOG.d("============================================");
+
         graph = DaggerAppComponent.builder().androidModule(new AndroidModule(this)).build();
         graph.inject(this);
 
@@ -63,6 +68,7 @@ public class MTGApp extends Application {
     }
 
     protected void checkReleaseNote() {
+        LOG.d();
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         int versionCode = sharedPreferences.getInt("VersionCode", -1);
         if (versionCode < BuildConfig.VERSION_CODE) {
@@ -73,6 +79,7 @@ public class MTGApp extends Application {
     }
 
     private void fireReleaseNotePush() {
+        LOG.d();
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(INTENT_RELEASE_NOTE_PUSH, true);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
@@ -101,6 +108,7 @@ public class MTGApp extends Application {
     }
 
     public static RefWatcher getRefWatcher(Context context) {
+        LOG.d();
         MTGApp application = (MTGApp) context.getApplicationContext();
         return application.refWatcher;
     }

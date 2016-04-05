@@ -4,13 +4,13 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
 
 public final class PlayerDataSource {
-
+    
     public static final String TABLE = "MTGPlayer";
 
     public enum COLUMNS {
@@ -48,6 +48,7 @@ public final class PlayerDataSource {
     }
 
     public static long savePlayer(SQLiteDatabase db, Player player) {
+        LOG.d("saving " + player.toString());
         ContentValues values = new ContentValues();
         values.put("_id", player.getId());
         values.put(COLUMNS.LIFE.getName(), player.getLife());
@@ -57,8 +58,9 @@ public final class PlayerDataSource {
     }
 
     public static ArrayList<Player> getPlayers(SQLiteDatabase db) {
+        LOG.d("get players");
         String query = "SELECT * FROM " + TABLE + " order by _ID ASC";
-        LOG.d("[getPlayers] query: " + query);
+        LOG.query(query);
         Cursor cursor = db.rawQuery(query, null);
         ArrayList<Player> players = new ArrayList<>();
         if (cursor.moveToFirst()) {
@@ -72,9 +74,10 @@ public final class PlayerDataSource {
     }
 
     public static void removePlayer(SQLiteDatabase db, Player player) {
+        LOG.d("remove " + player.toString());
         String[] args = new String[]{player.getId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
-        LOG.d("[getPlayers] query: " + query + " with args: " + player.getId());
+        LOG.query(query, player.getId() + "");
         db.rawQuery(query, args).moveToFirst();
     }
 

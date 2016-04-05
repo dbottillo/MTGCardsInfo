@@ -15,15 +15,16 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 
@@ -120,22 +121,26 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
+        LOG.d();
         TrackingManager.trackOpenCard(position);
         startActivity(CardsActivity.newFavInstance(getContext(), position));
     }
 
     @Override
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
+        LOG.d();
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card));
 
         } else if (menuItem.getItemId() == R.id.action_remove) {
-            cardsPresenter.saveAsFavourite(card);
+            cardsPresenter.removeFromFavourite(card, false);
+            cardsPresenter.loadFavourites();
         }
     }
 
     @Override
     public void updateContent() {
+        LOG.d();
         savedFilteredCards.clear();
         CardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedCards, savedFilteredCards);
         adapter.notifyDataSetChanged();
@@ -144,6 +149,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     @Override
     public void cardLoaded(CardsBucket bucket) {
+        LOG.d();
         progressBar.setVisibility(View.GONE);
         savedCards.clear();
         savedCards.addAll(bucket.getCards());
@@ -158,6 +164,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     @Override
     public void showError(String message) {
+        LOG.d();
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
         TrackingManager.trackSearchError(message);
     }

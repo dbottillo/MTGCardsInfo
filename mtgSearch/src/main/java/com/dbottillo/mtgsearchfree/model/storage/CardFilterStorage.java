@@ -4,16 +4,19 @@ import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardProperties;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 public class CardFilterStorage {
 
     SharedPreferences preferences;
 
     public CardFilterStorage(SharedPreferences preferences) {
+        LOG.d("created");
         this.preferences = preferences;
     }
 
     public CardFilter load() {
+        LOG.d();
         CardFilter res = new CardFilter();
         res.white = preferences.getBoolean(CardProperties.COLOR_WHITE, true);
         res.blue = preferences.getBoolean(CardProperties.COLOR_BLUE, true);
@@ -34,6 +37,7 @@ public class CardFilterStorage {
     }
 
     public void sync(CardFilter filter) {
+        LOG.d();
         preferences.edit()
                 .putBoolean(CardProperties.COLOR_WHITE, filter.white)
                 .putBoolean(CardProperties.COLOR_BLUE, filter.blue)

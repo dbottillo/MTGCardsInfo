@@ -6,7 +6,7 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 
 public final class AnimationUtil {
 

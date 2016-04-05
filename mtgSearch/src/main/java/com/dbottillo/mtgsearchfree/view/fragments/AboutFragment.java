@@ -40,7 +40,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
             TextView version = (TextView) v.findViewById(R.id.about_version);
             version.setText(Html.fromHtml("<b>" + getString(R.string.version) + "</b>: " + versionName));
         } catch (PackageManager.NameNotFoundException e) {
-            LOG.d("[AboutFragment] exception: " + e.getLocalizedMessage());
+            LOG.e(e);
         }
 
         Button sendFeedback = (Button) v.findViewById(R.id.send_feedback);
@@ -88,6 +88,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+        LOG.d();
         TrackingManager.trackOpenFeedback();
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         String text = String.format(getString(R.string.feedback_text), versionName,

@@ -12,6 +12,7 @@ import android.widget.ToggleButton;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -83,6 +84,7 @@ public class FilterPickerView extends LinearLayout {
     }
 
     public void refresh(CardFilter filter) {
+        LOG.d();
         String filterString = "";
 
         filterString += addEntryFilterString(filter.white, "W");
@@ -134,6 +136,7 @@ public class FilterPickerView extends LinearLayout {
             R.id.toggle_common, R.id.toggle_uncommon,
             R.id.toggle_rare, R.id.toggle_myhtic})
     public void onToggleClicked(View view) {
+        LOG.d();
         boolean on = ((ToggleButton) view).isChecked();
         switch (view.getId()) {
             case R.id.toggle_white: {

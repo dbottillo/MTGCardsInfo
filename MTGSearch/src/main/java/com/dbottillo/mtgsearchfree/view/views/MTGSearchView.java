@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view;
+package com.dbottillo.mtgsearchfree.view.views;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -11,10 +11,11 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.adapters.SearchSetAdapter;
-import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.IntParam;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.view.adapters.SearchSetAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +161,7 @@ public class MTGSearchView extends RelativeLayout {
     }
 
     public void refreshSets(List<MTGSet> sets) {
+        LOG.d();
         this.sets.addAll(sets);
         searchSetAdapter.notifyDataSetChanged();
     }

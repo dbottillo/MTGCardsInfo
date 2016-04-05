@@ -5,8 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -197,7 +197,7 @@ public final class CardDataSource {
                     rulJ.put("text", rule);
                     rules.put(rulJ);
                 } catch (JSONException e) {
-                    LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
+                    LOG.e(e);
                 }
             }
             values.put(COLUMNS.RULINGS.getName(), rules.toString());
@@ -287,7 +287,7 @@ public final class CardDataSource {
                     card.addRuling(rule.getString("text"));
                 }
             } catch (JSONException e) {
-                LOG.d("[MTGCard] exception: " + e.getLocalizedMessage());
+                LOG.e(e);
             }
         }
 

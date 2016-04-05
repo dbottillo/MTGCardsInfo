@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -67,13 +68,16 @@ public final class SetDataSource {
                 cursor.moveToNext();
             }
         }
+        LOG.query(query);
         cursor.close();
         return sets;
     }
 
     public static void removeSet(SQLiteDatabase database, long id) {
         String[] args = new String[]{id + ""};
-        database.rawQuery("DELETE FROM " + TABLE + " where _id=? ", args).moveToFirst();
+        String query = "DELETE FROM " + TABLE + " where _id=? ";
+        database.rawQuery(query, args).moveToFirst();
+        LOG.query(query, args);
     }
 
     public static MTGSet fromCursor(Cursor cursor) {

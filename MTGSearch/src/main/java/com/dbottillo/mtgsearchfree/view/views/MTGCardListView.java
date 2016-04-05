@@ -3,17 +3,17 @@ package com.dbottillo.mtgsearchfree.view.views;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class MTGCardListView extends RelativeLayout implements OnCardListener {
+public class MTGCardListView extends RelativeLayout {
 
     @Bind(R.id.card_list)
     ListView listView;
@@ -53,7 +53,8 @@ public class MTGCardListView extends RelativeLayout implements OnCardListener {
 
     }
 
-    public void loadCards(List<MTGCard> newCards, OnCardListener listener){
+    public void loadCards(List<MTGCard> newCards, OnCardListener listener) {
+        LOG.d();
         adapter.setOnCardListener(listener);
         cards.clear();
         cards.addAll(newCards);
@@ -70,15 +71,5 @@ public class MTGCardListView extends RelativeLayout implements OnCardListener {
         progressBar.setVisibility(View.GONE);
 
         emptyView.setVisibility((adapter.getCount() == 0) ? View.VISIBLE : View.GONE);
-    }
-
-    @Override
-    public void onCardSelected(MTGCard card, int position) {
-
-    }
-
-    @Override
-    public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
-
     }
 }
