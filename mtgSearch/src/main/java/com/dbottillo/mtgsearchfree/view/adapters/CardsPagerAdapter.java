@@ -9,15 +9,16 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CardsPagerAdapter extends PagerAdapter {
 
     Context context;
     boolean deck;
     boolean showImage;
-    ArrayList<MTGCard> cards;
+    List<MTGCard> cards;
 
-    public CardsPagerAdapter(Context context, boolean deck, boolean showImage, ArrayList<MTGCard> cards) {
+    public CardsPagerAdapter(Context context, boolean deck, boolean showImage, List<MTGCard> cards) {
         this.context = context;
         this.deck = deck;
         this.showImage = showImage;

@@ -198,11 +198,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         idFavourites = favourites;
 
         if (adapter == null) {
-            // first time needs to load cards
+            // first time needs to loadSet cards
             if (set != null) {
                 cardsPresenter.loadCards(set);
             } else if (search != null) {
-                // load search
+                // loadSet search
                 cardsPresenter.doSearch(search);
 
             } else if (deck != null) {
@@ -224,7 +224,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         LOG.d();
         this.bucket = bucket;
         if (set != null || favs || search != null) {
-            // needs to load filters first
+            // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
             reloadAdapter();
@@ -264,7 +264,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     @Override
     public void filterLoaded(CardFilter filter) {
         LOG.d();
-        ArrayList<MTGCard> allCards = bucket.getCards();
+        List<MTGCard> allCards = bucket.getCards();
         ArrayList<MTGCard> filteredCards = new ArrayList<>();
         CardsHelper.filterCards(filter, allCards, filteredCards);
         bucket.setCards(filteredCards);

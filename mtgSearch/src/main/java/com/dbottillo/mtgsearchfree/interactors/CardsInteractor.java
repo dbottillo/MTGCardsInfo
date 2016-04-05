@@ -5,13 +5,13 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 
 public interface CardsInteractor {
 
-    Observable<ArrayList<MTGCard>> load(MTGSet set);
+    Observable<List<MTGCard>> loadSet(MTGSet set);
 
     Observable<int[]> saveAsFavourite(MTGCard card);
 
@@ -19,11 +19,11 @@ public interface CardsInteractor {
 
     Observable<int[]> loadIdFav();
 
-    Observable<ArrayList<MTGCard>> getLuckyCards(int howMany);
+    Observable<List<MTGCard>> getLuckyCards(int howMany);
 
-    Observable<ArrayList<MTGCard>> getFavourites();
+    Observable<List<MTGCard>> getFavourites();
 
-    Observable<ArrayList<MTGCard>> loadDeck(Deck deck);
+    Observable<List<MTGCard>> loadDeck(Deck deck);
 
-    Observable<ArrayList<MTGCard>> doSearch(SearchParams searchParams);
+    Observable<List<MTGCard>> doSearch(SearchParams searchParams);
 }

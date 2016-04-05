@@ -18,7 +18,7 @@ public class SetsInteractorImpl implements SetsInteractor {
     }
 
     public Observable<ArrayList<MTGSet>> load() {
-        LOG.d("load sets");
+        LOG.d("loadSet sets");
         return Observable.just(storage.load());
     }
 

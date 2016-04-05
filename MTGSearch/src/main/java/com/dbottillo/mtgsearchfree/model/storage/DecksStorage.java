@@ -37,7 +37,7 @@ public class DecksStorage {
     }
 
     public ArrayList<MTGCard> loadDeck(Deck deck) {
-        LOG.d("load " + deck);
+        LOG.d("loadSet " + deck);
         return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
     }
 

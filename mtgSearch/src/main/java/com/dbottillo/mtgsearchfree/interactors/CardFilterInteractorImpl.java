@@ -16,7 +16,7 @@ public class CardFilterInteractorImpl implements CardFilterInteractor {
     }
 
     public Observable<CardFilter> load() {
-        LOG.d("load");
+        LOG.d("loadSet");
         return Observable.just(cardFilterStorage.load());
     }
 

@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class CardsStorage {
 
@@ -26,8 +27,8 @@ public class CardsStorage {
         this.context = context;
     }
 
-    public ArrayList<MTGCard> load(MTGSet set) {
-        LOG.d("load " + set);
+    public List<MTGCard> load(MTGSet set) {
+        LOG.d("loadSet " + set);
         return MTGDatabaseHelper.getInstance(context).getSet(set);
     }
 
@@ -54,22 +55,22 @@ public class CardsStorage {
         return loadIdFav();
     }
 
-    public ArrayList<MTGCard> getLuckyCards(int howMany) {
+    public List<MTGCard> getLuckyCards(int howMany) {
         LOG.d(howMany + " lucky cards requested");
         return MTGDatabaseHelper.getInstance(context).getRandomCard(howMany);
     }
 
-    public ArrayList<MTGCard> getFavourites() {
+    public List<MTGCard> getFavourites() {
         LOG.d();
         return FavouritesDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), true);
     }
 
-    public ArrayList<MTGCard> loadDeck(Deck deck) {
-        LOG.d("load " + deck);
+    public List<MTGCard> loadDeck(Deck deck) {
+        LOG.d("loadSet " + deck);
         return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
     }
 
-    public ArrayList<MTGCard> doSearch(SearchParams searchParams) {
+    public List<MTGCard> doSearch(SearchParams searchParams) {
         LOG.d("do search " + searchParams);
         ArrayList<MTGCard> result = MTGCardDataSource.searchCards(MTGDatabaseHelper.getInstance(context).getReadableDatabase(), searchParams);
 
