@@ -165,7 +165,7 @@ public final class DeckDataSource {
     }
 
     private static void setQuantityOfCards(SQLiteDatabase db, ArrayList<Deck> decks, boolean side) {
-        // need to load cards now
+        // need to loadSet cards now
         //select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
         //Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
         //Cursor cursor = db.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);

@@ -184,7 +184,7 @@ public class MTGCardView extends RelativeLayout {
 
                     public void onError() {
                         if (!fallback) {
-                            // need to try to load from gatherer
+                            // need to try to loadSet from gatherer
                             loadImage(true);
                             return;
                         }

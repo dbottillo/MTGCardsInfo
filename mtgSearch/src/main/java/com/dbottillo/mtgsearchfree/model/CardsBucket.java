@@ -3,25 +3,26 @@ package com.dbottillo.mtgsearchfree.model;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CardsBucket {
 
     String key;
-    ArrayList<MTGCard> cards;
+    List<MTGCard> cards;
 
-    public CardsBucket(MTGSet set, ArrayList<MTGCard> cards) {
+    public CardsBucket(MTGSet set, List<MTGCard> cards) {
         LOG.d("creating bucket with key: " + set.getName());
         this.key = set.getName();
         this.cards = cards;
     }
 
-    public CardsBucket(String key, ArrayList<MTGCard> cards) {
+    public CardsBucket(String key, List<MTGCard> cards) {
         LOG.d("creating bucket with key: " + key);
         this.key = key;
         this.cards = cards;
     }
 
-    public ArrayList<MTGCard> getCards() {
+    public List<MTGCard> getCards() {
         LOG.d("cards of bucket " + key + " requested");
         return cards;
     }

@@ -38,7 +38,7 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     @Override
     public void loadDeck(Deck deck) {
-        LOG.d("load " + deck);
+        LOG.d("loadSet " + deck);
         Observable<ArrayList<MTGCard>> obs = interactor.loadDeck(deck)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());

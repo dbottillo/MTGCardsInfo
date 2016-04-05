@@ -18,7 +18,7 @@ public class PlayerInteractorImpl implements PlayerInteractor {
     }
 
     public Observable<ArrayList<Player>> load() {
-        LOG.d("load");
+        LOG.d("loadSet");
         return Observable.just(storage.load());
     }
 

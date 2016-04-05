@@ -19,13 +19,13 @@ public class DecksInteractorImpl implements DecksInteractor {
     }
 
     public Observable<ArrayList<Deck>> load() {
-        LOG.d("load decks");
+        LOG.d("loadSet decks");
         return Observable.just(storage.load());
     }
 
     @Override
     public Observable<ArrayList<MTGCard>> loadDeck(Deck deck) {
-        LOG.d("load " + deck.toString());
+        LOG.d("loadSet " + deck.toString());
         return Observable.just(storage.loadDeck(deck));
     }
 

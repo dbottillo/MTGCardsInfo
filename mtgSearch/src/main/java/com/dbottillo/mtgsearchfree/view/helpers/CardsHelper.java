@@ -8,15 +8,16 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class CardsHelper {
 
-    public static void filterCards(CardFilter cardFilter, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
+    public static void filterCards(CardFilter cardFilter, List<MTGCard> input, ArrayList<MTGCard> output) {
         LOG.d();
         filterCards(cardFilter, null, input, output);
     }
 
-    public static void filterCards(CardFilter cardFilter, SearchParams searchParams, ArrayList<MTGCard> input, ArrayList<MTGCard> output) {
+    public static void filterCards(CardFilter cardFilter, SearchParams searchParams, List<MTGCard> input, ArrayList<MTGCard> output) {
         LOG.d();
         if (cardFilter == null) {
             return;
@@ -75,7 +76,7 @@ public class CardsHelper {
         }
     }
 
-    public static void sortCards(boolean wubrgSort, ArrayList<MTGCard> cards) {
+    public static void sortCards(boolean wubrgSort, List<MTGCard> cards) {
         LOG.d();
         if (wubrgSort) {
             Collections.sort(cards, new Comparator<MTGCard>() {
