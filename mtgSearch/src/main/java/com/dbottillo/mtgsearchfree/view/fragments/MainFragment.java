@@ -18,23 +18,24 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.adapters.GameSetAdapter;
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
-import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
-import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.dbottillo.mtgsearchfree.view.adapters.GameSetAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
 import java.util.ArrayList;
@@ -128,17 +129,20 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     @OnClick(R.id.cards_sort)
     public void onSortClicked(View view) {
+        LOG.d();
         DialogUtil.chooseSortDialog(getContext(), sharedPreferences, this);
     }
 
     @OnClick(R.id.set_list_bg)
     public void onSetListBgClicked(View view) {
+        LOG.d();
         if (setList.getHeight() > 0) {
             showHideSetList(false);
         }
     }
 
     private void showHideSetList(final boolean loadSet) {
+        LOG.d();
         final int startHeight = setList.getHeight();
         final int targetHeight = ((startHeight == 0)) ? mtgCardListView.getHeight() : 0;
         final float startRotation = setArrow.getRotation();
@@ -195,6 +199,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     public void setsLoaded(List<MTGSet> sets) {
+        LOG.d();
         currentSetPosition = sharedPreferences.getInt("setPosition", 0);
         setAdapter.setCurrent(currentSetPosition);
         this.sets.clear();
@@ -210,17 +215,20 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     private void loadSet() {
+        LOG.d();
         gameSet = sets.get(currentSetPosition);
         chooserName.setText(gameSet.getName());
         cardsPresenter.loadCards(gameSet);
     }
 
     public void cardLoaded(CardsBucket bucket) {
+        LOG.d();
         cardBucket = bucket;
         updateContent();
     }
 
     public void updateContent() {
+        LOG.d();
         ArrayList<MTGCard> cards = new ArrayList<>();
         CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket.getCards(), cards);
         boolean wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
@@ -234,11 +242,14 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     public void onSortSelected() {
+
+        LOG.d();
         loadSet();
     }
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
+        LOG.d();
         TrackingManager.trackCard(gameSet, position);
         startActivity(CardsActivity.newInstance(getContext(), gameSet, position));
     }
@@ -248,7 +259,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card));
         } else {
-            cardsPresenter.saveAsFavourite(card);
+            cardsPresenter.saveAsFavourite(card, true);
         }
     }
 

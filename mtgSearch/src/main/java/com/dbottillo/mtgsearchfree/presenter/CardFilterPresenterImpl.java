@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 
 import rx.Observable;
@@ -15,21 +16,26 @@ public class CardFilterPresenterImpl implements CardFilterPresenter {
     CardFilterView filterView;
 
     public CardFilterPresenterImpl(CardFilterInteractor interactor) {
+        LOG.d("created");
         this.interactor = interactor;
     }
 
     @Override
     public void init(CardFilterView view) {
+        LOG.d();
         filterView = view;
     }
 
     public void loadFilter() {
+        LOG.d();
         if (CardFilterMemoryStorage.init) {
+            LOG.d("filters already in memory, will just return");
             filterLoaded();
         } else {
             Observable<CardFilter> obs = interactor.load()
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io());
+            LOG.d("obs created and now subscribe");
             obs.subscribe(new Observer<CardFilter>() {
                 @Override
                 public void onCompleted() {
@@ -43,6 +49,7 @@ public class CardFilterPresenterImpl implements CardFilterPresenter {
 
                 @Override
                 public void onNext(CardFilter cardFilter) {
+                    LOG.d();
                     CardFilterMemoryStorage.init = true;
                     CardFilterMemoryStorage.filter = cardFilter;
                     filterLoaded();
@@ -52,10 +59,12 @@ public class CardFilterPresenterImpl implements CardFilterPresenter {
     }
 
     private void filterLoaded() {
+        LOG.d();
         filterView.filterLoaded(CardFilterMemoryStorage.filter);
     }
 
     public void update(CardFilter.TYPE type, boolean on) {
+        LOG.d("update " + type.toString() + "with: " + on);
         switch (type) {
             case WHITE: {
                 CardFilterMemoryStorage.filter.white = on;

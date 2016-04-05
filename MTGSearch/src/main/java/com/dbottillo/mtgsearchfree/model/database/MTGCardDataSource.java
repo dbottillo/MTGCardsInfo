@@ -3,10 +3,10 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,8 +22,9 @@ public final class MTGCardDataSource {
     }
 
     public static ArrayList<MTGCard> getSet(SQLiteDatabase db, MTGSet set) {
+        LOG.d("get set  " + set.toString());
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.getName() + " = '" + set.getCode() + "';";
-        LOG.d("[getSet] query: " + query + " with code: " + set.getCode());
+        LOG.query(query, set.getCode());
 
         ArrayList<MTGCard> cards = new ArrayList<>();
         Cursor cursor = db.rawQuery(query, null);
@@ -42,6 +43,7 @@ public final class MTGCardDataSource {
     }
 
     public static ArrayList<MTGCard> searchCards(SQLiteDatabase db, SearchParams searchParams) {
+        LOG.d("search cards  " + searchParams.toString());
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE ";
         ArrayList<String> selection = new ArrayList<>();
@@ -192,7 +194,7 @@ public final class MTGCardDataSource {
 
         String[] sel = Arrays.copyOf(selection.toArray(), selection.size(), String[].class);
 
-        LOG.d("[searchCards] query: " + query + " with selection: " + selection);
+        LOG.query(query, sel);
 
         Cursor cursor = db.rawQuery(query, sel);
         if (cursor.moveToFirst()) {
@@ -241,8 +243,9 @@ public final class MTGCardDataSource {
     }
 
     public static ArrayList<MTGCard> getRandomCard(SQLiteDatabase db, int number) {
+        LOG.d("get random card  " + number);
         String query = "SELECT * FROM " + CardDataSource.TABLE + " ORDER BY RANDOM() LIMIT " + number;
-        LOG.d("[getRandomCard] query: " + query);
+        LOG.query(query);
         ArrayList<MTGCard> cards = new ArrayList<>(number);
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {

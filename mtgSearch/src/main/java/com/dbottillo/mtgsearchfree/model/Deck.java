@@ -47,7 +47,7 @@ public class Deck implements Parcelable {
         this.numberOfCards = numberOfCards;
     }
 
-    public void addNumberOfCards(int numberOfCards){
+    public void addNumberOfCards(int numberOfCards) {
         this.numberOfCards += numberOfCards;
     }
 
@@ -95,6 +95,6 @@ public class Deck implements Parcelable {
 
     @Override
     public String toString() {
-        return name;
+        return "[" + id + "," + name + "]";
     }
 }

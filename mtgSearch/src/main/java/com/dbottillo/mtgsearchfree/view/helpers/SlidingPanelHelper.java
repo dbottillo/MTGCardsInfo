@@ -5,7 +5,8 @@ import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 
 public class SlidingPanelHelper implements SlidingUpPanelLayout.PanelSlideListener {
 
@@ -27,6 +28,7 @@ public class SlidingPanelHelper implements SlidingUpPanelLayout.PanelSlideListen
 
 
     public void init(View dragView) {
+        LOG.d();
         slidingPanel.setDragView(dragView);
         slidingPanel.setPanelSlideListener(this);
     }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 
 import java.util.Random;
@@ -88,6 +89,7 @@ public class NavDrawerHelper {
     }
 
     private void updateHeaderView() {
+        LOG.d();
         int random = new Random().nextInt(12);
         headerTitle.setText(resources.getStringArray(R.array.header_title_flavor)[random]);
         headerText.setText(resources.getStringArray(R.array.header_text_flavor)[random]);
@@ -112,6 +114,7 @@ public class NavDrawerHelper {
     }
 
     public void resetSelection() {
+        LOG.d();
         for (int i = 0; i < navigationView.getMenu().size(); i++) {
             navigationView.getMenu().getItem(i).setChecked(false);
         }
@@ -120,11 +123,13 @@ public class NavDrawerHelper {
     }
 
     public void select(int i) {
+        LOG.d();
         navigationView.getMenu().getItem(i).setChecked(true);
         drawerToggle.syncState();
     }
 
     public int getCurrentSelection() {
+        LOG.d();
         for (int i = 0; i < navigationView.getMenu().size(); i++) {
             if (navigationView.getMenu().getItem(i).isChecked()) {
                 return i;

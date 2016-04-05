@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
@@ -68,6 +69,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
     }
 
     protected void updateMenu() {
+        LOG.d();
         syncMenu();
     }
 

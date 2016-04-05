@@ -28,6 +28,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
@@ -147,6 +148,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     private void openNewDeck() {
+        LOG.d();
         newDeckOverlay.setAlpha(0.0f);
         newDeckOverlay.setVisibility(View.VISIBLE);
         newDeckOverlay.animate().alpha(1.0f).setDuration(250).setListener(new Animator.AnimatorListener() {
@@ -181,6 +183,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     private void closeNewDeck() {
+        LOG.d();
         AnimatorSet open = new AnimatorSet();
         ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(newDeck,
                 PropertyValuesHolder.ofFloat("scaleX", 1.0f),
@@ -218,6 +221,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_DONE) {
+            LOG.d();
             String text = newDeckName.getText().toString();
             closeNewDeck();
             decksPresenter.addDeck(text);
@@ -229,6 +233,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
 
     @Override
     public void onDeckSelected(Deck deck) {
+        LOG.d();
         Intent intent = new Intent(getActivity(), DeckActivity.class);
         intent.putExtra("deck", deck);
         startActivity(intent);
@@ -236,6 +241,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
 
     @Override
     public void onDeckDelete(final Deck deck) {
+        LOG.d();
         if (deck.getNumberOfCards() > 0) {
             new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.deck_delete_title)
@@ -259,6 +265,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
 
     @Override
     public void decksLoaded(List<Deck> newDecks) {
+        LOG.d();
         decks.clear();
         for (Deck deck : newDecks) {
             decks.add(deck);

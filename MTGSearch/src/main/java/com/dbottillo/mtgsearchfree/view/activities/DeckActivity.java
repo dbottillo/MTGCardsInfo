@@ -17,15 +17,16 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
-import com.dbottillo.mtgsearchfree.view.adapters.DeckCardSectionAdapter;
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
+import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.DeckCardSectionAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -147,6 +148,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
     @Override
     public void deckLoaded(List<MTGCard> newCards) {
+        LOG.d();
         progressBar.setVisibility(View.GONE);
         List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
         cards.clear();
@@ -218,6 +220,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
     }
 
     private void exportDeck() {
+        LOG.d();
         if (FileUtil.downloadDeckToSdCard(this, deck, cards)) {
             Snackbar snackbar = Snackbar
                     .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
@@ -239,6 +242,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
     }
 
     private void editDeckName() {
+        LOG.d();
         AlertDialog.Builder alert = new AlertDialog.Builder(this, R.style.MTGDialogTheme);
 
         alert.setTitle(getString(R.string.edit_deck));

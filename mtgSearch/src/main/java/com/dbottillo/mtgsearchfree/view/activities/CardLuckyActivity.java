@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
@@ -89,6 +90,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public void luckyCardsLoaded(ArrayList<MTGCard> cards) {
+        LOG.d();
         boolean firstRun = luckyCards.size() == 0;
         for (MTGCard card : cards) {
             luckyCards.add(card);
@@ -103,6 +105,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public void favIdLoaded(int[] favourites) {
+        LOG.d();
         idFavourites = favourites;
         if (luckyCards.size() == 0) {
             if (getIntent().getExtras() != null && getIntent().getExtras().getParcelable(CARD) != null) {
@@ -121,6 +124,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public void refreshCard() {
+        LOG.d();
         if (luckyCards == null || luckyCards.isEmpty()) {
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
             return;
@@ -136,19 +140,22 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public MTGCard getCurrentCard() {
+        LOG.d();
         return cardView.getCard();
     }
 
     public void toggleImage(boolean show) {
+        LOG.d();
         cardView.toggleImage(show);
     }
 
     public void favClicked() {
+        LOG.d();
         MTGCard currentCard = cardView.getCard();
         if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
-            cardsPresenter.removeFromFavourite(currentCard);
+            cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
-            cardsPresenter.saveAsFavourite(currentCard);
+            cardsPresenter.saveAsFavourite(currentCard, true);
         }
     }
 

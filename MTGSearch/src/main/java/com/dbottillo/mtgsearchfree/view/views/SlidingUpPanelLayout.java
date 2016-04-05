@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view;
+package com.dbottillo.mtgsearchfree.view.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;

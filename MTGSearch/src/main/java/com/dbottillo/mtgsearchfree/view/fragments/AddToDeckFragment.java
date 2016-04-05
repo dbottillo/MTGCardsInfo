@@ -23,6 +23,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
@@ -91,6 +92,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
     }
 
     private void setupQuantitySpinner() {
+        LOG.d();
         quantityChoose = new String[]{getString(R.string.deck_choose_quantity), "1", "2", "3", "4", getString(R.string.deck_specify)};
         final ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), R.layout.add_to_deck_spinner_item, quantityChoose);
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item);
@@ -98,6 +100,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
         chooseQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                LOG.d();
                 if (position == 5) {
                     chooseQuantity.setVisibility(View.GONE);
                     cardQuantityInputLayout.setVisibility(View.VISIBLE);
@@ -114,6 +117,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        LOG.d();
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         // request a window without the title
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -126,6 +130,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
     }
 
     private void setupDecksSpinner(final List<Deck> decks) {
+        LOG.d();
         this.decks = decks;
         decksChoose = new String[decks.size() + 2];
         decksChoose[0] = getString(R.string.deck_choose);
@@ -157,6 +162,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
     @OnClick(R.id.add_to_deck_save)
     public void addToDeck(View view) {
+        LOG.d();
         int quantity = -1;
         if (chooseQuantity.getVisibility() == View.VISIBLE && chooseQuantity.getSelectedItemPosition() > 0) {
             quantity = Integer.parseInt(quantityChoose[chooseQuantity.getSelectedItemPosition()]);
@@ -180,12 +186,14 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
     }
 
     private void saveCard(final int quantity, final Deck deck, final boolean side) {
+        LOG.d();
         card.setSideboard(side);
         decksPresenter.addCardToDeck(deck, card, quantity);
         TrackingManager.trackAddCardToDeck(quantity + " - existing");
     }
 
     private void saveCard(final int quantity, final String deck, final boolean side) {
+        LOG.d();
         card.setSideboard(side);
         decksPresenter.addCardToDeck(deck, card, quantity);
         TrackingManager.trackNewDeck(deck);
@@ -194,11 +202,13 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
     @Override
     public void decksLoaded(List<Deck> decks) {
+        LOG.d();
         setupDecksSpinner(decks);
     }
 
     @Override
     public void deckLoaded(List<MTGCard> cards) {
+        throw new UnsupportedOperationException();
     }
 
     @Override

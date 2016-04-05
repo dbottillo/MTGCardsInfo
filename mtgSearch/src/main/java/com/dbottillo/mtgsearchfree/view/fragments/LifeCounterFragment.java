@@ -19,12 +19,13 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
+import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -107,12 +108,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     }
 
     private void setScreenOn(boolean screenOn) {
+        LOG.d();
         if (getView() != null) {
             getView().setKeepScreenOn(screenOn);
         }
     }
 
     private void resetLifeCounter() {
+        LOG.d();
         for (Player player : players) {
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
@@ -128,6 +131,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
 
     private void addPlayer() {
+        LOG.d();
         if (players.size() == 10) {
             Toast.makeText(getActivity(), R.string.maximum_player, Toast.LENGTH_SHORT).show();
             return;
@@ -138,12 +142,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onRemovePlayer(int position) {
+        LOG.d();
         playerPresenter.removePlayer(players.get(position));
         TrackingManager.trackRemovePlayer();
     }
 
     @Override
     public void onEditPlayer(final int position) {
+        LOG.d();
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MTGDialogTheme);
 
         alert.setTitle(getString(R.string.edit_player));
@@ -174,6 +180,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onLifeCountChange(int position, int value) {
+        LOG.d();
         TrackingManager.trackLifeCountChanged();
         players.get(position).changeLife(value);
         playerPresenter.editPlayer(players.get(position));
@@ -181,12 +188,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onPoisonCountChange(int position, int value) {
+        LOG.d();
         TrackingManager.trackPoisonCountChanged();
         players.get(position).changePoisonCount(value);
         playerPresenter.editPlayer(players.get(position));
     }
 
     private void launchDice() {
+        LOG.d();
         if (diceShowed) {
             for (int i = 0; i < players.size(); i++) {
                 Player player = players.get(i);
@@ -232,6 +241,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     }
 
     private void hideDice() {
+        LOG.d();
         diceContainer.removeAllViews();
         diceScrollView.setVisibility(View.GONE);
         diceShowed = false;
@@ -239,6 +249,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void onClick(View v) {
+        LOG.d();
         addPlayer();
         TrackingManager.trackAddPlayer();
     }
@@ -308,6 +319,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Override
     public void playersLoaded(ArrayList<Player> players) {
+        LOG.d();
         progressBar.setVisibility(View.GONE);
         if (players.size() == 0) {
             // need at least one player

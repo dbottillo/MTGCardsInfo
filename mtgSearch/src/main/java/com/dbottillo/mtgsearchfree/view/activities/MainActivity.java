@@ -18,9 +18,10 @@ import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
@@ -111,6 +112,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void filterLoaded(CardFilter filter) {
+        LOG.d();
         currentFilter = filter;
         if (!filterLoaded) {
             if (initialBundle == null) {
@@ -128,6 +130,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void onNewIntent(Intent intent) {
+        LOG.d();
         super.onNewIntent(intent);
         mainPresenter.checkReleaseNote(intent);
     }
@@ -149,6 +152,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void showReleaseNote() {
+        LOG.d();
         changeFragment(new ReleaseNoteFragment(), "release_note_fragment", true);
         slidingPanelHelper.hidePanel(true);
         navDrawerHelper.select(6);
@@ -237,6 +241,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void onBackPressed() {
+        LOG.d();
         if (slidingPanelHelper.onBackPressed()) {
             return;
         }
@@ -259,6 +264,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     public void filterUpdated(CardFilter.TYPE type, boolean on) {
+        LOG.d();
         filterPresenter.update(type, on);
     }
 

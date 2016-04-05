@@ -85,4 +85,9 @@ public class MTGSet implements Parcelable {
         MTGSet other = (MTGSet) o;
         return name.equals(other.getName()) && code.equals(other.getCode());
     }
+
+    @Override
+    public String toString() {
+        return "[" + name + "," + code + "]";
+    }
 }

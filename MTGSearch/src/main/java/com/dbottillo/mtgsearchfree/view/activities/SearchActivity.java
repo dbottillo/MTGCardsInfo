@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -26,16 +24,19 @@ import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.CardsView;
-import com.dbottillo.mtgsearchfree.view.MTGSearchView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
+import com.dbottillo.mtgsearchfree.view.views.MTGSearchView;
 
 import java.util.List;
 
@@ -196,6 +197,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     }
 
     private void doSearch(SearchParams searchParams) {
+        LOG.d();
         TrackingManager.trackSearch(searchParams);
         cardsPresenter.doSearch(searchParams);
         hideIme();
@@ -203,6 +205,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        LOG.d();
         SearchParams searchParams = null;
         if (!searchOpen) {
             searchParams = searchView.getSearchParams();
@@ -299,11 +302,14 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void onSortSelected() {
+        LOG.d();
         refreshList();
     }
 
     @Override
     public void setsLoaded(List<MTGSet> sets) {
+
+        LOG.d();
         searchView.refreshSets(sets);
     }
 
@@ -314,11 +320,13 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void cardLoaded(CardsBucket bucket) {
+        LOG.d();
         currentBucket = bucket;
         refreshList();
     }
 
     private void refreshList() {
+        LOG.d();
         boolean wubrgSort = getSharedPreferences().getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
         CardsHelper.sortCards(wubrgSort, currentBucket.getCards());
         mtgCardListView.loadCards(currentBucket.getCards(), this);
@@ -331,6 +339,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void onCardSelected(MTGCard card, int position) {
+        LOG.d();
         startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position));
     }
 
@@ -339,7 +348,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(this, "add_to_deck", AddToDeckFragment.newInstance(card));
         } else {
-            cardsPresenter.saveAsFavourite(card);
+            cardsPresenter.saveAsFavourite(card, true);
         }
     }
 }

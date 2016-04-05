@@ -18,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class NetworkIntentService extends IntentService {
-
+    
     public static final String EXTRA_PARAMS = "NetworkIntentService.EXTRA_PARAMS";
     public static final String EXTRA_ID = "NetworkIntentService.EXTRA_ID";
     public static final String EXTRA_CARD_NAME = "NetworkIntentService.EXTRA_CARD_NAME";
@@ -47,20 +47,21 @@ public class NetworkIntentService extends IntentService {
         }
 
         String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=" + setName + "&p=" + cardName;
-        LOG.d("loading: " + url);
+
+        LOG.d("loading price for card "+cardName);
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
-            LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
+            LOG.e(e);
         }
 
         if (res != null && (res.getLowprice() == null || res.getLowprice().equalsIgnoreCase("0")) && setName != null && setName.length() > 0) {
             url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
-            LOG.d("try again without set: " + url);
+            LOG.d("try again without set for card "+cardName);
             try {
                 res = doNetworkRequest(url);
             } catch (Exception e) {
-                LOG.e("Price Card Error: " + e.getClass() + " - " + e.getLocalizedMessage());
+                LOG.e(e);
             }
         }
 

@@ -21,10 +21,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -99,7 +99,6 @@ public class MTGCardView extends RelativeLayout {
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT);
-            LOG.e("price received: " + price.toString());
             updatePrice();
             if (price != null && price.isNotFound() && isNetworkAvailable()) {
                 String url = intent.getStringExtra(NetworkIntentService.REST_URL);
@@ -110,10 +109,12 @@ public class MTGCardView extends RelativeLayout {
 
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        LOG.d();
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(priceReceiver);
     }
 
     public void load(MTGCard card, boolean showImage) {
+        LOG.d();
         this.card = card;
         String manaCost;
         String rulings;
@@ -157,6 +158,7 @@ public class MTGCardView extends RelativeLayout {
     }
 
     private void updatePrice() {
+        LOG.d();
         if (price == null) {
             return;
         }
@@ -168,6 +170,7 @@ public class MTGCardView extends RelativeLayout {
     }
 
     private void loadImage(final boolean fallback) {
+        LOG.d();
         retry.setVisibility(View.GONE);
         cardImageContainer.setVisibility(View.VISIBLE);
         cardImage.setVisibility(View.GONE);
@@ -250,6 +253,7 @@ public class MTGCardView extends RelativeLayout {
 
     @OnClick(R.id.price_container)
     public void openPrice(View view) {
+        LOG.d();
         if (price != null && !price.isAnError()) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(price.getLink()));
             getContext().startActivity(browserIntent);
@@ -257,6 +261,7 @@ public class MTGCardView extends RelativeLayout {
     }
 
     public void toggleImage(boolean showImage) {
+        LOG.d();
         if (showImage && card.getImage() != null) {
             loadImage(false);
         } else {

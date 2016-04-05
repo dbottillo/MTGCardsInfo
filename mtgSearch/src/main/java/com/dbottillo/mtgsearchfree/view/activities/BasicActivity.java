@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
@@ -32,6 +33,8 @@ public abstract class BasicActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        LOG.d("============================================");
+        LOG.d();
         app = (MTGApp) getApplication();
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
 
@@ -43,13 +46,13 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public void onResume() {
         super.onResume();
+        LOG.d();
         if (getPageTrack() != null) {
             TrackingManager.trackPage(getPageTrack());
         }
     }
 
     public abstract String getPageTrack();
-
 
     protected void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

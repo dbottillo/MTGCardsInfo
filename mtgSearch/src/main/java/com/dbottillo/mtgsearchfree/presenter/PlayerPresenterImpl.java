@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.ArrayList;
@@ -26,144 +27,94 @@ public class PlayerPresenterImpl implements PlayerPresenter {
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
+
+
     public PlayerPresenterImpl(PlayerInteractor interactor) {
+
+        LOG.d("created");
         this.interactor = interactor;
     }
 
     public void detachView() {
+        LOG.d();
         subscription.unsubscribe();
     }
 
     @Override
     public void init(PlayersView view) {
+        LOG.d();
         playerView = view;
     }
 
     @Override
     public void loadPlayers() {
+        LOG.d();
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.load()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(ArrayList<Player> players) {
-                playersLoaded(players);
-            }
-        });
+        subscription = obs.subscribe(playersSubscription);
     }
 
     @Override
     public void addPlayer() {
+        LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.addPlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(ArrayList<Player> players) {
-                playersLoaded(players);
-            }
-        });
+        subscription = obs.subscribe(playersSubscription);
     }
 
     @Override
     public void editPlayer(Player player) {
+        LOG.d();
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.editPlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(ArrayList<Player> players) {
-                playersLoaded(players);
-            }
-        });
+        subscription = obs.subscribe(playersSubscription);
     }
 
     @Override
     public void editPlayer(ArrayList<Player> players) {
+        LOG.d();
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.editPlayers(players)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(ArrayList<Player> players) {
-                playersLoaded(players);
-            }
-        });
+        subscription = obs.subscribe(playersSubscription);
     }
 
     @Override
     public void removePlayer(Player player) {
+        LOG.d();
         playerView.showLoading();
         Observable<ArrayList<Player>> obs = interactor.removePlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<ArrayList<Player>>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(ArrayList<Player> players) {
-                playersLoaded(players);
-            }
-        });
+        subscription = obs.subscribe(playersSubscription);
     }
 
-    private void playersLoaded(ArrayList<Player> newPlayers) {
-        players = newPlayers;
-        playerView.playersLoaded(players);
-    }
+    private Subscriber<ArrayList<Player>> playersSubscription = new Subscriber<ArrayList<Player>>() {
+        @Override
+        public void onCompleted() {
+
+        }
+
+        @Override
+        public void onError(Throwable e) {
+
+        }
+
+        @Override
+        public void onNext(ArrayList<Player> newPlayers) {
+            LOG.d();
+            players = newPlayers;
+            playerView.playersLoaded(players);
+        }
+    };
 
     private String getUniqueNameForPlayer() {
         boolean unique = false;

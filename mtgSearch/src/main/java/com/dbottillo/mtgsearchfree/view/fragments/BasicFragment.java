@@ -8,6 +8,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -26,6 +27,7 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onAttach(Context context) {
         super.onAttach(context);
+        LOG.d();
 
         this.dbActivity = (AppCompatActivity) context;
         app = (MTGApp) dbActivity.getApplication();
@@ -35,6 +37,7 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LOG.d();
 
         setHasOptionsMenu(true);
     }
@@ -54,6 +57,7 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onResume() {
         super.onResume();
+        LOG.d();
         TrackingManager.trackPage(getPageTrack());
     }
 
