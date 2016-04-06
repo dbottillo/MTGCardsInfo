@@ -1,11 +1,10 @@
-package com.dbottillo.mtgsearchfree.database;
+package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.Player;
-import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

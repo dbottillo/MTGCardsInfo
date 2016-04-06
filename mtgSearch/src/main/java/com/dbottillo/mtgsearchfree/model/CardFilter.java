@@ -68,22 +68,34 @@ public class CardFilter implements Parcelable {
 
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(white ? 1 : 0);
-        dest.writeInt((blue) ? 1 : 0);
-        dest.writeInt((black) ? 1 : 0);
-        dest.writeInt((red) ? 1 : 0);
-        dest.writeInt((green) ? 1 : 0);
+        dest.writeInt(blue ? 1 : 0);
+        dest.writeInt(black ? 1 : 0);
+        dest.writeInt(red ? 1 : 0);
+        dest.writeInt(green ? 1 : 0);
 
-        dest.writeInt((artifact) ? 1 : 0);
-        dest.writeInt((land) ? 1 : 0);
-        dest.writeInt((eldrazi) ? 1 : 0);
+        dest.writeInt(artifact ? 1 : 0);
+        dest.writeInt(land ? 1 : 0);
+        dest.writeInt(eldrazi ? 1 : 0);
 
-        dest.writeInt((common) ? 1 : 0);
-        dest.writeInt((uncommon) ? 1 : 0);
-        dest.writeInt((rare) ? 1 : 0);
-        dest.writeInt((mythic) ? 1 : 0);
+        dest.writeInt(common ? 1 : 0);
+        dest.writeInt(uncommon ? 1 : 0);
+        dest.writeInt(rare ? 1 : 0);
+        dest.writeInt(mythic ? 1 : 0);
     }
 
     public int describeContents() {
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CardFilter other = (CardFilter) o;
+        return white == other.white && blue == other.blue && black == other.black && red == other.red
+                && green == other.green && artifact == other.artifact && land == other.land
+                && common == other.common && uncommon == other.uncommon
+                && rare == other.rare && mythic == other.mythic;
     }
 }
