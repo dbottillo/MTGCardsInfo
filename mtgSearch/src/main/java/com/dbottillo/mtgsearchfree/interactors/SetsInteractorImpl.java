@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 
@@ -17,7 +17,7 @@ public class SetsInteractorImpl implements SetsInteractor {
         this.storage = storage;
     }
 
-    public Observable<ArrayList<MTGSet>> load() {
+    public Observable<List<MTGSet>> load() {
         LOG.d("loadSet sets");
         return Observable.just(storage.load());
     }

@@ -35,6 +35,7 @@ public class CardFilterInteractorImplTest {
         interactor.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Arrays.asList(cardFilter));
+        verify(storage).load();
     }
 
     @Test

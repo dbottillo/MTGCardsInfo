@@ -2,11 +2,11 @@ package com.dbottillo.mtgsearchfree.view;
 
 import com.dbottillo.mtgsearchfree.model.Player;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface PlayersView extends BasicView {
 
-    void playersLoaded(ArrayList<Player> players);
+    void playersLoaded(List<Player> players);
 
     void showLoading();
 }

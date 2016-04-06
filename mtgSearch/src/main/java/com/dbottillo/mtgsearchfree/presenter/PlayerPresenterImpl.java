@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -21,13 +22,11 @@ public class PlayerPresenterImpl implements PlayerPresenter {
 
     PlayersView playerView;
     Subscription subscription = null;
-    ArrayList<Player> players;
+    List<Player> players;
 
     String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
-
-
 
     public PlayerPresenterImpl(PlayerInteractor interactor) {
 
@@ -50,7 +49,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     public void loadPlayers() {
         LOG.d();
         playerView.showLoading();
-        Observable<ArrayList<Player>> obs = interactor.load()
+        Observable<List<Player>> obs = interactor.load()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         subscription = obs.subscribe(playersSubscription);
@@ -61,7 +60,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
         LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
-        Observable<ArrayList<Player>> obs = interactor.addPlayer(player)
+        Observable<List<Player>> obs = interactor.addPlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         subscription = obs.subscribe(playersSubscription);
@@ -71,7 +70,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     public void editPlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        Observable<ArrayList<Player>> obs = interactor.editPlayer(player)
+        Observable<List<Player>> obs = interactor.editPlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         subscription = obs.subscribe(playersSubscription);
@@ -81,7 +80,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     public void editPlayer(ArrayList<Player> players) {
         LOG.d();
         playerView.showLoading();
-        Observable<ArrayList<Player>> obs = interactor.editPlayers(players)
+        Observable<List<Player>> obs = interactor.editPlayers(players)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         subscription = obs.subscribe(playersSubscription);
@@ -91,13 +90,13 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     public void removePlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        Observable<ArrayList<Player>> obs = interactor.removePlayer(player)
+        Observable<List<Player>> obs = interactor.removePlayer(player)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         subscription = obs.subscribe(playersSubscription);
     }
 
-    private Subscriber<ArrayList<Player>> playersSubscription = new Subscriber<ArrayList<Player>>() {
+    private Subscriber<List<Player>> playersSubscription = new Subscriber<List<Player>>() {
         @Override
         public void onCompleted() {
 
@@ -109,7 +108,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
         }
 
         @Override
-        public void onNext(ArrayList<Player> newPlayers) {
+        public void onNext(List<Player> newPlayers) {
             LOG.d();
             players = newPlayers;
             playerView.playersLoaded(players);

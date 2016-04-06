@@ -3,19 +3,19 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.model.Player;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 
 public interface PlayerInteractor {
 
-    Observable<ArrayList<Player>> load();
+    Observable<List<Player>> load();
 
-    Observable<ArrayList<Player>> addPlayer(Player player);
+    Observable<List<Player>> addPlayer(Player player);
 
-    Observable<ArrayList<Player>> editPlayer(Player player);
+    Observable<List<Player>> editPlayer(Player player);
 
-    Observable<ArrayList<Player>> editPlayers(ArrayList<Player> players);
+    Observable<List<Player>> editPlayers(List<Player> players);
 
-    Observable<ArrayList<Player>> removePlayer(Player player);
+    Observable<List<Player>> removePlayer(Player player);
 }

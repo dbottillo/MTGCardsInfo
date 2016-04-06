@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 import rx.Observer;
@@ -34,11 +35,11 @@ public class SetsPresenterImpl implements SetsPresenter {
             setView.setsLoaded(SetsMemoryStorage.sets);
             return;
         }
-        Observable<ArrayList<MTGSet>> obs = interactor.load()
+        Observable<List<MTGSet>> obs = interactor.load()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         LOG.d("obs created");
-        obs.subscribe(new Observer<ArrayList<MTGSet>>() {
+        obs.subscribe(new Observer<List<MTGSet>>() {
             @Override
             public void onCompleted() {
 
@@ -50,7 +51,7 @@ public class SetsPresenterImpl implements SetsPresenter {
             }
 
             @Override
-            public void onNext(ArrayList<MTGSet> mtgSets) {
+            public void onNext(List<MTGSet> mtgSets) {
                 LOG.d();
                 SetsMemoryStorage.init = true;
                 SetsMemoryStorage.sets = mtgSets;

@@ -7,7 +7,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class PlayersStorage {
 
@@ -19,26 +19,26 @@ public class PlayersStorage {
         this.context = context;
     }
 
-    public ArrayList<Player> load() {
+    public List<Player> load() {
         LOG.d();
         return PlayerDataSource.getPlayers(CardsInfoDbHelper.getInstance(context).getReadableDatabase());
     }
 
-    public ArrayList<Player> addPlayer(Player player) {
+    public List<Player> addPlayer(Player player) {
         LOG.d("add " + player);
         CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
         return load();
     }
 
-    public ArrayList<Player> editPlayer(Player player) {
+    public List<Player> editPlayer(Player player) {
         LOG.d("edit " + player);
         CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
         return load();
     }
 
-    public ArrayList<Player> editPlayers(ArrayList<Player> players) {
+    public List<Player> editPlayers(List<Player> players) {
         LOG.d("update " + players);
         CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         for (Player player : players) {
@@ -47,7 +47,7 @@ public class PlayersStorage {
         return load();
     }
 
-    public ArrayList<Player> removePlayer(Player player) {
+    public List<Player> removePlayer(Player player) {
         LOG.d("remove " + player);
         CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         PlayerDataSource.removePlayer(helper.getWritableDatabase(), player);
