@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 import rx.Observer;
@@ -30,7 +31,7 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     public void loadDecks() {
         LOG.d();
-        Observable<ArrayList<Deck>> obs = interactor.load()
+        Observable<List<Deck>> obs = interactor.load()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(deckObserver);
@@ -39,7 +40,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        Observable<ArrayList<MTGCard>> obs = interactor.loadDeck(deck)
+        Observable<List<MTGCard>> obs = interactor.loadDeck(deck)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
@@ -48,7 +49,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void addDeck(String name) {
         LOG.d("add " + name);
-        Observable<ArrayList<Deck>> obs = interactor.addDeck(name)
+        Observable<List<Deck>> obs = interactor.addDeck(name)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(deckObserver);
@@ -57,7 +58,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void deleteDeck(Deck deck) {
         LOG.d("delete " + deck);
-        Observable<ArrayList<Deck>> obs = interactor.deleteDeck(deck)
+        Observable<List<Deck>> obs = interactor.deleteDeck(deck)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(deckObserver);
@@ -66,7 +67,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void editDeck(Deck deck, String name) {
         LOG.d("edit " + deck + " with " + name);
-        Observable<ArrayList<MTGCard>> obs = interactor.editDeck(deck, name)
+        Observable<List<MTGCard>> obs = interactor.editDeck(deck, name)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
@@ -75,7 +76,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void addCardToDeck(String name, MTGCard card, int quantity) {
         LOG.d();
-        Observable<ArrayList<MTGCard>> obs = interactor.addCard(name, card, quantity)
+        Observable<List<MTGCard>> obs = interactor.addCard(name, card, quantity)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
@@ -84,7 +85,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void addCardToDeck(Deck deck, MTGCard card, int quantity) {
         LOG.d();
-        Observable<ArrayList<MTGCard>> obs = interactor.addCard(deck, card, quantity)
+        Observable<List<MTGCard>> obs = interactor.addCard(deck, card, quantity)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
@@ -93,7 +94,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void removeCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        Observable<ArrayList<MTGCard>> obs = interactor.removeCard(deck, card)
+        Observable<List<MTGCard>> obs = interactor.removeCard(deck, card)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
@@ -102,13 +103,13 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void removeAllCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        Observable<ArrayList<MTGCard>> obs = interactor.removeAllCard(deck, card)
+        Observable<List<MTGCard>> obs = interactor.removeAllCard(deck, card)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         obs.subscribe(cardsObserver);
     }
 
-    Observer<ArrayList<Deck>> deckObserver = new Observer<ArrayList<Deck>>() {
+    Observer<List<Deck>> deckObserver = new Observer<List<Deck>>() {
         @Override
         public void onCompleted() {
 
@@ -120,14 +121,13 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
 
         @Override
-        public void onNext(ArrayList<Deck> decks) {
-
+        public void onNext(List<Deck> decks) {
             LOG.d();
             decksView.decksLoaded(decks);
         }
     };
 
-    Observer<ArrayList<MTGCard>> cardsObserver = new Observer<ArrayList<MTGCard>>() {
+    Observer<List<MTGCard>> cardsObserver = new Observer<List<MTGCard>>() {
         @Override
         public void onCompleted() {
 
@@ -139,7 +139,7 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
 
         @Override
-        public void onNext(ArrayList<MTGCard> cards) {
+        public void onNext(List<MTGCard> cards) {
             LOG.d();
             decksView.deckLoaded(cards);
         }

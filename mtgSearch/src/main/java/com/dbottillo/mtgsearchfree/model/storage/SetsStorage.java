@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SetsStorage {
 
@@ -18,7 +19,7 @@ public class SetsStorage {
     }
 
 
-    public ArrayList<MTGSet> load() {
+    public List<MTGSet> load() {
         LOG.d();
         return MTGDatabaseHelper.getInstance(context).getSets();
     }

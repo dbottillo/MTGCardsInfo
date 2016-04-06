@@ -21,6 +21,7 @@ import java.util.List;
 import rx.observers.TestSubscriber;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SmallTest
@@ -63,6 +64,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.getLuckyCards(2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(luckyCards));
+        verify(cardsStorage).getLuckyCards(2);
     }
 
     @Test
@@ -71,6 +73,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.getFavourites().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(favCards));
+        verify(cardsStorage).getFavourites();
     }
 
     @Test
@@ -82,6 +85,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.saveAsFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
+        verify(cardsStorage).saveAsFavourite(card);
     }
 
     @Test
@@ -93,6 +97,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.removeFromFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
+        verify(cardsStorage).removeFromFavourite(card);
     }
 
     @Test
@@ -101,6 +106,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.loadSet(set).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(setCards));
+        verify(cardsStorage).load(set);
     }
 
     @Test
@@ -111,6 +117,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.loadIdFav().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
+        verify(cardsStorage).loadIdFav();
     }
 
     @Test
@@ -119,6 +126,7 @@ public class CardsInteractorImplTest {
         cardsInteractor.loadDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        verify(cardsStorage).loadDeck(deck);
     }
 
     @Test
@@ -127,5 +135,6 @@ public class CardsInteractorImplTest {
         cardsInteractor.doSearch(searchParams).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(searchCards));
+        verify(cardsStorage).doSearch(searchParams);
     }
 }

@@ -28,6 +28,7 @@ import com.dbottillo.mtgsearchfree.view.PlayersView;
 import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.inject.Inject;
@@ -318,7 +319,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     }
 
     @Override
-    public void playersLoaded(ArrayList<Player> players) {
+    public void playersLoaded(List<Player> players) {
         LOG.d();
         progressBar.setVisibility(View.GONE);
         if (players.size() == 0) {
