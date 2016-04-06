@@ -1,10 +1,9 @@
-package com.dbottillo.mtgsearchfree.database;
+package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 
 import org.json.JSONException;
