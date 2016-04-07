@@ -83,7 +83,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
         setHasOptionsMenu(true);
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
     }
 

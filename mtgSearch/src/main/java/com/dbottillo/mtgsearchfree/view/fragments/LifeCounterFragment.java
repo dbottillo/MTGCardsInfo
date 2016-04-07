@@ -96,7 +96,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         setHasOptionsMenu(true);
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         playerPresenter.init(this);
 
         playerPresenter.loadPlayers();

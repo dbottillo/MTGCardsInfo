@@ -86,7 +86,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
         setActionBarTitle(getString(R.string.app_long_name));
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
         setsPresenter.init(this);
 

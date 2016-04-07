@@ -90,7 +90,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         initialBundle = bundle;
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         filterPresenter.init(this);
 
         if (bundle == null) {

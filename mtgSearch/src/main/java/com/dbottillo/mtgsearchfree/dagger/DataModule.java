@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -32,14 +34,14 @@ class DataModule {
 
     @Provides
     @Singleton
-    CardsStorage provideCardsStorage(Context context) {
-        return new CardsStorage(context);
+    CardsStorage provideCardsStorage(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper) {
+        return new CardsStorage(helper, cardsInfoDbHelper);
     }
 
     @Provides
     @Singleton
-    SetsStorage provideSetsStorage(Context context) {
-        return new SetsStorage(context);
+    SetsStorage provideSetsStorage(MTGDatabaseHelper helper) {
+        return new SetsStorage(helper);
     }
 
     @Provides

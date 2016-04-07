@@ -1,15 +1,11 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
+import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.robolectric.RobolectricTestRunner;
 
 import java.util.Arrays;
 
@@ -19,9 +15,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
-@RunWith(RobolectricTestRunner.class)
-public class CardFilterInteractorImplTest {
+public class CardFilterInteractorImplTest extends BaseTest{
 
     @Mock
     CardFilter cardFilter;

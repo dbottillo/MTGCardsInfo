@@ -16,7 +16,7 @@ import dagger.Component;
 
 @ActivityScope
 @Component(modules = {PresentersModule.class}, dependencies = {AppComponent.class})
-public interface DataComponent {
+public interface UiComponent {
     void inject(MainActivity activity);
 
     void inject(SearchActivity searchActivity);

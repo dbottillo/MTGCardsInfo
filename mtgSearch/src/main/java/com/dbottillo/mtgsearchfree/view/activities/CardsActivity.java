@@ -106,7 +106,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         setupView();
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
         filterPresenter.init(this);
 
