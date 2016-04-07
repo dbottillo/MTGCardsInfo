@@ -86,7 +86,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
         setupQuantitySpinner();
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDecks();
     }

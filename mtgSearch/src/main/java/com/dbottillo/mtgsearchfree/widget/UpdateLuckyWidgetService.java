@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UpdateLuckyWidgetService extends Service {
 
@@ -37,7 +38,7 @@ public class UpdateLuckyWidgetService extends Service {
         return null;
     }
 
-    public void onTaskFinished(ArrayList<MTGCard> objects) {
+    public void onTaskFinished(List<MTGCard> objects) {
         int index = 0;
 
         AppWidgetManager manager = AppWidgetManager.getInstance(getApplicationContext());
@@ -67,15 +68,15 @@ public class UpdateLuckyWidgetService extends Service {
     }
 
 
-    class LuckyAsyncTask extends AsyncTask<Integer, Void, ArrayList<MTGCard>> {
+    class LuckyAsyncTask extends AsyncTask<Integer, Void, List<MTGCard>> {
 
         @Override
-        protected ArrayList<MTGCard> doInBackground(Integer... params) {
+        protected List<MTGCard> doInBackground(Integer... params) {
             return mtgDatabaseHelper.getRandomCard(params[0]);
         }
 
         @Override
-        protected void onPostExecute(ArrayList<MTGCard> result) {
+        protected void onPostExecute(List<MTGCard> result) {
             onTaskFinished(result);
         }
     }

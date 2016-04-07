@@ -119,7 +119,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         decksPresenter.init(this);
     }
 

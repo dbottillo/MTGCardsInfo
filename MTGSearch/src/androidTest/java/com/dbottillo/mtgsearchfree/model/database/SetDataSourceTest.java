@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
@@ -51,7 +52,7 @@ public class SetDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_sets_can_be_retrieved_from_database() {
-        ArrayList<MTGSet> sets = mtgDatabaseHelper.getSets();
+        List<MTGSet> sets = mtgDatabaseHelper.getSets();
         assertNotNull(sets);
         assertThat(sets.size(), is(NUMBER_OF_SET)); // the one added from the previous test
     }
@@ -59,7 +60,7 @@ public class SetDataSourceTest extends BaseDatabaseTest {
     @Test
     public void test_all_set_are_loaded_correctly() throws JSONException {
         ArrayList<MTGSet> fromJson = FileHelper.readSetListJSON(context);
-        ArrayList<MTGSet> sets = mtgDatabaseHelper.getSets();
+        List<MTGSet> sets = mtgDatabaseHelper.getSets();
         assertNotNull(fromJson);
         assertTrue(fromJson.containsAll(sets));
     }

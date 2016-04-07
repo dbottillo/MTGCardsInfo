@@ -16,8 +16,8 @@ import com.crashlytics.android.Crashlytics;
 import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
-import com.dbottillo.mtgsearchfree.dagger.DaggerDataComponent;
-import com.dbottillo.mtgsearchfree.dagger.DataComponent;
+import com.dbottillo.mtgsearchfree.dagger.DaggerUiComponent;
+import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -33,12 +33,13 @@ import io.fabric.sdk.android.Fabric;
 public class MTGApp extends Application {
 
     public static AppComponent graph;
-    public static DataComponent dataGraph;
+    public static UiComponent uiGraph;
     public static ArrayList<MTGCard> cardsToDisplay = null;
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     public static String PREFS_NAME = "Filter";
     private RefWatcher refWatcher;
+    protected boolean isUnitTesting = false;
 
     @Override
     public void onCreate() {
@@ -51,19 +52,21 @@ public class MTGApp extends Application {
         graph = DaggerAppComponent.builder().androidModule(new AndroidModule(this)).build();
         graph.inject(this);
 
-        dataGraph = DaggerDataComponent.builder()
+        uiGraph = DaggerUiComponent.builder()
                 .appComponent(graph)
                 .presentersModule(new PresentersModule()).build();
 
-        TrackingManager.init(getApplicationContext());
-        Fabric.with(this, new Crashlytics());
-        Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
-        refWatcher = LeakCanary.install(this);
-        checkReleaseNote();
+        if (!isUnitTesting) {
+            TrackingManager.init(getApplicationContext());
+            Fabric.with(this, new Crashlytics());
+            Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
+            refWatcher = LeakCanary.install(this);
+            checkReleaseNote();
 
-        if (BuildConfig.DEBUG) {
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());
-            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build());
+            if (BuildConfig.DEBUG) {
+                StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());
+                StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build());
+            }
         }
     }
 

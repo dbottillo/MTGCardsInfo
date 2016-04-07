@@ -1,27 +1,24 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
-
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SetsStorage {
 
-    private Context context;
+    private MTGDatabaseHelper databaseHelper;
 
-    public SetsStorage(Context context) {
+    public SetsStorage(MTGDatabaseHelper databaseHelper) {
         LOG.d("created");
-        this.context = context;
+        this.databaseHelper = databaseHelper;
     }
 
 
     public List<MTGSet> load() {
         LOG.d();
-        return MTGDatabaseHelper.getInstance(context).getSets();
+        return databaseHelper.getSets();
     }
 
 }

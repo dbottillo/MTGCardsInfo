@@ -9,7 +9,8 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
 
 /**
  * Helper for access the card database, only on read mode
@@ -31,6 +32,7 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
 
     private static MTGDatabaseHelper instance;
 
+    @Deprecated
     public static synchronized MTGDatabaseHelper getInstance(Context context) {
         if (instance == null) {
             instance = new MTGDatabaseHelper(context);
@@ -38,22 +40,22 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
         return instance;
     }
 
-    public ArrayList<MTGSet> getSets() {
+    public List<MTGSet> getSets() {
         SQLiteDatabase db = getReadableDatabase();
         return SetDataSource.getSets(db);
     }
 
-    public ArrayList<MTGCard> getSet(MTGSet set) {
+    public List<MTGCard> getSet(MTGSet set) {
         SQLiteDatabase db = getReadableDatabase();
         return MTGCardDataSource.getSet(db, set);
     }
 
-    public ArrayList<MTGCard> searchCards(SearchParams searchParams) {
+    public List<MTGCard> searchCards(SearchParams searchParams) {
         SQLiteDatabase db = getReadableDatabase();
         return MTGCardDataSource.searchCards(db, searchParams);
     }
 
-    public ArrayList<MTGCard> getRandomCard(int number) {
+    public List<MTGCard> getRandomCard(int number) {
         SQLiteDatabase db = getReadableDatabase();
         return MTGCardDataSource.getRandomCard(db, number);
     }

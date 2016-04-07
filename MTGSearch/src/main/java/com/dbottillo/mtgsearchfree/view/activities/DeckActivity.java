@@ -108,7 +108,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         deckCardSectionAdapter = new DeckCardSectionAdapter(this, deckCardAdapter);
         cardList.setAdapter(deckCardSectionAdapter);
 
-        MTGApp.dataGraph.inject(this);
+        MTGApp.uiGraph.inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDeck(deck);
     }

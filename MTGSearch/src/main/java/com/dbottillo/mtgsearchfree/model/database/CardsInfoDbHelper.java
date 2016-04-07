@@ -6,7 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.VisibleForTesting;
 
+import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,13 +21,14 @@ import java.util.Set;
  * - favourites
  * - players (for life counter)
  */
-public final class CardsInfoDbHelper extends SQLiteOpenHelper {
+public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
     protected static final int DATABASE_VERSION = 6;
 
     private static CardsInfoDbHelper instance;
 
+    @Deprecated
     public static synchronized CardsInfoDbHelper getInstance(Context context) {
         if (instance == null) {
             instance = new CardsInfoDbHelper(context);
@@ -93,5 +99,21 @@ public final class CardsInfoDbHelper extends SQLiteOpenHelper {
         }
         dbCursor.close();
         return columns;
+    }
+
+    public void saveFavourite(MTGCard card) {
+        FavouritesDataSource.saveFavourites(getWritableDatabase(), card);
+    }
+
+    public ArrayList<MTGCard> loadFav(boolean full) {
+        return FavouritesDataSource.getCards(getReadableDatabase(), full);
+    }
+
+    public void removeFavourite(MTGCard card) {
+        FavouritesDataSource.removeFavourites(getWritableDatabase(), card);
+    }
+
+    public List<MTGCard> loadDeck(Deck deck) {
+        return DeckDataSource.getCards(getReadableDatabase(), deck);
     }
 }

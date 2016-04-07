@@ -1,15 +1,10 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
-
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
-import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
@@ -20,28 +15,29 @@ import java.util.List;
 
 public class CardsStorage {
 
-    private Context context;
+    private MTGDatabaseHelper mtgDatabaseHelper;
+    private CardsInfoDbHelper cardsInfoDbHelper;
 
-    public CardsStorage(Context context) {
+    public CardsStorage(MTGDatabaseHelper mtgDatabaseHelper, CardsInfoDbHelper cardsInfoDbHelper) {
         LOG.d("created");
-        this.context = context;
+        this.mtgDatabaseHelper = mtgDatabaseHelper;
+        this.cardsInfoDbHelper = cardsInfoDbHelper;
     }
 
     public List<MTGCard> load(MTGSet set) {
         LOG.d("loadSet " + set);
-        return MTGDatabaseHelper.getInstance(context).getSet(set);
+        return mtgDatabaseHelper.getSet(set);
     }
 
     public int[] saveAsFavourite(MTGCard card) {
         LOG.d("save as fav " + card);
-        FavouritesDataSource.saveFavourites(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), card);
+        cardsInfoDbHelper.saveFavourite(card);
         return loadIdFav();
     }
 
     public int[] loadIdFav() {
         LOG.d();
-        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
-        ArrayList<MTGCard> cards = FavouritesDataSource.getCards(helper.getReadableDatabase(), false);
+        ArrayList<MTGCard> cards = cardsInfoDbHelper.loadFav(false);
         int[] result = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             result[i] = cards.get(i).getMultiVerseId();
@@ -51,28 +47,28 @@ public class CardsStorage {
 
     public int[] removeFromFavourite(MTGCard card) {
         LOG.d("remove as fav " + card);
-        FavouritesDataSource.removeFavourites(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), card);
+        cardsInfoDbHelper.removeFavourite(card);
         return loadIdFav();
     }
 
     public List<MTGCard> getLuckyCards(int howMany) {
         LOG.d(howMany + " lucky cards requested");
-        return MTGDatabaseHelper.getInstance(context).getRandomCard(howMany);
+        return mtgDatabaseHelper.getRandomCard(howMany);
     }
 
     public List<MTGCard> getFavourites() {
         LOG.d();
-        return FavouritesDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), true);
+        return cardsInfoDbHelper.loadFav(true);
     }
 
     public List<MTGCard> loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
+        return cardsInfoDbHelper.loadDeck(deck);
     }
 
     public List<MTGCard> doSearch(SearchParams searchParams) {
         LOG.d("do search " + searchParams);
-        ArrayList<MTGCard> result = MTGCardDataSource.searchCards(MTGDatabaseHelper.getInstance(context).getReadableDatabase(), searchParams);
+        List<MTGCard> result = mtgDatabaseHelper.searchCards(searchParams);
 
         Collections.sort(result, new Comparator<Object>() {
             public int compare(Object o1, Object o2) {
