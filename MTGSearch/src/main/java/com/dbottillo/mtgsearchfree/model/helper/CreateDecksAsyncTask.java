@@ -40,7 +40,8 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
                 Random r = new Random();
                 int quantity = r.nextInt(4) + 1;
                 //LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
-                DeckDataSource.addCardToDeckWithoutCheck(db, deck, card, quantity, quantity == 1);
+                card.setSideboard(quantity == 1);
+                DeckDataSource.addCardToDeckWithoutCheck(db, deck, card, quantity);
             }
         }
 

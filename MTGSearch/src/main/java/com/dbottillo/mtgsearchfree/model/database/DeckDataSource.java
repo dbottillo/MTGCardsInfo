@@ -90,11 +90,11 @@ public final class DeckDataSource {
         return db.insert(TABLE, null, values);
     }
 
-    public static void addCardToDeck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
-        int sid = side ? 1 : 0;
+    public static void addCardToDeck(SQLiteDatabase db, long deckId, MTGCard card, int quantity) {
+        int sid = card.isSideboard() ? 1 : 0;
         int currentCard = 0;
         String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)";
-        LOG.query(query, deckId+"", card.getMultiVerseId()+"", sid+"");
+        LOG.query(query, deckId + "", card.getMultiVerseId() + "", sid + "");
         Cursor cardsCursor = db.rawQuery(query, new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
             cardsCursor.moveToFirst();
@@ -102,7 +102,7 @@ public final class DeckDataSource {
         }
         if (currentCard + quantity < 0) {
             cardsCursor.close();
-            removeCardFromDeck(db, deckId, card, side);
+            removeCardFromDeck(db, deckId, card);
             return;
         }
         if (currentCard > 0) {
@@ -114,12 +114,12 @@ public final class DeckDataSource {
             return;
         }
         cardsCursor.close();
-        addCardToDeckWithoutCheck(db, deckId, card, quantity, side);
+        addCardToDeckWithoutCheck(db, deckId, card, quantity);
     }
 
-    public static void addCardToDeckWithoutCheck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean side) {
+    public static void addCardToDeckWithoutCheck(SQLiteDatabase db, long deckId, MTGCard card, int quantity) {
         String query = "select * from MTGCard where multiVerseId=?";
-        LOG.query(query, card.getMultiVerseId()+"");
+        LOG.query(query, card.getMultiVerseId() + "");
         Cursor current = db.rawQuery(query, new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() > 0) {
             // card already added
@@ -143,7 +143,7 @@ public final class DeckDataSource {
         values.put(COLUMNSJOIN.CARD_ID.getName(), card.getMultiVerseId());
         values.put(COLUMNSJOIN.DECK_ID.getName(), deckId);
         values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
-        values.put(COLUMNSJOIN.SIDE.getName(), side ? 1 : 0);
+        values.put(COLUMNSJOIN.SIDE.getName(), card.isSideboard() ? 1 : 0);
         db.insert(TABLE_JOIN, null, values);
     }
 
@@ -196,7 +196,7 @@ public final class DeckDataSource {
     public static ArrayList<MTGCard> getCards(SQLiteDatabase db, long deckId) {
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)";
-        LOG.query(query, deckId+"");
+        LOG.query(query, deckId + "");
         Cursor cursor = db.rawQuery(query, new String[]{deckId + ""});
 
         cursor.moveToFirst();
@@ -213,8 +213,8 @@ public final class DeckDataSource {
         return cards;
     }
 
-    public static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card, boolean sideboard) {
-        int sid = sideboard ? 1 : 0;
+    public static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card) {
+        int sid = card.isSideboard() ? 1 : 0;
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
         String query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?";
         LOG.query(query, args);

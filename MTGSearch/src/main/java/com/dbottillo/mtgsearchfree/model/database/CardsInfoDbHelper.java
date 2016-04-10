@@ -8,8 +8,8 @@ import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.Player;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -105,7 +105,7 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         FavouritesDataSource.saveFavourites(getWritableDatabase(), card);
     }
 
-    public ArrayList<MTGCard> loadFav(boolean full) {
+    public List<MTGCard> loadFav(boolean full) {
         return FavouritesDataSource.getCards(getReadableDatabase(), full);
     }
 
@@ -115,5 +115,53 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public List<MTGCard> loadDeck(Deck deck) {
         return DeckDataSource.getCards(getReadableDatabase(), deck);
+    }
+
+    public List<MTGCard> loadDeck(long deckId) {
+        return DeckDataSource.getCards(getReadableDatabase(), deckId);
+    }
+
+    public List<Deck> getDecks() {
+        return DeckDataSource.getDecks(getReadableDatabase());
+    }
+
+    public long addDecK(String name) {
+        return DeckDataSource.addDeck(getWritableDatabase(), name);
+    }
+
+    public void deleteDeck(Deck deck) {
+        DeckDataSource.deleteDeck(getWritableDatabase(), deck);
+    }
+
+    public void editDeck(Deck deck, String name) {
+        DeckDataSource.renameDeck(getWritableDatabase(), deck.getId(), name);
+    }
+
+    public void addCard(Deck deck, MTGCard card, int quantity) {
+        DeckDataSource.addCardToDeck(getWritableDatabase(), deck.getId(), card, quantity);
+    }
+
+    public void addCard(long deckId, MTGCard card, int quantity) {
+        DeckDataSource.addCardToDeck(getWritableDatabase(), deckId, card, quantity);
+    }
+
+    public void removeAllCards(Deck deck, MTGCard card) {
+        DeckDataSource.removeCardFromDeck(getWritableDatabase(), deck.getId(), card);
+    }
+
+    public List<Player> loadPlayers() {
+        return PlayerDataSource.getPlayers(getReadableDatabase());
+    }
+
+    public void savePlayer(Player player) {
+        PlayerDataSource.savePlayer(getWritableDatabase(), player);
+    }
+
+    public void editPlayer(Player player) {
+        PlayerDataSource.savePlayer(getWritableDatabase(), player);
+    }
+
+    public void removePlayer(Player player) {
+        PlayerDataSource.removePlayer(getWritableDatabase(), player);
     }
 }

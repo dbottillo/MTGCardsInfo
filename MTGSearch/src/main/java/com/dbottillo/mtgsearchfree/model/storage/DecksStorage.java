@@ -1,74 +1,71 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
-
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
 
 public class DecksStorage {
 
-    private Context context;
+    private CardsInfoDbHelper helper;
 
-    public DecksStorage(Context context) {
+    public DecksStorage(CardsInfoDbHelper helper) {
         LOG.d("created");
-        this.context = context;
+        this.helper = helper;
     }
 
     public List<Deck> load() {
         LOG.d();
-        return DeckDataSource.getDecks(CardsInfoDbHelper.getInstance(context).getReadableDatabase());
+        return helper.getDecks();
     }
 
     public List<Deck> addDeck(String name) {
         LOG.d("add " + name);
-        DeckDataSource.addDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), name);
+        helper.addDecK(name);
         return load();
     }
 
     public List<Deck> deleteDeck(Deck deck) {
         LOG.d("delete " + deck);
-        DeckDataSource.deleteDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deck);
+        helper.deleteDeck(deck);
         return load();
     }
 
     public List<MTGCard> loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deck);
+        return helper.loadDeck(deck);
     }
 
     public List<MTGCard> editDeck(Deck deck, String name) {
         LOG.d("edit " + deck + " with " + name);
-        DeckDataSource.renameDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deck.getId(), name);
+        helper.editDeck(deck, name);
         return loadDeck(deck);
     }
 
     public List<MTGCard> addCard(Deck deck, MTGCard card, int quantity) {
         LOG.d("add " + quantity + " " + card + " to " + deck);
-        DeckDataSource.addCardToDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deck.getId(), card, quantity, card.isSideboard());
+        helper.addCard(deck, card, quantity);
         return loadDeck(deck);
     }
 
     public List<MTGCard> addCard(String name, MTGCard card, int quantity) {
         LOG.d("add " + quantity + " " + card + " with new deck name " + name);
-        long deckId = DeckDataSource.addDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), name);
-        DeckDataSource.addCardToDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deckId, card, quantity, card.isSideboard());
-        return DeckDataSource.getCards(CardsInfoDbHelper.getInstance(context).getReadableDatabase(), deckId);
+        long deckId = helper.addDecK(name);
+        helper.addCard(deckId, card, quantity);
+        return helper.loadDeck(deckId);
     }
 
     public List<MTGCard> removeCard(Deck deck, MTGCard card) {
         LOG.d("remove " + card + " from " + deck);
-        DeckDataSource.addCardToDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deck.getId(), card, -1, card.isSideboard());
+        helper.addCard(deck, card, -1);
         return loadDeck(deck);
     }
 
     public List<MTGCard> removeAllCard(Deck deck, MTGCard card) {
         LOG.d("remove all " + card + " from " + deck);
-        DeckDataSource.removeCardFromDeck(CardsInfoDbHelper.getInstance(context).getWritableDatabase(), deck.getId(), card, card.isSideboard());
+        helper.removeAllCards(deck, card);
         return loadDeck(deck);
     }
 }
