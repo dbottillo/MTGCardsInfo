@@ -11,46 +11,42 @@ import java.util.List;
 
 public class PlayersStorage {
 
-    private Context context;
+    private CardsInfoDbHelper helper;
 
-    public PlayersStorage(Context context) {
+    public PlayersStorage(CardsInfoDbHelper helper) {
 
         LOG.d("created");
-        this.context = context;
+        this.helper = helper;
     }
 
     public List<Player> load() {
         LOG.d();
-        return PlayerDataSource.getPlayers(CardsInfoDbHelper.getInstance(context).getReadableDatabase());
+        return helper.loadPlayers();
     }
 
     public List<Player> addPlayer(Player player) {
         LOG.d("add " + player);
-        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
-        PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
+        helper.savePlayer(player);
         return load();
     }
 
     public List<Player> editPlayer(Player player) {
         LOG.d("edit " + player);
-        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
-        PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
+        helper.editPlayer(player);
         return load();
     }
 
     public List<Player> editPlayers(List<Player> players) {
         LOG.d("update " + players);
-        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
         for (Player player : players) {
-            PlayerDataSource.savePlayer(helper.getWritableDatabase(), player);
+            helper.editPlayer(player);
         }
         return load();
     }
 
     public List<Player> removePlayer(Player player) {
         LOG.d("remove " + player);
-        CardsInfoDbHelper helper = CardsInfoDbHelper.getInstance(context);
-        PlayerDataSource.removePlayer(helper.getWritableDatabase(), player);
+        helper.removePlayer(player);
         return load();
     }
 }

@@ -37,7 +37,7 @@ public class CardsStorage {
 
     public int[] loadIdFav() {
         LOG.d();
-        ArrayList<MTGCard> cards = cardsInfoDbHelper.loadFav(false);
+        List<MTGCard> cards = cardsInfoDbHelper.loadFav(false);
         int[] result = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             result[i] = cards.get(i).getMultiVerseId();

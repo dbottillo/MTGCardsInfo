@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public final class FavouritesDataSource {
 
@@ -39,7 +40,7 @@ public final class FavouritesDataSource {
         return db.insertWithOnConflict(TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    public static ArrayList<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
+    public static List<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
         LOG.d("get cards, flag full: " + fullCard);
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)";
