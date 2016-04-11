@@ -133,13 +133,13 @@ public class MTGCardView extends RelativeLayout {
             rulings = "";
         }
         detailCard.setText(Html.fromHtml(getContext().getResources().getString(R.string.card_detail, card.getType(),
-                card.getPower(), card.getToughness(), manaCost, card.getText(), card.getSetName(), rulings)));
+                card.getPower(), card.getToughness(), manaCost, card.getText(), card.getSet().getName(), rulings)));
 
         Intent intent = new Intent(getContext(), NetworkIntentService.class);
         Bundle params = new Bundle();
         params.putString(NetworkIntentService.EXTRA_ID, card.getMultiVerseId() + "");
         params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.getName());
-        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSetName());
+        params.putString(NetworkIntentService.EXTRA_SET_NAME, card.getSet().getName());
         intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params);
         getContext().startService(intent);
 

@@ -31,9 +31,7 @@ public final class MTGCardDataSource {
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 MTGCard card = CardDataSource.fromCursor(cursor);
-                card.setSetCode(set.getCode());
-                card.setSetName(set.getName());
-                card.setIdSet(set.getId());
+                card.belongsTo(set);
                 cards.add(card);
                 cursor.moveToNext();
             }

@@ -7,6 +7,8 @@ import android.util.Log;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public final class LOG {
 
@@ -74,21 +76,6 @@ public final class LOG {
         d("");
     }
 
-    public static void dump(Object o) {
-        if (!BuildConfig.DEBUG) {
-            return;
-        }
-        try {
-            if (o == null) {
-                Log.v(TAG, enhanced("Object is null"));
-            } else {
-                Log.v(TAG, enhanced("" + o.toString()));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void e(String message) {
         if (BuildConfig.DEBUG) {
             Log.e(TAG, enhanced(message));
@@ -109,6 +96,21 @@ public final class LOG {
                 message += param + " ";
             }
             d(message);
+        }
+    }
+
+    public static void dump(Object o) {
+        if (BuildConfig.DEBUG) {
+            try {
+                if (o == null) {
+                    d("Object is null");
+                } else {
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    d("" + gson.toJson(o));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
