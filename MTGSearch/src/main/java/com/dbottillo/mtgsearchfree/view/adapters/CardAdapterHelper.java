@@ -8,8 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 
 public final class CardAdapterHelper {
 
@@ -48,7 +48,7 @@ public final class CardAdapterHelper {
 
         if (isASearch) {
             holder.setName.setVisibility(View.VISIBLE);
-            holder.setName.setText(card.getSetName());
+            holder.setName.setText(card.getSet().getName());
         } else {
             holder.setName.setVisibility(View.GONE);
         }

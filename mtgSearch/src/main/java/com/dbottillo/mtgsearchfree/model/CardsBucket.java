@@ -32,7 +32,7 @@ public class CardsBucket {
         return key.equals(otherKey);
     }
 
-    public void setCards(ArrayList<MTGCard> cards) {
+    public void setCards(List<MTGCard> cards) {
         this.cards = cards;
     }
 

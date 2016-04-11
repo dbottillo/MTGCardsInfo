@@ -47,10 +47,6 @@ public class Deck implements Parcelable {
         this.numberOfCards = numberOfCards;
     }
 
-    public void addNumberOfCards(int numberOfCards) {
-        this.numberOfCards += numberOfCards;
-    }
-
     public int getSizeOfSideboard() {
         return sizeOfSideboard;
     }
@@ -96,5 +92,15 @@ public class Deck implements Parcelable {
     @Override
     public String toString() {
         return "[" + id + "," + name + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Deck other = (Deck) o;
+        return id == other.id && name.equals(other.getName()) && archived == other.archived
+                && numberOfCards == other.numberOfCards && sizeOfSideboard == other.sizeOfSideboard;
     }
 }

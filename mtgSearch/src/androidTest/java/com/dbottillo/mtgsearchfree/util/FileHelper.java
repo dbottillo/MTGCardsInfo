@@ -100,9 +100,7 @@ public final class FileHelper {
             card.setCardName(names.toString());
         }
         card.setType(jsonObject.getString("type"));
-        card.setIdSet(set.getId());
-        card.setSetName(set.getName());
-        card.setSetCode(set.getCode());
+        card.belongsTo(set);
 
         int multicolor;
         int land;
@@ -112,7 +110,7 @@ public final class FileHelper {
             JSONArray colorsJ = jsonObject.getJSONArray("colors");
             for (int k = 0; k < colorsJ.length(); k++) {
                 String color = colorsJ.getString(k);
-                card.addColor(MTGCard.mapIntColor(color));
+                card.addColor(color);
             }
 
             if (colorsJ.length() > 1) {

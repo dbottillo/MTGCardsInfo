@@ -18,7 +18,7 @@ public class CardFilterStorage {
     public CardFilter load() {
         LOG.d();
         CardFilter res = new CardFilter();
-        res.white = preferences.getBoolean(CardProperties.COLOR_WHITE, true);
+        res.white = preferences.getBoolean(CardProperties.COLOR.WHITE.getColor(), true);
         res.blue = preferences.getBoolean(CardProperties.COLOR_BLUE, true);
         res.black = preferences.getBoolean(CardProperties.COLOR_BLACK, true);
         res.red = preferences.getBoolean(CardProperties.COLOR_RED, true);

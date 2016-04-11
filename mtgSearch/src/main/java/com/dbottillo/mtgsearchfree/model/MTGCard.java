@@ -13,37 +13,31 @@ import java.util.List;
 
 public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
-    int id;
-    String name;
-    String type;
-    ArrayList<String> types;
-    ArrayList<String> subTypes;
-    ArrayList<Integer> colors;
-    int cmc;
-    String rarity;
-    String power;
-    String toughness;
-    String manaCost;
-    String text;
-    boolean isAMultiColor;
-    boolean isALand;
-    boolean isAnArtifact;
-    int multiVerseId;
-    int idSet;
-    String setName;
-    String setCode;
-    int quantity = 1;
-    boolean sideboard = false;
-    String layout;
-    String number;
+    private int id;
+    private String name;
+    private String type;
+    private List<String> types;
+    private List<String> subTypes;
+    private List<Integer> colors;
+    private int cmc;
+    private String rarity;
+    private String power;
+    private String toughness;
+    private String manaCost;
+    private String text;
+    private boolean isAMultiColor;
+    private boolean isALand;
+    private boolean isAnArtifact;
+    private int multiVerseId;
+    private MTGSet set;
+
+
+    private int quantity = 1;
+    private boolean sideboard = false;
+    private String layout;
+    private String number;
 
     private List<String> rulings;
-
-    public static final int WHITE = 0;
-    public static final int BLUE = 1;
-    public static final int BLACK = 2;
-    public static final int RED = 3;
-    public static final int GREEN = 4;
 
     public MTGCard() {
         this.colors = new ArrayList<>();
@@ -64,42 +58,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         readFromParcel(in);
     }
 
-    public static int mapIntColor(String color) {
-        if (color.equalsIgnoreCase("Black")) {
-            return BLACK;
-        }
-        if (color.equalsIgnoreCase("Blue")) {
-            return BLUE;
-        }
-        if (color.equalsIgnoreCase("White")) {
-            return WHITE;
-        }
-        if (color.equalsIgnoreCase("Red")) {
-            return RED;
-        }
-        if (color.equalsIgnoreCase("Green")) {
-            return GREEN;
-        }
-        return -1;
-    }
-
-    public static String mapStringColor(int color) {
-        if (color == BLACK) {
-            return "Black";
-        }
-        if (color == BLUE) {
-            return "Blue";
-        }
-        if (color == WHITE) {
-            return "White";
-        }
-        if (color == RED) {
-            return "Red";
-        }
-        if (color == GREEN) {
-            return "Green";
-        }
-        return "";
+    public void addColor(String color) {
+        addColor(CardProperties.COLOR.getNumberFromString(color));
     }
 
     @Override
@@ -125,9 +85,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeInt(isALand ? 1 : 0);
         dest.writeInt(isAnArtifact ? 1 : 0);
         dest.writeInt(multiVerseId);
-        dest.writeInt(idSet);
-        dest.writeString(setName);
-        dest.writeString(setCode);
+        dest.writeParcelable(set, flags);
         dest.writeInt(quantity);
         dest.writeInt(sideboard ? 1 : 0);
         dest.writeStringList(rulings);
@@ -152,9 +110,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         isALand = in.readInt() == 1;
         isAnArtifact = in.readInt() == 1;
         multiVerseId = in.readInt();
-        idSet = in.readInt();
-        setName = in.readString();
-        setCode = in.readString();
+        set = in.readParcelable(MTGSet.class.getClassLoader());
         quantity = in.readInt();
         sideboard = in.readInt() == 1;
         in.readStringList(rulings);
@@ -200,7 +156,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.type = type;
     }
 
-    public ArrayList<String> getTypes() {
+    public List<String> getTypes() {
         return types;
     }
 
@@ -208,7 +164,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.types.add(type);
     }
 
-    public ArrayList<String> getSubTypes() {
+    public List<String> getSubTypes() {
         return subTypes;
     }
 
@@ -216,7 +172,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.subTypes.add(subType);
     }
 
-    public ArrayList<Integer> getColors() {
+    public List<Integer> getColors() {
         return colors;
     }
 
@@ -308,28 +264,12 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.multiVerseId = multiVerseId;
     }
 
-    public String getSetName() {
-        return setName;
+    public void belongsTo(MTGSet set) {
+        this.set = set;
     }
 
-    public void setSetName(String setName) {
-        this.setName = setName;
-    }
-
-    public int getIdSet() {
-        return idSet;
-    }
-
-    public void setIdSet(int idSet) {
-        this.idSet = idSet;
-    }
-
-    public String getSetCode() {
-        return setCode;
-    }
-
-    public void setSetCode(String setCode) {
-        this.setCode = setCode;
+    public MTGSet getSet() {
+        return set;
     }
 
     public int getQuantity() {
@@ -372,13 +312,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.rulings.add(rule);
     }
 
-    public void setColors(ArrayList<Integer> colors) {
+    public void setColors(List<Integer> colors) {
         this.colors = colors;
     }
 
     public String getImage() {
         if (number != null && number.length() > 0) {
-            return "http://magiccards.info/scans/en/" + setCode.toLowerCase() + "/" + number + ".jpg";
+            return "http://magiccards.info/scans/en/" + set.getCode().toLowerCase() + "/" + number + ".jpg";
         }
         return getImageFromGatherer();
     }
@@ -444,23 +384,23 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         int mtgColor = context.getResources().getColor(R.color.mtg_other);
         if (isMultiColor()) {
             mtgColor = context.getResources().getColor(R.color.mtg_multi);
-        } else if (getColors().contains(MTGCard.WHITE)) {
+        } else if (getColors().contains(CardProperties.COLOR.WHITE.getNumber())) {
             mtgColor = context.getResources().getColor(R.color.mtg_white);
-        } else if (getColors().contains(MTGCard.BLUE)) {
+        } else if (getColors().contains(CardProperties.COLOR.BLUE.getNumber())) {
             mtgColor = context.getResources().getColor(R.color.mtg_blue);
-        } else if (getColors().contains(MTGCard.BLACK)) {
+        } else if (getColors().contains(CardProperties.COLOR.BLACK.getNumber())) {
             mtgColor = context.getResources().getColor(R.color.mtg_black);
-        } else if (getColors().contains(MTGCard.RED)) {
+        } else if (getColors().contains(CardProperties.COLOR.RED.getNumber())) {
             mtgColor = context.getResources().getColor(R.color.mtg_red);
-        } else if (getColors().contains(MTGCard.GREEN)) {
+        } else if (getColors().contains(CardProperties.COLOR.GREEN.getNumber())) {
             mtgColor = context.getResources().getColor(R.color.mtg_green);
         }
         return mtgColor;
     }
 
+    @SuppressWarnings({"SimplifiableIfStatement", "RedundantIfStatement"})
     @Override
     public boolean equals(Object o) {
-        //return o != null && getClass() == o.getClass() && multiVerseId == ((MTGCard) o).multiVerseId;
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
@@ -477,29 +417,66 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 }
             }
         }*/
-        return equalOrNull(name, other.name)
-                && multiVerseId == other.multiVerseId
-                && equalOrNull(type, other.type)
-                && types.equals(other.types)
-                && (subTypes == null && other.subTypes == null || (subTypes != null && other.subTypes != null && subTypes.equals(other.subTypes)))
-                && (colors == null && other.colors == null || (colors != null && other.colors != null && colors.equals(other.colors)))
-                && cmc == other.cmc
-                && equalOrNull(rarity, other.rarity)
-                && equalOrNull(power, other.power)
-                && equalOrNull(toughness, other.toughness)
-                && equalOrNull(manaCost, other.manaCost)
-                && equalOrNull(text, other.text)
-                && isAMultiColor == other.isAMultiColor
-                && isALand == other.isALand
-                && idSet == other.idSet
-                && equalOrNull(setName, other.setName)
-                && equalOrNull(layout, other.layout)
-                && equalOrNull(number, other.number)
-                && (rulings == null && other.rulings == null || (rulings != null && other.rulings != null && rulings.equals(other.rulings)));
+        if (!equalOrNull(name, other.name)) {
+            return false;
+        }
+        if (!(multiVerseId == other.multiVerseId)) {
+            return false;
+        }
+        if (!equalOrNull(type, other.type)) {
+            return false;
+        }
+        if (!types.equals(other.types)) {
+            return false;
+        }
+        if (!(subTypes == null && other.subTypes == null || (subTypes != null && other.subTypes != null && subTypes.equals(other.subTypes)))) {
+            return false;
+        }
+        if (!(colors == null && other.colors == null || (colors != null && other.colors != null && colors.equals(other.colors)))) {
+            return false;
+        }
+        if (!(cmc == other.cmc)) {
+            return false;
+        }
+        if (!equalOrNull(rarity, other.rarity)) {
+            return false;
+        }
+        if (!equalOrNull(power, other.power)) {
+            return false;
+        }
+        if (!equalOrNull(toughness, other.toughness)) {
+            return false;
+        }
+        if (!equalOrNull(manaCost, other.manaCost)) {
+            return false;
+        }
+        if (!equalOrNull(text, other.text)) {
+            return false;
+        }
+        if (!(isAMultiColor == other.isAMultiColor)) {
+            return false;
+        }
+        if (!(isALand == other.isALand)) {
+            return false;
+        }
+        if (!(set.equals(other.set))) {
+            return false;
+        }
+        if (!equalOrNull(layout, other.layout)) {
+            return false;
+        }
+        if (!equalOrNull(number, other.number)) {
+            return false;
+        }
+        if (!(rulings == null && other.rulings == null || (rulings != null && other.rulings != null && rulings.equals(other.rulings)))) {
+            return false;
+        }
+        return true;
     }
 
     private boolean equalOrNull(String first, String second) {
-        return (first == null && second == null || (first != null && second != null && first.equals(second)));
+        return (first == null && second == null || (first != null && second != null
+                && first.equals(second)));
     }
 
     @Override

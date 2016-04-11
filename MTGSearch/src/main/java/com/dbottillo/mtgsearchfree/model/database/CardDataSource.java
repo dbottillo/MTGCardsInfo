@@ -5,7 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
+import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.json.JSONArray;
@@ -141,14 +143,14 @@ public final class CardDataSource {
         ContentValues values = new ContentValues();
         values.put(COLUMNS.NAME.getName(), card.getName());
         values.put(COLUMNS.TYPE.getName(), card.getType());
-        values.put(COLUMNS.SET_ID.getName(), card.getIdSet());
-        values.put(COLUMNS.SET_NAME.getName(), card.getSetName());
-        values.put(COLUMNS.SET_CODE.getName(), card.getSetCode());
+        values.put(COLUMNS.SET_ID.getName(), card.getSet().getId());
+        values.put(COLUMNS.SET_NAME.getName(), card.getSet().getName());
+        values.put(COLUMNS.SET_CODE.getName(), card.getSet().getCode());
         List<Integer> colors = card.getColors();
         if (colors.size() > 0) {
             StringBuilder col = new StringBuilder();
             for (int k = 0; k < colors.size(); k++) {
-                String color = MTGCard.mapStringColor(colors.get(k));
+                String color = CardProperties.COLOR.getStringFromNumber(colors.get(k));
                 col.append(color);
                 if (k < colors.size() - 1) {
                     col.append(',');
@@ -225,20 +227,22 @@ public final class CardDataSource {
         card.setType(cursor.getString(cursor.getColumnIndex(COLUMNS.TYPE.getName())));
         card.setCardName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
 
-        card.setIdSet(cursor.getInt(cursor.getColumnIndex(COLUMNS.SET_ID.getName())));
-        card.setSetName(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.getName())));
+        int setId = cursor.getInt(cursor.getColumnIndex(COLUMNS.SET_ID.getName()));
+        MTGSet set = new MTGSet(setId);
+        set.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.getName())));
         if (cursor.getColumnIndex(COLUMNS.SET_CODE.getName()) > -1) {
-            card.setSetCode(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_CODE.getName())));
+            set.setCode(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_CODE.getName())));
         } else {
-            card.setSetCode(null);
+            set.setCode(null);
         }
+        card.belongsTo(set);
 
         if (cursor.getColumnIndex(COLUMNS.COLORS.getName()) != -1) {
             String colors = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS.getName()));
             if (colors != null) {
                 String[] splitted = colors.split(",");
                 for (String aSplitted : splitted) {
-                    card.addColor(MTGCard.mapIntColor(aSplitted));
+                    card.addColor(aSplitted);
                 }
             }
         }
