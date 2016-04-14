@@ -50,20 +50,20 @@ public class CardFilterStorageTest {
         editor = mock(SharedPreferences.Editor.class);
         when(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor);
         when(sharedPreferences.edit()).thenReturn(editor);
-        when(sharedPreferences.getBoolean(CardProperties.COLOR_WHITE, true)).thenReturn(w);
-        when(sharedPreferences.getBoolean(CardProperties.COLOR_BLUE, true)).thenReturn(u);
-        when(sharedPreferences.getBoolean(CardProperties.COLOR_BLACK, true)).thenReturn(b);
-        when(sharedPreferences.getBoolean(CardProperties.COLOR_RED, true)).thenReturn(r);
-        when(sharedPreferences.getBoolean(CardProperties.COLOR_GREEN, true)).thenReturn(g);
+        when(sharedPreferences.getBoolean(CardProperties.COLOR.WHITE.key, true)).thenReturn(w);
+        when(sharedPreferences.getBoolean(CardProperties.COLOR.BLUE.key, true)).thenReturn(u);
+        when(sharedPreferences.getBoolean(CardProperties.COLOR.BLACK.key, true)).thenReturn(b);
+        when(sharedPreferences.getBoolean(CardProperties.COLOR.RED.key, true)).thenReturn(r);
+        when(sharedPreferences.getBoolean(CardProperties.COLOR.GREEN.key, true)).thenReturn(g);
 
-        when(sharedPreferences.getBoolean(CardProperties.TYPE_LAND, true)).thenReturn(l);
-        when(sharedPreferences.getBoolean(CardProperties.TYPE_ARTIFACT, true)).thenReturn(a);
-        when(sharedPreferences.getBoolean(CardProperties.TYPE_ELDRAZI, true)).thenReturn(e);
+        when(sharedPreferences.getBoolean(CardProperties.TYPE.LAND.key, true)).thenReturn(l);
+        when(sharedPreferences.getBoolean(CardProperties.TYPE.ARTIFACT.key, true)).thenReturn(a);
+        when(sharedPreferences.getBoolean(CardProperties.TYPE.ELDRAZI.key, true)).thenReturn(e);
 
-        when(sharedPreferences.getBoolean(CardProperties.RARITY_COMMON, true)).thenReturn(c);
-        when(sharedPreferences.getBoolean(CardProperties.RARITY_UNCOMMON, true)).thenReturn(uc);
-        when(sharedPreferences.getBoolean(CardProperties.RARITY_RARE, true)).thenReturn(ra);
-        when(sharedPreferences.getBoolean(CardProperties.RARITY_MYHTIC, true)).thenReturn(my);
+        when(sharedPreferences.getBoolean(CardProperties.RARITY.COMMON.key, true)).thenReturn(c);
+        when(sharedPreferences.getBoolean(CardProperties.RARITY.UNCOMMON.key, true)).thenReturn(uc);
+        when(sharedPreferences.getBoolean(CardProperties.RARITY.RARE.key, true)).thenReturn(ra);
+        when(sharedPreferences.getBoolean(CardProperties.RARITY.MYTHIC.key, true)).thenReturn(my);
     }
 
     @Test
@@ -104,18 +104,18 @@ public class CardFilterStorageTest {
         cardFilter.mythic = my;
         cardFilterStorage.sync(cardFilter);
         verify(sharedPreferences).edit();
-        verify(editor).putBoolean(CardProperties.COLOR_WHITE, w);
-        verify(editor).putBoolean(CardProperties.COLOR_BLUE, u);
-        verify(editor).putBoolean(CardProperties.COLOR_BLACK, b);
-        verify(editor).putBoolean(CardProperties.COLOR_RED, r);
-        verify(editor).putBoolean(CardProperties.COLOR_GREEN, g);
-        verify(editor).putBoolean(CardProperties.TYPE_ELDRAZI, e);
-        verify(editor).putBoolean(CardProperties.TYPE_ARTIFACT, a);
-        verify(editor).putBoolean(CardProperties.TYPE_LAND, l);
-        verify(editor).putBoolean(CardProperties.RARITY_COMMON, c);
-        verify(editor).putBoolean(CardProperties.RARITY_UNCOMMON, uc);
-        verify(editor).putBoolean(CardProperties.RARITY_RARE, ra);
-        verify(editor).putBoolean(CardProperties.RARITY_MYHTIC, my);
+        verify(editor).putBoolean(CardProperties.COLOR.WHITE.key, w);
+        verify(editor).putBoolean(CardProperties.COLOR.BLUE.key, u);
+        verify(editor).putBoolean(CardProperties.COLOR.BLACK.key, b);
+        verify(editor).putBoolean(CardProperties.COLOR.RED.key, r);
+        verify(editor).putBoolean(CardProperties.COLOR.GREEN.key, g);
+        verify(editor).putBoolean(CardProperties.TYPE.ELDRAZI.key, e);
+        verify(editor).putBoolean(CardProperties.TYPE.ARTIFACT.key, a);
+        verify(editor).putBoolean(CardProperties.TYPE.LAND.key, l);
+        verify(editor).putBoolean(CardProperties.RARITY.COMMON.key, c);
+        verify(editor).putBoolean(CardProperties.RARITY.UNCOMMON.key, uc);
+        verify(editor).putBoolean(CardProperties.RARITY.RARE.key, ra);
+        verify(editor).putBoolean(CardProperties.RARITY.MYTHIC.key, my);
         verify(editor).apply();
     }
 }

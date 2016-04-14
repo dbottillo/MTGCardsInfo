@@ -296,7 +296,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.layout = layout;
     }
 
-    public String getNumber() {
+    public String getNumber(){
         return number;
     }
 
@@ -373,7 +373,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return 1;
     }
 
-    private int getSingleColor() {
+    @VisibleForTesting
+    public int getSingleColor() {
         if (isAMultiColor || getColors().size() == 0) {
             return -1;
         }
@@ -384,15 +385,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         int mtgColor = context.getResources().getColor(R.color.mtg_other);
         if (isMultiColor()) {
             mtgColor = context.getResources().getColor(R.color.mtg_multi);
-        } else if (getColors().contains(CardProperties.COLOR.WHITE.getNumber())) {
+        } else if (getColors().contains(CardProperties.COLOR.WHITE.value)) {
             mtgColor = context.getResources().getColor(R.color.mtg_white);
-        } else if (getColors().contains(CardProperties.COLOR.BLUE.getNumber())) {
+        } else if (getColors().contains(CardProperties.COLOR.BLUE.value)) {
             mtgColor = context.getResources().getColor(R.color.mtg_blue);
-        } else if (getColors().contains(CardProperties.COLOR.BLACK.getNumber())) {
+        } else if (getColors().contains(CardProperties.COLOR.BLACK.value)) {
             mtgColor = context.getResources().getColor(R.color.mtg_black);
-        } else if (getColors().contains(CardProperties.COLOR.RED.getNumber())) {
+        } else if (getColors().contains(CardProperties.COLOR.RED.value)) {
             mtgColor = context.getResources().getColor(R.color.mtg_red);
-        } else if (getColors().contains(CardProperties.COLOR.GREEN.getNumber())) {
+        } else if (getColors().contains(CardProperties.COLOR.GREEN.value)) {
             mtgColor = context.getResources().getColor(R.color.mtg_green);
         }
         return mtgColor;
@@ -507,6 +508,5 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public boolean hasNoColor() {
         return manaCost == null || !manaCost.matches(".*[WUBRG].*");
     }
-
 
 }

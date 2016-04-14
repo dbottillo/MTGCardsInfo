@@ -11,7 +11,7 @@ public class SearchParams implements Parcelable {
     private IntParam cmc;
     private IntParam power;
     private IntParam tough;
-    private boolean white, blue, black, red, green, multi, nomulti;
+    private boolean white, blue, black, red, green, onlyMulti, noMulti;
     private boolean common, uncommon, rare, mythic;
     private int setId;
 
@@ -23,13 +23,16 @@ public class SearchParams implements Parcelable {
         this.name = "";
         this.types = "";
         this.text = "";
+        this.cmc = new IntParam("",-1);
+        this.power = new IntParam("",-1);
+        this.tough = new IntParam("",-1);
         white = false;
         blue = false;
         black = false;
         red = false;
         green = false;
-        multi = false;
-        nomulti = false;
+        onlyMulti = false;
+        noMulti = false;
         common = false;
         uncommon = false;
         rare = false;
@@ -131,24 +134,24 @@ public class SearchParams implements Parcelable {
     }
 
     public boolean onlyMulti() {
-        return multi;
+        return onlyMulti;
     }
 
-    public void setMulti(boolean multi) {
-        this.multi = multi;
-        if (multi) {
-            this.nomulti = false;
+    public void setOnlyMulti(boolean onlyMulti) {
+        this.onlyMulti = onlyMulti;
+        if (onlyMulti) {
+            this.noMulti = false;
         }
     }
 
-    public boolean isNomulti() {
-        return nomulti;
+    public boolean isNoMulti() {
+        return noMulti;
     }
 
-    public void setNomulti(boolean nomulti) {
-        this.nomulti = nomulti;
-        if (nomulti) {
-            this.multi = false;
+    public void setNoMulti(boolean noMulti) {
+        this.noMulti = noMulti;
+        if (noMulti) {
+            this.onlyMulti = false;
         }
     }
 
@@ -210,8 +213,8 @@ public class SearchParams implements Parcelable {
         dest.writeInt(black ? 1 : 0);
         dest.writeInt(red ? 1 : 0);
         dest.writeInt(green ? 1 : 0);
-        dest.writeInt(multi ? 1 : 0);
-        dest.writeInt(nomulti ? 1 : 0);
+        dest.writeInt(onlyMulti ? 1 : 0);
+        dest.writeInt(noMulti ? 1 : 0);
         dest.writeInt(common ? 1 : 0);
         dest.writeInt(uncommon ? 1 : 0);
         dest.writeInt(rare ? 1 : 0);
@@ -231,8 +234,8 @@ public class SearchParams implements Parcelable {
         black = in.readInt() == 1;
         red = in.readInt() == 1;
         green = in.readInt() == 1;
-        multi = in.readInt() == 1;
-        nomulti = in.readInt() == 1;
+        onlyMulti = in.readInt() == 1;
+        noMulti = in.readInt() == 1;
         common = in.readInt() == 1;
         uncommon = in.readInt() == 1;
         rare = in.readInt() == 1;
@@ -255,6 +258,19 @@ public class SearchParams implements Parcelable {
     @Override
     public String toString() {
         return "[SearchParams] name: " + name + " - types:" + types + " - text:+ " + text + " - cmc:" + cmc + " - p/t:" + power + "/" + tough;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SearchParams other = (SearchParams) o;
+        return name.equalsIgnoreCase(other.name) && types.equalsIgnoreCase(other.types) && text.equalsIgnoreCase(other.text)
+                && cmc.equals(other.cmc) && power.equals(other.power) && tough.equals(other.tough) && white == other.white &&
+                blue == other.blue && black == other.black && red == other.red && green == other.green && onlyMulti == other.onlyMulti
+                && noMulti == other.noMulti && common == other.common && other.uncommon == uncommon && rare == other.rare &&
+                mythic == other.mythic && setId == other.setId;
     }
 
     public boolean atLeastOneColor() {

@@ -143,8 +143,8 @@ public class MTGSearchView extends RelativeLayout {
         searchParams.setBlack(black.isChecked());
         searchParams.setRed(red.isChecked());
         searchParams.setGreen(green.isChecked());
-        searchParams.setMulti(multi.isChecked());
-        searchParams.setNomulti(noMulti.isChecked());
+        searchParams.setOnlyMulti(multi.isChecked());
+        searchParams.setNoMulti(noMulti.isChecked());
         searchParams.setCommon(common.isChecked());
         searchParams.setUncommon(uncommon.isChecked());
         searchParams.setRare(rare.isChecked());
