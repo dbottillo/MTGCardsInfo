@@ -92,7 +92,7 @@ public final class MTGCardDataSource {
             first = false;
             selection.add("" + searchParams.getTough().getValue());
         }
-        if (searchParams.isNomulti()) {
+        if (searchParams.isNoMulti()) {
             if (!first) {
                 query += "AND ";
             }

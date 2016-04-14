@@ -120,4 +120,14 @@ public class TCGPrice implements Parcelable {
     public boolean isNotFound() {
         return mNotFound;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TCGPrice other = (TCGPrice) o;
+        return hiPrice.equals(other.hiPrice) && avgPrice.equals(other.avgPrice) && lowprice.equals(other.lowprice)
+                && link.equals(other.link) && errorPrice.equalsIgnoreCase(other.errorPrice) && error == other.error;
+    }
 }

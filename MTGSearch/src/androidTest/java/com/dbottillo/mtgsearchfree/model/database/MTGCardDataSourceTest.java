@@ -174,13 +174,13 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         for (MTGCard card : cards) {
             assertTrue(card.getManaCost().contains("W") || card.getManaCost().contains("U"));
         }
-        searchParams.setMulti(true);
+        searchParams.setOnlyMulti(true);
         cards = MTGCardDataSource.searchCards(mtgDatabaseHelper.getReadableDatabase(), searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getManaCost().contains("W") && card.getManaCost().contains("U"));
         }
-        searchParams.setNomulti(true);
+        searchParams.setNoMulti(true);
         cards = MTGCardDataSource.searchCards(mtgDatabaseHelper.getReadableDatabase(), searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
@@ -298,7 +298,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         searchParams.setName("angel");
         searchParams.setTypes("creature");
         searchParams.setWhite(true);
-        searchParams.setNomulti(true);
+        searchParams.setNoMulti(true);
         searchParams.setRare(true);
         searchParams.setPower(new IntParam("=", 4));
         searchParams.setTough(new IntParam("=", 4));

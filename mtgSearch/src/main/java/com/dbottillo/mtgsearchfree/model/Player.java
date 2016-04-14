@@ -43,6 +43,10 @@ public class Player implements Parcelable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void changeLife(int value) {
         this.life += value;
     }
@@ -105,11 +109,18 @@ public class Player implements Parcelable {
         }
     };
 
+    @Override
     public String toString() {
-        return name;
+        return "[" + id + "," + name + "]";
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Player other = (Player) o;
+        return id == other.id && name.equals(other.getName());
     }
+
 }
