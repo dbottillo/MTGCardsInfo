@@ -26,7 +26,7 @@ public class PlayersStorageTest extends BaseTest {
     PlayersStorage storage;
 
     @BeforeClass
-    public static void setup() {
+    public static void staticSetup() {
         player = mock(Player.class);
     }
 
