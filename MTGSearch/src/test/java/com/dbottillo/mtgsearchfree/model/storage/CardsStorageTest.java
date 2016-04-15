@@ -39,7 +39,7 @@ public class CardsStorageTest extends BaseTest {
     CardsStorage cardsStorage;
 
     @BeforeClass
-    public static void setup() {
+    public static void staticSetup() {
         set = mock(MTGSet.class);
         deck = mock(Deck.class);
         MTGCard fav1 = new MTGCard(7);
