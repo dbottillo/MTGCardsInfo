@@ -4,6 +4,7 @@ import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface PlayerPresenter extends BasicPresenter {
 
@@ -15,7 +16,7 @@ public interface PlayerPresenter extends BasicPresenter {
 
     void editPlayer(Player player);
 
-    void editPlayer(ArrayList<Player> players);
+    void editPlayers(List<Player> players);
 
     void removePlayer(Player player);
 

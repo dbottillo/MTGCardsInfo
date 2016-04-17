@@ -1,10 +1,8 @@
 package com.dbottillo.mtgsearchfree;
 
 import android.content.Context;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.robolectric.RuntimeEnvironment;
@@ -38,5 +36,13 @@ public class BaseTest {
     @After
     public void tearDown() {
         RxAndroidPlugins.getInstance().reset();
+    }
+
+    protected void sync() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

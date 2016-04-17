@@ -121,7 +121,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             player.setLife(twoHGEnabled ? 30 : 20);
             player.setPoisonCount(twoHGEnabled ? 15 : 10);
         }
-        playerPresenter.editPlayer(players);
+        playerPresenter.editPlayers(players);
     }
 
 
