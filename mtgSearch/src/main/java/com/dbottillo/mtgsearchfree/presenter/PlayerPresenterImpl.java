@@ -29,7 +29,6 @@ public class PlayerPresenterImpl implements PlayerPresenter {
             "Chandra", "Venser", "Doran", "Sorin"};
 
     public PlayerPresenterImpl(PlayerInteractor interactor) {
-
         LOG.d("created");
         this.interactor = interactor;
     }
@@ -77,7 +76,7 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     }
 
     @Override
-    public void editPlayer(ArrayList<Player> players) {
+    public void editPlayers(List<Player> players) {
         LOG.d();
         playerView.showLoading();
         Observable<List<Player>> obs = interactor.editPlayers(players)
@@ -99,12 +98,12 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     private Subscriber<List<Player>> playersSubscription = new Subscriber<List<Player>>() {
         @Override
         public void onCompleted() {
-
+            LOG.d();
         }
 
         @Override
         public void onError(Throwable e) {
-
+            LOG.e(e.getLocalizedMessage());
         }
 
         @Override
