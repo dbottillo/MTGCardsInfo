@@ -23,7 +23,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
     List<Player> players;
 
     @Inject
-    RxWrapper rxWrapper;
+    RxWrapper<List<Player>> rxWrapper;
 
     String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",

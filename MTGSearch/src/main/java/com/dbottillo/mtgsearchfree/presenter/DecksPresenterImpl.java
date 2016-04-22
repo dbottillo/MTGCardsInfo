@@ -17,7 +17,10 @@ public class DecksPresenterImpl implements DecksPresenter {
     DecksView decksView;
 
     @Inject
-    RxWrapper wrapper;
+    RxWrapper<List<Deck>> deckWrapper;
+
+    @Inject
+    RxWrapper<List<MTGCard>> cardWrapper;
 
     public DecksPresenterImpl(DecksInteractor interactor) {
         LOG.d("created");
@@ -32,56 +35,56 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     public void loadDecks() {
         LOG.d();
-        wrapper.run(interactor.load(), deckObserver);
+        deckWrapper.run(interactor.load(), deckObserver);
     }
 
     @Override
     public void loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        wrapper.run(interactor.loadDeck(deck), cardsObserver);
+        cardWrapper.run(interactor.loadDeck(deck), cardsObserver);
     }
 
     @Override
     public void addDeck(String name) {
         LOG.d("add " + name);
-        wrapper.run(interactor.addDeck(name), deckObserver);
+        deckWrapper.run(interactor.addDeck(name), deckObserver);
     }
 
     @Override
     public void deleteDeck(Deck deck) {
         LOG.d("delete " + deck);
-        wrapper.run(interactor.deleteDeck(deck), deckObserver);
+        deckWrapper.run(interactor.deleteDeck(deck), deckObserver);
     }
 
     @Override
     public void editDeck(Deck deck, String name) {
         LOG.d("edit " + deck + " with " + name);
-        wrapper.run(interactor.editDeck(deck, name), cardsObserver);
+        cardWrapper.run(interactor.editDeck(deck, name), cardsObserver);
 
     }
 
     @Override
     public void addCardToDeck(String name, MTGCard card, int quantity) {
         LOG.d();
-        wrapper.run(interactor.addCard(name, card, quantity), cardsObserver);
+        cardWrapper.run(interactor.addCard(name, card, quantity), cardsObserver);
     }
 
     @Override
     public void addCardToDeck(Deck deck, MTGCard card, int quantity) {
         LOG.d();
-        wrapper.run(interactor.addCard(deck, card, quantity), cardsObserver);
+        cardWrapper.run(interactor.addCard(deck, card, quantity), cardsObserver);
     }
 
     @Override
     public void removeCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        wrapper.run(interactor.removeCard(deck, card), cardsObserver);
+        cardWrapper.run(interactor.removeCard(deck, card), cardsObserver);
     }
 
     @Override
     public void removeAllCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        wrapper.run(interactor.removeAllCard(deck, card), cardsObserver);
+        cardWrapper.run(interactor.removeAllCard(deck, card), cardsObserver);
     }
 
 

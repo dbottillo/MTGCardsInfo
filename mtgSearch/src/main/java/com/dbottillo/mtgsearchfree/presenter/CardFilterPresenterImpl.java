@@ -21,7 +21,7 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
     CardFilterView filterView;
 
     @Inject
-    RxWrapper wrapper;
+    RxWrapper<CardFilter> wrapper;
 
     public CardFilterPresenterImpl(CardFilterInteractor interactor) {
         LOG.d("created");
