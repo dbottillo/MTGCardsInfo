@@ -20,7 +20,7 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     SetsView setView;
 
     @Inject
-    RxWrapper wrapper;
+    RxWrapper<List<MTGSet>> wrapper;
 
     public SetsPresenterImpl(SetsInteractor interactor) {
         LOG.d("created");

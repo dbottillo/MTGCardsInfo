@@ -17,7 +17,6 @@ public class RxWrapper<T> {
     }
 
     Subscription run(Observable<T> on, final RxWrapperListener<T> listener) {
-        System.out.println("rx wrapper");
         on.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         return on.subscribe(new Observer<T>() {

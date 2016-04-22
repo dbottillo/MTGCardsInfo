@@ -24,7 +24,10 @@ public class CardsPresenterImpl implements CardsPresenter {
     Subscription subscription = null;
 
     @Inject
-    RxWrapper wrapper;
+    RxWrapper<List<MTGCard>> cardsWrapper;
+
+    @Inject
+    RxWrapper<int[]> favWrapper;
 
     public CardsPresenterImpl(CardsInteractor interactor) {
         LOG.d("created");
@@ -34,7 +37,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void getLuckyCards(int howMany) {
         LOG.d("get lucky cards " + howMany);
-        wrapper.run(interactor.getLuckyCards(howMany), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.getLuckyCards(howMany), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -62,7 +65,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             cardsView.cardLoaded(currentBucket);
             return;
         }
-        wrapper.run(interactor.getFavourites(), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.getFavourites(), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -85,7 +88,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadDeck(final Deck deck) {
         LOG.d("loadSet " + deck);
-        wrapper.run(interactor.loadDeck(deck), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.loadDeck(deck), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -108,7 +111,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void doSearch(final SearchParams searchParams) {
         LOG.d("do search " + searchParams);
-        wrapper.run(interactor.doSearch(searchParams), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.doSearch(searchParams), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -131,9 +134,9 @@ public class CardsPresenterImpl implements CardsPresenter {
     public void removeFromFavourite(MTGCard card, boolean reload) {
         LOG.d("remove " + card + " from fav");
         if (reload) {
-            subscription = wrapper.run(interactor.removeFromFavourite(card), idFavSubscriber);
+            subscription = favWrapper.run(interactor.removeFromFavourite(card), idFavSubscriber);
         } else {
-            subscription = wrapper.run(interactor.removeFromFavourite(card), null);
+            subscription = favWrapper.run(interactor.removeFromFavourite(card), null);
         }
         if (CardsMemoryStorage.bucket.getKey().equals("fav")) {
             invalidateBucket();
@@ -143,9 +146,9 @@ public class CardsPresenterImpl implements CardsPresenter {
     public void saveAsFavourite(MTGCard card, boolean reload) {
         LOG.d("save " + card + " as fav");
         if (reload) {
-            subscription = wrapper.run(interactor.saveAsFavourite(card), idFavSubscriber);
+            subscription = favWrapper.run(interactor.saveAsFavourite(card), idFavSubscriber);
         } else {
-            subscription = wrapper.run(interactor.saveAsFavourite(card), null);
+            subscription = favWrapper.run(interactor.saveAsFavourite(card), null);
         }
         if (CardsMemoryStorage.bucket.getKey().equals("fav")) {
             invalidateBucket();
@@ -165,7 +168,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             return;
         }
         LOG.d("obs created");
-        wrapper.run(interactor.loadSet(set), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.loadSet(set), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -197,7 +200,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             cardsView.favIdLoaded(currentFav);
             return;
         }
-        subscription = wrapper.run(interactor.loadIdFav(), idFavSubscriber);
+        subscription = favWrapper.run(interactor.loadIdFav(), idFavSubscriber);
     }
 
     public void detachView() {
