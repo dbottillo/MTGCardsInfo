@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -68,10 +69,10 @@ public class CardDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_cards_can_be_retrieved_from_database() {
-        MTGCard card = new MTGCard();
+        MTGCard card = generateCard();
         card.setMultiVerseId(101);
         CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
-        MTGCard card2 = new MTGCard();
+        MTGCard card2 = generateCard();
         card2.setMultiVerseId(102);
         CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card2);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE, null);
@@ -87,6 +88,12 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         assertThat(cards.size(), is(2));
         assertThat(cards.get(0).getMultiVerseId(), is(card.getMultiVerseId()));
         assertThat(cards.get(1).getMultiVerseId(), is(card2.getMultiVerseId()));
+    }
+
+    private MTGCard generateCard(){
+        MTGCard card = new MTGCard();
+        card.belongsTo(new MTGSet(1, "Zendikar"));
+        return card;
     }
 
 }

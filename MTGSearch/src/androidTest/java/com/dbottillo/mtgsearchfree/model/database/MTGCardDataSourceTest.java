@@ -3,9 +3,9 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -35,7 +35,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
                 assertThat(cardsJ.size(), is(cards.size()));
                 assertTrue(cards.containsAll(cardsJ));
             } catch (Resources.NotFoundException e) {
-                //LOG.e(set.getCode() + " file not found");
+                LOG.e(set.getCode() + " file not found");
             }
         }
     }

@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
 
 import org.junit.Test;
@@ -245,6 +246,7 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
 
     private void addDummyData(SQLiteDatabase db) {
         MTGCard card = new MTGCard();
+        card.belongsTo(new MTGSet(1, "Zendikar"));
         long deck = DeckDataSource.addDeck(db, "deck");
         DeckDataSource.addCardToDeck(db, deck, card, 2);
         PlayerDataSource.savePlayer(db, new Player(20, "liliana"));
