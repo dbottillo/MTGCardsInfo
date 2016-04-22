@@ -5,6 +5,7 @@ import android.content.Context;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
 
 import javax.inject.Singleton;
 
@@ -34,14 +35,19 @@ public class AndroidModule {
 
     @Provides
     @Singleton
-    MTGDatabaseHelper provideMTGDatabaseHelper(){
+    MTGDatabaseHelper provideMTGDatabaseHelper() {
         return new MTGDatabaseHelper(app);
     }
 
     @Provides
     @Singleton
-    CardsInfoDbHelper provideCardsInfoDatabaseHelper(){
+    CardsInfoDbHelper provideCardsInfoDatabaseHelper() {
         return new CardsInfoDbHelper(app);
+    }
+
+    @Provides
+    RxWrapper provideWrapper() {
+        return new RxWrapper();
     }
 
 }

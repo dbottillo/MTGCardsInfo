@@ -56,9 +56,7 @@ public class CardDataSourceTest extends BaseDatabaseTest {
         assertThat(cardFromDb.isLand(), is(card.isLand()));
         assertThat(cardFromDb.isArtifact(), is(card.isArtifact()));
         assertThat(cardFromDb.isEldrazi(), is(card.isEldrazi()));
-        assertThat(cardFromDb.getIdSet(), is(card.getIdSet()));
-        assertThat(cardFromDb.getSetName(), is(card.getSetName()));
-        assertThat(cardFromDb.getSetCode(), is(card.getSetCode()));
+        assertThat(cardFromDb.getSet(), is(card.getSet()));
         assertThat(cardFromDb.getLayout(), is(card.getLayout()));
         assertThat(cardFromDb.getNumber(), is(card.getNumber()));
         assertThat(cardFromDb.getRulings().size(), is(card.getRulings().size()));

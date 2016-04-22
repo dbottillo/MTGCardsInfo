@@ -49,7 +49,7 @@ public class MTGApp extends Application {
         LOG.d("            MTGApp created");
         LOG.d("============================================");
 
-        graph = DaggerAppComponent.builder().androidModule(new AndroidModule(this)).build();
+        graph = DaggerAppComponent.builder().androidModule(generateAndroidModule()).build();
         graph.inject(this);
 
         uiGraph = DaggerUiComponent.builder()
@@ -68,6 +68,10 @@ public class MTGApp extends Application {
                 StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build());
             }
         }
+    }
+
+    protected AndroidModule generateAndroidModule(){
+        return new AndroidModule(this);
     }
 
     protected void checkReleaseNote() {

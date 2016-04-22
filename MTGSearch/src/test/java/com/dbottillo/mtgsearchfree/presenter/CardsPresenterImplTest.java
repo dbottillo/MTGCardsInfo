@@ -71,7 +71,6 @@ public class CardsPresenterImplTest extends BaseTest {
 
     @Before
     public void setup() {
-        setupRxJava();
         MockitoAnnotations.initMocks(this);
         interactor = mock(CardsInteractor.class);
         view = mock(CardsView.class);
@@ -93,7 +92,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testGetLuckyCards() {
         presenter.getLuckyCards(3);
-        sync();
         verify(interactor).getLuckyCards(3);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardLoaded(argument.capture());
@@ -104,7 +102,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testLoadFavourites() {
         presenter.loadFavourites();
-        sync();
         verify(interactor).getFavourites();
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardLoaded(argument.capture());
@@ -115,7 +112,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testLoadDeck() {
         presenter.loadDeck(deck);
-        sync();
         verify(interactor).loadDeck(deck);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardLoaded(argument.capture());
@@ -126,7 +122,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testDoSearch() {
         presenter.doSearch(searchParams);
-        sync();
         verify(interactor).doSearch(searchParams);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardLoaded(argument.capture());
@@ -137,12 +132,10 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testRemoveFromFavourite() {
         presenter.removeFromFavourite(card, false);
-        sync();
         verifyNoMoreInteractions(view);
         CardsView newView = mock(CardsView.class);
         presenter.init(newView);
         presenter.removeFromFavourite(card, true);
-        sync();
         verify(newView).favIdLoaded(idFavs);
         verify(interactor, times(2)).removeFromFavourite(card);
     }
@@ -150,12 +143,10 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testSaveAsFavourite() {
         presenter.saveAsFavourite(card, false);
-        sync();
         verifyNoMoreInteractions(view);
         CardsView newView = mock(CardsView.class);
         presenter.init(newView);
         presenter.saveAsFavourite(card, true);
-        sync();
         verify(newView).favIdLoaded(idFavs);
         verify(interactor, times(2)).saveAsFavourite(card);
     }
@@ -163,37 +154,30 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void removeFavsInvalidateFavCache(){
         presenter.loadFavourites();
-        sync();
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.removeFromFavourite(card, false);
-        sync();
         assertNull(CardsMemoryStorage.bucket);
     }
 
     @Test
     public void saveFavsInvalidateFavCache(){
         presenter.loadFavourites();
-        sync();
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.saveAsFavourite(card, false);
-        sync();
         assertNull(CardsMemoryStorage.bucket);
     }
 
     @Test
     public void changeFavsNotInvalidateNonFavCache(){
         presenter.doSearch(searchParams);
-        sync();
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.saveAsFavourite(card, false);
-        sync();
         assertNotNull(CardsMemoryStorage.bucket);
     }
 
     @Test
     public void testLoadCards() {
         presenter.loadCards(set);
-        sync();
         verify(interactor).loadSet(set);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardLoaded(argument.capture());
@@ -204,7 +188,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void testLoadIdFavourites() {
         presenter.loadIdFavourites();
-        sync();
         verify(interactor).loadIdFav();
         verify(view).favIdLoaded(idFavs);
     }

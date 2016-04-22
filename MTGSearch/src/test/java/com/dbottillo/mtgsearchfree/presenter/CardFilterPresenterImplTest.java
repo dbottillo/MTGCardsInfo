@@ -34,7 +34,6 @@ public class CardFilterPresenterImplTest extends BaseTest {
 
     @Before
     public void setup() {
-        setupRxJava();
         MockitoAnnotations.initMocks(this);
         interactor = mock(CardFilterInteractor.class);
         view = mock(CardFilterView.class);
@@ -47,8 +46,9 @@ public class CardFilterPresenterImplTest extends BaseTest {
 
     @Test
     public void testLoadFilter() {
+        System.out.println("TEST - load filter");
         presenter.loadFilter();
-        sync();
+        System.out.println("TEST - checking");
         verify(view).filterLoaded(cardFilter);
         verify(interactor).load();
     }
@@ -56,9 +56,7 @@ public class CardFilterPresenterImplTest extends BaseTest {
     @Test
     public void testLoadFilterWillUseCacheAfterFirstCall() {
         presenter.loadFilter();
-        sync();
         presenter.loadFilter();
-        sync();
         verify(view, times(2)).filterLoaded(cardFilter);
         verify(interactor, times(1)).load();
     }
@@ -66,9 +64,7 @@ public class CardFilterPresenterImplTest extends BaseTest {
     @Test
     public void testUpdate() {
         presenter.loadFilter(); // need to load it first
-        sync();
         presenter.update(CardFilter.TYPE.BLUE, true);
-        sync();
         assertTrue(cardFilter.blue);
         verify(interactor).sync(cardFilter);
     }

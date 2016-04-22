@@ -260,7 +260,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getManaCost().contains("U"));
-            assertTrue(card.getSetName().equalsIgnoreCase(set.getName()));
+            assertThat(card.getSet(), is(set));
         }
     }
 
@@ -273,8 +273,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getManaCost().contains("U"));
-            LOG.e("check " + card.getSetName());
-            assertTrue(MTGCardDataSource.STANDARD.contains(card.getSetName()));
+            assertTrue(MTGCardDataSource.STANDARD.contains(card.getSet().getName()));
         }
     }
 

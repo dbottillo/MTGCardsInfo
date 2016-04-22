@@ -47,7 +47,6 @@ public class DecksPresenterImplTest extends BaseTest {
 
     @Before
     public void setup() {
-        setupRxJava();
         MockitoAnnotations.initMocks(this);
         interactor = mock(DecksInteractor.class);
         view = mock(DecksView.class);
@@ -67,7 +66,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testLoadDecks() {
         presenter.loadDecks();
-        sync();
         verify(interactor).load();
         verify(view).decksLoaded(decks);
     }
@@ -75,7 +73,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testLoadDeck() {
         presenter.loadDeck(deck);
-        sync();
         verify(interactor).loadDeck(deck);
         verify(view).deckLoaded(cards);
     }
@@ -83,7 +80,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testAddDeck() {
         presenter.addDeck("deck");
-        sync();
         verify(interactor).addDeck("deck");
         verify(view).decksLoaded(decks);
     }
@@ -91,7 +87,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testDeleteDeck() {
         presenter.deleteDeck(deck);
-        sync();
         verify(interactor).deleteDeck(deck);
         verify(view).decksLoaded(decks);
     }
@@ -99,7 +94,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testEditDeck() {
         presenter.editDeck(deck, "deck");
-        sync();
         verify(interactor).editDeck(deck, "deck");
         verify(view).deckLoaded(cards);
     }
@@ -107,7 +101,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testAddCardToDeck() {
         presenter.addCardToDeck(deck, card, 2);
-        sync();
         verify(interactor).addCard(deck, card, 2);
         verify(view).deckLoaded(cards);
     }
@@ -115,7 +108,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testAddCardToDeckWithName() {
         presenter.addCardToDeck("new", card, 2);
-        sync();
         verify(interactor).addCard("new", card, 2);
         verify(view).deckLoaded(cards);
     }
@@ -123,7 +115,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testRemoveCardFromDeck() {
         presenter.removeCardFromDeck(deck, card);
-        sync();
         verify(interactor).removeCard(deck, card);
         verify(view).deckLoaded(cards);
     }
@@ -131,7 +122,6 @@ public class DecksPresenterImplTest extends BaseTest {
     @Test
     public void testRemoveAllCardFromDeck() {
         presenter.removeAllCardFromDeck(deck, card);
-        sync();
         verify(interactor).removeAllCard(deck, card);
         verify(view).deckLoaded(cards);
     }
