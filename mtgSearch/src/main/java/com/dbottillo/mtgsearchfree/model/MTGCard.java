@@ -421,7 +421,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         if (!equalOrNull(name, other.name)) {
             return false;
         }
-        if (!(multiVerseId == other.multiVerseId)) {
+        if (multiVerseId > 0 && other.multiVerseId > 0 && !(multiVerseId == other.multiVerseId)) {
             return false;
         }
         if (!equalOrNull(type, other.type)) {
