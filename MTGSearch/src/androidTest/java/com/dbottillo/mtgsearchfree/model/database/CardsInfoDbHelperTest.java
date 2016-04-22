@@ -246,7 +246,7 @@ public class CardsInfoDbHelperTest extends BaseDatabaseTest {
     private void addDummyData(SQLiteDatabase db) {
         MTGCard card = new MTGCard();
         long deck = DeckDataSource.addDeck(db, "deck");
-        DeckDataSource.addCardToDeck(db, deck, card, 2, false);
+        DeckDataSource.addCardToDeck(db, deck, card, 2);
         PlayerDataSource.savePlayer(db, new Player(20, "liliana"));
         FavouritesDataSource.saveFavourites(db, card);
     }

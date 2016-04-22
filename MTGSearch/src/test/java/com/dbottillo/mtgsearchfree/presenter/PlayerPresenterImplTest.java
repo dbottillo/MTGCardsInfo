@@ -39,7 +39,6 @@ public class PlayerPresenterImplTest extends BaseTest {
 
     @Before
     public void setup() {
-        setupRxJava();
         MockitoAnnotations.initMocks(this);
         interactor = mock(PlayerInteractor.class);
         view = mock(PlayersView.class);
@@ -60,7 +59,6 @@ public class PlayerPresenterImplTest extends BaseTest {
     @Test
     public void testLoadPlayers() {
         presenter.loadPlayers();
-        sync();
         verify(interactor).load();
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -69,9 +67,7 @@ public class PlayerPresenterImplTest extends BaseTest {
     @Test
     public void testAddPlayer() {
         presenter.loadPlayers();
-        sync();
         presenter.addPlayer();
-        sync();
         verify(interactor).addPlayer(any(Player.class));
         verify(view, times(2)).showLoading();
         verify(view, times(2)).playersLoaded(players);
@@ -80,7 +76,6 @@ public class PlayerPresenterImplTest extends BaseTest {
     @Test
     public void testEditPlayer() {
         presenter.editPlayer(player);
-        sync();
         verify(interactor).editPlayer(player);
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -89,7 +84,6 @@ public class PlayerPresenterImplTest extends BaseTest {
     @Test
     public void testEditPlayers() {
         presenter.editPlayers(toEdit);
-        sync();
         verify(interactor).editPlayers(toEdit);
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -98,7 +92,6 @@ public class PlayerPresenterImplTest extends BaseTest {
     @Test
     public void testRemovePlayer() {
         presenter.removePlayer(player);
-        sync();
         verify(interactor).removePlayer(player);
         verify(view).showLoading();
         verify(view).playersLoaded(players);

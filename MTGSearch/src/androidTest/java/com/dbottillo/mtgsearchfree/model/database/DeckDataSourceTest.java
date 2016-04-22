@@ -50,7 +50,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     public void test_deck_can_be_removed_from_database() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2);
         ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.get(0).getNumberOfCards(), is(2));
         DeckDataSource.deleteDeck(cardsInfoDbHelper.getWritableDatabase(), decks.get(0));
@@ -85,7 +85,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     public void test_cards_can_be_added_to_deck() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2);
         // first check that the card has been saved in the db
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", new String[]{card.getMultiVerseId() + ""});
         assertNotNull(cursor);
@@ -106,10 +106,10 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     public void test_cards_can_be_removed_from_deck() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 2);
         ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.get(0).getNumberOfCards(), is(2));
-        DeckDataSource.removeCardFromDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, false);
+        DeckDataSource.removeCardFromDeck(cardsInfoDbHelper.getWritableDatabase(), id, card);
         decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
         assertThat(decks.get(0).getNumberOfCards(), is(0));
     }
@@ -129,19 +129,19 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
 
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 4, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, 4);
         Deck deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);
         assertThat(deck.getNumberOfCards(), is(4));
 
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -2, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -2);
         deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);
         assertThat(deck.getNumberOfCards(), is(2));
 
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -1, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -1);
         deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);
         assertThat(deck.getNumberOfCards(), is(1));
 
-        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -4, false);
+        DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, card, -4);
         deck = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase()).get(0);
         assertThat(deck.getNumberOfCards(), is(0));
     }
@@ -152,20 +152,25 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         long id = DeckDataSource.addDeck(db, "new deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
 
-        DeckDataSource.addCardToDeck(db, id, card, 2, false);
-        DeckDataSource.addCardToDeck(db, id, card, 2, true);
+        DeckDataSource.addCardToDeck(db, id, card, 2);
+        card.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, id, card, 2);
         Deck deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(2));
         assertThat(deck.getSizeOfSideboard(), is(2));
 
-        DeckDataSource.addCardToDeck(db, id, card, 2, false);
-        DeckDataSource.addCardToDeck(db, id, card, -4, true);
+        card.setSideboard(false);
+        DeckDataSource.addCardToDeck(db, id, card, 2);
+        card.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, id, card, -4);
         deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(4));
         assertThat(deck.getSizeOfSideboard(), is(0));
 
-        DeckDataSource.addCardToDeck(db, id, card, -1, false);
-        DeckDataSource.addCardToDeck(db, id, card, 6, true);
+        card.setSideboard(false);
+        DeckDataSource.addCardToDeck(db, id, card, -1);
+        card.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, id, card, 6);
         deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(3));
         assertThat(deck.getSizeOfSideboard(), is(6));
@@ -177,18 +182,22 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         long id = DeckDataSource.addDeck(db, "new deck");
         MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
 
-        DeckDataSource.addCardToDeck(db, id, card, 2, false);
-        DeckDataSource.addCardToDeck(db, id, card, 2, true);
+        card.setSideboard(false);
+        DeckDataSource.addCardToDeck(db, id, card, 2);
+        card.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, id, card, 2);
         Deck deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(2));
         assertThat(deck.getSizeOfSideboard(), is(2));
 
-        DeckDataSource.removeCardFromDeck(db, id, card, false);
+        card.setSideboard(false);
+        DeckDataSource.removeCardFromDeck(db, id, card);
         deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(0));
         assertThat(deck.getSizeOfSideboard(), is(2));
 
-        DeckDataSource.removeCardFromDeck(db, id, card, true);
+        card.setSideboard(true);
+        DeckDataSource.removeCardFromDeck(db, id, card);
         deck = DeckDataSource.getDecks(db).get(0);
         assertThat(deck.getNumberOfCards(), is(0));
         assertThat(deck.getSizeOfSideboard(), is(0));
@@ -198,7 +207,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
         List<MTGCard> cards = mtgDatabaseHelper.getRandomCard(SMALL_NUMBER_OF_CARDS);
         for (int i = 0; i < SMALL_NUMBER_OF_CARDS; i++) {
-            DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, cards.get(i), i + 1, false);
+            DeckDataSource.addCardToDeck(cardsInfoDbHelper.getWritableDatabase(), id, cards.get(i), i + 1);
         }
         return id;
     }

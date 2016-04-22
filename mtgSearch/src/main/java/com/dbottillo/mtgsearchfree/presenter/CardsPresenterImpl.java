@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -11,11 +12,9 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import java.util.List;
 
-import rx.Observable;
-import rx.Subscriber;
+import javax.inject.Inject;
+
 import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class CardsPresenterImpl implements CardsPresenter {
 
@@ -24,20 +23,22 @@ public class CardsPresenterImpl implements CardsPresenter {
     CardsView cardsView;
     Subscription subscription = null;
 
+    @Inject
+    RxWrapper wrapper;
+
     public CardsPresenterImpl(CardsInteractor interactor) {
         LOG.d("created");
+        MTGApp.graph.inject(this);
         this.interactor = interactor;
     }
 
     public void getLuckyCards(int howMany) {
         LOG.d("get lucky cards " + howMany);
-        Observable<List<MTGCard>> obs = interactor.getLuckyCards(howMany)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<List<MTGCard>>() {
+        wrapper.run(interactor.getLuckyCards(howMany), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
-            public void onCompleted() {
-
+            public void onNext(List<MTGCard> mtgCards) {
+                LOG.d();
+                cardsView.cardLoaded(new CardsBucket("lucky", mtgCards));
             }
 
             @Override
@@ -46,12 +47,10 @@ public class CardsPresenterImpl implements CardsPresenter {
             }
 
             @Override
-            public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
-                cardsView.cardLoaded(new CardsBucket("lucky", mtgCards));
+            public void onCompleted() {
+
             }
         });
-
     }
 
     @Override
@@ -63,13 +62,12 @@ public class CardsPresenterImpl implements CardsPresenter {
             cardsView.cardLoaded(currentBucket);
             return;
         }
-        Observable<List<MTGCard>> obs = interactor.getFavourites()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<List<MTGCard>>() {
+        wrapper.run(interactor.getFavourites(), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
-            public void onCompleted() {
-
+            public void onNext(List<MTGCard> mtgCards) {
+                LOG.d();
+                CardsMemoryStorage.bucket = new CardsBucket("fav", mtgCards);
+                cardsView.cardLoaded(CardsMemoryStorage.bucket);
             }
 
             @Override
@@ -78,10 +76,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             }
 
             @Override
-            public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
-                CardsMemoryStorage.bucket = new CardsBucket("fav", mtgCards);
-                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+            public void onCompleted() {
+
             }
         });
     }
@@ -89,13 +85,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadDeck(final Deck deck) {
         LOG.d("loadSet " + deck);
-        Observable<List<MTGCard>> obs = interactor.loadDeck(deck)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<List<MTGCard>>() {
+        wrapper.run(interactor.loadDeck(deck), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
-            public void onCompleted() {
-
+            public void onNext(List<MTGCard> mtgCards) {
+                LOG.d();
+                CardsMemoryStorage.bucket = new CardsBucket(deck.getName(), mtgCards);
+                cardsView.cardLoaded(CardsMemoryStorage.bucket);
             }
 
             @Override
@@ -104,10 +99,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             }
 
             @Override
-            public void onNext(List<MTGCard> cards) {
-                LOG.d();
-                CardsMemoryStorage.bucket = new CardsBucket(deck.getName(), cards);
-                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+            public void onCompleted() {
+
             }
         });
     }
@@ -115,13 +108,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void doSearch(final SearchParams searchParams) {
         LOG.d("do search " + searchParams);
-        Observable<List<MTGCard>> obs = interactor.doSearch(searchParams)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<List<MTGCard>>() {
+        wrapper.run(interactor.doSearch(searchParams), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
-            public void onCompleted() {
-
+            public void onNext(List<MTGCard> mtgCards) {
+                LOG.d();
+                CardsMemoryStorage.bucket = new CardsBucket(searchParams.toString(), mtgCards);
+                cardsView.cardLoaded(CardsMemoryStorage.bucket);
             }
 
             @Override
@@ -130,23 +122,18 @@ public class CardsPresenterImpl implements CardsPresenter {
             }
 
             @Override
-            public void onNext(List<MTGCard> cards) {
-                LOG.d();
-                CardsMemoryStorage.bucket = new CardsBucket(searchParams.toString(), cards);
-                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+            public void onCompleted() {
+
             }
         });
     }
 
     public void removeFromFavourite(MTGCard card, boolean reload) {
         LOG.d("remove " + card + " from fav");
-        Observable<int[]> obs = interactor.removeFromFavourite(card)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
         if (reload) {
-            subscription = obs.subscribe(idFavSubscriber);
+            subscription = wrapper.run(interactor.removeFromFavourite(card), idFavSubscriber);
         } else {
-            subscription = obs.subscribe();
+            subscription = wrapper.run(interactor.removeFromFavourite(card), null);
         }
         if (CardsMemoryStorage.bucket.getKey().equals("fav")) {
             invalidateBucket();
@@ -155,13 +142,10 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void saveAsFavourite(MTGCard card, boolean reload) {
         LOG.d("save " + card + " as fav");
-        Observable<int[]> obs = interactor.saveAsFavourite(card)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
         if (reload) {
-            subscription = obs.subscribe(idFavSubscriber);
+            subscription = wrapper.run(interactor.saveAsFavourite(card), idFavSubscriber);
         } else {
-            subscription = obs.subscribe();
+            subscription = wrapper.run(interactor.saveAsFavourite(card), null);
         }
         if (CardsMemoryStorage.bucket.getKey().equals("fav")) {
             invalidateBucket();
@@ -181,13 +165,12 @@ public class CardsPresenterImpl implements CardsPresenter {
             return;
         }
         LOG.d("obs created");
-        Observable<List<MTGCard>> obs = interactor.loadSet(set)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(new Subscriber<List<MTGCard>>() {
+        wrapper.run(interactor.loadSet(set), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
             @Override
-            public void onCompleted() {
-
+            public void onNext(List<MTGCard> mtgCards) {
+                LOG.d();
+                CardsMemoryStorage.bucket = new CardsBucket(set, mtgCards);
+                cardsView.cardLoaded(CardsMemoryStorage.bucket);
             }
 
             @Override
@@ -196,10 +179,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             }
 
             @Override
-            public void onNext(List<MTGCard> cards) {
-                LOG.d();
-                CardsMemoryStorage.bucket = new CardsBucket(set, cards);
-                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+            public void onCompleted() {
+
             }
         });
     }
@@ -216,10 +197,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             cardsView.favIdLoaded(currentFav);
             return;
         }
-        Observable<int[]> obs = interactor.loadIdFav()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(idFavSubscriber);
+        subscription = wrapper.run(interactor.loadIdFav(), idFavSubscriber);
     }
 
     public void detachView() {
@@ -227,10 +205,12 @@ public class CardsPresenterImpl implements CardsPresenter {
         subscription.unsubscribe();
     }
 
-    private Subscriber<int[]> idFavSubscriber = new Subscriber<int[]>() {
+    RxWrapper.RxWrapperListener<int[]> idFavSubscriber = new RxWrapper.RxWrapperListener<int[]>() {
         @Override
-        public void onCompleted() {
-
+        public void onNext(int[] ints) {
+            LOG.d();
+            CardsMemoryStorage.favourites = ints;
+            cardsView.favIdLoaded(ints);
         }
 
         @Override
@@ -239,10 +219,8 @@ public class CardsPresenterImpl implements CardsPresenter {
         }
 
         @Override
-        public void onNext(int[] ints) {
-            LOG.d();
-            CardsMemoryStorage.favourites = ints;
-            cardsView.favIdLoaded(ints);
+        public void onCompleted() {
+
         }
     };
 

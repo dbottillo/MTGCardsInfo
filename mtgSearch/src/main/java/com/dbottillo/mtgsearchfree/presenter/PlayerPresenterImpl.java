@@ -1,22 +1,20 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import javax.inject.Inject;
 
-public class PlayerPresenterImpl implements PlayerPresenter {
+import rx.Subscription;
+
+public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapperListener<List<Player>> {
 
     PlayerInteractor interactor;
 
@@ -24,12 +22,16 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     Subscription subscription = null;
     List<Player> players;
 
+    @Inject
+    RxWrapper rxWrapper;
+
     String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
     public PlayerPresenterImpl(PlayerInteractor interactor) {
         LOG.d("created");
+        MTGApp.graph.inject(this);
         this.interactor = interactor;
     }
 
@@ -47,76 +49,65 @@ public class PlayerPresenterImpl implements PlayerPresenter {
     @Override
     public void loadPlayers() {
         LOG.d();
+        System.out.println("load players " + subscription);
         playerView.showLoading();
-        Observable<List<Player>> obs = interactor.load()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(playersSubscription);
+        subscription = rxWrapper.run(interactor.load(), this);
     }
 
     @Override
     public void addPlayer() {
+        System.out.println("add player " + subscription);
         LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
-        Observable<List<Player>> obs = interactor.addPlayer(player)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(playersSubscription);
+        subscription = rxWrapper.run(interactor.addPlayer(player), this);
     }
 
     @Override
     public void editPlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        Observable<List<Player>> obs = interactor.editPlayer(player)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(playersSubscription);
+        subscription = rxWrapper.run(interactor.editPlayer(player), this);
     }
 
     @Override
     public void editPlayers(List<Player> players) {
         LOG.d();
         playerView.showLoading();
-        Observable<List<Player>> obs = interactor.editPlayers(players)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(playersSubscription);
+        subscription = rxWrapper.run(interactor.editPlayers(players), this);
     }
 
     @Override
     public void removePlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        Observable<List<Player>> obs = interactor.removePlayer(player)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io());
-        subscription = obs.subscribe(playersSubscription);
+        subscription = rxWrapper.run(interactor.removePlayer(player), this);
     }
 
-    private Subscriber<List<Player>> playersSubscription = new Subscriber<List<Player>>() {
-        @Override
-        public void onCompleted() {
-            LOG.d();
-        }
+    @Override
+    public void onNext(List<Player> newPlayers) {
+        LOG.d();
+        players = newPlayers;
+        playerView.playersLoaded(players);
+    }
 
-        @Override
-        public void onError(Throwable e) {
-            LOG.e(e.getLocalizedMessage());
-        }
+    @Override
+    public void onError(Throwable e) {
+        LOG.e(e.getLocalizedMessage());
+    }
 
-        @Override
-        public void onNext(List<Player> newPlayers) {
-            LOG.d();
-            players = newPlayers;
-            playerView.playersLoaded(players);
-        }
-    };
+    @Override
+    public void onCompleted() {
+        LOG.d();
+    }
+
 
     private String getUniqueNameForPlayer() {
         boolean unique = false;
         int pickedNumber = 0;
+        if (players == null || players.size() <= 0) {
+            return names[pickedNumber];
+        }
         while (!unique) {
             Random rand = new Random();
             pickedNumber = rand.nextInt(names.length);
@@ -136,6 +127,9 @@ public class PlayerPresenterImpl implements PlayerPresenter {
 
     private int getUniqueIdForPlayer() {
         int id = 0;
+        if (players == null || players.size() <= 0) {
+            return id;
+        }
         for (Player player : players) {
             if (id == player.getId()) {
                 id++;
@@ -143,4 +137,5 @@ public class PlayerPresenterImpl implements PlayerPresenter {
         }
         return id;
     }
+
 }
