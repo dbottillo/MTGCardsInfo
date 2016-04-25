@@ -22,6 +22,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
@@ -221,6 +222,10 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
     private void exportDeck() {
         LOG.d();
+        if (!PermissionUtil.storageGranted(this)){
+            PermissionUtil.requestStoragePermission(this);
+            return;
+        }
         if (FileUtil.downloadDeckToSdCard(this, deck, cards)) {
             Snackbar snackbar = Snackbar
                     .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
@@ -236,9 +241,23 @@ public class DeckActivity extends BasicActivity implements DecksView {
                     });
             snackbar.show();
         } else {
-            Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingManager.trackDeckExportError();
+            exportDeckNotAllowed();
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (PermissionUtil.isGranted(grantResults)){
+            exportDeck();
+        } else {
+            exportDeckNotAllowed();
+        }
+    }
+
+    private void exportDeckNotAllowed(){
+        Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
+        TrackingManager.trackDeckExportError();
     }
 
     private void editDeckName() {

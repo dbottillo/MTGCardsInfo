@@ -206,6 +206,7 @@
     <string name="action_copy_db">Replace db from sdcard</string>
     <string name="export">Export</string>
     <string name="error_export_deck">Impossible to export a deck, check that your external storage is available and try again.</string>
+    <string name="error_export_db">Impossible to export the database, check that your external storage is available and try again.</string>
     <string name="deck_exported">Deck exported on sdcard</string>
     <string name="edit_deck">Edit deck</string>
     <string name="debug_mode_active">Debug mode active</string>
