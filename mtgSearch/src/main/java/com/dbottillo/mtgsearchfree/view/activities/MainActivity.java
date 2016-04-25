@@ -6,7 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
@@ -21,6 +23,7 @@ import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
 import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
@@ -225,6 +228,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         } else if (menuItem.getItemId() == 104) {
             copyDBToSdCard();
+
         } else if (menuItem.getItemId() == 105) {
             boolean copied = FileUtil.copyDbFromSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
             Toast.makeText(this, (copied) ? "database copied" : "database not copied", Toast.LENGTH_LONG).show();
@@ -239,14 +243,25 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             PermissionUtil.requestStoragePermission(this);
             return;
         }
-        File file = FileUtil.copyDbToSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+        final File file = FileUtil.copyDbToSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
         if (file != null) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
-            intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-            startActivity(Intent.createChooser(intent, "Send mail...."));
+            Snackbar snackbar = Snackbar
+                    .make(slidingUpPanelLayout, getString(R.string.db_exported), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.share), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
+                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                            startActivity(Intent.createChooser(intent, "Send mail...."));
+                            TrackingManager.trackDeckExport();
+                        }
+                    });
+            snackbar.show();
+        } else {
+            Toast.makeText(this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();
         }
     }
 
