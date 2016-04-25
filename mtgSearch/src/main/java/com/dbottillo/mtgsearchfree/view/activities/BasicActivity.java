@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
+import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
@@ -111,5 +112,26 @@ public abstract class BasicActivity extends AppCompatActivity {
         }
         ft.addToBackStack(null);
         fragment.show(ft, tag);
+    }
+
+    private PermissionUtil.PermissionListener permissionListener;
+
+    public void requestPermission(PermissionUtil.TYPE type, PermissionUtil.PermissionListener listener) {
+        this.permissionListener = listener;
+        if (PermissionUtil.permissionGranted(this, type)){
+            listener.permissionGranted();
+            return;
+        }
+        PermissionUtil.requestPermission(this, type);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (PermissionUtil.isGranted(grantResults)){
+            permissionListener.permissionGranted();
+        } else {
+            permissionListener.permissionNotGranted();
+        }
     }
 }

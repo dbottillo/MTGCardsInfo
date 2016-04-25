@@ -4,8 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +15,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -29,6 +34,7 @@ import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
@@ -43,11 +49,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, DecksView, DeckListAdapter.OnDeckListener {
+public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, DecksView, DeckListAdapter.OnDeckListener, PermissionUtil.PermissionListener {
 
     private ArrayList<Deck> decks;
     private DeckListAdapter deckListAdapter;
 
+    private static final int READ_REQUEST_CODE = 42;
     private int heightNewDeckContainer = -1;
     private boolean newDeckViewOpen = false;
 
@@ -87,6 +94,8 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
 
         setActionBarTitle(getString(R.string.action_decks));
+        setHasOptionsMenu(true);
+
         emptyView.setText(R.string.empty_decks);
         progressBar.setVisibility(View.GONE);
         newDeckName.setImeOptions(EditorInfo.IME_ACTION_DONE);
@@ -288,4 +297,53 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.decks, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i1 = item.getItemId();
+        if (i1 == R.id.action_import) {
+            importDeck();
+            return true;
+        }
+        return false;
+    }
+
+    private void importDeck() {
+        LOG.d();
+        dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this);
+    }
+
+    @Override
+    public void permissionGranted() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("*/*") ;
+        startActivityForResult(intent, READ_REQUEST_CODE);
+    }
+
+    @Override
+    public void permissionNotGranted() {
+        Toast.makeText(getContext(), R.string.error_export_db, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+        super.onActivityResult(requestCode, resultCode, resultData);
+
+        if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // The document selected by the user won't be returned in the intent.
+            // Instead, a URI to that document will be contained in the return intent
+            // provided to this method as a parameter.
+            // Pull that URI using resultData.getData().
+            Uri uri;
+            if (resultData != null) {
+                uri = resultData.getData();
+                decksPresenter.importDeck(uri);
+            }
+        }
+    }
 }

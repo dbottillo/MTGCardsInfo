@@ -239,30 +239,36 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     }
 
     private void copyDBToSdCard(){
-        if (!PermissionUtil.storageGranted(this)){
-            PermissionUtil.requestStoragePermission(this);
-            return;
-        }
-        final File file = FileUtil.copyDbToSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
-        if (file != null) {
-            Snackbar snackbar = Snackbar
-                    .make(slidingUpPanelLayout, getString(R.string.db_exported), Snackbar.LENGTH_LONG)
-                    .setAction(getString(R.string.share), new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("text/plain");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
-                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-                            startActivity(Intent.createChooser(intent, "Send mail...."));
-                            TrackingManager.trackDeckExport();
-                        }
-                    });
-            snackbar.show();
-        } else {
-            Toast.makeText(this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();
-        }
+        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
+            @Override
+            public void permissionGranted() {
+                final File file = FileUtil.copyDbToSdCard(getApplicationContext(), CardsInfoDbHelper.DATABASE_NAME);
+                if (file != null) {
+                    Snackbar snackbar = Snackbar
+                            .make(slidingUpPanelLayout, getString(R.string.db_exported), Snackbar.LENGTH_LONG)
+                            .setAction(getString(R.string.share), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(Intent.ACTION_SEND);
+                                    intent.setType("text/plain");
+                                    intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"help@mtgcardsinfo.com"});
+                                    intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status");
+                                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                                    startActivity(Intent.createChooser(intent, "Send mail...."));
+                                    TrackingManager.trackDeckExport();
+                                }
+                            });
+                    snackbar.show();
+                } else {
+                    Toast.makeText(MainActivity.this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void permissionNotGranted() {
+                Toast.makeText(MainActivity.this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -7,17 +7,37 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
+
+@SuppressWarnings("SimplifiableIfStatement")
 public class PermissionUtil {
 
-    public static boolean storageGranted(Context context) {
+    public static boolean permissionGranted(Context context, TYPE type) {
         if (Build.VERSION.SDK_INT < 23) {
             return true;
         }
-        return context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        return context.checkSelfPermission(type.permission) == PackageManager.PERMISSION_GRANTED;
     }
 
-    public static void requestStoragePermission(Activity activity) {
-        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+    public static void requestPermission(Activity activity, TYPE type) {
+        ActivityCompat.requestPermissions(activity, new String[]{type.permission}, 1);
+    }
+
+    public enum TYPE{
+        READ_STORAGE(Manifest.permission.READ_EXTERNAL_STORAGE),
+        WRITE_STORAGE(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        String permission;
+
+        TYPE(String permission) {
+            this.permission = permission;
+        }
+    }
+
+    public interface PermissionListener{
+        void permissionGranted();
+
+        void permissionNotGranted();
     }
 
     public static boolean isGranted(int[] grantResults) {

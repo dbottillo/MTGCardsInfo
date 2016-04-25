@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import android.net.Uri;
+
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -85,6 +87,12 @@ public class DecksPresenterImpl implements DecksPresenter {
     public void removeAllCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
         cardWrapper.run(interactor.removeAllCard(deck, card), cardsObserver);
+    }
+
+    @Override
+    public void importDeck(Uri uri) {
+        LOG.d("import "+uri.toString());
+        deckWrapper.run(interactor.importDeck(uri), deckObserver);
     }
 
 

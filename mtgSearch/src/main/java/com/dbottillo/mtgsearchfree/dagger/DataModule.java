@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
@@ -51,7 +52,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(CardsInfoDbHelper cardsInfoDbHelper) {
-        return new DecksStorage(cardsInfoDbHelper);
+    DecksStorage provideDecksStorage(Context context, CardsInfoDbHelper cardsInfoDbHelper, MTGDatabaseHelper mtgHelper) {
+        return new DecksStorage(context, cardsInfoDbHelper, mtgHelper);
     }
 }

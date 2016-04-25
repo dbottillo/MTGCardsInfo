@@ -1,21 +1,29 @@
 package com.dbottillo.mtgsearchfree.util;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Environment;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.List;
 
 public final class FileUtil {
 
@@ -134,5 +142,58 @@ public final class FileUtil {
             TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
+    }
+
+    public static CardsBucket readFileContent(Context context, Uri uri) {
+        CardsBucket bucket = new CardsBucket();
+        List<MTGCard> cards = new ArrayList<>();
+        String extension = uri.getPath().substring(uri.getPath().lastIndexOf("."));
+        if (!extension.equalsIgnoreCase(".dec")){
+            return null;
+        }
+        try {
+            InputStream is = context.getContentResolver().openInputStream(uri);
+            if (is == null){
+                return null;
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                if (!line.isEmpty()){
+                    if (line.startsWith("//")){
+                        // title
+                        if (bucket.getKey() == null) {
+                            bucket.setKey(line.replace("//", ""));
+                        }
+
+                    } else if (line.startsWith("SB: ")){
+                        LOG.e("line: "+line.replace("SB: ", ""));
+                        String split[] = line.replace("SB: ", "").split(" ");
+                        MTGCard card = new MTGCard();
+                        card.setQuantity(Integer.parseInt(split[0]));
+                        card.setCardName(split[1]);
+                        card.setSideboard(true);
+                        LOG.e(split[0]+" - "+split[1]);
+                        cards.add(card);
+                    } else {
+                        // standard
+                        String split[] = line.replace("SB: ", "").split(" ");
+                        LOG.e(split[0]+" - "+split[1]);
+
+                        MTGCard card = new MTGCard();
+                        card.setQuantity(Integer.parseInt(split[0]));
+                        card.setCardName(split[1]);
+                        cards.add(card);
+                    }
+                }
+            }
+            br.close();
+        }
+        catch (IOException e) {
+            //You'll need to add proper error handling here
+        }
+        bucket.setCards(cards);
+        return bucket;
     }
 }

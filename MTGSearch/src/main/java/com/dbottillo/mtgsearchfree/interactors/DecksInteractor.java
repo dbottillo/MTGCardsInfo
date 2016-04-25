@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 
+import android.net.Uri;
+
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
@@ -27,4 +29,6 @@ public interface DecksInteractor {
     Observable<List<MTGCard>> removeCard(Deck deck, MTGCard card);
 
     Observable<List<MTGCard>> removeAllCard(Deck deck, MTGCard card);
+
+    Observable<List<Deck>> importDeck(Uri uri);
 }
