@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.model.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 public final class GeneralPreferences {
@@ -35,6 +36,6 @@ public final class GeneralPreferences {
     }
 
     public boolean isDebugEnabled() {
-        return sharedPreferences.getBoolean(DEBUG, false);
+        return BuildConfig.DEBUG || sharedPreferences.getBoolean(DEBUG, false);
     }
 }
