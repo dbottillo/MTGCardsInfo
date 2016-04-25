@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import android.net.Uri;
+
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -69,6 +71,12 @@ public class DecksInteractorImpl implements DecksInteractor {
     public Observable<List<MTGCard>> removeAllCard(Deck deck, MTGCard card) {
         LOG.d("remove all " + card.toString() + " from deck: " + deck);
         return Observable.just(storage.removeAllCard(deck, card));
+    }
+
+    @Override
+    public Observable<List<Deck>> importDeck(Uri uri) {
+        LOG.d("import " + uri.toString());
+        return Observable.just(storage.importDeck(uri));
     }
 
 }

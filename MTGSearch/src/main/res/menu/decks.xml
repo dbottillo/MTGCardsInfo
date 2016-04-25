@@ -2,17 +2,17 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_edit"
-        android:icon="@drawable/ic_edit_white"
-        android:orderInCategory="100"
-        android:title="@string/edit_deck"
-        app:showAsAction="always"/>
+        android:id="@+id/action_import"
+        android:icon="@drawable/ic_get_app_white_24dp"
+        android:title="@string/export"
+        android:orderInCategory="101"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/action_export"
         android:icon="@drawable/ic_get_app_white_24dp"
-        android:orderInCategory="101"
         android:title="@string/export"
+        android:orderInCategory="102"
         app:showAsAction="ifRoom"/>
 
 </menu>

@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -130,6 +132,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         if (id == R.id.action_export) {
             exportDeck();
             return true;
+
         } else if (id == R.id.action_edit) {
             editDeckName();
             return true;
@@ -222,27 +225,29 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
     private void exportDeck() {
         LOG.d();
-        if (!PermissionUtil.storageGranted(this)){
-            PermissionUtil.requestStoragePermission(this);
-            return;
-        }
-        if (FileUtil.downloadDeckToSdCard(this, deck, cards)) {
-            Snackbar snackbar = Snackbar
-                    .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
-                    .setAction(getString(R.string.share), new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("text/plain");
-                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
-                            startActivity(Intent.createChooser(intent, getString(R.string.share)));
-                            TrackingManager.trackDeckExport();
-                        }
-                    });
-            snackbar.show();
-        } else {
-            exportDeckNotAllowed();
-        }
+        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
+            @Override
+            public void permissionGranted() {
+                Snackbar snackbar = Snackbar
+                        .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.share), new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("text/plain");
+                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
+                                startActivity(Intent.createChooser(intent, getString(R.string.share)));
+                                TrackingManager.trackDeckExport();
+                            }
+                        });
+                snackbar.show();
+            }
+
+            @Override
+            public void permissionNotGranted() {
+                exportDeckNotAllowed();
+            }
+        });
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import android.net.Uri;
+
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.DecksView;
@@ -25,4 +27,6 @@ public interface DecksPresenter {
     void removeCardFromDeck(Deck deck, MTGCard card);
 
     void removeAllCardFromDeck(Deck deck, MTGCard card);
+
+    void importDeck(Uri uri);
 }

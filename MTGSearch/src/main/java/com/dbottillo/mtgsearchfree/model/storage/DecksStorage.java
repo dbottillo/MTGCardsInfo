@@ -1,8 +1,14 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
+import android.content.Context;
+import android.net.Uri;
+
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
@@ -10,10 +16,14 @@ import java.util.List;
 public class DecksStorage {
 
     private CardsInfoDbHelper helper;
+    private MTGDatabaseHelper mtgHelper;
+    private Context context;
 
-    public DecksStorage(CardsInfoDbHelper helper) {
+    public DecksStorage(Context context, CardsInfoDbHelper helper, MTGDatabaseHelper mtgHelper) {
         LOG.d("created");
         this.helper = helper;
+        this.mtgHelper = mtgHelper;
+        this.context = context;
     }
 
     public List<Deck> load() {
@@ -67,6 +77,14 @@ public class DecksStorage {
         LOG.d("remove all " + card + " from " + deck);
         helper.removeAllCards(deck, card);
         return loadDeck(deck);
+    }
+
+    public List<Deck> importDeck(Uri uri) {
+        CardsBucket bucket = FileUtil.readFileContent(context, uri);
+        if ( bucket == null){
+            return load();
+        }
+        return helper.addDeck(mtgHelper.getReadableDatabase(), bucket);
     }
 }
 

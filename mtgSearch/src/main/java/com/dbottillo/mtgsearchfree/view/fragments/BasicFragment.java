@@ -10,11 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class BasicFragment extends DialogFragment {
 
-    protected AppCompatActivity dbActivity;
+    protected BasicActivity dbActivity;
     protected boolean isPortrait = false;
     protected MTGApp app;
     protected SharedPreferences sharedPreferences;
@@ -29,7 +30,7 @@ public abstract class BasicFragment extends DialogFragment {
         super.onAttach(context);
         LOG.d();
 
-        this.dbActivity = (AppCompatActivity) context;
+        this.dbActivity = (BasicActivity) context;
         app = (MTGApp) dbActivity.getApplication();
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
         sharedPreferences = dbActivity.getSharedPreferences(MTGApp.PREFS_NAME, 0);

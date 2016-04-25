@@ -257,4 +257,14 @@ public final class MTGCardDataSource {
     }
 
 
+    public static MTGCard searchCard(SQLiteDatabase db, String name) {
+        LOG.d("search card  " + name);
+        SearchParams searchParams = new SearchParams();
+        searchParams.setName(name);
+        ArrayList<MTGCard> cards = searchCards(db, searchParams);
+        if (cards.size() == 0){
+            return null;
+        }
+        return cards.get(0);
+    }
 }

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.VisibleForTesting;
 
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.Player;
@@ -163,5 +164,10 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public void removePlayer(Player player) {
         PlayerDataSource.removePlayer(getWritableDatabase(), player);
+    }
+
+    public List<Deck> addDeck(SQLiteDatabase mtgDB, CardsBucket bucket) {
+        DeckDataSource.addDeck(mtgDB, getWritableDatabase(), bucket);
+        return DeckDataSource.getDecks(getReadableDatabase());
     }
 }

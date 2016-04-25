@@ -10,6 +10,10 @@ public class CardsBucket {
     String key;
     List<MTGCard> cards;
 
+    public CardsBucket(){
+
+    }
+
     public CardsBucket(MTGSet set, List<MTGCard> cards) {
         LOG.d("creating bucket with key: " + set.getName());
         this.key = set.getName();
@@ -38,5 +42,9 @@ public class CardsBucket {
 
     public String getKey() {
         return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
