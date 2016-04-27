@@ -126,7 +126,7 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         return DeckDataSource.getDecks(getReadableDatabase());
     }
 
-    public long addDecK(String name) {
+    public long addDeck(String name) {
         return DeckDataSource.addDeck(getWritableDatabase(), name);
     }
 
@@ -166,8 +166,8 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         PlayerDataSource.removePlayer(getWritableDatabase(), player);
     }
 
-    public List<Deck> addDeck(SQLiteDatabase mtgDB, CardsBucket bucket) {
-        DeckDataSource.addDeck(mtgDB, getWritableDatabase(), bucket);
+    public List<Deck> addDeck(MTGCardDataSource cardDataSource, CardsBucket bucket) {
+        DeckDataSource.addDeck(cardDataSource, getWritableDatabase(), bucket);
         return DeckDataSource.getDecks(getReadableDatabase());
     }
 }

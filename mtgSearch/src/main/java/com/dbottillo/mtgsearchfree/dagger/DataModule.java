@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import javax.inject.Singleton;
 
@@ -34,8 +36,8 @@ class DataModule {
 
     @Provides
     @Singleton
-    CardsStorage provideCardsStorage(MTGDatabaseHelper helper, CardsInfoDbHelper cardsInfoDbHelper) {
-        return new CardsStorage(helper, cardsInfoDbHelper);
+    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper) {
+        return new CardsStorage(mtgCardDataSource, cardsInfoDbHelper);
     }
 
     @Provides
@@ -52,7 +54,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(Context context, CardsInfoDbHelper cardsInfoDbHelper, MTGDatabaseHelper mtgHelper) {
-        return new DecksStorage(context, cardsInfoDbHelper, mtgHelper);
+    DecksStorage provideDecksStorage(FileUtil fileUtil, CardsInfoDbHelper cardsInfoDbHelper, MTGCardDataSource mtgCardDataSource) {
+        return new DecksStorage(fileUtil, cardsInfoDbHelper, mtgCardDataSource);
     }
 }

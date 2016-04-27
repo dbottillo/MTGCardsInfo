@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import android.net.Uri;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -31,6 +32,7 @@ public class DecksInteractorImplTest {
     static Deck deck;
     static MTGCard card;
     static DecksStorage storage;
+    static Uri uri;
     static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
     static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
 
@@ -41,6 +43,7 @@ public class DecksInteractorImplTest {
         deck = mock(Deck.class);
         card = mock(MTGCard.class);
         storage = mock(DecksStorage.class);
+        uri = mock(Uri.class);
         when(storage.load()).thenReturn(decks);
         when(storage.loadDeck(deck)).thenReturn(deckCards);
         when(storage.addDeck("deck")).thenReturn(decks);
@@ -135,5 +138,15 @@ public class DecksInteractorImplTest {
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
         verify(storage).removeAllCard(deck, card);
+    }
+
+    @Test
+    public void testImportDeck() {
+        when(storage.importDeck(uri)).thenReturn(decks);
+        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        decksInteractor.importDeck(uri).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
+        verify(storage).importDeck(uri);
     }
 }

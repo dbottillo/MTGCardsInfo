@@ -4,12 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper;
 
-import java.util.List;
 import java.util.List;
 
 /**
@@ -43,21 +40,6 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
     public List<MTGSet> getSets() {
         SQLiteDatabase db = getReadableDatabase();
         return SetDataSource.getSets(db);
-    }
-
-    public List<MTGCard> getSet(MTGSet set) {
-        SQLiteDatabase db = getReadableDatabase();
-        return MTGCardDataSource.getSet(db, set);
-    }
-
-    public List<MTGCard> searchCards(SearchParams searchParams) {
-        SQLiteDatabase db = getReadableDatabase();
-        return MTGCardDataSource.searchCards(db, searchParams);
-    }
-
-    public List<MTGCard> getRandomCard(int number) {
-        SQLiteDatabase db = getReadableDatabase();
-        return MTGCardDataSource.getRandomCard(db, number);
     }
 
 }

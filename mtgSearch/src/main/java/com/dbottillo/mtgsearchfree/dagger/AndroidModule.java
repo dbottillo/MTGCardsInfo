@@ -9,8 +9,10 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import java.util.List;
 
@@ -53,6 +55,12 @@ public class AndroidModule {
     }
 
     @Provides
+    @Singleton
+    MTGCardDataSource provideMTGCardDataSource(MTGDatabaseHelper helper){
+        return new MTGCardDataSource(helper);
+    }
+
+    @Provides
     RxWrapper<List<MTGSet>> provideListMTGSetWrapper() {
         return new RxWrapper<>();
     }
@@ -80,5 +88,10 @@ public class AndroidModule {
     @Provides
     RxWrapper<int[]> provideFavWrapper() {
         return new RxWrapper<>();
+    }
+
+    @Provides
+    FileUtil provideFileUtil(){
+        return new FileUtil(app.getApplicationContext());
     }
 }

@@ -6,6 +6,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -18,6 +19,13 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class CardDataSourceTest extends BaseDatabaseTest {
 
+    MTGCardDataSource cardDataSource;
+
+    @Before
+    public void setup(){
+        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
+    }
+
     @Test
     public void test_generate_table_is_correct() {
         String query = CardDataSource.generateCreateTable();
@@ -29,7 +37,7 @@ public class CardDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_card_can_be_saved_in_database() {
-        MTGCard card = mtgDatabaseHelper.getRandomCard(1).get(0);
+        MTGCard card = cardDataSource.getRandomCard(1).get(0);
         long id = CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);

@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -14,6 +15,13 @@ import static org.junit.Assert.assertTrue;
 
 public class FavouritesDataSourceTest extends BaseDatabaseTest {
 
+    MTGCardDataSource cardDataSource;
+
+    @Before
+    public void setup(){
+        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
+    }
+
     @Test
     public void generate_table_is_correct() {
         String query = FavouritesDataSource.generateCreateTable();
@@ -23,7 +31,7 @@ public class FavouritesDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void cards_can_be_saved_as_favourites() {
-        List<MTGCard> cards = mtgDatabaseHelper.getRandomCard(3);
+        List<MTGCard> cards = cardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
             FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
         }
@@ -35,7 +43,7 @@ public class FavouritesDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void cards_can_be_removed_from_favourites() {
-        List<MTGCard> cards = mtgDatabaseHelper.getRandomCard(3);
+        List<MTGCard> cards = cardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
             FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
         }
