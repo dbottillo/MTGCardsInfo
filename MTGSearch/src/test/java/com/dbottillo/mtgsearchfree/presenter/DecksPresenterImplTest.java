@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import android.net.Uri;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
@@ -40,6 +41,9 @@ public class DecksPresenterImplTest extends BaseTest {
     Deck deck;
 
     @Mock
+    Uri uri;
+
+    @Mock
     List<Deck> decks;
 
     @Mock
@@ -52,6 +56,7 @@ public class DecksPresenterImplTest extends BaseTest {
         view = mock(DecksView.class);
         when(interactor.load()).thenReturn(Observable.just(decks));
         when(interactor.addDeck("deck")).thenReturn(Observable.just(decks));
+        when(interactor.importDeck(uri)).thenReturn(Observable.just(decks));
         when(interactor.deleteDeck(deck)).thenReturn(Observable.just(decks));
         when(interactor.loadDeck(deck)).thenReturn(Observable.just(cards));
         when(interactor.addCard("new", card, 2)).thenReturn(Observable.just(cards));
@@ -124,5 +129,12 @@ public class DecksPresenterImplTest extends BaseTest {
         presenter.removeAllCardFromDeck(deck, card);
         verify(interactor).removeAllCard(deck, card);
         verify(view).deckLoaded(cards);
+    }
+
+    @Test
+    public void testImportDeck() {
+        presenter.importDeck(uri);
+        verify(interactor).importDeck(uri);
+        verify(view).decksLoaded(decks);
     }
 }

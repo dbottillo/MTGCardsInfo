@@ -13,8 +13,8 @@ import org.junit.Before;
 public class BaseDatabaseTest {
 
     protected RenamingDelegatingContext context;
-    CardsInfoDbHelper cardsInfoDbHelper;
-    MTGDatabaseHelper mtgDatabaseHelper;
+    public CardsInfoDbHelper cardsInfoDbHelper;
+    public MTGDatabaseHelper mtgDatabaseHelper;
 
     @Before
     public void create_data_helper() throws Exception {

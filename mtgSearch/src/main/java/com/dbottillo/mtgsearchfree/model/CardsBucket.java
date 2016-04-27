@@ -11,7 +11,7 @@ public class CardsBucket {
     List<MTGCard> cards;
 
     public CardsBucket(){
-
+        cards = new ArrayList<>();
     }
 
     public CardsBucket(MTGSet set, List<MTGCard> cards) {

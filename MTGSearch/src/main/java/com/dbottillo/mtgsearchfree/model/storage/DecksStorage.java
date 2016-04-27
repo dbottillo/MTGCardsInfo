@@ -1,12 +1,13 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -16,14 +17,14 @@ import java.util.List;
 public class DecksStorage {
 
     private CardsInfoDbHelper helper;
-    private MTGDatabaseHelper mtgHelper;
-    private Context context;
+    private MTGCardDataSource cardDataSource;
+    private FileUtil fileUtil;
 
-    public DecksStorage(Context context, CardsInfoDbHelper helper, MTGDatabaseHelper mtgHelper) {
+    public DecksStorage(FileUtil fileUtil, CardsInfoDbHelper helper, MTGCardDataSource cardDataSource) {
         LOG.d("created");
         this.helper = helper;
-        this.mtgHelper = mtgHelper;
-        this.context = context;
+        this.cardDataSource = cardDataSource;
+        this.fileUtil = fileUtil;
     }
 
     public List<Deck> load() {
@@ -33,7 +34,7 @@ public class DecksStorage {
 
     public List<Deck> addDeck(String name) {
         LOG.d("add " + name);
-        helper.addDecK(name);
+        helper.addDeck(name);
         return load();
     }
 
@@ -62,7 +63,7 @@ public class DecksStorage {
 
     public List<MTGCard> addCard(String name, MTGCard card, int quantity) {
         LOG.d("add " + quantity + " " + card + " with new deck name " + name);
-        long deckId = helper.addDecK(name);
+        long deckId = helper.addDeck(name);
         helper.addCard(deckId, card, quantity);
         return helper.loadDeck(deckId);
     }
@@ -80,11 +81,11 @@ public class DecksStorage {
     }
 
     public List<Deck> importDeck(Uri uri) {
-        CardsBucket bucket = FileUtil.readFileContent(context, uri);
-        if ( bucket == null){
+        CardsBucket bucket = fileUtil.readFileContent(uri);
+        if (bucket == null){
             return load();
         }
-        return helper.addDeck(mtgHelper.getReadableDatabase(), bucket);
+        return helper.addDeck(cardDataSource, bucket);
     }
 }
 

@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
@@ -21,13 +22,13 @@ import java.util.List;
 public class UpdateLuckyWidgetService extends Service {
 
     int[] allWidgetIds;
-    MTGDatabaseHelper mtgDatabaseHelper;
+    MTGCardDataSource cardDataSource;
 
     @Override
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            mtgDatabaseHelper = MTGDatabaseHelper.getInstance(getApplicationContext());
+            cardDataSource = new MTGCardDataSource(MTGDatabaseHelper.getInstance(getApplicationContext()));
             new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);
@@ -72,7 +73,7 @@ public class UpdateLuckyWidgetService extends Service {
 
         @Override
         protected List<MTGCard> doInBackground(Integer... params) {
-            return mtgDatabaseHelper.getRandomCard(params[0]);
+            return cardDataSource.getRandomCard(params[0]);
         }
 
         @Override

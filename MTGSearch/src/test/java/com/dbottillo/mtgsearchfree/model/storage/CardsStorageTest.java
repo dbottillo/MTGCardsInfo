@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 
 import org.junit.Before;
@@ -28,7 +29,7 @@ public class CardsStorageTest extends BaseTest {
 
     static MTGSet set;
     static Deck deck;
-    static MTGDatabaseHelper mtgDatabaseHelper;
+    static MTGCardDataSource mtgCardDataSource;
     static CardsInfoDbHelper cardsInfoDbHelper;
     static List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
     static List<MTGCard> luckyCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
@@ -51,14 +52,14 @@ public class CardsStorageTest extends BaseTest {
 
     @Before
     public void setupStorage() {
-        mtgDatabaseHelper = mock(MTGDatabaseHelper.class);
+        mtgCardDataSource = mock(MTGCardDataSource.class);
         cardsInfoDbHelper = mock(CardsInfoDbHelper.class);
-        when(mtgDatabaseHelper.getSet(set)).thenReturn(setCards);
+        when(mtgCardDataSource.getSet(set)).thenReturn(setCards);
         when(cardsInfoDbHelper.loadFav(anyBoolean())).thenReturn(favCards);
-        when(mtgDatabaseHelper.getRandomCard(2)).thenReturn(luckyCards);
-        when(mtgDatabaseHelper.searchCards(Matchers.any(SearchParams.class))).thenReturn(searchCards);
+        when(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards);
+        when(mtgCardDataSource.searchCards(Matchers.any(SearchParams.class))).thenReturn(searchCards);
         when(cardsInfoDbHelper.loadDeck(deck)).thenReturn(deckCards);
-        cardsStorage = new CardsStorage(mtgDatabaseHelper, cardsInfoDbHelper);
+        cardsStorage = new CardsStorage(mtgCardDataSource, cardsInfoDbHelper);
     }
 
     @Test
@@ -98,7 +99,7 @@ public class CardsStorageTest extends BaseTest {
     @Test
     public void testGetLuckyCards() {
         List<MTGCard> lucky = cardsStorage.getLuckyCards(2);
-        verify(mtgDatabaseHelper).getRandomCard(2);
+        verify(mtgCardDataSource).getRandomCard(2);
         assertThat(lucky.size(), is(2));
         assertThat(lucky, is(luckyCards));
     }
@@ -123,7 +124,7 @@ public class CardsStorageTest extends BaseTest {
     public void testDoSearch() {
         SearchParams searchParams = mock(SearchParams.class);
         List<MTGCard> search = cardsStorage.doSearch(searchParams);
-        verify(mtgDatabaseHelper).searchCards(searchParams);
+        verify(mtgCardDataSource).searchCards(searchParams);
         assertNotNull(search);
         assertThat(search, is(searchCards));
     }

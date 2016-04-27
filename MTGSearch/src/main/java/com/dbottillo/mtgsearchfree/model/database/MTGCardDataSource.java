@@ -12,22 +12,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public final class MTGCardDataSource {
+public class MTGCardDataSource {
 
     public static final int LIMIT = 400;
 
     public static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins", "Battle for Zendikar", "Oath of the Gatewatch", "Shadows over Innistrad");
 
-    private MTGCardDataSource() {
+    MTGDatabaseHelper mtgHelper;
+
+    public MTGCardDataSource(MTGDatabaseHelper helper) {
+        this.mtgHelper = helper;
     }
 
-    public static ArrayList<MTGCard> getSet(SQLiteDatabase db, MTGSet set) {
+    public List<MTGCard> getSet(MTGSet set) {
         LOG.d("get set  " + set.toString());
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.getName() + " = '" + set.getCode() + "';";
         LOG.query(query, set.getCode());
 
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 MTGCard card = CardDataSource.fromCursor(cursor);
@@ -40,7 +43,7 @@ public final class MTGCardDataSource {
         return cards;
     }
 
-    public static ArrayList<MTGCard> searchCards(SQLiteDatabase db, SearchParams searchParams) {
+    public List<MTGCard> searchCards(SearchParams searchParams) {
         LOG.d("search cards  " + searchParams.toString());
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE ";
@@ -194,7 +197,7 @@ public final class MTGCardDataSource {
 
         LOG.query(query, sel);
 
-        Cursor cursor = db.rawQuery(query, sel);
+        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, sel);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 MTGCard card = CardDataSource.fromCursor(cursor);
@@ -206,7 +209,7 @@ public final class MTGCardDataSource {
         return cards;
     }
 
-    private static String composeQuery(boolean first, String column, String operator) {
+    private String composeQuery(boolean first, String column, String operator) {
         String query = "";
         if (!first) {
             query += "AND ";
@@ -215,11 +218,11 @@ public final class MTGCardDataSource {
         return query;
     }
 
-    private static String composeQuery(boolean first, String column) {
+    private String composeQuery(boolean first, String column) {
         return composeQuery(first, column, "LIKE");
     }
 
-    private static String composeQueryForInt(boolean first, String column, String operator) {
+    private String composeQueryForInt(boolean first, String column, String operator) {
         //power != "" AND  CAST(power as integer)<1
         String query = "";
         if (!first) {
@@ -231,7 +234,7 @@ public final class MTGCardDataSource {
         return query;
     }
 
-    private static String composeQueryColor(boolean first, String operator) {
+    private String composeQueryColor(boolean first, String operator) {
         String query = "";
         if (!first) {
             query += operator;
@@ -240,12 +243,12 @@ public final class MTGCardDataSource {
         return query;
     }
 
-    public static ArrayList<MTGCard> getRandomCard(SQLiteDatabase db, int number) {
+    public List<MTGCard> getRandomCard(int number) {
         LOG.d("get random card  " + number);
         String query = "SELECT * FROM " + CardDataSource.TABLE + " ORDER BY RANDOM() LIMIT " + number;
         LOG.query(query);
         ArrayList<MTGCard> cards = new ArrayList<>(number);
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 cards.add(CardDataSource.fromCursor(cursor));
@@ -256,15 +259,20 @@ public final class MTGCardDataSource {
         return cards;
     }
 
-
-    public static MTGCard searchCard(SQLiteDatabase db, String name) {
-        LOG.d("search card  " + name);
-        SearchParams searchParams = new SearchParams();
-        searchParams.setName(name);
-        ArrayList<MTGCard> cards = searchCards(db, searchParams);
-        if (cards.size() == 0){
-            return null;
+    public MTGCard searchCard(String name) {
+        LOG.d("search card" + name);
+        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "+
+                CardDataSource.COLUMNS.NAME.getName()+"=?";
+        String[] selection = new String[]{name};
+        LOG.query(query);
+        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, selection);
+        MTGCard card = null;
+        LOG.e("cursor size: "+cursor.getCount());
+        if (cursor.moveToFirst()){
+            card = CardDataSource.fromCursor(cursor);
+            LOG.e("card: "+card.toString());
         }
-        return cards.get(0);
+        cursor.close();
+        return card;
     }
 }
