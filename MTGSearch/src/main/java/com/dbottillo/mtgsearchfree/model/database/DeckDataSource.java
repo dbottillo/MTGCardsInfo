@@ -114,19 +114,23 @@ public final class DeckDataSource {
         LOG.query(query, deckId + "", card.getMultiVerseId() + "", sid + "");
         Cursor cardsCursor = db.rawQuery(query, new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
+            LOG.d("card already in the database");
             cardsCursor.moveToFirst();
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
         }
         if (currentCard + quantity < 0) {
+            LOG.d("the quantity is negative and is bigger than the current quantity so needs to be removed");
             cardsCursor.close();
             removeCardFromDeck(db, deckId, card);
             return;
         }
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
+            LOG.d("just need to update the quantity");
             ContentValues values = new ContentValues();
             values.put(COLUMNSJOIN.QUANTITY.getName(), currentCard + quantity);
-            db.update(TABLE_JOIN, values, COLUMNSJOIN.DECK_ID.getName() + " = ? and " + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?", new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
+            String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
+            db.update(TABLE_JOIN, values, COLUMNSJOIN.DECK_ID.getName() + " = ? and " + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?", args);
             cardsCursor.close();
             return;
         }

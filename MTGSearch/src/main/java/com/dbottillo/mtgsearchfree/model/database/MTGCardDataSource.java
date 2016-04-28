@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -260,17 +259,15 @@ public class MTGCardDataSource {
     }
 
     public MTGCard searchCard(String name) {
-        LOG.d("search card" + name);
-        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "+
-                CardDataSource.COLUMNS.NAME.getName()+"=?";
+        LOG.d("search card <" + name + ">");
+        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " +
+                CardDataSource.COLUMNS.NAME.getName() + "=?";
         String[] selection = new String[]{name};
         LOG.query(query);
         Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, selection);
         MTGCard card = null;
-        LOG.e("cursor size: "+cursor.getCount());
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             card = CardDataSource.fromCursor(cursor);
-            LOG.e("card: "+card.toString());
         }
         cursor.close();
         return card;

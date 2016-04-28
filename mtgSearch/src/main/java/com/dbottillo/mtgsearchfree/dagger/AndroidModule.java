@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import java.util.List;
@@ -92,6 +93,6 @@ public class AndroidModule {
 
     @Provides
     FileUtil provideFileUtil(){
-        return new FileUtil(app.getApplicationContext());
+        return new FileUtil(new FileLoaderImpl(app.getApplicationContext()));
     }
 }

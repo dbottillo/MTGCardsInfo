@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.util;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
@@ -21,14 +22,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileUtil {
 
-    private Context context;
+    private FileLoader fileLoader;
 
-    public FileUtil(Context context) {
-        this.context = context;
+    public FileUtil(FileLoader fileLoader) {
+        this.fileLoader = fileLoader;
     }
 
     public static File copyDbToSdCard(Context ctx, String name) {
@@ -152,7 +154,7 @@ public class FileUtil {
         }
         CardsBucket bucket = null;
         try {
-            InputStream is = context.getContentResolver().openInputStream(uri);
+            InputStream is = fileLoader.loadUri(uri);
             bucket = readFileStream(is);
         } catch (IOException ignored) {
         }
@@ -178,32 +180,27 @@ public class FileUtil {
                     }
 
                 } else if (line.startsWith("SB: ")) {
-                    String split[] = line.replace("SB: ", "").split(" ");
-                    MTGCard card = new MTGCard();
-                    card.setQuantity(Integer.parseInt(split[0]));
-                    card.setCardName(split[1]);
+                    MTGCard card = generateCard(line.replace("SB: ",""));
                     card.setSideboard(true);
-                    LOG.e(split[0] + " - " + split[1]);
                     cards.add(card);
                 } else {
                     // standard
-                    String split[] = line.split(" ");
-                    String rest= "";
-                    for (int i=1; i<split.length; i++){
-                        rest += split[i]+" ";
-                    }
-
-                    LOG.e(split[0] + " - " + rest);
-
-                    MTGCard card = new MTGCard();
-                    card.setQuantity(Integer.parseInt(split[0]));
-                    card.setCardName(rest);
-                    cards.add(card);
+                    cards.add(generateCard(line));
                 }
             }
         }
         br.close();
         bucket.setCards(cards);
         return bucket;
+    }
+
+    private MTGCard generateCard(String line) {
+        ArrayList<String> items = new ArrayList<>(Arrays.asList(line.split(" ")));
+        String first = items.remove(0);
+        String rest = TextUtils.join(" ", items);
+        MTGCard card = new MTGCard();
+        card.setQuantity(Integer.parseInt(first));
+        card.setCardName(rest);
+        return card;
     }
 }
