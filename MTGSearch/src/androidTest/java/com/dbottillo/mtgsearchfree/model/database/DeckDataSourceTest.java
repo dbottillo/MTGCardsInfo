@@ -224,11 +224,10 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void test_add_deck_with_non_empty_bucket() {
-        String[] cardNames = new String[]{"Counterspell", "Jace", "Liliana", "Fireball", "Zombie"};
+        String[] cardNames = new String[]{"Counterspell", "Oath of Jace", "Fireball", "Thunderbolt", "Countersquall"};
         int[] quantities = new int[]{2, 3, 4, 1, 3};
         boolean[] side = new boolean[]{true, true, false, false, true};
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        SQLiteDatabase mtgdb = mtgDatabaseHelper.getWritableDatabase();
         CardsBucket bucket = new CardsBucket();
         bucket.setKey("deck");
         List<MTGCard> namedCards = new ArrayList<>(cardNames.length);
@@ -267,7 +266,6 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         String[] cardNames = new String[]{"Counterspell", "Eistein"};
         int[] quantities = new int[]{2, 3};
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        SQLiteDatabase mtgdb = mtgDatabaseHelper.getWritableDatabase();
         CardsBucket bucket = new CardsBucket();
         bucket.setKey("deck");
         List<MTGCard> namedCards = new ArrayList<>(cardNames.length);
@@ -281,11 +279,6 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         long deckId = DeckDataSource.addDeck(cardDataSource, db, bucket);
         List<MTGCard> deckCards = DeckDataSource.getCards(db, deckId);
         assertThat(deckCards.size(), is(cardNames.length-1));
-    }
-
-    @Test
-    public void DeckDataSource_willImportDeck(){
-
     }
 
     private long generateDeckWithSmallAmountOfCards() {

@@ -38,4 +38,5 @@ public final class GeneralPreferences {
     public boolean isDebugEnabled() {
         return BuildConfig.DEBUG || sharedPreferences.getBoolean(DEBUG, false);
     }
+
 }
