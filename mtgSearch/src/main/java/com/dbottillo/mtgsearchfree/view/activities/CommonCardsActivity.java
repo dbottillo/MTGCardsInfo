@@ -81,7 +81,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         MTGCard currentCard = getCurrentCard();
         if (currentCard != null && currentCard.getMultiVerseId() > 0) {
             favMenuItem.setVisible(true);
-            if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
+            if (isCardFavourite(currentCard.getMultiVerseId())) {
                 favMenuItem.setTitle(getString(R.string.favourite_remove));
                 favMenuItem.setIcon(R.drawable.ab_star_colored);
             } else {
@@ -96,6 +96,15 @@ public abstract class CommonCardsActivity extends BasicActivity {
         } else {
             imageMenuItem.setChecked(false);
         }
+    }
+
+    protected boolean isCardFavourite(int multiverseId){
+        for (int id : idFavourites){
+            if (id == multiverseId){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

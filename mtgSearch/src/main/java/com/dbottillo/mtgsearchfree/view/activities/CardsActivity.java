@@ -173,7 +173,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = adapter.getItem(viewPager.getCurrentItem());
-        if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
+        if (isCardFavourite(currentCard.getMultiVerseId())) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);
