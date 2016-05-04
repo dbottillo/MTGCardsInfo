@@ -2,8 +2,10 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
@@ -15,24 +17,30 @@ import java.util.List;
 import javax.inject.Inject;
 
 import rx.Subscription;
+import rx.functions.Func1;
 
 public class CardsPresenterImpl implements CardsPresenter {
 
     CardsInteractor interactor;
-
     CardsView cardsView;
+    DeckMapper deckMapper;
+
     Subscription subscription = null;
 
     @Inject
     RxWrapper<List<MTGCard>> cardsWrapper;
 
     @Inject
+    RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper;
+
+    @Inject
     RxWrapper<int[]> favWrapper;
 
-    public CardsPresenterImpl(CardsInteractor interactor) {
+    public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper) {
         LOG.d("created");
         MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.deckMapper = mapper;
     }
 
     public void getLuckyCards(int howMany) {
@@ -85,15 +93,29 @@ public class CardsPresenterImpl implements CardsPresenter {
         });
     }
 
+    private Func1<List<MTGCard>, DeckBucket> mapper = new Func1<List<MTGCard>, DeckBucket>() {
+        @Override
+        public DeckBucket call(List<MTGCard> mtgCards) {
+            return deckMapper.map(mtgCards);
+        }
+    };
+
     @Override
     public void loadDeck(final Deck deck) {
         LOG.d("loadSet " + deck);
-        cardsWrapper.run(interactor.loadDeck(deck), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        CardsBucket currentBucket = CardsMemoryStorage.bucket;
+        if (currentBucket != null && currentBucket.isValid(deck.getName())) {
+            LOG.d("current bucket is valid, will return");
+            cardsView.deckLoaded((DeckBucket) currentBucket);
+            return;
+        }
+        deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new RxWrapper.RxWrapperListener<DeckBucket>() {
             @Override
-            public void onNext(List<MTGCard> mtgCards) {
+            public void onNext(DeckBucket bucket) {
                 LOG.d();
-                CardsMemoryStorage.bucket = new CardsBucket(deck.getName(), mtgCards);
-                cardsView.cardLoaded(CardsMemoryStorage.bucket);
+                bucket.setKey(deck.getName());
+                CardsMemoryStorage.bucket = bucket;
+                cardsView.deckLoaded(bucket);
             }
 
             @Override

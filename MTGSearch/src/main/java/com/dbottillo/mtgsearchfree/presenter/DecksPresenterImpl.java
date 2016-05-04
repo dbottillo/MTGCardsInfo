@@ -3,8 +3,12 @@ package com.dbottillo.mtgsearchfree.presenter;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.DecksView;
@@ -12,6 +16,9 @@ import com.dbottillo.mtgsearchfree.view.DecksView;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import rx.functions.Func1;
+import rx.functions.Func2;
 
 public class DecksPresenterImpl implements DecksPresenter {
 
@@ -22,12 +29,15 @@ public class DecksPresenterImpl implements DecksPresenter {
     RxWrapper<List<Deck>> deckWrapper;
 
     @Inject
-    RxWrapper<List<MTGCard>> cardWrapper;
+    RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper;
 
-    public DecksPresenterImpl(DecksInteractor interactor) {
+    DeckMapper deckMapper;
+
+    public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper) {
         LOG.d("created");
         MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.deckMapper = deckMapper;
     }
 
     public void init(DecksView view) {
@@ -43,7 +53,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        cardWrapper.run(interactor.loadDeck(deck), cardsObserver);
+        cardWrapper.runAndMap(interactor.loadDeck(deck), mapper, cardsObserver);
     }
 
     @Override
@@ -61,32 +71,31 @@ public class DecksPresenterImpl implements DecksPresenter {
     @Override
     public void editDeck(Deck deck, String name) {
         LOG.d("edit " + deck + " with " + name);
-        cardWrapper.run(interactor.editDeck(deck, name), cardsObserver);
-
+        cardWrapper.runAndMap(interactor.editDeck(deck, name), mapper, cardsObserver);
     }
 
     @Override
     public void addCardToDeck(String name, MTGCard card, int quantity) {
         LOG.d();
-        cardWrapper.run(interactor.addCard(name, card, quantity), cardsObserver);
+        cardWrapper.runAndMap(interactor.addCard(name, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void addCardToDeck(Deck deck, MTGCard card, int quantity) {
         LOG.d();
-        cardWrapper.run(interactor.addCard(deck, card, quantity), cardsObserver);
+        cardWrapper.runAndMap(interactor.addCard(deck, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void removeCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        cardWrapper.run(interactor.removeCard(deck, card), cardsObserver);
+        cardWrapper.runAndMap(interactor.removeCard(deck, card), mapper, cardsObserver);
     }
 
     @Override
     public void removeAllCardFromDeck(Deck deck, MTGCard card) {
         LOG.d();
-        cardWrapper.run(interactor.removeAllCard(deck, card), cardsObserver);
+        cardWrapper.runAndMap(interactor.removeAllCard(deck, card), mapper, cardsObserver);
     }
 
     @Override
@@ -95,6 +104,12 @@ public class DecksPresenterImpl implements DecksPresenter {
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
     }
 
+    private Func1<List<MTGCard>, DeckBucket> mapper = new Func1<List<MTGCard>, DeckBucket>() {
+        @Override
+        public DeckBucket call(List<MTGCard> mtgCards) {
+            return deckMapper.map(mtgCards);
+        }
+    };
 
     RxWrapper.RxWrapperListener<List<Deck>> deckObserver = new RxWrapper.RxWrapperListener<List<Deck>>() {
         @Override
@@ -114,11 +129,11 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
     };
 
-    RxWrapper.RxWrapperListener<List<MTGCard>> cardsObserver = new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+    RxWrapper.RxWrapperListener<DeckBucket> cardsObserver = new RxWrapper.RxWrapperListener<DeckBucket>() {
         @Override
-        public void onNext(List<MTGCard> cards) {
+        public void onNext(DeckBucket bucket) {
             LOG.d();
-            decksView.deckLoaded(cards);
+            decksView.deckLoaded(bucket);
         }
 
         @Override

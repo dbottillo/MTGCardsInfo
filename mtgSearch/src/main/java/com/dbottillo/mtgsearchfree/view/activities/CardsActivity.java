@@ -15,6 +15,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
@@ -231,6 +232,13 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         }
     }
 
+    @Override
+    public void deckLoaded(DeckBucket bucket) {
+        LOG.d();
+        this.bucket = bucket;
+        reloadAdapter();
+    }
+
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
@@ -283,8 +291,4 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public void deckLoaded(List<MTGCard> cards) {
-        throw new UnsupportedOperationException();
-    }
 }

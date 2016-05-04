@@ -3,9 +3,11 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
@@ -67,7 +69,13 @@ public class CardsPresenterImplTest extends BaseTest {
     List<MTGCard> searchCards;
 
     @Mock
+    DeckBucket deckBucket;
+
+    @Mock
     SearchParams searchParams;
+
+    @Mock
+    DeckMapper deckMapper;
 
     @Before
     public void setup() {
@@ -85,7 +93,8 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.saveAsFavourite(card)).thenReturn(Observable.just(idFavs));
         when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
-        presenter = new CardsPresenterImpl(interactor);
+        when(deckMapper.map(deckCards)).thenReturn(deckBucket);
+        presenter = new CardsPresenterImpl(interactor, deckMapper);
         presenter.init(view);
     }
 
@@ -113,10 +122,9 @@ public class CardsPresenterImplTest extends BaseTest {
     public void testLoadDeck() {
         presenter.loadDeck(deck);
         verify(interactor).loadDeck(deck);
-        ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
-        verify(view).cardLoaded(argument.capture());
-        assertThat(argument.getValue().getKey(), is("deck"));
-        assertThat(argument.getValue().getCards(), is(deckCards));
+        ArgumentCaptor<DeckBucket> argument = ArgumentCaptor.forClass(DeckBucket.class);
+        verify(view).deckLoaded(argument.capture());
+        assertThat(argument.getValue(), is(deckBucket));
     }
 
     @Test

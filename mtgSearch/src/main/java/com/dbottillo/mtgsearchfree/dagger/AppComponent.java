@@ -8,8 +8,10 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
@@ -22,6 +24,7 @@ import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
+import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
@@ -66,7 +69,11 @@ public interface AppComponent {
 
     RxWrapper<List<Deck>> getRxWrapperListDeck();
 
+    RxDoubleWrapper<List<MTGCard>, DeckBucket> getRxWrapperDeckBucket();
+
     RxWrapper<int[]> getRxWrapperFav();
+
+    DeckMapper getDeckMapper();
 
     SharedPreferences getSharedPreferences();
 

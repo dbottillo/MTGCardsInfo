@@ -23,32 +23,6 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public DeckCardSectionAdapter(Context context, RecyclerView.Adapter baseAdapter) {
         mBaseAdapter = baseAdapter;
         mContext = context;
-
-        /*mBaseAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override
-            public void onChanged() {
-                mValid = mBaseAdapter.getItemCount()>0;
-                notifyDataSetChanged();
-            }
-
-            @Override
-            public void onItemRangeChanged(int positionStart, int itemCount) {
-                mValid = mBaseAdapter.getItemCount()>0;
-                notifyItemRangeChanged(positionStart, itemCount);
-            }
-
-            @Override
-            public void onItemRangeInserted(int positionStart, int itemCount) {
-                mValid = mBaseAdapter.getItemCount()>0;
-                notifyItemRangeInserted(positionStart, itemCount);
-            }
-
-            @Override
-            public void onItemRangeRemoved(int positionStart, int itemCount) {
-                mValid = mBaseAdapter.getItemCount()>0;
-                notifyItemRangeRemoved(positionStart, itemCount);
-            }
-        });*/
     }
 
 
@@ -109,15 +83,6 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void setSections(Section[] sections) {
         mSections.clear();
 
-        /*Arrays.sort(sections, new Comparator<Section>() {
-            @Override
-            public int compare(Section o, Section o1) {
-                return (o.firstPosition == o1.firstPosition)
-                        ? 0
-                        : ((o.firstPosition < o1.firstPosition) ? -1 : 1);
-            }
-        });*/
-
         int offset = 0; // offset positions for the headers we're adding
         for (Section section : sections) {
             section.sectionedPosition = section.firstPosition + offset;
@@ -126,17 +91,6 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
 
         notifyDataSetChanged();
-    }
-
-    public int positionToSectionedPosition(int position) {
-        int offset = 0;
-        for (int i = 0; i < mSections.size(); i++) {
-            if (mSections.valueAt(i).firstPosition > position) {
-                break;
-            }
-            ++offset;
-        }
-        return position + offset;
     }
 
     public int sectionedPositionToPosition(int sectionedPosition) {

@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
@@ -28,8 +29,8 @@ public class PresentersModule {
     }
 
     @Provides
-    CardsPresenter provideCardsPresenter(CardsInteractor interactor) {
-        return new CardsPresenterImpl(interactor);
+    CardsPresenter provideCardsPresenter(CardsInteractor interactor, DeckMapper deckMapper) {
+        return new CardsPresenterImpl(interactor, deckMapper);
     }
 
     @Provides
@@ -43,7 +44,7 @@ public class PresentersModule {
     }
 
     @Provides
-    DecksPresenter provideDeksPresenter(DecksInteractor interactor) {
-        return new DecksPresenterImpl(interactor);
+    DecksPresenter provideDecksPresenter(DecksInteractor interactor, DeckMapper deckMapper) {
+        return new DecksPresenterImpl(interactor, deckMapper);
     }
 }
