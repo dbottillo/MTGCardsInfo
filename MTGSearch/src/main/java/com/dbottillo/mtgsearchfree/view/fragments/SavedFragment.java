@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -154,6 +155,11 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
         savedCards.clear();
         savedCards.addAll(bucket.getCards());
         updateContent();
+    }
+
+    @Override
+    public void deckLoaded(DeckBucket bucket) {
+        throw new UnsupportedOperationException();
     }
 
 

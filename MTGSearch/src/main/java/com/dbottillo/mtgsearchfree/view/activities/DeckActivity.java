@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +18,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
@@ -88,7 +87,6 @@ public class DeckActivity extends BasicActivity implements DecksView {
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(this, cards, R.menu.deck_card, new OnCardListener() {
             @Override
             public void onCardSelected(MTGCard card, int position) {
-                MTGApp.cardsToDisplay = cards;
                 startActivity(CardsActivity.newInstance(DeckActivity.this, deck, position));
             }
 
@@ -151,66 +149,43 @@ public class DeckActivity extends BasicActivity implements DecksView {
     }
 
     @Override
-    public void deckLoaded(List<MTGCard> newCards) {
+    public void deckLoaded(DeckBucket bucket) {
         LOG.d();
         progressBar.setVisibility(View.GONE);
         List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
         cards.clear();
-        if (newCards.size() == 0) {
+        if (bucket.size() == 0) {
             emptyView.setVisibility(View.VISIBLE);
             setTitle(deck.getName());
         } else {
-            ArrayList<MTGCard> creatures = new ArrayList<>();
-            ArrayList<MTGCard> instantAndSorceries = new ArrayList<>();
-            ArrayList<MTGCard> other = new ArrayList<>();
-            ArrayList<MTGCard> lands = new ArrayList<>();
-            ArrayList<MTGCard> side = new ArrayList<>();
-            int nCreatures = 0, nInstanceSorceries = 0, nOther = 0, nLands = 0, nSide = 0;
-            for (MTGCard card : newCards) {
-                if (card.isSideboard()) {
-                    nSide += card.getQuantity();
-                    side.add(card);
-                } else if (card.isLand()) {
-                    nLands += card.getQuantity();
-                    lands.add(card);
-                } else if (card.getTypes().contains("Creature")) {
-                    nCreatures += card.getQuantity();
-                    creatures.add(card);
-                } else if (card.getTypes().contains("Instant") || card.getTypes().contains("Sorcery")) {
-                    nInstanceSorceries += card.getQuantity();
-                    instantAndSorceries.add(card);
-                } else {
-                    nOther += card.getQuantity();
-                    other.add(card);
-                }
-            }
+            
             int startingPoint = 0;
-            if (creatures.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + nCreatures + ")"));
-                startingPoint += creatures.size();
-                cards.addAll(creatures);
+            if (bucket.creatures.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.creatures.size() + ")"));
+                startingPoint += bucket.creatures.size();
+                cards.addAll(bucket.creatures);
             }
-            if (instantAndSorceries.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + nInstanceSorceries + ")"));
-                startingPoint += instantAndSorceries.size();
-                cards.addAll(instantAndSorceries);
+            if (bucket.instantAndSorceries.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + bucket.instantAndSorceries.size() + ")"));
+                startingPoint += bucket.instantAndSorceries.size();
+                cards.addAll(bucket.instantAndSorceries);
             }
-            if (other.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + nOther + ")"));
-                startingPoint += other.size();
-                cards.addAll(other);
+            if (bucket.other.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + bucket.other.size() + ")"));
+                startingPoint += bucket.other.size();
+                cards.addAll(bucket.other);
             }
-            if (lands.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + nLands + ")"));
-                startingPoint += lands.size();
-                cards.addAll(lands);
+            if (bucket.lands.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + bucket.lands.size() + ")"));
+                startingPoint += bucket.lands.size();
+                cards.addAll(bucket.lands);
             }
-            if (side.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + nSide + ")"));
-                cards.addAll(side);
+            if (bucket.side.size() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + bucket.side.size() + ")"));
+                cards.addAll(bucket.side);
             }
 
-            setTitle(deck.getName() + " (" + (nCreatures + nInstanceSorceries + nOther + nLands) + "/" + nSide + ")");
+            setTitle(deck.getName() + " (" + (bucket.sizeNoSideboard()) + "/" + bucket.sizeSideBoard() + ")");
 
         }
         DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
@@ -253,14 +228,14 @@ public class DeckActivity extends BasicActivity implements DecksView {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)){
+        if (PermissionUtil.isGranted(grantResults)) {
             exportDeck();
         } else {
             exportDeckNotAllowed();
         }
     }
 
-    private void exportDeckNotAllowed(){
+    private void exportDeckNotAllowed() {
         Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
         TrackingManager.trackDeckExportError();
     }

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
@@ -323,6 +324,11 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         LOG.d();
         currentBucket = bucket;
         refreshList();
+    }
+
+    @Override
+    public void deckLoaded(DeckBucket bucket) {
+        throw new UnsupportedOperationException();
     }
 
     private void refreshList() {

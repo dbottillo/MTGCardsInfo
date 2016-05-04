@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -288,7 +289,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     @Override
-    public void deckLoaded(List<MTGCard> cards) {
+    public void deckLoaded(DeckBucket bucket) {
         throw new UnsupportedOperationException();
     }
 

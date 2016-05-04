@@ -460,7 +460,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         if (!(isALand == other.isALand)) {
             return false;
         }
-        if (!(set.equals(other.set))) {
+        if (!(set == null && other.set == null || (set != null && other.set != null && set.equals(other.set)))) {
             return false;
         }
         if (!equalOrNull(layout, other.layout)) {

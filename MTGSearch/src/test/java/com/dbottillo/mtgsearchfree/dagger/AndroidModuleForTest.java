@@ -3,10 +3,13 @@ package com.dbottillo.mtgsearchfree.dagger;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.presenter.TestRxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.TestRxWrapper;
 
 import java.util.List;
@@ -44,7 +47,13 @@ public class AndroidModuleForTest extends AndroidModule{
     }
 
     @Provides
+    RxDoubleWrapper<List<MTGCard>, DeckBucket> provideDeckBucketWrapper() {
+        return new TestRxDoubleWrapper<>();
+    }
+
+    @Provides
     RxWrapper<int[]> provideFavWrapper() {
         return new TestRxWrapper<>();
     }
+
 }

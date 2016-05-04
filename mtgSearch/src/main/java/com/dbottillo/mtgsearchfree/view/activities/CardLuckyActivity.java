@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
@@ -86,6 +87,11 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public void cardLoaded(CardsBucket bucket) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deckLoaded(DeckBucket bucket) {
         throw new UnsupportedOperationException();
     }
 

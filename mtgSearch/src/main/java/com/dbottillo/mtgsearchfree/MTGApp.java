@@ -17,16 +17,13 @@ import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerUiComponent;
-import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-
-import java.util.ArrayList;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -34,7 +31,6 @@ public class MTGApp extends Application {
 
     public static AppComponent graph;
     public static UiComponent uiGraph;
-    public static ArrayList<MTGCard> cardsToDisplay = null;
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     public static String PREFS_NAME = "Filter";
@@ -70,7 +66,7 @@ public class MTGApp extends Application {
         }
     }
 
-    protected AndroidModule generateAndroidModule(){
+    protected AndroidModule generateAndroidModule() {
         return new AndroidModule(this);
     }
 
