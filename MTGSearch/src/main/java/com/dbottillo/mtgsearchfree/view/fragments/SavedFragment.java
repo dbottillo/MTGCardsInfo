@@ -3,13 +3,14 @@ package com.dbottillo.mtgsearchfree.view.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
-import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
@@ -41,14 +42,14 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     private ArrayList<MTGCard> savedCards;
     private ArrayList<MTGCard> savedFilteredCards;
-    private CardListAdapter adapter;
+    private CardsAdapter adapter;
 
     @Bind(R.id.progress)
     SmoothProgressBar progressBar;
     @Bind((R.id.empty_view))
     TextView emptyView;
     @Bind(R.id.card_list)
-    ListView listView;
+    RecyclerView listView;
 
     MainActivity mainActivity;
 
@@ -78,7 +79,10 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
         savedCards = new ArrayList<>();
         savedFilteredCards = new ArrayList<>();
 
-        adapter = new CardListAdapter(getActivity(), savedFilteredCards, false, R.menu.card_saved_option);
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        listView.setLayoutManager(llm);
+
+        adapter = CardsAdapter.list(savedFilteredCards, false, R.menu.card_saved_option);
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
 
@@ -165,6 +169,11 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     @Override
     public void favIdLoaded(int[] favourites) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void cardTypePreferenceChanged(boolean grid) {
         throw new UnsupportedOperationException();
     }
 

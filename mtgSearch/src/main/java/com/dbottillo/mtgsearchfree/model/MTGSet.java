@@ -90,4 +90,14 @@ public class MTGSet implements Parcelable {
     public String toString() {
         return "[" + name + "," + code + "]";
     }
+
+    public String getMagicCardsInfoCode() {
+        if (code.equalsIgnoreCase("tor")){
+            return "tr";
+        }
+        if (code.equalsIgnoreCase("dkm")){
+            return "dm";
+        }
+        return code.toLowerCase();
+    }
 }

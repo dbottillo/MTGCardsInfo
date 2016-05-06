@@ -9,8 +9,10 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     CardsInteractor interactor;
     CardsView cardsView;
     DeckMapper deckMapper;
+    GeneralPreferences generalPreferences;
 
     Subscription subscription = null;
 
@@ -36,11 +39,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Inject
     RxWrapper<int[]> favWrapper;
 
-    public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper) {
+    public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralPreferences generalPreferences) {
         LOG.d("created");
         MTGApp.graph.inject(this);
         this.interactor = interactor;
         this.deckMapper = mapper;
+        this.generalPreferences = generalPreferences;
     }
 
     public void getLuckyCards(int howMany) {
@@ -151,6 +155,22 @@ public class CardsPresenterImpl implements CardsPresenter {
 
             }
         });
+    }
+
+    @Override
+    public void loadCardTypePreference() {
+        cardsView.cardTypePreferenceChanged(generalPreferences.isCardsShowTypeGrid());
+    }
+
+    @Override
+    public void toggleCardTypeViewPreference() {
+        if (generalPreferences.isCardsShowTypeGrid()){
+            generalPreferences.setCardsShowTypeList();
+            cardsView.cardTypePreferenceChanged(false);
+        } else {
+            generalPreferences.setCardsShowTypeGrid();
+            cardsView.cardTypePreferenceChanged(true);
+        }
     }
 
     public void removeFromFavourite(MTGCard card, boolean reload) {

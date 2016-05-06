@@ -11,6 +11,7 @@ public final class GeneralPreferences {
     public static final String PREFS_NAME = "General";
 
     private static final String DEBUG = "debug";
+    private static final String CARDS_SHOW_TYPE = "cardShowType";
 
     SharedPreferences sharedPreferences;
 
@@ -37,6 +38,20 @@ public final class GeneralPreferences {
 
     public boolean isDebugEnabled() {
         return BuildConfig.DEBUG || sharedPreferences.getBoolean(DEBUG, false);
+    }
+
+    public void setCardsShowTypeList(){
+        LOG.d();
+        sharedPreferences.edit().putString(CARDS_SHOW_TYPE, "List").apply();
+    }
+
+    public void setCardsShowTypeGrid(){
+        LOG.d();
+        sharedPreferences.edit().putString(CARDS_SHOW_TYPE, "Grid").apply();
+    }
+
+    public boolean isCardsShowTypeGrid(){
+        return sharedPreferences.getString(CARDS_SHOW_TYPE, "Grid").equalsIgnoreCase("Grid");
     }
 
 }

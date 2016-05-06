@@ -1,10 +1,12 @@
 package com.dbottillo.mtgsearchfree.view.views;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -12,10 +14,10 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.view.adapters.CardListAdapter;
+import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -24,15 +26,17 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class MTGCardListView extends RelativeLayout {
 
+    boolean grid = false;
+    private CardsAdapter adapter;
+
     @Bind(R.id.card_list)
-    ListView listView;
+    RecyclerView listView;
     @Bind(R.id.empty_view)
     TextView emptyView;
     @Bind(R.id.progress)
     SmoothProgressBar progressBar;
-
-    private ArrayList<MTGCard> cards = new ArrayList<>();
-    private CardListAdapter adapter;
+    @Bind(R.id.search_bottom_container)
+    View footer;
 
     public MTGCardListView(Context ctx) {
         this(ctx, null);
@@ -48,28 +52,59 @@ public class MTGCardListView extends RelativeLayout {
         View view = inflater.inflate(R.layout.fragment_set, this, true);
         ButterKnife.bind(this, view);
 
-        adapter = new CardListAdapter(context, cards, false, R.menu.card_option);
-        listView.setAdapter(adapter);
-
+        listView.setHasFixedSize(true);
+        setListOn(); // default
     }
 
     public void loadCards(List<MTGCard> newCards, OnCardListener listener) {
         LOG.d();
-        adapter.setOnCardListener(listener);
-        cards.clear();
-        cards.addAll(newCards);
-        adapter.notifyDataSetChanged();
-        emptyView.setVisibility((adapter.getCount() == 0) ? View.VISIBLE : View.GONE);
-        listView.smoothScrollToPosition(0);
 
-        if (cards.size() == CardDataSource.LIMIT) {
-            View footer = LayoutInflater.from(getContext()).inflate(R.layout.search_bottom, listView, false);
+        adapter = null;
+        if (grid) {
+            adapter = CardsAdapter.grid(newCards, false, R.menu.card_option);
+        } else {
+            adapter = CardsAdapter.list(newCards, false, R.menu.card_option);
+        }
+        adapter.setOnCardListener(listener);
+        listView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+        emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
+
+        if (newCards.size() == CardDataSource.LIMIT) {
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
-            listView.addFooterView(footer);
+            UIUtil.setHeight(footer, UIUtil.dpToPx(getContext(), 60));
+        } else {
+            UIUtil.setHeight(footer, 0);
         }
-        progressBar.setVisibility(View.GONE);
 
-        emptyView.setVisibility((adapter.getCount() == 0) ? View.VISIBLE : View.GONE);
+        progressBar.setVisibility(View.GONE);
+        emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
+    }
+
+    public void setGridOn() {
+        LOG.d();
+        grid = true;
+        GridLayoutManager glm = new GridLayoutManager(getContext(), getResources().getInteger(R.integer.cards_grid_column_count));
+        listView.setLayoutManager(glm);
+        tryRefresh();
+    }
+
+    public void setListOn() {
+        LOG.d();
+        grid = false;
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        listView.setLayoutManager(llm);
+        tryRefresh();
+    }
+
+    private void tryRefresh() {
+        if (adapter == null || adapter.getCards().size() <= 0){
+            return;
+        }
+        List<MTGCard> cards = adapter.getCards();
+        OnCardListener listener = adapter.getOnCardListener();
+        loadCards(cards, listener);
     }
 }

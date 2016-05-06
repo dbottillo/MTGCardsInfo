@@ -41,7 +41,7 @@ public class DeckCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.row_card, parent, false);
-        return new CardViewHolder(view);
+        return new CardViewHolder(view, false);
     }
 
     @Override

@@ -125,6 +125,11 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         }
     }
 
+    @Override
+    public void cardTypePreferenceChanged(boolean grid) {
+        throw new UnsupportedOperationException();
+    }
+
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

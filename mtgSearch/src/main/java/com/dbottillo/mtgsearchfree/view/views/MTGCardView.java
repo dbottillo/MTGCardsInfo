@@ -52,7 +52,7 @@ public class MTGCardView extends RelativeLayout {
     @Bind(R.id.image_card_container)
     View cardImageContainer;
 
-    private static float RATIO_CARD = 1.39622641509434f;
+    public static float RATIO_CARD = 1.39622641509434f;
     int widthAvailable = 0;
     int heightAvailable = 0;
     boolean isLandscape = false;
