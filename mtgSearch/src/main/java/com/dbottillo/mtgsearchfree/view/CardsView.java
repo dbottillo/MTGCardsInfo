@@ -10,4 +10,6 @@ public interface CardsView extends BasicView {
     void deckLoaded(DeckBucket bucket);
 
     void favIdLoaded(int[] favourites);
+
+    void cardTypePreferenceChanged(boolean grid);
 }

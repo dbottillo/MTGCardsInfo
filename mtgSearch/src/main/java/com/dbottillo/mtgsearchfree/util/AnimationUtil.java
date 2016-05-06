@@ -32,6 +32,22 @@ public final class AnimationUtil {
         anim.start();
     }
 
+    public static void animateHeight(final View view, int target) {
+        if (view.getHeight() == target) {
+            return;
+        }
+        ValueAnimator anim = ValueAnimator.ofInt(view.getHeight(), target);
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int val = (Integer) valueAnimator.getAnimatedValue();
+                UIUtil.setHeight(view, val);
+            }
+        });
+        anim.setDuration(DEFAULT_DURATION);
+        anim.start();
+    }
+
     public static void growView(View view) {
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);

@@ -7,14 +7,11 @@
     android:orientation="vertical"
     tools:context=".view.activities.MainActivity">
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="#e6e6e6"
-        android:dividerHeight="1dp"
-        android:drawSelectorOnTop="true"/>
+        android:layout_above="@+id/search_bottom_container"/>
 
     <TextView
         android:id="@+id/empty_view"
@@ -26,6 +23,15 @@
         android:paddingTop="20dp"
         android:textStyle="italic"
         android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/search_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/search_bottom"/>
+    </FrameLayout>
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         android:id="@+id/progress"

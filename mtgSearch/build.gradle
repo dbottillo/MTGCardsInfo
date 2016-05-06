@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.1'
-    ext.support_library_version = '23.2.0'
+    ext.support_library_version = '23.3.0'
     ext.leak_canary_version = '1.4-beta1'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'

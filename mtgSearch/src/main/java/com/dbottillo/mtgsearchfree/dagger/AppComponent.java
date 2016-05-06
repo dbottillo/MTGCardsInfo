@@ -18,6 +18,7 @@ import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
@@ -76,6 +77,8 @@ public interface AppComponent {
     DeckMapper getDeckMapper();
 
     SharedPreferences getSharedPreferences();
+
+    GeneralPreferences getGeneralPreferences();
 
     void inject(MTGApp app);
 

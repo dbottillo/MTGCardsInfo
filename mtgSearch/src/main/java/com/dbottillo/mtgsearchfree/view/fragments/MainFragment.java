@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -24,6 +25,7 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
@@ -73,6 +75,8 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     TextView chooserName;
     @Bind(R.id.cards_list_view)
     MTGCardListView mtgCardListView;
+    @Bind(R.id.cards_view_type)
+    ImageButton viewType;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -116,6 +120,12 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         setsPresenter.loadSets();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        cardsPresenter.loadCardTypePreference();
+    }
+
     public void onAttach(Context context) {
         super.onAttach(context);
         mainActivity = (MainActivity) context;
@@ -132,6 +142,22 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     public void onSortClicked(View view) {
         LOG.d();
         DialogUtil.chooseSortDialog(getContext(), sharedPreferences, this);
+    }
+
+    @Override
+    public void cardTypePreferenceChanged(boolean grid) {
+        LOG.d();
+        if (grid){
+            mtgCardListView.setGridOn();
+        } else {
+            mtgCardListView.setListOn();
+        }
+    }
+
+    @OnClick(R.id.cards_view_type)
+    public void onViewTypeChanged(View view) {
+        LOG.d();
+        cardsPresenter.toggleCardTypeViewPreference();
     }
 
     @OnClick(R.id.set_list_bg)
@@ -248,7 +274,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     public void onSortSelected() {
-
         LOG.d();
         loadSet();
     }

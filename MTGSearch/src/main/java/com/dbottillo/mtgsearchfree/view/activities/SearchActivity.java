@@ -21,6 +21,7 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -169,6 +170,8 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         setsPresenter.init(this);
         cardsPresenter.init(this);
         setsPresenter.loadSets();
+
+        cardsPresenter.loadCardTypePreference();
     }
 
     @Override
@@ -298,6 +301,10 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             DialogUtil.chooseSortDialog(this, getSharedPreferences(), this);
             return true;
         }
+        if (item.getItemId() == R.id.action_view_type) {
+            cardsPresenter.toggleCardTypeViewPreference();
+            return true;
+        }
         return false;
     }
 
@@ -341,6 +348,16 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public void favIdLoaded(int[] favourites) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void cardTypePreferenceChanged(boolean grid) {
+        LOG.d();
+        if (grid){
+            mtgCardListView.setGridOn();
+        } else {
+            mtgCardListView.setListOn();
+        }
     }
 
     @Override

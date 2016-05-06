@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
 public interface CardsPresenter extends BasicPresenter {
 
@@ -25,4 +26,8 @@ public interface CardsPresenter extends BasicPresenter {
     void loadDeck(Deck deck);
 
     void doSearch(SearchParams searchParams);
+
+    void loadCardTypePreference();
+
+    void toggleCardTypeViewPreference();
 }

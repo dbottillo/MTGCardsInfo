@@ -318,7 +318,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public String getImage() {
         if (number != null && number.length() > 0) {
-            return "http://magiccards.info/scans/en/" + set.getCode().toLowerCase() + "/" + number + ".jpg";
+            return "http://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + number + ".jpg";
         }
         return getImageFromGatherer();
     }

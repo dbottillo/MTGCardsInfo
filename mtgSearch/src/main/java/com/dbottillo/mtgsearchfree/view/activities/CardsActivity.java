@@ -221,6 +221,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     }
 
+    @Override
+    public void cardTypePreferenceChanged(boolean grid) {
+
+    }
+
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
         this.bucket = bucket;
