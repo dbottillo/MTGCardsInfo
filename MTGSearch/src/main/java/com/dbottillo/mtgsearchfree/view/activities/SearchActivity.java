@@ -340,9 +340,8 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     private void refreshList() {
         LOG.d();
-        boolean wubrgSort = getSharedPreferences().getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
-        CardsHelper.sortCards(wubrgSort, currentBucket.getCards());
-        mtgCardListView.loadCards(currentBucket.getCards(), this);
+        CardsHelper.sortCards(getSharedPreferences(), currentBucket);
+        mtgCardListView.loadCards(currentBucket, this);
     }
 
     @Override

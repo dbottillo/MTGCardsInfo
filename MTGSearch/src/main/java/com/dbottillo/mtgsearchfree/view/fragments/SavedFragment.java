@@ -40,9 +40,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class SavedFragment extends BasicFragment implements OnCardListener, MainActivity.MainActivityListener, CardsView {
 
-    private ArrayList<MTGCard> savedCards;
-    private ArrayList<MTGCard> savedFilteredCards;
-    private CardsAdapter adapter;
+    private CardsBucket savedBucket;
 
     @Bind(R.id.progress)
     SmoothProgressBar progressBar;
@@ -76,15 +74,8 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
         emptyView.setText(R.string.empty_saved);
         setActionBarTitle(getString(R.string.action_saved));
 
-        savedCards = new ArrayList<>();
-        savedFilteredCards = new ArrayList<>();
-
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         listView.setLayoutManager(llm);
-
-        adapter = CardsAdapter.list(savedFilteredCards, false, R.menu.card_saved_option);
-        adapter.setOnCardListener(this);
-        listView.setAdapter(adapter);
 
         setHasOptionsMenu(true);
 
@@ -101,11 +92,6 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     @Override
     public String getPageTrack() {
         return "/saved";
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelableArrayList("savedCards", savedCards);
     }
 
     @Override
@@ -146,18 +132,18 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     @Override
     public void updateContent() {
         LOG.d();
-        savedFilteredCards.clear();
-        CardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedCards, savedFilteredCards);
-        adapter.notifyDataSetChanged();
-        emptyView.setVisibility(savedFilteredCards.size() == 0 ? View.VISIBLE : View.GONE);
+        CardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
+        CardsAdapter adapter = CardsAdapter.list(savedBucket, false, R.menu.card_saved_option);
+        adapter.setOnCardListener(this);
+        listView.setAdapter(adapter);
+        emptyView.setVisibility(savedBucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);
     }
 
     @Override
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
         progressBar.setVisibility(View.GONE);
-        savedCards.clear();
-        savedCards.addAll(bucket.getCards());
+        savedBucket = bucket;
         updateContent();
     }
 

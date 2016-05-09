@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -17,24 +18,24 @@ import java.util.List;
 
 public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
-    private List<MTGCard> cards;
+    private CardsBucket bucket;
     private boolean grid;
     private boolean isASearch;
     private OnCardListener onCardListener;
     private int menuRes;
 
-    public static CardsAdapter list(List<MTGCard> cards, boolean isASearch, int menuRes) {
+    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes) {
         LOG.d();
         return new CardsAdapter(cards, false, isASearch, menuRes);
     }
 
-    public static CardsAdapter grid(List<MTGCard> cards, boolean isASearch, int menuRes) {
+    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes) {
         LOG.d();
         return new CardsAdapter(cards, true, isASearch, menuRes);
     }
 
-    private CardsAdapter(List<MTGCard> cards, boolean grid, boolean isASearch, int menuRes) {
-        this.cards = cards;
+    private CardsAdapter(CardsBucket bucket, boolean grid, boolean isASearch, int menuRes) {
+        this.bucket = bucket;
         this.grid = grid;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
@@ -56,7 +57,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public void onBindViewHolder(final CardViewHolder holder, int position) {
-        final MTGCard card = cards.get(position);
+        final MTGCard card = bucket.getCards().get(position);
         Context context = holder.parent.getContext();
         if (grid) {
             Picasso.with(context).load(card.getImage())
@@ -84,7 +85,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public int getItemCount() {
-        return cards.size();
+        return bucket.getCards().size();
     }
 
     @Override
@@ -92,8 +93,8 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public List<MTGCard> getCards() {
-        return cards;
+    public CardsBucket getBucket() {
+        return bucket;
     }
 
     public OnCardListener getOnCardListener() {

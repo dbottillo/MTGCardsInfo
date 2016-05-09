@@ -262,10 +262,9 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     public void updateContent() {
         LOG.d();
         ArrayList<MTGCard> cards = new ArrayList<>();
-        CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket.getCards(), cards);
-        boolean wubrgSort = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
-        CardsHelper.sortCards(wubrgSort, cards);
-        mtgCardListView.loadCards(cards, this);
+        CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
+        CardsHelper.sortCards(sharedPreferences, cardBucket);
+        mtgCardListView.loadCards(cardBucket, this);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

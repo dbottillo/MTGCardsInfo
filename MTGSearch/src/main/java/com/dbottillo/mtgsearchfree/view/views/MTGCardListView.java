@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -56,14 +57,14 @@ public class MTGCardListView extends RelativeLayout {
         setListOn(); // default
     }
 
-    public void loadCards(List<MTGCard> newCards, OnCardListener listener) {
+    public void loadCards(CardsBucket bucket, OnCardListener listener) {
         LOG.d();
 
         adapter = null;
         if (grid) {
-            adapter = CardsAdapter.grid(newCards, false, R.menu.card_option);
+            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option);
         } else {
-            adapter = CardsAdapter.list(newCards, false, R.menu.card_option);
+            adapter = CardsAdapter.list(bucket, false, R.menu.card_option);
         }
         adapter.setOnCardListener(listener);
         listView.setAdapter(adapter);
@@ -71,7 +72,7 @@ public class MTGCardListView extends RelativeLayout {
         adapter.notifyDataSetChanged();
         emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
 
-        if (newCards.size() == CardDataSource.LIMIT) {
+        if (bucket.getCards().size() == CardDataSource.LIMIT) {
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
             UIUtil.setHeight(footer, UIUtil.dpToPx(getContext(), 60));
@@ -100,11 +101,11 @@ public class MTGCardListView extends RelativeLayout {
     }
 
     private void tryRefresh() {
-        if (adapter == null || adapter.getCards().size() <= 0){
+        if (adapter == null || adapter.getBucket().getCards().size() <= 0){
             return;
         }
-        List<MTGCard> cards = adapter.getCards();
+        CardsBucket bucket = adapter.getBucket();
         OnCardListener listener = adapter.getOnCardListener();
-        loadCards(cards, listener);
+        loadCards(bucket, listener);
     }
 }
