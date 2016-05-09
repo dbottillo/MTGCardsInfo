@@ -233,7 +233,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
             // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
-            sortBucketCards();
+            CardsHelper.sortCards(getSharedPreferences(), bucket);
             reloadAdapter();
         }
     }
@@ -278,21 +278,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     @Override
     public void filterLoaded(CardFilter filter) {
         LOG.d();
-        filterCards(filter);
-        sortBucketCards();
+        CardsHelper.filterCards(filter, bucket);
+        CardsHelper.sortCards(getSharedPreferences(), bucket);
         reloadAdapter();
-    }
-
-    private void filterCards(CardFilter filter){
-        List<MTGCard> allCards = bucket.getCards();
-        ArrayList<MTGCard> filteredCards = new ArrayList<>();
-        CardsHelper.filterCards(filter, allCards, filteredCards);
-        bucket.setCards(filteredCards);
-    }
-
-    private void sortBucketCards(){
-        boolean wubrgSort = getSharedPreferences().getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
-        CardsHelper.sortCards(wubrgSort, bucket.getCards());
     }
 
     @OnClick(R.id.card_add_to_deck)
