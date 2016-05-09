@@ -47,7 +47,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(grid ? R.layout.grid_item_card : R.layout.row_card, parent, false);
-        if (grid){
+        if (grid) {
             int height = (int) (parent.getMeasuredWidth() / MTGCardView.RATIO_CARD);
             UIUtil.setHeight(v, height);
         }
@@ -59,7 +59,6 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
         final MTGCard card = cards.get(position);
         Context context = holder.parent.getContext();
         if (grid) {
-            LOG.e(card.getImage());
             Picasso.with(context).load(card.getImage())
                     .error(R.drawable.leak_canary_icon)
                     .placeholder(R.drawable.card_loader)
@@ -72,12 +71,6 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
             @Override
             public void onClick(View v) {
                 if (onCardListener != null) {
-                    LOG.e("card: "+card);
-                    LOG.e("pos: "+holder.getAdapterPosition());
-                    LOG.e("card0: "+cards.get(0));
-                    LOG.e("card1: "+cards.get(1));
-                    LOG.e("card2: "+cards.get(2));
-                    LOG.e("card3: "+cards.get(3));
                     onCardListener.onCardSelected(card, holder.getAdapterPosition());
                 }
             }
