@@ -86,7 +86,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(this, cards, R.menu.deck_card, new OnCardListener() {
             @Override
-            public void onCardSelected(MTGCard card, int position) {
+            public void onCardSelected(MTGCard card, int position, View view) {
                 startActivity(CardsActivity.newInstance(DeckActivity.this, deck, position));
             }
 

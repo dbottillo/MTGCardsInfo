@@ -7,6 +7,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -31,9 +34,8 @@ import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -46,14 +48,16 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     private static final String KEY_SEARCH = "Search";
     private static final String KEY_SET = "Set";
+    private static final String KEY_CARD = "Card";
     private static final String KEY_FAV = "Fav";
     private static final String KEY_DECK = "Deck";
     private static final String POSITION = "Position";
 
-    public static Intent newInstance(Context context, MTGSet gameSet, int position) {
+    public static Intent newInstance(Context context, MTGSet gameSet, int position, MTGCard card) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SET, gameSet);
+        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 
@@ -64,10 +68,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         return intent;
     }
 
-    public static Intent newInstance(Context context, SearchParams search, int position) {
+    public static Intent newInstance(Context context, SearchParams search, int position, MTGCard card) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SEARCH, search);
+        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 
@@ -91,6 +96,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     PagerTabStrip pagerTabStrip;
     @Bind(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
+    @Bind(R.id.shared_image)
+    ImageView sharedImage;
 
     CardsPagerAdapter adapter;
 
@@ -128,7 +135,22 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 favs = true;
                 setTitle(getString(R.string.action_saved));
             }
+
+            if (getIntent().hasExtra(KEY_CARD)) {
+                MTGCard card = getIntent().getParcelableExtra(KEY_CARD);
+                Picasso.with(this).load(card.getImage()).into(sharedImage);
+
+                pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+                        UIUtil.setMarginTopLeftRight(sharedImage, pagerTabStrip.getHeight(), paddingCard, paddingCard);
+                        pagerTabStrip.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
+            }
         }
+
         startPosition = getIntent().getIntExtra(POSITION, 0);
         cardsPresenter.loadIdFavourites();
     }

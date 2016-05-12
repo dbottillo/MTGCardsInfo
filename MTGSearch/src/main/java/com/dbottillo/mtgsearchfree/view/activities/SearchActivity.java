@@ -360,9 +360,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     }
 
     @Override
-    public void onCardSelected(MTGCard card, int position) {
+    public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
-        startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position));
+        startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position, card));
     }
 
     @Override

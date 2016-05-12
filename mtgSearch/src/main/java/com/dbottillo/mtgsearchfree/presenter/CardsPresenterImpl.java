@@ -30,6 +30,9 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     Subscription subscription = null;
 
+    private boolean grid = true;
+    private boolean firstTypeTypeCheck = true;
+
     @Inject
     RxWrapper<List<MTGCard>> cardsWrapper;
 
@@ -159,11 +162,18 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void loadCardTypePreference() {
-        cardsView.cardTypePreferenceChanged(generalPreferences.isCardsShowTypeGrid());
+        LOG.d();
+        boolean isGrid = generalPreferences.isCardsShowTypeGrid();
+        if (firstTypeTypeCheck || grid != isGrid) {
+            grid = isGrid;
+            firstTypeTypeCheck = false;
+            cardsView.cardTypePreferenceChanged(grid);
+        } // else nothing has changed
     }
 
     @Override
     public void toggleCardTypeViewPreference() {
+        LOG.d();
         if (generalPreferences.isCardsShowTypeGrid()){
             generalPreferences.setCardsShowTypeList();
             cardsView.cardTypePreferenceChanged(false);

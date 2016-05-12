@@ -1,12 +1,13 @@
 <RelativeLayout
     android:id="@+id/card_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="16dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/grid_item_card_image"
-        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>

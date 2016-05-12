@@ -114,6 +114,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         if (bundle != null && bundle.getInt(CURRENT_SELECTION) > 0) {
             slidingPanelHelper.hidePanel(true);
         }
+
     }
 
     public void filterLoaded(CardFilter filter) {

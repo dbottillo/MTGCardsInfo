@@ -30,4 +30,12 @@ public final class UIUtil {
             view.setLayoutParams(lp);
         }
     }
+
+    public static void setMarginTopLeftRight(View view, int top, int left, int right) {
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        lp.topMargin = top;
+        lp.leftMargin = left;
+        lp.rightMargin = right;
+        view.setLayoutParams(lp);
+    }
 }
