@@ -1,14 +1,19 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
@@ -86,7 +91,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         setActionBarTitle(getString(R.string.app_long_name));
@@ -114,6 +119,16 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
             @Override
             public void onClick(View v) {
                 showHideSetList(false);
+            }
+        });
+
+        LOG.e("width: "+view.getMeasuredWidth());
+        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                LOG.e("width: "+view.getMeasuredWidth());
+                LOG.e("width: "+view.getWidth());
             }
         });
 
@@ -261,7 +276,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     public void updateContent() {
         LOG.d();
-        ArrayList<MTGCard> cards = new ArrayList<>();
         CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         CardsHelper.sortCards(sharedPreferences, cardBucket);
         mtgCardListView.loadCards(cardBucket, this);
@@ -278,10 +292,17 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     @Override
-    public void onCardSelected(MTGCard card, int position) {
+    public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
         TrackingManager.trackCard(gameSet, position);
-        startActivity(CardsActivity.newInstance(getContext(), gameSet, position));
+        Intent intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
+        if (view != null) {
+            view.setTransitionName("transitionName");
+            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, "transitionName");
+            startActivity(intent, activityOptionsCompat.toBundle());
+        } else {
+            startActivity(intent);
+        }
     }
 
     @Override

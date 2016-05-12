@@ -47,10 +47,16 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        int columns = context.getResources().getInteger(R.integer.cards_grid_column_count);
+        LOG.e(parent.toString());
+        LOG.e(parent.getMeasuredWidth()+"");
         View v = LayoutInflater.from(parent.getContext()).inflate(grid ? R.layout.grid_item_card : R.layout.row_card, parent, false);
         if (grid) {
-            int height = (int) (parent.getMeasuredWidth() / MTGCardView.RATIO_CARD);
-            UIUtil.setHeight(v, height);
+            int height = (int) ((parent.getMeasuredWidth() / columns) * MTGCardView.RATIO_CARD);
+            LOG.e("height: "+height);
+            v.setMinimumHeight(height);
+            //UIUtil.setHeight(v, height);
         }
         return new CardViewHolder(v, grid);
     }
@@ -68,11 +74,22 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
             CardAdapterHelper.bindView(context, card, holder, isASearch);
             CardAdapterHelper.setupMore(holder, context, card, position, menuRes, onCardListener);
         }
+        int color = -1;
+        if (position % 4 == 0){
+            color = R.color.color_primary;
+        } else if (position % 4 == 1){
+            color = R.color.color_primary_dark;
+        }  else if (position % 4 == 2){
+            color = R.color.color_accent;
+        } else {
+            color = R.color.mtg_green;
+        }
+        holder.parent.setBackgroundColor(context.getColor(color));
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (onCardListener != null) {
-                    onCardListener.onCardSelected(card, holder.getAdapterPosition());
+                    onCardListener.onCardSelected(card, holder.getAdapterPosition(), v.findViewById(R.id.grid_item_card_image));
                 }
             }
         });
