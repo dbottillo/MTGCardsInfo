@@ -7,7 +7,6 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +28,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     MTGCardDataSource cardDataSource;
 
     @Before
-    public void setup(){
+    public void setup() {
         cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
     }
 
@@ -278,7 +277,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         bucket.setCards(namedCards);
         long deckId = DeckDataSource.addDeck(cardDataSource, db, bucket);
         List<MTGCard> deckCards = DeckDataSource.getCards(db, deckId);
-        assertThat(deckCards.size(), is(cardNames.length-1));
+        assertThat(deckCards.size(), is(cardNames.length - 1));
     }
 
     private long generateDeckWithSmallAmountOfCards() {

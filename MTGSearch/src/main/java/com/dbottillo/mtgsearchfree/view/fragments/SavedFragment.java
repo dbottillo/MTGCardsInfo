@@ -30,8 +30,6 @@ import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 
-import java.util.ArrayList;
-
 import javax.inject.Inject;
 
 import butterknife.Bind;

@@ -13,14 +13,11 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-
-import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -106,7 +103,7 @@ public class MTGCardListView extends RelativeLayout {
     }
 
     private void tryRefresh() {
-        if (adapter == null || adapter.getBucket().getCards().size() <= 0){
+        if (adapter == null || adapter.getBucket().getCards().size() <= 0) {
             return;
         }
         CardsBucket bucket = adapter.getBucket();
@@ -114,7 +111,7 @@ public class MTGCardListView extends RelativeLayout {
         loadCards(bucket, listener);
     }
 
-    private class GridItemDecorator extends RecyclerView.ItemDecoration{
+    private class GridItemDecorator extends RecyclerView.ItemDecoration {
         private int space;
 
         public GridItemDecorator(int space) {
@@ -124,9 +121,9 @@ public class MTGCardListView extends RelativeLayout {
         @Override
         public void getItemOffsets(Rect outRect, View view,
                                    RecyclerView parent, RecyclerView.State state) {
-            outRect.left = space/2;
-            outRect.right = space/2;
-            outRect.bottom = space/2;
+            outRect.left = space / 2;
+            outRect.right = space / 2;
+            outRect.bottom = space / 2;
 
             // Add top margin only for the first item to avoid double space between items
             if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {

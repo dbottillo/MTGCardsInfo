@@ -5,7 +5,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -22,7 +21,6 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -35,7 +33,6 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
@@ -355,7 +352,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public void cardTypePreferenceChanged(boolean grid) {
         LOG.d();
-        if (grid){
+        if (grid) {
             mtgCardListView.setGridOn();
             if (cardsShowType != null) {
                 cardsShowType.setIcon(R.drawable.cards_list_type);

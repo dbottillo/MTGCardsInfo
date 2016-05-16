@@ -158,7 +158,6 @@ public class DeckActivity extends BasicActivity implements DecksView {
             emptyView.setVisibility(View.VISIBLE);
             setTitle(deck.getName());
         } else {
-            
             int startingPoint = 0;
             if (bucket.creatures.size() > 0) {
                 sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.creatures.size() + ")"));

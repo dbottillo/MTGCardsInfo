@@ -12,7 +12,6 @@ import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
-import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
 
 import java.util.List;
 
@@ -174,7 +173,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void toggleCardTypeViewPreference() {
         LOG.d();
-        if (generalPreferences.isCardsShowTypeGrid()){
+        if (generalPreferences.isCardsShowTypeGrid()) {
             generalPreferences.setCardsShowTypeList();
             cardsView.cardTypePreferenceChanged(false);
         } else {

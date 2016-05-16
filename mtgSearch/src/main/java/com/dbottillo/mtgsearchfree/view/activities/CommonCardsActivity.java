@@ -11,8 +11,6 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
-import java.util.Arrays;
-
 public abstract class CommonCardsActivity extends BasicActivity {
 
     private MenuItem favMenuItem = null;
@@ -98,9 +96,9 @@ public abstract class CommonCardsActivity extends BasicActivity {
         }
     }
 
-    protected boolean isCardFavourite(int multiverseId){
-        for (int id : idFavourites){
-            if (id == multiverseId){
+    protected boolean isCardFavourite(int multiverseId) {
+        for (int id : idFavourites) {
+            if (id == multiverseId) {
                 return true;
             }
         }

@@ -3,8 +3,6 @@ package com.dbottillo.mtgsearchfree.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-
 public class Deck implements Parcelable {
 
     long id;
@@ -104,5 +102,15 @@ public class Deck implements Parcelable {
         Deck other = (Deck) o;
         return id == other.id && name.equals(other.getName()) && archived == other.archived
                 && numberOfCards == other.numberOfCards && sizeOfSideboard == other.sizeOfSideboard;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (archived ? 1 : 0);
+        result = 31 * result + numberOfCards;
+        result = 31 * result + sizeOfSideboard;
+        return result;
     }
 }

@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface PlayerPresenter extends BasicPresenter {

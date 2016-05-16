@@ -8,8 +8,6 @@ import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.TestLifecycle;
 import org.robolectric.annotation.Config;
 import org.robolectric.manifest.AndroidManifest;
-import org.robolectric.res.FileFsFile;
-import org.robolectric.res.FsFile;
 
 import java.lang.reflect.Method;
 

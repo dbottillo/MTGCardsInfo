@@ -1,18 +1,14 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
-import com.dbottillo.mtgsearchfree.CustomRobolectricRunner;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 
-import org.fest.util.Sets;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class SetsStorageTest extends BaseTest{
+public class SetsStorageTest extends BaseTest {
 
     @Test
     public void testLoad() throws Exception {

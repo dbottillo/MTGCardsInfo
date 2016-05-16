@@ -12,7 +12,6 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 
 import org.json.JSONException;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -27,11 +26,11 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
 public class MTGCardDataSourceTest extends BaseDatabaseTest {
-    
+
     MTGCardDataSource cardDataSource;
-    
+
     @Before
-    public void setup(){
+    public void setup() {
         cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
     }
 

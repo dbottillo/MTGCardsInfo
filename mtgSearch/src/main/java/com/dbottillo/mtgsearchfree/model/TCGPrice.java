@@ -130,4 +130,16 @@ public class TCGPrice implements Parcelable {
         return hiPrice.equals(other.hiPrice) && avgPrice.equals(other.avgPrice) && lowprice.equals(other.lowprice)
                 && link.equals(other.link) && errorPrice.equalsIgnoreCase(other.errorPrice) && error == other.error;
     }
+
+    @Override
+    public int hashCode() {
+        int result = hiPrice != null ? hiPrice.hashCode() : 0;
+        result = 31 * result + (lowprice != null ? lowprice.hashCode() : 0);
+        result = 31 * result + (avgPrice != null ? avgPrice.hashCode() : 0);
+        result = 31 * result + (link != null ? link.hashCode() : 0);
+        result = 31 * result + (errorPrice != null ? errorPrice.hashCode() : 0);
+        result = 31 * result + (error ? 1 : 0);
+        result = 31 * result + (mNotFound ? 1 : 0);
+        return result;
+    }
 }

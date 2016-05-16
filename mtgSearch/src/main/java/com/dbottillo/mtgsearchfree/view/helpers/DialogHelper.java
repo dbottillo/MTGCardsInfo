@@ -7,7 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-public class DialogHelper {
+public final class DialogHelper {
+
+    private DialogHelper(){
+
+    }
 
     public static void open(AppCompatActivity activity, String tag, DialogFragment fragment) {
         LOG.d();

@@ -22,13 +22,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class PlayerPresenterImplTest extends BaseTest {
-    
+
     PlayerPresenter presenter;
-    
+
     PlayerInteractor interactor;
-    
+
     PlayersView view;
-    
+
     @Mock
     Player player;
 

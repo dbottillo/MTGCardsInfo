@@ -14,7 +14,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class CardsHelper {
+public final class CardsHelper {
+
+    private CardsHelper(){
+
+    }
 
     public static void filterCards(CardFilter cardFilter, CardsBucket bucket) {
         LOG.d();

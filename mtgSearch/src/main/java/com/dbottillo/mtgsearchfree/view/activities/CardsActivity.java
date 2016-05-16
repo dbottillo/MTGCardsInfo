@@ -23,7 +23,6 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
-import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;

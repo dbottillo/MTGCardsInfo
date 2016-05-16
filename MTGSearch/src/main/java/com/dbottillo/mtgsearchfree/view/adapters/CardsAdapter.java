@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
+public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     private CardsBucket bucket;
     private boolean grid;

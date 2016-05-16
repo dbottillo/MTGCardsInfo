@@ -30,7 +30,6 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.InputUtil;
@@ -322,7 +321,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     @Override
     public void permissionGranted() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        intent.setType("*/*") ;
+        intent.setType("*/*");
         startActivityForResult(intent, READ_REQUEST_CODE);
     }
 
