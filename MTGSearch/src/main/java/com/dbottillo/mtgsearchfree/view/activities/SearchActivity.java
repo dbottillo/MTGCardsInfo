@@ -5,6 +5,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -70,6 +71,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     AnimationDrawable newSearchAnimation;
     ArgbEvaluator argbEvaluator;
+    MenuItem cardsShowType;
 
     int sizeBig = 0;
     boolean searchOpen = false;
@@ -99,6 +101,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             }
         });
         secondToolbar.inflateMenu(R.menu.search_results);
+        cardsShowType = secondToolbar.getMenu().findItem(R.id.action_view_type);
         secondToolbar.setOnMenuItemClickListener(this);
 
         setSupportActionBar(toolbar);
@@ -354,8 +357,14 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         LOG.d();
         if (grid){
             mtgCardListView.setGridOn();
+            if (cardsShowType != null) {
+                cardsShowType.setIcon(R.drawable.cards_list_type);
+            }
         } else {
             mtgCardListView.setListOn();
+            if (cardsShowType != null) {
+                cardsShowType.setIcon(R.drawable.cards_grid_type);
+            }
         }
     }
 
