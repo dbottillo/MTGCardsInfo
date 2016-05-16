@@ -48,7 +48,7 @@ public class MTGCardView extends RelativeLayout {
     @Bind(R.id.image_card)
     ImageView cardImage;
     @Bind(R.id.image_card_loader)
-    ImageView cardLoader;
+    MTGLoader cardLoader;
     @Bind(R.id.image_card_container)
     View cardImageContainer;
 
@@ -206,24 +206,10 @@ public class MTGCardView extends RelativeLayout {
 
     private void startCardLoader() {
         cardLoader.setVisibility(View.VISIBLE);
-        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
-        cardLoader.post(new Runnable() {
-            @Override
-            public void run() {
-                frameAnimation.start();
-            }
-        });
     }
 
     private void stopCardLoader() {
-        final AnimationDrawable frameAnimation = (AnimationDrawable) cardLoader.getBackground();
-        cardLoader.post(new Runnable() {
-            @Override
-            public void run() {
-                frameAnimation.stop();
-                cardLoader.setVisibility(View.GONE);
-            }
-        });
+        cardLoader.setVisibility(View.GONE);
     }
 
     private void updateSizeImage() {
