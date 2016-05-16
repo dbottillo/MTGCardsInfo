@@ -10,14 +10,29 @@ import static org.junit.Assert.*;
 
 public class GeneralPreferencesTest extends BaseTest{
 
+    GeneralPreferences underTest;
+
+    @Before
+    public void setup(){
+        underTest = GeneralPreferences.with(mContext);
+        underTest.clear();
+    }
+
     @Test
     public void testSaveAndLoadDebugFlag(){
-        GeneralPreferences generalPreference = GeneralPreferences.with(mContext);
+        underTest = GeneralPreferences.with(mContext);
         if (!BuildConfig.DEBUG) {
-            assertFalse(generalPreference.isDebugEnabled());
+            assertFalse(underTest.isDebugEnabled());
         }
-        generalPreference.setDebug();
-        assertTrue(generalPreference.isDebugEnabled());
+        underTest.setDebug();
+        assertTrue(underTest.isDebugEnabled());
+    }
+
+    @Test
+    public void testShowTooltip(){
+        assertTrue(underTest.isTooltipMainToShow());
+        underTest.setTooltipMainHide();
+        assertFalse(underTest.isTooltipMainToShow());
     }
 
 }

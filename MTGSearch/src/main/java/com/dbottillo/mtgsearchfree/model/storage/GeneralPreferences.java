@@ -2,6 +2,8 @@ package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -12,6 +14,7 @@ public final class GeneralPreferences {
 
     private static final String DEBUG = "debug";
     private static final String CARDS_SHOW_TYPE = "cardShowType";
+    private static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
 
     SharedPreferences sharedPreferences;
 
@@ -51,7 +54,22 @@ public final class GeneralPreferences {
     }
 
     public boolean isCardsShowTypeGrid(){
+        LOG.d();
         return sharedPreferences.getString(CARDS_SHOW_TYPE, "Grid").equalsIgnoreCase("Grid");
     }
 
+    public void setTooltipMainHide(){
+        LOG.d();
+        sharedPreferences.edit().putBoolean(TOOLTIP_MAIN_SHOWN, false).apply();
+    }
+
+    public boolean isTooltipMainToShow(){
+        LOG.d();
+        return sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true);
+    }
+
+    @VisibleForTesting
+    void clear() {
+        sharedPreferences.edit().clear().apply();
+    }
 }

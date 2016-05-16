@@ -13,27 +13,27 @@
         android:orientation="horizontal"
         android:padding="5dp">
 
-        <TextView
-            android:id="@+id/set_chooser_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            tools:text="Theros"/>
-
         <ImageView
             android:id="@+id/set_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
+            android:layout_marginLeft="16dp"
             android:contentDescription="@string/cd_set_arrow"
             android:rotation="180"
             android:src="@drawable/arrow_up"/>
+
+        <TextView
+            android:id="@+id/set_chooser_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="Theros"/>
 
         <ImageButton
             android:id="@+id/cards_sort"
@@ -54,7 +54,7 @@
             android:layout_marginRight="5dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/cd_cards_view_type"
-            android:src="@drawable/card_order"
+            android:src="@drawable/cards_list_type"
             android:tint="@android:color/white"/>
 
     </LinearLayout>
@@ -81,5 +81,43 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@android:color/white"/>
+
+    <LinearLayout
+        android:id="@+id/main_tooltip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/set_chooser"
+        android:background="@color/color_accent_dark">
+
+        <ImageButton
+            android:id="@+id/main_tooltip_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="@string/main_fragment_tooltip"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/tooltip_main_arrow"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

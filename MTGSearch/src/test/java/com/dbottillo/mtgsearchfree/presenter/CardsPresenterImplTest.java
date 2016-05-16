@@ -11,6 +11,7 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
@@ -94,7 +95,7 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
-        presenter = new CardsPresenterImpl(interactor, deckMapper);
+        presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class));
         presenter.init(view);
     }
 
