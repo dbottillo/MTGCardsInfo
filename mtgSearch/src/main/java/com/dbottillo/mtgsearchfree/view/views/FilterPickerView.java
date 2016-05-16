@@ -139,55 +139,42 @@ public class FilterPickerView extends LinearLayout {
         LOG.d();
         boolean on = ((ToggleButton) view).isChecked();
         switch (view.getId()) {
-            case R.id.toggle_white: {
+            case R.id.toggle_white:
                 listener.filterUpdated(CardFilter.TYPE.WHITE, on);
                 break;
-            }
-            case R.id.toggle_blue: {
+            case R.id.toggle_blue:
                 listener.filterUpdated(CardFilter.TYPE.BLUE, on);
                 break;
-            }
-            case R.id.toggle_black: {
+            case R.id.toggle_black:
                 listener.filterUpdated(CardFilter.TYPE.BLACK, on);
                 break;
-            }
-
-            case R.id.toggle_red: {
+            case R.id.toggle_red:
                 listener.filterUpdated(CardFilter.TYPE.RED, on);
                 break;
-            }
-            case R.id.toggle_green: {
+            case R.id.toggle_green:
                 listener.filterUpdated(CardFilter.TYPE.GREEN, on);
                 break;
-            }
-            case R.id.toggle_artifact: {
+            case R.id.toggle_artifact:
                 listener.filterUpdated(CardFilter.TYPE.ARTIFACT, on);
                 break;
-            }
-            case R.id.toggle_land: {
+            case R.id.toggle_land:
                 listener.filterUpdated(CardFilter.TYPE.LAND, on);
                 break;
-            }
-            case R.id.toggle_eldrazi: {
+            case R.id.toggle_eldrazi:
                 listener.filterUpdated(CardFilter.TYPE.ELDRAZI, on);
                 break;
-            }
-            case R.id.toggle_common: {
+            case R.id.toggle_common:
                 listener.filterUpdated(CardFilter.TYPE.COMMON, on);
                 break;
-            }
-            case R.id.toggle_uncommon: {
+            case R.id.toggle_uncommon:
                 listener.filterUpdated(CardFilter.TYPE.UNCOMMON, on);
                 break;
-            }
-            case R.id.toggle_rare: {
+            case R.id.toggle_rare:
                 listener.filterUpdated(CardFilter.TYPE.RARE, on);
                 break;
-            }
-            case R.id.toggle_myhtic: {
+            case R.id.toggle_myhtic:
                 listener.filterUpdated(CardFilter.TYPE.MYTHIC, on);
                 break;
-            }
         }
     }
 

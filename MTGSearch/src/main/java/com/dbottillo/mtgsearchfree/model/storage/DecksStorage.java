@@ -5,10 +5,8 @@ import android.net.Uri;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
-import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
@@ -82,7 +80,7 @@ public class DecksStorage {
 
     public List<Deck> importDeck(Uri uri) {
         CardsBucket bucket = fileUtil.readFileContent(uri);
-        if (bucket == null){
+        if (bucket == null) {
             return load();
         }
         return helper.addDeck(cardDataSource, bucket);

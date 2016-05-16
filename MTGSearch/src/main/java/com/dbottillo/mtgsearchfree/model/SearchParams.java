@@ -267,10 +267,33 @@ public class SearchParams implements Parcelable {
         }
         SearchParams other = (SearchParams) o;
         return name.equalsIgnoreCase(other.name) && types.equalsIgnoreCase(other.types) && text.equalsIgnoreCase(other.text)
-                && cmc.equals(other.cmc) && power.equals(other.power) && tough.equals(other.tough) && white == other.white &&
-                blue == other.blue && black == other.black && red == other.red && green == other.green && onlyMulti == other.onlyMulti
-                && noMulti == other.noMulti && common == other.common && other.uncommon == uncommon && rare == other.rare &&
-                mythic == other.mythic && setId == other.setId;
+                && cmc.equals(other.cmc) && power.equals(other.power) && tough.equals(other.tough) && white == other.white
+                && blue == other.blue && black == other.black && red == other.red && green == other.green && onlyMulti == other.onlyMulti
+                && noMulti == other.noMulti && common == other.common && other.uncommon == uncommon && rare == other.rare
+                && mythic == other.mythic && setId == other.setId;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (types != null ? types.hashCode() : 0);
+        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (cmc != null ? cmc.hashCode() : 0);
+        result = 31 * result + (power != null ? power.hashCode() : 0);
+        result = 31 * result + (tough != null ? tough.hashCode() : 0);
+        result = 31 * result + (white ? 1 : 0);
+        result = 31 * result + (blue ? 1 : 0);
+        result = 31 * result + (black ? 1 : 0);
+        result = 31 * result + (red ? 1 : 0);
+        result = 31 * result + (green ? 1 : 0);
+        result = 31 * result + (onlyMulti ? 1 : 0);
+        result = 31 * result + (noMulti ? 1 : 0);
+        result = 31 * result + (common ? 1 : 0);
+        result = 31 * result + (uncommon ? 1 : 0);
+        result = 31 * result + (rare ? 1 : 0);
+        result = 31 * result + (mythic ? 1 : 0);
+        result = 31 * result + setId;
+        return result;
     }
 
     public boolean atLeastOneColor() {

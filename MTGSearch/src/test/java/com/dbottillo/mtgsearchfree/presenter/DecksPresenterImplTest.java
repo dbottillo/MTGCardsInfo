@@ -4,13 +4,11 @@ import android.net.Uri;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
-import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
 import org.junit.Before;
@@ -22,7 +20,6 @@ import java.util.List;
 
 import rx.Observable;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -73,7 +70,7 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards));
         when(interactor.editDeck(deck, "deck")).thenReturn(Observable.just(cards));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
-        presenter = new DecksPresenterImpl(interactor,deckMapper);
+        presenter = new DecksPresenterImpl(interactor, deckMapper);
         presenter.init(view);
     }
 

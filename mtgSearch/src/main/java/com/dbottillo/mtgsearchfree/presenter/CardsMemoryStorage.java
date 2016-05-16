@@ -2,7 +2,11 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 
-public class CardsMemoryStorage {
+public final class CardsMemoryStorage {
+
+    private CardsMemoryStorage() {
+
+    }
 
     public static CardsBucket bucket = null;
 

@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.interactors;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 
 import org.junit.Test;
@@ -16,7 +15,6 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

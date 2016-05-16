@@ -2,10 +2,7 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import android.test.suitebuilder.annotation.SmallTest;
 
-import com.dbottillo.mtgsearchfree.model.Deck;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.Player;
-import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 
 import org.junit.Before;
@@ -20,7 +17,6 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -28,7 +24,7 @@ import static org.mockito.Mockito.when;
 @SmallTest
 @RunWith(RobolectricTestRunner.class)
 public class PlayerInteractorImplTest {
-    
+
     static PlayersStorage storage;
     static Player player;
     static List<Player> players = Arrays.asList(new Player(1, "Jace"), new Player(2, "Liliana"));
@@ -37,7 +33,7 @@ public class PlayerInteractorImplTest {
     private PlayerInteractor playerInteractor;
 
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         storage = mock(PlayersStorage.class);
         player = mock(Player.class);
         when(storage.load()).thenReturn(players);
@@ -46,6 +42,7 @@ public class PlayerInteractorImplTest {
         when(storage.editPlayer(player)).thenReturn(players);
         when(storage.editPlayers(toEditPlayers)).thenReturn(players);
     }
+
     @Before
     public void init() {
         playerInteractor = new PlayerInteractorImpl(storage);

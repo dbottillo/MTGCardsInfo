@@ -5,14 +5,11 @@ import android.animation.ArgbEvaluator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
@@ -65,28 +62,28 @@ public class MTGLoader extends View {
     }
 
     private int getNextColor() {
-        int next = currentPaintColor+1;
-        if (next > 4){
+        int next = currentPaintColor + 1;
+        if (next > 4) {
             next = 0;
         }
         return getColor(next);
     }
 
-    private int getColor(int value){
+    private int getColor(int value) {
         Resources resources = getResources();
-        if (value == 0){
+        if (value == 0) {
             return resources.getColor(R.color.mtg_white);
         }
-        if (value == 1){
+        if (value == 1) {
             return resources.getColor(R.color.mtg_blue);
         }
-        if (value == 2){
+        if (value == 2) {
             return resources.getColor(R.color.mtg_black);
         }
-        if (value == 3){
+        if (value == 3) {
             return resources.getColor(R.color.mtg_red);
         }
-        if (value == 4){
+        if (value == 4) {
             return resources.getColor(R.color.mtg_green);
         }
         return -1;
@@ -98,27 +95,27 @@ public class MTGLoader extends View {
 
         float value = interpolator.getInterpolation(currentStep);
 
-        if (!growing){
+        if (!growing) {
             int color = (Integer) argbEvaluator.evaluate(value, getCurrentColor(), getNextColor());
             paint.setColor(color);
-            value = 1.0f-value;
+            value = 1.0f - value;
         }
 
         int radius = (int) (maxRadius * value);
-        canvas.drawCircle(size/2, size/2, radius, paint);
+        canvas.drawCircle(size / 2, size / 2, radius, paint);
 
         currentStep += STEP;
-        if (currentStep >= 1.0f){
-            if (growing){
+        if (currentStep >= 1.0f) {
+            if (growing) {
                 growing = false;
             } else {
-                currentPaintColor ++;
-                if (currentPaintColor > 4){
+                currentPaintColor++;
+                if (currentPaintColor > 4) {
                     currentPaintColor = 0;
                 }
                 growing = true;
             }
-            currentStep=0;
+            currentStep = 0;
         }
 
     }
@@ -128,7 +125,7 @@ public class MTGLoader extends View {
         super.onMeasure(widthMeasureSpec, widthMeasureSpec); // always want a square canvas
 
         size = getMeasuredWidth();
-        maxRadius = size/6;
+        maxRadius = size / 6;
     }
 
     private static class MTGLoaderHandler extends Handler {

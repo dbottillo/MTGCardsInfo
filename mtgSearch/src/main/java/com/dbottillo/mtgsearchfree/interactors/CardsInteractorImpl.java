@@ -7,7 +7,6 @@ import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;

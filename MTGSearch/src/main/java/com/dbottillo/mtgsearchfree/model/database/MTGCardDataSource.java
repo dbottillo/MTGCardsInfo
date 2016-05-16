@@ -260,8 +260,8 @@ public class MTGCardDataSource {
 
     public MTGCard searchCard(String name) {
         LOG.d("search card <" + name + ">");
-        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " +
-                CardDataSource.COLUMNS.NAME.getName() + "=?";
+        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
+                + CardDataSource.COLUMNS.NAME.getName() + "=?";
         String[] selection = new String[]{name};
         LOG.query(query);
         Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, selection);

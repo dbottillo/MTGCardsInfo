@@ -10,7 +10,10 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-public class TrackingManager {
+public final class TrackingManager {
+
+    private TrackingManager() {
+    }
 
     private static final String UA_CATEGORY_UI = "ui";
     private static final String UA_CATEGORY_POPUP = "popup";

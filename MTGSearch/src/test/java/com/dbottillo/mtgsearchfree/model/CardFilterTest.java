@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 @SmallTest
 public class CardFilterTest extends BaseTest {
@@ -17,7 +17,7 @@ public class CardFilterTest extends BaseTest {
     CardFilter cardFilter;
 
     @Before
-    public void setup(){
+    public void setup() {
         cardFilter = new CardFilter();
 
         cardFilter.white = true;
