@@ -16,7 +16,7 @@
         android:layout_marginRight="@dimen/padding_card_image"
         android:layout_marginTop="@dimen/padding_card_image_half"
         android:scaleType="fitXY"
-        android:transitionName="transitionName"
+        android:transitionName="@string/transition_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

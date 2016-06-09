@@ -137,7 +137,7 @@ public class MTGLoader extends View {
         }
 
         @Override
-        public void handleMessage(Message msg) {
+        public synchronized void handleMessage(Message msg) {
             if (loader.get() != null) {
                 loader.get().invalidate();
 

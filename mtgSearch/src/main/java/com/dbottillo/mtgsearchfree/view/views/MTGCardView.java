@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -12,9 +13,11 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.util.AttributeSet;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,6 +28,7 @@ import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -81,18 +85,18 @@ public class MTGCardView extends RelativeLayout {
 
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        mainContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            public void onGlobalLayout() {
-                int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
-                widthAvailable = mainContainer.getWidth() - paddingCard * 2;
-                if (isLandscape) {
-                    widthAvailable = mainContainer.getWidth() / 2 - paddingCard * 2;
-                }
-                heightAvailable = mainContainer.getHeight() - paddingCard;
-                updateSizeImage();
-                mainContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-        });
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+        int widthAvailable = size.x - paddingCard * 2;
+        if (isLandscape) {
+            widthAvailable = size.x  / 2 - paddingCard * 2;
+        }
+        LOG.e(widthAvailable+","+heightAvailable);
+        UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }
 
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {
@@ -209,26 +213,6 @@ public class MTGCardView extends RelativeLayout {
 
     private void stopCardLoader() {
         cardLoader.setVisibility(View.GONE);
-    }
-
-    private void updateSizeImage() {
-        float ratioScreen = (float) heightAvailable / (float) widthAvailable;
-        // screen taller than magic card, we can take the width
-        int wImage = widthAvailable;
-        int hImage = (int) (widthAvailable * RATIO_CARD);
-        if (!isLandscape && (ratioScreen > RATIO_CARD || hImage > heightAvailable)) {
-            // screen wider than magic card, we need to calculate from the size
-            hImage = heightAvailable;
-            wImage = (int) (heightAvailable / RATIO_CARD);
-        }
-        if (getResources().getBoolean(R.bool.isTablet)) {
-            wImage = (int) (wImage * 0.8);
-            hImage = (int) (hImage * 0.8);
-        }
-        RelativeLayout.LayoutParams par = (LayoutParams) cardImage.getLayoutParams();
-        par.width = wImage;
-        par.height = hImage;
-        cardImage.setLayoutParams(par);
     }
 
     @OnClick(R.id.image_card_retry)

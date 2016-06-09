@@ -11,8 +11,8 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
 import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
@@ -22,10 +22,9 @@ import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.google.firebase.crash.FirebaseCrash;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-
-import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
@@ -54,8 +53,6 @@ public class MTGApp extends Application {
 
         if (!isUnitTesting) {
             TrackingManager.init(getApplicationContext());
-            Fabric.with(this, new Crashlytics());
-            Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
             refWatcher = LeakCanary.install(this);
             checkReleaseNote();
 
