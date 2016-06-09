@@ -305,8 +305,8 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         TrackingManager.trackCard(gameSet, position);
         Intent intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
         if (view != null) {
-            view.setTransitionName("transitionName");
-            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, "transitionName");
+            view.setTransitionName(getString(R.string.transition_card));
+            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.transition_card));
             startActivity(intent, activityOptionsCompat.toBundle());
         } else {
             startActivity(intent);

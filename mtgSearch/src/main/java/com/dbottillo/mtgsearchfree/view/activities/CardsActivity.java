@@ -2,10 +2,14 @@ package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -111,6 +115,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         ButterKnife.bind(this);
 
+        setupEnterAnimation();
         setupView();
 
         MTGApp.uiGraph.inject(this);
@@ -142,8 +147,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
-                        UIUtil.setMarginTopLeftRight(sharedImage, pagerTabStrip.getHeight(), paddingCard, paddingCard);
+                        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image_half);
+                        UIUtil.setMarginTop(sharedImage, pagerTabStrip.getHeight() + paddingCard);
                         pagerTabStrip.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 });
@@ -151,7 +156,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         }
 
         startPosition = getIntent().getIntExtra(POSITION, 0);
-        cardsPresenter.loadIdFavourites();
     }
 
     public void setupView() {
@@ -165,15 +169,28 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+        RelativeLayout.LayoutParams parSharedImage = (RelativeLayout.LayoutParams) sharedImage.getLayoutParams();
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
         if (isPortrait) {
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+            parSharedImage.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
             par.rightMargin = UIUtil.dpToPx(this, 16);
         }
         fabButton.setLayoutParams(par);
         viewPager.addOnPageChangeListener(this);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+        int widthAvailable = size.x - paddingCard * 2;
+        if (!isPortrait) {
+            widthAvailable = size.x / 2 - paddingCard * 2;
+        }
+        UIUtil.calculateSizeCardImage(sharedImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }
 
     public String getPageTrack() {
@@ -316,4 +333,35 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         throw new UnsupportedOperationException();
     }
 
+    private void setupEnterAnimation() {
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.change_bound_with_arc);
+        transition.setDuration(200);
+        getWindow().setSharedElementEnterTransition(transition);
+        transition.addListener(new Transition.TransitionListener() {
+            @Override
+            public void onTransitionStart(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                cardsPresenter.loadIdFavourites();
+            }
+
+            @Override
+            public void onTransitionCancel(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionPause(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionResume(Transition transition) {
+
+            }
+        });
+    }
 }
