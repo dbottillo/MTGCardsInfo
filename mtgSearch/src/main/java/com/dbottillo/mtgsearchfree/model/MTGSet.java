@@ -91,12 +91,27 @@ public class MTGSet implements Parcelable {
         return "[" + name + "," + code + "]";
     }
 
-    public String getMagicCardsInfoCode() {
+    String getMagicCardsInfoCode() {
         if (code.equalsIgnoreCase("tor")){
             return "tr";
         }
         if (code.equalsIgnoreCase("dkm")){
             return "dm";
+        }
+        if (code.equalsIgnoreCase("RQS")){
+            return "RQS";
+        }
+        if (code.equalsIgnoreCase("ITP")){
+            return "itp";
+        }
+        if (code.equalsIgnoreCase("VAN")){
+            return "VAN";
+        }
+        if (code.equalsIgnoreCase("EXO")){
+            return "ex";
+        }
+        if (code.equalsIgnoreCase("UGL")){
+            return "ug";
         }
         return code.toLowerCase();
     }
