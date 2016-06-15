@@ -1,8 +1,10 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
@@ -115,7 +117,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         ButterKnife.bind(this);
 
-        setupEnterAnimation();
+        if (MTGApp.isActivityTransitionAvailable()) {
+            setupEnterAnimation();
+        }
         setupView();
 
         MTGApp.uiGraph.inject(this);
@@ -140,7 +144,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 setTitle(getString(R.string.action_saved));
             }
 
-            if (getIntent().hasExtra(KEY_CARD)) {
+            if (getIntent().hasExtra(KEY_CARD) && MTGApp.isActivityTransitionAvailable()) {
                 MTGCard card = getIntent().getParcelableExtra(KEY_CARD);
                 Picasso.with(this).load(card.getImage()).into(sharedImage);
 
@@ -156,6 +160,10 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         }
 
         startPosition = getIntent().getIntExtra(POSITION, 0);
+
+        if (!MTGApp.isActivityTransitionAvailable()){
+            cardsPresenter.loadIdFavourites();
+        }
     }
 
     public void setupView() {
@@ -333,6 +341,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         throw new UnsupportedOperationException();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void setupEnterAnimation() {
         Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.change_bound_with_arc);
         transition.setDuration(200);

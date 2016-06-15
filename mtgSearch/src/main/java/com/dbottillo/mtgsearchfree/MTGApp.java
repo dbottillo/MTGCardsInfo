@@ -115,4 +115,8 @@ public class MTGApp extends Application {
         MTGApp application = (MTGApp) context.getApplicationContext();
         return application.refWatcher;
     }
+
+    public static boolean isActivityTransitionAvailable(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+    }
 }
