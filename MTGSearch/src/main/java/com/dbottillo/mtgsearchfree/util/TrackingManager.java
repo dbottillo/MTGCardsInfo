@@ -1,12 +1,14 @@
 package com.dbottillo.mtgsearchfree.util;
 
 import android.content.Context;
-import android.os.Bundle;
 
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 public final class TrackingManager {
 
@@ -22,7 +24,7 @@ public final class TrackingManager {
     private static final String UA_CATEGORY_FAVOURITE = "favourite";
     private static final String UA_CATEGORY_DECK = "deck";
     private static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
-    private static final String UA_CATEGORY_ERROR = "error";
+    private static final String UA_CATEGORY_ERROR = "error";9
     private static final String UA_CATEGORY_APP_WIDGET = "appWidget";
     private static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 
@@ -43,11 +45,14 @@ public final class TrackingManager {
     private static final String UA_ACTION_REMOVE_ALL = "removeALL";
     private static final String UA_ACTION_EXPORT = "export";
 
-    private static FirebaseAnalytics analytics = null;
+    static Tracker tracker = null;
 
     public static void init(Context context) {
-        if (analytics == null) {
-            analytics = FirebaseAnalytics.getInstance(context);
+        if (tracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(context);
+            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+            tracker = analytics.newTracker(R.xml.global_tracker);
+            tracker.enableAdvertisingIdCollection(true);
         }
     }
 
@@ -57,9 +62,8 @@ public final class TrackingManager {
 
     public static void trackPage(String page) {
         if (page != null) {
-            Bundle bundle = new Bundle();
-            bundle.putString(FirebaseAnalytics.Param.VALUE, page);
-            analytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle);
+            tracker.setScreenName(page);
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
         }
     }
 
@@ -68,11 +72,7 @@ public final class TrackingManager {
     }
 
     private static void trackEvent(String category, String action, String label) {
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, category);
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, action);
-        bundle.putString(FirebaseAnalytics.Param.VALUE, label);
-        analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+        tracker.send(new HitBuilders.EventBuilder().setCategory(category).setAction(action).setLabel(label).build());
     }
 
     public static void trackSet(MTGSet gameSet, MTGSet mtgSet) {

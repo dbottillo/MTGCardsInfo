@@ -1,37 +1,21 @@
 {
   "project_info": {
-    "project_number": "546887382192",
-    "firebase_url": "https://mtgsearch-10925.firebaseio.com",
     "project_id": "mtgsearch-10925",
-    "storage_bucket": "mtgsearch-10925.appspot.com"
+    "project_number": "546887382192",
+    "name": "MTGSearch"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:546887382192:android:c2a0ca719aeeb0ad",
+        "client_id": "android:com.dbottillo.mtgsearchfree",
+        "client_type": 1,
         "android_client_info": {
           "package_name": "com.dbottillo.mtgsearchfree"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "546887382192-ogjp4g19e8ump5ejj83nnfp89qu8bhf2.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "546887382192-61bo27r42svjdltlmcmlmli2srpml440.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "546887382192-s5o7cgauccdul9meoggi8540cfju027t.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCVt4dODIKY4N_7-wWtw6HFmuPYjJpv_VI"
-        }
-      ],
+      "oauth_client": [],
+      "api_key": [],
       "services": {
         "analytics_service": {
           "status": 2,
@@ -39,41 +23,33 @@
             "tracking_id": "UA-48823803-2"
           }
         },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
         },
+        "google_signin_service": {
+          "status": 1
+        },
         "ads_service": {
-          "status": 2
+          "status": 1
         }
       }
     },
     {
       "client_info": {
         "mobilesdk_app_id": "1:546887382192:android:9af5fd6ec9165221",
+        "client_id": "android:com.dbottillo.mtgsearchfree.debug",
+        "client_type": 1,
         "android_client_info": {
           "package_name": "com.dbottillo.mtgsearchfree.debug"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "546887382192-ogjp4g19e8ump5ejj83nnfp89qu8bhf2.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "546887382192-61bo27r42svjdltlmcmlmli2srpml440.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "546887382192-s5o7cgauccdul9meoggi8540cfju027t.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCVt4dODIKY4N_7-wWtw6HFmuPYjJpv_VI"
-        }
-      ],
+      "oauth_client": [],
+      "api_key": [],
       "services": {
         "analytics_service": {
           "status": 2,
@@ -81,15 +57,23 @@
             "tracking_id": "UA-48823803-3"
           }
         },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
         },
+        "google_signin_service": {
+          "status": 1
+        },
         "ads_service": {
-          "status": 2
+          "status": 1
         }
       }
     }
   ],
-  "configuration_version": "1"
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
 }
