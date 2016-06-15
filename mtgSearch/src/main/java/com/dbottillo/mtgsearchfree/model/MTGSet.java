@@ -91,27 +91,70 @@ public class MTGSet implements Parcelable {
         return "[" + name + "," + code + "]";
     }
 
+    private enum MAGIC_CARDS_INFO_SET_MAP{
+        TORMENTO("tor", "tr"),
+        DECKMASTER("dkm", "dm"),
+        EXODUS("EXO", "ex"),
+        UNGLUED("UGL", "ug"),
+        URZA_SAGA("USG", "us"),
+        ANTHOLOGIES("ATH", "at"),
+        URZA_LEGACY("ULG", "ul"),
+        SIXTH_EDITION("6ED", "6e"),
+        PORTAL_THREE_KINGDOM("PTK", "p3k"),
+        URZA_DESTINY("UDS", "ud"),
+        STARTER_1999("S99", "st"),
+        MERCADIAN_MASQUE("MMQ", "mm"),
+        NEMESIS("NMS", "ne"),
+        PROPHECY("PCY", "pr"),
+        INVASION("INV", "in"),
+        PLANESHIFT("PLS", "ps"),
+        SEVENTH_EDITION("7ED", "7e"),
+        APOCALYPSE("APC", "ap"),
+        ODYSEEY("ODY", "od"),
+        JUDGMENT("JUD", "ju"),
+        ONSLAUGHT("ONS", "on"),
+        LEGIONS("LGN", "le"),
+        SCOURGE("SCG", "sc"),
+        EIGTH_EDITION("8ED", "8e"),
+        MIRRODIN("MRD", "mi"),
+        DARKSTEEL("DST", "ds"),
+        UNHINGED("UNH", "uh"),
+        NINTH_EDITION("9ED", "9e"),
+        GUILDPACT("GPT", "gp"),
+        DISSENSION("DIS", "di"),
+        COLDSNAP("CSP", "cs"),
+        TIMESPIRAL("TSP", "ts"),
+        TIMESPIRAL_SHIFTED("TSB", "tsts"),
+        PLANAR_CHAOS("PLC", "pc"),
+        LORWYN("LRW", "lw"),
+        MORNINGTIDE("MOR", "mt"),
+        FROM_THE_VAULT_DRAGONS("DRB", "fvd"),
+        DUAL_DECKS_JACE_CHANDRA("DD2", "ddm"),
+        CONFLUX("CON", "cfx"),
+        DUAL_DECKS_DIVINE_DEMONIC("DDC", "ddadvd"),
+        FROM_THE_VAULT_EXILED("V09", "fve"),
+        PLANECHASE("HOP", "pch"),
+        DUAL_DECKS_GARRUCK_LILIANA("DDD", "gvl"),
+        PREMIUM_DECK_SERIES_SLIVERS("H09", "pds"),
+        DUAL_DECKS_PHYREXIA_COALITION("DDE", "pvc"),
+        FROM_THE_VAULT_RELICS("V10", "fvr"),
+        FROM_THE_VAULT_LEGENDS("V11", "fvl"),
+        COMMANDER_ARSENAL("CM1", "cma");
+
+        private String set;
+        private String mapped;
+
+        MAGIC_CARDS_INFO_SET_MAP(String set, String mapped) {
+            this.set = set;
+            this.mapped = mapped;
+        }
+    }
+
     String getMagicCardsInfoCode() {
-        if (code.equalsIgnoreCase("tor")){
-            return "tr";
-        }
-        if (code.equalsIgnoreCase("dkm")){
-            return "dm";
-        }
-        if (code.equalsIgnoreCase("RQS")){
-            return "RQS";
-        }
-        if (code.equalsIgnoreCase("ITP")){
-            return "itp";
-        }
-        if (code.equalsIgnoreCase("VAN")){
-            return "VAN";
-        }
-        if (code.equalsIgnoreCase("EXO")){
-            return "ex";
-        }
-        if (code.equalsIgnoreCase("UGL")){
-            return "ug";
+        for (MAGIC_CARDS_INFO_SET_MAP entry : MAGIC_CARDS_INFO_SET_MAP.values()){
+            if (entry.set.equalsIgnoreCase(code)){
+                return entry.mapped;
+            }
         }
         return code.toLowerCase();
     }
