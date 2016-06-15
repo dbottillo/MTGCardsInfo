@@ -24,7 +24,8 @@ public final class TrackingManager {
     private static final String UA_CATEGORY_FAVOURITE = "favourite";
     private static final String UA_CATEGORY_DECK = "deck";
     private static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
-    private static final String UA_CATEGORY_ERROR = "error";9
+    private static final String UA_CATEGORY_ERROR = "error";
+
     private static final String UA_CATEGORY_APP_WIDGET = "appWidget";
     private static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 

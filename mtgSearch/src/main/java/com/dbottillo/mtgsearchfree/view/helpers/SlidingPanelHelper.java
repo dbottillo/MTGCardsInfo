@@ -65,6 +65,14 @@ public class SlidingPanelHelper implements SlidingUpPanelLayout.PanelSlideListen
 
     }
 
+    public boolean isPanelOpen(){
+        return slidingPanel.isExpanded();
+    }
+
+    public void closePanel(){
+        slidingPanel.collapsePane();
+    }
+
     public boolean onBackPressed() {
         if (slidingPanel.isExpanded()) {
             slidingPanel.collapsePane();

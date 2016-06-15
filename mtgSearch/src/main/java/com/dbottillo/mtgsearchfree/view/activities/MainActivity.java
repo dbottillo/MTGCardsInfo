@@ -314,4 +314,11 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         filterView.onPanelSlide(offset);
     }
 
+    public boolean isFilterOpen() {
+        return slidingPanelHelper.isPanelOpen();
+    }
+
+    public void closePanel() {
+        slidingPanelHelper.closePanel();
+    }
 }

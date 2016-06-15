@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -299,12 +300,17 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         loadSet();
     }
 
+    @SuppressLint("NewApi")
     @Override
     public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
+        if (mainActivity.isFilterOpen()){
+            mainActivity.closePanel();
+            return;
+        }
         TrackingManager.trackCard(gameSet, position);
         Intent intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
-        if (view != null) {
+        if (view != null && MTGApp.isActivityTransitionAvailable()) {
             view.setTransitionName(getString(R.string.transition_card));
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.transition_card));
             startActivity(intent, activityOptionsCompat.toBundle());
