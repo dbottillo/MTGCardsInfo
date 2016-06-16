@@ -143,7 +143,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
             transitionCard = getIntent().getParcelableExtra(KEY_CARD);
             if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
-                Picasso.with(this).load(transitionCard.getImage()).into(sharedImage);
+                Picasso.with(getApplicationContext()).load(transitionCard.getImage()).into(sharedImage);
 
                 pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override

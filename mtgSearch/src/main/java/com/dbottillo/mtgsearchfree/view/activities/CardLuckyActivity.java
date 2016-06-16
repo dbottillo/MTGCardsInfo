@@ -102,7 +102,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             luckyCards.add(card);
             if (card.getImage() != null) {
                 // pre-fetch images
-                Picasso.with(this).load(card.getImage()).fetch();
+                Picasso.with(getApplicationContext()).load(card.getImage()).fetch();
             }
         }
         if (firstRun) {

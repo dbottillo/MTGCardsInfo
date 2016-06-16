@@ -178,7 +178,7 @@ public class MTGCardView extends RelativeLayout {
         cardImageContainer.setVisibility(View.VISIBLE);
         cardImage.setVisibility(View.GONE);
         startCardLoader();
-        Picasso.with(getContext()).load(fallback ? card.getImageFromGatherer() : card.getImage())
+        Picasso.with(getContext().getApplicationContext()).load(fallback ? card.getImageFromGatherer() : card.getImage())
                 .into(cardImage, new Callback() {
                     public void onSuccess() {
                         cardImage.setVisibility(View.VISIBLE);
