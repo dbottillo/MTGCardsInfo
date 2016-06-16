@@ -1,9 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -368,7 +370,16 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
-        startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position, card));
+        Intent intent;
+        if (view != null && MTGApp.isActivityTransitionAvailable()) {
+            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, card);
+            view.setTransitionName(getString(R.string.transition_card));
+            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, getString(R.string.transition_card));
+            startActivity(intent, activityOptionsCompat.toBundle());
+        } else {
+            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, null);
+            startActivity(intent);
+        }
     }
 
     @Override

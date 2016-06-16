@@ -309,12 +309,14 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
             return;
         }
         TrackingManager.trackCard(gameSet, position);
-        Intent intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
+        Intent intent;
         if (view != null && MTGApp.isActivityTransitionAvailable()) {
+            intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
             view.setTransitionName(getString(R.string.transition_card));
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.transition_card));
             startActivity(intent, activityOptionsCompat.toBundle());
         } else {
+            intent = CardsActivity.newInstance(getContext(), gameSet, position, null);
             startActivity(intent);
         }
     }
