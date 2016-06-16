@@ -1,47 +1,32 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:background="@color/white">
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <ImageView
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/join_beta_card"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="@dimen/base_margin"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="3dp">
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:src="@drawable/join_beta_header"/>
 
-        <LinearLayout
-            android:id="@+id/libraries_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/join_beta_text"
-                android:textColor="@color/color_primary_dark"/>
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/base_margin"
+        android:layout_below="@+id/header"
+        android:text="@string/join_beta_text"
+        android:textColor="@color/color_primary_dark"/>
 
     <Button
         android:id="@+id/join_action"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/join_beta_card"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/base_margin"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/base_margin"
         android:background="@drawable/btn_common"
         android:text="@string/join_beta_action"
         android:textColor="@color/white"
