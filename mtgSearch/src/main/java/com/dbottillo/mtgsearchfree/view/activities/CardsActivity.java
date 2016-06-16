@@ -116,16 +116,13 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         setContentView(R.layout.activity_cards);
 
         ButterKnife.bind(this);
-
-        if (MTGApp.isActivityTransitionAvailable()) {
-            setupEnterAnimation();
-        }
         setupView();
 
         MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
         filterPresenter.init(this);
 
+        MTGCard transitionCard = null;
         if (getIntent() != null) {
             if (getIntent().hasExtra(KEY_SET)) {
                 set = getIntent().getParcelableExtra(KEY_SET);
@@ -144,9 +141,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 setTitle(getString(R.string.action_saved));
             }
 
-            if (getIntent().hasExtra(KEY_CARD) && MTGApp.isActivityTransitionAvailable()) {
-                MTGCard card = getIntent().getParcelableExtra(KEY_CARD);
-                Picasso.with(this).load(card.getImage()).into(sharedImage);
+            transitionCard = getIntent().getParcelableExtra(KEY_CARD);
+            if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
+                Picasso.with(this).load(transitionCard.getImage()).into(sharedImage);
 
                 pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
@@ -157,11 +154,13 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                     }
                 });
             }
+
+            startPosition = getIntent().getIntExtra(POSITION, 0);
         }
 
-        startPosition = getIntent().getIntExtra(POSITION, 0);
-
-        if (!MTGApp.isActivityTransitionAvailable()){
+        if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
+            setupEnterAnimation();
+        } else {
             cardsPresenter.loadIdFavourites();
         }
     }
@@ -275,7 +274,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
         this.bucket = bucket;
-        if (set != null || favs || search != null) {
+        if (set != null || favs) {
             // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
