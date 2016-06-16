@@ -54,9 +54,9 @@ public class MTGApp extends Application {
 
         if (!isUnitTesting) {
             TrackingManager.init(getApplicationContext());
+            refWatcher = LeakCanary.install(this);
             Fabric.with(this, new Crashlytics());
             Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
-            refWatcher = LeakCanary.install(this);
             checkReleaseNote();
 
             if (BuildConfig.DEBUG) {
@@ -114,5 +114,9 @@ public class MTGApp extends Application {
         LOG.d();
         MTGApp application = (MTGApp) context.getApplicationContext();
         return application.refWatcher;
+    }
+
+    public static boolean isActivityTransitionAvailable(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 }

@@ -12,9 +12,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 
-import static org.hamcrest.CoreMatchers.any;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyBoolean;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
@@ -45,7 +44,7 @@ public class CardFilterStorageTest {
 
     @SuppressLint("CommitPrefEdits")
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         sharedPreferences = mock(SharedPreferences.class);
         editor = mock(SharedPreferences.Editor.class);
         when(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor);

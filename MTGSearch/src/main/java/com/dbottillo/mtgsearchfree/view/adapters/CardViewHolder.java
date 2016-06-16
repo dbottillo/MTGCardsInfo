@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.view.views.MTGLoader;
 
 public class CardViewHolder extends RecyclerView.ViewHolder {
 
@@ -18,12 +19,14 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     View indicator;
     ImageButton more;
     ImageView image;
+    MTGLoader loader;
 
     public CardViewHolder(View row, boolean grid) {
         super(row);
         parent = row.findViewById(R.id.card_parent);
         if (grid){
             image = (ImageView) row.findViewById(R.id.grid_item_card_image);
+            loader = (MTGLoader) row.findViewById(R.id.grid_item_card_loader);
         } else {
             name = (TextView) row.findViewById(R.id.card_name);
             setName = (TextView) row.findViewById(R.id.card_set_name);

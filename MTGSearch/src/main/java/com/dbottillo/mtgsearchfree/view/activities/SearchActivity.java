@@ -1,9 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +23,6 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -34,7 +35,6 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
@@ -70,6 +70,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     AnimationDrawable newSearchAnimation;
     ArgbEvaluator argbEvaluator;
+    MenuItem cardsShowType;
 
     int sizeBig = 0;
     boolean searchOpen = false;
@@ -99,6 +100,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             }
         });
         secondToolbar.inflateMenu(R.menu.search_results);
+        cardsShowType = secondToolbar.getMenu().findItem(R.id.action_view_type);
         secondToolbar.setOnMenuItemClickListener(this);
 
         setSupportActionBar(toolbar);
@@ -352,17 +354,32 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public void cardTypePreferenceChanged(boolean grid) {
         LOG.d();
-        if (grid){
+        if (grid) {
             mtgCardListView.setGridOn();
+            if (cardsShowType != null) {
+                cardsShowType.setIcon(R.drawable.cards_list_type);
+            }
         } else {
             mtgCardListView.setListOn();
+            if (cardsShowType != null) {
+                cardsShowType.setIcon(R.drawable.cards_grid_type);
+            }
         }
     }
 
     @Override
-    public void onCardSelected(MTGCard card, int position) {
+    public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
-        startActivity(CardsActivity.newInstance(this, searchView.getSearchParams(), position));
+        Intent intent;
+        if (view != null && MTGApp.isActivityTransitionAvailable()) {
+            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, card);
+            view.setTransitionName(getString(R.string.transition_card));
+            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, getString(R.string.transition_card));
+            startActivity(intent, activityOptionsCompat.toBundle());
+        } else {
+            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, null);
+            startActivity(intent);
+        }
     }
 
     @Override

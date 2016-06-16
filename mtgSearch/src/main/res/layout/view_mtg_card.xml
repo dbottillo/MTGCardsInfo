@@ -59,14 +59,12 @@
                         android:text="@string/image_retry" />
                 </LinearLayout>
 
-                <ImageView
+                <com.dbottillo.mtgsearchfree.view.views.MTGLoader
                     android:id="@+id/image_card_loader"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/card_loader"
-                    android:contentDescription="@string/cd_card_image_loader" />
+                    android:layout_marginTop="30dp" />
 
             </RelativeLayout>
 

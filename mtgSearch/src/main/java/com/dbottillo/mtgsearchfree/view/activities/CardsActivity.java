@@ -1,12 +1,20 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -31,9 +39,8 @@ import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -46,14 +53,16 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     private static final String KEY_SEARCH = "Search";
     private static final String KEY_SET = "Set";
+    private static final String KEY_CARD = "Card";
     private static final String KEY_FAV = "Fav";
     private static final String KEY_DECK = "Deck";
     private static final String POSITION = "Position";
 
-    public static Intent newInstance(Context context, MTGSet gameSet, int position) {
+    public static Intent newInstance(Context context, MTGSet gameSet, int position, MTGCard card) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SET, gameSet);
+        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 
@@ -64,10 +73,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         return intent;
     }
 
-    public static Intent newInstance(Context context, SearchParams search, int position) {
+    public static Intent newInstance(Context context, SearchParams search, int position, MTGCard card) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SEARCH, search);
+        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 
@@ -91,6 +101,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     PagerTabStrip pagerTabStrip;
     @Bind(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
+    @Bind(R.id.shared_image)
+    ImageView sharedImage;
 
     CardsPagerAdapter adapter;
 
@@ -104,13 +116,13 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         setContentView(R.layout.activity_cards);
 
         ButterKnife.bind(this);
-
         setupView();
 
         MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
         filterPresenter.init(this);
 
+        MTGCard transitionCard = null;
         if (getIntent() != null) {
             if (getIntent().hasExtra(KEY_SET)) {
                 set = getIntent().getParcelableExtra(KEY_SET);
@@ -128,9 +140,29 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 favs = true;
                 setTitle(getString(R.string.action_saved));
             }
+
+            transitionCard = getIntent().getParcelableExtra(KEY_CARD);
+            if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
+                Picasso.with(getApplicationContext()).load(transitionCard.getImage()).into(sharedImage);
+
+                pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image_half);
+                        UIUtil.setMarginTop(sharedImage, pagerTabStrip.getHeight() + paddingCard);
+                        pagerTabStrip.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
+            }
+
+            startPosition = getIntent().getIntExtra(POSITION, 0);
         }
-        startPosition = getIntent().getIntExtra(POSITION, 0);
-        cardsPresenter.loadIdFavourites();
+
+        if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
+            setupEnterAnimation();
+        } else {
+            cardsPresenter.loadIdFavourites();
+        }
     }
 
     public void setupView() {
@@ -144,15 +176,28 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+        RelativeLayout.LayoutParams parSharedImage = (RelativeLayout.LayoutParams) sharedImage.getLayoutParams();
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
         if (isPortrait) {
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+            parSharedImage.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
             par.rightMargin = UIUtil.dpToPx(this, 16);
         }
         fabButton.setLayoutParams(par);
         viewPager.addOnPageChangeListener(this);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
+        int widthAvailable = size.x - paddingCard * 2;
+        if (!isPortrait) {
+            widthAvailable = size.x / 2 - paddingCard * 2;
+        }
+        UIUtil.calculateSizeCardImage(sharedImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }
 
     public String getPageTrack() {
@@ -229,7 +274,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
         this.bucket = bucket;
-        if (set != null || favs || search != null) {
+        if (set != null || favs) {
             // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
@@ -295,4 +340,36 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         throw new UnsupportedOperationException();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void setupEnterAnimation() {
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.change_bound_with_arc);
+        transition.setDuration(200);
+        getWindow().setSharedElementEnterTransition(transition);
+        transition.addListener(new Transition.TransitionListener() {
+            @Override
+            public void onTransitionStart(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                cardsPresenter.loadIdFavourites();
+            }
+
+            @Override
+            public void onTransitionCancel(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionPause(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionResume(Transition transition) {
+
+            }
+        });
+    }
 }

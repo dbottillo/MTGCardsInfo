@@ -5,7 +5,6 @@ import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 
 import org.junit.Before;
@@ -20,7 +19,6 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -39,7 +37,7 @@ public class DecksInteractorImplTest {
     private DecksInteractor decksInteractor;
 
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         deck = mock(Deck.class);
         card = mock(MTGCard.class);
         storage = mock(DecksStorage.class);
@@ -50,6 +48,7 @@ public class DecksInteractorImplTest {
         when(storage.deleteDeck(deck)).thenReturn(decks);
         when(storage.editDeck(deck, "new name")).thenReturn(deckCards);
     }
+
     @Before
     public void init() {
         decksInteractor = new DecksInteractorImpl(storage);
@@ -102,7 +101,7 @@ public class DecksInteractorImplTest {
 
     @Test
     public void testAddCard() {
-        when(storage.addCard(deck, card, 2 )).thenReturn(deckCards);
+        when(storage.addCard(deck, card, 2)).thenReturn(deckCards);
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
         decksInteractor.addCard(deck, card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
@@ -112,7 +111,7 @@ public class DecksInteractorImplTest {
 
     @Test
     public void testAddCardWithNewDeck() {
-        when(storage.addCard("name", card, 2 )).thenReturn(deckCards);
+        when(storage.addCard("name", card, 2)).thenReturn(deckCards);
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
         decksInteractor.addCard("name", card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();

@@ -7,13 +7,13 @@ import com.dbottillo.mtgsearchfree.BaseTest;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 @SmallTest
-public class CardPropertiesTest extends BaseTest{
+public class CardPropertiesTest extends BaseTest {
 
     @Test
-    public void CardProperties_areCorrect(){
+    public void CardProperties_areCorrect() {
         assertThat(CardProperties.COLOR.getNumberFromString("White"), is(0));
         assertThat(CardProperties.COLOR.getNumberFromString("Blue"), is(1));
         assertThat(CardProperties.COLOR.getNumberFromString("Black"), is(2));

@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 public class MTGCardImageView extends ImageView {
+
     public MTGCardImageView(Context context) {
         super(context);
     }
@@ -19,7 +20,9 @@ public class MTGCardImageView extends ImageView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, (int) (widthMeasureSpec / MTGCardView.RATIO_CARD));
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int height = (int) (getMeasuredWidth() * MTGCardView.RATIO_CARD);
+        setMeasuredDimension(getMeasuredWidth(), height);
     }
 
 }

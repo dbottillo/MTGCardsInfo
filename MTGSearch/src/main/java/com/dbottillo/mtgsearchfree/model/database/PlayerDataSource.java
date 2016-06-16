@@ -10,7 +10,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 
 public final class PlayerDataSource {
-    
+
     public static final String TABLE = "MTGPlayer";
 
     public enum COLUMNS {

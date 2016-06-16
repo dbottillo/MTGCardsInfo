@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -94,12 +93,12 @@ public final class DeckDataSource {
 
     public static long addDeck(MTGCardDataSource cardDataSource, SQLiteDatabase db, CardsBucket bucket) {
         long deckId = addDeck(db, bucket.getKey());
-        if (bucket.getCards().isEmpty()){
+        if (bucket.getCards().isEmpty()) {
             return deckId;
         }
-        for (MTGCard card : bucket.getCards()){
+        for (MTGCard card : bucket.getCards()) {
             MTGCard realCard = cardDataSource.searchCard(card.getName());
-            if (realCard != null){
+            if (realCard != null) {
                 realCard.setSideboard(card.isSideboard());
                 addCardToDeck(db, deckId, realCard, card.getQuantity());
             }

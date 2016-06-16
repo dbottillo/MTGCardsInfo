@@ -7,10 +7,12 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
-
 @SuppressWarnings("SimplifiableIfStatement")
-public class PermissionUtil {
+public final class PermissionUtil {
+
+    private PermissionUtil() {
+
+    }
 
     public static boolean permissionGranted(Context context, TYPE type) {
         if (Build.VERSION.SDK_INT < 23) {
@@ -23,7 +25,7 @@ public class PermissionUtil {
         ActivityCompat.requestPermissions(activity, new String[]{type.permission}, 1);
     }
 
-    public enum TYPE{
+    public enum TYPE {
         READ_STORAGE(Manifest.permission.READ_EXTERNAL_STORAGE),
         WRITE_STORAGE(Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
@@ -34,7 +36,7 @@ public class PermissionUtil {
         }
     }
 
-    public interface PermissionListener{
+    public interface PermissionListener {
         void permissionGranted();
 
         void permissionNotGranted();

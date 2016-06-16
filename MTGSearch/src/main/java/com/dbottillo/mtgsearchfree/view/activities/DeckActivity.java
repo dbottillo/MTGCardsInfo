@@ -86,7 +86,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(this, cards, R.menu.deck_card, new OnCardListener() {
             @Override
-            public void onCardSelected(MTGCard card, int position) {
+            public void onCardSelected(MTGCard card, int position, View view) {
                 startActivity(CardsActivity.newInstance(DeckActivity.this, deck, position));
             }
 
@@ -158,7 +158,6 @@ public class DeckActivity extends BasicActivity implements DecksView {
             emptyView.setVisibility(View.VISIBLE);
             setTitle(deck.getName());
         } else {
-            
             int startingPoint = 0;
             if (bucket.creatures.size() > 0) {
                 sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.creatures.size() + ")"));

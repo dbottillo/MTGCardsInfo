@@ -8,13 +8,12 @@ import com.dbottillo.mtgsearchfree.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @SmallTest
 public class MTGCardTest extends BaseTest {
@@ -33,7 +32,7 @@ public class MTGCardTest extends BaseTest {
         card.setAsArtifact(true);
         card.setCardName("Name");
         card.setCmc(2);
-        card.setColors(Arrays.asList(1,3));
+        card.setColors(Arrays.asList(1, 3));
         card.belongsTo(set);
         card.setLayout("layout");
         card.setManaCost("3UW");
@@ -58,7 +57,7 @@ public class MTGCardTest extends BaseTest {
     }
 
     @Test
-    public void card_willParseColor(){
+    public void card_willParseColor() {
         MTGCard other = new MTGCard(2);
         other.addColor(CardProperties.COLOR.WHITE.key);
         assertTrue(other.getColors().contains(CardProperties.COLOR.WHITE.value));
@@ -73,7 +72,7 @@ public class MTGCardTest extends BaseTest {
     }
 
     @Test
-    public void card_willDetectEldrazi(){
+    public void card_willDetectEldrazi() {
         MTGCard other = new MTGCard(1);
         other.addColor(CardProperties.COLOR.WHITE.key);
         assertFalse(other.isEldrazi());
@@ -91,7 +90,7 @@ public class MTGCardTest extends BaseTest {
     }
 
     @Test
-    public void card_willRetrieveSingleColor(){
+    public void card_willRetrieveSingleColor() {
         MTGCard card = new MTGCard(1);
         card.addColor(CardProperties.COLOR.WHITE.key);
         card.addColor(CardProperties.COLOR.BLUE.key);

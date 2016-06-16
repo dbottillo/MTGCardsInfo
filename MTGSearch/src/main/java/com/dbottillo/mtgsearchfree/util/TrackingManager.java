@@ -10,7 +10,10 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-public class TrackingManager {
+public final class TrackingManager {
+
+    private TrackingManager() {
+    }
 
     private static final String UA_CATEGORY_UI = "ui";
     private static final String UA_CATEGORY_POPUP = "popup";
@@ -22,6 +25,7 @@ public class TrackingManager {
     private static final String UA_CATEGORY_DECK = "deck";
     private static final String UA_CATEGORY_LIFE_COUNTER = "lifeCounter";
     private static final String UA_CATEGORY_ERROR = "error";
+
     private static final String UA_CATEGORY_APP_WIDGET = "appWidget";
     private static final String UA_CATEGORY_RELEASE_NOTE = "releaseNote";
 
@@ -64,11 +68,11 @@ public class TrackingManager {
         }
     }
 
-    public static void trackEvent(String category, String action) {
+    private static void trackEvent(String category, String action) {
         trackEvent(category, action, "");
     }
 
-    public static void trackEvent(String category, String action, String label) {
+    private static void trackEvent(String category, String action, String label) {
         tracker.send(new HitBuilders.EventBuilder().setCategory(category).setAction(action).setLabel(label).build());
     }
 

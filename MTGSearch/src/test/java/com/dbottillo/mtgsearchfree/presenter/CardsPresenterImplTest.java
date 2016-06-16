@@ -1,17 +1,15 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
-import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
-import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.view.CardFilterView;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import org.junit.Before;
@@ -19,15 +17,15 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.internal.verification.Times;
 
 import java.util.List;
 
 import rx.Observable;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.argThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -94,7 +92,7 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
-        presenter = new CardsPresenterImpl(interactor, deckMapper);
+        presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class));
         presenter.init(view);
     }
 
@@ -160,7 +158,7 @@ public class CardsPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void removeFavsInvalidateFavCache(){
+    public void removeFavsInvalidateFavCache() {
         presenter.loadFavourites();
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.removeFromFavourite(card, false);
@@ -168,7 +166,7 @@ public class CardsPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void saveFavsInvalidateFavCache(){
+    public void saveFavsInvalidateFavCache() {
         presenter.loadFavourites();
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.saveAsFavourite(card, false);
@@ -176,7 +174,7 @@ public class CardsPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void changeFavsNotInvalidateNonFavCache(){
+    public void changeFavsNotInvalidateNonFavCache() {
         presenter.doSearch(searchParams);
         assertNotNull(CardsMemoryStorage.bucket);
         presenter.saveAsFavourite(card, false);

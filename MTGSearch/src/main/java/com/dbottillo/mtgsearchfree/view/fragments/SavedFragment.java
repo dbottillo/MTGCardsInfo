@@ -30,8 +30,6 @@ import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 
-import java.util.ArrayList;
-
 import javax.inject.Inject;
 
 import butterknife.Bind;
@@ -111,7 +109,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     }
 
     @Override
-    public void onCardSelected(MTGCard card, int position) {
+    public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
         TrackingManager.trackOpenCard(position);
         startActivity(CardsActivity.newFavInstance(getContext(), position));

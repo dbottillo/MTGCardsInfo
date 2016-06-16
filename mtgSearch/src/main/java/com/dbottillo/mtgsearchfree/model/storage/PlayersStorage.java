@@ -1,10 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
-
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;

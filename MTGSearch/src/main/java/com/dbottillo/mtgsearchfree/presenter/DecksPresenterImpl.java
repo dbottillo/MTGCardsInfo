@@ -3,10 +3,8 @@ package com.dbottillo.mtgsearchfree.presenter;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
-import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -18,7 +16,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import rx.functions.Func1;
-import rx.functions.Func2;
 
 public class DecksPresenterImpl implements DecksPresenter {
 
@@ -100,7 +97,7 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     @Override
     public void importDeck(Uri uri) {
-        LOG.d("import "+uri.toString());
+        LOG.d("import " + uri.toString());
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
     }
 
