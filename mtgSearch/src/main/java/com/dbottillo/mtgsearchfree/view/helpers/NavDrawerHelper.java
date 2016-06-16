@@ -63,14 +63,14 @@ public class NavDrawerHelper {
         navigationView.setSaveEnabled(true);
 
         if (BuildConfig.DEBUG) {
-            navigationView.getMenu().add(0, 100, Menu.NONE, resources.getString(R.string.action_create_db));
-            navigationView.getMenu().add(0, 101, Menu.NONE, resources.getString(R.string.action_fill_decks));
-            navigationView.getMenu().add(0, 102, Menu.NONE, resources.getString(R.string.action_create_fav));
-            navigationView.getMenu().add(0, 103, Menu.NONE, resources.getString(R.string.action_crash));
+            navigationView.getMenu().add(0, 100, Menu.NONE, resources.getString(R.string.action_create_db)).setIcon(R.drawable.left_debug);;
+            navigationView.getMenu().add(0, 101, Menu.NONE, resources.getString(R.string.action_fill_decks)).setIcon(R.drawable.left_debug);
+            navigationView.getMenu().add(0, 102, Menu.NONE, resources.getString(R.string.action_create_fav)).setIcon(R.drawable.left_debug);
+            navigationView.getMenu().add(0, 103, Menu.NONE, resources.getString(R.string.action_crash)).setIcon(R.drawable.left_debug);;
         }
         if (GeneralPreferences.with(activity.getApplicationContext()).isDebugEnabled()) {
-            navigationView.getMenu().add(0, 104, Menu.NONE, resources.getString(R.string.action_send_db));
-            navigationView.getMenu().add(0, 105, Menu.NONE, resources.getString(R.string.action_copy_db));
+            navigationView.getMenu().add(0, 104, Menu.NONE, resources.getString(R.string.action_send_db)).setIcon(R.drawable.left_debug);
+            navigationView.getMenu().add(0, 105, Menu.NONE, resources.getString(R.string.action_copy_db)).setIcon(R.drawable.left_debug);
         }
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.drawer_header);
