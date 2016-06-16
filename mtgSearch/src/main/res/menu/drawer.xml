@@ -25,7 +25,7 @@
             android:title="@string/action_rate" />
         <item
             android:id="@+id/drawer_beta"
-            android:icon="@drawable/left_info"
+            android:icon="@drawable/left_beta"
             android:title="@string/action_join_beta" />
         <item
             android:id="@+id/drawer_release_note"
