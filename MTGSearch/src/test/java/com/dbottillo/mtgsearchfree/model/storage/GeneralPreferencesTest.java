@@ -6,18 +6,34 @@ import com.dbottillo.mtgsearchfree.BuildConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-public class GeneralPreferencesTest extends BaseTest{
+public class GeneralPreferencesTest extends BaseTest {
+
+    GeneralPreferences underTest;
+
+    @Before
+    public void setup() {
+        underTest = GeneralPreferences.with(mContext);
+        underTest.clear();
+    }
 
     @Test
-    public void testSaveAndLoadDebugFlag(){
-        GeneralPreferences generalPreference = GeneralPreferences.with(mContext);
+    public void testSaveAndLoadDebugFlag() {
+        underTest = GeneralPreferences.with(mContext);
         if (!BuildConfig.DEBUG) {
-            assertFalse(generalPreference.isDebugEnabled());
+            assertFalse(underTest.isDebugEnabled());
         }
-        generalPreference.setDebug();
-        assertTrue(generalPreference.isDebugEnabled());
+        underTest.setDebug();
+        assertTrue(underTest.isDebugEnabled());
+    }
+
+    @Test
+    public void testShowTooltip() {
+        assertTrue(underTest.isTooltipMainToShow());
+        underTest.setTooltipMainHide();
+        assertFalse(underTest.isTooltipMainToShow());
     }
 
 }

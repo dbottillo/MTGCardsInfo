@@ -123,4 +123,13 @@ public class Player implements Parcelable {
         return id == other.id && name.equals(other.getName());
     }
 
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + life;
+        result = 31 * result + poisonCount;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + diceResult;
+        return result;
+    }
 }

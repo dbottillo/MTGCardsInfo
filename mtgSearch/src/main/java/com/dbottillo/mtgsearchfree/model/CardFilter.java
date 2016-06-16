@@ -98,4 +98,21 @@ public class CardFilter implements Parcelable {
                 && common == other.common && uncommon == other.uncommon
                 && rare == other.rare && mythic == other.mythic;
     }
+
+    @Override
+    public int hashCode() {
+        int result = (white ? 1 : 0);
+        result = 31 * result + (blue ? 1 : 0);
+        result = 31 * result + (black ? 1 : 0);
+        result = 31 * result + (red ? 1 : 0);
+        result = 31 * result + (green ? 1 : 0);
+        result = 31 * result + (artifact ? 1 : 0);
+        result = 31 * result + (land ? 1 : 0);
+        result = 31 * result + (eldrazi ? 1 : 0);
+        result = 31 * result + (common ? 1 : 0);
+        result = 31 * result + (uncommon ? 1 : 0);
+        result = 31 * result + (rare ? 1 : 0);
+        result = 31 * result + (mythic ? 1 : 0);
+        return result;
+    }
 }

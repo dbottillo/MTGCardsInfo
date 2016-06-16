@@ -4,9 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.dbottillo.mtgsearchfree.view.views.MTGLoader
+        android:id="@+id/grid_item_card_loader"
+        android:layout_centerInParent="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <com.dbottillo.mtgsearchfree.view.views.MTGCardImageView
         android:id="@+id/grid_item_card_image"
-        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>

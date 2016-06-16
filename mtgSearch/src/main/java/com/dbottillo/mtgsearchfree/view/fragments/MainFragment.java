@@ -1,8 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,8 +31,10 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
+import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
@@ -77,6 +82,8 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     MTGCardListView mtgCardListView;
     @Bind(R.id.cards_view_type)
     ImageButton viewType;
+    @Bind(R.id.main_tooltip)
+    View tooltip;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,7 +93,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         setActionBarTitle(getString(R.string.app_long_name));
@@ -116,6 +123,14 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
                 showHideSetList(false);
             }
         });
+
+        GeneralPreferences generalPreferences = GeneralPreferences.with(getContext());
+        if (generalPreferences.isTooltipMainToShow()){
+            tooltip.setVisibility(View.VISIBLE);
+            MaterialWrapper.setElevation(tooltip, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
+        } else {
+            tooltip.setVisibility(View.GONE);
+        }
 
         setsPresenter.loadSets();
     }
@@ -147,10 +162,12 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     @Override
     public void cardTypePreferenceChanged(boolean grid) {
         LOG.d();
-        if (grid){
+        if (grid) {
             mtgCardListView.setGridOn();
+            viewType.setImageResource(R.drawable.cards_list_type);
         } else {
             mtgCardListView.setListOn();
+            viewType.setImageResource(R.drawable.cards_grid_type);
         }
     }
 
@@ -166,6 +183,13 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         if (setList.getHeight() > 0) {
             showHideSetList(false);
         }
+    }
+
+    @OnClick(R.id.main_tooltip_close)
+    public void onCloseTooltip(View view){
+        LOG.d();
+        GeneralPreferences.with(view.getContext()).setTooltipMainHide();
+        AnimationUtil.animateHeight(tooltip, 0);
     }
 
     private void showHideSetList(final boolean loadSet) {
@@ -261,7 +285,6 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     public void updateContent() {
         LOG.d();
-        ArrayList<MTGCard> cards = new ArrayList<>();
         CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         CardsHelper.sortCards(sharedPreferences, cardBucket);
         mtgCardListView.loadCards(cardBucket, this);
@@ -277,11 +300,25 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         loadSet();
     }
 
+    @SuppressLint("NewApi")
     @Override
-    public void onCardSelected(MTGCard card, int position) {
+    public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
+        if (mainActivity.isFilterOpen()){
+            mainActivity.closePanel();
+            return;
+        }
         TrackingManager.trackCard(gameSet, position);
-        startActivity(CardsActivity.newInstance(getContext(), gameSet, position));
+        Intent intent;
+        if (view != null && MTGApp.isActivityTransitionAvailable()) {
+            intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
+            view.setTransitionName(getString(R.string.transition_card));
+            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.transition_card));
+            startActivity(intent, activityOptionsCompat.toBundle());
+        } else {
+            intent = CardsActivity.newInstance(getContext(), gameSet, position, null);
+            startActivity(intent);
+        }
     }
 
     @Override

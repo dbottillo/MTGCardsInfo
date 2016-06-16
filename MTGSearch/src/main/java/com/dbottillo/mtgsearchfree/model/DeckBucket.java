@@ -55,8 +55,8 @@ public class DeckBucket extends CardsBucket {
 
     @Override
     public String toString() {
-        return "DeckBucket: [nCreatures:" + creatures.size() + ", nLands" + lands.size() +
-                ", nInstantAndSorceries:" + instantAndSorceries.size() + ", nOther:" + other.size() + "]";
+        return "DeckBucket: [nCreatures:" + creatures.size() + ", nLands" + lands.size()
+                + ", nInstantAndSorceries:" + instantAndSorceries.size() + ", nOther:" + other.size() + "]";
     }
 
 }

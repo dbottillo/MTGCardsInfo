@@ -114,6 +114,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         if (bundle != null && bundle.getInt(CURRENT_SELECTION) > 0) {
             slidingPanelHelper.hidePanel(true);
         }
+
     }
 
     public void filterLoaded(CardFilter filter) {
@@ -313,4 +314,11 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         filterView.onPanelSlide(offset);
     }
 
+    public boolean isFilterOpen() {
+        return slidingPanelHelper.isPanelOpen();
+    }
+
+    public void closePanel() {
+        slidingPanelHelper.closePanel();
+    }
 }

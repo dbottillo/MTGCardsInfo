@@ -8,7 +8,6 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
-import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import org.junit.Before;
@@ -19,20 +18,21 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-public class DecksStorageTest extends BaseTest{
+public class DecksStorageTest extends BaseTest {
 
     static CardsInfoDbHelper cardsInfoDbHelper;
     static MTGCardDataSource mtgCardDataSource;
     static Deck deck;
     static MTGCard card;
     static FileUtil fileUtil;
-    static  CardsBucket cardsBucket;
+    static CardsBucket cardsBucket;
     static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
     static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
 
@@ -122,7 +122,7 @@ public class DecksStorageTest extends BaseTest{
     }
 
     @Test
-    public void DecksStorage_willImportDeck(){
+    public void DecksStorage_willImportDeck() {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(cardsBucket);
         List<Deck> decksLoaded = storage.importDeck(uri);
@@ -132,7 +132,7 @@ public class DecksStorageTest extends BaseTest{
     }
 
     @Test
-    public void DecksStorage_willNotImportNullDeck(){
+    public void DecksStorage_willNotImportNullDeck() {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(null);
         storage.importDeck(uri);

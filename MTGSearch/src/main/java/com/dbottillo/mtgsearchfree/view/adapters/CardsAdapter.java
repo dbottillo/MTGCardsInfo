@@ -10,13 +10,11 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
-
-public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
+public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     private CardsBucket bucket;
     private boolean grid;
@@ -47,10 +45,12 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        int columns = context.getResources().getInteger(R.integer.cards_grid_column_count);
         View v = LayoutInflater.from(parent.getContext()).inflate(grid ? R.layout.grid_item_card : R.layout.row_card, parent, false);
         if (grid) {
-            int height = (int) (parent.getMeasuredWidth() / MTGCardView.RATIO_CARD);
-            UIUtil.setHeight(v, height);
+            int height = (int) ((parent.getMeasuredWidth() / columns) * MTGCardView.RATIO_CARD);
+            v.setMinimumHeight(height);
         }
         return new CardViewHolder(v, grid);
     }
@@ -58,12 +58,22 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
     @Override
     public void onBindViewHolder(final CardViewHolder holder, int position) {
         final MTGCard card = bucket.getCards().get(position);
-        Context context = holder.parent.getContext();
+        final Context context = holder.parent.getContext();
         if (grid) {
-            Picasso.with(context).load(card.getImage())
+            holder.loader.setVisibility(View.VISIBLE);
+            Picasso.with(context.getApplicationContext()).load(card.getImage())
                     .error(R.drawable.leak_canary_icon)
-                    .placeholder(R.drawable.card_loader)
-                    .into(holder.image);
+                    .into(holder.image, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            holder.loader.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onError() {
+                            holder.loader.setVisibility(View.GONE);
+                        }
+                    });
         } else {
             CardAdapterHelper.bindView(context, card, holder, isASearch);
             CardAdapterHelper.setupMore(holder, context, card, position, menuRes, onCardListener);
@@ -72,7 +82,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
             @Override
             public void onClick(View v) {
                 if (onCardListener != null) {
-                    onCardListener.onCardSelected(card, holder.getAdapterPosition());
+                    onCardListener.onCardSelected(card, holder.getAdapterPosition(), v.findViewById(R.id.grid_item_card_image));
                 }
             }
         });

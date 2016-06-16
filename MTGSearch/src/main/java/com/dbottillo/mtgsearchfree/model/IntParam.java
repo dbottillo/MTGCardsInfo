@@ -63,4 +63,11 @@ public class IntParam implements Parcelable {
         IntParam other = (IntParam) o;
         return Objects.equals(operator, other.operator) && value == other.value;
     }
+
+    @Override
+    public int hashCode() {
+        int result = operator != null ? operator.hashCode() : 0;
+        result = 31 * result + value;
+        return result;
+    }
 }

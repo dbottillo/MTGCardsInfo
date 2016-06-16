@@ -152,14 +152,12 @@ public class FileUtil {
         if (!extension.equalsIgnoreCase(".dec")) {
             return null;
         }
-        CardsBucket bucket = null;
         try {
             InputStream is = fileLoader.loadUri(uri);
-            bucket = readFileStream(is);
+            return readFileStream(is);
         } catch (IOException ignored) {
+            return null;
         }
-
-        return bucket;
     }
 
     public CardsBucket readFileStream(InputStream is) throws IOException {

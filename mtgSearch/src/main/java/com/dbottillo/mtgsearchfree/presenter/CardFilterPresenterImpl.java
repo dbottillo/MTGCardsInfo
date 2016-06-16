@@ -1,7 +1,5 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import android.util.Log;
-
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
@@ -9,11 +7,6 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 
 import javax.inject.Inject;
-
-import rx.Observable;
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.RxWrapperListener<CardFilter> {
 
@@ -72,54 +65,42 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
     public void update(CardFilter.TYPE type, boolean on) {
         LOG.d("update " + type.toString() + "with: " + on);
         switch (type) {
-            case WHITE: {
+            case WHITE:
                 CardFilterMemoryStorage.filter.white = on;
                 break;
-            }
-            case BLUE: {
+            case BLUE:
                 CardFilterMemoryStorage.filter.blue = on;
                 break;
-            }
-            case RED: {
+            case RED:
                 CardFilterMemoryStorage.filter.red = on;
                 break;
-            }
-            case BLACK: {
+            case BLACK:
                 CardFilterMemoryStorage.filter.black = on;
                 break;
-            }
-            case GREEN: {
+            case GREEN:
                 CardFilterMemoryStorage.filter.green = on;
                 break;
-            }
-            case LAND: {
+            case LAND:
                 CardFilterMemoryStorage.filter.land = on;
                 break;
-            }
-            case ELDRAZI: {
+            case ELDRAZI:
                 CardFilterMemoryStorage.filter.eldrazi = on;
                 break;
-            }
-            case ARTIFACT: {
+            case ARTIFACT:
                 CardFilterMemoryStorage.filter.artifact = on;
                 break;
-            }
-            case COMMON: {
+            case COMMON:
                 CardFilterMemoryStorage.filter.common = on;
                 break;
-            }
-            case UNCOMMON: {
+            case UNCOMMON:
                 CardFilterMemoryStorage.filter.uncommon = on;
                 break;
-            }
-            case RARE: {
+            case RARE:
                 CardFilterMemoryStorage.filter.rare = on;
                 break;
-            }
-            case MYTHIC: {
+            case MYTHIC:
                 CardFilterMemoryStorage.filter.mythic = on;
                 break;
-            }
         }
         interactor.sync(CardFilterMemoryStorage.filter);
         filterLoaded();

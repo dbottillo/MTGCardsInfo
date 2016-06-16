@@ -52,7 +52,7 @@ public class DeckCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCardListener.onCardSelected(card, position);
+                onCardListener.onCardSelected(card, position, v);
             }
         });
     }

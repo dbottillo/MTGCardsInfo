@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CardsPagerAdapter extends PagerAdapter {
