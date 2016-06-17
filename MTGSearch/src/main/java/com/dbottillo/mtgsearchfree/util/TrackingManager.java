@@ -1,14 +1,12 @@
 package com.dbottillo.mtgsearchfree.util;
 
 import android.content.Context;
+import android.os.Bundle;
 
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public final class TrackingManager {
 
@@ -46,14 +44,11 @@ public final class TrackingManager {
     private static final String UA_ACTION_REMOVE_ALL = "removeALL";
     private static final String UA_ACTION_EXPORT = "export";
 
-    static Tracker tracker = null;
+    static FirebaseAnalytics firebaseAnalytics;
 
     public static void init(Context context) {
-        if (tracker == null) {
-            GoogleAnalytics analytics = GoogleAnalytics.getInstance(context);
-            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
-            tracker = analytics.newTracker(R.xml.global_tracker);
-            tracker.enableAdvertisingIdCollection(true);
+        if (firebaseAnalytics == null) {
+            firebaseAnalytics = FirebaseAnalytics.getInstance(context);
         }
     }
 
@@ -63,8 +58,9 @@ public final class TrackingManager {
 
     public static void trackPage(String page) {
         if (page != null) {
-            tracker.setScreenName(page);
-            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+            Bundle bundle = new Bundle();
+            bundle.putString("page_name", page);
+            firebaseAnalytics.logEvent("page", bundle);
         }
     }
 
@@ -73,7 +69,11 @@ public final class TrackingManager {
     }
 
     private static void trackEvent(String category, String action, String label) {
-        tracker.send(new HitBuilders.EventBuilder().setCategory(category).setAction(action).setLabel(label).build());
+        Bundle bundle = new Bundle();
+        bundle.putString("category", category);
+        bundle.putString("action", action);
+        bundle.putString("label", label);
+        firebaseAnalytics.logEvent("event", bundle);
     }
 
     public static void trackSet(MTGSet gameSet, MTGSet mtgSet) {

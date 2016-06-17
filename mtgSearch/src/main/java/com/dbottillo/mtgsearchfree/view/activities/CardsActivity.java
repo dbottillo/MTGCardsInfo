@@ -165,7 +165,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         }
     }
 
-    public void setupView() {
+    private void setupView() {
         setupToolbar();
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
