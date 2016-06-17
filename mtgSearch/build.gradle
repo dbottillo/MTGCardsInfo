@@ -1,10 +1,10 @@
 buildscript {
     ext.dagger_version = '2.1'
-    ext.support_library_version = '23.4.0'
+    ext.support_library_version = '24.0.0'
     ext.leak_canary_version = '1.4-SNAPSHOT'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
-    ext.play_store_version = '8.4.0'
+    ext.firebase_version = '9.0.2'
     ext.espresso_version = '2.2.2'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
@@ -66,7 +66,7 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '16'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             lintOptions {
@@ -78,7 +78,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '16'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -87,7 +87,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '16'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -135,7 +135,7 @@ tasks.whenTaskAdded { task ->
 dependencies {
     compile "com.android.support:support-v4:$support_library_version"
     compile "com.android.support:appcompat-v7:$support_library_version"
-    compile "com.google.android.gms:play-services-analytics:$play_store_version"
+    compile "com.google.firebase:firebase-core:$firebase_version"
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile "com.android.support:cardview-v7:$support_library_version"
