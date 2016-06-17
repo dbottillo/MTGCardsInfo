@@ -79,7 +79,7 @@ public class FilterPickerView extends LinearLayout {
         listener = list;
     }
 
-    public void setRotationArrow(float angle) {
+    private void setRotationArrow(float angle) {
         arrow.setRotation(angle);
     }
 
@@ -135,7 +135,7 @@ public class FilterPickerView extends LinearLayout {
             R.id.toggle_green, R.id.toggle_artifact, R.id.toggle_land, R.id.toggle_eldrazi,
             R.id.toggle_common, R.id.toggle_uncommon,
             R.id.toggle_rare, R.id.toggle_myhtic})
-    public void onToggleClicked(View view) {
+    void onToggleClicked(View view) {
         LOG.d();
         boolean on = ((ToggleButton) view).isChecked();
         switch (view.getId()) {

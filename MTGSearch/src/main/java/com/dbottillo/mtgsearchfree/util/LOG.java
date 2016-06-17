@@ -72,6 +72,13 @@ public final class LOG {
         Log.d(TAG, enhanced(msg));
     }
 
+    public static void v(String msg) {
+        if (!BuildConfig.DEBUG) {
+            return;
+        }
+        Log.v(TAG, enhanced(msg));
+    }
+
     public static void d() {
         d("");
     }

@@ -148,10 +148,6 @@ public class FileUtil {
     }
 
     public CardsBucket readFileContent(Uri uri) {
-        String extension = uri.getPath().substring(uri.getPath().lastIndexOf("."));
-        if (!extension.equalsIgnoreCase(".dec")) {
-            return null;
-        }
         try {
             InputStream is = fileLoader.loadUri(uri);
             return readFileStream(is);
@@ -160,7 +156,7 @@ public class FileUtil {
         }
     }
 
-    public CardsBucket readFileStream(InputStream is) throws IOException {
+    private CardsBucket readFileStream(InputStream is) throws IOException {
         List<MTGCard> cards = new ArrayList<>();
         CardsBucket bucket = new CardsBucket();
         if (is == null) {

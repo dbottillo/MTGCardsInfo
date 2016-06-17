@@ -27,7 +27,7 @@ public class CardsBucket {
     }
 
     public List<MTGCard> getCards() {
-        LOG.d("cards of bucket " + key + " requested");
+        LOG.v("cards of bucket " + key + " requested");
         return cards;
     }
 
