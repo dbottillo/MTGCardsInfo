@@ -130,9 +130,9 @@ public class MTGLoader extends View {
 
     private static class MTGLoaderHandler extends Handler {
 
-        protected WeakReference<MTGLoader> loader;
+        WeakReference<MTGLoader> loader;
 
-        public MTGLoaderHandler(MTGLoader loader) {
+        MTGLoaderHandler(MTGLoader loader) {
             this.loader = new WeakReference<>(loader);
         }
 

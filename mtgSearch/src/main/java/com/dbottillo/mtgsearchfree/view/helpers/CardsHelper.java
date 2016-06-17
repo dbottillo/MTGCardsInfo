@@ -20,17 +20,20 @@ public final class CardsHelper {
 
     }
 
-    public static void filterCards(CardFilter cardFilter, CardsBucket bucket) {
+    public static CardsBucket filterCards(CardFilter cardFilter, CardsBucket bucket) {
         LOG.d();
-        filterCards(cardFilter, null, bucket);
+        return filterCards(cardFilter, null, bucket);
     }
 
-    public static void filterCards(CardFilter cardFilter, SearchParams searchParams, CardsBucket bucket) {
+    public static CardsBucket filterCards(CardFilter cardFilter, SearchParams searchParams, CardsBucket bucket) {
         LOG.d();
         List<MTGCard> allCards = bucket.getCards();
         ArrayList<MTGCard> filteredCards = new ArrayList<>();
+        CardsBucket filteredBucket = new CardsBucket();
+        filteredBucket.setKey(bucket.getKey());
         if (cardFilter == null) {
-            return;
+            filteredBucket.setCards(filteredCards);
+            return filteredBucket;
         }
         for (MTGCard card : allCards) {
             boolean toAdd = false;
@@ -84,7 +87,8 @@ public final class CardsHelper {
                 filteredCards.add(card);
             }
         }
-        bucket.setCards(filteredCards);
+        filteredBucket.setCards(filteredCards);
+        return filteredBucket;
     }
 
     public static void sortCards(SharedPreferences sharedPreferences, CardsBucket bucket) {

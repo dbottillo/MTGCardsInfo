@@ -238,7 +238,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         getView().startAnimation(animation);
     }
 
-    public void setHeightView(View view, int value) {
+    private void setHeightView(View view, int value) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
         params.height = value;
         view.setLayoutParams(params);
@@ -285,9 +285,9 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
 
     public void updateContent() {
         LOG.d();
-        CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
-        CardsHelper.sortCards(sharedPreferences, cardBucket);
-        mtgCardListView.loadCards(cardBucket, this);
+        CardsBucket bucket = CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
+        CardsHelper.sortCards(sharedPreferences, bucket);
+        mtgCardListView.loadCards(bucket, this);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
