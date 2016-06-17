@@ -262,7 +262,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
 
     @Test
     public void search_cards_by_set_id() {
-        MTGSet set = mtgDatabaseHelper.getSets().get(5);
+        MTGSet set = mtgDatabaseHelper.getSets().get(0);
         SearchParams searchParams = new SearchParams();
         searchParams.setBlue(true);
         searchParams.setSetId(set.getId());
