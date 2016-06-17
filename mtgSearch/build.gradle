@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.1'
-    ext.support_library_version = '24.0.0'
+    ext.support_library_version = '23.4.0'
     ext.leak_canary_version = '1.4-SNAPSHOT'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
@@ -39,8 +39,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 45
-        versionName "2.7.4"
+        versionCode 46
+        versionName "2.7.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

@@ -61,7 +61,7 @@ public class CardsPresenterImplTest extends BaseTest {
     @Mock
     List<MTGCard> setCards;
 
-    int[] idFavs;
+    private int[] idFavs;
 
     @Mock
     List<MTGCard> searchCards;
