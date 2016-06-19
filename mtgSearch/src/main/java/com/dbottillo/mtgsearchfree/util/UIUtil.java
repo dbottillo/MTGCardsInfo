@@ -4,11 +4,9 @@ import android.content.Context;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
 public final class UIUtil {
@@ -53,7 +51,7 @@ public final class UIUtil {
         }
     }
 
-    public static void calculateSizeCardImage(ImageView cardImage, int widthAvailable, boolean isTablet){
+    public static void calculateSizeCardImage(ImageView cardImage, int widthAvailable, boolean isTablet) {
         int wImage = widthAvailable;
         int hImage = (int) (widthAvailable * MTGCardView.RATIO_CARD);
         if (isTablet) {
@@ -63,7 +61,6 @@ public final class UIUtil {
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) cardImage.getLayoutParams();
         par.width = wImage;
         par.height = hImage;
-        LOG.e(wImage+","+hImage);
         cardImage.setLayoutParams(par);
     }
 

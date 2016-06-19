@@ -95,7 +95,6 @@ public class MTGCardView extends RelativeLayout {
         if (isLandscape) {
             widthAvailable = size.x  / 2 - paddingCard * 2;
         }
-        LOG.e(widthAvailable+","+heightAvailable);
         UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }
 
