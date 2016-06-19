@@ -93,7 +93,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
-        boolean firstRun = luckyCards.size() == 0;
+        boolean firstRun = luckyCards.size() <=1;
         for (MTGCard card : bucket.getCards()) {
             luckyCards.add(card);
             if (card.getImage() != null) {
@@ -115,12 +115,10 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         LOG.d();
         idFavourites = favourites;
         if (luckyCards.size() == 0) {
-            if (getIntent().getExtras() != null && getIntent().getExtras().getParcelable(CARD) != null) {
-                luckyCards.add((MTGCard) getIntent().getExtras().getParcelable(CARD));
-                refreshCard(null);
-            } else {
-                cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
+            if (getIntent() != null && getIntent().hasExtra(CARD)){
+                luckyCards.add((MTGCard) getIntent().getParcelableExtra(CARD));
             }
+            cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
         } else {
             updateMenu();
         }

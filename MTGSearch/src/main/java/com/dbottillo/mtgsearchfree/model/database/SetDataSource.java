@@ -76,7 +76,9 @@ public final class SetDataSource {
     public static void removeSet(SQLiteDatabase database, long id) {
         String[] args = new String[]{id + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
-        database.rawQuery(query, args).moveToFirst();
+        Cursor cursor = database.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
         LOG.query(query, args);
     }
 

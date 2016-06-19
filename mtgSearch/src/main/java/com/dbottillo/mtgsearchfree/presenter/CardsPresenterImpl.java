@@ -256,7 +256,9 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void detachView() {
         LOG.d();
-        subscription.unsubscribe();
+        if (subscription != null) {
+            subscription.unsubscribe();
+        }
     }
 
     RxWrapper.RxWrapperListener<int[]> idFavSubscriber = new RxWrapper.RxWrapperListener<int[]>() {

@@ -238,25 +238,35 @@ public final class DeckDataSource {
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
         String query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?";
         LOG.query(query, args);
-        db.rawQuery(query, args).moveToFirst();
+        Cursor cursor = db.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
     }
 
     public static void deleteDeck(SQLiteDatabase db, Deck deck) {
         String[] args = new String[]{deck.getId() + ""};
         String query = "DELETE FROM deck_card where deck_id=? ";
         LOG.query(query, args);
-        db.rawQuery(query, args).moveToFirst();
+        Cursor cursor = db.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
         String query2 = "DELETE FROM decks where _id=? ";
-        db.rawQuery(query2, args).moveToFirst();
+        Cursor cursor2 = db.rawQuery(query2, args);
+        cursor2.moveToFirst();
+        cursor2.close();
     }
 
     public static void deleteAllDecks(SQLiteDatabase db) {
         String query = "DELETE FROM deck_card";
         LOG.query(query);
-        db.rawQuery(query, null).moveToFirst();
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        cursor.close();
         String query2 = "DELETE FROM decks";
         LOG.query(query2);
-        db.rawQuery(query2, null).moveToFirst();
+        Cursor cursor2 = db.rawQuery(query2, null);
+        cursor2.moveToFirst();
+        cursor2.close();
     }
 
     public static int renameDeck(SQLiteDatabase db, long deckId, String name) {
