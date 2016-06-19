@@ -323,7 +323,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     @Override
     public void filterLoaded(CardFilter filter) {
         LOG.d();
-        CardsHelper.filterCards(filter, bucket);
+        this.bucket = CardsHelper.filterCards(filter, bucket);
         CardsHelper.sortCards(getSharedPreferences(), bucket);
         reloadAdapter();
     }
