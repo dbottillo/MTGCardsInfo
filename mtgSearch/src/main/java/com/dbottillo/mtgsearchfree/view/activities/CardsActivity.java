@@ -124,6 +124,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         MTGCard transitionCard = null;
         if (getIntent() != null) {
+            LOG.d("intent not null");
             if (getIntent().hasExtra(KEY_SET)) {
                 set = getIntent().getParcelableExtra(KEY_SET);
                 setTitle(set.getName());
@@ -156,9 +157,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
             }
 
             startPosition = getIntent().getIntExtra(POSITION, 0);
+        } else {
+            LOG.d("intent null");
         }
 
-        if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
+        if (transitionCard != null && MTGApp.isActivityTransitionAvailable() && bundle == null) {
             setupEnterAnimation();
         } else {
             cardsPresenter.loadIdFavourites();

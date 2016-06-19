@@ -52,6 +52,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private static final String SEARCH_OPEN = "searchOpen";
     private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
     private static final String TOOLBAR_ELEVATION = "toolbarElevation";
+    private static final String SEARCH_PARAMS = "searchParams";
 
     @Bind(R.id.action_search)
     ImageButton newSearch;
@@ -174,6 +175,13 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         setsPresenter.loadSets();
 
         cardsPresenter.loadCardTypePreference();
+
+        if (savedInstanceState != null){
+            SearchParams searchParams = savedInstanceState.getParcelable(SEARCH_PARAMS);
+            if (searchParams !=null){
+                doSearch(searchParams);
+            }
+        }
     }
 
     @Override
@@ -185,6 +193,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             outState.putFloat(TOOLBAR_ELEVATION, toolbar.getElevation());
         }
+        outState.putParcelable(SEARCH_PARAMS, searchView.getSearchParams());
     }
 
     @Override
