@@ -1,7 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,7 +16,9 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Picasso;
@@ -20,8 +26,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class CardLuckyActivity extends CommonCardsActivity implements CardsView {
 
@@ -30,6 +39,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     private ArrayList<MTGCard> luckyCards = null;
 
+    @Inject
     CardsPresenter cardsPresenter;
 
     @Bind(R.id.card_view)
@@ -38,6 +48,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_lucky_card);
+
+        setTitle(R.string.lucky_title);
 
         ButterKnife.bind(this);
 
@@ -49,17 +61,10 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
         MTGApp.uiGraph.inject(this);
         cardsPresenter.init(this);
-
-        findViewById(R.id.btn_lucky_again).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                refreshCard();
-            }
-        });
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                refreshCard();
+                refreshCard(null);
             }
         });
 
@@ -87,18 +92,9 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     }
 
     public void cardLoaded(CardsBucket bucket) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void deckLoaded(DeckBucket bucket) {
-        throw new UnsupportedOperationException();
-    }
-
-    public void luckyCardsLoaded(ArrayList<MTGCard> cards) {
         LOG.d();
         boolean firstRun = luckyCards.size() == 0;
-        for (MTGCard card : cards) {
+        for (MTGCard card : bucket.getCards()) {
             luckyCards.add(card);
             if (card.getImage() != null) {
                 // pre-fetch images
@@ -106,8 +102,13 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             }
         }
         if (firstRun) {
-            refreshCard();
+            refreshCard(null);
         }
+    }
+
+    @Override
+    public void deckLoaded(DeckBucket bucket) {
+        throw new UnsupportedOperationException();
     }
 
     public void favIdLoaded(int[] favourites) {
@@ -116,7 +117,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         if (luckyCards.size() == 0) {
             if (getIntent().getExtras() != null && getIntent().getExtras().getParcelable(CARD) != null) {
                 luckyCards.add((MTGCard) getIntent().getExtras().getParcelable(CARD));
-                refreshCard();
+                refreshCard(null);
             } else {
                 cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
             }
@@ -134,7 +135,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void refreshCard() {
+    @OnClick(R.id.lucky_again)
+    public void refreshCard(View view) {
         LOG.d();
         if (luckyCards == null || luckyCards.isEmpty()) {
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
@@ -170,4 +172,18 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.lucky_card, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_add_to_deck) {
+            openDialog("add_to_deck", AddToDeckFragment.newInstance(cardView.getCard()));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
