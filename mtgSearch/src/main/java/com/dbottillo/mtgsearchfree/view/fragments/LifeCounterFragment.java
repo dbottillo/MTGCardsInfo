@@ -24,6 +24,7 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 
@@ -155,14 +156,17 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         alert.setTitle(getString(R.string.edit_player));
 
-        final EditText input = new EditText(getActivity());
-        input.setText(players.get(position).getName());
-        input.setSelection(players.get(position).getName().length());
-        alert.setView(input);
+
+        LayoutInflater layoutInflater = LayoutInflater.from(getContext());
+        View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
+        final EditText editText = (EditText) view.findViewById(R.id.edit_text);
+        editText.setText(players.get(position).getName());
+        editText.setSelection(players.get(position).getName().length());
+        alert.setView(view);
 
         alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
+                String value = editText.getText().toString();
                 players.get(position).setName(value);
                 playerPresenter.editPlayer(players.get(position));
                 TrackingManager.trackEditPlayer();
