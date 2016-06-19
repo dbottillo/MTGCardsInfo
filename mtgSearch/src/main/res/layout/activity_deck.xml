@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:layout_below="@+id/toolbar"
         android:padding="40dp"
         android:paddingTop="20dp"
         android:textStyle="italic"
