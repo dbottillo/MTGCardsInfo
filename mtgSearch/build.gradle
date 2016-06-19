@@ -29,9 +29,6 @@ def keystorePropertiesFile = rootProject.file("keystore.properties");
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
-println(" here ")
-println(" here "+keystoreProperties)
-
 repositories {
     maven { url 'https://maven.fabric.io/public' }
     mavenCentral()

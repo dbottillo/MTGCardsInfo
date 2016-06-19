@@ -26,7 +26,6 @@ import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
-import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
@@ -35,6 +34,7 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
@@ -47,7 +47,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SearchActivity extends BasicActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, DialogUtil.SortDialogListener, SetsView, CardsView, OnCardListener {
+public class SearchActivity extends BasicActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, SetsView, CardsView, OnCardListener, SortDialogFragment.SortDialogListener {
 
     private static final String SEARCH_OPEN = "searchOpen";
     private static final String BG_COLOR_SCROLLVIEW = "bgColorScrollview";
@@ -300,7 +300,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         if (item.getItemId() == R.id.action_sort) {
-            DialogUtil.chooseSortDialog(this, getSharedPreferences(), this);
+            SortDialogFragment sortDialogFragment = new SortDialogFragment();
+            sortDialogFragment.show(getSupportFragmentManager(), sortDialogFragment.getTag());
+            sortDialogFragment.setListener(this);
             return true;
         }
         if (item.getItemId() == R.id.action_view_type) {
