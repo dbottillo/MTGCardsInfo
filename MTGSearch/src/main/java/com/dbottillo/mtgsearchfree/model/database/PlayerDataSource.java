@@ -78,7 +78,9 @@ public final class PlayerDataSource {
         String[] args = new String[]{player.getId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
         LOG.query(query, player.getId() + "");
-        db.rawQuery(query, args).moveToFirst();
+        Cursor cursor = db.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
     }
 
     public static Player fromCursor(Cursor cursor) {
