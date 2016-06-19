@@ -85,7 +85,7 @@
     <string name="lucky_title">Lucky?</string>
     <string name="menu_life_screen_on">Keep screen on</string>
     <string name="menu_life_two_hg">2HG game</string>
-    <string name="pick_sort_option">Sorting bucket:</string>
+    <string name="pick_sort_option">Sorting cards</string>
     <string name="action_rate">Rate the app</string>
     <string name="share_app">Share App</string>
     <string name="libraries">Libraries</string>
@@ -222,6 +222,8 @@
     <string name="view_type_option">View type</string>
     <string name="main_fragment_tooltip">NEW: you can now switch between list and grid view type!</string>
     <string name="transition_card" translatable="false">transitionName</string>
+    <string name="sort_az">Alphabetically</string>
+    <string name="sort_color">WUBRG</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

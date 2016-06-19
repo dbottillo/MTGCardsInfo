@@ -106,8 +106,8 @@ public final class TrackingManager {
         trackEvent(UA_CATEGORY_RELEASE_NOTE, UA_ACTION_OPEN, "update");
     }
 
-    public static void trackSortCard(int which) {
-        trackEvent(UA_CATEGORY_SET, UA_ACTION_TOGGLE, which == 1 ? "wubrg" : "alphabetically");
+    public static void trackSortCard(boolean color) {
+        trackEvent(UA_CATEGORY_SET, UA_ACTION_TOGGLE, color ? "wubrg" : "alphabetically");
     }
 
     public static void trackDatabaseExport() {

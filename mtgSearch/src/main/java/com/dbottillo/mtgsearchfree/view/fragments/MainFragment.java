@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,7 +33,6 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
-import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
@@ -55,8 +55,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainFragment extends BasicFragment implements DialogUtil.SortDialogListener,
-        MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView {
+public class MainFragment extends BasicFragment implements
+        MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView, SortDialogFragment.SortDialogListener {
 
     @Inject
     CardsPresenter cardsPresenter;
@@ -125,7 +125,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
         });
 
         GeneralPreferences generalPreferences = GeneralPreferences.with(getContext());
-        if (generalPreferences.isTooltipMainToShow()){
+        if (generalPreferences.isTooltipMainToShow()) {
             tooltip.setVisibility(View.VISIBLE);
             MaterialWrapper.setElevation(tooltip, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
         } else {
@@ -156,7 +156,9 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     @OnClick(R.id.cards_sort)
     public void onSortClicked(View view) {
         LOG.d();
-        DialogUtil.chooseSortDialog(getContext(), sharedPreferences, this);
+        SortDialogFragment sortDialogFragment = new SortDialogFragment();
+        sortDialogFragment.show(mainActivity.getSupportFragmentManager(), sortDialogFragment.getTag());
+        sortDialogFragment.setListener(this);
     }
 
     @Override
@@ -186,7 +188,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     }
 
     @OnClick(R.id.main_tooltip_close)
-    public void onCloseTooltip(View view){
+    public void onCloseTooltip(View view) {
         LOG.d();
         GeneralPreferences.with(view.getContext()).setTooltipMainHide();
         AnimationUtil.animateHeight(tooltip, 0);
@@ -304,7 +306,7 @@ public class MainFragment extends BasicFragment implements DialogUtil.SortDialog
     @Override
     public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
-        if (mainActivity.isFilterOpen()){
+        if (mainActivity.isFilterOpen()) {
             mainActivity.closePanel();
             return;
         }
