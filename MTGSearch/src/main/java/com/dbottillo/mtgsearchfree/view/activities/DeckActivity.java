@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardSectionAdapter;
@@ -245,14 +247,16 @@ public class DeckActivity extends BasicActivity implements DecksView {
 
         alert.setTitle(getString(R.string.edit_deck));
 
-        final EditText input = new EditText(this);
-        input.setText(deck.getName());
-        input.setSelection(deck.getName().length());
-        alert.setView(input);
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
+        final EditText editText = (EditText) view.findViewById(R.id.edit_text);
+        editText.setText(deck.getName());
+        editText.setSelection(deck.getName().length());
+        alert.setView(view);
 
         alert.setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
+                String value = editText.getText().toString();
                 decksPresenter.editDeck(deck, value);
                 TrackingManager.trackEditDeck();
                 deck.setName(value);

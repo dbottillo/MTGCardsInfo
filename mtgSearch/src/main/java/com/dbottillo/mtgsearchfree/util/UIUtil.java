@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -64,5 +65,14 @@ public final class UIUtil {
         par.height = hImage;
         LOG.e(wImage+","+hImage);
         cardImage.setLayoutParams(par);
+    }
+
+    public static void setMargin(View view, int value) {
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        lp.topMargin = value;
+        lp.leftMargin = value;
+        lp.rightMargin = value;
+        lp.bottomMargin = value;
+        view.setLayoutParams(lp);
     }
 }
