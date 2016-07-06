@@ -28,7 +28,6 @@
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
         <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
     </plurals>
-    <string name="apply_filter">Apply Filter</string>
     <string name="minimum_search">Search requires at least one condition</string>
     <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
     <string name="need_premium">Need Premium</string>
@@ -86,7 +85,7 @@
     <string name="lucky_title">Lucky?</string>
     <string name="menu_life_screen_on">Keep screen on</string>
     <string name="menu_life_two_hg">2HG game</string>
-    <string name="pick_sort_option">Sorting cards:</string>
+    <string name="pick_sort_option">Sorting cards</string>
     <string name="action_rate">Rate the app</string>
     <string name="share_app">Share App</string>
     <string name="libraries">Libraries</string>
@@ -104,7 +103,7 @@
     <string name="action_remove_all">Remove all</string>
     <string name="deck_subtitle">%1s cards</string>
     <string name="deck_delete_title">Delete deck</string>
-    <string name="deck_delete_text">There are cards in this deck. Are you sure?</string>
+    <string name="deck_delete_text">This deck is not empty. Are you sure?</string>
     <string name="deck_delete_confirmation">Delete</string>
     <string name="new_deck_quantity_hint">How many (max 30)</string>
     <string name="deck_choose">Choose deck</string>
@@ -114,11 +113,17 @@
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="ok">OK</string>
     <string name="release_note_text">
-        - NEW: Shadows over Innistrad \n
-        - NEW: Duel Decks: Blessed vs. Cursed \n
-        - Fix search issue with multicolor
+        - NEW: Eternal Masters\n
+        - NEW: Grid option view\n
+        - NEW: Import deck\n
+        - NEW: Duel Decks: Zendikar vs. Eldrazi
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.7.5:</b> \n
+        - NEW: Eternal Masters \n
+        - NEW: Grid option view \n
+        - NEW: Import deck (.dec format) \n
+        - NEW: Duel Decks: Zendikar vs. Eldrazi \n\n
         <b>Version 2.7.4:</b> \n
         - NEW: Shadows over Innistrad \n
         - NEW: Duel Decks: Blessed vs. Cursed \n
@@ -191,6 +196,7 @@
     <string name="cd_filter">Filter</string>
     <string name="cd_set_arrow">Sets</string>
     <string name="cd_cards_sort">Sorting cards</string>
+    <string name="cd_cards_view_type">View type cards</string>
     <string name="cd_again">Again</string>
     <string name="cd_more_options">More options</string>
     <string name="cd_deck_icon">Deck icon</string>
@@ -207,12 +213,23 @@
     <string name="action_copy_db">Replace db from sdcard</string>
     <string name="export">Export</string>
     <string name="error_export_deck">Impossible to export a deck, check that your external storage is available and try again.</string>
+    <string name="error_export_db">Impossible to export the database, check that your external storage is available and try again.</string>
     <string name="deck_exported">Deck exported on sdcard</string>
+    <string name="db_exported">Db exported on sdcard</string>
     <string name="edit_deck">Edit deck</string>
     <string name="debug_mode_active">Debug mode active</string>
     <string name="action_join_beta">Join Beta</string>
-    <string name="join_beta_text">Join the beta program on Google+ in order to give feedback, to request features and get access to new version of the app quickly. It requires a google account.</string>
+    <string name="join_beta_text">Join The Beta Program on Google+ in order to:\n
+        - give feedback\n
+        - request new feature\n
+        - try new feature ahead of time \n\n\n
+        It requires a Google Account.</string>
     <string name="join_beta_action">Join</string>
+    <string name="view_type_option">View type</string>
+    <string name="main_fragment_tooltip">NEW: you can now switch between list and grid view type!</string>
+    <string name="transition_card" translatable="false">transitionName</string>
+    <string name="sort_az">Alphabetically</string>
+    <string name="sort_color">WUBRG</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

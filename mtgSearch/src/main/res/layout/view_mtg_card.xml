@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/fragment_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/price_container"
+        android:background="@color/white"
+        tools:ignore="UnknownIdInLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/image_card_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:minHeight="200dp">
+
+                <ImageView
+                    android:id="@+id/image_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/padding_card_image_half"
+                    android:layout_marginLeft="@dimen/padding_card_image"
+                    android:layout_marginRight="@dimen/padding_card_image"
+                    android:layout_marginTop="@dimen/padding_card_image_half"
+                    android:contentDescription="@string/cd_card_image"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:id="@+id/image_card_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error_load_image"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/image_card_retry_btn"
+                        style="@style/BtnGeneric"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/image_retry" />
+                </LinearLayout>
+
+                <com.dbottillo.mtgsearchfree.view.views.MTGLoader
+                    android:id="@+id/image_card_loader"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/detail_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_card_container"
+                android:padding="20dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include layout="@layout/card_price" />
+</RelativeLayout>
