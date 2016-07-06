@@ -216,7 +216,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         } else if (menuItem.getItemId() == 100) {
             // NB: WARNING, FOR RECREATE DATABASE
-            new CreateDBAsyncTask(this, getApplication().getPackageName()).execute();
+            recreateDb();
 
         } else if (menuItem.getItemId() == 101) {
             new CreateDecksAsyncTask(getApplicationContext()).execute();
@@ -237,6 +237,20 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         navDrawerHelper.closeDrawer();
         return true;
+    }
+
+    private void recreateDb(){
+        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
+            @Override
+            public void permissionGranted() {
+                new CreateDBAsyncTask(MainActivity.this, getApplication().getPackageName()).execute();
+            }
+
+            @Override
+            public void permissionNotGranted() {
+                Toast.makeText(MainActivity.this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void copyDBToSdCard(){

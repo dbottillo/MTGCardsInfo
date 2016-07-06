@@ -42,7 +42,7 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 48
+        versionCode 49
         versionName "2.7.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -69,19 +69,16 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '16'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-            lintOptions {
-                abortOnError false
-            }
         }
         beta {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '16'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -90,7 +87,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '16'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
