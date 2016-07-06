@@ -91,7 +91,7 @@ public class MTGSet implements Parcelable {
         return "[" + name + "," + code + "]";
     }
 
-    private enum MAGIC_CARDS_INFO_SET_MAP{
+    private enum CARDSINFOMAP {
         TORMENTO("tor", "tr"),
         DECKMASTER("dkm", "dm"),
         EXODUS("EXO", "ex"),
@@ -144,14 +144,14 @@ public class MTGSet implements Parcelable {
         private String set;
         private String mapped;
 
-        MAGIC_CARDS_INFO_SET_MAP(String set, String mapped) {
+        CARDSINFOMAP(String set, String mapped) {
             this.set = set;
             this.mapped = mapped;
         }
     }
 
     String getMagicCardsInfoCode() {
-        for (MAGIC_CARDS_INFO_SET_MAP entry : MAGIC_CARDS_INFO_SET_MAP.values()){
+        for (CARDSINFOMAP entry : CARDSINFOMAP.values()){
             if (entry.set.equalsIgnoreCase(code)){
                 return entry.mapped;
             }

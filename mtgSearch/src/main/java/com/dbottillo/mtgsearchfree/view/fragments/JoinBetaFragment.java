@@ -9,11 +9,10 @@ import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.R;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class JoinBetaFragment extends BasicFragment{
+public class JoinBetaFragment extends BasicFragment {
 
 
     @Override

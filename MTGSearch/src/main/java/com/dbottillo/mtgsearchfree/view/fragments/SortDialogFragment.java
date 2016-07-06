@@ -8,7 +8,6 @@ import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.AppCompatRadioButton;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
@@ -77,10 +76,10 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
         azContainer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (colorSelected && checkedId == R.id.sort_option_az){
+                if (colorSelected && checkedId == R.id.sort_option_az) {
                     colorSelected = false;
                     syncUI();
-                } else if (!colorSelected && checkedId == R.id.sort_option_color){
+                } else if (!colorSelected && checkedId == R.id.sort_option_color) {
                     colorSelected = true;
                     syncUI();
                 }

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;

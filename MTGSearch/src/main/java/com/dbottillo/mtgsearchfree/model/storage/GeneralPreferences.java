@@ -7,7 +7,7 @@ import android.support.annotation.VisibleForTesting;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-public class GeneralPreferences {
+public final class GeneralPreferences {
 
     public static final String PREFS_NAME = "General";
 

@@ -62,7 +62,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
         if (grid) {
             holder.loader.setVisibility(View.VISIBLE);
             Picasso.with(context.getApplicationContext()).load(card.getImage())
-                    .error(R.drawable.leak_canary_icon)
+                    .error(R.drawable.left_debug)
                     .into(holder.image, new Callback() {
                         @Override
                         public void onSuccess() {

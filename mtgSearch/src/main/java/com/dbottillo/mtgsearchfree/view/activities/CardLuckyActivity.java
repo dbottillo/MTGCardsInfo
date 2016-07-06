@@ -1,9 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +14,6 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
@@ -93,7 +90,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void cardLoaded(CardsBucket bucket) {
         LOG.d();
-        boolean firstRun = luckyCards.size() <=1;
+        boolean firstRun = luckyCards.size() <= 1;
         for (MTGCard card : bucket.getCards()) {
             luckyCards.add(card);
             if (card.getImage() != null) {
@@ -115,7 +112,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         LOG.d();
         idFavourites = favourites;
         if (luckyCards.size() == 0) {
-            if (getIntent() != null && getIntent().hasExtra(CARD)){
+            if (getIntent() != null && getIntent().hasExtra(CARD)) {
                 luckyCards.add((MTGCard) getIntent().getParcelableExtra(CARD));
             }
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);

@@ -24,7 +24,6 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 
@@ -37,7 +36,6 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
-
 
 public class LifeCounterFragment extends BasicFragment implements LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener, PlayersView {
 

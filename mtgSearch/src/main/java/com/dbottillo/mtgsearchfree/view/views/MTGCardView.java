@@ -16,7 +16,6 @@ import android.util.AttributeSet;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -93,7 +92,7 @@ public class MTGCardView extends RelativeLayout {
         int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
         int widthAvailable = size.x - paddingCard * 2;
         if (isLandscape) {
-            widthAvailable = size.x  / 2 - paddingCard * 2;
+            widthAvailable = size.x / 2 - paddingCard * 2;
         }
         UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }

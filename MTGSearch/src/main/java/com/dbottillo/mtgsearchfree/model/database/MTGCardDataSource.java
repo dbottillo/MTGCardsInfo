@@ -121,7 +121,7 @@ public class MTGCardDataSource {
                 query += "AND ";
             }
             first = false;
-            query += "(setId == 2 OR setId == 4 OR setId == 7 OR setId == 8 OR setId == 10) ";
+            query += "(setId == 2 OR setId == 4 OR setId == 7 OR setId == 9 OR setId == 11) ";
         }
         if (searchParams.atLeastOneColor()) {
             if (!first) {
