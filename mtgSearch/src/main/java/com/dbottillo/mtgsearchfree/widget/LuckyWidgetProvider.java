@@ -9,20 +9,22 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
+import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
 public class LuckyWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
         super.onDeleted(context, appWidgetIds);
-        TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_APP_WIDGET, "deleted");
+        TrackingManager.init(context);
+        TrackingManager.trackDeleteWidget();
     }
 
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
-        TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_APP_WIDGET, "enabled");
+        TrackingManager.init(context);
+        TrackingManager.trackAddWidget();
     }
 
     @Override

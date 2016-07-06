@@ -1,11 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/main_bg"
-    tools:context=".mtgsearch.base.MainFragment">
+    android:orientation="vertical"
+    tools:context=".view.activities.MainActivity">
 
     <ListView
         android:id="@+id/deck_list"
@@ -13,7 +14,7 @@
         android:layout_height="match_parent"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@null"
-        android:dividerHeight="-1dp" />
+        android:dividerHeight="-1dp"/>
 
     <TextView
         android:id="@+id/empty_view"
@@ -24,7 +25,7 @@
         android:padding="40dp"
         android:paddingTop="20dp"
         android:textStyle="italic"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
     <View
         android:id="@+id/new_deck_overlay"
@@ -32,7 +33,7 @@
         android:layout_height="match_parent"
         android:background="@color/black_30"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_new_deck"
@@ -46,11 +47,11 @@
         android:tint="@android:color/white"
         app:borderWidth="0dp"
         app:elevation="4dp"
-        app:pressedTranslationZ="8dp" />
+        app:pressedTranslationZ="8dp"/>
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         android:id="@+id/progress"
-        style="@style/MTGProgressBar" />
+        style="@style/MTGProgressBar"/>
 
     <FrameLayout
         android:id="@+id/new_deck_name_container"
@@ -69,9 +70,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/new_deck_hint"
-                android:textColor="@color/white"
                 android:inputType="textPersonName|textCapWords"
-                android:theme="@style/EditTextWhite" />
+                android:textColor="@color/white"
+                android:theme="@style/EditTextWhite"/>
         </android.support.design.widget.TextInputLayout>
     </FrameLayout>
 

@@ -6,7 +6,7 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-import com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout;
+import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 
 public final class AnimationUtil {
 
@@ -26,6 +26,22 @@ public final class AnimationUtil {
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int val = (Integer) valueAnimator.getAnimatedValue();
                 slidingPaneLayout.setPanelHeight(val);
+            }
+        });
+        anim.setDuration(DEFAULT_DURATION);
+        anim.start();
+    }
+
+    public static void animateHeight(final View view, int target) {
+        if (view.getHeight() == target) {
+            return;
+        }
+        ValueAnimator anim = ValueAnimator.ofInt(view.getHeight(), target);
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int val = (Integer) valueAnimator.getAnimatedValue();
+                UIUtil.setHeight(view, val);
             }
         });
         anim.setDuration(DEFAULT_DURATION);

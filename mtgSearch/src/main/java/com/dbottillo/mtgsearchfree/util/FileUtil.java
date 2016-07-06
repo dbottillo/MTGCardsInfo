@@ -1,27 +1,36 @@
 package com.dbottillo.mtgsearchfree.util;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.helper.LOG;
-import com.dbottillo.mtgsearchfree.helper.TrackingHelper;
-import com.dbottillo.mtgsearchfree.resources.Deck;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.Deck;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public final class FileUtil {
+public class FileUtil {
 
-    private FileUtil() {
+    private FileLoader fileLoader;
+
+    public FileUtil(FileLoader fileLoader) {
+        this.fileLoader = fileLoader;
     }
 
     public static File copyDbToSdCard(Context ctx, String name) {
@@ -113,7 +122,7 @@ public final class FileUtil {
             return false;
         }
         OutputStreamWriter writer;
-        TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_DECK, TrackingHelper.UA_ACTION_EXPORT);
+        TrackingManager.trackDatabaseExport();
         try {
             writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
             writer.append("//");
@@ -133,8 +142,59 @@ public final class FileUtil {
             return true;
         } catch (IOException e) {
             Toast.makeText(context, context.getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
-            TrackingHelper.getInstance(context).trackEvent(TrackingHelper.UA_CATEGORY_ERROR, TrackingHelper.UA_ACTION_EXPORT, "[deck] " + e.getLocalizedMessage());
+            TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
+    }
+
+    public CardsBucket readFileContent(Uri uri) {
+        try {
+            InputStream is = fileLoader.loadUri(uri);
+            return readFileStream(is);
+        } catch (IOException ignored) {
+            return null;
+        }
+    }
+
+    private CardsBucket readFileStream(InputStream is) throws IOException {
+        List<MTGCard> cards = new ArrayList<>();
+        CardsBucket bucket = new CardsBucket();
+        if (is == null) {
+            return null;
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            if (!line.isEmpty()) {
+                if (line.startsWith("//")) {
+                    // title
+                    if (bucket.getKey() == null) {
+                        bucket.setKey(line.replace("//", ""));
+                    }
+
+                } else if (line.startsWith("SB: ")) {
+                    MTGCard card = generateCard(line.replace("SB: ",""));
+                    card.setSideboard(true);
+                    cards.add(card);
+                } else {
+                    // standard
+                    cards.add(generateCard(line));
+                }
+            }
+        }
+        br.close();
+        bucket.setCards(cards);
+        return bucket;
+    }
+
+    private MTGCard generateCard(String line) {
+        ArrayList<String> items = new ArrayList<>(Arrays.asList(line.split(" ")));
+        String first = items.remove(0);
+        String rest = TextUtils.join(" ", items);
+        MTGCard card = new MTGCard();
+        card.setQuantity(Integer.parseInt(first));
+        card.setCardName(rest);
+        return card;
     }
 }

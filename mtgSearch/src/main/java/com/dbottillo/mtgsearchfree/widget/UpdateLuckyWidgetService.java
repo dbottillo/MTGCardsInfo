@@ -10,23 +10,24 @@ import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.cards.CardLuckyActivity;
-import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.resources.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class UpdateLuckyWidgetService extends Service {
 
     int[] allWidgetIds;
-    MTGDatabaseHelper mtgDatabaseHelper;
+    MTGCardDataSource cardDataSource;
 
     @Override
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            mtgDatabaseHelper = new MTGDatabaseHelper(getApplicationContext());
+            cardDataSource = new MTGCardDataSource(MTGDatabaseHelper.getInstance(getApplicationContext()));
             new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);
@@ -37,7 +38,7 @@ public class UpdateLuckyWidgetService extends Service {
         return null;
     }
 
-    public void onTaskFinished(ArrayList<MTGCard> objects) {
+    public void onTaskFinished(List<MTGCard> objects) {
         int index = 0;
 
         AppWidgetManager manager = AppWidgetManager.getInstance(getApplicationContext());
@@ -67,15 +68,15 @@ public class UpdateLuckyWidgetService extends Service {
     }
 
 
-    class LuckyAsyncTask extends AsyncTask<Integer, Void, ArrayList<MTGCard>> {
+    class LuckyAsyncTask extends AsyncTask<Integer, Void, List<MTGCard>> {
 
         @Override
-        protected ArrayList<MTGCard> doInBackground(Integer... params) {
-            return mtgDatabaseHelper.getRandomCard(params[0]);
+        protected List<MTGCard> doInBackground(Integer... params) {
+            return cardDataSource.getRandomCard(params[0]);
         }
 
         @Override
-        protected void onPostExecute(ArrayList<MTGCard> result) {
+        protected void onPostExecute(List<MTGCard> result) {
             onTaskFinished(result);
         }
     }

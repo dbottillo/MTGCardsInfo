@@ -8,7 +8,7 @@
     android:layout_alignParentBottom="true"
     android:clickable="true"
     android:background="@drawable/btn_primary_dark"
-    tools:showIn="@layout/fragment_card">
+    tools:showIn="@layout/view_mtg_card">
 
     <TextView
         android:id="@+id/price_card"

@@ -1,18 +1,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mtgsearch.base.MainActivity">
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".mtgsearch.base.MainActivity">
+
+    <item
+        android:id="@+id/action_fav"
+        android:icon="@drawable/ab_star"
+        android:orderInCategory="101"
+        android:title="@string/favourite_add"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_fullscreen_image"
         android:icon="@drawable/ic_fullscreen"
+        android:orderInCategory="102"
         android:title="@string/menu_fullscreen_image"
-        android:orderInCategory="103"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_menu_share"
+        android:orderInCategory="104"
+        android:title="@string/share"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/action_image"
-        android:icon="@null"
-        android:title="@string/menu_image"
-        android:orderInCategory="104"
         android:checkable="true"
-        app:showAsAction="never" />
+        android:icon="@null"
+        android:orderInCategory="104"
+        android:title="@string/menu_image"
+        app:showAsAction="never"/>
 </menu>

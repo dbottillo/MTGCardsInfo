@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <!-- The main content view -->
-    <com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout
+    <com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,13 +27,13 @@
                 android:layout_height="match_parent"/>
         </LinearLayout>
 
-        <FrameLayout
+        <com.dbottillo.mtgsearchfree.view.views.FilterPickerView
             android:id="@+id/filter"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:gravity="center|top"/>
 
-    </com.dbottillo.mtgsearchfree.view.SlidingUpPanelLayout>
+    </com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"

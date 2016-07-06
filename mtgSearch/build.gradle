@@ -1,35 +1,49 @@
 buildscript {
+    ext.dagger_version = '2.1'
+    ext.support_library_version = '23.4.0'
+    ext.leak_canary_version = '1.4-SNAPSHOT'
+    ext.power_mock = '1.6.4'
+    ext.gson_version = '2.6.2'
+    ext.firebase_version = '9.0.2'
+    ext.espresso_version = '2.2.2'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
+        mavenCentral()
     }
 
     dependencies {
         classpath 'io.fabric.tools:gradle:1.20.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }
 }
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
-
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
+def keystorePropertiesFile = rootProject.file("keystore.properties");
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
+}
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 45
-        versionName "2.7.4"
+        versionCode 49
+        versionName "2.7.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -44,8 +58,8 @@ android {
         releaseConfig {
             keyAlias 'dbottillo'
             storeFile file('../dbottillo.keystore')
-            keyPassword ''
-            storePassword ''
+            keyPassword keystoreProperties['keyPassword']
+            storePassword keystoreProperties['storePassword']
         }
     }
 
@@ -55,18 +69,17 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
+            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-            lintOptions {
-                abortOnError false
-            }
         }
         beta {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
+            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
         release {
@@ -74,7 +87,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '15'
+            buildConfigField 'int', 'DATABASE_VERSION', '17'
+            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
@@ -84,7 +98,7 @@ android {
             minSdkVersion 21
         }
         prod {
-            minSdkVersion 14
+            minSdkVersion 16
         }
     }
 
@@ -96,65 +110,52 @@ android {
     }
 }
 
-task readPasswordFromInput << {
-    def console = System.console()
-    if (console == null)
-        throw new IllegalStateException('no console available, use --no-daemon flag')
-
-    ext.keystorePassword = console.readLine('\n\n\n> Enter keystore password: ')
-
-    android.signingConfigs.releaseConfig.storePassword = ext.keystorePassword
-    android.signingConfigs.releaseConfig.keyPassword = ext.keystorePassword
-}
-
-/*tasks.whenTaskAdded { task ->
-    if (task.NAME == 'assembleHearthstoneRelease' || task.NAME == 'assembleMagicRelease')
-        task.dependsOn readPasswordFromInput
-}*/
-
-tasks.whenTaskAdded { task ->
-    if (task.name == 'validateReleaseConfigSigning') {
-        task.dependsOn readPasswordFromInput
-    }
-}
-
 dependencies {
-    compile 'com.android.support:support-v4:23.1.1'
-    compile "com.android.support:appcompat-v7:23.1.1"
-    compile 'com.google.android.gms:play-services-analytics:8.4.0'
+    compile "com.android.support:support-v4:$support_library_version"
+    compile "com.android.support:appcompat-v7:$support_library_version"
+    compile "com.google.firebase:firebase-core:$firebase_version"
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.android.support:cardview-v7:23.1.1'
-    compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
-    compile 'de.greenrobot:eventbus:2.4.1'
+    compile "com.android.support:cardview-v7:$support_library_version"
+    compile "com.android.support:recyclerview-v7:$support_library_version"
+    compile "com.android.support:design:$support_library_version"
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile "com.google.code.gson:gson:$gson_version"
+    compile "com.google.dagger:dagger:$dagger_version"
+    apt "com.google.dagger:dagger-compiler:$dagger_version"
 
-    // Crashlytics Kit
     compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
         transitive = true
     }
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    betaCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
+    betaCompile "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'commons-io:commons-io:2.0'
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
     testCompile 'org.robolectric:robolectric:3.0'
-    testCompile 'com.android.support:support-annotations:23.1.1'
-    testCompile "com.android.support:appcompat-v7:23.1.1"
-    testCompile 'com.android.support:recyclerview-v7:23.1.1'
+    testCompile "com.android.support:support-annotations:$support_library_version"
+    testCompile "com.android.support:appcompat-v7:$support_library_version"
+    testCompile "com.android.support:recyclerview-v7:$support_library_version"
+    testCompile "com.android.support:design:$support_library_version"
+    testCompile "org.powermock:powermock-module-junit4:$power_mock"
+    testCompile "org.powermock:powermock-module-junit4-rule:$power_mock"
+    testCompile "org.powermock:powermock-api-mockito:$power_mock"
+    testCompile "org.powermock:powermock-classloading-xstream:$power_mock"
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.1'
-    androidTestCompile 'com.android.support:support-annotations:23.1.1'
-    androidTestCompile "com.android.support:appcompat-v7:23.1.1"
-    androidTestCompile 'com.android.support:recyclerview-v7:23.1.1'
+    androidTestCompile "com.android.support.test.espresso:espresso-core:$espresso_version"
+    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$espresso_version"
+    androidTestCompile "com.android.support:support-annotations:$support_library_version"
+    androidTestCompile "com.android.support:appcompat-v7:$support_library_version"
+    androidTestCompile "com.android.support:recyclerview-v7:$support_library_version"
+    androidTestCompile "com.android.support:design:$support_library_version"
 }
 
 task checkstyle(type: Checkstyle) {
