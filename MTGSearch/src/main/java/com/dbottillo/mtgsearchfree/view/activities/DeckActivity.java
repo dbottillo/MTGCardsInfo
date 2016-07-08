@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -110,7 +109,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         deckCardSectionAdapter = new DeckCardSectionAdapter(this, deckCardAdapter);
         cardList.setAdapter(deckCardSectionAdapter);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDeck(deck);
     }

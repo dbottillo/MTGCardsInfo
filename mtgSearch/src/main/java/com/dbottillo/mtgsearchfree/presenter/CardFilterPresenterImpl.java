@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -12,14 +11,13 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
 
     CardFilterInteractor interactor;
     CardFilterView filterView;
-
-    @Inject
     RxWrapper<CardFilter> wrapper;
 
-    public CardFilterPresenterImpl(CardFilterInteractor interactor) {
+    @Inject
+    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapper<CardFilter> wrapper) {
         LOG.d("created");
-        MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.wrapper = wrapper;
     }
 
     @Override

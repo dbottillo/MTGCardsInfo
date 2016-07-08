@@ -70,7 +70,9 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards));
         when(interactor.editDeck(deck, "deck")).thenReturn(Observable.just(cards));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
-        presenter = new DecksPresenterImpl(interactor, deckMapper);
+        presenter = new DecksPresenterImpl(interactor, deckMapper,
+                new TestRxWrapper<List<Deck>>(),
+                new TestRxDoubleWrapper<List<MTGCard>, DeckBucket>());
         presenter.init(view);
     }
 

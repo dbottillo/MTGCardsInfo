@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -21,20 +20,20 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     DecksInteractor interactor;
     DecksView decksView;
-
-    @Inject
     RxWrapper<List<Deck>> deckWrapper;
-
-    @Inject
     RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper;
 
     DeckMapper deckMapper;
 
-    public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper) {
+    @Inject
+    public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper,
+                              RxWrapper<List<Deck>> deckWrapper,
+                              RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper) {
         LOG.d("created");
-        MTGApp.graph.inject(this);
         this.interactor = interactor;
         this.deckMapper = deckMapper;
+        this.deckWrapper = deckWrapper;
+        this.cardWrapper = cardWrapper;
     }
 
     public void init(DecksView view) {

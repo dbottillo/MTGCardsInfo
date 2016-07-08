@@ -13,6 +13,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
+import com.dbottillo.mtgsearchfree.presenter.CardsMemoryStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import javax.inject.Singleton;
@@ -63,5 +64,11 @@ class DataModule {
     @Singleton
     DecksStorage provideDecksStorage(FileUtil fileUtil, CardsInfoDbHelper cardsInfoDbHelper, MTGCardDataSource mtgCardDataSource) {
         return new DecksStorage(fileUtil, cardsInfoDbHelper, mtgCardDataSource);
+    }
+
+    @Provides
+    @Singleton
+    CardsMemoryStorage provideCardsMemoryStorage() {
+        return new CardsMemoryStorage();
     }
 }

@@ -118,7 +118,7 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public void requestPermission(PermissionUtil.TYPE type, PermissionUtil.PermissionListener listener) {
         this.permissionListener = listener;
-        if (PermissionUtil.permissionGranted(this, type)){
+        if (PermissionUtil.permissionGranted(this, type)) {
             listener.permissionGranted();
             return;
         }
@@ -128,10 +128,14 @@ public abstract class BasicActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)){
+        if (PermissionUtil.isGranted(grantResults)) {
             permissionListener.permissionGranted();
         } else {
             permissionListener.permissionNotGranted();
         }
+    }
+
+    public MTGApp getMTGApp() {
+        return (MTGApp) getApplication();
     }
 }

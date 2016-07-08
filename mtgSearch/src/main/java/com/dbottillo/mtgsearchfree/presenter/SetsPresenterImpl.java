@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -14,18 +13,17 @@ import rx.Observable;
 
 public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperListener<List<MTGSet>> {
 
-    @Inject
     SetsInteractor interactor;
 
     SetsView setView;
 
-    @Inject
     RxWrapper<List<MTGSet>> wrapper;
 
-    public SetsPresenterImpl(SetsInteractor interactor) {
+    @Inject
+    public SetsPresenterImpl(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper) {
         LOG.d("created");
-        MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.wrapper = wrapper;
     }
 
     public void init(SetsView view) {

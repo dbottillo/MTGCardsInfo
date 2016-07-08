@@ -34,7 +34,7 @@ public class SetsPresenterImplTest extends BaseTest {
         interactor = mock(SetsInteractor.class);
         view = mock(SetsView.class);
         when(interactor.load()).thenReturn(Observable.just(sets));
-        presenter = new SetsPresenterImpl(interactor);
+        presenter = new SetsPresenterImpl(interactor, new TestRxWrapper<List<MTGSet>>());
         presenter.init(view);
         SetsMemoryStorage.init = false;
         SetsMemoryStorage.sets = null;

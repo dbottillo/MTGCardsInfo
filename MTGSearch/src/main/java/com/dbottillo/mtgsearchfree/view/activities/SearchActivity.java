@@ -169,7 +169,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             newSearch.setElevation(6.0f); // TODO: pre-lollipop version
         }
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         setsPresenter.init(this);
         cardsPresenter.init(this);
         setsPresenter.loadSets();
