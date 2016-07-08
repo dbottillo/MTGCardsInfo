@@ -97,7 +97,7 @@ public class MainFragment extends BasicFragment implements
 
         setActionBarTitle(getString(R.string.app_long_name));
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         setsPresenter.init(this);
 

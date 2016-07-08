@@ -29,8 +29,7 @@ import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
 
-    public static AppComponent graph;
-    public static UiComponent uiGraph;
+    private UiComponent uiGraph;
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     public static String PREFS_NAME = "Filter";
@@ -45,7 +44,7 @@ public class MTGApp extends Application {
         LOG.d("            MTGApp created");
         LOG.d("============================================");
 
-        graph = DaggerAppComponent.builder().androidModule(generateAndroidModule()).build();
+        AppComponent graph = DaggerAppComponent.builder().androidModule(generateAndroidModule()).build();
         graph.inject(this);
 
         uiGraph = DaggerUiComponent.builder()
@@ -116,7 +115,11 @@ public class MTGApp extends Application {
         return application.refWatcher;
     }
 
-    public static boolean isActivityTransitionAvailable(){
+    public static boolean isActivityTransitionAvailable() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+    }
+
+    public UiComponent getUiGraph() {
+        return uiGraph;
     }
 }

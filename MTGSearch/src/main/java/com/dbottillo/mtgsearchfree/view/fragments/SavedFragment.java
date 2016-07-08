@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -77,7 +76,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
         setHasOptionsMenu(true);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
     }
 

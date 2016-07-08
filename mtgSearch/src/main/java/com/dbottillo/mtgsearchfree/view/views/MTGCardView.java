@@ -55,8 +55,6 @@ public class MTGCardView extends RelativeLayout {
     View cardImageContainer;
 
     public static float RATIO_CARD = 1.39622641509434f;
-    int widthAvailable = 0;
-    int heightAvailable = 0;
     boolean isLandscape = false;
 
     public MTGCard getCard() {

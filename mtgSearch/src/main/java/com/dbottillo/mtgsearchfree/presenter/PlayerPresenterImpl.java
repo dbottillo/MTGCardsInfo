@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -22,17 +21,17 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
     Subscription subscription = null;
     List<Player> players;
 
-    @Inject
     RxWrapper<List<Player>> rxWrapper;
 
     String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
-    public PlayerPresenterImpl(PlayerInteractor interactor) {
+    @Inject
+    public PlayerPresenterImpl(PlayerInteractor interactor, RxWrapper<List<Player>> rxWrapper) {
         LOG.d("created");
-        MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.rxWrapper = rxWrapper;
     }
 
     public void detachView() {

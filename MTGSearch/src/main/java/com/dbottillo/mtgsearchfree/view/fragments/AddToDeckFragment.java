@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -87,7 +86,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
         setupQuantitySpinner();
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDecks();
     }

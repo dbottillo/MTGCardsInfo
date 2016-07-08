@@ -56,7 +56,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override

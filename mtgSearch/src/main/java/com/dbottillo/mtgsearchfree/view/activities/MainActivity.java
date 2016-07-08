@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
@@ -26,7 +25,6 @@ import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
-import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
@@ -38,6 +36,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
+import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
 
 import java.io.File;
 
@@ -95,7 +94,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         initialBundle = bundle;
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         filterPresenter.init(this);
 
         if (bundle == null) {
@@ -239,7 +238,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         return true;
     }
 
-    private void recreateDb(){
+    private void recreateDb() {
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
             @Override
             public void permissionGranted() {
@@ -253,7 +252,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         });
     }
 
-    private void copyDBToSdCard(){
+    private void copyDBToSdCard() {
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
             @Override
             public void permissionGranted() {
@@ -289,7 +288,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)){
+        if (PermissionUtil.isGranted(grantResults)) {
             copyDBToSdCard();
         } else {
             Toast.makeText(this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show();

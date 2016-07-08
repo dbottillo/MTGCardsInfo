@@ -118,7 +118,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         ButterKnife.bind(this);
         setupView();
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         filterPresenter.init(this);
 

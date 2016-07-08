@@ -17,7 +17,6 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
@@ -95,7 +94,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         setHasOptionsMenu(true);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         playerPresenter.init(this);
 
         playerPresenter.loadPlayers();

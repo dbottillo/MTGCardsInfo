@@ -35,6 +35,10 @@ public abstract class BasicFragment extends DialogFragment {
         sharedPreferences = dbActivity.getSharedPreferences(MTGApp.PREFS_NAME, 0);
     }
 
+    protected MTGApp getMTGApp(){
+        return dbActivity.getMTGApp();
+    }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LOG.d();

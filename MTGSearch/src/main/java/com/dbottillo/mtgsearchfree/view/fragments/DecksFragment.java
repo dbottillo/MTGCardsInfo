@@ -26,7 +26,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -128,7 +127,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
     }
 
