@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
 
 import org.junit.Test;
 import org.mockito.Mock;

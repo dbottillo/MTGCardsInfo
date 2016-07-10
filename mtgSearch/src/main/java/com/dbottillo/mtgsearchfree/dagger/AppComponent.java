@@ -1,7 +1,5 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
-import android.content.SharedPreferences;
-
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
@@ -15,14 +13,14 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.CardsMemoryStorage;
+import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
@@ -45,9 +43,7 @@ public interface AppComponent {
 
     CardsInteractor getCardsInteractor();
 
-    CardFilterStorage getCardFilterStorage();
-
-    CardsMemoryStorage getCardsMemoryStorage();
+    MemoryStorage getCardsMemoryStorage();
 
     CardsStorage getCardsStorage();
 
@@ -79,7 +75,7 @@ public interface AppComponent {
 
     DeckMapper getDeckMapper();
 
-    SharedPreferences getSharedPreferences();
+    CardsPreferences getCardsPreferences();
 
     GeneralPreferences getGeneralPreferences();
 

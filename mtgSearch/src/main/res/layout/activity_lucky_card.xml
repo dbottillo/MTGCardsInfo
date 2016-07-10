@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/mtg_toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/mtg_toolbar"/>
 
     <com.dbottillo.mtgsearchfree.view.views.MTGCardView
         android:id="@+id/card_view"

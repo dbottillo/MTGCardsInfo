@@ -1,11 +1,12 @@
 buildscript {
-    ext.dagger_version = '2.1'
-    ext.support_library_version = '23.4.0'
-    ext.leak_canary_version = '1.4-SNAPSHOT'
+    ext.dagger_version = '2.5'
+    ext.support_library_version = '24.0.0'
+    ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
     ext.firebase_version = '9.0.2'
     ext.espresso_version = '2.2.2'
+    ext.butterknife_version = '8.1.0'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
@@ -13,7 +14,7 @@ buildscript {
 
     dependencies {
         classpath 'io.fabric.tools:gradle:1.20.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 apply plugin: 'com.android.application'
@@ -35,13 +36,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    compileSdkVersion 24
+    buildToolsVersion '24.0.0'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 50
         versionName "2.7.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -119,9 +120,10 @@ dependencies {
     compile "com.android.support:cardview-v7:$support_library_version"
     compile "com.android.support:recyclerview-v7:$support_library_version"
     compile "com.android.support:design:$support_library_version"
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
+    compile "com.jakewharton:butterknife:$butterknife_version"
+    apt "com.jakewharton:butterknife-compiler:$butterknife_version"
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.7'
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.google.dagger:dagger:$dagger_version"
     apt "com.google.dagger:dagger-compiler:$dagger_version"
@@ -136,9 +138,9 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
-    testCompile 'commons-io:commons-io:2.0'
+    testCompile 'commons-io:commons-io:2.5'
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
-    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.robolectric:robolectric:3.1'
     testCompile "com.android.support:support-annotations:$support_library_version"
     testCompile "com.android.support:appcompat-v7:$support_library_version"
     testCompile "com.android.support:recyclerview-v7:$support_library_version"
@@ -201,6 +203,10 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
     }
 }
 
-check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
+//check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
+check.dependsOn 'checkstyle', 'pmd', 'lint'
+
+task release
+release.dependsOn 'check', 'connectedCheck', 'assembleProdRelease'
 
 apply plugin: 'com.google.gms.google-services'

@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ReleaseNoteFragment extends BasicFragment {
 
-    @Bind(R.id.release_note)
+    @BindView(R.id.release_note)
     TextView releaseNote;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -44,7 +44,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SearchActivity extends BasicActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, SetsView, CardsView, OnCardListener, SortDialogFragment.SortDialogListener {
@@ -54,19 +54,19 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private static final String TOOLBAR_ELEVATION = "toolbarElevation";
     private static final String SEARCH_PARAMS = "searchParams";
 
-    @Bind(R.id.action_search)
+    @BindView(R.id.action_search)
     ImageButton newSearch;
 
-    @Bind(R.id.search_scroll_view)
+    @BindView(R.id.search_scroll_view)
     ScrollView scrollView;
 
-    @Bind(R.id.cards_list_view)
+    @BindView(R.id.cards_list_view)
     MTGCardListView mtgCardListView;
 
-    @Bind(R.id.search_view)
+    @BindView(R.id.search_view)
     MTGSearchView searchView;
 
-    @Bind(R.id.second_toolbar)
+    @BindView(R.id.second_toolbar)
     Toolbar secondToolbar;
 
     AnimationDrawable newSearchAnimation;
@@ -82,6 +82,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Inject
     CardsPresenter cardsPresenter;
+
+    @Inject
+    CardsHelper cardsHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -329,7 +332,6 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void setsLoaded(List<MTGSet> sets) {
-
         LOG.d();
         searchView.refreshSets(sets);
     }
@@ -353,7 +355,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     private void refreshList() {
         LOG.d();
-        CardsHelper.sortCards(getSharedPreferences(), currentBucket);
+        cardsHelper.sortCards(currentBucket);
         mtgCardListView.loadCards(currentBucket, this);
     }
 

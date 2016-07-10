@@ -206,6 +206,8 @@ Severity: EASY
         </module>
         <module name="UpperEll"/>
 
+        <module name="SuppressWarningsHolder" />
+
     </module>
 
     <!-- Enable suppression comments -->
@@ -222,5 +224,6 @@ Severity: EASY
     <module name="SuppressionFilter">
         <property name="file" value="${checkstyleConfigDir}/suppressions.xml"/>
     </module>
+    <module name="SuppressWarningsFilter" />
 
 </module>

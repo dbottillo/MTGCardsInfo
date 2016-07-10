@@ -44,7 +44,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -57,25 +57,25 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     private int heightNewDeckContainer = -1;
     private boolean newDeckViewOpen = false;
 
-    @Bind(R.id.add_new_deck)
+    @BindView(R.id.add_new_deck)
     FloatingActionButton newDeck;
 
-    @Bind(R.id.deck_list)
+    @BindView(R.id.deck_list)
     ListView listView;
 
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
 
-    @Bind(R.id.empty_view)
+    @BindView(R.id.empty_view)
     TextView emptyView;
 
-    @Bind(R.id.new_deck_overlay)
+    @BindView(R.id.new_deck_overlay)
     View newDeckOverlay;
 
-    @Bind(R.id.new_deck_name_container)
+    @BindView(R.id.new_deck_name_container)
     View newDeckContainer;
 
-    @Bind(R.id.new_deck_name)
+    @BindView(R.id.new_deck_name)
     AppCompatEditText newDeckName;
 
     @Inject

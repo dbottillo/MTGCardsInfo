@@ -40,7 +40,7 @@ public class CardsPresenterImplTest extends BaseTest {
 
     CardsView view;
 
-    CardsMemoryStorage cardsMemoryStorage;
+    MemoryStorage memoryStorage;
 
     @Mock
     Deck deck;
@@ -80,7 +80,7 @@ public class CardsPresenterImplTest extends BaseTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        cardsMemoryStorage = new CardsMemoryStorage();
+        memoryStorage = new MemoryStorage();
         interactor = mock(CardsInteractor.class);
         view = mock(CardsView.class);
         when(deck.getName()).thenReturn("deck");
@@ -98,7 +98,7 @@ public class CardsPresenterImplTest extends BaseTest {
         presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
                 new TestRxWrapper<List<MTGCard>>(),
                 new TestRxDoubleWrapper<List<MTGCard>, DeckBucket>(),
-                new TestRxWrapper<int[]>(), cardsMemoryStorage);
+                new TestRxWrapper<int[]>(), memoryStorage);
         presenter.init(view);
     }
 
@@ -166,25 +166,25 @@ public class CardsPresenterImplTest extends BaseTest {
     @Test
     public void removeFavsInvalidateFavCache() {
         presenter.loadFavourites();
-        assertNotNull(cardsMemoryStorage.getBucket());
+        assertNotNull(memoryStorage.getBucket());
         presenter.removeFromFavourite(card, false);
-        assertNull(cardsMemoryStorage.getBucket());
+        assertNull(memoryStorage.getBucket());
     }
 
     @Test
     public void saveFavsInvalidateFavCache() {
         presenter.loadFavourites();
-        assertNotNull(cardsMemoryStorage.getBucket());
+        assertNotNull(memoryStorage.getBucket());
         presenter.saveAsFavourite(card, false);
-        assertNull(cardsMemoryStorage.getBucket());
+        assertNull(memoryStorage.getBucket());
     }
 
     @Test
     public void changeFavsNotInvalidateNonFavCache() {
         presenter.doSearch(searchParams);
-        assertNotNull(cardsMemoryStorage.getBucket());
+        assertNotNull(memoryStorage.getBucket());
         presenter.saveAsFavourite(card, false);
-        assertNotNull(cardsMemoryStorage.getBucket());
+        assertNotNull(memoryStorage.getBucket());
     }
 
     @Test

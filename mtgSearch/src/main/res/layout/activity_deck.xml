@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:background="@color/main_bg">
 
-    <include layout="@layout/mtg_toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/mtg_toolbar"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"
@@ -17,9 +19,9 @@
         android:id="@+id/empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/toolbar"
         android:padding="40dp"
         android:paddingTop="20dp"
         android:textStyle="italic"

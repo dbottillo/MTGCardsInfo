@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -32,7 +33,7 @@ import java.util.Random;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -42,15 +43,15 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return new LifeCounterFragment();
     }
 
-    @Bind(R.id.life_counter_dice_scrolliew)
+    @BindView(R.id.life_counter_dice_scrolliew)
     ScrollView diceScrollView;
-    @Bind(R.id.life_counter_dice_container)
+    @BindView(R.id.life_counter_dice_container)
     LinearLayout diceContainer;
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
-    @Bind(R.id.life_counter_list)
+    @BindView(R.id.life_counter_list)
     ListView lifeListView;
-    @Bind(R.id.new_player)
+    @BindView(R.id.new_player)
     FloatingActionButton newPlayerButton;
 
     private ArrayList<Player> players;
@@ -63,11 +64,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     @Inject
     PlayerPresenter playerPresenter;
+    @Inject
+    CardsPreferences cardsPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_life_counter, container, false);
         ButterKnife.bind(this, rootView);
+        getMTGApp().getUiGraph().inject(this);
         return rootView;
     }
 
@@ -76,12 +80,12 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         setActionBarTitle(getString(R.string.action_life_counter));
 
-        showPoison = sharedPreferences.getBoolean("poison", false);
+        showPoison = cardsPreferences.showPoison();
 
         View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
 
-        twoHGEnabled = sharedPreferences.getBoolean(BasicFragment.PREF_TWO_HG_ENABLED, false);
+        twoHGEnabled = cardsPreferences.twoHGEnabled();
 
         newPlayerButton.setOnClickListener(this);
 
@@ -94,7 +98,6 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         setHasOptionsMenu(true);
 
-        getMTGApp().getUiGraph().inject(this);
         playerPresenter.init(this);
 
         playerPresenter.loadPlayers();
@@ -103,7 +106,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     @Override
     public void onResume() {
         super.onResume();
-        setScreenOn(sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false));
+        setScreenOn(cardsPreferences.screenOn());
     }
 
     private void setScreenOn(boolean screenOn) {
@@ -155,7 +158,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
 
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-        View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
+        @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
         final EditText editText = (EditText) view.findViewById(R.id.edit_text);
         editText.setText(players.get(position).getName());
         editText.setSelection(players.get(position).getName().length());
@@ -269,7 +272,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
 
         MenuItem screenOn = menu.findItem(R.id.action_screen_on);
-        screenOn.setChecked(sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false));
+        screenOn.setChecked(cardsPreferences.screenOn());
 
         MenuItem twoHg = menu.findItem(R.id.action_two_hg);
         twoHg.setChecked(twoHGEnabled);
@@ -290,7 +293,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
         if (i1 == R.id.action_poison) {
             TrackingManager.trackChangePoisonSetting();
-            sharedPreferences.edit().putBoolean("poison", !showPoison).apply();
+            cardsPreferences.showPoison(!showPoison);
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
             lifeCounterAdapter.setShowPoison(showPoison);
@@ -298,19 +301,15 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             return true;
         }
         if (i1 == R.id.action_screen_on) {
-            boolean screenOn = sharedPreferences.getBoolean(BasicFragment.PREF_SCREEN_ON, false);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(BasicFragment.PREF_SCREEN_ON, !screenOn);
-            editor.apply();
+            boolean screenOn = cardsPreferences.screenOn();
+            cardsPreferences.setScreenOn(!screenOn);
             getActivity().invalidateOptionsMenu();
             setScreenOn(!screenOn);
             TrackingManager.trackScreenOn();
         }
         if (i1 == R.id.action_two_hg) {
             twoHGEnabled = !twoHGEnabled;
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(BasicFragment.PREF_TWO_HG_ENABLED, twoHGEnabled);
-            editor.apply();
+            cardsPreferences.setTwoHGEnabled(twoHGEnabled);
             getActivity().invalidateOptionsMenu();
             resetLifeCounter();
             TrackingManager.trackHGLifeCounter();
