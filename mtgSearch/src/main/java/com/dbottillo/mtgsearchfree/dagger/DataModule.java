@@ -1,19 +1,17 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
-import com.dbottillo.mtgsearchfree.presenter.CardsMemoryStorage;
+import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import javax.inject.Singleton;
@@ -26,20 +24,14 @@ class DataModule {
 
     @Provides
     @Singleton
-    SharedPreferences provideSharedPreferences(MTGApp app) {
-        return app.getSharedPreferences(MTGApp.PREFS_NAME, 0);
+    GeneralPreferences provideSharedPreferences(Context context) {
+        return new GeneralPreferences(context);
     }
 
     @Provides
     @Singleton
-    GeneralPreferences provideGeneralPreferences(Context context) {
-        return GeneralPreferences.with(context);
-    }
-
-    @Provides
-    @Singleton
-    CardFilterStorage provideCardFilterStorage(SharedPreferences pref) {
-        return new CardFilterStorage(pref);
+    CardsPreferences provideGeneralPreferences(Context context) {
+        return new CardsPreferences(context);
     }
 
     @Provides
@@ -68,7 +60,8 @@ class DataModule {
 
     @Provides
     @Singleton
-    CardsMemoryStorage provideCardsMemoryStorage() {
-        return new CardsMemoryStorage();
+    MemoryStorage provideMemoryStorage() {
+        return new MemoryStorage();
     }
+
 }

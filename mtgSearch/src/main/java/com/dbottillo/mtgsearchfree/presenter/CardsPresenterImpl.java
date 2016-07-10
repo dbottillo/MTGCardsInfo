@@ -34,13 +34,13 @@ public class CardsPresenterImpl implements CardsPresenter {
     RxWrapper<List<MTGCard>> cardsWrapper;
     RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper;
     RxWrapper<int[]> favWrapper;
-    CardsMemoryStorage cardsMemoryStorage;
+    MemoryStorage memoryStorage;
 
     @Inject
     public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralPreferences generalPreferences,
                               RxWrapper<List<MTGCard>> cardsWrapper,
                               RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper,
-                              RxWrapper<int[]> favWrapper, CardsMemoryStorage cardsMemoryStorage) {
+                              RxWrapper<int[]> favWrapper, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = mapper;
@@ -48,7 +48,7 @@ public class CardsPresenterImpl implements CardsPresenter {
         this.cardsWrapper = cardsWrapper;
         this.deckWrapper = deckWrapper;
         this.favWrapper = favWrapper;
-        this.cardsMemoryStorage = cardsMemoryStorage;
+        this.memoryStorage = memoryStorage;
     }
 
     public void getLuckyCards(int howMany) {
@@ -75,7 +75,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadFavourites() {
         LOG.d();
-        CardsBucket currentBucket = cardsMemoryStorage.getBucket();
+        CardsBucket currentBucket = memoryStorage.getBucket();
         if (currentBucket != null && currentBucket.isValid("fav")) {
             LOG.d("current bucket is valid, will return");
             cardsView.cardLoaded(currentBucket);
@@ -85,8 +85,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
-                cardsMemoryStorage.setBucket(new CardsBucket("fav", mtgCards));
-                cardsView.cardLoaded(cardsMemoryStorage.getBucket());
+                memoryStorage.setBucket(new CardsBucket("fav", mtgCards));
+                cardsView.cardLoaded(memoryStorage.getBucket());
             }
 
             @Override
@@ -111,7 +111,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadDeck(final Deck deck) {
         LOG.d("loadSet " + deck);
-        CardsBucket currentBucket = cardsMemoryStorage.getBucket();
+        CardsBucket currentBucket = memoryStorage.getBucket();
         if (currentBucket != null && currentBucket.isValid(deck.getName())) {
             LOG.d("current bucket is valid, will return");
             cardsView.deckLoaded((DeckBucket) currentBucket);
@@ -122,7 +122,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             public void onNext(DeckBucket bucket) {
                 LOG.d();
                 bucket.setKey(deck.getName());
-                cardsMemoryStorage.setBucket(bucket);
+                memoryStorage.setBucket(bucket);
                 cardsView.deckLoaded(bucket);
             }
 
@@ -145,8 +145,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
-                cardsMemoryStorage.setBucket(new CardsBucket(searchParams.toString(), mtgCards));
-                cardsView.cardLoaded(cardsMemoryStorage.getBucket());
+                memoryStorage.setBucket(new CardsBucket(searchParams.toString(), mtgCards));
+                cardsView.cardLoaded(memoryStorage.getBucket());
             }
 
             @Override
@@ -191,8 +191,8 @@ public class CardsPresenterImpl implements CardsPresenter {
         } else {
             subscription = favWrapper.run(interactor.removeFromFavourite(card), null);
         }
-        if (cardsMemoryStorage.isBucketType("fav")) {
-            cardsMemoryStorage.invalidate();
+        if (memoryStorage.isBucketType("fav")) {
+            memoryStorage.invalidateBucket();
         }
     }
 
@@ -203,14 +203,14 @@ public class CardsPresenterImpl implements CardsPresenter {
         } else {
             subscription = favWrapper.run(interactor.saveAsFavourite(card), null);
         }
-        if (cardsMemoryStorage.isBucketType("fav")) {
-            cardsMemoryStorage.invalidate();
+        if (memoryStorage.isBucketType("fav")) {
+            memoryStorage.invalidateBucket();
         }
     }
 
     public void loadCards(final MTGSet set) {
         LOG.d("loadSet cards of " + set);
-        CardsBucket currentBucket = cardsMemoryStorage.getBucket();
+        CardsBucket currentBucket = memoryStorage.getBucket();
         if (currentBucket != null && currentBucket.isValid(set.getName())) {
             LOG.d("current bucket is valid, will return");
             cardsView.cardLoaded(currentBucket);
@@ -221,8 +221,8 @@ public class CardsPresenterImpl implements CardsPresenter {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
-                cardsMemoryStorage.setBucket(new CardsBucket(set, mtgCards));
-                cardsView.cardLoaded(cardsMemoryStorage.getBucket());
+                memoryStorage.setBucket(new CardsBucket(set, mtgCards));
+                cardsView.cardLoaded(memoryStorage.getBucket());
             }
 
             @Override
@@ -244,7 +244,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void loadIdFavourites() {
         LOG.d();
-        int[] currentFav = cardsMemoryStorage.getFavourites();
+        int[] currentFav = memoryStorage.getFavourites();
         if (currentFav != null) {
             cardsView.favIdLoaded(currentFav);
             return;
@@ -263,7 +263,7 @@ public class CardsPresenterImpl implements CardsPresenter {
         @Override
         public void onNext(int[] ints) {
             LOG.d();
-            cardsMemoryStorage.setFavourites(ints);
+            memoryStorage.setFavourites(ints);
             cardsView.favIdLoaded(ints);
         }
 

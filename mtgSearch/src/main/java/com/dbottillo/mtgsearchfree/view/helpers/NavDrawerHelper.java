@@ -21,16 +21,20 @@ import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import java.util.Random;
 
 public class NavDrawerHelper {
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle drawerToggle;
-    NavigationView navigationView;
-    TextView headerTitle;
-    TextView headerText;
-    Resources resources;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private NavigationView navigationView;
+    private TextView headerTitle;
+    private TextView headerText;
+    private Resources resources;
+    private GeneralPreferences generalPreferences;
 
-    public NavDrawerHelper(final MainActivity activity, NavigationView navigationView, Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener) {
+    public NavDrawerHelper(final MainActivity activity, NavigationView navigationView,
+                           Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener,
+                           GeneralPreferences generalPreferences) {
         this.navigationView = navigationView;
         this.resources = activity.getResources();
+        this.generalPreferences = generalPreferences;
         drawerLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
             /* Called when a drawer has settled in a completely closed state. */
@@ -68,7 +72,7 @@ public class NavDrawerHelper {
             navigationView.getMenu().add(0, 102, Menu.NONE, resources.getString(R.string.action_create_fav)).setIcon(R.drawable.left_debug);
             navigationView.getMenu().add(0, 103, Menu.NONE, resources.getString(R.string.action_crash)).setIcon(R.drawable.left_debug);
         }
-        if (GeneralPreferences.with(activity.getApplicationContext()).isDebugEnabled()) {
+        if (generalPreferences.isDebugEnabled()) {
             navigationView.getMenu().add(0, 104, Menu.NONE, resources.getString(R.string.action_send_db)).setIcon(R.drawable.left_debug);
             navigationView.getMenu().add(0, 105, Menu.NONE, resources.getString(R.string.action_copy_db)).setIcon(R.drawable.left_debug);
         }

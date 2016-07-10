@@ -19,11 +19,14 @@ import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerUiComponent;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+
+import javax.inject.Inject;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -32,9 +35,11 @@ public class MTGApp extends Application {
     private UiComponent uiGraph;
 
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
-    public static String PREFS_NAME = "Filter";
     private RefWatcher refWatcher;
     protected boolean isUnitTesting = false;
+
+    @Inject
+    CardsPreferences cardsPreferences;
 
     @Override
     public void onCreate() {
@@ -69,14 +74,14 @@ public class MTGApp extends Application {
         return new AndroidModule(this);
     }
 
-    protected void checkReleaseNote() {
+    private void checkReleaseNote() {
         LOG.d();
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
-        int versionCode = sharedPreferences.getInt("VersionCode", -1);
+        int versionCode = cardsPreferences.getVersionCode();
         if (versionCode < BuildConfig.VERSION_CODE) {
             TrackingManager.trackReleaseNote();
             fireReleaseNotePush();
-            sharedPreferences.edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply();
+            cardsPreferences.saveSetPosition(0);
+            cardsPreferences.saveVersionCode();
         }
     }
 

@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
@@ -42,7 +43,7 @@ import java.io.File;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BasicActivity implements MainView, CardFilterView,
@@ -55,22 +56,22 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     private static final String CURRENT_SELECTION = "currentSelection";
 
-    MainActivityPresenter mainPresenter;
-    SlidingPanelHelper slidingPanelHelper;
-    NavDrawerHelper navDrawerHelper;
-    MainActivityListener listener;
+    private MainActivityPresenter mainPresenter;
+    private SlidingPanelHelper slidingPanelHelper;
+    private NavDrawerHelper navDrawerHelper;
+    private MainActivityListener listener;
 
-    @Bind(R.id.navigation_view)
+    @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
-    @Bind(R.id.filter)
+    @BindView(R.id.filter)
     FilterPickerView filterView;
 
-    @Bind(R.id.sliding_layout)
+    @BindView(R.id.sliding_layout)
     SlidingUpPanelLayout slidingUpPanelLayout;
 
-    boolean filterLoaded;
-    Bundle initialBundle;
+    private boolean filterLoaded;
+    private Bundle initialBundle;
 
     public CardFilter getCurrentFilter() {
         return currentFilter;
@@ -81,20 +82,23 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     @Inject
     CardFilterPresenter filterPresenter;
 
+    @Inject
+    GeneralPreferences generalPreferences;
+
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+        getMTGApp().getUiGraph().inject(this);
 
         setupToolbar();
         slidingPanelHelper = new SlidingPanelHelper(slidingUpPanelLayout, getResources(), this);
         slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
-        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this);
+        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this, generalPreferences);
 
         initialBundle = bundle;
 
-        getMTGApp().getUiGraph().inject(this);
         filterPresenter.init(this);
 
         if (bundle == null) {

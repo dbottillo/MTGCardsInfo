@@ -12,10 +12,11 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.CardsMemoryStorage;
+import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
@@ -26,6 +27,7 @@ import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 
 import java.util.List;
 
@@ -36,7 +38,7 @@ import dagger.Provides;
 public class PresentersModule {
 
     @Provides
-    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor,RxWrapper<CardFilter> wrapper) {
+    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor, RxWrapper<CardFilter> wrapper) {
         return new CardFilterPresenterImpl(interactor, wrapper);
     }
 
@@ -44,13 +46,14 @@ public class PresentersModule {
     CardsPresenter provideCardsPresenter(CardsInteractor interactor, DeckMapper deckMapper, GeneralPreferences generalPreferences,
                                          RxWrapper<List<MTGCard>> cardsWrapper,
                                          RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper,
-                                         RxWrapper<int[]> favWrapper, CardsMemoryStorage cardsMemoryStorage) {
-        return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, cardsWrapper, deckWrapper, favWrapper, cardsMemoryStorage);
+                                         RxWrapper<int[]> favWrapper, MemoryStorage memoryStorage) {
+        return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, cardsWrapper, deckWrapper, favWrapper, memoryStorage);
     }
 
     @Provides
-    SetsPresenter provideSetsPresenter(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper) {
-        return new SetsPresenterImpl(interactor, wrapper);
+    SetsPresenter provideSetsPresenter(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper,
+                                       CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
+        return new SetsPresenterImpl(interactor, wrapper, cardsPreferences, memoryStorage);
     }
 
     @Provides
@@ -64,4 +67,10 @@ public class PresentersModule {
                                          RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper) {
         return new DecksPresenterImpl(interactor, deckMapper, deckWrapper, cardWrapper);
     }
+
+    @Provides
+    CardsHelper provideCardsHelper(CardsPreferences cardsPreferences) {
+        return new CardsHelper(cardsPreferences);
+    }
+
 }

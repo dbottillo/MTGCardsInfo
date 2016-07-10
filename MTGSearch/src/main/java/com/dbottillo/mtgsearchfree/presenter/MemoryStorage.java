@@ -1,16 +1,20 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.MTGSet;
 
-public final class CardsMemoryStorage {
+import java.util.List;
 
-    public CardsMemoryStorage() {
+public final class MemoryStorage {
+
+    public MemoryStorage() {
 
     }
 
     private CardsBucket bucket = null;
-
     private int[] favourites = null;
+    private boolean init;
+    private List<MTGSet> sets;
 
     public CardsBucket getBucket() {
         return bucket;
@@ -28,11 +32,27 @@ public final class CardsMemoryStorage {
         this.favourites = favourites;
     }
 
-    public boolean isBucketType(String value) {
+    boolean isBucketType(String value) {
         return !(bucket == null || !bucket.getKey().equals(value));
     }
 
-    public void invalidate() {
+    void invalidateBucket() {
         bucket = null;
+    }
+
+    public boolean isInit() {
+        return init;
+    }
+
+    public void setInit(boolean init) {
+        this.init = init;
+    }
+
+    public List<MTGSet> getSets() {
+        return sets;
+    }
+
+    public void setSets(List<MTGSet> sets) {
+        this.sets = sets;
     }
 }

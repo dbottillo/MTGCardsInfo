@@ -31,27 +31,27 @@ import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MTGCardView extends RelativeLayout {
 
-    @Bind(R.id.fragment_card_container)
+    @BindView(R.id.fragment_card_container)
     View mainContainer;
-    @Bind(R.id.detail_card)
+    @BindView(R.id.detail_card)
     TextView detailCard;
-    @Bind(R.id.price_on_tcg)
+    @BindView(R.id.price_on_tcg)
     TextView priceOnTcg;
-    @Bind(R.id.price_card)
+    @BindView(R.id.price_card)
     TextView cardPrice;
-    @Bind(R.id.image_card_retry)
+    @BindView(R.id.image_card_retry)
     View retry;
-    @Bind(R.id.image_card)
+    @BindView(R.id.image_card)
     ImageView cardImage;
-    @Bind(R.id.image_card_loader)
+    @BindView(R.id.image_card_loader)
     MTGLoader cardLoader;
-    @Bind(R.id.image_card_container)
+    @BindView(R.id.image_card_container)
     View cardImageContainer;
 
     public static float RATIO_CARD = 1.39622641509434f;

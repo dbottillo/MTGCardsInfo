@@ -113,7 +113,7 @@ public class FileUtil {
         if (root == null) {
             return null;
         }
-        return new File(root, deck.getName().replaceAll("\\s+", "").toLowerCase() + ".dec");
+        return new File(root, StringUtil.clearDeckName(deck) + ".dec");
     }
 
     public static boolean downloadDeckToSdCard(Context context, Deck deck, ArrayList<MTGCard> cards) {

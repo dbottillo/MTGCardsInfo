@@ -12,25 +12,28 @@ import android.widget.RadioGroup;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
-import butterknife.Bind;
+import javax.inject.Inject;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SortDialogFragment extends BottomSheetDialogFragment {
 
-    @Bind(R.id.sort_option_container)
+    @BindView(R.id.sort_option_container)
     RadioGroup azContainer;
-    @Bind(R.id.sort_option_az)
+    @BindView(R.id.sort_option_az)
     AppCompatRadioButton azOption;
-    @Bind(R.id.sort_option_color)
+    @BindView(R.id.sort_option_color)
     AppCompatRadioButton colorOption;
 
-    SortDialogListener listener;
-
-    SharedPreferences sharedPreferences;
-
+    private SortDialogListener listener;
     private boolean colorSelected;
+
+    @Inject
+    CardsPreferences cardsPreferences;
 
     public interface SortDialogListener {
         void onSortSelected();
@@ -62,6 +65,8 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
         ButterKnife.bind(this, contentView);
         dialog.setContentView(contentView);
 
+        ((MTGApp) getActivity().getApplication()).getUiGraph().inject(this);
+
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
         CoordinatorLayout.Behavior behavior = params.getBehavior();
 
@@ -69,8 +74,7 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
             ((BottomSheetBehavior) behavior).setBottomSheetCallback(mBottomSheetBehaviorCallback);
         }
 
-        sharedPreferences = getActivity().getSharedPreferences(MTGApp.PREFS_NAME, 0);
-        colorSelected = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
+        colorSelected = cardsPreferences.isSortWUBRG();
         syncUI();
 
         azContainer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -94,9 +98,7 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
     }
 
     private void optionUpdate(boolean color) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(BasicFragment.PREF_SORT_WUBRG, color);
-        editor.apply();
+        cardsPreferences.setSortOption(color);
         listener.onSortSelected();
         TrackingManager.trackSortCard(color);
     }

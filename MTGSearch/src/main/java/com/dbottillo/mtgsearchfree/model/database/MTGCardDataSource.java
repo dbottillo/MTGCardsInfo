@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class MTGCardDataSource {
 
@@ -51,7 +52,7 @@ public class MTGCardDataSource {
         boolean first = true;
         if (searchParams.getName().length() > 0) {
             query += composeQuery(true, CardDataSource.COLUMNS.NAME.getName());
-            selection.add("%" + searchParams.getName().toLowerCase() + "%");
+            selection.add("%" + searchParams.getName().toLowerCase(Locale.getDefault()) + "%");
             first = false;
         }
         if (searchParams.getTypes().length() > 0) {
@@ -71,7 +72,7 @@ public class MTGCardDataSource {
             } else {
                 query += composeQuery(first, CardDataSource.COLUMNS.TYPE.getName());
                 first = false;
-                selection.add("%" + searchParams.getTypes().toLowerCase() + "%");
+                selection.add("%" + searchParams.getTypes().toLowerCase(Locale.getDefault()) + "%");
             }
         }
         if (searchParams.getText().length() > 0) {

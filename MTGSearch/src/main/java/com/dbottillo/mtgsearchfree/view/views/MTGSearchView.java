@@ -20,7 +20,7 @@ import com.dbottillo.mtgsearchfree.view.adapters.SearchSetAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MTGSearchView extends RelativeLayout {
@@ -28,47 +28,47 @@ public class MTGSearchView extends RelativeLayout {
     String[] operators = new String[]{"=", ">", "<", ">=", "<="};
     ArrayList<MTGSet> sets;
 
-    @Bind(R.id.search_name)
+    @BindView(R.id.search_name)
     AppCompatEditText name;
-    @Bind(R.id.search_types)
+    @BindView(R.id.search_types)
     AppCompatEditText types;
-    @Bind(R.id.search_text)
+    @BindView(R.id.search_text)
     AppCompatEditText text;
-    @Bind(R.id.search_cmc)
+    @BindView(R.id.search_cmc)
     AppCompatEditText cmc;
-    @Bind(R.id.search_power)
+    @BindView(R.id.search_power)
     AppCompatEditText power;
-    @Bind(R.id.search_tough)
+    @BindView(R.id.search_tough)
     AppCompatEditText tough;
-    @Bind(R.id.search_power_operator)
+    @BindView(R.id.search_power_operator)
     Spinner powerOp;
-    @Bind(R.id.search_toughness_operator)
+    @BindView(R.id.search_toughness_operator)
     Spinner toughOp;
-    @Bind(R.id.search_cmc_operator)
+    @BindView(R.id.search_cmc_operator)
     Spinner cmcOp;
-    @Bind(R.id.search_w)
+    @BindView(R.id.search_w)
     AppCompatCheckBox white;
-    @Bind(R.id.search_u)
+    @BindView(R.id.search_u)
     AppCompatCheckBox blue;
-    @Bind(R.id.search_b)
+    @BindView(R.id.search_b)
     AppCompatCheckBox black;
-    @Bind(R.id.search_r)
+    @BindView(R.id.search_r)
     AppCompatCheckBox red;
-    @Bind(R.id.search_g)
+    @BindView(R.id.search_g)
     AppCompatCheckBox green;
-    @Bind(R.id.search_m)
+    @BindView(R.id.search_m)
     AppCompatCheckBox multi;
-    @Bind(R.id.search_nm)
+    @BindView(R.id.search_nm)
     AppCompatCheckBox noMulti;
-    @Bind(R.id.search_common)
+    @BindView(R.id.search_common)
     AppCompatCheckBox common;
-    @Bind(R.id.search_uncommon)
+    @BindView(R.id.search_uncommon)
     AppCompatCheckBox uncommon;
-    @Bind(R.id.search_rare)
+    @BindView(R.id.search_rare)
     AppCompatCheckBox rare;
-    @Bind(R.id.search_mythic)
+    @BindView(R.id.search_mythic)
     AppCompatCheckBox mythic;
-    @Bind(R.id.search_set)
+    @BindView(R.id.search_set)
     Spinner set;
 
     private SearchSetAdapter searchSetAdapter;

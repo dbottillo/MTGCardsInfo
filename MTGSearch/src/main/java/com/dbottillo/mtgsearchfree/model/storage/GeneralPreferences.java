@@ -7,30 +7,17 @@ import android.support.annotation.VisibleForTesting;
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
+@SuppressWarnings("checkstyle:finalclass")
 public class GeneralPreferences {
-
-    public static final String PREFS_NAME = "General";
 
     private static final String DEBUG = "debug";
     private static final String CARDS_SHOW_TYPE = "cardShowType";
     private static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
 
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
 
-    private static GeneralPreferences instance;
-
-    private GeneralPreferences() {
-    }
-
-    public static GeneralPreferences with(Context context) {
-        if (instance == null) {
-            instance = new GeneralPreferences(context);
-        }
-        return instance;
-    }
-
-    private GeneralPreferences(Context context) {
-        sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+    public GeneralPreferences(Context context) {
+        sharedPreferences = context.getSharedPreferences("General", Context.MODE_PRIVATE);
         LOG.d("created");
     }
 

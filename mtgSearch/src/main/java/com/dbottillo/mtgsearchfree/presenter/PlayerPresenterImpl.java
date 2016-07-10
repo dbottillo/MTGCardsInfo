@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.List;
@@ -112,7 +113,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
             pickedNumber = rand.nextInt(names.length);
             boolean founded = false;
             for (Player player : players) {
-                if (player.getName().toLowerCase(Locale.getDefault()).contains(names[pickedNumber].toLowerCase(Locale.getDefault()))) {
+                if (StringUtil.contains(player.getName(), names[pickedNumber])){
                     founded = true;
                     break;
                 }
