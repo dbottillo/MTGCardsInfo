@@ -57,6 +57,10 @@ public class MTGCardListView extends RelativeLayout {
         setListOn(); // default
     }
 
+    public void setEmptyString(int res){
+        emptyView.setText(res);
+    }
+
     public void loadCards(CardsBucket bucket, OnCardListener listener) {
         LOG.d();
 
@@ -70,7 +74,6 @@ public class MTGCardListView extends RelativeLayout {
         listView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
-        emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
 
         if (bucket.getCards().size() == CardDataSource.LIMIT) {
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
@@ -82,6 +85,7 @@ public class MTGCardListView extends RelativeLayout {
 
         progressBar.setVisibility(View.GONE);
         emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
+        LOG.d("visibility: "+emptyView.getVisibility());
     }
 
     public void setGridOn() {

@@ -117,6 +117,7 @@ public class MainFragment extends BasicFragment implements
                 }
             }
         });
+        mtgCardListView.setEmptyString(R.string.empty_cards);
 
         view.findViewById(R.id.set_chooser).setOnClickListener(new View.OnClickListener() {
             @Override

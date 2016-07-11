@@ -23,14 +23,11 @@
     <string name="version">Version</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results:</string>
-    <string name="to_premium_btn">Open Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
         <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
     </plurals>
     <string name="minimum_search">Search requires at least one condition</string>
-    <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
-    <string name="need_premium">Need Premium</string>
 
     <!-- filter panel -->
     <string name="mtg_color_white" translatable="false">W</string>
@@ -73,15 +70,12 @@
     <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
-    <string name="loading">Loading…</string>
     <string name="price_error">Error retrieving price</string>
     <string name="add_to_deck_title">Add to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
     <string name="menu_fullscreen_image" translatable="false">Full screen</string>
-    <string name="error_favourites">Impossible to load saved cards at the moment</string>
     <string name="action_lucky">I feel lucky</string>
-    <string name="lucky_again">I\'m feeling lucky again</string>
     <string name="lucky_title">Lucky?</string>
     <string name="menu_life_screen_on">Keep screen on</string>
     <string name="menu_life_two_hg">2HG game</string>
@@ -111,7 +105,6 @@
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
-    <string name="ok">OK</string>
     <string name="release_note_text">
         - NEW: Eternal Masters\n
         - NEW: Grid option view\n

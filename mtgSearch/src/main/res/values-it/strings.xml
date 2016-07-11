@@ -20,15 +20,12 @@
     <string name="version">Versione</string>
     <string name="action_search">Cerca</string>
     <string name="search_result">Risultati per:</string>
-    <string name="to_premium_btn">Apri Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">C\'é un limite di %d risultato,\n prova ad affinare la ricerca!</item>
         <item quantity="other">C\'é un limite di %d risultati,\n prova ad affinare la ricerca!</item>
         i
     </plurals>
     <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
-    <string name="sets_open_play">Nella versione gratis di MTG Cards solo i primi tre set sono visibili, se vuoi vedere tutti i sei hai bisogno della versione premium di MTG Cards</string>
-    <string name="need_premium">Premium richiesto</string>
 
     <!-- filter panel -->
     <string name="mtg_type_artifact">Artefatto</string>
@@ -59,14 +56,11 @@
     <string name="empty_deck">Nessuna carta presente nel mazzo, usa la sezione Magic Set e la ricerca per aggiungere carte al mazzo.</string>
     <string name="error_load_image">Impossibile caricare l\'immagine al momento.</string>
     <string name="image_retry">Carica immagine</string>
-    <string name="loading">Caricamento…</string>
     <string name="price_error">Impossibile caricare il prezzo</string>
     <string name="add_to_deck_title">Aggiungi al mazzo</string>
     <string name="menu_image">Mostra immagine</string>
     <string name="action_crash">Crash!</string>
-    <string name="error_favourites">Impossibile caricare i preferiti al momento</string>
     <string name="action_lucky">I feel lucky</string>
-    <string name="lucky_again">Mi sento ancora fortunato</string>
     <string name="lucky_title">Fortunato?</string>
     <string name="menu_life_screen_on">Display attivo</string>
     <string name="menu_life_two_hg">2HG punti</string>
@@ -96,7 +90,6 @@
     <string name="deck_new">Nuovo mazzo</string>
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
-    <string name="ok">Ok</string>
     <string name="release_note_text">
         - NUOVO: Eternal Masters\n
         - NUOVO: Modalità griglia\n

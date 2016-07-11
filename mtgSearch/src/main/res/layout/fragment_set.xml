@@ -20,9 +20,11 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:padding="40dp"
+        android:text="@string/empty_search"
         android:paddingTop="20dp"
         android:textStyle="italic"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        tools:visibility="visible"/>
 
     <FrameLayout
         android:id="@+id/search_bottom_container"

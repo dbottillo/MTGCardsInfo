@@ -30,11 +30,11 @@ public abstract class CommonCardsActivity extends BasicActivity {
     @Inject
     CardsPreferences cardsPreferences;
 
-    @Override
+    /*@Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         getMTGApp().getUiGraph().inject(this);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
