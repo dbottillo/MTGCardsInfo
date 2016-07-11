@@ -106,6 +106,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         secondToolbar.inflateMenu(R.menu.search_results);
         cardsShowType = secondToolbar.getMenu().findItem(R.id.action_view_type);
         secondToolbar.setOnMenuItemClickListener(this);
+        mtgCardListView.setEmptyString(R.string.empty_search);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
