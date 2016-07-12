@@ -1,16 +1,15 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".mtgsearch.base.MainActivity">
-
-    <item
-        android:id="@+id/action_add_to_deck"
-        android:title="@string/add_to_deck_title"
-        app:showAsAction="always" />
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_add_to_favourites"
         android:title="@string/favourite_add_long"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_add_to_deck"
+        android:title="@string/add_to_deck_title"
+        app:showAsAction="ifRoom"/>
 
 </menu>

@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
 import org.junit.Before;
@@ -34,10 +35,9 @@ public class SetsPresenterImplTest extends BaseTest {
         interactor = mock(SetsInteractor.class);
         view = mock(SetsView.class);
         when(interactor.load()).thenReturn(Observable.just(sets));
-        presenter = new SetsPresenterImpl(interactor, new TestRxWrapper<List<MTGSet>>());
+        presenter = new SetsPresenterImpl(interactor, new TestRxWrapper<List<MTGSet>>(),
+                mock(CardsPreferences.class), mock(MemoryStorage.class));
         presenter.init(view);
-        SetsMemoryStorage.init = false;
-        SetsMemoryStorage.sets = null;
     }
 
     @Test
