@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
@@ -62,7 +63,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         searchParams.setName("Dragon");
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         for (MTGCard card : cards) {
-            assertTrue(card.getName().toLowerCase(Locale.getDefault())().contains("dragon"));
+            assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("dragon"));
         }
     }
 
@@ -73,7 +74,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getType().toLowerCase(Locale.getDefault())().contains("creature"));
+            assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature"));
         }
     }
 
@@ -84,7 +85,7 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getText().toLowerCase(Locale.getDefault())().contains("lifelink"));
+            assertTrue(card.getText().toLowerCase(Locale.getDefault()).contains("lifelink"));
         }
     }
 
@@ -250,13 +251,13 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getType().toLowerCase(Locale.getDefault())().contains("creature") && card.getType().toLowerCase(Locale.getDefault())().contains("angel"));
+            assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature") && card.getType().toLowerCase(Locale.getDefault()).contains("angel"));
         }
         searchParams.setTypes("creature angel ally");
         List<MTGCard> cards2 = cardDataSource.searchCards(searchParams);
         assertTrue(cards2.size() > 0);
         for (MTGCard card : cards2) {
-            assertTrue(card.getType().toLowerCase(Locale.getDefault())().contains("creature") && card.getType().toLowerCase(Locale.getDefault())().contains("angel") && card.getType().toLowerCase(Locale.getDefault())().contains("ally"));
+            assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature") && card.getType().toLowerCase(Locale.getDefault()).contains("angel") && card.getType().toLowerCase(Locale.getDefault()).contains("ally"));
         }
     }
 
@@ -295,8 +296,8 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getName().toLowerCase(Locale.getDefault())().contains("angel"));
-            assertTrue(card.getType().toLowerCase(Locale.getDefault())().contains("creature") && card.getType().toLowerCase(Locale.getDefault())().contains("angel"));
+            assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("angel"));
+            assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature") && card.getType().toLowerCase(Locale.getDefault()).contains("angel"));
         }
     }
 
@@ -314,8 +315,8 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getName().toLowerCase(Locale.getDefault())().contains("angel"));
-            assertTrue(card.getType().toLowerCase(Locale.getDefault())().contains("creature"));
+            assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("angel"));
+            assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature"));
             assertTrue(card.getManaCost().contains("W"));
             assertTrue(Integer.parseInt(card.getPower()) == 4);
             assertTrue(Integer.parseInt(card.getToughness()) == 4);

@@ -185,7 +185,6 @@
     <string name="cd_price_go">See price</string>
     <string name="cd_drawer_header">Planeswalker</string>
     <string name="cd_card_image">Card Image</string>
-    <string name="cd_card_image_loader">Card Image Loader</string>
     <string name="cd_filter">Filter</string>
     <string name="cd_set_arrow">Sets</string>
     <string name="cd_cards_sort">Sorting cards</string>
@@ -199,8 +198,6 @@
     <string name="cd_remove">Remove</string>
     <string name="cd_action_search">Perform search</string>
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
-    <string name="favourite_migration_in_progress_title">Favourites migration</string>
-    <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
     <string name="search_card_text">Card text</string>
     <string name="action_send_db">Copy db to sdcard</string>
     <string name="action_copy_db">Replace db from sdcard</string>
