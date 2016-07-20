@@ -14,11 +14,13 @@ import java.util.Locale;
 
 public class MTGCardDataSource {
 
-    public static final int LIMIT = 400;
+    private static final int LIMIT = 400;
 
-    public static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins", "Battle for Zendikar", "Oath of the Gatewatch", "Shadows over Innistrad");
+    static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins",
+            "Battle for Zendikar", "Oath of the Gatewatch",
+            "Shadows over Innistrad", "Eldritch Moon");
 
-    MTGDatabaseHelper mtgHelper;
+    private MTGDatabaseHelper mtgHelper;
 
     public MTGCardDataSource(MTGDatabaseHelper helper) {
         this.mtgHelper = helper;
@@ -122,7 +124,7 @@ public class MTGCardDataSource {
                 query += "AND ";
             }
             first = false;
-            query += "(setId == 2 OR setId == 4 OR setId == 7 OR setId == 9 OR setId == 11) ";
+            query += "(setId==1 OR setId == 3 OR setId == 5 OR setId == 8 OR setId == 10 OR setId == 12) ";
         }
         if (searchParams.atLeastOneColor()) {
             if (!first) {

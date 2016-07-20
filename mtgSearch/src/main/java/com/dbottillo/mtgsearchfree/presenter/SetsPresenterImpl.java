@@ -18,7 +18,7 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     private SetsView setView;
     private CardsPreferences cardsPreferences;
     private RxWrapper<List<MTGSet>> wrapper;
-    MemoryStorage memoryStorage;
+    private MemoryStorage memoryStorage;
     private int currentSetPosition = -1;
 
     @Inject
