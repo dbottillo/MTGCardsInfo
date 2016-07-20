@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gradle testDevDebugUnitTest
-gradle connectedDevDebugAndroidTest
+gradle testProdReleaseUnitTest
+gradle connectedProdDebugAndroidTest

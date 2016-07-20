@@ -164,21 +164,6 @@
     <string name="search_card_text">Testo carta</string>
     <string name="search_set_title">Set</string>
 
-    <string name="cd_price_go">Guarda Prezzo</string>
-    <string name="cd_drawer_header">Planeswalker</string>
-    <string name="cd_card_image">Immagine Carta</string>
-    <string name="cd_filter">Filtri</string>
-    <string name="cd_set_arrow">Sets</string>
-    <string name="cd_cards_sort">Ordinamento carte</string>
-    <string name="cd_cards_view_type">Tipo visualizzazione carte</string>
-    <string name="cd_again">Ancora</string>
-    <string name="cd_more_options">Altre opzioni</string>
-    <string name="cd_deck_icon">Icona mazzo</string>
-    <string name="cd_delete_deck">Cancella mazzo</string>
-    <string name="cd_library_icon">Icona libreria</string>
-    <string name="cd_edit">Modifica</string>
-    <string name="cd_remove">Rimuovi</string>
-    <string name="cd_action_search">Effettua ricerca</string>
     <string name="action_send_db">Copia db su sdcard</string>
     <string name="action_copy_db">Sostituisci db da sdcard</string>
     <string name="export">Esporta</string>
@@ -195,5 +180,24 @@
     <string name="main_fragment_tooltip">NUOVO: ora puoi visualizzare le carte su griglia o su lista!</string>
     <string name="sort_az">Alfabeticamente</string>
     <string name="sort_color">WUBRG</string>
+
+    <string name="cd_price_go">Guarda Prezzo</string>
+    <string name="cd_drawer_header">Planeswalker</string>
+    <string name="cd_card_image">Immagine Carta</string>
+    <string name="cd_filter">Filtri</string>
+    <string name="cd_set_arrow">Sets</string>
+    <string name="cd_cards_sort">Ordinamento carte</string>
+    <string name="cd_cards_view_type">Tipo visualizzazione carte</string>
+    <string name="cd_again">Ancora</string>
+    <string name="cd_more_options">Altre opzioni</string>
+    <string name="cd_deck_icon">Icona mazzo</string>
+    <string name="cd_delete_deck">Cancella mazzo</string>
+    <string name="cd_library_icon">Icona libreria</string>
+    <string name="cd_edit">Modifica</string>
+    <string name="cd_remove">Rimuovi</string>
+    <string name="cd_action_search">Effettua ricerca</string>
+    <string name="cd_join_beta_header">Partecipa alla beta</string>
+    <string name="cd_close">Chiudi</string>
+    <string name="cd_tooltip_arrow">Chiudi aiuto</string>
 
 </resources>
