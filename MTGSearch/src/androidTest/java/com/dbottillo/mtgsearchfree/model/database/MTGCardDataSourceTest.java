@@ -22,7 +22,10 @@ import java.util.Locale;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
@@ -283,8 +286,9 @@ public class MTGCardDataSourceTest extends BaseDatabaseTest {
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertTrue(card.getManaCost().contains("U"));
-            assertTrue(MTGCardDataSource.STANDARD.contains(card.getSet().getName()));
+            assertThat(card.getManaCost(), containsString("U"));
+            System.out.println("set: "+card.getSet().toString());
+            assertThat(MTGCardDataSource.STANDARD, hasItem(card.getSet().getName()));
         }
     }
 

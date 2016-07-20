@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 
 import java.util.List;
 
-public final class MemoryStorage {
+public class MemoryStorage {
 
     public MemoryStorage() {
 
