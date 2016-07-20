@@ -211,7 +211,7 @@ public class MTGCardView extends RelativeLayout {
         cardLoader.setVisibility(View.GONE);
     }
 
-    @OnClick(R.id.image_card_retry)
+    @OnClick(R.id.image_card_retry_btn)
     public void retryImage(View view) {
         loadImage(false);
     }

@@ -387,7 +387,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         Intent intent;
         if (view != null && MTGApp.isActivityTransitionAvailable()) {
             intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, card);
-            view.setTransitionName(getString(R.string.transition_card));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.setTransitionName(getString(R.string.transition_card));
+            }
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, getString(R.string.transition_card));
             startActivity(intent, activityOptionsCompat.toBundle());
         } else {
@@ -400,7 +402,8 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(this, "add_to_deck", AddToDeckFragment.newInstance(card));
-        } else {
+
+        } else if (menuItem.getItemId() == R.id.action_add_to_favourites) {
             cardsPresenter.saveAsFavourite(card, true);
         }
     }

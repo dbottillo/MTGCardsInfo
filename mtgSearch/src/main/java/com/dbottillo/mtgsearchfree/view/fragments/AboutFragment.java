@@ -150,6 +150,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                     generalPreferences.setDebug();
                     Toast.makeText(getActivity(), R.string.debug_mode_active, Toast.LENGTH_LONG).show();
                 }
+                v.performClick();
                 break;
             case MotionEvent.ACTION_MOVE:
                 break;

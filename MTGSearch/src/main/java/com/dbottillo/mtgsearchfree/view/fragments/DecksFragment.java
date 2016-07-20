@@ -4,10 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -317,6 +319,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this);
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     public void permissionGranted() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);

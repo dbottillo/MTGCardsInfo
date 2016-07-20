@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:scaleType="fitStart"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/cd_join_beta_header"
         android:src="@drawable/join_beta_header"/>
 
     <TextView

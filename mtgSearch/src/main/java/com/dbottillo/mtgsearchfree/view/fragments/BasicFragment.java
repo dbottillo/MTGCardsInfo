@@ -7,9 +7,9 @@ import android.support.v4.app.DialogFragment;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
-import com.squareup.leakcanary.RefWatcher;
 
 public abstract class BasicFragment extends DialogFragment {
 
@@ -46,8 +46,7 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
-        refWatcher.watch(this);
+        LeakCanaryUtil.watchFragment(this);
     }
 
     void setActionBarTitle(String title) {

@@ -6,8 +6,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
+import android.os.Build.VERSION_CODES;
 import android.os.StrictMode;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
@@ -21,10 +21,9 @@ import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
-import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
 
 import javax.inject.Inject;
 
@@ -33,10 +32,8 @@ import io.fabric.sdk.android.Fabric;
 public class MTGApp extends Application {
 
     private UiComponent uiGraph;
-
     public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
-    private RefWatcher refWatcher;
-    protected boolean isUnitTesting = false;
+    boolean isUnitTesting = false;
 
     @Inject
     CardsPreferences cardsPreferences;
@@ -58,7 +55,7 @@ public class MTGApp extends Application {
 
         if (!isUnitTesting) {
             TrackingManager.init(getApplicationContext());
-            refWatcher = LeakCanary.install(this);
+            LeakCanaryUtil.install(this);
             Fabric.with(this, new Crashlytics());
             Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
             checkReleaseNote();
@@ -104,7 +101,8 @@ public class MTGApp extends Application {
                 .setColor(getResources().getColor(R.color.color_primary))
                 .setContentIntent(resultPendingIntent);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+        if (Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
             b.setCategory(Notification.CATEGORY_RECOMMENDATION);
         }
 
@@ -114,14 +112,8 @@ public class MTGApp extends Application {
         notificationManager.notify(1, b.build());
     }
 
-    public static RefWatcher getRefWatcher(Context context) {
-        LOG.d();
-        MTGApp application = (MTGApp) context.getApplicationContext();
-        return application.refWatcher;
-    }
-
     public static boolean isActivityTransitionAvailable() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+        return Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP;
     }
 
     public UiComponent getUiGraph() {
