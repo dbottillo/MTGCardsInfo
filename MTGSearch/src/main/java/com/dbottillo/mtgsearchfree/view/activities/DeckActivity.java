@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +17,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -36,7 +36,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -45,16 +45,16 @@ public class DeckActivity extends BasicActivity implements DecksView {
     @Inject
     DecksPresenter decksPresenter;
 
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     View container;
 
-    @Bind(R.id.empty_view)
+    @BindView(R.id.empty_view)
     TextView emptyView;
 
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
 
-    @Bind(R.id.card_list)
+    @BindView(R.id.card_list)
     RecyclerView cardList;
 
     Deck deck;
@@ -110,7 +110,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         deckCardSectionAdapter = new DeckCardSectionAdapter(this, deckCardAdapter);
         cardList.setAdapter(deckCardSectionAdapter);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDeck(deck);
     }
@@ -247,7 +247,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         alert.setTitle(getString(R.string.edit_deck));
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
+        @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.dialog_edit_deck, null);
         final EditText editText = (EditText) view.findViewById(R.id.edit_text);
         editText.setText(deck.getName());
         editText.setSelection(deck.getName().length());

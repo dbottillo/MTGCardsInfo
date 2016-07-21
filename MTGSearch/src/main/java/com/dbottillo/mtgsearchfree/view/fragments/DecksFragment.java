@@ -4,10 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -26,7 +28,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -45,7 +46,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -58,25 +59,25 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     private int heightNewDeckContainer = -1;
     private boolean newDeckViewOpen = false;
 
-    @Bind(R.id.add_new_deck)
+    @BindView(R.id.add_new_deck)
     FloatingActionButton newDeck;
 
-    @Bind(R.id.deck_list)
+    @BindView(R.id.deck_list)
     ListView listView;
 
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
 
-    @Bind(R.id.empty_view)
+    @BindView(R.id.empty_view)
     TextView emptyView;
 
-    @Bind(R.id.new_deck_overlay)
+    @BindView(R.id.new_deck_overlay)
     View newDeckOverlay;
 
-    @Bind(R.id.new_deck_name_container)
+    @BindView(R.id.new_deck_name_container)
     View newDeckContainer;
 
-    @Bind(R.id.new_deck_name)
+    @BindView(R.id.new_deck_name)
     AppCompatEditText newDeckName;
 
     @Inject
@@ -128,7 +129,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         AnimationUtil.growView(newDeck);
         newDeck.setOnClickListener(this);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
     }
 
@@ -318,6 +319,7 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this);
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     public void permissionGranted() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);

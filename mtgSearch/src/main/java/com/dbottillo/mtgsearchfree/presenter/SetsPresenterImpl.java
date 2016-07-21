@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
@@ -14,18 +14,21 @@ import rx.Observable;
 
 public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperListener<List<MTGSet>> {
 
+    private SetsInteractor interactor;
+    private SetsView setView;
+    private CardsPreferences cardsPreferences;
+    private RxWrapper<List<MTGSet>> wrapper;
+    private MemoryStorage memoryStorage;
+    private int currentSetPosition = -1;
+
     @Inject
-    SetsInteractor interactor;
-
-    SetsView setView;
-
-    @Inject
-    RxWrapper<List<MTGSet>> wrapper;
-
-    public SetsPresenterImpl(SetsInteractor interactor) {
+    public SetsPresenterImpl(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper,
+                             CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
         LOG.d("created");
-        MTGApp.graph.inject(this);
         this.interactor = interactor;
+        this.wrapper = wrapper;
+        this.cardsPreferences = cardsPreferences;
+        this.memoryStorage = memoryStorage;
     }
 
     public void init(SetsView view) {
@@ -35,8 +38,8 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
 
     public void loadSets() {
         LOG.d();
-        if (SetsMemoryStorage.init) {
-            setView.setsLoaded(SetsMemoryStorage.sets);
+        if (memoryStorage.isInit()) {
+            setView.setsLoaded(memoryStorage.getSets());
             return;
         }
         Observable<List<MTGSet>> obs = interactor.load();
@@ -44,10 +47,24 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     }
 
     @Override
+    public void setSelected(int position) {
+        currentSetPosition = position;
+        cardsPreferences.saveSetPosition(position);
+    }
+
+    @Override
+    public int getCurrentSetPosition() {
+        if (currentSetPosition < 0){
+            currentSetPosition = cardsPreferences.getSetPosition();
+        }
+        return currentSetPosition;
+    }
+
+    @Override
     public void onNext(List<MTGSet> mtgSets) {
         LOG.d();
-        SetsMemoryStorage.init = true;
-        SetsMemoryStorage.sets = mtgSets;
+        memoryStorage.setInit(true);
+        memoryStorage.setSets(mtgSets);
         setView.setsLoaded(mtgSets);
     }
 

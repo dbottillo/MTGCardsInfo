@@ -7,7 +7,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.PagerTabStrip;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
@@ -27,8 +27,10 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -45,7 +47,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -95,21 +97,25 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     private CardsBucket bucket;
     private boolean favs = false;
 
-    @Bind(R.id.cards_view_pager)
+    @BindView(R.id.cards_view_pager)
     ViewPager viewPager;
-    @Bind(R.id.cards_tab_strip)
-    PagerTabStrip pagerTabStrip;
-    @Bind(R.id.card_add_to_deck)
+    @BindView(R.id.cards_tab_layout)
+    TabLayout tabLayout;
+    @BindView(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
-    @Bind(R.id.shared_image)
+    @BindView(R.id.shared_image)
     ImageView sharedImage;
 
-    CardsPagerAdapter adapter;
+    private CardsPagerAdapter adapter;
 
     @Inject
     CardsPresenter cardsPresenter;
     @Inject
     CardFilterPresenter filterPresenter;
+    @Inject
+    CardsHelper cardsHelper;
+    @Inject
+    CardsPreferences cardsPreferences;
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -118,7 +124,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         ButterKnife.bind(this);
         setupView();
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         filterPresenter.init(this);
 
@@ -146,12 +152,12 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
             if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
                 Picasso.with(getApplicationContext()).load(transitionCard.getImage()).into(sharedImage);
 
-                pagerTabStrip.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                tabLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
                         int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image_half);
-                        UIUtil.setMarginTop(sharedImage, pagerTabStrip.getHeight() + paddingCard);
-                        pagerTabStrip.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        UIUtil.setMarginTop(sharedImage, tabLayout.getHeight() + paddingCard);
+                        tabLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 });
             }
@@ -176,9 +182,10 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         }
         MaterialWrapper.setElevation(toolbar, 0f);
 
-        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
+        /*pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
-        pagerTabStrip.setTextColor(getResources().getColor(R.color.white));
+        pagerTabStrip.setTextColor(getResources().getColor(R.color.white));*/
+        tabLayout.setupWithViewPager(viewPager);
         RelativeLayout.LayoutParams parSharedImage = (RelativeLayout.LayoutParams) sharedImage.getLayoutParams();
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
         if (isPortrait) {
@@ -212,7 +219,10 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     private void reloadAdapter() {
         LOG.d();
-        boolean showImage = getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
+        boolean showImage = cardsPreferences.showImage();
+        if (set != null || search != null){
+            cardsHelper.sortCards(bucket);
+        }
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(startPosition);
@@ -222,7 +232,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = adapter.getItem(viewPager.getCurrentItem());
-        if (isCardFavourite(currentCard.getMultiVerseId())) {
+        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);
@@ -281,7 +291,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
             // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
-            CardsHelper.sortCards(getSharedPreferences(), bucket);
             reloadAdapter();
         }
     }
@@ -326,8 +335,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     @Override
     public void filterLoaded(CardFilter filter) {
         LOG.d();
-        this.bucket = CardsHelper.filterCards(filter, bucket);
-        CardsHelper.sortCards(getSharedPreferences(), bucket);
+        this.bucket = cardsHelper.filterCards(filter, bucket);
         reloadAdapter();
     }
 

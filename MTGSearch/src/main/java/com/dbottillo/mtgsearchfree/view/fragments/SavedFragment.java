@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -32,7 +31,7 @@ import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -40,17 +39,20 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
     private CardsBucket savedBucket;
 
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
-    @Bind((R.id.empty_view))
+    @BindView((R.id.empty_view))
     TextView emptyView;
-    @Bind(R.id.card_list)
+    @BindView(R.id.card_list)
     RecyclerView listView;
 
     MainActivity mainActivity;
 
     @Inject
     CardsPresenter cardsPresenter;
+
+    @Inject
+    CardsHelper cardsHelper;
 
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -77,7 +79,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
 
         setHasOptionsMenu(true);
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
     }
 
@@ -130,7 +132,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     @Override
     public void updateContent() {
         LOG.d();
-        CardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
+        cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
         CardsAdapter adapter = CardsAdapter.list(savedBucket, false, R.menu.card_saved_option);
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);

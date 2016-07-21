@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.StringUtil;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +15,7 @@ import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
@@ -248,7 +250,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
             boolean found = false;
             int index = 0;
             for (int i = 0; i < cardNames.length; i++) {
-                if (card.getName().toLowerCase().contains(cardNames[i].toLowerCase())) {
+                if (StringUtil.contains(card.getName(), cardNames[i])) {
                     found = true;
                     index = i;
                     break;

@@ -103,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:contentDescription="@string/cd_close"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_close"/>
 
@@ -120,6 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
+                android:contentDescription="@string/cd_tooltip_arrow"
                 android:src="@drawable/tooltip_main_arrow"/>
 
         </LinearLayout>

@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scaleType="fitStart"
+        android:contentDescription="@string/cd_join_beta_header"
         android:adjustViewBounds="true"
         android:src="@drawable/join_beta_header"/>
 

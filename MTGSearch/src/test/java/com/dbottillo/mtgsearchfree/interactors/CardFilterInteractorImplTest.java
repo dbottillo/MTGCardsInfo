@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 
 import org.junit.Test;
 import org.mockito.Mock;
@@ -22,22 +22,22 @@ public class CardFilterInteractorImplTest extends BaseTest{
 
     @Test
     public void willLoadDataFromStorage() {
-        CardFilterStorage storage = mock(CardFilterStorage.class);
-        when(storage.load()).thenReturn(cardFilter);
-        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(storage);
+        CardsPreferences cardsPreferences = mock(CardsPreferences.class);
+        when(cardsPreferences.load()).thenReturn(cardFilter);
+        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
         TestSubscriber<CardFilter> testSubscriber = new TestSubscriber<>();
         interactor.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Arrays.asList(cardFilter));
-        verify(storage).load();
+        verify(cardsPreferences).load();
     }
 
     @Test
     public void willSyncDataWithStorage() {
-        CardFilterStorage storage = mock(CardFilterStorage.class);
-        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(storage);
+        CardsPreferences cardsPreferences = mock(CardsPreferences.class);
+        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
         interactor.sync(cardFilter);
-        verify(storage).sync(cardFilter);
+        verify(cardsPreferences).sync(cardFilter);
     }
 
 }

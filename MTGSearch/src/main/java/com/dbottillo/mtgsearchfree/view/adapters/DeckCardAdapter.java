@@ -45,14 +45,14 @@ public class DeckCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final CardViewHolder holder, final int position) {
+    public void onBindViewHolder(final CardViewHolder holder, int position) {
         final MTGCard card = cards.get(position);
         CardAdapterHelper.bindView(mContext, card, holder, false, true);
         CardAdapterHelper.setupMore(holder, mContext, card, position, menuRes, onCardListener);
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCardListener.onCardSelected(card, position, v);
+                onCardListener.onCardSelected(card, holder.getAdapterPosition(), v);
             }
         });
     }

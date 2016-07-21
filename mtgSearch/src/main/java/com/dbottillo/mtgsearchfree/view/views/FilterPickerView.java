@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -24,35 +24,35 @@ public class FilterPickerView extends LinearLayout {
         void filterUpdated(CardFilter.TYPE type, boolean on);
     }
 
-    @Bind(R.id.filter_text)
+    @BindView(R.id.filter_text)
     TextView filterText;
-    @Bind(R.id.arrow_filter)
+    @BindView(R.id.arrow_filter)
     ImageView arrow;
-    @Bind(R.id.toggle_white)
+    @BindView(R.id.toggle_white)
     ToggleButton toggleW;
-    @Bind(R.id.toggle_blue)
+    @BindView(R.id.toggle_blue)
     ToggleButton toggleU;
-    @Bind(R.id.toggle_black)
+    @BindView(R.id.toggle_black)
     ToggleButton toggleB;
-    @Bind(R.id.toggle_red)
+    @BindView(R.id.toggle_red)
     ToggleButton toggleR;
-    @Bind(R.id.toggle_green)
+    @BindView(R.id.toggle_green)
     ToggleButton toggleG;
 
-    @Bind(R.id.toggle_land)
+    @BindView(R.id.toggle_land)
     ToggleButton toggleLand;
-    @Bind(R.id.toggle_artifact)
+    @BindView(R.id.toggle_artifact)
     ToggleButton toggleArtifact;
-    @Bind(R.id.toggle_eldrazi)
+    @BindView(R.id.toggle_eldrazi)
     ToggleButton toggleEldrazi;
 
-    @Bind(R.id.toggle_common)
+    @BindView(R.id.toggle_common)
     ToggleButton toggleCommon;
-    @Bind(R.id.toggle_uncommon)
+    @BindView(R.id.toggle_uncommon)
     ToggleButton toggleUncommon;
-    @Bind(R.id.toggle_rare)
+    @BindView(R.id.toggle_rare)
     ToggleButton toggleRare;
-    @Bind(R.id.toggle_myhtic)
+    @BindView(R.id.toggle_myhtic)
     ToggleButton toggleMythic;
 
     private OnFilterPickerListener listener;

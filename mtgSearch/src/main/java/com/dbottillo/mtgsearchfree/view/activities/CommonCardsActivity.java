@@ -2,26 +2,34 @@ package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+
+import javax.inject.Inject;
 
 public abstract class CommonCardsActivity extends BasicActivity {
 
     private MenuItem favMenuItem = null;
     private MenuItem imageMenuItem = null;
-    protected int[] idFavourites;
+    int[] idFavourites;
 
     abstract MTGCard getCurrentCard();
 
     abstract void favClicked();
 
     abstract void toggleImage(boolean show);
+
+    @Inject
+    CardsPreferences cardsPreferences;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,10 +63,8 @@ public abstract class CommonCardsActivity extends BasicActivity {
             return true;
         }
         if (id == R.id.action_image) {
-            boolean showImage = getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
-            SharedPreferences.Editor editor = getSharedPreferences().edit();
-            editor.putBoolean(BasicFragment.PREF_SHOW_IMAGE, !showImage);
-            editor.apply();
+            boolean showImage = cardsPreferences.showImage();
+            cardsPreferences.setShowImage(!showImage);
             toggleImage(!showImage);
             updateMenu();
             return true;
@@ -66,7 +72,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void updateMenu() {
+    void updateMenu() {
         LOG.d();
         syncMenu();
     }
@@ -79,7 +85,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         MTGCard currentCard = getCurrentCard();
         if (currentCard != null && currentCard.getMultiVerseId() > 0) {
             favMenuItem.setVisible(true);
-            if (isCardFavourite(currentCard.getMultiVerseId())) {
+            if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
                 favMenuItem.setTitle(getString(R.string.favourite_remove));
                 favMenuItem.setIcon(R.drawable.ab_star_colored);
             } else {
@@ -89,20 +95,11 @@ public abstract class CommonCardsActivity extends BasicActivity {
         } else {
             favMenuItem.setVisible(false);
         }
-        if (getSharedPreferences().getBoolean(BasicFragment.PREF_SHOW_IMAGE, true)) {
+        if (cardsPreferences.showImage()) {
             imageMenuItem.setChecked(true);
         } else {
             imageMenuItem.setChecked(false);
         }
-    }
-
-    protected boolean isCardFavourite(int multiverseId) {
-        for (int id : idFavourites) {
-            if (id == multiverseId) {
-                return true;
-            }
-        }
-        return false;
     }
 
 }

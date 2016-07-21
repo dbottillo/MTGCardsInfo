@@ -11,17 +11,16 @@ import static org.junit.Assert.assertTrue;
 
 public class GeneralPreferencesTest extends BaseTest {
 
-    GeneralPreferences underTest;
+    private GeneralPreferences underTest;
 
     @Before
     public void setup() {
-        underTest = GeneralPreferences.with(mContext);
+        underTest = new GeneralPreferences(mContext);
         underTest.clear();
     }
 
     @Test
     public void testSaveAndLoadDebugFlag() {
-        underTest = GeneralPreferences.with(mContext);
         if (!BuildConfig.DEBUG) {
             assertFalse(underTest.isDebugEnabled());
         }

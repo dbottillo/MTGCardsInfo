@@ -44,7 +44,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SearchActivity extends BasicActivity implements View.OnClickListener, Toolbar.OnMenuItemClickListener, SetsView, CardsView, OnCardListener, SortDialogFragment.SortDialogListener {
@@ -54,19 +54,19 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private static final String TOOLBAR_ELEVATION = "toolbarElevation";
     private static final String SEARCH_PARAMS = "searchParams";
 
-    @Bind(R.id.action_search)
+    @BindView(R.id.action_search)
     ImageButton newSearch;
 
-    @Bind(R.id.search_scroll_view)
+    @BindView(R.id.search_scroll_view)
     ScrollView scrollView;
 
-    @Bind(R.id.cards_list_view)
+    @BindView(R.id.cards_list_view)
     MTGCardListView mtgCardListView;
 
-    @Bind(R.id.search_view)
+    @BindView(R.id.search_view)
     MTGSearchView searchView;
 
-    @Bind(R.id.second_toolbar)
+    @BindView(R.id.second_toolbar)
     Toolbar secondToolbar;
 
     AnimationDrawable newSearchAnimation;
@@ -82,6 +82,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Inject
     CardsPresenter cardsPresenter;
+
+    @Inject
+    CardsHelper cardsHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         secondToolbar.inflateMenu(R.menu.search_results);
         cardsShowType = secondToolbar.getMenu().findItem(R.id.action_view_type);
         secondToolbar.setOnMenuItemClickListener(this);
+        mtgCardListView.setEmptyString(R.string.empty_search);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -169,7 +173,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             newSearch.setElevation(6.0f); // TODO: pre-lollipop version
         }
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         setsPresenter.init(this);
         cardsPresenter.init(this);
         setsPresenter.loadSets();
@@ -329,7 +333,6 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     public void setsLoaded(List<MTGSet> sets) {
-
         LOG.d();
         searchView.refreshSets(sets);
     }
@@ -353,7 +356,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     private void refreshList() {
         LOG.d();
-        CardsHelper.sortCards(getSharedPreferences(), currentBucket);
+        cardsHelper.sortCards(currentBucket);
         mtgCardListView.loadCards(currentBucket, this);
     }
 
@@ -384,7 +387,9 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         Intent intent;
         if (view != null && MTGApp.isActivityTransitionAvailable()) {
             intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, card);
-            view.setTransitionName(getString(R.string.transition_card));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.setTransitionName(getString(R.string.transition_card));
+            }
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, getString(R.string.transition_card));
             startActivity(intent, activityOptionsCompat.toBundle());
         } else {
@@ -397,7 +402,8 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(this, "add_to_deck", AddToDeckFragment.newInstance(card));
-        } else {
+
+        } else if (menuItem.getItemId() == R.id.action_add_to_favourites) {
             cardsPresenter.saveAsFavourite(card, true);
         }
     }
