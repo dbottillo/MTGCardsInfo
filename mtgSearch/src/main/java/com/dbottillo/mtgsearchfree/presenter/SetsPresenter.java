@@ -7,4 +7,9 @@ public interface SetsPresenter {
     void init(SetsView view);
 
     void loadSets();
+
+    void setSelected(int position);
+
+    int getCurrentSetPosition();
+
 }

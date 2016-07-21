@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Locale;
+
 public class MTGSet implements Parcelable {
 
     int id;
@@ -156,6 +158,6 @@ public class MTGSet implements Parcelable {
                 return entry.mapped;
             }
         }
-        return code.toLowerCase();
+        return code.toLowerCase(Locale.getDefault());
     }
 }

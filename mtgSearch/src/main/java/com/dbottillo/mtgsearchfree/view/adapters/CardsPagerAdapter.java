@@ -12,10 +12,10 @@ import java.util.List;
 
 public class CardsPagerAdapter extends PagerAdapter {
 
-    Context context;
-    boolean deck;
-    boolean showImage;
-    List<MTGCard> cards;
+    private Context context;
+    private boolean deck;
+    private boolean showImage;
+    private List<MTGCard> cards;
 
     public CardsPagerAdapter(Context context, boolean deck, boolean showImage, List<MTGCard> cards) {
         this.context = context;

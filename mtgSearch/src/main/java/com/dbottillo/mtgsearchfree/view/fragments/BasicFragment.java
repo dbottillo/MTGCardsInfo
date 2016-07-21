@@ -1,23 +1,21 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
-import com.squareup.leakcanary.RefWatcher;
 
 public abstract class BasicFragment extends DialogFragment {
 
     protected BasicActivity dbActivity;
     protected boolean isPortrait = false;
     protected MTGApp app;
-    protected SharedPreferences sharedPreferences;
 
     public static final String PREF_SHOW_IMAGE = "show_image";
     public static final String PREF_SCREEN_ON = "screen_on";
@@ -32,7 +30,10 @@ public abstract class BasicFragment extends DialogFragment {
         this.dbActivity = (BasicActivity) context;
         app = (MTGApp) dbActivity.getApplication();
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
-        sharedPreferences = dbActivity.getSharedPreferences(MTGApp.PREFS_NAME, 0);
+    }
+
+    protected MTGApp getMTGApp() {
+        return dbActivity.getMTGApp();
     }
 
     public void onCreate(Bundle savedInstanceState) {
@@ -45,11 +46,10 @@ public abstract class BasicFragment extends DialogFragment {
 
     public void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = MTGApp.getRefWatcher(getActivity());
-        refWatcher.watch(this);
+        LeakCanaryUtil.watchFragment(this);
     }
 
-    protected void setActionBarTitle(String title) {
+    void setActionBarTitle(String title) {
         if (dbActivity.getSupportActionBar() != null) {
             dbActivity.getSupportActionBar().setTitle(title);
         }

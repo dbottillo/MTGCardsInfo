@@ -10,14 +10,17 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class MTGCardDataSource {
 
-    public static final int LIMIT = 400;
+    private static final int LIMIT = 400;
 
-    public static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins", "Battle for Zendikar", "Oath of the Gatewatch", "Shadows over Innistrad");
+    static final List<String> STANDARD = Arrays.asList("Dragons of Tarkir", "Magic Origins",
+            "Battle for Zendikar", "Oath of the Gatewatch",
+            "Shadows over Innistrad", "Eldritch Moon");
 
-    MTGDatabaseHelper mtgHelper;
+    private MTGDatabaseHelper mtgHelper;
 
     public MTGCardDataSource(MTGDatabaseHelper helper) {
         this.mtgHelper = helper;
@@ -51,7 +54,7 @@ public class MTGCardDataSource {
         boolean first = true;
         if (searchParams.getName().length() > 0) {
             query += composeQuery(true, CardDataSource.COLUMNS.NAME.getName());
-            selection.add("%" + searchParams.getName().toLowerCase() + "%");
+            selection.add("%" + searchParams.getName().toLowerCase(Locale.getDefault()) + "%");
             first = false;
         }
         if (searchParams.getTypes().length() > 0) {
@@ -71,7 +74,7 @@ public class MTGCardDataSource {
             } else {
                 query += composeQuery(first, CardDataSource.COLUMNS.TYPE.getName());
                 first = false;
-                selection.add("%" + searchParams.getTypes().toLowerCase() + "%");
+                selection.add("%" + searchParams.getTypes().toLowerCase(Locale.getDefault()) + "%");
             }
         }
         if (searchParams.getText().length() > 0) {
@@ -121,7 +124,7 @@ public class MTGCardDataSource {
                 query += "AND ";
             }
             first = false;
-            query += "(setId == 2 OR setId == 4 OR setId == 7 OR setId == 9 OR setId == 11) ";
+            query += "(setId==1 OR setId == 3 OR setId == 5 OR setId == 8 OR setId == 10 OR setId == 12) ";
         }
         if (searchParams.atLeastOneColor()) {
             if (!first) {

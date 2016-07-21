@@ -15,4 +15,19 @@
         <ignore path="build/generated/res/google-services/release/values/values.xml"/>
         <ignore path="build/generated/res/google-services/debug/values/values.xml"/>
     </issue>
+    <issue id="UnusedResources">
+        <ignore regexp="default_web_client_id"/>
+        <ignore regexp="firebase_database_url"/>
+        <ignore regexp="google_api_key"/>
+        <ignore regexp="google_crash_reporting_api_key"/>
+        <ignore regexp="google_storage_bucket"/>
+        <ignore regexp="ga_trackingId"/>
+        <ignore regexp="global-tracker.xml"/>
+    </issue>
+    <issue id="LogConditional">
+        <ignore regexp="*SQLiteAssetHelper.java"/>
+    </issue>
+    <issue id="NewerVersionAvailable">
+        <ignore regexp="*leakcanary*"/>
+    </issue>
 </lint>

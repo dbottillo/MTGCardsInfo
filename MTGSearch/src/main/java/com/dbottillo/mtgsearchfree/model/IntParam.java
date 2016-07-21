@@ -57,11 +57,12 @@ public class IntParam implements Parcelable {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        IntParam other = (IntParam) o;
-        return Objects.equals(operator, other.operator) && value == other.value;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        IntParam intParam = (IntParam) o;
+
+        return value == intParam.value && (operator != null ? operator.equals(intParam.operator) : intParam.operator == null);
     }
 
     @Override

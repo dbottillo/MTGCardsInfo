@@ -19,7 +19,7 @@ import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -29,13 +29,13 @@ public class MTGCardListView extends RelativeLayout {
     private CardsAdapter adapter;
     private GridItemDecorator itemDecorator;
 
-    @Bind(R.id.card_list)
+    @BindView(R.id.card_list)
     RecyclerView listView;
-    @Bind(R.id.empty_view)
+    @BindView(R.id.empty_view)
     TextView emptyView;
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     SmoothProgressBar progressBar;
-    @Bind(R.id.search_bottom_container)
+    @BindView(R.id.search_bottom_container)
     View footer;
 
     public MTGCardListView(Context ctx) {
@@ -57,6 +57,10 @@ public class MTGCardListView extends RelativeLayout {
         setListOn(); // default
     }
 
+    public void setEmptyString(int res){
+        emptyView.setText(res);
+    }
+
     public void loadCards(CardsBucket bucket, OnCardListener listener) {
         LOG.d();
 
@@ -70,7 +74,6 @@ public class MTGCardListView extends RelativeLayout {
         listView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
-        emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
 
         if (bucket.getCards().size() == CardDataSource.LIMIT) {
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
@@ -82,6 +85,7 @@ public class MTGCardListView extends RelativeLayout {
 
         progressBar.setVisibility(View.GONE);
         emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
+        LOG.d("visibility: "+emptyView.getVisibility());
     }
 
     public void setGridOn() {

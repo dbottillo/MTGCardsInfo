@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.view.activities;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,17 +25,15 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 public abstract class BasicActivity extends AppCompatActivity {
 
-    MTGApp app = null;
     int sizeToolbar = 0;
     Toolbar toolbar = null;
-    protected boolean isPortrait = false;
+    boolean isPortrait = false;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         LOG.d("============================================");
         LOG.d();
-        app = (MTGApp) getApplication();
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
 
         TypedValue tv = new TypedValue();
@@ -55,7 +52,7 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public abstract String getPageTrack();
 
-    protected void hideIme() {
+    void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), 0);
@@ -66,13 +63,13 @@ public abstract class BasicActivity extends AppCompatActivity {
         }
     }
 
-    protected void setupToolbar() {
+    void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     }
 
-    protected void changeFragment(BasicFragment fragment, String tag, boolean addToBackStack) {
+    void changeFragment(BasicFragment fragment, String tag, boolean addToBackStack) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         if (addToBackStack) {
@@ -81,7 +78,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void openRateTheApp() {
+    void openRateTheApp() {
         String packageName = getPackageName();
         if (BuildConfig.DEBUG) {
             packageName = "com.dbottillo.mtgsearchfree";
@@ -100,11 +97,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         TrackingManager.trackOpenRateApp();
     }
 
-    public SharedPreferences getSharedPreferences() {
-        return getSharedPreferences(MTGApp.PREFS_NAME, 0);
-    }
-
-    public void openDialog(String tag, DialogFragment fragment) {
+    void openDialog(String tag, DialogFragment fragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
         if (prev != null) {
@@ -118,7 +111,7 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public void requestPermission(PermissionUtil.TYPE type, PermissionUtil.PermissionListener listener) {
         this.permissionListener = listener;
-        if (PermissionUtil.permissionGranted(this, type)){
+        if (PermissionUtil.permissionGranted(this, type)) {
             listener.permissionGranted();
             return;
         }
@@ -128,10 +121,14 @@ public abstract class BasicActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)){
+        if (PermissionUtil.isGranted(grantResults)) {
             permissionListener.permissionGranted();
         } else {
             permissionListener.permissionNotGranted();
         }
+    }
+
+    public MTGApp getMTGApp() {
+        return (MTGApp) getApplication();
     }
 }

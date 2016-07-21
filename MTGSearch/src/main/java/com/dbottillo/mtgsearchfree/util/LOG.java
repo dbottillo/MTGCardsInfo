@@ -66,17 +66,15 @@ public final class LOG {
     }
 
     public static void d(String msg) {
-        if (!BuildConfig.DEBUG) {
-            return;
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, enhanced(msg));
         }
-        Log.d(TAG, enhanced(msg));
     }
 
     public static void v(String msg) {
-        if (!BuildConfig.DEBUG) {
-            return;
+        if (BuildConfig.DEBUG) {
+            Log.v(TAG, enhanced(msg));
         }
-        Log.v(TAG, enhanced(msg));
     }
 
     public static void d() {

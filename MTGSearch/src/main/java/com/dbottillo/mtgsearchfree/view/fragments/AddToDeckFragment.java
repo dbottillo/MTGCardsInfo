@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -32,29 +31,29 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AddToDeckFragment extends BasicFragment implements DecksView {
 
-    @Bind(R.id.choose_deck)
+    @BindView(R.id.choose_deck)
     Spinner chooseDeck;
-    @Bind(R.id.choose_quantity)
+    @BindView(R.id.choose_quantity)
     Spinner chooseQuantity;
-    @Bind(R.id.add_to_deck_sideboard)
+    @BindView(R.id.add_to_deck_sideboard)
     CheckBox sideboard;
 
     String[] decksChoose;
     String[] quantityChoose;
 
-    @Bind(R.id.new_deck_name_input_layout)
+    @BindView(R.id.new_deck_name_input_layout)
     TextInputLayout cardNameInputLayout;
-    @Bind(R.id.new_deck_name)
+    @BindView(R.id.new_deck_name)
     EditText deckName;
-    @Bind(R.id.new_deck_quantity_input_layout)
+    @BindView(R.id.new_deck_quantity_input_layout)
     TextInputLayout cardQuantityInputLayout;
-    @Bind(R.id.new_deck_quantity)
+    @BindView(R.id.new_deck_quantity)
     EditText cardQuantity;
 
     List<Deck> decks;
@@ -87,7 +86,7 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
         setupQuantitySpinner();
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDecks();
     }

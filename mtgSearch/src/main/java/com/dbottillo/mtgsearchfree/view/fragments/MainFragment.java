@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.view.fragments;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
@@ -50,7 +49,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -61,27 +60,30 @@ public class MainFragment extends BasicFragment implements
     CardsPresenter cardsPresenter;
     @Inject
     SetsPresenter setsPresenter;
+    @Inject
+    CardsHelper cardsHelper;
+    @Inject
+    GeneralPreferences generalPreferences;
 
     private MTGSet gameSet;
     private ArrayList<MTGSet> sets = new ArrayList<>();
     private CardsBucket cardBucket;
     private GameSetAdapter setAdapter;
-    private int currentSetPosition = -1;
-    MainActivity mainActivity;
+    private MainActivity mainActivity;
 
-    @Bind(R.id.set_arrow)
+    @BindView(R.id.set_arrow)
     ImageView setArrow;
-    @Bind(R.id.set_list_bg)
+    @BindView(R.id.set_list_bg)
     View setListBg;
-    @Bind(R.id.set_list)
+    @BindView(R.id.set_list)
     ListView setList;
-    @Bind(R.id.set_chooser_name)
+    @BindView(R.id.set_chooser_name)
     TextView chooserName;
-    @Bind(R.id.cards_list_view)
+    @BindView(R.id.cards_list_view)
     MTGCardListView mtgCardListView;
-    @Bind(R.id.cards_view_type)
+    @BindView(R.id.cards_view_type)
     ImageButton viewType;
-    @Bind(R.id.main_tooltip)
+    @BindView(R.id.main_tooltip)
     View tooltip;
 
     @Override
@@ -97,24 +99,25 @@ public class MainFragment extends BasicFragment implements
 
         setActionBarTitle(getString(R.string.app_long_name));
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         setsPresenter.init(this);
 
         setAdapter = new GameSetAdapter(getActivity().getApplicationContext(), sets);
-        setAdapter.setCurrent(currentSetPosition);
+        setAdapter.setCurrent(setsPresenter.getCurrentSetPosition());
         setList.setAdapter(setAdapter);
         setList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (currentSetPosition != position) {
-                    currentSetPosition = position;
+                if (setsPresenter.getCurrentSetPosition() != position) {
+                    setsPresenter.setSelected(position);
                     showHideSetList(true);
                 } else {
                     showHideSetList(false);
                 }
             }
         });
+        mtgCardListView.setEmptyString(R.string.empty_cards);
 
         view.findViewById(R.id.set_chooser).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +126,6 @@ public class MainFragment extends BasicFragment implements
             }
         });
 
-        GeneralPreferences generalPreferences = GeneralPreferences.with(getContext());
         if (generalPreferences.isTooltipMainToShow()) {
             tooltip.setVisibility(View.VISIBLE);
             MaterialWrapper.setElevation(tooltip, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
@@ -148,7 +150,6 @@ public class MainFragment extends BasicFragment implements
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("currentSetPosition", currentSetPosition);
         outState.putParcelableArrayList("SET", sets);
     }
 
@@ -189,7 +190,7 @@ public class MainFragment extends BasicFragment implements
     @OnClick(R.id.main_tooltip_close)
     public void onCloseTooltip(View view) {
         LOG.d();
-        GeneralPreferences.with(view.getContext()).setTooltipMainHide();
+        generalPreferences.setTooltipMainHide();
         AnimationUtil.animateHeight(tooltip, 0);
     }
 
@@ -222,11 +223,9 @@ public class MainFragment extends BasicFragment implements
 
             public void onAnimationEnd(Animation animation) {
                 if (loadSet) {
-                    TrackingManager.trackSet(gameSet, sets.get(currentSetPosition));
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putInt("setPosition", currentSetPosition);
-                    editor.apply();
-                    setAdapter.setCurrent(currentSetPosition);
+                    int pos = setsPresenter.getCurrentSetPosition();
+                    TrackingManager.trackSet(gameSet, sets.get(pos));
+                    setAdapter.setCurrent(pos);
                     setAdapter.notifyDataSetChanged();
                     loadSet();
                 }
@@ -236,7 +235,9 @@ public class MainFragment extends BasicFragment implements
 
             }
         });
-        getView().startAnimation(animation);
+        if (getView() != null) {
+            getView().startAnimation(animation);
+        }
     }
 
     private void setHeightView(View view, int value) {
@@ -250,10 +251,10 @@ public class MainFragment extends BasicFragment implements
         throw new UnsupportedOperationException();
     }
 
+    @Override
     public void setsLoaded(List<MTGSet> sets) {
         LOG.d();
-        currentSetPosition = sharedPreferences.getInt("setPosition", 0);
-        setAdapter.setCurrent(currentSetPosition);
+        setAdapter.setCurrent(setsPresenter.getCurrentSetPosition());
         this.sets.clear();
         for (MTGSet set : sets) {
             this.sets.add(set);
@@ -268,7 +269,7 @@ public class MainFragment extends BasicFragment implements
 
     private void loadSet() {
         LOG.d();
-        gameSet = sets.get(currentSetPosition);
+        gameSet = sets.get(setsPresenter.getCurrentSetPosition());
         chooserName.setText(gameSet.getName());
         cardsPresenter.loadCards(gameSet);
     }
@@ -286,8 +287,8 @@ public class MainFragment extends BasicFragment implements
 
     public void updateContent() {
         LOG.d();
-        CardsBucket bucket = CardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
-        CardsHelper.sortCards(sharedPreferences, bucket);
+        CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
+        cardsHelper.sortCards(bucket);
         mtgCardListView.loadCards(bucket, this);
     }
 
@@ -326,7 +327,8 @@ public class MainFragment extends BasicFragment implements
     public void onOptionSelected(MenuItem menuItem, MTGCard card, int position) {
         if (menuItem.getItemId() == R.id.action_add_to_deck) {
             DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card));
-        } else {
+
+        } else if (menuItem.getItemId() == R.id.action_add_to_favourites) {
             cardsPresenter.saveAsFavourite(card, true);
         }
     }

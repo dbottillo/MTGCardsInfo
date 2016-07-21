@@ -23,14 +23,11 @@
     <string name="version">Version</string>
     <string name="action_search">Search</string>
     <string name="search_result">Results:</string>
-    <string name="to_premium_btn">Open Play Store</string>
     <plurals name="search_limit">
         <item quantity="one">There is a limit of %d result,\n what about a more specific search?</item>
         <item quantity="other">There is a limit of %d results,\n what about a more specific search?</item>
     </plurals>
     <string name="minimum_search">Search requires at least one condition</string>
-    <string name="sets_open_play">In the free version of MTG Cards only the first three sets are available, if you want to see all sets you need to buy the full version of MTG Cards</string>
-    <string name="need_premium">Need Premium</string>
 
     <!-- filter panel -->
     <string name="mtg_color_white" translatable="false">W</string>
@@ -73,15 +70,12 @@
     <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
-    <string name="loading">Loading…</string>
     <string name="price_error">Error retrieving price</string>
     <string name="add_to_deck_title">Add to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
     <string name="menu_fullscreen_image" translatable="false">Full screen</string>
-    <string name="error_favourites">Impossible to load saved cards at the moment</string>
     <string name="action_lucky">I feel lucky</string>
-    <string name="lucky_again">I\'m feeling lucky again</string>
     <string name="lucky_title">Lucky?</string>
     <string name="menu_life_screen_on">Keep screen on</string>
     <string name="menu_life_two_hg">2HG game</string>
@@ -111,8 +105,8 @@
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
-    <string name="ok">OK</string>
     <string name="release_note_text">
+        - NEW: Eldritch Moon\n
         - NEW: Eternal Masters\n
         - NEW: Grid option view\n
         - NEW: Import deck\n
@@ -120,6 +114,7 @@
     </string>
     <string name="release_note_text_full">
         <b>Version 2.7.5:</b> \n
+        - NEW: Eldritch Moon \n
         - NEW: Eternal Masters \n
         - NEW: Grid option view \n
         - NEW: Import deck (.dec format) \n
@@ -189,25 +184,7 @@
     <string name="search_set_title">Set</string>
     <string name="search_hint_numbers" translatable="false">0,1,2,3…</string>
 
-    <string name="cd_price_go">See price</string>
-    <string name="cd_drawer_header">Planeswalker</string>
-    <string name="cd_card_image">Card Image</string>
-    <string name="cd_card_image_loader">Card Image Loader</string>
-    <string name="cd_filter">Filter</string>
-    <string name="cd_set_arrow">Sets</string>
-    <string name="cd_cards_sort">Sorting cards</string>
-    <string name="cd_cards_view_type">View type cards</string>
-    <string name="cd_again">Again</string>
-    <string name="cd_more_options">More options</string>
-    <string name="cd_deck_icon">Deck icon</string>
-    <string name="cd_delete_deck">Delete deck</string>
-    <string name="cd_library_icon">Library icon</string>
-    <string name="cd_edit">Edit</string>
-    <string name="cd_remove">Remove</string>
-    <string name="cd_action_search">Perform search</string>
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
-    <string name="favourite_migration_in_progress_title">Favourites migration</string>
-    <string name="favourite_migration_in_progress">Your favourites are migrating to a better system, check out this page later!</string>
     <string name="search_card_text">Card text</string>
     <string name="action_send_db">Copy db to sdcard</string>
     <string name="action_copy_db">Replace db from sdcard</string>
@@ -260,5 +237,24 @@
         <item>If you want to kill a lot of goblins, just make sure your defenses look like fun.</item>
         <item>Goblin lessons include the 2,071 tips for survival. Frek only remembered 2,070.</item>
     </string-array>
+
+    <string name="cd_price_go">See price</string>
+    <string name="cd_drawer_header">Planeswalker</string>
+    <string name="cd_card_image">Card Image</string>
+    <string name="cd_filter">Filter</string>
+    <string name="cd_set_arrow">Sets</string>
+    <string name="cd_cards_sort">Sorting cards</string>
+    <string name="cd_cards_view_type">View type cards</string>
+    <string name="cd_again">Again</string>
+    <string name="cd_more_options">More options</string>
+    <string name="cd_deck_icon">Deck icon</string>
+    <string name="cd_delete_deck">Delete deck</string>
+    <string name="cd_library_icon">Library icon</string>
+    <string name="cd_edit">Edit</string>
+    <string name="cd_remove">Remove</string>
+    <string name="cd_action_search">Perform search</string>
+    <string name="cd_join_beta_header">Join beta</string>
+    <string name="cd_close">Close</string>
+    <string name="cd_tooltip_arrow">Close tooltip</string>
 
 </resources>

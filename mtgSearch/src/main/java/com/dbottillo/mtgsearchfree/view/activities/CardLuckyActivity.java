@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +13,9 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
@@ -25,7 +28,7 @@ import java.util.Arrays;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -39,7 +42,10 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     @Inject
     CardsPresenter cardsPresenter;
 
-    @Bind(R.id.card_view)
+    @Inject
+    CardsPreferences cardsPreferences;
+
+    @BindView(R.id.card_view)
     MTGCardView cardView;
 
     public void onCreate(Bundle bundle) {
@@ -56,7 +62,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        MTGApp.uiGraph.inject(this);
+        getMTGApp().getUiGraph().inject(this);
         cardsPresenter.init(this);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,9 +144,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             return;
         }
         MTGCard card = luckyCards.remove(0);
-        SharedPreferences sharedPreferences = getSharedPreferences(MTGApp.PREFS_NAME, 0);
-        boolean showImage = sharedPreferences.getBoolean(BasicFragment.PREF_SHOW_IMAGE, true);
-        cardView.load(card, showImage);
+        cardView.load(card, cardsPreferences.showImage());
         if (luckyCards.size() <= 2) {
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
         }
@@ -160,7 +164,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = cardView.getCard();
-        if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
+        ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
+        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);

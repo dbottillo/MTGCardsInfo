@@ -23,7 +23,9 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
 import java.util.Calendar;
 
-import butterknife.Bind;
+import javax.inject.Inject;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.net.Uri.parse;
@@ -36,22 +38,25 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
 
     String versionName;
 
-    @Bind(R.id.share_app)
+    @BindView(R.id.share_app)
     View shareApp;
 
-    @Bind(R.id.send_feedback)
+    @BindView(R.id.send_feedback)
     Button sendFeedback;
 
-    @Bind(R.id.about_version)
+    @BindView(R.id.about_version)
     TextView version;
 
-    @Bind(R.id.copyright)
+    @BindView(R.id.copyright)
     TextView copyright;
 
-    @Bind(R.id.libraries_container)
+    @BindView(R.id.libraries_container)
     LinearLayout cardContainer;
 
     private long firstTap;
+
+    @Inject
+    GeneralPreferences generalPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,6 +66,8 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
 
         ButterKnife.bind(this, v);
         version.setOnTouchListener(this);
+
+        getMTGApp().getUiGraph().inject(this);
 
         versionName = "";
         try {
@@ -140,9 +147,10 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                 long seconds = diff / 1000;
                 if (seconds < 5) {
                     version.setOnTouchListener(null);
-                    GeneralPreferences.with(getActivity().getApplicationContext()).setDebug();
+                    generalPreferences.setDebug();
                     Toast.makeText(getActivity(), R.string.debug_mode_active, Toast.LENGTH_LONG).show();
                 }
+                v.performClick();
                 break;
             case MotionEvent.ACTION_MOVE:
                 break;

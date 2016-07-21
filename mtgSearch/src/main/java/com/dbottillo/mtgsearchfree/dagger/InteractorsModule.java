@@ -10,7 +10,7 @@ import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl;
-import com.dbottillo.mtgsearchfree.model.storage.CardFilterStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
@@ -23,8 +23,8 @@ import dagger.Provides;
 class InteractorsModule {
 
     @Provides
-    CardFilterInteractor provideCardFilterInteractor(CardFilterStorage filterStorage) {
-        return new CardFilterInteractorImpl(filterStorage);
+    CardFilterInteractor provideCardFilterInteractor(CardsPreferences cardsPreferences) {
+        return new CardFilterInteractorImpl(cardsPreferences);
     }
 
     @Provides
