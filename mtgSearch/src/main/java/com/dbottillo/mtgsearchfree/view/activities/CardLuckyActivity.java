@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
@@ -162,7 +164,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = cardView.getCard();
-        if (Arrays.asList(idFavourites).contains(currentCard.getMultiVerseId())) {
+        ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
+        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);

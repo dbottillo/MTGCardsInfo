@@ -30,6 +30,7 @@ import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -219,6 +220,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     private void reloadAdapter() {
         LOG.d();
         boolean showImage = cardsPreferences.showImage();
+        if (set != null || search != null){
+            cardsHelper.sortCards(bucket);
+        }
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(startPosition);
@@ -228,7 +232,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = adapter.getItem(viewPager.getCurrentItem());
-        if (isCardFavourite(currentCard.getMultiVerseId())) {
+        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);
@@ -287,7 +291,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
             // needs to loadSet filters first
             filterPresenter.loadFilter();
         } else {
-            cardsHelper.sortCards(bucket);
             reloadAdapter();
         }
     }
@@ -333,7 +336,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     public void filterLoaded(CardFilter filter) {
         LOG.d();
         this.bucket = cardsHelper.filterCards(filter, bucket);
-        cardsHelper.sortCards(bucket);
         reloadAdapter();
     }
 
