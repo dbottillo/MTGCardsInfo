@@ -206,7 +206,13 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
 //check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
 check.dependsOn 'checkstyle', 'pmd', 'lint'
 
+task testPreRelease
+testPreRelease.dependsOn 'testProdReleaseUnitTest','connectedProdDebugAndroidTest'
+
 task release
-release.dependsOn 'check', 'testProdReleaseUnitTest', 'connectedProdDebugAndroidTest', 'assembleProdRelease'
+release.dependsOn 'check', 'assembleProdRelease'
+
+task checkAndRelease
+checkAndRelease.dependsOn 'testPreRelease', 'release'
 
 apply plugin: 'com.google.gms.google-services'

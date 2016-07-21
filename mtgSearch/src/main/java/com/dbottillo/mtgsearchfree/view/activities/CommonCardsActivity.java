@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
@@ -19,7 +20,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
 
     private MenuItem favMenuItem = null;
     private MenuItem imageMenuItem = null;
-    protected int[] idFavourites;
+    int[] idFavourites;
 
     abstract MTGCard getCurrentCard();
 
@@ -29,12 +30,6 @@ public abstract class CommonCardsActivity extends BasicActivity {
 
     @Inject
     CardsPreferences cardsPreferences;
-
-    /*@Override
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        getMTGApp().getUiGraph().inject(this);
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,7 +85,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         MTGCard currentCard = getCurrentCard();
         if (currentCard != null && currentCard.getMultiVerseId() > 0) {
             favMenuItem.setVisible(true);
-            if (isCardFavourite(currentCard.getMultiVerseId())) {
+            if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
                 favMenuItem.setTitle(getString(R.string.favourite_remove));
                 favMenuItem.setIcon(R.drawable.ab_star_colored);
             } else {
@@ -105,15 +100,6 @@ public abstract class CommonCardsActivity extends BasicActivity {
         } else {
             imageMenuItem.setChecked(false);
         }
-    }
-
-    protected boolean isCardFavourite(int multiverseId) {
-        for (int id : idFavourites) {
-            if (id == multiverseId) {
-                return true;
-            }
-        }
-        return false;
     }
 
 }
