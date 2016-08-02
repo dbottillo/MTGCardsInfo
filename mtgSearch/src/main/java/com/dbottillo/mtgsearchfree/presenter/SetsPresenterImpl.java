@@ -38,7 +38,7 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
 
     public void loadSets() {
         LOG.d();
-        if (memoryStorage.isInit()) {
+        if (memoryStorage.getSets() != null) {
             setView.setsLoaded(memoryStorage.getSets());
             return;
         }
@@ -63,7 +63,6 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     @Override
     public void onNext(List<MTGSet> mtgSets) {
         LOG.d();
-        memoryStorage.setInit(true);
         memoryStorage.setSets(mtgSets);
         setView.setsLoaded(mtgSets);
     }
