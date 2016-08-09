@@ -71,4 +71,12 @@ public class IntParam implements Parcelable {
         result = 31 * result + value;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "IntParam{" +
+                "operator='" + operator + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }

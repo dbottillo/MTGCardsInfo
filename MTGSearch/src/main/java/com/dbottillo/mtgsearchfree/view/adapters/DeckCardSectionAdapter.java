@@ -15,7 +15,6 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private final Context mContext;
     private static final int SECTION_TYPE = 0;
 
-    private boolean mValid = true;
     private RecyclerView.Adapter mBaseAdapter;
     private SparseArray<Section> mSections = new SparseArray<>();
 
@@ -25,12 +24,11 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         mContext = context;
     }
 
-
-    public static class SectionViewHolder extends RecyclerView.ViewHolder {
+    private static class SectionViewHolder extends RecyclerView.ViewHolder {
 
         public TextView title;
 
-        public SectionViewHolder(View view) {
+        SectionViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.text_section);
         }
@@ -93,7 +91,7 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         notifyDataSetChanged();
     }
 
-    public int sectionedPositionToPosition(int sectionedPosition) {
+    private int sectionedPositionToPosition(int sectionedPosition) {
         if (isSectionHeaderPosition(sectionedPosition)) {
             return RecyclerView.NO_POSITION;
         }
@@ -108,7 +106,7 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         return sectionedPosition + offset;
     }
 
-    public boolean isSectionHeaderPosition(int position) {
+    private boolean isSectionHeaderPosition(int position) {
         return mSections.get(position) != null;
     }
 
@@ -122,7 +120,7 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     @Override
     public int getItemCount() {
-        return (mValid ? mBaseAdapter.getItemCount() + mSections.size() : 0);
+        return mBaseAdapter.getItemCount() + mSections.size();
     }
 
 }

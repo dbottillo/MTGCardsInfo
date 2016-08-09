@@ -60,6 +60,8 @@ public class MTGSearchView extends RelativeLayout {
     AppCompatCheckBox multi;
     @BindView(R.id.search_nm)
     AppCompatCheckBox noMulti;
+    @BindView(R.id.search_l)
+    AppCompatCheckBox land;
     @BindView(R.id.search_common)
     AppCompatCheckBox common;
     @BindView(R.id.search_uncommon)
@@ -145,6 +147,7 @@ public class MTGSearchView extends RelativeLayout {
         searchParams.setGreen(green.isChecked());
         searchParams.setOnlyMulti(multi.isChecked());
         searchParams.setNoMulti(noMulti.isChecked());
+        searchParams.setLand(land.isChecked());
         searchParams.setCommon(common.isChecked());
         searchParams.setUncommon(uncommon.isChecked());
         searchParams.setRare(rare.isChecked());
