@@ -166,37 +166,37 @@ public class DeckActivity extends BasicActivity implements DecksView {
         progressBar.setVisibility(View.GONE);
         List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
         cards.clear();
-        if (bucket.size() == 0) {
+        if (bucket.numberOfCards() == 0) {
             emptyView.setVisibility(View.VISIBLE);
             setTitle(deck.getName());
         } else {
             int startingPoint = 0;
-            if (bucket.creatures.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.creatures.size() + ")"));
-                startingPoint += bucket.creatures.size();
-                cards.addAll(bucket.creatures);
+            if (bucket.getNumberOfUniqueCreatures() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.getNumberOfCreatures() + ")"));
+                startingPoint += bucket.getNumberOfUniqueCreatures();
+                cards.addAll(bucket.getCreatures());
             }
-            if (bucket.instantAndSorceries.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + bucket.instantAndSorceries.size() + ")"));
-                startingPoint += bucket.instantAndSorceries.size();
-                cards.addAll(bucket.instantAndSorceries);
+            if (bucket.getNumberOfUniqueInstantAndSorceries() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + bucket.getNumberOfInstantAndSorceries() + ")"));
+                startingPoint += bucket.getNumberOfUniqueInstantAndSorceries();
+                cards.addAll(bucket.getInstantAndSorceries());
             }
-            if (bucket.other.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + bucket.other.size() + ")"));
-                startingPoint += bucket.other.size();
-                cards.addAll(bucket.other);
+            if (bucket.getNumberOfUniqueOther() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + bucket.getNumberOfOther() + ")"));
+                startingPoint += bucket.getNumberOfUniqueOther();
+                cards.addAll(bucket.getOther());
             }
-            if (bucket.lands.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + bucket.lands.size() + ")"));
-                startingPoint += bucket.lands.size();
-                cards.addAll(bucket.lands);
+            if (bucket.getNumberOfUniqueLands() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + bucket.getNumberOfLands() + ")"));
+                startingPoint += bucket.getNumberOfUniqueLands();
+                cards.addAll(bucket.getLands());
             }
-            if (bucket.side.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + bucket.side.size() + ")"));
-                cards.addAll(bucket.side);
+            if (bucket.numberOfUniqueCardsInSideboard() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + bucket.numberOfCardsInSideboard() + ")"));
+                cards.addAll(bucket.getSide());
             }
 
-            setTitle(deck.getName() + " (" + (bucket.sizeNoSideboard()) + "/" + bucket.sizeSideBoard() + ")");
+            setTitle(deck.getName() + " (" + (bucket.numberOfCardsWithoutSideboard()) + "/" + bucket.numberOfCardsInSideboard() + ")");
 
         }
         DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
