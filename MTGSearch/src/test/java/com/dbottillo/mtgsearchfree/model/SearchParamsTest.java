@@ -120,4 +120,11 @@ public class SearchParamsTest extends BaseTest {
         assertFalse(searchParams.isNoMulti());
         assertTrue(searchParams.onlyMulti());
     }
+
+    @Test
+    public void returnValidWithOnlyLandSet(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setLand(true);
+        assertTrue(searchParams.isValid());
+    }
 }

@@ -296,6 +296,14 @@
             android:text="@string/no_multi"
             android:textColor="@color/white"/>
 
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/search_l"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mtg_type_land"
+            android:textColor="@color/white"/>
+
     </LinearLayout>
 
     <TextView
