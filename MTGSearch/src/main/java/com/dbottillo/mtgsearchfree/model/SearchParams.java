@@ -23,9 +23,9 @@ public class SearchParams implements Parcelable {
         this.name = "";
         this.types = "";
         this.text = "";
-        this.cmc = new IntParam("",-1);
-        this.power = new IntParam("",-1);
-        this.tough = new IntParam("",-1);
+        this.cmc = null;
+        this.power = null;
+        this.tough = null;
         white = false;
         blue = false;
         black = false;

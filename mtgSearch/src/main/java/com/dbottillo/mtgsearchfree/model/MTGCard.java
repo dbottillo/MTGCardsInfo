@@ -31,8 +31,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     private int multiVerseId;
     private MTGSet set;
 
-
-    private int quantity = 1;
+    private int quantity;
     private boolean sideboard = false;
     private String layout;
     private String number;
@@ -44,13 +43,18 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.types = new ArrayList<>();
         this.subTypes = new ArrayList<>();
         this.rulings = new ArrayList<>();
-        this.quantity = -1;
+        this.quantity = 1;
         this.multiVerseId = -1;
     }
 
     public MTGCard(int id) {
         this();
         this.id = id;
+    }
+
+    public MTGCard(int id, int multiVerseId) {
+        this(id);
+        this.multiVerseId = multiVerseId;
     }
 
     public MTGCard(Parcel in) {
