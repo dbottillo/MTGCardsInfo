@@ -23,17 +23,11 @@ public class MTGLoader extends View {
     private float currentStep = 0.0f;
     private int currentPaintColor = 0;
     private boolean growing = true;
-
+    private final static float STEP = 0.05f;
+    private final static int DELAY_MILLIS = 40;
     private ArgbEvaluator argbEvaluator;
-
-    private static int delayMillis = 40;
-    private static MTGLoaderHandler loadingHandler;
-
     private FastOutLinearInInterpolator interpolator;
-
-    private static float STEP = 0.05f;
-
-    Paint paint = new Paint();
+    private Paint paint = new Paint();
 
     public MTGLoader(Context context) {
         this(context, null);
@@ -49,7 +43,7 @@ public class MTGLoader extends View {
         argbEvaluator = new ArgbEvaluator();
         interpolator = new FastOutLinearInInterpolator();
         setPaintColor();
-        loadingHandler = new MTGLoaderHandler(this);
+        MTGLoaderHandler loadingHandler = new MTGLoaderHandler(this);
         loadingHandler.sendEmptyMessage(0);
     }
 
@@ -102,7 +96,7 @@ public class MTGLoader extends View {
         }
 
         int radius = (int) (maxRadius * value);
-        canvas.drawCircle(size / 2, size / 2, radius, paint);
+        canvas.drawCircle(size / 2.f,  size / 2.f, radius, paint);
 
         currentStep += STEP;
         if (currentStep >= 1.0f) {
@@ -125,7 +119,7 @@ public class MTGLoader extends View {
         super.onMeasure(widthMeasureSpec, widthMeasureSpec); // always want a square canvas
 
         size = getMeasuredWidth();
-        maxRadius = size / 6;
+        maxRadius = size / 6.f;
     }
 
     private static class MTGLoaderHandler extends Handler {
@@ -138,10 +132,10 @@ public class MTGLoader extends View {
 
         @Override
         public synchronized void handleMessage(Message msg) {
-            if (loader.get() != null) {
-                loader.get().invalidate();
-
-                sendEmptyMessageDelayed(0, delayMillis);
+            MTGLoader mtgLoader = loader.get();
+            if (mtgLoader != null) {
+                mtgLoader.invalidate();
+                sendEmptyMessageDelayed(0, DELAY_MILLIS);
             }
         }
     }

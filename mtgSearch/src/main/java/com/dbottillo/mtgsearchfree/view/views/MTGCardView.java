@@ -54,7 +54,7 @@ public class MTGCardView extends RelativeLayout {
     @BindView(R.id.image_card_container)
     View cardImageContainer;
 
-    public static float RATIO_CARD = 1.39622641509434f;
+    public final static float RATIO_CARD = 1.39622641509434f;
     boolean isLandscape = false;
 
     public MTGCard getCard() {
@@ -78,7 +78,7 @@ public class MTGCardView extends RelativeLayout {
         View view = inflater.inflate(R.layout.view_mtg_card, this, true);
         ButterKnife.bind(this, view);
 
-        priceOnTcg.setText(Html.fromHtml("<i><u>TCG</i></u>"));
+        setTCGPriceTitle();
 
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
@@ -93,6 +93,10 @@ public class MTGCardView extends RelativeLayout {
             widthAvailable = size.x / 2 - paddingCard * 2;
         }
         UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
+    }
+
+    private void setTCGPriceTitle(){
+        priceOnTcg.setText(Html.fromHtml("<i><u>TCG</i></u>"));
     }
 
     private BroadcastReceiver priceReceiver = new BroadcastReceiver() {

@@ -21,22 +21,17 @@ public final class LOG {
     private static final StackTraceElement NOT_FOUND = new StackTraceElement("", "", "", 0);
 
     private static StackTraceElement determineCaller() {
+        StackTraceElement validElement = NOT_FOUND;
         for (final StackTraceElement element : new RuntimeException().getStackTrace()) {
-            if (element.getClassName().equals(LOG.class.getName())) {
-                continue;
+            if (!element.getClassName().equals(LOG.class.getName())
+                    && !element.getClassName().equals(BasicActivity.class.getName())
+                    && !element.getClassName().equals(BasicFragment.class.getName())
+                    && !element.getClassName().equals(Instrumentation.class.getName())) {
+                validElement = element;
+                break;
             }
-            if (element.getClassName().equals(BasicActivity.class.getName())) {
-                continue;
-            }
-            if (element.getClassName().equals(BasicFragment.class.getName())) {
-                continue;
-            }
-            if (element.getClassName().equals(Instrumentation.class.getName())) {
-                continue;
-            }
-            return element;
         }
-        return NOT_FOUND;
+        return validElement;
     }
 
     private static String getClassNameOnly(final String classNameWithPackage) {
@@ -114,7 +109,7 @@ public final class LOG {
                     d("" + gson.toJson(o));
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                d("Error dumping object: "+e.getLocalizedMessage());
             }
         }
     }

@@ -253,7 +253,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     public void favIdLoaded(int[] favourites) {
         LOG.d();
-        idFavourites = favourites;
+        idFavourites = favourites.clone();
 
         if (adapter == null) {
             // first time needs to loadSet cards
