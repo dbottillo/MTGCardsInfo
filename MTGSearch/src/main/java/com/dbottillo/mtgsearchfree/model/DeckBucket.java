@@ -7,14 +7,31 @@ import java.util.List;
 
 public class DeckBucket extends CardsBucket {
 
-    public ArrayList<MTGCard> creatures = new ArrayList<>();
-    public ArrayList<MTGCard> instantAndSorceries = new ArrayList<>();
-    public ArrayList<MTGCard> other = new ArrayList<>();
-    public ArrayList<MTGCard> lands = new ArrayList<>();
-    public ArrayList<MTGCard> side = new ArrayList<>();
+    private ArrayList<MTGCard> creatures = new ArrayList<>();
+    private ArrayList<MTGCard> instantAndSorceries = new ArrayList<>();
+    private ArrayList<MTGCard> other = new ArrayList<>();
+    private ArrayList<MTGCard> lands = new ArrayList<>();
+    private ArrayList<MTGCard> side = new ArrayList<>();
 
-    public int size() {
-        return creatures.size() + instantAndSorceries.size() + other.size() + lands.size() + side.size();
+
+    public ArrayList<MTGCard> getCreatures() {
+        return creatures;
+    }
+
+    public ArrayList<MTGCard> getInstantAndSorceries() {
+        return instantAndSorceries;
+    }
+
+    public ArrayList<MTGCard> getOther() {
+        return other;
+    }
+
+    public ArrayList<MTGCard> getLands() {
+        return lands;
+    }
+
+    public ArrayList<MTGCard> getSide() {
+        return side;
     }
 
     @Override
@@ -45,18 +62,74 @@ public class DeckBucket extends CardsBucket {
         return cards;
     }
 
-    public int sizeNoSideboard() {
-        return creatures.size() + instantAndSorceries.size() + other.size() + lands.size();
-    }
-
-    public int sizeSideBoard() {
-        return side.size();
-    }
-
     @Override
     public String toString() {
         return "DeckBucket: [nCreatures:" + creatures.size() + ", nLands" + lands.size()
                 + ", nInstantAndSorceries:" + instantAndSorceries.size() + ", nOther:" + other.size() + "]";
     }
 
+    public int numberOfCards() {
+        List<MTGCard> cards = getCards();
+        int total = 0;
+        for (MTGCard card : cards) {
+            total += card.getQuantity();
+        }
+        return total;
+    }
+
+    public int numberOfUniqueCards() {
+        return creatures.size() + instantAndSorceries.size() + other.size() + lands.size() + side.size();
+    }
+
+    public int numberOfCardsWithoutSideboard() {
+        return numberOfCards() - numberOfCardsInSideboard();
+    }
+
+    public int numberOfCardsInSideboard() {
+        return totalQuantityOfList(side);
+    }
+
+    public int numberOfUniqueCardsInSideboard() {
+        return side.size();
+    }
+
+    public int getNumberOfUniqueCreatures() {
+        return creatures.size();
+    }
+
+    public int getNumberOfCreatures() {
+        return totalQuantityOfList(creatures);
+    }
+
+    public int getNumberOfUniqueInstantAndSorceries() {
+        return instantAndSorceries.size();
+    }
+
+    public int getNumberOfInstantAndSorceries() {
+        return totalQuantityOfList(instantAndSorceries);
+    }
+
+    public int getNumberOfUniqueLands() {
+        return lands.size();
+    }
+
+    public int getNumberOfLands() {
+        return totalQuantityOfList(lands);
+    }
+
+    public int getNumberOfUniqueOther() {
+        return other.size();
+    }
+
+    public int getNumberOfOther() {
+        return totalQuantityOfList(other);
+    }
+
+    private static int totalQuantityOfList(List<MTGCard> list){
+        int total = 0;
+        for (MTGCard card : list) {
+            total += card.getQuantity();
+        }
+        return total;
+    }
 }

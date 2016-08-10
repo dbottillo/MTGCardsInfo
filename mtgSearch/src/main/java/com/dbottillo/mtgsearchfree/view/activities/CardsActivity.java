@@ -39,7 +39,6 @@ import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.squareup.picasso.Picasso;
 
@@ -220,7 +219,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     private void reloadAdapter() {
         LOG.d();
         boolean showImage = cardsPreferences.showImage();
-        if (set != null || search != null){
+        if (set != null || search != null) {
             cardsHelper.sortCards(bucket);
         }
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
@@ -254,7 +253,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     public void favIdLoaded(int[] favourites) {
         LOG.d();
-        idFavourites = favourites;
+        idFavourites = favourites.clone();
 
         if (adapter == null) {
             // first time needs to loadSet cards
@@ -300,6 +299,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         LOG.d();
         this.bucket = bucket;
         reloadAdapter();
+    }
+
+    @Override
+    public void deckExported(boolean success) {
+        throw new UnsupportedOperationException();
     }
 
     public void showError(String message) {

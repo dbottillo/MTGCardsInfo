@@ -18,6 +18,7 @@ import rx.Observable;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 public class SetsPresenterImplTest extends BaseTest {
 
@@ -31,19 +32,28 @@ public class SetsPresenterImplTest extends BaseTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
+        MemoryStorage memoryStorage = new MemoryStorage();
         interactor = mock(SetsInteractor.class);
         view = mock(SetsView.class);
         when(interactor.load()).thenReturn(Observable.just(sets));
-        presenter = new SetsPresenterImpl(interactor, new TestRxWrapper<List<MTGSet>>(),
-                mock(CardsPreferences.class), mock(MemoryStorage.class));
+        presenter = new SetsPresenterImpl(interactor, new TestRxWrapperFactory(),
+                mock(CardsPreferences.class), memoryStorage);
         presenter.init(view);
     }
 
     @Test
-    public void testLoadSets() throws Exception {
+    public void willLoadSetsFromInteractorOnColdStart() throws Exception {
         presenter.loadSets();
         verify(interactor).load();
         verify(view).setsLoaded(sets);
+    }
+
+    @Test
+    public void cachesSetsAfterFirstRun() throws Exception {
+        presenter.loadSets();
+        presenter.loadSets();
+        verify(interactor, times(1)).load();
+        verify(view, times(2)).setsLoaded(sets);
     }
 
 }

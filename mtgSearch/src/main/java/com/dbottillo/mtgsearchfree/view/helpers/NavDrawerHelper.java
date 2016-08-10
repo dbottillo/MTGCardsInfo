@@ -27,14 +27,12 @@ public class NavDrawerHelper {
     private TextView headerTitle;
     private TextView headerText;
     private Resources resources;
-    private GeneralPreferences generalPreferences;
 
     public NavDrawerHelper(final MainActivity activity, NavigationView navigationView,
                            Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener,
                            GeneralPreferences generalPreferences) {
         this.navigationView = navigationView;
         this.resources = activity.getResources();
-        this.generalPreferences = generalPreferences;
         drawerLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
             /* Called when a drawer has settled in a completely closed state. */

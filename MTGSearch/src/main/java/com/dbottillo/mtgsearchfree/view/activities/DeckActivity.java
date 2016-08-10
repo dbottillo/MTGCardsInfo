@@ -71,7 +71,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         setupToolbar();
 
         deck = getIntent().getParcelableExtra("deck");
-        setTitle(deck.getName());
+        setTitle(deck.getName() == null ? getString(R.string.deck_title) : deck.getName());
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeButtonEnabled(true);
@@ -88,7 +88,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(this, cards, R.menu.deck_card, new OnCardListener() {
             @Override
             public void onCardSelected(MTGCard card, int position, View view) {
-                startActivity(CardsActivity.newInstance(DeckActivity.this, deck, position));
+                startActivity(CardsActivity.newInstance(DeckActivity.this, deck, cardPositionWithoutSections(card)));
             }
 
             @Override
@@ -113,6 +113,17 @@ public class DeckActivity extends BasicActivity implements DecksView {
         getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
         decksPresenter.loadDeck(deck);
+    }
+
+    private int cardPositionWithoutSections(MTGCard card){
+        int positionWithoutSections = 0;
+        for (int i=0; i<cards.size(); i++){
+            if (cards.get(i).equals(card)){
+                positionWithoutSections = i;
+                break;
+            }
+        }
+        return positionWithoutSections;
     }
 
     @Override
@@ -155,42 +166,63 @@ public class DeckActivity extends BasicActivity implements DecksView {
         progressBar.setVisibility(View.GONE);
         List<DeckCardSectionAdapter.Section> sections = new ArrayList<>();
         cards.clear();
-        if (bucket.size() == 0) {
+        if (bucket.numberOfCards() == 0) {
             emptyView.setVisibility(View.VISIBLE);
             setTitle(deck.getName());
         } else {
             int startingPoint = 0;
-            if (bucket.creatures.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.creatures.size() + ")"));
-                startingPoint += bucket.creatures.size();
-                cards.addAll(bucket.creatures);
+            if (bucket.getNumberOfUniqueCreatures() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + bucket.getNumberOfCreatures() + ")"));
+                startingPoint += bucket.getNumberOfUniqueCreatures();
+                cards.addAll(bucket.getCreatures());
             }
-            if (bucket.instantAndSorceries.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + bucket.instantAndSorceries.size() + ")"));
-                startingPoint += bucket.instantAndSorceries.size();
-                cards.addAll(bucket.instantAndSorceries);
+            if (bucket.getNumberOfUniqueInstantAndSorceries() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + bucket.getNumberOfInstantAndSorceries() + ")"));
+                startingPoint += bucket.getNumberOfUniqueInstantAndSorceries();
+                cards.addAll(bucket.getInstantAndSorceries());
             }
-            if (bucket.other.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + bucket.other.size() + ")"));
-                startingPoint += bucket.other.size();
-                cards.addAll(bucket.other);
+            if (bucket.getNumberOfUniqueOther() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + bucket.getNumberOfOther() + ")"));
+                startingPoint += bucket.getNumberOfUniqueOther();
+                cards.addAll(bucket.getOther());
             }
-            if (bucket.lands.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + bucket.lands.size() + ")"));
-                startingPoint += bucket.lands.size();
-                cards.addAll(bucket.lands);
+            if (bucket.getNumberOfUniqueLands() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + bucket.getNumberOfLands() + ")"));
+                startingPoint += bucket.getNumberOfUniqueLands();
+                cards.addAll(bucket.getLands());
             }
-            if (bucket.side.size() > 0) {
-                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + bucket.side.size() + ")"));
-                cards.addAll(bucket.side);
+            if (bucket.numberOfUniqueCardsInSideboard() > 0) {
+                sections.add(new DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + bucket.numberOfCardsInSideboard() + ")"));
+                cards.addAll(bucket.getSide());
             }
 
-            setTitle(deck.getName() + " (" + (bucket.sizeNoSideboard()) + "/" + bucket.sizeSideBoard() + ")");
+            setTitle(deck.getName() + " (" + (bucket.numberOfCardsWithoutSideboard()) + "/" + bucket.numberOfCardsInSideboard() + ")");
 
         }
         DeckCardSectionAdapter.Section[] dummy = new DeckCardSectionAdapter.Section[sections.size()];
         deckCardSectionAdapter.setSections(sections.toArray(dummy));
         deckCardSectionAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void deckExported(boolean success) {
+        if (success){
+            Snackbar snackbar = Snackbar
+                    .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.share), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
+                            startActivity(Intent.createChooser(intent, getString(R.string.share)));
+                            TrackingManager.trackDeckExport();
+                        }
+                    });
+            snackbar.show();
+        } else {
+            exportDeckNotAllowed();
+        }
     }
 
     @Override
@@ -203,19 +235,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
             @Override
             public void permissionGranted() {
-                Snackbar snackbar = Snackbar
-                        .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
-                        .setAction(getString(R.string.share), new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setType("text/plain");
-                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
-                                startActivity(Intent.createChooser(intent, getString(R.string.share)));
-                                TrackingManager.trackDeckExport();
-                            }
-                        });
-                snackbar.show();
+                decksPresenter.exportDeck(deck, cards);
             }
 
             @Override
@@ -228,11 +248,6 @@ public class DeckActivity extends BasicActivity implements DecksView {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)) {
-            exportDeck();
-        } else {
-            exportDeckNotAllowed();
-        }
     }
 
     private void exportDeckNotAllowed() {

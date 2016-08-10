@@ -40,7 +40,7 @@ public class MTGCardTest extends BaseTest {
         card.setNumber("23");
         card.setPower("2");
         card.setQuantity(23);
-        card.setRarity(CardProperties.RARITY.MYTHIC.key);
+        card.setRarity(CardProperties.RARITY.MYTHIC.getKey());
         card.setText("text");
         card.setToughness("4");
         card.setType("Creature");
@@ -59,22 +59,22 @@ public class MTGCardTest extends BaseTest {
     @Test
     public void card_willParseColor() {
         MTGCard other = new MTGCard(2);
-        other.addColor(CardProperties.COLOR.WHITE.key);
-        assertTrue(other.getColors().contains(CardProperties.COLOR.WHITE.value));
-        other.addColor(CardProperties.COLOR.BLUE.key);
-        assertTrue(other.getColors().contains(CardProperties.COLOR.BLUE.value));
-        other.addColor(CardProperties.COLOR.BLACK.key);
-        assertTrue(other.getColors().contains(CardProperties.COLOR.BLACK.value));
-        other.addColor(CardProperties.COLOR.RED.key);
-        assertTrue(other.getColors().contains(CardProperties.COLOR.RED.value));
-        other.addColor(CardProperties.COLOR.GREEN.key);
-        assertTrue(other.getColors().contains(CardProperties.COLOR.GREEN.value));
+        other.addColor(CardProperties.COLOR.WHITE.getKey());
+        assertTrue(other.getColors().contains(CardProperties.COLOR.WHITE.getValue()));
+        other.addColor(CardProperties.COLOR.BLUE.getKey());
+        assertTrue(other.getColors().contains(CardProperties.COLOR.BLUE.getValue()));
+        other.addColor(CardProperties.COLOR.BLACK.getKey());
+        assertTrue(other.getColors().contains(CardProperties.COLOR.BLACK.getValue()));
+        other.addColor(CardProperties.COLOR.RED.getKey());
+        assertTrue(other.getColors().contains(CardProperties.COLOR.RED.getValue()));
+        other.addColor(CardProperties.COLOR.GREEN.getKey());
+        assertTrue(other.getColors().contains(CardProperties.COLOR.GREEN.getValue()));
     }
 
     @Test
     public void card_willDetectEldrazi() {
         MTGCard other = new MTGCard(1);
-        other.addColor(CardProperties.COLOR.WHITE.key);
+        other.addColor(CardProperties.COLOR.WHITE.getKey());
         assertFalse(other.isEldrazi());
         other = new MTGCard(1);
         other.setMultiColor(true);
@@ -92,13 +92,13 @@ public class MTGCardTest extends BaseTest {
     @Test
     public void card_willRetrieveSingleColor() {
         MTGCard card = new MTGCard(1);
-        card.addColor(CardProperties.COLOR.WHITE.key);
-        card.addColor(CardProperties.COLOR.BLUE.key);
+        card.addColor(CardProperties.COLOR.WHITE.getKey());
+        card.addColor(CardProperties.COLOR.BLUE.getKey());
         card.setMultiColor(true);
         assertThat(card.getSingleColor(), is(-1));
         card = new MTGCard(1);
-        card.addColor(CardProperties.COLOR.BLUE.key);
-        assertThat(card.getSingleColor(), is(CardProperties.COLOR.BLUE.value));
+        card.addColor(CardProperties.COLOR.BLUE.getKey());
+        assertThat(card.getSingleColor(), is(CardProperties.COLOR.BLUE.getValue()));
     }
 
 }

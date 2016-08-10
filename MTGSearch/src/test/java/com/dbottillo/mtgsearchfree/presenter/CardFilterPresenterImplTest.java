@@ -23,11 +23,9 @@ import static org.mockito.Mockito.when;
 @SmallTest
 public class CardFilterPresenterImplTest extends BaseTest {
 
-    CardFilterPresenter presenter;
-
-    CardFilterInteractor interactor;
-
-    CardFilterView view;
+    private CardFilterPresenter presenter;
+    private CardFilterInteractor interactor;
+    private CardFilterView view;
 
     @Mock
     CardFilter cardFilter;
@@ -38,17 +36,13 @@ public class CardFilterPresenterImplTest extends BaseTest {
         interactor = mock(CardFilterInteractor.class);
         view = mock(CardFilterView.class);
         when(interactor.load()).thenReturn(Observable.just(cardFilter));
-        presenter = new CardFilterPresenterImpl(interactor, new TestRxWrapper<CardFilter>());
+        presenter = new CardFilterPresenterImpl(interactor, new TestRxWrapperFactory(), new MemoryStorage());
         presenter.init(view);
-        CardFilterMemoryStorage.init = false;
-        CardFilterMemoryStorage.filter = null;
     }
 
     @Test
     public void testLoadFilter() {
-        System.out.println("TEST - load filter");
         presenter.loadFilter();
-        System.out.println("TEST - checking");
         verify(view).filterLoaded(cardFilter);
         verify(interactor).load();
     }

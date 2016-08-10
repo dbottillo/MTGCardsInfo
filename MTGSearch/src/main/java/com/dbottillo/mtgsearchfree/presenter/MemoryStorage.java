@@ -1,51 +1,29 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 
 import java.util.List;
 
 public class MemoryStorage {
 
+    private int[] favourites = null;
+    private List<MTGSet> sets;
+    private CardFilter filter;
+
     public MemoryStorage() {
 
     }
 
-    private CardsBucket bucket = null;
-    private int[] favourites = null;
-    private boolean init;
-    private List<MTGSet> sets;
-
-    public CardsBucket getBucket() {
-        return bucket;
-    }
-
-    public void setBucket(CardsBucket bucket) {
-        this.bucket = bucket;
-    }
-
     public int[] getFavourites() {
-        return favourites;
+        if (favourites == null){
+            return null;
+        }
+        return favourites.clone();
     }
 
     public void setFavourites(int[] favourites) {
-        this.favourites = favourites;
-    }
-
-    boolean isBucketType(String value) {
-        return !(bucket == null || !bucket.getKey().equals(value));
-    }
-
-    void invalidateBucket() {
-        bucket = null;
-    }
-
-    public boolean isInit() {
-        return init;
-    }
-
-    public void setInit(boolean init) {
-        this.init = init;
+        this.favourites = favourites.clone();
     }
 
     public List<MTGSet> getSets() {
@@ -54,5 +32,13 @@ public class MemoryStorage {
 
     public void setSets(List<MTGSet> sets) {
         this.sets = sets;
+    }
+
+    public CardFilter getFilter() {
+        return filter;
+    }
+
+    public void setFilter(CardFilter filter) {
+        this.filter = filter;
     }
 }

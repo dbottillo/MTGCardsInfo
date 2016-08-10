@@ -23,8 +23,6 @@ import java.util.List;
 import rx.Observable;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -34,13 +32,10 @@ import static org.mockito.Mockito.when;
 
 public class CardsPresenterImplTest extends BaseTest {
 
-    CardsPresenter presenter;
-
-    CardsInteractor interactor;
-
-    CardsView view;
-
-    MemoryStorage memoryStorage;
+    private CardsPresenter presenter;
+    private CardsInteractor interactor;
+    private CardsView view;
+    private int[] idFavs = new int[]{2, 3, 4};
 
     @Mock
     Deck deck;
@@ -63,8 +58,6 @@ public class CardsPresenterImplTest extends BaseTest {
     @Mock
     List<MTGCard> setCards;
 
-    private int[] idFavs;
-
     @Mock
     List<MTGCard> searchCards;
 
@@ -80,7 +73,7 @@ public class CardsPresenterImplTest extends BaseTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        memoryStorage = new MemoryStorage();
+        MemoryStorage memoryStorage = new MemoryStorage();
         interactor = mock(CardsInteractor.class);
         view = mock(CardsView.class);
         when(deck.getName()).thenReturn("deck");
@@ -96,9 +89,7 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
         presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
-                new TestRxWrapper<List<MTGCard>>(),
-                new TestRxDoubleWrapper<List<MTGCard>, DeckBucket>(),
-                new TestRxWrapper<int[]>(), memoryStorage);
+                new TestRxWrapperFactory(), memoryStorage);
         presenter.init(view);
     }
 
@@ -164,30 +155,6 @@ public class CardsPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void removeFavsInvalidateFavCache() {
-        presenter.loadFavourites();
-        assertNotNull(memoryStorage.getBucket());
-        presenter.removeFromFavourite(card, false);
-        assertNull(memoryStorage.getBucket());
-    }
-
-    @Test
-    public void saveFavsInvalidateFavCache() {
-        presenter.loadFavourites();
-        assertNotNull(memoryStorage.getBucket());
-        presenter.saveAsFavourite(card, false);
-        assertNull(memoryStorage.getBucket());
-    }
-
-    @Test
-    public void changeFavsNotInvalidateNonFavCache() {
-        presenter.doSearch(searchParams);
-        assertNotNull(memoryStorage.getBucket());
-        presenter.saveAsFavourite(card, false);
-        assertNotNull(memoryStorage.getBucket());
-    }
-
-    @Test
     public void testLoadCards() {
         presenter.loadCards(set);
         verify(interactor).loadSet(set);
@@ -198,9 +165,17 @@ public class CardsPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void testLoadIdFavourites() {
+    public void loadIDFavsFromDatabaseOnColdStart() {
         presenter.loadIdFavourites();
         verify(interactor).loadIdFav();
         verify(view).favIdLoaded(idFavs);
+    }
+
+    @Test
+    public void keepIDFavsInCacheAfterFirstRun() throws InterruptedException {
+        presenter.loadIdFavourites();
+        presenter.loadIdFavourites();
+        verify(interactor, times(1)).loadIdFav();
+        verify(view, times(2)).favIdLoaded(idFavs);
     }
 }

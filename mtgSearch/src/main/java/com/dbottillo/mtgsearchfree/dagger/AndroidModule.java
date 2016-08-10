@@ -4,17 +4,14 @@ import android.content.Context;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
-import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
 import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
@@ -65,28 +62,8 @@ public class AndroidModule {
     }
 
     @Provides
-    RxWrapper<List<MTGSet>> provideListMTGSetWrapper() {
-        return new RxWrapper<>();
-    }
-
-    @Provides
-    RxWrapper<CardFilter> provideCardFilterWrapper() {
-        return new RxWrapper<>();
-    }
-
-    @Provides
-    RxWrapper<List<Player>> provideLisPlayerWrapper() {
-        return new RxWrapper<>();
-    }
-
-    @Provides
-    RxWrapper<List<MTGCard>> provideListCardWrapper() {
-        return new RxWrapper<>();
-    }
-
-    @Provides
-    RxWrapper<List<Deck>> provideListDeckWrapper() {
-        return new RxWrapper<>();
+    RxWrapperFactory provideRxWrapperFactory() {
+        return new RxWrapperFactory();
     }
 
     @Provides

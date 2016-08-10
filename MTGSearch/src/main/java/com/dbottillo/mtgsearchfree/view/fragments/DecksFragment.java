@@ -294,6 +294,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     @Override
+    public void deckExported(boolean success) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
@@ -322,7 +327,12 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     public void permissionGranted() {
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+        } else {
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+        }
         intent.setType("*/*");
         startActivityForResult(intent, READ_REQUEST_CODE);
     }

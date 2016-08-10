@@ -109,6 +109,15 @@ public class SearchParamsTest extends BaseTest {
     }
 
     @Test
+    public void isNotValid(){
+        SearchParams searchParams = new SearchParams();
+        assertThat(searchParams.isValid(), is(false));
+
+        searchParams.setPower(null);
+        assertThat(searchParams.isValid(), is(false));
+    }
+
+    @Test
     public void searchParams_willHandleMulticolorOption() {
         SearchParams searchParams = new SearchParams();
         assertFalse(searchParams.isNoMulti());
@@ -119,5 +128,12 @@ public class SearchParamsTest extends BaseTest {
         searchParams.setOnlyMulti(true);
         assertFalse(searchParams.isNoMulti());
         assertTrue(searchParams.onlyMulti());
+    }
+
+    @Test
+    public void returnValidWithOnlyLandSet(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setLand(true);
+        assertTrue(searchParams.isValid());
     }
 }

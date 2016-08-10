@@ -32,7 +32,7 @@ import io.fabric.sdk.android.Fabric;
 public class MTGApp extends Application {
 
     private UiComponent uiGraph;
-    public static String INTENT_RELEASE_NOTE_PUSH = "Release push note";
+    public static final String INTENT_RELEASE_NOTE_PUSH = "Release push note";
     boolean isUnitTesting = false;
 
     @Inject
