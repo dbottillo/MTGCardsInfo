@@ -335,7 +335,10 @@ public class SearchParams implements Parcelable {
 
     public boolean isValid() {
         return ((name != null && name.length() > 0) || (types != null && types.length() > 0)
-                || cmc.getValue() > 0 || power.getValue() > 0 || tough.getValue() > 0 || setId > 0
+                || (cmc != null && cmc.getValue() > 0)
+                || (power != null && power.getValue() > 0)
+                || (tough != null && tough.getValue() > 0)
+                || setId > 0
                 || (text != null && text.length() > 0)
                 || land
                 || atLeastOneColor() || atLeastOneRarity());

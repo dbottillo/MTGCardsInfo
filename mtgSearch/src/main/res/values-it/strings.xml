@@ -80,6 +80,7 @@
     <string name="action_remove_one">Rimuovi una</string>
     <string name="action_remove_all">Rimuovi tutte</string>
 
+    <string name="deck_title">Mazzo</string>
     <string name="deck_subtitle">%1s carte</string>
     <string name="deck_delete_title">Cancellazione mazzo</string>
     <string name="deck_delete_text">Ci sono carte in questo mazzo. Sei sicuro?</string>
@@ -91,13 +92,13 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - NUOVO: Eldritch Moon\n
-        - NUOVO: Eternal Masters\n
-        - NUOVO: Modalità griglia\n
-        - NUOVO: Importa mazzo\n
-        - NUOVO: Duel Decks: Zendikar vs. Eldrazi
+        - NUOVO: Mazzi, risolti bug\n
+        - NUOVO: Opzione terra per ricerca
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.7.6:</b> \n
+        - NUOVO: Mazzi, risolti bug\n
+        - NUOVO: Opzione terra per ricerca \n\n
         <b>Version 2.7.5:</b> \n
         - NUOVO: Eldritch Moon \n
         - NEW: Eternal Masters \n

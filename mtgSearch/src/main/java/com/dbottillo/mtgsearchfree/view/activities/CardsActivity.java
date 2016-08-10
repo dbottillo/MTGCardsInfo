@@ -302,6 +302,11 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         reloadAdapter();
     }
 
+    @Override
+    public void deckExported(boolean success) {
+        throw new UnsupportedOperationException();
+    }
+
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

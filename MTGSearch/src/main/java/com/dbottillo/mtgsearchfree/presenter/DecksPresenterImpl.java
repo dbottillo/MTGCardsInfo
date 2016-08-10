@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,21 +20,21 @@ import rx.functions.Func1;
 public class DecksPresenterImpl implements DecksPresenter {
 
     DecksInteractor interactor;
-    DecksView decksView;
-    RxWrapper<List<Deck>> deckWrapper;
-    RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper;
-
-    DeckMapper deckMapper;
+    private DecksView decksView;
+    private RxWrapper<Boolean> exportWrapper;
+    private RxWrapper<List<Deck>> deckWrapper;
+    private RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper;
+    private DeckMapper deckMapper;
 
     @Inject
     public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper,
-                              RxWrapper<List<Deck>> deckWrapper,
-                              RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper) {
+                              RxWrapperFactory rxWrapperFactory) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = deckMapper;
-        this.deckWrapper = deckWrapper;
-        this.cardWrapper = cardWrapper;
+        this.exportWrapper = rxWrapperFactory.singleWrapper();
+        this.deckWrapper = rxWrapperFactory.singleWrapper();
+        this.cardWrapper = rxWrapperFactory.doubleWrapper();
     }
 
     public void init(DecksView view) {
@@ -98,6 +99,26 @@ public class DecksPresenterImpl implements DecksPresenter {
     public void importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
+    }
+
+    @Override
+    public void exportDeck(Deck deck, List<MTGCard> cards) {
+        exportWrapper.run(interactor.exportDeck(deck, cards), new RxWrapper.RxWrapperListener<Boolean>() {
+            @Override
+            public void onNext(Boolean data) {
+                decksView.deckExported(data);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+
+            }
+        });
     }
 
     private Func1<List<MTGCard>, DeckBucket> mapper = new Func1<List<MTGCard>, DeckBucket>() {

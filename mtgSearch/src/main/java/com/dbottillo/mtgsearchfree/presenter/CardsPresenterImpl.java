@@ -33,19 +33,16 @@ public class CardsPresenterImpl implements CardsPresenter {
     private boolean grid = true;
     private boolean firstTypeTypeCheck = true;
 
-
     @Inject
     public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralPreferences generalPreferences,
-                              RxWrapper<List<MTGCard>> cardsWrapper,
-                              RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper,
-                              RxWrapper<int[]> favWrapper, MemoryStorage memoryStorage) {
+                              RxWrapperFactory rxWrapperFactory, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = mapper;
         this.generalPreferences = generalPreferences;
-        this.cardsWrapper = cardsWrapper;
-        this.deckWrapper = deckWrapper;
-        this.favWrapper = favWrapper;
+        this.cardsWrapper = rxWrapperFactory.singleWrapper();
+        this.deckWrapper = rxWrapperFactory.doubleWrapper();
+        this.favWrapper = rxWrapperFactory.singleWrapper();
         this.memoryStorage = memoryStorage;
     }
 

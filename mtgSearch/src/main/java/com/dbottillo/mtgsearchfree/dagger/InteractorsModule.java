@@ -15,6 +15,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import dagger.Module;
 import dagger.Provides;
@@ -43,8 +44,8 @@ class InteractorsModule {
     }
 
     @Provides
-    DecksInteractor provideDecksInteractor(DecksStorage decksStorage) {
-        return new DecksInteractorImpl(decksStorage);
+    DecksInteractor provideDecksInteractor(DecksStorage decksStorage, FileUtil fileUtil) {
+        return new DecksInteractorImpl(decksStorage, fileUtil);
     }
 }
 

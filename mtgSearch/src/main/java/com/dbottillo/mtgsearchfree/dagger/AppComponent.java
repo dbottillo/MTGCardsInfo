@@ -26,6 +26,7 @@ import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
@@ -59,19 +60,7 @@ public interface AppComponent {
 
     DecksStorage getDecksStorage();
 
-    RxWrapper<List<MTGSet>> getRxWrapperListMTGSet();
-
-    RxWrapper<CardFilter> getRxWrapperCardFilter();
-
-    RxWrapper<List<Player>> getRxWrapperListPlayer();
-
-    RxWrapper<List<MTGCard>> getRxWrapperListCard();
-
-    RxWrapper<List<Deck>> getRxWrapperListDeck();
-
-    RxDoubleWrapper<List<MTGCard>, DeckBucket> getRxWrapperDeckBucket();
-
-    RxWrapper<int[]> getRxWrapperFav();
+    RxWrapperFactory getRxWrapperFactory();
 
     DeckMapper getDeckMapper();
 

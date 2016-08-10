@@ -38,7 +38,7 @@ public class CardFilterPresenterImplTest extends BaseTest {
         interactor = mock(CardFilterInteractor.class);
         view = mock(CardFilterView.class);
         when(interactor.load()).thenReturn(Observable.just(cardFilter));
-        presenter = new CardFilterPresenterImpl(interactor, new TestRxWrapper<CardFilter>());
+        presenter = new CardFilterPresenterImpl(interactor, new TestRxWrapperFactory());
         presenter.init(view);
         CardFilterMemoryStorage.init = false;
         CardFilterMemoryStorage.filter = null;

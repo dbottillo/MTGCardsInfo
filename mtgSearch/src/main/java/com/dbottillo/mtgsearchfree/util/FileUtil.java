@@ -116,7 +116,7 @@ public class FileUtil {
         return new File(root, StringUtil.clearDeckName(deck) + ".dec");
     }
 
-    public static boolean downloadDeckToSdCard(Context context, Deck deck, ArrayList<MTGCard> cards) {
+    public boolean downloadDeckToSdCard(Deck deck, List<MTGCard> cards) {
         File deckFile = fileNameForDeck(deck);
         if (deckFile == null) {
             return false;
@@ -141,7 +141,6 @@ public class FileUtil {
             writer.close();
             return true;
         } catch (IOException e) {
-            Toast.makeText(context, context.getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
             TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }

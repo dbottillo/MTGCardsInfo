@@ -69,10 +69,9 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.removeCard(deck, card)).thenReturn(Observable.just(cards));
         when(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards));
         when(interactor.editDeck(deck, "deck")).thenReturn(Observable.just(cards));
+        when(interactor.exportDeck(deck, cards)).thenReturn(Observable.just(true));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
-        presenter = new DecksPresenterImpl(interactor, deckMapper,
-                new TestRxWrapper<List<Deck>>(),
-                new TestRxDoubleWrapper<List<MTGCard>, DeckBucket>());
+        presenter = new DecksPresenterImpl(interactor, deckMapper, new TestRxWrapperFactory());
         presenter.init(view);
     }
 
@@ -144,5 +143,12 @@ public class DecksPresenterImplTest extends BaseTest {
         presenter.importDeck(uri);
         verify(interactor).importDeck(uri);
         verify(view).decksLoaded(decks);
+    }
+
+    @Test
+    public void willExportDeck() {
+        presenter.exportDeck(deck, cards);
+        verify(interactor).exportDeck(deck, cards);
+        verify(view).deckExported(true);
     }
 }

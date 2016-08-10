@@ -109,6 +109,15 @@ public class SearchParamsTest extends BaseTest {
     }
 
     @Test
+    public void isNotValid(){
+        SearchParams searchParams = new SearchParams();
+        assertThat(searchParams.isValid(), is(false));
+
+        searchParams.setPower(null);
+        assertThat(searchParams.isValid(), is(false));
+    }
+
+    @Test
     public void searchParams_willHandleMulticolorOption() {
         SearchParams searchParams = new SearchParams();
         assertFalse(searchParams.isNoMulti());

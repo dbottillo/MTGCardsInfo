@@ -25,6 +25,7 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
 import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
@@ -38,34 +39,30 @@ import dagger.Provides;
 public class PresentersModule {
 
     @Provides
-    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor, RxWrapper<CardFilter> wrapper) {
-        return new CardFilterPresenterImpl(interactor, wrapper);
+    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor, RxWrapperFactory factory) {
+        return new CardFilterPresenterImpl(interactor, factory);
     }
 
     @Provides
     CardsPresenter provideCardsPresenter(CardsInteractor interactor, DeckMapper deckMapper, GeneralPreferences generalPreferences,
-                                         RxWrapper<List<MTGCard>> cardsWrapper,
-                                         RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper,
-                                         RxWrapper<int[]> favWrapper, MemoryStorage memoryStorage) {
-        return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, cardsWrapper, deckWrapper, favWrapper, memoryStorage);
+                                         RxWrapperFactory factory, MemoryStorage memoryStorage) {
+        return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, factory, memoryStorage);
     }
 
     @Provides
-    SetsPresenter provideSetsPresenter(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper,
+    SetsPresenter provideSetsPresenter(SetsInteractor interactor, RxWrapperFactory factory,
                                        CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
-        return new SetsPresenterImpl(interactor, wrapper, cardsPreferences, memoryStorage);
+        return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage);
     }
 
     @Provides
-    PlayerPresenter providePlayerPresenter(PlayerInteractor interactor, RxWrapper<List<Player>> rxWrapper) {
-        return new PlayerPresenterImpl(interactor, rxWrapper);
+    PlayerPresenter providePlayerPresenter(PlayerInteractor interactor, RxWrapperFactory factory) {
+        return new PlayerPresenterImpl(interactor, factory);
     }
 
     @Provides
-    DecksPresenter provideDecksPresenter(DecksInteractor interactor, DeckMapper deckMapper,
-                                         RxWrapper<List<Deck>> deckWrapper,
-                                         RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper) {
-        return new DecksPresenterImpl(interactor, deckMapper, deckWrapper, cardWrapper);
+    DecksPresenter provideDecksPresenter(DecksInteractor interactor, DeckMapper deckMapper, RxWrapperFactory factory) {
+        return new DecksPresenterImpl(interactor, deckMapper, factory);
     }
 
     @Provides
