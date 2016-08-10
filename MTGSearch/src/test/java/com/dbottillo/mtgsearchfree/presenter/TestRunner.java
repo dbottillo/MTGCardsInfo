@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 import rx.Observable;
 import rx.Subscription;
 
-public class TestRxWrapper<T> extends RxWrapper<T> {
+public class TestRunner<T> extends Runner<T> {
 
     @Override
     Subscription run(Observable<T> on, RxWrapperListener<T> listener) {

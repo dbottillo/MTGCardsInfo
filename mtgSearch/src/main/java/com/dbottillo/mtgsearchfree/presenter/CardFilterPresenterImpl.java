@@ -7,19 +7,19 @@ import com.dbottillo.mtgsearchfree.view.CardFilterView;
 
 import javax.inject.Inject;
 
-public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.RxWrapperListener<CardFilter> {
+public class CardFilterPresenterImpl implements CardFilterPresenter, Runner.RxWrapperListener<CardFilter> {
 
     CardFilterInteractor interactor;
     private CardFilterView filterView;
-    private RxWrapper<CardFilter> wrapper;
+    private Runner<CardFilter> wrapper;
     private MemoryStorage memoryStorage;
 
     @Inject
-    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapperFactory rxWrapperFactory,
+    public CardFilterPresenterImpl(CardFilterInteractor interactor, RunnerFactory runnerFactory,
                                    MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
-        this.wrapper = rxWrapperFactory.singleWrapper();
+        this.wrapper = runnerFactory.simple();
         this.memoryStorage = memoryStorage;
     }
 

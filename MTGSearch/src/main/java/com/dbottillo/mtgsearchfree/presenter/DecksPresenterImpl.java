@@ -20,20 +20,20 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     DecksInteractor interactor;
     private DecksView decksView;
-    private RxWrapper<Boolean> exportWrapper;
-    private RxWrapper<List<Deck>> deckWrapper;
-    private RxDoubleWrapper<List<MTGCard>, DeckBucket> cardWrapper;
+    private Runner<Boolean> exportWrapper;
+    private Runner<List<Deck>> deckWrapper;
+    private RunnerAndMap<List<MTGCard>, DeckBucket> cardWrapper;
     private DeckMapper deckMapper;
 
     @Inject
     public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper,
-                              RxWrapperFactory rxWrapperFactory) {
+                              RunnerFactory runnerFactory) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = deckMapper;
-        this.exportWrapper = rxWrapperFactory.singleWrapper();
-        this.deckWrapper = rxWrapperFactory.singleWrapper();
-        this.cardWrapper = rxWrapperFactory.doubleWrapper();
+        this.exportWrapper = runnerFactory.simple();
+        this.deckWrapper = runnerFactory.simple();
+        this.cardWrapper = runnerFactory.withMap();
     }
 
     public void init(DecksView view) {
@@ -102,7 +102,7 @@ public class DecksPresenterImpl implements DecksPresenter {
 
     @Override
     public void exportDeck(Deck deck, List<MTGCard> cards) {
-        exportWrapper.run(interactor.exportDeck(deck, cards), new RxWrapper.RxWrapperListener<Boolean>() {
+        exportWrapper.run(interactor.exportDeck(deck, cards), new Runner.RxWrapperListener<Boolean>() {
             @Override
             public void onNext(Boolean data) {
                 decksView.deckExported(data);
@@ -127,7 +127,7 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
     };
 
-    RxWrapper.RxWrapperListener<List<Deck>> deckObserver = new RxWrapper.RxWrapperListener<List<Deck>>() {
+    Runner.RxWrapperListener<List<Deck>> deckObserver = new Runner.RxWrapperListener<List<Deck>>() {
         @Override
         public void onNext(List<Deck> decks) {
             LOG.d();
@@ -145,7 +145,7 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
     };
 
-    RxWrapper.RxWrapperListener<DeckBucket> cardsObserver = new RxWrapper.RxWrapperListener<DeckBucket>() {
+    Runner.RxWrapperListener<DeckBucket> cardsObserver = new Runner.RxWrapperListener<DeckBucket>() {
         @Override
         public void onNext(DeckBucket bucket) {
             LOG.d();
