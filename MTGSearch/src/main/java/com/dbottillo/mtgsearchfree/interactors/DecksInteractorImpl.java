@@ -8,7 +8,6 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

@@ -7,7 +7,6 @@ import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 import javax.inject.Inject;
@@ -112,7 +111,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
             pickedNumber = rand.nextInt(names.length);
             boolean founded = false;
             for (Player player : players) {
-                if (StringUtil.contains(player.getName(), names[pickedNumber])){
+                if (StringUtil.contains(player.getName(), names[pickedNumber])) {
                     founded = true;
                     break;
                 }

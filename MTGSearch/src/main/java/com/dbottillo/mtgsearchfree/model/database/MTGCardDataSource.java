@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
-import android.widget.ArrayAdapter;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -17,7 +16,7 @@ public class MTGCardDataSource {
 
     private static final int LIMIT = 400;
 
-    enum STANDARD{
+    enum STANDARD {
         DRAGONS_TARKIR(12, "Dragons of Tarkir"),
         MAGIC_ORIGINS(10, "Magic Origins"),
         BATTLE_ZENDIKAR(8, "Battle for Zendikar"),
@@ -33,17 +32,17 @@ public class MTGCardDataSource {
             this.name = name;
         }
 
-        public static String[] getSetIds(){
+        public static String[] getSetIds() {
             String[] ids = new String[STANDARD.values().length];
-            for (int i=0; i<STANDARD.values().length; i++){
+            for (int i = 0; i < STANDARD.values().length; i++) {
                 ids[i] = String.valueOf(STANDARD.values()[i].setId);
             }
             return ids;
         }
 
-        public static List<String> getSetNames(){
+        public static List<String> getSetNames() {
             ArrayList<String> sets = new ArrayList<>();
-            for (STANDARD standard : STANDARD.values()){
+            for (STANDARD standard : STANDARD.values()) {
                 sets.add(standard.name);
             }
             return sets;
@@ -120,7 +119,7 @@ public class MTGCardDataSource {
             }
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.MANA_COST.getName(), "LIKE", colorsOperator, Arrays.copyOf(colors.toArray(), colors.size(), String[].class));
         }
-        if (searchParams.atLeastOneRarity()){
+        if (searchParams.atLeastOneRarity()) {
             List<String> rarities = new ArrayList<>();
             if (searchParams.isCommon()) {
                 rarities.add("Common");
@@ -136,7 +135,7 @@ public class MTGCardDataSource {
             }
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.getName(), "==", "OR", Arrays.copyOf(rarities.toArray(), rarities.size(), String[].class));
         }
-        if (searchParams.isLand()){
+        if (searchParams.isLand()) {
             queryComposer.addParam(CardDataSource.COLUMNS.LAND.getName(), "==", 1);
         }
         queryComposer.append("ORDER BY " + CardDataSource.COLUMNS.MULTIVERSE_ID.getName() + " DESC LIMIT " + LIMIT);

@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.app.Dialog;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
