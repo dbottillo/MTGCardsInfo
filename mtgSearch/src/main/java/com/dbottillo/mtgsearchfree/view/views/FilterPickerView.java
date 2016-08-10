@@ -175,6 +175,8 @@ public class FilterPickerView extends LinearLayout {
             case R.id.toggle_myhtic:
                 listener.filterUpdated(CardFilter.TYPE.MYTHIC, on);
                 break;
+            default:
+                break;
         }
     }
 

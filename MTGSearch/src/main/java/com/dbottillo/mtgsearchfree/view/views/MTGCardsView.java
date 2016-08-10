@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class MTGCardListView extends RelativeLayout {
+public class MTGCardsView extends RelativeLayout {
 
     boolean grid = false;
     private CardsAdapter adapter;
@@ -38,15 +38,15 @@ public class MTGCardListView extends RelativeLayout {
     @BindView(R.id.search_bottom_container)
     View footer;
 
-    public MTGCardListView(Context ctx) {
+    public MTGCardsView(Context ctx) {
         this(ctx, null);
     }
 
-    public MTGCardListView(Context ctx, AttributeSet attrs) {
+    public MTGCardsView(Context ctx, AttributeSet attrs) {
         this(ctx, attrs, -1);
     }
 
-    public MTGCardListView(Context context, AttributeSet attrs, int defStyle) {
+    public MTGCardsView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.fragment_set, this, true);

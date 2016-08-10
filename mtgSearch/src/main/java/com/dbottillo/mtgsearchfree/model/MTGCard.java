@@ -31,8 +31,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     private int multiVerseId;
     private MTGSet set;
 
-
-    private int quantity = 1;
+    private int quantity;
     private boolean sideboard = false;
     private String layout;
     private String number;
@@ -44,13 +43,18 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.types = new ArrayList<>();
         this.subTypes = new ArrayList<>();
         this.rulings = new ArrayList<>();
-        this.quantity = -1;
+        this.quantity = 1;
         this.multiVerseId = -1;
     }
 
     public MTGCard(int id) {
         this();
         this.id = id;
+    }
+
+    public MTGCard(int id, int multiVerseId) {
+        this(id);
+        this.multiVerseId = multiVerseId;
     }
 
     public MTGCard(Parcel in) {
@@ -387,15 +391,15 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         int mtgColor = context.getResources().getColor(R.color.mtg_other);
         if (isMultiColor()) {
             mtgColor = context.getResources().getColor(R.color.mtg_multi);
-        } else if (getColors().contains(CardProperties.COLOR.WHITE.value)) {
+        } else if (getColors().contains(CardProperties.COLOR.WHITE.getValue())) {
             mtgColor = context.getResources().getColor(R.color.mtg_white);
-        } else if (getColors().contains(CardProperties.COLOR.BLUE.value)) {
+        } else if (getColors().contains(CardProperties.COLOR.BLUE.getValue())) {
             mtgColor = context.getResources().getColor(R.color.mtg_blue);
-        } else if (getColors().contains(CardProperties.COLOR.BLACK.value)) {
+        } else if (getColors().contains(CardProperties.COLOR.BLACK.getValue())) {
             mtgColor = context.getResources().getColor(R.color.mtg_black);
-        } else if (getColors().contains(CardProperties.COLOR.RED.value)) {
+        } else if (getColors().contains(CardProperties.COLOR.RED.getValue())) {
             mtgColor = context.getResources().getColor(R.color.mtg_red);
-        } else if (getColors().contains(CardProperties.COLOR.GREEN.value)) {
+        } else if (getColors().contains(CardProperties.COLOR.GREEN.getValue())) {
             mtgColor = context.getResources().getColor(R.color.mtg_green);
         }
         return mtgColor;

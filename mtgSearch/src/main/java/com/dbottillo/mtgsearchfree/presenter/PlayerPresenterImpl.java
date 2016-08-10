@@ -7,7 +7,6 @@ import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 import javax.inject.Inject;
@@ -18,21 +17,20 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
 
     PlayerInteractor interactor;
 
-    PlayersView playerView;
-    Subscription subscription = null;
-    List<Player> players;
+    private PlayersView playerView;
+    private Subscription subscription = null;
+    private List<Player> players;
+    private RxWrapper<List<Player>> rxWrapper;
 
-    RxWrapper<List<Player>> rxWrapper;
-
-    String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
+    private String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
     @Inject
-    public PlayerPresenterImpl(PlayerInteractor interactor, RxWrapper<List<Player>> rxWrapper) {
+    public PlayerPresenterImpl(PlayerInteractor interactor, RxWrapperFactory rxWrapperFactory) {
         LOG.d("created");
         this.interactor = interactor;
-        this.rxWrapper = rxWrapper;
+        this.rxWrapper = rxWrapperFactory.singleWrapper();
     }
 
     public void detachView() {
@@ -49,14 +47,12 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
     @Override
     public void loadPlayers() {
         LOG.d();
-        System.out.println("load players " + subscription);
         playerView.showLoading();
         subscription = rxWrapper.run(interactor.load(), this);
     }
 
     @Override
     public void addPlayer() {
-        System.out.println("add player " + subscription);
         LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
@@ -113,7 +109,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
             pickedNumber = rand.nextInt(names.length);
             boolean founded = false;
             for (Player player : players) {
-                if (StringUtil.contains(player.getName(), names[pickedNumber])){
+                if (StringUtil.contains(player.getName(), names[pickedNumber])) {
                     founded = true;
                     break;
                 }

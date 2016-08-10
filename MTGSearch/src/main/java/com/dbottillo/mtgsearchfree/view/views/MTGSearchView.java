@@ -60,6 +60,8 @@ public class MTGSearchView extends RelativeLayout {
     AppCompatCheckBox multi;
     @BindView(R.id.search_nm)
     AppCompatCheckBox noMulti;
+    @BindView(R.id.search_l)
+    AppCompatCheckBox land;
     @BindView(R.id.search_common)
     AppCompatCheckBox common;
     @BindView(R.id.search_uncommon)
@@ -135,9 +137,15 @@ public class MTGSearchView extends RelativeLayout {
         searchParams.setName(name.getText().toString());
         searchParams.setTypes(types.getText().toString());
         searchParams.setText(text.getText().toString());
-        searchParams.setCmc(new IntParam(operators[cmcOp.getSelectedItemPosition()], parseNumber(cmc.getText().toString())));
-        searchParams.setPower(new IntParam(operators[powerOp.getSelectedItemPosition()], parseNumber(power.getText().toString())));
-        searchParams.setTough(new IntParam(operators[toughOp.getSelectedItemPosition()], parseNumber(tough.getText().toString())));
+        if (cmc.getText().length() > 0) {
+            searchParams.setCmc(new IntParam(operators[cmcOp.getSelectedItemPosition()], Integer.parseInt(cmc.getText().toString())));
+        }
+        if (power.getText().length() > 0) {
+            searchParams.setPower(new IntParam(operators[powerOp.getSelectedItemPosition()], Integer.parseInt(power.getText().toString())));
+        }
+        if (tough.getText().length() > 0) {
+            searchParams.setTough(new IntParam(operators[toughOp.getSelectedItemPosition()], Integer.parseInt(tough.getText().toString())));
+        }
         searchParams.setWhite(white.isChecked());
         searchParams.setBlue(blue.isChecked());
         searchParams.setBlack(black.isChecked());
@@ -145,19 +153,13 @@ public class MTGSearchView extends RelativeLayout {
         searchParams.setGreen(green.isChecked());
         searchParams.setOnlyMulti(multi.isChecked());
         searchParams.setNoMulti(noMulti.isChecked());
+        searchParams.setLand(land.isChecked());
         searchParams.setCommon(common.isChecked());
         searchParams.setUncommon(uncommon.isChecked());
         searchParams.setRare(rare.isChecked());
         searchParams.setMythic(mythic.isChecked());
         searchParams.setSetId(sets.get(set.getSelectedItemPosition()).getId());
         return searchParams;
-    }
-
-    private static int parseNumber(String text) {
-        if (text.length() == 0) {
-            return -1;
-        }
-        return Integer.parseInt(text);
     }
 
     public void refreshSets(List<MTGSet> sets) {

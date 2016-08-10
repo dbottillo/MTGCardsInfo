@@ -1,14 +1,11 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -19,12 +16,10 @@ import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.inject.Inject;
 
@@ -34,8 +29,8 @@ import butterknife.OnClick;
 
 public class CardLuckyActivity extends CommonCardsActivity implements CardsView {
 
-    public static String CARD = "CARD";
-    public static int LUCKY_BATCH_CARDS = 10;
+    public static final String CARD = "CARD";
+    public static final int LUCKY_BATCH_CARDS = 10;
 
     private ArrayList<MTGCard> luckyCards = null;
 
@@ -116,7 +111,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void favIdLoaded(int[] favourites) {
         LOG.d();
-        idFavourites = favourites;
+        idFavourites = favourites.clone();
         if (luckyCards.size() == 0) {
             if (getIntent() != null && getIntent().hasExtra(CARD)) {
                 luckyCards.add((MTGCard) getIntent().getParcelableExtra(CARD));
@@ -164,8 +159,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = cardView.getCard();
-        ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
-        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
+        boolean favInCollection = ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
+        if (favInCollection) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);

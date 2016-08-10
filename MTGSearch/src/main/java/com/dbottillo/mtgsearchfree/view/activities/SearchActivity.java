@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.animation.ArgbEvaluator;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
@@ -37,7 +38,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
-import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardsView;
 import com.dbottillo.mtgsearchfree.view.views.MTGSearchView;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     ScrollView scrollView;
 
     @BindView(R.id.cards_list_view)
-    MTGCardListView mtgCardListView;
+    MTGCardsView mtgCardsView;
 
     @BindView(R.id.search_view)
     MTGSearchView searchView;
@@ -106,7 +107,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
         secondToolbar.inflateMenu(R.menu.search_results);
         cardsShowType = secondToolbar.getMenu().findItem(R.id.action_view_type);
         secondToolbar.setOnMenuItemClickListener(this);
-        mtgCardListView.setEmptyString(R.string.empty_search);
+        mtgCardsView.setEmptyString(R.string.empty_search);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -127,11 +128,11 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             @Override
             public void onGlobalLayout() {
                 sizeBig = scrollView.getHeight();
-                UIUtil.setMarginTop(mtgCardListView, sizeBig);
+                UIUtil.setMarginTop(mtgCardsView, sizeBig);
                 if (searchOpen) {
                     UIUtil.setHeight(scrollView, 0);
-                    UIUtil.setMarginTop(mtgCardListView, 0);
-                    mtgCardListView.setVisibility(View.VISIBLE);
+                    UIUtil.setMarginTop(mtgCardsView, 0);
+                    mtgCardsView.setVisibility(View.VISIBLE);
                 }
                 scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
@@ -149,21 +150,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    computeScrollChanged(scrollY);
-                }
-            });
-        } else {
-            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-                @Override
-                public void onScrollChanged() {
-                    computeScrollChanged(scrollView.getScrollY());
-                }
-            });
-        }
+        setupScrollviewListener();
 
         argbEvaluator = new ArgbEvaluator();
 
@@ -186,6 +173,29 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 doSearch(searchParams);
             }
         }
+    }
+
+    private void setupScrollviewListener(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            setupScrollViewListenerM();
+        } else {
+            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                @Override
+                public void onScrollChanged() {
+                    computeScrollChanged(scrollView.getScrollY());
+                }
+            });
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private void setupScrollViewListenerM(){
+        scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                computeScrollChanged(scrollY);
+            }
+        });
     }
 
     @Override
@@ -254,7 +264,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 super.applyTransformation(interpolatedTime, t);
                 int val = (int) backgroundInterpolator.getInterpolation(interpolatedTime);
                 UIUtil.setHeight(scrollView, val);
-                UIUtil.setMarginTop(mtgCardListView, val);
+                UIUtil.setMarginTop(mtgCardsView, val);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     int color = (Integer) argbEvaluator.evaluate(interpolatedTime, startColor, endColor);
                     SearchActivity.this.getWindow().setStatusBarColor(color);
@@ -266,7 +276,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             @Override
             public void onAnimationStart(Animation animation) {
                 if (!searchOpen) {
-                    mtgCardListView.setVisibility(View.VISIBLE);
+                    mtgCardsView.setVisibility(View.VISIBLE);
                     MaterialWrapper.copyElevation(secondToolbar, toolbar);
                     secondToolbar.animate().setDuration(100).translationY(0).start();
                 } else {
@@ -277,7 +287,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
             @Override
             public void onAnimationEnd(Animation animation) {
                 if (searchOpen) {
-                    mtgCardListView.setVisibility(View.GONE);
+                    mtgCardsView.setVisibility(View.GONE);
                 } else {
                     doSearch(finalSearchParams);
                 }
@@ -357,7 +367,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private void refreshList() {
         LOG.d();
         cardsHelper.sortCards(currentBucket);
-        mtgCardListView.loadCards(currentBucket, this);
+        mtgCardsView.loadCards(currentBucket, this);
     }
 
     @Override
@@ -369,12 +379,12 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     public void cardTypePreferenceChanged(boolean grid) {
         LOG.d();
         if (grid) {
-            mtgCardListView.setGridOn();
+            mtgCardsView.setGridOn();
             if (cardsShowType != null) {
                 cardsShowType.setIcon(R.drawable.cards_list_type);
             }
         } else {
-            mtgCardListView.setListOn();
+            mtgCardsView.setListOn();
             if (cardsShowType != null) {
                 cardsShowType.setIcon(R.drawable.cards_grid_type);
             }

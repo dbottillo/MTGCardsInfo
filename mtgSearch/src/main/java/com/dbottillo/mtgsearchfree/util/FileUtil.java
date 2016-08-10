@@ -4,10 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -21,6 +19,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -116,7 +115,7 @@ public class FileUtil {
         return new File(root, StringUtil.clearDeckName(deck) + ".dec");
     }
 
-    public static boolean downloadDeckToSdCard(Context context, Deck deck, ArrayList<MTGCard> cards) {
+    public boolean downloadDeckToSdCard(Deck deck, List<MTGCard> cards) {
         File deckFile = fileNameForDeck(deck);
         if (deckFile == null) {
             return false;
@@ -141,7 +140,6 @@ public class FileUtil {
             writer.close();
             return true;
         } catch (IOException e) {
-            Toast.makeText(context, context.getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show();
             TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
@@ -162,7 +160,7 @@ public class FileUtil {
         if (is == null) {
             return null;
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
         String line;
 
         while ((line = br.readLine()) != null) {
@@ -174,7 +172,7 @@ public class FileUtil {
                     }
 
                 } else if (line.startsWith("SB: ")) {
-                    MTGCard card = generateCard(line.replace("SB: ",""));
+                    MTGCard card = generateCard(line.replace("SB: ", ""));
                     card.setSideboard(true);
                     cards.add(card);
                 } else {

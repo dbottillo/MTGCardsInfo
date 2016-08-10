@@ -5,19 +5,25 @@ import android.net.Uri;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 import rx.Observable;
 
 public class DecksInteractorImpl implements DecksInteractor {
 
     DecksStorage storage;
+    FileUtil fileUtil;
 
-    public DecksInteractorImpl(DecksStorage storage) {
+    @Inject
+    public DecksInteractorImpl(DecksStorage storage, FileUtil fileUtil) {
         LOG.d("created");
         this.storage = storage;
+        this.fileUtil = fileUtil;
     }
 
     public Observable<List<Deck>> load() {
@@ -77,6 +83,11 @@ public class DecksInteractorImpl implements DecksInteractor {
     public Observable<List<Deck>> importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
         return Observable.just(storage.importDeck(uri));
+    }
+
+    @Override
+    public Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards) {
+        return Observable.just(fileUtil.downloadDeckToSdCard(deck, cards));
     }
 
 }

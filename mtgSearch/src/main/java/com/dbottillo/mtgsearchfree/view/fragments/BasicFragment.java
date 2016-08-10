@@ -68,9 +68,5 @@ public abstract class BasicFragment extends DialogFragment {
         return false;
     }
 
-    public boolean getIsPortrait() {
-        return isPortrait;
-    }
-
 }
 

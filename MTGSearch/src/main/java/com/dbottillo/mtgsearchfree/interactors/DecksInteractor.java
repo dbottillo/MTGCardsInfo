@@ -31,4 +31,6 @@ public interface DecksInteractor {
     Observable<List<MTGCard>> removeAllCard(Deck deck, MTGCard card);
 
     Observable<List<Deck>> importDeck(Uri uri);
+
+    Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards);
 }

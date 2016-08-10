@@ -10,14 +10,17 @@ import javax.inject.Inject;
 public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.RxWrapperListener<CardFilter> {
 
     CardFilterInteractor interactor;
-    CardFilterView filterView;
-    RxWrapper<CardFilter> wrapper;
+    private CardFilterView filterView;
+    private RxWrapper<CardFilter> wrapper;
+    private MemoryStorage memoryStorage;
 
     @Inject
-    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapper<CardFilter> wrapper) {
+    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapperFactory rxWrapperFactory,
+                                   MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
-        this.wrapper = wrapper;
+        this.wrapper = rxWrapperFactory.singleWrapper();
+        this.memoryStorage = memoryStorage;
     }
 
     @Override
@@ -28,7 +31,7 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
 
     public void loadFilter() {
         LOG.d();
-        if (CardFilterMemoryStorage.init) {
+        if (memoryStorage.getFilter() != null) {
             LOG.d("filters already in memory, will just return");
             filterLoaded();
         } else {
@@ -40,8 +43,7 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
     @Override
     public void onNext(CardFilter cardFilter) {
         LOG.d();
-        CardFilterMemoryStorage.init = true;
-        CardFilterMemoryStorage.filter = cardFilter;
+        memoryStorage.setFilter(cardFilter);
         filterLoaded();
     }
 
@@ -57,50 +59,50 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.R
 
     private void filterLoaded() {
         LOG.d();
-        filterView.filterLoaded(CardFilterMemoryStorage.filter);
+        filterView.filterLoaded(memoryStorage.getFilter());
     }
 
     public void update(CardFilter.TYPE type, boolean on) {
         LOG.d("update " + type.toString() + "with: " + on);
         switch (type) {
             case WHITE:
-                CardFilterMemoryStorage.filter.white = on;
+                memoryStorage.getFilter().white = on;
                 break;
             case BLUE:
-                CardFilterMemoryStorage.filter.blue = on;
+                memoryStorage.getFilter().blue = on;
                 break;
             case RED:
-                CardFilterMemoryStorage.filter.red = on;
+                memoryStorage.getFilter().red = on;
                 break;
             case BLACK:
-                CardFilterMemoryStorage.filter.black = on;
+                memoryStorage.getFilter().black = on;
                 break;
             case GREEN:
-                CardFilterMemoryStorage.filter.green = on;
+                memoryStorage.getFilter().green = on;
                 break;
             case LAND:
-                CardFilterMemoryStorage.filter.land = on;
+                memoryStorage.getFilter().land = on;
                 break;
             case ELDRAZI:
-                CardFilterMemoryStorage.filter.eldrazi = on;
+                memoryStorage.getFilter().eldrazi = on;
                 break;
             case ARTIFACT:
-                CardFilterMemoryStorage.filter.artifact = on;
+                memoryStorage.getFilter().artifact = on;
                 break;
             case COMMON:
-                CardFilterMemoryStorage.filter.common = on;
+                memoryStorage.getFilter().common = on;
                 break;
             case UNCOMMON:
-                CardFilterMemoryStorage.filter.uncommon = on;
+                memoryStorage.getFilter().uncommon = on;
                 break;
             case RARE:
-                CardFilterMemoryStorage.filter.rare = on;
+                memoryStorage.getFilter().rare = on;
                 break;
             case MYTHIC:
-                CardFilterMemoryStorage.filter.mythic = on;
+                memoryStorage.getFilter().mythic = on;
                 break;
         }
-        interactor.sync(CardFilterMemoryStorage.filter);
+        interactor.sync(memoryStorage.getFilter());
         filterLoaded();
     }
 

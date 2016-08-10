@@ -42,7 +42,7 @@ import com.dbottillo.mtgsearchfree.view.adapters.GameSetAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
-import com.dbottillo.mtgsearchfree.view.views.MTGCardListView;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardsView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +80,7 @@ public class MainFragment extends BasicFragment implements
     @BindView(R.id.set_chooser_name)
     TextView chooserName;
     @BindView(R.id.cards_list_view)
-    MTGCardListView mtgCardListView;
+    MTGCardsView mtgCardsView;
     @BindView(R.id.cards_view_type)
     ImageButton viewType;
     @BindView(R.id.main_tooltip)
@@ -117,7 +117,7 @@ public class MainFragment extends BasicFragment implements
                 }
             }
         });
-        mtgCardListView.setEmptyString(R.string.empty_cards);
+        mtgCardsView.setEmptyString(R.string.empty_cards);
 
         view.findViewById(R.id.set_chooser).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,10 +165,10 @@ public class MainFragment extends BasicFragment implements
     public void cardTypePreferenceChanged(boolean grid) {
         LOG.d();
         if (grid) {
-            mtgCardListView.setGridOn();
+            mtgCardsView.setGridOn();
             viewType.setImageResource(R.drawable.cards_list_type);
         } else {
-            mtgCardListView.setListOn();
+            mtgCardsView.setListOn();
             viewType.setImageResource(R.drawable.cards_grid_type);
         }
     }
@@ -197,7 +197,7 @@ public class MainFragment extends BasicFragment implements
     private void showHideSetList(final boolean loadSet) {
         LOG.d();
         final int startHeight = setList.getHeight();
-        final int targetHeight = ((startHeight == 0)) ? mtgCardListView.getHeight() : 0;
+        final int targetHeight = ((startHeight == 0)) ? mtgCardsView.getHeight() : 0;
         final float startRotation = setArrow.getRotation();
         final Animation animation = new Animation() {
             public void applyTransformation(float interpolatedTime, Transformation t) {
@@ -289,7 +289,7 @@ public class MainFragment extends BasicFragment implements
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         cardsHelper.sortCards(bucket);
-        mtgCardListView.loadCards(bucket, this);
+        mtgCardsView.loadCards(bucket, this);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

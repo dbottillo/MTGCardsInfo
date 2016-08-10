@@ -22,11 +22,11 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     private int currentSetPosition = -1;
 
     @Inject
-    public SetsPresenterImpl(SetsInteractor interactor, RxWrapper<List<MTGSet>> wrapper,
+    public SetsPresenterImpl(SetsInteractor interactor, RxWrapperFactory rxWrapperFactory,
                              CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
-        this.wrapper = wrapper;
+        this.wrapper = rxWrapperFactory.singleWrapper();
         this.cardsPreferences = cardsPreferences;
         this.memoryStorage = memoryStorage;
     }
@@ -38,7 +38,7 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
 
     public void loadSets() {
         LOG.d();
-        if (memoryStorage.isInit()) {
+        if (memoryStorage.getSets() != null) {
             setView.setsLoaded(memoryStorage.getSets());
             return;
         }
@@ -63,7 +63,6 @@ public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperList
     @Override
     public void onNext(List<MTGSet> mtgSets) {
         LOG.d();
-        memoryStorage.setInit(true);
         memoryStorage.setSets(mtgSets);
         setView.setsLoaded(mtgSets);
     }

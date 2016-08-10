@@ -39,7 +39,7 @@ public class DeckMapperTest extends BaseTest {
         cards.add(new MTGCard(2));
         cards.add(new MTGCard(3));
         DeckBucket bucket = deckMapper.map(cards);
-        assertThat(bucket.size(), is(2));
+        assertThat(bucket.numberOfCards(), is(2));
     }
 
     @Test
@@ -51,8 +51,8 @@ public class DeckMapperTest extends BaseTest {
         card.setSideboard(true);
         cards.add(card);
         DeckBucket bucket = deckMapper.map(cards);
-        assertThat(bucket.size(), is(3));
-        assertThat(bucket.sizeNoSideboard(), is(2));
-        assertThat(bucket.sizeSideBoard(), is(1));
+        assertThat(bucket.numberOfCards(), is(3));
+        assertThat(bucket.numberOfCardsWithoutSideboard(), is(2));
+        assertThat(bucket.numberOfCardsInSideboard(), is(1));
     }
 }

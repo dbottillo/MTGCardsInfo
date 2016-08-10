@@ -70,7 +70,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     @BindView(R.id.sliding_layout)
     SlidingUpPanelLayout slidingUpPanelLayout;
 
-    private boolean filterLoaded;
+    private boolean filterOn;
     private Bundle initialBundle;
 
     public CardFilter getCurrentFilter() {
@@ -106,7 +106,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         } else {
             currentFilter = bundle.getParcelable("currentFilter");
             filterView.refresh(currentFilter);
-            filterLoaded = true;
+            filterOn = true;
         }
 
         mainPresenter = new MainActivityPresenter(this);
@@ -123,10 +123,10 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     public void filterLoaded(CardFilter filter) {
         LOG.d();
         currentFilter = filter;
-        if (!filterLoaded) {
+        if (!filterOn) {
             if (initialBundle == null) {
                 changeFragment(new MainFragment(), "main", false);
-                filterLoaded = true;
+                filterOn = true;
             }
         } else {
             listener.updateContent();

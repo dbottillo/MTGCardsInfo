@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,7 +10,6 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 import javax.inject.Inject;
 

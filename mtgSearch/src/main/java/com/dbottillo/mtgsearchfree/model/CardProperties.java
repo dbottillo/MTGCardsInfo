@@ -9,8 +9,16 @@ public class CardProperties {
         RED(3, "Red"),
         GREEN(4, "Green");
 
-        public int value;
-        public String key;
+        private int value;
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
+
+        public int getValue() {
+            return value;
+        }
 
         COLOR(int value, String key) {
             this.value = value;
@@ -41,7 +49,11 @@ public class CardProperties {
         LAND("Land"),
         ELDRAZI("Eldrazi");
 
-        public String key;
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
 
         TYPE(String key) {
             this.key = key;
@@ -54,7 +66,11 @@ public class CardProperties {
         RARE("Rare"),
         MYTHIC("Mythic Rare");
 
-        public String key;
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
 
         RARITY(String key) {
             this.key = key;

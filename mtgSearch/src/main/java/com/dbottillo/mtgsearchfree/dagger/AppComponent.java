@@ -7,12 +7,6 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
-import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.Deck;
-import com.dbottillo.mtgsearchfree.model.DeckBucket;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -20,16 +14,13 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
+import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
+import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
-
-import java.util.List;
 
 import javax.inject.Singleton;
 
@@ -59,19 +50,7 @@ public interface AppComponent {
 
     DecksStorage getDecksStorage();
 
-    RxWrapper<List<MTGSet>> getRxWrapperListMTGSet();
-
-    RxWrapper<CardFilter> getRxWrapperCardFilter();
-
-    RxWrapper<List<Player>> getRxWrapperListPlayer();
-
-    RxWrapper<List<MTGCard>> getRxWrapperListCard();
-
-    RxWrapper<List<Deck>> getRxWrapperListDeck();
-
-    RxDoubleWrapper<List<MTGCard>, DeckBucket> getRxWrapperDeckBucket();
-
-    RxWrapper<int[]> getRxWrapperFav();
+    RxWrapperFactory getRxWrapperFactory();
 
     DeckMapper getDeckMapper();
 
