@@ -26,29 +26,29 @@ public class CardsPresenterImpl implements CardsPresenter {
     private DeckMapper deckMapper;
     private GeneralPreferences generalPreferences;
     private Subscription subscription = null;
-    private RxWrapper<List<MTGCard>> cardsWrapper;
-    private RxDoubleWrapper<List<MTGCard>, DeckBucket> deckWrapper;
-    private RxWrapper<int[]> favWrapper;
+    private Runner<List<MTGCard>> cardsWrapper;
+    private RunnerAndMap<List<MTGCard>, DeckBucket> deckWrapper;
+    private Runner<int[]> favWrapper;
     private MemoryStorage memoryStorage;
     private boolean grid = true;
     private boolean firstTypeTypeCheck = true;
 
     @Inject
     public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralPreferences generalPreferences,
-                              RxWrapperFactory rxWrapperFactory, MemoryStorage memoryStorage) {
+                              RunnerFactory runnerFactory, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = mapper;
         this.generalPreferences = generalPreferences;
-        this.cardsWrapper = rxWrapperFactory.singleWrapper();
-        this.deckWrapper = rxWrapperFactory.doubleWrapper();
-        this.favWrapper = rxWrapperFactory.singleWrapper();
+        this.cardsWrapper = runnerFactory.simple();
+        this.deckWrapper = runnerFactory.withMap();
+        this.favWrapper = runnerFactory.simple();
         this.memoryStorage = memoryStorage;
     }
 
     public void getLuckyCards(int howMany) {
         LOG.d("get lucky cards " + howMany);
-        cardsWrapper.run(interactor.getLuckyCards(howMany), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.getLuckyCards(howMany), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -70,7 +70,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadFavourites() {
         LOG.d();
-        cardsWrapper.run(interactor.getFavourites(), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.getFavourites(), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -99,7 +99,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadDeck(final Deck deck) {
         LOG.d("loadDeck " + deck);
-        deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new RxWrapper.RxWrapperListener<DeckBucket>() {
+        deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new Runner.RxWrapperListener<DeckBucket>() {
             @Override
             public void onNext(DeckBucket bucket) {
                 LOG.d();
@@ -122,7 +122,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void doSearch(final SearchParams searchParams) {
         LOG.d("do search " + searchParams);
-        cardsWrapper.run(interactor.doSearch(searchParams), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.doSearch(searchParams), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -184,7 +184,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void loadCards(final MTGSet set) {
         LOG.d("loadSet cards of " + set);
-        cardsWrapper.run(interactor.loadSet(set), new RxWrapper.RxWrapperListener<List<MTGCard>>() {
+        cardsWrapper.run(interactor.loadSet(set), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 LOG.d();
@@ -226,7 +226,7 @@ public class CardsPresenterImpl implements CardsPresenter {
         }
     }
 
-    private RxWrapper.RxWrapperListener<int[]> idFavSubscriber = new RxWrapper.RxWrapperListener<int[]>() {
+    private Runner.RxWrapperListener<int[]> idFavSubscriber = new Runner.RxWrapperListener<int[]>() {
         @Override
         public void onNext(int[] ints) {
             LOG.d();

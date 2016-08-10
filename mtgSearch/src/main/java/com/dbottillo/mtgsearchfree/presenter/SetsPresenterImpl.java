@@ -12,21 +12,21 @@ import javax.inject.Inject;
 
 import rx.Observable;
 
-public class SetsPresenterImpl implements SetsPresenter, RxWrapper.RxWrapperListener<List<MTGSet>> {
+public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListener<List<MTGSet>> {
 
     private SetsInteractor interactor;
     private SetsView setView;
     private CardsPreferences cardsPreferences;
-    private RxWrapper<List<MTGSet>> wrapper;
+    private Runner<List<MTGSet>> wrapper;
     private MemoryStorage memoryStorage;
     private int currentSetPosition = -1;
 
     @Inject
-    public SetsPresenterImpl(SetsInteractor interactor, RxWrapperFactory rxWrapperFactory,
+    public SetsPresenterImpl(SetsInteractor interactor, RunnerFactory runnerFactory,
                              CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
-        this.wrapper = rxWrapperFactory.singleWrapper();
+        this.wrapper = runnerFactory.simple();
         this.cardsPreferences = cardsPreferences;
         this.memoryStorage = memoryStorage;
     }

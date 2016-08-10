@@ -71,7 +71,7 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.editDeck(deck, "deck")).thenReturn(Observable.just(cards));
         when(interactor.exportDeck(deck, cards)).thenReturn(Observable.just(true));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
-        presenter = new DecksPresenterImpl(interactor, deckMapper, new TestRxWrapperFactory());
+        presenter = new DecksPresenterImpl(interactor, deckMapper, new TestRunnerFactory());
         presenter.init(view);
     }
 

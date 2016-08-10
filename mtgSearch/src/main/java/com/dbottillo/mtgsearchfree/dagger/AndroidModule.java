@@ -9,9 +9,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.presenter.RxDoubleWrapper;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapper;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
+import com.dbottillo.mtgsearchfree.presenter.Runner;
+import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
+import com.dbottillo.mtgsearchfree.presenter.RunnerAndMap;
 import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
@@ -62,8 +62,8 @@ public class AndroidModule {
     }
 
     @Provides
-    RxWrapperFactory provideRxWrapperFactory() {
-        return new RxWrapperFactory();
+    RunnerFactory provideRxWrapperFactory() {
+        return new RunnerFactory();
     }
 
     @Provides
@@ -73,13 +73,13 @@ public class AndroidModule {
     }
 
     @Provides
-    RxDoubleWrapper<List<MTGCard>, DeckBucket> provideDeckBucketWrapper() {
-        return new RxDoubleWrapper<>();
+    RunnerAndMap<List<MTGCard>, DeckBucket> provideDeckBucketWrapper() {
+        return new RunnerAndMap<>();
     }
 
     @Provides
-    RxWrapper<int[]> provideFavWrapper() {
-        return new RxWrapper<>();
+    Runner<int[]> provideFavWrapper() {
+        return new Runner<>();
     }
 
     @Provides

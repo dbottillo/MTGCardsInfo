@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
-import com.dbottillo.mtgsearchfree.presenter.TestRxWrapperFactory;
+import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
+import com.dbottillo.mtgsearchfree.presenter.TestRunnerFactory;
 
 import dagger.Provides;
 
@@ -12,8 +12,8 @@ public class AndroidModuleForTest extends AndroidModule {
     }
 
     @Provides
-    RxWrapperFactory provideRxWrapperFactory() {
-        return new TestRxWrapperFactory();
+    RunnerFactory provideRxWrapperFactory() {
+        return new TestRunnerFactory();
     }
 
 }

@@ -52,7 +52,7 @@ public class PlayerPresenterImplTest extends BaseTest {
         when(interactor.editPlayer(player)).thenReturn(Observable.just(players));
         when(interactor.removePlayer(player)).thenReturn(Observable.just(players));
         when(interactor.editPlayers(toEdit)).thenReturn(Observable.just(players));
-        presenter = new PlayerPresenterImpl(interactor, new TestRxWrapperFactory());
+        presenter = new PlayerPresenterImpl(interactor, new TestRunnerFactory());
         presenter.init(view);
     }
 

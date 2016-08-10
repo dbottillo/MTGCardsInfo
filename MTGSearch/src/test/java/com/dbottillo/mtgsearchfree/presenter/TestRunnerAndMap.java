@@ -4,7 +4,7 @@ import rx.Observable;
 import rx.Subscription;
 import rx.functions.Func1;
 
-public class TestRxDoubleWrapper<T, K> extends RxDoubleWrapper<T, K> {
+public class TestRunnerAndMap<T, K> extends RunnerAndMap<T, K> {
 
     @Override
     Subscription runAndMap(Observable<T> on, Func1<T, K> mapFun, final RxWrapperListener<K> listener) {

@@ -17,7 +17,7 @@ import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
+import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
@@ -30,7 +30,7 @@ public class PresentersModule {
 
     @Provides
     CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor,
-                                                   RxWrapperFactory factory,
+                                                   RunnerFactory factory,
                                                    MemoryStorage memoryStorage) {
         return new CardFilterPresenterImpl(interactor, factory, memoryStorage);
     }
@@ -39,14 +39,14 @@ public class PresentersModule {
     CardsPresenter provideCardsPresenter(CardsInteractor interactor,
                                          DeckMapper deckMapper,
                                          GeneralPreferences generalPreferences,
-                                         RxWrapperFactory factory,
+                                         RunnerFactory factory,
                                          MemoryStorage memoryStorage) {
         return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, factory, memoryStorage);
     }
 
     @Provides
     SetsPresenter provideSetsPresenter(SetsInteractor interactor,
-                                       RxWrapperFactory factory,
+                                       RunnerFactory factory,
                                        CardsPreferences cardsPreferences,
                                        MemoryStorage memoryStorage) {
         return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage);
@@ -54,14 +54,14 @@ public class PresentersModule {
 
     @Provides
     PlayerPresenter providePlayerPresenter(PlayerInteractor interactor,
-                                           RxWrapperFactory factory) {
+                                           RunnerFactory factory) {
         return new PlayerPresenterImpl(interactor, factory);
     }
 
     @Provides
     DecksPresenter provideDecksPresenter(DecksInteractor interactor,
                                          DeckMapper deckMapper,
-                                         RxWrapperFactory factory) {
+                                         RunnerFactory factory) {
         return new DecksPresenterImpl(interactor, deckMapper, factory);
     }
 
