@@ -6,6 +6,8 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
+import java.util.List;
+
 public interface DecksPresenter {
 
     void init(DecksView view);
@@ -29,4 +31,6 @@ public interface DecksPresenter {
     void removeAllCardFromDeck(Deck deck, MTGCard card);
 
     void importDeck(Uri uri);
+
+    void exportDeck(Deck deck, List<MTGCard> cards);
 }

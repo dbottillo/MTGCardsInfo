@@ -294,6 +294,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     }
 
     @Override
+    public void deckExported(boolean success) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }

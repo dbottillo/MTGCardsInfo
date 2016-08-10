@@ -10,4 +10,6 @@ public interface DecksView extends BasicView {
     void decksLoaded(List<Deck> decks);
 
     void deckLoaded(DeckBucket bucket);
+
+    void deckExported(boolean success);
 }

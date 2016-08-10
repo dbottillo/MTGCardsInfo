@@ -95,6 +95,8 @@
     <string name="action_add_one_more">Add one more</string>
     <string name="action_remove_one">Remove one</string>
     <string name="action_remove_all">Remove all</string>
+
+    <string name="deck_title">Deck</string>
     <string name="deck_subtitle">%1s cards</string>
     <string name="deck_delete_title">Delete deck</string>
     <string name="deck_delete_text">This deck is not empty. Are you sure?</string>
@@ -106,13 +108,13 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Eldritch Moon\n
-        - NEW: Eternal Masters\n
-        - NEW: Grid option view\n
-        - NEW: Import deck\n
-        - NEW: Duel Decks: Zendikar vs. Eldrazi
+        - NEW: Deck fixes\n
+        - NEW: Land option in Search
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.7.6:</b> \n
+        - NEW: Deck fixes
+        - NEW: Land option in Search \n\n
         <b>Version 2.7.5:</b> \n
         - NEW: Eldritch Moon \n
         - NEW: Eternal Masters \n

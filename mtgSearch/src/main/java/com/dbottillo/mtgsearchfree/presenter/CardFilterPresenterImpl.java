@@ -10,14 +10,14 @@ import javax.inject.Inject;
 public class CardFilterPresenterImpl implements CardFilterPresenter, RxWrapper.RxWrapperListener<CardFilter> {
 
     CardFilterInteractor interactor;
-    CardFilterView filterView;
-    RxWrapper<CardFilter> wrapper;
+    private CardFilterView filterView;
+    private RxWrapper<CardFilter> wrapper;
 
     @Inject
-    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapper<CardFilter> wrapper) {
+    public CardFilterPresenterImpl(CardFilterInteractor interactor, RxWrapperFactory rxWrapperFactory) {
         LOG.d("created");
         this.interactor = interactor;
-        this.wrapper = wrapper;
+        this.wrapper = rxWrapperFactory.singleWrapper();
     }
 
     @Override

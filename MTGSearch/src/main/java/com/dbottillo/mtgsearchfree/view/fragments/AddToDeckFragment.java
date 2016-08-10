@@ -212,6 +212,11 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
     }
 
     @Override
+    public void deckExported(boolean success) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public void showError(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }

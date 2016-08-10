@@ -71,7 +71,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         setupToolbar();
 
         deck = getIntent().getParcelableExtra("deck");
-        setTitle(deck.getName());
+        setTitle(deck.getName() == null ? getString(R.string.deck_title) : deck.getName());
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeButtonEnabled(true);
@@ -205,6 +205,27 @@ public class DeckActivity extends BasicActivity implements DecksView {
     }
 
     @Override
+    public void deckExported(boolean success) {
+        if (success){
+            Snackbar snackbar = Snackbar
+                    .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.share), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
+                            startActivity(Intent.createChooser(intent, getString(R.string.share)));
+                            TrackingManager.trackDeckExport();
+                        }
+                    });
+            snackbar.show();
+        } else {
+            exportDeckNotAllowed();
+        }
+    }
+
+    @Override
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
@@ -214,19 +235,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
             @Override
             public void permissionGranted() {
-                Snackbar snackbar = Snackbar
-                        .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
-                        .setAction(getString(R.string.share), new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setType("text/plain");
-                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)));
-                                startActivity(Intent.createChooser(intent, getString(R.string.share)));
-                                TrackingManager.trackDeckExport();
-                            }
-                        });
-                snackbar.show();
+                decksPresenter.exportDeck(deck, cards);
             }
 
             @Override
@@ -239,11 +248,6 @@ public class DeckActivity extends BasicActivity implements DecksView {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (PermissionUtil.isGranted(grantResults)) {
-            exportDeck();
-        } else {
-            exportDeckNotAllowed();
-        }
     }
 
     private void exportDeckNotAllowed() {

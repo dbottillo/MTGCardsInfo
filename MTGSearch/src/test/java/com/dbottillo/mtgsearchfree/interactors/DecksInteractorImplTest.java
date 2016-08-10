@@ -6,6 +6,7 @@ import android.test.suitebuilder.annotation.SmallTest;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -30,6 +31,7 @@ public class DecksInteractorImplTest {
     static Deck deck;
     static MTGCard card;
     static DecksStorage storage;
+    static FileUtil fileUtil;
     static Uri uri;
     static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
     static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
@@ -41,6 +43,7 @@ public class DecksInteractorImplTest {
         deck = mock(Deck.class);
         card = mock(MTGCard.class);
         storage = mock(DecksStorage.class);
+        fileUtil = mock(FileUtil.class);
         uri = mock(Uri.class);
         when(storage.load()).thenReturn(decks);
         when(storage.loadDeck(deck)).thenReturn(deckCards);
@@ -51,7 +54,7 @@ public class DecksInteractorImplTest {
 
     @Before
     public void init() {
-        decksInteractor = new DecksInteractorImpl(storage);
+        decksInteractor = new DecksInteractorImpl(storage, fileUtil);
     }
 
 
@@ -147,5 +150,14 @@ public class DecksInteractorImplTest {
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
         verify(storage).importDeck(uri);
+    }
+
+    @Test
+    public void exportsDeck() {
+        when(fileUtil.downloadDeckToSdCard(deck, deckCards)).thenReturn(true);
+        TestSubscriber<Boolean> testSubscriber = new TestSubscriber<>();
+        decksInteractor.exportDeck(deck, deckCards).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(true));
     }
 }

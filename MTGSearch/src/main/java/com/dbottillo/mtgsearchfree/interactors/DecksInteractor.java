@@ -1,11 +1,13 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 
+import android.content.Context;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
@@ -31,4 +33,6 @@ public interface DecksInteractor {
     Observable<List<MTGCard>> removeAllCard(Deck deck, MTGCard card);
 
     Observable<List<Deck>> importDeck(Uri uri);
+
+    Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards);
 }
