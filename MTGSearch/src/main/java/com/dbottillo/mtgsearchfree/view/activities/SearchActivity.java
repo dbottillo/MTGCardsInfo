@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.animation.ArgbEvaluator;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
@@ -149,21 +150,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    computeScrollChanged(scrollY);
-                }
-            });
-        } else {
-            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-                @Override
-                public void onScrollChanged() {
-                    computeScrollChanged(scrollView.getScrollY());
-                }
-            });
-        }
+        setupScrollviewListener();
 
         argbEvaluator = new ArgbEvaluator();
 
@@ -186,6 +173,29 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 doSearch(searchParams);
             }
         }
+    }
+
+    private void setupScrollviewListener(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            setupScrollViewListenerM();
+        } else {
+            scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                @Override
+                public void onScrollChanged() {
+                    computeScrollChanged(scrollView.getScrollY());
+                }
+            });
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private void setupScrollViewListenerM(){
+        scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                computeScrollChanged(scrollY);
+            }
+        });
     }
 
     @Override

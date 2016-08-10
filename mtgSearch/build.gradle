@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.5'
-    ext.support_library_version = '24.1.0'
+    ext.support_library_version = '24.1.1'
     ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
@@ -169,12 +169,12 @@ task checkstyle(type: Checkstyle) {
     classpath = files()
 }
 
-task findbugs(type: FindBugs, dependsOn: assembleDebug) {
+task findbugs(type: FindBugs, dependsOn: assembleProd) {
 
     description 'Run findbugs'
     group 'verification'
 
-    classes = fileTree('build/intermediates/classes/debug/')
+    classes = fileTree('build/intermediates/classes/prod/release')
     source = fileTree('src/main/java')
     classpath = files()
 
@@ -203,13 +203,13 @@ task pmd(type: Pmd, dependsOn: assembleDebug) {
     }
 }
 
-check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
-//check.dependsOn 'checkstyle', 'pmd', 'lint'
+task quality
+quality.dependsOn 'checkstyle', 'lintDevRelease', 'pmd', 'findbugs'
 
 task testPreRelease
-testPreRelease.dependsOn 'testProdReleaseUnitTest','connectedProdDebugAndroidTest'
+testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedProdDebugAndroidTest'
 
 task release
-release.dependsOn 'check', 'testPreRelease', 'assembleProdRelease'
+release.dependsOn 'quality', 'testPreRelease', 'assembleProdRelease'
 
 apply plugin: 'com.google.gms.google-services'

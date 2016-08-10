@@ -29,29 +29,39 @@ import dagger.Provides;
 public class PresentersModule {
 
     @Provides
-    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor, RxWrapperFactory factory) {
-        return new CardFilterPresenterImpl(interactor, factory);
+    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor,
+                                                   RxWrapperFactory factory,
+                                                   MemoryStorage memoryStorage) {
+        return new CardFilterPresenterImpl(interactor, factory, memoryStorage);
     }
 
     @Provides
-    CardsPresenter provideCardsPresenter(CardsInteractor interactor, DeckMapper deckMapper, GeneralPreferences generalPreferences,
-                                         RxWrapperFactory factory, MemoryStorage memoryStorage) {
+    CardsPresenter provideCardsPresenter(CardsInteractor interactor,
+                                         DeckMapper deckMapper,
+                                         GeneralPreferences generalPreferences,
+                                         RxWrapperFactory factory,
+                                         MemoryStorage memoryStorage) {
         return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, factory, memoryStorage);
     }
 
     @Provides
-    SetsPresenter provideSetsPresenter(SetsInteractor interactor, RxWrapperFactory factory,
-                                       CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
+    SetsPresenter provideSetsPresenter(SetsInteractor interactor,
+                                       RxWrapperFactory factory,
+                                       CardsPreferences cardsPreferences,
+                                       MemoryStorage memoryStorage) {
         return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage);
     }
 
     @Provides
-    PlayerPresenter providePlayerPresenter(PlayerInteractor interactor, RxWrapperFactory factory) {
+    PlayerPresenter providePlayerPresenter(PlayerInteractor interactor,
+                                           RxWrapperFactory factory) {
         return new PlayerPresenterImpl(interactor, factory);
     }
 
     @Provides
-    DecksPresenter provideDecksPresenter(DecksInteractor interactor, DeckMapper deckMapper, RxWrapperFactory factory) {
+    DecksPresenter provideDecksPresenter(DecksInteractor interactor,
+                                         DeckMapper deckMapper,
+                                         RxWrapperFactory factory) {
         return new DecksPresenterImpl(interactor, deckMapper, factory);
     }
 

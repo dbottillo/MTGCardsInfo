@@ -7,9 +7,9 @@ import java.util.List;
 
 class QueryComposer {
 
-    private static String LIKE_OPERATOR = "LIKE";
+    private final static String LIKE_OPERATOR = "LIKE";
 
-    class Output {
+    static class Output {
 
         public String query;
         public List<String> selection;
@@ -20,7 +20,7 @@ class QueryComposer {
         }
     }
 
-    private StringBuilder stringBuilder;
+    private StringBuilder stringBuilder;  //NOPMD
     private List<String> selection;
 
     QueryComposer(String initial) {

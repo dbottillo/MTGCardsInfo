@@ -29,8 +29,8 @@ import butterknife.OnClick;
 
 public class CardLuckyActivity extends CommonCardsActivity implements CardsView {
 
-    public static String CARD = "CARD";
-    public static int LUCKY_BATCH_CARDS = 10;
+    public static final String CARD = "CARD";
+    public static final int LUCKY_BATCH_CARDS = 10;
 
     private ArrayList<MTGCard> luckyCards = null;
 
@@ -111,7 +111,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void favIdLoaded(int[] favourites) {
         LOG.d();
-        idFavourites = favourites;
+        idFavourites = favourites.clone();
         if (luckyCards.size() == 0) {
             if (getIntent() != null && getIntent().hasExtra(CARD)) {
                 luckyCards.add((MTGCard) getIntent().getParcelableExtra(CARD));
@@ -159,8 +159,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void favClicked() {
         LOG.d();
         MTGCard currentCard = cardView.getCard();
-        ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
-        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
+        boolean favInCollection = ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId());
+        if (favInCollection) {
             cardsPresenter.removeFromFavourite(currentCard, true);
         } else {
             cardsPresenter.saveAsFavourite(currentCard, true);

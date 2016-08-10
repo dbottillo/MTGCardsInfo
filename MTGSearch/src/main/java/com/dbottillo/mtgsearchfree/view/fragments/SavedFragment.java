@@ -132,11 +132,11 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     @Override
     public void updateContent() {
         LOG.d();
-        cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
-        CardsAdapter adapter = CardsAdapter.list(savedBucket, false, R.menu.card_saved_option);
+        CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
+        CardsAdapter adapter = CardsAdapter.list(bucket, false, R.menu.card_saved_option);
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
-        emptyView.setVisibility(savedBucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);
+        emptyView.setVisibility(bucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);
     }
 
     @Override

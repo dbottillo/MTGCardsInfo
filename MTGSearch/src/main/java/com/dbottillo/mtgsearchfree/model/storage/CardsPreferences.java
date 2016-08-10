@@ -9,11 +9,9 @@ import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
-import java.util.Map;
-
 public class CardsPreferences {
 
-    private static String PREFS_NAME = "Filter";
+    private final static String PREFS_NAME = "Filter";
     private SharedPreferences sharedPreferences;
 
     public CardsPreferences(Context context) {
@@ -23,20 +21,20 @@ public class CardsPreferences {
     public CardFilter load() {
         LOG.d();
         CardFilter res = new CardFilter();
-        res.white = sharedPreferences.getBoolean(CardProperties.COLOR.WHITE.key, true);
-        res.blue = sharedPreferences.getBoolean(CardProperties.COLOR.BLUE.key, true);
-        res.black = sharedPreferences.getBoolean(CardProperties.COLOR.BLACK.key, true);
-        res.red = sharedPreferences.getBoolean(CardProperties.COLOR.RED.key, true);
-        res.green = sharedPreferences.getBoolean(CardProperties.COLOR.GREEN.key, true);
+        res.white = sharedPreferences.getBoolean(CardProperties.COLOR.WHITE.getKey(), true);
+        res.blue = sharedPreferences.getBoolean(CardProperties.COLOR.BLUE.getKey(), true);
+        res.black = sharedPreferences.getBoolean(CardProperties.COLOR.BLACK.getKey(), true);
+        res.red = sharedPreferences.getBoolean(CardProperties.COLOR.RED.getKey(), true);
+        res.green = sharedPreferences.getBoolean(CardProperties.COLOR.GREEN.getKey(), true);
 
-        res.artifact = sharedPreferences.getBoolean(CardProperties.TYPE.ARTIFACT.key, true);
-        res.land = sharedPreferences.getBoolean(CardProperties.TYPE.LAND.key, true);
-        res.eldrazi = sharedPreferences.getBoolean(CardProperties.TYPE.ELDRAZI.key, true);
+        res.artifact = sharedPreferences.getBoolean(CardProperties.TYPE.ARTIFACT.getKey(), true);
+        res.land = sharedPreferences.getBoolean(CardProperties.TYPE.LAND.getKey(), true);
+        res.eldrazi = sharedPreferences.getBoolean(CardProperties.TYPE.ELDRAZI.getKey(), true);
 
-        res.common = sharedPreferences.getBoolean(CardProperties.RARITY.COMMON.key, true);
-        res.uncommon = sharedPreferences.getBoolean(CardProperties.RARITY.UNCOMMON.key, true);
-        res.rare = sharedPreferences.getBoolean(CardProperties.RARITY.RARE.key, true);
-        res.mythic = sharedPreferences.getBoolean(CardProperties.RARITY.MYTHIC.key, true);
+        res.common = sharedPreferences.getBoolean(CardProperties.RARITY.COMMON.getKey(), true);
+        res.uncommon = sharedPreferences.getBoolean(CardProperties.RARITY.UNCOMMON.getKey(), true);
+        res.rare = sharedPreferences.getBoolean(CardProperties.RARITY.RARE.getKey(), true);
+        res.mythic = sharedPreferences.getBoolean(CardProperties.RARITY.MYTHIC.getKey(), true);
 
         return res;
     }
@@ -44,18 +42,18 @@ public class CardsPreferences {
     public void sync(CardFilter filter) {
         LOG.d();
         sharedPreferences.edit()
-                .putBoolean(CardProperties.COLOR.WHITE.key, filter.white)
-                .putBoolean(CardProperties.COLOR.BLUE.key, filter.blue)
-                .putBoolean(CardProperties.COLOR.BLACK.key, filter.black)
-                .putBoolean(CardProperties.COLOR.RED.key, filter.red)
-                .putBoolean(CardProperties.COLOR.GREEN.key, filter.green)
-                .putBoolean(CardProperties.TYPE.ARTIFACT.key, filter.artifact)
-                .putBoolean(CardProperties.TYPE.LAND.key, filter.land)
-                .putBoolean(CardProperties.TYPE.ELDRAZI.key, filter.eldrazi)
-                .putBoolean(CardProperties.RARITY.COMMON.key, filter.common)
-                .putBoolean(CardProperties.RARITY.UNCOMMON.key, filter.uncommon)
-                .putBoolean(CardProperties.RARITY.RARE.key, filter.rare)
-                .putBoolean(CardProperties.RARITY.MYTHIC.key, filter.mythic)
+                .putBoolean(CardProperties.COLOR.WHITE.getKey(), filter.white)
+                .putBoolean(CardProperties.COLOR.BLUE.getKey(), filter.blue)
+                .putBoolean(CardProperties.COLOR.BLACK.getKey(), filter.black)
+                .putBoolean(CardProperties.COLOR.RED.getKey(), filter.red)
+                .putBoolean(CardProperties.COLOR.GREEN.getKey(), filter.green)
+                .putBoolean(CardProperties.TYPE.ARTIFACT.getKey(), filter.artifact)
+                .putBoolean(CardProperties.TYPE.LAND.getKey(), filter.land)
+                .putBoolean(CardProperties.TYPE.ELDRAZI.getKey(), filter.eldrazi)
+                .putBoolean(CardProperties.RARITY.COMMON.getKey(), filter.common)
+                .putBoolean(CardProperties.RARITY.UNCOMMON.getKey(), filter.uncommon)
+                .putBoolean(CardProperties.RARITY.RARE.getKey(), filter.rare)
+                .putBoolean(CardProperties.RARITY.MYTHIC.getKey(), filter.mythic)
                 .apply();
     }
 
@@ -121,7 +119,6 @@ public class CardsPreferences {
     }
 
     public int getVersionCode() {
-        Map<String, ?> values = sharedPreferences.getAll();
         return sharedPreferences.getInt("VersionCode", -1);
     }
 

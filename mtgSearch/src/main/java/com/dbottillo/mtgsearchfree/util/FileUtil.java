@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -159,7 +160,7 @@ public class FileUtil {
         if (is == null) {
             return null;
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
         String line;
 
         while ((line = br.readLine()) != null) {

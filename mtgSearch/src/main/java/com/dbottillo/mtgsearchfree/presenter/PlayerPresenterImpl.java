@@ -47,14 +47,12 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
     @Override
     public void loadPlayers() {
         LOG.d();
-        System.out.println("load players " + subscription);
         playerView.showLoading();
         subscription = rxWrapper.run(interactor.load(), this);
     }
 
     @Override
     public void addPlayer() {
-        System.out.println("add player " + subscription);
         LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();

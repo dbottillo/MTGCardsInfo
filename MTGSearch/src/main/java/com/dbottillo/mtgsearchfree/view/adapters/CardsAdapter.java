@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     private CardsBucket bucket;
-    private boolean grid;
+    private boolean gridMode;
     private boolean isASearch;
     private OnCardListener onCardListener;
     private int menuRes;
@@ -32,9 +32,9 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
         return new CardsAdapter(cards, true, isASearch, menuRes);
     }
 
-    private CardsAdapter(CardsBucket bucket, boolean grid, boolean isASearch, int menuRes) {
+    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes) {
         this.bucket = bucket;
-        this.grid = grid;
+        this.gridMode = gridMode;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
     }
@@ -47,19 +47,19 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         int columns = context.getResources().getInteger(R.integer.cards_grid_column_count);
-        View v = LayoutInflater.from(parent.getContext()).inflate(grid ? R.layout.grid_item_card : R.layout.row_card, parent, false);
-        if (grid) {
-            int height = (int) ((parent.getMeasuredWidth() / columns) * MTGCardView.RATIO_CARD);
+        View v = LayoutInflater.from(parent.getContext()).inflate(gridMode ? R.layout.grid_item_card : R.layout.row_card, parent, false);
+        if (gridMode) {
+            int height = (int) ((parent.getMeasuredWidth() / (double) columns) * MTGCardView.RATIO_CARD);
             v.setMinimumHeight(height);
         }
-        return new CardViewHolder(v, grid);
+        return new CardViewHolder(v, gridMode);
     }
 
     @Override
     public void onBindViewHolder(final CardViewHolder holder, int position) {
         final MTGCard card = bucket.getCards().get(position);
         final Context context = holder.parent.getContext();
-        if (grid) {
+        if (gridMode) {
             holder.loader.setVisibility(View.VISIBLE);
             Picasso.with(context.getApplicationContext()).load(card.getImage())
                     .error(R.drawable.left_debug)
