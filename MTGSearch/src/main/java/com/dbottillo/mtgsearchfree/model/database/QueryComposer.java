@@ -5,9 +5,9 @@ import com.dbottillo.mtgsearchfree.model.IntParam;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryComposer {
+class QueryComposer {
 
-    private String LIKE_OPERATOR = "LIKE";
+    private static String LIKE_OPERATOR = "LIKE";
 
     class Output {
 
@@ -23,23 +23,23 @@ public class QueryComposer {
     private StringBuilder stringBuilder;
     private List<String> selection;
 
-    public QueryComposer(String initial) {
+    QueryComposer(String initial) {
         stringBuilder = new StringBuilder(initial);
         selection = new ArrayList<>();
     }
 
-    public void addParam(String name, IntParam intParam) {
+    void addParam(String name, IntParam intParam) {
         if (intParam == null) {
             return;
         }
         addParam(name, intParam.getOperator(), intParam.getValue());
     }
 
-    public void addLikeParam(String name, String value) {
+    void addLikeParam(String name, String value) {
         addParam(name, LIKE_OPERATOR, value);
     }
 
-    public void addParam(String name, String operator, int value) {
+    void addParam(String name, String operator, int value) {
         if (isValid(name, operator, String.valueOf(value))) {
             checkFirstParam();
             stringBuilder.append("(CAST(");
@@ -53,7 +53,7 @@ public class QueryComposer {
         }
     }
 
-    public void addParam(String name, String operator, String value) {
+    void addParam(String name, String operator, String value) {
         if (isValid(name, operator, value)) {
             checkFirstParam();
             addOneParam(name, operator);
@@ -61,7 +61,7 @@ public class QueryComposer {
         }
     }
 
-    public void addMultipleParam(String name, String operator, String paramOperator, String... values) {
+    void addMultipleParam(String name, String operator, String paramOperator, String... values) {
         if (name == null || name.length() <= 0 || values.length == 0) {
             return;
         }
@@ -106,7 +106,7 @@ public class QueryComposer {
                 .append(operator).append(" ?");
     }
 
-    private boolean isValid(String name, String operator, String value){
+    private boolean isValid(String name, String operator, String value) {
         if (name == null || name.length() <= 0
                 || operator == null || operator.length() <= 0
                 || value.length() <= 0) {

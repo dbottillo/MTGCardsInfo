@@ -4,10 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -173,7 +171,7 @@ public class FileUtil {
                     }
 
                 } else if (line.startsWith("SB: ")) {
-                    MTGCard card = generateCard(line.replace("SB: ",""));
+                    MTGCard card = generateCard(line.replace("SB: ", ""));
                     card.setSideboard(true);
                     cards.add(card);
                 } else {

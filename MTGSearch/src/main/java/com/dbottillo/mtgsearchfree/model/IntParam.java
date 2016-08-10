@@ -3,8 +3,6 @@ package com.dbottillo.mtgsearchfree.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Objects;
-
 public class IntParam implements Parcelable {
 
     private String operator;
@@ -14,7 +12,7 @@ public class IntParam implements Parcelable {
         readFromParcel(in);
     }
 
-    public IntParam(String operator, int value){
+    public IntParam(String operator, int value) {
         this.operator = operator;
         this.value = value;
     }
@@ -74,9 +72,9 @@ public class IntParam implements Parcelable {
 
     @Override
     public String toString() {
-        return "IntParam{" +
-                "operator='" + operator + '\'' +
-                ", value=" + value +
-                '}';
+        return "IntParam{"
+                + "operator='" + operator + '\''
+                + ", value=" + value
+                + '}';
     }
 }

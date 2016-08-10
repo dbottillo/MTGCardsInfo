@@ -1,13 +1,11 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 
-import android.content.Context;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;

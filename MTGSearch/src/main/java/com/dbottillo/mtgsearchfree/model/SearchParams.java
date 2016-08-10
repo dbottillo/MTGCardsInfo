@@ -264,27 +264,27 @@ public class SearchParams implements Parcelable {
 
     @Override
     public String toString() {
-        return "SearchParams{" +
-                "name='" + name + '\'' +
-                ", types='" + types + '\'' +
-                ", text='" + text + '\'' +
-                ", cmc=" + cmc +
-                ", power=" + power +
-                ", tough=" + tough +
-                ", white=" + white +
-                ", blue=" + blue +
-                ", black=" + black +
-                ", red=" + red +
-                ", green=" + green +
-                ", onlyMulti=" + onlyMulti +
-                ", noMulti=" + noMulti +
-                ", land=" + land +
-                ", common=" + common +
-                ", uncommon=" + uncommon +
-                ", rare=" + rare +
-                ", mythic=" + mythic +
-                ", setId=" + setId +
-                '}';
+        return "SearchParams{"
+                + "name='" + name + '\''
+                + ", types='" + types + '\''
+                + ", text='" + text + '\''
+                + ", cmc=" + cmc
+                + ", power=" + power
+                + ", tough=" + tough
+                + ", white=" + white
+                + ", blue=" + blue
+                + ", black=" + black
+                + ", red=" + red
+                + ", green=" + green
+                + ", onlyMulti=" + onlyMulti
+                + ", noMulti=" + noMulti
+                + ", land=" + land
+                + ", common=" + common
+                + ", uncommon=" + uncommon
+                + ", rare=" + rare
+                + ", mythic=" + mythic
+                + ", setId=" + setId
+                + '}';
     }
 
     @Override

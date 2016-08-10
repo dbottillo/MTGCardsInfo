@@ -10,7 +10,6 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

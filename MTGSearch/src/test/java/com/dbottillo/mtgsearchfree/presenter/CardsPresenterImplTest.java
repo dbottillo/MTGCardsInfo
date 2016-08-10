@@ -23,8 +23,6 @@ import java.util.List;
 import rx.Observable;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -37,7 +35,7 @@ public class CardsPresenterImplTest extends BaseTest {
     private CardsPresenter presenter;
     private CardsInteractor interactor;
     private CardsView view;
-    private int[] idFavs = new int[]{2,3,4};
+    private int[] idFavs = new int[]{2, 3, 4};
 
     @Mock
     Deck deck;
