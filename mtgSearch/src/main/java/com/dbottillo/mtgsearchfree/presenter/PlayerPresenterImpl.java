@@ -13,24 +13,24 @@ import javax.inject.Inject;
 
 import rx.Subscription;
 
-public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapperListener<List<Player>> {
+public class PlayerPresenterImpl implements PlayerPresenter, Runner.RxWrapperListener<List<Player>> {
 
     PlayerInteractor interactor;
 
     private PlayersView playerView;
     private Subscription subscription = null;
     private List<Player> players;
-    private RxWrapper<List<Player>> rxWrapper;
+    private Runner<List<Player>> runner;
 
     private String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
     @Inject
-    public PlayerPresenterImpl(PlayerInteractor interactor, RxWrapperFactory rxWrapperFactory) {
+    public PlayerPresenterImpl(PlayerInteractor interactor, RunnerFactory runnerFactory) {
         LOG.d("created");
         this.interactor = interactor;
-        this.rxWrapper = rxWrapperFactory.singleWrapper();
+        this.runner = runnerFactory.simple();
     }
 
     public void detachView() {
@@ -48,7 +48,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
     public void loadPlayers() {
         LOG.d();
         playerView.showLoading();
-        subscription = rxWrapper.run(interactor.load(), this);
+        subscription = runner.run(interactor.load(), this);
     }
 
     @Override
@@ -56,28 +56,28 @@ public class PlayerPresenterImpl implements PlayerPresenter, RxWrapper.RxWrapper
         LOG.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
-        subscription = rxWrapper.run(interactor.addPlayer(player), this);
+        subscription = runner.run(interactor.addPlayer(player), this);
     }
 
     @Override
     public void editPlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        subscription = rxWrapper.run(interactor.editPlayer(player), this);
+        subscription = runner.run(interactor.editPlayer(player), this);
     }
 
     @Override
     public void editPlayers(List<Player> players) {
         LOG.d();
         playerView.showLoading();
-        subscription = rxWrapper.run(interactor.editPlayers(players), this);
+        subscription = runner.run(interactor.editPlayers(players), this);
     }
 
     @Override
     public void removePlayer(Player player) {
         LOG.d();
         playerView.showLoading();
-        subscription = rxWrapper.run(interactor.removePlayer(player), this);
+        subscription = runner.run(interactor.removePlayer(player), this);
     }
 
     @Override

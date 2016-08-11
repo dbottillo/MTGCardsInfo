@@ -89,7 +89,7 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
         presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
-                new TestRxWrapperFactory(), memoryStorage);
+                new TestRunnerFactory(), memoryStorage);
         presenter.init(view);
     }
 

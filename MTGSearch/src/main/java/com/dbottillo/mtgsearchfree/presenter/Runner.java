@@ -4,15 +4,22 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-public class RxDoubleWrapper<T, K> extends RxWrapper<T> {
+public class Runner<T> {
 
-    Subscription runAndMap(Observable<T> on, Func1<T, K> mapFun, final RxWrapperListener<K> listener) {
-        Observable obs = on.observeOn(AndroidSchedulers.mainThread())
-                .map(mapFun).subscribeOn(Schedulers.io());
-        return obs.subscribe(new Observer<K>() {
+    interface RxWrapperListener<T> {
+        void onNext(T data);
+
+        void onError(Throwable e);
+
+        void onCompleted();
+    }
+
+    Subscription run(Observable<T> on, final RxWrapperListener<T> listener) {
+        on.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
+        return on.subscribe(new Observer<T>() {
             @Override
             public void onCompleted() {
                 if (listener != null) {
@@ -29,7 +36,7 @@ public class RxDoubleWrapper<T, K> extends RxWrapper<T> {
             }
 
             @Override
-            public void onNext(K data) {
+            public void onNext(T data) {
                 if (listener != null) {
                     listener.onNext(data);
                 }

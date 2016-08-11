@@ -18,7 +18,7 @@ import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.RxWrapperFactory;
+import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
@@ -50,7 +50,7 @@ public interface AppComponent {
 
     DecksStorage getDecksStorage();
 
-    RxWrapperFactory getRxWrapperFactory();
+    RunnerFactory getRxWrapperFactory();
 
     DeckMapper getDeckMapper();
 
