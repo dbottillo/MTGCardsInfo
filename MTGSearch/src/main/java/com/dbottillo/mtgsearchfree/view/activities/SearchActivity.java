@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -167,15 +165,15 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
         cardsPresenter.loadCardTypePreference();
 
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             SearchParams searchParams = savedInstanceState.getParcelable(SEARCH_PARAMS);
-            if (searchParams !=null){
+            if (searchParams != null) {
                 doSearch(searchParams);
             }
         }
     }
 
-    private void setupScrollviewListener(){
+    private void setupScrollviewListener() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             setupScrollViewListenerM();
         } else {
@@ -189,7 +187,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    private void setupScrollViewListenerM(){
+    private void setupScrollViewListenerM() {
         scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
@@ -394,18 +392,8 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     @Override
     public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
-        Intent intent;
-        if (view != null && MTGApp.isActivityTransitionAvailable()) {
-            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, card);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                view.setTransitionName(getString(R.string.transition_card));
-            }
-            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, getString(R.string.transition_card));
-            startActivity(intent, activityOptionsCompat.toBundle());
-        } else {
-            intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, null);
-            startActivity(intent);
-        }
+        Intent intent = CardsActivity.newInstance(this, searchView.getSearchParams(), position, null);
+        startActivity(intent);
     }
 
     @Override

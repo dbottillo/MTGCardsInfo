@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,7 +20,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
@@ -311,16 +309,8 @@ public class MainFragment extends BasicFragment implements
             return;
         }
         TrackingManager.trackCard(gameSet, position);
-        Intent intent;
-        if (view != null && MTGApp.isActivityTransitionAvailable()) {
-            intent = CardsActivity.newInstance(getContext(), gameSet, position, card);
-            view.setTransitionName(getString(R.string.transition_card));
-            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.transition_card));
-            startActivity(intent, activityOptionsCompat.toBundle());
-        } else {
-            intent = CardsActivity.newInstance(getContext(), gameSet, position, null);
-            startActivity(intent);
-        }
+        Intent intent = CardsActivity.newInstance(getContext(), gameSet, position, null);
+        startActivity(intent);
     }
 
     @Override

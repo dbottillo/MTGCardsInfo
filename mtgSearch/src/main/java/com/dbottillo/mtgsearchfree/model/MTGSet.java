@@ -7,6 +7,17 @@ import java.util.Locale;
 
 public class MTGSet implements Parcelable {
 
+    public static final Parcelable.Creator<MTGSet> CREATOR = new Parcelable.Creator<MTGSet>() {
+        @Override
+        public MTGSet createFromParcel(Parcel source) {
+            return new MTGSet(source);
+        }
+
+        @Override
+        public MTGSet[] newArray(int size) {
+            return new MTGSet[size];
+        }
+    };
     int id;
     String code;
     String name;
@@ -62,18 +73,6 @@ public class MTGSet implements Parcelable {
         code = in.readString();
     }
 
-    public static final Parcelable.Creator<MTGSet> CREATOR = new Parcelable.Creator<MTGSet>() {
-        @Override
-        public MTGSet createFromParcel(Parcel source) {
-            return new MTGSet(source);
-        }
-
-        @Override
-        public MTGSet[] newArray(int size) {
-            return new MTGSet[size];
-        }
-    };
-
     @Override
     public int hashCode() {
         return name.hashCode();
@@ -81,16 +80,36 @@ public class MTGSet implements Parcelable {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MTGSet other = (MTGSet) o;
-        return name.equals(other.getName()) && code.equals(other.getCode());
+
+        MTGSet mtgSet = (MTGSet) o;
+        if (code != null ? !code.equals(mtgSet.code) : mtgSet.code != null) {
+            return false;
+        }
+        return name != null ? name.equals(mtgSet.name) : mtgSet.name == null;
     }
 
     @Override
     public String toString() {
-        return "[" + name + "," + code + "]";
+        return "MTGSet{"
+                + "id=" + id
+                + ", code='" + code + '\''
+                + ", name='" + name + '\''
+                + '}';
+    }
+
+    String getMagicCardsInfoCode() {
+        for (CARDSINFOMAP entry : CARDSINFOMAP.values()){
+            if (entry.set.equalsIgnoreCase(code)){
+                return entry.mapped;
+            }
+        }
+        return code.toLowerCase(Locale.getDefault());
     }
 
     private enum CARDSINFOMAP {
@@ -150,14 +169,5 @@ public class MTGSet implements Parcelable {
             this.set = set;
             this.mapped = mapped;
         }
-    }
-
-    String getMagicCardsInfoCode() {
-        for (CARDSINFOMAP entry : CARDSINFOMAP.values()){
-            if (entry.set.equalsIgnoreCase(code)){
-                return entry.mapped;
-            }
-        }
-        return code.toLowerCase(Locale.getDefault());
     }
 }
