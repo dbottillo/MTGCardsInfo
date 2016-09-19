@@ -10,18 +10,6 @@
         android:id="@+id/toolbar"
         layout="@layout/mtg_toolbar"/>
 
-    <com.dbottillo.mtgsearchfree.view.views.MTGCardImageView
-        android:id="@+id/shared_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginBottom="@dimen/padding_card_image_half"
-        android:layout_marginLeft="@dimen/padding_card_image"
-        android:layout_marginRight="@dimen/padding_card_image"
-        android:layout_marginTop="@dimen/padding_card_image_half"
-        android:scaleType="fitXY"
-        android:transitionName="@string/transition_card"/>
-
     <android.support.design.widget.TabLayout
         android:id="@+id/cards_tab_layout"
         style="@style/CardsTabLayout"
