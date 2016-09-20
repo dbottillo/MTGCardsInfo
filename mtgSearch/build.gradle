@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.5'
-    ext.support_library_version = '24.1.1'
+    ext.support_library_version = '24.2.1'
     ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
@@ -110,6 +110,10 @@ android {
         checkAllWarnings true
         lintConfig file("config/lint/lint.xml")
         ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText'
+    }
+
+    dexOptions{
+        preDexLibraries true
     }
 }
 
