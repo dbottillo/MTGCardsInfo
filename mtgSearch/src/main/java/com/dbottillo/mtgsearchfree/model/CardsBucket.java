@@ -10,7 +10,7 @@ public class CardsBucket {
     String key;
     List<MTGCard> cards;
 
-    public CardsBucket(){
+    public CardsBucket() {
         cards = new ArrayList<>();
     }
 
@@ -46,5 +46,13 @@ public class CardsBucket {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    @Override
+    public String toString() {
+        return "CardsBucket{"
+                + "key='" + key + '\''
+                + ", cards=" + cards
+                + '}';
     }
 }

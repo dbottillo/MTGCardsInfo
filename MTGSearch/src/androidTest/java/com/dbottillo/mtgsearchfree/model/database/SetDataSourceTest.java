@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class SetDataSourceTest extends BaseDatabaseTest {
 
-    private static final int NUMBER_OF_SET = 149;
+    private static final int NUMBER_OF_SET = 151;
 
     @Test
     public void test_generate_table_is_correct() {

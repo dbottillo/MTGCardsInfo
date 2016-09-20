@@ -108,6 +108,45 @@ public class DecksStorageIntegrationTest extends BaseDatabaseTest {
         assertCardInSideboardDeck(cards, "Transgress the Mind", 2);
     }
 
+    @Test
+    public void DecksStorage_willImportProtourDeck() {
+        List<Deck> decks = storage.importDeck(Uri.parse("assets/protour.txt"));
+        assertTrue(decks.size() > 0);
+        Deck deck = decks.get(0);
+        assertThat(deck.getName(), is("protour.txt"));
+        assertThat(deck.getNumberOfCards(), is(60));
+        assertThat(deck.getSizeOfSideboard(), is(15));
+        List<MTGCard> cards = storage.loadDeck(deck);
+        assertCardInDeck(cards, "Elspeth, Sun's Champion", 2);
+        assertCardInDeck(cards, "Obzedat, Ghost Council", 1);
+        assertCardInDeck(cards, "Desecration Demon", 3);
+        assertCardInDeck(cards, "Pack Rat", 4);
+        assertCardInDeck(cards, "Lifebane Zombie", 3);
+        assertCardInDeck(cards, "Blood Baron of Vizkopa", 3);
+        assertCardInDeck(cards, "Thoughtseize", 4);
+        assertCardInDeck(cards, "Devour Flesh", 2);
+        assertCardInDeck(cards, "Bile Blight", 3);
+        assertCardInDeck(cards, "Ultimate Price", 1);
+        assertCardInDeck(cards, "Hero's Downfall", 3);
+        assertCardInDeck(cards, "Underworld Connections", 3);
+        assertCardInDeck(cards, "Banishing Light", 2);
+        assertCardInDeck(cards, "Swamp", 8);
+        assertCardInDeck(cards, "Plains", 1);
+        assertCardInDeck(cards, "Godless Shrine", 4);
+        assertCardInDeck(cards, "Temple of Silence", 4);
+        assertCardInDeck(cards, "Urborg, Tomb of Yawgmoth", 1);
+        assertCardInDeck(cards, "Mutavault", 4);
+        assertCardInDeck(cards, "Caves of Koilos", 4);
+        assertCardInSideboardDeck(cards, "Underworld Connections", 1);
+        assertCardInSideboardDeck(cards, "Duress", 3);
+        assertCardInSideboardDeck(cards, "Erebos, God of the Dead", 1);
+        assertCardInSideboardDeck(cards, "Sin Collector", 1);
+        assertCardInSideboardDeck(cards, "Drown in Sorrow", 2);
+        assertCardInSideboardDeck(cards, "Last Breath", 2);
+        assertCardInSideboardDeck(cards, "Doom Blade", 3);
+        assertCardInSideboardDeck(cards, "Deicide", 2);
+    }
+
     private static MTGCard getCardFromDeck(List<MTGCard> cards, String name, boolean side) {
         for (MTGCard card : cards) {
             if (card.getName().contains(name) && card.isSideboard() == side) {

@@ -1,24 +1,17 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.view.Display;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -40,7 +33,6 @@ import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -102,8 +94,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     TabLayout tabLayout;
     @BindView(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
-    @BindView(R.id.shared_image)
-    ImageView sharedImage;
 
     private CardsPagerAdapter adapter;
 
@@ -129,7 +119,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
         MTGCard transitionCard = null;
         if (getIntent() != null) {
-            LOG.d("intent not null");
             if (getIntent().hasExtra(KEY_SET)) {
                 set = getIntent().getParcelableExtra(KEY_SET);
                 setTitle(set.getName());
@@ -147,30 +136,12 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
                 setTitle(getString(R.string.action_saved));
             }
 
-            transitionCard = getIntent().getParcelableExtra(KEY_CARD);
-            if (transitionCard != null && MTGApp.isActivityTransitionAvailable()) {
-                Picasso.with(getApplicationContext()).load(transitionCard.getImage()).into(sharedImage);
-
-                tabLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image_half);
-                        UIUtil.setMarginTop(sharedImage, tabLayout.getHeight() + paddingCard);
-                        tabLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    }
-                });
-            }
-
             startPosition = getIntent().getIntExtra(POSITION, 0);
         } else {
             LOG.d("intent null");
         }
 
-        if (transitionCard != null && MTGApp.isActivityTransitionAvailable() && bundle == null) {
-            setupEnterAnimation();
-        } else {
-            cardsPresenter.loadIdFavourites();
-        }
+        cardsPresenter.loadIdFavourites();
     }
 
     private void setupView() {
@@ -185,11 +156,9 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));*/
         tabLayout.setupWithViewPager(viewPager);
-        RelativeLayout.LayoutParams parSharedImage = (RelativeLayout.LayoutParams) sharedImage.getLayoutParams();
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
         if (isPortrait) {
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
-            parSharedImage.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
             par.rightMargin = UIUtil.dpToPx(this, 16);
@@ -200,13 +169,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-
-        int paddingCard = getResources().getDimensionPixelSize(R.dimen.padding_card_image);
-        int widthAvailable = size.x - paddingCard * 2;
-        if (!isPortrait) {
-            widthAvailable = size.x / 2 - paddingCard * 2;
-        }
-        UIUtil.calculateSizeCardImage(sharedImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
     }
 
     public String getPageTrack() {
@@ -355,36 +317,4 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         throw new UnsupportedOperationException();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void setupEnterAnimation() {
-        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.change_bound_with_arc);
-        transition.setDuration(200);
-        getWindow().setSharedElementEnterTransition(transition);
-        transition.addListener(new Transition.TransitionListener() {
-            @Override
-            public void onTransitionStart(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                cardsPresenter.loadIdFavourites();
-            }
-
-            @Override
-            public void onTransitionCancel(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionPause(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionResume(Transition transition) {
-
-            }
-        });
-    }
 }

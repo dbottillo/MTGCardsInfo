@@ -64,6 +64,9 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, Runner.RxWr
 
     public void update(CardFilter.TYPE type, boolean on) {
         LOG.d("update " + type.toString() + "with: " + on);
+        if (memoryStorage.getFilter() == null){
+            memoryStorage.setFilter(new CardFilter());
+        }
         switch (type) {
             case WHITE:
                 memoryStorage.getFilter().white = on;

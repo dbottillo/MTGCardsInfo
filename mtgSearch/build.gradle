@@ -23,6 +23,7 @@ apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
+apply plugin: 'jacoco'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
@@ -37,14 +38,14 @@ repositories {
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    buildToolsVersion '24.0.2'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 53
-        versionName "2.7.6"
+        versionCode 54
+        versionName "2.7.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -70,7 +71,8 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            buildConfigField 'int', 'DATABASE_VERSION', '18'
+            testCoverageEnabled true
+            buildConfigField 'int', 'DATABASE_VERSION', '19'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -79,7 +81,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '18'
+            buildConfigField 'int', 'DATABASE_VERSION', '19'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -88,7 +90,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '18'
+            buildConfigField 'int', 'DATABASE_VERSION', '19'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -169,7 +171,7 @@ task checkstyle(type: Checkstyle) {
     classpath = files()
 }
 
-task findbugs(type: FindBugs, dependsOn: assembleProd) {
+task findbugs(type: FindBugs) {
 
     description 'Run findbugs'
     group 'verification'
@@ -188,7 +190,7 @@ task findbugs(type: FindBugs, dependsOn: assembleProd) {
     }
 }
 
-task pmd(type: Pmd, dependsOn: assembleDebug) {
+task pmd(type: Pmd) {
 
     description 'Run pmd'
     group 'verification'
@@ -211,5 +213,33 @@ testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedProdDebugAndroidTe
 
 task release
 release.dependsOn 'quality', 'testPreRelease', 'assembleProdRelease'
+
+task qualityBeta
+qualityBeta.dependsOn 'checkstyle', 'lintProdBeta', 'pmd', 'findbugs'
+
+task testPreBeta
+testPreBeta.dependsOn 'testProdBetaUnitTest', 'connectedProdBetaAndroidTest'
+
+task beta
+beta.dependsOn 'quality', 'testPreBeta', 'assembleProdBeta'
+
+task devTestAndCoverage(type: JacocoReport) {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    jacocoClasspath = configurations['androidJacocoAnt']
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/dev/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = files(["${buildDir}/jacoco/testDevDebugUnitTest.exec",
+                           "${buildDir}/outputs/code-coverage/connected/flavors/DEV/coverage.ec"])
+}
+devTestAndCoverage.dependsOn 'createDevDebugCoverageReport', 'testDevDebugUnitTest'
 
 apply plugin: 'com.google.gms.google-services'
