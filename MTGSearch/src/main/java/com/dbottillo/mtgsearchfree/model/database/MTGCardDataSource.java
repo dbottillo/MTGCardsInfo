@@ -17,12 +17,12 @@ public class MTGCardDataSource {
     private static final int LIMIT = 400;
 
     enum STANDARD {
-        DRAGONS_TARKIR(12, "Dragons of Tarkir"),
-        MAGIC_ORIGINS(10, "Magic Origins"),
-        BATTLE_ZENDIKAR(8, "Battle for Zendikar"),
-        OATH_GATEWATCH(5, "Oath of the Gatewatch"),
-        SHADOWS_OVER_INNISTRAD(3, "Shadows over Innistrad"),
-        ELDRITCH_MOON(1, "Eldritch Moon");
+        DRAGONS_TARKIR(14, "Dragons of Tarkir"),
+        MAGIC_ORIGINS(12, "Magic Origins"),
+        BATTLE_ZENDIKAR(10, "Battle for Zendikar"),
+        OATH_GATEWATCH(7, "Oath of the Gatewatch"),
+        SHADOWS_OVER_INNISTRAD(5, "Shadows over Innistrad"),
+        ELDRITCH_MOON(3, "Eldritch Moon");
 
         public int setId;
         public String name;

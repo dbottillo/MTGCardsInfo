@@ -148,7 +148,11 @@ public class FileUtil {
     public CardsBucket readFileContent(Uri uri) {
         try {
             InputStream is = fileLoader.loadUri(uri);
-            return readFileStream(is);
+            CardsBucket bucket = readFileStream(is);
+            if (bucket.getKey() == null) {
+                bucket.setKey(uri.getLastPathSegment());
+            }
+            return bucket;
         } catch (IOException ignored) {
             return null;
         }
@@ -163,22 +167,28 @@ public class FileUtil {
         BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
         String line;
 
+        boolean side = false;
+        int numberOfEmptyLines = 0;
         while ((line = br.readLine()) != null) {
-            if (!line.isEmpty()) {
-                if (line.startsWith("//")) {
-                    // title
-                    if (bucket.getKey() == null) {
-                        bucket.setKey(line.replace("//", ""));
-                    }
-
-                } else if (line.startsWith("SB: ")) {
-                    MTGCard card = generateCard(line.replace("SB: ", ""));
-                    card.setSideboard(true);
-                    cards.add(card);
-                } else {
-                    // standard
-                    cards.add(generateCard(line));
+            if (line.startsWith("//")) {
+                // title
+                if (bucket.getKey() == null) {
+                    bucket.setKey(line.replace("//", ""));
                 }
+            } else if (line.isEmpty()) {
+                numberOfEmptyLines++;
+                // from here on all the cards belong to side
+                if (numberOfEmptyLines >= 2) {
+                    side = true;
+                }
+            } else {
+                MTGCard card = generateCard(line.replace("SB: ", ""));
+                if (line.startsWith("SB: ")) {
+                    card.setSideboard(true);
+                } else {
+                    card.setSideboard(side);
+                }
+                cards.add(card);
             }
         }
         br.close();

@@ -151,7 +151,7 @@ public final class TrackingManager {
     }
 
     public static void trackSearch(SearchParams searchParams) {
-        trackEvent(UA_CATEGORY_SEARCH, "done", searchParams.toString());
+        trackEvent(UA_CATEGORY_SEARCH, "done", searchParams != null ? searchParams.toString() : "null");
     }
 
     public static void trackOpenFeedback() {
