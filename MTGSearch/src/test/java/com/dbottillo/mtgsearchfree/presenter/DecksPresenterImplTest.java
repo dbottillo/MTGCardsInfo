@@ -151,4 +151,13 @@ public class DecksPresenterImplTest extends BaseTest {
         verify(interactor).exportDeck(deck, cards);
         verify(view).deckExported(true);
     }
+
+    @Test
+    public void willShowErrorIfDeckFileCannotBeImported(){
+        Observable observable = Observable.error(new Throwable("error"));
+        when(interactor.importDeck(uri)).thenReturn(observable);
+        presenter.importDeck(uri);
+        verify(interactor).importDeck(uri);
+        verify(view).showError("error");
+    }
 }

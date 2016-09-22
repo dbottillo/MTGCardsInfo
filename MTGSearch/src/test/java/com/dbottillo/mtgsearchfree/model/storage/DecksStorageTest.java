@@ -27,16 +27,16 @@ import static org.mockito.Mockito.when;
 
 public class DecksStorageTest extends BaseTest {
 
-    static CardsInfoDbHelper cardsInfoDbHelper;
-    static MTGCardDataSource mtgCardDataSource;
-    static Deck deck;
-    static MTGCard card;
-    static FileUtil fileUtil;
-    static CardsBucket cardsBucket;
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
-    static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
+    private static CardsInfoDbHelper cardsInfoDbHelper;
+    private static MTGCardDataSource mtgCardDataSource;
+    private static Deck deck;
+    private static MTGCard card;
+    private static FileUtil fileUtil;
+    private static CardsBucket cardsBucket;
+    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
+    private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
 
-    DecksStorage storage;
+    private DecksStorage storage;
 
     @BeforeClass
     public static void staticSetup() {
@@ -122,7 +122,7 @@ public class DecksStorageTest extends BaseTest {
     }
 
     @Test
-    public void DecksStorage_willImportDeck() {
+    public void DecksStorage_willImportDeck() throws Throwable {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(cardsBucket);
         List<Deck> decksLoaded = storage.importDeck(uri);
@@ -131,12 +131,11 @@ public class DecksStorageTest extends BaseTest {
         assertThat(decksLoaded, is(decks));
     }
 
-    @Test
-    public void DecksStorage_willNotImportNullDeck() {
+    @Test(expected=Throwable.class)
+    public void DecksStorage_willNotImportNullDeck() throws Throwable {
         Uri uri = mock(Uri.class);
-        when(fileUtil.readFileContent(uri)).thenReturn(null);
+        Throwable throwable = new Throwable("error");
+        when(fileUtil.readFileContent(uri)).thenThrow(throwable);
         storage.importDeck(uri);
-        verify(cardsInfoDbHelper).getDecks();
-        verifyNoMoreInteractions(cardsInfoDbHelper);
     }
 }

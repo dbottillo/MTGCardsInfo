@@ -78,11 +78,8 @@ public class DecksStorage {
         return loadDeck(deck);
     }
 
-    public List<Deck> importDeck(Uri uri) {
+    public List<Deck> importDeck(Uri uri) throws Throwable {
         CardsBucket bucket = fileUtil.readFileContent(uri);
-        if (bucket == null) {
-            return load();
-        }
         return helper.addDeck(cardDataSource, bucket);
     }
 }
