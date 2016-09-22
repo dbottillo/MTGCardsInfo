@@ -145,16 +145,24 @@ public class FileUtil {
         }
     }
 
-    public CardsBucket readFileContent(Uri uri) {
+    public CardsBucket readFileContent(Uri uri) throws Throwable {
+        InputStream is = null;
         try {
-            InputStream is = fileLoader.loadUri(uri);
+            is = fileLoader.loadUri(uri);
             CardsBucket bucket = readFileStream(is);
+            if (bucket == null){
+                throw new Throwable("error");
+            }
             if (bucket.getKey() == null) {
                 bucket.setKey(uri.getLastPathSegment());
             }
+
             return bucket;
-        } catch (IOException ignored) {
-            return null;
+        } catch (IOException e) {
+            if (is != null) {
+                is.close();
+            }
+            throw new Throwable(e.getLocalizedMessage());
         }
     }
 

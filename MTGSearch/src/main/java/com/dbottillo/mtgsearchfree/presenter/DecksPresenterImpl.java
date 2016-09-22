@@ -136,7 +136,7 @@ public class DecksPresenterImpl implements DecksPresenter {
 
         @Override
         public void onError(Throwable e) {
-
+            decksView.showError(e.getLocalizedMessage());
         }
 
         @Override

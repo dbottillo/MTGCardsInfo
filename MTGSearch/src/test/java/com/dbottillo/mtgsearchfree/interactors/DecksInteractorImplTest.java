@@ -20,6 +20,7 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -28,13 +29,13 @@ import static org.mockito.Mockito.when;
 @RunWith(RobolectricTestRunner.class)
 public class DecksInteractorImplTest {
 
-    static Deck deck;
-    static MTGCard card;
-    static DecksStorage storage;
-    static FileUtil fileUtil;
-    static Uri uri;
-    static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
+    private static Deck deck;
+    private static MTGCard card;
+    private static DecksStorage storage;
+    private static FileUtil fileUtil;
+    private static Uri uri;
+    private static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
+    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
 
     private DecksInteractor decksInteractor;
 
@@ -143,7 +144,7 @@ public class DecksInteractorImplTest {
     }
 
     @Test
-    public void testImportDeck() {
+    public void testImportDeck() throws Throwable {
         when(storage.importDeck(uri)).thenReturn(decks);
         TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
         decksInteractor.importDeck(uri).subscribe(testSubscriber);
@@ -159,5 +160,14 @@ public class DecksInteractorImplTest {
         decksInteractor.exportDeck(deck, deckCards).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(true));
+    }
+
+    @Test
+    public void throwErrorIfImportFails() throws Throwable {
+        Throwable throwable = new Throwable("error");
+        given(storage.importDeck(uri)).willThrow(throwable);
+        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        decksInteractor.importDeck(uri).subscribe(testSubscriber);
+        testSubscriber.assertError(throwable);
     }
 }
