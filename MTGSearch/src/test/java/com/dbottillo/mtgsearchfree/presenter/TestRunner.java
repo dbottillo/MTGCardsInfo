@@ -21,7 +21,9 @@ public class TestRunner<T> extends Runner<T> {
 
             @Override
             public void onNext(T t) {
-                listener.onNext(t);
+                if (listener != null) {
+                    listener.onNext(t);
+                }
             }
         });
         return null;

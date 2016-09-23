@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -168,6 +169,11 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
         LOG.d();
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
         TrackingManager.trackSearchError(message);
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
     }
 
 }

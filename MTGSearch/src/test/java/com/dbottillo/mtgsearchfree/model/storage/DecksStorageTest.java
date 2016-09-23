@@ -3,16 +3,23 @@ package com.dbottillo.mtgsearchfree.model.storage;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher;
 
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +44,9 @@ public class DecksStorageTest extends BaseTest {
     private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
 
     private DecksStorage storage;
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @BeforeClass
     public static void staticSetup() {
@@ -131,11 +141,15 @@ public class DecksStorageTest extends BaseTest {
         assertThat(decksLoaded, is(decks));
     }
 
-    @Test(expected=Throwable.class)
-    public void DecksStorage_willNotImportNullDeck() throws Throwable {
+    @Test
+    public void DecksStorage_willNotImportNullDeck() throws Exception {
+        exception.expect(MTGException.class);
+        exception.expect(MTGExceptionMatcher.hasCode(ExceptionCode.DECK_NOT_IMPORTED));
+
         Uri uri = mock(Uri.class);
-        Throwable throwable = new Throwable("error");
-        when(fileUtil.readFileContent(uri)).thenThrow(throwable);
+        Exception e = new Exception("error");
+        when(fileUtil.readFileContent(uri)).thenThrow(e);
         storage.importDeck(uri);
     }
+
 }
