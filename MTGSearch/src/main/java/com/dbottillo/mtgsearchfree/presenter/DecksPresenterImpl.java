@@ -137,7 +137,12 @@ public class DecksPresenterImpl implements DecksPresenter {
 
         @Override
         public void onError(Throwable e) {
-            decksView.showError((MTGException) e);
+            if (e instanceof MTGException) {
+                MTGException exception = (MTGException) e;
+                decksView.showError(exception);
+            } else {
+                decksView.showError(e.getLocalizedMessage());
+            }
         }
 
         @Override

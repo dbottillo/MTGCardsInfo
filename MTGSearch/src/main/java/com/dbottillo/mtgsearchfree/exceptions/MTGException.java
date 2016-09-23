@@ -13,7 +13,7 @@ public class MTGException extends Exception {
     }
 
     public String getLocalizedMessage(Context context){
-        return context.getResources().getString(code.resource);
+        return context.getResources().getString(code.getResource());
     }
 
     @Override

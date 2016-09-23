@@ -6,8 +6,6 @@ import android.os.Environment;
 import android.text.TextUtils;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
-import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;

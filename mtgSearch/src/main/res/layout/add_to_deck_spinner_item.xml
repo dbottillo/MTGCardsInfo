@@ -6,5 +6,5 @@
     android:ellipsize="marquee"
     android:gravity="center|left"
     android:paddingLeft="16dp"
-    android:singleLine="true"
+    android:maxLines="1"
     android:textColor="@color/color_primary" />

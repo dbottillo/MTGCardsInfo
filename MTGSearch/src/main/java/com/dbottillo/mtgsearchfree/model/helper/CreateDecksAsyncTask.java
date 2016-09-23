@@ -28,7 +28,7 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
     protected ArrayList<Object> doInBackground(String... params) {
         ArrayList<Object> result = new ArrayList<Object>();
 
-        MTGDatabaseHelper databaseHelper = MTGDatabaseHelper.getInstance(context);
+        MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
         CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper);

@@ -108,12 +108,12 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Conspiracy: Take the Crown\n- NEW: From the Vault: Lore
+        - NEW: Kaladesh\n- NEW: Kaladesh Inventions
     </string>
     <string name="release_note_text_full">
-        <b>Version 2.7.7:</b> \n
-        - NEW: Deck fixes \n
-        - NEW: Land option in Search \n\n
+        <b>Version 2.7.8:</b> \n
+        - NEW: Kaladesh\n
+        - NEW: Kaladesh Inventions \n\n
         <b>Version 2.7.6:</b> \n
         - NEW: Deck fixes \n
         - NEW: Land option in Search \n\n
@@ -208,7 +208,6 @@
     <string name="join_beta_action">Join</string>
     <string name="view_type_option">View type</string>
     <string name="main_fragment_tooltip">NEW: you can now switch between list and gridMode view type!</string>
-    <string name="transition_card" translatable="false">transitionName</string>
     <string name="sort_az">Alphabetically</string>
     <string name="sort_color">WUBRG</string>
 
