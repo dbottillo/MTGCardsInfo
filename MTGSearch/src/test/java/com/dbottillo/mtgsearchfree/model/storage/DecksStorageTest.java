@@ -13,8 +13,6 @@ import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher;
 
-import org.hamcrest.Description;
-import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -29,7 +27,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 public class DecksStorageTest extends BaseTest {
@@ -42,11 +39,9 @@ public class DecksStorageTest extends BaseTest {
     private static CardsBucket cardsBucket;
     private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
     private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
-
-    private DecksStorage storage;
-
     @Rule
     public ExpectedException exception = ExpectedException.none();
+    private DecksStorage storage;
 
     @BeforeClass
     public static void staticSetup() {

@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 import android.net.Uri;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
@@ -22,12 +21,10 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
 @RunWith(RobolectricTestRunner.class)
 public class DecksInteractorImplTest {
 

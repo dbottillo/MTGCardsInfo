@@ -21,7 +21,7 @@ public class MTGCardDataSource {
         OATH_GATEWATCH(9, "Oath of the Gatewatch"),
         SHADOWS_OVER_INNISTRAD(7, "Shadows over Innistrad"),
         ELDRITCH_MOON(5, "Eldritch Moon"),
-        KALADESH(2, "KALADESH"),
+        KALADESH(2, "Kaladesh"),
         KALADESH_INVENTIONS(1, "Kaladesh Inventions");
 
         public int setId;
