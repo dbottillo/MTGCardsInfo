@@ -1,8 +1,9 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
 import android.net.Uri;
-import android.test.suitebuilder.annotation.SmallTest;
 
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -24,22 +25,26 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
 @RunWith(RobolectricTestRunner.class)
 public class DecksInteractorImplTest {
 
-    static Deck deck;
-    static MTGCard card;
-    static DecksStorage storage;
-    static FileUtil fileUtil;
-    static Uri uri;
-    static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
+    private static Deck deck;
+    private static MTGCard card;
+    private static DecksStorage storage;
+    private static FileUtil fileUtil;
+    private static Uri uri;
+    private static List<Deck> decks = Arrays.asList(new Deck(2), new Deck(3));
+    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
 
     private DecksInteractor decksInteractor;
 
     @BeforeClass
     public static void setup() {
+
+    }
+
+    @Before
+    public void init() {
         deck = mock(Deck.class);
         card = mock(MTGCard.class);
         storage = mock(DecksStorage.class);
@@ -50,10 +55,6 @@ public class DecksInteractorImplTest {
         when(storage.addDeck("deck")).thenReturn(decks);
         when(storage.deleteDeck(deck)).thenReturn(decks);
         when(storage.editDeck(deck, "new name")).thenReturn(deckCards);
-    }
-
-    @Before
-    public void init() {
         decksInteractor = new DecksInteractorImpl(storage, fileUtil);
     }
 
@@ -143,7 +144,7 @@ public class DecksInteractorImplTest {
     }
 
     @Test
-    public void testImportDeck() {
+    public void testImportDeck() throws Throwable {
         when(storage.importDeck(uri)).thenReturn(decks);
         TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
         decksInteractor.importDeck(uri).subscribe(testSubscriber);
@@ -159,5 +160,14 @@ public class DecksInteractorImplTest {
         decksInteractor.exportDeck(deck, deckCards).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(true));
+    }
+
+    @Test
+    public void throwErrorIfImportFails() throws MTGException {
+        MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
+        when(storage.importDeck(uri)).thenThrow(exception);
+        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        decksInteractor.importDeck(uri).subscribe(testSubscriber);
+        testSubscriber.assertError(exception);
     }
 }

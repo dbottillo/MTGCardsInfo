@@ -166,20 +166,12 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void removeFromFavourite(MTGCard card, boolean reload) {
         LOG.d("remove " + card + " from fav");
-        if (reload) {
-            subscription = favWrapper.run(interactor.removeFromFavourite(card), idFavSubscriber);
-        } else {
-            subscription = favWrapper.run(interactor.removeFromFavourite(card), null);
-        }
+        subscription = favWrapper.run(interactor.removeFromFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void saveAsFavourite(MTGCard card, boolean reload) {
         LOG.d("save " + card + " as fav");
-        if (reload) {
-            subscription = favWrapper.run(interactor.saveAsFavourite(card), idFavSubscriber);
-        } else {
-            subscription = favWrapper.run(interactor.saveAsFavourite(card), null);
-        }
+        subscription = favWrapper.run(interactor.saveAsFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void loadCards(final MTGSet set) {

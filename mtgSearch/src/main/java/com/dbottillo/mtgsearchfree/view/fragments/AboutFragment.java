@@ -124,7 +124,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
         TrackingManager.trackOpenFeedback();
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         String text = String.format(getString(R.string.feedback_text), versionName,
-                Build.VERSION.SDK_INT, Build.DEVICE, Build.MODEL, Build.PRODUCT);
+                String.valueOf(Build.VERSION.SDK_INT), Build.DEVICE, Build.MODEL, Build.PRODUCT);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getActivity().getString(R.string.app_name));
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text));
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));

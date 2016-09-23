@@ -82,7 +82,11 @@ public class DecksInteractorImpl implements DecksInteractor {
     @Override
     public Observable<List<Deck>> importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
-        return Observable.just(storage.importDeck(uri));
+        try {
+            return Observable.just(storage.importDeck(uri));
+        } catch (Throwable throwable) {
+            return Observable.error(throwable);
+        }
     }
 
     @Override

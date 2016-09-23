@@ -4,6 +4,8 @@ import android.net.Uri;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -150,5 +152,15 @@ public class DecksPresenterImplTest extends BaseTest {
         presenter.exportDeck(deck, cards);
         verify(interactor).exportDeck(deck, cards);
         verify(view).deckExported(true);
+    }
+
+    @Test
+    public void willShowErrorIfDeckFileCannotBeImported(){
+        MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
+        Observable observable = Observable.error(exception);
+        when(interactor.importDeck(uri)).thenReturn(observable);
+        presenter.importDeck(uri);
+        verify(interactor).importDeck(uri);
+        verify(view).showError(exception);
     }
 }

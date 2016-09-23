@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -129,6 +130,11 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
     }
 
     @OnClick(R.id.lucky_again)

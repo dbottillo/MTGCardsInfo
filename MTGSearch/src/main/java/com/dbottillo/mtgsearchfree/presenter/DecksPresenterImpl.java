@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
 
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -136,7 +137,12 @@ public class DecksPresenterImpl implements DecksPresenter {
 
         @Override
         public void onError(Throwable e) {
-
+            if (e instanceof MTGException) {
+                MTGException exception = (MTGException) e;
+                decksView.showError(exception);
+            } else {
+                decksView.showError(e.getLocalizedMessage());
+            }
         }
 
         @Override

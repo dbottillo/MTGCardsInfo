@@ -2,6 +2,8 @@ package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.net.Uri;
 
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -78,10 +80,15 @@ public class DecksStorage {
         return loadDeck(deck);
     }
 
-    public List<Deck> importDeck(Uri uri) {
-        CardsBucket bucket = fileUtil.readFileContent(uri);
-        if (bucket == null) {
-            return load();
+    public List<Deck> importDeck(Uri uri) throws MTGException {
+        CardsBucket bucket;
+        try {
+            bucket = fileUtil.readFileContent(uri);
+        } catch (Exception e) {
+            throw new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "file not valid");
+        }
+        if (bucket == null){
+            throw new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "bucket null");
         }
         return helper.addDeck(cardDataSource, bucket);
     }

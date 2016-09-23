@@ -34,7 +34,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     tools:text="Ajani" />

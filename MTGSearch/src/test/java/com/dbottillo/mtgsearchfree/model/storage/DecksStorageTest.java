@@ -3,16 +3,21 @@ package com.dbottillo.mtgsearchfree.model.storage;
 import android.net.Uri;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,21 +27,21 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 public class DecksStorageTest extends BaseTest {
 
-    static CardsInfoDbHelper cardsInfoDbHelper;
-    static MTGCardDataSource mtgCardDataSource;
-    static Deck deck;
-    static MTGCard card;
-    static FileUtil fileUtil;
-    static CardsBucket cardsBucket;
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
-    static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
-
-    DecksStorage storage;
+    private static CardsInfoDbHelper cardsInfoDbHelper;
+    private static MTGCardDataSource mtgCardDataSource;
+    private static Deck deck;
+    private static MTGCard card;
+    private static FileUtil fileUtil;
+    private static CardsBucket cardsBucket;
+    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
+    private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
+    private DecksStorage storage;
 
     @BeforeClass
     public static void staticSetup() {
@@ -122,7 +127,7 @@ public class DecksStorageTest extends BaseTest {
     }
 
     @Test
-    public void DecksStorage_willImportDeck() {
+    public void DecksStorage_willImportDeck() throws Throwable {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(cardsBucket);
         List<Deck> decksLoaded = storage.importDeck(uri);
@@ -132,11 +137,14 @@ public class DecksStorageTest extends BaseTest {
     }
 
     @Test
-    public void DecksStorage_willNotImportNullDeck() {
+    public void DecksStorage_willNotImportNullDeck() throws Exception {
+        exception.expect(MTGException.class);
+        exception.expect(MTGExceptionMatcher.hasCode(ExceptionCode.DECK_NOT_IMPORTED));
+
         Uri uri = mock(Uri.class);
-        when(fileUtil.readFileContent(uri)).thenReturn(null);
+        Exception e = new Exception("error");
+        when(fileUtil.readFileContent(uri)).thenThrow(e);
         storage.importDeck(uri);
-        verify(cardsInfoDbHelper).getDecks();
-        verifyNoMoreInteractions(cardsInfoDbHelper);
     }
+
 }
