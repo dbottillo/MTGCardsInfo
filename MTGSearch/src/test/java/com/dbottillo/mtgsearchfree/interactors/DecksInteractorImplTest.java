@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.interactors;
 import android.net.Uri;
 import android.test.suitebuilder.annotation.SmallTest;
 
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -41,6 +43,11 @@ public class DecksInteractorImplTest {
 
     @BeforeClass
     public static void setup() {
+
+    }
+
+    @Before
+    public void init() {
         deck = mock(Deck.class);
         card = mock(MTGCard.class);
         storage = mock(DecksStorage.class);
@@ -51,10 +58,6 @@ public class DecksInteractorImplTest {
         when(storage.addDeck("deck")).thenReturn(decks);
         when(storage.deleteDeck(deck)).thenReturn(decks);
         when(storage.editDeck(deck, "new name")).thenReturn(deckCards);
-    }
-
-    @Before
-    public void init() {
         decksInteractor = new DecksInteractorImpl(storage, fileUtil);
     }
 
@@ -163,11 +166,11 @@ public class DecksInteractorImplTest {
     }
 
     @Test
-    public void throwErrorIfImportFails() throws Throwable {
-        Throwable throwable = new Throwable("error");
-        given(storage.importDeck(uri)).willThrow(throwable);
+    public void throwErrorIfImportFails() throws MTGException {
+        MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
+        when(storage.importDeck(uri)).thenThrow(exception);
         TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
         decksInteractor.importDeck(uri).subscribe(testSubscriber);
-        testSubscriber.assertError(throwable);
+        testSubscriber.assertError(exception);
     }
 }

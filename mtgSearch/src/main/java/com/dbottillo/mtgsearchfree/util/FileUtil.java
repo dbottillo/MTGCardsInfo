@@ -6,6 +6,8 @@ import android.os.Environment;
 import android.text.TextUtils;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
+import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -145,33 +147,24 @@ public class FileUtil {
         }
     }
 
-    public CardsBucket readFileContent(Uri uri) throws Throwable {
-        InputStream is = null;
+    public CardsBucket readFileContent(Uri uri) throws Exception{
+        InputStream is = fileLoader.loadUri(uri);
+        CardsBucket bucket;
         try {
-            is = fileLoader.loadUri(uri);
-            CardsBucket bucket = readFileStream(is);
-            if (bucket == null){
-                throw new Throwable("error");
-            }
+            bucket = readFileStream(is);
             if (bucket.getKey() == null) {
                 bucket.setKey(uri.getLastPathSegment());
             }
-
-            return bucket;
-        } catch (IOException e) {
-            if (is != null) {
-                is.close();
-            }
-            throw new Throwable(e.getLocalizedMessage());
+        } catch (Exception e) {
+            is.close();
+            throw e;
         }
+        return bucket;
     }
 
-    private CardsBucket readFileStream(InputStream is) throws IOException {
+    private CardsBucket readFileStream(InputStream is) throws Exception {
         List<MTGCard> cards = new ArrayList<>();
         CardsBucket bucket = new CardsBucket();
-        if (is == null) {
-            return null;
-        }
         BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
         String line;
 

@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
@@ -301,6 +302,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
     @Override
     public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+        Toast.makeText(getActivity(), exception.getLocalizedMessage(getContext()), Toast.LENGTH_SHORT).show();
     }
 
     @Override

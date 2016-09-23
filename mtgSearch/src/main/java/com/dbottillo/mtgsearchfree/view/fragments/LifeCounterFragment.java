@@ -18,6 +18,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
@@ -345,5 +346,10 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     public void showError(String message) {
         progressBar.setVisibility(View.VISIBLE);
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
     }
 }
