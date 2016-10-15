@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +17,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class PlayerDataSourceTest extends BaseDatabaseTest {
+public class PlayerDataSourceTest extends BaseContextTest {
 
     @Test
     public void generate_table_is_correct() {

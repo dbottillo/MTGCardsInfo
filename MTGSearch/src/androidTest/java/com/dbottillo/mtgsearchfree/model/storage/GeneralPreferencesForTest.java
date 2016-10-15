@@ -10,8 +10,8 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 @SuppressWarnings("checkstyle:finalclass")
 public class GeneralPreferencesForTest implements GeneralData {
 
-    boolean debug = false;
-    boolean typeList = false;
+    private boolean debug = false;
+    private boolean typeList = false;
 
     public GeneralPreferencesForTest() {
 
@@ -39,7 +39,6 @@ public class GeneralPreferencesForTest implements GeneralData {
 
     @Override
     public boolean isCardsShowTypeGrid() {
-        LOG.e("here!");
         return !typeList;
     }
 

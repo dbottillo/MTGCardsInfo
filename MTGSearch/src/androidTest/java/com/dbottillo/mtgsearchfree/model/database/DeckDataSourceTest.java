@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.StringUtil;
 
 import org.junit.Before;
@@ -22,7 +23,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class DeckDataSourceTest extends BaseDatabaseTest {
+public class DeckDataSourceTest extends BaseContextTest {
 
     private static final int SMALL_NUMBER_OF_CARDS = 4;
 
