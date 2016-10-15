@@ -85,7 +85,6 @@ public class MTGCardsView extends RelativeLayout {
 
         progressBar.setVisibility(View.GONE);
         emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
-        LOG.d("visibility: "+emptyView.getVisibility());
     }
 
     public void setGridOn() {
