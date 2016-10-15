@@ -46,7 +46,7 @@ android {
         targetSdkVersion 24
         versionCode 55
         versionName "2.7.8"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
     }
 
     signingConfigs {

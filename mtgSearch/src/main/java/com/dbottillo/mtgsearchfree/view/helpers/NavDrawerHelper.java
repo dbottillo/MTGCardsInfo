@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
@@ -30,7 +31,7 @@ public class NavDrawerHelper {
 
     public NavDrawerHelper(final MainActivity activity, NavigationView navigationView,
                            Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener,
-                           GeneralPreferences generalPreferences) {
+                           GeneralData generalData) {
         this.navigationView = navigationView;
         this.resources = activity.getResources();
         drawerLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
@@ -70,7 +71,7 @@ public class NavDrawerHelper {
             navigationView.getMenu().add(0, 102, Menu.NONE, resources.getString(R.string.action_create_fav)).setIcon(R.drawable.left_debug);
             navigationView.getMenu().add(0, 103, Menu.NONE, resources.getString(R.string.action_crash)).setIcon(R.drawable.left_debug);
         }
-        if (generalPreferences.isDebugEnabled()) {
+        if (generalData.isDebugEnabled()) {
             navigationView.getMenu().add(0, 104, Menu.NONE, resources.getString(R.string.action_send_db)).setIcon(R.drawable.left_debug);
             navigationView.getMenu().add(0, 105, Menu.NONE, resources.getString(R.string.action_copy_db)).setIcon(R.drawable.left_debug);
         }

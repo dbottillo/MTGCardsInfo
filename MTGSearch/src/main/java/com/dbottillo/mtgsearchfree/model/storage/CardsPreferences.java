@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
@@ -71,13 +72,10 @@ public class CardsPreferences {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("setPosition", position);
         editor.apply();
-        LOG.e("saving: " + position);
     }
 
     public int getSetPosition() {
-        int pos = sharedPreferences.getInt("setPosition", 0);
-        LOG.e("pos: " + pos);
-        return 0;
+        return sharedPreferences.getInt("setPosition", 0);
     }
 
     public boolean showPoison() {
@@ -124,5 +122,10 @@ public class CardsPreferences {
 
     public void saveVersionCode() {
         sharedPreferences.edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply();
+    }
+
+    @VisibleForTesting
+    public void clear(){
+        sharedPreferences.edit().clear().apply();
     }
 }

@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
@@ -20,6 +21,7 @@ import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
 import javax.inject.Singleton;
@@ -27,26 +29,16 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AndroidModule.class, DataModule.class, InteractorsModule.class})
+@Component(modules = {AndroidModule.class, DataModule.class})
 public interface AppComponent {
-
-    CardFilterInteractor getCardFilterInteractor();
-
-    CardsInteractor getCardsInteractor();
 
     MemoryStorage getCardsMemoryStorage();
 
     CardsStorage getCardsStorage();
 
-    SetsInteractor getSetsInteractor();
-
     SetsStorage getSetsStorage();
 
-    PlayerInteractor getPlayerInteractor();
-
     PlayersStorage getPlayerStorage();
-
-    DecksInteractor getDecksInteractor();
 
     DecksStorage getDecksStorage();
 
@@ -56,7 +48,9 @@ public interface AppComponent {
 
     CardsPreferences getCardsPreferences();
 
-    GeneralPreferences getGeneralPreferences();
+    GeneralData getGeneralPreferences();
+
+    FileUtil getFileUtil();
 
     void inject(MTGApp app);
 

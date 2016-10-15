@@ -61,6 +61,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
         final Context context = holder.parent.getContext();
         if (gridMode) {
             holder.loader.setVisibility(View.VISIBLE);
+            holder.image.setContentDescription(card.getName());
             Picasso.with(context.getApplicationContext()).load(card.getImage())
                     .error(R.drawable.left_debug)
                     .into(holder.image, new Callback() {
