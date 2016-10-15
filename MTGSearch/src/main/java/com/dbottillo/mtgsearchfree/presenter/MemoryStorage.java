@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
 
@@ -12,11 +13,11 @@ public class MemoryStorage {
     private CardFilter filter;
 
     public MemoryStorage() {
-
+        LOG.d("created");
     }
 
     public int[] getFavourites() {
-        if (favourites == null){
+        if (favourites == null) {
             return null;
         }
         return favourites.clone();

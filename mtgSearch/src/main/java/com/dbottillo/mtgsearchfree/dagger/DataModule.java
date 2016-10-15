@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
@@ -20,11 +21,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class DataModule {
+public class DataModule {
 
     @Provides
     @Singleton
-    GeneralPreferences provideSharedPreferences(Context context) {
+    GeneralData provideSharedPreferences(Context context) {
         return new GeneralPreferences(context);
     }
 
