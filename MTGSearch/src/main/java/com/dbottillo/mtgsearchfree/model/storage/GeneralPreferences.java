@@ -56,7 +56,7 @@ public class GeneralPreferences implements GeneralData {
 
     @Override
     public long getDefaultDuration() {
-        return 2000;
+        return 200;
     }
 
     @VisibleForTesting
