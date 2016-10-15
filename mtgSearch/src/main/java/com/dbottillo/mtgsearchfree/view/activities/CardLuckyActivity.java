@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
@@ -15,6 +17,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
@@ -31,6 +34,7 @@ import butterknife.OnClick;
 public class CardLuckyActivity extends CommonCardsActivity implements CardsView {
 
     public static final String CARD = "CARD";
+    public static final String CARDS = "luckyCards";
     public static final int LUCKY_BATCH_CARDS = 10;
 
     private ArrayList<MTGCard> luckyCards = null;
@@ -44,6 +48,9 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     @BindView(R.id.card_view)
     MTGCardView cardView;
 
+    @BindView(R.id.title_card)
+    TextView titleCard;
+
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_lucky_card);
@@ -53,6 +60,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         ButterKnife.bind(this);
 
         setupToolbar();
+        MaterialWrapper.setElevation(toolbar, 0);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -70,7 +78,11 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         if (bundle == null) {
             luckyCards = new ArrayList<>();
         } else {
-            luckyCards = bundle.getParcelableArrayList("luckyCards");
+            luckyCards = bundle.getParcelableArrayList(CARDS);
+            MTGCard card = bundle.getParcelable(CARD);
+            cardView.load(card, cardsPreferences.showImage());
+            titleCard.setText(card.getName());
+            updateMenu();
         }
 
         cardsPresenter.loadIdFavourites();
@@ -78,7 +90,8 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList("luckyCards", luckyCards);
+        outState.putParcelableArrayList(CARDS, luckyCards);
+        outState.putParcelable(CARD, getCurrentCard());
     }
 
     public void onDestroy() {
@@ -150,6 +163,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
         }
         updateMenu();
+        titleCard.setText(card.getName());
     }
 
     public MTGCard getCurrentCard() {
