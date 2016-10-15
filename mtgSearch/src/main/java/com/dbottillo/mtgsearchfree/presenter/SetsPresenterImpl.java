@@ -19,7 +19,6 @@ public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListene
     private CardsPreferences cardsPreferences;
     private Runner<List<MTGSet>> wrapper;
     private MemoryStorage memoryStorage;
-    private int currentSetPosition = -1;
 
     @Inject
     public SetsPresenterImpl(SetsInteractor interactor, RunnerFactory runnerFactory,
@@ -48,16 +47,12 @@ public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListene
 
     @Override
     public void setSelected(int position) {
-        currentSetPosition = position;
         cardsPreferences.saveSetPosition(position);
     }
 
     @Override
     public int getCurrentSetPosition() {
-        if (currentSetPosition < 0){
-            currentSetPosition = cardsPreferences.getSetPosition();
-        }
-        return currentSetPosition;
+        return cardsPreferences.getSetPosition();
     }
 
     @Override

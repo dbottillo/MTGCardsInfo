@@ -5,6 +5,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class CardDataSourceTest extends BaseDatabaseTest {
+public class CardDataSourceTest extends BaseContextTest {
 
     MTGCardDataSource cardDataSource;
 

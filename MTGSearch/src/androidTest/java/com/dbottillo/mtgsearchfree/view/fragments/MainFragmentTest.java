@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.content.pm.ActivityInfo;
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -31,7 +33,7 @@ public class MainFragmentTest {
     private final static String CARD_NAME = "Aerial Responder";
 
     @Test
-    public void willShowKaladeshSet() {
+    public void showsKaladeshSet() {
         goToKaladesh();
         onView(withId(R.id.set_chooser_name)).check(matches(withText(SET_NAME)));
         onView(withRecyclerView(R.id.card_list).atPositionOnView(1, R.id.grid_item_card_image))
@@ -39,13 +41,30 @@ public class MainFragmentTest {
     }
 
     @Test
-    public void willSwitchToListMode() {
+    public void switchesToListMode() {
         goToKaladesh();
         onView(withId(R.id.cards_view_type)).check(matches(withDrawable(R.drawable.cards_list_type)));
         onView(withId(R.id.cards_view_type)).perform(click());
         onView(withId(R.id.cards_view_type)).check(matches(withDrawable(R.drawable.cards_grid_type)));
         onView(withRecyclerView(R.id.card_list).atPositionOnView(1, R.id.card_name))
                 .check(matches(withText(CARD_NAME)));
+    }
+
+    @Test
+    public void switchesToAlphabeticalOrder() {
+        goToKaladesh();
+        onView(withId(R.id.cards_sort)).perform(click());
+        onView(withId(R.id.sort_option_az)).perform(click());
+        Espresso.pressBack();
+        onView(withRecyclerView(R.id.card_list).atPositionOnView(0, R.id.grid_item_card_image))
+                .check(matches(withContentDescription("Accomplished Automaton")));
+    }
+
+    @Test
+    public void retainsSetOnOrientationChange() {
+        goToKaladesh();
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        onView(withId(R.id.set_chooser_name)).check(matches(withText(SET_NAME)));
     }
 
     private void waitForIt() {
