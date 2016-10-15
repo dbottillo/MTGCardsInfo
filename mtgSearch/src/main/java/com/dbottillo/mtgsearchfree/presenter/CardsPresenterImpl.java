@@ -8,7 +8,7 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
@@ -24,7 +24,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     CardsInteractor interactor;
     private CardsView cardsView;
     private DeckMapper deckMapper;
-    private GeneralPreferences generalPreferences;
+    private GeneralData generalData;
     private Subscription subscription = null;
     private Runner<List<MTGCard>> cardsWrapper;
     private RunnerAndMap<List<MTGCard>, DeckBucket> deckWrapper;
@@ -34,12 +34,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     private boolean firstTypeTypeCheck = true;
 
     @Inject
-    public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralPreferences generalPreferences,
+    public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralData generalData,
                               RunnerFactory runnerFactory, MemoryStorage memoryStorage) {
         LOG.d("created");
         this.interactor = interactor;
         this.deckMapper = mapper;
-        this.generalPreferences = generalPreferences;
+        this.generalData = generalData;
         this.cardsWrapper = runnerFactory.simple();
         this.deckWrapper = runnerFactory.withMap();
         this.favWrapper = runnerFactory.simple();
@@ -144,7 +144,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadCardTypePreference() {
         LOG.d();
-        boolean isGrid = generalPreferences.isCardsShowTypeGrid();
+        boolean isGrid = generalData.isCardsShowTypeGrid();
         if (firstTypeTypeCheck || grid != isGrid) {
             grid = isGrid;
             firstTypeTypeCheck = false;
@@ -155,11 +155,11 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void toggleCardTypeViewPreference() {
         LOG.d();
-        if (generalPreferences.isCardsShowTypeGrid()) {
-            generalPreferences.setCardsShowTypeList();
+        if (generalData.isCardsShowTypeGrid()) {
+            generalData.setCardsShowTypeList();
             cardsView.cardTypePreferenceChanged(false);
         } else {
-            generalPreferences.setCardsShowTypeGrid();
+            generalData.setCardsShowTypeGrid();
             cardsView.cardTypePreferenceChanged(true);
         }
     }

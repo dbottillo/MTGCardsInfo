@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:text="@string/pick_sort_option"/>
 
-
     <RadioGroup
         android:id="@+id/sort_option_container"
         android:layout_width="wrap_content"
@@ -24,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sort_az"/>
-
 
         <RadioButton
             android:id="@+id/sort_option_color"

@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
@@ -56,7 +56,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
     private long firstTap;
 
     @Inject
-    GeneralPreferences generalPreferences;
+    GeneralData generalData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -147,7 +147,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                 long seconds = diff / 1000;
                 if (seconds < 5) {
                     version.setOnTouchListener(null);
-                    generalPreferences.setDebug();
+                    generalData.setDebug();
                     Toast.makeText(getActivity(), R.string.debug_mode_active, Toast.LENGTH_LONG).show();
                 }
                 v.performClick();

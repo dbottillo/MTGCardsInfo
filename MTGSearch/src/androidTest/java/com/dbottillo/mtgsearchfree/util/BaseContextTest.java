@@ -1,13 +1,16 @@
-package com.dbottillo.mtgsearchfree.model.database;
+package com.dbottillo.mtgsearchfree.util;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.test.RenamingDelegatingContext;
 
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
+
 import org.junit.After;
 import org.junit.Before;
 
-public class BaseDatabaseTest {
+public abstract class BaseContextTest {
 
     protected RenamingDelegatingContext context;
     public CardsInfoDbHelper cardsInfoDbHelper;
