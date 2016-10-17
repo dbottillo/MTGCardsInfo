@@ -5,11 +5,11 @@ import android.os.Parcelable;
 
 public class Deck implements Parcelable {
 
-    long id;
-    String name;
-    boolean archived;
-    int numberOfCards = 0;
-    int sizeOfSideboard = 0;
+    private long id;
+    private String name;
+    private boolean archived;
+    private int numberOfCards = 0;
+    private int sizeOfSideboard = 0;
 
     public Deck(Parcel in) {
         readFromParcel(in);
