@@ -96,6 +96,18 @@ public class DecksPresenterImpl implements DecksPresenter {
     }
 
     @Override
+    public void moveCardFromSideBoard(Deck deck, MTGCard card, int quantity) {
+        LOG.d();
+        cardWrapper.runAndMap(interactor.moveCardFromSideboard(deck, card, quantity), mapper, cardsObserver);
+    }
+
+    @Override
+    public void moveCardToSideBoard(Deck deck, MTGCard card, int quantity) {
+        LOG.d();
+        cardWrapper.runAndMap(interactor.moveCardToSideboard(deck, card, quantity), mapper, cardsObserver);
+    }
+
+    @Override
     public void importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
