@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;

@@ -1,17 +1,11 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
-import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
-import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
-import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;

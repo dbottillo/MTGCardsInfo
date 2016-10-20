@@ -54,6 +54,6 @@ public class GeneralPreferencesForTest implements GeneralData {
 
     @Override
     public long getDefaultDuration() {
-        return 50;
+        return 0;
     }
 }

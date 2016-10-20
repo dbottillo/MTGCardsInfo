@@ -8,6 +8,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,6 +49,7 @@ public class MainFragmentTest {
         onView(withId(R.id.cards_view_type)).check(matches(withDrawable(R.drawable.cards_grid_type)));
         onView(withRecyclerView(R.id.card_list).atPositionOnView(1, R.id.card_name))
                 .check(matches(withText(CARD_NAME)));
+        onView(withId(R.id.cards_view_type)).perform(click());
     }
 
     @Test
@@ -58,6 +60,8 @@ public class MainFragmentTest {
         Espresso.pressBack();
         onView(withRecyclerView(R.id.card_list).atPositionOnView(0, R.id.grid_item_card_image))
                 .check(matches(withContentDescription("Accomplished Automaton")));
+        onView(withId(R.id.cards_sort)).perform(click());
+        onView(withId(R.id.sort_option_color)).perform(click());
     }
 
     @Test
@@ -65,11 +69,12 @@ public class MainFragmentTest {
         goToKaladesh();
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         onView(withId(R.id.set_chooser_name)).check(matches(withText(SET_NAME)));
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     private void waitForIt() {
         try {
-            Thread.sleep(4000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
@@ -32,7 +33,7 @@ public class DataModule {
     @Provides
     @Singleton
     CardsPreferences provideGeneralPreferences(Context context) {
-        return new CardsPreferences(context);
+        return new CardsPreferencesImpl(context);
     }
 
     @Provides
