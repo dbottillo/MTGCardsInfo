@@ -8,13 +8,13 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-public class CardsPreferencesTest extends BaseContextTest{
+public class CardsPreferencesImplTest extends BaseContextTest{
 
-    private CardsPreferences underTest;
+    private CardsPreferencesImpl underTest;
 
     @Before
     public void setup(){
-        underTest = new CardsPreferences(context);
+        underTest = new CardsPreferencesImpl(context);
         underTest.clear();
     }
 

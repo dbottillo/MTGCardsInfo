@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 
 import org.junit.Test;
 import org.mockito.Mock;
@@ -22,7 +22,7 @@ public class CardFilterInteractorImplTest extends BaseTest{
 
     @Test
     public void willLoadDataFromStorage() {
-        CardsPreferences cardsPreferences = mock(CardsPreferences.class);
+        CardsPreferencesImpl cardsPreferences = mock(CardsPreferencesImpl.class);
         when(cardsPreferences.load()).thenReturn(cardFilter);
         CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
         TestSubscriber<CardFilter> testSubscriber = new TestSubscriber<>();
@@ -34,7 +34,7 @@ public class CardFilterInteractorImplTest extends BaseTest{
 
     @Test
     public void willSyncDataWithStorage() {
-        CardsPreferences cardsPreferences = mock(CardsPreferences.class);
+        CardsPreferencesImpl cardsPreferences = mock(CardsPreferencesImpl.class);
         CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
         interactor.sync(cardFilter);
         verify(cardsPreferences).sync(cardFilter);
