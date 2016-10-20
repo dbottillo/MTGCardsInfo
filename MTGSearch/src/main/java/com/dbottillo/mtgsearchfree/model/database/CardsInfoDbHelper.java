@@ -150,6 +150,14 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         DeckDataSource.removeCardFromDeck(getWritableDatabase(), deck.getId(), card);
     }
 
+    public void moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
+        DeckDataSource.moveCardFromSideBoard(getWritableDatabase(), deck.getId(), card, quantity);
+    }
+
+    public void moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
+        DeckDataSource.moveCardToSideBoard(getWritableDatabase(), deck.getId(), card, quantity);
+    }
+
     public List<Player> loadPlayers() {
         return PlayerDataSource.getPlayers(getReadableDatabase());
     }
