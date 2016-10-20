@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
@@ -26,14 +25,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
 public class DecksPresenterImplTest extends BaseTest {
 
-    DecksPresenter presenter;
-
-    DecksInteractor interactor;
-
-    DecksView view;
+    private DecksPresenter presenter;
+    private DecksInteractor interactor;
+    private DecksView view;
 
     @Mock
     DeckMapper deckMapper;
@@ -72,6 +68,8 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards));
         when(interactor.editDeck(deck, "deck")).thenReturn(Observable.just(cards));
         when(interactor.exportDeck(deck, cards)).thenReturn(Observable.just(true));
+        when(interactor.moveCardFromSideboard(deck, card, 2)).thenReturn(Observable.just(cards));
+        when(interactor.moveCardToSideboard(deck, card, 2)).thenReturn(Observable.just(cards));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
         presenter = new DecksPresenterImpl(interactor, deckMapper, new TestRunnerFactory());
         presenter.init(view);
@@ -155,12 +153,26 @@ public class DecksPresenterImplTest extends BaseTest {
     }
 
     @Test
-    public void willShowErrorIfDeckFileCannotBeImported(){
+    public void willShowErrorIfDeckFileCannotBeImported() {
         MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
         Observable observable = Observable.error(exception);
         when(interactor.importDeck(uri)).thenReturn(observable);
         presenter.importDeck(uri);
         verify(interactor).importDeck(uri);
         verify(view).showError(exception);
+    }
+
+    @Test
+    public void movesCardFromSideboard() {
+        presenter.moveCardFromSideBoard(deck, card, 2);
+        verify(interactor).moveCardFromSideboard(deck, card, 2);
+        verify(view).deckLoaded(deckBucket);
+    }
+
+    @Test
+    public void movesCardToSideboard() {
+        presenter.moveCardToSideBoard(deck, card, 2);
+        verify(interactor).moveCardToSideboard(deck, card, 2);
+        verify(view).deckLoaded(deckBucket);
     }
 }

@@ -144,6 +144,26 @@ public class DecksInteractorImplTest {
     }
 
     @Test
+    public void movesCardFromSideboard() {
+        when(storage.moveCardFromSideboard(deck, card, 2)).thenReturn(deckCards);
+        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        decksInteractor.moveCardFromSideboard(deck, card, 2).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        verify(storage).moveCardFromSideboard(deck, card, 2);
+    }
+
+    @Test
+    public void movesCardToSideboard() {
+        when(storage.moveCardToSideboard(deck, card, 2)).thenReturn(deckCards);
+        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        decksInteractor.moveCardToSideboard(deck, card, 2).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        verify(storage).moveCardToSideboard(deck, card, 2);
+    }
+
+    @Test
     public void testImportDeck() throws Throwable {
         when(storage.importDeck(uri)).thenReturn(decks);
         TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();

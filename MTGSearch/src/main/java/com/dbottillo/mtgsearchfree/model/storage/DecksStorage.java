@@ -92,5 +92,17 @@ public class DecksStorage {
         }
         return helper.addDeck(cardDataSource, bucket);
     }
+
+    public List<MTGCard> moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
+        LOG.d("move [" +quantity+']' + card + " from sideboard of" + deck);
+        helper.moveCardFromSideboard(deck, card, quantity);
+        return loadDeck(deck);
+    }
+
+    public List<MTGCard> moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
+        LOG.d("move [" +quantity+']' + card + " to sideboard of" + deck);
+        helper.moveCardToSideboard(deck, card, quantity);
+        return loadDeck(deck);
+    }
 }
 

@@ -120,6 +120,20 @@ public class DecksStorageTest extends BaseTest {
     }
 
     @Test
+    public void movesCardFromSideboard() {
+        List<MTGCard> cards = storage.moveCardFromSideboard(deck, card, 2);
+        verify(cardsInfoDbHelper).moveCardFromSideboard(deck, card, 2);
+        assertThat(cards, is(deckCards));
+    }
+
+    @Test
+    public void movesCardToSideboard() {
+        List<MTGCard> cards = storage.moveCardToSideboard(deck, card, 2);
+        verify(cardsInfoDbHelper).moveCardToSideboard(deck, card, 2);
+        assertThat(cards, is(deckCards));
+    }
+
+    @Test
     public void testRemoveAllCard() {
         List<MTGCard> cards = storage.removeAllCard(deck, card);
         verify(cardsInfoDbHelper).removeAllCards(deck, card);

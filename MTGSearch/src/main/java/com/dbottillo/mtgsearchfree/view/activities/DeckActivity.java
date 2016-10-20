@@ -105,6 +105,22 @@ public class DeckActivity extends BasicActivity implements DecksView {
                 } else if (menuItem.getItemId() == R.id.action_remove_all) {
                     TrackingManager.trackRemoveAllCardsFromDeck();
                     decksPresenter.removeAllCardFromDeck(deck, card);
+
+                } else if (menuItem.getItemId() == R.id.action_move_one) {
+                    TrackingManager.trackMoveOneCardFromDeck();
+                    if (card.isSideboard()){
+                        decksPresenter.moveCardFromSideBoard(deck, card, 1);
+                    } else {
+                        decksPresenter.moveCardToSideBoard(deck, card, 1);
+                    }
+
+                } else if (menuItem.getItemId() == R.id.action_move_all) {
+                    TrackingManager.trackMoveAllCardFromDeck();
+                    if (card.isSideboard()){
+                        decksPresenter.moveCardFromSideBoard(deck, card, card.getQuantity());
+                    } else {
+                        decksPresenter.moveCardToSideBoard(deck, card, card.getQuantity());
+                    }
                 }
             }
         });
