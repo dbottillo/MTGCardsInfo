@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.5'
-    ext.support_library_version = '24.2.1'
+    ext.support_library_version = '25.0.0'
     ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
@@ -37,15 +37,15 @@ repositories {
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.2'
+    compileSdkVersion 25
+    buildToolsVersion '24.0.3'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 55
-        versionName "2.7.8"
+        targetSdkVersion 25
+        versionCode 56
+        versionName "2.7.9"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
     }
 
@@ -72,7 +72,7 @@ android {
             signingConfig signingConfigs.debugConfig
             debuggable true
             testCoverageEnabled true
-            buildConfigField 'int', 'DATABASE_VERSION', '20'
+            buildConfigField 'int', 'DATABASE_VERSION', '21'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -81,7 +81,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '20'
+            buildConfigField 'int', 'DATABASE_VERSION', '21'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -90,7 +90,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '20'
+            buildConfigField 'int', 'DATABASE_VERSION', '21'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
