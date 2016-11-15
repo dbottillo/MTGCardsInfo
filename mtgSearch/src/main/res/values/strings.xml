@@ -95,6 +95,8 @@
     <string name="action_add_one_more">Add one more</string>
     <string name="action_remove_one">Remove one</string>
     <string name="action_remove_all">Remove all</string>
+    <string name="action_move_one">Move one</string>
+    <string name="action_move_all">Move all</string>
 
     <string name="deck_title">Deck</string>
     <string name="deck_subtitle">%1s cards</string>
@@ -108,9 +110,13 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Kaladesh\n- NEW: Kaladesh Inventions
+        - NEW: Kaladesh\n- Move cards between deck and sideboard
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.7.9:</b> \n
+        - NEW: Commander 2016\n
+        - NEW: Move cards between deck and sideboard\n
+        - Bug fixes \n\n
         <b>Version 2.7.8:</b> \n
         - NEW: Kaladesh\n
         - NEW: Kaladesh Inventions \n\n

@@ -5,28 +5,30 @@ import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CardsPreferencesImplTest extends BaseContextTest{
+public class CardsPreferencesImplTest extends BaseContextTest {
 
     private CardsPreferencesImpl underTest;
 
     @Before
-    public void setup(){
+    public void setup() {
         underTest = new CardsPreferencesImpl(context);
         underTest.clear();
     }
 
     @Test
-    public void retainsSetPosition(){
+    public void retainsSetPosition() {
         assertThat(underTest.getSetPosition(), is(0));
         underTest.saveSetPosition(2);
         assertThat(underTest.getSetPosition(), is(2));
     }
 
     @Test
-    public void retainsShowImage(){
+    public void retainsShowImage() {
         assertTrue(underTest.showImage());
         underTest.setShowImage(false);
         assertFalse(underTest.showImage());

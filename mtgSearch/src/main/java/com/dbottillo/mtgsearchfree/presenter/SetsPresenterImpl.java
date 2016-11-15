@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 

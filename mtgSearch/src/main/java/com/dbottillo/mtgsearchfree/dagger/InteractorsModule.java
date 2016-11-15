@@ -11,7 +11,6 @@ import com.dbottillo.mtgsearchfree.interactors.PlayerInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;

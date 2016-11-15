@@ -4,7 +4,7 @@ import android.app.Application;
 
 import org.junit.runners.model.InitializationError;
 import org.robolectric.DefaultTestLifecycle;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.TestLifecycle;
 import org.robolectric.annotation.Config;
 import org.robolectric.manifest.AndroidManifest;
@@ -12,7 +12,7 @@ import org.robolectric.manifest.AndroidManifest;
 import java.lang.reflect.Method;
 
 
-public class CustomRobolectricRunner extends RobolectricGradleTestRunner {
+public class CustomRobolectricRunner extends RobolectricTestRunner {
 
     public CustomRobolectricRunner(Class<?> klass) throws InitializationError {
         super(klass);

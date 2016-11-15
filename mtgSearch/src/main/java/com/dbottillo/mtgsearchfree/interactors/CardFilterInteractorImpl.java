@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import rx.Observable;

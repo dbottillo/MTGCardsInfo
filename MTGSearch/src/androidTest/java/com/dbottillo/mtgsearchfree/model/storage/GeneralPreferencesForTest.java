@@ -1,12 +1,5 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.support.annotation.VisibleForTesting;
-
-import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.util.LOG;
-
 @SuppressWarnings("checkstyle:finalclass")
 public class GeneralPreferencesForTest implements GeneralData {
 

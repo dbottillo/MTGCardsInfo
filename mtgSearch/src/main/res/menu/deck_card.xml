@@ -19,11 +19,11 @@
     <item
         android:id="@+id/action_move_one"
         android:orderInCategory="101"
-        android:title="Move one" />
+        android:title="@string/action_move_one" />
 
 
     <item
         android:id="@+id/action_move_all"
         android:orderInCategory="101"
-        android:title="Move all" />
+        android:title="@string/action_move_all" />
 </menu>
