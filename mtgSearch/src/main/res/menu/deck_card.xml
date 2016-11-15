@@ -15,4 +15,15 @@
         android:id="@+id/action_remove_all"
         android:orderInCategory="101"
         android:title="@string/action_remove_all" />
+
+    <item
+        android:id="@+id/action_move_one"
+        android:orderInCategory="101"
+        android:title="@string/action_move_one" />
+
+
+    <item
+        android:id="@+id/action_move_all"
+        android:orderInCategory="101"
+        android:title="@string/action_move_all" />
 </menu>

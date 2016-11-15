@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.dagger.AndroidModule;
 import com.dbottillo.mtgsearchfree.dagger.AppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent;
 import com.dbottillo.mtgsearchfree.dagger.DaggerUiComponent;
+import com.dbottillo.mtgsearchfree.dagger.DataModule;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
@@ -46,12 +47,16 @@ public class MTGApp extends Application {
         LOG.d("            MTGApp created");
         LOG.d("============================================");
 
-        AppComponent graph = DaggerAppComponent.builder().androidModule(generateAndroidModule()).build();
+        AppComponent graph = DaggerAppComponent.builder()
+                .androidModule(generateAndroidModule())
+                .dataModule(generateDataModule())
+                .build();
         graph.inject(this);
 
         uiGraph = DaggerUiComponent.builder()
                 .appComponent(graph)
-                .presentersModule(new PresentersModule()).build();
+                .presentersModule(new PresentersModule())
+                .build();
 
         if (!isUnitTesting) {
             TrackingManager.init(getApplicationContext());
@@ -65,6 +70,10 @@ public class MTGApp extends Application {
                 StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build());
             }
         }
+    }
+
+    protected DataModule generateDataModule() {
+        return new DataModule();
     }
 
     protected AndroidModule generateAndroidModule() {

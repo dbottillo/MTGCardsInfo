@@ -30,6 +30,10 @@ public interface DecksPresenter {
 
     void removeAllCardFromDeck(Deck deck, MTGCard card);
 
+    void moveCardFromSideBoard(Deck deck, MTGCard card, int quantity);
+
+    void moveCardToSideBoard(Deck deck, MTGCard card, int quantity);
+
     void importDeck(Uri uri);
 
     void exportDeck(Deck deck, List<MTGCard> cards);

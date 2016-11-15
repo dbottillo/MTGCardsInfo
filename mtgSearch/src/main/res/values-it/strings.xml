@@ -79,6 +79,8 @@
     <string name="action_add_one_more">Aggiungi un\'altra</string>
     <string name="action_remove_one">Rimuovi una</string>
     <string name="action_remove_all">Rimuovi tutte</string>
+    <string name="action_move_one">Sposta una</string>
+    <string name="action_move_all">Sposta tutte</string>
 
     <string name="deck_title">Mazzo</string>
     <string name="deck_subtitle">%1s carte</string>
@@ -92,26 +94,33 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - NUOVO: Conspiracy: Take the Crown\n- NUOVO: From the Vault: Lore
+        - NUOVO: Commander 2016\n- NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa
     </string>
     <string name="release_note_text_full">
-        <b>Version 2.7.7:</b> \n
+        <b>Versione 2.7.9:</b> \n
+        - NUOVO: Commander 2016\n
+        - NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa\n
+        - Bug fixes \n\n
+        <b>Versione 2.7.8:</b> \n
+        - NUOVO: Kaladesh\n
+        - NUOVO: Kaladesh Inventions \n\n
+        <b>Versione 2.7.7:</b> \n
         - NUOVO: Conspiracy: Take the Crown\n
         - NUOVO: From the Vault: Lore \n\n
-        <b>Version 2.7.6:</b> \n
+        <b>Versione 2.7.6:</b> \n
         - NUOVO: Mazzi, risolti bug\n
         - NUOVO: Opzione terra per ricerca \n\n
-        <b>Version 2.7.5:</b> \n
+        <b>Versione 2.7.5:</b> \n
         - NUOVO: Eldritch Moon \n
         - NEW: Eternal Masters \n
         - NEW: Modalità griglia \n
         - NEW: Importa mazzo (formato .dec) \n
         - NEW: Duel Decks: Zendikar vs. Eldrazi \n\n
-        <b>Version 2.7.4:</b> \n
+        <b>Versione 2.7.4:</b> \n
         - NUOVO: Shadows over Innistrad \n
         - NUOVO: Duel Decks: Blessed vs. Cursed \n
         - Sistemata la ricerca multicolore \n\n
-        <b>Version 2.7.3:</b> \n
+        <b>Versione 2.7.3:</b> \n
         - NUOVO: Oath of the gatewatch \n
         - NUOVO: Esporta mazzi \n
         - NUOVO: Modifica nome mazzo \n
@@ -204,5 +213,10 @@
     <string name="cd_join_beta_header">Partecipa alla beta</string>
     <string name="cd_close">Chiudi</string>
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
+    <string name="deck_not_imported">Impossibile caricare il mazzo</string>
+    <string name="move_card_to_deck">Sposta una nel mazzo</string>
+    <string name="move_card_to_sideboard">Sposta una nel side</string>
+    <string name="move_all_card_to_deck">Sposta tutte nel mazzo</string>
+    <string name="move_all_card_to_sideboard">Sposta tutte nel side</string>
 
 </resources>

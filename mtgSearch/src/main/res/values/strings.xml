@@ -95,6 +95,8 @@
     <string name="action_add_one_more">Add one more</string>
     <string name="action_remove_one">Remove one</string>
     <string name="action_remove_all">Remove all</string>
+    <string name="action_move_one">Move one</string>
+    <string name="action_move_all">Move all</string>
 
     <string name="deck_title">Deck</string>
     <string name="deck_subtitle">%1s cards</string>
@@ -108,12 +110,16 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Conspiracy: Take the Crown\n- NEW: From the Vault: Lore
+        - NEW: Kaladesh\n- Move cards between deck and sideboard
     </string>
     <string name="release_note_text_full">
-        <b>Version 2.7.7:</b> \n
-        - NEW: Deck fixes \n
-        - NEW: Land option in Search \n\n
+        <b>Version 2.7.9:</b> \n
+        - NEW: Commander 2016\n
+        - NEW: Move cards between deck and sideboard\n
+        - Bug fixes \n\n
+        <b>Version 2.7.8:</b> \n
+        - NEW: Kaladesh\n
+        - NEW: Kaladesh Inventions \n\n
         <b>Version 2.7.6:</b> \n
         - NEW: Deck fixes \n
         - NEW: Land option in Search \n\n
@@ -208,7 +214,6 @@
     <string name="join_beta_action">Join</string>
     <string name="view_type_option">View type</string>
     <string name="main_fragment_tooltip">NEW: you can now switch between list and gridMode view type!</string>
-    <string name="transition_card" translatable="false">transitionName</string>
     <string name="sort_az">Alphabetically</string>
     <string name="sort_color">WUBRG</string>
 
@@ -260,5 +265,10 @@
     <string name="cd_join_beta_header">Join beta</string>
     <string name="cd_close">Close</string>
     <string name="cd_tooltip_arrow">Close tooltip</string>
+    <string name="deck_not_imported">Cannot import deck</string>
+    <string name="move_card_to_deck">Move one to deck</string>
+    <string name="move_card_to_sideboard">Move one to sideboard</string>
+    <string name="move_all_card_to_deck">Move all to deck</string>
+    <string name="move_all_card_to_sideboard">Move all to sideboard</string>
 
 </resources>

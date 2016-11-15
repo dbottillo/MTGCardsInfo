@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 
 import org.json.JSONException;
@@ -19,9 +20,9 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class SetDataSourceTest extends BaseDatabaseTest {
+public class SetDataSourceTest extends BaseContextTest {
 
-    private static final int NUMBER_OF_SET = 151;
+    private static final int NUMBER_OF_SET = 154;
 
     @Test
     public void test_generate_table_is_correct() {

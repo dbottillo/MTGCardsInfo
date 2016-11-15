@@ -13,49 +13,10 @@ import java.util.ArrayList;
 
 public final class DeckDataSource {
 
-    private DeckDataSource() {
-
-    }
-
     public static final String TABLE = "decks";
     public static final String TABLE_JOIN = "deck_card";
+    private DeckDataSource() {
 
-
-    public enum COLUMNS {
-        NAME("name", "TEXT not null"),
-        COLOR("color", "TEXT"),
-        ARCHIVED("archived", "INT");
-
-        private String name;
-        private String type;
-
-        COLUMNS(String name, String type) {
-            this.name = name;
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
-    }
-
-    public enum COLUMNSJOIN {
-        DECK_ID("deck_id", "INT not null"),
-        CARD_ID("card_id", "INT not null"),
-        QUANTITY("quantity", "INT not null"),
-        SIDE("side", "INT");
-
-        private String name;
-        private String type;
-
-        COLUMNSJOIN(String name, String type) {
-            this.name = name;
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
     }
 
     public static String generateCreateTable() {
@@ -126,10 +87,7 @@ public final class DeckDataSource {
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
             LOG.d("just need to update the quantity");
-            ContentValues values = new ContentValues();
-            values.put(COLUMNSJOIN.QUANTITY.getName(), currentCard + quantity);
-            String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
-            db.update(TABLE_JOIN, values, COLUMNSJOIN.DECK_ID.getName() + " = ? and " + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?", args);
+            updateQuantity(db, deckId,  currentCard + quantity, card.getMultiVerseId(), sid);
             cardsCursor.close();
             return;
         }
@@ -165,6 +123,16 @@ public final class DeckDataSource {
         values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
         values.put(COLUMNSJOIN.SIDE.getName(), card.isSideboard() ? 1 : 0);
         db.insert(TABLE_JOIN, null, values);
+    }
+
+    public static Deck getDeck(SQLiteDatabase db, long deckId){
+        String query = "select * from " + DeckDataSource.TABLE + " where rowid =?";
+        Cursor cursor = db.rawQuery(query, new String[]{deckId + ""});
+        LOG.query(query);
+        cursor.moveToFirst();
+        Deck deck = DeckDataSource.fromCursor(cursor);
+        cursor.close();
+        return deck;
     }
 
     public static ArrayList<Deck> getDecks(SQLiteDatabase db) {
@@ -233,7 +201,7 @@ public final class DeckDataSource {
         return cards;
     }
 
-    public static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card) {
+    static void removeCardFromDeck(SQLiteDatabase db, long deckId, MTGCard card) {
         int sid = card.isSideboard() ? 1 : 0;
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
         String query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?";
@@ -269,6 +237,58 @@ public final class DeckDataSource {
         cursor2.close();
     }
 
+    static void moveCardToSideBoard(SQLiteDatabase db, long deckId, MTGCard card, int quantity) {
+        moveCardInDeck(db, deckId, card, quantity, true);
+    }
+
+    static void moveCardFromSideBoard(SQLiteDatabase db, long deckId, MTGCard card, int quantity) {
+        moveCardInDeck(db, deckId, card, quantity, false);
+    }
+
+    private static void moveCardInDeck(SQLiteDatabase db, long deckId, MTGCard card, int quantity, boolean fromDeckToSide){
+        boolean removeCard = false;
+        int before = fromDeckToSide ? 0 : 1;
+        int after = fromDeckToSide ? 1 : 0;
+
+        Cursor cursor = runQuery(db, "select quantity from deck_card where deck_id=? and card_id=? and side = ?",
+                String.valueOf(deckId), String.valueOf(card.getMultiVerseId()), String.valueOf(before));
+        if (cursor.moveToFirst()){
+            if (cursor.getInt(0) - quantity <= 0){
+                removeCard = true;
+            } else {
+                updateQuantity(db, deckId, cursor.getInt(0) - quantity, card.getMultiVerseId(), before);
+            }
+        }
+        cursor.close();
+
+        Cursor cursorSideboard = runQuery(db, "select quantity from deck_card where deck_id=? and card_id=? and side = ?",
+                String.valueOf(deckId), String.valueOf(card.getMultiVerseId()), String.valueOf(after));
+        if (cursorSideboard.moveToFirst()){
+            updateQuantity(db, deckId, cursorSideboard.getInt(0) + quantity, card.getMultiVerseId(), after);
+        } else {
+            // card wasn't in the deck
+            card.setSideboard(before == 0);
+            addCardToDeckWithoutCheck(db, deckId, card, quantity);
+        }
+        cursor.close();
+
+        if (removeCard){
+            card.setSideboard(before == 1);
+            removeCardFromDeck(db, deckId, card);
+        }
+    }
+
+    public static void updateQuantity(SQLiteDatabase db, long deckId, int quantity, int multiverseId, int sid){
+        ContentValues values = new ContentValues();
+        values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
+        String query = "UPDATE " +TABLE_JOIN+" SET quantity=? WHERE "+COLUMNSJOIN.DECK_ID.getName() + " = ? and "
+                + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?";
+        String[] args = new String[]{String.valueOf(quantity), deckId + "", multiverseId + "", sid + ""};
+        Cursor cursor = runQuery(db, query, args);
+        cursor.moveToFirst();
+        cursor.close();
+    }
+
     public static int renameDeck(SQLiteDatabase db, long deckId, String name) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMNS.NAME.getName(), name);
@@ -280,5 +300,53 @@ public final class DeckDataSource {
         deck.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
         deck.setArchived(cursor.getInt(cursor.getColumnIndex(COLUMNS.ARCHIVED.getName())) == 1);
         return deck;
+    }
+
+    private static Cursor runQuery(SQLiteDatabase db, String query, String... args){
+        Cursor cursor = db.rawQuery(query, args);
+        LOG.query(query, args);
+        return cursor;
+    }
+
+    private static void runQueryAndClose(SQLiteDatabase db, String query, String... args){
+        runQuery(db, query, args).close();
+    }
+
+
+    public enum COLUMNS {
+        NAME("name", "TEXT not null"),
+        COLOR("color", "TEXT"),
+        ARCHIVED("archived", "INT");
+
+        private String name;
+        private String type;
+
+        COLUMNS(String name, String type) {
+            this.name = name;
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    public enum COLUMNSJOIN {
+        DECK_ID("deck_id", "INT not null"),
+        CARD_ID("card_id", "INT not null"),
+        QUANTITY("quantity", "INT not null"),
+        SIDE("side", "INT");
+
+        private String name;
+        private String type;
+
+        COLUMNSJOIN(String name, String type) {
+            this.name = name;
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }

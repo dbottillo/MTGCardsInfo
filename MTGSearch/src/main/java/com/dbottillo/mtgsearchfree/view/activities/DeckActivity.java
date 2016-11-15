@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -104,6 +105,22 @@ public class DeckActivity extends BasicActivity implements DecksView {
                 } else if (menuItem.getItemId() == R.id.action_remove_all) {
                     TrackingManager.trackRemoveAllCardsFromDeck();
                     decksPresenter.removeAllCardFromDeck(deck, card);
+
+                } else if (menuItem.getItemId() == R.id.action_move_one) {
+                    TrackingManager.trackMoveOneCardFromDeck();
+                    if (card.isSideboard()){
+                        decksPresenter.moveCardFromSideBoard(deck, card, 1);
+                    } else {
+                        decksPresenter.moveCardToSideBoard(deck, card, 1);
+                    }
+
+                } else if (menuItem.getItemId() == R.id.action_move_all) {
+                    TrackingManager.trackMoveAllCardFromDeck();
+                    if (card.isSideboard()){
+                        decksPresenter.moveCardFromSideBoard(deck, card, card.getQuantity());
+                    } else {
+                        decksPresenter.moveCardToSideBoard(deck, card, card.getQuantity());
+                    }
                 }
             }
         });
@@ -228,6 +245,11 @@ public class DeckActivity extends BasicActivity implements DecksView {
     @Override
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
     }
 
     private void exportDeck() {

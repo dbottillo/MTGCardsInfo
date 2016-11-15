@@ -3,9 +3,10 @@ package com.dbottillo.mtgsearchfree.model.storage;
 import android.net.Uri;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.database.BaseDatabaseTest;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
@@ -25,7 +26,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class DecksStorageIntegrationTest extends BaseDatabaseTest {
+public class DecksStorageIntegrationTest extends BaseContextTest {
 
     DecksStorage storage;
 
@@ -36,7 +37,7 @@ public class DecksStorageIntegrationTest extends BaseDatabaseTest {
     }
 
     @Test
-    public void DecksStorage_willImportEldraziDeck() {
+    public void DecksStorage_willImportEldraziDeck() throws MTGException {
         List<Deck> decks = storage.importDeck(Uri.parse("assets/Eldrazi.dec"));
         assertTrue(decks.size() > 0);
         Deck deck = decks.get(0);
@@ -75,7 +76,7 @@ public class DecksStorageIntegrationTest extends BaseDatabaseTest {
     }
 
     @Test
-    public void DecksStorage_willImportGBRampDeck() {
+    public void DecksStorage_willImportGBRampDeck() throws MTGException {
         List<Deck> decks = storage.importDeck(Uri.parse("assets/GB_Ramp.dec"));
         assertTrue(decks.size() > 0);
         Deck deck = decks.get(0);
@@ -109,7 +110,7 @@ public class DecksStorageIntegrationTest extends BaseDatabaseTest {
     }
 
     @Test
-    public void DecksStorage_willImportProtourDeck() {
+    public void DecksStorage_willImportProtourDeck() throws MTGException {
         List<Deck> decks = storage.importDeck(Uri.parse("assets/protour.txt"));
         assertTrue(decks.size() > 0);
         Deck deck = decks.get(0);

@@ -42,6 +42,8 @@ public final class TrackingManager {
     private static final String UA_ACTION_ONE_MORE = "oneMore";
     private static final String UA_ACTION_REMOVE_ONE = "removeOne";
     private static final String UA_ACTION_REMOVE_ALL = "removeALL";
+    private static final String UA_ACTION_MOVE_ONE = "moveOne";
+    private static final String UA_ACTION_MOVE_ALL = "moveAll";
     private static final String UA_ACTION_EXPORT = "export";
 
     static FirebaseAnalytics firebaseAnalytics;
@@ -148,6 +150,14 @@ public final class TrackingManager {
 
     public static void trackRemoveAllCardsFromDeck() {
         trackEvent(UA_CATEGORY_DECK, UA_ACTION_REMOVE_ALL);
+    }
+
+    public static void trackMoveOneCardFromDeck() {
+        trackEvent(UA_CATEGORY_DECK, UA_ACTION_MOVE_ONE);
+    }
+
+    public static void trackMoveAllCardFromDeck() {
+        trackEvent(UA_CATEGORY_DECK, UA_ACTION_MOVE_ALL);
     }
 
     public static void trackSearch(SearchParams searchParams) {

@@ -27,16 +27,6 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
         setForcedUpgrade();
     }
 
-    private static MTGDatabaseHelper instance;
-
-    @Deprecated
-    public static synchronized MTGDatabaseHelper getInstance(Context context) {
-        if (instance == null) {
-            instance = new MTGDatabaseHelper(context);
-        }
-        return instance;
-    }
-
     public List<MTGSet> getSets() {
         SQLiteDatabase db = getReadableDatabase();
         return SetDataSource.getSets(db);

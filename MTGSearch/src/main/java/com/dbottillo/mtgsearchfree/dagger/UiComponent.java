@@ -18,8 +18,9 @@ import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import dagger.Component;
 
 @ActivityScope
-@Component(modules = {PresentersModule.class}, dependencies = {AppComponent.class})
+@Component(modules = {PresentersModule.class, InteractorsModule.class}, dependencies = {AppComponent.class})
 public interface UiComponent {
+
     void inject(CommonCardsActivity activity);
 
     void inject(MainActivity activity);

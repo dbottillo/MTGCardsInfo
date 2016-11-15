@@ -7,7 +7,7 @@ import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
@@ -38,10 +38,10 @@ public class PresentersModule {
     @Provides
     CardsPresenter provideCardsPresenter(CardsInteractor interactor,
                                          DeckMapper deckMapper,
-                                         GeneralPreferences generalPreferences,
+                                         GeneralData generalData,
                                          RunnerFactory factory,
                                          MemoryStorage memoryStorage) {
-        return new CardsPresenterImpl(interactor, deckMapper, generalPreferences, factory, memoryStorage);
+        return new CardsPresenterImpl(interactor, deckMapper, generalData, factory, memoryStorage);
     }
 
     @Provides

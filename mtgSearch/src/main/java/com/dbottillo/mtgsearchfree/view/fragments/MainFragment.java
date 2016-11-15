@@ -21,11 +21,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
@@ -61,7 +62,7 @@ public class MainFragment extends BasicFragment implements
     @Inject
     CardsHelper cardsHelper;
     @Inject
-    GeneralPreferences generalPreferences;
+    GeneralData generalData;
 
     private MTGSet gameSet;
     private ArrayList<MTGSet> sets = new ArrayList<>();
@@ -124,7 +125,7 @@ public class MainFragment extends BasicFragment implements
             }
         });
 
-        if (generalPreferences.isTooltipMainToShow()) {
+        if (generalData.isTooltipMainToShow()) {
             tooltip.setVisibility(View.VISIBLE);
             MaterialWrapper.setElevation(tooltip, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
         } else {
@@ -188,7 +189,7 @@ public class MainFragment extends BasicFragment implements
     @OnClick(R.id.main_tooltip_close)
     public void onCloseTooltip(View view) {
         LOG.d();
-        generalPreferences.setTooltipMainHide();
+        generalData.setTooltipMainHide();
         AnimationUtil.animateHeight(tooltip, 0);
     }
 
@@ -213,7 +214,7 @@ public class MainFragment extends BasicFragment implements
                 }
             }
         };
-        animation.setDuration(200);
+        animation.setDuration(generalData.getDefaultDuration());
         animation.setAnimationListener(new Animation.AnimationListener() {
             public void onAnimationStart(Animation animation) {
 
@@ -263,6 +264,11 @@ public class MainFragment extends BasicFragment implements
 
     public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
     }
 
     private void loadSet() {

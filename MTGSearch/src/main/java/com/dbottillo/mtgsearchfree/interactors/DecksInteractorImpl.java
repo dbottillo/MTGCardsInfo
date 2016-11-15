@@ -82,12 +82,28 @@ public class DecksInteractorImpl implements DecksInteractor {
     @Override
     public Observable<List<Deck>> importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
-        return Observable.just(storage.importDeck(uri));
+        try {
+            return Observable.just(storage.importDeck(uri));
+        } catch (Throwable throwable) {
+            return Observable.error(throwable);
+        }
     }
 
     @Override
     public Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards) {
         return Observable.just(fileUtil.downloadDeckToSdCard(deck, cards));
+    }
+
+    @Override
+    public Observable<List<MTGCard>> moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
+        LOG.d("move " + card.toString() + " to sideboard deck: " + deck);
+        return Observable.just(storage.moveCardToSideboard(deck, card, quantity));
+    }
+
+    @Override
+    public Observable<List<MTGCard>> moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
+        LOG.d("move " + card.toString() + " from sideboard deck: " + deck);
+        return Observable.just(storage.moveCardFromSideboard(deck, card, quantity));
     }
 
 }

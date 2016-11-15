@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class FavouritesDataSourceTest extends BaseDatabaseTest {
+public class FavouritesDataSourceTest extends BaseContextTest {
 
     MTGCardDataSource cardDataSource;
 
