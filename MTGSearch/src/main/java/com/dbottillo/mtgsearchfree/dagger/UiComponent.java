@@ -1,11 +1,6 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
-import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
-import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
-import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
-import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CommonCardsActivity;

@@ -1,12 +1,14 @@
 buildscript {
     ext.dagger_version = '2.5'
-    ext.support_library_version = '25.0.0'
+    ext.support_library_version = '25.0.1'
     ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
     ext.firebase_version = '9.4.0'
     ext.espresso_version = '2.2.2'
     ext.butterknife_version = '8.4.0'
+    ext.mockito_version= '1.10.19'
+    ext.roboelectric_version = '3.1.4'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
@@ -38,7 +40,7 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '24.0.3'
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
@@ -131,7 +133,7 @@ dependencies {
     compile "com.jakewharton:butterknife:$butterknife_version"
     apt "com.jakewharton:butterknife-compiler:$butterknife_version"
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.2.0'
+    compile 'io.reactivex:rxjava:1.2.2'
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.google.dagger:dagger:$dagger_version"
     apt "com.google.dagger:dagger-compiler:$dagger_version"
@@ -145,10 +147,10 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-library:1.3'
-    testCompile 'org.mockito:mockito-core:1.10.19'
+    testCompile "org.mockito:mockito-core:$mockito_version"
     testCompile 'commons-io:commons-io:2.5'
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
-    testCompile 'org.robolectric:robolectric:3.1.2'
+    testCompile "org.robolectric:robolectric:$roboelectric_version"
     testCompile "com.android.support:support-annotations:$support_library_version"
     testCompile "com.android.support:appcompat-v7:$support_library_version"
     testCompile "com.android.support:recyclerview-v7:$support_library_version"
@@ -218,7 +220,7 @@ task testPreRelease
 testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedProdDebugAndroidTest'
 
 task release
-release.dependsOn 'quality', 'testPreRelease', 'assembleProdRelease'
+release.dependsOn 'assembleProdRelease', 'quality', 'testPreRelease'
 
 task qualityBeta
 qualityBeta.dependsOn 'checkstyle', 'lintProdBeta', 'pmd', 'findbugs'

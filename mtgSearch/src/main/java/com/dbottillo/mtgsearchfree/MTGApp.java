@@ -21,7 +21,6 @@ import com.dbottillo.mtgsearchfree.dagger.DataModule;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;

@@ -8,7 +8,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 
-import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +34,7 @@ public class MainFragmentTest {
     private final static String CARD_NAME = "Aerial Responder";
 
     @Test
+    @Ignore
     public void showsKaladeshSet() {
         goToKaladesh();
         onView(withId(R.id.set_chooser_name)).check(matches(withText(SET_NAME)));
@@ -42,6 +43,7 @@ public class MainFragmentTest {
     }
 
     @Test
+    @Ignore
     public void switchesToListMode() {
         goToKaladesh();
         onView(withId(R.id.cards_view_type)).check(matches(withDrawable(R.drawable.cards_list_type)));
@@ -53,6 +55,7 @@ public class MainFragmentTest {
     }
 
     @Test
+    @Ignore
     public void switchesToAlphabeticalOrder() {
         goToKaladesh();
         onView(withId(R.id.cards_sort)).perform(click());
@@ -65,6 +68,7 @@ public class MainFragmentTest {
     }
 
     @Test
+    @Ignore
     public void retainsSetOnOrientationChange() {
         goToKaladesh();
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);

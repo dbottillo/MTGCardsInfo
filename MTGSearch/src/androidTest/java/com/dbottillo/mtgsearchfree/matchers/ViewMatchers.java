@@ -9,7 +9,11 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
-public class ViewMatchers {
+public final class ViewMatchers {
+
+    private ViewMatchers(){
+
+    }
 
     public static Matcher<Object> setWithName(final String name) {
 
