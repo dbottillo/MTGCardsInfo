@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 
@@ -56,7 +56,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
     private long firstTap;
 
     @Inject
-    GeneralPreferences generalPreferences;
+    GeneralData generalData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -124,7 +124,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
         TrackingManager.trackOpenFeedback();
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getActivity().getString(R.string.email), null));
         String text = String.format(getString(R.string.feedback_text), versionName,
-                Build.VERSION.SDK_INT, Build.DEVICE, Build.MODEL, Build.PRODUCT);
+                String.valueOf(Build.VERSION.SDK_INT), Build.DEVICE, Build.MODEL, Build.PRODUCT);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getActivity().getString(R.string.app_name));
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text));
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)));
@@ -147,7 +147,7 @@ public class AboutFragment extends BasicFragment implements View.OnClickListener
                 long seconds = diff / 1000;
                 if (seconds < 5) {
                     version.setOnTouchListener(null);
-                    generalPreferences.setDebug();
+                    generalData.setDebug();
                     Toast.makeText(getActivity(), R.string.debug_mode_active, Toast.LENGTH_LONG).show();
                 }
                 v.performClick();

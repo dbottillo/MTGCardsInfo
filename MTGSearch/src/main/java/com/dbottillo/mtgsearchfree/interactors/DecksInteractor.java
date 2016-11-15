@@ -33,4 +33,8 @@ public interface DecksInteractor {
     Observable<List<Deck>> importDeck(Uri uri);
 
     Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards);
+
+    Observable<List<MTGCard>> moveCardToSideboard(Deck deck, MTGCard card, int quantity);
+
+    Observable<List<MTGCard>> moveCardFromSideboard(Deck deck, MTGCard card, int quantity);
 }

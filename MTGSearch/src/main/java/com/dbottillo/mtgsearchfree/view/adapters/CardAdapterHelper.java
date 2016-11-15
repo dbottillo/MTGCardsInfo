@@ -17,11 +17,11 @@ public final class CardAdapterHelper {
 
     }
 
-    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch) {
+    static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch) {
         bindView(context, card, holder, isASearch, false);
     }
 
-    protected static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck) {
+    static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck) {
         holder.name.setText(context.getString(R.string.row_card_name, (deck ? card.getQuantity() + " " : ""), card.getName()));
 
         int rarityColor = R.color.common;
@@ -58,7 +58,7 @@ public final class CardAdapterHelper {
 
     }
 
-    public static void setupMore(final CardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
+    static void setupMore(final CardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
         if (menuRes > 0 && onCardListener != null) {
             holder.more.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,6 +67,10 @@ public final class CardAdapterHelper {
                     final Menu menu = popupMenu.getMenu();
 
                     popupMenu.getMenuInflater().inflate(menuRes, menu);
+                    MenuItem moveOne = menu.getItem(3);
+                    moveOne.setTitle(card.isSideboard() ? R.string.move_card_to_deck : R.string.move_card_to_sideboard);
+                    MenuItem moveAll = menu.getItem(4);
+                    moveAll.setTitle(card.isSideboard() ? R.string.move_all_card_to_deck : R.string.move_all_card_to_sideboard);
                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {

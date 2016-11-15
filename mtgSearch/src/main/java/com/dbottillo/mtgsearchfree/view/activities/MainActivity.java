@@ -17,7 +17,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
@@ -83,7 +83,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     CardFilterPresenter filterPresenter;
 
     @Inject
-    GeneralPreferences generalPreferences;
+    GeneralData generalData;
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -95,7 +95,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         setupToolbar();
         slidingPanelHelper = new SlidingPanelHelper(slidingUpPanelLayout, getResources(), this);
         slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
-        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this, generalPreferences);
+        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this, generalData);
 
         initialBundle = bundle;
 

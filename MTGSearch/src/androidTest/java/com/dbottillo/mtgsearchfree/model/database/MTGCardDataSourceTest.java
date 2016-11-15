@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
@@ -32,7 +33,7 @@ import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class MTGCardDataSourceTest extends BaseDatabaseTest {
+public class MTGCardDataSourceTest extends BaseContextTest {
 
     private MTGCardDataSource cardDataSource;
 

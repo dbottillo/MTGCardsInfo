@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.StringUtil;
 
 import org.junit.Before;
@@ -22,11 +23,11 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
-public class DeckDataSourceTest extends BaseDatabaseTest {
+public class DeckDataSourceTest extends BaseContextTest {
 
     private static final int SMALL_NUMBER_OF_CARDS = 4;
 
-    MTGCardDataSource cardDataSource;
+    private MTGCardDataSource cardDataSource;
 
     @Before
     public void setup() {
@@ -45,7 +46,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
     @Test
     public void test_deck_can_be_saved_in_database() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "deck");
-        Deck deckFromDb = getDeck(id);
+        Deck deckFromDb = DeckDataSource.getDeck(cardsInfoDbHelper.getReadableDatabase(), id);
         assertNotNull(deckFromDb);
         assertThat(deckFromDb.getId(), is(id));
         assertThat(deckFromDb.getName(), is("deck"));
@@ -217,7 +218,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         bucket.setKey("deck");
         long deckId = DeckDataSource.addDeck(cardDataSource, db, bucket);
         assertTrue(deckId > 0);
-        Deck deckFromDb = getDeck(deckId);
+        Deck deckFromDb = DeckDataSource.getDeck(db, deckId);
         assertThat(deckFromDb.getName(), is("deck"));
         assertThat(deckFromDb.getNumberOfCards(), is(0));
     }
@@ -241,7 +242,7 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         bucket.setCards(namedCards);
         long deckId = DeckDataSource.addDeck(cardDataSource, db, bucket);
         assertTrue(deckId > 0);
-        Deck deckFromDb = getDeck(deckId);
+        Deck deckFromDb = DeckDataSource.getDeck(db, deckId);
         assertThat(deckFromDb.getName(), is("deck"));
         List<MTGCard> deckCards = DeckDataSource.getCards(db, deckId);
         assertThat(deckCards.size(), is(cardNames.length));
@@ -281,6 +282,138 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         assertThat(deckCards.size(), is(cardNames.length - 1));
     }
 
+    @Test
+    public void movesCardFromDeckToSideBoard(){
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        long deckId = DeckDataSource.addDeck(db, "new deck");
+        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+
+        MTGCard card1 = cards.get(0);
+        MTGCard card2 = cards.get(1);
+        MTGCard card3 = cards.get(2);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      2         2
+        card 3      0         4
+         */
+        DeckDataSource.addCardToDeck(db, deckId, card1, 4);
+        DeckDataSource.addCardToDeck(db, deckId, card2, 2);
+        card2.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, deckId, card2, 2);
+        card3.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, deckId, card3, 4);
+
+        assertQuantityAndSideboard(deckId, 6, 6);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      1         3
+        card 3      0         4
+         */
+        DeckDataSource.moveCardToSideBoard(db, deckId, card2, 1);
+        List<MTGCard> deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(4));
+        assertThat(deckCards.get(1), is(card2));
+        assertThat(deckCards.get(1).getQuantity(), is(1));
+        assertThat(deckCards.get(2), is(card2));
+        assertThat(deckCards.get(2).getQuantity(), is(3));
+        assertQuantityAndSideboard(deckId, 5, 7);
+
+        /*        normal    side
+        card 1      0         4
+        card 2      1         3
+        card 3      0         4
+         */
+        DeckDataSource.moveCardToSideBoard(db, deckId, card1, 4);
+        deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(4));
+        assertThat(deckCards.get(0), is(card2));
+        assertThat(deckCards.get(1), is(card2));
+        assertThat(deckCards.get(1).getQuantity(), is(3));
+        assertThat(deckCards.get(2), is(card3));
+        assertThat(deckCards.get(2).getQuantity(), is(4));
+        assertThat(deckCards.get(3), is(card1));
+        assertThat(deckCards.get(3).getQuantity(), is(4));
+        assertQuantityAndSideboard(deckId, 1, 11);
+
+        /*        normal    side
+        card 1      0         4
+        card 2      0         4
+        card 3      0         4
+         */
+        DeckDataSource.moveCardToSideBoard(db, deckId, card2, 1);
+        deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(3));
+        assertQuantityAndSideboard(deckId, 0, 12);
+    }
+
+    @Test
+    public void movesCardFromSideBoardToDeck(){
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        long deckId = DeckDataSource.addDeck(db, "new deck");
+        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+
+        MTGCard card1 = cards.get(0);
+        MTGCard card2 = cards.get(1);
+        MTGCard card3 = cards.get(2);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      2         2
+        card 3      0         4
+         */
+        DeckDataSource.addCardToDeck(db, deckId, card1, 4);
+        DeckDataSource.addCardToDeck(db, deckId, card2, 2);
+        card2.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, deckId, card2, 2);
+        card3.setSideboard(true);
+        DeckDataSource.addCardToDeck(db, deckId, card3, 4);
+
+        assertQuantityAndSideboard(deckId, 6, 6);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      3         1
+        card 3      0         4
+         */
+        DeckDataSource.moveCardFromSideBoard(db, deckId, card2, 1);
+        List<MTGCard> deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(4));
+        assertThat(deckCards.get(1), is(card2));
+        assertThat(deckCards.get(1).getQuantity(), is(3));
+        assertThat(deckCards.get(2), is(card2));
+        assertThat(deckCards.get(2).getQuantity(), is(1));
+        assertQuantityAndSideboard(deckId, 7, 5);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      3         1
+        card 3      4         0
+         */
+        DeckDataSource.moveCardFromSideBoard(db, deckId, card3, 4);
+        deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(4));
+        assertThat(deckCards.get(0), is(card1));
+        assertThat(deckCards.get(1), is(card2));
+        assertThat(deckCards.get(1).getQuantity(), is(3));
+        assertThat(deckCards.get(2), is(card2));
+        assertThat(deckCards.get(2).getQuantity(), is(1));
+        assertThat(deckCards.get(3), is(card3));
+        assertThat(deckCards.get(3).getQuantity(), is(4));
+        assertQuantityAndSideboard(deckId, 11, 1);
+
+        /*        normal    side
+        card 1      4         0
+        card 2      4         0
+        card 3      4         0
+         */
+        DeckDataSource.moveCardFromSideBoard(db, deckId, card2, 1);
+        deckCards = DeckDataSource.getCards(db, deckId);
+        assertThat(deckCards.size(), is(3));
+        assertQuantityAndSideboard(deckId, 12, 0);
+    }
+
     private long generateDeckWithSmallAmountOfCards() {
         long id = DeckDataSource.addDeck(cardsInfoDbHelper.getWritableDatabase(), "new deck");
         List<MTGCard> cards = cardDataSource.getRandomCard(SMALL_NUMBER_OF_CARDS);
@@ -290,14 +423,14 @@ public class DeckDataSourceTest extends BaseDatabaseTest {
         return id;
     }
 
-    private Deck getDeck(long id) {
-        Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + DeckDataSource.TABLE + " where rowid =?", new String[]{id + ""});
-        assertNotNull(cursor);
-        assertThat(cursor.getCount(), is(1));
-        cursor.moveToFirst();
-        Deck deck = DeckDataSource.fromCursor(cursor);
-        cursor.close();
-        return deck;
+    private void assertQuantityAndSideboard(long deckId, int quantity, int sideboard){
+        ArrayList<Deck> decks = DeckDataSource.getDecks(cardsInfoDbHelper.getReadableDatabase());
+        assertThat(decks.size(), is(1));
+        Deck deck = decks.get(0);
+        assertThat(deck.getId(), is(deckId));
+        assertThat(deck.getNumberOfCards(), is(quantity));
+        assertThat(deck.getSizeOfSideboard(), is(sideboard));
     }
+
 
 }

@@ -8,7 +8,7 @@ import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 @SuppressWarnings("checkstyle:finalclass")
-public class GeneralPreferences {
+public class GeneralPreferences implements GeneralData {
 
     private static final String DEBUG = "debug";
     private static final String CARDS_SHOW_TYPE = "cardShowType";
@@ -52,6 +52,11 @@ public class GeneralPreferences {
     public boolean isTooltipMainToShow() {
         LOG.d();
         return sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true);
+    }
+
+    @Override
+    public long getDefaultDuration() {
+        return 200;
     }
 
     @VisibleForTesting

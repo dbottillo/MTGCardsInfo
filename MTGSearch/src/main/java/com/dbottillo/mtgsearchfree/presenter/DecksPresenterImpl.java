@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
 
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
@@ -95,6 +96,18 @@ public class DecksPresenterImpl implements DecksPresenter {
     }
 
     @Override
+    public void moveCardFromSideBoard(Deck deck, MTGCard card, int quantity) {
+        LOG.d();
+        cardWrapper.runAndMap(interactor.moveCardFromSideboard(deck, card, quantity), mapper, cardsObserver);
+    }
+
+    @Override
+    public void moveCardToSideBoard(Deck deck, MTGCard card, int quantity) {
+        LOG.d();
+        cardWrapper.runAndMap(interactor.moveCardToSideboard(deck, card, quantity), mapper, cardsObserver);
+    }
+
+    @Override
     public void importDeck(Uri uri) {
         LOG.d("import " + uri.toString());
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
@@ -136,7 +149,12 @@ public class DecksPresenterImpl implements DecksPresenter {
 
         @Override
         public void onError(Throwable e) {
-
+            if (e instanceof MTGException) {
+                MTGException exception = (MTGException) e;
+                decksView.showError(exception);
+            } else {
+                decksView.showError(e.getLocalizedMessage());
+            }
         }
 
         @Override
