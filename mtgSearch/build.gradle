@@ -46,7 +46,7 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 56
+        versionCode 57
         versionName "2.7.9"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
     }
