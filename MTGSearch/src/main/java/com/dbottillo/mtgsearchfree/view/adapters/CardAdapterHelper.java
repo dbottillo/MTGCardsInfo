@@ -67,10 +67,12 @@ public final class CardAdapterHelper {
                     final Menu menu = popupMenu.getMenu();
 
                     popupMenu.getMenuInflater().inflate(menuRes, menu);
-                    MenuItem moveOne = menu.getItem(3);
-                    moveOne.setTitle(card.isSideboard() ? R.string.move_card_to_deck : R.string.move_card_to_sideboard);
-                    MenuItem moveAll = menu.getItem(4);
-                    moveAll.setTitle(card.isSideboard() ? R.string.move_all_card_to_deck : R.string.move_all_card_to_sideboard);
+                    if (menu.size() > 4) {
+                        MenuItem moveOne = menu.getItem(3);
+                        moveOne.setTitle(card.isSideboard() ? R.string.move_card_to_deck : R.string.move_card_to_sideboard);
+                        MenuItem moveAll = menu.getItem(4);
+                        moveAll.setTitle(card.isSideboard() ? R.string.move_all_card_to_deck : R.string.move_all_card_to_sideboard);
+                    }
                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
