@@ -50,6 +50,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
         db.delete(SetDataSource.TABLE, null, null);
         db.delete(CardDataSource.TABLE, null, null);
+
+        SetDataSource setDataSource = new SetDataSource(mDbHelper.getWritableDatabase());
         try {
             int setList = context.getResources().getIdentifier("set_list", "raw", packageName);
             String jsonString = loadFile(setList);
@@ -61,7 +63,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
                     int setToLoad = setToLoad(context, setJ.getString("code"));
                     String jsonSetString = loadFile(setToLoad);
 
-                    long newRowId = db.insert(SetDataSource.TABLE, null, SetDataSource.fromJSON(setJ));
+                    long newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ));
                     LOG.e("row id " + newRowId + " -> " + setJ.getString("code"));
 
                     JSONObject jsonCards = new JSONObject(jsonSetString);

@@ -4,10 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper;
-
-import java.util.List;
 
 /**
  * Helper for access the card database, only on read mode
@@ -25,11 +22,6 @@ public class MTGDatabaseHelper extends SQLiteAssetHelper {
     public MTGDatabaseHelper(Context context) {
         this(context, DATABASE_NAME, null, BuildConfig.DATABASE_VERSION);
         setForcedUpgrade();
-    }
-
-    public List<MTGSet> getSets() {
-        SQLiteDatabase db = getReadableDatabase();
-        return SetDataSource.getSets(db);
     }
 
 }

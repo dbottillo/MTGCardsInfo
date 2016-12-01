@@ -298,7 +298,8 @@ public class MTGCardDataSourceTest extends BaseContextTest {
 
     @Test
     public void search_cards_by_set_id() {
-        MTGSet set = mtgDatabaseHelper.getSets().get(0);
+        SetDataSource setDataSource = new SetDataSource(mtgDatabaseHelper.getReadableDatabase());
+        MTGSet set = setDataSource.getSets().get(0);
         SearchParams searchParams = new SearchParams();
         searchParams.setSetId(set.getId());
         List<MTGCard> cards = cardDataSource.searchCards(searchParams);
