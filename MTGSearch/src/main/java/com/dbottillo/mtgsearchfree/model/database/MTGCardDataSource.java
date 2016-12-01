@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -49,10 +50,10 @@ public class MTGCardDataSource {
         }
     }
 
-    private MTGDatabaseHelper mtgHelper;
+    private SQLiteDatabase database;
 
-    public MTGCardDataSource(MTGDatabaseHelper helper) {
-        this.mtgHelper = helper;
+    public MTGCardDataSource(SQLiteDatabase database) {
+        this.database = database;
     }
 
     public List<MTGCard> getSet(MTGSet set) {
@@ -61,7 +62,7 @@ public class MTGCardDataSource {
         LOG.query(query, set.getCode());
 
         ArrayList<MTGCard> cards = new ArrayList<>();
-        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 MTGCard card = CardDataSource.fromCursor(cursor);
@@ -144,7 +145,7 @@ public class MTGCardDataSource {
         String[] sel = Arrays.copyOf(output.selection.toArray(), output.selection.size(), String[].class);
         LOG.query(output.query, sel);
 
-        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(output.query, sel);
+        Cursor cursor = database.rawQuery(output.query, sel);
 
         ArrayList<MTGCard> cards = new ArrayList<>();
         if (cursor.moveToFirst()) {
@@ -164,7 +165,7 @@ public class MTGCardDataSource {
         String query = "SELECT * FROM " + CardDataSource.TABLE + " ORDER BY RANDOM() LIMIT " + number;
         LOG.query(query);
         ArrayList<MTGCard> cards = new ArrayList<>(number);
-        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 cards.add(CardDataSource.fromCursor(cursor));
@@ -181,7 +182,7 @@ public class MTGCardDataSource {
                 + CardDataSource.COLUMNS.NAME.getName() + "=?";
         String[] selection = new String[]{name};
         LOG.query(query);
-        Cursor cursor = mtgHelper.getReadableDatabase().rawQuery(query, selection);
+        Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;
         if (cursor.moveToFirst()) {
             card = CardDataSource.fromCursor(cursor);

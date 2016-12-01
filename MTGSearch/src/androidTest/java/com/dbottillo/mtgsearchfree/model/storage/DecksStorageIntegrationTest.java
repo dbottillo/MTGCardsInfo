@@ -6,8 +6,9 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.util.BaseContextTest;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
+import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
@@ -28,12 +29,35 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class DecksStorageIntegrationTest extends BaseContextTest {
 
-    DecksStorage storage;
+    private DecksStorage storage;
+
+    private static MTGCard getCardFromDeck(List<MTGCard> cards, String name, boolean side) {
+        for (MTGCard card : cards) {
+            if (card.getName().contains(name) && card.isSideboard() == side) {
+                return card;
+            }
+        }
+        return null;
+    }
+
+    private static void assertCardInDeck(List<MTGCard> cards, String name, int quantity) {
+        MTGCard card = getCardFromDeck(cards, name, false);
+        assertNotNull(card);
+        assertThat(card.getQuantity(), is(quantity));
+        assertFalse(card.isSideboard());
+    }
+
+    private static void assertCardInSideboardDeck(List<MTGCard> cards, String name, int quantity) {
+        MTGCard card = getCardFromDeck(cards, name, true);
+        assertNotNull(card);
+        assertThat(card.getQuantity(), is(quantity));
+        assertTrue(card.isSideboard());
+    }
 
     @Before
     public void setup() throws FileNotFoundException {
         FileUtil fileUtil = new FileUtil(new FileLoaderLocal());
-        storage = new DecksStorage(fileUtil, cardsInfoDbHelper, new MTGCardDataSource(mtgDatabaseHelper));
+        storage = new DecksStorage(fileUtil, new DeckDataSource(cardsInfoDbHelper.getWritableDatabase()), new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase()));
     }
 
     @Test
@@ -146,29 +170,6 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         assertCardInSideboardDeck(cards, "Last Breath", 2);
         assertCardInSideboardDeck(cards, "Doom Blade", 3);
         assertCardInSideboardDeck(cards, "Deicide", 2);
-    }
-
-    private static MTGCard getCardFromDeck(List<MTGCard> cards, String name, boolean side) {
-        for (MTGCard card : cards) {
-            if (card.getName().contains(name) && card.isSideboard() == side) {
-                return card;
-            }
-        }
-        return null;
-    }
-
-    private static void assertCardInDeck(List<MTGCard> cards, String name, int quantity) {
-        MTGCard card = getCardFromDeck(cards, name, false);
-        assertNotNull(card);
-        assertThat(card.getQuantity(), is(quantity));
-        assertFalse(card.isSideboard());
-    }
-
-    private static void assertCardInSideboardDeck(List<MTGCard> cards, String name, int quantity) {
-        MTGCard card = getCardFromDeck(cards, name, true);
-        assertNotNull(card);
-        assertThat(card.getQuantity(), is(quantity));
-        assertTrue(card.isSideboard());
     }
 
     private class FileLoaderLocal implements FileLoader {

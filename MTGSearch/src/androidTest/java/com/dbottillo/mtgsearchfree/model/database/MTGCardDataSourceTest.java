@@ -39,7 +39,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
 
     @Before
     public void setup() {
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
+        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase());
     }
 
     @Test

@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -19,6 +20,13 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class PlayerDataSourceTest extends BaseContextTest {
 
+    private PlayerDataSource underTest;
+
+    @Before
+    public void setup(){
+        underTest = new PlayerDataSource(cardsInfoDbHelper.getWritableDatabase());
+    }
+
     @Test
     public void generate_table_is_correct() {
         String query = PlayerDataSource.generateCreateTable();
@@ -29,12 +37,12 @@ public class PlayerDataSourceTest extends BaseContextTest {
     @Test
     public void player_can_be_saved_in_database() {
         Player player = generatePlayer();
-        long id = PlayerDataSource.savePlayer(cardsInfoDbHelper.getWritableDatabase(), player);
+        long id = underTest.savePlayer(player);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + PlayerDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
-        Player playerFromDb = PlayerDataSource.fromCursor(cursor);
+        Player playerFromDb = underTest.fromCursor(cursor);
         assertNotNull(playerFromDb);
         assertPlayerSame(playerFromDb, player);
         cursor.close();
@@ -43,8 +51,8 @@ public class PlayerDataSourceTest extends BaseContextTest {
     @Test
     public void player_can_be_removed_from_database() {
         Player player = generatePlayer();
-        long id = PlayerDataSource.savePlayer(cardsInfoDbHelper.getWritableDatabase(), player);
-        PlayerDataSource.removePlayer(cardsInfoDbHelper.getWritableDatabase(), player);
+        long id = underTest.savePlayer(player);
+        underTest.removePlayer(player);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + PlayerDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(0));
@@ -56,15 +64,15 @@ public class PlayerDataSourceTest extends BaseContextTest {
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         int uniqueId = 444;
         Player player = generatePlayer(uniqueId, "Jayce", 15, 2);
-        long id = PlayerDataSource.savePlayer(db, player);
+        long id = underTest.savePlayer(player);
         Player player2 = generatePlayer(uniqueId, "Jayce", 18, 4);
-        long id2 = PlayerDataSource.savePlayer(db, player2);
+        long id2 = underTest.savePlayer(player2);
         assertThat(id, is(id2));
         Cursor cursor = db.rawQuery("select * from " + PlayerDataSource.TABLE + " where _id =?", new String[]{uniqueId + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
-        Player playerFromDb = PlayerDataSource.fromCursor(cursor);
+        Player playerFromDb = underTest.fromCursor(cursor);
         assertNotNull(playerFromDb);
         assertPlayerSame(playerFromDb, player2);
         cursor.close();
@@ -74,12 +82,12 @@ public class PlayerDataSourceTest extends BaseContextTest {
     public void test_cards_can_be_retrieved_from_database() {
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         Player player1 = generatePlayer();
-        PlayerDataSource.savePlayer(db, player1);
+        underTest.savePlayer(player1);
         Player player2 = generatePlayer(20, "Liliana", 10, 10);
-        PlayerDataSource.savePlayer(db, player2);
+        underTest.savePlayer(player2);
         Player player3 = generatePlayer(30, "Garruck", 12, 3);
-        PlayerDataSource.savePlayer(db, player3);
-        List<Player> player = PlayerDataSource.getPlayers(db);
+        underTest.savePlayer(player3);
+        List<Player> player = underTest.getPlayers();
         assertNotNull(player);
         assertThat(player.size(), is(3));
         assertPlayerSame(player.get(0), player1);

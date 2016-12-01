@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 
@@ -30,7 +30,7 @@ public class CardsStorageTest extends BaseTest {
     private static MTGSet set;
     private static Deck deck;
     private static MTGCardDataSource mtgCardDataSource;
-    private static CardsInfoDbHelper cardsInfoDbHelper;
+    private static DeckDataSource deckDataSource;
     private static FavouritesDataSource favouritesDataSource;
     private static List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
     private static List<MTGCard> luckyCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
@@ -54,14 +54,14 @@ public class CardsStorageTest extends BaseTest {
     @Before
     public void setupStorage() {
         mtgCardDataSource = mock(MTGCardDataSource.class);
-        cardsInfoDbHelper = mock(CardsInfoDbHelper.class);
+        deckDataSource = mock(DeckDataSource.class);
         favouritesDataSource = mock(FavouritesDataSource.class);
         when(mtgCardDataSource.getSet(set)).thenReturn(setCards);
         when(favouritesDataSource.getCards(anyBoolean())).thenReturn(favCards);
         when(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards);
         when(mtgCardDataSource.searchCards(Matchers.any(SearchParams.class))).thenReturn(searchCards);
-        when(cardsInfoDbHelper.loadDeck(deck)).thenReturn(deckCards);
-        cardsStorage = new CardsStorage(mtgCardDataSource, cardsInfoDbHelper, favouritesDataSource);
+        when(deckDataSource.getCards(deck)).thenReturn(deckCards);
+        cardsStorage = new CardsStorage(mtgCardDataSource, deckDataSource, favouritesDataSource);
     }
 
     @Test
@@ -117,7 +117,7 @@ public class CardsStorageTest extends BaseTest {
     @Test
     public void testLoadDeck() {
         List<MTGCard> cards = cardsStorage.loadDeck(deck);
-        verify(cardsInfoDbHelper).loadDeck(deck);
+        verify(deckDataSource).getCards(deck);
         assertNotNull(cards);
         assertThat(cards, is(deckCards));
     }
