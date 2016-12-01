@@ -1,49 +1,48 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
 import com.dbottillo.mtgsearchfree.model.Player;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
 
 public class PlayersStorage {
 
-    private CardsInfoDbHelper helper;
+    private PlayerDataSource playerDataSource;
 
-    public PlayersStorage(CardsInfoDbHelper helper) {
-
+    public PlayersStorage(PlayerDataSource playerDataSource) {
         LOG.d("created");
-        this.helper = helper;
+        this.playerDataSource = playerDataSource;
     }
 
     public List<Player> load() {
         LOG.d();
-        return helper.loadPlayers();
+        return playerDataSource.getPlayers();
     }
 
     public List<Player> addPlayer(Player player) {
         LOG.d("add " + player);
-        helper.savePlayer(player);
+        playerDataSource.savePlayer(player);
         return load();
     }
 
     public List<Player> editPlayer(Player player) {
         LOG.d("edit " + player);
-        helper.editPlayer(player);
+        playerDataSource.savePlayer(player);
         return load();
     }
 
     public List<Player> editPlayers(List<Player> players) {
         LOG.d("update " + players);
         for (Player player : players) {
-            helper.editPlayer(player);
+            playerDataSource.savePlayer(player);
         }
         return load();
     }
 
     public List<Player> removePlayer(Player player) {
         LOG.d("remove " + player);
-        helper.removePlayer(player);
+        playerDataSource.removePlayer(player);
         return load();
     }
 }

@@ -58,14 +58,14 @@ public class AndroidModule {
     }
 
     @Provides
-    @Named("cardsDatabase")
+    @Named("cardsDB")
     @Singleton
     SQLiteDatabase provideCardsDatabase(MTGDatabaseHelper mtgDatabaseHelper){
         return mtgDatabaseHelper.getReadableDatabase();
     }
 
     @Provides
-    @Named("storageDatabase")
+    @Named("storageDB")
     @Singleton
     SQLiteDatabase provideStorageDatabase(CardsInfoDbHelper cardsInfoDbHelper){
         return cardsInfoDbHelper.getWritableDatabase();

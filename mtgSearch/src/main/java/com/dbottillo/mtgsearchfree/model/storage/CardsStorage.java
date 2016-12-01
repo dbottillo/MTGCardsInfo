@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
@@ -16,8 +17,10 @@ public class CardsStorage {
 
     private CardsInfoDbHelper cardsInfoDbHelper;
     private MTGCardDataSource mtgCardDataSource;
+    private FavouritesDataSource favouritesDataSource;
 
-    public CardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper) {
+    public CardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper, FavouritesDataSource favouritesDataSource) {
+        this.favouritesDataSource = favouritesDataSource;
         LOG.d("created");
         this.mtgCardDataSource = mtgCardDataSource;
         this.cardsInfoDbHelper = cardsInfoDbHelper;
@@ -30,13 +33,13 @@ public class CardsStorage {
 
     public int[] saveAsFavourite(MTGCard card) {
         LOG.d("save as fav " + card);
-        cardsInfoDbHelper.saveFavourite(card);
+        favouritesDataSource.saveFavourites(card);
         return loadIdFav();
     }
 
     public int[] loadIdFav() {
         LOG.d();
-        List<MTGCard> cards = cardsInfoDbHelper.loadFav(false);
+        List<MTGCard> cards = favouritesDataSource.getCards(false);
         int[] result = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             result[i] = cards.get(i).getMultiVerseId();
@@ -46,7 +49,7 @@ public class CardsStorage {
 
     public int[] removeFromFavourite(MTGCard card) {
         LOG.d("remove as fav " + card);
-        cardsInfoDbHelper.removeFavourite(card);
+        favouritesDataSource.removeFavourites(card);
         return loadIdFav();
     }
 
@@ -57,7 +60,7 @@ public class CardsStorage {
 
     public List<MTGCard> getFavourites() {
         LOG.d();
-        return cardsInfoDbHelper.loadFav(true);
+        return favouritesDataSource.getCards(true);
     }
 
     public List<MTGCard> loadDeck(Deck deck) {

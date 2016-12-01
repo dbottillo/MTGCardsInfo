@@ -9,6 +9,7 @@ buildscript {
     ext.butterknife_version = '8.4.0'
     ext.mockito_version= '1.10.19'
     ext.roboelectric_version = '3.1.4'
+    ext.rx_java_version = '1.2.3'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
@@ -133,7 +134,7 @@ dependencies {
     compile "com.jakewharton:butterknife:$butterknife_version"
     apt "com.jakewharton:butterknife-compiler:$butterknife_version"
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.2.2'
+    compile "io.reactivex:rxjava:$rx_java_version"
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.google.dagger:dagger:$dagger_version"
     apt "com.google.dagger:dagger-compiler:$dagger_version"
