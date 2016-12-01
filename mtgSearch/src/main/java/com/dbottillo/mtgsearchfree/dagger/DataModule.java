@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.dagger;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
@@ -47,8 +47,8 @@ public class DataModule {
 
     @Provides
     @Singleton
-    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper, FavouritesDataSource favouritesDataSource) {
-        return new CardsStorage(mtgCardDataSource, cardsInfoDbHelper, favouritesDataSource);
+    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, DeckDataSource deckDataSource, FavouritesDataSource favouritesDataSource) {
+        return new CardsStorage(mtgCardDataSource, deckDataSource, favouritesDataSource);
     }
 
     @Provides
@@ -71,8 +71,14 @@ public class DataModule {
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(FileUtil fileUtil, CardsInfoDbHelper cardsInfoDbHelper, MTGCardDataSource mtgCardDataSource) {
-        return new DecksStorage(fileUtil, cardsInfoDbHelper, mtgCardDataSource);
+    DeckDataSource provideDeckDataSource(@Named("storageDB") SQLiteDatabase database) {
+        return new DeckDataSource(database);
+    }
+
+    @Provides
+    @Singleton
+    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, MTGCardDataSource mtgCardDataSource) {
+        return new DecksStorage(fileUtil, deckDataSource, mtgCardDataSource);
     }
 
     @Provides

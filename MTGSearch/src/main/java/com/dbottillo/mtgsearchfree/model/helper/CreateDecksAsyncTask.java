@@ -29,21 +29,22 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
         ArrayList<Object> result = new ArrayList<Object>();
 
         MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
-        CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
+        CardsInfoDbHelper cardsInfoDbHelper = new CardsInfoDbHelper(context);
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper);
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper.getReadableDatabase());
 
-        DeckDataSource.deleteAllDecks(db);
+        DeckDataSource deckDataSource = new DeckDataSource(db);
+        deckDataSource.deleteAllDecks(db);
 
         for (int i = 0; i < 99; i++) {
-            long deck = DeckDataSource.addDeck(db, "Deck " + i);
+            long deck = deckDataSource.addDeck("Deck " + i);
             List<MTGCard> cards = mtgCardDataSource.getRandomCard(30);
             for (MTGCard card : cards) {
                 Random r = new Random();
                 int quantity = r.nextInt(4) + 1;
                 //LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
                 card.setSideboard(quantity == 1);
-                DeckDataSource.addCardToDeckWithoutCheck(db, deck, card, quantity);
+                deckDataSource.addCardToDeckWithoutCheck(deck, card, quantity);
             }
         }
 

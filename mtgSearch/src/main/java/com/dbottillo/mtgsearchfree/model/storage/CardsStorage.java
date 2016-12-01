@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -15,15 +15,15 @@ import java.util.List;
 
 public class CardsStorage {
 
-    private CardsInfoDbHelper cardsInfoDbHelper;
     private MTGCardDataSource mtgCardDataSource;
+    private DeckDataSource deckDataSource;
     private FavouritesDataSource favouritesDataSource;
 
-    public CardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper, FavouritesDataSource favouritesDataSource) {
-        this.favouritesDataSource = favouritesDataSource;
+    public CardsStorage(MTGCardDataSource mtgCardDataSource, DeckDataSource deckDataSource, FavouritesDataSource favouritesDataSource) {
         LOG.d("created");
+        this.deckDataSource = deckDataSource;
+        this.favouritesDataSource = favouritesDataSource;
         this.mtgCardDataSource = mtgCardDataSource;
-        this.cardsInfoDbHelper = cardsInfoDbHelper;
     }
 
     public List<MTGCard> load(MTGSet set) {
@@ -65,7 +65,7 @@ public class CardsStorage {
 
     public List<MTGCard> loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        return cardsInfoDbHelper.loadDeck(deck);
+        return deckDataSource.getCards(deck);
     }
 
     public List<MTGCard> doSearch(SearchParams searchParams) {
