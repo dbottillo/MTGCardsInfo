@@ -250,7 +250,8 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
         card.belongsTo(new MTGSet(1, "Zendikar"));
         long deck = DeckDataSource.addDeck(db, "deck");
         DeckDataSource.addCardToDeck(db, deck, card, 2);
-        PlayerDataSource.savePlayer(db, new Player(20, "liliana"));
+        PlayerDataSource playerDataSource = new PlayerDataSource(db);
+        playerDataSource.savePlayer(new Player(20, "liliana"));
         FavouritesDataSource.saveFavourites(db, card);
     }
 

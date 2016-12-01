@@ -8,12 +8,15 @@ import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public final class PlayerDataSource {
+public class PlayerDataSource {
 
     public static final String TABLE = "MTGPlayer";
 
-    public enum COLUMNS {
+    private SQLiteDatabase database;
+
+    private enum COLUMNS {
         NAME("name", "TEXT"),
         LIFE("life", "INT"),
         POISON("poison", "INT");
@@ -31,7 +34,8 @@ public final class PlayerDataSource {
         }
     }
 
-    private PlayerDataSource() {
+    public PlayerDataSource(SQLiteDatabase database) {
+        this.database = database;
     }
 
     public static String generateCreateTable() {
@@ -47,21 +51,21 @@ public final class PlayerDataSource {
         return builder.toString();
     }
 
-    public static long savePlayer(SQLiteDatabase db, Player player) {
+    public long savePlayer(Player player) {
         LOG.d("saving " + player.toString());
         ContentValues values = new ContentValues();
         values.put("_id", player.getId());
         values.put(COLUMNS.LIFE.getName(), player.getLife());
         values.put(COLUMNS.POISON.getName(), player.getPoisonCount());
         values.put(COLUMNS.NAME.getName(), player.getName());
-        return db.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+        return database.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    public static ArrayList<Player> getPlayers(SQLiteDatabase db) {
+    public List<Player> getPlayers() {
         LOG.d("get players");
         String query = "SELECT * FROM " + TABLE + " order by _ID ASC";
         LOG.query(query);
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         ArrayList<Player> players = new ArrayList<>();
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
@@ -73,17 +77,17 @@ public final class PlayerDataSource {
         return players;
     }
 
-    public static void removePlayer(SQLiteDatabase db, Player player) {
+    public void removePlayer(Player player) {
         LOG.d("remove " + player.toString());
         String[] args = new String[]{player.getId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
         LOG.query(query, player.getId() + "");
-        Cursor cursor = db.rawQuery(query, args);
+        Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
     }
 
-    public static Player fromCursor(Cursor cursor) {
+    public Player fromCursor(Cursor cursor) {
         Player player = new Player();
         player.setId(cursor.getInt(cursor.getColumnIndex("_id")));
         player.setLife(cursor.getInt(cursor.getColumnIndex(COLUMNS.LIFE.getName())));

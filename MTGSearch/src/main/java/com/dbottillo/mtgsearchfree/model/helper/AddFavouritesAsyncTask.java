@@ -13,6 +13,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    This class is used only on debug to generate random favourites cards.
+ */
 public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     private boolean error = false;
@@ -30,10 +33,11 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
         CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
         MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper);
 
-        FavouritesDataSource.clear(cardsInfoDbHelper.getWritableDatabase());
+        FavouritesDataSource favouritesDataSource = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase());
+        favouritesDataSource.clear();
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(600);
         for (MTGCard card : cards) {
-            FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
+            favouritesDataSource.saveFavourites(card);
         }
 
         return result;

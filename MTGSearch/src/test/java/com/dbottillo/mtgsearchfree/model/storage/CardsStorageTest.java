@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 
 import org.junit.Before;
@@ -26,17 +27,18 @@ import static org.mockito.Mockito.when;
 
 public class CardsStorageTest extends BaseTest {
 
-    static MTGSet set;
-    static Deck deck;
-    static MTGCardDataSource mtgCardDataSource;
-    static CardsInfoDbHelper cardsInfoDbHelper;
-    static List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
-    static List<MTGCard> luckyCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
-    static List<MTGCard> searchCards = Arrays.asList(new MTGCard(12), new MTGCard(13));
-    static List<MTGCard> favCards;
+    private static MTGSet set;
+    private static Deck deck;
+    private static MTGCardDataSource mtgCardDataSource;
+    private static CardsInfoDbHelper cardsInfoDbHelper;
+    private static FavouritesDataSource favouritesDataSource;
+    private static List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
+    private static List<MTGCard> luckyCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
+    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
+    private static List<MTGCard> searchCards = Arrays.asList(new MTGCard(12), new MTGCard(13));
+    private static List<MTGCard> favCards;
 
-    CardsStorage cardsStorage;
+    private CardsStorage cardsStorage;
 
     @BeforeClass
     public static void staticSetup() {
@@ -53,12 +55,13 @@ public class CardsStorageTest extends BaseTest {
     public void setupStorage() {
         mtgCardDataSource = mock(MTGCardDataSource.class);
         cardsInfoDbHelper = mock(CardsInfoDbHelper.class);
+        favouritesDataSource = mock(FavouritesDataSource.class);
         when(mtgCardDataSource.getSet(set)).thenReturn(setCards);
-        when(cardsInfoDbHelper.loadFav(anyBoolean())).thenReturn(favCards);
+        when(favouritesDataSource.getCards(anyBoolean())).thenReturn(favCards);
         when(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards);
         when(mtgCardDataSource.searchCards(Matchers.any(SearchParams.class))).thenReturn(searchCards);
         when(cardsInfoDbHelper.loadDeck(deck)).thenReturn(deckCards);
-        cardsStorage = new CardsStorage(mtgCardDataSource, cardsInfoDbHelper);
+        cardsStorage = new CardsStorage(mtgCardDataSource, cardsInfoDbHelper, favouritesDataSource);
     }
 
     @Test
@@ -73,14 +76,14 @@ public class CardsStorageTest extends BaseTest {
     public void testSaveAsFavourite() {
         MTGCard card = mock(MTGCard.class);
         int[] favs = cardsStorage.saveAsFavourite(card);
-        verify(cardsInfoDbHelper).saveFavourite(card);
+        verify(favouritesDataSource).saveFavourites(card);
         assertThat(favs.length, is(2));
     }
 
     @Test
     public void testLoadIdFav() {
         int[] favs = cardsStorage.loadIdFav();
-        verify(cardsInfoDbHelper).loadFav(false);
+        verify(favouritesDataSource).getCards(false);
         assertThat(favs.length, is(2));
         assertThat(favs[0], is(favCards.get(0).getMultiVerseId()));
         assertThat(favs[1], is(favCards.get(1).getMultiVerseId()));
@@ -90,8 +93,8 @@ public class CardsStorageTest extends BaseTest {
     public void testRemoveFromFavourite() {
         MTGCard card = mock(MTGCard.class);
         int[] favs = cardsStorage.removeFromFavourite(card);
-        verify(cardsInfoDbHelper).removeFavourite(card);
-        verify(cardsInfoDbHelper).loadFav(false);
+        verify(favouritesDataSource).removeFavourites(card);
+        verify(favouritesDataSource).getCards(false);
         assertThat(favs.length, is(2));
     }
 
@@ -106,7 +109,7 @@ public class CardsStorageTest extends BaseTest {
     @Test
     public void testGetFavourites() {
         List<MTGCard> favs = cardsStorage.getFavourites();
-        verify(cardsInfoDbHelper).loadFav(true);
+        verify(favouritesDataSource).getCards(true);
         assertNotNull(favs);
         assertThat(favs, is(favCards));
     }

@@ -9,7 +9,6 @@ import android.support.annotation.VisibleForTesting;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.HashSet;
 import java.util.List;
@@ -29,17 +28,17 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     private static CardsInfoDbHelper instance;
 
+    @VisibleForTesting
+    public CardsInfoDbHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
     @Deprecated
     public static synchronized CardsInfoDbHelper getInstance(Context context) {
         if (instance == null) {
             instance = new CardsInfoDbHelper(context);
         }
         return instance;
-    }
-
-    @VisibleForTesting
-    public CardsInfoDbHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -102,18 +101,6 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         return columns;
     }
 
-    public void saveFavourite(MTGCard card) {
-        FavouritesDataSource.saveFavourites(getWritableDatabase(), card);
-    }
-
-    public List<MTGCard> loadFav(boolean full) {
-        return FavouritesDataSource.getCards(getReadableDatabase(), full);
-    }
-
-    public void removeFavourite(MTGCard card) {
-        FavouritesDataSource.removeFavourites(getWritableDatabase(), card);
-    }
-
     public List<MTGCard> loadDeck(Deck deck) {
         return DeckDataSource.getCards(getReadableDatabase(), deck);
     }
@@ -156,22 +143,6 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public void moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
         DeckDataSource.moveCardToSideBoard(getWritableDatabase(), deck.getId(), card, quantity);
-    }
-
-    public List<Player> loadPlayers() {
-        return PlayerDataSource.getPlayers(getReadableDatabase());
-    }
-
-    public void savePlayer(Player player) {
-        PlayerDataSource.savePlayer(getWritableDatabase(), player);
-    }
-
-    public void editPlayer(Player player) {
-        PlayerDataSource.savePlayer(getWritableDatabase(), player);
-    }
-
-    public void removePlayer(Player player) {
-        PlayerDataSource.removePlayer(getWritableDatabase(), player);
     }
 
     public List<Deck> addDeck(MTGCardDataSource cardDataSource, CardsBucket bucket) {
