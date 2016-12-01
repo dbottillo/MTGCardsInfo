@@ -1,10 +1,11 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
-import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
+import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
@@ -12,10 +13,10 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
-import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -44,8 +45,8 @@ public class DataModule {
 
     @Provides
     @Singleton
-    SetsStorage provideSetsStorage(MTGDatabaseHelper helper) {
-        return new SetsStorage(helper);
+    SetDataSource provideSetDataSource(@Named("cardsDatabase") SQLiteDatabase database) {
+        return new SetDataSource(database);
     }
 
     @Provides

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
@@ -17,6 +18,7 @@ import com.dbottillo.mtgsearchfree.util.FileUtil;
 
 import java.util.List;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -53,6 +55,20 @@ public class AndroidModule {
     @Singleton
     CardsInfoDbHelper provideCardsInfoDatabaseHelper() {
         return new CardsInfoDbHelper(app);
+    }
+
+    @Provides
+    @Named("cardsDatabase")
+    @Singleton
+    SQLiteDatabase provideCardsDatabase(MTGDatabaseHelper mtgDatabaseHelper){
+        return mtgDatabaseHelper.getReadableDatabase();
+    }
+
+    @Provides
+    @Named("storageDatabase")
+    @Singleton
+    SQLiteDatabase provideStorageDatabase(CardsInfoDbHelper cardsInfoDbHelper){
+        return cardsInfoDbHelper.getWritableDatabase();
     }
 
     @Provides
