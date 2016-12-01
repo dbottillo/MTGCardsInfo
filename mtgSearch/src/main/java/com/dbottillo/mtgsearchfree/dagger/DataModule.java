@@ -4,7 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
+import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
@@ -39,20 +41,32 @@ public class DataModule {
 
     @Provides
     @Singleton
-    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper) {
-        return new CardsStorage(mtgCardDataSource, cardsInfoDbHelper);
+    FavouritesDataSource provideFavouritesDataSource(@Named("storageDB") SQLiteDatabase database) {
+        return new FavouritesDataSource(database);
     }
 
     @Provides
     @Singleton
-    SetDataSource provideSetDataSource(@Named("cardsDatabase") SQLiteDatabase database) {
+    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper, FavouritesDataSource favouritesDataSource) {
+        return new CardsStorage(mtgCardDataSource, cardsInfoDbHelper, favouritesDataSource);
+    }
+
+    @Provides
+    @Singleton
+    SetDataSource provideSetDataSource(@Named("cardsDB") SQLiteDatabase database) {
         return new SetDataSource(database);
     }
 
     @Provides
     @Singleton
-    PlayersStorage providePlayerStorage(CardsInfoDbHelper cardsInfoDbHelper) {
-        return new PlayersStorage(cardsInfoDbHelper);
+    PlayerDataSource providePlayerDataSource(@Named("storageDB") SQLiteDatabase database) {
+        return new PlayerDataSource(database);
+    }
+
+    @Provides
+    @Singleton
+    PlayersStorage providePlayerStorage(PlayerDataSource playerDataSource) {
+        return new PlayersStorage(playerDataSource);
     }
 
     @Provides
