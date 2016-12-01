@@ -20,11 +20,11 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class CardDataSourceTest extends BaseContextTest {
 
-    MTGCardDataSource cardDataSource;
+    private MTGCardDataSource underTest;
 
     @Before
     public void setup(){
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
+        underTest = new MTGCardDataSource(mtgDatabaseHelper.getWritableDatabase());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CardDataSourceTest extends BaseContextTest {
 
     @Test
     public void test_card_can_be_saved_in_database() {
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = underTest.getRandomCard(1).get(0);
         long id = CardDataSource.saveCard(cardsInfoDbHelper.getWritableDatabase(), card);
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where rowid =?", new String[]{id + ""});
         assertNotNull(cursor);

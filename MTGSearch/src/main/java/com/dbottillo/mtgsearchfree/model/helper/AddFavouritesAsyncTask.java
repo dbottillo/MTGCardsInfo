@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-    This class is used only on debug to generate random favourites cards.
+    this class is used only on debug to generate random favourites cards
  */
 public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
@@ -30,8 +30,8 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
         ArrayList<Object> result = new ArrayList<>();
 
         MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
-        CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
-        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper);
+        CardsInfoDbHelper cardsInfoDbHelper = new CardsInfoDbHelper(context);
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper.getReadableDatabase());
 
         FavouritesDataSource favouritesDataSource = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase());
         favouritesDataSource.clear();

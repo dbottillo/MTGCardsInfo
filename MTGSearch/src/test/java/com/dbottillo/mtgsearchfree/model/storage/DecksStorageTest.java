@@ -8,7 +8,7 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher;
@@ -31,7 +31,8 @@ import static org.mockito.Mockito.when;
 
 public class DecksStorageTest extends BaseTest {
 
-    private static CardsInfoDbHelper cardsInfoDbHelper;
+    private static final long DECK_ID = 200L;
+    private static DeckDataSource deckDataSource;
     private static MTGCardDataSource mtgCardDataSource;
     private static Deck deck;
     private static MTGCard card;
@@ -41,7 +42,7 @@ public class DecksStorageTest extends BaseTest {
     private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
     @Rule
     public ExpectedException exception = ExpectedException.none();
-    private DecksStorage storage;
+    private DecksStorage underTest;
 
     @BeforeClass
     public static void staticSetup() {
@@ -53,90 +54,92 @@ public class DecksStorageTest extends BaseTest {
 
     @Before
     public void setupStorage() {
-        cardsInfoDbHelper = mock(CardsInfoDbHelper.class);
+        deckDataSource = mock(DeckDataSource.class);
         mtgCardDataSource = mock(MTGCardDataSource.class);
-        when(cardsInfoDbHelper.getDecks()).thenReturn(decks);
-        when(cardsInfoDbHelper.loadDeck(deck)).thenReturn(deckCards);
-        when(cardsInfoDbHelper.loadDeck(2L)).thenReturn(deckCards);
-        when(cardsInfoDbHelper.addDeck("deck2")).thenReturn(2L);
-        when(cardsInfoDbHelper.addDeck(mtgCardDataSource, cardsBucket)).thenReturn(decks);
-        storage = new DecksStorage(fileUtil, cardsInfoDbHelper, mtgCardDataSource);
+        when(deck.getId()).thenReturn(DECK_ID);
+        when(deckDataSource.getDecks()).thenReturn(decks);
+        when(deckDataSource.getDeck(DECK_ID)).thenReturn(deck);
+        when(deckDataSource.addDeck("deck2")).thenReturn(2L);
+        when(deckDataSource.addDeck(mtgCardDataSource, cardsBucket)).thenReturn(DECK_ID);
+        when(deckDataSource.getCards(deck)).thenReturn(deckCards);
+        when(deckDataSource.getCards(2L)).thenReturn(deckCards);
+        underTest = new DecksStorage(fileUtil, deckDataSource, mtgCardDataSource);
     }
 
     @Test
     public void testLoad() {
-        List<Deck> decksLoaded = storage.load();
-        verify(cardsInfoDbHelper).getDecks();
+        List<Deck> decksLoaded = underTest.load();
+        verify(deckDataSource).getDecks();
         assertNotNull(decksLoaded);
         assertThat(decksLoaded, is(decks));
     }
 
     @Test
     public void testAddDeck() {
-        storage.addDeck("deck");
-        verify(cardsInfoDbHelper).addDeck("deck");
+        underTest.addDeck("deck");
+        verify(deckDataSource).addDeck("deck");
     }
 
     @Test
     public void testDeleteDeck() {
-        storage.deleteDeck(deck);
-        verify(cardsInfoDbHelper).deleteDeck(deck);
+        underTest.deleteDeck(deck);
+        verify(deckDataSource).deleteDeck(deck);
     }
 
     @Test
     public void testLoadDeck() {
-        List<MTGCard> cards = storage.loadDeck(deck);
-        verify(cardsInfoDbHelper).loadDeck(deck);
+        List<MTGCard> cards = underTest.loadDeck(deck);
+        verify(deckDataSource).getCards(deck);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void testEditDeck() {
-        List<MTGCard> cards = storage.editDeck(deck, "new");
-        verify(cardsInfoDbHelper).editDeck(deck, "new");
+        List<MTGCard> cards = underTest.editDeck(deck, "new");
+        verify(deckDataSource).renameDeck(DECK_ID, "new");
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void testAddCard() {
-        List<MTGCard> cards = storage.addCard(deck, card, 2);
-        verify(cardsInfoDbHelper).addCard(deck, card, 2);
+        List<MTGCard> cards = underTest.addCard(deck, card, 2);
+        verify(deckDataSource).addCardToDeck(DECK_ID, card, 2);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void testAddCardNewDeck() {
-        List<MTGCard> cards = storage.addCard("deck2", card, 2);
-        verify(cardsInfoDbHelper).addDeck("deck2");
-        verify(cardsInfoDbHelper).addCard(2L, card, 2);
+        List<MTGCard> cards = underTest.addCard("deck2", card, 2);
+        verify(deckDataSource).addDeck("deck2");
+        verify(deckDataSource).addCardToDeck(2L, card, 2);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void testRemoveCard() {
-        List<MTGCard> cards = storage.removeCard(deck, card);
-        verify(cardsInfoDbHelper).addCard(deck, card, -1);
+        List<MTGCard> cards = underTest.removeCard(deck, card);
+        verify(deckDataSource).addCardToDeck(DECK_ID, card, -1);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void movesCardFromSideboard() {
-        List<MTGCard> cards = storage.moveCardFromSideboard(deck, card, 2);
-        verify(cardsInfoDbHelper).moveCardFromSideboard(deck, card, 2);
+        List<MTGCard> cards = underTest.moveCardFromSideboard(deck, card, 2);
+        verify(deckDataSource).moveCardFromSideBoard(DECK_ID, card, 2);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void movesCardToSideboard() {
-        List<MTGCard> cards = storage.moveCardToSideboard(deck, card, 2);
-        verify(cardsInfoDbHelper).moveCardToSideboard(deck, card, 2);
+        List<MTGCard> cards = underTest.moveCardToSideboard(deck, card, 2);
+        verify(deckDataSource).moveCardToSideBoard(DECK_ID, card, 2);
         assertThat(cards, is(deckCards));
     }
 
     @Test
     public void testRemoveAllCard() {
-        List<MTGCard> cards = storage.removeAllCard(deck, card);
-        verify(cardsInfoDbHelper).removeAllCards(deck, card);
+        List<MTGCard> cards = underTest.removeAllCard(deck, card);
+        verify(deckDataSource).removeCardFromDeck(DECK_ID, card);
         assertThat(cards, is(deckCards));
     }
 
@@ -144,8 +147,8 @@ public class DecksStorageTest extends BaseTest {
     public void DecksStorage_willImportDeck() throws Throwable {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(cardsBucket);
-        List<Deck> decksLoaded = storage.importDeck(uri);
-        verify(cardsInfoDbHelper).addDeck(mtgCardDataSource, cardsBucket);
+        List<Deck> decksLoaded = underTest.importDeck(uri);
+        verify(deckDataSource).addDeck(mtgCardDataSource, cardsBucket);
         assertNotNull(decksLoaded);
         assertThat(decksLoaded, is(decks));
     }
@@ -158,7 +161,7 @@ public class DecksStorageTest extends BaseTest {
         Uri uri = mock(Uri.class);
         Exception e = new Exception("error");
         when(fileUtil.readFileContent(uri)).thenThrow(e);
-        storage.importDeck(uri);
+        underTest.importDeck(uri);
     }
 
 }

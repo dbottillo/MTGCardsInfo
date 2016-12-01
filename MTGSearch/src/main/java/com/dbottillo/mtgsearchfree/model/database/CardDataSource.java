@@ -64,19 +64,19 @@ public final class CardDataSource {
     private CardDataSource() {
     }
 
-    protected static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
+    static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
             + COLUMNS.RULINGS.getName() + " " + COLUMNS.RULINGS.getType();
 
-    protected static final String SQL_ADD_COLUMN_LAYOUT = "ALTER TABLE "
+    static final String SQL_ADD_COLUMN_LAYOUT = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
             + COLUMNS.LAYOUT.getName() + " " + COLUMNS.LAYOUT.getType();
 
-    protected static final String SQL_ADD_COLUMN_SET_CODE = "ALTER TABLE "
+    static final String SQL_ADD_COLUMN_SET_CODE = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
             + COLUMNS.SET_CODE.getName() + " " + COLUMNS.SET_CODE.getType();
 
-    protected static final String SQL_ADD_COLUMN_NUMBER = "ALTER TABLE "
+    static final String SQL_ADD_COLUMN_NUMBER = "ALTER TABLE "
             + TABLE + " ADD COLUMN "
             + COLUMNS.NUMBER.getName() + " " + COLUMNS.NUMBER.getType();
 
@@ -120,7 +120,7 @@ public final class CardDataSource {
     }
 
     @VisibleForTesting
-    public static String generateCreateTableWithoutLayout() {
+    static String generateCreateTableWithoutLayout() {
         StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
         builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         for (COLUMNS column : COLUMNS.values()) {

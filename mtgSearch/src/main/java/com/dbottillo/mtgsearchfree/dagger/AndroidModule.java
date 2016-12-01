@@ -73,8 +73,8 @@ public class AndroidModule {
 
     @Provides
     @Singleton
-    MTGCardDataSource provideMTGCardDataSource(MTGDatabaseHelper helper) {
-        return new MTGCardDataSource(helper);
+    MTGCardDataSource provideMTGCardDataSource(@Named("cardsDB") SQLiteDatabase database) {
+        return new MTGCardDataSource(database);
     }
 
     @Provides
