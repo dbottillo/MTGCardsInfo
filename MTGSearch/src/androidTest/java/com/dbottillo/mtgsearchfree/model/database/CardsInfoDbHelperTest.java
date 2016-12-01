@@ -248,11 +248,13 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
     private void addDummyData(SQLiteDatabase db) {
         MTGCard card = new MTGCard();
         card.belongsTo(new MTGSet(1, "Zendikar"));
-        long deck = DeckDataSource.addDeck(db, "deck");
-        DeckDataSource.addCardToDeck(db, deck, card, 2);
+        DeckDataSource deckDataSource = new DeckDataSource(db);
+        long deck = deckDataSource.addDeck("deck");
+        deckDataSource.addCardToDeck(deck, card, 2);
         PlayerDataSource playerDataSource = new PlayerDataSource(db);
         playerDataSource.savePlayer(new Player(20, "liliana"));
-        FavouritesDataSource.saveFavourites(db, card);
+        FavouritesDataSource favouritesDataSource = new FavouritesDataSource(db);
+        favouritesDataSource.saveFavourites(card);
     }
 
     private void downgradeDb(SQLiteDatabase db, int version) {
