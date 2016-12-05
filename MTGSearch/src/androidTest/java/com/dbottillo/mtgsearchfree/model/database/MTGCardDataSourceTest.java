@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.junit.Before;
@@ -35,11 +36,12 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class MTGCardDataSourceTest extends BaseContextTest {
 
-    private MTGCardDataSource cardDataSource;
+    private MTGCardDataSource underTest;
 
     @Before
     public void setup() {
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase());
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        underTest = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
     }
 
     @Test
@@ -49,18 +51,20 @@ public class MTGCardDataSourceTest extends BaseContextTest {
             //LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
                 ArrayList<MTGCard> cardsJ = FileHelper.readSingleSetFile(set, context);
-                List<MTGCard> cards = cardDataSource.getSet(set);
+                List<MTGCard> cards = underTest.getSet(set);
                 assertThat(cardsJ.size(), is(cards.size()));
                 assertTrue(cards.containsAll(cardsJ));
             } catch (Resources.NotFoundException e) {
                 LOG.e(set.getCode() + " file not found");
             }
         }
+
+
     }
 
     @Test
     public void getsRandomCards() {
-        List<MTGCard> cards = cardDataSource.getRandomCard(10);
+        List<MTGCard> cards = underTest.getRandomCard(10);
         assertThat(cards.size(), is(10));
     }
 
@@ -68,7 +72,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsByName() {
         SearchParams searchParams = new SearchParams();
         searchParams.setName("Dragon");
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         for (MTGCard card : cards) {
             assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("dragon"));
         }
@@ -78,7 +82,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsByType() {
         SearchParams searchParams = new SearchParams();
         searchParams.setTypes("creature");
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature"));
@@ -89,13 +93,12 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsByText() {
         SearchParams searchParams = new SearchParams();
         searchParams.setText("lifelink");
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getText().toLowerCase(Locale.getDefault()).contains("lifelink"));
         }
     }
-
 
     @Test
     public void searchCardsByCMC() {
@@ -103,7 +106,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         for (int i = 0; i < OPERATOR.values().length; i++) {
             OPERATOR operator = OPERATOR.values()[i];
             searchParams.setCmc(operator.generateParam());
-            List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+            List<MTGCard> cards = underTest.searchCards(searchParams);
             assertTrue(cards.size() > 0);
             for (MTGCard card : cards) {
                 operator.assertOperator(card.getCmc());
@@ -117,7 +120,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         for (int i = 0; i < OPERATOR.values().length; i++) {
             OPERATOR operator = OPERATOR.values()[i];
             searchParams.setPower(operator.generateParam());
-            List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+            List<MTGCard> cards = underTest.searchCards(searchParams);
             assertTrue(cards.size() > 0);
             for (MTGCard card : cards) {
                 if (!card.getPower().equals("*")) {
@@ -133,7 +136,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         for (int i = 0; i < OPERATOR.values().length; i++) {
             OPERATOR operator = OPERATOR.values()[i];
             searchParams.setTough(operator.generateParam());
-            List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+            List<MTGCard> cards = underTest.searchCards(searchParams);
             assertTrue(cards.size() > 0);
             for (MTGCard card : cards) {
                 if (!card.getPower().equals("*")) {
@@ -147,35 +150,35 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsByColor() {
         SearchParams searchParams = new SearchParams();
         searchParams.setWhite(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("W"));
         }
         searchParams = new SearchParams();
         searchParams.setBlue(true);
-        cards = cardDataSource.searchCards(searchParams);
+        cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("U"));
         }
         searchParams = new SearchParams();
         searchParams.setRed(true);
-        cards = cardDataSource.searchCards(searchParams);
+        cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("R"));
         }
         searchParams = new SearchParams();
         searchParams.setBlack(true);
-        cards = cardDataSource.searchCards(searchParams);
+        cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("B"));
         }
         searchParams = new SearchParams();
         searchParams.setGreen(true);
-        cards = cardDataSource.searchCards(searchParams);
+        cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("G"));
@@ -187,7 +190,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         searchParams.setWhite(true);
         searchParams.setBlue(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("W"));
@@ -201,7 +204,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         searchParams.setWhite(true);
         searchParams.setBlue(true);
         searchParams.setOnlyMulti(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("W"));
@@ -215,7 +218,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         searchParams.setWhite(true);
         searchParams.setBlue(true);
         searchParams.setNoMulti(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue((card.getManaCost().contains("W") && !card.getManaCost().contains("U"))
@@ -227,7 +230,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCommonCards() {
         SearchParams searchParams = new SearchParams();
         searchParams.setCommon(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getRarity().equalsIgnoreCase("Common"));
@@ -238,7 +241,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchUncommonCards() {
         SearchParams searchParams = new SearchParams();
         searchParams.setUncommon(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getRarity().equalsIgnoreCase("Uncommon"));
@@ -249,7 +252,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchRareCards() {
         SearchParams searchParams = new SearchParams();
         searchParams.setRare(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getRarity().equalsIgnoreCase("Rare"));
@@ -260,7 +263,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchMythicCards() {
         SearchParams searchParams = new SearchParams();
         searchParams.setMythic(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getRarity().equalsIgnoreCase("Mythic Rare"));
@@ -272,7 +275,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         searchParams.setRare(true);
         searchParams.setMythic(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getRarity().equalsIgnoreCase("Rare") || card.getRarity().equalsIgnoreCase("Mythic Rare"));
@@ -283,13 +286,13 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void search_cards_by_multiple_types() {
         SearchParams searchParams = new SearchParams();
         searchParams.setTypes("creature angel");
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature") && card.getType().toLowerCase(Locale.getDefault()).contains("angel"));
         }
         searchParams.setTypes("creature angel ally");
-        List<MTGCard> cards2 = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards2 = underTest.searchCards(searchParams);
         assertTrue(cards2.size() > 0);
         for (MTGCard card : cards2) {
             assertTrue(card.getType().toLowerCase(Locale.getDefault()).contains("creature") && card.getType().toLowerCase(Locale.getDefault()).contains("angel") && card.getType().toLowerCase(Locale.getDefault()).contains("ally"));
@@ -302,7 +305,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         MTGSet set = setDataSource.getSets().get(0);
         SearchParams searchParams = new SearchParams();
         searchParams.setSetId(set.getId());
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(card.getSet(), is(set));
@@ -313,7 +316,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void search_cards_by_standard() {
         SearchParams searchParams = new SearchParams();
         searchParams.setSetId(-2);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertThat(MTGCardDataSource.STANDARD.getSetNames(), hasItem(card.getSet().getName()));
@@ -325,7 +328,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         searchParams.setName("angel");
         searchParams.setTypes("creature angel");
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("angel"));
@@ -343,7 +346,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         searchParams.setRare(true);
         searchParams.setPower(new IntParam("=", 4));
         searchParams.setTough(new IntParam("=", 4));
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("angel"));
@@ -361,11 +364,11 @@ public class MTGCardDataSourceTest extends BaseContextTest {
                 "Urborg, Tomb of Yawgmoth", "Engineered Explosives"};
         MTGCard card;
         for (String name : toTest) {
-            card = cardDataSource.searchCard(name);
+            card = underTest.searchCard(name);
             assertNotNull(card);
             assertThat(card.getName(), is(name));
         }
-        card = cardDataSource.searchCard("Obama");
+        card = underTest.searchCard("Obama");
         assertNull(card);
     }
 
@@ -374,13 +377,20 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         searchParams.setName("island");
         searchParams.setLand(true);
-        List<MTGCard> cards = cardDataSource.searchCards(searchParams);
+        List<MTGCard> cards = underTest.searchCards(searchParams);
         assertNotNull(cards);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
             assertTrue(card.getName().toLowerCase(Locale.getDefault()).contains("island"));
             assertTrue(card.isLand());
         }
+    }
+
+    @Test
+    public void searchCardsByMultiverseId() {
+        MTGCard card = underTest.searchCard(420621);
+        assertNotNull(card);
+        assertThat(card.getName(), is("Selfless Squire"));
     }
 
     private static final int NUMBER = 5;

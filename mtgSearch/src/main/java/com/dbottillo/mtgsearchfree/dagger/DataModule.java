@@ -1,8 +1,10 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
@@ -16,7 +18,10 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
+import com.dbottillo.mtgsearchfree.util.AppInfo;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
+import com.google.gson.Gson;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -29,8 +34,20 @@ public class DataModule {
 
     @Provides
     @Singleton
-    GeneralData provideSharedPreferences(Context context) {
-        return new GeneralPreferences(context);
+    SharedPreferences provideSharedPreferences(Context context){
+        return context.getSharedPreferences("General", Context.MODE_PRIVATE);
+    }
+
+    @Provides
+    @Singleton
+    AppInfo providesAppInfo(Context context){
+        return new AppInfo(context);
+    }
+
+    @Provides
+    @Singleton
+    GeneralData providesGeneralData(SharedPreferences sharedPreferences, AppInfo appInfo) {
+        return new GeneralPreferences(sharedPreferences, appInfo);
     }
 
     @Provides
@@ -41,14 +58,20 @@ public class DataModule {
 
     @Provides
     @Singleton
-    FavouritesDataSource provideFavouritesDataSource(@Named("storageDB") SQLiteDatabase database) {
-        return new FavouritesDataSource(database);
+    CardDataSource providesCardDataSource(@Named("storageDB") SQLiteDatabase database, Gson gson){
+        return new CardDataSource(database, gson);
     }
 
     @Provides
     @Singleton
-    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, DeckDataSource deckDataSource, FavouritesDataSource favouritesDataSource) {
-        return new CardsStorage(mtgCardDataSource, deckDataSource, favouritesDataSource);
+    FavouritesDataSource provideFavouritesDataSource(@Named("storageDB") SQLiteDatabase database, CardDataSource cardDataSource) {
+        return new FavouritesDataSource(database, cardDataSource);
+    }
+
+    @Provides
+    @Singleton
+    CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource, DeckDataSource deckDataSource, FavouritesDataSource favouritesDataSource, Logger logger) {
+        return new CardsStorage(mtgCardDataSource, deckDataSource, favouritesDataSource, logger);
     }
 
     @Provides
@@ -71,20 +94,25 @@ public class DataModule {
 
     @Provides
     @Singleton
-    DeckDataSource provideDeckDataSource(@Named("storageDB") SQLiteDatabase database) {
-        return new DeckDataSource(database);
+    DeckDataSource provideDeckDataSource(@Named("storageDB") SQLiteDatabase database, CardDataSource cardDataSource, MTGCardDataSource mtgCardDataSource) {
+        return new DeckDataSource(database, cardDataSource, mtgCardDataSource);
     }
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, MTGCardDataSource mtgCardDataSource) {
-        return new DecksStorage(fileUtil, deckDataSource, mtgCardDataSource);
+    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource) {
+        return new DecksStorage(fileUtil, deckDataSource);
     }
 
     @Provides
     @Singleton
-    MemoryStorage provideMemoryStorage() {
-        return new MemoryStorage();
+    MemoryStorage provideMemoryStorage(Logger logger) {
+        return new MemoryStorage(logger);
     }
 
+    @Provides
+    @Singleton
+    Gson providesGson(){
+        return new Gson();
+    }
 }

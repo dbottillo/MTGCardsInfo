@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.util;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.test.RenamingDelegatingContext;
 
@@ -12,7 +12,7 @@ import org.junit.Before;
 
 public abstract class BaseContextTest {
 
-    protected RenamingDelegatingContext context;
+    protected Context context;
     public CardsInfoDbHelper cardsInfoDbHelper;
     public MTGDatabaseHelper mtgDatabaseHelper;
 
@@ -30,7 +30,4 @@ public abstract class BaseContextTest {
         mtgDatabaseHelper.close();
     }
 
-    protected SQLiteDatabase getRawDatabase() {
-        return SQLiteDatabase.openOrCreateDatabase(context.getDatabasePath("cardsinfo.db"), null);
-    }
 }

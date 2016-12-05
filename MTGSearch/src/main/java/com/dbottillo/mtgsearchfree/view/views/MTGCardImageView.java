@@ -2,9 +2,8 @@ package com.dbottillo.mtgsearchfree.view.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
-public class MTGCardImageView extends ImageView {
+public class MTGCardImageView extends android.support.v7.widget.AppCompatImageView {
 
     public MTGCardImageView(Context context) {
         super(context);

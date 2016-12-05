@@ -45,6 +45,9 @@
 
         <service android:name=".widget.UpdateLuckyWidgetService"/>
 
+        <service
+            android:name=".util.CardMigratorService" android:exported="false"/>
+
         <receiver
             android:name=".widget.LuckyWidgetProvider"
             android:icon="@drawable/ic_launcher"
@@ -64,6 +67,7 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
+
 
     </application>
 

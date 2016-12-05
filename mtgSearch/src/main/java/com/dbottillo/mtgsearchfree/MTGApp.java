@@ -128,4 +128,5 @@ public class MTGApp extends Application {
     public UiComponent getUiGraph() {
         return uiGraph;
     }
+
 }

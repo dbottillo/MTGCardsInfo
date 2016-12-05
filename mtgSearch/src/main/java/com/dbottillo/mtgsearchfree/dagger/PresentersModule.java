@@ -10,6 +10,8 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
+import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
+import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
@@ -20,6 +22,7 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 
 import dagger.Module;
@@ -40,8 +43,9 @@ public class PresentersModule {
                                          DeckMapper deckMapper,
                                          GeneralData generalData,
                                          RunnerFactory factory,
-                                         MemoryStorage memoryStorage) {
-        return new CardsPresenterImpl(interactor, deckMapper, generalData, factory, memoryStorage);
+                                         MemoryStorage memoryStorage,
+                                         Logger logger) {
+        return new CardsPresenterImpl(interactor, deckMapper, generalData, factory, memoryStorage, logger);
     }
 
     @Provides
@@ -70,4 +74,8 @@ public class PresentersModule {
         return new CardsHelper(cardsPreferences);
     }
 
+    @Provides
+    CardPresenter provideCardPresenter(CardsInteractor interactor, Logger logger, RunnerFactory runnerFactory){
+        return new CardPresenterImpl(interactor, logger, runnerFactory);
+    }
 }

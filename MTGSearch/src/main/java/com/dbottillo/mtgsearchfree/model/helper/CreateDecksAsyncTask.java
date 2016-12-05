@@ -5,11 +5,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +33,10 @@ public class CreateDecksAsyncTask extends AsyncTask<String, Void, ArrayList<Obje
         MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
         CardsInfoDbHelper cardsInfoDbHelper = new CardsInfoDbHelper(context);
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper.getReadableDatabase());
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper.getReadableDatabase(), cardDataSource);
 
-        DeckDataSource deckDataSource = new DeckDataSource(db);
+        DeckDataSource deckDataSource = new DeckDataSource(db, cardDataSource, mtgCardDataSource);
         deckDataSource.deleteAllDecks(db);
 
         for (int i = 0; i < 99; i++) {

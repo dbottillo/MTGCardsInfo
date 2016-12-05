@@ -15,12 +15,16 @@ import java.util.List;
 public class DeckDataSource {
 
     public final static String TABLE = "decks";
-    public final static String TABLE_JOIN = "deck_card";
+    final static String TABLE_JOIN = "deck_card";
 
-    private SQLiteDatabase database;
+    private final SQLiteDatabase database;
+    private final CardDataSource cardDataSource;
+    private final MTGCardDataSource mtgCardDataSource;
 
-    public DeckDataSource(SQLiteDatabase database) {
+    public DeckDataSource(SQLiteDatabase database, CardDataSource cardDataSource, MTGCardDataSource mtgCardDataSource) {
         this.database = database;
+        this.cardDataSource = cardDataSource;
+        this.mtgCardDataSource = mtgCardDataSource;
     }
 
     public static String generateCreateTable() {
@@ -56,13 +60,13 @@ public class DeckDataSource {
         return database.insert(TABLE, null, values);
     }
 
-    public long addDeck(MTGCardDataSource cardDataSource, CardsBucket bucket) {
+    public long addDeck(CardsBucket bucket) {
         long deckId = addDeck(bucket.getKey());
         if (bucket.getCards().isEmpty()) {
             return deckId;
         }
         for (MTGCard card : bucket.getCards()) {
-            MTGCard realCard = cardDataSource.searchCard(card.getName());
+            MTGCard realCard = mtgCardDataSource.searchCard(card.getName());
             if (realCard != null) {
                 realCard.setSideboard(card.isSideboard());
                 addCardToDeck(deckId, realCard, card.getQuantity());
@@ -118,7 +122,7 @@ public class DeckDataSource {
             }
         } else {
             // need to add the card
-            long cardId = CardDataSource.saveCard(database, card);
+            long cardId = cardDataSource.saveCard(card);
         }
         current.close();
         ContentValues values = new ContentValues();
@@ -193,7 +197,7 @@ public class DeckDataSource {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = CardDataSource.fromCursor(cursor);
+            MTGCard card = cardDataSource.fromCursor(cursor);
             int quantity = cursor.getInt(cursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
             card.setQuantity(quantity);
             int sideboard = cursor.getInt(cursor.getColumnIndex(COLUMNSJOIN.SIDE.getName()));

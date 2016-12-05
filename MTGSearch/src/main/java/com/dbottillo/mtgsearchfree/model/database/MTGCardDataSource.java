@@ -51,9 +51,11 @@ public class MTGCardDataSource {
     }
 
     private SQLiteDatabase database;
+    private CardDataSource cardDataSource;
 
-    public MTGCardDataSource(SQLiteDatabase database) {
+    public MTGCardDataSource(SQLiteDatabase database, CardDataSource cardDataSource) {
         this.database = database;
+        this.cardDataSource = cardDataSource;
     }
 
     public List<MTGCard> getSet(MTGSet set) {
@@ -65,7 +67,7 @@ public class MTGCardDataSource {
         Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                MTGCard card = CardDataSource.fromCursor(cursor);
+                MTGCard card = cardDataSource.fromCursor(cursor);
                 card.belongsTo(set);
                 cards.add(card);
                 cursor.moveToNext();
@@ -150,7 +152,7 @@ public class MTGCardDataSource {
         ArrayList<MTGCard> cards = new ArrayList<>();
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                MTGCard card = CardDataSource.fromCursor(cursor);
+                MTGCard card = cardDataSource.fromCursor(cursor);
                 cards.add(card);
                 cursor.moveToNext();
             }
@@ -168,7 +170,7 @@ public class MTGCardDataSource {
         Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                cards.add(CardDataSource.fromCursor(cursor));
+                cards.add(cardDataSource.fromCursor(cursor));
                 cursor.moveToNext();
             }
         }
@@ -176,7 +178,7 @@ public class MTGCardDataSource {
         return cards;
     }
 
-    MTGCard searchCard(String name) {
+    public MTGCard searchCard(String name) {
         LOG.d("search card <" + name + ">");
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
                 + CardDataSource.COLUMNS.NAME.getName() + "=?";
@@ -185,7 +187,22 @@ public class MTGCardDataSource {
         Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;
         if (cursor.moveToFirst()) {
-            card = CardDataSource.fromCursor(cursor);
+            card = cardDataSource.fromCursor(cursor);
+        }
+        cursor.close();
+        return card;
+    }
+
+    public MTGCard searchCard(int multiverseid) {
+        LOG.d("search card <" + multiverseid + ">");
+        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
+                + CardDataSource.COLUMNS.MULTIVERSE_ID.getName() + "=?";
+        String[] selection = new String[]{String.valueOf(multiverseid)};
+        LOG.query(query);
+        Cursor cursor = database.rawQuery(query, selection);
+        MTGCard card = null;
+        if (cursor.moveToFirst()) {
+            card = cardDataSource.fromCursor(cursor);
         }
         cursor.close();
         return card;
