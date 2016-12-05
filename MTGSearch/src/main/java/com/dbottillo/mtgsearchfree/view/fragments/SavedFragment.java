@@ -141,7 +141,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     }
 
     @Override
-    public void cardLoaded(CardsBucket bucket) {
+    public void cardsLoaded(CardsBucket bucket) {
         LOG.d();
         progressBar.setVisibility(View.GONE);
         savedBucket = bucket;

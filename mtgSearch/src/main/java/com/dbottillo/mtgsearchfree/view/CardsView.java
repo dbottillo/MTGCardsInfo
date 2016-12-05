@@ -5,11 +5,12 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 
 public interface CardsView extends BasicView {
 
-    void cardLoaded(CardsBucket bucket);
+    void cardsLoaded(CardsBucket bucket);
 
     void deckLoaded(DeckBucket bucket);
 
     void favIdLoaded(int[] favourites);
 
     void cardTypePreferenceChanged(boolean grid);
+
 }

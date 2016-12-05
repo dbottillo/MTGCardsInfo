@@ -6,11 +6,13 @@ import android.support.test.runner.AndroidJUnit4;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -57,7 +59,10 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
     @Before
     public void setup() throws FileNotFoundException {
         FileUtil fileUtil = new FileUtil(new FileLoaderLocal());
-        storage = new DecksStorage(fileUtil, new DeckDataSource(cardsInfoDbHelper.getWritableDatabase()), new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase()));
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
+        DeckDataSource deckDataSource = new DeckDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource, mtgCardDataSource);
+        storage = new DecksStorage(fileUtil, deckDataSource);
     }
 
     @Test

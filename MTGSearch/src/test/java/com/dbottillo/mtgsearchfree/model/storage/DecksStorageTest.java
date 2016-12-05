@@ -60,10 +60,10 @@ public class DecksStorageTest extends BaseTest {
         when(deckDataSource.getDecks()).thenReturn(decks);
         when(deckDataSource.getDeck(DECK_ID)).thenReturn(deck);
         when(deckDataSource.addDeck("deck2")).thenReturn(2L);
-        when(deckDataSource.addDeck(mtgCardDataSource, cardsBucket)).thenReturn(DECK_ID);
+        when(deckDataSource.addDeck(cardsBucket)).thenReturn(DECK_ID);
         when(deckDataSource.getCards(deck)).thenReturn(deckCards);
         when(deckDataSource.getCards(2L)).thenReturn(deckCards);
-        underTest = new DecksStorage(fileUtil, deckDataSource, mtgCardDataSource);
+        underTest = new DecksStorage(fileUtil, deckDataSource);
     }
 
     @Test
@@ -148,7 +148,7 @@ public class DecksStorageTest extends BaseTest {
         Uri uri = mock(Uri.class);
         when(fileUtil.readFileContent(uri)).thenReturn(cardsBucket);
         List<Deck> decksLoaded = underTest.importDeck(uri);
-        verify(deckDataSource).addDeck(mtgCardDataSource, cardsBucket);
+        verify(deckDataSource).addDeck(cardsBucket);
         assertNotNull(decksLoaded);
         assertThat(decksLoaded, is(decks));
     }

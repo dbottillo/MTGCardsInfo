@@ -35,7 +35,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
     private Context context;
     private String packageName;
 
-    CreateDatabaseHelper mDbHelper;
+    private CreateDatabaseHelper mDbHelper;
 
     public CreateDBAsyncTask(Context context, String packageName) {
         this.context = context;
@@ -159,25 +159,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
     private static ContentValues createContentValueFromJSON(JSONObject jsonObject, MTGSet set) throws JSONException {
         ContentValues values = new ContentValues();
 
-        boolean isASplit = false;
-        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
-            isASplit = true;
-        }
-
-        if (!isASplit) {
-            values.put(CardDataSource.COLUMNS.NAME.getName(), jsonObject.getString("name"));
-        } else {
-            JSONArray namesJ = jsonObject.getJSONArray("names");
-            StringBuilder names = new StringBuilder();
-            for (int k = 0; k < namesJ.length(); k++) {
-                String name = namesJ.getString(k);
-                names.append(name);
-                if (k < namesJ.length() - 1) {
-                    names.append('/');
-                }
-            }
-            values.put(CardDataSource.COLUMNS.NAME.getName(), names.toString());
-        }
+        values.put(CardDataSource.COLUMNS.NAME.getName(), jsonObject.getString("name"));
         values.put(CardDataSource.COLUMNS.TYPE.getName(), jsonObject.getString("type"));
         values.put(CardDataSource.COLUMNS.SET_ID.getName(), set.getId());
         values.put(CardDataSource.COLUMNS.SET_NAME.getName(), set.getName());
@@ -250,12 +232,8 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         }
         values.put(CardDataSource.COLUMNS.TOUGHNESS.getName(), toughness);
 
-        if (!isASplit && jsonObject.has("text")) {
+        if (jsonObject.has("text")) {
             values.put(CardDataSource.COLUMNS.TEXT.getName(), jsonObject.getString("text"));
-        }
-
-        if (isASplit && jsonObject.has("originalText")) {
-            values.put(CardDataSource.COLUMNS.TEXT.getName(), jsonObject.getString("originalText"));
         }
 
         int cmc = -1;
@@ -279,6 +257,32 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         if (jsonObject.has("number")) {
             values.put(CardDataSource.COLUMNS.NUMBER.getName(), jsonObject.getString("number"));
         }
+
+        if (jsonObject.has("names")) {
+            values.put(CardDataSource.COLUMNS.NAMES.getName(), jsonObject.getString("names"));
+        }
+        if (jsonObject.has("supertypes")) {
+            values.put(CardDataSource.COLUMNS.SUPER_TYPES.getName(), jsonObject.getString("supertypes"));
+        }
+        if (jsonObject.has("flavor")) {
+            values.put(CardDataSource.COLUMNS.FLAVOR.getName(), jsonObject.getString("flavor"));
+        }
+        if (jsonObject.has("artist")) {
+            values.put(CardDataSource.COLUMNS.ARTIST.getName(), jsonObject.getString("artist"));
+        }
+        if (jsonObject.has("loyalty")) {
+            values.put(CardDataSource.COLUMNS.LOYALTY.getName(), jsonObject.getInt("loyalty"));
+        }
+        if (jsonObject.has("printings")) {
+            values.put(CardDataSource.COLUMNS.PRINTINGS.getName(), jsonObject.getString("printings"));
+        }
+        if (jsonObject.has("legalities")) {
+            values.put(CardDataSource.COLUMNS.LEGALITIES.getName(), jsonObject.getString("legalities"));
+        }
+        if (jsonObject.has("originalText")) {
+            values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName(), jsonObject.getString("originalText"));
+        }
+
         return values;
     }
 

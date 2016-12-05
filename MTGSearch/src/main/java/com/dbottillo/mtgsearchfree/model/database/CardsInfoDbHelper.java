@@ -18,7 +18,7 @@ import java.util.Set;
 public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    protected static final int DATABASE_VERSION = 6;
+    protected static final int DATABASE_VERSION = 7;
 
     public CardsInfoDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -56,7 +56,30 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         if (!columns.contains(CardDataSource.COLUMNS.NUMBER.getName())) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
         }
-
+        if (!columns.contains(CardDataSource.COLUMNS.NAMES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_NAMES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SUPER_TYPES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.FLAVOR.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_FLAVOR);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.ARTIST.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_ARTIST);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.LOYALTY.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LOYALTY);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.PRINTINGS.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_PRINTINGS);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.LEGALITIES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LEGALITIES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_ORIGINAL_TEXT);
+        }
     }
 
     @Override
