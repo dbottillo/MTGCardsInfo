@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
@@ -20,6 +21,7 @@ import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
+import com.dbottillo.mtgsearchfree.util.CardMigratorService;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
@@ -32,8 +34,10 @@ import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.NoticeDialogFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
@@ -116,6 +120,13 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         if (bundle != null && bundle.getInt(CURRENT_SELECTION) > 0) {
             slidingPanelHelper.hidePanel(true);
+        }
+
+        if (bundle == null && generalData.cardMigrationRequired() && BuildConfig.VERSION_CODE == 58) {
+            Intent intent = new Intent(this, CardMigratorService.class);
+            startService(intent);
+            DialogHelper.open(this, "notice", NoticeDialogFragment.newInstance(R.string.card_migrator_title, R.string.card_migrator_text));
+            generalData.markCardMigrationStarted();
         }
 
     }

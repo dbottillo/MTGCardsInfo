@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
@@ -58,6 +59,7 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
     }
 
     @Override
+    @SuppressLint("RestrictedApi")
     public void setupDialog(Dialog dialog, int style) {
         super.setupDialog(dialog, style);
         View contentView = View.inflate(getContext(), R.layout.dialog_sort, null);

@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
+import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,11 +17,14 @@ import static org.junit.Assert.assertTrue;
 
 public class FavouritesDataSourceTest extends BaseContextTest {
 
-    MTGCardDataSource cardDataSource;
+    private MTGCardDataSource mtgCardDataSource;
+    private FavouritesDataSource underTest;
 
     @Before
     public void setup(){
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper);
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
+        underTest = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource);
     }
 
     @Test
@@ -32,11 +36,11 @@ public class FavouritesDataSourceTest extends BaseContextTest {
 
     @Test
     public void cards_can_be_saved_as_favourites() {
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
-            FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
+            underTest.saveFavourites(card);
         }
-        List<MTGCard> favouritesCard = FavouritesDataSource.getCards(cardsInfoDbHelper.getReadableDatabase(), true);
+        List<MTGCard> favouritesCard = underTest.getCards(true);
         assertThat(favouritesCard.size(), is(cards.size()));
         assertTrue(cards.containsAll(favouritesCard));
         assertTrue(favouritesCard.containsAll(cards));
@@ -44,12 +48,12 @@ public class FavouritesDataSourceTest extends BaseContextTest {
 
     @Test
     public void cards_can_be_removed_from_favourites() {
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
-            FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
+            underTest.saveFavourites(card);
         }
-        FavouritesDataSource.removeFavourites(cardsInfoDbHelper.getWritableDatabase(), cards.get(0));
-        List<MTGCard> favouritesCard = FavouritesDataSource.getCards(cardsInfoDbHelper.getReadableDatabase(), true);
+        underTest.removeFavourites(cards.get(0));
+        List<MTGCard> favouritesCard = underTest.getCards(true);
         assertThat(favouritesCard.size(), is(2));
         assertTrue(cards.containsAll(favouritesCard));
         assertFalse(favouritesCard.contains(cards.get(0)));

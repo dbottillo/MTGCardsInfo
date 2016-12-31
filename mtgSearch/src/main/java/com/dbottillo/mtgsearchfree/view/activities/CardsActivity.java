@@ -246,7 +246,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     }
 
-    public void cardLoaded(CardsBucket bucket) {
+    public void cardsLoaded(CardsBucket bucket) {
         LOG.d();
         this.bucket = bucket;
         if (set != null || favs) {

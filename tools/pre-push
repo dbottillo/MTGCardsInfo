@@ -1,0 +1,3 @@
+#!/bin/bash
+./gradlew assembleProdRelease
+./gradlew quality

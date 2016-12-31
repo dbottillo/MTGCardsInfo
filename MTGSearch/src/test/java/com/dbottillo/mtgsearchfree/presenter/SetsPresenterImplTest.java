@@ -4,6 +4,7 @@ import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
 import org.junit.Before;
@@ -29,10 +30,13 @@ public class SetsPresenterImplTest extends BaseTest {
     @Mock
     List<MTGSet> sets;
 
+    @Mock
+    Logger logger;
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        MemoryStorage memoryStorage = new MemoryStorage();
+        MemoryStorage memoryStorage = new MemoryStorage(logger);
         interactor = mock(SetsInteractor.class);
         view = mock(SetsView.class);
         when(interactor.load()).thenReturn(Observable.just(sets));

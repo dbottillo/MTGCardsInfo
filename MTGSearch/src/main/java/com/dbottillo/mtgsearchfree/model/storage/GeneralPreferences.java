@@ -1,24 +1,24 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.AppInfo;
 
 @SuppressWarnings("checkstyle:finalclass")
 public class GeneralPreferences implements GeneralData {
 
-    private static final String DEBUG = "debug";
-    private static final String CARDS_SHOW_TYPE = "cardShowType";
-    private static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
+    static final String DEBUG = "debug";
+    static final String CARDS_SHOW_TYPE = "cardShowType";
+    static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
+    static final String CARD_MIGRATION_REQUIRED = "cardMigrationRequired";
 
     private SharedPreferences sharedPreferences;
+    private final AppInfo appInfo;
 
-    public GeneralPreferences(Context context) {
-        sharedPreferences = context.getSharedPreferences("General", Context.MODE_PRIVATE);
-        LOG.d("created");
+    public GeneralPreferences(SharedPreferences sharedPreferences, AppInfo appInfo) {
+        this.appInfo = appInfo;
+        this.sharedPreferences = sharedPreferences;
     }
 
     public void setDebug() {
@@ -30,28 +30,23 @@ public class GeneralPreferences implements GeneralData {
     }
 
     public void setCardsShowTypeList() {
-        LOG.d();
         sharedPreferences.edit().putString(CARDS_SHOW_TYPE, "List").apply();
     }
 
     public void setCardsShowTypeGrid() {
-        LOG.d();
         sharedPreferences.edit().putString(CARDS_SHOW_TYPE, "Grid").apply();
     }
 
     public boolean isCardsShowTypeGrid() {
-        LOG.d();
         return sharedPreferences.getString(CARDS_SHOW_TYPE, "Grid").equalsIgnoreCase("Grid");
     }
 
     public void setTooltipMainHide() {
-        LOG.d();
         sharedPreferences.edit().putBoolean(TOOLTIP_MAIN_SHOWN, false).apply();
     }
 
     public boolean isTooltipMainToShow() {
-        LOG.d();
-        return sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true);
+        return !isFreshInstall() && sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true);
     }
 
     @Override
@@ -59,8 +54,21 @@ public class GeneralPreferences implements GeneralData {
         return 200;
     }
 
-    @VisibleForTesting
-    void clear() {
-        sharedPreferences.edit().clear().apply();
+    @Override
+    public boolean isFreshInstall() {
+        long firstInstallTime = appInfo.getFirstInstallTime();
+        long lastUpdateTime = appInfo.getLastUpdateTime();
+        return firstInstallTime == lastUpdateTime;
     }
+
+    @Override
+    public boolean cardMigrationRequired() {
+        return !isFreshInstall() && sharedPreferences.getBoolean(CARD_MIGRATION_REQUIRED, true);
+    }
+
+    @Override
+    public void markCardMigrationStarted() {
+        sharedPreferences.edit().putBoolean(CARD_MIGRATION_REQUIRED, false).apply();
+    }
+
 }

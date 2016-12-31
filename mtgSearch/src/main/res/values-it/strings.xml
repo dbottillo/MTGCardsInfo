@@ -94,9 +94,11 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - NUOVO: Commander 2016\n- NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa
+        - NUOVO: Supporto per carte split e double-side
     </string>
     <string name="release_note_text_full">
+        <b>Version 2.8.0</b>\n
+        - NUOVO: Supporto per split e double-side carte\n\n
         <b>Versione 2.7.9:</b> \n
         - NUOVO: Commander 2016\n
         - NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa\n
@@ -149,7 +151,8 @@
      <b>Costo di mana</b>: %4$s<br/><br/>
      %5$s<br/><br/>
      <b>Set</b>: %6$s<br/><br/>
-     <b>Rulings</b>: <br/>%7$s<br/><br/>
+     <b>Testo original</b>: %7$s<br/><br/>
+     <b>Regole</b>: <br/>%8$s<br/><br/>
     ]]>
     </string>
     <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
@@ -218,5 +221,10 @@
     <string name="move_card_to_sideboard">Sposta una nel side</string>
     <string name="move_all_card_to_deck">Sposta tutte nel mazzo</string>
     <string name="move_all_card_to_sideboard">Sposta tutte nel side</string>
+
+    <string name="card_migrator_title">Aggiornamento database in corso</string>
+    <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
+    <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
+    <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
 
 </resources>

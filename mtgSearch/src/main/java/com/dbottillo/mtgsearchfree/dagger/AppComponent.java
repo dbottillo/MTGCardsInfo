@@ -2,12 +2,12 @@ package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
+import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
-import com.dbottillo.mtgsearchfree.model.storage.SetsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
 import javax.inject.Singleton;
@@ -30,7 +31,7 @@ public interface AppComponent {
 
     CardsStorage getCardsStorage();
 
-    SetsStorage getSetsStorage();
+    SetDataSource getSetDataSource();
 
     PlayersStorage getPlayerStorage();
 
@@ -45,6 +46,8 @@ public interface AppComponent {
     GeneralData getGeneralPreferences();
 
     FileUtil getFileUtil();
+
+    Logger getLogger();
 
     void inject(MTGApp app);
 

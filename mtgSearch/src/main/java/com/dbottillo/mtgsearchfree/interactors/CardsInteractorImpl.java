@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
-import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import java.util.List;
 
@@ -13,54 +13,68 @@ import rx.Observable;
 
 public class CardsInteractorImpl implements CardsInteractor {
 
-    CardsStorage storage;
+    private final CardsStorage storage;
+    private final Logger logger;
 
-    public CardsInteractorImpl(CardsStorage storage) {
+    public CardsInteractorImpl(CardsStorage storage, Logger logger) {
         this.storage = storage;
-        LOG.d("created");
+        this.logger = logger;
+        logger.d("created");
     }
 
     public Observable<List<MTGCard>> getLuckyCards(int howMany) {
-        LOG.d("get lucky cards");
+        logger.d("get lucky cards");
         return Observable.just(storage.getLuckyCards(howMany));
     }
 
     @Override
     public Observable<List<MTGCard>> getFavourites() {
-        LOG.d("get favourites");
+        logger.d("get favourites");
         return Observable.just(storage.getFavourites());
     }
 
     public Observable<int[]> saveAsFavourite(MTGCard card) {
-        LOG.d("save as favourite");
+        logger.d("save as favourite");
         return Observable.just(storage.saveAsFavourite(card));
     }
 
     public Observable<int[]> removeFromFavourite(MTGCard card) {
-        LOG.d("remove from favourite");
+        logger.d("remove from favourite");
         return Observable.just(storage.removeFromFavourite(card));
     }
 
     public Observable<List<MTGCard>> loadSet(MTGSet set) {
-        LOG.d("loadSet " + set.toString());
+        logger.d("loadSet " + set.toString());
         return Observable.just(storage.load(set));
     }
 
     public Observable<int[]> loadIdFav() {
-        LOG.d("loadSet id fav");
+        logger.d("loadSet id fav");
         return Observable.just(storage.loadIdFav());
     }
 
     @Override
     public Observable<List<MTGCard>> loadDeck(Deck deck) {
-        LOG.d("loadSet deck " + deck.toString());
+        logger.d("loadSet deck " + deck.toString());
         return Observable.just(storage.loadDeck(deck));
     }
 
     @Override
     public Observable<List<MTGCard>> doSearch(SearchParams searchParams) {
-        LOG.d("do search " + searchParams.toString());
+        logger.d("do search " + searchParams.toString());
         return Observable.just(storage.doSearch(searchParams));
+    }
+
+    @Override
+    public Observable<MTGCard> loadCard(int multiverseid) {
+        logger.d("loading card with multiverse id: " + multiverseid);
+        return Observable.just(storage.loadCard(multiverseid));
+    }
+
+    @Override
+    public Observable<MTGCard> loadOtherSideCard(MTGCard card) {
+        logger.d("loading other side of card: " + card.toString());
+        return Observable.just(storage.loadOtherSide(card));
     }
 }
 

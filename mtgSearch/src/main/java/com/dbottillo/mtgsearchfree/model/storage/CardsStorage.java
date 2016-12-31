@@ -4,9 +4,10 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
-import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,29 +15,33 @@ import java.util.List;
 
 public class CardsStorage {
 
-    private CardsInfoDbHelper cardsInfoDbHelper;
-    private MTGCardDataSource mtgCardDataSource;
+    private final MTGCardDataSource mtgCardDataSource;
+    private final DeckDataSource deckDataSource;
+    private final FavouritesDataSource favouritesDataSource;
+    private final Logger logger;
 
-    public CardsStorage(MTGCardDataSource mtgCardDataSource, CardsInfoDbHelper cardsInfoDbHelper) {
-        LOG.d("created");
+    public CardsStorage(MTGCardDataSource mtgCardDataSource, DeckDataSource deckDataSource, FavouritesDataSource favouritesDataSource, Logger logger) {
+        this.logger = logger;
+        logger.d("created");
+        this.deckDataSource = deckDataSource;
+        this.favouritesDataSource = favouritesDataSource;
         this.mtgCardDataSource = mtgCardDataSource;
-        this.cardsInfoDbHelper = cardsInfoDbHelper;
     }
 
     public List<MTGCard> load(MTGSet set) {
-        LOG.d("loadSet " + set);
+        logger.d("loadSet " + set);
         return mtgCardDataSource.getSet(set);
     }
 
     public int[] saveAsFavourite(MTGCard card) {
-        LOG.d("save as fav " + card);
-        cardsInfoDbHelper.saveFavourite(card);
+        logger.d("save as fav " + card);
+        favouritesDataSource.saveFavourites(card);
         return loadIdFav();
     }
 
     public int[] loadIdFav() {
-        LOG.d();
-        List<MTGCard> cards = cardsInfoDbHelper.loadFav(false);
+        logger.d();
+        List<MTGCard> cards = favouritesDataSource.getCards(false);
         int[] result = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             result[i] = cards.get(i).getMultiVerseId();
@@ -45,28 +50,28 @@ public class CardsStorage {
     }
 
     public int[] removeFromFavourite(MTGCard card) {
-        LOG.d("remove as fav " + card);
-        cardsInfoDbHelper.removeFavourite(card);
+        logger.d("remove as fav " + card);
+        favouritesDataSource.removeFavourites(card);
         return loadIdFav();
     }
 
     public List<MTGCard> getLuckyCards(int howMany) {
-        LOG.d(howMany + " lucky cards requested");
+        logger.d(howMany + " lucky cards requested");
         return mtgCardDataSource.getRandomCard(howMany);
     }
 
     public List<MTGCard> getFavourites() {
-        LOG.d();
-        return cardsInfoDbHelper.loadFav(true);
+        logger.d();
+        return favouritesDataSource.getCards(true);
     }
 
     public List<MTGCard> loadDeck(Deck deck) {
-        LOG.d("loadSet " + deck);
-        return cardsInfoDbHelper.loadDeck(deck);
+        logger.d("loadSet " + deck);
+        return deckDataSource.getCards(deck);
     }
 
     public List<MTGCard> doSearch(SearchParams searchParams) {
-        LOG.d("do search " + searchParams);
+        logger.d("do search " + searchParams);
         List<MTGCard> result = mtgCardDataSource.searchCards(searchParams);
 
         Collections.sort(result, new Comparator<Object>() {
@@ -77,5 +82,25 @@ public class CardsStorage {
             }
         });
         return result;
+    }
+
+    public MTGCard loadCard(int multiverseId) {
+        logger.d("do search with multiverse: " + multiverseId);
+        return mtgCardDataSource.searchCard(multiverseId);
+    }
+
+    public MTGCard loadOtherSide(MTGCard card) {
+        logger.d("do search other side card " + card.toString());
+        if (card.getNames() == null) {
+            return card;
+        }
+        if (card.getNames().size() < 2) {
+            return card;
+        }
+        String name = card.getNames().get(0);
+        if (name.equalsIgnoreCase(card.getName())) {
+            name = card.getNames().get(1);
+        }
+        return mtgCardDataSource.searchCard(name);
     }
 }

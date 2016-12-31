@@ -4,15 +4,20 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    this class is used only on debug to generate random favourites cards
+ */
 public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Object>> {
 
     private boolean error = false;
@@ -27,13 +32,15 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
         ArrayList<Object> result = new ArrayList<>();
 
         MTGDatabaseHelper databaseHelper = new MTGDatabaseHelper(context);
-        CardsInfoDbHelper cardsInfoDbHelper = CardsInfoDbHelper.getInstance(context);
-        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper);
+        CardsInfoDbHelper cardsInfoDbHelper = new CardsInfoDbHelper(context);
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(databaseHelper.getReadableDatabase(), cardDataSource);
 
-        FavouritesDataSource.clear(cardsInfoDbHelper.getWritableDatabase());
+        FavouritesDataSource favouritesDataSource = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource);
+        favouritesDataSource.clear();
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(600);
         for (MTGCard card : cards) {
-            FavouritesDataSource.saveFavourites(cardsInfoDbHelper.getWritableDatabase(), card);
+            favouritesDataSource.saveFavourites(card);
         }
 
         return result;

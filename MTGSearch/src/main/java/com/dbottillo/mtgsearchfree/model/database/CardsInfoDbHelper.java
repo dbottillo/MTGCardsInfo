@@ -4,15 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.VisibleForTesting;
-
-import com.dbottillo.mtgsearchfree.model.CardsBucket;
-import com.dbottillo.mtgsearchfree.model.Deck;
-import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,19 +18,8 @@ import java.util.Set;
 public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    protected static final int DATABASE_VERSION = 6;
+    protected static final int DATABASE_VERSION = 7;
 
-    private static CardsInfoDbHelper instance;
-
-    @Deprecated
-    public static synchronized CardsInfoDbHelper getInstance(Context context) {
-        if (instance == null) {
-            instance = new CardsInfoDbHelper(context);
-        }
-        return instance;
-    }
-
-    @VisibleForTesting
     public CardsInfoDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -74,7 +56,30 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         if (!columns.contains(CardDataSource.COLUMNS.NUMBER.getName())) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_NUMBER);
         }
-
+        if (!columns.contains(CardDataSource.COLUMNS.NAMES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_NAMES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SUPER_TYPES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.FLAVOR.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_FLAVOR);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.ARTIST.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_ARTIST);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.LOYALTY.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LOYALTY);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.PRINTINGS.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_PRINTINGS);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.LEGALITIES.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_LEGALITIES);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_ORIGINAL_TEXT);
+        }
     }
 
     @Override
@@ -90,7 +95,7 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         db.delete(FavouritesDataSource.TABLE, null, null);
     }
 
-    public Set<String> readColumnTable(SQLiteDatabase db, String table) {
+    Set<String> readColumnTable(SQLiteDatabase db, String table) {
         Cursor dbCursor = db.rawQuery("PRAGMA table_info(MTGCard)", null);
         Set<String> columns = new HashSet<>(dbCursor.getCount());
         if (dbCursor.moveToFirst()) {
@@ -102,80 +107,4 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         return columns;
     }
 
-    public void saveFavourite(MTGCard card) {
-        FavouritesDataSource.saveFavourites(getWritableDatabase(), card);
-    }
-
-    public List<MTGCard> loadFav(boolean full) {
-        return FavouritesDataSource.getCards(getReadableDatabase(), full);
-    }
-
-    public void removeFavourite(MTGCard card) {
-        FavouritesDataSource.removeFavourites(getWritableDatabase(), card);
-    }
-
-    public List<MTGCard> loadDeck(Deck deck) {
-        return DeckDataSource.getCards(getReadableDatabase(), deck);
-    }
-
-    public List<MTGCard> loadDeck(long deckId) {
-        return DeckDataSource.getCards(getReadableDatabase(), deckId);
-    }
-
-    public List<Deck> getDecks() {
-        return DeckDataSource.getDecks(getReadableDatabase());
-    }
-
-    public long addDeck(String name) {
-        return DeckDataSource.addDeck(getWritableDatabase(), name);
-    }
-
-    public void deleteDeck(Deck deck) {
-        DeckDataSource.deleteDeck(getWritableDatabase(), deck);
-    }
-
-    public void editDeck(Deck deck, String name) {
-        DeckDataSource.renameDeck(getWritableDatabase(), deck.getId(), name);
-    }
-
-    public void addCard(Deck deck, MTGCard card, int quantity) {
-        DeckDataSource.addCardToDeck(getWritableDatabase(), deck.getId(), card, quantity);
-    }
-
-    public void addCard(long deckId, MTGCard card, int quantity) {
-        DeckDataSource.addCardToDeck(getWritableDatabase(), deckId, card, quantity);
-    }
-
-    public void removeAllCards(Deck deck, MTGCard card) {
-        DeckDataSource.removeCardFromDeck(getWritableDatabase(), deck.getId(), card);
-    }
-
-    public void moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
-        DeckDataSource.moveCardFromSideBoard(getWritableDatabase(), deck.getId(), card, quantity);
-    }
-
-    public void moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
-        DeckDataSource.moveCardToSideBoard(getWritableDatabase(), deck.getId(), card, quantity);
-    }
-
-    public List<Player> loadPlayers() {
-        return PlayerDataSource.getPlayers(getReadableDatabase());
-    }
-
-    public void savePlayer(Player player) {
-        PlayerDataSource.savePlayer(getWritableDatabase(), player);
-    }
-
-    public void editPlayer(Player player) {
-        PlayerDataSource.savePlayer(getWritableDatabase(), player);
-    }
-
-    public void removePlayer(Player player) {
-        PlayerDataSource.removePlayer(getWritableDatabase(), player);
-    }
-
-    public List<Deck> addDeck(MTGCardDataSource cardDataSource, CardsBucket bucket) {
-        DeckDataSource.addDeck(cardDataSource, getWritableDatabase(), bucket);
-        return DeckDataSource.getDecks(getReadableDatabase());
-    }
 }

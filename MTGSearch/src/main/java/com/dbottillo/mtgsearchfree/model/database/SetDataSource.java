@@ -11,12 +11,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public final class SetDataSource {
+public class SetDataSource {
 
     public static final String TABLE = "MTGSet";
 
-    public enum COLUMNS {
+    private SQLiteDatabase database;
+
+    private enum COLUMNS {
         NAME("name", "TEXT"),
         CODE("code", "TEXT");
 
@@ -33,7 +36,8 @@ public final class SetDataSource {
         }
     }
 
-    private SetDataSource() {
+    public SetDataSource(SQLiteDatabase database) {
+        this.database = database;
     }
 
     public static String generateCreateTable() {
@@ -48,19 +52,19 @@ public final class SetDataSource {
         return builder.append(')').toString();
     }
 
-    public static long saveSet(SQLiteDatabase db, MTGSet set) {
+    long saveSet(MTGSet set) {
         ContentValues values = new ContentValues();
         if (set.getId() > -1) {
             values.put("_id", set.getId());
         }
         values.put(COLUMNS.NAME.getName(), set.getName());
         values.put(COLUMNS.CODE.getName(), set.getCode());
-        return db.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+        return database.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    public static ArrayList<MTGSet> getSets(SQLiteDatabase db) {
+    public List<MTGSet> getSets() {
         String query = "SELECT * FROM " + TABLE;
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         ArrayList<MTGSet> sets = new ArrayList<>();
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
@@ -73,7 +77,7 @@ public final class SetDataSource {
         return sets;
     }
 
-    public static void removeSet(SQLiteDatabase database, long id) {
+    void removeSet(long id) {
         String[] args = new String[]{id + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
         Cursor cursor = database.rawQuery(query, args);
@@ -82,14 +86,14 @@ public final class SetDataSource {
         LOG.query(query, args);
     }
 
-    public static MTGSet fromCursor(Cursor cursor) {
+    public MTGSet fromCursor(Cursor cursor) {
         MTGSet set = new MTGSet(cursor.getInt(cursor.getColumnIndex("_id")));
         set.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
         set.setCode(cursor.getString(cursor.getColumnIndex(COLUMNS.CODE.getName())));
         return set;
     }
 
-    public static ContentValues fromJSON(JSONObject object) throws JSONException {
+    public ContentValues fromJSON(JSONObject object) throws JSONException {
         ContentValues values = new ContentValues();
         values.put(COLUMNS.CODE.getName(), object.getString("code"));
         values.put(COLUMNS.NAME.getName(), object.getString("name"));
