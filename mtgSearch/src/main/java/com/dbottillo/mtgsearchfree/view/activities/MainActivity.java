@@ -122,11 +122,11 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             slidingPanelHelper.hidePanel(true);
         }
 
-
-        if (bundle == null && !generalData.isFreshInstall() && BuildConfig.VERSION_CODE == 58) {
+        if (bundle == null && generalData.cardMigrationRequired() && BuildConfig.VERSION_CODE == 58) {
             Intent intent = new Intent(this, CardMigratorService.class);
             startService(intent);
             DialogHelper.open(this, "notice", NoticeDialogFragment.newInstance(R.string.card_migrator_title, R.string.card_migrator_text));
+            generalData.markCardMigrationStarted();
         }
 
     }

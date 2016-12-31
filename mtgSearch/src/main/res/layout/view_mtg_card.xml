@@ -93,7 +93,7 @@
         </RelativeLayout>
     </ScrollView>
 
-    <include layout="@layout/card_price" android:id="@+id/price_container" />
+    <include layout="@layout/card_price" />
 
 
 </RelativeLayout>

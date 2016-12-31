@@ -19,4 +19,8 @@ public interface GeneralData {
     long getDefaultDuration();
 
     boolean isFreshInstall();
+
+    boolean cardMigrationRequired();
+
+    void markCardMigrationStarted();
 }
