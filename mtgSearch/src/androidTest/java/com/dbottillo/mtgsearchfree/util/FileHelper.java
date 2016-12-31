@@ -3,10 +3,9 @@ package com.dbottillo.mtgsearchfree.util;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
-import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

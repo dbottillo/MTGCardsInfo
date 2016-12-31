@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.CARDS_SHOW_TYPE;
+import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.CARD_MIGRATION_REQUIRED;
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.DEBUG;
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.TOOLTIP_MAIN_SHOWN;
 import static org.junit.Assert.assertFalse;
@@ -104,6 +105,15 @@ public class GeneralPreferencesTest {
         when(appInfo.getLastUpdateTime()).thenReturn(400L);
 
         assertFalse(underTest.isTooltipMainToShow());
+    }
+
+    @Test
+    public void markCardMigrationStarted_shouldUpdateSharedPreferences() {
+        underTest.markCardMigrationStarted();
+
+        verify(sharedPreferences).edit();
+        verify(editor).putBoolean(CARD_MIGRATION_REQUIRED, false);
+        verify(editor).apply();
     }
 
 }

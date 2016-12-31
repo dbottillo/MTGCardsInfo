@@ -54,4 +54,14 @@ public class GeneralPreferencesForTest implements GeneralData {
     public boolean isFreshInstall() {
         return true;
     }
+
+    @Override
+    public boolean cardMigrationRequired() {
+        return false;
+    }
+
+    @Override
+    public void markCardMigrationStarted() {
+
+    }
 }

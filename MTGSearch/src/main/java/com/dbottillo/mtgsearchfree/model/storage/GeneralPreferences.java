@@ -11,6 +11,7 @@ public class GeneralPreferences implements GeneralData {
     static final String DEBUG = "debug";
     static final String CARDS_SHOW_TYPE = "cardShowType";
     static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
+    static final String CARD_MIGRATION_REQUIRED = "cardMigrationRequired";
 
     private SharedPreferences sharedPreferences;
     private final AppInfo appInfo;
@@ -58,6 +59,16 @@ public class GeneralPreferences implements GeneralData {
         long firstInstallTime = appInfo.getFirstInstallTime();
         long lastUpdateTime = appInfo.getLastUpdateTime();
         return firstInstallTime == lastUpdateTime;
+    }
+
+    @Override
+    public boolean cardMigrationRequired() {
+        return !isFreshInstall() && sharedPreferences.getBoolean(CARD_MIGRATION_REQUIRED, true);
+    }
+
+    @Override
+    public void markCardMigrationStarted() {
+        sharedPreferences.edit().putBoolean(CARD_MIGRATION_REQUIRED, false).apply();
     }
 
 }

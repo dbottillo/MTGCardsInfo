@@ -2,6 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <ScrollView
@@ -61,6 +63,20 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/image_retry"/>
                 </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/card_flip"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="@dimen/base_margin"
+                    app:srcCompat="@drawable/ic_swap_horiz"
+                    android:tint="@android:color/white"
+                    android:background="@drawable/btn_oval_accent"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
 
             </RelativeLayout>
 
