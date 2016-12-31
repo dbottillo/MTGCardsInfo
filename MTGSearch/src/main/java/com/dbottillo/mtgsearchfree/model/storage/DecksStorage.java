@@ -7,76 +7,76 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class DecksStorage {
 
-    private CardsInfoDbHelper helper;
-    private MTGCardDataSource cardDataSource;
+    private DeckDataSource deckDataSource;
     private FileUtil fileUtil;
 
-    public DecksStorage(FileUtil fileUtil, CardsInfoDbHelper helper, MTGCardDataSource cardDataSource) {
+    @Inject
+    public DecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource) {
         LOG.d("created");
-        this.helper = helper;
-        this.cardDataSource = cardDataSource;
+        this.deckDataSource = deckDataSource;
         this.fileUtil = fileUtil;
     }
 
     public List<Deck> load() {
         LOG.d();
-        return helper.getDecks();
+        return deckDataSource.getDecks();
     }
 
     public List<Deck> addDeck(String name) {
         LOG.d("add " + name);
-        helper.addDeck(name);
+        deckDataSource.addDeck(name);
         return load();
     }
 
     public List<Deck> deleteDeck(Deck deck) {
         LOG.d("delete " + deck);
-        helper.deleteDeck(deck);
+        deckDataSource.deleteDeck(deck);
         return load();
     }
 
     public List<MTGCard> loadDeck(Deck deck) {
         LOG.d("loadSet " + deck);
-        return helper.loadDeck(deck);
+        return deckDataSource.getCards(deck);
     }
 
     public List<MTGCard> editDeck(Deck deck, String name) {
         LOG.d("edit " + deck + " with " + name);
-        helper.editDeck(deck, name);
+        deckDataSource.renameDeck(deck.getId(), name);
         return loadDeck(deck);
     }
 
     public List<MTGCard> addCard(Deck deck, MTGCard card, int quantity) {
         LOG.d("add " + quantity + " " + card + " to " + deck);
-        helper.addCard(deck, card, quantity);
+        deckDataSource.addCardToDeck(deck.getId(), card, quantity);
         return loadDeck(deck);
     }
 
     public List<MTGCard> addCard(String name, MTGCard card, int quantity) {
         LOG.d("add " + quantity + " " + card + " with new deck name " + name);
-        long deckId = helper.addDeck(name);
-        helper.addCard(deckId, card, quantity);
-        return helper.loadDeck(deckId);
+        long deckId = deckDataSource.addDeck(name);
+        deckDataSource.addCardToDeck(deckId, card, quantity);
+        return deckDataSource.getCards(deckId);
     }
 
     public List<MTGCard> removeCard(Deck deck, MTGCard card) {
         LOG.d("remove " + card + " from " + deck);
-        helper.addCard(deck, card, -1);
+        deckDataSource.addCardToDeck(deck.getId(), card, -1);
         return loadDeck(deck);
     }
 
     public List<MTGCard> removeAllCard(Deck deck, MTGCard card) {
         LOG.d("remove all " + card + " from " + deck);
-        helper.removeAllCards(deck, card);
+        deckDataSource.removeCardFromDeck(deck.getId(), card);
         return loadDeck(deck);
     }
 
@@ -87,21 +87,22 @@ public class DecksStorage {
         } catch (Exception e) {
             throw new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "file not valid");
         }
-        if (bucket == null){
+        if (bucket == null) {
             throw new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "bucket null");
         }
-        return helper.addDeck(cardDataSource, bucket);
+        deckDataSource.addDeck(bucket);
+        return deckDataSource.getDecks();
     }
 
     public List<MTGCard> moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
-        LOG.d("move [" +quantity+']' + card + " from sideboard of" + deck);
-        helper.moveCardFromSideboard(deck, card, quantity);
+        LOG.d("move [" + quantity + ']' + card + " from sideboard of" + deck);
+        deckDataSource.moveCardFromSideBoard(deck.getId(), card, quantity);
         return loadDeck(deck);
     }
 
     public List<MTGCard> moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
-        LOG.d("move [" +quantity+']' + card + " to sideboard of" + deck);
-        helper.moveCardToSideboard(deck, card, quantity);
+        LOG.d("move [" + quantity + ']' + card + " to sideboard of" + deck);
+        deckDataSource.moveCardToSideBoard(deck.getId(), card, quantity);
         return loadDeck(deck);
     }
 }

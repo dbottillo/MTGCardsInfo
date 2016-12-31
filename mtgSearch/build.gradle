@@ -9,6 +9,7 @@ buildscript {
     ext.butterknife_version = '8.4.0'
     ext.mockito_version= '1.10.19'
     ext.roboelectric_version = '3.1.4'
+    ext.rx_java_version = '1.2.3'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
@@ -46,9 +47,10 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 57
-        versionName "2.7.9"
+        versionCode 58
+        versionName "2.8.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     signingConfigs {
@@ -74,7 +76,7 @@ android {
             signingConfig signingConfigs.debugConfig
             debuggable true
             testCoverageEnabled true
-            buildConfigField 'int', 'DATABASE_VERSION', '21'
+            buildConfigField 'int', 'DATABASE_VERSION', '22'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -83,7 +85,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '21'
+            buildConfigField 'int', 'DATABASE_VERSION', '22'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -92,7 +94,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '21'
+            buildConfigField 'int', 'DATABASE_VERSION', '22'
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -133,7 +135,7 @@ dependencies {
     compile "com.jakewharton:butterknife:$butterknife_version"
     apt "com.jakewharton:butterknife-compiler:$butterknife_version"
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.2.2'
+    compile "io.reactivex:rxjava:$rx_java_version"
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.google.dagger:dagger:$dagger_version"
     apt "com.google.dagger:dagger-compiler:$dagger_version"
@@ -217,7 +219,7 @@ task quality
 quality.dependsOn 'checkstyle', 'lintDevRelease', 'pmd', 'findbugs'
 
 task testPreRelease
-testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedProdDebugAndroidTest'
+testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedAndroidTest'
 
 task release
 release.dependsOn 'assembleProdRelease', 'quality', 'testPreRelease'

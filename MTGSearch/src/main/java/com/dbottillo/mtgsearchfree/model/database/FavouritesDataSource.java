@@ -10,14 +10,16 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class FavouritesDataSource {
-
-    private static final String TAG = FavouritesDataSource.class.getSimpleName();
+public class FavouritesDataSource {
 
     public static final String TABLE = "Favourites";
 
-    private FavouritesDataSource() {
+    private SQLiteDatabase database;
+    private CardDataSource cardDataSource;
 
+    public FavouritesDataSource(SQLiteDatabase database, CardDataSource cardDataSource) {
+        this.database = database;
+        this.cardDataSource = cardDataSource;
     }
 
     public static String generateCreateTable() {
@@ -27,28 +29,28 @@ public final class FavouritesDataSource {
     }
 
 
-    public static long saveFavourites(SQLiteDatabase db, MTGCard card) {
+    public long saveFavourites(MTGCard card) {
         LOG.d("saving " + card.toString() + " as favourite");
-        Cursor current = db.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
+        Cursor current = database.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() == 0) {
             // need to add the card
-            CardDataSource.saveCard(db, card);
+            cardDataSource.saveCard(card);
         }
         current.close();
         ContentValues contentValues = new ContentValues();
         contentValues.put("_id", card.getMultiVerseId());
-        return db.insertWithOnConflict(TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
+        return database.insertWithOnConflict(TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    public static List<MTGCard> getCards(SQLiteDatabase db, boolean fullCard) {
+    public List<MTGCard> getCards(boolean fullCard) {
         LOG.d("get cards, flag full: " + fullCard);
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)";
         LOG.query(query);
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = CardDataSource.fromCursor(cursor, fullCard);
+            MTGCard card = cardDataSource.fromCursor(cursor, fullCard);
             if (card != null) {
                 cards.add(card);
             }
@@ -58,18 +60,20 @@ public final class FavouritesDataSource {
         return cards;
     }
 
-    public static void removeFavourites(SQLiteDatabase db, MTGCard card) {
+    public void removeFavourites(MTGCard card) {
         LOG.d("remove card  " + card.toString() + " from favourites");
         String[] args = new String[]{card.getMultiVerseId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
         LOG.query(query);
-        db.rawQuery(query, args).moveToFirst();
+        Cursor cursor = database.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
     }
 
-    public static void clear(SQLiteDatabase db) {
+    public void clear() {
         String query = "DELETE FROM " + TABLE;
         LOG.query(query);
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         cursor.close();
     }

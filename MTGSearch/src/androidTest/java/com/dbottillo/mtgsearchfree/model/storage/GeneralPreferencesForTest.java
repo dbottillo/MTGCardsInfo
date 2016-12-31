@@ -49,4 +49,19 @@ public class GeneralPreferencesForTest implements GeneralData {
     public long getDefaultDuration() {
         return 0;
     }
+
+    @Override
+    public boolean isFreshInstall() {
+        return true;
+    }
+
+    @Override
+    public boolean cardMigrationRequired() {
+        return false;
+    }
+
+    @Override
+    public void markCardMigrationStarted() {
+
+    }
 }

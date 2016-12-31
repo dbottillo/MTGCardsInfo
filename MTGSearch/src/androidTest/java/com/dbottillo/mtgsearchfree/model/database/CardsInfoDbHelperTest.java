@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
+import com.google.gson.Gson;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -203,18 +204,6 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
     }
 
     @Test
-    public void test_db_upgrade_from_version4_to_version5_without_layout() {
-        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
-        downgradeDb(db, 4);
-        removeLayoutColumn(db);
-        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(false));
-        cardsInfoDbHelper.onUpgrade(db, 4, 5);
-        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
-    }
-
-    @Test
     public void test_db_upgrade_from_version4_to_version5_does_not_generate_error() {
         SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
         downgradeDb(db, 4);
@@ -223,6 +212,31 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
         cardsInfoDbHelper.onUpgrade(db, 4, 5);
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
         assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.getName()), is(true));
+    }
+
+    @Test
+    public void test_db_upgrade_from_version6_to_version7_does_not_generate_error() {
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        downgradeDb(db, 6);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName()), is(false));
+        cardsInfoDbHelper.onUpgrade(db, 6, 7);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName()), is(true));
     }
 
     private void assertRowDatabaseNumber(SQLiteDatabase db, String table, long howMany) {
@@ -248,10 +262,15 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
     private void addDummyData(SQLiteDatabase db) {
         MTGCard card = new MTGCard();
         card.belongsTo(new MTGSet(1, "Zendikar"));
-        long deck = DeckDataSource.addDeck(db, "deck");
-        DeckDataSource.addCardToDeck(db, deck, card, 2);
-        PlayerDataSource.savePlayer(db, new Player(20, "liliana"));
-        FavouritesDataSource.saveFavourites(db, card);
+        CardDataSource cardDataSource = new CardDataSource(db, new Gson());
+        MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(db, cardDataSource);
+        DeckDataSource deckDataSource = new DeckDataSource(db, cardDataSource, mtgCardDataSource);
+        long deck = deckDataSource.addDeck("deck");
+        deckDataSource.addCardToDeck(deck, card, 2);
+        PlayerDataSource playerDataSource = new PlayerDataSource(db);
+        playerDataSource.savePlayer(new Player(20, "liliana"));
+        FavouritesDataSource favouritesDataSource = new FavouritesDataSource(db, cardDataSource);
+        favouritesDataSource.saveFavourites(card);
     }
 
     private void downgradeDb(SQLiteDatabase db, int version) {
@@ -276,11 +295,11 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
             db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.generateCreateTable());
         }
-    }
-
-    private void removeLayoutColumn(SQLiteDatabase db) {
-        db.execSQL("DROP TABLE " + CardDataSource.TABLE);
-        db.execSQL(CardDataSource.generateCreateTableWithoutLayout());
+        if (version == 6) {
+            db.execSQL(CardDataSource.generateCreateTable(6));
+            db.execSQL(PlayerDataSource.generateCreateTable());
+            db.execSQL(FavouritesDataSource.generateCreateTable());
+        }
     }
 
 }

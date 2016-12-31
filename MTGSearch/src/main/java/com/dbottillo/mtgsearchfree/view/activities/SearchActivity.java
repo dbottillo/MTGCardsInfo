@@ -357,7 +357,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     }
 
     @Override
-    public void cardLoaded(CardsBucket bucket) {
+    public void cardsLoaded(CardsBucket bucket) {
         LOG.d();
         currentBucket = bucket;
         refreshList();

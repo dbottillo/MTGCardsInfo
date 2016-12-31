@@ -5,15 +5,18 @@ import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -27,7 +30,8 @@ public class UpdateLuckyWidgetService extends Service {
     public void onStart(Intent intent, int startId) {
         if (intent != null) {
             allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-            cardDataSource = new MTGCardDataSource(new MTGDatabaseHelper(getApplicationContext()));
+            SQLiteDatabase database = new MTGDatabaseHelper(getApplicationContext()).getReadableDatabase();
+            cardDataSource = new MTGCardDataSource(database, new CardDataSource(database, new Gson()));
             new LuckyAsyncTask().execute(allWidgetIds.length);
         }
         super.onStart(intent, startId);

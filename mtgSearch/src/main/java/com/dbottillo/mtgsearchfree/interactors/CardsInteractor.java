@@ -26,4 +26,8 @@ public interface CardsInteractor {
     Observable<List<MTGCard>> loadDeck(Deck deck);
 
     Observable<List<MTGCard>> doSearch(SearchParams searchParams);
+
+    Observable<MTGCard> loadCard(int multiverseid);
+
+    Observable<MTGCard> loadOtherSideCard(MTGCard card);
 }

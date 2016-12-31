@@ -29,4 +29,5 @@ public interface CardsPresenter extends BasicPresenter {
     void loadCardTypePreference();
 
     void toggleCardTypeViewPreference();
+
 }
