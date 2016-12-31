@@ -5,6 +5,7 @@ import android.test.suitebuilder.annotation.SmallTest;
 import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 
 import org.junit.Before;
@@ -30,13 +31,16 @@ public class CardFilterPresenterImplTest extends BaseTest {
     @Mock
     CardFilter cardFilter;
 
+    @Mock
+    Logger logger;
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
         interactor = mock(CardFilterInteractor.class);
         view = mock(CardFilterView.class);
         when(interactor.load()).thenReturn(Observable.just(cardFilter));
-        presenter = new CardFilterPresenterImpl(interactor, new TestRunnerFactory(), new MemoryStorage());
+        presenter = new CardFilterPresenterImpl(interactor, new TestRunnerFactory(), new MemoryStorage(logger));
         presenter.init(view);
     }
 

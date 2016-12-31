@@ -102,7 +102,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         return "/lucky-card";
     }
 
-    public void cardLoaded(CardsBucket bucket) {
+    public void cardsLoaded(CardsBucket bucket) {
         LOG.d();
         boolean firstRun = luckyCards.size() <= 1;
         for (MTGCard card : bucket.getCards()) {

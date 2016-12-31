@@ -9,7 +9,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
-import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import java.util.List;
@@ -33,10 +33,13 @@ public class CardsPresenterImpl implements CardsPresenter {
     private boolean grid = true;
     private boolean firstTypeTypeCheck = true;
 
+    private final Logger logger;
+
     @Inject
     public CardsPresenterImpl(CardsInteractor interactor, DeckMapper mapper, GeneralData generalData,
-                              RunnerFactory runnerFactory, MemoryStorage memoryStorage) {
-        LOG.d("created");
+                              RunnerFactory runnerFactory, MemoryStorage memoryStorage, Logger logger) {
+        this.logger = logger;
+        logger.d("created");
         this.interactor = interactor;
         this.deckMapper = mapper;
         this.generalData = generalData;
@@ -47,12 +50,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     }
 
     public void getLuckyCards(int howMany) {
-        LOG.d("get lucky cards " + howMany);
+        logger.d("get lucky cards " + howMany);
         cardsWrapper.run(interactor.getLuckyCards(howMany), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
-                cardsView.cardLoaded(new CardsBucket("lucky", mtgCards));
+                logger.d();
+                cardsView.cardsLoaded(new CardsBucket("lucky", mtgCards));
             }
 
             @Override
@@ -69,12 +72,12 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void loadFavourites() {
-        LOG.d();
+        logger.d();
         cardsWrapper.run(interactor.getFavourites(), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
-                cardsView.cardLoaded(new CardsBucket("fav", mtgCards));
+                logger.d();
+                cardsView.cardsLoaded(new CardsBucket("fav", mtgCards));
             }
 
             @Override
@@ -98,11 +101,11 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void loadDeck(final Deck deck) {
-        LOG.d("loadDeck " + deck);
+        logger.d("loadDeck " + deck);
         deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new Runner.RxWrapperListener<DeckBucket>() {
             @Override
             public void onNext(DeckBucket bucket) {
-                LOG.d();
+                logger.d();
                 bucket.setKey(deck.getName());
                 cardsView.deckLoaded(bucket);
             }
@@ -121,12 +124,12 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void doSearch(final SearchParams searchParams) {
-        LOG.d("do search " + searchParams);
+        logger.d("do search " + searchParams);
         cardsWrapper.run(interactor.doSearch(searchParams), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
-                cardsView.cardLoaded(new CardsBucket(searchParams.toString(), mtgCards));
+                logger.d();
+                cardsView.cardsLoaded(new CardsBucket(searchParams.toString(), mtgCards));
             }
 
             @Override
@@ -143,7 +146,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void loadCardTypePreference() {
-        LOG.d();
+        logger.d();
         boolean isGrid = generalData.isCardsShowTypeGrid();
         if (firstTypeTypeCheck || grid != isGrid) {
             grid = isGrid;
@@ -154,7 +157,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     @Override
     public void toggleCardTypeViewPreference() {
-        LOG.d();
+        logger.d();
         if (generalData.isCardsShowTypeGrid()) {
             generalData.setCardsShowTypeList();
             cardsView.cardTypePreferenceChanged(false);
@@ -164,24 +167,25 @@ public class CardsPresenterImpl implements CardsPresenter {
         }
     }
 
+    @Override
     public void removeFromFavourite(MTGCard card, boolean reload) {
-        LOG.d("remove " + card + " from fav");
+        logger.d("remove " + card + " from fav");
         subscription = favWrapper.run(interactor.removeFromFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void saveAsFavourite(MTGCard card, boolean reload) {
-        LOG.d("save " + card + " as fav");
+        logger.d("save " + card + " as fav");
         subscription = favWrapper.run(interactor.saveAsFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void loadCards(final MTGSet set) {
-        LOG.d("loadSet cards of " + set);
+        logger.d("loadSet cards of " + set);
         cardsWrapper.run(interactor.loadSet(set), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
-                LOG.d();
+                logger.d();
 
-                cardsView.cardLoaded(new CardsBucket(set, mtgCards));
+                cardsView.cardsLoaded(new CardsBucket(set, mtgCards));
             }
 
             @Override
@@ -197,12 +201,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     }
 
     public void init(CardsView view) {
-        LOG.d();
+        logger.d();
         cardsView = view;
     }
 
     public void loadIdFavourites() {
-        LOG.d();
+        logger.d();
         int[] currentFav = memoryStorage.getFavourites();
         if (currentFav != null) {
             cardsView.favIdLoaded(currentFav);
@@ -212,7 +216,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     }
 
     public void detachView() {
-        LOG.d();
+        logger.d();
         if (subscription != null) {
             subscription.unsubscribe();
         }
@@ -221,7 +225,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     private Runner.RxWrapperListener<int[]> idFavSubscriber = new Runner.RxWrapperListener<int[]>() {
         @Override
         public void onNext(int[] ints) {
-            LOG.d();
+            logger.d();
             memoryStorage.setFavourites(ints);
             cardsView.favIdLoaded(ints);
         }

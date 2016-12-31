@@ -9,17 +9,25 @@ import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class CardDataSource {
 
     public static final int LIMIT = 400;
     public static final String TABLE = "MTGCard";
+
+
+    private final SQLiteDatabase database;
+    private final Gson gson;
 
     public enum COLUMNS {
         NAME("name", "TEXT"),
@@ -42,7 +50,15 @@ public final class CardDataSource {
         RULINGS("rulings", "TEXT"),
         LAYOUT("layout", "TEXT"),
         SET_CODE("setCode", "TEXT"),
-        NUMBER("number", "TEXT");
+        NUMBER("number", "TEXT"),
+        NAMES("names", "TEXT"),
+        SUPER_TYPES("supertypes", "TEXT"),
+        FLAVOR("flavor", "TEXT"),
+        ARTIST("artist", "TEXT"),
+        LOYALTY("loyalty", "INTEGER"),
+        PRINTINGS("printings", "TEXT"),
+        LEGALITIES("legalities", "TEXT"),
+        ORIGINAL_TEXT("originalText", "TEXT");
 
         private String name;
         private String type;
@@ -61,7 +77,9 @@ public final class CardDataSource {
         }
     }
 
-    private CardDataSource() {
+    public CardDataSource(SQLiteDatabase database, Gson gson) {
+        this.database = database;
+        this.gson = gson;
     }
 
     static final String SQL_ADD_COLUMN_RULINGS = "ALTER TABLE "
@@ -80,12 +98,44 @@ public final class CardDataSource {
             + TABLE + " ADD COLUMN "
             + COLUMNS.NUMBER.getName() + " " + COLUMNS.NUMBER.getType();
 
+    static final String SQL_ADD_COLUMN_NAMES = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.NAMES.getName() + " " + COLUMNS.NAMES.getType();
+
+    static final String SQL_ADD_COLUMN_SUPER_TYPES = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.SUPER_TYPES.getName() + " " + COLUMNS.SUPER_TYPES.getType();
+
+    static final String SQL_ADD_COLUMN_FLAVOR = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.FLAVOR.getName() + " " + COLUMNS.FLAVOR.getType();
+
+    static final String SQL_ADD_COLUMN_ARTIST = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.ARTIST.getName() + " " + COLUMNS.ARTIST.getType();
+
+    static final String SQL_ADD_COLUMN_LOYALTY = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.LOYALTY.getName() + " " + COLUMNS.LOYALTY.getType();
+
+    static final String SQL_ADD_COLUMN_PRINTINGS = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.PRINTINGS.getName() + " " + COLUMNS.PRINTINGS.getType();
+
+    static final String SQL_ADD_COLUMN_LEGALITIES = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.LEGALITIES.getName() + " " + COLUMNS.LEGALITIES.getType();
+
+    static final String SQL_ADD_COLUMN_ORIGINAL_TEXT = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.ORIGINAL_TEXT.getName() + " " + COLUMNS.ORIGINAL_TEXT.getType();
+
     public static String generateCreateTable() {
         StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
         builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         for (COLUMNS column : COLUMNS.values()) {
             builder.append(column.name).append(' ').append(column.type);
-            if (column != COLUMNS.NUMBER) {
+            if (column != COLUMNS.ORIGINAL_TEXT) {
                 builder.append(',');
             }
         }
@@ -96,17 +146,25 @@ public final class CardDataSource {
     public static String generateCreateTable(int version) {
         StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
         builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
-        COLUMNS lastColumn = COLUMNS.NUMBER;
+        COLUMNS lastColumn = COLUMNS.ORIGINAL_TEXT;
         if (version < 2) {
             lastColumn = COLUMNS.SET_NAME;
         } else if (version < 3) {
             lastColumn = COLUMNS.LAYOUT;
+        } else if (version < 7) {
+            lastColumn = COLUMNS.NUMBER;
         }
         for (COLUMNS column : COLUMNS.values()) {
             boolean addColumn = true;
             if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
                 addColumn = false;
             } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
+                addColumn = false;
+            } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES
+                    || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST
+                    || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS
+                    || column == COLUMNS.LEGALITIES)|| column == COLUMNS.ORIGINAL_TEXT
+                    && version <= 6) {
                 addColumn = false;
             }
             if (addColumn) {
@@ -119,27 +177,31 @@ public final class CardDataSource {
         return builder.append(')').toString();
     }
 
-    @VisibleForTesting
-    static String generateCreateTableWithoutLayout() {
-        StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
-        builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
-        for (COLUMNS column : COLUMNS.values()) {
-            if (column != COLUMNS.LAYOUT) {
-                builder.append(column.name).append(' ').append(column.type);
-                if (column != COLUMNS.NUMBER) {
-                    builder.append(',');
-                }
-            }
-        }
-        return builder.append(')').toString();
-    }
-
-
-    public static long saveCard(SQLiteDatabase database, MTGCard card) {
+    public long saveCard(MTGCard card) {
         return database.insertWithOnConflict(TABLE, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE);
     }
 
-    public static ContentValues createContentValue(MTGCard card) {
+    public void removeCard(MTGCard card) {
+        String removeQuery = "DELETE FROM " + TABLE + " where _id=?";
+        Cursor cursor = database.rawQuery(removeQuery, new String[]{String.valueOf(card.getId())});
+        cursor.moveToFirst();
+        cursor.close();
+    }
+
+    public List<MTGCard> getCards() {
+        Cursor cursor = database.rawQuery("select * from " + CardDataSource.TABLE, null);
+        List<MTGCard> cards = new ArrayList<>(cursor.getCount());
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                cards.add(fromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return cards;
+    }
+
+    ContentValues createContentValue(MTGCard card) {
         ContentValues values = new ContentValues();
         values.put(COLUMNS.NAME.getName(), card.getName());
         values.put(COLUMNS.TYPE.getName(), card.getType());
@@ -206,14 +268,24 @@ public final class CardDataSource {
         }
         values.put(COLUMNS.LAYOUT.getName(), card.getLayout());
         values.put(COLUMNS.NUMBER.getName(), card.getNumber());
+
+        values.put(COLUMNS.NAMES.getName(), gson.toJson(card.getNames()));
+        values.put(COLUMNS.SUPER_TYPES.getName(), gson.toJson(card.getSuperTypes()));
+        values.put(COLUMNS.FLAVOR.getName(), card.getFlavor());
+        values.put(COLUMNS.ARTIST.getName(), card.getArtist());
+        values.put(COLUMNS.LOYALTY.getName(), card.getLoyalty());
+        values.put(COLUMNS.PRINTINGS.getName(), gson.toJson(card.getPrintings()));
+        values.put(COLUMNS.ORIGINAL_TEXT.getName(), card.getOriginalText());
+
         return values;
     }
 
-    public static MTGCard fromCursor(Cursor cursor) {
+
+    public MTGCard fromCursor(Cursor cursor) {
         return fromCursor(cursor, true);
     }
 
-    public static MTGCard fromCursor(Cursor cursor, boolean fullCard) {
+    public MTGCard fromCursor(Cursor cursor, boolean fullCard) {
         if (cursor.getColumnIndex("_id") == -1) {
             return null;
         }
@@ -295,12 +367,50 @@ public final class CardDataSource {
             }
         }
 
+        Type type = new TypeToken<List<String>>() {
+        }.getType();
+
         if (cursor.getColumnIndex(COLUMNS.LAYOUT.getName()) != -1) {
             card.setLayout(cursor.getString(cursor.getColumnIndex(COLUMNS.LAYOUT.getName())));
         }
         if (cursor.getColumnIndex(COLUMNS.NUMBER.getName()) != -1) {
             card.setNumber(cursor.getString(cursor.getColumnIndex(COLUMNS.NUMBER.getName())));
         }
+
+        if (cursor.getColumnIndex(COLUMNS.NAMES.getName()) != -1) {
+            String names = cursor.getString(cursor.getColumnIndex(COLUMNS.NAMES.getName()));
+            if (names != null) {
+                List<String> strings = gson.fromJson(names, type);
+                card.setNames(strings);
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.SUPER_TYPES.getName()) != -1) {
+            String superTypes = cursor.getString(cursor.getColumnIndex(COLUMNS.SUPER_TYPES.getName()));
+            if (superTypes != null) {
+                List<String> strings = gson.fromJson(superTypes, type);
+                card.setSuperTypes(strings);
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.LOYALTY.getName()) != -1) {
+            card.setLoyalty(cursor.getInt(cursor.getColumnIndex(COLUMNS.LOYALTY.getName())));
+        }
+        if (cursor.getColumnIndex(COLUMNS.ARTIST.getName()) != -1) {
+            card.setArtist(cursor.getString(cursor.getColumnIndex(COLUMNS.ARTIST.getName())));
+        }
+        if (cursor.getColumnIndex(COLUMNS.FLAVOR.getName()) != -1) {
+            card.setFlavor(cursor.getString(cursor.getColumnIndex(COLUMNS.FLAVOR.getName())));
+        }
+        if (cursor.getColumnIndex(COLUMNS.PRINTINGS.getName()) != -1) {
+            String printings = cursor.getString(cursor.getColumnIndex(COLUMNS.PRINTINGS.getName()));
+            if (printings != null) {
+                List<String> strings = gson.fromJson(printings, type);
+                card.setPrintings(strings);
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName()) != -1) {
+            card.setOriginalText(cursor.getString(cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName())));
+        }
+
         return card;
     }
 }

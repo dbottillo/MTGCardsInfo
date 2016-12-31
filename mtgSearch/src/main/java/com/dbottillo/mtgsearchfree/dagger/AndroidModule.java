@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
@@ -15,6 +16,7 @@ import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.RunnerAndMap;
 import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import java.util.List;
 
@@ -73,8 +75,8 @@ public class AndroidModule {
 
     @Provides
     @Singleton
-    MTGCardDataSource provideMTGCardDataSource(@Named("cardsDB") SQLiteDatabase database) {
-        return new MTGCardDataSource(database);
+    MTGCardDataSource provideMTGCardDataSource(@Named("cardsDB") SQLiteDatabase database, CardDataSource cardDataSource) {
+        return new MTGCardDataSource(database, cardDataSource);
     }
 
     @Provides
@@ -101,5 +103,10 @@ public class AndroidModule {
     @Provides
     FileUtil provideFileUtil() {
         return new FileUtil(new FileLoaderImpl(app.getApplicationContext()));
+    }
+
+    @Provides
+    Logger provideLogger(){
+        return new Logger();
     }
 }

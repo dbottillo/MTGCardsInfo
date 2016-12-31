@@ -15,9 +15,11 @@ public class FavouritesDataSource {
     public static final String TABLE = "Favourites";
 
     private SQLiteDatabase database;
+    private CardDataSource cardDataSource;
 
-    public FavouritesDataSource(SQLiteDatabase database) {
+    public FavouritesDataSource(SQLiteDatabase database, CardDataSource cardDataSource) {
         this.database = database;
+        this.cardDataSource = cardDataSource;
     }
 
     public static String generateCreateTable() {
@@ -32,7 +34,7 @@ public class FavouritesDataSource {
         Cursor current = database.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() == 0) {
             // need to add the card
-            CardDataSource.saveCard(database, card);
+            cardDataSource.saveCard(card);
         }
         current.close();
         ContentValues contentValues = new ContentValues();
@@ -48,7 +50,7 @@ public class FavouritesDataSource {
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            MTGCard card = CardDataSource.fromCursor(cursor, fullCard);
+            MTGCard card = cardDataSource.fromCursor(cursor, fullCard);
             if (card != null) {
                 cards.add(card);
             }
@@ -63,7 +65,9 @@ public class FavouritesDataSource {
         String[] args = new String[]{card.getMultiVerseId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
         LOG.query(query);
-        database.rawQuery(query, args).moveToFirst();
+        Cursor cursor = database.rawQuery(query, args);
+        cursor.moveToFirst();
+        cursor.close();
     }
 
     public void clear() {

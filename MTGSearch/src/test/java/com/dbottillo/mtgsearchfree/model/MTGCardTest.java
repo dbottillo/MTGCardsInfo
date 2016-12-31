@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import com.dbottillo.mtgsearchfree.BaseTest;
 
@@ -15,11 +14,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-@SmallTest
 public class MTGCardTest extends BaseTest {
 
-    MTGCard card;
-    MTGSet set;
+    private MTGCard card;
+    private MTGSet set;
 
     @Before
     public void setup() {
@@ -44,6 +42,12 @@ public class MTGCardTest extends BaseTest {
         card.setText("text");
         card.setToughness("4");
         card.setType("Creature");
+        card.setNames(Arrays.asList("one", "two"));
+        card.setSuperTypes(Arrays.asList("legendary", "creature"));
+        card.setFlavor("flavor");
+        card.setArtist("artist");
+        card.setLoyalty(2);
+        card.setPrintings(Arrays.asList("C16", "C15"));
     }
 
     @Test

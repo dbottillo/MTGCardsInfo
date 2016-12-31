@@ -17,4 +17,6 @@ public interface GeneralData {
     boolean isTooltipMainToShow();
 
     long getDefaultDuration();
+
+    boolean isFreshInstall();
 }

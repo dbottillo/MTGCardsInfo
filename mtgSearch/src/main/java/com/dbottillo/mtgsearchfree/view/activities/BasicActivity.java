@@ -131,4 +131,12 @@ public abstract class BasicActivity extends AppCompatActivity {
     public MTGApp getMTGApp() {
         return (MTGApp) getApplication();
     }
+
+    @Override
+    public Object getSystemService(String name) {
+        if ("Dagger".equals(name)) {
+            return getMTGApp().getUiGraph();
+        }
+        return super.getSystemService(name);
+    }
 }

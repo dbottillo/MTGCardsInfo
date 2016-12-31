@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
+import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,13 +17,14 @@ import static org.junit.Assert.assertTrue;
 
 public class FavouritesDataSourceTest extends BaseContextTest {
 
-    private MTGCardDataSource cardDataSource;
+    private MTGCardDataSource mtgCardDataSource;
     private FavouritesDataSource underTest;
 
     @Before
     public void setup(){
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase());
-        underTest = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase());
+        CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
+        underTest = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource);
     }
 
     @Test
@@ -34,7 +36,7 @@ public class FavouritesDataSourceTest extends BaseContextTest {
 
     @Test
     public void cards_can_be_saved_as_favourites() {
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
             underTest.saveFavourites(card);
         }
@@ -46,7 +48,7 @@ public class FavouritesDataSourceTest extends BaseContextTest {
 
     @Test
     public void cards_can_be_removed_from_favourites() {
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
         for (MTGCard card : cards) {
             underTest.saveFavourites(card);
         }
