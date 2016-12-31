@@ -278,7 +278,7 @@ public class MainFragment extends BasicFragment implements
         cardsPresenter.loadCards(gameSet);
     }
 
-    public void cardLoaded(CardsBucket bucket) {
+    public void cardsLoaded(CardsBucket bucket) {
         LOG.d();
         cardBucket = bucket;
         updateContent();

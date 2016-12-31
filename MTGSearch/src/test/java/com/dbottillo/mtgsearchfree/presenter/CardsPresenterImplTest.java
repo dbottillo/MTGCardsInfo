@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -10,13 +9,15 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -30,7 +31,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-public class CardsPresenterImplTest extends BaseTest {
+@RunWith(MockitoJUnitRunner.class)
+public class CardsPresenterImplTest  {
 
     private CardsPresenter presenter;
     private CardsInteractor interactor;
@@ -70,10 +72,12 @@ public class CardsPresenterImplTest extends BaseTest {
     @Mock
     DeckMapper deckMapper;
 
+    @Mock
+    Logger logger;
+
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
-        MemoryStorage memoryStorage = new MemoryStorage();
+        MemoryStorage memoryStorage = new MemoryStorage(logger);
         interactor = mock(CardsInteractor.class);
         view = mock(CardsView.class);
         when(deck.getName()).thenReturn("deck");
@@ -89,7 +93,7 @@ public class CardsPresenterImplTest extends BaseTest {
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
         presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
-                new TestRunnerFactory(), memoryStorage);
+                new TestRunnerFactory(), memoryStorage, logger);
         presenter.init(view);
     }
 
@@ -98,7 +102,7 @@ public class CardsPresenterImplTest extends BaseTest {
         presenter.getLuckyCards(3);
         verify(interactor).getLuckyCards(3);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
-        verify(view).cardLoaded(argument.capture());
+        verify(view).cardsLoaded(argument.capture());
         assertThat(argument.getValue().getKey(), is("lucky"));
         assertThat(argument.getValue().getCards(), is(luckyCards));
     }
@@ -108,7 +112,7 @@ public class CardsPresenterImplTest extends BaseTest {
         presenter.loadFavourites();
         verify(interactor).getFavourites();
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
-        verify(view).cardLoaded(argument.capture());
+        verify(view).cardsLoaded(argument.capture());
         assertThat(argument.getValue().getKey(), is("fav"));
         assertThat(argument.getValue().getCards(), is(favCards));
     }
@@ -127,7 +131,7 @@ public class CardsPresenterImplTest extends BaseTest {
         presenter.doSearch(searchParams);
         verify(interactor).doSearch(searchParams);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
-        verify(view).cardLoaded(argument.capture());
+        verify(view).cardsLoaded(argument.capture());
         assertThat(argument.getValue().getKey(), is("search"));
         assertThat(argument.getValue().getCards(), is(searchCards));
     }
@@ -159,7 +163,7 @@ public class CardsPresenterImplTest extends BaseTest {
         presenter.loadCards(set);
         verify(interactor).loadSet(set);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
-        verify(view).cardLoaded(argument.capture());
+        verify(view).cardsLoaded(argument.capture());
         assertThat(argument.getValue().getKey(), is("set"));
         assertThat(argument.getValue().getCards(), is(setCards));
     }
@@ -178,4 +182,6 @@ public class CardsPresenterImplTest extends BaseTest {
         verify(interactor, times(1)).loadIdFav();
         verify(view, times(2)).favIdLoaded(idFavs);
     }
+
+
 }

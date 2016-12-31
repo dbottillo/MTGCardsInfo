@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.StringUtil;
+import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,14 +27,15 @@ public class DeckDataSourceTest extends BaseContextTest {
 
     private static final int SMALL_NUMBER_OF_CARDS = 4;
 
-    private MTGCardDataSource cardDataSource;
-
+    private MTGCardDataSource mtgCardDataSource;
+    private CardDataSource cardDataSource;
     private DeckDataSource underTest;
 
     @Before
     public void setup() {
-        cardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase());
-        underTest = new DeckDataSource(cardsInfoDbHelper.getWritableDatabase());
+        cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
+        underTest = new DeckDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource, mtgCardDataSource);
     }
 
     @Test
@@ -58,7 +60,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_deck_can_be_removed_from_database() {
         long id = underTest.addDeck("deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
         underTest.addCardToDeck(id, card, 2);
         List<Deck> decks = underTest.getDecks();
         assertThat(decks.get(0).getNumberOfCards(), is(2));
@@ -93,14 +95,14 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_cards_can_be_added_to_deck() {
         long id = underTest.addDeck("new deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
         underTest.addCardToDeck(id, card, 2);
         // first check that the card has been saved in the db
         Cursor cursor = cardsInfoDbHelper.getReadableDatabase().rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", new String[]{card.getMultiVerseId() + ""});
         assertNotNull(cursor);
         assertThat(cursor.getCount(), is(1));
         cursor.moveToFirst();
-        MTGCard cardFromDb = CardDataSource.fromCursor(cursor, true);
+        MTGCard cardFromDb = cardDataSource.fromCursor(cursor, true);
         assertNotNull(cardFromDb);
         assertThat(cardFromDb.getMultiVerseId(), is(card.getMultiVerseId()));
         // then check that the decks contain at least one card
@@ -114,7 +116,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_cards_can_be_removed_from_deck() {
         long id = underTest.addDeck("new deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
         underTest.addCardToDeck(id, card, 2);
         List<Deck> decks = underTest.getDecks();
         assertThat(decks.get(0).getNumberOfCards(), is(2));
@@ -136,7 +138,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_negative_quantity_will_decrease_cards() {
         long id = underTest.addDeck("new deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
 
         underTest.addCardToDeck(id, card, 4);
         Deck deck = underTest.getDecks().get(0);
@@ -158,7 +160,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_add_sideboard_cards_are_independent() {
         long id = underTest.addDeck("new deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
 
         underTest.addCardToDeck(id, card, 2);
         card.setSideboard(true);
@@ -187,7 +189,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void test_remove_sideboard_cards_are_independent() {
         long id = underTest.addDeck("new deck");
-        MTGCard card = cardDataSource.getRandomCard(1).get(0);
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
 
         card.setSideboard(false);
         underTest.addCardToDeck(id, card, 2);
@@ -214,7 +216,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     public void test_add_deck_with_empty_bucket() {
         CardsBucket bucket = new CardsBucket();
         bucket.setKey("deck");
-        long deckId = underTest.addDeck(cardDataSource, bucket);
+        long deckId = underTest.addDeck(bucket);
         assertTrue(deckId > 0);
         Deck deckFrom = underTest.getDeck(deckId);
         assertThat(deckFrom.getName(), is("deck"));
@@ -237,7 +239,7 @@ public class DeckDataSourceTest extends BaseContextTest {
             namedCards.add(card);
         }
         bucket.setCards(namedCards);
-        long deckId = underTest.addDeck(cardDataSource, bucket);
+        long deckId = underTest.addDeck(bucket);
         assertTrue(deckId > 0);
         Deck deckFrom = underTest.getDeck(deckId);
         assertThat(deckFrom.getName(), is("deck"));
@@ -273,7 +275,7 @@ public class DeckDataSourceTest extends BaseContextTest {
             namedCards.add(card);
         }
         bucket.setCards(namedCards);
-        long deckId = underTest.addDeck(cardDataSource, bucket);
+        long deckId = underTest.addDeck(bucket);
         List<MTGCard> deckCards = underTest.getCards(deckId);
         assertThat(deckCards.size(), is(cardNames.length - 1));
     }
@@ -281,7 +283,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void movesCardFromDeckToSideBoard(){
         long deckId = underTest.addDeck("new deck");
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
 
         MTGCard card1 = cards.get(0);
         MTGCard card2 = cards.get(1);
@@ -346,7 +348,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     @Test
     public void movesCardFromSideBoardToDeck(){
         long deckId = underTest.addDeck("new deck");
-        List<MTGCard> cards = cardDataSource.getRandomCard(3);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
 
         MTGCard card1 = cards.get(0);
         MTGCard card2 = cards.get(1);
@@ -410,7 +412,7 @@ public class DeckDataSourceTest extends BaseContextTest {
 
     private long generateDeckWithSmallAmountOfCards() {
         long id = underTest.addDeck("new deck");
-        List<MTGCard> cards = cardDataSource.getRandomCard(SMALL_NUMBER_OF_CARDS);
+        List<MTGCard> cards = mtgCardDataSource.getRandomCard(SMALL_NUMBER_OF_CARDS);
         for (int i = 0; i < SMALL_NUMBER_OF_CARDS; i++) {
             underTest.addCardToDeck(id, cards.get(i), i + 1);
         }

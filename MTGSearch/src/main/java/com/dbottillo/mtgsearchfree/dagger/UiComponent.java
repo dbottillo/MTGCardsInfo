@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
+import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
 import dagger.Component;
 
@@ -46,4 +47,6 @@ public interface UiComponent {
     void inject(AboutFragment aboutFragment);
 
     void inject(SortDialogFragment sortDialogFragment);
+
+    void inject(MTGCardView mtgCardView);
 }

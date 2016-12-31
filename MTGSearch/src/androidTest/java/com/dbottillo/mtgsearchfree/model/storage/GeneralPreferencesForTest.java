@@ -49,4 +49,9 @@ public class GeneralPreferencesForTest implements GeneralData {
     public long getDefaultDuration() {
         return 0;
     }
+
+    @Override
+    public boolean isFreshInstall() {
+        return true;
+    }
 }

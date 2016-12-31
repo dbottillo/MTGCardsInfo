@@ -1,18 +1,17 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,44 +23,53 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
-@RunWith(RobolectricTestRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class CardsInteractorImplTest {
 
-    static CardsStorage cardsStorage;
-    CardsInteractor cardsInteractor;
+    public static final int MULTIVERSE_ID = 180607;
+    private CardsInteractor underTest;
 
-    static MTGSet set;
-    static SearchParams searchParams;
-    static Deck deck;
-    static List<MTGCard> luckyCards = Arrays.asList(new MTGCard(2), new MTGCard(3));
-    static List<MTGCard> favCards = Arrays.asList(new MTGCard(3), new MTGCard(4));
-    static List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
-    static List<MTGCard> searchCards = Arrays.asList(new MTGCard(6), new MTGCard(7));
-    static List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
+    @Mock
+    private CardsStorage cardsStorage;
+    @Mock
+    private MTGSet set;
+    @Mock
+    private SearchParams searchParams;
+    @Mock
+    private Deck deck;
+    @Mock
+    private List<MTGCard> luckyCards = Arrays.asList(new MTGCard(2), new MTGCard(3));
+    @Mock
+    private List<MTGCard> favCards = Arrays.asList(new MTGCard(3), new MTGCard(4));
+    @Mock
+    private List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
+    @Mock
+    private List<MTGCard> searchCards = Arrays.asList(new MTGCard(6), new MTGCard(7));
+    @Mock
+    private List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
+    @Mock
+    private MTGCard card;
+    @Mock
+    private MTGCard otherSideCard;
+    @Mock
+    Logger logger;
 
-    @BeforeClass
-    public static void setupStorage() {
-        set = mock(MTGSet.class);
-        deck = mock(Deck.class);
-        searchParams = mock(SearchParams.class);
-        cardsStorage = mock(CardsStorage.class);
+    @Before
+    public void setup() {
         when(cardsStorage.getLuckyCards(2)).thenReturn(luckyCards);
         when(cardsStorage.getFavourites()).thenReturn(favCards);
         when(cardsStorage.load(set)).thenReturn(setCards);
         when(cardsStorage.doSearch(searchParams)).thenReturn(searchCards);
         when(cardsStorage.loadDeck(deck)).thenReturn(deckCards);
-    }
-
-    @Before
-    public void setup() {
-        cardsInteractor = new CardsInteractorImpl(cardsStorage);
+        when(cardsStorage.loadCard(MULTIVERSE_ID)).thenReturn(card);
+        when(cardsStorage.loadOtherSide(card)).thenReturn(otherSideCard);
+        underTest = new CardsInteractorImpl(cardsStorage, logger);
     }
 
     @Test
     public void testGetLuckyCards() {
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.getLuckyCards(2).subscribe(testSubscriber);
+        underTest.getLuckyCards(2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(luckyCards));
         verify(cardsStorage).getLuckyCards(2);
@@ -70,7 +78,7 @@ public class CardsInteractorImplTest {
     @Test
     public void testGetFavourites() {
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.getFavourites().subscribe(testSubscriber);
+        underTest.getFavourites().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(favCards));
         verify(cardsStorage).getFavourites();
@@ -82,7 +90,7 @@ public class CardsInteractorImplTest {
         int[] idFavs = new int[]{1, 2, 3};
         when(cardsStorage.saveAsFavourite(card)).thenReturn(idFavs);
         TestSubscriber<int[]> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.saveAsFavourite(card).subscribe(testSubscriber);
+        underTest.saveAsFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
         verify(cardsStorage).saveAsFavourite(card);
@@ -94,7 +102,7 @@ public class CardsInteractorImplTest {
         int[] idFavs = new int[]{3, 4, 5};
         when(cardsStorage.removeFromFavourite(card)).thenReturn(idFavs);
         TestSubscriber<int[]> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.removeFromFavourite(card).subscribe(testSubscriber);
+        underTest.removeFromFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
         verify(cardsStorage).removeFromFavourite(card);
@@ -103,7 +111,7 @@ public class CardsInteractorImplTest {
     @Test
     public void testLoadSet() {
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.loadSet(set).subscribe(testSubscriber);
+        underTest.loadSet(set).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(setCards));
         verify(cardsStorage).load(set);
@@ -114,7 +122,7 @@ public class CardsInteractorImplTest {
         int[] idFavs = new int[]{6, 7, 8};
         when(cardsStorage.loadIdFav()).thenReturn(idFavs);
         TestSubscriber<int[]> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.loadIdFav().subscribe(testSubscriber);
+        underTest.loadIdFav().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(idFavs));
         verify(cardsStorage).loadIdFav();
@@ -123,7 +131,7 @@ public class CardsInteractorImplTest {
     @Test
     public void testLoadDeck() {
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.loadDeck(deck).subscribe(testSubscriber);
+        underTest.loadDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
         verify(cardsStorage).loadDeck(deck);
@@ -132,9 +140,27 @@ public class CardsInteractorImplTest {
     @Test
     public void testDoSearch() {
         TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
-        cardsInteractor.doSearch(searchParams).subscribe(testSubscriber);
+        underTest.doSearch(searchParams).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(searchCards));
         verify(cardsStorage).doSearch(searchParams);
+    }
+
+    @Test
+    public void testLoadCardWithMultiverseId() {
+        TestSubscriber<MTGCard> testSubscriber = new TestSubscriber<>();
+        underTest.loadCard(MULTIVERSE_ID).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(card));
+        verify(cardsStorage).loadCard(MULTIVERSE_ID);
+    }
+
+    @Test
+    public void testLoadOtherSideCard() {
+        TestSubscriber<MTGCard> testSubscriber = new TestSubscriber<>();
+        underTest.loadOtherSideCard(card).subscribe(testSubscriber);
+        testSubscriber.assertNoErrors();
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(otherSideCard));
+        verify(cardsStorage).loadOtherSide(card);
     }
 }

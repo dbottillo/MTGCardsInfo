@@ -3,9 +3,12 @@ package com.dbottillo.mtgsearchfree.util;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,7 +21,9 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public final class FileHelper {
 
@@ -81,24 +86,8 @@ public final class FileHelper {
 
     private static MTGCard cardFromJSON(JSONObject jsonObject, MTGSet set) throws JSONException {
         MTGCard card = new MTGCard();
-        boolean isASplit = false;
-        if (jsonObject.getString("layout").equalsIgnoreCase("split")) {
-            isASplit = true;
-        }
-        if (!isASplit) {
-            card.setCardName(jsonObject.getString("name"));
-        } else {
-            JSONArray namesJ = jsonObject.getJSONArray("names");
-            StringBuilder names = new StringBuilder();
-            for (int k = 0; k < namesJ.length(); k++) {
-                String name = namesJ.getString(k);
-                names.append(name);
-                if (k < namesJ.length() - 1) {
-                    names.append('/');
-                }
-            }
-            card.setCardName(names.toString());
-        }
+
+        card.setCardName(jsonObject.getString("name"));
         card.setType(jsonObject.getString("type"));
         card.belongsTo(set);
 
@@ -159,12 +148,8 @@ public final class FileHelper {
         }
         card.setToughness(toughness);
 
-        if (!isASplit && jsonObject.has("text")) {
+        if (jsonObject.has("text")) {
             card.setText(jsonObject.getString("text"));
-        }
-
-        if (isASplit && jsonObject.has("originalText")) {
-            card.setText(jsonObject.getString("originalText"));
         }
 
         int cmc = -1;
@@ -190,6 +175,44 @@ public final class FileHelper {
 
         if (jsonObject.has("number")) {
             card.setNumber(jsonObject.getString("number"));
+        }
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {
+        }.getType();
+
+        if (jsonObject.has("names")) {
+            String names = jsonObject.getString("names");
+            if (names != null) {
+                List<String> strings = gson.fromJson(names, type);
+                card.setNames(strings);
+            }
+        }
+        if (jsonObject.has("supertypes")) {
+            String supertypes = jsonObject.getString("supertypes");
+            if (supertypes != null) {
+                List<String> strings = gson.fromJson(supertypes, type);
+                card.setSuperTypes(strings);
+            }
+        }
+        if (jsonObject.has("flavor")) {
+            card.setFlavor(jsonObject.getString("flavor"));
+        }
+        if (jsonObject.has("artist")) {
+            card.setArtist(jsonObject.getString("artist"));
+        }
+        if (jsonObject.has("loyalty")) {
+            card.setLoyalty(jsonObject.getInt("loyalty"));
+        }
+        if (jsonObject.has("printings")) {
+            String printings = jsonObject.getString("printings");
+            if (printings != null) {
+                List<String> strings = gson.fromJson(printings, type);
+                card.setPrintings(strings);
+            }
+        }
+        if (jsonObject.has("originalText")) {
+            card.setOriginalText(jsonObject.getString("originalText"));
         }
         return card;
     }

@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
 import javax.inject.Singleton;
@@ -45,6 +46,8 @@ public interface AppComponent {
     GeneralData getGeneralPreferences();
 
     FileUtil getFileUtil();
+
+    Logger getLogger();
 
     void inject(MTGApp app);
 

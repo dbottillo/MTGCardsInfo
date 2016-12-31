@@ -17,42 +17,59 @@ import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.dagger.UiComponent;
+import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
+import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.view.CardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MTGCardView extends RelativeLayout {
+public class MTGCardView extends RelativeLayout implements CardView {
 
     @BindView(R.id.fragment_card_container)
     View mainContainer;
+
     @BindView(R.id.detail_card)
     TextView detailCard;
+
     @BindView(R.id.price_on_tcg)
     TextView priceOnTcg;
+
     @BindView(R.id.price_card)
     TextView cardPrice;
+
     @BindView(R.id.image_card_retry)
     View retry;
+
     @BindView(R.id.image_card)
     ImageView cardImage;
+
     @BindView(R.id.image_card_loader)
     MTGLoader cardLoader;
+
     @BindView(R.id.image_card_container)
     View cardImageContainer;
+
+    @BindView(R.id.card_flip)
+    ImageButton flipCardButton;
 
     public final static float RATIO_CARD = 1.39622641509434f;
     boolean isLandscape = false;
@@ -63,6 +80,9 @@ public class MTGCardView extends RelativeLayout {
 
     MTGCard card;
     TCGPrice price;
+
+    @Inject
+    CardPresenter cardPresenter;
 
     public MTGCardView(Context ctx) {
         this(ctx, null);
@@ -77,6 +97,11 @@ public class MTGCardView extends RelativeLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.view_mtg_card, this, true);
         ButterKnife.bind(this, view);
+
+        //noinspection ResourceType
+        UiComponent uiComponent = (UiComponent) context.getSystemService("Dagger");
+        uiComponent.inject(this);
+        cardPresenter.init(this);
 
         setTCGPriceTitle();
 
@@ -116,7 +141,15 @@ public class MTGCardView extends RelativeLayout {
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(priceReceiver);
     }
 
+    boolean showImage;
+
     public void load(MTGCard card, boolean showImage) {
+        this.showImage = showImage;
+        load(card);
+    }
+
+    private void load(MTGCard card){
+        LOG.e("card load: "+card.bigToString());
         LOG.d();
         this.card = card;
         String manaCost;
@@ -136,7 +169,7 @@ public class MTGCardView extends RelativeLayout {
             rulings = "";
         }
         detailCard.setText(Html.fromHtml(getContext().getResources().getString(R.string.card_detail, card.getType(),
-                card.getPower(), card.getToughness(), manaCost, card.getText(), card.getSet().getName(), rulings)));
+                card.getPower(), card.getToughness(), manaCost, card.getText(), card.getSet().getName(), card.getOriginalText(), rulings)));
 
         Intent intent = new Intent(getContext(), NetworkIntentService.class);
         Bundle params = new Bundle();
@@ -158,6 +191,10 @@ public class MTGCardView extends RelativeLayout {
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(priceReceiver);
         IntentFilter cardFilter = new IntentFilter(card.getMultiVerseId() + "");
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(priceReceiver, cardFilter);
+
+        if (card.isDoubleFaced()){
+            flipCardButton.setVisibility(View.VISIBLE);
+        }
     }
 
     private void updatePrice() {
@@ -241,4 +278,23 @@ public class MTGCardView extends RelativeLayout {
         }
     }
 
+    @OnClick(R.id.card_flip)
+    public void flipCard(){
+        cardPresenter.loadOtherSideCard(card);
+    }
+
+    @Override
+    public void showError(String message) {
+
+    }
+
+    @Override
+    public void showError(MTGException exception) {
+
+    }
+
+    @Override
+    public void otherSideCardLoaded(MTGCard card) {
+        load(card);
+    }
 }

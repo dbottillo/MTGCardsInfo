@@ -38,13 +38,13 @@ public class NavDrawerHelper {
             /* Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                activity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                activity.supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /* Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                activity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                activity.supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             public void onDrawerSlide(View view, float slideOffset) {

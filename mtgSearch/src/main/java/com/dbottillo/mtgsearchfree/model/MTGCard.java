@@ -38,11 +38,22 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     private List<String> rulings;
 
+    private List<String> names;
+    private List<String> superTypes;
+    private String artist;
+    private String flavor;
+    private int loyalty;
+    private List<String> printings;
+    private String originalText;
+
     public MTGCard() {
         this.colors = new ArrayList<>();
         this.types = new ArrayList<>();
         this.subTypes = new ArrayList<>();
         this.rulings = new ArrayList<>();
+        this.names = new ArrayList<>();
+        this.superTypes = new ArrayList<>();
+        this.printings = new ArrayList<>();
         this.quantity = 1;
         this.multiVerseId = -1;
     }
@@ -95,6 +106,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeStringList(rulings);
         dest.writeString(layout);
         dest.writeString(number);
+        dest.writeStringList(names);
+        dest.writeStringList(superTypes);
+        dest.writeString(artist);
+        dest.writeString(flavor);
+        dest.writeInt(loyalty);
+        dest.writeStringList(printings);
+        dest.writeString(originalText);
     }
 
     private void readFromParcel(Parcel in) {
@@ -120,6 +138,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         in.readStringList(rulings);
         layout = in.readString();
         number = in.readString();
+        in.readStringList(names);
+        in.readStringList(superTypes);
+        artist = in.readString();
+        flavor = in.readString();
+        loyalty = in.readInt();
+        in.readStringList(printings);
+        originalText = in.readString();
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -300,7 +325,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.layout = layout;
     }
 
-    public String getNumber(){
+    public String getNumber() {
         return number;
     }
 
@@ -318,6 +343,54 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public void setColors(List<Integer> colors) {
         this.colors = colors;
+    }
+
+    public List<String> getNames() {
+        return names;
+    }
+
+    public List<String> getSuperTypes() {
+        return superTypes;
+    }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public int getLoyalty() {
+        return loyalty;
+    }
+
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public void setSuperTypes(List<String> superTypes) {
+        this.superTypes = superTypes;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
+
+    public void setLoyalty(int loyalty) {
+        this.loyalty = loyalty;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public List<String> getPrintings() {
+        return printings;
+    }
+
+    public void setPrintings(List<String> printings) {
+        this.printings = printings;
     }
 
     public String getImage() {
@@ -338,6 +411,14 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public List<String> getRulings() {
         return rulings;
+    }
+
+    public String getOriginalText() {
+        return originalText;
+    }
+
+    public void setOriginalText(String originalText) {
+        this.originalText = originalText;
     }
 
     @Override
@@ -416,7 +497,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             if (!Modifier.isStatic(field.getModifiers())) {
                 try {
                     if (field.get(this) != null && !field.get(this).equals(field.get(other))) {
-                        LOG.e("error on: " + field.getName() + " with values: " + field.get(this) + " vs " + field.get(other));
+                        Log.e("CUSTOM", "error on: " + field.getName() + " with values: " + field.get(this) + " vs " + field.get(other));
                     }
                 } catch (IllegalAccessException e) {
                     LOG.e("impossible to read value");
@@ -424,6 +505,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 }
             }
         }*/
+
         if (!equalOrNull(name, other.name)) {
             return false;
         }
@@ -478,6 +560,24 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         if (!(rulings == null && other.rulings == null || (rulings != null && other.rulings != null && rulings.equals(other.rulings)))) {
             return false;
         }
+        if (!(names == null && other.names == null || (names != null && other.names != null && names.equals(other.names)))) {
+            return false;
+        }
+        if (!(superTypes == null && other.superTypes == null || (superTypes != null && other.superTypes != null && superTypes.equals(other.superTypes)))) {
+            return false;
+        }
+        if (!equalOrNull(flavor, other.flavor)) {
+            return false;
+        }
+        if (!equalOrNull(artist, other.artist)) {
+            return false;
+        }
+        if (!(loyalty == other.loyalty)) {
+            return false;
+        }
+        if (!(printings == null && other.printings == null || (printings != null && other.printings != null && printings.equals(other.printings)))) {
+            return false;
+        }
         return true;
     }
 
@@ -513,6 +613,44 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
 
     public boolean hasNoColor() {
         return manaCost == null || !manaCost.matches(".*[WUBRG].*");
+    }
+
+    public boolean isDoubleFaced() {
+        return layout.equalsIgnoreCase("double-faced");
+    }
+
+    public String bigToString() {
+        return "MTGCard{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", type='" + type + '\''
+                + ", types=" + types
+                + ", subTypes=" + subTypes
+                + ", colors=" + colors
+                + ", cmc=" + cmc
+                + ", rarity='" + rarity + '\''
+                + ", power='" + power + '\''
+                + ", toughness='" + toughness + '\''
+                + ", manaCost='" + manaCost + '\''
+                + ", text='" + text + '\''
+                + ", isAMultiColor=" + isAMultiColor
+                + ", isALand=" + isALand
+                + ", isAnArtifact=" + isAnArtifact
+                + ", multiVerseId=" + multiVerseId
+                + ", set=" + set
+                + ", quantity=" + quantity
+                + ", sideboard=" + sideboard
+                + ", layout='" + layout + '\''
+                + ", number='" + number + '\''
+                + ", rulings=" + rulings
+                + ", names=" + names
+                + ", superTypes=" + superTypes
+                + ", artist='" + artist + '\''
+                + ", flavor='" + flavor + '\''
+                + ", loyalty=" + loyalty
+                + ", printings=" + printings
+                + ", originalText=" + originalText
+                + '}';
     }
 
 }
