@@ -88,8 +88,8 @@ public class DataModule {
 
     @Provides
     @Singleton
-    PlayersStorage providePlayerStorage(PlayerDataSource playerDataSource) {
-        return new PlayersStorage(playerDataSource);
+    PlayersStorage providePlayerStorage(PlayerDataSource playerDataSource, Logger logger) {
+        return new PlayersStorage(playerDataSource, logger);
     }
 
     @Provides
@@ -100,8 +100,8 @@ public class DataModule {
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource) {
-        return new DecksStorage(fileUtil, deckDataSource);
+    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, Logger logger) {
+        return new DecksStorage(fileUtil, deckDataSource, logger);
     }
 
     @Provides

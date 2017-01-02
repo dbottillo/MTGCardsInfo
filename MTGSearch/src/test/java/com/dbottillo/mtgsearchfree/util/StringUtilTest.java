@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.util;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -13,7 +11,6 @@ import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@RunWith(MockitoJUnitRunner.class)
 public class StringUtilTest {
 
     @Test
@@ -32,7 +29,7 @@ public class StringUtilTest {
 
     @Test
     public void joinListOfColors(){
-        List<Integer> integerList = Arrays.asList(new Integer[]{0,1,2});
+        List integerList = Arrays.asList(new Integer[]{0,1,2});
         assertThat(StringUtil.joinListOfColors(integerList, ","), is("White,Blue,Black"));
         integerList = Arrays.asList(new Integer[]{0,1,2,3,4});
         assertThat(StringUtil.joinListOfColors(integerList, ","), is("White,Blue,Black,Red,Green"));
@@ -40,7 +37,7 @@ public class StringUtilTest {
 
     @Test
     public void joinListOfStrings(){
-        List<String> integerList = Arrays.asList(new String[]{"Uno", "Due", "Tre"});
+        List integerList = Arrays.asList(new String[]{"Uno", "Due", "Tre"});
         assertThat(StringUtil.joinListOfStrings(integerList, "*"), is("Uno*Due*Tre"));
     }
 }

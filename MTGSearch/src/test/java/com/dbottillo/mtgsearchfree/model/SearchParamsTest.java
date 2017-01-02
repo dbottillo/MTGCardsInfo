@@ -1,9 +1,8 @@
 package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
-import android.test.suitebuilder.annotation.SmallTest;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +12,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-@SmallTest
-public class SearchParamsTest extends BaseTest {
+public class SearchParamsTest extends BaseContextTest {
 
-    SearchParams searchParams;
+    private SearchParams searchParams;
 
     @Before
     public void setup() {
@@ -109,7 +107,7 @@ public class SearchParamsTest extends BaseTest {
     }
 
     @Test
-    public void isNotValid(){
+    public void isNotValid() {
         SearchParams searchParams = new SearchParams();
         assertThat(searchParams.isValid(), is(false));
 
@@ -131,7 +129,7 @@ public class SearchParamsTest extends BaseTest {
     }
 
     @Test
-    public void returnValidWithOnlyLandSet(){
+    public void returnValidWithOnlyLandSet() {
         SearchParams searchParams = new SearchParams();
         searchParams.setLand(true);
         assertTrue(searchParams.isValid());

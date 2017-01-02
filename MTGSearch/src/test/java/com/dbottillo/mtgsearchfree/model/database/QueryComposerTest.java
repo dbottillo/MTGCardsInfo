@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.IntParam;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertNotNull;
@@ -11,11 +10,6 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class QueryComposerTest {
-
-    @Before
-    public void setup() {
-
-    }
 
     @Test
     public void generateQueryFromConstructor() {

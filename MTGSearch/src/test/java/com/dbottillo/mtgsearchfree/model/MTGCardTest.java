@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,14 +14,13 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class MTGCardTest extends BaseTest {
+public class MTGCardTest extends BaseContextTest {
 
     private MTGCard card;
-    private MTGSet set;
 
     @Before
     public void setup() {
-        set = new MTGSet(2, "Zendikar");
+        MTGSet set = new MTGSet(2, "Zendikar");
         set.setCode("ZEN");
         card = new MTGCard(1);
         card.setSideboard(true);

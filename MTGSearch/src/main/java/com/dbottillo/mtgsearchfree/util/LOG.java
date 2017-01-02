@@ -26,6 +26,7 @@ public final class LOG {
             if (!element.getClassName().equals(LOG.class.getName())
                     && !element.getClassName().equals(BasicActivity.class.getName())
                     && !element.getClassName().equals(BasicFragment.class.getName())
+                    && !element.getClassName().equals(Logger.class.getName())
                     && !element.getClassName().equals(Instrumentation.class.getName())) {
                 validElement = element;
                 break;

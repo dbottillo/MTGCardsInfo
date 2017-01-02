@@ -80,9 +80,7 @@ public class NetworkIntentService extends IntentService {
         URL uri = new URL(url);
         HttpURLConnection urlConnection = (HttpURLConnection) uri.openConnection();
         urlConnection.setRequestMethod("GET");
-        if (Build.VERSION.SDK != null && Build.VERSION.SDK_INT > 13) {
-            urlConnection.setRequestProperty("Connection", "close");
-        }
+        urlConnection.setRequestProperty("Connection", "close");
 
         if (urlConnection.getResponseCode() == 200) {
             InputStream in = urlConnection.getInputStream();

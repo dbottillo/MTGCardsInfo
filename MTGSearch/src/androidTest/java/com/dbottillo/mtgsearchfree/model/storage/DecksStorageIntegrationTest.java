@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.google.gson.Gson;
 
 import org.junit.Before;
@@ -62,7 +63,7 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
         MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
         DeckDataSource deckDataSource = new DeckDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource, mtgCardDataSource);
-        storage = new DecksStorage(fileUtil, deckDataSource);
+        storage = new DecksStorage(fileUtil, deckDataSource, new Logger());
     }
 
     @Test
