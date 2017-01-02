@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
@@ -10,12 +9,15 @@ import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.List;
 
@@ -25,11 +27,18 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DecksPresenterImplTest extends BaseTest {
+public class DecksPresenterImplTest {
 
-    private DecksPresenter presenter;
-    private DecksInteractor interactor;
-    private DecksView view;
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+    private DecksPresenter underTest;
+
+    @Mock
+    DecksInteractor interactor;
+
+    @Mock
+    DecksView view;
 
     @Mock
     DeckMapper deckMapper;
@@ -52,11 +61,11 @@ public class DecksPresenterImplTest extends BaseTest {
     @Mock
     DeckBucket deckBucket;
 
+    @Mock
+    Logger logger;
+
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
-        interactor = mock(DecksInteractor.class);
-        view = mock(DecksView.class);
         when(interactor.load()).thenReturn(Observable.just(decks));
         when(interactor.addDeck("deck")).thenReturn(Observable.just(decks));
         when(interactor.importDeck(uri)).thenReturn(Observable.just(decks));
@@ -71,83 +80,83 @@ public class DecksPresenterImplTest extends BaseTest {
         when(interactor.moveCardFromSideboard(deck, card, 2)).thenReturn(Observable.just(cards));
         when(interactor.moveCardToSideboard(deck, card, 2)).thenReturn(Observable.just(cards));
         when(deckMapper.map(cards)).thenReturn(deckBucket);
-        presenter = new DecksPresenterImpl(interactor, deckMapper, new TestRunnerFactory());
-        presenter.init(view);
+        underTest = new DecksPresenterImpl(interactor, deckMapper, new TestRunnerFactory(), logger);
+        underTest.init(view);
     }
 
     @Test
     public void testLoadDecks() {
-        presenter.loadDecks();
+        underTest.loadDecks();
         verify(interactor).load();
         verify(view).decksLoaded(decks);
     }
 
     @Test
     public void testLoadDeck() {
-        presenter.loadDeck(deck);
+        underTest.loadDeck(deck);
         verify(interactor).loadDeck(deck);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testAddDeck() {
-        presenter.addDeck("deck");
+        underTest.addDeck("deck");
         verify(interactor).addDeck("deck");
         verify(view).decksLoaded(decks);
     }
 
     @Test
     public void testDeleteDeck() {
-        presenter.deleteDeck(deck);
+        underTest.deleteDeck(deck);
         verify(interactor).deleteDeck(deck);
         verify(view).decksLoaded(decks);
     }
 
     @Test
     public void testEditDeck() {
-        presenter.editDeck(deck, "deck");
+        underTest.editDeck(deck, "deck");
         verify(interactor).editDeck(deck, "deck");
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testAddCardToDeck() {
-        presenter.addCardToDeck(deck, card, 2);
+        underTest.addCardToDeck(deck, card, 2);
         verify(interactor).addCard(deck, card, 2);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testAddCardToDeckWithName() {
-        presenter.addCardToDeck("new", card, 2);
+        underTest.addCardToDeck("new", card, 2);
         verify(interactor).addCard("new", card, 2);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testRemoveCardFromDeck() {
-        presenter.removeCardFromDeck(deck, card);
+        underTest.removeCardFromDeck(deck, card);
         verify(interactor).removeCard(deck, card);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testRemoveAllCardFromDeck() {
-        presenter.removeAllCardFromDeck(deck, card);
+        underTest.removeAllCardFromDeck(deck, card);
         verify(interactor).removeAllCard(deck, card);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void testImportDeck() {
-        presenter.importDeck(uri);
+        underTest.importDeck(uri);
         verify(interactor).importDeck(uri);
         verify(view).decksLoaded(decks);
     }
 
     @Test
     public void willExportDeck() {
-        presenter.exportDeck(deck, cards);
+        underTest.exportDeck(deck, cards);
         verify(interactor).exportDeck(deck, cards);
         verify(view).deckExported(true);
     }
@@ -157,21 +166,21 @@ public class DecksPresenterImplTest extends BaseTest {
         MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
         Observable observable = Observable.error(exception);
         when(interactor.importDeck(uri)).thenReturn(observable);
-        presenter.importDeck(uri);
+        underTest.importDeck(uri);
         verify(interactor).importDeck(uri);
         verify(view).showError(exception);
     }
 
     @Test
     public void movesCardFromSideboard() {
-        presenter.moveCardFromSideBoard(deck, card, 2);
+        underTest.moveCardFromSideBoard(deck, card, 2);
         verify(interactor).moveCardFromSideboard(deck, card, 2);
         verify(view).deckLoaded(deckBucket);
     }
 
     @Test
     public void movesCardToSideboard() {
-        presenter.moveCardToSideBoard(deck, card, 2);
+        underTest.moveCardToSideBoard(deck, card, 2);
         verify(interactor).moveCardToSideboard(deck, card, 2);
         verify(view).deckLoaded(deckBucket);
     }

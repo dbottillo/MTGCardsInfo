@@ -1,14 +1,16 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,28 +23,32 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class PlayerPresenterImplTest extends BaseTest {
+public class PlayerPresenterImplTest {
 
-    PlayerPresenter presenter;
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
+    private PlayerPresenter underTest;
+
+    @Mock
     PlayerInteractor interactor;
 
+    @Mock
     PlayersView view;
 
     @Mock
     Player player;
 
-    List<Player> players;
+    private List<Player> players;
 
     @Mock
     List<Player> toEdit;
 
+    @Mock
+    Logger logger;
+
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
-        interactor = mock(PlayerInteractor.class);
-        view = mock(PlayersView.class);
-
         players = new ArrayList<>();
         players.add(new Player(1, "Liliana"));
         players.add(new Player(2, "Jayce"));
@@ -52,13 +58,13 @@ public class PlayerPresenterImplTest extends BaseTest {
         when(interactor.editPlayer(player)).thenReturn(Observable.just(players));
         when(interactor.removePlayer(player)).thenReturn(Observable.just(players));
         when(interactor.editPlayers(toEdit)).thenReturn(Observable.just(players));
-        presenter = new PlayerPresenterImpl(interactor, new TestRunnerFactory());
-        presenter.init(view);
+        underTest = new PlayerPresenterImpl(interactor, new TestRunnerFactory(), logger);
+        underTest.init(view);
     }
 
     @Test
     public void testLoadPlayers() {
-        presenter.loadPlayers();
+        underTest.loadPlayers();
         verify(interactor).load();
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -66,8 +72,8 @@ public class PlayerPresenterImplTest extends BaseTest {
 
     @Test
     public void testAddPlayer() {
-        presenter.loadPlayers();
-        presenter.addPlayer();
+        underTest.loadPlayers();
+        underTest.addPlayer();
         verify(interactor).addPlayer(any(Player.class));
         verify(view, times(2)).showLoading();
         verify(view, times(2)).playersLoaded(players);
@@ -75,7 +81,7 @@ public class PlayerPresenterImplTest extends BaseTest {
 
     @Test
     public void testEditPlayer() {
-        presenter.editPlayer(player);
+        underTest.editPlayer(player);
         verify(interactor).editPlayer(player);
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -83,7 +89,7 @@ public class PlayerPresenterImplTest extends BaseTest {
 
     @Test
     public void testEditPlayers() {
-        presenter.editPlayers(toEdit);
+        underTest.editPlayers(toEdit);
         verify(interactor).editPlayers(toEdit);
         verify(view).showLoading();
         verify(view).playersLoaded(players);
@@ -91,7 +97,7 @@ public class PlayerPresenterImplTest extends BaseTest {
 
     @Test
     public void testRemovePlayer() {
-        presenter.removePlayer(player);
+        underTest.removePlayer(player);
         verify(interactor).removePlayer(player);
         verify(view).showLoading();
         verify(view).playersLoaded(players);

@@ -1,42 +1,59 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 import rx.observers.TestSubscriber;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class CardFilterInteractorImplTest extends BaseTest{
+public class CardFilterInteractorImplTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Mock
     CardFilter cardFilter;
 
+    @Mock
+    CardsPreferencesImpl cardsPreferences;
+
+    @Mock
+    Logger logger;
+
+    private CardFilterInteractor underTest;
+
+    @Before
+    public void setUp() throws Exception {
+        when(cardsPreferences.load()).thenReturn(cardFilter);
+        underTest = new CardFilterInteractorImpl(cardsPreferences, logger);
+    }
+
     @Test
     public void willLoadDataFromStorage() {
-        CardsPreferencesImpl cardsPreferences = mock(CardsPreferencesImpl.class);
-        when(cardsPreferences.load()).thenReturn(cardFilter);
-        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
         TestSubscriber<CardFilter> testSubscriber = new TestSubscriber<>();
-        interactor.load().subscribe(testSubscriber);
+        underTest.load().subscribe(testSubscriber);
+
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Arrays.asList(cardFilter));
+        testSubscriber.assertReceivedOnNext(Collections.singletonList(cardFilter));
         verify(cardsPreferences).load();
     }
 
     @Test
     public void willSyncDataWithStorage() {
-        CardsPreferencesImpl cardsPreferences = mock(CardsPreferencesImpl.class);
-        CardFilterInteractorImpl interactor = new CardFilterInteractorImpl(cardsPreferences);
-        interactor.sync(cardFilter);
+        underTest.sync(cardFilter);
+
         verify(cardsPreferences).sync(cardFilter);
     }
 

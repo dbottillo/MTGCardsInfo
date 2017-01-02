@@ -22,9 +22,9 @@ import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
+import com.squareup.leakcanary.LeakCanary;
 
 import javax.inject.Inject;
 
@@ -60,7 +60,6 @@ public class MTGApp extends Application {
 
         if (!isUnitTesting) {
             TrackingManager.init(getApplicationContext());
-            LeakCanaryUtil.install(this);
             Fabric.with(this, new Crashlytics());
             Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
             checkReleaseNote();
@@ -70,6 +69,13 @@ public class MTGApp extends Application {
                 StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build());
             }
         }
+
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     protected DataModule generateDataModule() {

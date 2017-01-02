@@ -1,13 +1,11 @@
 package com.dbottillo.mtgsearchfree.mapper;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +14,19 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-@SmallTest
-public class DeckMapperTest extends BaseTest {
+public class DeckMapperTest {
 
-    DeckMapper deckMapper;
+    private DeckMapper underTest;
 
     @Before
     public void setup() {
-        deckMapper = new DeckMapper();
+        underTest = new DeckMapper();
     }
 
     @Test
     public void test_mapIsNotNull() throws Exception {
         List<MTGCard> cards = new ArrayList<>();
-        DeckBucket bucket = deckMapper.map(cards);
+        DeckBucket bucket = underTest.map(cards);
         assertNotNull(bucket);
     }
 
@@ -38,7 +35,7 @@ public class DeckMapperTest extends BaseTest {
         List<MTGCard> cards = new ArrayList<>();
         cards.add(new MTGCard(2));
         cards.add(new MTGCard(3));
-        DeckBucket bucket = deckMapper.map(cards);
+        DeckBucket bucket = underTest.map(cards);
         assertThat(bucket.numberOfCards(), is(2));
     }
 
@@ -50,7 +47,7 @@ public class DeckMapperTest extends BaseTest {
         MTGCard card = new MTGCard(4);
         card.setSideboard(true);
         cards.add(card);
-        DeckBucket bucket = deckMapper.map(cards);
+        DeckBucket bucket = underTest.map(cards);
         assertThat(bucket.numberOfCards(), is(3));
         assertThat(bucket.numberOfCardsWithoutSideboard(), is(2));
         assertThat(bucket.numberOfCardsInSideboard(), is(1));

@@ -1,12 +1,15 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,43 +20,47 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class PlayersStorageTest extends BaseTest {
+public class PlayersStorageTest {
 
-    private static PlayerDataSource playerDataSource;
-    private static Player player;
-    private static List<Player> players = Arrays.asList(new Player(1, "Jayce"), new Player(2, "Liliana"));
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
-    private PlayersStorage storage;
+    @Mock
+    PlayerDataSource playerDataSource;
 
-    @BeforeClass
-    public static void staticSetup() {
-        player = mock(Player.class);
-    }
+    @Mock
+    Player player;
+
+    @Mock
+    Logger logger;
+
+    private List<Player> players = Arrays.asList(new Player(1, "Jayce"), new Player(2, "Liliana"));
+
+    private PlayersStorage underTest;
 
     @Before
-    public void setupStorage() {
-        playerDataSource = mock(PlayerDataSource.class);
+    public void setup() {
         when(playerDataSource.getPlayers()).thenReturn(players);
-        storage = new PlayersStorage(playerDataSource);
+        underTest = new PlayersStorage(playerDataSource, logger);
     }
 
     @Test
     public void testLoad() {
-        List<Player> result = storage.load();
+        List<Player> result = underTest.load();
         verify(playerDataSource).getPlayers();
         assertThat(result, is(players));
     }
 
     @Test
     public void testAddPlayer() {
-        List<Player> result = storage.addPlayer(player);
+        List<Player> result = underTest.addPlayer(player);
         verify(playerDataSource).savePlayer(player);
         assertThat(result, is(players));
     }
 
     @Test
     public void testEditPlayer() {
-        List<Player> result = storage.editPlayer(player);
+        List<Player> result = underTest.editPlayer(player);
         verify(playerDataSource).savePlayer(player);
         assertThat(result, is(players));
     }
@@ -63,7 +70,7 @@ public class PlayersStorageTest extends BaseTest {
         Player player1 = mock(Player.class);
         Player player2 = mock(Player.class);
         List<Player> toEdit = Arrays.asList(player1, player2);
-        List<Player> result = storage.editPlayers(toEdit);
+        List<Player> result = underTest.editPlayers(toEdit);
         verify(playerDataSource).savePlayer(player1);
         verify(playerDataSource).savePlayer(player2);
         assertThat(result, is(players));
@@ -71,7 +78,7 @@ public class PlayersStorageTest extends BaseTest {
 
     @Test
     public void testRemovePlayer() {
-        List<Player> result = storage.removePlayer(player);
+        List<Player> result = underTest.removePlayer(player);
         verify(playerDataSource).removePlayer(player);
         assertThat(result, is(players));
     }

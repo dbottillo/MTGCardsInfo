@@ -7,7 +7,6 @@ import android.support.v4.app.DialogFragment;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.LeakCanaryUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
@@ -41,12 +40,6 @@ public abstract class BasicFragment extends DialogFragment {
         LOG.d();
 
         setHasOptionsMenu(true);
-    }
-
-
-    public void onDestroy() {
-        super.onDestroy();
-        LeakCanaryUtil.watchFragment(this);
     }
 
     void setActionBarTitle(String title) {

@@ -6,9 +6,12 @@ import android.content.SharedPreferences;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.CARDS_SHOW_TYPE;
@@ -21,9 +24,11 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 @SuppressLint("CommitPrefEdits")
 public class GeneralPreferencesTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     private GeneralPreferences underTest;
 
@@ -91,7 +96,6 @@ public class GeneralPreferencesTest {
 
     @Test
     public void isTooltipMainToShow_shouldReturnFalseIfItsAFreshInstall() {
-        when(sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true)).thenReturn(true);
         when(appInfo.getFirstInstallTime()).thenReturn(200L);
         when(appInfo.getLastUpdateTime()).thenReturn(200L);
 

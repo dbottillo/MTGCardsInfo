@@ -219,6 +219,15 @@
     <string name="main_fragment_tooltip">NEW: you can now switch between list and grid!</string>
     <string name="sort_az">Alphabetically</string>
     <string name="sort_color">WUBRG</string>
+    <string name="deck_not_imported">Cannot import deck</string>
+    <string name="move_card_to_deck">Move one to deck</string>
+    <string name="move_card_to_sideboard">Move one to sideboard</string>
+    <string name="move_all_card_to_deck">Move all to deck</string>
+    <string name="move_all_card_to_sideboard">Move all to sideboard</string>
+    <string name="card_migrator_title">Database update in progress</string>
+    <string name="card_migrator_notification_title">The app is updating the database of card in order to handle more features.</string>
+    <string name="card_migrator_text">The app is updating the database of card in order to handle more features. \n\nCheck your notification center to see if the update has finished.</string>
+    <string name="card_migrator_finished">The database has been updated, enjoy!</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
@@ -268,14 +277,6 @@
     <string name="cd_join_beta_header">Join beta</string>
     <string name="cd_close">Close</string>
     <string name="cd_tooltip_arrow">Close tooltip</string>
-    <string name="deck_not_imported">Cannot import deck</string>
-    <string name="move_card_to_deck">Move one to deck</string>
-    <string name="move_card_to_sideboard">Move one to sideboard</string>
-    <string name="move_all_card_to_deck">Move all to deck</string>
-    <string name="move_all_card_to_sideboard">Move all to sideboard</string>
-    <string name="card_migrator_title">Database update in progress</string>
-    <string name="card_migrator_notification_title">The app is updating the database of card in order to handle more features.</string>
-    <string name="card_migrator_text">The app is updating the database of card in order to handle more features. \n\nCheck your notification center to see if the update has finished.</string>
-    <string name="card_migrator_finished">The database has been updated, enjoy!</string>
+    <string name="cd_flip_card">Other side card</string>
 
 </resources>

@@ -3,46 +3,49 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.CardFilterView;
 
 import javax.inject.Inject;
 
 public class CardFilterPresenterImpl implements CardFilterPresenter, Runner.RxWrapperListener<CardFilter> {
 
-    CardFilterInteractor interactor;
+    private final CardFilterInteractor interactor;
+    private final Runner<CardFilter> wrapper;
+    private final MemoryStorage memoryStorage;
+    private final Logger logger;
     private CardFilterView filterView;
-    private Runner<CardFilter> wrapper;
-    private MemoryStorage memoryStorage;
 
     @Inject
     public CardFilterPresenterImpl(CardFilterInteractor interactor, RunnerFactory runnerFactory,
-                                   MemoryStorage memoryStorage) {
-        LOG.d("created");
+                                   MemoryStorage memoryStorage, Logger logger) {
+        this.logger = logger;
         this.interactor = interactor;
         this.wrapper = runnerFactory.simple();
         this.memoryStorage = memoryStorage;
+        logger.d("created");
     }
 
     @Override
     public void init(CardFilterView view) {
-        LOG.d();
+        logger.d();
         filterView = view;
     }
 
     public void loadFilter() {
-        LOG.d();
+        logger.d();
         if (memoryStorage.getFilter() != null) {
-            LOG.d("filters already in memory, will just return");
+            logger.d("filters already in memory, will just return");
             filterLoaded();
         } else {
-            LOG.d("obs created and now subscribe");
+            logger.d("obs created and now subscribe");
             wrapper.run(interactor.load(), this);
         }
     }
 
     @Override
     public void onNext(CardFilter cardFilter) {
-        LOG.d();
+        logger.d();
         memoryStorage.setFilter(cardFilter);
         filterLoaded();
     }
@@ -58,12 +61,12 @@ public class CardFilterPresenterImpl implements CardFilterPresenter, Runner.RxWr
     }
 
     private void filterLoaded() {
-        LOG.d();
+        logger.d();
         filterView.filterLoaded(memoryStorage.getFilter());
     }
 
     public void update(CardFilter.TYPE type, boolean on) {
-        LOG.d("update " + type.toString() + "with: " + on);
+        logger.d("update " + type.toString() + "with: " + on);
         if (memoryStorage.getFilter() == null){
             memoryStorage.setFilter(new CardFilter());
         }

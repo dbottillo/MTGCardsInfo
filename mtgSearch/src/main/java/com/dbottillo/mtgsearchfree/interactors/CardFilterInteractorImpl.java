@@ -3,25 +3,28 @@ package com.dbottillo.mtgsearchfree.interactors;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import rx.Observable;
 
 public class CardFilterInteractorImpl implements CardFilterInteractor {
 
-    CardsPreferences cardsPreferences;
+    private final CardsPreferences cardsPreferences;
+    private final Logger logger;
 
-    public CardFilterInteractorImpl(CardsPreferences cardsPreferences) {
-        LOG.d("created");
+    public CardFilterInteractorImpl(CardsPreferences cardsPreferences, Logger logger) {
+        this.logger = logger;
         this.cardsPreferences = cardsPreferences;
+        logger.d("created");
     }
 
     public Observable<CardFilter> load() {
-        LOG.d("loadSet");
+        logger.d("loadSet");
         return Observable.just(cardsPreferences.load());
     }
 
     public void sync(CardFilter filter) {
-        LOG.d("sync");
+        logger.d("sync");
         cardsPreferences.sync(filter);
     }
 

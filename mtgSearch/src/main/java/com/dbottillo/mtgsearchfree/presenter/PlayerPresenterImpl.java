@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 
@@ -15,45 +16,47 @@ import rx.Subscription;
 
 public class PlayerPresenterImpl implements PlayerPresenter, Runner.RxWrapperListener<List<Player>> {
 
-    PlayerInteractor interactor;
+    private final PlayerInteractor interactor;
+    private final Runner<List<Player>> runner;
+    private final Logger logger;
 
     private PlayersView playerView;
     private Subscription subscription = null;
     private List<Player> players;
-    private Runner<List<Player>> runner;
 
     private String[] names = {"Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace",
             "Liliana", "Elspeth", "Tezzeret", "Garruck",
             "Chandra", "Venser", "Doran", "Sorin"};
 
     @Inject
-    public PlayerPresenterImpl(PlayerInteractor interactor, RunnerFactory runnerFactory) {
-        LOG.d("created");
+    public PlayerPresenterImpl(PlayerInteractor interactor, RunnerFactory runnerFactory, Logger logger) {
+        this.logger = logger;
         this.interactor = interactor;
         this.runner = runnerFactory.simple();
+        logger.d("created");
     }
 
     public void detachView() {
-        LOG.d();
+        logger.d();
         subscription.unsubscribe();
     }
 
     @Override
     public void init(PlayersView view) {
-        LOG.d();
+        logger.d();
         playerView = view;
     }
 
     @Override
     public void loadPlayers() {
-        LOG.d();
+        logger.d();
         playerView.showLoading();
         subscription = runner.run(interactor.load(), this);
     }
 
     @Override
     public void addPlayer() {
-        LOG.d();
+        logger.d();
         Player player = new Player(getUniqueIdForPlayer(), getUniqueNameForPlayer());
         playerView.showLoading();
         subscription = runner.run(interactor.addPlayer(player), this);
@@ -61,28 +64,28 @@ public class PlayerPresenterImpl implements PlayerPresenter, Runner.RxWrapperLis
 
     @Override
     public void editPlayer(Player player) {
-        LOG.d();
+        logger.d();
         playerView.showLoading();
         subscription = runner.run(interactor.editPlayer(player), this);
     }
 
     @Override
     public void editPlayers(List<Player> players) {
-        LOG.d();
+        logger.d();
         playerView.showLoading();
         subscription = runner.run(interactor.editPlayers(players), this);
     }
 
     @Override
     public void removePlayer(Player player) {
-        LOG.d();
+        logger.d();
         playerView.showLoading();
         subscription = runner.run(interactor.removePlayer(player), this);
     }
 
     @Override
     public void onNext(List<Player> newPlayers) {
-        LOG.d();
+        logger.d();
         players = newPlayers;
         playerView.playersLoaded(players);
     }
@@ -94,7 +97,7 @@ public class PlayerPresenterImpl implements PlayerPresenter, Runner.RxWrapperLis
 
     @Override
     public void onCompleted() {
-        LOG.d();
+        logger.d();
     }
 
 

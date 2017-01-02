@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.model.storage;
 
 import android.net.Uri;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -11,13 +10,16 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,33 +31,43 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DecksStorageTest extends BaseTest {
+public class DecksStorageTest {
 
-    private static final long DECK_ID = 200L;
-    private static DeckDataSource deckDataSource;
-    private static MTGCardDataSource mtgCardDataSource;
-    private static Deck deck;
-    private static MTGCard card;
-    private static FileUtil fileUtil;
-    private static CardsBucket cardsBucket;
-    private static List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
-    private static List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
     private DecksStorage underTest;
 
-    @BeforeClass
-    public static void staticSetup() {
-        deck = mock(Deck.class);
-        card = mock(MTGCard.class);
-        fileUtil = mock(FileUtil.class);
-        cardsBucket = mock(CardsBucket.class);
-    }
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
+
+    @Mock
+    DeckDataSource deckDataSource;
+
+    @Mock
+    MTGCardDataSource mtgCardDataSource;
+
+    @Mock
+    Deck deck;
+
+    @Mock
+    MTGCard card;
+
+    @Mock
+    FileUtil fileUtil;
+
+    @Mock
+    CardsBucket cardsBucket;
+
+    @Mock
+    Logger logger;
+
+    private List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
+    private List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
+    private final long DECK_ID = 200L;
 
     @Before
-    public void setupStorage() {
-        deckDataSource = mock(DeckDataSource.class);
-        mtgCardDataSource = mock(MTGCardDataSource.class);
+    public void setup() {
         when(deck.getId()).thenReturn(DECK_ID);
         when(deckDataSource.getDecks()).thenReturn(decks);
         when(deckDataSource.getDeck(DECK_ID)).thenReturn(deck);
@@ -63,7 +75,7 @@ public class DecksStorageTest extends BaseTest {
         when(deckDataSource.addDeck(cardsBucket)).thenReturn(DECK_ID);
         when(deckDataSource.getCards(deck)).thenReturn(deckCards);
         when(deckDataSource.getCards(2L)).thenReturn(deckCards);
-        underTest = new DecksStorage(fileUtil, deckDataSource);
+        underTest = new DecksStorage(fileUtil, deckDataSource, logger);
     }
 
     @Test
