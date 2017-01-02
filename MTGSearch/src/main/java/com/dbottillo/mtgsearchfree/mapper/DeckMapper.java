@@ -11,7 +11,6 @@ public class DeckMapper {
     public DeckBucket map(List<MTGCard> mtgCards) {
         DeckBucket bucket = new DeckBucket();
         bucket.setCards(mtgCards);
-        LOG.d("mapping " + mtgCards.size() + " cards to " + bucket.toString());
         return bucket;
     }
 }

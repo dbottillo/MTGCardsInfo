@@ -8,9 +8,12 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
@@ -23,10 +26,12 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 public class CardsInteractorImplTest {
 
-    public static final int MULTIVERSE_ID = 180607;
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+    private static final int MULTIVERSE_ID = 180607;
     private CardsInteractor underTest;
 
     @Mock
@@ -38,21 +43,17 @@ public class CardsInteractorImplTest {
     @Mock
     private Deck deck;
     @Mock
-    private List<MTGCard> luckyCards = Arrays.asList(new MTGCard(2), new MTGCard(3));
-    @Mock
-    private List<MTGCard> favCards = Arrays.asList(new MTGCard(3), new MTGCard(4));
-    @Mock
-    private List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
-    @Mock
-    private List<MTGCard> searchCards = Arrays.asList(new MTGCard(6), new MTGCard(7));
-    @Mock
-    private List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
-    @Mock
     private MTGCard card;
     @Mock
     private MTGCard otherSideCard;
     @Mock
     Logger logger;
+
+    private List<MTGCard> luckyCards = Arrays.asList(new MTGCard(2), new MTGCard(3));
+    private List<MTGCard> favCards = Arrays.asList(new MTGCard(3), new MTGCard(4));
+    private List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
+    private List<MTGCard> searchCards = Arrays.asList(new MTGCard(6), new MTGCard(7));
+    private List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
 
     @Before
     public void setup() {

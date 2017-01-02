@@ -1,15 +1,15 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,42 +17,40 @@ import java.util.List;
 
 import rx.observers.TestSubscriber;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SmallTest
-@RunWith(RobolectricTestRunner.class)
 public class PlayerInteractorImplTest {
 
-    static PlayersStorage storage;
-    static Player player;
-    static List<Player> players = Arrays.asList(new Player(1, "Jace"), new Player(2, "Liliana"));
-    static List<Player> toEditPlayers = Arrays.asList(new Player(3, "Chandra"), new Player(4, "Sorin"));
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
-    private PlayerInteractor playerInteractor;
+    @Mock
+    PlayersStorage storage;
+    @Mock
+    Player player;
+    @Mock
+    Logger logger;
 
-    @BeforeClass
-    public static void setup() {
-        storage = mock(PlayersStorage.class);
-        player = mock(Player.class);
+    private List<Player> players = Arrays.asList(new Player(1, "Jace"), new Player(2, "Liliana"));
+    private List<Player> toEditPlayers = Arrays.asList(new Player(3, "Chandra"), new Player(4, "Sorin"));
+
+    private PlayerInteractor underTest;
+
+    @Before
+    public void setup() {
         when(storage.load()).thenReturn(players);
         when(storage.addPlayer(player)).thenReturn(players);
         when(storage.removePlayer(player)).thenReturn(players);
         when(storage.editPlayer(player)).thenReturn(players);
         when(storage.editPlayers(toEditPlayers)).thenReturn(players);
+        underTest = new PlayerInteractorImpl(storage, logger);
     }
-
-    @Before
-    public void init() {
-        playerInteractor = new PlayerInteractorImpl(storage);
-    }
-
 
     @Test
     public void testLoad() {
         TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
-        playerInteractor.load().subscribe(testSubscriber);
+        underTest.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
         verify(storage).load();
@@ -61,7 +59,7 @@ public class PlayerInteractorImplTest {
     @Test
     public void testAddPlayer() {
         TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
-        playerInteractor.addPlayer(player).subscribe(testSubscriber);
+        underTest.addPlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
         verify(storage).addPlayer(player);
@@ -70,7 +68,7 @@ public class PlayerInteractorImplTest {
     @Test
     public void testEditPlayer() {
         TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
-        playerInteractor.editPlayer(player).subscribe(testSubscriber);
+        underTest.editPlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
         verify(storage).editPlayer(player);
@@ -79,7 +77,7 @@ public class PlayerInteractorImplTest {
     @Test
     public void testEditPlayers() {
         TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
-        playerInteractor.editPlayers(toEditPlayers).subscribe(testSubscriber);
+        underTest.editPlayers(toEditPlayers).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
         verify(storage).editPlayers(toEditPlayers);
@@ -88,7 +86,7 @@ public class PlayerInteractorImplTest {
     @Test
     public void testRemovePlayer() {
         TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
-        playerInteractor.removePlayer(player).subscribe(testSubscriber);
+        underTest.removePlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
         verify(storage).removePlayer(player);

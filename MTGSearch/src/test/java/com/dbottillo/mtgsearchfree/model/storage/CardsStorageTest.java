@@ -10,10 +10,13 @@ import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Matchers;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
@@ -28,13 +31,16 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 public class CardsStorageTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     private static final int MULTIVERSE_ID = 180607;
 
     @Mock
     private static MTGSet set;
+
     @Mock
     private Deck deck;
 
@@ -50,9 +56,15 @@ public class CardsStorageTest {
     @Mock
     private Logger logger;
 
-    private MTGCardDataSource mtgCardDataSource;
-    private DeckDataSource deckDataSource;
-    private FavouritesDataSource favouritesDataSource;
+    @Mock
+    MTGCardDataSource mtgCardDataSource;
+
+    @Mock
+    DeckDataSource deckDataSource;
+
+    @Mock
+    FavouritesDataSource favouritesDataSource;
+
     private List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
     private List<MTGCard> luckyCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
     private List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
@@ -68,9 +80,6 @@ public class CardsStorageTest {
         MTGCard fav2 = new MTGCard(8);
         fav1.setMultiVerseId(101);
         favCards = Arrays.asList(fav1, fav2);
-        mtgCardDataSource = mock(MTGCardDataSource.class);
-        deckDataSource = mock(DeckDataSource.class);
-        favouritesDataSource = mock(FavouritesDataSource.class);
         when(mtgCardDataSource.getSet(set)).thenReturn(setCards);
         when(favouritesDataSource.getCards(anyBoolean())).thenReturn(favCards);
         when(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards);

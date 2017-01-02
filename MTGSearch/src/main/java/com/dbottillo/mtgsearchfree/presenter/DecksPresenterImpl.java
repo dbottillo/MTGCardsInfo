@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
 import java.util.List;
@@ -19,97 +20,99 @@ import rx.functions.Func1;
 
 public class DecksPresenterImpl implements DecksPresenter {
 
-    DecksInteractor interactor;
+    private final DecksInteractor interactor;
     private DecksView decksView;
-    private Runner<Boolean> exportWrapper;
-    private Runner<List<Deck>> deckWrapper;
-    private RunnerAndMap<List<MTGCard>, DeckBucket> cardWrapper;
-    private DeckMapper deckMapper;
+    private final Runner<Boolean> exportWrapper;
+    private final Runner<List<Deck>> deckWrapper;
+    private final RunnerAndMap<List<MTGCard>, DeckBucket> cardWrapper;
+    private final DeckMapper deckMapper;
+    private final Logger logger;
 
     @Inject
     public DecksPresenterImpl(DecksInteractor interactor, DeckMapper deckMapper,
-                              RunnerFactory runnerFactory) {
-        LOG.d("created");
+                              RunnerFactory runnerFactory, Logger logger) {
+        this.logger = logger;
         this.interactor = interactor;
         this.deckMapper = deckMapper;
         this.exportWrapper = runnerFactory.simple();
         this.deckWrapper = runnerFactory.simple();
         this.cardWrapper = runnerFactory.withMap();
+        logger.d("created");
     }
 
     public void init(DecksView view) {
-        LOG.d();
+        logger.d();
         decksView = view;
     }
 
     public void loadDecks() {
-        LOG.d();
+        logger.d();
         deckWrapper.run(interactor.load(), deckObserver);
     }
 
     @Override
     public void loadDeck(Deck deck) {
-        LOG.d("loadSet " + deck);
+        logger.d("loadSet " + deck);
         cardWrapper.runAndMap(interactor.loadDeck(deck), mapper, cardsObserver);
     }
 
     @Override
     public void addDeck(String name) {
-        LOG.d("add " + name);
+        logger.d("add " + name);
         deckWrapper.run(interactor.addDeck(name), deckObserver);
     }
 
     @Override
     public void deleteDeck(Deck deck) {
-        LOG.d("delete " + deck);
+        logger.d("delete " + deck);
         deckWrapper.run(interactor.deleteDeck(deck), deckObserver);
     }
 
     @Override
     public void editDeck(Deck deck, String name) {
-        LOG.d("edit " + deck + " with " + name);
+        logger.d("edit " + deck + " with " + name);
         cardWrapper.runAndMap(interactor.editDeck(deck, name), mapper, cardsObserver);
     }
 
     @Override
     public void addCardToDeck(String name, MTGCard card, int quantity) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.addCard(name, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void addCardToDeck(Deck deck, MTGCard card, int quantity) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.addCard(deck, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void removeCardFromDeck(Deck deck, MTGCard card) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.removeCard(deck, card), mapper, cardsObserver);
     }
 
     @Override
     public void removeAllCardFromDeck(Deck deck, MTGCard card) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.removeAllCard(deck, card), mapper, cardsObserver);
     }
 
     @Override
     public void moveCardFromSideBoard(Deck deck, MTGCard card, int quantity) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.moveCardFromSideboard(deck, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void moveCardToSideBoard(Deck deck, MTGCard card, int quantity) {
-        LOG.d();
+        logger.d();
         cardWrapper.runAndMap(interactor.moveCardToSideboard(deck, card, quantity), mapper, cardsObserver);
     }
 
     @Override
     public void importDeck(Uri uri) {
-        LOG.d("import " + uri.toString());
+        logger.d("import " + uri.toString());
         deckWrapper.run(interactor.importDeck(uri), deckObserver);
     }
 
@@ -143,7 +146,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     Runner.RxWrapperListener<List<Deck>> deckObserver = new Runner.RxWrapperListener<List<Deck>>() {
         @Override
         public void onNext(List<Deck> decks) {
-            LOG.d();
+            logger.d();
             decksView.decksLoaded(decks);
         }
 
@@ -166,7 +169,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     Runner.RxWrapperListener<DeckBucket> cardsObserver = new Runner.RxWrapperListener<DeckBucket>() {
         @Override
         public void onNext(DeckBucket bucket) {
-            LOG.d();
+            logger.d();
             decksView.deckLoaded(bucket);
         }
 

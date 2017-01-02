@@ -13,11 +13,12 @@ import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.List;
 
@@ -31,13 +32,18 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 public class CardsPresenterImplTest  {
 
-    private CardsPresenter presenter;
-    private CardsInteractor interactor;
-    private CardsView view;
-    private int[] idFavs = new int[]{2, 3, 4};
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+    private CardsPresenter underTest;
+
+    @Mock
+    CardsInteractor interactor;
+
+    @Mock
+    CardsView view;
 
     @Mock
     Deck deck;
@@ -75,11 +81,11 @@ public class CardsPresenterImplTest  {
     @Mock
     Logger logger;
 
+    private int[] idFavs = new int[]{2, 3, 4};
+
     @Before
     public void setup() {
         MemoryStorage memoryStorage = new MemoryStorage(logger);
-        interactor = mock(CardsInteractor.class);
-        view = mock(CardsView.class);
         when(deck.getName()).thenReturn("deck");
         when(searchParams.toString()).thenReturn("search");
         when(set.getName()).thenReturn("set");
@@ -92,14 +98,14 @@ public class CardsPresenterImplTest  {
         when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
         when(deckMapper.map(deckCards)).thenReturn(deckBucket);
-        presenter = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
+        underTest = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
                 new TestRunnerFactory(), memoryStorage, logger);
-        presenter.init(view);
+        underTest.init(view);
     }
 
     @Test
     public void testGetLuckyCards() {
-        presenter.getLuckyCards(3);
+        underTest.getLuckyCards(3);
         verify(interactor).getLuckyCards(3);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardsLoaded(argument.capture());
@@ -109,7 +115,7 @@ public class CardsPresenterImplTest  {
 
     @Test
     public void testLoadFavourites() {
-        presenter.loadFavourites();
+        underTest.loadFavourites();
         verify(interactor).getFavourites();
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardsLoaded(argument.capture());
@@ -119,7 +125,7 @@ public class CardsPresenterImplTest  {
 
     @Test
     public void testLoadDeck() {
-        presenter.loadDeck(deck);
+        underTest.loadDeck(deck);
         verify(interactor).loadDeck(deck);
         ArgumentCaptor<DeckBucket> argument = ArgumentCaptor.forClass(DeckBucket.class);
         verify(view).deckLoaded(argument.capture());
@@ -128,7 +134,7 @@ public class CardsPresenterImplTest  {
 
     @Test
     public void testDoSearch() {
-        presenter.doSearch(searchParams);
+        underTest.doSearch(searchParams);
         verify(interactor).doSearch(searchParams);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardsLoaded(argument.capture());
@@ -138,29 +144,29 @@ public class CardsPresenterImplTest  {
 
     @Test
     public void testRemoveFromFavourite() {
-        presenter.removeFromFavourite(card, false);
+        underTest.removeFromFavourite(card, false);
         verifyNoMoreInteractions(view);
         CardsView newView = mock(CardsView.class);
-        presenter.init(newView);
-        presenter.removeFromFavourite(card, true);
+        underTest.init(newView);
+        underTest.removeFromFavourite(card, true);
         verify(newView).favIdLoaded(idFavs);
         verify(interactor, times(2)).removeFromFavourite(card);
     }
 
     @Test
     public void testSaveAsFavourite() {
-        presenter.saveAsFavourite(card, false);
+        underTest.saveAsFavourite(card, false);
         verifyNoMoreInteractions(view);
         CardsView newView = mock(CardsView.class);
-        presenter.init(newView);
-        presenter.saveAsFavourite(card, true);
+        underTest.init(newView);
+        underTest.saveAsFavourite(card, true);
         verify(newView).favIdLoaded(idFavs);
         verify(interactor, times(2)).saveAsFavourite(card);
     }
 
     @Test
     public void testLoadCards() {
-        presenter.loadCards(set);
+        underTest.loadCards(set);
         verify(interactor).loadSet(set);
         ArgumentCaptor<CardsBucket> argument = ArgumentCaptor.forClass(CardsBucket.class);
         verify(view).cardsLoaded(argument.capture());
@@ -170,15 +176,15 @@ public class CardsPresenterImplTest  {
 
     @Test
     public void loadIDFavsFromDatabaseOnColdStart() {
-        presenter.loadIdFavourites();
+        underTest.loadIdFavourites();
         verify(interactor).loadIdFav();
         verify(view).favIdLoaded(idFavs);
     }
 
     @Test
     public void keepIDFavsInCacheAfterFirstRun() throws InterruptedException {
-        presenter.loadIdFavourites();
-        presenter.loadIdFavourites();
+        underTest.loadIdFavourites();
+        underTest.loadIdFavourites();
         verify(interactor, times(1)).loadIdFav();
         verify(view, times(2)).favIdLoaded(idFavs);
     }

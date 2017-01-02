@@ -1,16 +1,11 @@
 package com.dbottillo.mtgsearchfree.model;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
-import com.dbottillo.mtgsearchfree.BaseTest;
-
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-@SmallTest
-public class CardPropertiesTest extends BaseTest {
+public class CardPropertiesTest {
 
     @Test
     public void CardProperties_areCorrect() {

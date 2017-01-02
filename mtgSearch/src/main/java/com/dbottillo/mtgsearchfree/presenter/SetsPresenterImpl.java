@@ -1,9 +1,12 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
+import android.util.Log;
+
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
 import java.util.List;
@@ -14,29 +17,31 @@ import rx.Observable;
 
 public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListener<List<MTGSet>> {
 
-    private SetsInteractor interactor;
+    private final SetsInteractor interactor;
     private SetsView setView;
-    private CardsPreferences cardsPreferences;
-    private Runner<List<MTGSet>> wrapper;
-    private MemoryStorage memoryStorage;
+    private final CardsPreferences cardsPreferences;
+    private final Runner<List<MTGSet>> wrapper;
+    private final MemoryStorage memoryStorage;
+    private final Logger logger;
 
     @Inject
     public SetsPresenterImpl(SetsInteractor interactor, RunnerFactory runnerFactory,
-                             CardsPreferences cardsPreferences, MemoryStorage memoryStorage) {
-        LOG.d("created");
+                             CardsPreferences cardsPreferences, MemoryStorage memoryStorage, Logger logger) {
+        this.logger = logger;
         this.interactor = interactor;
         this.wrapper = runnerFactory.simple();
         this.cardsPreferences = cardsPreferences;
         this.memoryStorage = memoryStorage;
+        logger.d("created");
     }
 
     public void init(SetsView view) {
-        LOG.d();
+        logger.d();
         setView = view;
     }
 
     public void loadSets() {
-        LOG.d();
+        logger.d();
         if (memoryStorage.getSets() != null) {
             setView.setsLoaded(memoryStorage.getSets());
             return;
@@ -57,7 +62,7 @@ public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListene
 
     @Override
     public void onNext(List<MTGSet> mtgSets) {
-        LOG.d();
+        logger.d();
         memoryStorage.setSets(mtgSets);
         setView.setsLoaded(mtgSets);
     }

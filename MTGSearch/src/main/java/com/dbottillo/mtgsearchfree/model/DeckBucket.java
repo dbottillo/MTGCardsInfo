@@ -1,7 +1,5 @@
 package com.dbottillo.mtgsearchfree.model;
 
-import com.dbottillo.mtgsearchfree.util.LOG;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +51,6 @@ public class DeckBucket extends CardsBucket {
 
     @Override
     public List<MTGCard> getCards() {
-        LOG.d("deck of bucket " + key + " requested");
         ArrayList<MTGCard> cards = new ArrayList<>(creatures);
         cards.addAll(instantAndSorceries);
         cards.addAll(other);
@@ -125,7 +122,7 @@ public class DeckBucket extends CardsBucket {
         return totalQuantityOfList(other);
     }
 
-    private static int totalQuantityOfList(List<MTGCard> list){
+    private static int totalQuantityOfList(List<MTGCard> list) {
         int total = 0;
         for (MTGCard card : list) {
             total += card.getQuantity();
