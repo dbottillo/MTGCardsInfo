@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.model;
 import android.os.Parcel;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @SmallTest
-public class MTGSetTest extends BaseTest {
+public class MTGSetContextTest extends BaseContextTest {
 
     MTGSet set;
 

@@ -34,8 +34,8 @@ public class PresentersModule {
     @Provides
     CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor,
                                                    RunnerFactory factory,
-                                                   MemoryStorage memoryStorage) {
-        return new CardFilterPresenterImpl(interactor, factory, memoryStorage);
+                                                   MemoryStorage memoryStorage, Logger logger) {
+        return new CardFilterPresenterImpl(interactor, factory, memoryStorage, logger);
     }
 
     @Provides
@@ -52,21 +52,21 @@ public class PresentersModule {
     SetsPresenter provideSetsPresenter(SetsInteractor interactor,
                                        RunnerFactory factory,
                                        CardsPreferences cardsPreferences,
-                                       MemoryStorage memoryStorage) {
-        return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage);
+                                       MemoryStorage memoryStorage, Logger logger) {
+        return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage, logger);
     }
 
     @Provides
     PlayerPresenter providePlayerPresenter(PlayerInteractor interactor,
-                                           RunnerFactory factory) {
-        return new PlayerPresenterImpl(interactor, factory);
+                                           RunnerFactory factory, Logger logger) {
+        return new PlayerPresenterImpl(interactor, factory, logger);
     }
 
     @Provides
     DecksPresenter provideDecksPresenter(DecksInteractor interactor,
                                          DeckMapper deckMapper,
-                                         RunnerFactory factory) {
-        return new DecksPresenterImpl(interactor, deckMapper, factory);
+                                         RunnerFactory factory, Logger logger) {
+        return new DecksPresenterImpl(interactor, deckMapper, factory, logger);
     }
 
     @Provides

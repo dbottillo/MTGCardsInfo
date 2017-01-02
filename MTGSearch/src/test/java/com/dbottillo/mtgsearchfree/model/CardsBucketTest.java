@@ -1,12 +1,11 @@
 package com.dbottillo.mtgsearchfree.model;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
-import com.dbottillo.mtgsearchfree.BaseTest;
-
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,27 +14,25 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@SmallTest
-public class CardsBucketTest extends BaseTest {
+public class CardsBucketTest {
 
-    static MTGSet set;
-    CardsBucket cardsSetBucket;
-    CardsBucket genericBucket;
-    List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
-    List<MTGCard> genericCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
+    @Mock
+    MTGSet set;
 
-    @BeforeClass
-    public static void setupModel() {
-        set = mock(MTGSet.class);
-        when(set.getName()).thenReturn("Zendikar");
-    }
+    private CardsBucket cardsSetBucket;
+    private CardsBucket genericBucket;
+    private List<MTGCard> setCards = Arrays.asList(new MTGCard(5), new MTGCard(6));
+    private List<MTGCard> genericCards = Arrays.asList(new MTGCard(8), new MTGCard(9));
+
 
     @Before
     public void setup() {
+        when(set.getName()).thenReturn("Zendikar");
         cardsSetBucket = new CardsBucket(set, setCards);
         genericBucket = new CardsBucket("fav", genericCards);
     }

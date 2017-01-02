@@ -72,6 +72,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="14dp"
                     android:layout_marginLeft="@dimen/base_margin"
+                    android:contentDescription="@string/cd_flip_card"
                     app:srcCompat="@drawable/ic_swap_horiz"
                     android:tint="@android:color/white"
                     android:background="@drawable/btn_oval_accent"

@@ -25,8 +25,8 @@ import dagger.Provides;
 class InteractorsModule {
 
     @Provides
-    CardFilterInteractor provideCardFilterInteractor(CardsPreferences cardsPreferences) {
-        return new CardFilterInteractorImpl(cardsPreferences);
+    CardFilterInteractor provideCardFilterInteractor(CardsPreferences cardsPreferences, Logger logger) {
+        return new CardFilterInteractorImpl(cardsPreferences, logger);
     }
 
     @Provides
@@ -35,18 +35,18 @@ class InteractorsModule {
     }
 
     @Provides
-    SetsInteractor provideSetsInteractor(SetDataSource setDataSource) {
-        return new SetsInteractorImpl(setDataSource);
+    SetsInteractor provideSetsInteractor(SetDataSource setDataSource, Logger logger) {
+        return new SetsInteractorImpl(setDataSource, logger);
     }
 
     @Provides
-    PlayerInteractor providePlayerInteractor(PlayersStorage playersStorage) {
-        return new PlayerInteractorImpl(playersStorage);
+    PlayerInteractor providePlayerInteractor(PlayersStorage playersStorage, Logger logger) {
+        return new PlayerInteractorImpl(playersStorage, logger);
     }
 
     @Provides
-    DecksInteractor provideDecksInteractor(DecksStorage decksStorage, FileUtil fileUtil) {
-        return new DecksInteractorImpl(decksStorage, fileUtil);
+    DecksInteractor provideDecksInteractor(DecksStorage decksStorage, FileUtil fileUtil, Logger logger) {
+        return new DecksInteractorImpl(decksStorage, fileUtil, logger);
     }
 }
 

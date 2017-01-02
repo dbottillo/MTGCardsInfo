@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.model;
 
 import android.test.suitebuilder.annotation.SmallTest;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @SmallTest
-public class DeckBucketTest extends BaseTest {
+public class DeckBucketContextTest extends BaseContextTest {
 
     private static final int NUMBER_OF_UNIQUE_CARDS = 12;
     private static final int NUMBER_OF_TOTAL_CARDS = 30;

@@ -1,9 +1,8 @@
 package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
-import android.test.suitebuilder.annotation.SmallTest;
 
-import com.dbottillo.mtgsearchfree.BaseTest;
+import com.dbottillo.mtgsearchfree.BaseContextTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,10 +10,9 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-@SmallTest
-public class DeckTest extends BaseTest {
+public class DeckTest extends BaseContextTest {
 
-    Deck deck;
+    private Deck deck;
 
     @Before
     public void setup() {

@@ -200,6 +200,16 @@
     <string name="main_fragment_tooltip">NUOVO: ora puoi visualizzare le carte su griglia o su lista!</string>
     <string name="sort_az">Alfabeticamente</string>
     <string name="sort_color">WUBRG</string>
+    <string name="deck_not_imported">Impossibile caricare il mazzo</string>
+    <string name="move_card_to_deck">Sposta una nel mazzo</string>
+    <string name="move_card_to_sideboard">Sposta una nel side</string>
+    <string name="move_all_card_to_deck">Sposta tutte nel mazzo</string>
+    <string name="move_all_card_to_sideboard">Sposta tutte nel side</string>
+
+    <string name="card_migrator_title">Aggiornamento database in corso</string>
+    <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
+    <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
+    <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
 
     <string name="cd_price_go">Guarda Prezzo</string>
     <string name="cd_drawer_header">Planeswalker</string>
@@ -219,15 +229,6 @@
     <string name="cd_join_beta_header">Partecipa alla beta</string>
     <string name="cd_close">Chiudi</string>
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
-    <string name="deck_not_imported">Impossibile caricare il mazzo</string>
-    <string name="move_card_to_deck">Sposta una nel mazzo</string>
-    <string name="move_card_to_sideboard">Sposta una nel side</string>
-    <string name="move_all_card_to_deck">Sposta tutte nel mazzo</string>
-    <string name="move_all_card_to_sideboard">Sposta tutte nel side</string>
-
-    <string name="card_migrator_title">Aggiornamento database in corso</string>
-    <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
-    <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
-    <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
+    <string name="cd_flip_card">Gira carta</string>
 
 </resources>
