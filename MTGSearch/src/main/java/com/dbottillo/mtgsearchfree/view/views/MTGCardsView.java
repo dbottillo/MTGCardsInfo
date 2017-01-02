@@ -90,7 +90,9 @@ public class MTGCardsView extends RelativeLayout {
     public void setGridOn() {
         LOG.d();
         grid = true;
-        GridLayoutManager glm = new GridLayoutManager(getContext(), getResources().getInteger(R.integer.cards_grid_column_count));
+        int columns = getResources().getInteger(R.integer.cards_grid_column_count);
+        GridLayoutManager glm = new GridLayoutManager(getContext(), columns);
+        glm.setInitialPrefetchItemCount(columns);
         listView.addItemDecoration(itemDecorator);
         listView.setLayoutManager(glm);
         tryRefresh();
@@ -100,6 +102,7 @@ public class MTGCardsView extends RelativeLayout {
         LOG.d();
         grid = false;
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        llm.setInitialPrefetchItemCount(6);
         listView.removeItemDecoration(itemDecorator);
         listView.setLayoutManager(llm);
         tryRefresh();
