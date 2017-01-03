@@ -64,7 +64,7 @@ public class DecksStorageTest {
 
     private List<MTGCard> deckCards = Arrays.asList(new MTGCard(18), new MTGCard(19));
     private List<Deck> decks = Arrays.asList(new Deck(1), new Deck(2));
-    private final long DECK_ID = 200L;
+    private final static long DECK_ID = 200L;
 
     @Before
     public void setup() {

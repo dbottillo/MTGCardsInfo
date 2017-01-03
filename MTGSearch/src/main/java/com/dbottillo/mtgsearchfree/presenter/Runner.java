@@ -1,10 +1,11 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import rx.Observable;
-import rx.Observer;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class Runner<T> {
 
@@ -16,23 +17,27 @@ public class Runner<T> {
         void onCompleted();
     }
 
-    Subscription run(Observable<T> on, final RxWrapperListener<T> listener) {
+    void run(Observable<T> on, final RxWrapperListener<T> listener) {
         on.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
-        return on.subscribe(new Observer<T>() {
-            @Override
-            public void onCompleted() {
-                if (listener != null) {
-                    listener.onCompleted();
-                }
-
-            }
-
+        on.subscribe(new Observer<T>() {
             @Override
             public void onError(Throwable e) {
                 if (listener != null) {
                     listener.onError(e);
                 }
+            }
+
+            @Override
+            public void onComplete() {
+                if (listener != null) {
+                    listener.onCompleted();
+                }
+            }
+
+            @Override
+            public void onSubscribe(Disposable d) {
+
             }
 
             @Override
@@ -42,5 +47,6 @@ public class Runner<T> {
                 }
             }
         });
+
     }
 }

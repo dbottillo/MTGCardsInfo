@@ -8,7 +8,6 @@ import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 
@@ -16,7 +15,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import rx.functions.Func1;
+import io.reactivex.functions.Function;
 
 public class DecksPresenterImpl implements DecksPresenter {
 
@@ -136,14 +135,14 @@ public class DecksPresenterImpl implements DecksPresenter {
         });
     }
 
-    private Func1<List<MTGCard>, DeckBucket> mapper = new Func1<List<MTGCard>, DeckBucket>() {
+    private Function<List<MTGCard>, DeckBucket> mapper = new Function<List<MTGCard>, DeckBucket>() {
         @Override
-        public DeckBucket call(List<MTGCard> mtgCards) {
+        public DeckBucket apply(List<MTGCard> mtgCards) throws Exception {
             return deckMapper.map(mtgCards);
         }
     };
 
-    Runner.RxWrapperListener<List<Deck>> deckObserver = new Runner.RxWrapperListener<List<Deck>>() {
+    private Runner.RxWrapperListener<List<Deck>> deckObserver = new Runner.RxWrapperListener<List<Deck>>() {
         @Override
         public void onNext(List<Deck> decks) {
             logger.d();
@@ -166,7 +165,7 @@ public class DecksPresenterImpl implements DecksPresenter {
         }
     };
 
-    Runner.RxWrapperListener<DeckBucket> cardsObserver = new Runner.RxWrapperListener<DeckBucket>() {
+    private Runner.RxWrapperListener<DeckBucket> cardsObserver = new Runner.RxWrapperListener<DeckBucket>() {
         @Override
         public void onNext(DeckBucket bucket) {
             logger.d();

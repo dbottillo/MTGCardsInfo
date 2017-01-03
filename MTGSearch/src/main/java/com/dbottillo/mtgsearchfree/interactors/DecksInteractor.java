@@ -8,7 +8,8 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
+
 
 public interface DecksInteractor {
 

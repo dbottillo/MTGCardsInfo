@@ -1,22 +1,18 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.Subscription;
 
-public class TestRunner<T> extends Runner<T> {
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
+class TestRunner<T> extends Runner<T> {
 
     @Override
-    Subscription run(Observable<T> on, final RxWrapperListener<T> listener) {
-        on.toBlocking().subscribe(new Subscriber<T>() {
+    void run(Observable<T> on, final RxWrapperListener<T> listener) {
+        on.blockingSubscribe(new Observer<T>() {
             @Override
-            public void onCompleted() {
+            public void onSubscribe(Disposable d) {
 
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                listener.onError(e);
             }
 
             @Override
@@ -25,7 +21,19 @@ public class TestRunner<T> extends Runner<T> {
                     listener.onNext(t);
                 }
             }
+
+            @Override
+            public void onError(Throwable e) {
+                if (listener != null) {
+                    listener.onError(e);
+                }
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
         });
-        return null;
+
     }
 }

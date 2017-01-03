@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 public interface PlayerInteractor {
 

@@ -9,7 +9,7 @@ import com.dbottillo.mtgsearchfree.util.Logger;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 public class CardsInteractorImpl implements CardsInteractor {
 
