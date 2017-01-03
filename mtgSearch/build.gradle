@@ -9,8 +9,8 @@ buildscript {
     ext.butterknife_version = '8.4.0'
     ext.mockito_version= '2.1.0'
     ext.roboelectric_version = '3.1.4'
-    ext.rx_java_version = '1.2.3'
-    ext.rx_android_version = '1.2.1'
+    ext.rx_java_version = '2.0.3'
+    ext.rx_android_version = '2.0.1'
     ext.picasso_version = '2.5.2'
     ext.crashlytics_version = '2.4.0'
     ext.junit_version = '4.12'
@@ -22,6 +22,7 @@ buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -143,8 +144,8 @@ dependencies {
     compile "com.android.support:design:$support_library_version"
     compile "com.jakewharton:butterknife:$butterknife_version"
     apt "com.jakewharton:butterknife-compiler:$butterknife_version"
-    compile "io.reactivex:rxandroid:$rx_android_version"
-    compile "io.reactivex:rxjava:$rx_java_version"
+    compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rx_android_version"
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.google.dagger:dagger:$dagger_version"
     apt "com.google.dagger:dagger-compiler:$dagger_version"

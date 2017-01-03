@@ -16,8 +16,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import rx.Subscription;
-import rx.functions.Func1;
+import io.reactivex.functions.Function;
+
 
 public class CardsPresenterImpl implements CardsPresenter {
 
@@ -25,7 +25,6 @@ public class CardsPresenterImpl implements CardsPresenter {
     private CardsView cardsView;
     private DeckMapper deckMapper;
     private GeneralData generalData;
-    private Subscription subscription = null;
     private Runner<List<MTGCard>> cardsWrapper;
     private RunnerAndMap<List<MTGCard>, DeckBucket> deckWrapper;
     private Runner<int[]> favWrapper;
@@ -92,9 +91,9 @@ public class CardsPresenterImpl implements CardsPresenter {
         });
     }
 
-    private Func1<List<MTGCard>, DeckBucket> mapper = new Func1<List<MTGCard>, DeckBucket>() {
+    private Function<List<MTGCard>, DeckBucket> mapper = new Function<List<MTGCard>, DeckBucket>() {
         @Override
-        public DeckBucket call(List<MTGCard> mtgCards) {
+        public DeckBucket apply(List<MTGCard> mtgCards) throws Exception {
             return deckMapper.map(mtgCards);
         }
     };
@@ -170,12 +169,12 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void removeFromFavourite(MTGCard card, boolean reload) {
         logger.d("remove " + card + " from fav");
-        subscription = favWrapper.run(interactor.removeFromFavourite(card), reload ? idFavSubscriber : null);
+        favWrapper.run(interactor.removeFromFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void saveAsFavourite(MTGCard card, boolean reload) {
         logger.d("save " + card + " as fav");
-        subscription = favWrapper.run(interactor.saveAsFavourite(card), reload ? idFavSubscriber : null);
+        favWrapper.run(interactor.saveAsFavourite(card), reload ? idFavSubscriber : null);
     }
 
     public void loadCards(final MTGSet set) {
@@ -212,14 +211,11 @@ public class CardsPresenterImpl implements CardsPresenter {
             cardsView.favIdLoaded(currentFav);
             return;
         }
-        subscription = favWrapper.run(interactor.loadIdFav(), idFavSubscriber);
+        favWrapper.run(interactor.loadIdFav(), idFavSubscriber);
     }
 
     public void detachView() {
         logger.d();
-        if (subscription != null) {
-            subscription.unsubscribe();
-        }
     }
 
     private Runner.RxWrapperListener<int[]> idFavSubscriber = new Runner.RxWrapperListener<int[]>() {
