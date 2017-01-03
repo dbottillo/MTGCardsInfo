@@ -1,11 +1,8 @@
 package com.dbottillo.mtgsearchfree.presenter;
 
-import android.util.Log;
-
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.SetsView;
 
@@ -13,7 +10,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import rx.Observable;
+import io.reactivex.Observable;
+
 
 public class SetsPresenterImpl implements SetsPresenter, Runner.RxWrapperListener<List<MTGSet>> {
 

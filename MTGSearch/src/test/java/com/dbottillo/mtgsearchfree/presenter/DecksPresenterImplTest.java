@@ -21,9 +21,8 @@ import org.mockito.junit.MockitoRule;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -164,7 +163,7 @@ public class DecksPresenterImplTest {
     @Test
     public void willShowErrorIfDeckFileCannotBeImported() {
         MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
-        Observable observable = Observable.error(exception);
+        Observable<List<Deck>> observable = Observable.error(exception);
         when(interactor.importDeck(uri)).thenReturn(observable);
         underTest.importDeck(uri);
         verify(interactor).importDeck(uri);

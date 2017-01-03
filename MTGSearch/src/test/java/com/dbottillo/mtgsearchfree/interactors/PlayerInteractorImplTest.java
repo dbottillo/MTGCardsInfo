@@ -12,10 +12,9 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import rx.observers.TestSubscriber;
+import io.reactivex.observers.TestObserver;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -49,46 +48,46 @@ public class PlayerInteractorImplTest {
 
     @Test
     public void testLoad() {
-        TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Player>> testSubscriber = new TestObserver<>();
         underTest.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
+        testSubscriber.assertValue(players);
         verify(storage).load();
     }
 
     @Test
     public void testAddPlayer() {
-        TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Player>> testSubscriber = new TestObserver<>();
         underTest.addPlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
+        testSubscriber.assertValue(players);
         verify(storage).addPlayer(player);
     }
 
     @Test
     public void testEditPlayer() {
-        TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Player>> testSubscriber = new TestObserver<>();
         underTest.editPlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
+        testSubscriber.assertValue(players);
         verify(storage).editPlayer(player);
     }
 
     @Test
     public void testEditPlayers() {
-        TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Player>> testSubscriber = new TestObserver<>();
         underTest.editPlayers(toEditPlayers).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
+        testSubscriber.assertValue(players);
         verify(storage).editPlayers(toEditPlayers);
     }
 
     @Test
     public void testRemovePlayer() {
-        TestSubscriber<List<Player>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Player>> testSubscriber = new TestObserver<>();
         underTest.removePlayer(player).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(players));
+        testSubscriber.assertValue(players);
         verify(storage).removePlayer(player);
     }
 }

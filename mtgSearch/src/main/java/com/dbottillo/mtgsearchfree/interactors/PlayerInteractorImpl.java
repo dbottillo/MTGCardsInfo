@@ -2,12 +2,11 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import com.dbottillo.mtgsearchfree.model.Player;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 public class PlayerInteractorImpl implements PlayerInteractor {
 

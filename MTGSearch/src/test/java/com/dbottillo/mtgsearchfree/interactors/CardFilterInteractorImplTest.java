@@ -11,9 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-import java.util.Collections;
-
-import rx.observers.TestSubscriber;
+import io.reactivex.observers.TestObserver;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -42,11 +40,11 @@ public class CardFilterInteractorImplTest {
 
     @Test
     public void willLoadDataFromStorage() {
-        TestSubscriber<CardFilter> testSubscriber = new TestSubscriber<>();
+        TestObserver<CardFilter> testSubscriber = new TestObserver<>();
         underTest.load().subscribe(testSubscriber);
 
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(cardFilter));
+        testSubscriber.assertValue(cardFilter);
         verify(cardsPreferences).load();
     }
 

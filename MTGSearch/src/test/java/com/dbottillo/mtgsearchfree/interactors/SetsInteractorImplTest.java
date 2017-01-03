@@ -11,10 +11,9 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import rx.observers.TestSubscriber;
+import io.reactivex.observers.TestObserver;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -35,10 +34,10 @@ public class SetsInteractorImplTest {
         SetDataSource setDataSource = mock(SetDataSource.class);
         when(setDataSource.getSets()).thenReturn(sets);
         SetsInteractor interactor = new SetsInteractorImpl(setDataSource, logger);
-        TestSubscriber<List<MTGSet>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGSet>> testSubscriber = new TestObserver<>();
         interactor.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(sets));
+        testSubscriber.assertValue(sets);
         verify(setDataSource).getSets();
     }
 }

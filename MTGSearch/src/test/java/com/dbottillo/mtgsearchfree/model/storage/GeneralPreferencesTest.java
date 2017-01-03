@@ -8,11 +8,9 @@ import com.dbottillo.mtgsearchfree.util.AppInfo;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.CARDS_SHOW_TYPE;
 import static com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.CARD_MIGRATION_REQUIRED;

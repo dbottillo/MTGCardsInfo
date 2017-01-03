@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.model.network;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 

@@ -18,10 +18,9 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import rx.observers.TestSubscriber;
+import io.reactivex.observers.TestObserver;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -61,132 +60,132 @@ public class DecksInteractorImplTest {
 
     @Test
     public void testLoad() {
-        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Deck>> testSubscriber = new TestObserver<>();
         underTest.load().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
+        testSubscriber.assertValue(decks);
     }
 
     @Test
     public void testLoadDeck() {
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.loadDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).loadDeck(deck);
     }
 
     @Test
     public void testAddDeck() {
-        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Deck>> testSubscriber = new TestObserver<>();
         underTest.addDeck("deck").subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
+        testSubscriber.assertValue(decks);
         verify(storage).addDeck("deck");
     }
 
     @Test
     public void testDeleteDeck() {
-        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Deck>> testSubscriber = new TestObserver<>();
         underTest.deleteDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
+        testSubscriber.assertValue(decks);
         verify(storage).deleteDeck(deck);
     }
 
     @Test
     public void testEditDeck() {
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.editDeck(deck, "new name").subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).editDeck(deck, "new name");
     }
 
     @Test
     public void testAddCard() {
         when(storage.addCard(deck, card, 2)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.addCard(deck, card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).addCard(deck, card, 2);
     }
 
     @Test
     public void testAddCardWithNewDeck() {
         when(storage.addCard("name", card, 2)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.addCard("name", card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).addCard("name", card, 2);
     }
 
     @Test
     public void testRemoveCard() {
         when(storage.removeCard(deck, card)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.removeCard(deck, card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).removeCard(deck, card);
     }
 
     @Test
     public void testRemoveAllCard() {
         when(storage.removeAllCard(deck, card)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.removeAllCard(deck, card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).removeAllCard(deck, card);
     }
 
     @Test
     public void movesCardFromSideboard() {
         when(storage.moveCardFromSideboard(deck, card, 2)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.moveCardFromSideboard(deck, card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).moveCardFromSideboard(deck, card, 2);
     }
 
     @Test
     public void movesCardToSideboard() {
         when(storage.moveCardToSideboard(deck, card, 2)).thenReturn(deckCards);
-        TestSubscriber<List<MTGCard>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
         underTest.moveCardToSideboard(deck, card, 2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(deckCards));
+        testSubscriber.assertValue(deckCards);
         verify(storage).moveCardToSideboard(deck, card, 2);
     }
 
     @Test
     public void testImportDeck() throws Throwable {
         when(storage.importDeck(uri)).thenReturn(decks);
-        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Deck>> testSubscriber = new TestObserver<>();
         underTest.importDeck(uri).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(decks));
+        testSubscriber.assertValue(decks);
         verify(storage).importDeck(uri);
     }
 
     @Test
     public void exportsDeck() {
         when(fileUtil.downloadDeckToSdCard(deck, deckCards)).thenReturn(true);
-        TestSubscriber<Boolean> testSubscriber = new TestSubscriber<>();
+        TestObserver<Boolean> testSubscriber = new TestObserver<>();
         underTest.exportDeck(deck, deckCards).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertReceivedOnNext(Collections.singletonList(true));
+        testSubscriber.assertValue(true);
     }
 
     @Test
     public void throwErrorIfImportFails() throws MTGException {
         MTGException exception = new MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error");
         when(storage.importDeck(uri)).thenThrow(exception);
-        TestSubscriber<List<Deck>> testSubscriber = new TestSubscriber<>();
+        TestObserver<List<Deck>> testSubscriber = new TestObserver<>();
         underTest.importDeck(uri).subscribe(testSubscriber);
         testSubscriber.assertError(exception);
     }
