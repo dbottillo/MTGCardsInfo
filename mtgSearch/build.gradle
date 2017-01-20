@@ -1,6 +1,6 @@
 buildscript {
     ext.dagger_version = '2.5'
-    ext.support_library_version = '25.0.1'
+    ext.support_library_version = '25.1.0'
     ext.leak_canary_version = '1.4-beta2'
     ext.power_mock = '1.6.4'
     ext.gson_version = '2.6.2'
@@ -10,13 +10,17 @@ buildscript {
     ext.mockito_version= '1.10.19'
     ext.roboelectric_version = '3.1.4'
     ext.rx_java_version = '1.2.3'
+
+    ext.number_of_set = 156;
+    ext.database_version = 23
+
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.20.0'
+        classpath 'io.fabric.tools:gradle:1.21.6'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
@@ -41,14 +45,14 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 58
-        versionName "2.8.0"
+        versionCode 59
+        versionName "2.8.1"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -76,7 +80,8 @@ android {
             signingConfig signingConfigs.debugConfig
             debuggable true
             testCoverageEnabled true
-            buildConfigField 'int', 'DATABASE_VERSION', '22'
+            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
+            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -85,7 +90,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '22'
+            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
+            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -94,7 +100,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'DATABASE_VERSION', '22'
+            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
+            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
@@ -113,7 +120,7 @@ android {
         xmlReport false
         checkAllWarnings true
         lintConfig file("config/lint/lint.xml")
-        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText'
+        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
     }
 
     dexOptions{

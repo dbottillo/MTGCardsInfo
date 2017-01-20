@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.database.Cursor;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.dbottillo.mtgsearchfree.debug.test.BuildConfig;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
@@ -22,8 +23,6 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
 public class SetDataSourceTest extends BaseContextTest {
-
-    private static final int NUMBER_OF_SET = 154;
 
     private SetDataSource underTest;
 
@@ -63,7 +62,7 @@ public class SetDataSourceTest extends BaseContextTest {
     public void test_sets_can_be_retrieved_from_database() {
         List<MTGSet> sets = underTest.getSets();
         assertNotNull(sets);
-        assertThat(sets.size(), is(NUMBER_OF_SET)); // the one added from the previous test
+        assertThat(sets.size(), is(BuildConfig.NUMBER_OF_SET)); // the one added from the previous test
     }
 
     @Test
