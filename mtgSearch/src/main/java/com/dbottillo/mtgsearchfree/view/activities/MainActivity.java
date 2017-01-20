@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
@@ -122,7 +121,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             slidingPanelHelper.hidePanel(true);
         }
 
-        if (bundle == null && generalData.cardMigrationRequired() && BuildConfig.VERSION_CODE == 58) {
+        if (bundle == null && generalData.cardMigrationRequired()) {
             Intent intent = new Intent(this, CardMigratorService.class);
             startService(intent);
             DialogHelper.open(this, "notice", NoticeDialogFragment.newInstance(R.string.card_migrator_title, R.string.card_migrator_text));
