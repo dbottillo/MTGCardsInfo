@@ -9,5 +9,3 @@ public interface BasicView {
     void showError(MTGException exception);
 
 }
-
-

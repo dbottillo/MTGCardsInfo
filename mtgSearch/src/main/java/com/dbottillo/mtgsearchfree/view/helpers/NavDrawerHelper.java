@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.util.LOG;
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 
 import java.util.Random;
@@ -28,7 +29,7 @@ public class NavDrawerHelper {
     private TextView headerText;
     private Resources resources;
 
-    public NavDrawerHelper(final MainActivity activity, NavigationView navigationView,
+    public NavDrawerHelper(final BasicActivity activity, NavigationView navigationView,
                            Toolbar toolbar, NavigationView.OnNavigationItemSelectedListener listener,
                            GeneralData generalData) {
         this.navigationView = navigationView;
@@ -109,10 +110,12 @@ public class NavDrawerHelper {
         drawerLayout.closeDrawers();
     }
 
-    public void onBackPressed() {
+    public boolean onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
         }
+        return false;
     }
 
     public void resetSelection() {

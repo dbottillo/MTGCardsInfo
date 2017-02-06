@@ -11,8 +11,10 @@ import com.dbottillo.mtgsearchfree.util.AppInfo;
 
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 
+@Module
 public class DataModuleForTest extends DataModule {
 
     @Provides

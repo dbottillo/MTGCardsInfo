@@ -61,7 +61,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     private MainActivityPresenter mainPresenter;
     private SlidingPanelHelper slidingPanelHelper;
-    private NavDrawerHelper navDrawerHelper;
+
     private MainActivityListener listener;
 
     @BindView(R.id.navigation_view)
@@ -85,8 +85,6 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     @Inject
     CardFilterPresenter filterPresenter;
 
-    @Inject
-    GeneralData generalData;
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -98,7 +96,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         setupToolbar();
         slidingPanelHelper = new SlidingPanelHelper(slidingUpPanelLayout, getResources(), this);
         slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
-        navDrawerHelper = new NavDrawerHelper(this, navigationView, toolbar, this, generalData);
+
 
         initialBundle = bundle;
 
@@ -156,35 +154,28 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(CURRENT_SELECTION, navDrawerHelper.getCurrentSelection());
+    //    outState.putInt(CURRENT_SELECTION, navDrawerHelper.getCurrentSelection());
         outState.putParcelable("currentFilter", currentFilter);
     }
 
-    public void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        navDrawerHelper.syncState();
-    }
 
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        navDrawerHelper.onConfigurationChanged(newConfig);
-    }
 
     public void showReleaseNote() {
         LOG.d();
         changeFragment(new ReleaseNoteFragment(), "release_note_fragment", true);
         slidingPanelHelper.hidePanel(true);
-        navDrawerHelper.select(6);
+        //navDrawerHelper.select(6);
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (navDrawerHelper.onOptionsItemSelected(item)) {
+        /*if (navDrawerHelper.onOptionsItemSelected(item)) {
             return true;
         }
         if (item.getItemId() == android.R.id.home) {
             navDrawerHelper.openDrawer();
             return true;
-        }
+        }*/
         if (item.getItemId() == R.id.action_search) {
             startActivity(new Intent(this, SearchActivity.class));
             return true;
@@ -196,6 +187,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         BasicFragment currentFragment = (BasicFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
@@ -248,7 +240,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             Toast.makeText(this, (copied) ? "database copied" : "database not copied", Toast.LENGTH_LONG).show();
         }
 
-        navDrawerHelper.closeDrawer();
+        //navDrawerHelper.closeDrawer();
         return true;
     }
 
@@ -311,7 +303,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
     public void onBackPressed() {
         LOG.d();
-        if (slidingPanelHelper.onBackPressed()) {
+        /*if (slidingPanelHelper.onBackPressed()) {
             return;
         }
         navDrawerHelper.onBackPressed();
@@ -325,7 +317,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             slidingPanelHelper.showPanel();
         } else {
             finish();
-        }
+        }*/
     }
 
     public void setMainActivityListener(MainActivityListener list) {

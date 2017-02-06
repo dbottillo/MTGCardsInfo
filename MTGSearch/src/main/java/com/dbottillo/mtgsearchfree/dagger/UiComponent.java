@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
+import com.dbottillo.mtgsearchfree.ui.lifecounter.NewLifeCounterFragment;
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CommonCardsActivity;
@@ -16,6 +18,8 @@ import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
+import org.jetbrains.annotations.NotNull;
+
 import dagger.Component;
 
 @ActivityScope
@@ -23,6 +27,8 @@ import dagger.Component;
 public interface UiComponent {
 
     void inject(CommonCardsActivity activity);
+
+    void inject(BasicActivity activity);
 
     void inject(MainActivity activity);
 
@@ -49,4 +55,6 @@ public interface UiComponent {
     void inject(SortDialogFragment sortDialogFragment);
 
     void inject(MTGCardView mtgCardView);
+
+    void inject(@NotNull NewLifeCounterFragment newLifeCounterFragment);
 }
