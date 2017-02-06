@@ -3,6 +3,7 @@ buildscript {
     ext.database_version = 26
 }
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
@@ -14,6 +15,10 @@ def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/ch
 def keystorePropertiesFile = rootProject.file("keystore.properties");
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+kapt {
+    generateStubs = true
+}
 
 android {
     compileSdkVersion 25
@@ -79,6 +84,9 @@ android {
     dexOptions{
         preDexLibraries true
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 checkstyle {
@@ -103,6 +111,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "com.google.dagger:dagger:$dagger_version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true

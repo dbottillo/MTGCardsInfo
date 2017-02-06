@@ -6,22 +6,40 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
+import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
+import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
+import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
+import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
+
+import javax.inject.Inject;
 
 public abstract class BasicActivity extends AppCompatActivity {
 
@@ -29,11 +47,16 @@ public abstract class BasicActivity extends AppCompatActivity {
     Toolbar toolbar = null;
     boolean isPortrait = false;
 
+    @Inject
+    public GeneralData generalData;
+
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         LOG.d("============================================");
-        LOG.d();
+
+        getMTGApp().getUiGraph().inject(this);
+
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
 
         TypedValue tv = new TypedValue();
@@ -69,7 +92,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     }
 
-    void changeFragment(BasicFragment fragment, String tag, boolean addToBackStack) {
+    public void changeFragment(BasicFragment fragment, String tag, boolean addToBackStack) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         if (addToBackStack) {
@@ -78,7 +101,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    void openRateTheApp() {
+    public void openRateTheApp() {
         String packageName = getPackageName();
         if (BuildConfig.DEBUG) {
             packageName = "com.dbottillo.mtgsearchfree";
@@ -139,4 +162,5 @@ public abstract class BasicActivity extends AppCompatActivity {
         }
         return super.getSystemService(name);
     }
+
 }

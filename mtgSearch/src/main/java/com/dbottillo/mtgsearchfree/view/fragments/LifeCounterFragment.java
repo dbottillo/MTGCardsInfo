@@ -28,6 +28,8 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
 import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -44,14 +46,14 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return new LifeCounterFragment();
     }
 
-    @BindView(R.id.life_counter_dice_scrolliew)
+    /*@BindView(R.id.life_counter_dice_scrollview)
     ScrollView diceScrollView;
     @BindView(R.id.life_counter_dice_container)
-    LinearLayout diceContainer;
+    LinearLayout diceContainer;*/
     @BindView(R.id.progress)
     SmoothProgressBar progressBar;
-    @BindView(R.id.life_counter_list)
-    ListView lifeListView;
+    /*@BindView(R.id.life_counter_list)
+    ListView lifeListView;*/
     @BindView(R.id.new_player)
     FloatingActionButton newPlayerButton;
 
@@ -83,9 +85,9 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         showPoison = cardsPreferences.showPoison();
 
-        View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, lifeListView, false);
+        /*View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, lifeListView, false);
         lifeListView.addFooterView(footerView);
-
+*/
         twoHGEnabled = cardsPreferences.twoHGEnabled();
 
         newPlayerButton.setOnClickListener(this);
@@ -93,7 +95,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         players = new ArrayList<>();
 
         lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
-        lifeListView.setAdapter(lifeCounterAdapter);
+        //lifeListView.setAdapter(lifeCounterAdapter);
 
         AnimationUtil.growView(newPlayerButton);
 
@@ -248,8 +250,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
     private void hideDice() {
         LOG.d();
-        diceContainer.removeAllViews();
-        diceScrollView.setVisibility(View.GONE);
+        /*diceContainer.removeAllViews();
+        diceScrollView.setVisibility(View.GONE);*/
         diceShowed = false;
     }
 
@@ -319,23 +321,10 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         return false;
     }
 
-    @Override
+   /* @Override
     public void playersLoaded(List<Player> players) {
-        LOG.d();
-        progressBar.setVisibility(View.GONE);
-        if (players.size() == 0) {
-            // need at least one player
-            addPlayer();
-        } else {
-            this.players.clear();
-            this.players.addAll(players);
-        }
-        lifeCounterAdapter.notifyDataSetChanged();
-        if (scrollDownAfterLoad && getView() != null) {
-            ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
-        }
-        scrollDownAfterLoad = false;
-    }
+
+    }*/
 
     @Override
     public void showLoading() {
@@ -351,5 +340,23 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     @Override
     public void showError(MTGException exception) {
 
+    }
+
+    @Override
+    public void playersLoaded(@NotNull List<? extends Player> players) {
+        LOG.d();
+        progressBar.setVisibility(View.GONE);
+        if (players.size() == 0) {
+            // need at least one player
+            addPlayer();
+        } else {
+            this.players.clear();
+            this.players.addAll(players);
+        }
+        lifeCounterAdapter.notifyDataSetChanged();
+        if (scrollDownAfterLoad && getView() != null) {
+            //   ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
+        }
+        scrollDownAfterLoad = false;
     }
 }

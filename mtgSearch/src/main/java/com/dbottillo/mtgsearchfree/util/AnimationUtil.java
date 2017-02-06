@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.util;
 
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TimeInterpolator;
@@ -32,9 +33,9 @@ public final class AnimationUtil {
         anim.start();
     }
 
-    public static void animateHeight(final View view, int target) {
+    public static ValueAnimator animateHeight(final View view, int target) {
         if (view.getHeight() == target) {
-            return;
+            return null;
         }
         ValueAnimator anim = ValueAnimator.ofInt(view.getHeight(), target);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -46,6 +47,7 @@ public final class AnimationUtil {
         });
         anim.setDuration(DEFAULT_DURATION);
         anim.start();
+        return anim;
     }
 
     public static void growView(View view) {
@@ -96,6 +98,35 @@ public final class AnimationUtil {
             } else {
                 return mStartValue - (amount * input);
             }
+        }
+    }
+
+    public static ArgbInterpolator createArgbInterpolator() {
+        return new ArgbInterpolator();
+    }
+
+    public static class ArgbInterpolator {
+
+        private int mStartValue;
+        private int mEndValue;
+        private ArgbEvaluator argbEvaluator;
+
+        ArgbInterpolator() {
+            argbEvaluator = new ArgbEvaluator();
+        }
+
+        public final ArgbInterpolator fromValue(final int startValue) {
+            mStartValue = startValue;
+            return this;
+        }
+
+        public final ArgbInterpolator toValue(final int endValue) {
+            mEndValue = endValue;
+            return this;
+        }
+
+        public final int getInterpolation(final float input) {
+            return (int)argbEvaluator.evaluate(input, mStartValue, mEndValue);
         }
     }
 

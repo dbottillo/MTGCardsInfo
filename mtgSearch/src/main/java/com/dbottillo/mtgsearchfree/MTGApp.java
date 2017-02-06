@@ -28,6 +28,7 @@ import com.squareup.leakcanary.LeakCanary;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
@@ -76,7 +77,6 @@ public class MTGApp extends Application {
             }
             LeakCanary.install(this);
         }
-
     }
 
     protected DataModule generateDataModule() {

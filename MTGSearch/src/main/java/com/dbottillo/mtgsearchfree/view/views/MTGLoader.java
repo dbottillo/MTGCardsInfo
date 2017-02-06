@@ -30,16 +30,21 @@ public class MTGLoader extends View {
     private Paint paint = new Paint();
 
     public MTGLoader(Context context) {
-        this(context, null);
+        super(context);
+        init();
     }
 
     public MTGLoader(Context context, AttributeSet attrs) {
-        this(context, attrs, -1);
+        super(context, attrs);
+        init();
     }
 
     public MTGLoader(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+    }
 
+    private void init() {
         argbEvaluator = new ArgbEvaluator();
         interpolator = new FastOutLinearInInterpolator();
         setPaintColor();

@@ -97,10 +97,20 @@
         <item name="tabTextAppearance">@style/CardsTabTextAppearance</item>
         <item name="tabSelectedTextColor">@android:color/white</item>
     </style>
+
     <style name="CardsTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/grey</item>
         <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BigTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/color_primary</item>
     </style>
 
 

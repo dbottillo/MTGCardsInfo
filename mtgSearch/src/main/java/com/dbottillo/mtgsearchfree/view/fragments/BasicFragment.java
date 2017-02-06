@@ -2,19 +2,30 @@ package com.dbottillo.mtgsearchfree.view.fragments;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
+import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
+
+import butterknife.ButterKnife;
 
 public abstract class BasicFragment extends DialogFragment {
 
     protected BasicActivity dbActivity;
     protected boolean isPortrait = false;
     protected MTGApp app;
+    public Toolbar toolbar;
+    public TextView toolbarTitle;
+    protected int heightToolbar;
 
     public static final String PREF_SHOW_IMAGE = "show_image";
     public static final String PREF_SCREEN_ON = "screen_on";
@@ -29,6 +40,17 @@ public abstract class BasicFragment extends DialogFragment {
         this.dbActivity = (BasicActivity) context;
         app = (MTGApp) dbActivity.getApplication();
         isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
+        if (heightToolbar <= 0) {
+            final TypedArray styledAttributes = getActivity().getTheme().obtainStyledAttributes(new int[]{android.support.v7.appcompat.R.attr.actionBarSize});
+            heightToolbar = (int) styledAttributes.getDimension(0, 0);
+            styledAttributes.recycle();
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
     }
 
     protected MTGApp getMTGApp() {
@@ -59,6 +81,24 @@ public abstract class BasicFragment extends DialogFragment {
 
     public boolean onBackPressed() {
         return false;
+    }
+
+    public void setupToolbar(View rootView) {
+        toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+
+        toolbar.setTitle("");
+        toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        setTitle(getTitle());
+    }
+
+    protected void setTitle(final String title) {
+        if (toolbarTitle != null) {
+            toolbarTitle.setText(title);
+        }
+    }
+
+    public String getTitle() {
+        return "";
     }
 
 }

@@ -4,34 +4,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".mtgsearch.lifecounter.LifeCounterActivity">
+    android:orientation="vertical">
 
-    <ListView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/mtg_toolbar.Transparent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            tools:textColor="@color/color_primary"
+            android:textSize="20sp"
+            tools:text="Toolbar Title"/>
+
+        <ImageView
+            android:id="@+id/action_search"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/action_search"
+            android:src="@drawable/ic_search"
+            android:tint="@color/white"
+            tools:tint="@color/color_primary"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/action_lucky"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/action_lucky"
+            android:src="@drawable/ic_action_lucky"
+            android:tint="@color/white"
+            tools:tint="@color/color_primary"
+            android:visibility="visible"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--<ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/BigTitle"
+                android:text="@string/action_life_counter"
+                tools:layout_width="wrap_content"
+                tools:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>-->
+
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/life_counter_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:paddingTop="8dp" />
+        android:layout_below="@+id/toolbar" />
 
-    <ScrollView
-        android:id="@+id/life_counter_dice_scrolliew"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:id="@+id/life_counter_dice_container"
+       <!-- <LinearLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:orientation="vertical">
 
-    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:id="@+id/progress"
-        style="@style/MTGProgressBar" />
+
+
+        </LinearLayout>-->
+
+    <com.dbottillo.mtgsearchfree.view.views.MTGLoader
+        android:id="@+id/loader"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/new_player"
