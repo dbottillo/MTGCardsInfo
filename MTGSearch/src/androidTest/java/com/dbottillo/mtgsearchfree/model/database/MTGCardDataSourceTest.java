@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
@@ -38,13 +40,23 @@ public class MTGCardDataSourceTest extends BaseContextTest {
 
     private MTGCardDataSource underTest;
 
+    private MTGSet kaladesh;
+
     @Before
     public void setup() {
         CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
+        SetDataSource setDataSource = new SetDataSource(mtgDatabaseHelper.getReadableDatabase());
+        for (MTGSet set : setDataSource.getSets()){
+            if (set.getName().equalsIgnoreCase("kaladesh")){
+                kaladesh = set;
+                break;
+            }
+        }
         underTest = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
     }
 
     @Test
+    @Ignore
     public void fetchesAllSets() throws JSONException {
         ArrayList<MTGSet> setsJ = FileHelper.readSetListJSON(context);
         for (MTGSet set : setsJ) {
@@ -58,8 +70,6 @@ public class MTGCardDataSourceTest extends BaseContextTest {
                 LOG.e(set.getCode() + " file not found");
             }
         }
-
-
     }
 
     @Test
@@ -185,7 +195,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         }
     }
 
-    @Test
+    /*@Test
     public void searchCardsWithTwoColors() {
         SearchParams searchParams = new SearchParams();
         searchParams.setWhite(true);
@@ -195,6 +205,59 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         for (MTGCard card : cards) {
             assertThat(card.getManaCost(), containsString("W"));
             assertThat(card.getManaCost(), containsString("U"));
+        }
+    }*/
+
+    @Test
+    public void searchKaladeshCardsWithTwoColors() {
+        SearchParams searchParams = new SearchParams();
+        searchParams.setRed(true);
+        searchParams.setBlue(true);
+        searchParams.setSetId(kaladesh.getId());
+        searchParams.setText("Energy");
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        assertThat(cards.size(), is(20));
+        for (MTGCard card : cards) {
+            //assertTrue(containsString("W") || containsString("U"));
+            assertTrue(card.isRed() || card.isBlue());
+            assertTrue(card.getText().toLowerCase().contains("energy"));
+        }
+    }
+
+    @Test
+    public void searchKaladeshCardsWithTwoColorsOnlyMulticolor() {
+        SearchParams searchParams = new SearchParams();
+        searchParams.setRed(true);
+        searchParams.setBlue(true);
+        searchParams.setOnlyMulti(true);
+        searchParams.setSetId(kaladesh.getId());
+        searchParams.setText("Energy");
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        assertThat(cards.size(), is(3));
+        for (MTGCard card : cards) {
+            assertTrue(card.isMultiColor());
+            assertTrue(card.isRed() || card.isBlue());
+            assertTrue(card.getText().toLowerCase().contains("energy"));
+        }
+    }
+
+    @Test
+    public void searchKaladeshCardsWithTwoColorsNoMulticolor() {
+        SearchParams searchParams = new SearchParams();
+        searchParams.setRed(true);
+        searchParams.setBlue(true);
+        searchParams.setNoMulti(true);
+        searchParams.setSetId(kaladesh.getId());
+        searchParams.setText("Energy");
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        assertThat(cards.size(), is(17));
+        for (MTGCard card : cards) {
+            assertFalse(card.isMultiColor());
+            assertTrue(card.isRed() || card.isBlue());
+            assertTrue(card.getText().toLowerCase().contains("energy"));
         }
     }
 
@@ -207,8 +270,8 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
-            assertThat(card.getManaCost(), containsString("W"));
-            assertThat(card.getManaCost(), containsString("U"));
+            assertTrue(card.isMultiColor());
+            assertTrue(card.isWhite() || card.isBlue());
         }
     }
 
@@ -221,6 +284,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
+            assertFalse(card.isMultiColor());
             assertTrue((card.getManaCost().contains("W") && !card.getManaCost().contains("U"))
                     || (card.getManaCost().contains("U") && !card.getManaCost().contains("W")));
         }

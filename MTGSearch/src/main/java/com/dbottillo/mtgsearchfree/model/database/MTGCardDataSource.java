@@ -90,10 +90,10 @@ public class MTGCardDataSource {
         queryComposer.addParam(CardDataSource.COLUMNS.CMC.getName(), searchParams.getCmc());
         queryComposer.addParam(CardDataSource.COLUMNS.POWER.getName(), searchParams.getPower());
         queryComposer.addParam(CardDataSource.COLUMNS.TOUGHNESS.getName(), searchParams.getTough());
-        String colorsOperator = "AND";
+        String colorsOperator = "OR";
         if (searchParams.isNoMulti()) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "0");
-            colorsOperator = "OR";
+            //colorsOperator = "OR";
         }
         if (searchParams.onlyMulti()) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "1");
