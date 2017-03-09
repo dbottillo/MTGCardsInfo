@@ -41,6 +41,7 @@ class NewLifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterLis
     internal lateinit var cardsPreferences: CardsPreferences
 
     internal lateinit var adapter: NewLifeCounterAdapter
+    internal var players: MutableList<Player> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_life_counter, container, false)
@@ -69,6 +70,9 @@ class NewLifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterLis
             })
         }
 
+        adapter = NewLifeCounterAdapter(players, this, cardsPreferences.showPoison())
+        lifeCounterList.adapter = adapter
+
         playerPresenter.init(this)
         playerPresenter.loadPlayers()
 
@@ -93,7 +97,11 @@ class NewLifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterLis
 
     override fun playersLoaded(newPlayers: List<Player>) {
         loader.visibility = View.GONE
-        lifeCounterList.adapter = NewLifeCounterAdapter(newPlayers, this, cardsPreferences.showPoison())
+
+        players.clear()
+        players.addAll(newPlayers)
+
+        adapter.notifyDataSetChanged()
     }
 
     override fun showError(exception: MTGException?) {

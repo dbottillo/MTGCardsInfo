@@ -18,11 +18,15 @@ class NewLifeCounterAdapter(val players: List<Player>, val listener: OnLifeCount
     companion object {
         private val TYPE_HEADER: Int = 0
         private val TYPE_PLAYER: Int = 1
+        private val TYPE_FOOTER: Int = 2
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder? {
         if (viewType == TYPE_HEADER) {
             return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_header, parent, false))
+        }
+        if (viewType == TYPE_FOOTER) {
+            return FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false))
         }
         return PlayerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_life_counter, parent, false))
     }
@@ -57,17 +61,20 @@ class NewLifeCounterAdapter(val players: List<Player>, val listener: OnLifeCount
     }
 
     override fun getItemCount(): Int {
-        return players.size + 1
+        return players.size + 2
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (position == 0) {
-            return TYPE_HEADER
+        return when(position){
+            0 -> TYPE_HEADER
+            players.size + 1 -> TYPE_FOOTER
+            else -> TYPE_PLAYER
         }
-        return TYPE_PLAYER
     }
 
     class HeaderViewHolder(val row: View) : RecyclerView.ViewHolder(row)
+
+    class FooterViewHolder(val row: View) : RecyclerView.ViewHolder(row)
 
     class PlayerViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
 
