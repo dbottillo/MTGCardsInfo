@@ -1,16 +1,11 @@
 package com.dbottillo.mtgsearchfree.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
-import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 
 abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListener {

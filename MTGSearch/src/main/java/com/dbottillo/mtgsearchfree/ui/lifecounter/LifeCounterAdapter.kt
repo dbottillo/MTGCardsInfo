@@ -13,7 +13,7 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Player
 
-class NewLifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterListener, val showPoisonCounter: Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class LifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterListener, var showPoisonCounter: Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         private val TYPE_HEADER: Int = 0
@@ -108,5 +108,9 @@ class NewLifeCounterAdapter(val players: List<Player>, val listener: OnLifeCount
             return ContextCompat.getColor(context, R.color.player_4)
         }
         return ContextCompat.getColor(context, R.color.player_5)
+    }
+
+    fun setShowPoison(showPoison: Boolean) {
+        showPoisonCounter = showPoison
     }
 }

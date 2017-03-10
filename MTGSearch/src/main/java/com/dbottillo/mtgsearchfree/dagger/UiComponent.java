@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
-import com.dbottillo.mtgsearchfree.ui.lifecounter.NewLifeCounterFragment;
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
@@ -12,7 +12,7 @@ import com.dbottillo.mtgsearchfree.view.activities.SearchActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.OldLifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
@@ -44,7 +44,7 @@ public interface UiComponent {
 
     void inject(SavedFragment savedFragment);
 
-    void inject(LifeCounterFragment lifeCounterFragment);
+    void inject(OldLifeCounterFragment oldLifeCounterFragment);
 
     void inject(DecksFragment decksFragment);
 
@@ -56,5 +56,5 @@ public interface UiComponent {
 
     void inject(MTGCardView mtgCardView);
 
-    void inject(@NotNull NewLifeCounterFragment newLifeCounterFragment);
+    void inject(@NotNull LifeCounterFragment lifeCounterFragment);
 }

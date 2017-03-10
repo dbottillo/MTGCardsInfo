@@ -15,7 +15,8 @@ import com.dbottillo.mtgsearchfree.model.Player;
 
 import java.util.List;
 
-public class LifeCounterAdapter extends BaseAdapter {
+@Deprecated
+public class OldLifeCounterAdapter extends BaseAdapter {
 
     public interface OnLifeCounterListener {
         void onRemovePlayer(int position);
@@ -33,7 +34,7 @@ public class LifeCounterAdapter extends BaseAdapter {
     private OnLifeCounterListener listener;
     private boolean showPoison;
 
-    public LifeCounterAdapter(Context context, List<Player> players, OnLifeCounterListener listener, boolean showPoison) {
+    public OldLifeCounterAdapter(Context context, List<Player> players, OnLifeCounterListener listener, boolean showPoison) {
         this.players = players;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
