@@ -165,7 +165,7 @@
     </string>
     <string name="action_release_note">Release Note</string>
     <string name="empty_cards">No cards available with the current filters.</string>
-    <string name="empty_decks">You don\'t have any decks yet, use the plus button to create a new one.</string>
+    <string name="empty_decks">You don\'t have any decks yet!</string>
 
     <string name="share_card">Share card</string>
     <string name="row_card_name" translatable="false">%1$s%2$s</string>
@@ -238,6 +238,9 @@
     <string name="card_migrator_notification_title">The app is updating the database of card in order to handle more features.</string>
     <string name="card_migrator_text">The app is updating the database of card in order to handle more features. \n\nCheck your notification center to see if the update has finished.</string>
     <string name="card_migrator_finished">The database has been updated, enjoy!</string>
+
+    <string name="add_new_player">Add new player</string>
+    <string name="add_new_deck">Add new deck</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>

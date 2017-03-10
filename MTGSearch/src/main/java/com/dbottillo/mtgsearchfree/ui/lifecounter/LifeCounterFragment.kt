@@ -3,10 +3,12 @@ package com.dbottillo.mtgsearchfree.ui.lifecounter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import butterknife.BindView
@@ -17,8 +19,7 @@ import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
-import com.dbottillo.mtgsearchfree.ui.HomeActivity
-import com.dbottillo.mtgsearchfree.util.AnimationUtil
+import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.view.PlayersView
@@ -34,14 +35,14 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
     @BindView(R.id.life_counter_list)
     lateinit var lifeCounterList: RecyclerView
 
-    @BindView(R.id.new_player)
-    lateinit var newPlayerButton: FloatingActionButton
-
     @Inject
     internal lateinit var playerPresenter: PlayerPresenter
 
     @Inject
     internal lateinit var cardsPreferences: CardsPreferences
+
+    @Inject
+    lateinit var dialogUtil : DialogUtil
 
     internal lateinit var adapter: LifeCounterAdapter
     internal var players: MutableList<Player> = mutableListOf()
@@ -59,25 +60,9 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
 
         lifeCounterList.setHasFixedSize(true)
         lifeCounterList.layoutManager = LinearLayoutManager(view?.context)
-        if (activity is HomeActivity) {
-            lifeCounterList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
-                override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-
-                    if (dy > 0) {
-                        (activity as HomeActivity).scrollingUp()
-                    } else {
-                        (activity as HomeActivity).scrollingDown()
-                    }
-                }
-
-            })
-        }
+        setupHomeActivityScroll(recyclerView = lifeCounterList)
 
         setupMenu()
-
-        AnimationUtil.growView(newPlayerButton)
 
         adapter = LifeCounterAdapter(players, this, cardsPreferences.showPoison())
         lifeCounterList.adapter = adapter
@@ -174,8 +159,7 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
         TrackingManager.trackRemovePlayer()
     }
 
-    @OnClick(R.id.new_player)
-    fun addNewPlayer() {
+    override fun onAddPlayer() {
         LOG.d()
         if (lifeCounterList.adapter.itemCount == 10) {
             Toast.makeText(activity, R.string.maximum_player, Toast.LENGTH_SHORT).show()

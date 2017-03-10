@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.ui
 
 import android.os.Bundle
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
@@ -64,6 +65,21 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             return true
         }
         return true
+    }
+
+    protected fun setupHomeActivityScroll(recyclerView: RecyclerView) {
+        if (activity is HomeActivity) {
+            recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    if (dy > 0) {
+                        (activity as HomeActivity).scrollingUp()
+                    } else {
+                        (activity as HomeActivity).scrollingDown()
+                    }
+                }
+            })
+        }
     }
 
 }

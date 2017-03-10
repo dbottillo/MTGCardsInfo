@@ -13,7 +13,8 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 
 import java.util.List;
 
-public class DeckListAdapter extends BaseAdapter {
+@Deprecated
+public class OldDeckListAdapter extends BaseAdapter {
 
     public interface OnDeckListener {
         void onDeckSelected(Deck deck);
@@ -26,7 +27,7 @@ public class DeckListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private OnDeckListener listener;
 
-    public DeckListAdapter(Context context, List<Deck> cards, OnDeckListener listener) {
+    public OldDeckListAdapter(Context context, List<Deck> cards, OnDeckListener listener) {
         this.decks = cards;
         this.context = context;
         this.inflater = LayoutInflater.from(context);

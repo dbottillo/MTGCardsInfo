@@ -52,8 +52,6 @@ public class OldLifeCounterFragment extends BasicFragment implements OldLifeCoun
     SmoothProgressBar progressBar;
     /*@BindView(R.id.life_counter_list)
     ListView lifeListView;*/
-    @BindView(R.id.new_player)
-    FloatingActionButton newPlayerButton;
 
     private ArrayList<Player> players;
     private OldLifeCounterAdapter oldLifeCounterAdapter;
@@ -88,14 +86,11 @@ public class OldLifeCounterFragment extends BasicFragment implements OldLifeCoun
 */
         twoHGEnabled = cardsPreferences.twoHGEnabled();
 
-        newPlayerButton.setOnClickListener(this);
 
         players = new ArrayList<>();
 
         oldLifeCounterAdapter = new OldLifeCounterAdapter(getActivity(), players, this, showPoison);
         //lifeListView.setAdapter(oldLifeCounterAdapter);
-
-        AnimationUtil.growView(newPlayerButton);
 
         setHasOptionsMenu(true);
 

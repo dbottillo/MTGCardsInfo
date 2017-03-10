@@ -1,79 +1,34 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".view.activities.MainActivity">
 
-    <ListView
-        android:id="@+id/deck_list"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/mtg_toolbar.Transparent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@null"
-        android:dividerHeight="-1dp"/>
+        android:layout_height="?attr/actionBarSize">
 
-    <TextView
-        android:id="@+id/empty_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:padding="40dp"
-        android:paddingTop="20dp"
-        android:textStyle="italic"
-        android:visibility="gone"/>
-
-    <View
-        android:id="@+id/new_deck_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black_30"
-        android:clickable="true"
-        android:focusable="true"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_new_deck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/plus"
-        android:tint="@android:color/white"
-        app:borderWidth="0dp"
-        app:elevation="4dp"
-        app:pressedTranslationZ="8dp"/>
-
-    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:id="@+id/progress"
-        style="@style/MTGProgressBar"/>
-
-    <FrameLayout
-        android:id="@+id/new_deck_name_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_primary_dark"
-        android:padding="10dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/EditTextWhite">
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="Toolbar Title"
+            tools:textColor="@color/color_primary"/>
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/new_deck_name"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/new_deck_hint"
-                android:inputType="textPersonName|textCapWords"
-                android:textColor="@color/white"
-                android:theme="@style/EditTextWhite"/>
-        </android.support.design.widget.TextInputLayout>
-    </FrameLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/decks_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
 
 </RelativeLayout>

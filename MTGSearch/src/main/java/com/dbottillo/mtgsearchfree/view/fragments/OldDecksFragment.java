@@ -40,7 +40,7 @@ import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
-import com.dbottillo.mtgsearchfree.view.adapters.DeckListAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OldDeckListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,34 +51,26 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class DecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, DecksView, DeckListAdapter.OnDeckListener, PermissionUtil.PermissionListener {
+@Deprecated
+public class OldDecksFragment extends BasicFragment implements View.OnClickListener, TextView.OnEditorActionListener, DecksView, OldDeckListAdapter.OnDeckListener, PermissionUtil.PermissionListener {
 
     private ArrayList<Deck> decks;
-    private DeckListAdapter deckListAdapter;
+    private OldDeckListAdapter deckListAdapter;
 
     private static final int READ_REQUEST_CODE = 42;
     private int heightNewDeckContainer = -1;
     private boolean newDeckViewOpen = false;
 
-    @BindView(R.id.add_new_deck)
-    FloatingActionButton newDeck;
-
-    @BindView(R.id.deck_list)
-    ListView listView;
-
-    @BindView(R.id.progress)
-    SmoothProgressBar progressBar;
-
-    @BindView(R.id.empty_view)
+   // @BindView(R.id.empty_view)
     TextView emptyView;
 
-    @BindView(R.id.new_deck_overlay)
+   // @BindView(R.id.new_deck_overlay)
     View newDeckOverlay;
 
-    @BindView(R.id.new_deck_name_container)
+   // @BindView(R.id.new_deck_name_container)
     View newDeckContainer;
 
-    @BindView(R.id.new_deck_name)
+   // @BindView(R.id.new_deck_name)
     AppCompatEditText newDeckName;
 
     @Inject
@@ -99,7 +91,6 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
         setHasOptionsMenu(true);
 
         emptyView.setText(R.string.empty_decks);
-        progressBar.setVisibility(View.GONE);
         newDeckName.setImeOptions(EditorInfo.IME_ACTION_DONE);
         newDeckName.setOnEditorActionListener(this);
         newDeckOverlay.setAlpha(0.0f);
@@ -122,13 +113,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
 
         decks = new ArrayList<>();
 
-        deckListAdapter = new DeckListAdapter(getActivity(), decks, this);
-        View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, listView, false);
-        listView.addFooterView(footerView);
-        listView.setAdapter(deckListAdapter);
+        deckListAdapter = new OldDeckListAdapter(getActivity(), decks, this);
+        //View footerView = LayoutInflater.from(getContext()).inflate(R.layout.fab_button_list_footer, listView, false);
+        /*listView.addFooterView(footerView);
+        listView.setAdapter(deckListAdapter);*/
 
-        AnimationUtil.growView(newDeck);
-        newDeck.setOnClickListener(this);
 
         getMTGApp().getUiGraph().inject(this);
         decksPresenter.init(this);
@@ -184,24 +173,11 @@ public class DecksFragment extends BasicFragment implements View.OnClickListener
             }
         }).start();
         newDeckViewOpen = true;
-        AnimatorSet open = new AnimatorSet();
-        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(newDeck,
-                PropertyValuesHolder.ofFloat("scaleX", 0.0f),
-                PropertyValuesHolder.ofFloat("scaleY", 0.0f));
-        ObjectAnimator moveDown = ObjectAnimator.ofFloat(newDeckContainer, "Y", 0);
-        open.play(scaleDown).with(moveDown);
-        open.setDuration(200).start();
+
     }
 
     private void closeNewDeck() {
         LOG.d();
-        AnimatorSet open = new AnimatorSet();
-        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(newDeck,
-                PropertyValuesHolder.ofFloat("scaleX", 1.0f),
-                PropertyValuesHolder.ofFloat("scaleY", 1.0f));
-        ObjectAnimator moveUp = ObjectAnimator.ofFloat(newDeckContainer, "Y", -heightNewDeckContainer);
-        open.play(scaleUp).with(moveUp);
-        open.setDuration(200).start();
         newDeckOverlay.requestFocus();
         newDeckOverlay.animate().alpha(0.0f).setDuration(250).setListener(new Animator.AnimatorListener() {
             @Override
