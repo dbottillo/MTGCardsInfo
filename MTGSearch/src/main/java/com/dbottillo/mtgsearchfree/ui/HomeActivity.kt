@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.ui.decks.NewDecksFragment
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.NewSavedFragment
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
@@ -68,7 +68,7 @@ class HomeActivity : BasicActivity() {
             return SetsFragment()
         }
         if (tag == "decks") {
-            return NewDecksFragment()
+            return DecksFragment()
         }
         if (tag == "saved") {
             return NewSavedFragment()

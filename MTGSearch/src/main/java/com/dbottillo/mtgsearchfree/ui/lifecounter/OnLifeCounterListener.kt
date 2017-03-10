@@ -10,4 +10,6 @@ interface OnLifeCounterListener{
     fun onLifeCountChange(player: Player, value: Int)
 
     fun onPoisonCountChange(player: Player, value: Int)
+
+    fun onAddPlayer()
 }

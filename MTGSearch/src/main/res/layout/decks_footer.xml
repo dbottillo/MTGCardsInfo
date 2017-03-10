@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:background="@color/white">
+
+    <TextView
+        android:id="@+id/empty_decks_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="40dp"
+        android:paddingTop="20dp"
+        android:textColor="@color/color_primary"
+        android:text="@string/empty_decks"
+        android:textStyle="italic"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/add_new_deck"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_list_footer_add">
+
+        <TextView
+            style="@style/FooterText"
+            android:text="@string/add_new_deck" />
+
+    </FrameLayout>
+</LinearLayout>

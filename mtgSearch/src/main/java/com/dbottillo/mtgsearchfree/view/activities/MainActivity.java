@@ -27,7 +27,7 @@ import com.dbottillo.mtgsearchfree.view.CardFilterView;
 import com.dbottillo.mtgsearchfree.view.MainView;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.OldDecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.OldLifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
@@ -198,8 +198,8 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             changeFragment(OldLifeCounterFragment.newInstance(), "life_counter", true);
             slidingPanelHelper.hidePanel(true);
 
-        } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {
-            changeFragment(new DecksFragment(), "decks", true);
+        } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof OldDecksFragment)) {
+            changeFragment(new OldDecksFragment(), "decks", true);
             slidingPanelHelper.hidePanel(true);
 
         } else if (menuItem.getItemId() == R.id.drawer_rate) {
