@@ -12,9 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
@@ -26,7 +23,7 @@ import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.PlayersView;
-import com.dbottillo.mtgsearchfree.view.adapters.LifeCounterAdapter;
+import com.dbottillo.mtgsearchfree.view.adapters.OldLifeCounterAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -40,10 +37,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class LifeCounterFragment extends BasicFragment implements LifeCounterAdapter.OnLifeCounterListener, View.OnClickListener, PlayersView {
+@Deprecated
+public class OldLifeCounterFragment extends BasicFragment implements OldLifeCounterAdapter.OnLifeCounterListener, View.OnClickListener, PlayersView {
 
-    public static LifeCounterFragment newInstance() {
-        return new LifeCounterFragment();
+    public static OldLifeCounterFragment newInstance() {
+        return new OldLifeCounterFragment();
     }
 
     /*@BindView(R.id.life_counter_dice_scrollview)
@@ -58,7 +56,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
     FloatingActionButton newPlayerButton;
 
     private ArrayList<Player> players;
-    private LifeCounterAdapter lifeCounterAdapter;
+    private OldLifeCounterAdapter oldLifeCounterAdapter;
 
     private boolean scrollDownAfterLoad = false;
     private boolean showPoison = false;
@@ -94,8 +92,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
 
         players = new ArrayList<>();
 
-        lifeCounterAdapter = new LifeCounterAdapter(getActivity(), players, this, showPoison);
-        //lifeListView.setAdapter(lifeCounterAdapter);
+        oldLifeCounterAdapter = new OldLifeCounterAdapter(getActivity(), players, this, showPoison);
+        //lifeListView.setAdapter(oldLifeCounterAdapter);
 
         AnimationUtil.growView(newPlayerButton);
 
@@ -245,7 +243,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
         }
         diceShowed = true;*/
         diceShowed = !diceShowed;
-        lifeCounterAdapter.notifyDataSetChanged();
+        oldLifeCounterAdapter.notifyDataSetChanged();
     }
 
     private void hideDice() {
@@ -299,8 +297,8 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             cardsPreferences.showPoison(!showPoison);
             showPoison = !showPoison;
             getActivity().invalidateOptionsMenu();
-            lifeCounterAdapter.setShowPoison(showPoison);
-            lifeCounterAdapter.notifyDataSetChanged();
+            oldLifeCounterAdapter.setShowPoison(showPoison);
+            oldLifeCounterAdapter.notifyDataSetChanged();
             return true;
         }
         if (i1 == R.id.action_screen_on) {
@@ -353,7 +351,7 @@ public class LifeCounterFragment extends BasicFragment implements LifeCounterAda
             this.players.clear();
             this.players.addAll(players);
         }
-        lifeCounterAdapter.notifyDataSetChanged();
+        oldLifeCounterAdapter.notifyDataSetChanged();
         if (scrollDownAfterLoad && getView() != null) {
             //   ((ListView) getView().findViewById(R.id.life_counter_list)).setSelection(players.size() - 1);
         }

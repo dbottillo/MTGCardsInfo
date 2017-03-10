@@ -8,7 +8,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.decks.NewDecksFragment
-import com.dbottillo.mtgsearchfree.ui.lifecounter.NewLifeCounterFragment
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.NewSavedFragment
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.views.BottomTabs
@@ -74,7 +74,7 @@ class HomeActivity : BasicActivity() {
             return NewSavedFragment()
         }
         // life
-        return NewLifeCounterFragment()
+        return LifeCounterFragment()
     }
 
     fun scrollingUp(){

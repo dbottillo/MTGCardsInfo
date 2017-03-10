@@ -4,21 +4,6 @@
     tools:context=".mtgsearch.base.MainActivity">
 
     <item
-        android:id="@+id/action_reset"
-        android:icon="@drawable/ic_reset"
-        android:title="@string/life_reset"
-        android:orderInCategory="100"
-        app:showAsAction="always"
-        tools:ignore="AlwaysShowAction" />
-
-    <item
-        android:id="@+id/action_dice"
-        android:icon="@drawable/ic_dice"
-        android:title="@string/life_dice"
-        android:orderInCategory="101"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/action_poison"
         android:icon="@null"
         android:title="@string/menu_life_poison"
@@ -33,7 +18,6 @@
         android:orderInCategory="103"
         android:checkable="true"
         app:showAsAction="never" />
-
 
     <item
         android:id="@+id/action_two_hg"

@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.view.activities;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +16,6 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask;
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.MainActivityPresenter;
 import com.dbottillo.mtgsearchfree.util.CardMigratorService;
@@ -31,13 +29,12 @@ import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.OldLifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.NoticeDialogFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
-import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
 import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
@@ -197,8 +194,8 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
             changeFragment(new SavedFragment(), "saved_fragment", true);
             slidingPanelHelper.showPanel();
 
-        } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof LifeCounterFragment)) {
-            changeFragment(LifeCounterFragment.newInstance(), "life_counter", true);
+        } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof OldLifeCounterFragment)) {
+            changeFragment(OldLifeCounterFragment.newInstance(), "life_counter", true);
             slidingPanelHelper.hidePanel(true);
 
         } else if (menuItem.getItemId() == R.id.drawer_decks && !(currentFragment instanceof DecksFragment)) {

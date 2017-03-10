@@ -6,38 +6,23 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
-import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask;
-import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
-import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.DecksFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.LifeCounterFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
-import com.dbottillo.mtgsearchfree.view.helpers.NavDrawerHelper;
 
 import javax.inject.Inject;
 
