@@ -32,6 +32,7 @@
             android:contentDescription="@string/action_search"
             android:src="@drawable/ic_reset"
             android:tint="@color/white"
+            tools:tint="@color/color_primary"
             android:visibility="visible"/>
 
         <ImageView
@@ -44,6 +45,7 @@
             android:contentDescription="@string/action_lucky"
             android:src="@drawable/ic_dice"
             android:tint="@color/white"
+            tools:tint="@color/color_primary"
             android:visibility="visible"/>
 
     </android.support.v7.widget.Toolbar>

@@ -4,11 +4,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 
-class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener,
+                   val delete:(deck: Deck) -> Unit, val selected:(deck: Deck) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         private val TYPE_HEADER: Int = 0
@@ -37,8 +39,14 @@ class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener) : Recyc
                 holder.emptyText.visibility = View.GONE
             }
         }
-        if (getItemViewType(position) == TYPE_DECK) {
 
+        if (getItemViewType(position) == TYPE_DECK) {
+            holder as DeckViewHolder
+            val deck = decks[position-1]
+            holder.name.text = deck.name
+            holder.number.text = holder.row.context?.getString(R.string.deck_subtitle, deck.numberOfCards)
+            holder.delete.setOnClickListener{ delete(deck) }
+            holder.parent.setOnClickListener{ selected(deck) }
         }
     }
 
@@ -61,20 +69,10 @@ class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener) : Recyc
     }
 
     class DeckViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
-/*
-        val card: CardView = row.findViewById(R.id.life_counter_card) as CardView
-        val name: TextView = row.findViewById(R.id.player_name) as TextView
-        val life: TextView = row.findViewById(R.id.player_life) as TextView
-        val poison: TextView = row.findViewById(R.id.player_poison) as TextView
-        val poisonContainer: View = row.findViewById(R.id.life_counter_poison_container)
-        val edit: ImageButton = row.findViewById(R.id.player_edit) as ImageButton
-        val remove: ImageButton = row.findViewById(R.id.player_remove) as ImageButton
-        val lifePlusOne: Button = row.findViewById(R.id.btn_life_plus_one) as Button
-        val lifeMinusOne: Button = row.findViewById(R.id.btn_life_minus_one) as Button
-        val lifePlusFive: Button = row.findViewById(R.id.btn_life_plus_five) as Button
-        val lifeMinusFive: Button = row.findViewById(R.id.btn_life_minus_five) as Button
-        val poisonPlusOne: Button = row.findViewById(R.id.btn_poison_plus_one) as Button
-        val poisonMinusOne: Button = row.findViewById(R.id.btn_poison_minus_one) as Button*/
+        val parent: View = row.findViewById(R.id.deck_parent)
+        val name: TextView = row.findViewById(R.id.deck_name) as TextView
+        val number: TextView = row.findViewById(R.id.deck_number) as TextView
+        val delete: ImageButton = row.findViewById(R.id.delete_deck) as ImageButton
     }
 
 }

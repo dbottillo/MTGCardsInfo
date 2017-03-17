@@ -27,6 +27,9 @@
     </plurals>
     <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
 
+    <!-- basic -->
+    <string name="add">Aggiungi</string>
+
     <!-- filter panel -->
     <string name="mtg_type_artifact">Artefatto</string>
     <string name="mtg_type_land">Terra</string>
@@ -83,7 +86,7 @@
     <string name="action_move_all">Sposta tutte</string>
 
     <string name="deck_title">Mazzo</string>
-    <string name="deck_subtitle">%1s carte</string>
+    <string name="deck_subtitle">%d carte</string>
     <string name="deck_delete_title">Cancellazione mazzo</string>
     <string name="deck_delete_text">Ci sono carte in questo mazzo. Sei sicuro?</string>
     <string name="deck_delete_confirmation">Cancella</string>

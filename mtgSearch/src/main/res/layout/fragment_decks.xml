@@ -23,6 +23,19 @@
             tools:text="Toolbar Title"
             tools:textColor="@color/color_primary"/>
 
+        <ImageView
+            android:id="@+id/action_import"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/export"
+            android:src="@drawable/ic_upload"
+            android:tint="@color/white"
+            tools:tint="@color/color_primary"
+            android:visibility="visible"/>
+
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView

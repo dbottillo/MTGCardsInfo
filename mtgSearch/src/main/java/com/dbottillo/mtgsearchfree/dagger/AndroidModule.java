@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.presenter.Runner;
 import com.dbottillo.mtgsearchfree.presenter.RunnerAndMap;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
+import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
@@ -108,5 +109,10 @@ public class AndroidModule {
     @Provides
     Logger provideLogger(){
         return new Logger();
+    }
+
+    @Provides
+    DialogUtil provideDialogUtil(){
+        return new DialogUtil();
     }
 }

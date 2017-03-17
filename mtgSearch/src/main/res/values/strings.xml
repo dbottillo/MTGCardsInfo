@@ -29,6 +29,9 @@
     </plurals>
     <string name="minimum_search">Search requires at least one condition</string>
 
+    <!-- basic -->
+    <string name="add">Add</string>
+
     <!-- filter panel -->
     <string name="mtg_color_white" translatable="false">W</string>
     <string name="mtg_color_blue" translatable="false">U</string>
@@ -99,7 +102,7 @@
     <string name="action_move_all">Move all</string>
 
     <string name="deck_title">Deck</string>
-    <string name="deck_subtitle">%1s cards</string>
+    <string name="deck_subtitle">%d cards</string>
     <string name="deck_delete_title">Delete deck</string>
     <string name="deck_delete_text">This deck is not empty. Are you sure?</string>
     <string name="deck_delete_confirmation">Delete</string>

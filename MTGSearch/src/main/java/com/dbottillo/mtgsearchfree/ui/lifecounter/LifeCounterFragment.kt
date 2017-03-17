@@ -1,7 +1,9 @@
 package com.dbottillo.mtgsearchfree.ui.lifecounter
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -52,6 +54,7 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_life_counter, container, false)
         mtgApp.uiGraph.inject(this)
+        dialogUtil.init(context)
         return rootView
     }
 
@@ -132,25 +135,11 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
 
     override fun onEditPlayer(player: Player) {
         LOG.d()
-        val alert = AlertDialog.Builder(activity, R.style.MTGDialogTheme)
-
-        alert.setTitle(getString(R.string.edit_player))
-
-        val layoutInflater = LayoutInflater.from(context)
-        @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
-        val editText = view.findViewById(R.id.edit_text) as EditText
-        editText.setText(player.name)
-        editText.setSelection(player.name.length)
-        alert.setView(view)
-
-        alert.setPositiveButton(getString(R.string.save)) { _, _ ->
-            val value = editText.text.toString()
-            player.name = value
+        dialogUtil.showEditPlayer(player){
+            player.name = it
             playerPresenter.editPlayer(player)
             TrackingManager.trackEditPlayer()
         }
-
-        alert.show()
     }
 
     override fun onRemovePlayer(player: Player) {
