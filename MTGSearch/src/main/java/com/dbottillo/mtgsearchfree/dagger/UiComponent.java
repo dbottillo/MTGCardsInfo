@@ -19,8 +19,6 @@ import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
-import org.jetbrains.annotations.NotNull;
-
 import dagger.Component;
 
 @ActivityScope
@@ -57,7 +55,7 @@ public interface UiComponent {
 
     void inject(MTGCardView mtgCardView);
 
-    void inject(@NotNull LifeCounterFragment lifeCounterFragment);
+    void inject(LifeCounterFragment lifeCounterFragment);
 
-    void inject(@NotNull DecksFragment decksFragment);
+    void inject(DecksFragment decksFragment);
 }

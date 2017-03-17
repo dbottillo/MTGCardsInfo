@@ -15,6 +15,7 @@ import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
+import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
@@ -48,6 +49,8 @@ public interface AppComponent {
     FileUtil getFileUtil();
 
     Logger getLogger();
+
+    DialogUtil getDialogUtil();
 
     void inject(MTGApp app);
 
