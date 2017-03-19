@@ -1,21 +1,34 @@
 package com.dbottillo.mtgsearchfree.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
+import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
+import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
+import com.dbottillo.mtgsearchfree.util.FileUtil
+import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
+import javax.inject.Inject
 
 abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListener {
 
     lateinit var toolbarRevealScrollHelper: ToolbarRevealScrollHelper
 
+    @Inject
+    lateinit var generalData : GeneralData
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        mtgApp.uiGraph.inject(this)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, getScrollViewId(),
                 R.color.white, heightToolbar, true)
 
@@ -28,6 +41,10 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
         toolbarRevealScrollHelper.onViewCreated(view, savedInstanceState)
 
         toolbar.inflateMenu(R.menu.main_more)
+        if (BuildConfig.DEBUG) {
+            toolbar.inflateMenu(R.menu.main_debug)
+        }
+        toolbar.inflateMenu(R.menu.main_user_debug)
         toolbar.setOnMenuItemClickListener(this)
 
     }
@@ -48,21 +65,20 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     }
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.more_rate){
-            dbActivity.openRateTheApp()
-            return true
-        }
-        if (item?.itemId == R.id.more_about) {
-            //startActivity(Intent(activity, CardLuckyActivity::class.java))
-            return true
-        }
-        if (item?.itemId == R.id.more_beta) {
-            //startActivity(Intent(activity, CardLuckyActivity::class.java))
-            return true
-        }
-        if (item?.itemId == R.id.more_release_note) {
-            //startActivity(Intent(activity, CardLuckyActivity::class.java))
-            return true
+        when (item?.itemId) {
+            R.id.more_rate -> dbActivity.openRateTheApp()
+            R.id.more_about -> startActivity(Intent(activity, CardLuckyActivity::class.java))
+            R.id.more_beta -> startActivity(Intent(activity, CardLuckyActivity::class.java))
+            R.id.more_release_note -> startActivity(Intent(activity, CardLuckyActivity::class.java))
+            R.id.action_create_db -> (activity as HomeActivity).recreateDb()
+            R.id.action_fill_decks -> CreateDecksAsyncTask(app.applicationContext).execute()
+            R.id.action_create_fav -> AddFavouritesAsyncTask(app.applicationContext).execute()
+            R.id.action_crash -> throw RuntimeException("This is a crash")
+            R.id.action_send_db -> (activity as HomeActivity).copyDBToSdCard()
+            R.id.action_copy_db -> {
+                val copied = FileUtil.copyDbFromSdCard(app.applicationContext, CardsInfoDbHelper.DATABASE_NAME)
+                Toast.makeText(app.applicationContext, if (copied) "database copied" else "database not copied", Toast.LENGTH_LONG).show()
+            }
         }
         return true
     }

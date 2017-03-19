@@ -293,7 +293,7 @@ public class MainFragment extends BasicFragment implements
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         cardsHelper.sortCards(bucket);
-        mtgCardsView.loadCards(bucket, this);
+        mtgCardsView.loadCards(bucket, this, gameSet.getName());
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -304,6 +304,16 @@ public class MainFragment extends BasicFragment implements
     public void onSortSelected() {
         LOG.d();
         loadSet();
+    }
+
+    @Override
+    public void onCardsViewTypeSelected() {
+        
+    }
+
+    @Override
+    public void onCardsSettingSelected() {
+
     }
 
     @SuppressLint("NewApi")

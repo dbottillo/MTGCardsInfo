@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
     android:orientation="vertical"
+    tools:background="@color/white"
     tools:context=".view.activities.MainActivity">
 
     <android.support.v7.widget.RecyclerView
@@ -20,8 +20,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:padding="40dp"
-        android:text="@string/empty_search"
         android:paddingTop="20dp"
+        android:text="@string/empty_search"
         android:textStyle="italic"
         android:visibility="gone"
         tools:visibility="visible"/>
@@ -34,9 +34,5 @@
 
         <include layout="@layout/search_bottom"/>
     </FrameLayout>
-
-    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:id="@+id/progress"
-        style="@style/MTGProgressBar"/>
 
 </RelativeLayout>

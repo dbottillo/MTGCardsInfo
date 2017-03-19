@@ -5,6 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -14,29 +17,34 @@ import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
+public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private static final int ITEM_VIEW_TYPE_HEADER = 0;
+    private static final int ITEM_VIEW_TYPE_ITEM = 1;
 
     private CardsBucket bucket;
     private boolean gridMode;
     private boolean isASearch;
     private OnCardListener onCardListener;
     private int menuRes;
+    private String title;
 
-    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes) {
+    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes, String title) {
         LOG.d();
-        return new CardsAdapter(cards, false, isASearch, menuRes);
+        return new CardsAdapter(cards, false, isASearch, menuRes, title);
     }
 
-    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes) {
+    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes, String title) {
         LOG.d();
-        return new CardsAdapter(cards, true, isASearch, menuRes);
+        return new CardsAdapter(cards, true, isASearch, menuRes, title);
     }
 
-    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes) {
+    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes, String title) {
         this.bucket = bucket;
         this.gridMode = gridMode;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
+        this.title = title;
     }
 
     public void setOnCardListener(OnCardListener onCardListener) {
@@ -44,10 +52,16 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
     }
 
     @Override
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        if (viewType == ITEM_VIEW_TYPE_HEADER){
+            return new HeaderViewHolder(inflater.inflate(R.layout.cards_header, parent, false));
+        }
+
         Context context = parent.getContext();
         int columns = context.getResources().getInteger(R.integer.cards_grid_column_count);
-        View v = LayoutInflater.from(parent.getContext()).inflate(gridMode ? R.layout.grid_item_card : R.layout.row_card, parent, false);
+        View v = inflater.inflate(gridMode ? R.layout.grid_item_card : R.layout.row_card, parent, false);
         if (gridMode) {
             int height = (int) ((parent.getMeasuredWidth() / (double) columns) * MTGCardView.RATIO_CARD);
             v.setMinimumHeight(height);
@@ -56,7 +70,31 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final CardViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder originalHolder, int position) {
+        if (position == ITEM_VIEW_TYPE_HEADER){
+            final HeaderViewHolder holder = (HeaderViewHolder) originalHolder;
+            holder.title.setText(title);
+            holder.type.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onCardListener.onCardsViewTypeSelected();
+                }
+            });
+            holder.settings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onCardListener.onCardsSettingSelected();
+                }
+            });
+            if (gridMode) {
+                holder.type.setImageResource(R.drawable.cards_grid_type);
+            } else {
+                holder.type.setImageResource(R.drawable.cards_list_type);
+            }
+            return;
+        }
+
+        final CardViewHolder holder = (CardViewHolder) originalHolder;
         final MTGCard card = bucket.getCards().get(position);
         final Context context = holder.parent.getContext();
         if (gridMode) {
@@ -96,7 +134,12 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public int getItemCount() {
-        return bucket.getCards().size();
+        return bucket.getCards().size() + 1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position == 0 ? ITEM_VIEW_TYPE_HEADER : ITEM_VIEW_TYPE_ITEM;
     }
 
     @Override
@@ -110,5 +153,23 @@ public final class CardsAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     public OnCardListener getOnCardListener() {
         return onCardListener;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    class HeaderViewHolder extends RecyclerView.ViewHolder{
+
+        TextView title;
+        ImageButton type;
+        ImageButton settings;
+
+        public HeaderViewHolder(View itemView) {
+            super(itemView);
+            title = (TextView) itemView.findViewById(R.id.title);
+            type = (ImageButton) itemView.findViewById(R.id.cards_view_type);
+            settings = (ImageButton) itemView.findViewById(R.id.cards_settings);
+        }
     }
 }

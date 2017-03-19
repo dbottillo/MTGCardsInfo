@@ -32,8 +32,8 @@ import com.dbottillo.mtgsearchfree.view.fragments.JoinBetaFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.OldLifeCounterFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.NoticeDialogFragment;
+import com.dbottillo.mtgsearchfree.view.fragments.OldSavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.ReleaseNoteFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.SavedFragment;
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper;
 import com.dbottillo.mtgsearchfree.view.helpers.SlidingPanelHelper;
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView;
@@ -190,8 +190,8 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
         if (menuItem.getItemId() == R.id.drawer_home && !(currentFragment instanceof MainFragment)) {
             changeFragment(new MainFragment(), "main", false);
             slidingPanelHelper.showPanel();
-        } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof SavedFragment)) {
-            changeFragment(new SavedFragment(), "saved_fragment", true);
+        } else if (menuItem.getItemId() == R.id.drawer_saved && !(currentFragment instanceof OldSavedFragment)) {
+            changeFragment(new OldSavedFragment(), "saved_fragment", true);
             slidingPanelHelper.showPanel();
 
         } else if (menuItem.getItemId() == R.id.drawer_life_counter && !(currentFragment instanceof OldLifeCounterFragment)) {
