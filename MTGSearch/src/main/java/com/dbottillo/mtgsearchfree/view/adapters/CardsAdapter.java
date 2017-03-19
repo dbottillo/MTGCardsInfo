@@ -1,7 +1,15 @@
 package com.dbottillo.mtgsearchfree.view.adapters;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -28,23 +37,25 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private OnCardListener onCardListener;
     private int menuRes;
     private String title;
+    private CardFilter cardFilter;
 
-    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes, String title) {
+    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         LOG.d();
-        return new CardsAdapter(cards, false, isASearch, menuRes, title);
+        return new CardsAdapter(cards, false, isASearch, menuRes, title, cardFilter);
     }
 
-    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes, String title) {
+    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         LOG.d();
-        return new CardsAdapter(cards, true, isASearch, menuRes, title);
+        return new CardsAdapter(cards, true, isASearch, menuRes, title, cardFilter);
     }
 
-    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes, String title) {
+    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         this.bucket = bucket;
         this.gridMode = gridMode;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
         this.title = title;
+        this.cardFilter = cardFilter;
     }
 
     public void setOnCardListener(OnCardListener onCardListener) {
@@ -91,6 +102,30 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             } else {
                 holder.type.setImageResource(R.drawable.cards_list_type);
             }
+            if (cardFilter == null){
+                holder.subTitle.setVisibility(View.GONE);
+                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP,40);
+            } else {
+                holder.subTitle.setVisibility(View.VISIBLE);
+                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP,32);
+                SpannableString spannableString = new SpannableString("WUBRG - ALE - CURM");
+                int accent = ContextCompat.getColor(holder.itemView.getContext(), R.color.color_accent);
+                checkSpannable(spannableString, cardFilter.white, 0, accent);
+                checkSpannable(spannableString, cardFilter.blue, 1, accent);
+                checkSpannable(spannableString, cardFilter.black, 2, accent);
+                checkSpannable(spannableString, cardFilter.red, 3, accent);
+                checkSpannable(spannableString, cardFilter.green, 4, accent);
+
+                checkSpannable(spannableString, cardFilter.artifact, 6, accent);
+                checkSpannable(spannableString, cardFilter.land, 7, accent);
+                checkSpannable(spannableString, cardFilter.eldrazi, 8, accent);
+
+                checkSpannable(spannableString, cardFilter.common, 10, accent);
+                checkSpannable(spannableString, cardFilter.uncommon, 11, accent);
+                checkSpannable(spannableString, cardFilter.rare, 12, accent);
+                checkSpannable(spannableString, cardFilter.mythic, 12, accent);
+                holder.subTitle.setText(spannableString);
+            }
             return;
         }
 
@@ -127,6 +162,12 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         });
     }
 
+    private void checkSpannable(SpannableString spannableString, boolean on, int start, int color) {
+        if (on){
+            spannableString.setSpan(new ForegroundColorSpan(color), start, start+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+    }
+
     @Override
     public long getItemId(int position) {
         return position;
@@ -159,17 +200,24 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return title;
     }
 
+    public CardFilter getCardFilter() {
+        return cardFilter;
+    }
+
     class HeaderViewHolder extends RecyclerView.ViewHolder{
 
         TextView title;
+        TextView subTitle;
         ImageButton type;
         ImageButton settings;
 
         public HeaderViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
+            subTitle= (TextView) itemView.findViewById(R.id.sub_title);
             type = (ImageButton) itemView.findViewById(R.id.cards_view_type);
             settings = (ImageButton) itemView.findViewById(R.id.cards_settings);
         }
     }
+
 }

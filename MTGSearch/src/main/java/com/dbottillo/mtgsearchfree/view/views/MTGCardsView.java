@@ -12,12 +12,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
+
+import org.jetbrains.annotations.NotNull;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,17 +69,21 @@ public class MTGCardsView extends RelativeLayout {
     }
 
     public void loadCards(CardsBucket bucket, OnCardListener listener, int title) {
-        loadCards(bucket, listener, getContext().getString(title));
+        loadCards(bucket, listener, title, null);
     }
 
-    public void loadCards(CardsBucket bucket, OnCardListener listener, String title) {
+    public void loadCards(CardsBucket bucket, OnCardListener listener, int title, CardFilter cardFilter) {
+        loadCards(bucket, listener, getContext().getString(title), cardFilter);
+    }
+
+    public void loadCards(CardsBucket bucket, OnCardListener listener, String title, CardFilter cardFilter) {
         LOG.d();
 
         adapter = null;
         if (grid) {
-            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option, title);
+            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option, title, cardFilter);
         } else {
-            adapter = CardsAdapter.list(bucket, false, R.menu.card_option, title);
+            adapter = CardsAdapter.list(bucket, false, R.menu.card_option, title, cardFilter);
         }
         adapter.setOnCardListener(listener);
         listView.setAdapter(adapter);
@@ -128,7 +135,8 @@ public class MTGCardsView extends RelativeLayout {
         CardsBucket bucket = adapter.getBucket();
         OnCardListener listener = adapter.getOnCardListener();
         String title = adapter.getTitle();
-        loadCards(bucket, listener, title);
+        CardFilter cardFilter = adapter.getCardFilter();
+        loadCards(bucket, listener, title, cardFilter);
     }
 
     private class GridItemDecorator extends RecyclerView.ItemDecoration {
@@ -150,13 +158,6 @@ public class MTGCardsView extends RelativeLayout {
                 outRect.left = space / 2;
                 outRect.right = space / 2;
                 outRect.bottom = space / 2;
-
-                // Add top margin only for the first item to avoid double space between items
-                /*if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {
-                    outRect.top = space;
-                } else {
-                    outRect.top = 0;
-                }*/
                 outRect.top = space;
             }
         }

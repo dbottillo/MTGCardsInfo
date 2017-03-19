@@ -293,7 +293,7 @@ public class MainFragment extends BasicFragment implements
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         cardsHelper.sortCards(bucket);
-        mtgCardsView.loadCards(bucket, this, gameSet.getName());
+        mtgCardsView.loadCards(bucket, this, gameSet.getName(), null);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
