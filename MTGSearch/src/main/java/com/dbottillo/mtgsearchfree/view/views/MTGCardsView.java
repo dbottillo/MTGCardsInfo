@@ -33,21 +33,25 @@ public class MTGCardsView extends RelativeLayout {
     RecyclerView listView;
     @BindView(R.id.empty_view)
     TextView emptyView;
-    @BindView(R.id.progress)
-    SmoothProgressBar progressBar;
     @BindView(R.id.search_bottom_container)
     View footer;
 
     public MTGCardsView(Context ctx) {
-        this(ctx, null);
+        super(ctx);
+        init(ctx);
     }
 
     public MTGCardsView(Context ctx, AttributeSet attrs) {
-        this(ctx, attrs, -1);
+        super(ctx, attrs);
+        init(ctx);
     }
 
-    public MTGCardsView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public MTGCardsView(Context ctx, AttributeSet attrs, int defStyle) {
+        super(ctx, attrs, defStyle);
+        init(ctx);
+    }
+
+    private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.fragment_set, this, true);
         ButterKnife.bind(this, view);
@@ -61,14 +65,18 @@ public class MTGCardsView extends RelativeLayout {
         emptyView.setText(res);
     }
 
-    public void loadCards(CardsBucket bucket, OnCardListener listener) {
+    public void loadCards(CardsBucket bucket, OnCardListener listener, int title) {
+        loadCards(bucket, listener, getContext().getString(title));
+    }
+
+    public void loadCards(CardsBucket bucket, OnCardListener listener, String title) {
         LOG.d();
 
         adapter = null;
         if (grid) {
-            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option);
+            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option, title);
         } else {
-            adapter = CardsAdapter.list(bucket, false, R.menu.card_option);
+            adapter = CardsAdapter.list(bucket, false, R.menu.card_option, title);
         }
         adapter.setOnCardListener(listener);
         listView.setAdapter(adapter);
@@ -83,7 +91,6 @@ public class MTGCardsView extends RelativeLayout {
             UIUtil.setHeight(footer, 0);
         }
 
-        progressBar.setVisibility(View.GONE);
         emptyView.setVisibility((adapter.getItemCount() == 0) ? View.VISIBLE : View.GONE);
     }
 
@@ -91,8 +98,14 @@ public class MTGCardsView extends RelativeLayout {
         LOG.d();
         grid = true;
         int columns = getResources().getInteger(R.integer.cards_grid_column_count);
-        GridLayoutManager glm = new GridLayoutManager(getContext(), columns);
+        final GridLayoutManager glm = new GridLayoutManager(getContext(), columns);
         glm.setInitialPrefetchItemCount(columns);
+        glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return position == 0 ? glm.getSpanCount() : 1;
+            }
+        });
         listView.addItemDecoration(itemDecorator);
         listView.setLayoutManager(glm);
         tryRefresh();
@@ -114,7 +127,8 @@ public class MTGCardsView extends RelativeLayout {
         }
         CardsBucket bucket = adapter.getBucket();
         OnCardListener listener = adapter.getOnCardListener();
-        loadCards(bucket, listener);
+        String title = adapter.getTitle();
+        loadCards(bucket, listener, title);
     }
 
     private class GridItemDecorator extends RecyclerView.ItemDecoration {
@@ -127,15 +141,23 @@ public class MTGCardsView extends RelativeLayout {
         @Override
         public void getItemOffsets(Rect outRect, View view,
                                    RecyclerView parent, RecyclerView.State state) {
-            outRect.left = space / 2;
-            outRect.right = space / 2;
-            outRect.bottom = space / 2;
-
-            // Add top margin only for the first item to avoid double space between items
-            if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {
-                outRect.top = space;
-            } else {
+            if (parent.getChildLayoutPosition(view) == 0){
+                outRect.left = 0;
+                outRect.right = 0;
+                outRect.bottom = 0;
                 outRect.top = 0;
+            } else {
+                outRect.left = space / 2;
+                outRect.right = space / 2;
+                outRect.bottom = space / 2;
+
+                // Add top margin only for the first item to avoid double space between items
+                /*if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {
+                    outRect.top = space;
+                } else {
+                    outRect.top = 0;
+                }*/
+                outRect.top = space;
             }
         }
     }

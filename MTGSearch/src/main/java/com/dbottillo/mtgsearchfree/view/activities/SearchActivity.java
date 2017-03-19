@@ -371,7 +371,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private void refreshList() {
         LOG.d();
         cardsHelper.sortCards(currentBucket);
-        mtgCardsView.loadCards(currentBucket, this);
+        mtgCardsView.loadCards(currentBucket, this, R.string.action_search);
     }
 
     @Override
@@ -393,6 +393,16 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 cardsShowType.setIcon(R.drawable.cards_grid_type);
             }
         }
+    }
+
+    @Override
+    public void onCardsViewTypeSelected() {
+
+    }
+
+    @Override
+    public void onCardsSettingSelected() {
+
     }
 
     @Override

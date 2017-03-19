@@ -51,8 +51,8 @@ abstract class BaseDrawerActivity: BasicActivity(), NavigationView.OnNavigationI
         if (menuItem.itemId == R.id.drawer_home && currentFragment !is MainFragment) {
             changeFragment(MainFragment(), "main", false)
 
-        } else if (menuItem.itemId == R.id.drawer_saved && currentFragment !is SavedFragment) {
-            changeFragment(SavedFragment(), "saved_fragment", true)
+        } else if (menuItem.itemId == R.id.drawer_saved && currentFragment !is OldSavedFragment) {
+            changeFragment(OldSavedFragment(), "saved_fragment", true)
 
 
         } else if (menuItem.itemId == R.id.drawer_life_counter && currentFragment !is OldLifeCounterFragment) {

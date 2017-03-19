@@ -36,7 +36,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
-public class SavedFragment extends BasicFragment implements OnCardListener, MainActivity.MainActivityListener, CardsView {
+@Deprecated
+public class OldSavedFragment extends BasicFragment implements OnCardListener, MainActivity.MainActivityListener, CardsView {
 
     private CardsBucket savedBucket;
 
@@ -112,6 +113,16 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     }
 
     @Override
+    public void onCardsViewTypeSelected() {
+
+    }
+
+    @Override
+    public void onCardsSettingSelected() {
+
+    }
+
+    @Override
     public void onCardSelected(MTGCard card, int position, View view) {
         LOG.d();
         TrackingManager.trackOpenCard(position);
@@ -134,7 +145,7 @@ public class SavedFragment extends BasicFragment implements OnCardListener, Main
     public void updateContent() {
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
-        CardsAdapter adapter = CardsAdapter.list(bucket, false, R.menu.card_saved_option);
+        CardsAdapter adapter = CardsAdapter.list(bucket, false, R.menu.card_saved_option, getString(R.string.action_saved));
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
         emptyView.setVisibility(bucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);
