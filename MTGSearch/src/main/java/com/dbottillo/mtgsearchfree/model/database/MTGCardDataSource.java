@@ -18,13 +18,13 @@ public class MTGCardDataSource {
     private static final int LIMIT = 400;
 
     enum STANDARD {
-        BATTLE_ZENDIKAR(15, "Battle for Zendikar"),
-        OATH_GATEWATCH(12, "Oath of the Gatewatch"),
-        SHADOWS_OVER_INNISTRAD(10, "Shadows over Innistrad"),
-        ELDRITCH_MOON(8, "Eldritch Moon"),
-        KALADESH(5, "Kaladesh"),
-        KALADESH_INVENTIONS(4, "Kaladesh Inventions"),
-        AETHER_REVOLT(1, "Aether Revolt");
+        BATTLE_ZENDIKAR(16, "Battle for Zendikar"),
+        OATH_GATEWATCH(13, "Oath of the Gatewatch"),
+        SHADOWS_OVER_INNISTRAD(11, "Shadows over Innistrad"),
+        ELDRITCH_MOON(9, "Eldritch Moon"),
+        KALADESH(6, "Kaladesh"),
+        KALADESH_INVENTIONS(5, "Kaladesh Inventions"),
+        AETHER_REVOLT(2, "Aether Revolt");
 
         public int setId;
         public String name;

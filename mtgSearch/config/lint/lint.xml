@@ -25,9 +25,9 @@
         <ignore regexp="global-tracker.xml"/>
     </issue>
     <issue id="LogConditional">
-        <ignore regexp="*SQLiteAssetHelper.java"/>
+        <ignore regexp="SQLiteAssetHelper.java"/>
     </issue>
-    <issue id="NewerVersionAvailable">
+    <!--<issue id="NewerVersionAvailable">
         <ignore regexp="*leakcanary*"/>
-    </issue>
+    </issue>-->
 </lint>
