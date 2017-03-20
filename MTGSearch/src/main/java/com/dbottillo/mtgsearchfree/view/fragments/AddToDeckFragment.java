@@ -209,12 +209,12 @@ public class AddToDeckFragment extends BasicFragment implements DecksView {
 
     @Override
     public void deckLoaded(DeckBucket bucket) {
-        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public void deckExported(boolean success) {
-        throw new UnsupportedOperationException();
+
     }
 
     @Override

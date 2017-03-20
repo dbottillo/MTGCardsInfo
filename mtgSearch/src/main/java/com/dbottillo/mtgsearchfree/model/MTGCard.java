@@ -616,7 +616,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public boolean isDoubleFaced() {
-        return layout.equalsIgnoreCase("double-faced");
+        return layout != null && layout.equalsIgnoreCase("double-faced");
     }
 
     public String bigToString() {

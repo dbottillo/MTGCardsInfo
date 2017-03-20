@@ -63,7 +63,7 @@ public class GeneralPreferences implements GeneralData {
 
     @Override
     public boolean cardMigrationRequired() {
-        return !isFreshInstall() && sharedPreferences.getBoolean(CARD_MIGRATION_REQUIRED, true);
+        return false;
     }
 
     @Override
