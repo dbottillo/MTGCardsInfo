@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/add_new_player"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginBottom="48dp"
@@ -14,9 +13,12 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_list_footer_add">
 
-        <TextView
-            style="@style/FooterText"
-            android:text="@string/add_new_player"/>
+        <Button
+            android:id="@+id/add_new_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/add_new_player"
+            style="@style/FooterBtn" />
 
     </FrameLayout>
 </LinearLayout>

@@ -1,12 +1,15 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import butterknife.BindView
+import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.CardFilter
@@ -17,10 +20,12 @@ import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.view.CardFilterView
 import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
+import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
@@ -32,6 +37,9 @@ class SavedFragment : BaseHomeFragment(), CardsView, OnCardListener, CardFilterV
 
     @BindView(R.id.cards)
     internal lateinit var mtgCardsView: MTGCardsView
+
+    @BindView(R.id.empty_saved_cards_container)
+    internal lateinit var emptyContainer : LinearLayout
 
     @Inject
     lateinit var cardsPresenter: CardsPresenter
@@ -92,7 +100,8 @@ class SavedFragment : BaseHomeFragment(), CardsView, OnCardListener, CardFilterV
         TrackingManager.trackSearchError(exception?.message)
     }
 
-    override fun cardsLoaded(bucket: CardsBucket?) {
+    override fun cardsLoaded(bucket: CardsBucket) {
+        emptyContainer.visibility = if (bucket.cards.isEmpty()) View.VISIBLE else View.GONE
         val filteredBucket = cardsHelper.filterCards(filter, bucket)
         cardsHelper.sortCards(bucket)
         mtgCardsView.loadCards(filteredBucket, this, R.string.action_saved, filter)
@@ -136,6 +145,12 @@ class SavedFragment : BaseHomeFragment(), CardsView, OnCardListener, CardFilterV
 
     override fun onCardsSettingSelected() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    @OnClick(R.id.empty_cards_action)
+    fun openSearch(){
+        LOG.d()
+        startActivity(Intent(activity, SearchActivity::class.java))
     }
 
 }
