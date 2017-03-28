@@ -38,6 +38,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private int menuRes;
     private String title;
     private CardFilter cardFilter;
+    private int colorFilterActive = -1;
 
     public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         LOG.d();
@@ -109,21 +110,23 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 holder.subTitle.setVisibility(View.VISIBLE);
                 holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP,32);
                 SpannableString spannableString = new SpannableString("WUBRG - ALE - CURM");
-                int accent = ContextCompat.getColor(holder.itemView.getContext(), R.color.color_accent);
-                checkSpannable(spannableString, cardFilter.white, 0, accent);
-                checkSpannable(spannableString, cardFilter.blue, 1, accent);
-                checkSpannable(spannableString, cardFilter.black, 2, accent);
-                checkSpannable(spannableString, cardFilter.red, 3, accent);
-                checkSpannable(spannableString, cardFilter.green, 4, accent);
+                if (colorFilterActive == -1) {
+                    colorFilterActive = ContextCompat.getColor(holder.itemView.getContext(), R.color.color_accent);
+                }
+                checkSpannable(spannableString, cardFilter.white, 0);
+                checkSpannable(spannableString, cardFilter.blue, 1);
+                checkSpannable(spannableString, cardFilter.black, 2);
+                checkSpannable(spannableString, cardFilter.red, 3);
+                checkSpannable(spannableString, cardFilter.green, 4);
 
-                checkSpannable(spannableString, cardFilter.artifact, 6, accent);
-                checkSpannable(spannableString, cardFilter.land, 7, accent);
-                checkSpannable(spannableString, cardFilter.eldrazi, 8, accent);
+                checkSpannable(spannableString, cardFilter.artifact, 8);
+                checkSpannable(spannableString, cardFilter.land, 9);
+                checkSpannable(spannableString, cardFilter.eldrazi, 10);
 
-                checkSpannable(spannableString, cardFilter.common, 10, accent);
-                checkSpannable(spannableString, cardFilter.uncommon, 11, accent);
-                checkSpannable(spannableString, cardFilter.rare, 12, accent);
-                checkSpannable(spannableString, cardFilter.mythic, 12, accent);
+                checkSpannable(spannableString, cardFilter.common, 14);
+                checkSpannable(spannableString, cardFilter.uncommon, 15);
+                checkSpannable(spannableString, cardFilter.rare, 16);
+                checkSpannable(spannableString, cardFilter.mythic, 17);
                 holder.subTitle.setText(spannableString);
             }
             return;
@@ -162,9 +165,9 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         });
     }
 
-    private void checkSpannable(SpannableString spannableString, boolean on, int start, int color) {
+    private void checkSpannable(SpannableString spannableString, boolean on, int start) {
         if (on){
-            spannableString.setSpan(new ForegroundColorSpan(color), start, start+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new ForegroundColorSpan(colorFilterActive), start, start+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
     }
 
