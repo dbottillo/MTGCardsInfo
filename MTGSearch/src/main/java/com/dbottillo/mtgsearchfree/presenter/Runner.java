@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class Runner<T> {
 
-    interface RxWrapperListener<T> {
+    public interface RxWrapperListener<T> {
         void onNext(T data);
 
         void onError(Throwable e);
@@ -17,7 +17,7 @@ public class Runner<T> {
         void onCompleted();
     }
 
-    void run(Observable<T> on, final RxWrapperListener<T> listener) {
+    public void run(Observable<T> on, final RxWrapperListener<T> listener) {
         on.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
         on.subscribe(new Observer<T>() {

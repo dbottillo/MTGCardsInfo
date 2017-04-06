@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -21,6 +22,8 @@ import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,29 +71,30 @@ public class MTGCardsView extends RelativeLayout {
         emptyView.setText(res);
     }
 
-    public void loadCards(CardsBucket bucket, OnCardListener listener, int title) {
-        loadCards(bucket, listener, title, null);
+    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title) {
+        loadCards(cards, listener, title, null, R.menu.card_option);
     }
 
-    public void loadCards(CardsBucket bucket, OnCardListener listener, int title, CardFilter cardFilter) {
-        loadCards(bucket, listener, getContext().getString(title), cardFilter);
+    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title, CardFilter cardFilter, int menuOption) {
+        loadCards(cards, listener, getContext().getString(title), cardFilter, menuOption);
     }
 
-    public void loadCards(CardsBucket bucket, OnCardListener listener, String title, CardFilter cardFilter) {
+    public void loadCards(List<MTGCard> cards, OnCardListener listener,
+                          String title, CardFilter cardFilter, int menuOption) {
         LOG.d();
 
         adapter = null;
         if (grid) {
-            adapter = CardsAdapter.grid(bucket, false, R.menu.card_option, title, cardFilter);
+            adapter = CardsAdapter.grid(cards, false, menuOption, title, cardFilter);
         } else {
-            adapter = CardsAdapter.list(bucket, false, R.menu.card_option, title, cardFilter);
+            adapter = CardsAdapter.list(cards, false, menuOption, title, cardFilter);
         }
         adapter.setOnCardListener(listener);
         listView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
 
-        if (bucket.getCards().size() == CardDataSource.LIMIT) {
+        if (cards.size() == CardDataSource.LIMIT) {
             TextView moreResult = (TextView) footer.findViewById(R.id.more_result);
             moreResult.setText(getResources().getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT));
             UIUtil.setHeight(footer, UIUtil.dpToPx(getContext(), 60));
@@ -129,14 +133,15 @@ public class MTGCardsView extends RelativeLayout {
     }
 
     private void tryRefresh() {
-        if (adapter == null || adapter.getBucket().getCards().size() <= 0) {
+        if (adapter == null || adapter.getCards().size() <= 0) {
             return;
         }
-        CardsBucket bucket = adapter.getBucket();
+        List<MTGCard> cards = adapter.getCards();
         OnCardListener listener = adapter.getOnCardListener();
         String title = adapter.getTitle();
         CardFilter cardFilter = adapter.getCardFilter();
-        loadCards(bucket, listener, title, cardFilter);
+        int menuOption = adapter.getMenuOption();
+        loadCards(cards, listener, title, cardFilter, menuOption);
     }
 
     private class GridItemDecorator extends RecyclerView.ItemDecoration {
