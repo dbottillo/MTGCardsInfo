@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 class TestRunner<T> extends Runner<T> {
 
     @Override
-    void run(Observable<T> on, final RxWrapperListener<T> listener) {
+    public void run(Observable<T> on, final RxWrapperListener<T> listener) {
         on.blockingSubscribe(new Observer<T>() {
             @Override
             public void onSubscribe(Disposable d) {

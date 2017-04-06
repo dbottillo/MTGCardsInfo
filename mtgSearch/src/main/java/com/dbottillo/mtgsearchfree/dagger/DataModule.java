@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.dagger;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
@@ -17,10 +18,13 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 import com.google.gson.Gson;
 
 import javax.inject.Named;
@@ -102,6 +106,13 @@ public class DataModule {
     @Singleton
     DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, Logger logger) {
         return new DecksStorage(fileUtil, deckDataSource, logger);
+    }
+
+    @Provides
+    @Singleton
+    SavedCardsStorage provideSavedCardsStorage(FavouritesDataSource favouritesDataSource, CardsHelper cardsHelper,
+                                               CardsPreferences cardsPreferences, Logger logger){
+        return new SavedCardsStorageImpl(favouritesDataSource, cardsHelper, cardsPreferences, logger);
     }
 
     @Provides

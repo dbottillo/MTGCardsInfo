@@ -8,6 +8,8 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractorImpl;
+import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor;
+import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
@@ -15,6 +17,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
@@ -47,6 +50,11 @@ class InteractorsModule {
     @Provides
     DecksInteractor provideDecksInteractor(DecksStorage decksStorage, FileUtil fileUtil, Logger logger) {
         return new DecksInteractorImpl(decksStorage, fileUtil, logger);
+    }
+
+    @Provides
+    SavedCardsInteractor provideSavedCardsInteractor(SavedCardsStorage storage, Logger logger){
+        return new SavedCardsInteractorImpl(storage, logger);
     }
 }
 

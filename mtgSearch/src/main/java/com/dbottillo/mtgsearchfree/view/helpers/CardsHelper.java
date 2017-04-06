@@ -14,9 +14,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public final class CardsHelper {
+public class CardsHelper {
 
     private CardsPreferences cardsPreferences;
+
+    public CardsHelper(){
+
+    }
 
     @Inject
     public CardsHelper(CardsPreferences cardsPreferences) {
@@ -30,15 +34,23 @@ public final class CardsHelper {
 
     public CardsBucket filterCards(CardFilter cardFilter, SearchParams searchParams, CardsBucket bucket) {
         LOG.d();
-        List<MTGCard> allCards = bucket.getCards();
-        ArrayList<MTGCard> filteredCards = new ArrayList<>();
         CardsBucket filteredBucket = new CardsBucket();
         filteredBucket.setKey(bucket.getKey());
+        filteredBucket.setCards(filterCards(cardFilter, searchParams, bucket.getCards()));
+        return filteredBucket;
+    }
+
+    public List<MTGCard> filterCards(CardFilter cardFilter, List<MTGCard> cards) {
+        LOG.d();
+        return filterCards(cardFilter, null, cards);
+    }
+
+    public List<MTGCard> filterCards(CardFilter cardFilter, SearchParams searchParams, List<MTGCard> cards){
+        ArrayList<MTGCard> filteredCards = new ArrayList<>();
         if (cardFilter == null) {
-            filteredBucket.setCards(filteredCards);
-            return filteredBucket;
+            return cards;
         }
-        for (MTGCard card : allCards) {
+        for (MTGCard card : cards) {
             boolean toAdd = false;
             if (searchParams == null) {
                 if (card.isWhite() && cardFilter.white) {
@@ -90,27 +102,42 @@ public final class CardsHelper {
                 filteredCards.add(card);
             }
         }
-        filteredBucket.setCards(filteredCards);
-        return filteredBucket;
+        return filteredCards;
     }
 
     public void sortCards(CardsBucket bucket) {
         LOG.d();
         boolean wubrgSort = cardsPreferences.isSortWUBRG();
+        sortCards(wubrgSort, bucket);
+    }
+
+    public void sortCards(boolean wubrgSort, CardsBucket bucket){
+        sortCards(wubrgSort, bucket.getCards());
+    }
+
+    public void sortCards(boolean wubrgSort, List<MTGCard> cards){
         if (wubrgSort) {
-            Collections.sort(bucket.getCards(), new Comparator<MTGCard>() {
-                @Override
-                public int compare(MTGCard lhs, MTGCard rhs) {
-                    return lhs.compareTo(rhs);
-                }
-            });
+            sortWUBGRCards(cards);
         } else {
-            Collections.sort(bucket.getCards(), new Comparator<MTGCard>() {
-                @Override
-                public int compare(MTGCard lhs, MTGCard rhs) {
-                    return lhs.getName().compareTo(rhs.getName());
-                }
-            });
+            sortAZCards(cards);
         }
+    }
+
+    public void sortWUBGRCards(List<MTGCard> cards){
+        Collections.sort(cards, new Comparator<MTGCard>() {
+            @Override
+            public int compare(MTGCard lhs, MTGCard rhs) {
+                return lhs.compareTo(rhs);
+            }
+        });
+    }
+
+    public void sortAZCards(List<MTGCard> cards){
+        Collections.sort(cards, new Comparator<MTGCard>() {
+            @Override
+            public int compare(MTGCard lhs, MTGCard rhs) {
+                return lhs.getName().compareTo(rhs.getName());
+            }
+        });
     }
 }

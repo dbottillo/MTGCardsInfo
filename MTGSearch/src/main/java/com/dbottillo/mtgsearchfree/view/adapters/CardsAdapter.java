@@ -26,12 +26,14 @@ import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int ITEM_VIEW_TYPE_HEADER = 0;
     private static final int ITEM_VIEW_TYPE_ITEM = 1;
 
-    private CardsBucket bucket;
+    private List<MTGCard> cards;
     private boolean gridMode;
     private boolean isASearch;
     private OnCardListener onCardListener;
@@ -40,18 +42,18 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private CardFilter cardFilter;
     private int colorFilterActive = -1;
 
-    public static CardsAdapter list(CardsBucket cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+    public static CardsAdapter list(List<MTGCard> cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         LOG.d();
         return new CardsAdapter(cards, false, isASearch, menuRes, title, cardFilter);
     }
 
-    public static CardsAdapter grid(CardsBucket cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+    public static CardsAdapter grid(List<MTGCard> cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
         LOG.d();
         return new CardsAdapter(cards, true, isASearch, menuRes, title, cardFilter);
     }
 
-    private CardsAdapter(CardsBucket bucket, boolean gridMode, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
-        this.bucket = bucket;
+    private CardsAdapter(List<MTGCard> cards, boolean gridMode, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+        this.cards = cards;
         this.gridMode = gridMode;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
@@ -133,7 +135,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
 
         final CardViewHolder holder = (CardViewHolder) originalHolder;
-        final MTGCard card = bucket.getCards().get(position);
+        final MTGCard card = cards.get(position);
         final Context context = holder.parent.getContext();
         if (gridMode) {
             holder.loader.setVisibility(View.VISIBLE);
@@ -178,7 +180,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        return bucket.getCards().size() + 1;
+        return cards.size() + 1;
     }
 
     @Override
@@ -191,8 +193,8 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public CardsBucket getBucket() {
-        return bucket;
+    public List<MTGCard> getCards() {
+        return cards;
     }
 
     public OnCardListener getOnCardListener() {
@@ -205,6 +207,10 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public CardFilter getCardFilter() {
         return cardFilter;
+    }
+
+    public int getMenuOption() {
+        return menuRes;
     }
 
     class HeaderViewHolder extends RecyclerView.ViewHolder{

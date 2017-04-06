@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
@@ -31,6 +32,8 @@ public interface AppComponent {
     MemoryStorage getCardsMemoryStorage();
 
     CardsStorage getCardsStorage();
+
+    SavedCardsStorage getSavedCardsStorage();
 
     SetDataSource getSetDataSource();
 

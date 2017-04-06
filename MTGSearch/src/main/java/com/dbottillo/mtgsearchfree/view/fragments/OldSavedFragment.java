@@ -145,7 +145,7 @@ public class OldSavedFragment extends BasicFragment implements OnCardListener, M
     public void updateContent() {
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
-        CardsAdapter adapter = CardsAdapter.list(bucket, false, R.menu.card_saved_option, getString(R.string.action_saved), null);
+        CardsAdapter adapter = CardsAdapter.list(bucket.getCards(), false, R.menu.card_saved_option, getString(R.string.action_saved), null);
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
         emptyView.setVisibility(bucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);
