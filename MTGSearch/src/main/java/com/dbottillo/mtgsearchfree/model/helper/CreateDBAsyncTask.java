@@ -270,7 +270,7 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         if (jsonObject.has("artist")) {
             values.put(CardDataSource.COLUMNS.ARTIST.getName(), jsonObject.getString("artist"));
         }
-        if (jsonObject.has("loyalty")) {
+        if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
             values.put(CardDataSource.COLUMNS.LOYALTY.getName(), jsonObject.getInt("loyalty"));
         }
         if (jsonObject.has("printings")) {

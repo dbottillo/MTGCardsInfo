@@ -19,8 +19,8 @@ buildscript {
     ext.support_runner_version = '0.5'
     ext.dexmaker_mockito_version = '1.2'
 
-    ext.number_of_set = 157;
-    ext.database_version = 24
+    ext.number_of_set = 160;
+    ext.database_version = 25
 
     repositories {
         maven { url 'https://maven.fabric.io/public' }
@@ -60,8 +60,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 61
-        versionName "2.8.2"
+        versionCode 62
+        versionName "2.8.3"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
     }
