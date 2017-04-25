@@ -396,7 +396,10 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public String getImage() {
         if (number != null && number.length() > 0
                 && !set.getCode().equalsIgnoreCase("MM3")
-                && !set.getCode().equalsIgnoreCase("MPS")) {
+                && !set.getCode().equalsIgnoreCase("MPS")
+                && !set.getCode().equalsIgnoreCase("DDS")
+                && !set.getCode().equalsIgnoreCase("AKH")
+                && !set.getCode().equalsIgnoreCase("MPS_AKH")) {
             return "http://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + number + ".jpg";
         }
         return getImageFromGatherer();
