@@ -271,11 +271,11 @@
             android:textColor="@color/white"/>
 
         <android.support.v7.widget.AppCompatCheckBox
-            android:id="@+id/search_m"
+            android:id="@+id/search_l"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/multicolor"
+            android:text="@string/mtg_type_land"
             android:textColor="@color/white"/>
 
     </LinearLayout>
@@ -297,11 +297,29 @@
             android:textColor="@color/white"/>
 
         <android.support.v7.widget.AppCompatCheckBox
-            android:id="@+id/search_l"
+            android:id="@+id/search_m"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/mtg_type_land"
+            android:text="@string/multicolor"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_color5_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_color4_container"
+        android:layout_marginTop="@dimen/base_margin"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/search_mno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/multicolor_no_others"
             android:textColor="@color/white"/>
 
     </LinearLayout>
@@ -310,7 +328,7 @@
         android:id="@+id/search_rarity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color4_container"
+        android:layout_below="@id/search_color5_container"
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_rarity_title"
