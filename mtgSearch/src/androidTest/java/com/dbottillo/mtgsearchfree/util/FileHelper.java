@@ -200,7 +200,7 @@ public final class FileHelper {
         if (jsonObject.has("artist")) {
             card.setArtist(jsonObject.getString("artist"));
         }
-        if (jsonObject.has("loyalty")) {
+        if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
             card.setLoyalty(jsonObject.getInt("loyalty"));
         }
         if (jsonObject.has("printings")) {
