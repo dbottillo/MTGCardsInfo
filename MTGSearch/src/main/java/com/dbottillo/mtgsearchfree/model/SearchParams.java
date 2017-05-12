@@ -11,7 +11,7 @@ public class SearchParams implements Parcelable {
     private IntParam cmc;
     private IntParam power;
     private IntParam tough;
-    private boolean white, blue, black, red, green, onlyMulti, noMulti, land;
+    private boolean white, blue, black, red, green, onlyMulti, noMulti, land, onlyMultiNoOthers;
     private boolean common, uncommon, rare, mythic;
     private int setId;
 
@@ -38,6 +38,7 @@ public class SearchParams implements Parcelable {
         rare = false;
         mythic = false;
         land = false;
+        onlyMultiNoOthers = false;
         setId = -1;
     }
 
@@ -156,6 +157,14 @@ public class SearchParams implements Parcelable {
         }
     }
 
+    public boolean isOnlyMultiNoOthers() {
+        return onlyMultiNoOthers;
+    }
+
+    public void setOnlyMultiNoOthers(boolean onlyMultiNoOthers) {
+        this.onlyMultiNoOthers = onlyMultiNoOthers;
+    }
+
     public boolean isCommon() {
         return common;
     }
@@ -226,6 +235,7 @@ public class SearchParams implements Parcelable {
         dest.writeInt(rare ? 1 : 0);
         dest.writeInt(mythic ? 1 : 0);
         dest.writeInt(setId);
+        dest.writeInt(onlyMultiNoOthers ? 1 : 0);
     }
 
     private void readFromParcel(Parcel in) {
@@ -248,6 +258,7 @@ public class SearchParams implements Parcelable {
         rare = in.readInt() == 1;
         mythic = in.readInt() == 1;
         setId = in.readInt();
+        onlyMultiNoOthers = in.readInt() == 1;
     }
 
     public static final Parcelable.Creator<SearchParams> CREATOR = new Parcelable.Creator<SearchParams>() {
@@ -277,6 +288,7 @@ public class SearchParams implements Parcelable {
                 + ", red=" + red
                 + ", green=" + green
                 + ", onlyMulti=" + onlyMulti
+                + ", onlyMultiNoOthers=" + onlyMultiNoOthers
                 + ", noMulti=" + noMulti
                 + ", land=" + land
                 + ", common=" + common
@@ -296,7 +308,7 @@ public class SearchParams implements Parcelable {
         return name.equalsIgnoreCase(other.name) && types.equalsIgnoreCase(other.types) && text.equalsIgnoreCase(other.text)
                 && cmc.equals(other.cmc) && power.equals(other.power) && tough.equals(other.tough) && white == other.white
                 && blue == other.blue && black == other.black && red == other.red && green == other.green
-                && onlyMulti == other.onlyMulti && land == other.land
+                && onlyMultiNoOthers == other.onlyMultiNoOthers && onlyMulti == other.onlyMulti && land == other.land
                 && noMulti == other.noMulti && common == other.common && other.uncommon == uncommon && rare == other.rare
                 && mythic == other.mythic && setId == other.setId;
     }
@@ -315,6 +327,7 @@ public class SearchParams implements Parcelable {
         result = 31 * result + (red ? 1 : 0);
         result = 31 * result + (green ? 1 : 0);
         result = 31 * result + (onlyMulti ? 1 : 0);
+        result = 31 * result + (onlyMultiNoOthers ? 1 : 0);
         result = 31 * result + (noMulti ? 1 : 0);
         result = 31 * result + (land ? 1 : 0);
         result = 31 * result + (common ? 1 : 0);

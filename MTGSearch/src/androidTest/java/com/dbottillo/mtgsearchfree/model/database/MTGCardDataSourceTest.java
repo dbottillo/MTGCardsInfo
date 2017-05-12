@@ -14,7 +14,6 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -56,7 +55,6 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     }
 
     @Test
-    @Ignore
     public void fetchesAllSets() throws JSONException {
         ArrayList<MTGSet> setsJ = FileHelper.readSetListJSON(context);
         for (MTGSet set : setsJ) {
@@ -195,19 +193,6 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         }
     }
 
-    /*@Test
-    public void searchCardsWithTwoColors() {
-        SearchParams searchParams = new SearchParams();
-        searchParams.setWhite(true);
-        searchParams.setBlue(true);
-        List<MTGCard> cards = underTest.searchCards(searchParams);
-        assertTrue(cards.size() > 0);
-        for (MTGCard card : cards) {
-            assertThat(card.getManaCost(), containsString("W"));
-            assertThat(card.getManaCost(), containsString("U"));
-        }
-    }*/
-
     @Test
     public void searchKaladeshCardsWithTwoColors() {
         SearchParams searchParams = new SearchParams();
@@ -242,6 +227,26 @@ public class MTGCardDataSourceTest extends BaseContextTest {
             assertTrue(card.getText().toLowerCase().contains("energy"));
         }
     }
+
+    @Test
+    public void searchKaladeshCardsWithTwoColorsOnlyMulticolorAndNoOtherColors() {
+        SearchParams searchParams = new SearchParams();
+        searchParams.setRed(true);
+        searchParams.setBlue(true);
+        searchParams.setOnlyMultiNoOthers(true);
+        searchParams.setSetId(kaladesh.getId());
+        searchParams.setText("Energy");
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        assertThat(cards.size(), is(1));
+        MTGCard card = cards.get(0);
+        assertTrue(card.isMultiColor());
+        assertTrue(card.isRed() && card.isBlue());
+        assertTrue(!card.isBlack() && !card.isWhite() && !card.isGreen());
+        assertThat(card.getName(), is("Whirler Virtuoso"));
+        assertTrue(card.getText().toLowerCase().contains("energy"));
+    }
+
 
     @Test
     public void searchKaladeshCardsWithTwoColorsNoMulticolor() {

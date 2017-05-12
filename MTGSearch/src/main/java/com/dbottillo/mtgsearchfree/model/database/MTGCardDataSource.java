@@ -97,8 +97,11 @@ public class MTGCardDataSource {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "0");
             //colorsOperator = "OR";
         }
-        if (searchParams.onlyMulti()) {
+        if (searchParams.onlyMulti() || searchParams.isOnlyMultiNoOthers()) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "1");
+        }
+        if (searchParams.isOnlyMultiNoOthers()){
+            colorsOperator = "AND";
         }
         if (searchParams.getSetId() > 0) {
             queryComposer.addParam(CardDataSource.COLUMNS.SET_ID.getName(), "==", searchParams.getSetId());

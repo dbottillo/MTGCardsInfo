@@ -60,6 +60,8 @@ public class MTGSearchView extends RelativeLayout {
     AppCompatCheckBox multi;
     @BindView(R.id.search_nm)
     AppCompatCheckBox noMulti;
+    @BindView(R.id.search_mno)
+    AppCompatCheckBox multiNoOthers;
     @BindView(R.id.search_l)
     AppCompatCheckBox land;
     @BindView(R.id.search_common)
@@ -119,6 +121,7 @@ public class MTGSearchView extends RelativeLayout {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     noMulti.setChecked(false);
+                    multiNoOthers.setChecked(false);
                 }
             }
         });
@@ -126,6 +129,16 @@ public class MTGSearchView extends RelativeLayout {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    multi.setChecked(false);
+                    multiNoOthers.setChecked(false);
+                }
+            }
+        });
+        multiNoOthers.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    noMulti.setChecked(false);
                     multi.setChecked(false);
                 }
             }
@@ -153,6 +166,7 @@ public class MTGSearchView extends RelativeLayout {
         searchParams.setGreen(green.isChecked());
         searchParams.setOnlyMulti(multi.isChecked());
         searchParams.setNoMulti(noMulti.isChecked());
+        searchParams.setOnlyMultiNoOthers(multiNoOthers.isChecked());
         searchParams.setLand(land.isChecked());
         searchParams.setCommon(common.isChecked());
         searchParams.setUncommon(uncommon.isChecked());
