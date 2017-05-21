@@ -2,9 +2,8 @@ package com.dbottillo.mtgsearchfree.util;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
-
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;

@@ -2,15 +2,13 @@ package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
 
-import com.dbottillo.mtgsearchfree.BaseContextTest;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class PlayerTest extends BaseContextTest {
+public class PlayerTest {
 
     private Player player;
 
