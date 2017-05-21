@@ -2,8 +2,6 @@ package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
 
-import com.dbottillo.mtgsearchfree.BaseContextTest;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +12,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class MTGCardTest extends BaseContextTest {
+public class MTGCardTest {
 
     private MTGCard card;
 

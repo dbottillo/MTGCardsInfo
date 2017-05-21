@@ -15,7 +15,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="@dimen/padding_spinner_row"
         android:ellipsize="marquee"
-        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="@color/color_primary_dark"
         tools:text="Item"/>
 

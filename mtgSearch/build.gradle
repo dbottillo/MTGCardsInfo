@@ -1,25 +1,24 @@
 buildscript {
-    ext.dagger_version = '2.8'
-    ext.support_library_version = '25.2.0'
+    ext.dagger_version = '2.10'
+    ext.support_library_version = '25.3.1'
     ext.smooth_pb_version = '1.1.0'
-    ext.leak_canary_version = '1.5'
+    ext.leak_canary_version = '1.5.1'
     ext.gson_version = '2.8.0'
-    ext.firebase_version = '9.4.0'
+    ext.firebase_version = '10.2.1'
     ext.espresso_version = '2.2.2'
-    ext.butterknife_version = '8.5.1'
+    ext.butterknife_version = '8.6.0'
     ext.mockito_version= '2.1.0'
-    ext.roboelectric_version = '3.1.4'
     ext.rx_java_version = '2.0.3'
     ext.rx_android_version = '2.0.1'
     ext.picasso_version = '2.5.2'
-    ext.crashlytics_version = '2.4.0'
+    ext.crashlytics_version = '2.5.5'
     ext.junit_version = '4.12'
     ext.hamcrest_version = '1.3'
     ext.fest_version = '2.0M10'
     ext.support_runner_version = '0.5'
     ext.dexmaker_mockito_version = '1.2'
 
-    ext.number_of_set = 160;
+    ext.number_of_set = 160
     ext.database_version = 25
 
     repositories {
@@ -29,12 +28,10 @@ buildscript {
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.21.6'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'io.fabric.tools:gradle:1.22.1'
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
@@ -60,7 +57,7 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 63
+        versionCode 64
         versionName "2.8.3"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
@@ -94,16 +91,6 @@ android {
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
-        beta {
-            debuggable false
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-            signingConfig signingConfigs.releaseConfig
-            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
-            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
-            buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-        }
         release {
             debuggable false
             minifyEnabled false
@@ -113,15 +100,6 @@ android {
             buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-        }
-    }
-
-    productFlavors {
-        dev {
-            minSdkVersion 21
-        }
-        prod {
-            minSdkVersion 16
         }
     }
 
@@ -137,48 +115,50 @@ android {
     }
 }
 
-dependencies {
-    compile "com.android.support:support-v4:$support_library_version"
-    compile "com.android.support:appcompat-v7:$support_library_version"
-    compile "com.google.firebase:firebase-core:$firebase_version"
-    compile "com.google.firebase:firebase-crash:$firebase_version"
-    compile "com.google.firebase:firebase-messaging:$firebase_version"
-    compile "com.github.castorflex.smoothprogressbar:library:$smooth_pb_version"
-    compile "com.squareup.picasso:picasso:$picasso_version"
-    compile "com.android.support:cardview-v7:$support_library_version"
-    compile "com.android.support:recyclerview-v7:$support_library_version"
-    compile "com.android.support:design:$support_library_version"
-    compile "com.jakewharton:butterknife:$butterknife_version"
-    apt "com.jakewharton:butterknife-compiler:$butterknife_version"
-    compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
-    compile "io.reactivex.rxjava2:rxandroid:$rx_android_version"
-    compile "com.google.code.gson:gson:$gson_version"
-    compile "com.google.dagger:dagger:$dagger_version"
-    apt "com.google.dagger:dagger-compiler:$dagger_version"
+checkstyle {
+    toolVersion "7.6.1"
+}
 
-    compile("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
+dependencies {
+    implementation "com.android.support:support-v4:$support_library_version"
+    implementation "com.android.support:appcompat-v7:$support_library_version"
+    implementation "com.google.firebase:firebase-core:$firebase_version"
+    implementation "com.google.firebase:firebase-crash:$firebase_version"
+    implementation "com.google.firebase:firebase-messaging:$firebase_version"
+    implementation "com.github.castorflex.smoothprogressbar:library:$smooth_pb_version"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+    implementation "com.android.support:cardview-v7:$support_library_version"
+    implementation "com.android.support:recyclerview-v7:$support_library_version"
+    implementation "com.android.support:design:$support_library_version"
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+
+    implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
 
-    debugCompile "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
-    betaCompile "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
-    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
-    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
+    testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
 
-    testCompile "junit:junit:$junit_version"
-    testCompile "org.hamcrest:hamcrest-library:$hamcrest_version"
-    testCompile "org.mockito:mockito-core:$mockito_version"
-    testCompile "org.easytesting:fest-assert-core:$fest_version"
-    testCompile "org.robolectric:robolectric:$roboelectric_version"
-    androidTestCompile "org.hamcrest:hamcrest-library:$hamcrest_version"
-    androidTestCompile "com.android.support.test:runner:$support_runner_version"
-    androidTestCompile "com.google.dexmaker:dexmaker-mockito:$dexmaker_mockito_version"
-    androidTestCompile "com.android.support.test.espresso:espresso-core:$espresso_version"
-    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$espresso_version"
-    androidTestCompile "com.android.support:support-annotations:$support_library_version"
-    androidTestCompile "com.android.support:appcompat-v7:$support_library_version"
-    androidTestCompile "com.android.support:recyclerview-v7:$support_library_version"
-    androidTestCompile "com.android.support:design:$support_library_version"
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.easytesting:fest-assert-core:$fest_version"
+    androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
+    androidTestImplementation "com.android.support.test:runner:$support_runner_version"
+    androidTestImplementation "com.google.dexmaker:dexmaker-mockito:$dexmaker_mockito_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espresso_version"
+    androidTestImplementation "com.android.support:support-annotations:$support_library_version"
+    androidTestImplementation "com.android.support:appcompat-v7:$support_library_version"
+    androidTestImplementation "com.android.support:recyclerview-v7:$support_library_version"
+    androidTestImplementation "com.android.support:design:$support_library_version"
 }
 
 task checkstyle(type: Checkstyle) {
@@ -195,7 +175,7 @@ task findbugs(type: FindBugs) {
     description 'Run findbugs'
     group 'verification'
 
-    classes = fileTree('build/intermediates/classes/prod/release')
+    classes = fileTree('build/intermediates/classes/release')
     source = fileTree('src/main/java')
     classpath = files()
 
@@ -225,22 +205,13 @@ task pmd(type: Pmd) {
 }
 
 task quality
-quality.dependsOn 'checkstyle', 'lintProdRelease', 'pmd', 'findbugs'
+quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease
-testPreRelease.dependsOn 'testProdReleaseUnitTest', 'connectedAndroidTest'
+testPreRelease.dependsOn 'testReleaseUnitTest', 'connectedAndroidTest'
 
 task release
-release.dependsOn 'assembleProdRelease', 'quality', 'testPreRelease'
-
-task qualityBeta
-qualityBeta.dependsOn 'checkstyle', 'lintProdBeta', 'pmd', 'findbugs'
-
-task testPreBeta
-testPreBeta.dependsOn 'testProdBetaUnitTest', 'connectedAndroidTest'
-
-task beta
-beta.dependsOn 'quality', 'testPreBeta', 'assembleProdBeta'
+release.dependsOn 'assembleRelease', 'quality', 'testPreRelease'
 
 task devTestAndCoverage(type: JacocoReport) {
     reports {
@@ -251,13 +222,13 @@ task devTestAndCoverage(type: JacocoReport) {
     jacocoClasspath = configurations['androidJacocoAnt']
 
     def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/dev/debug", excludes: fileFilter)
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
     def mainSrc = "${project.projectDir}/src/main/java"
 
     sourceDirectories = files([mainSrc])
     classDirectories = files([debugTree])
     executionData = files(["${buildDir}/jacoco/testDevDebugUnitTest.exec",
-                           "${buildDir}/outputs/code-coverage/connected/flavors/DEV/coverage.ec"])
+                           "${buildDir}/outputs/code-coverage/connected/coverage.ec"])
 }
 devTestAndCoverage.dependsOn 'createDevDebugCoverageReport', 'testDevDebugUnitTest'
 

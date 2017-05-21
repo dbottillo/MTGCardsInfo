@@ -1,11 +1,10 @@
 package com.dbottillo.mtgsearchfree.model;
 
-import android.test.suitebuilder.annotation.SmallTest;
-
-import com.dbottillo.mtgsearchfree.BaseContextTest;
-
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +13,10 @@ import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-@SmallTest
-public class DeckBucketContextTest extends BaseContextTest {
+public class DeckBucketTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     private static final int NUMBER_OF_UNIQUE_CARDS = 12;
     private static final int NUMBER_OF_TOTAL_CARDS = 30;

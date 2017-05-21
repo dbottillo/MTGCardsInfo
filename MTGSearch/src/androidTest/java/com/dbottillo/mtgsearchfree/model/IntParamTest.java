@@ -2,15 +2,13 @@ package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
 
-import com.dbottillo.mtgsearchfree.BaseContextTest;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class IntParamTest extends BaseContextTest {
+public class IntParamTest {
 
     private IntParam param;
 
