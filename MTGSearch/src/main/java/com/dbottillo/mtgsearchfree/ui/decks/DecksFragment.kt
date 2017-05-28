@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.decks
 
 import android.annotation.TargetApi
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -45,6 +46,11 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
 
     internal lateinit var adapter: DecksAdapter
     internal var decks: MutableList<Deck> = mutableListOf()
+
+    override fun onAttach(context: Context?) {
+        mtgApp.uiGraph.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_decks, container, false)

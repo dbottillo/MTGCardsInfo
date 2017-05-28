@@ -91,7 +91,7 @@ public abstract class BasicFragment extends DialogFragment {
         setTitle(getTitle());
     }
 
-    protected void setTitle(final String title) {
+    public void setTitle(final String title) {
         if (toolbarTitle != null) {
             toolbarTitle.setText(title);
         }

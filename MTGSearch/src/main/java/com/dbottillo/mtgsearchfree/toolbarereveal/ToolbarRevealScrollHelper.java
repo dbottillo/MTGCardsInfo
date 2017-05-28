@@ -239,4 +239,9 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
         refreshUI();
     }
 
+    public void updateTitle(@org.jetbrains.annotations.Nullable String name) {
+        if (fragment.get() != null) {
+            fragment.get().setTitle(name);
+        }
+    }
 }

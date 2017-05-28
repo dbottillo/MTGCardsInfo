@@ -36,7 +36,7 @@ public class MTGCardsView extends RelativeLayout {
     private GridItemDecorator itemDecorator;
 
     @BindView(R.id.card_list)
-    RecyclerView listView;
+    public RecyclerView listView;
     @BindView(R.id.empty_view)
     TextView emptyView;
     @BindView(R.id.search_bottom_container)

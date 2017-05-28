@@ -28,7 +28,6 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mtgApp.uiGraph.inject(this)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, getScrollViewId(),
                 R.color.white, heightToolbar, true)
 

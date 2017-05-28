@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -38,6 +39,11 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
 
+    /*override fun onAttach(context: Context?) {
+        mtgApp.uiGraph.inject(this)
+        super.onAttach(context)
+    }*/
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_saved, container, false)
         mtgApp.uiGraph.inject(this)
@@ -50,6 +56,8 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         mtgCardsView = view.findViewById(R.id.cards) as MTGCardsView
         emptyContainer = view.findViewById(R.id.empty_saved_cards_container) as LinearLayout
         view.findViewById(R.id.empty_cards_action).setOnClickListener{ openSearch() }
+
+        setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
 
         savedCardsPresenter.init(this)
         savedCardsPresenter.load()
