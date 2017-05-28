@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:background="@android:color/transparent"
@@ -49,31 +49,46 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <LinearLayout
+        android:id="@+id/main_tooltip"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_height="0dp"
+        tools:layout_height="@dimen/main_tooltip_height"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/color_accent_dark">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/main_tooltip_close"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="8dp"
+            android:contentDescription="@string/cd_close"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Aehter Reveal"
-                android:textSize="40sp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:text="@string/main_fragment_tooltip"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:background="@color/color_accent"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@string/cd_tooltip_arrow"
+            android:src="@drawable/tooltip_main_arrow"/>
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </ScrollView>
+    <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+        android:id="@+id/cards"
+        android:layout_below="@+id/main_tooltip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>

@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment;
+import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
@@ -63,5 +64,5 @@ public interface UiComponent {
 
     void inject(SavedFragment savedFragment);
 
-    void inject(BaseHomeFragment baseHomeFragment);
+    void inject(SetsFragment setsFragment);
 }

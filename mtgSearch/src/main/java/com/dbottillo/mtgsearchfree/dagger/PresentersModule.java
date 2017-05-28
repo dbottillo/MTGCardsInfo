@@ -25,6 +25,8 @@ import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
+import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 
@@ -88,5 +90,15 @@ public class PresentersModule {
                                                    Logger logger,
                                                    RunnerFactory runnerFactory){
         return new SavedCardsPresenterImpl(interactor, runnerFactory, generalData, logger);
+    }
+
+    @Provides
+    SetsFragmentPresenter providesSetsFragmentPresenter(SetsInteractor setsInteractor,
+                                                        CardsInteractor cardsInteractor,
+                                                        CardsPreferences cardsPreferences,
+                                                        RunnerFactory runnerFactory,
+                                                        GeneralData generalData,
+                                                        Logger logger){
+        return new SetsFragmentPresenterImpl(setsInteractor, cardsInteractor, cardsPreferences, runnerFactory, generalData, logger);
     }
 }
