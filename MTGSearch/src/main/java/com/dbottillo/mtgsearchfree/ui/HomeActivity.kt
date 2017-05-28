@@ -25,7 +25,6 @@ import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 
 class HomeActivity : BasicActivity() {
 
-    @BindView(R.id.bottom_tabs)
     lateinit var bottomTabs: BottomTabs
 
     @BindView(R.id.fragment_container)
@@ -42,6 +41,7 @@ class HomeActivity : BasicActivity() {
 
         bottomTabsHeight = resources?.getDimensionPixelSize(R.dimen.bottom_tabs_height)!!
 
+        bottomTabs = findViewById(R.id.bottom_tabs) as BottomTabs
         bottomTabs.setBottomTabsListener(object : BottomTabs.BottomTabsListener {
             override fun tabSelected(selection: Int) {
                 when (selection) {

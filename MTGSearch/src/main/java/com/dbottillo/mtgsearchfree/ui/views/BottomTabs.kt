@@ -23,43 +23,43 @@ class BottomTabs : LinearLayout {
     val alphaDefault: Float = 0.7f
     val alphaSelected: Float = 1.0f
 
-    @BindView(R.id.home_tab)
-    internal lateinit var homeTab: LinearLayout
-
-    @BindView(R.id.decks_tab)
-    internal lateinit var decksTab: LinearLayout
-
-    @BindView(R.id.saved_tab)
-    internal lateinit var savedTab: LinearLayout
-
-    @BindView(R.id.life_counter_tab)
-    internal lateinit var lifeCounterTab: LinearLayout
-
-
-    @BindView(R.id.home_tab_image)
-    internal lateinit var homeTabImage: ImageView
-
-    @BindView(R.id.decks_tab_image)
-    internal lateinit var decksTabImage: ImageView
-
-    @BindView(R.id.saved_tab_image)
-    internal lateinit var savedTabImage: ImageView
-
-    @BindView(R.id.life_counter_tab_image)
-    internal lateinit var lifeCounterTabImage: ImageView
+    var homeTab: LinearLayout
+    var decksTab: LinearLayout
+    var savedTab: LinearLayout
+    var lifeCounterTab: LinearLayout
+    
+    var homeTabImage: ImageView
+    var decksTabImage: ImageView
+    var savedTabImage: ImageView
+    var lifeCounterTabImage: ImageView
 
     var currentSelection = 0
     var listener : BottomTabsListener? = null
 
-    constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
+    constructor(context: Context) : this(context, null)
 
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+
+    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
         val view = inflate(context, R.layout.bottom_tabs, this)
 
         orientation = LinearLayout.HORIZONTAL
         setBackgroundColor(ContextCompat.getColor(context, R.color.color_primary))
 
-        ButterKnife.bind(this, view)
+        homeTab = view.findViewById(R.id.home_tab) as LinearLayout
+        decksTab = view.findViewById(R.id.decks_tab) as LinearLayout
+        savedTab = view.findViewById(R.id.saved_tab) as LinearLayout
+        lifeCounterTab = view.findViewById(R.id.life_counter_tab) as LinearLayout
+
+        homeTabImage = view.findViewById(R.id.home_tab_image) as ImageView
+        decksTabImage = view.findViewById(R.id.decks_tab_image) as ImageView
+        savedTabImage = view.findViewById(R.id.saved_tab_image) as ImageView
+        lifeCounterTabImage = view.findViewById(R.id.life_counter_tab_image) as ImageView
+
+        homeTab.setOnClickListener { homeTabTapped() }
+        decksTab.setOnClickListener { decksTabTapped() }
+        savedTab.setOnClickListener { savedTabTapped() }
+        lifeCounterTab.setOnClickListener { lifeCounterTabTapped() }
 
         refreshUI()
     }
@@ -104,25 +104,21 @@ class BottomTabs : LinearLayout {
         }
     }
 
-    @OnClick(R.id.home_tab)
     fun homeTabTapped() {
         setSelection(0)
         listener?.tabSelected(0)
     }
 
-    @OnClick(R.id.decks_tab)
     fun decksTabTapped() {
         setSelection(1)
         listener?.tabSelected(1)
     }
 
-    @OnClick(R.id.saved_tab)
     fun savedTabTapped() {
         setSelection(2)
         listener?.tabSelected(2)
     }
 
-    @OnClick(R.id.life_counter_tab)
     fun lifeCounterTabTapped() {
         setSelection(3)
         listener?.tabSelected(3)
