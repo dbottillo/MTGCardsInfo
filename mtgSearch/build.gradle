@@ -1,35 +1,6 @@
 buildscript {
-    ext.dagger_version = '2.10'
-    ext.support_library_version = '25.3.1'
-    ext.smooth_pb_version = '1.1.0'
-    ext.leak_canary_version = '1.5.1'
-    ext.gson_version = '2.8.0'
-    ext.firebase_version = '10.2.1'
-    ext.espresso_version = '2.2.2'
-    ext.butterknife_version = '8.6.0'
-    ext.mockito_version= '2.1.0'
-    ext.rx_java_version = '2.0.3'
-    ext.rx_android_version = '2.0.1'
-    ext.picasso_version = '2.5.2'
-    ext.crashlytics_version = '2.5.5'
-    ext.junit_version = '4.12'
-    ext.hamcrest_version = '1.3'
-    ext.fest_version = '2.0M10'
-    ext.support_runner_version = '0.5'
-    ext.dexmaker_mockito_version = '1.2'
-
     ext.number_of_set = 160
     ext.database_version = 25
-
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-        mavenCentral()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.22.1'
-    }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
@@ -43,11 +14,6 @@ def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/ch
 def keystorePropertiesFile = rootProject.file("keystore.properties");
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-    mavenCentral()
-}
 
 android {
     compileSdkVersion 25
