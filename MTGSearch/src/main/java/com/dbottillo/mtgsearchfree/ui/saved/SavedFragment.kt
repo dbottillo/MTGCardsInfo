@@ -32,11 +32,8 @@ import javax.inject.Inject
 
 class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
-    @BindView(R.id.cards)
-    internal lateinit var mtgCardsView: MTGCardsView
-
-    @BindView(R.id.empty_saved_cards_container)
-    internal lateinit var emptyContainer : LinearLayout
+    lateinit var mtgCardsView: MTGCardsView
+    lateinit var emptyContainer : LinearLayout
 
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
@@ -47,8 +44,12 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        mtgCardsView = view.findViewById(R.id.cards) as MTGCardsView
+        emptyContainer = view.findViewById(R.id.empty_saved_cards_container) as LinearLayout
+        view.findViewById(R.id.empty_cards_action).setOnClickListener{ openSearch() }
 
         savedCardsPresenter.init(this)
         savedCardsPresenter.load()
@@ -118,7 +119,6 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    @OnClick(R.id.empty_cards_action)
     fun openSearch(){
         LOG.d()
         startActivity(Intent(activity, SearchActivity::class.java))

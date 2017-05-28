@@ -36,7 +36,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
 
     abstract fun getScrollViewId(): Int
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbarRevealScrollHelper.onViewCreated(view, savedInstanceState)
 

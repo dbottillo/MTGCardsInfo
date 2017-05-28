@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import butterknife.BindView
+import butterknife.ButterKnife
 import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
@@ -34,7 +35,6 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
 
     private val READ_REQUEST_CODE = 42
 
-    @BindView(R.id.decks_list)
     lateinit var decksList: RecyclerView
 
     @Inject
@@ -53,11 +53,13 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        decksList = view.findViewById(R.id.decks_list) as RecyclerView
+
         decksList.setHasFixedSize(true)
-        decksList.layoutManager = LinearLayoutManager(view?.context)
+        decksList.layoutManager = LinearLayoutManager(view.context)
         setupHomeActivityScroll(recyclerView = decksList)
 
         adapter = DecksAdapter(decks, this, delete = {

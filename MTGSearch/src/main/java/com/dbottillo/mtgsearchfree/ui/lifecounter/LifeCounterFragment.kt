@@ -26,10 +26,7 @@ import javax.inject.Inject
 
 class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListener {
 
-    @BindView(R.id.loader)
     lateinit var loader: MTGLoader
-
-    @BindView(R.id.life_counter_list)
     lateinit var lifeCounterList: RecyclerView
 
     @Inject
@@ -53,11 +50,16 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        loader = view.findViewById(R.id.loader) as MTGLoader
+        lifeCounterList = view.findViewById(R.id.life_counter_list) as RecyclerView
+        view.findViewById(R.id.action_reset).setOnClickListener{ reset() }
+        view.findViewById(R.id.action_dice).setOnClickListener{ launchDice() }
+
         lifeCounterList.setHasFixedSize(true)
-        lifeCounterList.layoutManager = LinearLayoutManager(view?.context)
+        lifeCounterList.layoutManager = LinearLayoutManager(view.context)
         setupHomeActivityScroll(recyclerView = lifeCounterList)
 
         setupMenu()
@@ -220,13 +222,11 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
         playerPresenter.editPlayers(players)
     }
 
-    @OnClick(R.id.action_reset)
     fun reset(){
         resetLifeCounter()
         TrackingManager.trackResetLifeCounter()
     }
 
-    @OnClick(R.id.action_dice)
     fun launchDice(){
         if (diceShowed) {
             players.forEach { it.diceResult = -1 }
