@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
@@ -14,7 +14,7 @@ import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
-class SavedCardsInteractorImplTest {
+class CardsCollectionInteractorImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
@@ -24,34 +24,34 @@ class SavedCardsInteractorImplTest {
     @Mock lateinit var storage: SavedCardsStorage
     @Mock lateinit var logger: Logger
     @Mock lateinit var card: MTGCard
-    @Mock lateinit var cards: SavedCards
+    @Mock lateinit var cardsCollection: CardsCollection
 
     @Before
     fun setUp() {
-        Mockito.`when`(storage.load()).thenReturn(cards)
+        Mockito.`when`(storage.load()).thenReturn(cardsCollection)
         underTest = SavedCardsInteractorImpl(storage, logger)
     }
 
     @Test
     fun load_shouldLoadSavedCards() {
-        val testObserver = TestObserver<SavedCards>()
+        val testObserver = TestObserver<CardsCollection>()
         underTest.load().subscribe(testObserver)
 
         testObserver.assertNoErrors()
         testObserver.assertValueCount(1)
-        testObserver.assertValue(cards)
+        testObserver.assertValue(cardsCollection)
         verify(storage).load()
         verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun removeCard_shouldRemoveCard_andLoadSavedCards() {
-        val testObserver = TestObserver<SavedCards>()
+        val testObserver = TestObserver<CardsCollection>()
         underTest.remove(card).subscribe(testObserver)
 
         testObserver.assertNoErrors()
         testObserver.assertValueCount(1)
-        testObserver.assertValue(cards)
+        testObserver.assertValue(cardsCollection)
         verify(storage).load()
         verify(storage).removeFromFavourite(card)
         verifyNoMoreInteractions(storage)
@@ -59,12 +59,12 @@ class SavedCardsInteractorImplTest {
 
     @Test
     fun addCard_shouldAddCard_andLoadSavedCards() {
-        val testObserver = TestObserver<SavedCards>()
+        val testObserver = TestObserver<CardsCollection>()
         underTest.save(card).subscribe(testObserver)
 
         testObserver.assertNoErrors()
         testObserver.assertValueCount(1)
-        testObserver.assertValue(cards)
+        testObserver.assertValue(cardsCollection)
         verify(storage).load()
         verify(storage).saveAsFavourite(card)
         verifyNoMoreInteractions(storage)

@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
@@ -37,7 +37,7 @@ class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSour
         return loadIdFav()
     }
 
-    override fun load(): SavedCards {
+    override fun load(): CardsCollection {
         logger.d()
         val filter = cardsPreferences.load()
         val cards = cardsHelper.filterCards(filter, favouritesDataSource.getCards(true))
@@ -46,6 +46,6 @@ class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSour
         } else {
             cardsHelper.sortAZCards(cards)
         }
-        return SavedCards(cards, filter, cardsPreferences.isSortWUBRG)
+        return CardsCollection(cards, filter, cardsPreferences.isSortWUBRG)
     }
 }

@@ -13,20 +13,21 @@ import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
-import com.dbottillo.mtgsearchfree.util.AnimationUtil
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.MaterialWrapper
-import com.dbottillo.mtgsearchfree.util.UIUtil
+import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
+import com.dbottillo.mtgsearchfree.util.*
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
+import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
 import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
 import javax.inject.Inject
 
 class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
     @Inject
-    lateinit var preenter: SetsFragmentPresenter
+    lateinit var presenter: SetsFragmentPresenter
 
     lateinit var mtgCardsView: MTGCardsView
     lateinit var tooltip: LinearLayout
@@ -43,7 +44,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        preenter.init(this)
+        presenter.init(this)
 
         view.findViewById(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         view.findViewById(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
@@ -65,9 +66,19 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
         setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
 
-        preenter.loadSets()
+        dbActivity.supportFragmentManager.addOnBackStackChangedListener {
+            LOG.e("back stack $dbActivity.supportFragmentManager.backStackEntryCount")
+            if (dbActivity.supportFragmentManager.backStackEntryCount == 0) {
+                presenter.loadSets()
+            }
+        }
     }
 
+    override fun onResume() {
+        super.onResume()
+        LOG.e("onResume")
+        presenter.loadSets()
+    }
 
     override fun getPageTrack(): String {
         return "/sets"
@@ -78,7 +89,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     }
 
     override fun getTitle(): String {
-        return preenter.set()?.name?: "Aether Reveal"
+        return presenter.set()?.name?: "Aether Reveal"
     }
 
     override fun showSet(set: MTGSet, cards: List<MTGCard>, filter: CardFilter) {
@@ -87,19 +98,33 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     }
 
     override fun onCardsViewTypeSelected() {
-        preenter.toggleCardTypeViewPreference()
+        presenter.toggleCardTypeViewPreference()
     }
 
     override fun onCardsSettingSelected() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val cardsConfigurator= CardsConfiguratorFragment()
+        cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
+        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
+            override fun onConfigurationChange() {
+                LOG.e("onConfigurationChange")
+                presenter.reloadSet()
+            }
+        }
     }
 
     override fun onCardSelected(card: MTGCard?, position: Int, view: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TrackingManager.trackOpenCard(position)
+        startActivity(CardsActivity.newInstance(context, presenter.set(), position, card))
     }
 
-    override fun onOptionSelected(menuItem: MenuItem?, card: MTGCard?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
+        LOG.d()
+        when(menuItem.itemId){
+            R.id.action_add_to_deck -> DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card))
+            R.id.action_add_to_favourites -> {
+                presenter.saveAsFavourite(card)
+            }
+        }
     }
 
     override fun showCardsGrid() {

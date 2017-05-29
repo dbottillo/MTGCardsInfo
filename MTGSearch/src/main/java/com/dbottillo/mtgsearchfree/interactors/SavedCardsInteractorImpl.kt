@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
@@ -14,14 +14,14 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
         logger.d("created")
     }
 
-    override fun load(): Observable<SavedCards> {
+    override fun load(): Observable<CardsCollection> {
         logger.d("get favourites")
          return Observable.fromCallable {
              storage.load()
          }
     }
 
-    override fun save(card: MTGCard): Observable<SavedCards>  {
+    override fun save(card: MTGCard): Observable<CardsCollection>  {
         logger.d("save as favourite")
         return Observable.fromCallable {
             storage.saveAsFavourite(card)
@@ -29,7 +29,7 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
         }
     }
 
-    override fun remove(card: MTGCard): Observable<SavedCards>  {
+    override fun remove(card: MTGCard): Observable<CardsCollection>  {
         logger.d("remove from favourite")
         return Observable.fromCallable {
             storage.removeFromFavourite(card)

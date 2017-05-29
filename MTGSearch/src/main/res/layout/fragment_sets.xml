@@ -13,39 +13,49 @@
         android:layout_height="?attr/actionBarSize"
         tools:background="@color/color_primary_dark">
 
-        <TextView
-            android:id="@+id/toolbar_title"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:background="@android:color/transparent"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="Toolbar Title"/>
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/action_search"
-            android:layout_width="@dimen/toolbar_icon_size"
-            android:layout_height="@dimen/toolbar_icon_size"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="16dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/action_search"
-            android:src="@drawable/ic_search"
-            android:tint="@color/white"
-            android:visibility="visible"/>
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Toolbar Title"/>
 
-        <ImageView
-            android:id="@+id/action_lucky"
-            android:layout_width="@dimen/toolbar_icon_size"
-            android:layout_height="@dimen/toolbar_icon_size"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="16dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/action_lucky"
-            android:src="@drawable/ic_action_lucky"
-            android:tint="@color/white"
-            android:visibility="visible"/>
+            <ImageView
+                android:id="@+id/action_search"
+                android:layout_width="@dimen/toolbar_icon_size"
+                android:layout_height="@dimen/toolbar_icon_size"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/action_search"
+                android:src="@drawable/ic_search"
+                android:tint="@color/white"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/action_lucky"
+                android:layout_width="@dimen/toolbar_icon_size"
+                android:layout_height="@dimen/toolbar_icon_size"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/action_lucky"
+                android:src="@drawable/ic_action_lucky"
+                android:tint="@color/white"
+                android:visibility="visible"/>
+
+        </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
 
@@ -53,18 +63,18 @@
         android:id="@+id/main_tooltip"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout_height="@dimen/main_tooltip_height"
-        android:gravity="center_vertical"
         android:layout_below="@+id/toolbar"
-        android:background="@color/color_accent_dark">
+        android:background="@color/color_accent_dark"
+        android:gravity="center_vertical"
+        tools:layout_height="@dimen/main_tooltip_height">
 
         <ImageButton
             android:id="@+id/main_tooltip_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:contentDescription="@string/cd_close"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_close"
             android:src="@drawable/ic_close"/>
 
         <TextView
@@ -88,7 +98,7 @@
 
     <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
         android:id="@+id/cards"
-        android:layout_below="@+id/main_tooltip"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_tooltip"/>
 </RelativeLayout>

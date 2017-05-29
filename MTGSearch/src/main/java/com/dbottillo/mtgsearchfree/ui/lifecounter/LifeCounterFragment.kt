@@ -44,11 +44,6 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
 
     internal var diceShowed : Boolean = false
 
-    override fun onAttach(context: Context?) {
-        mtgApp.uiGraph.inject(this)
-        super.onAttach(context)
-    }
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_life_counter, container, false)
         mtgApp.uiGraph.inject(this)

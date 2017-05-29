@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.view.BasicView
 
 interface SavedCardsView : BasicView {
@@ -9,6 +9,6 @@ interface SavedCardsView : BasicView {
 
     fun showCardsList()
 
-    fun showCards(cards: SavedCards)
+    fun showCards(cardsCollection: CardsCollection)
 
 }

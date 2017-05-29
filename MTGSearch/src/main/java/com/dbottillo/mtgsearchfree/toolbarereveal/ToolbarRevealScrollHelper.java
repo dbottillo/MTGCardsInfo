@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.dbottillo.mtgsearchfree.R;
@@ -148,7 +149,7 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
         if (baseFragment.toolbar.getNavigationIcon() != null) {
             MaterialWrapper.setTint(baseFragment.toolbar.getNavigationIcon(), ContextCompat.getColor(context, R.color.color_primary));
         }
-        setChildrenToolbarColor(baseFragment, ContextCompat.getColor(context, R.color.color_primary));
+        setChildrenToolbarColor(baseFragment.toolbar, ContextCompat.getColor(context, R.color.color_primary));
         baseFragment.toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(context, R.color.color_primary), PorterDuff.Mode.SRC_IN);
         if (statusBarIncluded) {
             MaterialWrapper.setStatusBarColor(baseFragment.getActivity(), ContextCompat.getColor(baseFragment.getContext(), R.color.main_bg));
@@ -170,11 +171,13 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
         }
     }
 
-    private void setChildrenToolbarColor(BasicFragment baseFragment, int color) {
-        for (int i=0; i<baseFragment.toolbar.getChildCount(); i++){
-            View view = baseFragment.toolbar.getChildAt(i);
+    private void setChildrenToolbarColor(ViewGroup viewGroup, int color) {
+        for (int i=0; i<viewGroup.getChildCount(); i++){
+            View view = viewGroup.getChildAt(i);
             if (view instanceof ImageView){
                 ((ImageView) view).setColorFilter(color);
+            } else if (view instanceof LinearLayout){
+                setChildrenToolbarColor((LinearLayout)view, color);
             }
         }
     }
@@ -186,7 +189,7 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
             MaterialWrapper.setElevation(fragment.get().toolbar, elevationInterpolator.getInterpolation(interval));
             fragment.get().toolbarTitle.setTranslationY(translationTitle.getInterpolation(interval));
             fragment.get().toolbar.setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval));
-            setChildrenToolbarColor(fragment.get(), arrowToolbarEvaluator.getInterpolation(interval));
+            setChildrenToolbarColor(fragment.get().toolbar, arrowToolbarEvaluator.getInterpolation(interval));
             if (fragment.get().toolbar.getNavigationIcon() != null) {
                 MaterialWrapper.setTint(fragment.get().toolbar.getNavigationIcon(), arrowToolbarEvaluator.getInterpolation(interval));
             }

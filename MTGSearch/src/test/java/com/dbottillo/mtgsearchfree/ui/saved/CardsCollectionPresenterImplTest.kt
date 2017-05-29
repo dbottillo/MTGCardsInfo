@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.saved
 
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences
 import com.dbottillo.mtgsearchfree.presenter.TestRunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
@@ -16,7 +16,7 @@ import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
-class SavedCardsPresenterImplTest {
+class CardsCollectionPresenterImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
@@ -25,15 +25,15 @@ class SavedCardsPresenterImplTest {
     @Mock lateinit var interactor: SavedCardsInteractor
     @Mock lateinit var logger: Logger
     @Mock lateinit var generalData: GeneralPreferences
-    @Mock lateinit var cards: SavedCards
+    @Mock lateinit var cardsCollection: CardsCollection
     @Mock lateinit var card: MTGCard
 
     lateinit var underTest: SavedCardsPresenter
 
     @Before
     fun setUp() {
-        Mockito.`when`(interactor.load()).thenReturn(Observable.just(cards))
-        Mockito.`when`(interactor.remove(card)).thenReturn(Observable.just(cards))
+        Mockito.`when`(interactor.load()).thenReturn(Observable.just(cardsCollection))
+        Mockito.`when`(interactor.remove(card)).thenReturn(Observable.just(cardsCollection))
         underTest = SavedCardsPresenterImpl(interactor, TestRunnerFactory(), generalData, logger)
         underTest.init(view)
     }
@@ -43,7 +43,7 @@ class SavedCardsPresenterImplTest {
         underTest.load()
 
         verify(interactor).load()
-        verify(view).showCards(cards)
+        verify(view).showCards(cardsCollection)
         verifyNoMoreInteractions(interactor, view)
     }
 
@@ -52,7 +52,7 @@ class SavedCardsPresenterImplTest {
         underTest.removeFromFavourite(card)
 
         verify(interactor).remove(card)
-        verify(view).showCards(cards)
+        verify(view).showCards(cardsCollection)
         verifyNoMoreInteractions(interactor, view)
     }
 
