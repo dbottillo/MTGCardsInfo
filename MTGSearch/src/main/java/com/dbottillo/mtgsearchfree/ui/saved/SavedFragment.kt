@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,24 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.*
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.CardFilterView
-import com.dbottillo.mtgsearchfree.view.CardsView
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
 import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
 import javax.inject.Inject
@@ -60,6 +51,10 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
 
         savedCardsPresenter.init(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
         savedCardsPresenter.load()
     }
 
@@ -87,9 +82,9 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         TrackingManager.trackSearchError(exception?.message)
     }
 
-    override fun showCards(cards: SavedCards) {
-        emptyContainer.visibility = if (cards.list.isEmpty()) View.VISIBLE else View.GONE
-        mtgCardsView.loadCards(cards.list, this, R.string.action_saved, cards.filter, R.menu.card_saved_option)
+    override fun showCards(cardsCollection: CardsCollection) {
+        emptyContainer.visibility = if (cardsCollection.list.isEmpty()) View.VISIBLE else View.GONE
+        mtgCardsView.loadCards(cardsCollection.list, this, R.string.action_saved, cardsCollection.filter, R.menu.card_saved_option)
     }
 
     override fun showCardsGrid() {

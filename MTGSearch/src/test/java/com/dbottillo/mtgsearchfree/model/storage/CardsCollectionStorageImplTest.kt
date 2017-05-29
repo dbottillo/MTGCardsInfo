@@ -16,7 +16,7 @@ import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
-class SavedCardsStorageImplTest{
+class CardsCollectionStorageImplTest {
 
     @JvmField @Rule var mockitoRule = MockitoJUnit.rule()
 

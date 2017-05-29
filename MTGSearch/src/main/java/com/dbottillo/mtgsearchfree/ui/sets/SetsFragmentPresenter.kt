@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.sets
 
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 
 interface SetsFragmentPresenter{
@@ -11,4 +12,8 @@ interface SetsFragmentPresenter{
     fun toggleCardTypeViewPreference()
 
     fun set(): MTGSet?
+
+    fun saveAsFavourite(card: MTGCard)
+
+    fun reloadSet()
 }

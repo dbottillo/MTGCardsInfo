@@ -135,7 +135,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
 
         final CardViewHolder holder = (CardViewHolder) originalHolder;
-        final MTGCard card = cards.get(position);
+        final MTGCard card = cards.get(position-1);
         final Context context = holder.parent.getContext();
         if (gridMode) {
             holder.loader.setVisibility(View.VISIBLE);
@@ -161,7 +161,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             @Override
             public void onClick(View v) {
                 if (onCardListener != null) {
-                    onCardListener.onCardSelected(card, holder.getAdapterPosition(), v.findViewById(R.id.grid_item_card_image));
+                    onCardListener.onCardSelected(card, holder.getAdapterPosition()-1, v.findViewById(R.id.grid_item_card_image));
                 }
             }
         });

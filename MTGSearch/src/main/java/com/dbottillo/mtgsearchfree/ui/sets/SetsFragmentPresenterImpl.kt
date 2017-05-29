@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.sets
 
-import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -23,6 +22,8 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
     val cardsWrapper: Runner<List<MTGCard>> = runnerFactory.simple()
 
     val sets: MutableList<MTGSet> = mutableListOf()
+    var set: MTGSet? = null
+    var currentPos: Int = -1
 
     lateinit var view: SetsFragmentView
 
@@ -32,6 +33,12 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
 
     override fun loadSets() {
         logger.d()
+        if (sets.size > 0){
+            currentPos = cardsPreferences.setPosition
+            set = sets[currentPos]
+            set?.let { loadSet(it) }
+            return
+        }
         val obs = setsInteractor.load()
         setsWrapper.run(obs, object : Runner.RxWrapperListener<List<MTGSet>> {
             override fun onNext(data: List<MTGSet>) {
@@ -44,16 +51,22 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
             }
 
             override fun onCompleted() {
-                LOG.e("on onCompleted $sets")
-                sets[cardsPreferences.setPosition].let { loadSet(it) }
+                currentPos = cardsPreferences.setPosition
+                set = sets[currentPos]
+                set?.let { loadSet(it) }
             }
 
         })
     }
 
+    override fun reloadSet() {
+        LOG.e("reload $set")
+        set?.let { loadSet(it) }
+    }
+
     private fun loadSet(set: MTGSet) {
         logger.d()
-        cardsWrapper.run(cardsInteractor.loadSet(set), object : Runner.RxWrapperListener<List<MTGCard>>{
+        cardsWrapper.run(cardsInteractor.loadSet(set), object : Runner.RxWrapperListener<List<MTGCard>> {
             override fun onError(e: Throwable?) {
             }
 
@@ -79,6 +92,10 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
             generalData.setCardsShowTypeGrid()
             view.showCardsGrid()
         }
+    }
+
+    override fun saveAsFavourite(card: MTGCard) {
+        cardsInteractor.saveAsFavourite(card)
     }
 
 }

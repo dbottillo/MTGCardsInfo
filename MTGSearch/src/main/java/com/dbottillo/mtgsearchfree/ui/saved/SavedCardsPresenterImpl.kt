@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.saved
 
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SavedCards
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.presenter.Runner
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
@@ -13,11 +13,11 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
                               val generalData: GeneralData,
                               val logger: Logger) : SavedCardsPresenter {
 
-    var cardsRunner : Runner<SavedCards> = runnerFactor.simple<SavedCards>()
+    var cardsCollectionRunner: Runner<CardsCollection> = runnerFactor.simple<CardsCollection>()
     lateinit var view: SavedCardsView
 
-    var listener = object : Runner.RxWrapperListener<SavedCards>{
-        override fun onNext(data: SavedCards) {
+    var listener = object : Runner.RxWrapperListener<CardsCollection>{
+        override fun onNext(data: CardsCollection) {
             logger.d()
             view.showCards(data)
         }
@@ -30,11 +30,11 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
     }
 
     override fun load() {
-        cardsRunner.run(interactor.load(),listener)
+        cardsCollectionRunner.run(interactor.load(),listener)
     }
 
     override fun removeFromFavourite(card: MTGCard) {
-        cardsRunner.run(interactor.remove(card), listener)
+        cardsCollectionRunner.run(interactor.remove(card), listener)
     }
 
     override fun toggleCardTypeViewPreference() {

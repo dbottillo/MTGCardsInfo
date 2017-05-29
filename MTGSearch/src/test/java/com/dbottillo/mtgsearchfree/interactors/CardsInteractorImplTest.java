@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
 import org.junit.Before;
@@ -32,7 +32,7 @@ public class CardsInteractorImplTest {
     private CardsInteractor underTest;
 
     @Mock
-    private CardsStorage cardsStorage;
+    private CardsStorageImpl cardsStorageImpl;
     @Mock
     private MTGSet set;
     @Mock
@@ -54,14 +54,14 @@ public class CardsInteractorImplTest {
 
     @Before
     public void setup() {
-        when(cardsStorage.getLuckyCards(2)).thenReturn(luckyCards);
-        when(cardsStorage.getFavourites()).thenReturn(favCards);
-        when(cardsStorage.load(set)).thenReturn(setCards);
-        when(cardsStorage.doSearch(searchParams)).thenReturn(searchCards);
-        when(cardsStorage.loadDeck(deck)).thenReturn(deckCards);
-        when(cardsStorage.loadCard(MULTIVERSE_ID)).thenReturn(card);
-        when(cardsStorage.loadOtherSide(card)).thenReturn(otherSideCard);
-        underTest = new CardsInteractorImpl(cardsStorage, logger);
+        when(cardsStorageImpl.getLuckyCards(2)).thenReturn(luckyCards);
+        when(cardsStorageImpl.getFavourites()).thenReturn(favCards);
+        when(cardsStorageImpl.load(set)).thenReturn(setCards);
+        when(cardsStorageImpl.doSearch(searchParams)).thenReturn(searchCards);
+        when(cardsStorageImpl.loadDeck(deck)).thenReturn(deckCards);
+        when(cardsStorageImpl.loadCard(MULTIVERSE_ID)).thenReturn(card);
+        when(cardsStorageImpl.loadOtherSide(card)).thenReturn(otherSideCard);
+        underTest = new CardsInteractorImpl(cardsStorageImpl, logger);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CardsInteractorImplTest {
         underTest.getLuckyCards(2).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(luckyCards);
-        verify(cardsStorage).getLuckyCards(2);
+        verify(cardsStorageImpl).getLuckyCards(2);
     }
 
     @Test
@@ -79,31 +79,31 @@ public class CardsInteractorImplTest {
         underTest.getFavourites().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(favCards);
-        verify(cardsStorage).getFavourites();
+        verify(cardsStorageImpl).getFavourites();
     }
 
     @Test
     public void testSaveAsFavourite() {
         MTGCard card = mock(MTGCard.class);
         int[] idFavs = new int[]{1, 2, 3};
-        when(cardsStorage.saveAsFavourite(card)).thenReturn(idFavs);
+        when(cardsStorageImpl.saveAsFavourite(card)).thenReturn(idFavs);
         TestObserver<int[]> testSubscriber = new TestObserver<>();
         underTest.saveAsFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(idFavs);
-        verify(cardsStorage).saveAsFavourite(card);
+        verify(cardsStorageImpl).saveAsFavourite(card);
     }
 
     @Test
     public void testRemoveFromFavourite() {
         MTGCard card = mock(MTGCard.class);
         int[] idFavs = new int[]{3, 4, 5};
-        when(cardsStorage.removeFromFavourite(card)).thenReturn(idFavs);
+        when(cardsStorageImpl.removeFromFavourite(card)).thenReturn(idFavs);
         TestObserver<int[]> testSubscriber = new TestObserver<>();
         underTest.removeFromFavourite(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(idFavs);
-        verify(cardsStorage).removeFromFavourite(card);
+        verify(cardsStorageImpl).removeFromFavourite(card);
     }
 
     @Test
@@ -112,18 +112,18 @@ public class CardsInteractorImplTest {
         underTest.loadSet(set).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(setCards);
-        verify(cardsStorage).load(set);
+        verify(cardsStorageImpl).load(set);
     }
 
     @Test
     public void testLoadIdFav() {
         int[] idFavs = new int[]{6, 7, 8};
-        when(cardsStorage.loadIdFav()).thenReturn(idFavs);
+        when(cardsStorageImpl.loadIdFav()).thenReturn(idFavs);
         TestObserver<int[]> testSubscriber = new TestObserver<>();
         underTest.loadIdFav().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(idFavs);
-        verify(cardsStorage).loadIdFav();
+        verify(cardsStorageImpl).loadIdFav();
     }
 
     @Test
@@ -132,7 +132,7 @@ public class CardsInteractorImplTest {
         underTest.loadDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(deckCards);
-        verify(cardsStorage).loadDeck(deck);
+        verify(cardsStorageImpl).loadDeck(deck);
     }
 
     @Test
@@ -141,7 +141,7 @@ public class CardsInteractorImplTest {
         underTest.doSearch(searchParams).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(searchCards);
-        verify(cardsStorage).doSearch(searchParams);
+        verify(cardsStorageImpl).doSearch(searchParams);
     }
 
     @Test
@@ -150,7 +150,7 @@ public class CardsInteractorImplTest {
         underTest.loadCard(MULTIVERSE_ID).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(card);
-        verify(cardsStorage).loadCard(MULTIVERSE_ID);
+        verify(cardsStorageImpl).loadCard(MULTIVERSE_ID);
     }
 
     @Test
@@ -159,6 +159,6 @@ public class CardsInteractorImplTest {
         underTest.loadOtherSideCard(card).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValue(otherSideCard);
-        verify(cardsStorage).loadOtherSide(card);
+        verify(cardsStorageImpl).loadOtherSide(card);
     }
 }

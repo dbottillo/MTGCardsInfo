@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
