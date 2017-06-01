@@ -292,7 +292,7 @@ public class MainFragment extends BasicFragment implements
     public void updateContent() {
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
-        cardsHelper.sortCards(bucket);
+        //cardsHelper.sortCards(bucket);
         mtgCardsView.loadCards(bucket.getCards(), this, gameSet.getName(), null, R.menu.card_option);
     }
 

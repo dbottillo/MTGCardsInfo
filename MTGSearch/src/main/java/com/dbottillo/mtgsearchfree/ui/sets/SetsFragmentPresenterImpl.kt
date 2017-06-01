@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.sets
 
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
@@ -19,7 +20,7 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
                                 val logger: Logger) : SetsFragmentPresenter {
 
     val setsWrapper: Runner<List<MTGSet>> = runnerFactory.simple()
-    val cardsWrapper: Runner<List<MTGCard>> = runnerFactory.simple()
+    val cardsWrapper: Runner<CardsCollection> = runnerFactory.simple()
 
     val sets: MutableList<MTGSet> = mutableListOf()
     var set: MTGSet? = null
@@ -66,15 +67,15 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
 
     private fun loadSet(set: MTGSet) {
         logger.d()
-        cardsWrapper.run(cardsInteractor.loadSet(set), object : Runner.RxWrapperListener<List<MTGCard>> {
+        cardsWrapper.run(cardsInteractor.loadSet(set), object : Runner.RxWrapperListener<CardsCollection> {
             override fun onError(e: Throwable?) {
             }
 
             override fun onCompleted() {
             }
 
-            override fun onNext(data: List<MTGCard>) {
-                view.showSet(set, data, cardsPreferences.load())
+            override fun onNext(data: CardsCollection) {
+                view.showSet(set, data)
             }
         })
 

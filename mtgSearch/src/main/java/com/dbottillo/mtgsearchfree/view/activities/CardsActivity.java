@@ -183,7 +183,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         LOG.d();
         boolean showImage = cardsPreferences.showImage();
         if (set != null || search != null) {
-            cardsHelper.sortCards(bucket);
+            //cardsHelper.sortCards(bucket);
         }
         adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
         viewPager.setAdapter(adapter);

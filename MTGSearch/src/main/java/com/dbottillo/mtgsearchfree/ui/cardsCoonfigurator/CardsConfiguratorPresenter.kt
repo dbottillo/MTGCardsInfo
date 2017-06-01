@@ -6,5 +6,4 @@ interface CardsConfiguratorPresenter{
 
     fun init(view: CardsConfiguratorView)
     fun update(type: CardFilter.TYPE, on: Boolean)
-
 }

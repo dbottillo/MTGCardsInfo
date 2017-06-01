@@ -1,29 +1,29 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
-import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-
-import java.util.Collections
-import java.util.Comparator
+import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
+import java.util.*
 
 open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
-                       private val deckDataSource: DeckDataSource,
-                       private val favouritesDataSource: FavouritesDataSource,
-                       private val logger: Logger) : CardsStorage {
+                            private val deckDataSource: DeckDataSource,
+                            private val favouritesDataSource: FavouritesDataSource,
+                            private val cardsPreferences: CardsPreferences,
+                            private val cardsHelper: CardsHelper,
+                            private val logger: Logger) : CardsStorage {
 
     init {
         logger.d("created")
     }
 
-    override fun load(set: MTGSet): List<MTGCard> {
+    override fun load(set: MTGSet): CardsCollection {
         logger.d("loadSet " + set)
-        return mtgCardDataSource.getSet(set)
+        val cards = mtgCardDataSource.getSet(set)
+        val filter = cardsPreferences.load()
+        return CardsCollection(cardsHelper.filterCards(filter, cards), filter)
     }
 
     override fun saveAsFavourite(card: MTGCard): IntArray {

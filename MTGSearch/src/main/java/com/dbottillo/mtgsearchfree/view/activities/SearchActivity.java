@@ -370,7 +370,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
 
     private void refreshList() {
         LOG.d();
-        cardsHelper.sortCards(currentBucket);
+        //cardsHelper.sortCards(currentBucket);
         mtgCardsView.loadCards(currentBucket.getCards(), this, R.string.action_search);
     }
 
