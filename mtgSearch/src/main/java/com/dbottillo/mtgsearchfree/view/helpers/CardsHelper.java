@@ -102,20 +102,11 @@ public class CardsHelper {
                 filteredCards.add(card);
             }
         }
+        sortCards(cardFilter.sortWUBGR, filteredCards);
         return filteredCards;
     }
 
-    public void sortCards(CardsBucket bucket) {
-        LOG.d();
-        boolean wubrgSort = cardsPreferences.isSortWUBRG();
-        sortCards(wubrgSort, bucket);
-    }
-
-    public void sortCards(boolean wubrgSort, CardsBucket bucket){
-        sortCards(wubrgSort, bucket.getCards());
-    }
-
-    public void sortCards(boolean wubrgSort, List<MTGCard> cards){
+    private void sortCards(boolean wubrgSort, List<MTGCard> cards){
         if (wubrgSort) {
             sortWUBGRCards(cards);
         } else {

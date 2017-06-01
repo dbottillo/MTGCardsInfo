@@ -46,6 +46,7 @@ class CardsConfiguratorPresenterImpl(val cardFilterInteractor: CardFilterInterac
             CardFilter.TYPE.UNCOMMON -> filter?.uncommon = on
             CardFilter.TYPE.RARE -> filter?.rare = on
             CardFilter.TYPE.MYTHIC -> filter?.mythic = on
+            CardFilter.TYPE.SORT_WUBGR -> filter?.sortWUBGR = on
         }
         cardFilterInteractor.sync(filter)
         filter?.let { view.loadFilter(it) }

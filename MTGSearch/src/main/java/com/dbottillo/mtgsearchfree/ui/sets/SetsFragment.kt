@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
@@ -92,9 +93,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         return presenter.set()?.name?: "Aether Reveal"
     }
 
-    override fun showSet(set: MTGSet, cards: List<MTGCard>, filter: CardFilter) {
+    override fun showSet(set: MTGSet, cards: CardsCollection) {
         toolbarRevealScrollHelper.updateTitle(set.name)
-        mtgCardsView.loadCards(cards, this, set.name, filter, R.menu.card_option)
+        mtgCardsView.loadCards(cards.list, this, set.name, cards.filter, R.menu.card_option)
     }
 
     override fun onCardsViewTypeSelected() {
@@ -106,7 +107,6 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
         cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
             override fun onConfigurationChange() {
-                LOG.e("onConfigurationChange")
                 presenter.reloadSet()
             }
         }

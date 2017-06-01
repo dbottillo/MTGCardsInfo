@@ -20,6 +20,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+@Deprecated
 public class SortDialogFragment extends BottomSheetDialogFragment {
 
     @BindView(R.id.sort_option_container)
@@ -75,7 +76,7 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
             ((BottomSheetBehavior) behavior).setBottomSheetCallback(mBottomSheetBehaviorCallback);
         }
 
-        colorSelected = cardsPreferences.isSortWUBRG();
+        //colorSelected = cardsPreferences.isSortWUBRG();
         syncUI();
 
         azContainer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -99,7 +100,7 @@ public class SortDialogFragment extends BottomSheetDialogFragment {
     }
 
     private void optionUpdate(boolean color) {
-        cardsPreferences.setSortOption(color);
+       // cardsPreferences.setSortOption(color);
         listener.onSortSelected();
         TrackingManager.trackSortCard(color);
     }

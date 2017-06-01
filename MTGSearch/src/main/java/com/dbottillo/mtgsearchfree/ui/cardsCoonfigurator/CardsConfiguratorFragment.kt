@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator
 
-import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.BottomSheetDialogFragment
@@ -8,18 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
-import javax.inject.Inject
-import android.support.design.widget.BottomSheetBehavior
-import android.support.design.widget.CoordinatorLayout
 import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.view.CardFilterView
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
+import javax.inject.Inject
 
 class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfiguratorView, FilterPickerView.OnFilterPickerListener {
 
-    interface CardsConfiguratorListener{
+    interface CardsConfiguratorListener {
         fun onConfigurationChange()
     }
 
@@ -50,7 +45,6 @@ class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfigurator
 
     override fun loadFilter(filter: CardFilter) {
         filterPickerView.refresh(filter)
-        LOG.e("calling $listener")
         listener.onConfigurationChange()
     }
 

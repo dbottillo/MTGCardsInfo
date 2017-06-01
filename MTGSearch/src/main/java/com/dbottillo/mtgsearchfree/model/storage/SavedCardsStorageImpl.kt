@@ -41,11 +41,6 @@ class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSour
         logger.d()
         val filter = cardsPreferences.load()
         val cards = cardsHelper.filterCards(filter, favouritesDataSource.getCards(true))
-        if (cardsPreferences.isSortWUBRG) {
-            cardsHelper.sortWUBGRCards(cards)
-        } else {
-            cardsHelper.sortAZCards(cards)
-        }
-        return CardsCollection(cards, filter, cardsPreferences.isSortWUBRG)
+        return CardsCollection(cards, filter)
     }
 }

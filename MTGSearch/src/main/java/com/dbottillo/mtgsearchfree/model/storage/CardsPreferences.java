@@ -8,10 +8,6 @@ public interface CardsPreferences {
 
     void sync(CardFilter filter);
 
-    boolean isSortWUBRG();
-
-    void setSortOption(boolean wubrg);
-
     void saveSetPosition(int position);
 
     int getSetPosition();

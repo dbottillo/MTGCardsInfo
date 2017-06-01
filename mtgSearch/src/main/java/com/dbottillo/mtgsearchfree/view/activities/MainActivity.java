@@ -46,9 +46,15 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+@Deprecated
 public class MainActivity extends BasicActivity implements MainView, CardFilterView,
         NavigationView.OnNavigationItemSelectedListener, FilterPickerView.OnFilterPickerListener,
         SlidingPanelHelper.SlidingPanelHelperListener {
+
+    @Override
+    public void onPanelChangeOffset(float Float) {
+
+    }
 
     public interface MainActivityListener {
         void updateContent();
@@ -92,7 +98,7 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
 
         setupToolbar();
         slidingPanelHelper = new SlidingPanelHelper(slidingUpPanelLayout, getResources(), this);
-        slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
+        //slidingPanelHelper.init(filterView.findViewById(R.id.filter_draggable));
 
 
         initialBundle = bundle;
@@ -324,10 +330,6 @@ public class MainActivity extends BasicActivity implements MainView, CardFilterV
     public void filterUpdated(CardFilter.TYPE type, boolean on) {
         LOG.d();
         filterPresenter.update(type, on);
-    }
-
-    public void onPanelChangeOffset(float offset) {
-        filterView.onPanelSlide(offset);
     }
 
     public boolean isFilterOpen() {

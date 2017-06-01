@@ -38,6 +38,8 @@ public class CardsPreferencesImpl implements CardsPreferences{
         res.rare = sharedPreferences.getBoolean(CardProperties.RARITY.RARE.getKey(), true);
         res.mythic = sharedPreferences.getBoolean(CardProperties.RARITY.MYTHIC.getKey(), true);
 
+        res.sortWUBGR = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
+
         return res;
     }
 
@@ -57,19 +59,8 @@ public class CardsPreferencesImpl implements CardsPreferences{
                 .putBoolean(CardProperties.RARITY.UNCOMMON.getKey(), filter.uncommon)
                 .putBoolean(CardProperties.RARITY.RARE.getKey(), filter.rare)
                 .putBoolean(CardProperties.RARITY.MYTHIC.getKey(), filter.mythic)
+                .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.sortWUBGR)
                 .apply();
-    }
-
-    @Override
-    public boolean isSortWUBRG() {
-        return sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
-    }
-
-    @Override
-    public void setSortOption(boolean wubrg) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(BasicFragment.PREF_SORT_WUBRG, wubrg);
-        editor.apply();
     }
 
     @Override

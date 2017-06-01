@@ -20,6 +20,8 @@ public class CardFilter implements Parcelable {
     public boolean rare = true;
     public boolean mythic = true;
 
+    public boolean sortWUBGR = true;
+
     public enum TYPE {
         WHITE,
         BLUE,
@@ -32,7 +34,8 @@ public class CardFilter implements Parcelable {
         COMMON,
         UNCOMMON,
         RARE,
-        MYTHIC
+        MYTHIC,
+        SORT_WUBGR
     }
 
     public CardFilter(){
@@ -52,6 +55,7 @@ public class CardFilter implements Parcelable {
         uncommon = in.readByte() != 0;
         rare = in.readByte() != 0;
         mythic = in.readByte() != 0;
+        sortWUBGR = in.readByte() != 0;
     }
 
     public static final Creator<CardFilter> CREATOR = new Creator<CardFilter>() {
@@ -81,6 +85,8 @@ public class CardFilter implements Parcelable {
         dest.writeInt(uncommon ? 1 : 0);
         dest.writeInt(rare ? 1 : 0);
         dest.writeInt(mythic ? 1 : 0);
+
+        dest.writeInt(sortWUBGR ? 1 : 0);
     }
 
     public int describeContents() {
@@ -96,7 +102,7 @@ public class CardFilter implements Parcelable {
         return white == other.white && blue == other.blue && black == other.black && red == other.red
                 && green == other.green && artifact == other.artifact && land == other.land
                 && common == other.common && uncommon == other.uncommon
-                && rare == other.rare && mythic == other.mythic;
+                && rare == other.rare && mythic == other.mythic && sortWUBGR == other.sortWUBGR;
     }
 
     @Override
@@ -113,6 +119,7 @@ public class CardFilter implements Parcelable {
         result = 31 * result + (uncommon ? 1 : 0);
         result = 31 * result + (rare ? 1 : 0);
         result = 31 * result + (mythic ? 1 : 0);
+        result = 31 * result + (sortWUBGR ? 1 : 0);
         return result;
     }
 }

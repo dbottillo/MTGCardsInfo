@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
+import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
@@ -29,11 +30,6 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
-
-    /*override fun onAttach(context: Context?) {
-        mtgApp.uiGraph.inject(this)
-        super.onAttach(context)
-    }*/
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_saved, container, false)
@@ -97,7 +93,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         mtgCardsView.setListOn()
     }
 
-    override fun onCardSelected(card: MTGCard?, position: Int, view: View?) {
+    override fun onCardSelected(card: MTGCard, position: Int, view: View?) {
         TrackingManager.trackOpenCard(position)
         startActivity(CardsActivity.newFavInstance(context, position))
     }
@@ -119,7 +115,13 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     }
 
     override fun onCardsSettingSelected() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val cardsConfigurator= CardsConfiguratorFragment()
+        cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
+        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
+            override fun onConfigurationChange() {
+                savedCardsPresenter.load()
+            }
+        }
     }
 
     fun openSearch(){

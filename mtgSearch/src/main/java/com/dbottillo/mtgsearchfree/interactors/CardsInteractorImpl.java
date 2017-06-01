@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -28,7 +29,6 @@ public class CardsInteractorImpl implements CardsInteractor {
         return Observable.just(storage.getLuckyCards(howMany));
     }
 
-    @Override
     public Observable<List<MTGCard>> getFavourites() {
         logger.d("get favourites");
         return Observable.just(storage.getFavourites());
@@ -44,7 +44,7 @@ public class CardsInteractorImpl implements CardsInteractor {
         return Observable.just(storage.removeFromFavourite(card));
     }
 
-    public Observable<List<MTGCard>> loadSet(MTGSet set) {
+    public Observable<CardsCollection> loadSet(MTGSet set) {
         logger.d("loadSet " + set.toString());
         return Observable.just(storage.load(set));
     }

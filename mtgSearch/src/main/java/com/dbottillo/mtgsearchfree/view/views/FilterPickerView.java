@@ -5,6 +5,7 @@ import android.text.Html;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,10 +25,6 @@ public class FilterPickerView extends LinearLayout {
         void filterUpdated(CardFilter.TYPE type, boolean on);
     }
 
-    @BindView(R.id.filter_text)
-    TextView filterText;
-    @BindView(R.id.arrow_filter)
-    ImageView arrow;
     @BindView(R.id.toggle_white)
     ToggleButton toggleW;
     @BindView(R.id.toggle_blue)
@@ -67,10 +64,10 @@ public class FilterPickerView extends LinearLayout {
 
     public FilterPickerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setOrientation(LinearLayout.VERTICAL);
 
+        setOrientation(LinearLayout.VERTICAL);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.view_filter_picker, this, true);
+        View view = inflater.inflate(R.layout.view_filter_picker, this);
 
         ButterKnife.bind(this, view);
     }
@@ -79,31 +76,8 @@ public class FilterPickerView extends LinearLayout {
         listener = list;
     }
 
-    private void setRotationArrow(float angle) {
-        arrow.setRotation(angle);
-    }
-
     public void refresh(CardFilter filter) {
         LOG.d();
-        String filterString = "";
-
-        filterString += addEntryFilterString(filter.white, "W");
-        filterString += addEntryFilterString(filter.blue, "U");
-        filterString += addEntryFilterString(filter.black, "B");
-        filterString += addEntryFilterString(filter.red, "R");
-        filterString += addEntryFilterString(filter.green, "G");
-
-        filterString += " - ";
-        filterString += addEntryFilterString(filter.eldrazi, "A");
-        filterString += addEntryFilterString(filter.land, "L");
-        filterString += addEntryFilterString(filter.eldrazi, "E");
-        filterString += " - ";
-
-        filterString += addEntryFilterString(filter.common, "C");
-        filterString += addEntryFilterString(filter.uncommon, "U");
-        filterString += addEntryFilterString(filter.rare, "R");
-        filterString += addEntryFilterString(filter.mythic, "M");
-
         toggleW.setChecked(filter.white);
         toggleU.setChecked(filter.blue);
         toggleB.setChecked(filter.black);
@@ -116,25 +90,12 @@ public class FilterPickerView extends LinearLayout {
         toggleUncommon.setChecked(filter.uncommon);
         toggleRare.setChecked(filter.rare);
         toggleMythic.setChecked(filter.mythic);
-
-        filterText.setText(Html.fromHtml(filterString));
-    }
-
-    public String addEntryFilterString(boolean active, String text) {
-        String filterString = "";
-        if (active) {
-            filterString += "<font color=\"#FFFFFF\">" + text + "</font>";
-        } else {
-            filterString += "<font color=\"#777777\">" + text + "</font>";
-        }
-        filterString += "&nbsp;";
-        return filterString;
     }
 
     @OnClick({R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_red,
             R.id.toggle_green, R.id.toggle_artifact, R.id.toggle_land, R.id.toggle_eldrazi,
             R.id.toggle_common, R.id.toggle_uncommon,
-            R.id.toggle_rare, R.id.toggle_myhtic})
+            R.id.toggle_rare, R.id.toggle_myhtic, R.id.toggle_order})
     void onToggleClicked(View view) {
         LOG.d();
         boolean on = ((ToggleButton) view).isChecked();
@@ -175,13 +136,12 @@ public class FilterPickerView extends LinearLayout {
             case R.id.toggle_myhtic:
                 listener.filterUpdated(CardFilter.TYPE.MYTHIC, on);
                 break;
+            case R.id.toggle_order:
+                listener.filterUpdated(CardFilter.TYPE.SORT_WUBGR, on);
+                break;
             default:
                 break;
         }
-    }
-
-    public void onPanelSlide(float offset) {
-        setRotationArrow(180 - (180 * offset));
     }
 
 }

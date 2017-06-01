@@ -179,7 +179,7 @@ public class CardsPresenterImpl implements CardsPresenter {
 
     public void loadCards(final MTGSet set) {
         logger.d("loadSet cards of " + set);
-        cardsWrapper.run(interactor.loadSet(set), new Runner.RxWrapperListener<List<MTGCard>>() {
+        /*cardsWrapper.run(interactor.loadSet(set), new Runner.RxWrapperListener<List<MTGCard>>() {
             @Override
             public void onNext(List<MTGCard> mtgCards) {
                 logger.d();
@@ -196,7 +196,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             public void onCompleted() {
 
             }
-        });
+        });*/
     }
 
     public void init(CardsView view) {

@@ -1,13 +1,10 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
-import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.*
 
 interface CardsStorage{
 
-    fun load(set: MTGSet): List<MTGCard>
+    fun load(set: MTGSet): CardsCollection
     fun saveAsFavourite(card: MTGCard): IntArray
     fun loadIdFav(): IntArray
     fun removeFromFavourite(card: MTGCard): IntArray
