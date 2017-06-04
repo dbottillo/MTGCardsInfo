@@ -34,12 +34,6 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
 
     override fun loadSets() {
         logger.d()
-        if (sets.size > 0){
-            currentPos = cardsPreferences.setPosition
-            set = sets[currentPos]
-            set?.let { loadSet(it) }
-            return
-        }
         val obs = setsInteractor.load()
         setsWrapper.run(obs, object : Runner.RxWrapperListener<List<MTGSet>> {
             override fun onNext(data: List<MTGSet>) {
@@ -52,6 +46,10 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
             }
 
             override fun onCompleted() {
+                val newPos = cardsPreferences.setPosition
+                if (newPos == currentPos){
+                    return;
+                }
                 currentPos = cardsPreferences.setPosition
                 set = sets[currentPos]
                 set?.let { loadSet(it) }
@@ -61,7 +59,6 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
     }
 
     override fun reloadSet() {
-        LOG.e("reload $set")
         set?.let { loadSet(it) }
     }
 

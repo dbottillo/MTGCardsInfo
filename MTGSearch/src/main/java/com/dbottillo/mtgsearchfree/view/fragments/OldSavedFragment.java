@@ -23,7 +23,7 @@ import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
@@ -113,6 +113,11 @@ public class OldSavedFragment extends BasicFragment implements OnCardListener, M
     }
 
     @Override
+    public void onCardsHeaderSelected() {
+
+    }
+
+    @Override
     public void onCardsViewTypeSelected() {
 
     }
@@ -145,7 +150,7 @@ public class OldSavedFragment extends BasicFragment implements OnCardListener, M
     public void updateContent() {
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), null, savedBucket);
-        CardsAdapter adapter = CardsAdapter.list(bucket.getCards(), false, R.menu.card_saved_option, getString(R.string.action_saved), null);
+        CardsAdapter adapter = CardsAdapter.list(bucket.getCards(), false, R.menu.card_saved_option, getString(R.string.action_saved), -1,null);
         adapter.setOnCardListener(this);
         listView.setAdapter(adapter);
         emptyView.setVisibility(bucket.getCards().size() == 0 ? View.VISIBLE : View.GONE);

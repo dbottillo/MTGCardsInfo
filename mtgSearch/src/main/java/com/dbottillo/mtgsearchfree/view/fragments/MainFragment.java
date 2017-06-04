@@ -35,7 +35,7 @@ import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.view.CardsView;
 import com.dbottillo.mtgsearchfree.view.SetsView;
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.dbottillo.mtgsearchfree.view.adapters.GameSetAdapter;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
@@ -52,6 +52,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+@Deprecated
 public class MainFragment extends BasicFragment implements
         MainActivity.MainActivityListener, OnCardListener, CardsView, SetsView, SortDialogFragment.SortDialogListener {
 
@@ -293,7 +294,7 @@ public class MainFragment extends BasicFragment implements
         LOG.d();
         CardsBucket bucket = cardsHelper.filterCards(mainActivity.getCurrentFilter(), cardBucket);
         //cardsHelper.sortCards(bucket);
-        mtgCardsView.loadCards(bucket.getCards(), this, gameSet.getName(), null, R.menu.card_option);
+        mtgCardsView.loadCards(bucket.getCards(), this, gameSet.getName(), -1, null, R.menu.card_option);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -304,6 +305,11 @@ public class MainFragment extends BasicFragment implements
     public void onSortSelected() {
         LOG.d();
         loadSet();
+    }
+
+    @Override
+    public void onCardsHeaderSelected() {
+
     }
 
     @Override

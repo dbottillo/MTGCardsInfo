@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
@@ -17,7 +16,7 @@ import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.*
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
@@ -67,17 +66,10 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
         setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
 
-        dbActivity.supportFragmentManager.addOnBackStackChangedListener {
-            LOG.e("back stack $dbActivity.supportFragmentManager.backStackEntryCount")
-            if (dbActivity.supportFragmentManager.backStackEntryCount == 0) {
-                presenter.loadSets()
-            }
-        }
     }
 
     override fun onResume() {
         super.onResume()
-        LOG.e("onResume")
         presenter.loadSets()
     }
 
@@ -95,7 +87,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
     override fun showSet(set: MTGSet, cards: CardsCollection) {
         toolbarRevealScrollHelper.updateTitle(set.name)
-        mtgCardsView.loadCards(cards.list, this, set.name, cards.filter, R.menu.card_option)
+        mtgCardsView.loadCards(cards.list, this, set.name, R.drawable.ic_edit_grey, cards.filter, R.menu.card_option)
     }
 
     override fun onCardsViewTypeSelected() {
@@ -136,4 +128,10 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         LOG.d()
         mtgCardsView.setListOn()
     }
+
+    override fun onCardsHeaderSelected() {
+        val intent = Intent(activity, SetPickerActivity::class.java)
+        startActivity(intent)
+    }
+
 }

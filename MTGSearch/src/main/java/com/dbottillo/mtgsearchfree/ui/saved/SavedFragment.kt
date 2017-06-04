@@ -15,7 +15,7 @@ import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
@@ -80,7 +80,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun showCards(cardsCollection: CardsCollection) {
         emptyContainer.visibility = if (cardsCollection.list.isEmpty()) View.VISIBLE else View.GONE
-        mtgCardsView.loadCards(cardsCollection.list, this, R.string.action_saved, cardsCollection.filter, R.menu.card_saved_option)
+        mtgCardsView.loadCards(cardsCollection.list, this, R.string.action_saved, -1, cardsCollection.filter, R.menu.card_saved_option)
     }
 
     override fun showCardsGrid() {
@@ -127,6 +127,10 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     fun openSearch(){
         LOG.d()
         startActivity(Intent(activity, SearchActivity::class.java))
+    }
+
+    override fun onCardsHeaderSelected() {
+
     }
 
 }

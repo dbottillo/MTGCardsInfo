@@ -1,16 +1,16 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
-import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment;
+import com.dbottillo.mtgsearchfree.ui.sets.SetPickerActivity;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
-import com.dbottillo.mtgsearchfree.view.activities.CardsActivity;
-import com.dbottillo.mtgsearchfree.view.activities.CommonCardsActivity;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
+import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
 import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.dbottillo.mtgsearchfree.view.activities.SearchActivity;
@@ -70,4 +70,6 @@ public interface UiComponent {
     void inject(SetsFragment setsFragment);
 
     void inject(@NotNull CardsConfiguratorFragment cardsConfiguratorFragment);
+
+    void inject(@NotNull SetPickerActivity setPickerActivity);
 }

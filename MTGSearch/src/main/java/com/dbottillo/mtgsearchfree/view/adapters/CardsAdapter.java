@@ -1,11 +1,12 @@
 package com.dbottillo.mtgsearchfree.view.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -14,12 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
@@ -38,25 +37,27 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private boolean isASearch;
     private OnCardListener onCardListener;
     private int menuRes;
+    private int headerIconTitle;
     private String title;
     private CardFilter cardFilter;
     private int colorFilterActive = -1;
 
-    public static CardsAdapter list(List<MTGCard> cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+    public static CardsAdapter list(List<MTGCard> cards, boolean isASearch, int menuRes, String title, int headerIconTitle, CardFilter cardFilter) {
         LOG.d();
-        return new CardsAdapter(cards, false, isASearch, menuRes, title, cardFilter);
+        return new CardsAdapter(cards, false, isASearch, menuRes, title, headerIconTitle, cardFilter);
     }
 
-    public static CardsAdapter grid(List<MTGCard> cards, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+    public static CardsAdapter grid(List<MTGCard> cards, boolean isASearch, int menuRes, String title, int headerIconTitle, CardFilter cardFilter) {
         LOG.d();
-        return new CardsAdapter(cards, true, isASearch, menuRes, title, cardFilter);
+        return new CardsAdapter(cards, true, isASearch, menuRes, title, headerIconTitle, cardFilter);
     }
 
-    private CardsAdapter(List<MTGCard> cards, boolean gridMode, boolean isASearch, int menuRes, String title, CardFilter cardFilter) {
+    private CardsAdapter(List<MTGCard> cards, boolean gridMode, boolean isASearch, int menuRes, String title, int headerIconTitle, CardFilter cardFilter) {
         this.cards = cards;
         this.gridMode = gridMode;
         this.isASearch = isASearch;
         this.menuRes = menuRes;
+        this.headerIconTitle = headerIconTitle;
         this.title = title;
         this.cardFilter = cardFilter;
     }
@@ -69,7 +70,7 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        if (viewType == ITEM_VIEW_TYPE_HEADER){
+        if (viewType == ITEM_VIEW_TYPE_HEADER) {
             return new HeaderViewHolder(inflater.inflate(R.layout.cards_header, parent, false));
         }
 
@@ -85,9 +86,20 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder originalHolder, int position) {
-        if (position == ITEM_VIEW_TYPE_HEADER){
+        if (position == ITEM_VIEW_TYPE_HEADER) {
             final HeaderViewHolder holder = (HeaderViewHolder) originalHolder;
             holder.title.setText(title);
+            if (headerIconTitle > -1){
+                headerIconTitle = R.drawable.ic_edit_grey;
+                LOG.e("headerIconTitle "+headerIconTitle);
+                Drawable drawable = ContextCompat.getDrawable(holder.itemView.getContext(), headerIconTitle);
+                LOG.e("drawable "+drawable);
+                drawable = DrawableCompat.wrap(drawable);
+                LOG.e("wrap drawable "+drawable);
+                DrawableCompat.setTint(drawable,ContextCompat.getColor(holder.itemView.getContext(), R.color.color_primary));
+                DrawableCompat.setTintMode(drawable, PorterDuff.Mode.SRC_IN);
+                holder.title.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+            }
             holder.type.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,12 +117,12 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             } else {
                 holder.type.setImageResource(R.drawable.cards_list_type);
             }
-            if (cardFilter == null){
+            if (cardFilter == null) {
                 holder.subTitle.setVisibility(View.GONE);
-                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP,40);
+                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
             } else {
                 holder.subTitle.setVisibility(View.VISIBLE);
-                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP,32);
+                holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
                 SpannableString spannableString = new SpannableString("WUBRG - ALE - CURM");
                 if (colorFilterActive == -1) {
                     colorFilterActive = ContextCompat.getColor(holder.itemView.getContext(), R.color.color_accent);
@@ -131,11 +143,17 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 checkSpannable(spannableString, cardFilter.mythic, 17);
                 holder.subTitle.setText(spannableString);
             }
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onCardListener.onCardsHeaderSelected();
+                }
+            });
             return;
         }
 
         final CardViewHolder holder = (CardViewHolder) originalHolder;
-        final MTGCard card = cards.get(position-1);
+        final MTGCard card = cards.get(position - 1);
         final Context context = holder.parent.getContext();
         if (gridMode) {
             holder.loader.setVisibility(View.VISIBLE);
@@ -161,15 +179,15 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             @Override
             public void onClick(View v) {
                 if (onCardListener != null) {
-                    onCardListener.onCardSelected(card, holder.getAdapterPosition()-1, v.findViewById(R.id.grid_item_card_image));
+                    onCardListener.onCardSelected(card, holder.getAdapterPosition() - 1, v.findViewById(R.id.grid_item_card_image));
                 }
             }
         });
     }
 
     private void checkSpannable(SpannableString spannableString, boolean on, int start) {
-        if (on){
-            spannableString.setSpan(new ForegroundColorSpan(colorFilterActive), start, start+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        if (on) {
+            spannableString.setSpan(new ForegroundColorSpan(colorFilterActive), start, start + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
     }
 
@@ -213,17 +231,21 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return menuRes;
     }
 
-    class HeaderViewHolder extends RecyclerView.ViewHolder{
+    public int getTitleImage() {
+        return headerIconTitle;
+    }
 
-        TextView title;
+    class HeaderViewHolder extends RecyclerView.ViewHolder {
+
+        AppCompatTextView title;
         TextView subTitle;
         ImageButton type;
         ImageButton settings;
 
         public HeaderViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            subTitle= (TextView) itemView.findViewById(R.id.sub_title);
+            title = (AppCompatTextView) itemView.findViewById(R.id.title);
+            subTitle = (TextView) itemView.findViewById(R.id.sub_title);
             type = (ImageButton) itemView.findViewById(R.id.cards_view_type);
             settings = (ImageButton) itemView.findViewById(R.id.cards_settings);
         }

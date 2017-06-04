@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.activities;
+package com.dbottillo.mtgsearchfree.ui.cards;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,29 +13,19 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.exceptions.MTGException;
-import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
-import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
-import com.dbottillo.mtgsearchfree.util.ArrayUtils;
+import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
-import com.dbottillo.mtgsearchfree.view.CardFilterView;
-import com.dbottillo.mtgsearchfree.view.CardsView;
-import com.dbottillo.mtgsearchfree.view.DecksView;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
 
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 
@@ -43,19 +33,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CardsActivity extends CommonCardsActivity implements CardsView, ViewPager.OnPageChangeListener, CardFilterView, DecksView {
+public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPageChangeListener, CardsActivityView {
 
-    private static final String KEY_SEARCH = "Search";
-    private static final String KEY_SET = "Set";
-    private static final String KEY_CARD = "Card";
-    private static final String KEY_FAV = "Fav";
-    private static final String KEY_DECK = "Deck";
-    private static final String POSITION = "Position";
+    protected static final String KEY_SEARCH = "Search";
+    protected static final String KEY_SET = "Set";
+    protected static final String KEY_CARD = "Card";
+    protected static final String KEY_FAV = "Fav";
+    protected static final String KEY_DECK = "Deck";
+    protected static final String POSITION = "Position";
 
-    public static Intent newInstance(Context context, MTGSet gameSet, int position, MTGCard card) {
+    public static Intent newInstance(Context context, MTGSet set, int position, MTGCard card) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
-        intent.putExtra(CardsActivity.KEY_SET, gameSet);
+        intent.putExtra(CardsActivity.KEY_SET, set);
         intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
@@ -82,12 +72,6 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         return intent;
     }
 
-    private MTGSet set = null;
-    private Deck deck = null;
-    private SearchParams search = null;
-    private int startPosition = 0;
-    private CardsBucket bucket;
-    private boolean favs = false;
 
     @BindView(R.id.cards_view_pager)
     ViewPager viewPager;
@@ -99,13 +83,7 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     private CardsPagerAdapter adapter;
 
     @Inject
-    CardsPresenter cardsPresenter;
-    @Inject
-    CardFilterPresenter filterPresenter;
-    @Inject
-    CardsHelper cardsHelper;
-    @Inject
-    CardsPreferences cardsPreferences;
+    CardsActivityPresenter cardsPresenter;
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -115,34 +93,8 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         setupView();
 
         getMTGApp().getUiGraph().inject(this);
-        cardsPresenter.init(this);
-        filterPresenter.init(this);
 
-        MTGCard transitionCard = null;
-        if (getIntent() != null) {
-            if (getIntent().hasExtra(KEY_SET)) {
-                set = getIntent().getParcelableExtra(KEY_SET);
-                setTitle(set.getName());
-
-            } else if (getIntent().hasExtra(KEY_SEARCH)) {
-                search = getIntent().getParcelableExtra(KEY_SEARCH);
-                setTitle(getString(R.string.action_search));
-
-            } else if (getIntent().hasExtra(KEY_DECK)) {
-                deck = getIntent().getParcelableExtra(KEY_DECK);
-                setTitle(deck.getName());
-
-            } else if (getIntent().hasExtra(KEY_FAV)) {
-                favs = true;
-                setTitle(getString(R.string.action_saved));
-            }
-
-            startPosition = getIntent().getIntExtra(POSITION, 0);
-        } else {
-            LOG.d("intent null");
-        }
-
-        cardsPresenter.loadIdFavourites();
+        cardsPresenter.init(this, getIntent());
     }
 
     private void setupView() {
@@ -173,32 +125,24 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
     }
 
     public String getPageTrack() {
-        if (deck != null) {
+        if (cardsPresenter.isDeck()) {
             return "/deck";
         }
         return "/cards";
     }
 
-    private void reloadAdapter() {
+    @Override
+    public void updateAdapter(CardsCollection cards, boolean deck, boolean showImage, int startPosition) {
         LOG.d();
-        boolean showImage = cardsPreferences.showImage();
-        if (set != null || search != null) {
-            //cardsHelper.sortCards(bucket);
-        }
-        adapter = new CardsPagerAdapter(this, deck != null, showImage, bucket.getCards());
+        adapter = new CardsPagerAdapter(this, deck, showImage, cards.getList());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(startPosition);
-        updateMenu();
+        syncMenu();
     }
 
     public void favClicked() {
         LOG.d();
-        MTGCard currentCard = adapter.getItem(viewPager.getCurrentItem());
-        if (ArrayUtils.contains(idFavourites, currentCard.getMultiVerseId())) {
-            cardsPresenter.removeFromFavourite(currentCard, true);
-        } else {
-            cardsPresenter.saveAsFavourite(currentCard, true);
-        }
+        cardsPresenter.favClicked(getCurrentCard());
     }
 
     public MTGCard getCurrentCard() {
@@ -211,82 +155,27 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
 
     public void toggleImage(boolean show) {
         LOG.d();
-        reloadAdapter();
-    }
-
-    public void favIdLoaded(int[] favourites) {
-        LOG.d();
-        idFavourites = favourites.clone();
-
-        if (adapter == null) {
-            // first time needs to loadSet cards
-            if (set != null) {
-                cardsPresenter.loadCards(set);
-            } else if (search != null) {
-                // loadSet search
-                cardsPresenter.doSearch(search);
-
-            } else if (deck != null) {
-                cardsPresenter.loadDeck(deck);
-
-            } else if (favs) {
-                cardsPresenter.loadFavourites();
-
-            } else {// something very bad happened here
-                throw new UnsupportedOperationException();
-            }
-        } else {
-            updateMenu();
-        }
-
+        cardsPresenter.toggleImage(show);
     }
 
     @Override
-    public void cardTypePreferenceChanged(boolean grid) {
-
-    }
-
-    public void cardsLoaded(CardsBucket bucket) {
-        LOG.d();
-        this.bucket = bucket;
-        if (set != null || favs) {
-            // needs to loadSet filters first
-            filterPresenter.loadFilter();
-        } else {
-            reloadAdapter();
-        }
-    }
-
-    @Override
-    public void deckLoaded(DeckBucket bucket) {
-        LOG.d();
-        this.bucket = bucket;
-        reloadAdapter();
-    }
-
-    @Override
-    public void deckExported(boolean success) {
-        throw new UnsupportedOperationException();
+    protected void syncMenu() {
+        cardsPresenter.updateMenu(getCurrentCard());
     }
 
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void showError(MTGException exception) {
-
-    }
-
     public void onPageScrollStateChanged(int state) {
         if (state == ViewPager.SCROLL_STATE_IDLE) {
             setFabScale(1.0f);
-            updateMenu();
+            syncMenu();
         }
     }
 
     public void onPageSelected(int position) {
-        updateMenu();
+        syncMenu();
     }
 
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -304,23 +193,48 @@ public class CardsActivity extends CommonCardsActivity implements CardsView, Vie
         fabButton.setScaleY(value);
     }
 
-    @Override
-    public void filterLoaded(CardFilter filter) {
-        LOG.d();
-        this.bucket = cardsHelper.filterCards(filter, bucket);
-        reloadAdapter();
-    }
-
     @OnClick(R.id.card_add_to_deck)
     public void addToDeck(View view) {
         LOG.d();
-        MTGCard card = bucket.getCards().get(viewPager.getCurrentItem());
-        openDialog("add_to_deck", AddToDeckFragment.newInstance(card));
+        openDialog("add_to_deck", AddToDeckFragment.newInstance(getCurrentCard()));
     }
 
     @Override
-    public void decksLoaded(List<Deck> decks) {
-        throw new UnsupportedOperationException();
+    public void updateTitle(@NotNull String name) {
+        setTitle(name);
     }
 
+    @Override
+    public void updateTitle(int resource) {
+        setTitle(getString(resource));
+    }
+
+    @Override
+    public void showFavMenuItem() {
+        if (favMenuItem != null) {
+            favMenuItem.setVisible(true);
+        }
+    }
+
+    @Override
+    public void updateFavMenuItem(int text, int icon) {
+        if (favMenuItem != null) {
+            favMenuItem.setTitle(getString(text));
+            favMenuItem.setIcon(icon);
+        }
+    }
+
+    @Override
+    public void hideFavMenuItem() {
+        if (favMenuItem != null) {
+            favMenuItem.setVisible(false);
+        }
+    }
+
+    @Override
+    public void setImageMenuItemChecked(boolean checked) {
+        if (imageMenuItem != null){
+            imageMenuItem.setChecked(checked);
+        }
+    }
 }

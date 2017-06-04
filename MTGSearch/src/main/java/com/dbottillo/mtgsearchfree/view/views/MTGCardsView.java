@@ -71,23 +71,23 @@ public class MTGCardsView extends RelativeLayout {
         emptyView.setText(res);
     }
 
-    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title) {
-        loadCards(cards, listener, title, null, R.menu.card_option);
+    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title, int titleImage) {
+        loadCards(cards, listener, title, titleImage, null, R.menu.card_option);
     }
 
-    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title, CardFilter cardFilter, int menuOption) {
-        loadCards(cards, listener, getContext().getString(title), cardFilter, menuOption);
+    public void loadCards(List<MTGCard> cards, OnCardListener listener, int title, int titleImage, CardFilter cardFilter, int menuOption) {
+        loadCards(cards, listener, getContext().getString(title), titleImage, cardFilter, menuOption);
     }
 
     public void loadCards(List<MTGCard> cards, OnCardListener listener,
-                          String title, CardFilter cardFilter, int menuOption) {
+                          String title, int titleImage, CardFilter cardFilter, int menuOption) {
         LOG.d();
 
         adapter = null;
         if (grid) {
-            adapter = CardsAdapter.grid(cards, false, menuOption, title, cardFilter);
+            adapter = CardsAdapter.grid(cards, false, menuOption, title, titleImage, cardFilter);
         } else {
-            adapter = CardsAdapter.list(cards, false, menuOption, title, cardFilter);
+            adapter = CardsAdapter.list(cards, false, menuOption, title, titleImage, cardFilter);
         }
         adapter.setOnCardListener(listener);
         listView.setAdapter(adapter);
@@ -141,7 +141,8 @@ public class MTGCardsView extends RelativeLayout {
         String title = adapter.getTitle();
         CardFilter cardFilter = adapter.getCardFilter();
         int menuOption = adapter.getMenuOption();
-        loadCards(cards, listener, title, cardFilter, menuOption);
+        int titleImage = adapter.getTitleImage();
+        loadCards(cards, listener, title, titleImage, cardFilter, menuOption);
     }
 
     private class GridItemDecorator extends RecyclerView.ItemDecoration {

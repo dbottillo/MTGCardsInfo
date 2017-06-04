@@ -23,6 +23,7 @@ import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.PermissionUtil;
@@ -87,6 +88,11 @@ public class DeckActivity extends BasicActivity implements DecksView {
         cardList.setLayoutManager(new LinearLayoutManager(this));
 
         DeckCardAdapter deckCardAdapter = new DeckCardAdapter(this, cards, R.menu.deck_card, new OnCardListener() {
+            @Override
+            public void onCardsHeaderSelected() {
+
+            }
+
             @Override
             public void onCardsViewTypeSelected() {
 
