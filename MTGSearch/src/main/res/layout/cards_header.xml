@@ -7,33 +7,35 @@
     android:orientation="vertical"
     tools:background="@color/white">
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/title"
         style="@style/BigTitle"
-        android:textSize="32sp"
-        android:maxLines="1"
-        android:ellipsize="end"
         android:layout_alignParentLeft="true"
+        android:layout_marginRight="0dp"
+        android:drawablePadding="0dp"
         android:layout_toLeftOf="@+id/cards_settings"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="32sp"
+        tools:drawableLeft="@drawable/ic_edit_grey"
         tools:layout_height="wrap_content"
         tools:layout_width="wrap_content"
         tools:text="@string/action_decks"/>
 
     <TextView
         android:id="@+id/sub_title"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:layout_marginLeft="16dp"
-        tools:visibility="gone"
         tools:text="WUBRG - AL - CUMR"/>
 
     <ImageButton
         android:id="@+id/cards_view_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_cards_view_type"
@@ -44,12 +46,12 @@
         android:id="@+id/cards_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/cards_view_type"
-        android:layout_gravity="center_vertical"
-        android:padding="8dp"
-        android:background="@android:color/transparent"
         android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@id/cards_view_type"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/cd_cards_sort"
+        android:padding="8dp"
         android:src="@drawable/ic_settings"
         android:tint="@color/color_primary"/>
 

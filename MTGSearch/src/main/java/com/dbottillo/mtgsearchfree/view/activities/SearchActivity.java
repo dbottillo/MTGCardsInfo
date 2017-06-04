@@ -25,6 +25,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
@@ -371,7 +372,7 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
     private void refreshList() {
         LOG.d();
         //cardsHelper.sortCards(currentBucket);
-        mtgCardsView.loadCards(currentBucket.getCards(), this, R.string.action_search);
+        mtgCardsView.loadCards(currentBucket.getCards(), this, R.string.action_search, -1);
     }
 
     @Override
@@ -393,6 +394,11 @@ public class SearchActivity extends BasicActivity implements View.OnClickListene
                 cardsShowType.setIcon(R.drawable.cards_grid_type);
             }
         }
+    }
+
+    @Override
+    public void onCardsHeaderSelected() {
+
     }
 
     @Override

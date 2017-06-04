@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.activities;
+package com.dbottillo.mtgsearchfree.ui;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -10,26 +10,30 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
+import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
 
 import javax.inject.Inject;
 
 public abstract class CommonCardsActivity extends BasicActivity {
 
-    private MenuItem favMenuItem = null;
-    private MenuItem imageMenuItem = null;
-    int[] idFavourites;
+    protected MenuItem favMenuItem = null;
+    protected MenuItem imageMenuItem = null;
+    protected int[] idFavourites;
 
-    abstract MTGCard getCurrentCard();
+    protected abstract MTGCard getCurrentCard();
 
-    abstract void favClicked();
+    protected abstract void favClicked();
 
-    abstract void toggleImage(boolean show);
+    protected abstract void toggleImage(boolean show);
+
+    protected abstract void syncMenu();
 
     @Inject
     CardsPreferences cardsPreferences;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        LOG.e("onCreateOptionsMenu");
         getMenuInflater().inflate(R.menu.cards, menu);
         favMenuItem = menu.findItem(R.id.action_fav);
         imageMenuItem = menu.findItem(R.id.action_image);
@@ -63,13 +67,13 @@ public abstract class CommonCardsActivity extends BasicActivity {
             boolean showImage = cardsPreferences.showImage();
             cardsPreferences.setShowImage(!showImage);
             toggleImage(!showImage);
-            updateMenu();
+            syncMenu();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    void updateMenu() {
+    /*protected void updateMenu() {
         LOG.d();
         syncMenu();
     }
@@ -97,6 +101,6 @@ public abstract class CommonCardsActivity extends BasicActivity {
         } else {
             imageMenuItem.setChecked(false);
         }
-    }
+    }*/
 
 }

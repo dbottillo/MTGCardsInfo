@@ -29,8 +29,8 @@ import javax.inject.Inject;
 public abstract class BasicActivity extends AppCompatActivity {
 
     int sizeToolbar = 0;
-    Toolbar toolbar = null;
-    boolean isPortrait = false;
+    protected Toolbar toolbar = null;
+    protected boolean isPortrait = false;
 
     @Inject
     public GeneralData generalData;
@@ -71,7 +71,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         }
     }
 
-    void setupToolbar() {
+    protected void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MaterialWrapper.setElevation(toolbar, getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
@@ -105,7 +105,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         TrackingManager.trackOpenRateApp();
     }
 
-    void openDialog(String tag, DialogFragment fragment) {
+    protected void openDialog(String tag, DialogFragment fragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         Fragment prev = getSupportFragmentManager().findFragmentByTag(tag);
         if (prev != null) {

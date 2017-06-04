@@ -23,10 +23,14 @@ import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
 import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenter;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenter;
+import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.Logger;
@@ -108,5 +112,22 @@ public class PresentersModule {
     CardsConfiguratorPresenter providesCardsConfiguratorPresenter(CardFilterInteractor interactor,
                                                                   RunnerFactory runnerFactory){
         return new CardsConfiguratorPresenterImpl(interactor, runnerFactory);
+    }
+
+    @Provides
+    SetPickerPresenter providesSetPickerPresenter(SetsInteractor setsInteractor,
+                                                     CardsPreferences cardsPreferences,
+                                                     RunnerFactory runnerFactory,
+                                                     Logger logger){
+        return new SetPickerPresenterImpl(setsInteractor, cardsPreferences, runnerFactory, logger);
+    }
+
+    @Provides
+    CardsActivityPresenter providesCardsActivityPresenter(CardsInteractor cardsInteractor,
+                                                      SavedCardsInteractor savedCardsInteractor,
+                                                      CardsPreferences cardsPreferences,
+                                                      RunnerFactory runnerFactory,
+                                                      Logger logger){
+        return new CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, cardsPreferences, runnerFactory, logger);
     }
 }

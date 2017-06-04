@@ -5,8 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.view.View
-import android.view.ViewPropertyAnimator
 import android.widget.FrameLayout
 import android.widget.Toast
 import butterknife.BindView
@@ -19,7 +17,10 @@ import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.views.BottomTabs
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.FileUtil
+import com.dbottillo.mtgsearchfree.util.PermissionUtil
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.UIUtil
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 
@@ -30,7 +31,7 @@ class HomeActivity : BasicActivity() {
     @BindView(R.id.fragment_container)
     lateinit var fragmentContainer: FrameLayout
 
-    var bottomTabsHeight : Int = 0
+    var bottomTabsHeight: Int = 0
     var currentBottomTabsHeightAnimator: ValueAnimator? = null
     var isUserScrollingDown: Boolean = false
 
@@ -83,8 +84,8 @@ class HomeActivity : BasicActivity() {
         return LifeCounterFragment()
     }
 
-    fun scrollingUp(){
-        if (!isUserScrollingDown){
+    fun scrollingUp() {
+        if (!isUserScrollingDown) {
             return
         }
 
@@ -92,15 +93,15 @@ class HomeActivity : BasicActivity() {
         isUserScrollingDown = false
     }
 
-    fun scrollingDown(){
-        if (isUserScrollingDown){
+    fun scrollingDown() {
+        if (isUserScrollingDown) {
             return
         }
         animateBottomTabs(bottomTabsHeight)
         isUserScrollingDown = true
     }
 
-    internal fun animateBottomTabs(targetHeight : Int){
+    internal fun animateBottomTabs(targetHeight: Int) {
         currentBottomTabsHeightAnimator?.cancel()
         currentBottomTabsHeightAnimator = ValueAnimator.ofInt(bottomTabs.height, targetHeight)
         currentBottomTabsHeightAnimator?.addUpdateListener { valueAnimator ->

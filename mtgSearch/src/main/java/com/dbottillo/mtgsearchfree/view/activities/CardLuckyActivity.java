@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
+import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.util.ArrayUtils;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
@@ -81,7 +82,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             MTGCard card = bundle.getParcelable(CARD);
             cardView.load(card, cardsPreferences.showImage());
             titleCard.setText(card.getName());
-            updateMenu();
+            syncMenu();
         }
 
         cardsPresenter.loadIdFavourites();
@@ -131,7 +132,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
             }
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
         } else {
-            updateMenu();
+            syncMenu();
         }
     }
 
@@ -161,7 +162,7 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
         if (luckyCards.size() <= 2) {
             cardsPresenter.getLuckyCards(LUCKY_BATCH_CARDS);
         }
-        updateMenu();
+        syncMenu();
         titleCard.setText(card.getName());
     }
 
@@ -173,6 +174,11 @@ public class CardLuckyActivity extends CommonCardsActivity implements CardsView 
     public void toggleImage(boolean show) {
         LOG.d();
         cardView.toggleImage(show);
+    }
+
+    @Override
+    protected void syncMenu() {
+
     }
 
     public void favClicked() {

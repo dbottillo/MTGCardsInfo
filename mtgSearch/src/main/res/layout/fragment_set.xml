@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:background="@color/white"
-    tools:context=".view.activities.MainActivity">
+    tools:background="@color/white">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"

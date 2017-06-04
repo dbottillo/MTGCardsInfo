@@ -34,13 +34,15 @@
         </activity>
 
         <activity
-            android:name=".view.activities.CardsActivity"/>
+            android:name=".ui.cards.CardsActivity"/>
 
         <activity android:name=".view.activities.CardLuckyActivity"/>
 
         <activity android:name=".view.activities.SearchActivity"/>
 
         <activity android:name=".view.activities.DeckActivity"/>
+
+        <activity android:name=".ui.sets.SetPickerActivity" />
 
         <meta-data
             android:name="com.crashlytics.ApiKey"
