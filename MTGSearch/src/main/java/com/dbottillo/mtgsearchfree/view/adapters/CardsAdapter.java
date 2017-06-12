@@ -91,11 +91,8 @@ public final class CardsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             holder.title.setText(title);
             if (headerIconTitle > -1){
                 headerIconTitle = R.drawable.ic_edit_grey;
-                LOG.e("headerIconTitle "+headerIconTitle);
                 Drawable drawable = ContextCompat.getDrawable(holder.itemView.getContext(), headerIconTitle);
-                LOG.e("drawable "+drawable);
                 drawable = DrawableCompat.wrap(drawable);
-                LOG.e("wrap drawable "+drawable);
                 DrawableCompat.setTint(drawable,ContextCompat.getColor(holder.itemView.getContext(), R.color.color_primary));
                 DrawableCompat.setTintMode(drawable, PorterDuff.Mode.SRC_IN);
                 holder.title.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);

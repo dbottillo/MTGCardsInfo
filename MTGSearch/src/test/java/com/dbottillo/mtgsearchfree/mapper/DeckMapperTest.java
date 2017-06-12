@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.mapper;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
@@ -25,7 +26,7 @@ public class DeckMapperTest {
     @Test
     public void test_mapIsNotNull() throws Exception {
         List<MTGCard> cards = new ArrayList<>();
-        DeckBucket bucket = underTest.map(cards);
+        DeckBucket bucket = underTest.map(new CardsCollection(cards, null, false));
         assertNotNull(bucket);
     }
 
@@ -34,7 +35,7 @@ public class DeckMapperTest {
         List<MTGCard> cards = new ArrayList<>();
         cards.add(new MTGCard(2));
         cards.add(new MTGCard(3));
-        DeckBucket bucket = underTest.map(cards);
+        DeckBucket bucket = underTest.map(new CardsCollection(cards, null, false));
         assertThat(bucket.numberOfCards(), is(2));
     }
 
@@ -46,7 +47,7 @@ public class DeckMapperTest {
         MTGCard card = new MTGCard(4);
         card.setSideboard(true);
         cards.add(card);
-        DeckBucket bucket = underTest.map(cards);
+        DeckBucket bucket = underTest.map(new CardsCollection(cards, null, false));
         assertThat(bucket.numberOfCards(), is(3));
         assertThat(bucket.numberOfCardsWithoutSideboard(), is(2));
         assertThat(bucket.numberOfCardsInSideboard(), is(1));

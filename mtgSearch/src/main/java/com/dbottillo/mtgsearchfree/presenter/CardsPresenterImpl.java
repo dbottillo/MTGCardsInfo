@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -26,7 +27,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     private DeckMapper deckMapper;
     private GeneralData generalData;
     private Runner<List<MTGCard>> cardsWrapper;
-    private RunnerAndMap<List<MTGCard>, DeckBucket> deckWrapper;
+    private RunnerAndMap<CardsCollection, DeckBucket> deckWrapper;
     private Runner<int[]> favWrapper;
     private MemoryStorage memoryStorage;
     private boolean grid = true;
@@ -91,9 +92,9 @@ public class CardsPresenterImpl implements CardsPresenter {
         });
     }
 
-    private Function<List<MTGCard>, DeckBucket> mapper = new Function<List<MTGCard>, DeckBucket>() {
+    private Function<CardsCollection, DeckBucket> mapper = new Function<CardsCollection, DeckBucket>() {
         @Override
-        public DeckBucket apply(List<MTGCard> mtgCards) throws Exception {
+        public DeckBucket apply(CardsCollection mtgCards) throws Exception {
             return deckMapper.map(mtgCards);
         }
     };
@@ -101,7 +102,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void loadDeck(final Deck deck) {
         logger.d("loadDeck " + deck);
-        deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new Runner.RxWrapperListener<DeckBucket>() {
+        /*deckWrapper.runAndMap(interactor.loadDeck(deck), mapper, new Runner.RxWrapperListener<DeckBucket>() {
             @Override
             public void onNext(DeckBucket bucket) {
                 logger.d();
@@ -118,7 +119,7 @@ public class CardsPresenterImpl implements CardsPresenter {
             public void onCompleted() {
 
             }
-        });
+        });*/
     }
 
     @Override

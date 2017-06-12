@@ -132,9 +132,9 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
     }
 
     @Override
-    public void updateAdapter(CardsCollection cards, boolean deck, boolean showImage, int startPosition) {
+    public void updateAdapter(CardsCollection cards, boolean showImage, int startPosition) {
         LOG.d();
-        adapter = new CardsPagerAdapter(this, deck, showImage, cards.getList());
+        adapter = new CardsPagerAdapter(this, showImage, cards);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(startPosition);
         syncMenu();

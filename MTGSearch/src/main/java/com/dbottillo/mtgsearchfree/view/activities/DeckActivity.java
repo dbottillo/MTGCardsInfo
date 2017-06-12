@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -273,7 +274,7 @@ public class DeckActivity extends BasicActivity implements DecksView {
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, new PermissionUtil.PermissionListener() {
             @Override
             public void permissionGranted() {
-                decksPresenter.exportDeck(deck, cards);
+                decksPresenter.exportDeck(deck, new CardsCollection(cards, null, false));
             }
 
             @Override

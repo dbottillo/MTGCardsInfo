@@ -6,7 +6,7 @@ interface CardsActivityView {
     fun finish()
     fun updateTitle(name: String)
     fun updateTitle(resource: Int)
-    fun updateAdapter(cards: CardsCollection, isDeck: Boolean, showImage: Boolean, startPosition: Int)
+    fun updateAdapter(cards: CardsCollection, showImage: Boolean, startPosition: Int)
     fun showFavMenuItem()
     fun updateFavMenuItem(text: Int, icon: Int)
     fun hideFavMenuItem()

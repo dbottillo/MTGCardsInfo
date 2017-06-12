@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import android.support.annotation.NonNull;
+
 import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -52,12 +54,6 @@ public class CardsInteractorImpl implements CardsInteractor {
     public Observable<int[]> loadIdFav() {
         logger.d("loadSet id fav");
         return Observable.just(storage.loadIdFav());
-    }
-
-    @Override
-    public Observable<List<MTGCard>> loadDeck(Deck deck) {
-        logger.d("loadSet deck " + deck.toString());
-        return Observable.just(storage.loadDeck(deck));
     }
 
     @Override

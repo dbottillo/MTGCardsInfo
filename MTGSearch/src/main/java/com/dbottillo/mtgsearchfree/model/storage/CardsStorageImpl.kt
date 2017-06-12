@@ -58,11 +58,6 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         return favouritesDataSource.getCards(true)
     }
 
-    override fun loadDeck(deck: Deck): List<MTGCard> {
-        logger.d("loadSet " + deck)
-        return deckDataSource.getCards(deck)
-    }
-
     override fun doSearch(searchParams: SearchParams): List<MTGCard> {
         logger.d("do search " + searchParams)
         val result = mtgCardDataSource.searchCards(searchParams)
