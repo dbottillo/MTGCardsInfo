@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.cards
 import android.content.Intent
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
@@ -14,6 +15,7 @@ import io.reactivex.Observable
 
 class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                                  val savedCardsInteractor: SavedCardsInteractor,
+                                 val decksInteractor: DecksInteractor,
                                  val cardsPreferences: CardsPreferences,
                                  val factory: RunnerFactory,
                                  val logger: Logger) : CardsActivityPresenter {
@@ -69,7 +71,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                 if (set != null) {
                     set?.let { loadData(cardsInteractor.loadSet(it)) }
                 } else if (deck != null) {
-                    // load deck
+                    deck?.let {loadData(decksInteractor.loadDeck(it))}
                 } else if (search != null) {
                     // load search
                 } else {
@@ -97,7 +99,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     }
 
     private fun updateView() {
-        currentData?.let { view.updateAdapter(it, isDeck(), cardsPreferences.showImage(), startPosition) }
+        currentData?.let { view.updateAdapter(it, cardsPreferences.showImage(), startPosition) }
     }
 
     override fun updateMenu(currentCard: MTGCard?) {

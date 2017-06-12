@@ -5,6 +5,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
@@ -13,19 +14,17 @@ import java.util.List;
 public class CardsPagerAdapter extends PagerAdapter {
 
     private Context context;
-    private boolean deck;
     private boolean showImage;
-    private List<MTGCard> cards;
+    private CardsCollection cards;
 
-    public CardsPagerAdapter(Context context, boolean deck, boolean showImage, List<MTGCard> cards) {
+    public CardsPagerAdapter(Context context, boolean showImage, CardsCollection cards) {
         this.context = context;
-        this.deck = deck;
         this.showImage = showImage;
         this.cards = cards;
     }
 
     public int getCount() {
-        return cards.size();
+        return cards.getList().size();
     }
 
     @Override
@@ -36,7 +35,7 @@ public class CardsPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         MTGCardView view = new MTGCardView(context);
-        view.load(cards.get(position), showImage);
+        view.load(cards.getList().get(position), showImage);
         container.addView(view);
         return view;
     }
@@ -47,15 +46,15 @@ public class CardsPagerAdapter extends PagerAdapter {
     }
 
     public CharSequence getPageTitle(int position) {
-        MTGCard card = cards.get(position);
-        if (deck) {
+        MTGCard card = cards.getList().get(position);
+        if (cards.isDeck()) {
             return card.getName() + " (" + card.getQuantity() + ")";
         }
         return card.getName();
     }
 
     public MTGCard getItem(int currentItem) {
-        return cards.get(currentItem);
+        return cards.getList().get(currentItem);
     }
 
 }

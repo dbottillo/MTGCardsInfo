@@ -22,8 +22,6 @@ interface CardsInteractor {
 
     fun getFavourites(): Observable<List<MTGCard>>
 
-    fun loadDeck(deck: Deck): Observable<List<MTGCard>>
-
     fun doSearch(searchParams: SearchParams): Observable<List<MTGCard>>
 
     fun loadCard(multiverseid: Int): Observable<MTGCard>

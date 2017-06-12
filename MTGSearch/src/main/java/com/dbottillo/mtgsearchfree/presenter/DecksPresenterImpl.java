@@ -5,6 +5,7 @@ import android.net.Uri;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -23,7 +24,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     private DecksView decksView;
     private final Runner<Boolean> exportWrapper;
     private final Runner<List<Deck>> deckWrapper;
-    private final RunnerAndMap<List<MTGCard>, DeckBucket> cardWrapper;
+    private final RunnerAndMap<CardsCollection, DeckBucket> cardWrapper;
     private final DeckMapper deckMapper;
     private final Logger logger;
 
@@ -116,7 +117,7 @@ public class DecksPresenterImpl implements DecksPresenter {
     }
 
     @Override
-    public void exportDeck(Deck deck, List<MTGCard> cards) {
+    public void exportDeck(Deck deck, CardsCollection cards) {
         exportWrapper.run(interactor.exportDeck(deck, cards), new Runner.RxWrapperListener<Boolean>() {
             @Override
             public void onNext(Boolean data) {
@@ -135,9 +136,9 @@ public class DecksPresenterImpl implements DecksPresenter {
         });
     }
 
-    private Function<List<MTGCard>, DeckBucket> mapper = new Function<List<MTGCard>, DeckBucket>() {
+    private Function<CardsCollection, DeckBucket> mapper = new Function<CardsCollection, DeckBucket>() {
         @Override
-        public DeckBucket apply(List<MTGCard> mtgCards) throws Exception {
+        public DeckBucket apply(CardsCollection mtgCards) throws Exception {
             return deckMapper.map(mtgCards);
         }
     };

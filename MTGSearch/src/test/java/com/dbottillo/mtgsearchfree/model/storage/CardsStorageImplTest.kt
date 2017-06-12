@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
+import junit.framework.Assert.*
 
 import org.junit.Before
 import org.junit.Rule
@@ -17,7 +18,6 @@ import org.mockito.junit.MockitoRule
 
 import java.util.Arrays
 
-import junit.framework.Assert.assertNotNull
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
 import org.mockito.ArgumentMatchers
@@ -30,7 +30,7 @@ import org.mockito.Mockito.`when`
 
 class CardsStorageImplTest {
 
-    @Rule
+    @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
     @Mock
@@ -91,14 +91,13 @@ class CardsStorageImplTest {
 
     @Test
     fun testLoad() {
-        `when`(cardsPreferences.isSortWUBRG).thenReturn(true)
         `when`(cardsHelper.filterCards(filter, setCards)).thenReturn(setCardsFiltered)
 
         val cards = underTest.load(set)
 
         assertThat(cards.list, `is`(setCardsFiltered))
         assertThat(cards.filter, `is`(filter))
-        assertThat(cards.wubgrSort, `is`(true))
+        assertFalse(cards.isDeck)
     }
 
     @Test
@@ -145,10 +144,13 @@ class CardsStorageImplTest {
 
     @Test
     fun testLoadDeck() {
-        val cards = underTest.loadDeck(deck)
+        /*val cards = underTest.loadDeck(deck)
+
         verify<DeckDataSource>(deckDataSource).getCards(deck)
         assertNotNull(cards)
-        assertThat(cards, `is`(deckCards))
+        assertThat(cards.list, `is`(deckCards))
+        assertNull(cards.filter)
+        assertTrue(cards.isDeck)*/
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
@@ -52,13 +53,20 @@ public class CardsInteractorImplTest {
     private List<MTGCard> searchCards = Arrays.asList(new MTGCard(6), new MTGCard(7));
     private List<MTGCard> deckCards = Arrays.asList(new MTGCard(7), new MTGCard(8));
 
+    @Mock
+    private CardsCollection setCollection;
+
+    @Mock
+    private CardsCollection deckCollection;
+
     @Before
     public void setup() {
         when(cardsStorageImpl.getLuckyCards(2)).thenReturn(luckyCards);
         when(cardsStorageImpl.getFavourites()).thenReturn(favCards);
-       // when(cardsStorageImpl.load(set)).thenReturn(setCards);
+        when(setCollection.getList()).thenReturn(setCards);
+        when(cardsStorageImpl.load(set)).thenReturn(setCollection);
         when(cardsStorageImpl.doSearch(searchParams)).thenReturn(searchCards);
-        when(cardsStorageImpl.loadDeck(deck)).thenReturn(deckCards);
+       // when(cardsStorageImpl.loadDeck(deck)).thenReturn(deckCollection);
         when(cardsStorageImpl.loadCard(MULTIVERSE_ID)).thenReturn(card);
         when(cardsStorageImpl.loadOtherSide(card)).thenReturn(otherSideCard);
         underTest = new CardsInteractorImpl(cardsStorageImpl, logger);
@@ -106,14 +114,14 @@ public class CardsInteractorImplTest {
         verify(cardsStorageImpl).removeFromFavourite(card);
     }
 
-   /* @Test
+    @Test
     public void testLoadSet() {
-        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
+        TestObserver<CardsCollection> testSubscriber = new TestObserver<>();
         underTest.loadSet(set).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(setCards);
+        testSubscriber.assertValue(setCollection);
         verify(cardsStorageImpl).load(set);
-    }*/
+    }
 
     @Test
     public void testLoadIdFav() {
@@ -126,14 +134,14 @@ public class CardsInteractorImplTest {
         verify(cardsStorageImpl).loadIdFav();
     }
 
-    @Test
+   /* @Test
     public void testLoadDeck() {
-        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
+        TestObserver<CardsCollection> testSubscriber = new TestObserver<>();
         underTest.loadDeck(deck).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(deckCards);
+        testSubscriber.assertValue(deckCollection);
         verify(cardsStorageImpl).loadDeck(deck);
-    }
+    }*/
 
     @Test
     public void testDoSearch() {

@@ -41,13 +41,10 @@ class CardsCollectionStorageImplTest {
 
     @Test
     fun load_shouldLoadFav_filterAndSortWUBGR() {
-        Mockito.`when`(cardsPreferences.isSortWUBRG).thenReturn(true)
-
         val result = underTest.load()
 
         assertThat(result.list, `is`(filteredCards))
         assertThat(result.filter, `is`(filter))
-        assertThat(result.wubgrSort, `is`(true))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
         verify(cardsHelper).filterCards(filter, cards)
@@ -57,13 +54,10 @@ class CardsCollectionStorageImplTest {
 
     @Test
     fun load_shouldLoadFav_filterAndSortAZ() {
-        Mockito.`when`(cardsPreferences.isSortWUBRG).thenReturn(false)
-
         val result = underTest.load()
 
         assertThat(result.list, `is`(filteredCards))
         assertThat(result.filter, `is`(filter))
-        assertThat(result.wubgrSort, `is`(false))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
         verify(cardsHelper).filterCards(filter, cards)

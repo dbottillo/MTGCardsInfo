@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.interactors;
 
 import android.net.Uri;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -34,7 +35,7 @@ public class DecksInteractorImpl implements DecksInteractor {
     }
 
     @Override
-    public Observable<List<MTGCard>> loadDeck(Deck deck) {
+    public Observable<CardsCollection> loadDeck(Deck deck) {
         logger.d("loadSet " + deck.toString());
         return Observable.just(storage.loadDeck(deck));
     }
@@ -52,31 +53,31 @@ public class DecksInteractorImpl implements DecksInteractor {
     }
 
     @Override
-    public Observable<List<MTGCard>> editDeck(Deck deck, String name) {
+    public Observable<CardsCollection> editDeck(Deck deck, String name) {
         logger.d("edit " + deck.toString() + " with name: " + name);
         return Observable.just(storage.editDeck(deck, name));
     }
 
     @Override
-    public Observable<List<MTGCard>> addCard(Deck deck, MTGCard card, int quantity) {
+    public Observable<CardsCollection> addCard(Deck deck, MTGCard card, int quantity) {
         logger.d("add " + quantity + " " + card.toString() + " to deck: " + deck);
         return Observable.just(storage.addCard(deck, card, quantity));
     }
 
     @Override
-    public Observable<List<MTGCard>> addCard(String name, MTGCard card, int quantity) {
+    public Observable<CardsCollection> addCard(String name, MTGCard card, int quantity) {
         logger.d("add " + quantity + " " + card.toString() + " to new deck with name: " + name);
         return Observable.just(storage.addCard(name, card, quantity));
     }
 
     @Override
-    public Observable<List<MTGCard>> removeCard(Deck deck, MTGCard card) {
+    public Observable<CardsCollection> removeCard(Deck deck, MTGCard card) {
         logger.d("remove " + card.toString() + " from deck: " + deck);
         return Observable.just(storage.removeCard(deck, card));
     }
 
     @Override
-    public Observable<List<MTGCard>> removeAllCard(Deck deck, MTGCard card) {
+    public Observable<CardsCollection> removeAllCard(Deck deck, MTGCard card) {
         logger.d("remove all " + card.toString() + " from deck: " + deck);
         return Observable.just(storage.removeAllCard(deck, card));
     }
@@ -92,18 +93,18 @@ public class DecksInteractorImpl implements DecksInteractor {
     }
 
     @Override
-    public Observable<Boolean> exportDeck(Deck deck, List<MTGCard> cards) {
+    public Observable<Boolean> exportDeck(Deck deck, CardsCollection cards) {
         return Observable.just(fileUtil.downloadDeckToSdCard(deck, cards));
     }
 
     @Override
-    public Observable<List<MTGCard>> moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
+    public Observable<CardsCollection> moveCardToSideboard(Deck deck, MTGCard card, int quantity) {
         logger.d("move " + card.toString() + " to sideboard deck: " + deck);
         return Observable.just(storage.moveCardToSideboard(deck, card, quantity));
     }
 
     @Override
-    public Observable<List<MTGCard>> moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
+    public Observable<CardsCollection> moveCardFromSideboard(Deck deck, MTGCard card, int quantity) {
         logger.d("move " + card.toString() + " from sideboard deck: " + deck);
         return Observable.just(storage.moveCardFromSideboard(deck, card, quantity));
     }

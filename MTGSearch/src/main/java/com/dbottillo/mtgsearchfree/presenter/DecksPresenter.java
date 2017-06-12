@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.presenter;
 
 import android.net.Uri;
 
+import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.DecksView;
@@ -36,5 +37,5 @@ public interface DecksPresenter {
 
     void importDeck(Uri uri);
 
-    void exportDeck(Deck deck, List<MTGCard> cards);
+    void exportDeck(Deck deck, CardsCollection cards);
 }

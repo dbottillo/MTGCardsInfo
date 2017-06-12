@@ -10,7 +10,6 @@ interface CardsStorage{
     fun removeFromFavourite(card: MTGCard): IntArray
     fun getLuckyCards(howMany: Int): List<MTGCard>
     fun getFavourites(): List<MTGCard>
-    fun loadDeck(deck: Deck): List<MTGCard>
     fun doSearch(searchParams: SearchParams): List<MTGCard>
     fun loadCard(multiverseId: Int): MTGCard
     fun loadOtherSide(card: MTGCard): MTGCard

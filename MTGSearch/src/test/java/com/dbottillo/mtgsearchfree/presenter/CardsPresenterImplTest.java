@@ -90,14 +90,14 @@ public class CardsPresenterImplTest  {
         when(searchParams.toString()).thenReturn("search");
         when(set.getName()).thenReturn("set");
         when(interactor.getLuckyCards(3)).thenReturn(Observable.just(luckyCards));
-        when(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCards));
+      //  when(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCards));
         when(interactor.getFavourites()).thenReturn(Observable.just(favCards));
         when(interactor.loadIdFav()).thenReturn(Observable.just(idFavs));
         when(interactor.removeFromFavourite(card)).thenReturn(Observable.just(idFavs));
         when(interactor.saveAsFavourite(card)).thenReturn(Observable.just(idFavs));
         when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         //when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
-        when(deckMapper.map(deckCards)).thenReturn(deckBucket);
+      //  when(deckMapper.map(deckCards)).thenReturn(deckBucket);
         underTest = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),
                 new TestRunnerFactory(), memoryStorage, logger);
         underTest.init(view);
@@ -126,7 +126,7 @@ public class CardsPresenterImplTest  {
     @Test
     public void testLoadDeck() {
         underTest.loadDeck(deck);
-        verify(interactor).loadDeck(deck);
+     //  verify(interactor).loadDeck(deck);
         ArgumentCaptor<DeckBucket> argument = ArgumentCaptor.forClass(DeckBucket.class);
         verify(view).deckLoaded(argument.capture());
         assertThat(argument.getValue(), is(deckBucket));

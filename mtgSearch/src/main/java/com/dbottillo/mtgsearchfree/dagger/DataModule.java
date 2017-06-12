@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
@@ -15,6 +16,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
@@ -110,8 +112,8 @@ public class DataModule {
 
     @Provides
     @Singleton
-    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, Logger logger) {
-        return new DecksStorage(fileUtil, deckDataSource, logger);
+    DecksStorage provideDecksStorage(FileUtil fileUtil, DeckDataSource deckDataSource, DeckMapper deckMapper, Logger logger) {
+        return new DecksStorageImpl(fileUtil, deckDataSource, deckMapper, logger);
     }
 
     @Provides
