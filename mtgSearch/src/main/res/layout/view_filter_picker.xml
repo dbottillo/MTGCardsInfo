@@ -8,6 +8,7 @@
        tools:parentTag="android.widget.LinearLayout">
 
     <TextView
+        android:id="@+id/filter_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -17,6 +18,7 @@
         android:textSize="16sp"/>
 
     <View
+        android:id="@+id/filter_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="10dp"
@@ -29,6 +31,7 @@
         layout="@layout/filter_panel"/>
 
     <TextView
+        android:id="@+id/order_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -38,6 +41,7 @@
         android:textSize="16sp"/>
 
     <View
+        android:id="@+id/order_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="10dp"

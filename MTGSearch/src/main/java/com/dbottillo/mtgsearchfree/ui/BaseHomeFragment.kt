@@ -42,8 +42,8 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
         toolbar.inflateMenu(R.menu.main_more)
         if (BuildConfig.DEBUG) {
             toolbar.inflateMenu(R.menu.main_debug)
+            toolbar.inflateMenu(R.menu.main_user_debug)
         }
-        toolbar.inflateMenu(R.menu.main_user_debug)
         toolbar.setOnMenuItemClickListener(this)
 
     }

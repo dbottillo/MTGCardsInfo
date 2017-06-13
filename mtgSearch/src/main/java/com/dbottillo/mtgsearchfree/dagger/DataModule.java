@@ -77,12 +77,11 @@ public class DataModule {
     @Provides
     @Singleton
     CardsStorage provideCardsStorage(MTGCardDataSource mtgCardDataSource,
-                                     DeckDataSource deckDataSource,
                                      FavouritesDataSource favouritesDataSource,
                                      CardsPreferences cardsPreferences,
                                      CardsHelper cardsHelper,
                                      Logger logger) {
-        return new CardsStorageImpl(mtgCardDataSource, deckDataSource,
+        return new CardsStorageImpl(mtgCardDataSource,
                 favouritesDataSource, cardsPreferences, cardsHelper, logger);
     }
 

@@ -12,7 +12,8 @@ import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
 import javax.inject.Inject
 
-class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfiguratorView, FilterPickerView.OnFilterPickerListener {
+class CardsConfiguratorFragment(val showFilter: Boolean = true,
+                                val showOrder: Boolean = true) : BottomSheetDialogFragment(), CardsConfiguratorView, FilterPickerView.OnFilterPickerListener {
 
     interface CardsConfiguratorListener {
         fun onConfigurationChange()
@@ -39,6 +40,7 @@ class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfigurator
 
         filterPickerView = view.findViewById(R.id.filter_view) as FilterPickerView
         filterPickerView.setFilterPickerListener(this)
+        filterPickerView.configure(showFilter, showOrder)
 
         presenter.init(this)
     }

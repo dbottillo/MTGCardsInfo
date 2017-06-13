@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mtgsearch.base.MainActivity">
 
-    <item
+   <!-- <item
         android:id="@+id/action_lucky"
         android:icon="@drawable/ic_action_lucky"
         android:title="@string/action_lucky"
@@ -14,5 +14,5 @@
         android:title="@string/action_search"
         android:icon="@drawable/ic_search"
         app:showAsAction="always"
-        android:orderInCategory="101" />
+        android:orderInCategory="101" />-->
 </menu>

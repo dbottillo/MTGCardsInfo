@@ -1,7 +1,8 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -12,17 +13,8 @@
         android:focusable="true"
         android:focusableInTouchMode="true"/>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/second_toolbar"
-        style="@style/mtg_toolbar.Transparent"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_accent"/>
-
     <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
         android:id="@+id/cards_list_view"
-        android:background="@color/main_bg"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -51,5 +43,17 @@
         android:contentDescription="@string/cd_action_search"
         android:background="@drawable/anim_search_icon"
         android:tint="@android:color/white"/>
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:tint="@color/color_primary"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/cd_close"
+        tools:tint="@color/white"
+        android:src="@drawable/ic_close"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>

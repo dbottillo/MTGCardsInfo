@@ -80,7 +80,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun showCards(cardsCollection: CardsCollection) {
         emptyContainer.visibility = if (cardsCollection.list.isEmpty()) View.VISIBLE else View.GONE
-        mtgCardsView.loadCards(cardsCollection.list, this, R.string.action_saved, -1, cardsCollection.filter, R.menu.card_saved_option)
+        mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), -1, cardsCollection.filter, R.menu.card_saved_option)
     }
 
     override fun showCardsGrid() {

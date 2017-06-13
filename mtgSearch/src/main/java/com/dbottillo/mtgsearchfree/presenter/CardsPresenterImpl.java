@@ -27,7 +27,7 @@ public class CardsPresenterImpl implements CardsPresenter {
     private DeckMapper deckMapper;
     private GeneralData generalData;
     private Runner<List<MTGCard>> cardsWrapper;
-    private RunnerAndMap<CardsCollection, DeckBucket> deckWrapper;
+    private Runner<CardsCollection> searchCardsWrapper;
     private Runner<int[]> favWrapper;
     private MemoryStorage memoryStorage;
     private boolean grid = true;
@@ -44,7 +44,7 @@ public class CardsPresenterImpl implements CardsPresenter {
         this.deckMapper = mapper;
         this.generalData = generalData;
         this.cardsWrapper = runnerFactory.simple();
-        this.deckWrapper = runnerFactory.withMap();
+        this.searchCardsWrapper = runnerFactory.simple();
         this.favWrapper = runnerFactory.simple();
         this.memoryStorage = memoryStorage;
     }
@@ -125,11 +125,11 @@ public class CardsPresenterImpl implements CardsPresenter {
     @Override
     public void doSearch(final SearchParams searchParams) {
         logger.d("do search " + searchParams);
-        cardsWrapper.run(interactor.doSearch(searchParams), new Runner.RxWrapperListener<List<MTGCard>>() {
+        searchCardsWrapper.run(interactor.doSearch(searchParams), new Runner.RxWrapperListener<CardsCollection>() {
             @Override
-            public void onNext(List<MTGCard> mtgCards) {
+            public void onNext(CardsCollection mtgCards) {
                 logger.d();
-                cardsView.cardsLoaded(new CardsBucket(searchParams.toString(), mtgCards));
+                cardsView.cardsLoaded(new CardsBucket(searchParams.toString(), mtgCards.getList()));
             }
 
             @Override
