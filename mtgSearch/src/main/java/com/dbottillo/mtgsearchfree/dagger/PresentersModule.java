@@ -13,8 +13,6 @@ import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
@@ -27,8 +25,12 @@ import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenter;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.search.SearchPresenter;
+import com.dbottillo.mtgsearchfree.ui.search.SearchPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
@@ -47,16 +49,6 @@ public class PresentersModule {
                                                    RunnerFactory factory,
                                                    MemoryStorage memoryStorage, Logger logger) {
         return new CardFilterPresenterImpl(interactor, factory, memoryStorage, logger);
-    }
-
-    @Provides
-    CardsPresenter provideCardsPresenter(CardsInteractor interactor,
-                                         DeckMapper deckMapper,
-                                         GeneralData generalData,
-                                         RunnerFactory factory,
-                                         MemoryStorage memoryStorage,
-                                         Logger logger) {
-        return new CardsPresenterImpl(interactor, deckMapper, generalData, factory, memoryStorage, logger);
     }
 
     @Provides
@@ -130,5 +122,22 @@ public class PresentersModule {
                                                       RunnerFactory runnerFactory,
                                                       Logger logger){
         return new CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, runnerFactory, logger);
+    }
+
+    @Provides
+    SearchPresenter providesSearchActivityPresenter(SetsInteractor setsInteratcor,
+                                                   CardsInteractor cardsInteractor,
+                                                   GeneralData generalData,
+                                                   RunnerFactory runnerFactory,
+                                                   Logger logger){
+        return new SearchPresenterImpl(setsInteratcor, cardsInteractor, generalData, runnerFactory, logger);
+    }
+
+    @Provides
+    CardsLuckyPresenter providesCardsLuckyActivityPresenter(CardsInteractor cardsInteractor,
+                                                        CardsPreferences cardsPreferences,
+                                                        RunnerFactory runnerFactory,
+                                                        Logger logger){
+        return new CardsLuckyPresenterImpl(cardsInteractor, cardsPreferences, runnerFactory, logger);
     }
 }

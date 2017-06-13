@@ -26,7 +26,7 @@ public class CardsInteractorImpl implements CardsInteractor {
         logger.d("created");
     }
 
-    public Observable<List<MTGCard>> getLuckyCards(int howMany) {
+    public Observable<CardsCollection> getLuckyCards(int howMany) {
         logger.d("get lucky cards");
         return Observable.just(storage.getLuckyCards(howMany));
     }

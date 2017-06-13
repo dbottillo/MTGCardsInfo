@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
@@ -100,7 +101,7 @@ public class DataModule {
     @Provides
     @Singleton
     PlayersStorage providePlayerStorage(PlayerDataSource playerDataSource, Logger logger) {
-        return new PlayersStorage(playerDataSource, logger);
+        return new PlayersStorageImpl(playerDataSource, logger);
     }
 
     @Provides

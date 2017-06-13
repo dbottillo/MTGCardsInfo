@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapperImpl;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
@@ -63,7 +64,7 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
         MTGCardDataSource mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
         DeckDataSource deckDataSource = new DeckDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource, mtgCardDataSource);
-        storage = new DecksStorage(fileUtil, deckDataSource, new Logger());
+        storage = new DecksStorageImpl(fileUtil, deckDataSource, new DeckMapperImpl(), new Logger());
     }
 
     @Test
@@ -74,7 +75,7 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         assertThat(deck.getName(), is("NAME: "));
         assertThat(deck.getNumberOfCards(), is(60));
         assertThat(deck.getSizeOfSideboard(), is(15));
-        List<MTGCard> cards = storage.loadDeck(deck);
+        List<MTGCard> cards = storage.loadDeck(deck).getList();
         assertCardInDeck(cards, "Chalice of the Void", 4);
         assertCardInDeck(cards, "Ancient Tomb", 4);
         assertCardInDeck(cards, "City of Traitors", 2);
@@ -113,7 +114,7 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         assertThat(deck.getName(), is("GB Ramp, a Standard deck by CLYDE THE GLIDE DREXLER"));
         assertThat(deck.getNumberOfCards(), is(60));
         assertThat(deck.getSizeOfSideboard(), is(15));
-        List<MTGCard> cards = storage.loadDeck(deck);
+        List<MTGCard> cards = storage.loadDeck(deck).getList();
         assertCardInDeck(cards, "Blisterpod", 4);
         assertCardInDeck(cards, "Catacomb Sifter", 4);
         assertCardInDeck(cards, "Duskwatch Recruiter", 4);
@@ -147,7 +148,7 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         assertThat(deck.getName(), is("protour.txt"));
         assertThat(deck.getNumberOfCards(), is(60));
         assertThat(deck.getSizeOfSideboard(), is(15));
-        List<MTGCard> cards = storage.loadDeck(deck);
+        List<MTGCard> cards = storage.loadDeck(deck).getList();
         assertCardInDeck(cards, "Elspeth, Sun's Champion", 2);
         assertCardInDeck(cards, "Obzedat, Ghost Council", 1);
         assertCardInDeck(cards, "Desecration Demon", 3);

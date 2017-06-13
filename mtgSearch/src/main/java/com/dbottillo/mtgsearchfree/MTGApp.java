@@ -21,14 +21,13 @@ import com.dbottillo.mtgsearchfree.dagger.DataModule;
 import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
+import com.dbottillo.mtgsearchfree.ui.HomeActivity;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
 import com.squareup.leakcanary.LeakCanary;
 
 import javax.inject.Inject;
 
-import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
 public class MTGApp extends Application {
@@ -100,10 +99,10 @@ public class MTGApp extends Application {
 
     private void fireReleaseNotePush() {
         LOG.d();
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(INTENT_RELEASE_NOTE_PUSH, true);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addParentStack(HomeActivity.class);
         stackBuilder.addNextIntent(intent);
         PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
 

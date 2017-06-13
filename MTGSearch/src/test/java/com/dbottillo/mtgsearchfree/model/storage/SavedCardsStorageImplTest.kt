@@ -16,7 +16,7 @@ import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
-class CardsCollectionStorageImplTest {
+class SavedCardsStorageImplTest {
 
     @JvmField @Rule var mockitoRule = MockitoJUnit.rule()
 
@@ -48,7 +48,6 @@ class CardsCollectionStorageImplTest {
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
         verify(cardsHelper).filterCards(filter, cards)
-        verify(cardsHelper).sortWUBGRCards(filteredCards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 
@@ -61,7 +60,6 @@ class CardsCollectionStorageImplTest {
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
         verify(cardsHelper).filterCards(filter, cards)
-        verify(cardsHelper).sortAZCards(filteredCards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 }

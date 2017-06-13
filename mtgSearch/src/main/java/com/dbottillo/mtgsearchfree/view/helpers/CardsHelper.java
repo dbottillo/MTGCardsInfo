@@ -114,7 +114,7 @@ public class CardsHelper {
         }
     }
 
-    public void sortWUBGRCards(List<MTGCard> cards){
+    private void sortWUBGRCards(List<MTGCard> cards){
         Collections.sort(cards, new Comparator<MTGCard>() {
             @Override
             public int compare(MTGCard lhs, MTGCard rhs) {
@@ -123,7 +123,7 @@ public class CardsHelper {
         });
     }
 
-    public void sortAZCards(List<MTGCard> cards){
+    private void sortAZCards(List<MTGCard> cards){
         Collections.sort(cards, new Comparator<MTGCard>() {
             @Override
             public int compare(MTGCard lhs, MTGCard rhs) {

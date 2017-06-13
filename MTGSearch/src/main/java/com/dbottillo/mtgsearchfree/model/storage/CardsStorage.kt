@@ -8,7 +8,7 @@ interface CardsStorage{
     fun saveAsFavourite(card: MTGCard): IntArray
     fun loadIdFav(): IntArray
     fun removeFromFavourite(card: MTGCard): IntArray
-    fun getLuckyCards(howMany: Int): List<MTGCard>
+    fun getLuckyCards(howMany: Int): CardsCollection
     fun getFavourites(): List<MTGCard>
     fun doSearch(searchParams: SearchParams): CardsCollection
     fun loadCard(multiverseId: Int): MTGCard

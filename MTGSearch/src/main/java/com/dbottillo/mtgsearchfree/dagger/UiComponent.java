@@ -8,18 +8,13 @@ import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment;
 import com.dbottillo.mtgsearchfree.ui.sets.SetPickerActivity;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment;
 import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
-import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.view.activities.DeckActivity;
-import com.dbottillo.mtgsearchfree.view.activities.MainActivity;
-import com.dbottillo.mtgsearchfree.view.activities.SearchActivity;
+import com.dbottillo.mtgsearchfree.ui.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.MainFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.OldDecksFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.OldLifeCounterFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.OldSavedFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
@@ -35,8 +30,6 @@ public interface UiComponent {
 
     void inject(BasicActivity activity);
 
-    void inject(MainActivity activity);
-
     void inject(SearchActivity searchActivity);
 
     void inject(CardsActivity cardsActivity);
@@ -44,14 +37,6 @@ public interface UiComponent {
     void inject(CardLuckyActivity luckyActivity);
 
     void inject(DeckActivity deckActivity);
-
-    void inject(MainFragment mainFragment);
-
-    void inject(OldSavedFragment oldSavedFragment);
-
-    void inject(OldLifeCounterFragment oldLifeCounterFragment);
-
-    void inject(OldDecksFragment oldDecksFragment);
 
     void inject(AddToDeckFragment addToDeckFragment);
 

@@ -18,7 +18,7 @@ interface CardsInteractor {
 
     fun loadIdFav(): Observable<IntArray>
 
-    fun getLuckyCards(howMany: Int): Observable<List<MTGCard>>
+    fun getLuckyCards(howMany: Int): Observable<CardsCollection>
 
     fun getFavourites(): Observable<List<MTGCard>>
 

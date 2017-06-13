@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.ui.BaseDrawerActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 
 /**

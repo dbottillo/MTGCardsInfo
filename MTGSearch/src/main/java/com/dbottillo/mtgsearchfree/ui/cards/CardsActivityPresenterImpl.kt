@@ -127,14 +127,14 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
 
     override fun favClicked(currentCard: MTGCard?) {
         currentCard?.let {
-            if (favs.contains(currentCard.multiVerseId)) {
-                cardsInteractor.removeFromFavourite(currentCard)
-                favs.remove(currentCard.multiVerseId)
+            if (favs.contains(it.multiVerseId)) {
+                cardsInteractor.removeFromFavourite(it)
+                favs.remove(it.multiVerseId)
             } else {
-                cardsInteractor.saveAsFavourite(currentCard)
-                favs.add(currentCard.multiVerseId)
+                cardsInteractor.saveAsFavourite(it)
+                favs.add(it.multiVerseId)
             }
-            updateMenu(currentCard)
+            updateMenu(it)
         }
     }
 
