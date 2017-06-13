@@ -15,6 +15,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
+import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -24,6 +25,13 @@ public class FilterPickerView extends LinearLayout {
     public interface OnFilterPickerListener {
         void filterUpdated(CardFilter.TYPE type, boolean on);
     }
+
+    @BindView(R.id.filter_panel_container)
+    View filterPanelContainer;
+    @BindView(R.id.filter_title)
+    TextView filterTitle;
+    @BindView(R.id.filter_divisor)
+    View filterDivisor;
 
     @BindView(R.id.toggle_white)
     ToggleButton toggleW;
@@ -51,6 +59,13 @@ public class FilterPickerView extends LinearLayout {
     ToggleButton toggleRare;
     @BindView(R.id.toggle_myhtic)
     ToggleButton toggleMythic;
+
+    @BindView(R.id.toggle_order)
+    ToggleButton toggleOrder;
+    @BindView(R.id.order_title)
+    TextView orderTitle;
+    @BindView(R.id.order_divisor)
+    View orderDivisor;
 
     private OnFilterPickerListener listener;
 
@@ -144,5 +159,14 @@ public class FilterPickerView extends LinearLayout {
         }
     }
 
+    public void configure(boolean showFilter, boolean showOrder) {
+        filterPanelContainer.setVisibility(showFilter ? View.VISIBLE : View.GONE);
+        filterTitle.setVisibility(showFilter ? View.VISIBLE : View.GONE);
+        filterDivisor.setVisibility(showFilter ? View.VISIBLE : View.GONE);
+
+        toggleOrder.setVisibility(showOrder ? View.VISIBLE : View.GONE);
+        orderDivisor.setVisibility(showOrder ? View.VISIBLE : View.GONE);
+        orderTitle.setVisibility(showOrder ? View.VISIBLE : View.GONE);
+    }
 }
 

@@ -95,7 +95,7 @@ public class CardsPresenterImplTest  {
         when(interactor.loadIdFav()).thenReturn(Observable.just(idFavs));
         when(interactor.removeFromFavourite(card)).thenReturn(Observable.just(idFavs));
         when(interactor.saveAsFavourite(card)).thenReturn(Observable.just(idFavs));
-        when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
+        //when(interactor.doSearch(searchParams)).thenReturn(Observable.just(searchCards));
         //when(interactor.loadSet(set)).thenReturn(Observable.just(setCards));
       //  when(deckMapper.map(deckCards)).thenReturn(deckBucket);
         underTest = new CardsPresenterImpl(interactor, deckMapper, mock(GeneralPreferences.class),

@@ -131,4 +131,12 @@ public class CardsHelper {
             }
         });
     }
+
+    public void sortCards(CardFilter cardFilter, List<MTGCard> cards){
+        if (cardFilter.sortWUBGR) {
+            sortWUBGRCards(cards);
+        } else {
+            sortAZCards(cards);
+        }
+    }
 }

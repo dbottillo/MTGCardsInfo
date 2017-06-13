@@ -57,7 +57,7 @@ public class CardsInteractorImpl implements CardsInteractor {
     }
 
     @Override
-    public Observable<List<MTGCard>> doSearch(SearchParams searchParams) {
+    public Observable<CardsCollection> doSearch(SearchParams searchParams) {
         logger.d("do search " + searchParams.toString());
         return Observable.just(storage.doSearch(searchParams));
     }

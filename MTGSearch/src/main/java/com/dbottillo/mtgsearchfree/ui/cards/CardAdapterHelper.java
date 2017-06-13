@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.adapters;
+package com.dbottillo.mtgsearchfree.ui.cards;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -9,6 +9,8 @@ import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder;
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 
 public final class CardAdapterHelper {
@@ -17,12 +19,12 @@ public final class CardAdapterHelper {
 
     }
 
-    static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch) {
+    static void bindView(Context context, MTGCard card, ListCardViewHolder holder, boolean isASearch) {
         bindView(context, card, holder, isASearch, false);
     }
 
-    static void bindView(Context context, MTGCard card, CardViewHolder holder, boolean isASearch, boolean deck) {
-        holder.name.setText(context.getString(R.string.row_card_name, (deck ? card.getQuantity() + " " : ""), card.getName()));
+    public static void bindView(Context context, MTGCard card, ListCardViewHolder holder, boolean isASearch, boolean deck) {
+        holder.getName().setText(context.getString(R.string.row_card_name, (deck ? card.getQuantity() + " " : ""), card.getName()));
 
         int rarityColor = R.color.common;
         if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {
@@ -32,38 +34,38 @@ public final class CardAdapterHelper {
         } else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)) {
             rarityColor = R.color.mythic;
         }
-        holder.rarity.setTextColor(context.getResources().getColor(rarityColor));
+        holder.getRarity().setTextColor(context.getResources().getColor(rarityColor));
         if (card.getRarity().length() > 0) {
-            holder.rarity.setText(card.getRarity());
+            holder.getRarity().setText(card.getRarity());
         } else {
-            holder.rarity.setText("");
+            holder.getRarity().setText("");
         }
 
         if (card.getManaCost() != null) {
-            holder.cost.setText(card.getManaCost().replace("{", "").replace("}", ""));
-            holder.cost.setTextColor(card.getMtgColor(context));
+            holder.getCost().setText(card.getManaCost().replace("{", "").replace("}", ""));
+            holder.getCost().setTextColor(card.getMtgColor(context));
         } else {
-            holder.cost.setText("-");
+            holder.getCost().setText("-");
         }
 
         if (isASearch) {
-            holder.setName.setVisibility(View.VISIBLE);
-            holder.setName.setText(card.getSet().getName());
+            holder.getSetName().setVisibility(View.VISIBLE);
+            holder.getSetName().setText(card.getSet().getName());
         } else {
-            holder.setName.setVisibility(View.GONE);
+            holder.getSetName().setVisibility(View.GONE);
         }
 
-        GradientDrawable indicator = (GradientDrawable) holder.indicator.getBackground();
+        GradientDrawable indicator = (GradientDrawable) holder.getIndicator().getBackground();
         indicator.setColor(card.getMtgColor(context));
 
     }
 
-    static void setupMore(final CardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
+    public static void setupMore(final ListCardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
         if (menuRes > 0 && onCardListener != null) {
-            holder.more.setOnClickListener(new View.OnClickListener() {
+            holder.getMore().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final PopupMenu popupMenu = new PopupMenu(context, holder.more);
+                    final PopupMenu popupMenu = new PopupMenu(context, holder.getMore());
                     final Menu menu = popupMenu.getMenu();
 
                     popupMenu.getMenuInflater().inflate(menuRes, menu);
@@ -86,7 +88,7 @@ public final class CardAdapterHelper {
                 }
             });
         } else {
-            holder.more.setVisibility(View.GONE);
+            holder.getMore().setVisibility(View.GONE);
         }
     }
 }

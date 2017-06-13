@@ -20,7 +20,7 @@ public class DeckMapperTest {
 
     @Before
     public void setup() {
-        underTest = new DeckMapper();
+        underTest = new DeckMapperImpl();
     }
 
     @Test

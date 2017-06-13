@@ -50,8 +50,6 @@ class CardsStorageImplTest {
     @Mock
     internal lateinit var mtgCardDataSource: MTGCardDataSource
     @Mock
-    internal lateinit var deckDataSource: DeckDataSource
-    @Mock
     internal lateinit var favouritesDataSource: FavouritesDataSource
     @Mock
     lateinit var cardsPreferences: CardsPreferences
@@ -61,8 +59,8 @@ class CardsStorageImplTest {
     private val setCards = Arrays.asList(MTGCard(5), MTGCard(6))
     private val setCardsFiltered = Arrays.asList(MTGCard(15), MTGCard(16))
     private val luckyCards = Arrays.asList(MTGCard(8), MTGCard(9))
-    private val deckCards = Arrays.asList(MTGCard(18), MTGCard(19))
     private val searchCards = Arrays.asList(MTGCard(12), MTGCard(13))
+    private val searchCardsFiltered = Arrays.asList(MTGCard(121), MTGCard(131))
     private lateinit var favCards: List<MTGCard>
     private lateinit var underTest: CardsStorageImpl
 
@@ -77,7 +75,6 @@ class CardsStorageImplTest {
         `when`(favouritesDataSource.getCards(ArgumentMatchers.anyBoolean())).thenReturn(favCards)
         `when`(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards)
         `when`(mtgCardDataSource.searchCards(Matchers.any(SearchParams::class.java))).thenReturn(searchCards)
-        `when`(deckDataSource.getCards(deck)).thenReturn(deckCards)
         `when`(mainSideCard.name).thenReturn("One")
         `when`(secondSideCard.name).thenReturn("Two")
         `when`(mtgCardDataSource.searchCard("Two")).thenReturn(secondSideCard)
@@ -85,8 +82,7 @@ class CardsStorageImplTest {
         `when`(mainSideCard.names).thenReturn(Arrays.asList("One", "Two"))
         `when`(secondSideCard.names).thenReturn(Arrays.asList("One", "Two"))
         `when`(cardsPreferences.load()).thenReturn(filter)
-        underTest = CardsStorageImpl(mtgCardDataSource, deckDataSource,
-                favouritesDataSource, cardsPreferences, cardsHelper, logger)
+        underTest = CardsStorageImpl(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper, logger)
     }
 
     @Test
@@ -143,23 +139,16 @@ class CardsStorageImplTest {
     }
 
     @Test
-    fun testLoadDeck() {
-        /*val cards = underTest.loadDeck(deck)
-
-        verify<DeckDataSource>(deckDataSource).getCards(deck)
-        assertNotNull(cards)
-        assertThat(cards.list, `is`(deckCards))
-        assertNull(cards.filter)
-        assertTrue(cards.isDeck)*/
-    }
-
-    @Test
     fun testDoSearch() {
         val searchParams = mock(SearchParams::class.java)
-        val search = underTest.doSearch(searchParams)
-        verify<MTGCardDataSource>(mtgCardDataSource).searchCards(searchParams)
-        assertNotNull(search)
-        assertThat(search, `is`(searchCards))
+        `when`(cardsHelper.filterCards(filter, searchCards)).thenReturn(searchCardsFiltered)
+
+        val cards = underTest.doSearch(searchParams)
+
+        assertThat(cards.list, `is`(searchCardsFiltered))
+        assertThat(cards.filter, `is`(filter))
+        assertFalse(cards.isDeck)
+
     }
 
     @Test

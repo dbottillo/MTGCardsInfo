@@ -73,7 +73,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                 } else if (deck != null) {
                     deck?.let {loadData(decksInteractor.loadDeck(it))}
                 } else if (search != null) {
-                    // load search
+                    search?.let {loadData(cardsInteractor.doSearch(it))}
                 } else {
                     loadData(savedCardsInteractor.load())
                 }

@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
+import com.dbottillo.mtgsearchfree.mapper.DeckMapperImpl;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
@@ -88,7 +89,7 @@ public class AndroidModule {
     @Provides
     @Singleton
     DeckMapper provideDeckMapper() {
-        return new DeckMapper();
+        return new DeckMapperImpl();
     }
 
     @Provides

@@ -8,11 +8,14 @@ import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterHelper;
+import com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder;
+import com.dbottillo.mtgsearchfree.ui.cards.ListCardViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeckCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
+public class DeckCardAdapter extends RecyclerView.Adapter<ListCardViewHolder> {
 
     private final Context mContext;
     private List<MTGCard> cards;
@@ -39,17 +42,17 @@ public class DeckCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
         this.onCardListener = onCardListener;
     }
 
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ListCardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.row_card, parent, false);
-        return new CardViewHolder(view, false);
+        return new ListCardViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final CardViewHolder holder, int position) {
+    public void onBindViewHolder(final ListCardViewHolder holder, int position) {
         final MTGCard card = cards.get(position);
         CardAdapterHelper.bindView(mContext, card, holder, false, true);
         CardAdapterHelper.setupMore(holder, mContext, card, position, menuRes, onCardListener);
-        holder.parent.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onCardListener.onCardSelected(card, holder.getAdapterPosition(), v);

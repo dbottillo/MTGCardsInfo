@@ -9,7 +9,6 @@ import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
 import java.util.*
 
 open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
-                            private val deckDataSource: DeckDataSource,
                             private val favouritesDataSource: FavouritesDataSource,
                             private val cardsPreferences: CardsPreferences,
                             private val cardsHelper: CardsHelper,
@@ -58,14 +57,12 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         return favouritesDataSource.getCards(true)
     }
 
-    override fun doSearch(searchParams: SearchParams): List<MTGCard> {
+    override fun doSearch(searchParams: SearchParams): CardsCollection {
         logger.d("do search " + searchParams)
-        val result = mtgCardDataSource.searchCards(searchParams)
-
-        Collections.sort(result) { o1, o2 ->
-            o1.compareTo(o2)
-        }
-        return result
+        val cards = mtgCardDataSource.searchCards(searchParams)
+        val filter = cardsPreferences.load()
+        cardsHelper.sortCards(filter, cards)
+        return CardsCollection(cards, null)
     }
 
     override fun loadCard(multiverseId: Int): MTGCard {
