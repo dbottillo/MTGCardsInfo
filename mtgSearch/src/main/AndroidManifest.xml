@@ -17,10 +17,6 @@
         android:label="@string/app_name"
         android:theme="@style/MTGSearchTheme"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
-        <activity
-            android:name=".view.activities.MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask" />
 
         <activity
             android:name=".ui.HomeActivity"
@@ -36,9 +32,9 @@
         <activity
             android:name=".ui.cards.CardsActivity"/>
 
-        <activity android:name=".view.activities.CardLuckyActivity"/>
+        <activity android:name=".ui.lucky.CardLuckyActivity"/>
 
-        <activity android:name=".view.activities.SearchActivity"/>
+        <activity android:name=".ui.search.SearchActivity"/>
 
         <activity android:name=".view.activities.DeckActivity"/>
 

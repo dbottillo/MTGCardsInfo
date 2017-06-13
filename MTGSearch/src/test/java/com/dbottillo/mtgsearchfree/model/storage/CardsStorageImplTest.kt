@@ -125,9 +125,10 @@ class CardsStorageImplTest {
     @Test
     fun testGetLuckyCards() {
         val lucky = underTest.getLuckyCards(2)
+
         verify<MTGCardDataSource>(mtgCardDataSource).getRandomCard(2)
-        assertThat(lucky.size, `is`(2))
-        assertThat(lucky, `is`(luckyCards))
+        assertThat(lucky.list.size, `is`(2))
+        assertThat(lucky.list, `is`(luckyCards))
     }
 
     @Test
@@ -146,7 +147,7 @@ class CardsStorageImplTest {
         val cards = underTest.doSearch(searchParams)
 
         assertThat(cards.list, `is`(searchCardsFiltered))
-        assertThat(cards.filter, `is`(filter))
+        assertNull(cards.filter)
         assertFalse(cards.isDeck)
 
     }

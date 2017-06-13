@@ -18,7 +18,7 @@ import org.junit.Assert.assertThat
 import org.mockito.ArgumentMatchers
 import org.mockito.Mockito.*
 
-class PlayersStorageTest {
+class PlayersStorageImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
@@ -39,7 +39,7 @@ class PlayersStorageTest {
     @Before
     fun setup() {
         `when`(playerDataSource.players).thenReturn(players)
-        underTest = PlayersStorage(playerDataSource, logger)
+        underTest = PlayersStorageImpl(playerDataSource, logger)
     }
 
     @Test

@@ -10,15 +10,6 @@ public class CardsPreferencesForTest extends CardsPreferencesImpl {
         super(context);
     }
 
-    @Override
-    public boolean isSortWUBRG() {
-        return sortWUBRG;
-    }
-
-    @Override
-    public void setSortOption(boolean wubrg) {
-        sortWUBRG = wubrg;
-    }
 /*
 
     int position = 0;

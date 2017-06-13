@@ -16,7 +16,7 @@ import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragme
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.view.activities.SearchActivity
+import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper

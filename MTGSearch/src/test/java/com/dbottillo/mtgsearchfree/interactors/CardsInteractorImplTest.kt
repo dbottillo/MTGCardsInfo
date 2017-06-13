@@ -43,9 +43,10 @@ class CardsInteractorImplTest {
     @Mock
     lateinit var logger: Logger
 
-    private val luckyCards = Arrays.asList(MTGCard(2), MTGCard(3))
     private val favCards = Arrays.asList(MTGCard(3), MTGCard(4))
-    private val setCards = Arrays.asList(MTGCard(5), MTGCard(6))
+
+    @Mock
+    lateinit var lukcyCardsCollection: CardsCollection
 
     @Mock
     lateinit var setCollection: CardsCollection
@@ -55,9 +56,8 @@ class CardsInteractorImplTest {
 
     @Before
     fun setup() {
-        `when`(cardsStorageImpl.getLuckyCards(2)).thenReturn(luckyCards)
+        `when`(cardsStorageImpl.getLuckyCards(2)).thenReturn(lukcyCardsCollection)
         `when`(cardsStorageImpl.getFavourites()).thenReturn(favCards)
-        `when`(setCollection.list).thenReturn(setCards)
         `when`(cardsStorageImpl.load(set)).thenReturn(setCollection)
         `when`(cardsStorageImpl.doSearch(searchParams)).thenReturn(searchCardsCollection)
         // when(cardsStorageImpl.loadDeck(deck)).thenReturn(deckCollection);
@@ -68,10 +68,10 @@ class CardsInteractorImplTest {
 
     @Test
     fun testGetLuckyCards() {
-        val testSubscriber = TestObserver<List<MTGCard>>()
+        val testSubscriber = TestObserver<CardsCollection>()
         underTest.getLuckyCards(2).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
-        testSubscriber.assertValue(luckyCards)
+        testSubscriber.assertValue(lukcyCardsCollection)
         verify<CardsStorageImpl>(cardsStorageImpl).getLuckyCards(2)
     }
 

@@ -5,13 +5,11 @@ import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
-import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.CardsPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
@@ -67,6 +65,4 @@ public interface AppComponent {
     void inject(PlayerPresenterImpl playerPresenter);
 
     void inject(DecksPresenterImpl decksPresenter);
-
-    void inject(CardsPresenterImpl cardsPresenter);
 }

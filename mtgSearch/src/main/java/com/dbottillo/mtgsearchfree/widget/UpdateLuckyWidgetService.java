@@ -15,7 +15,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
-import com.dbottillo.mtgsearchfree.view.activities.CardLuckyActivity;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter;
+import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -61,7 +63,7 @@ public class UpdateLuckyWidgetService extends Service {
                 index++;
 
                 Intent openIntent = new Intent(getApplicationContext(), CardLuckyActivity.class);
-                openIntent.putExtra(CardLuckyActivity.CARD, card);
+                openIntent.putExtra(CardsLuckyPresenterImpl.Companion.getCARD(), card);
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 remoteViews.setOnClickPendingIntent(R.id.image_card, pendingIntent);
 

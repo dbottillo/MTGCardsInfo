@@ -28,7 +28,7 @@ import javax.inject.Inject;
 
 public abstract class BasicActivity extends AppCompatActivity {
 
-    int sizeToolbar = 0;
+    protected int sizeToolbar = 0;
     protected Toolbar toolbar = null;
     protected boolean isPortrait = false;
 
@@ -60,7 +60,7 @@ public abstract class BasicActivity extends AppCompatActivity {
 
     public abstract String getPageTrack();
 
-    void hideIme() {
+    protected void hideIme() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), 0);

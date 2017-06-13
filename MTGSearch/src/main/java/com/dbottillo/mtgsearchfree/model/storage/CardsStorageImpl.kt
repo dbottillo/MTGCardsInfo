@@ -47,9 +47,9 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         return loadIdFav()
     }
 
-    override fun getLuckyCards(howMany: Int): List<MTGCard> {
+    override fun getLuckyCards(howMany: Int): CardsCollection {
         logger.d(howMany.toString() + " lucky cards requested")
-        return mtgCardDataSource.getRandomCard(howMany)
+        return CardsCollection(mtgCardDataSource.getRandomCard(howMany))
     }
 
     override fun getFavourites(): List<MTGCard> {
