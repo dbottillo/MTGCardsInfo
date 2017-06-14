@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
+import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

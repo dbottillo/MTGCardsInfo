@@ -15,7 +15,7 @@ import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
+import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 
 import javax.inject.Singleton;
 

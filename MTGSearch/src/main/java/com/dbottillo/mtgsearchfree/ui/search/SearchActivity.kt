@@ -23,7 +23,7 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.*
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
+import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper

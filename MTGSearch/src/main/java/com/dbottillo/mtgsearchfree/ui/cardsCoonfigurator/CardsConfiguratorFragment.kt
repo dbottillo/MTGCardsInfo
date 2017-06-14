@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
+import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
 import javax.inject.Inject
 

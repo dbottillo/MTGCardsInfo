@@ -3,10 +3,9 @@ package com.dbottillo.mtgsearchfree.ui.sets
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
+import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import javax.inject.Inject
 
 class SetPickerActivity : BasicActivity(), SetPickerView {

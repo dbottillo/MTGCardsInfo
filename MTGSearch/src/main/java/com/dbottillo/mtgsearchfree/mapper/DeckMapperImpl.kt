@@ -2,15 +2,10 @@ package com.dbottillo.mtgsearchfree.mapper
 
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.DeckBucket
+import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 
 open class DeckMapperImpl : DeckMapper {
-
-    override fun map(cardsCollection: CardsCollection): DeckBucket {
-        val bucket = DeckBucket()
-        bucket.cards = cardsCollection.list
-        return bucket
-    }
 
     override fun order(cards: List<MTGCard>) : List<MTGCard> {
         val side = mutableListOf<MTGCard>()

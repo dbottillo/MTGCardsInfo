@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.adapters;
+package com.dbottillo.mtgsearchfree.ui.decks;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

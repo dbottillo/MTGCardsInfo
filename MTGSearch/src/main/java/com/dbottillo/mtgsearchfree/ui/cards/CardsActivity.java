@@ -103,14 +103,14 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        MaterialWrapper.setElevation(toolbar, 0f);
+        MaterialWrapper.setElevation(getToolbar(), 0f);
 
         /*pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));*/
         tabLayout.setupWithViewPager(viewPager);
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
-        if (isPortrait) {
+        if (getIsPortrait()) {
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
