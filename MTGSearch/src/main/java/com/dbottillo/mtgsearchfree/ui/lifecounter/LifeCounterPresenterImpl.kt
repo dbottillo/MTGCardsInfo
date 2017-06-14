@@ -1,21 +1,22 @@
-package com.dbottillo.mtgsearchfree.presenter
+package com.dbottillo.mtgsearchfree.ui.lifecounter
 
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.model.Player
+import com.dbottillo.mtgsearchfree.presenter.Runner
+import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.util.StringUtil
-import com.dbottillo.mtgsearchfree.view.PlayersView
-import java.util.Random
 
 import javax.inject.Inject
 
-class PlayerPresenterImpl @Inject
-constructor(private val interactor: PlayerInteractor, runnerFactory: RunnerFactory, private val logger: Logger) : PlayerPresenter, Runner.RxWrapperListener<List<Player>> {
+class LifeCounterPresenterImpl @Inject
+constructor(val interactor: PlayerInteractor,
+            val runnerFactory: RunnerFactory,
+            val logger: Logger) : LifeCounterPresenter, Runner.RxWrapperListener<List<Player>> {
     
     private val runner: Runner<List<Player>> = runnerFactory.simple<List<Player>>()
 
-    private lateinit var playerView: PlayersView
+    private lateinit var playerView: LifeCounterView
     private var players: List<Player>? = null
 
 
@@ -23,7 +24,7 @@ constructor(private val interactor: PlayerInteractor, runnerFactory: RunnerFacto
         logger.d("created")
     }
 
-    override fun init(view: PlayersView) {
+    override fun init(view: LifeCounterView) {
         logger.d()
         playerView = view
     }
@@ -73,10 +74,4 @@ constructor(private val interactor: PlayerInteractor, runnerFactory: RunnerFacto
         logger.d()
     }
 
-
-
-
-    override fun detachView() {
-
-    }
 }

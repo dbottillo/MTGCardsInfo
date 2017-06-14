@@ -9,18 +9,13 @@ import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardFilterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
-import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter;
-import com.dbottillo.mtgsearchfree.presenter.PlayerPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter;
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
-import com.dbottillo.mtgsearchfree.presenter.SetsPresenter;
-import com.dbottillo.mtgsearchfree.presenter.SetsPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenter;
@@ -45,24 +40,9 @@ import dagger.Provides;
 public class PresentersModule {
 
     @Provides
-    CardFilterPresenter provideCardFilterPresenter(CardFilterInteractor interactor,
-                                                   RunnerFactory factory,
-                                                   MemoryStorage memoryStorage, Logger logger) {
-        return new CardFilterPresenterImpl(interactor, factory, memoryStorage, logger);
-    }
-
-    @Provides
-    SetsPresenter provideSetsPresenter(SetsInteractor interactor,
-                                       RunnerFactory factory,
-                                       CardsPreferences cardsPreferences,
-                                       MemoryStorage memoryStorage, Logger logger) {
-        return new SetsPresenterImpl(interactor, factory, cardsPreferences, memoryStorage, logger);
-    }
-
-    @Provides
-    PlayerPresenter providePlayerPresenter(PlayerInteractor interactor,
+    LifeCounterPresenter providePlayerPresenter(PlayerInteractor interactor,
                                            RunnerFactory factory, Logger logger) {
-        return new PlayerPresenterImpl(interactor, factory, logger);
+        return new LifeCounterPresenterImpl(interactor, factory, logger);
     }
 
     @Provides
