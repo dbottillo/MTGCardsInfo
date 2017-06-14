@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.lifecounter
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -9,29 +8,25 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.presenter.PlayerPresenter
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.PlayersView
 import com.dbottillo.mtgsearchfree.view.views.MTGLoader
 import java.util.*
 import javax.inject.Inject
 
-class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListener {
+class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterListener {
 
     lateinit var loader: MTGLoader
     lateinit var lifeCounterList: RecyclerView
 
     @Inject
-    internal lateinit var playerPresenter: PlayerPresenter
+    internal lateinit var lifeCounterPresenter: LifeCounterPresenter
 
     @Inject
     internal lateinit var cardsPreferences: CardsPreferences
@@ -68,8 +63,8 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
         adapter = LifeCounterAdapter(players, this, cardsPreferences.showPoison())
         lifeCounterList.adapter = adapter
 
-        playerPresenter.init(this)
-        playerPresenter.loadPlayers()
+        lifeCounterPresenter.init(this)
+        lifeCounterPresenter.loadPlayers()
 
     }
 
@@ -121,28 +116,28 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
     override fun onLifeCountChange(player: Player, value: Int) {
         TrackingManager.trackLifeCountChanged()
         player.changeLife(value)
-        playerPresenter.editPlayer(player)
+        lifeCounterPresenter.editPlayer(player)
     }
 
     override fun onPoisonCountChange(player: Player, value: Int) {
         LOG.d()
         TrackingManager.trackPoisonCountChanged()
         player.changePoisonCount(value)
-        playerPresenter.editPlayer(player)
+        lifeCounterPresenter.editPlayer(player)
     }
 
     override fun onEditPlayer(player: Player) {
         LOG.d()
         dialogUtil.showEditPlayer(player){
             player.name = it
-            playerPresenter.editPlayer(player)
+            lifeCounterPresenter.editPlayer(player)
             TrackingManager.trackEditPlayer()
         }
     }
 
     override fun onRemovePlayer(player: Player) {
         LOG.d()
-        playerPresenter.removePlayer(player)
+        lifeCounterPresenter.removePlayer(player)
         TrackingManager.trackRemovePlayer()
     }
 
@@ -152,7 +147,7 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
             Toast.makeText(activity, R.string.maximum_player, Toast.LENGTH_SHORT).show()
             return
         }
-        playerPresenter.addPlayer()
+        lifeCounterPresenter.addPlayer()
         TrackingManager.trackAddPlayer()
     }
 
@@ -220,7 +215,7 @@ class LifeCounterFragment : BaseHomeFragment(), PlayersView, OnLifeCounterListen
             player.life = if (twoHGEnabled) 30 else 20
             player.poisonCount = if (twoHGEnabled) 15 else 10
         }
-        playerPresenter.editPlayers(players)
+        lifeCounterPresenter.editPlayers(players)
     }
 
     fun reset(){

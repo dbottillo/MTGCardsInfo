@@ -1,30 +1,32 @@
-package com.dbottillo.mtgsearchfree.presenter
+package com.dbottillo.mtgsearchfree.ui.saved.lifecounter
 
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.model.Player
+import com.dbottillo.mtgsearchfree.presenter.TestRunnerFactory
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.PlayersView
+import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterView
 import io.reactivex.Observable
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
-class PlayerPresenterImplTest {
+class LifeCounterPresenterImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    lateinit var underTest: PlayerPresenter
+    lateinit var underTest: LifeCounterPresenter
 
     @Mock
     lateinit var interactor: PlayerInteractor
 
     @Mock
-    lateinit var view: PlayersView
+    lateinit var view: LifeCounterView
 
     @Mock
     lateinit var player: Player
@@ -49,7 +51,7 @@ class PlayerPresenterImplTest {
         `when`(interactor.removePlayer(player)).thenReturn(Observable.just<List<Player>>(players))
         `when`(interactor.editPlayers(toEdit)).thenReturn(Observable.just<List<Player>>(players))
 
-        underTest = PlayerPresenterImpl(interactor, TestRunnerFactory(), logger)
+        underTest = LifeCounterPresenterImpl(interactor, TestRunnerFactory(), logger)
         underTest.init(view)
     }
 
@@ -57,8 +59,8 @@ class PlayerPresenterImplTest {
     fun testLoadPlayers() {
         underTest.loadPlayers()
         verify<PlayerInteractor>(interactor).load()
-        verify<PlayersView>(view).showLoading()
-        verify<PlayersView>(view).playersLoaded(players)
+        verify<LifeCounterView>(view).showLoading()
+        verify<LifeCounterView>(view).playersLoaded(players)
     }
 
     @Test
@@ -66,31 +68,31 @@ class PlayerPresenterImplTest {
         underTest.loadPlayers()
         underTest.addPlayer()
         verify<PlayerInteractor>(interactor).addPlayer()
-        verify<PlayersView>(view, times(2)).showLoading()
-        verify<PlayersView>(view, times(2)).playersLoaded(players)
+        verify<LifeCounterView>(view, times(2)).showLoading()
+        verify<LifeCounterView>(view, times(2)).playersLoaded(players)
     }
 
     @Test
     fun testEditPlayer() {
         underTest.editPlayer(player)
         verify<PlayerInteractor>(interactor).editPlayer(player)
-        verify<PlayersView>(view).showLoading()
-        verify<PlayersView>(view).playersLoaded(players)
+        verify<LifeCounterView>(view).showLoading()
+        verify<LifeCounterView>(view).playersLoaded(players)
     }
 
     @Test
     fun testEditPlayers() {
         underTest.editPlayers(toEdit)
         verify<PlayerInteractor>(interactor).editPlayers(toEdit)
-        verify<PlayersView>(view).showLoading()
-        verify<PlayersView>(view).playersLoaded(players)
+        verify<LifeCounterView>(view).showLoading()
+        verify<LifeCounterView>(view).playersLoaded(players)
     }
 
     @Test
     fun testRemovePlayer() {
         underTest.removePlayer(player)
         verify<PlayerInteractor>(interactor).removePlayer(player)
-        verify<PlayersView>(view).showLoading()
-        verify<PlayersView>(view).playersLoaded(players)
+        verify<LifeCounterView>(view).showLoading()
+        verify<LifeCounterView>(view).playersLoaded(players)
     }
 }
