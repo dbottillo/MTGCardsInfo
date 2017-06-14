@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity;
+import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 
 import butterknife.ButterKnife;
 

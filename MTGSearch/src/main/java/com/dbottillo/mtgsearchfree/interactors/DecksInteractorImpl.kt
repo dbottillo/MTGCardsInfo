@@ -1,17 +1,14 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
-
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
-
-import javax.inject.Inject
-
 import io.reactivex.Observable
+import javax.inject.Inject
 
 class DecksInteractorImpl @Inject
 constructor(val storage: DecksStorage,
@@ -27,7 +24,7 @@ constructor(val storage: DecksStorage,
         return Observable.just(storage.load())
     }
 
-    override fun loadDeck(deck: Deck): Observable<CardsCollection> {
+    override fun loadDeck(deck: Deck): Observable<DeckCollection> {
         logger.d("loadSet " + deck.toString())
         return Observable.just(storage.loadDeck(deck))
     }
@@ -42,27 +39,27 @@ constructor(val storage: DecksStorage,
         return Observable.just(storage.deleteDeck(deck))
     }
 
-    override fun editDeck(deck: Deck, name: String): Observable<CardsCollection> {
+    override fun editDeck(deck: Deck, name: String): Observable<DeckCollection> {
         logger.d("edit " + deck.toString() + " with name: " + name)
         return Observable.just(storage.editDeck(deck, name))
     }
 
-    override fun addCard(deck: Deck, card: MTGCard, quantity: Int): Observable<CardsCollection> {
+    override fun addCard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
         logger.d("add " + quantity + " " + card.toString() + " to deck: " + deck)
         return Observable.just(storage.addCard(deck, card, quantity))
     }
 
-    override fun addCard(name: String, card: MTGCard, quantity: Int): Observable<CardsCollection> {
+    override fun addCard(name: String, card: MTGCard, quantity: Int): Observable<DeckCollection> {
         logger.d("add " + quantity + " " + card.toString() + " to new deck with name: " + name)
         return Observable.just(storage.addCard(name, card, quantity))
     }
 
-    override fun removeCard(deck: Deck, card: MTGCard): Observable<CardsCollection> {
+    override fun removeCard(deck: Deck, card: MTGCard): Observable<DeckCollection> {
         logger.d("remove " + card.toString() + " from deck: " + deck)
         return Observable.just(storage.removeCard(deck, card))
     }
 
-    override fun removeAllCard(deck: Deck, card: MTGCard): Observable<CardsCollection> {
+    override fun removeAllCard(deck: Deck, card: MTGCard): Observable<DeckCollection> {
         logger.d("remove all " + card.toString() + " from deck: " + deck)
         return Observable.just(storage.removeAllCard(deck, card))
     }
@@ -76,16 +73,16 @@ constructor(val storage: DecksStorage,
         }
     }
 
-    override fun exportDeck(deck: Deck, cards: CardsCollection): Observable<Boolean> {
+    override fun exportDeck(deck: Deck, cards: DeckCollection): Observable<Boolean> {
         return Observable.just(fileUtil.downloadDeckToSdCard(deck, cards))
     }
 
-    override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<CardsCollection> {
+    override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
         logger.d("move " + card.toString() + " to sideboard deck: " + deck)
         return Observable.just(storage.moveCardToSideboard(deck, card, quantity))
     }
 
-    override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<CardsCollection> {
+    override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
         logger.d("move " + card.toString() + " from sideboard deck: " + deck)
         return Observable.just(storage.moveCardFromSideboard(deck, card, quantity))
     }

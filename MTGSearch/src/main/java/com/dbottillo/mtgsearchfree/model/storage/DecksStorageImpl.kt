@@ -5,10 +5,7 @@ import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.mapper.DeckMapper
-import com.dbottillo.mtgsearchfree.model.CardsBucket
-import com.dbottillo.mtgsearchfree.model.CardsCollection
-import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
@@ -18,7 +15,6 @@ import javax.inject.Inject
 class DecksStorageImpl @Inject
 constructor(private val fileUtil: FileUtil,
             private val deckDataSource: DeckDataSource,
-            private val deckMapper: DeckMapper,
             private val logger: Logger) : DecksStorage {
 
     init {
@@ -42,38 +38,38 @@ constructor(private val fileUtil: FileUtil,
         return load()
     }
 
-    override fun loadDeck(deck: Deck): CardsCollection {
+    override fun loadDeck(deck: Deck): DeckCollection {
         logger.d("loadDeck " + deck)
         val cards = deckDataSource.getCards(deck)
-        return CardsCollection(deckMapper.order(cards), isDeck = true)
+        return DeckCollection().addCards(cards)
     }
 
-    override fun editDeck(deck: Deck, name: String): CardsCollection {
+    override fun editDeck(deck: Deck, name: String): DeckCollection {
         logger.d("edit $deck with $name")
         deckDataSource.renameDeck(deck.id, name)
         return loadDeck(deck)
     }
 
-    override fun addCard(deck: Deck, card: MTGCard, quantity: Int): CardsCollection {
+    override fun addCard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("add $quantity $card to $deck")
         deckDataSource.addCardToDeck(deck.id, card, quantity)
         return loadDeck(deck)
     }
 
-    override fun addCard(name: String, card: MTGCard, quantity: Int): CardsCollection {
+    override fun addCard(name: String, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("add $quantity $card with new deck name $name")
         val deckId = deckDataSource.addDeck(name)
         deckDataSource.addCardToDeck(deckId, card, quantity)
-        return CardsCollection(deckDataSource.getCards(deckId), isDeck = true)
+        return DeckCollection().addCards(deckDataSource.getCards(deckId))
     }
 
-    override fun removeCard(deck: Deck, card: MTGCard): CardsCollection {
+    override fun removeCard(deck: Deck, card: MTGCard): DeckCollection {
         logger.d("remove $card from $deck")
         deckDataSource.addCardToDeck(deck.id, card, -1)
         return loadDeck(deck)
     }
 
-    override fun removeAllCard(deck: Deck, card: MTGCard): CardsCollection {
+    override fun removeAllCard(deck: Deck, card: MTGCard): DeckCollection {
         logger.d("remove all $card from $deck")
         deckDataSource.removeCardFromDeck(deck.id, card)
         return loadDeck(deck)
@@ -95,13 +91,13 @@ constructor(private val fileUtil: FileUtil,
         return deckDataSource.decks
     }
 
-    override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): CardsCollection {
+    override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("move [$quantity]$card from sideboard of$deck")
         deckDataSource.moveCardFromSideBoard(deck.id, card, quantity)
         return loadDeck(deck)
     }
 
-    override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): CardsCollection {
+    override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("move [$quantity]$card to sideboard of$deck")
         deckDataSource.moveCardToSideBoard(deck.id, card, quantity)
         return loadDeck(deck)

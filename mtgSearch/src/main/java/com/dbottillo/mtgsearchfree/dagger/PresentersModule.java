@@ -13,6 +13,8 @@ import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
 import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenter;
 import com.dbottillo.mtgsearchfree.presenter.DecksPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenter;
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
@@ -50,6 +52,12 @@ public class PresentersModule {
                                          DeckMapper deckMapper,
                                          RunnerFactory factory, Logger logger) {
         return new DecksPresenterImpl(interactor, deckMapper, factory, logger);
+    }
+
+    @Provides
+    DecksFragmentPresenter provideDecksFragmentPresenter(DecksInteractor interactor,
+                                                 RunnerFactory factory, Logger logger) {
+        return new DecksFragmentPresenterImpl(interactor, factory, logger);
     }
 
     @Provides

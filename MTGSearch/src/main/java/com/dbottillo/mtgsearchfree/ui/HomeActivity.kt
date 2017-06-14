@@ -21,7 +21,6 @@ import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.UIUtil
-import com.dbottillo.mtgsearchfree.view.activities.BasicActivity
 import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 
 class HomeActivity : BasicActivity() {

@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.ui.decks
 
 import android.annotation.TargetApi
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -13,14 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.ButterKnife
 import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.DeckBucket
-import com.dbottillo.mtgsearchfree.presenter.DecksPresenter
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
 import com.dbottillo.mtgsearchfree.ui.lifecounter.OnDecksListener
@@ -28,18 +22,16 @@ import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.DecksView
-import com.dbottillo.mtgsearchfree.view.activities.DeckActivity
 import javax.inject.Inject
 
-class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, PermissionUtil.PermissionListener {
+class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, PermissionUtil.PermissionListener {
 
     private val READ_REQUEST_CODE = 42
 
     lateinit var decksList: RecyclerView
 
     @Inject
-    lateinit var decksPresenter: DecksPresenter
+    lateinit var presenter: DecksFragmentPresenter
 
     @Inject
     lateinit var dialogUtil: DialogUtil
@@ -73,12 +65,16 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
         })
         decksList.adapter = adapter
 
-        decksPresenter.init(this)
+        presenter.init(this)
     }
 
     override fun onResume() {
         super.onResume()
-        decksPresenter.loadDecks()
+        presenter.loadDecks()
+    }
+
+    override fun getTitle(): String {
+        return getString(R.string.action_decks)
     }
 
     override fun getScrollViewId(): Int {
@@ -89,33 +85,17 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
         return "/decks"
     }
 
-    override fun showError(message: String?) {
-        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun showError(exception: MTGException?) {
-        Toast.makeText(activity, exception?.getLocalizedMessage(context), Toast.LENGTH_SHORT).show()
-    }
-
-    override fun decksLoaded(newDecks: MutableList<Deck>) {
-        decks.clear()
-        newDecks.forEach {
-            decks.add(it)
+    override fun decksLoaded(decks: List<Deck>) {
+        this.decks.clear()
+        decks.forEach {
+            this.decks.add(it)
         }
         adapter.notifyDataSetChanged()
     }
 
-    override fun deckLoaded(bucket: DeckBucket?) {
-        throw UnsupportedOperationException()
-    }
-
-    override fun deckExported(success: Boolean) {
-        throw UnsupportedOperationException()
-    }
-
     override fun onAddDeck() {
         dialogUtil.showAddDeck {
-            decksPresenter.addDeck(it)
+            presenter.addDeck(it)
             TrackingManager.trackNewDeck(it)
         }
     }
@@ -124,12 +104,12 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
         LOG.d()
         if (deck.numberOfCards > 0) {
             dialogUtil.deleteDeck(deck, {
-                decksPresenter.deleteDeck(it)
+                presenter.deleteDeck(it)
                 TrackingManager.trackDeleteDeck(deck.name)
             })
 
         } else {
-            decksPresenter.deleteDeck(deck)
+            presenter.deleteDeck(deck)
             TrackingManager.trackDeleteDeck(deck.name)
         }
     }
@@ -138,6 +118,10 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
     fun importDeck(){
         LOG.d()
         dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this)
+    }
+
+    override fun showError(message: String?) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -167,7 +151,7 @@ class DecksFragment : BaseHomeFragment(), DecksView, OnDecksListener, Permission
             val uri: Uri
             if (resultData != null) {
                 uri = resultData.data
-                decksPresenter.importDeck(uri)
+                presenter.importDeck(uri)
             }
         }
     }
