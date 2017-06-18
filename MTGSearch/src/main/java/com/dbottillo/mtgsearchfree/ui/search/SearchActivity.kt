@@ -133,7 +133,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     @TargetApi(Build.VERSION_CODES.M)
     private fun setupScrollViewListenerM() {
-        scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY -> computeScrollChanged(scrollY) }
+        scrollView.setOnScrollChangeListener { _, _, scrollY, _, _ -> computeScrollChanged(scrollY) }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

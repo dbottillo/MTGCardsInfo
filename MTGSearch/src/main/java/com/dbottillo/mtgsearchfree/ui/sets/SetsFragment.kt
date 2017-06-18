@@ -85,9 +85,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         return presenter.set()?.name?: "Aether Reveal"
     }
 
-    override fun showSet(set: MTGSet, cards: CardsCollection) {
+    override fun showSet(set: MTGSet, cardsCollection: CardsCollection) {
         toolbarRevealScrollHelper.updateTitle(set.name)
-        mtgCardsView.loadCards(cards.list, this, set.name, R.drawable.ic_edit_grey, cards.filter, R.menu.card_option)
+        mtgCardsView.loadCards(cardsCollection.list, this, set.name, R.drawable.ic_edit_grey, cardsCollection.filter, R.menu.card_option)
     }
 
     override fun onCardsViewTypeSelected() {

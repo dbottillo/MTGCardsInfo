@@ -15,7 +15,6 @@ import com.dbottillo.mtgsearchfree.ui.decks.DeckActivity;
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
 import org.jetbrains.annotations.NotNull;
@@ -41,8 +40,6 @@ public interface UiComponent {
     void inject(AddToDeckFragment addToDeckFragment);
 
     void inject(AboutFragment aboutFragment);
-
-    void inject(SortDialogFragment sortDialogFragment);
 
     void inject(MTGCardView mtgCardView);
 

@@ -197,7 +197,6 @@ class DeckActivity : BasicActivity(), DeckActivityView {
             title = deck.name + " (" + deckCollection.numberOfCardsWithoutSideboard() + "/" + deckCollection.numberOfCardsInSideboard() + ")"
 
         }
-        val dummy = arrayOfNulls<DeckCardSectionAdapter.Section>(sections.size)
         deckCardSectionAdapter?.setSections(sections.toTypedArray())
         deckCardSectionAdapter?.notifyDataSetChanged()
     }
@@ -262,7 +261,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         editText.setSelection(deck.name.length)
         alert.setView(view)
 
-        alert.setPositiveButton(getString(R.string.save)) { dialog, whichButton ->
+        alert.setPositiveButton(getString(R.string.save)) { _, _ ->
             val value = editText.text.toString()
             presenter.editDeck(deck, value)
             TrackingManager.trackEditDeck()
@@ -270,7 +269,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
             title = deck.name
         }
 
-        alert.setNegativeButton(getString(R.string.cancel)) { dialog, whichButton ->
+        alert.setNegativeButton(getString(R.string.cancel)) { _, _ ->
             // Canceled.
         }
 

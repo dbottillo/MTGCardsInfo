@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.view.BasicView
 
 interface LifeCounterView : BasicView {
 
-    fun playersLoaded(players: List<Player>)
+    fun playersLoaded(newPlayers: List<Player>)
 
     fun showLoading()
 }

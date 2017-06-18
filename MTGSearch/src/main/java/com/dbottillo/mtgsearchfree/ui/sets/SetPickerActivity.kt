@@ -19,8 +19,8 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
     @Inject
     lateinit var presenter: SetPickerPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
         mtgApp.uiGraph.inject(this)
         setContentView(R.layout.activity_set_picker)
 
