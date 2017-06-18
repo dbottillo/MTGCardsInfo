@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
-import com.dbottillo.mtgsearchfree.mapper.DeckMapper;
-import com.dbottillo.mtgsearchfree.mapper.DeckMapperImpl;
 import com.dbottillo.mtgsearchfree.model.DeckBucket;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
@@ -84,12 +82,6 @@ public class AndroidModule {
     @Provides
     RunnerFactory provideRxWrapperFactory() {
         return new RunnerFactory();
-    }
-
-    @Provides
-    @Singleton
-    DeckMapper provideDeckMapper() {
-        return new DeckMapperImpl();
     }
 
     @Provides

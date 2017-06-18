@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckActivity;
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
-import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.fragments.SortDialogFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 

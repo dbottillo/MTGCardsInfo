@@ -117,7 +117,7 @@ public class FileUtil {
         return new File(root, StringUtil.clearDeckName(deck) + ".dec");
     }
 
-    public boolean downloadDeckToSdCard(Deck deck, DeckCollection deckCollection) {
+    public boolean downloadDeckToSdCard(Deck deck, CardsCollection cards) {
         File deckFile = fileNameForDeck(deck);
         if (deckFile == null) {
             return false;
@@ -129,7 +129,7 @@ public class FileUtil {
             writer.append("//");
             writer.append(deck.getName());
             writer.append("\n");
-            for (MTGCard card : deckCollection.allCards()) {
+            for (MTGCard card : cards.getList()) {
                 if (card.isSideboard()) {
                     writer.append("SB: ");
                 }

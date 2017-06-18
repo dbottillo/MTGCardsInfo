@@ -4,7 +4,6 @@ import android.net.Uri
 
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.mapper.DeckMapper
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil

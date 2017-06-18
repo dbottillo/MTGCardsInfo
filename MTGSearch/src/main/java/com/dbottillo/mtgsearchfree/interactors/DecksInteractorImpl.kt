@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -73,7 +74,7 @@ constructor(val storage: DecksStorage,
         }
     }
 
-    override fun exportDeck(deck: Deck, cards: DeckCollection): Observable<Boolean> {
+    override fun exportDeck(deck: Deck, cards: CardsCollection): Observable<Boolean> {
         return Observable.just(fileUtil.downloadDeckToSdCard(deck, cards))
     }
 

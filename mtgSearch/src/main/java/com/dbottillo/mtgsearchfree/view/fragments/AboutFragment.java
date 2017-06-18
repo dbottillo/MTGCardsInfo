@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 

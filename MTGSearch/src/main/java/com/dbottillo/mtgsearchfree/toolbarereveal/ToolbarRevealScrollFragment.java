@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 
 /**
  * Abstract class that let fragments access the {@link ToolbarRevealScrollHelper} seamless

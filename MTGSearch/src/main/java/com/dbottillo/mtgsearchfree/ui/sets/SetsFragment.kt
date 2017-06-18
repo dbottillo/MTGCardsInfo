@@ -19,7 +19,7 @@ import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
-import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
 import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
 import javax.inject.Inject

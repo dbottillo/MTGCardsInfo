@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -28,7 +29,7 @@ interface DecksInteractor {
 
     fun importDeck(uri: Uri): Observable<List<Deck>>
 
-    fun exportDeck(deck: Deck, deckCollection: DeckCollection): Observable<Boolean>
+    fun exportDeck(deck: Deck, cards: CardsCollection): Observable<Boolean>
 
     fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection>
 

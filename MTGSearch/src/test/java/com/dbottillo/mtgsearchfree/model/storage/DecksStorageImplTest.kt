@@ -1,36 +1,26 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.net.Uri
-
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.mapper.DeckMapper
 import com.dbottillo.mtgsearchfree.model.CardsBucket
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher
-
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
 import org.mockito.Mock
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
-
-import java.util.Arrays
-
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertThat
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
-import org.mockito.Mockito.`when`
+import java.util.*
 
 class DecksStorageImplTest {
 
@@ -60,9 +50,6 @@ class DecksStorageImplTest {
     @Mock
     lateinit var logger: Logger
 
-    @Mock
-    lateinit var deckMapper: DeckMapper
-
     private val deckCards = Arrays.asList(MTGCard(18), MTGCard(19))
     private val decks = Arrays.asList(Deck(1), Deck(2))
 
@@ -74,15 +61,14 @@ class DecksStorageImplTest {
         `when`(deckDataSource.addDeck("deck2")).thenReturn(2L)
         `when`(deckDataSource.addDeck(cardsBucket)).thenReturn(DECK_ID)
         `when`(deckDataSource.getCards(deck)).thenReturn(deckCards)
-        `when`(deckMapper.order(deckCards)).thenReturn(deckCards)
         `when`(deckDataSource.getCards(2L)).thenReturn(deckCards)
-        underTest = DecksStorageImpl(fileUtil, deckDataSource, deckMapper, logger)
+        underTest = DecksStorageImpl(fileUtil, deckDataSource, logger)
     }
 
     @Test
     fun testLoad() {
         val decksLoaded = underTest.load()
-        verify<DeckDataSource>(deckDataSource).decks
+        verify(deckDataSource).decks
         assertNotNull(decksLoaded)
         assertThat(decksLoaded, `is`(decks))
     }
@@ -90,72 +76,71 @@ class DecksStorageImplTest {
     @Test
     fun testAddDeck() {
         underTest.addDeck("deck")
-        verify<DeckDataSource>(deckDataSource).addDeck("deck")
+        verify(deckDataSource).addDeck("deck")
     }
 
     @Test
     fun testDeleteDeck() {
         underTest.deleteDeck(deck)
-        verify<DeckDataSource>(deckDataSource).deleteDeck(deck)
+        verify(deckDataSource).deleteDeck(deck)
     }
 
     @Test
     fun testLoadDeck() {
         val cards = underTest.loadDeck(deck)
 
-        verify<DeckMapper>(deckMapper).order(deckCards)
-        verify<DeckDataSource>(deckDataSource).getCards(deck)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).getCards(deck)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun testEditDeck() {
         val cards = underTest.editDeck(deck, "new")
-        verify<DeckDataSource>(deckDataSource).renameDeck(DECK_ID, "new")
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).renameDeck(DECK_ID, "new")
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun testAddCard() {
         val cards = underTest.addCard(deck, card, 2)
-        verify<DeckDataSource>(deckDataSource).addCardToDeck(DECK_ID, card, 2)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).addCardToDeck(DECK_ID, card, 2)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun testAddCardNewDeck() {
         val cards = underTest.addCard("deck2", card, 2)
-        verify<DeckDataSource>(deckDataSource).addDeck("deck2")
-        verify<DeckDataSource>(deckDataSource).addCardToDeck(2L, card, 2)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).addDeck("deck2")
+        verify(deckDataSource).addCardToDeck(2L, card, 2)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun testRemoveCard() {
         val cards = underTest.removeCard(deck, card)
-        verify<DeckDataSource>(deckDataSource).addCardToDeck(DECK_ID, card, -1)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).addCardToDeck(DECK_ID, card, -1)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun movesCardFromSideboard() {
         val cards = underTest.moveCardFromSideboard(deck, card, 2)
-        verify<DeckDataSource>(deckDataSource).moveCardFromSideBoard(DECK_ID, card, 2)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).moveCardFromSideBoard(DECK_ID, card, 2)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun movesCardToSideboard() {
         val cards = underTest.moveCardToSideboard(deck, card, 2)
-        verify<DeckDataSource>(deckDataSource).moveCardToSideBoard(DECK_ID, card, 2)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).moveCardToSideBoard(DECK_ID, card, 2)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
     fun testRemoveAllCard() {
         val cards = underTest.removeAllCard(deck, card)
-        verify<DeckDataSource>(deckDataSource).removeCardFromDeck(DECK_ID, card)
-        assertThat(cards.list, `is`(deckCards))
+        verify(deckDataSource).removeCardFromDeck(DECK_ID, card)
+        assertThat(cards.allCards(), `is`(deckCards))
     }
 
     @Test
@@ -164,7 +149,7 @@ class DecksStorageImplTest {
         val uri = mock(Uri::class.java)
         `when`(fileUtil.readFileContent(uri)).thenReturn(cardsBucket)
         val decksLoaded = underTest.importDeck(uri)
-        verify<DeckDataSource>(deckDataSource).addDeck(cardsBucket)
+        verify(deckDataSource).addDeck(cardsBucket)
         assertNotNull(decksLoaded)
         assertThat(decksLoaded, `is`(decks))
     }
