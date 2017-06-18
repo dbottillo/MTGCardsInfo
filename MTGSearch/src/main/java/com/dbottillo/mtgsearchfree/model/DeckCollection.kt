@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
-data class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+open class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val instantAndSorceries: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val other: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val lands: MutableList<MTGCard> = mutableListOf<MTGCard>(),

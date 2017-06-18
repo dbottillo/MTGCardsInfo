@@ -13,4 +13,8 @@ public class Logger {
     public void d(){
         LOG.d();
     }
+
+    public void e(Throwable throwable) {
+        LOG.e(throwable.getLocalizedMessage());
+    }
 }

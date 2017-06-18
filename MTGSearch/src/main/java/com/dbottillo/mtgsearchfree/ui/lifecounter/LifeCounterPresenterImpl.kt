@@ -6,19 +6,16 @@ import com.dbottillo.mtgsearchfree.presenter.Runner
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.Logger
+import org.reactivestreams.Subscription
+import java.util.function.Consumer
 
 import javax.inject.Inject
 
 class LifeCounterPresenterImpl @Inject
 constructor(val interactor: PlayerInteractor,
-            val runnerFactory: RunnerFactory,
-            val logger: Logger) : LifeCounterPresenter, Runner.RxWrapperListener<List<Player>> {
-    
-    private val runner: Runner<List<Player>> = runnerFactory.simple<List<Player>>()
+            val logger: Logger) : LifeCounterPresenter {
 
     private lateinit var playerView: LifeCounterView
-    private var players: List<Player>? = null
-
 
     init {
         logger.d("created")
@@ -31,47 +28,37 @@ constructor(val interactor: PlayerInteractor,
 
     override fun loadPlayers() {
         logger.d()
-        playerView.showLoading()
-        runner.run(interactor.load(), this)
+        interactor.load().subscribe({ playersLoaded(it)}, { showError(it) })
     }
 
     override fun addPlayer() {
         logger.d()
-        /*val player = Player(uniqueIdForPlayer, uniqueNameForPlayer)*/
-        playerView.showLoading()
-        runner.run(interactor.addPlayer(), this)
+        interactor.addPlayer().subscribe({ playersLoaded(it)}, { showError(it) })
     }
 
     override fun editPlayer(player: Player) {
         logger.d()
-        playerView.showLoading()
-        runner.run(interactor.editPlayer(player), this)
+        interactor.editPlayer(player).subscribe({ playersLoaded(it)}, { showError(it) })
     }
 
     override fun editPlayers(players: List<Player>) {
         logger.d()
-        playerView.showLoading()
-        runner.run(interactor.editPlayers(players), this)
+        interactor.editPlayers(players).subscribe({ playersLoaded(it)}, { showError(it) })
     }
 
     override fun removePlayer(player: Player) {
         logger.d()
-        playerView.showLoading()
-        runner.run(interactor.removePlayer(player), this)
+        interactor.removePlayer(player).subscribe({ playersLoaded(it)}, { showError(it) })
     }
 
-    override fun onNext(newPlayers: List<Player>) {
+    fun playersLoaded(newPlayers: List<Player>) {
         logger.d()
-        players = newPlayers
-        playerView.playersLoaded(players!!)
+        playerView.playersLoaded(newPlayers)
     }
 
-    override fun onError(e: Throwable) {
-        LOG.e(e.localizedMessage)
-    }
-
-    override fun onCompleted() {
-        logger.d()
+    fun showError(throwable: Throwable) {
+        logger.e(throwable)
+        playerView.showError(throwable.localizedMessage)
     }
 
 }

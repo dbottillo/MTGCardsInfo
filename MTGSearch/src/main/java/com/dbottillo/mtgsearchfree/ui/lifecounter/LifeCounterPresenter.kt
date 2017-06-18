@@ -1,17 +1,12 @@
 package com.dbottillo.mtgsearchfree.ui.lifecounter
 
+import com.dbottillo.mtgsearchfree.model.Player
+
 interface LifeCounterPresenter {
-
     fun init(view: LifeCounterView)
-
     fun loadPlayers()
-
     fun addPlayer()
-
-    fun editPlayer(player: com.dbottillo.mtgsearchfree.model.Player)
-
-    fun editPlayers(players: List<com.dbottillo.mtgsearchfree.model.Player>)
-
-    fun removePlayer(player: com.dbottillo.mtgsearchfree.model.Player)
-
+    fun editPlayer(player: Player)
+    fun editPlayers(players: List<Player>)
+    fun removePlayer(player: Player)
 }
