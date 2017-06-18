@@ -11,12 +11,13 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NoticeDialogFragment extends BasicFragment  {
+public class NoticeDialogFragment extends BasicFragment {
 
     public static final String TITLE = "title";
     public static final String MESSAGE = "message";

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.fragments;
+package com.dbottillo.mtgsearchfree.ui;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -54,7 +54,7 @@ public abstract class BasicFragment extends DialogFragment {
     }
 
     protected MTGApp getMTGApp() {
-        return dbActivity.getMTGApp();
+        return dbActivity.getMtgApp();
     }
 
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public abstract class BasicFragment extends DialogFragment {
         setHasOptionsMenu(true);
     }
 
-    void setActionBarTitle(String title) {
+    protected void setActionBarTitle(String title) {
         if (dbActivity.getSupportActionBar() != null) {
             dbActivity.getSupportActionBar().setTitle(title);
         }

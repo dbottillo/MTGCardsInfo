@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import javax.inject.Inject
 
 abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListener {

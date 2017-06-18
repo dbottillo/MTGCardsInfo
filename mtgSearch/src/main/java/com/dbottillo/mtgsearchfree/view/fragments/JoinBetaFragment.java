@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

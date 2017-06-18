@@ -7,10 +7,9 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.util.ArrayUtils
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
-import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView
 import com.squareup.picasso.Picasso
 import javax.inject.Inject

@@ -22,6 +22,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
 
     val idFavsRunner: Runner<IntArray> = factory.simple()
     val cardsRunner: Runner<CardsCollection> = factory.simple()
+    val deckRunner: Runner<DeckCollection> = factory.simple()
 
     var set: MTGSet? = null
     var search: SearchParams? = null
@@ -71,7 +72,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                 if (set != null) {
                     set?.let { loadData(cardsInteractor.loadSet(it)) }
                 } else if (deck != null) {
-                    deck?.let {loadData(decksInteractor.loadDeck(it))}
+                    deck?.let {loadDeck(decksInteractor.loadDeck(it))}
                 } else if (search != null) {
                     search?.let {loadData(cardsInteractor.doSearch(it))}
                 } else {
@@ -87,6 +88,22 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         cardsRunner.run(obs, object : Runner.RxWrapperListener<CardsCollection> {
             override fun onNext(data: CardsCollection) {
                 currentData = data
+                updateView()
+            }
+
+            override fun onError(e: Throwable?) {
+            }
+
+            override fun onCompleted() {
+            }
+        })
+    }
+
+    internal fun loadDeck(obs: Observable<DeckCollection>) {
+        logger.d()
+        deckRunner.run(obs, object : Runner.RxWrapperListener<DeckCollection> {
+            override fun onNext(data: DeckCollection) {
+                currentData = CardsCollection(data.allCards(), isDeck = true, filter = null)
                 updateView()
             }
 

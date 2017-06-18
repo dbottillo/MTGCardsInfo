@@ -15,28 +15,22 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.presenter.DecksPresenter
+import com.dbottillo.mtgsearchfree.model.CardsCollection
+import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.DeckCollection
+import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.DecksView
-import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.view.adapters.DeckCardAdapter
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
-
-import java.util.ArrayList
-
-import javax.inject.Inject
-
-import butterknife.BindView
-import butterknife.ButterKnife
-import com.dbottillo.mtgsearchfree.model.*
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+import java.util.*
+import javax.inject.Inject
 
 class DeckActivity : BasicActivity(), DeckActivityView {
 

@@ -23,7 +23,7 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
 import com.dbottillo.mtgsearchfree.view.adapters.CardsPagerAdapter;
-import com.dbottillo.mtgsearchfree.view.fragments.AddToDeckFragment;
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -92,7 +92,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         ButterKnife.bind(this);
         setupView();
 
-        getMTGApp().getUiGraph().inject(this);
+        getMtgApp().getUiGraph().inject(this);
 
         cardsPresenter.init(this, getIntent());
     }
@@ -110,7 +110,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         pagerTabStrip.setTextColor(getResources().getColor(R.color.white));*/
         tabLayout.setupWithViewPager(viewPager);
         RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) fabButton.getLayoutParams();
-        if (getIsPortrait()) {
+        if (isPortrait()) {
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
@@ -196,7 +196,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
     @OnClick(R.id.card_add_to_deck)
     public void addToDeck(View view) {
         LOG.d();
-        openDialog("add_to_deck", AddToDeckFragment.newInstance(getCurrentCard()));
+        openDialog("add_to_deck", AddToDeckFragment.Companion.newInstance(getCurrentCard()));
     }
 
     @Override

@@ -19,13 +19,12 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.fragments.BasicFragment
 import javax.inject.Inject
 
 abstract class BasicActivity : AppCompatActivity() {
 
     protected var sizeToolbar = 0
-    protected var toolbar: Toolbar? = null
+    protected lateinit var toolbar: Toolbar
     protected var isPortrait = false
 
     @Inject

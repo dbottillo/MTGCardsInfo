@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.mapper.DeckMapper
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
@@ -12,8 +11,9 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
 class DeckActivityPresenterImpl @Inject
-constructor(private val interactor: DecksInteractor, private val deckMapper: DeckMapper,
-            runnerFactory: RunnerFactory, private val logger: Logger): DeckActivityPresenter {
+constructor(private val interactor: DecksInteractor,
+            runnerFactory: RunnerFactory,
+            private val logger: Logger): DeckActivityPresenter {
 
     lateinit var view: DeckActivityView
     private val deckWrapper: Runner<DeckCollection> = runnerFactory.simple<DeckCollection>()
@@ -33,31 +33,43 @@ constructor(private val interactor: DecksInteractor, private val deckMapper: Dec
     }
 
     override fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.addCard(deck, card, quantity), cardsObserver)
     }
 
     override fun removeCardFromDeck(deck: Deck, card: MTGCard) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.removeCard(deck, card), cardsObserver)
     }
 
     override fun removeAllCardFromDeck(deck: Deck, card: MTGCard) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.removeAllCard(deck, card), cardsObserver)
     }
 
     override fun moveCardFromSideBoard(deck: Deck, card: MTGCard, quantity: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.moveCardFromSideboard(deck, card, quantity), cardsObserver)
     }
 
     override fun moveCardToSideBoard(deck: Deck, card: MTGCard, quantity: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.moveCardToSideboard(deck, card, quantity), cardsObserver)
     }
 
     override fun exportDeck(deck: Deck, cards: CardsCollection) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        exportWrapper.run(interactor.exportDeck(deck, cards), object : Runner.RxWrapperListener<Boolean> {
+            override fun onNext(data: Boolean) {
+                view.deckExported(data)
+            }
+
+            override fun onError(e: Throwable) {
+
+            }
+
+            override fun onCompleted() {
+
+            }
+        })
     }
 
     override fun editDeck(deck: Deck, name: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckWrapper.run(interactor.editDeck(deck, name), cardsObserver)
     }
 
     private val cardsObserver = object : Runner.RxWrapperListener<DeckCollection> {

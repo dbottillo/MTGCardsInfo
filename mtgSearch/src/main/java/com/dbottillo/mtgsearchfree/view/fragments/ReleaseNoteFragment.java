@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
