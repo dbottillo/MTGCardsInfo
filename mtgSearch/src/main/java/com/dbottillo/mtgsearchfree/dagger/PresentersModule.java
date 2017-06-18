@@ -43,9 +43,8 @@ import dagger.Provides;
 public class PresentersModule {
 
     @Provides
-    LifeCounterPresenter providePlayerPresenter(PlayerInteractor interactor,
-                                                RunnerFactory factory, Logger logger) {
-        return new LifeCounterPresenterImpl(interactor, factory, logger);
+    LifeCounterPresenter providePlayerPresenter(PlayerInteractor interactor, Logger logger) {
+        return new LifeCounterPresenterImpl(interactor, logger);
     }
 
     @Provides

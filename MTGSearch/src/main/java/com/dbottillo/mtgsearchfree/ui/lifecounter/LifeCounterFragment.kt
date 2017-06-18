@@ -22,7 +22,6 @@ import javax.inject.Inject
 
 class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterListener {
 
-    lateinit var loader: MTGLoader
     lateinit var lifeCounterList: RecyclerView
 
     @Inject
@@ -49,7 +48,6 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loader = view.findViewById(R.id.loader) as MTGLoader
         lifeCounterList = view.findViewById(R.id.life_counter_list) as RecyclerView
         view.findViewById(R.id.action_reset).setOnClickListener{ reset() }
         view.findViewById(R.id.action_dice).setOnClickListener{ launchDice() }
@@ -91,13 +89,10 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     }
 
     override fun showError(message: String?) {
-        loader.visibility = View.VISIBLE
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun playersLoaded(newPlayers: List<Player>) {
-        loader.visibility = View.GONE
-
         players.clear()
         players.addAll(newPlayers)
 
@@ -105,12 +100,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     }
 
     override fun showError(exception: MTGException?) {
-        loader.visibility = View.VISIBLE
         Toast.makeText(activity, exception?.localizedMessage, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun showLoading() {
-        loader.visibility = View.VISIBLE
     }
 
     override fun onLifeCountChange(player: Player, value: Int) {

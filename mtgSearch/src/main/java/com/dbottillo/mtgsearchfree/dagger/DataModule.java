@@ -22,7 +22,6 @@ import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
-import com.dbottillo.mtgsearchfree.presenter.MemoryStorage;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
@@ -120,12 +119,6 @@ public class DataModule {
     SavedCardsStorage provideSavedCardsStorage(FavouritesDataSource favouritesDataSource, CardsHelper cardsHelper,
                                                CardsPreferences cardsPreferences, Logger logger){
         return new SavedCardsStorageImpl(favouritesDataSource, cardsHelper, cardsPreferences, logger);
-    }
-
-    @Provides
-    @Singleton
-    MemoryStorage provideMemoryStorage(Logger logger) {
-        return new MemoryStorage(logger);
     }
 
     @Provides

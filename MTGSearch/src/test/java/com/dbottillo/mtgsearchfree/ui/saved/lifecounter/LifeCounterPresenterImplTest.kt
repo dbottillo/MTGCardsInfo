@@ -8,10 +8,12 @@ import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterView
 import io.reactivex.Observable
+import net.bytebuddy.implementation.bytecode.Throw
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
@@ -20,7 +22,7 @@ class LifeCounterPresenterImplTest {
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    lateinit var underTest: LifeCounterPresenter
+    lateinit var underTest: LifeCounterPresenterImpl
 
     @Mock
     lateinit var interactor: PlayerInteractor
@@ -31,68 +33,94 @@ class LifeCounterPresenterImplTest {
     @Mock
     lateinit var player: Player
 
-    lateinit var players: MutableList<Player>
+    @Mock
+    lateinit var players: List<Player>
 
     @Mock
     lateinit var toEdit: List<Player>
+
+    @Mock
+    lateinit var error: Throwable
 
     @Mock
     internal lateinit var logger: Logger
 
     @Before
     fun setup() {
-        players = ArrayList<Player>()
-        players.add(Player(1, "Liliana"))
-        players.add(Player(2, "Jayce"))
-
-        `when`(interactor.load()).thenReturn(Observable.just<List<Player>>(players))
-        `when`(interactor.addPlayer()).thenReturn(Observable.just<List<Player>>(players))
-        `when`(interactor.editPlayer(player)).thenReturn(Observable.just<List<Player>>(players))
-        `when`(interactor.removePlayer(player)).thenReturn(Observable.just<List<Player>>(players))
-        `when`(interactor.editPlayers(toEdit)).thenReturn(Observable.just<List<Player>>(players))
-
-        underTest = LifeCounterPresenterImpl(interactor, TestRunnerFactory(), logger)
+        underTest = LifeCounterPresenterImpl(interactor, logger)
         underTest.init(view)
     }
 
     @Test
-    fun testLoadPlayers() {
+    fun `load players should call interactor and show loading`() {
+        `when`(interactor.load()).thenReturn(Observable.just<List<Player>>(players))
+
         underTest.loadPlayers()
-        verify<PlayerInteractor>(interactor).load()
-        verify<LifeCounterView>(view).showLoading()
-        verify<LifeCounterView>(view).playersLoaded(players)
+
+        verify(interactor).load()
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
     }
 
     @Test
-    fun testAddPlayer() {
-        underTest.loadPlayers()
+    fun `add player should call interactor and show loading`() {
+        `when`(interactor.addPlayer()).thenReturn(Observable.just<List<Player>>(players))
+
         underTest.addPlayer()
-        verify<PlayerInteractor>(interactor).addPlayer()
-        verify<LifeCounterView>(view, times(2)).showLoading()
-        verify<LifeCounterView>(view, times(2)).playersLoaded(players)
+
+        verify(interactor).addPlayer()
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
     }
 
     @Test
-    fun testEditPlayer() {
+    fun `edit player should call interactor and show loading`() {
+        `when`(interactor.editPlayer(player)).thenReturn(Observable.just<List<Player>>(players))
+
         underTest.editPlayer(player)
-        verify<PlayerInteractor>(interactor).editPlayer(player)
-        verify<LifeCounterView>(view).showLoading()
-        verify<LifeCounterView>(view).playersLoaded(players)
+
+        verify(interactor).editPlayer(player)
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
     }
 
     @Test
-    fun testEditPlayers() {
+    fun `edit players should call interactor and show loading`() {
+        `when`(interactor.editPlayers(toEdit)).thenReturn(Observable.just<List<Player>>(players))
+
         underTest.editPlayers(toEdit)
-        verify<PlayerInteractor>(interactor).editPlayers(toEdit)
-        verify<LifeCounterView>(view).showLoading()
-        verify<LifeCounterView>(view).playersLoaded(players)
+
+        verify(interactor).editPlayers(toEdit)
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
     }
 
     @Test
-    fun testRemovePlayer() {
+    fun `remove player should call interactor and show loading`() {
+        `when`(interactor.removePlayer(player)).thenReturn(Observable.just<List<Player>>(players))
+
         underTest.removePlayer(player)
-        verify<PlayerInteractor>(interactor).removePlayer(player)
-        verify<LifeCounterView>(view).showLoading()
-        verify<LifeCounterView>(view).playersLoaded(players)
+
+        verify(interactor).removePlayer(player)
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
+    }
+
+    @Test
+    fun `players loaded should update the view and remove loading`() {
+        underTest.playersLoaded(players)
+
+        verify(view).playersLoaded(players)
+        verifyNoMoreInteractions(interactor, view)
+    }
+
+    @Test
+    fun `show error should show the error in the view and remove loading`() {
+        Mockito.`when`(error.localizedMessage).thenReturn("error")
+
+        underTest.showError(error)
+
+        verify(view).showError("error")
+        verifyNoMoreInteractions(interactor, view)
     }
 }
