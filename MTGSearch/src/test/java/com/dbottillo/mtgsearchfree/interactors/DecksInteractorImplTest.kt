@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.RxImmediateSchedulerRule
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
@@ -14,15 +15,17 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 import java.util.*
 
 class DecksInteractorImplTest {
 
     @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    var mockitoRule = MockitoJUnit.rule()!!
+
+    @Rule @JvmField
+    var rxjavaRule = RxImmediateSchedulerRule()
 
     @Mock
     lateinit var deck: Deck
@@ -46,58 +49,72 @@ class DecksInteractorImplTest {
 
     @Before
     fun setup() {
-        `when`(storage.load()).thenReturn(decks)
-        `when`(storage.loadDeck(deck)).thenReturn(deckCollection)
-        `when`(storage.addDeck("deck")).thenReturn(decks)
-        `when`(storage.deleteDeck(deck)).thenReturn(decks)
-        `when`(storage.editDeck(deck, "new name")).thenReturn(deckCollection)
         underTest = DecksInteractorImpl(storage, fileUtil, logger)
     }
 
     @Test
-    fun testLoad() {
+    fun `load should call storage and returns observable`() {
         val testSubscriber = TestObserver<List<Deck>>()
+        `when`(storage.load()).thenReturn(decks)
+
         underTest.load().subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
+        verify(storage).load()
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testLoadDeck() {
+        `when`(storage.loadDeck(deck)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.loadDeck(deck).subscribe(testSubscriber)
 
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify<DecksStorage>(storage).loadDeck(deck)
+        verify(storage).loadDeck(deck)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testAddDeck() {
+        `when`(storage.addDeck("deck")).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
+
         underTest.addDeck("deck").subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
-        verify<DecksStorage>(storage).addDeck("deck")
+        verify(storage).addDeck("deck")
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testDeleteDeck() {
+        `when`(storage.deleteDeck(deck)).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
+
         underTest.deleteDeck(deck).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
-        verify<DecksStorage>(storage).deleteDeck(deck)
+        verify(storage).deleteDeck(deck)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testEditDeck() {
+        `when`(storage.editDeck(deck, "new name")).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
+
         underTest.editDeck(deck, "new name").subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify<DecksStorage>(storage).editDeck(deck, "new name")
+        verify(storage).editDeck(deck, "new name")
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
@@ -106,25 +123,31 @@ class DecksInteractorImplTest {
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.addCard(deck, card, 2).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify<DecksStorage>(storage).addCard(deck, card, 2)
+        verify(storage).addCard(deck, card, 2)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testAddCardWithNewDeck() {
         `when`(storage.addCard("name", card, 2)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
+
         underTest.addCard("name", card, 2).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify<DecksStorage>(storage).addCard("name", card, 2)
+        verify(storage).addCard("name", card, 2)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
     fun testRemoveCard() {
         `when`(storage.removeCard(deck, card)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
+
         underTest.removeCard(deck, card).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)

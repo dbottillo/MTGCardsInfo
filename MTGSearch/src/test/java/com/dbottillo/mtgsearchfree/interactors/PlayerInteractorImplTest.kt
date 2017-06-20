@@ -9,8 +9,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class PlayerInteractorImplTest {
@@ -19,7 +18,7 @@ class PlayerInteractorImplTest {
     var mockitoRule = MockitoJUnit.rule()
 
     @Rule @JvmField
-    var rxjavaFule = RxImmediateSchedulerRule()
+    var rxjavaRule = RxImmediateSchedulerRule()
 
     @Mock
     internal lateinit var storage: PlayersStorage
@@ -48,6 +47,7 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).load()
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
@@ -60,6 +60,7 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).addPlayer()
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
@@ -72,6 +73,7 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayer(player)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
@@ -84,6 +86,7 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayers(players)
+        verifyNoMoreInteractions(storage)
     }
 
     @Test
@@ -96,5 +99,6 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).removePlayer(player)
+        verifyNoMoreInteractions(storage)
     }
 }
