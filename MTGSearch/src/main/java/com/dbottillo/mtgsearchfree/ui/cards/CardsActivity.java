@@ -163,6 +163,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         cardsPresenter.updateMenu(getCurrentCard());
     }
 
+    @Override
     public void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

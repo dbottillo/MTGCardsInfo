@@ -205,9 +205,9 @@ task devTestAndCoverage(type: JacocoReport) {
     executionData = files(["${buildDir}/jacoco/testDevDebugUnitTest.exec",
                            "${buildDir}/outputs/code-coverage/connected/coverage.ec"])
 }
-devTestAndCoverage.dependsOn 'createDevDebugCoverageReport', 'testDevDebugUnitTest'
+devTestAndCoverage.dependsOn 'createDevDebugCoverageReport', 'testDebugUnitTest'
 
 task devTest
-devTest.dependsOn 'testDevDebugUnitTest', 'connectedAndroidTest'
+devTest.dependsOn 'testDebugUnitTest', 'connectedAndroidTest'
 
 apply plugin: 'com.google.gms.google-services'

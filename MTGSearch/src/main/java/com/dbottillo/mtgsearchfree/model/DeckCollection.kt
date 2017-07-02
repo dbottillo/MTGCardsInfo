@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
-open class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val instantAndSorceries: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val other: MutableList<MTGCard> = mutableListOf<MTGCard>(),
                           val lands: MutableList<MTGCard> = mutableListOf<MTGCard>(),
@@ -86,6 +86,10 @@ open class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MT
         newList.addAll(lands)
         newList.addAll(side)
         return newList
+    }
+
+    fun toCardsCollection() : CardsCollection{
+        return CardsCollection(list = allCards(), filter = null, isDeck = true)
     }
 
     internal fun sizeOfSingleList(list: List<MTGCard>): Int{
