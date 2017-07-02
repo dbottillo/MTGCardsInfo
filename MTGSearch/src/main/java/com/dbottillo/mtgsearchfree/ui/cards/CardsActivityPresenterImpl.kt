@@ -17,12 +17,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                                  val savedCardsInteractor: SavedCardsInteractor,
                                  val decksInteractor: DecksInteractor,
                                  val cardsPreferences: CardsPreferences,
-                                 val factory: RunnerFactory,
                                  val logger: Logger) : CardsActivityPresenter {
-
-    val idFavsRunner: Runner<IntArray> = factory.simple()
-    val cardsRunner: Runner<CardsCollection> = factory.simple()
-    val deckRunner: Runner<DeckCollection> = factory.simple()
 
     var set: MTGSet? = null
     var search: SearchParams? = null
@@ -30,7 +25,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     var startPosition: Int = 0
     var isFavs: Boolean = false
     var currentData: CardsCollection? = null
-    lateinit var favs: MutableList<Int>
+    var favs: MutableList<Int> = mutableListOf()
     lateinit var view: CardsActivityView
 
     override fun init(view: CardsActivityView, intent: Intent?) {
@@ -53,69 +48,53 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
             } else if (intent.hasExtra(KEY_FAV)) {
                 isFavs = true
                 view.updateTitle(R.string.action_saved)
+            } else {
+                view.finish()
+                return
             }
             startPosition = intent.getIntExtra(POSITION, 0)
         } else {
             view.finish()
+            return
         }
 
-        idFavsRunner.run(cardsInteractor.loadIdFav(), object : Runner.RxWrapperListener<IntArray> {
-            override fun onNext(data: IntArray) {
-                favs = data.toMutableList()
+        cardsInteractor.loadIdFav().subscribe({
+            favs.addAll(it.toList())
+            if (set != null) {
+                set?.let { loadData(cardsInteractor.loadSet(it)) }
+            } else if (deck != null) {
+                deck?.let {loadDeck(decksInteractor.loadDeck(it))}
+            } else if (search != null) {
+                search?.let {loadData(cardsInteractor.doSearch(it))}
+            } else {
+                loadData(savedCardsInteractor.load())
             }
-
-            override fun onError(e: Throwable?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun onCompleted() {
-                if (set != null) {
-                    set?.let { loadData(cardsInteractor.loadSet(it)) }
-                } else if (deck != null) {
-                    deck?.let {loadDeck(decksInteractor.loadDeck(it))}
-                } else if (search != null) {
-                    search?.let {loadData(cardsInteractor.doSearch(it))}
-                } else {
-                    loadData(savedCardsInteractor.load())
-                }
-            }
-
+        }, {
+            showError(it)
         })
     }
 
     internal fun loadData(obs: Observable<CardsCollection>) {
         logger.d()
-        cardsRunner.run(obs, object : Runner.RxWrapperListener<CardsCollection> {
-            override fun onNext(data: CardsCollection) {
-                currentData = data
-                updateView()
-            }
-
-            override fun onError(e: Throwable?) {
-            }
-
-            override fun onCompleted() {
-            }
+        obs.subscribe({
+            currentData = it
+            updateView()
+        }, {
+            showError(it)
         })
     }
 
     internal fun loadDeck(obs: Observable<DeckCollection>) {
         logger.d()
-        deckRunner.run(obs, object : Runner.RxWrapperListener<DeckCollection> {
-            override fun onNext(data: DeckCollection) {
-                currentData = CardsCollection(data.allCards(), isDeck = true, filter = null)
-                updateView()
-            }
-
-            override fun onError(e: Throwable?) {
-            }
-
-            override fun onCompleted() {
-            }
+        obs.subscribe({
+            currentData = it.toCardsCollection()
+            updateView()
+        }, {
+            showError(it)
         })
     }
 
-    private fun updateView() {
+    internal fun updateView() {
         currentData?.let { view.updateAdapter(it, cardsPreferences.showImage(), startPosition) }
     }
 
@@ -135,11 +114,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         } else {
             view.hideFavMenuItem()
         }
-        if (cardsPreferences.showImage()) {
-            view.setImageMenuItemChecked(true)
-        } else {
-            view.setImageMenuItemChecked(false)
-        }
+        view.setImageMenuItemChecked(cardsPreferences.showImage())
     }
 
     override fun favClicked(currentCard: MTGCard?) {
@@ -162,5 +137,10 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     override fun toggleImage(show: Boolean) {
         cardsPreferences.setShowImage(show)
         updateView()
+    }
+
+    fun showError(throwable: Throwable) {
+        logger.e(throwable)
+        view.showError(throwable.localizedMessage)
     }
 }

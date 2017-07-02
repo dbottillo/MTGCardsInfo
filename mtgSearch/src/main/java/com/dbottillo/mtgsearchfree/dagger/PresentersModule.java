@@ -112,9 +112,8 @@ public class PresentersModule {
                                                           SavedCardsInteractor savedCardsInteractor,
                                                           DecksInteractor decksInteractor,
                                                           CardsPreferences cardsPreferences,
-                                                          RunnerFactory runnerFactory,
                                                           Logger logger) {
-        return new CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, runnerFactory, logger);
+        return new CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, logger);
     }
 
     @Provides

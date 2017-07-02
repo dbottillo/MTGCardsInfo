@@ -244,6 +244,10 @@
 
     <string name="add_new_player">Add new player</string>
     <string name="add_new_deck">Add new deck</string>
+    <string name="multicolor_no_others">Multicolor exclude unselected colors</string>
+    <string name="filter_title">Filters</string>
+    <string name="order_title">Order</string>
+    <string name="set_choose">Choose a set</string>
 
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
@@ -294,9 +298,5 @@
     <string name="cd_close">Close</string>
     <string name="cd_tooltip_arrow">Close tooltip</string>
     <string name="cd_flip_card">Other side card</string>
-    <string name="multicolor_no_others">Multicolor exclude unselected colors</string>
-    <string name="filter_title">Filters</string>
-    <string name="order_title">Order</string>
-    <string name="set_choose">Choose a set</string>
 
 </resources>
