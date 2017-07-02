@@ -2,20 +2,17 @@ package com.dbottillo.mtgsearchfree.ui.saved.lifecounter
 
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.presenter.TestRunnerFactory
-import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl
-import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterView
+import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
-import net.bytebuddy.implementation.bytecode.Throw
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
+import org.mockito.Mockito.*
 
 class LifeCounterPresenterImplTest {
 

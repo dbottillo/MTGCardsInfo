@@ -11,14 +11,9 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
 class AddToDeckPresenterImpl @Inject constructor(private val interactor: DecksInteractor,
-                                                runnerFactory: RunnerFactory,
                                                 private val logger: Logger) : AddToDeckPresenter{
 
     lateinit var view: AddToDeckView
-
-    private val decksWrapper: Runner<List<Deck>> = runnerFactory.simple<List<Deck>>()
-
-    private val deckWrapper: Runner<DeckCollection> = runnerFactory.simple<DeckCollection>()
 
     init {
         logger.d("created")
@@ -30,35 +25,29 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: DecksIn
 
     override fun loadDecks() {
         logger.d()
-        decksWrapper.run(interactor.load(), decksObserver)
+        interactor.load().subscribe({
+            logger.d()
+            view.decksLoaded(it)
+        }, {
+            showError(it)
+        })
     }
 
     override fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int) {
-        logger.d("add $deck")
-        deckWrapper.run(interactor.addCard(deck, card, quantity), null)
+        logger.d("add $card to $deck")
+        interactor.addCard(deck, card, quantity)
     }
 
     override fun addCardToDeck(newDeck: String, card: MTGCard, quantity: Int) {
-        logger.d("add $newDeck")
-        deckWrapper.run(interactor.addCard(newDeck, card, quantity), null)
+        logger.d("add $card to $newDeck")
+        interactor.addCard(newDeck, card, quantity)
     }
 
-    private val decksObserver = object : Runner.RxWrapperListener<List<Deck>> {
-        override fun onNext(decks: List<Deck>) {
-            logger.d()
-            view.decksLoaded(decks)
-        }
-
-        override fun onError(e: Throwable) {
-            if (e is MTGException) {
-                view.showError(e.message ?: "")
-            } else {
-                view.showError(e.localizedMessage)
-            }
-        }
-
-        override fun onCompleted() {
-
+    internal fun showError(e: Throwable){
+        if (e is MTGException) {
+            view.showError(e.message ?: e.localizedMessage)
+        } else {
+            view.showError(e.localizedMessage)
         }
     }
 

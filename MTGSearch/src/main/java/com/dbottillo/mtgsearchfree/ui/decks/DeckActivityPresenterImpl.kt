@@ -10,14 +10,11 @@ import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
-class DeckActivityPresenterImpl @Inject
-constructor(private val interactor: DecksInteractor,
-            runnerFactory: RunnerFactory,
-            private val logger: Logger): DeckActivityPresenter {
+class DeckActivityPresenterImpl @Inject constructor(
+        private val interactor: DecksInteractor,
+        private val logger: Logger): DeckActivityPresenter {
 
     lateinit var view: DeckActivityView
-    private val deckWrapper: Runner<DeckCollection> = runnerFactory.simple<DeckCollection>()
-    private val exportWrapper: Runner<Boolean> = runnerFactory.simple<Boolean>()
 
     init {
         logger.d("created")
@@ -29,61 +26,51 @@ constructor(private val interactor: DecksInteractor,
     }
 
     override fun loadDeck(deck: Deck) {
-        deckWrapper.run(interactor.loadDeck(deck), cardsObserver)
+        interactor.loadDeck(deck).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
     override fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int) {
-        deckWrapper.run(interactor.addCard(deck, card, quantity), cardsObserver)
+        interactor.addCard(deck, card, quantity).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
     override fun removeCardFromDeck(deck: Deck, card: MTGCard) {
-        deckWrapper.run(interactor.removeCard(deck, card), cardsObserver)
+        interactor.removeCard(deck, card).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
     override fun removeAllCardFromDeck(deck: Deck, card: MTGCard) {
-        deckWrapper.run(interactor.removeAllCard(deck, card), cardsObserver)
+        interactor.removeAllCard(deck, card).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
     override fun moveCardFromSideBoard(deck: Deck, card: MTGCard, quantity: Int) {
-        deckWrapper.run(interactor.moveCardFromSideboard(deck, card, quantity), cardsObserver)
+        interactor.moveCardFromSideboard(deck, card, quantity).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
     override fun moveCardToSideBoard(deck: Deck, card: MTGCard, quantity: Int) {
-        deckWrapper.run(interactor.moveCardToSideboard(deck, card, quantity), cardsObserver)
-    }
-
-    override fun exportDeck(deck: Deck, cards: CardsCollection) {
-        exportWrapper.run(interactor.exportDeck(deck, cards), object : Runner.RxWrapperListener<Boolean> {
-            override fun onNext(data: Boolean) {
-                view.deckExported(data)
-            }
-
-            override fun onError(e: Throwable) {
-
-            }
-
-            override fun onCompleted() {
-
-            }
+        interactor.moveCardToSideboard(deck, card, quantity).subscribe({
+            view.deckLoaded(it)
         })
     }
 
     override fun editDeck(deck: Deck, name: String) {
-        deckWrapper.run(interactor.editDeck(deck, name), cardsObserver)
+        interactor.editDeck(deck, name).subscribe({
+            view.deckLoaded(it)
+        })
     }
 
-    private val cardsObserver = object : Runner.RxWrapperListener<DeckCollection> {
-        override fun onNext(collection: DeckCollection) {
-            logger.d()
-            view.deckLoaded(collection)
-        }
-
-        override fun onError(e: Throwable) {
-
-        }
-
-        override fun onCompleted() {
-
-        }
+    override fun exportDeck(deck: Deck, cards: CardsCollection) {
+        interactor.exportDeck(deck, cards).subscribe({
+            view.deckExported(it)
+        })
     }
+
 }
