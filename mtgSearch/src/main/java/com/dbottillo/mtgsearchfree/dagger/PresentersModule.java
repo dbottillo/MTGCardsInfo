@@ -48,15 +48,13 @@ public class PresentersModule {
     }
 
     @Provides
-    AddToDeckPresenter provideDecksPresenter(DecksInteractor interactor,
-                                             RunnerFactory factory, Logger logger) {
-        return new AddToDeckPresenterImpl(interactor, factory, logger);
+    AddToDeckPresenter provideDecksPresenter(DecksInteractor interactor, Logger logger) {
+        return new AddToDeckPresenterImpl(interactor, logger);
     }
 
     @Provides
-    DeckActivityPresenter provideDeckActivityPresenter(DecksInteractor interactor,
-                                                       RunnerFactory factory, Logger logger) {
-        return new DeckActivityPresenterImpl(interactor, factory, logger);
+    DeckActivityPresenter provideDeckActivityPresenter(DecksInteractor interactor, Logger logger) {
+        return new DeckActivityPresenterImpl(interactor, logger);
     }
 
     @Provides
@@ -94,9 +92,8 @@ public class PresentersModule {
     }
 
     @Provides
-    CardsConfiguratorPresenter providesCardsConfiguratorPresenter(CardFilterInteractor interactor,
-                                                                  RunnerFactory runnerFactory) {
-        return new CardsConfiguratorPresenterImpl(interactor, runnerFactory);
+    CardsConfiguratorPresenter providesCardsConfiguratorPresenter(CardFilterInteractor interactor) {
+        return new CardsConfiguratorPresenterImpl(interactor);
     }
 
     @Provides
