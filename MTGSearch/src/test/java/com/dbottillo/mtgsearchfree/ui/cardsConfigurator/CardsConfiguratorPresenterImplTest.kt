@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator
+package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.model.CardFilter

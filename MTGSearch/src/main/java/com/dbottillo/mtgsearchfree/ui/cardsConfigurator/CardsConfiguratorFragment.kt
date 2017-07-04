@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator
+package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 
 import android.content.Context
 import android.os.Bundle

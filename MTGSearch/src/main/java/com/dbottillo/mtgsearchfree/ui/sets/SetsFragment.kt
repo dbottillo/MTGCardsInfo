@@ -13,7 +13,7 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
-import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.*
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity

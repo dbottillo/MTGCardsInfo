@@ -5,19 +5,18 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.*
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
-class DeckActivityPresenterImplTest{
+class DeckActivityPresenterImplTest {
 
     @Rule @JvmField
     val mockitoRule = MockitoJUnit.rule()

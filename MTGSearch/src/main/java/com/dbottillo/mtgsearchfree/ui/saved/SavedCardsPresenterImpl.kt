@@ -9,32 +9,25 @@ import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
 
 class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
-                              runnerFactor: RunnerFactory,
                               val generalData: GeneralData,
                               val logger: Logger) : SavedCardsPresenter {
 
-    var cardsCollectionRunner: Runner<CardsCollection> = runnerFactor.simple<CardsCollection>()
     lateinit var view: SavedCardsView
 
-    var listener = object : Runner.RxWrapperListener<CardsCollection>{
-        override fun onNext(data: CardsCollection) {
-            logger.d()
-            view.showCards(data)
-        }
-
-        override fun onError(e: Throwable?) {
-        }
-
-        override fun onCompleted() {
-        }
+    override fun init(view: SavedCardsView) {
+        this.view = view
     }
 
     override fun load() {
-        cardsCollectionRunner.run(interactor.load(),listener)
+        interactor.load().subscribe{
+            view.showCards(it)
+        }
     }
 
     override fun removeFromFavourite(card: MTGCard) {
-        cardsCollectionRunner.run(interactor.remove(card), listener)
+        interactor.remove(card).subscribe{
+            view.showCards(it)
+        }
     }
 
     override fun toggleCardTypeViewPreference() {
@@ -46,11 +39,5 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
             view.showCardsGrid()
         }
     }
-
-    override fun init(view: SavedCardsView) {
-        this.view = view
-    }
-
-
 
 }

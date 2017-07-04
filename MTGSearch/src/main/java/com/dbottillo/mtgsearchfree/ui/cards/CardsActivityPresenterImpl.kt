@@ -117,6 +117,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         view.setImageMenuItemChecked(cardsPreferences.showImage())
     }
 
+    // TODO: this need testing
     override fun favClicked(currentCard: MTGCard?) {
         currentCard?.let {
             if (favs.contains(it.multiVerseId)) {

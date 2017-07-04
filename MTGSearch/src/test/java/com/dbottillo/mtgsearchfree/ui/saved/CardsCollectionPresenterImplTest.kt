@@ -34,7 +34,7 @@ class CardsCollectionPresenterImplTest {
     fun setUp() {
         Mockito.`when`(interactor.load()).thenReturn(Observable.just(cardsCollection))
         Mockito.`when`(interactor.remove(card)).thenReturn(Observable.just(cardsCollection))
-        underTest = SavedCardsPresenterImpl(interactor, TestRunnerFactory(), generalData, logger)
+        underTest = SavedCardsPresenterImpl(interactor, generalData, logger)
         underTest.init(view)
     }
 
