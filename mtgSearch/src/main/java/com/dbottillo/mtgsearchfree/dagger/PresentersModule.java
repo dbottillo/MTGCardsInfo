@@ -8,9 +8,6 @@ import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
-import com.dbottillo.mtgsearchfree.presenter.CardPresenter;
-import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter;
@@ -35,6 +32,8 @@ import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.dbottillo.mtgsearchfree.view.views.CardPresenter;
+import com.dbottillo.mtgsearchfree.view.views.CardPresenterImpl;
 
 import dagger.Module;
 import dagger.Provides;
@@ -68,8 +67,8 @@ public class PresentersModule {
     }
 
     @Provides
-    CardPresenter provideCardPresenter(CardsInteractor interactor, Logger logger, RunnerFactory runnerFactory) {
-        return new CardPresenterImpl(interactor, logger, runnerFactory);
+    CardPresenter provideCardPresenter(CardsInteractor interactor, Logger logger) {
+        return new CardPresenterImpl(interactor, logger);
     }
 
     @Provides
@@ -83,10 +82,9 @@ public class PresentersModule {
     SetsFragmentPresenter providesSetsFragmentPresenter(SetsInteractor setsInteractor,
                                                         CardsInteractor cardsInteractor,
                                                         CardsPreferences cardsPreferences,
-                                                        RunnerFactory runnerFactory,
                                                         GeneralData generalData,
                                                         Logger logger) {
-        return new SetsFragmentPresenterImpl(setsInteractor, cardsInteractor, cardsPreferences, runnerFactory, generalData, logger);
+        return new SetsFragmentPresenterImpl(setsInteractor, cardsInteractor, cardsPreferences, generalData, logger);
     }
 
     @Provides
@@ -97,9 +95,8 @@ public class PresentersModule {
     @Provides
     SetPickerPresenter providesSetPickerPresenter(SetsInteractor setsInteractor,
                                                   CardsPreferences cardsPreferences,
-                                                  RunnerFactory runnerFactory,
                                                   Logger logger) {
-        return new SetPickerPresenterImpl(setsInteractor, cardsPreferences, runnerFactory, logger);
+        return new SetPickerPresenterImpl(setsInteractor, cardsPreferences, logger);
     }
 
     @Provides
@@ -115,9 +112,8 @@ public class PresentersModule {
     SearchPresenter providesSearchActivityPresenter(SetsInteractor setsInteratcor,
                                                     CardsInteractor cardsInteractor,
                                                     GeneralData generalData,
-                                                    RunnerFactory runnerFactory,
                                                     Logger logger) {
-        return new SearchPresenterImpl(setsInteratcor, cardsInteractor, generalData, runnerFactory, logger);
+        return new SearchPresenterImpl(setsInteratcor, cardsInteractor, generalData, logger);
     }
 
     @Provides

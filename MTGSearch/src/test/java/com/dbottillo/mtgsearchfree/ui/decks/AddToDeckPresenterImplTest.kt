@@ -7,15 +7,15 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
-import org.mockito.Mockito.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
-class AddToDeckPresenterImplTest{
+class AddToDeckPresenterImplTest {
 
     @Rule @JvmField
     val mockitoRule = MockitoJUnit.rule()

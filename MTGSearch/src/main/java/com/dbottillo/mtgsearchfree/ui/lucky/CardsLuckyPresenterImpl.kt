@@ -2,20 +2,15 @@ package com.dbottillo.mtgsearchfree.ui.lucky
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.presenter.Runner
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
-import com.dbottillo.mtgsearchfree.util.ArrayUtils
 import com.dbottillo.mtgsearchfree.util.Logger
 
 class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
                               val cardsPreferences: CardsPreferences,
-                              val logger: Logger) : CardsLuckyPresenter{
+                              val logger: Logger) : CardsLuckyPresenter {
 
     lateinit var view: CardsLuckyView
 
@@ -29,17 +24,17 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         cardsInteractor.loadIdFav().subscribe({
             favs = it.toMutableList()
 
-            intent?.let{
+            intent?.let {
                 if (it.hasExtra(CARD)) {
                     currentCard = it.getParcelableExtra<MTGCard>(CARD)
                 }
             }
 
-            bundle?.let{
+            bundle?.let {
                 currentCard = bundle.getParcelable<MTGCard>(CARD)
             }
 
-            currentCard?.let{
+            currentCard?.let {
                 loadCurrentCard()
             }
 
@@ -59,8 +54,8 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         }
     }
 
-    override fun showNextCard(){
-        if (luckyCards.isEmpty()){
+    override fun showNextCard() {
+        if (luckyCards.isEmpty()) {
             currentCard = null
             loadMoreCards()
             return
@@ -73,7 +68,7 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         }
     }
 
-    internal fun loadCurrentCard(){
+    internal fun loadCurrentCard() {
         currentCard?.let {
             view.showCard(it, cardsPreferences.showImage())
         }

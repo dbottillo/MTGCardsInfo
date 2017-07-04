@@ -7,8 +7,6 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.presenter.Runner
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity.*
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
@@ -63,9 +61,9 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
             if (set != null) {
                 set?.let { loadData(cardsInteractor.loadSet(it)) }
             } else if (deck != null) {
-                deck?.let {loadDeck(decksInteractor.loadDeck(it))}
+                deck?.let { loadDeck(decksInteractor.loadDeck(it)) }
             } else if (search != null) {
-                search?.let {loadData(cardsInteractor.doSearch(it))}
+                search?.let { loadData(cardsInteractor.doSearch(it)) }
             } else {
                 loadData(savedCardsInteractor.load())
             }
