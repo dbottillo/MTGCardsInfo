@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
-import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorFragment;
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment;

@@ -13,8 +13,8 @@ import com.dbottillo.mtgsearchfree.presenter.CardPresenterImpl;
 import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
-import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenter;
-import com.dbottillo.mtgsearchfree.ui.cardsCoonfigurator.CardsConfiguratorPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter;
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckPresenter;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckActivityPresenter;
@@ -58,9 +58,8 @@ public class PresentersModule {
     }
 
     @Provides
-    DecksFragmentPresenter provideDecksFragmentPresenter(DecksInteractor interactor,
-                                                         RunnerFactory factory, Logger logger) {
-        return new DecksFragmentPresenterImpl(interactor, factory, logger);
+    DecksFragmentPresenter provideDecksFragmentPresenter(DecksInteractor interactor, Logger logger) {
+        return new DecksFragmentPresenterImpl(interactor, logger);
     }
 
     @Provides
@@ -76,9 +75,8 @@ public class PresentersModule {
     @Provides
     SavedCardsPresenter provideSavedCardsPresenter(SavedCardsInteractor interactor,
                                                    GeneralData generalData,
-                                                   Logger logger,
-                                                   RunnerFactory runnerFactory) {
-        return new SavedCardsPresenterImpl(interactor, runnerFactory, generalData, logger);
+                                                   Logger logger) {
+        return new SavedCardsPresenterImpl(interactor, generalData, logger);
     }
 
     @Provides
@@ -125,8 +123,7 @@ public class PresentersModule {
     @Provides
     CardsLuckyPresenter providesCardsLuckyActivityPresenter(CardsInteractor cardsInteractor,
                                                             CardsPreferences cardsPreferences,
-                                                            RunnerFactory runnerFactory,
                                                             Logger logger) {
-        return new CardsLuckyPresenterImpl(cardsInteractor, cardsPreferences, runnerFactory, logger);
+        return new CardsLuckyPresenterImpl(cardsInteractor, cardsPreferences, logger);
     }
 }

@@ -61,6 +61,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     override fun showCard(card: MTGCard, showImage: Boolean) {
         cardView.load(card, showImage)
         titleCard.text = card.name
+        syncMenu()
     }
 
     public override fun getCurrentCard(): MTGCard {
