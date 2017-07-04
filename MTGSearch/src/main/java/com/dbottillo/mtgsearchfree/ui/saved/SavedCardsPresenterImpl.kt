@@ -2,10 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.saved
 
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
-import com.dbottillo.mtgsearchfree.presenter.Runner
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
 
 class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
@@ -19,13 +16,13 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
     }
 
     override fun load() {
-        interactor.load().subscribe{
+        interactor.load().subscribe {
             view.showCards(it)
         }
     }
 
     override fun removeFromFavourite(card: MTGCard) {
-        interactor.remove(card).subscribe{
+        interactor.remove(card).subscribe {
             view.showCards(it)
         }
     }

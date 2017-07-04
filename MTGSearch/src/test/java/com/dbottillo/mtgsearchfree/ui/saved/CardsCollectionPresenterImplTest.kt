@@ -4,7 +4,6 @@ import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences
-import com.dbottillo.mtgsearchfree.presenter.TestRunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
 import org.junit.Before

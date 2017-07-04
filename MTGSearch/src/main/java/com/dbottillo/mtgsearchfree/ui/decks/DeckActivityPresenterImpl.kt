@@ -3,16 +3,13 @@ package com.dbottillo.mtgsearchfree.ui.decks
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.presenter.Runner
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory
 import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
 class DeckActivityPresenterImpl @Inject constructor(
         private val interactor: DecksInteractor,
-        private val logger: Logger): DeckActivityPresenter {
+        private val logger: Logger) : DeckActivityPresenter {
 
     lateinit var view: DeckActivityView
 

@@ -62,7 +62,7 @@ class SavedCardsPresenterImplTest {
     }
 
     @Test
-    fun `toogle card view preference should switch to list if it was grid`() {
+    fun `toggle card view preference should switch to list if it was grid`() {
         `when`(generalData.isCardsShowTypeGrid).thenReturn(true)
 
         underTest.toggleCardTypeViewPreference()
@@ -74,7 +74,7 @@ class SavedCardsPresenterImplTest {
     }
 
     @Test
-    fun `toogle card view preference should switch to grid if it was list`() {
+    fun `toggle card view preference should switch to grid if it was list`() {
         `when`(generalData.isCardsShowTypeGrid).thenReturn(false)
 
         underTest.toggleCardTypeViewPreference()

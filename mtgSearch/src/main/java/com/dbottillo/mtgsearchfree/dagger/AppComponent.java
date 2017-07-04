@@ -8,7 +8,6 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
-import com.dbottillo.mtgsearchfree.presenter.RunnerFactory;
 import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
@@ -32,8 +31,6 @@ public interface AppComponent {
     PlayersStorage getPlayerStorage();
 
     DecksStorage getDecksStorage();
-
-    RunnerFactory getRxWrapperFactory();
 
     CardsPreferences getCardsPreferences();
 
