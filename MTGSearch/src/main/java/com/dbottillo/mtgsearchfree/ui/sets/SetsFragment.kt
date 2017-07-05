@@ -82,7 +82,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     }
 
     override fun getTitle(): String {
-        return presenter.set()?.name?: "Aether Reveal"
+        return presenter.set()?.name ?: ""
     }
 
     override fun showSet(set: MTGSet, cardsCollection: CardsCollection) {

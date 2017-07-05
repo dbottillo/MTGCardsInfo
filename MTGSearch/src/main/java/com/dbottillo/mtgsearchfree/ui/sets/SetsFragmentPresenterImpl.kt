@@ -14,7 +14,7 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
                                 val generalData: GeneralData,
                                 val logger: Logger) : SetsFragmentPresenter {
 
-    lateinit var set: MTGSet
+    var set: MTGSet?=null
     var currentPos: Int = -1
 
     lateinit var view: SetsFragmentView
@@ -37,8 +37,10 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
 
     override fun reloadSet() {
         logger.d()
-        cardsInteractor.loadSet(set).subscribe {
-            view.showSet(set, it)
+        set?.let{
+            cardsInteractor.loadSet(it).subscribe {
+                data -> view.showSet(it, data)
+            }
         }
     }
 
