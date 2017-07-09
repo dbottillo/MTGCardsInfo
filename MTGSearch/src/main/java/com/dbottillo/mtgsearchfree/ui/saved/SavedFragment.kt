@@ -21,10 +21,12 @@ import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
 import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+import com.dbottillo.mtgsearchfree.view.views.MTGLoader
 import javax.inject.Inject
 
 class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
+    lateinit var loader: MTGLoader
     lateinit var mtgCardsView: MTGCardsView
     lateinit var emptyContainer : LinearLayout
 
@@ -41,6 +43,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         super.onViewCreated(view, savedInstanceState)
 
         mtgCardsView = view.findViewById(R.id.cards) as MTGCardsView
+        loader = view.findViewById(R.id.loader) as MTGLoader
         emptyContainer = view.findViewById(R.id.empty_saved_cards_container) as LinearLayout
         view.findViewById(R.id.empty_cards_action).setOnClickListener{ openSearch() }
 
@@ -66,6 +69,14 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         return context.getString(R.string.action_saved)
     }
 
+    override fun hideLoading() {
+        loader.visibility = View.GONE
+    }
+
+    override fun showLoading() {
+        loader.visibility = View.VISIBLE
+    }
+
     override fun showError(message: String?) {
         LOG.d()
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
@@ -79,8 +90,14 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     }
 
     override fun showCards(cardsCollection: CardsCollection) {
-        emptyContainer.visibility = if (cardsCollection.list.isEmpty()) View.VISIBLE else View.GONE
+        emptyContainer.visibility = View.GONE
+        mtgCardsView.visibility = View.VISIBLE
         mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), -1, cardsCollection.filter, R.menu.card_saved_option)
+    }
+
+    override fun showEmptyScreen() {
+        mtgCardsView.visibility = View.GONE
+        emptyContainer.visibility = View.VISIBLE
     }
 
     override fun showCardsGrid() {

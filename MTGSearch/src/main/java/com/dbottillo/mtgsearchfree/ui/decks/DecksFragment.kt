@@ -50,6 +50,9 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
         super.onViewCreated(view, savedInstanceState)
 
         decksList = view.findViewById(R.id.decks_list) as RecyclerView
+        view.findViewById(R.id.action_import).setOnClickListener {
+            importDeck()
+        }
 
         decksList.setHasFixedSize(true)
         decksList.layoutManager = LinearLayoutManager(view.context)
@@ -114,8 +117,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
         }
     }
 
-    @OnClick(R.id.action_import)
-    fun importDeck(){
+    internal fun importDeck(){
         LOG.d()
         dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this)
     }
