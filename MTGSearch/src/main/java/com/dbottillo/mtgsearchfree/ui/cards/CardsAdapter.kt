@@ -25,24 +25,10 @@ import com.dbottillo.mtgsearchfree.view.views.MTGCardView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
-class CardsAdapter
-/*public static CardsAdapter list(List<MTGCard> cards, boolean isASearch, int menuRes, String title, int headerIconTitle, CardFilter cardFilter) {
-        LOG.d();
-        return new CardsAdapter(cards, false, isASearch, menuRes, title, headerIconTitle, cardFilter);
-    }
-
-    public static CardsAdapter grid(List<MTGCard> cards, boolean isASearch, int menuRes, String title, int headerIconTitle, CardFilter cardFilter) {
-        LOG.d();
-        return new CardsAdapter(cards, true, isASearch, menuRes, title, headerIconTitle, cardFilter);
-    }*/
-(val cards: List<MTGCard>,
- val listener: OnCardListener,
- val cardFilter: CardFilter?,
- val configuration: CardAdapterConfiguration)/*this.gridMode = gridMode;
-        this.isASearch = isASearch;
-        this.menuRes = menuRes;
-        this.headerIconTitle = headerIconTitle;
-        this.title = title;*/ : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CardsAdapter(val cards: List<MTGCard>,
+                   val listener: OnCardListener,
+                   val cardFilter: CardFilter?,
+                   val configuration: CardAdapterConfiguration): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var colorFilterActive = -1
 

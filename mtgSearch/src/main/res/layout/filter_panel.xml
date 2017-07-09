@@ -5,8 +5,7 @@
     android:id="@+id/filter_panel_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:showIn="@layout/activity_main">
-
+    tools:background="@color/white">
 
     <ToggleButton
         android:id="@+id/toggle_white"
@@ -14,6 +13,7 @@
         android:layout_height="@dimen/filter_toggle_size"
         android:layout_toLeftOf="@+id/toggle_blue"
         android:textColor="@drawable/toggle_text_color"
+        tools:checked="true"
         android:textOff="@string/mtg_color_white"
         android:textOn="@string/mtg_color_white"/>
 

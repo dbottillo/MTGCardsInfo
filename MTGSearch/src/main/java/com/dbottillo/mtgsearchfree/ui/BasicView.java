@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view;
+package com.dbottillo.mtgsearchfree.ui;
 
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 

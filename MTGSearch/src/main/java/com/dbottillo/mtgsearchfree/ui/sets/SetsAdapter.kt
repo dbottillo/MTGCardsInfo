@@ -18,7 +18,7 @@ class SetsAdapter(val sets: List<MTGSet>,
     override fun onBindViewHolder(holder: SetViewHolder, position: Int) {
         holder.name.text = sets[position].name
 
-        holder.name.setTextColor(holder.itemView.resources.getColor(if (position == currentPos) R.color.main else R.color.dark_grey))
+        holder.name.setTextColor(holder.itemView.resources.getColor(if (position == currentPos) R.color.color_accent else R.color.color_primary))
         holder.name.setTypeface(null, if (position == currentPos) Typeface.BOLD else Typeface.NORMAL)
         holder.itemView.setOnClickListener{
             if (position != currentPos){

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.view;
 
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.ui.BasicView;
 
 import java.util.List;
 

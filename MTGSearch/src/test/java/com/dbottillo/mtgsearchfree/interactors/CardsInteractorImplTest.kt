@@ -1,32 +1,28 @@
 package com.dbottillo.mtgsearchfree.interactors
 
+import com.dbottillo.mtgsearchfree.RxImmediateSchedulerRule
 import com.dbottillo.mtgsearchfree.model.CardsCollection
-import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl
 import com.dbottillo.mtgsearchfree.util.Logger
-
+import io.reactivex.observers.TestObserver
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
-
-import java.util.Arrays
-
-import io.reactivex.observers.TestObserver
-
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
-import org.mockito.Mockito.`when`
+import java.util.*
 
 class CardsInteractorImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
+
+    @Rule @JvmField
+    var rxjavaRule = RxImmediateSchedulerRule()
 
     lateinit var underTest: CardsInteractor
 
@@ -60,7 +56,6 @@ class CardsInteractorImplTest {
         `when`(cardsStorageImpl.getFavourites()).thenReturn(favCards)
         `when`(cardsStorageImpl.load(set)).thenReturn(setCollection)
         `when`(cardsStorageImpl.doSearch(searchParams)).thenReturn(searchCardsCollection)
-        // when(cardsStorageImpl.loadDeck(deck)).thenReturn(deckCollection);
         `when`(cardsStorageImpl.loadCard(MULTIVERSE_ID)).thenReturn(card)
         `when`(cardsStorageImpl.loadOtherSide(card)).thenReturn(otherSideCard)
         underTest = CardsInteractorImpl(cardsStorageImpl, logger)

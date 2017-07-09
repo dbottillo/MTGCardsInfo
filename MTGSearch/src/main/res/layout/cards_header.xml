@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:background="@color/white">
 
@@ -11,16 +11,15 @@
         android:id="@+id/title"
         style="@style/BigTitle"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="0dp"
-        android:drawablePadding="0dp"
+        android:drawablePadding="5dp"
         android:layout_toLeftOf="@+id/cards_settings"
-        android:ellipsize="end"
-        android:maxLines="1"
         android:textSize="32sp"
         tools:drawableLeft="@drawable/ic_edit_grey"
         tools:layout_height="wrap_content"
         tools:layout_width="wrap_content"
-        tools:text="@string/action_decks"/>
+        tools:text="Duel Decks: Ravinca vs Guild"/>
 
     <TextView
         android:id="@+id/sub_title"

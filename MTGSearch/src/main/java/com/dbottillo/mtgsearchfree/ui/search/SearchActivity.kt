@@ -65,7 +65,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         toolbar.setTitle(R.string.action_search)
         mtgCardsView.setEmptyString(R.string.empty_search)
         closeButton.setOnClickListener {
-            LOG.e("closeButton ")
             newSearch.callOnClick()
         }
 
@@ -291,7 +290,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         fragment.show(supportFragmentManager, "cards_configurator")
     }
 
-    override fun onCardSelected(card: MTGCard, position: Int, view: View) {
+    override fun onCardSelected(card: MTGCard, position: Int, view: View?) {
         LOG.d()
         val intent = CardsActivity.newInstance(this, searchView.searchParams, position, null)
         startActivity(intent)
