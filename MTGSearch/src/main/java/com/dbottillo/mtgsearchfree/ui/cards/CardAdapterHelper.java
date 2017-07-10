@@ -59,7 +59,12 @@ public final class CardAdapterHelper {
 
     }
 
-    public static void setupMore(final ListCardViewHolder holder, final Context context, final MTGCard card, final int position, final int menuRes, final OnCardListener onCardListener) {
+    public static void setupMore(final ListCardViewHolder holder,
+                                 final Context context,
+                                 final MTGCard card,
+                                 final int position,
+                                 final int menuRes,
+                                 final OnCardListener onCardListener) {
         if (menuRes > 0 && onCardListener != null) {
             holder.getMore().setOnClickListener(new View.OnClickListener() {
                 @Override

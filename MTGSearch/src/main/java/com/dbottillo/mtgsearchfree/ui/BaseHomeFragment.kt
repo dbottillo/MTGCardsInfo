@@ -14,6 +14,8 @@ import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
+import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
+import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import javax.inject.Inject
@@ -65,9 +67,8 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.more_rate -> dbActivity.openRateTheApp()
-            R.id.more_about -> startActivity(Intent(activity, CardLuckyActivity::class.java))
-            R.id.more_beta -> startActivity(Intent(activity, CardLuckyActivity::class.java))
-            R.id.more_release_note -> startActivity(Intent(activity, CardLuckyActivity::class.java))
+            R.id.more_about -> startActivity(Intent(activity, AboutActivity::class.java))
+            R.id.more_release_note -> startActivity(Intent(activity, ReleaseNoteActivity::class.java))
             R.id.action_create_db -> (activity as HomeActivity).recreateDb()
             R.id.action_fill_decks -> CreateDecksAsyncTask(app.applicationContext).execute()
             R.id.action_create_fav -> AddFavouritesAsyncTask(app.applicationContext).execute()

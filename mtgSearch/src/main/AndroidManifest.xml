@@ -34,6 +34,10 @@
 
         <activity android:name=".ui.lucky.CardLuckyActivity"/>
 
+        <activity android:name=".ui.about.AboutActivity"/>
+
+        <activity android:name=".ui.about.ReleaseNoteActivity"/>
+
         <activity android:name=".ui.search.SearchActivity"/>
 
         <activity android:name=".ui.decks.DeckActivity"/>

@@ -1,18 +1,15 @@
-package com.dbottillo.mtgsearchfree.view.adapters
+package com.dbottillo.mtgsearchfree.ui.decks
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterHelper
-import com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder
 import com.dbottillo.mtgsearchfree.ui.cards.ListCardViewHolder
-
-import java.util.ArrayList
+import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
 
 class DeckCardAdapter(private val mContext: Context,
                       private val cards: MutableList<MTGCard>,

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.fragments;
+package com.dbottillo.mtgsearchfree.ui.about;
 
 import android.app.Dialog;
 import android.os.Bundle;
