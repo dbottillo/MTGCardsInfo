@@ -1,10 +1,10 @@
 package com.dbottillo.mtgsearchfree.interactors
 
-import com.dbottillo.mtgsearchfree.RxImmediateSchedulerRule
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
+import io.reactivex.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -17,9 +17,6 @@ class PlayerInteractorImplTest {
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    @Rule @JvmField
-    var rxjavaRule = RxImmediateSchedulerRule()
-
     @Mock
     internal lateinit var storage: PlayersStorage
     @Mock
@@ -31,9 +28,14 @@ class PlayerInteractorImplTest {
     
     private lateinit var underTest: PlayerInteractor
 
+    @Mock
+    lateinit var schedulerProvider: SchedulerProvider
+
     @Before
     fun setup() {
-        underTest = PlayerInteractorImpl(storage, logger)
+        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        underTest = PlayerInteractorImpl(storage, schedulerProvider, logger)
     }
 
     @Test
@@ -47,7 +49,9 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).load()
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -60,7 +64,9 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).addPlayer()
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -73,7 +79,9 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayer(player)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -86,7 +94,9 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayers(players)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -99,6 +109,8 @@ class PlayerInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).removePlayer(player)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 }

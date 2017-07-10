@@ -1,13 +1,13 @@
 package com.dbottillo.mtgsearchfree.interactors
 
-import com.dbottillo.mtgsearchfree.RxImmediateSchedulerRule
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
+import io.reactivex.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -18,16 +18,15 @@ import java.util.*
 
 class CardsInteractorImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    private val MULTIVERSE_ID = 180607
 
     @Rule @JvmField
-    var rxjavaRule = RxImmediateSchedulerRule()
+    var mockitoRule = MockitoJUnit.rule()
 
     lateinit var underTest: CardsInteractor
 
     @Mock
-    lateinit var cardsStorageImpl: CardsStorageImpl
+    lateinit var cardsStorage: CardsStorage
     @Mock
     lateinit var set: MTGSet
     @Mock
@@ -50,117 +49,153 @@ class CardsInteractorImplTest {
     @Mock
     lateinit var searchCardsCollection: CardsCollection
 
+    @Mock
+    lateinit var schedulerProvider: SchedulerProvider
+
     @Before
     fun setup() {
-        `when`(cardsStorageImpl.getLuckyCards(2)).thenReturn(lukcyCardsCollection)
-        `when`(cardsStorageImpl.getFavourites()).thenReturn(favCards)
-        `when`(cardsStorageImpl.load(set)).thenReturn(setCollection)
-        `when`(cardsStorageImpl.doSearch(searchParams)).thenReturn(searchCardsCollection)
-        `when`(cardsStorageImpl.loadCard(MULTIVERSE_ID)).thenReturn(card)
-        `when`(cardsStorageImpl.loadOtherSide(card)).thenReturn(otherSideCard)
-        underTest = CardsInteractorImpl(cardsStorageImpl, logger)
+        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        underTest = CardsInteractorImpl(cardsStorage, schedulerProvider, logger)
     }
 
     @Test
-    fun testGetLuckyCards() {
+    fun `get lucky cards should call storage and return observable`() {
+        `when`(cardsStorage.getLuckyCards(2)).thenReturn(lukcyCardsCollection)
         val testSubscriber = TestObserver<CardsCollection>()
+        
         underTest.getLuckyCards(2).subscribe(testSubscriber)
+        
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(lukcyCardsCollection)
-        verify<CardsStorageImpl>(cardsStorageImpl).getLuckyCards(2)
+        verify(cardsStorage).getLuckyCards(2)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testGetFavourites() {
+    fun `get favourites should call storage and return observable`() {
+        `when`(cardsStorage.getFavourites()).thenReturn(favCards)
         val testSubscriber = TestObserver<List<MTGCard>>()
+
         underTest.getFavourites().subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(favCards)
-        verify<CardsStorageImpl>(cardsStorageImpl).getFavourites()
+        verify(cardsStorage).getFavourites()
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testSaveAsFavourite() {
-        val card = mock(MTGCard::class.java)
+    fun `save card as favourites should call storage and return observable`() {
         val idFavs = intArrayOf(1, 2, 3)
-        `when`(cardsStorageImpl.saveAsFavourite(card)).thenReturn(idFavs)
+        `when`(cardsStorage.saveAsFavourite(card)).thenReturn(idFavs)
         val testSubscriber = TestObserver<IntArray>()
+
         underTest.saveAsFavourite(card).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(idFavs)
-        verify(cardsStorageImpl).saveAsFavourite(card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verify(cardsStorage).saveAsFavourite(card)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testRemoveFromFavourite() {
+    fun `remove card as favourites should call storage and return observable`() {
         val card = mock(MTGCard::class.java)
         val idFavs = intArrayOf(3, 4, 5)
-        `when`(cardsStorageImpl.removeFromFavourite(card)).thenReturn(idFavs)
+        `when`(cardsStorage.removeFromFavourite(card)).thenReturn(idFavs)
         val testSubscriber = TestObserver<IntArray>()
+
         underTest.removeFromFavourite(card).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(idFavs)
-        verify(cardsStorageImpl).removeFromFavourite(card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verify(cardsStorage).removeFromFavourite(card)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testLoadSet() {
+    fun `load set should call storage and return observable`() {
+        `when`(cardsStorage.load(set)).thenReturn(setCollection)
         val testSubscriber = TestObserver<CardsCollection>()
+
         underTest.loadSet(set).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(setCollection)
-        verify<CardsStorageImpl>(cardsStorageImpl).load(set)
+        verify(cardsStorage).load(set)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testLoadIdFav() {
+    fun `load ifs of favourites should call storage and return observable`() {
         val idFavs = intArrayOf(6, 7, 8)
-        `when`(cardsStorageImpl.loadIdFav()).thenReturn(idFavs)
+        `when`(cardsStorage.loadIdFav()).thenReturn(idFavs)
         val testSubscriber = TestObserver<IntArray>()
+
         underTest.loadIdFav().subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(idFavs)
-        verify(cardsStorageImpl).loadIdFav()
+        verify(cardsStorage).loadIdFav()
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
-    /* @Test
-    public void testLoadDeck() {
-        TestObserver<CardsCollection> testSubscriber = new TestObserver<>();
-        underTest.loadDeck(deck).subscribe(testSubscriber);
-        testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(deckCollection);
-        verify(cardsStorageImpl).loadDeck(deck);
-    }*/
-
     @Test
-    fun testDoSearch() {
+    fun `do search should call storage and return observable`() {
+        `when`(cardsStorage.doSearch(searchParams)).thenReturn(searchCardsCollection)
         val testSubscriber = TestObserver<CardsCollection>()
+
         underTest.doSearch(searchParams).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(searchCardsCollection)
-        verify<CardsStorageImpl>(cardsStorageImpl).doSearch(searchParams)
+        verify(cardsStorage).doSearch(searchParams)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testLoadCardWithMultiverseId() {
+    fun `load card with multiverse id should call storage and return observable`() {
+        `when`(cardsStorage.loadCard(MULTIVERSE_ID)).thenReturn(card)
         val testSubscriber = TestObserver<MTGCard>()
+
         underTest.loadCard(MULTIVERSE_ID).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(card)
-        verify<CardsStorageImpl>(cardsStorageImpl).loadCard(MULTIVERSE_ID)
+        verify(cardsStorage).loadCard(MULTIVERSE_ID)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
     @Test
-    fun testLoadOtherSideCard() {
+    fun `load other side of card should call storage and return observable`() {
+        `when`(cardsStorage.loadOtherSide(card)).thenReturn(otherSideCard)
         val testSubscriber = TestObserver<MTGCard>()
+
         underTest.loadOtherSideCard(card).subscribe(testSubscriber)
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(otherSideCard)
-        verify<CardsStorageImpl>(cardsStorageImpl).loadOtherSide(card)
+        verify(cardsStorage).loadOtherSide(card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
-    companion object {
-
-        private val MULTIVERSE_ID = 180607
-    }
 }

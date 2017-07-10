@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
-import com.dbottillo.mtgsearchfree.RxImmediateSchedulerRule
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
@@ -11,6 +10,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
+import io.reactivex.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -23,9 +23,6 @@ class DecksInteractorImplTest {
 
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()!!
-
-    @Rule @JvmField
-    var rxjavaRule = RxImmediateSchedulerRule()
 
     @Mock
     lateinit var deck: Deck
@@ -45,11 +42,16 @@ class DecksInteractorImplTest {
     @Mock
     lateinit var deckCollection: DeckCollection
 
+    @Mock
+    lateinit var schedulerProvider: SchedulerProvider
+
     lateinit var underTest: DecksInteractor
 
     @Before
     fun setup() {
-        underTest = DecksInteractorImpl(storage, fileUtil, logger)
+        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        underTest = DecksInteractorImpl(storage, fileUtil, schedulerProvider, logger)
     }
 
     @Test
@@ -61,8 +63,10 @@ class DecksInteractorImplTest {
 
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
         verify(storage).load()
-        verifyNoMoreInteractions(storage)
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -75,7 +79,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
         verify(storage).loadDeck(deck)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -88,7 +94,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
         verify(storage).addDeck("deck")
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -101,7 +109,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
         verify(storage).deleteDeck(deck)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -114,7 +124,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
         verify(storage).editDeck(deck, "new name")
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -127,7 +139,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
         verify(storage).addCard(deck, card, 2)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -140,7 +154,9 @@ class DecksInteractorImplTest {
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
         verify(storage).addCard("name", card, 2)
-        verifyNoMoreInteractions(storage)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
     }
 
     @Test
@@ -151,7 +167,9 @@ class DecksInteractorImplTest {
         underTest.removeCard(deck, card).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify<DecksStorage>(storage).removeCard(deck, card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verify(storage).removeCard(deck, card)
     }
 
     @Test
@@ -161,6 +179,8 @@ class DecksInteractorImplTest {
         underTest.removeAllCard(deck, card).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
         verify<DecksStorage>(storage).removeAllCard(deck, card)
     }
 
@@ -192,6 +212,8 @@ class DecksInteractorImplTest {
         underTest.importDeck(uri).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(decks)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
         verify<DecksStorage>(storage).importDeck(uri)
     }
 
@@ -211,6 +233,8 @@ class DecksInteractorImplTest {
         `when`(storage.importDeck(uri)).thenThrow(exception)
         val testSubscriber = TestObserver<List<Deck>>()
         underTest.importDeck(uri).subscribe(testSubscriber)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
         testSubscriber.assertError(exception)
     }
 }

@@ -42,6 +42,8 @@ class CardsCollectionPresenterImplTest {
         underTest.load()
 
         verify(interactor).load()
+        verify(view).showLoading()
+        verify(view).hideLoading()
         verify(view).showCards(cardsCollection)
         verifyNoMoreInteractions(interactor, view)
     }

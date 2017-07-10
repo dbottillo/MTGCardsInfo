@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
+import com.dbottillo.mtgsearchfree.interactors.AppSchedulerProvider;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
@@ -10,6 +11,7 @@ import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl;
+import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
@@ -29,33 +31,50 @@ import dagger.Provides;
 class InteractorsModule {
 
     @Provides
-    CardFilterInteractor provideCardFilterInteractor(CardsPreferences cardsPreferences, Logger logger) {
+    CardFilterInteractor provideCardFilterInteractor(CardsPreferences cardsPreferences,
+                                                     Logger logger) {
         return new CardFilterInteractorImpl(cardsPreferences, logger);
     }
 
     @Provides
-    CardsInteractor provideCardsInteractor(CardsStorage cardsStorage, Logger logger) {
-        return new CardsInteractorImpl(cardsStorage, logger);
+    CardsInteractor provideCardsInteractor(CardsStorage cardsStorage,
+                                           SchedulerProvider schedulerProvider,
+                                           Logger logger) {
+        return new CardsInteractorImpl(cardsStorage, schedulerProvider, logger);
     }
 
     @Provides
-    SetsInteractor provideSetsInteractor(SetDataSource setDataSource, Logger logger) {
-        return new SetsInteractorImpl(setDataSource, logger);
+    SetsInteractor provideSetsInteractor(SetDataSource setDataSource,
+                                         SchedulerProvider schedulerProvider,
+                                         Logger logger) {
+        return new SetsInteractorImpl(setDataSource, schedulerProvider, logger);
     }
 
     @Provides
-    PlayerInteractor providePlayerInteractor(PlayersStorage playersStorage, Logger logger) {
-        return new PlayerInteractorImpl(playersStorage, logger);
+    PlayerInteractor providePlayerInteractor(PlayersStorage playersStorage,
+                                             SchedulerProvider schedulerProvider,
+                                             Logger logger) {
+        return new PlayerInteractorImpl(playersStorage, schedulerProvider, logger);
     }
 
     @Provides
-    DecksInteractor provideDecksInteractor(DecksStorage decksStorage, FileUtil fileUtil, Logger logger) {
-        return new DecksInteractorImpl(decksStorage, fileUtil, logger);
+    DecksInteractor provideDecksInteractor(DecksStorage decksStorage,
+                                           FileUtil fileUtil,
+                                           SchedulerProvider schedulerProvider,
+                                           Logger logger) {
+        return new DecksInteractorImpl(decksStorage, fileUtil, schedulerProvider, logger);
     }
 
     @Provides
-    SavedCardsInteractor provideSavedCardsInteractor(SavedCardsStorage storage, Logger logger){
-        return new SavedCardsInteractorImpl(storage, logger);
+    SavedCardsInteractor provideSavedCardsInteractor(SavedCardsStorage storage,
+                                                     SchedulerProvider schedulerProvider,
+                                                     Logger logger){
+        return new SavedCardsInteractorImpl(storage, schedulerProvider, logger);
+    }
+
+    @Provides
+    SchedulerProvider provideSchedulerProvider(){
+        return new AppSchedulerProvider();
     }
 }
 

@@ -4,10 +4,10 @@ import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
-class PlayerInteractorImpl(private val storage: PlayersStorage, private val logger: Logger) : PlayerInteractor {
+class PlayerInteractorImpl(private val storage: PlayersStorage,
+                           private val schedulerProvider: SchedulerProvider,
+                           private val logger: Logger) : PlayerInteractor {
 
     init {
         logger.d("created")
@@ -16,36 +16,36 @@ class PlayerInteractorImpl(private val storage: PlayersStorage, private val logg
     override fun load(): Observable<List<Player>> {
         logger.d("loadSet")
         return Observable.fromCallable {storage.load()}
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun addPlayer(): Observable<List<Player>> {
         logger.d("add player")
         return Observable.fromCallable {storage.addPlayer()}
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun editPlayer(player: Player): Observable<List<Player>> {
         logger.d("edit " + player)
         return Observable.fromCallable {storage.editPlayer(player)}
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun editPlayers(players: List<Player>): Observable<List<Player>> {
         logger.d("update players " + players.toString())
         return Observable.fromCallable {storage.editPlayers(players)}
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun removePlayer(player: Player): Observable<List<Player>> {
         logger.d("remove " + player)
         return Observable.fromCallable {storage.removePlayer(player)}
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
 }
