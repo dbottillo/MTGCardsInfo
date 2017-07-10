@@ -8,7 +8,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 
 public final class MaterialWrapper {
 

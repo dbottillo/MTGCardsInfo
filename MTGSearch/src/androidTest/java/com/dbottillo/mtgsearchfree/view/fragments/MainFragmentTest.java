@@ -1,27 +1,5 @@
 package com.dbottillo.mtgsearchfree.view.fragments;
 
-import android.content.pm.ActivityInfo;
-import android.support.test.espresso.Espresso;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-
-import com.dbottillo.mtgsearchfree.R;
-
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import static android.support.test.espresso.Espresso.onData;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.dbottillo.mtgsearchfree.matchers.RecyclerViewMatcher.withRecyclerView;
-import static com.dbottillo.mtgsearchfree.matchers.ViewMatchers.setWithName;
-import static com.dbottillo.mtgsearchfree.matchers.ViewMatchers.withDrawable;
 
 public class MainFragmentTest {
 

@@ -9,7 +9,6 @@ import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.Deck;
-import com.dbottillo.mtgsearchfree.model.DeckCollection;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 
 import java.io.BufferedReader;

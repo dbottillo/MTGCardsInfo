@@ -94,6 +94,7 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
                 final ViewGroup mScrollViewContentLayout = (ViewGroup) mViewGroup.getChildAt(0);
                 mScrollViewContentLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                     @Override
+                    @SuppressWarnings("checkstyle:parameternumber")
                     public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         int totalScroll = v.getHeight() - mViewGroup.getHeight();
                         scrollingEnabled = totalScroll > 0;

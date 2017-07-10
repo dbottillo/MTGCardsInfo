@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder;
 import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
 import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 
