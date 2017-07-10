@@ -9,8 +9,6 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
-import java.util.List;
-
 public class CardsPagerAdapter extends PagerAdapter {
 
     private Context context;

@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity;
-import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter;
 import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;

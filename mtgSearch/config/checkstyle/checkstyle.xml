@@ -8,6 +8,8 @@ Severity: EASY
 -->
 <module name="Checker">
 
+    <module name="SuppressWarningsFilter"/>
+
     <!-- Checks whether files end with a new line.                        -->
     <!-- See http://checkstyle.sourceforge.net/config_misc.html#NewlineAtEndOfFile -->
     <module name="NewlineAtEndOfFile">
@@ -39,6 +41,10 @@ Severity: EASY
     </module>
 
     <module name="TreeWalker">
+
+        <module name="ParameterNumber">
+            <property name="max" value="10"/>
+        </module>
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sourceforge.net/config_javadoc.html -->
