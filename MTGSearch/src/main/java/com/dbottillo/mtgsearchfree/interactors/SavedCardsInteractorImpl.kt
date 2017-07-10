@@ -5,10 +5,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
+                               private val schedulerProvider: SchedulerProvider,
                                private val logger: Logger) : SavedCardsInteractor {
 
     init {
@@ -18,8 +17,8 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
     override fun load(): Observable<CardsCollection> {
         logger.d("get favourites")
         return Observable.fromCallable { storage.load() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun save(card: MTGCard): Observable<CardsCollection> {
@@ -27,8 +26,8 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
         return Observable.fromCallable {
             storage.saveAsFavourite(card)
             storage.load() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun remove(card: MTGCard): Observable<CardsCollection> {
@@ -36,15 +35,15 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
         return Observable.fromCallable {
             storage.removeFromFavourite(card)
             storage.load() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
     override fun loadId(): Observable<IntArray> {
         logger.d("loadSet id fav")
         return Observable.fromCallable { storage.loadIdFav() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 }
 

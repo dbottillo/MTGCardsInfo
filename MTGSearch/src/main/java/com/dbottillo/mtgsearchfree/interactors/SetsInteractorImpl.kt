@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class SetsInteractorImpl(private val storage: SetDataSource,
+                         private val schedulerProvider: SchedulerProvider,
                          private val logger: Logger) : SetsInteractor {
 
     init {
@@ -18,8 +19,8 @@ class SetsInteractorImpl(private val storage: SetDataSource,
     override fun load(): Observable<List<MTGSet>> {
         logger.d("loadSet sets")
         return Observable.just(storage.sets)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
     }
 
 }
