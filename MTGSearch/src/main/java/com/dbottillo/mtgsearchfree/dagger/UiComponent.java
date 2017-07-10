@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
+import com.dbottillo.mtgsearchfree.ui.about.AboutActivity;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
@@ -13,7 +14,6 @@ import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity;
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckActivity;
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity;
-import com.dbottillo.mtgsearchfree.view.fragments.AboutFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
 
@@ -29,6 +29,8 @@ public interface UiComponent {
 
     void inject(BasicActivity activity);
 
+    void inject(AboutActivity aboutActivity);
+
     void inject(SearchActivity searchActivity);
 
     void inject(CardsActivity cardsActivity);
@@ -38,8 +40,6 @@ public interface UiComponent {
     void inject(DeckActivity deckActivity);
 
     void inject(AddToDeckFragment addToDeckFragment);
-
-    void inject(AboutFragment aboutFragment);
 
     void inject(MTGCardView mtgCardView);
 
