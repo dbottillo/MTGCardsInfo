@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model;
 
 import android.os.Parcel;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import org.junit.Before;
 import org.junit.Test;
