@@ -1,6 +1,6 @@
 buildscript {
-    ext.number_of_set = 160
-    ext.database_version = 25
+    ext.number_of_set = 161
+    ext.database_version = 26
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
@@ -23,8 +23,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 64
-        versionName "2.8.3"
+        versionCode 65
+        versionName "2.8.4"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
     }
