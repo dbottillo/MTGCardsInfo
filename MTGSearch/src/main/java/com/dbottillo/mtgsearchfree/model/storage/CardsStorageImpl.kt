@@ -25,10 +25,14 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         return CardsCollection(cardsHelper.filterCards(filter, cards), filter)
     }
 
-    override fun saveAsFavourite(card: MTGCard): IntArray {
+    override fun saveAsFavourite(card: MTGCard) {
         logger.d("save as fav " + card)
         favouritesDataSource.saveFavourites(card)
-        return loadIdFav()
+    }
+
+    override fun removeFromFavourite(card: MTGCard){
+        logger.d("remove as fav " + card)
+        favouritesDataSource.removeFavourites(card)
     }
 
     override fun loadIdFav(): IntArray {
@@ -39,12 +43,6 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
             result[i] = cards[i].multiVerseId
         }
         return result
-    }
-
-    override fun removeFromFavourite(card: MTGCard): IntArray {
-        logger.d("remove as fav " + card)
-        favouritesDataSource.removeFavourites(card)
-        return loadIdFav()
     }
 
     override fun getLuckyCards(howMany: Int): CardsCollection {

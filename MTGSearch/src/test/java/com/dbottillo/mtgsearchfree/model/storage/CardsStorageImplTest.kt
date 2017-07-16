@@ -98,10 +98,18 @@ class CardsStorageImplTest {
 
     @Test
     fun testSaveAsFavourite() {
-        val card = mock(MTGCard::class.java)
-        val favs = underTest.saveAsFavourite(card)
-        verify<FavouritesDataSource>(favouritesDataSource).saveFavourites(card)
-        assertThat(favs.size, `is`(2))
+        underTest.saveAsFavourite(card)
+
+        verify(favouritesDataSource).saveFavourites(card)
+        verifyNoMoreInteractions(favouritesDataSource, mtgCardDataSource, cardsPreferences, cardsHelper)
+    }
+
+    @Test
+    fun testRemoveFromFavourite() {
+        underTest.removeFromFavourite(card)
+
+        verify(favouritesDataSource).removeFavourites(card)
+        verifyNoMoreInteractions(favouritesDataSource, mtgCardDataSource, cardsPreferences, cardsHelper)
     }
 
     @Test
@@ -111,15 +119,6 @@ class CardsStorageImplTest {
         assertThat(favs.size, `is`(2))
         assertThat(favs[0], `is`(favCards[0].multiVerseId))
         assertThat(favs[1], `is`(favCards[1].multiVerseId))
-    }
-
-    @Test
-    fun testRemoveFromFavourite() {
-        val card = mock(MTGCard::class.java)
-        val favs = underTest.removeFromFavourite(card)
-        verify<FavouritesDataSource>(favouritesDataSource).removeFavourites(card)
-        verify<FavouritesDataSource>(favouritesDataSource).getCards(false)
-        assertThat(favs.size, `is`(2))
     }
 
     @Test

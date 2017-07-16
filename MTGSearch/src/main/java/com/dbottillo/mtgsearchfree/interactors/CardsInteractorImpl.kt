@@ -30,18 +30,20 @@ class CardsInteractorImpl(private val storage: CardsStorage,
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun saveAsFavourite(card: MTGCard): Observable<IntArray> {
+    override fun saveAsFavourite(card: MTGCard){
         logger.d("save as favourite")
-        return Observable.fromCallable { storage.saveAsFavourite(card) }
+        Observable.fromCallable { storage.saveAsFavourite(card) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
+                .subscribe()
     }
 
-    override fun removeFromFavourite(card: MTGCard): Observable<IntArray> {
+    override fun removeFromFavourite(card: MTGCard) {
         logger.d("remove from favourite")
-        return Observable.fromCallable { storage.removeFromFavourite(card) }
+        Observable.fromCallable { storage.removeFromFavourite(card) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
+                .subscribe()
     }
 
     override fun loadSet(set: MTGSet): Observable<CardsCollection> {
@@ -65,9 +67,9 @@ class CardsInteractorImpl(private val storage: CardsStorage,
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun loadCard(multiverseid: Int): Observable<MTGCard> {
-        logger.d("loading card with multiverse id: " + multiverseid)
-        return Observable.fromCallable { storage.loadCard(multiverseid) }
+    override fun loadCard(multiverseId: Int): Observable<MTGCard> {
+        logger.d("loading card with multiverse id: " + multiverseId)
+        return Observable.fromCallable { storage.loadCard(multiverseId) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

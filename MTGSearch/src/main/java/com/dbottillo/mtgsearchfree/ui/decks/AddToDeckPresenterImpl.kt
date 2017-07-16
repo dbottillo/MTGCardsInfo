@@ -32,12 +32,12 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: DecksIn
 
     override fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int) {
         logger.d("add $card to $deck")
-        interactor.addCard(deck, card, quantity)
+        interactor.addCard(deck, card, quantity).subscribe()
     }
 
     override fun addCardToDeck(newDeck: String, card: MTGCard, quantity: Int) {
         logger.d("add $card to $newDeck")
-        interactor.addCard(newDeck, card, quantity)
+        interactor.addCard(newDeck, card, quantity).subscribe()
     }
 
     internal fun showError(e: Throwable) {
