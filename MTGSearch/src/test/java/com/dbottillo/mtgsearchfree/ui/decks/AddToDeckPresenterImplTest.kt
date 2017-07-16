@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.decks
 
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -40,6 +41,8 @@ class AddToDeckPresenterImplTest {
     lateinit var deckCollection: DeckCollection
     @Mock
     lateinit var mtgException: MTGException
+    @Mock
+    lateinit var observableDeckCollection: Observable<DeckCollection>
 
     @Before
     fun setUp() {
@@ -84,21 +87,23 @@ class AddToDeckPresenterImplTest {
 
     @Test
     fun `add card to existing deck should call interactor`() {
-        Mockito.`when`(interactor.addCard(deck, card, 5)).thenReturn(Observable.just(deckCollection))
+        Mockito.`when`(interactor.addCard(deck, card, 5)).thenReturn(observableDeckCollection)
 
         underTest.addCardToDeck(deck, card, 5)
 
         verify(interactor).addCard(deck, card, 5)
+        verify(observableDeckCollection).subscribe()
         verifyNoMoreInteractions(view, interactor)
     }
 
     @Test
     fun `add card to new deck should call interactor`() {
-        Mockito.`when`(interactor.addCard("new deck", card, 5)).thenReturn(Observable.just(deckCollection))
+        Mockito.`when`(interactor.addCard("new deck", card, 5)).thenReturn(observableDeckCollection)
 
         underTest.addCardToDeck("new deck", card, 5)
 
         verify(interactor).addCard("new deck", card, 5)
+        verify(observableDeckCollection).subscribe()
         verifyNoMoreInteractions(view, interactor)
     }
 

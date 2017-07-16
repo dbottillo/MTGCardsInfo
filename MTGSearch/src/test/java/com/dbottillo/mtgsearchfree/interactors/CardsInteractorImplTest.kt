@@ -91,14 +91,8 @@ class CardsInteractorImplTest {
 
     @Test
     fun `save card as favourites should call storage and return observable`() {
-        val idFavs = intArrayOf(1, 2, 3)
-        `when`(cardsStorage.saveAsFavourite(card)).thenReturn(idFavs)
-        val testSubscriber = TestObserver<IntArray>()
+        underTest.saveAsFavourite(card)
 
-        underTest.saveAsFavourite(card).subscribe(testSubscriber)
-
-        testSubscriber.assertNoErrors()
-        testSubscriber.assertValue(idFavs)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verify(cardsStorage).saveAsFavourite(card)
@@ -107,15 +101,8 @@ class CardsInteractorImplTest {
 
     @Test
     fun `remove card as favourites should call storage and return observable`() {
-        val card = mock(MTGCard::class.java)
-        val idFavs = intArrayOf(3, 4, 5)
-        `when`(cardsStorage.removeFromFavourite(card)).thenReturn(idFavs)
-        val testSubscriber = TestObserver<IntArray>()
+        underTest.removeFromFavourite(card)
 
-        underTest.removeFromFavourite(card).subscribe(testSubscriber)
-
-        testSubscriber.assertNoErrors()
-        testSubscriber.assertValue(idFavs)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verify(cardsStorage).removeFromFavourite(card)
