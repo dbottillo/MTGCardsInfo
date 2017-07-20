@@ -7,8 +7,6 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-import com.dbottillo.mtgsearchfree.view.views.SlidingUpPanelLayout;
-
 public final class AnimationUtil {
 
     private AnimationUtil() {
@@ -16,22 +14,6 @@ public final class AnimationUtil {
     }
 
     private static final int DEFAULT_DURATION = 200;
-
-    public static void animateSlidingPanelHeight(final SlidingUpPanelLayout slidingPaneLayout, int target) {
-        if (slidingPaneLayout.getPanelHeight() == target) {
-            return;
-        }
-        ValueAnimator anim = ValueAnimator.ofInt(slidingPaneLayout.getPanelHeight(), target);
-        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                int val = (Integer) valueAnimator.getAnimatedValue();
-                slidingPaneLayout.setPanelHeight(val);
-            }
-        });
-        anim.setDuration(DEFAULT_DURATION);
-        anim.start();
-    }
 
     public static ValueAnimator animateHeight(final View view, int target) {
         if (view.getHeight() == target) {
@@ -126,7 +108,7 @@ public final class AnimationUtil {
         }
 
         public final int getInterpolation(final float input) {
-            return (int)argbEvaluator.evaluate(input, mStartValue, mEndValue);
+            return (int) argbEvaluator.evaluate(input, mStartValue, mEndValue);
         }
     }
 

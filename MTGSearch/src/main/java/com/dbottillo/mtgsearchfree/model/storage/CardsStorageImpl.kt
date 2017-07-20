@@ -1,12 +1,9 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.*
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
-import java.util.*
 
 open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
                             private val favouritesDataSource: FavouritesDataSource,

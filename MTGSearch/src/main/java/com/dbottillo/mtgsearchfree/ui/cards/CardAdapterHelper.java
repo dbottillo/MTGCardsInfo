@@ -8,9 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener;
-import com.dbottillo.mtgsearchfree.view.helpers.FilterHelper;
 
 public final class CardAdapterHelper {
 
@@ -26,11 +25,11 @@ public final class CardAdapterHelper {
         holder.getName().setText(context.getString(R.string.row_card_name, (deck ? card.getQuantity() + " " : ""), card.getName()));
 
         int rarityColor = R.color.common;
-        if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)) {
+        if (card.getRarity().equalsIgnoreCase(CardFilter.FILTER_UNCOMMON)) {
             rarityColor = R.color.uncommon;
-        } else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)) {
+        } else if (card.getRarity().equalsIgnoreCase(CardFilter.FILTER_RARE)) {
             rarityColor = R.color.rare;
-        } else if (card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)) {
+        } else if (card.getRarity().equalsIgnoreCase(CardFilter.FILTER_MYHTIC)) {
             rarityColor = R.color.mythic;
         }
         holder.getRarity().setTextColor(context.getResources().getColor(rarityColor));

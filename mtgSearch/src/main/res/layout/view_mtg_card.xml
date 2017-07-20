@@ -60,7 +60,7 @@
                         android:text="@string/image_retry" />
                 </LinearLayout>
 
-                <com.dbottillo.mtgsearchfree.view.views.MTGLoader
+                <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
                     android:id="@+id/image_card_loader"
                     android:layout_width="100dp"
                     android:layout_height="100dp"

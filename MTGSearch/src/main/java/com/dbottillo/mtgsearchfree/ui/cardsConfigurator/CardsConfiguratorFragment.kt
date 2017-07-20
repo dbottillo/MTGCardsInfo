@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.view.views.FilterPickerView
+import com.dbottillo.mtgsearchfree.ui.views.FilterPickerView
 import javax.inject.Inject
 
 class CardsConfiguratorFragment(val showFilter: Boolean = true,

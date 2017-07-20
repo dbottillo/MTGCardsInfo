@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.views;
+package com.dbottillo.mtgsearchfree.ui.views;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -31,7 +31,6 @@ import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
-import com.dbottillo.mtgsearchfree.view.CardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

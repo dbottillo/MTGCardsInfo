@@ -3,22 +3,18 @@ package com.dbottillo.mtgsearchfree.view.views
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.CardView
-import com.dbottillo.mtgsearchfree.view.views.CardPresenter
-import com.dbottillo.mtgsearchfree.view.views.CardPresenterImpl
+import com.dbottillo.mtgsearchfree.ui.views.CardView
+import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
+import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
 
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
 
 import io.reactivex.Observable
 
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
 import org.mockito.Mockito.*
 
 class CardPresenterImplTest {

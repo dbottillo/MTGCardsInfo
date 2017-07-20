@@ -1,7 +1,6 @@
-package com.dbottillo.mtgsearchfree.view.views
+package com.dbottillo.mtgsearchfree.ui.views
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.view.CardView
 
 interface CardPresenter {
     fun loadOtherSideCard(card: MTGCard)

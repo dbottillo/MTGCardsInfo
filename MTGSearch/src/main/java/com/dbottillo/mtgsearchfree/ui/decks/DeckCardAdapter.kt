@@ -9,7 +9,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterHelper
 import com.dbottillo.mtgsearchfree.ui.cards.ListCardViewHolder
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 
 class DeckCardAdapter(private val mContext: Context,
                       private val cards: MutableList<MTGCard>,

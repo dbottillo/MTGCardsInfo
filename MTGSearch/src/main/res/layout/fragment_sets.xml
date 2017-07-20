@@ -96,7 +96,7 @@
 
     </LinearLayout>
 
-    <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+    <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

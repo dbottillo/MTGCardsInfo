@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
-import android.content.Context
 import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.widget.AppCompatTextView
@@ -20,8 +18,7 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
-import com.dbottillo.mtgsearchfree.view.views.MTGCardView
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 

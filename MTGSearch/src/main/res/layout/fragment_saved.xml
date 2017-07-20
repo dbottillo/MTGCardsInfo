@@ -26,7 +26,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+    <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -77,7 +77,7 @@
         </FrameLayout>
     </LinearLayout>
 
-    <com.dbottillo.mtgsearchfree.view.views.MTGLoader
+    <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
         android:layout_centerInParent="true"
         android:layout_width="100dp"

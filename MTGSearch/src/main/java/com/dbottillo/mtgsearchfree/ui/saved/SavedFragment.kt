@@ -17,11 +17,11 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
-import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
-import com.dbottillo.mtgsearchfree.view.views.MTGLoader
+import com.dbottillo.mtgsearchfree.ui.DialogHelper
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
+import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import javax.inject.Inject
 
 class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {

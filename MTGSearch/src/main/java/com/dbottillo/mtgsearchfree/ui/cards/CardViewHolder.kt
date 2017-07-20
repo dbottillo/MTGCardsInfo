@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.view.views.MTGLoader
+import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 
 abstract class CardViewHolder(row: View) : RecyclerView.ViewHolder(row) {
     var parent: View = row.findViewById(R.id.card_parent)

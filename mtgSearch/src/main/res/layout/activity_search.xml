@@ -13,7 +13,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"/>
 
-    <com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+    <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards_list_view"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         android:background="@color/color_primary"
         android:layout_below="@+id/toolbar">
 
-        <com.dbottillo.mtgsearchfree.view.views.MTGSearchView
+        <com.dbottillo.mtgsearchfree.ui.search.MTGSearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

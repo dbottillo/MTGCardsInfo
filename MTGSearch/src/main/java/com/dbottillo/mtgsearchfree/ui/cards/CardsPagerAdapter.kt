@@ -7,7 +7,7 @@ import android.view.ViewGroup
 
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.view.views.MTGCardView
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 
 class CardsPagerAdapter(private val context: Context,
                         private val showImage: Boolean,
