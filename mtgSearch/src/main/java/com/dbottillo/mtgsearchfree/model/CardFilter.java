@@ -22,6 +22,11 @@ public class CardFilter implements Parcelable {
 
     public boolean sortWUBGR = true;
 
+    public static final String FILTER_COMMON = "Common";
+    public static final String FILTER_UNCOMMON = "Uncommon";
+    public static final String FILTER_RARE = "Rare";
+    public static final String FILTER_MYHTIC = "Mythic Rare";
+
     public enum TYPE {
         WHITE,
         BLUE,

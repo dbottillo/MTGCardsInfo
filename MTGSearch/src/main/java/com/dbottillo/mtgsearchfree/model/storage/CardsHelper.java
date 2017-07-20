@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.helpers;
+package com.dbottillo.mtgsearchfree.model.storage;
 
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.model.CardsBucket;
@@ -77,19 +77,19 @@ public class CardsHelper {
                 if (card.isEldrazi() && cardFilter.eldrazi) {
                     toAdd = true;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_COMMON)
+                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_COMMON)
                         && !cardFilter.common) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_UNCOMMON)
+                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_UNCOMMON)
                         && !cardFilter.uncommon) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_RARE)
+                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_RARE)
                         && !cardFilter.rare) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(FilterHelper.FILTER_MYHTIC)
+                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_MYHTIC)
                         && !cardFilter.mythic) {
                     toAdd = false;
                 }

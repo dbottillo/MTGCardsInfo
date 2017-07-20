@@ -18,10 +18,10 @@ import com.dbottillo.mtgsearchfree.util.*
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.view.helpers.DialogHelper
-import com.dbottillo.mtgsearchfree.view.views.MTGCardsView
+import com.dbottillo.mtgsearchfree.ui.DialogHelper
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import javax.inject.Inject
 
 class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
@@ -104,7 +104,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         }
     }
 
-    override fun onCardSelected(card: MTGCard?, position: Int, view: View?) {
+    override fun onCardSelected(card: MTGCard, position: Int, view: View) {
         TrackingManager.trackOpenCard(position)
         startActivity(CardsActivity.newInstance(context, presenter.set(), position, card))
     }

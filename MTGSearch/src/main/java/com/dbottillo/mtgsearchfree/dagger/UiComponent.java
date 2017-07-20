@@ -15,7 +15,7 @@ import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckActivity;
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
-import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardView;
 
 import org.jetbrains.annotations.NotNull;
 

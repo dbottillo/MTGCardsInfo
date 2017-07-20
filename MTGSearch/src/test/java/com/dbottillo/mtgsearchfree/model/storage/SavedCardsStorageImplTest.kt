@@ -4,7 +4,6 @@ import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.*
 import org.junit.Before

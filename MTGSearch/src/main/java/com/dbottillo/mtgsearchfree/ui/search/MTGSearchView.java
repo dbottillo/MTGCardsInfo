@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.views;
+package com.dbottillo.mtgsearchfree.ui.search;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -15,7 +15,6 @@ import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.view.adapters.SearchSetAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

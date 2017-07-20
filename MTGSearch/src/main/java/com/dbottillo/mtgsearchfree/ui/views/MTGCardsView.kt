@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.views
+package com.dbottillo.mtgsearchfree.ui.views
 
 import android.content.Context
 import android.graphics.Rect
@@ -19,10 +19,7 @@ import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.UIUtil
 import com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
-
-import butterknife.BindView
-import butterknife.ButterKnife
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 
 class MTGCardsView : RelativeLayout {
 

@@ -26,7 +26,7 @@ import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.view.adapters.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 import javax.inject.Inject

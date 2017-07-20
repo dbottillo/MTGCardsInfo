@@ -1,9 +1,8 @@
-package com.dbottillo.mtgsearchfree.view.views
+package com.dbottillo.mtgsearchfree.ui.views
 
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.CardView
 
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.views;
+package com.dbottillo.mtgsearchfree.ui.views;
 
 import android.content.Context;
 import android.util.AttributeSet;

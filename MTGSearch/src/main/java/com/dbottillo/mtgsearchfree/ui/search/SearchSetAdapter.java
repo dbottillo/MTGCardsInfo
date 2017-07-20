@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.view.adapters;
+package com.dbottillo.mtgsearchfree.ui.search;
 
 import android.content.Context;
 import android.view.LayoutInflater;

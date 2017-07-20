@@ -9,7 +9,7 @@
     app:behavior_peekHeight="400dp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <com.dbottillo.mtgsearchfree.view.views.FilterPickerView
+    <com.dbottillo.mtgsearchfree.ui.views.FilterPickerView
         android:id="@+id/filter_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

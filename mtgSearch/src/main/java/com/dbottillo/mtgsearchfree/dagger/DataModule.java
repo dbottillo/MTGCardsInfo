@@ -25,7 +25,7 @@ import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper;
+import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.google.gson.Gson;
 
 import javax.inject.Named;

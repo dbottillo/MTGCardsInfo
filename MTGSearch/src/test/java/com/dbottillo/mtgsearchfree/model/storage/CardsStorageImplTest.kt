@@ -1,11 +1,9 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.*
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.view.helpers.CardsHelper
 import junit.framework.Assert.*
 
 import org.junit.Before
@@ -14,15 +12,12 @@ import org.junit.Test
 import org.mockito.Matchers
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
 
 import java.util.Arrays
 
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
 import org.mockito.ArgumentMatchers
-import org.mockito.Matchers.anyBoolean
-import org.mockito.Mockito
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions

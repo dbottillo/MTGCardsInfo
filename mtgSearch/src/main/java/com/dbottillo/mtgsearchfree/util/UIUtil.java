@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.dbottillo.mtgsearchfree.view.views.MTGCardView;
+import com.dbottillo.mtgsearchfree.ui.views.MTGCardView;
 
 public final class UIUtil {
 
