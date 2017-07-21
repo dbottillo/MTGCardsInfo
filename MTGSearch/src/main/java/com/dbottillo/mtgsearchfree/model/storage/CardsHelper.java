@@ -16,30 +16,6 @@ import javax.inject.Inject;
 
 public class CardsHelper {
 
-    private CardsPreferences cardsPreferences;
-
-    public CardsHelper(){
-
-    }
-
-    @Inject
-    public CardsHelper(CardsPreferences cardsPreferences) {
-        this.cardsPreferences = cardsPreferences;
-    }
-
-    public CardsBucket filterCards(CardFilter cardFilter, CardsBucket bucket) {
-        LOG.d();
-        return filterCards(cardFilter, null, bucket);
-    }
-
-    public CardsBucket filterCards(CardFilter cardFilter, SearchParams searchParams, CardsBucket bucket) {
-        LOG.d();
-        CardsBucket filteredBucket = new CardsBucket();
-        filteredBucket.setKey(bucket.getKey());
-        filteredBucket.setCards(filterCards(cardFilter, searchParams, bucket.getCards()));
-        return filteredBucket;
-    }
-
     public List<MTGCard> filterCards(CardFilter cardFilter, List<MTGCard> cards) {
         LOG.d();
         return filterCards(cardFilter, null, cards);
@@ -77,20 +53,16 @@ public class CardsHelper {
                 if (card.isEldrazi() && cardFilter.eldrazi) {
                     toAdd = true;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_COMMON)
-                        && !cardFilter.common) {
+                if (toAdd && card.isCommon() && !cardFilter.common) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_UNCOMMON)
-                        && !cardFilter.uncommon) {
+                if (toAdd && card.isUncommon() && !cardFilter.uncommon) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_RARE)
-                        && !cardFilter.rare) {
+                if (toAdd && card.isRare() && !cardFilter.rare) {
                     toAdd = false;
                 }
-                if (toAdd && card.getRarity().equalsIgnoreCase(CardFilter.FILTER_MYHTIC)
-                        && !cardFilter.mythic) {
+                if (toAdd && card.isMythicRare() && !cardFilter.mythic) {
                     toAdd = false;
                 }
             } else {
