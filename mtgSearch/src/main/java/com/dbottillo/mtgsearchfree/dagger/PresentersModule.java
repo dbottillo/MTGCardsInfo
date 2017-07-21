@@ -62,11 +62,6 @@ public class PresentersModule {
     }
 
     @Provides
-    CardsHelper provideCardsHelper(CardsPreferences cardsPreferences) {
-        return new CardsHelper(cardsPreferences);
-    }
-
-    @Provides
     CardPresenter provideCardPresenter(CardsInteractor interactor, Logger logger) {
         return new CardPresenterImpl(interactor, logger);
     }

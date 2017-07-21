@@ -126,4 +126,11 @@ public class DataModule {
     Gson providesGson(){
         return new Gson();
     }
+
+
+    @Provides
+    @Singleton
+    CardsHelper provideCardsHelper() {
+        return new CardsHelper();
+    }
 }

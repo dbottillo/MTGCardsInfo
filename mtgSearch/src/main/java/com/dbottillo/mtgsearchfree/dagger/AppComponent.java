@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
+import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
@@ -41,6 +42,8 @@ public interface AppComponent {
     Logger getLogger();
 
     DialogUtil getDialogUtil();
+
+    CardsHelper getCardsHelper();
 
     void inject(MTGApp app);
 

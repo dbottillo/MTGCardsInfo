@@ -110,7 +110,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         mtgCardsView.setListOn()
     }
 
-    override fun onCardSelected(card: MTGCard, position: Int, view: View?) {
+    override fun onCardSelected(card: MTGCard, position: Int, view: View) {
         TrackingManager.trackOpenCard(position)
         startActivity(CardsActivity.newFavInstance(context, position))
     }
