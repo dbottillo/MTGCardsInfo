@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -22,6 +23,7 @@ import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
+import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import javax.inject.Inject
 
 class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
@@ -30,7 +32,8 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     lateinit var presenter: SetsFragmentPresenter
 
     lateinit var mtgCardsView: MTGCardsView
-    lateinit var tooltip: LinearLayout
+    lateinit var tooltip: ViewGroup
+    lateinit var loader: MTGLoader
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -46,6 +49,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
         presenter.init(this)
 
+        loader = view.findViewById<MTGLoader>(R.id.loader)
         view.findViewById<View>(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         view.findViewById<View>(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
         view.findViewById<View>(R.id.main_tooltip_close).setOnClickListener {
@@ -53,12 +57,11 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
             AnimationUtil.animateHeight(tooltip, 0)
         }
 
-        tooltip = view.findViewById<LinearLayout>(R.id.main_tooltip)
+        tooltip = view.findViewById<ViewGroup>(R.id.main_tooltip)
         mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
         mtgCardsView.setEmptyString(R.string.empty_cards)
 
         if (generalData.isTooltipMainToShow) {
-            UIUtil.setHeight(tooltip, resources.getDimensionPixelSize(R.dimen.main_tooltip_height))
             MaterialWrapper.setElevation(tooltip, resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat())
         } else {
             UIUtil.setHeight(tooltip, 0)
@@ -95,7 +98,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     }
 
     override fun onCardsSettingSelected() {
-        val cardsConfigurator= CardsConfiguratorFragment()
+        val cardsConfigurator = CardsConfiguratorFragment()
         cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
         cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
             override fun onConfigurationChange() {
@@ -134,4 +137,11 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         startActivity(intent)
     }
 
+    override fun hideLoading() {
+        loader.visibility = View.GONE
+    }
+
+    override fun showLoading() {
+        loader.visibility = View.VISIBLE
+    }
 }

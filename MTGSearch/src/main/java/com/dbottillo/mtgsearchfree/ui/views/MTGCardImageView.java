@@ -3,8 +3,6 @@ package com.dbottillo.mtgsearchfree.ui.views;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.dbottillo.mtgsearchfree.ui.views.MTGCardView;
-
 public class MTGCardImageView extends android.support.v7.widget.AppCompatImageView {
 
     public MTGCardImageView(Context context) {

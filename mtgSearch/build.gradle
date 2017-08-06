@@ -28,8 +28,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 65
-        versionName "2.8.4"
+        versionCode 66
+        versionName "3.0.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -181,7 +181,8 @@ task pmd(type: Pmd) {
 }
 
 task quality
-quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
+quality.dependsOn 'checkstyle', 'pmd', 'findbugs'
+//quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease
 testPreRelease.dependsOn 'testReleaseUnitTest', 'connectedAndroidTest'

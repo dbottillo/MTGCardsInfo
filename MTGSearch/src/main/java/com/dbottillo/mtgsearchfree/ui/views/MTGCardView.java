@@ -42,9 +42,6 @@ import butterknife.OnClick;
 
 public class MTGCardView extends RelativeLayout implements CardView {
 
-    @BindView(R.id.fragment_card_container)
-    View mainContainer;
-
     @BindView(R.id.detail_card)
     TextView detailCard;
 

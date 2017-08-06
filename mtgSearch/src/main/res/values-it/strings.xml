@@ -97,9 +97,11 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - NUOVO: Hour of Devastation
+        - La versione 3.0.0 porta una nuova interfaccia
     </string>
     <string name="release_note_text_full">
+        <b>Version 3.0.0:</b> \n
+        - Nuova interfaccia\n\n
         <b>Version 2.8.4:</b> \n
         - NUOVO: Hour of Devastation\n\n
         <b>Version 2.8.3:</b> \n
@@ -247,5 +249,9 @@
     <string name="cd_close">Chiudi</string>
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
     <string name="cd_flip_card">Gira carta</string>
+    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
+    <string name="tooltip_line_2">Per cambiare Set</string>
+    <string name="tooltip_line_3">Per cambiare filtri</string>
+    <string name="ok_got_it">Ok, capito!</string>
 
 </resources>

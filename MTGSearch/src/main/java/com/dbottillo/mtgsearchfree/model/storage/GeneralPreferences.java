@@ -10,7 +10,7 @@ public class GeneralPreferences implements GeneralData {
 
     static final String DEBUG = "debug";
     static final String CARDS_SHOW_TYPE = "cardShowType";
-    static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow";
+    static final String TOOLTIP_MAIN_SHOWN = "tooltipMainShow2";
     static final String CARD_MIGRATION_REQUIRED = "cardMigrationRequired";
 
     private SharedPreferences sharedPreferences;

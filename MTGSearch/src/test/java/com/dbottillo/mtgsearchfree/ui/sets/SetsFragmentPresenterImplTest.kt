@@ -63,6 +63,8 @@ class SetsFragmentPresenterImplTest {
         underTest.loadSets()
 
         verify(setsInteractor).load()
+        verify(view).showLoading()
+        verify(view).hideLoading()
         verify(cardsInteractor).loadSet(set)
         verify(view).showSet(set, cards)
         verify(cardsPreferences).setPosition
@@ -92,6 +94,8 @@ class SetsFragmentPresenterImplTest {
 
         verify(cardsInteractor).loadSet(set)
         verify(view).showSet(set, cards)
+        verify(view).showLoading()
+        verify(view).hideLoading()
         verifyNoMoreInteractions(setsInteractor, cardsInteractor, cardsPreferences, view, generalData)
     }
 

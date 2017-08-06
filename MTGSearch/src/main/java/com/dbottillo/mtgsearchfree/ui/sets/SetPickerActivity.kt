@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.ImageView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
@@ -16,6 +17,10 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
 
     val list: RecyclerView by lazy {
         findViewById<RecyclerView>(R.id.set_list)
+    }
+
+    val close: ImageView by lazy {
+        findViewById<ImageView>(R.id.acton_close)
     }
 
     var adapter: SetsAdapter? = null
@@ -33,6 +38,8 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
         list.setHasFixedSize(true)
         list.layoutManager = LinearLayoutManager(this)
         list.addItemDecoration(Divider(ContextCompat.getDrawable(this, R.drawable.sets_divider)))
+
+        close.setOnClickListener { finish() }
 
         presenter.init(this)
     }
