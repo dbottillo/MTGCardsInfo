@@ -101,6 +101,7 @@ public class FilterPickerView extends LinearLayout {
         toggleUncommon.setChecked(filter.uncommon);
         toggleRare.setChecked(filter.rare);
         toggleMythic.setChecked(filter.mythic);
+        toggleOrder.setChecked(filter.sortWUBGR);
     }
 
     @OnClick({R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_red,

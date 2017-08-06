@@ -9,4 +9,6 @@ interface CardsActivityView : BaseCardsView {
     fun updateTitle(resource: Int)
     fun updateAdapter(cards: CardsCollection, showImage: Boolean, startPosition: Int)
     fun showError(errorMessage: String)
+    fun showLoading()
+    fun hideLoading()
 }

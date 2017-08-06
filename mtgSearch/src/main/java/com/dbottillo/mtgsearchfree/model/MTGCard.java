@@ -392,20 +392,20 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public void setPrintings(List<String> printings) {
         this.printings = printings;
     }
-    
-    public boolean isCommon(){
+
+    public boolean isCommon() {
         return rarity.equalsIgnoreCase(CardFilter.FILTER_COMMON);
     }
 
-    public boolean isUncommon(){
+    public boolean isUncommon() {
         return rarity.equalsIgnoreCase(CardFilter.FILTER_UNCOMMON);
     }
 
-    public boolean isRare(){
+    public boolean isRare() {
         return rarity.equalsIgnoreCase(CardFilter.FILTER_RARE);
     }
 
-    public boolean isMythicRare(){
+    public boolean isMythicRare() {
         return rarity.equalsIgnoreCase(CardFilter.FILTER_MYHTIC);
     }
 

@@ -35,4 +35,12 @@
         app:borderWidth="0dp"
         app:elevation="8dp"
         app:pressedTranslationZ="8dp"/>
+
+    <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+        android:id="@+id/loader"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
 </RelativeLayout>

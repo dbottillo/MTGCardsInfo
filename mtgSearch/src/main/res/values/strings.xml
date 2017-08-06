@@ -113,9 +113,11 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Hour of Devastation
+        - NEW: Version 3.0.0 with a revamped UI
     </string>
     <string name="release_note_text_full">
+        <b>Version 3.0.0:</b> \n
+        - Revamped UI\n\n
         <b>Version 2.8.4:</b> \n
         - NEW: Hour of Devastation\n\n
         <b>Version 2.8.3:</b> \n
@@ -298,5 +300,9 @@
     <string name="cd_close">Close</string>
     <string name="cd_tooltip_arrow">Close tooltip</string>
     <string name="cd_flip_card">Other side card</string>
+    <string name="tooltip_line_1">The UI has changed!\nBut everything still works the same!</string>
+    <string name="tooltip_line_2">To change set</string>
+    <string name="tooltip_line_3">To change filters</string>
+    <string name="ok_got_it">Ok, got it!</string>
 
 </resources>

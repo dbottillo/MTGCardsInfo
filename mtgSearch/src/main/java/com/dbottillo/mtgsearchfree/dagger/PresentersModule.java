@@ -31,7 +31,6 @@ import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.Logger;
-import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter;
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl;
 

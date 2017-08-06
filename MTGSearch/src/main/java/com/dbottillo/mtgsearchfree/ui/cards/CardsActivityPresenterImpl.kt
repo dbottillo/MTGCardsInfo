@@ -56,6 +56,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
             return
         }
 
+        view.showLoading()
         cardsInteractor.loadIdFav().subscribe({
             favs.addAll(it.toList())
             if (set != null) {
@@ -68,6 +69,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
                 loadData(savedCardsInteractor.load())
             }
         }, {
+            view.hideLoading()
             showError(it)
         })
     }
@@ -75,9 +77,11 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     internal fun loadData(obs: Observable<CardsCollection>) {
         logger.d()
         obs.subscribe({
+            view.hideLoading()
             currentData = it
             updateView()
         }, {
+            view.hideLoading()
             showError(it)
         })
     }
@@ -85,9 +89,11 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     internal fun loadDeck(obs: Observable<DeckCollection>) {
         logger.d()
         obs.subscribe({
+            view.hideLoading()
             currentData = it.toCardsCollection()
             updateView()
         }, {
+            view.hideLoading()
             showError(it)
         })
     }

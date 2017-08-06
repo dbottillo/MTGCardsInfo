@@ -13,11 +13,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+
 import com.dbottillo.mtgsearchfree.R;
+import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
-import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 
 import java.lang.ref.WeakReference;
 
@@ -56,14 +57,14 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     private int statusBarColor;
 
     public ToolbarRevealScrollHelper(BasicFragment baseFragment, int scrollviewID,
-                              int backgroundColor, int heightToolbar,
-                              boolean statusBarIncluded) {
+                                     int backgroundColor, int heightToolbar,
+                                     boolean statusBarIncluded) {
         this(baseFragment, scrollviewID, backgroundColor, heightToolbar, statusBarIncluded, R.color.color_primary, R.color.color_primary);
     }
 
     public ToolbarRevealScrollHelper(BasicFragment baseFragment, int scrollviewID,
-                              int backgroundColor, int heightToolbar,
-                              boolean statusBarIncluded, int toolbarColor, int statusBarColor) {
+                                     int backgroundColor, int heightToolbar,
+                                     boolean statusBarIncluded, int toolbarColor, int statusBarColor) {
         this.fragment = new WeakReference<>(baseFragment);
         this.scrollviewID = scrollviewID;
         this.backgroundColor = backgroundColor;
@@ -83,12 +84,13 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     }
 
     public void onViewCreated(View view, @Nullable final Bundle savedInstanceState) {
-        if (fragment.get() != null && context.get() != null) {
+        BasicFragment instance = fragment.get();
+        if (instance != null) {
 
-            mViewGroup = (ViewGroup) view.findViewById(scrollviewID);
-            fragment.get().setupToolbar(view);
-            maximumScroll = heightToolbar + UIUtil.dpToPx(context.get(), OFFSET_MAXIMUM_SCROLL);
-            setupTitleAnimation(fragment.get(), context.get());
+            mViewGroup = view.findViewById(scrollviewID);
+            instance.setupToolbar(view);
+            maximumScroll = heightToolbar + UIUtil.dpToPx(view.getContext(), OFFSET_MAXIMUM_SCROLL);
+            setupTitleAnimation(instance, view.getContext());
 
             if (mViewGroup instanceof ScrollView) {
                 final ViewGroup mScrollViewContentLayout = (ViewGroup) mViewGroup.getChildAt(0);
@@ -129,10 +131,11 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     }
 
     public void onPause() {
-        if (fragment.get() != null && context.get() != null) {
-            MaterialWrapper.setDarkStatusBar(fragment.get().getActivity().getWindow());
+        BasicFragment instance = fragment.get();
+        if (instance != null && context.get() != null) {
+            MaterialWrapper.setDarkStatusBar(instance.getActivity().getWindow());
             if (statusBarIncluded) {
-                MaterialWrapper.setStatusBarColor(fragment.get().getActivity(), ContextCompat.getColor(context.get(), R.color.color_primary_dark));
+                MaterialWrapper.setStatusBarColor(instance.getActivity(), ContextCompat.getColor(context.get(), R.color.color_primary_dark));
             }
         }
         if (mViewGroup != null) {
@@ -172,34 +175,35 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     }
 
     private void setChildrenToolbarColor(ViewGroup viewGroup, int color) {
-        for (int i=0; i<viewGroup.getChildCount(); i++){
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
             View view = viewGroup.getChildAt(i);
-            if (view instanceof ImageView){
+            if (view instanceof ImageView) {
                 ((ImageView) view).setColorFilter(color);
-            } else if (view instanceof LinearLayout){
-                setChildrenToolbarColor((LinearLayout)view, color);
+            } else if (view instanceof LinearLayout) {
+                setChildrenToolbarColor((LinearLayout) view, color);
             }
         }
     }
 
     private void refreshUI() {
-        if (fragment.get() != null) {
+        BasicFragment instance = fragment.get();
+        if (instance != null) {
             float interval = calculateInterval();
-            fragment.get().toolbarTitle.setAlpha(alphaInterpolator.getInterpolation(interval));
-            MaterialWrapper.setElevation(fragment.get().toolbar, elevationInterpolator.getInterpolation(interval));
-            fragment.get().toolbarTitle.setTranslationY(translationTitle.getInterpolation(interval));
-            fragment.get().toolbar.setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval));
-            setChildrenToolbarColor(fragment.get().toolbar, arrowToolbarEvaluator.getInterpolation(interval));
-            if (fragment.get().toolbar.getNavigationIcon() != null) {
-                MaterialWrapper.setTint(fragment.get().toolbar.getNavigationIcon(), arrowToolbarEvaluator.getInterpolation(interval));
+            instance.toolbarTitle.setAlpha(alphaInterpolator.getInterpolation(interval));
+            MaterialWrapper.setElevation(instance.toolbar, elevationInterpolator.getInterpolation(interval));
+            instance.toolbarTitle.setTranslationY(translationTitle.getInterpolation(interval));
+            instance.toolbar.setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval));
+            setChildrenToolbarColor(instance.toolbar, arrowToolbarEvaluator.getInterpolation(interval));
+            if (instance.toolbar.getNavigationIcon() != null) {
+                MaterialWrapper.setTint(instance.toolbar.getNavigationIcon(), arrowToolbarEvaluator.getInterpolation(interval));
             }
-            fragment.get().toolbar.getOverflowIcon().setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN);
+            instance.toolbar.getOverflowIcon().setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN);
             if (statusBarIncluded) {
-                MaterialWrapper.setStatusBarColor(fragment.get().getActivity(), statusBarColorEvaluator.getInterpolation(interval));
+                MaterialWrapper.setStatusBarColor(instance.getActivity(), statusBarColorEvaluator.getInterpolation(interval));
                 if (interval <= THRESHOLD_STATUS_BAR_COLOR) {
-                    MaterialWrapper.setLightStatusBar(fragment.get().getActivity().getWindow());
+                    MaterialWrapper.setLightStatusBar(instance.getActivity().getWindow());
                 } else {
-                    MaterialWrapper.setDarkStatusBar(fragment.get().getActivity().getWindow());
+                    MaterialWrapper.setDarkStatusBar(instance.getActivity().getWindow());
                 }
             }
         }
@@ -243,8 +247,9 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     }
 
     public void updateTitle(@org.jetbrains.annotations.Nullable String name) {
-        if (fragment.get() != null) {
-            fragment.get().setTitle(name);
+        BasicFragment instance = fragment.get();
+        if (instance != null) {
+            instance.setTitle(name);
         }
     }
 }

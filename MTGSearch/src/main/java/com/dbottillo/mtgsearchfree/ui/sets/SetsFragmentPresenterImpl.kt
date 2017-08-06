@@ -30,16 +30,25 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
             if (newPos != currentPos) {
                 currentPos = newPos
                 set = it[currentPos]
-                reloadSet()
+                loadSet()
             }
         }
     }
 
     override fun reloadSet() {
         logger.d()
+        loadSet()
+    }
+
+    internal fun loadSet(){
+        view.showLoading()
         set?.let{
             cardsInteractor.loadSet(it).subscribe {
-                data -> view.showSet(it, data)
+                data ->
+                run {
+                    view.showSet(it, data)
+                    view.hideLoading()
+                }
             }
         }
     }

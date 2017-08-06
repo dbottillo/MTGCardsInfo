@@ -22,7 +22,7 @@ import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
-class CardsAdapter(val cards: List<MTGCard>,
+class CardsAdapter(var cards: List<MTGCard>,
                    val listener: OnCardListener,
                    val cardFilter: CardFilter?,
                    val configuration: CardAdapterConfiguration): RecyclerView.Adapter<RecyclerView.ViewHolder>() {

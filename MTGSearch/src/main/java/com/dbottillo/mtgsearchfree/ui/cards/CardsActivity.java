@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
+import com.dbottillo.mtgsearchfree.ui.views.MTGLoader;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -78,6 +79,8 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
     TabLayout tabLayout;
     @BindView(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
+    @BindView(R.id.loader)
+    MTGLoader loader;
 
     private CardsPagerAdapter adapter;
 
@@ -236,5 +239,15 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         if (imageMenuItem != null){
             imageMenuItem.setChecked(checked);
         }
+    }
+
+    @Override
+    public void showLoading() {
+        loader.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        loader.setVisibility(View.GONE);
     }
 }
