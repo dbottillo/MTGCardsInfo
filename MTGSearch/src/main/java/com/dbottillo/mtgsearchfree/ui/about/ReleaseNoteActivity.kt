@@ -12,7 +12,7 @@ class ReleaseNoteActivity : BasicActivity(){
 
         setContentView(R.layout.activity_release_note)
 
-        (findViewById(R.id.release_note) as TextView).text = getText(R.string.release_note_text_full)
+        findViewById<TextView>(R.id.release_note).setText(R.string.release_note_text_full)
 
     }
 

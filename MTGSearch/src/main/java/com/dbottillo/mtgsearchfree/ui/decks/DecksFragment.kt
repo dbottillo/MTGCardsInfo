@@ -49,8 +49,8 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        decksList = view.findViewById(R.id.decks_list) as RecyclerView
-        view.findViewById(R.id.action_import).setOnClickListener {
+        decksList = view.findViewById<RecyclerView>(R.id.decks_list)
+        view.findViewById<View>(R.id.action_import).setOnClickListener {
             importDeck()
         }
 

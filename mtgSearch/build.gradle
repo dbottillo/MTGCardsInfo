@@ -21,13 +21,13 @@ kapt {
 }
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion 19
+        targetSdkVersion 26
         versionCode 65
         versionName "2.8.4"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
@@ -125,6 +125,7 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.easytesting:fest-assert-core:$fest_version"
+
     androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     androidTestImplementation "com.android.support.test:runner:$support_runner_version"
     androidTestImplementation "com.google.dexmaker:dexmaker-mockito:$dexmaker_mockito_version"

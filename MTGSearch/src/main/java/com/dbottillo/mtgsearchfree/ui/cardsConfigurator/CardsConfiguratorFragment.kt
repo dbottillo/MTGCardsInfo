@@ -38,7 +38,7 @@ class CardsConfiguratorFragment(val showFilter: Boolean = true,
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        filterPickerView = view.findViewById(R.id.filter_view) as FilterPickerView
+        filterPickerView = view.findViewById<FilterPickerView>(R.id.filter_view)
         filterPickerView.setFilterPickerListener(this)
         filterPickerView.configure(showFilter, showOrder)
 

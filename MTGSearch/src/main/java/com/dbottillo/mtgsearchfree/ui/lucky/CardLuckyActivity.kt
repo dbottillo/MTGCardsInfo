@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.lucky
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -28,10 +29,10 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
         setTitle(R.string.lucky_title)
 
-        cardView = findViewById(R.id.card_view) as MTGCardView
-        titleCard = findViewById(R.id.title_card) as TextView
+        cardView = findViewById<MTGCardView>(R.id.card_view)
+        titleCard = findViewById<TextView>(R.id.title_card)
 
-        findViewById(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
+        findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
         setupToolbar()
         MaterialWrapper.setElevation(toolbar, 0f)

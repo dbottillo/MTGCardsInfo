@@ -24,7 +24,7 @@ class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener,
         }
         if (viewType == TYPE_FOOTER) {
             val footerView = LayoutInflater.from(parent.context).inflate(R.layout.decks_footer, parent, false)
-            footerView.findViewById(R.id.add_new_deck).setOnClickListener { listener.onAddDeck() }
+            footerView.findViewById<View>(R.id.add_new_deck).setOnClickListener { listener.onAddDeck() }
             return FooterViewHolder(footerView)
         }
         return DeckViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_deck, parent, false))
@@ -65,14 +65,14 @@ class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener,
     class HeaderViewHolder(val row: View) : RecyclerView.ViewHolder(row)
 
     class FooterViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
-        val emptyText : TextView = row.findViewById(R.id.empty_decks_text_view) as TextView
+        val emptyText : TextView = row.findViewById<TextView>(R.id.empty_decks_text_view)
     }
 
     class DeckViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val parent: View = row.findViewById(R.id.deck_parent)
-        val name: TextView = row.findViewById(R.id.deck_name) as TextView
-        val number: TextView = row.findViewById(R.id.deck_number) as TextView
-        val delete: ImageButton = row.findViewById(R.id.delete_deck) as ImageButton
+        val name: TextView = row.findViewById<TextView>(R.id.deck_name)
+        val number: TextView = row.findViewById<TextView>(R.id.deck_number)
+        val delete: ImageButton = row.findViewById<ImageButton>(R.id.delete_deck)
     }
 
 }

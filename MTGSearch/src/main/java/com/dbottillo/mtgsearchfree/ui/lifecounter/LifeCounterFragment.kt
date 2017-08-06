@@ -47,9 +47,9 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lifeCounterList = view.findViewById(R.id.life_counter_list) as RecyclerView
-        view.findViewById(R.id.action_reset).setOnClickListener{ reset() }
-        view.findViewById(R.id.action_dice).setOnClickListener{ launchDice() }
+        lifeCounterList = view.findViewById<RecyclerView>(R.id.life_counter_list)
+        view.findViewById<View>(R.id.action_reset).setOnClickListener{ reset() }
+        view.findViewById<View>(R.id.action_dice).setOnClickListener{ launchDice() }
 
         lifeCounterList.setHasFixedSize(true)
         lifeCounterList.layoutManager = LinearLayoutManager(view.context)

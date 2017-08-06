@@ -51,9 +51,9 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         setContentView(R.layout.activity_deck)
 
         container = findViewById(R.id.container)
-        emptyView = findViewById(R.id.empty_view) as TextView
-        progressBar = findViewById(R.id.progress) as SmoothProgressBar
-        cardList = findViewById(R.id.card_list) as RecyclerView
+        emptyView = findViewById<TextView>(R.id.empty_view)
+        progressBar = findViewById<SmoothProgressBar>(R.id.progress)
+        cardList = findViewById<RecyclerView>(R.id.card_list)
 
         setupToolbar()
 
@@ -255,7 +255,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         val layoutInflater = LayoutInflater.from(this)
         @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
-        val editText = view.findViewById(R.id.edit_text) as EditText
+        val editText = view.findViewById<EditText>(R.id.edit_text)
         editText.setText(deck.name)
         editText.setSelection(deck.name.length)
         alert.setView(view)

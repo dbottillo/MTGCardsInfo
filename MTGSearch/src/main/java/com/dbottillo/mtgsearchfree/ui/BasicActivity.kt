@@ -10,6 +10,7 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.TypedValue
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.MTGApp
@@ -59,13 +60,13 @@ abstract class BasicActivity : AppCompatActivity() {
 
     protected fun hideIme() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(findViewById(android.R.id.content).windowToken, 0)
+        imm.hideSoftInputFromWindow(findViewById<View>(android.R.id.content).windowToken, 0)
 
         currentFocus?.clearFocus()
     }
 
     protected fun setupToolbar() {
-        toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         MaterialWrapper.setElevation(toolbar, resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat())
     }

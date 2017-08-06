@@ -46,15 +46,15 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
         presenter.init(this)
 
-        view.findViewById(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
-        view.findViewById(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
-        view.findViewById(R.id.main_tooltip_close).setOnClickListener {
+        view.findViewById<View>(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
+        view.findViewById<View>(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
+        view.findViewById<View>(R.id.main_tooltip_close).setOnClickListener {
             generalData.setTooltipMainHide()
             AnimationUtil.animateHeight(tooltip, 0)
         }
 
-        tooltip = view.findViewById(R.id.main_tooltip) as LinearLayout
-        mtgCardsView = view.findViewById(R.id.cards) as MTGCardsView
+        tooltip = view.findViewById<LinearLayout>(R.id.main_tooltip)
+        mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
         mtgCardsView.setEmptyString(R.string.empty_cards)
 
         if (generalData.isTooltipMainToShow) {

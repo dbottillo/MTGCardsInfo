@@ -29,7 +29,7 @@ class DialogUtil{
 
         val layoutInflater = LayoutInflater.from(context)
         @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
-        val editText = view.findViewById(R.id.edit_text) as EditText
+        val editText = view.findViewById<EditText>(R.id.edit_text)
         editText.setText(player.name)
         editText.setSelection(player.name.length)
         alert.setView(view)
@@ -53,7 +53,7 @@ class DialogUtil{
 
         val layoutInflater = LayoutInflater.from(context)
         @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_add_new_deck, null)
-        val editText = view.findViewById(R.id.deck_name) as EditText
+        val editText = view.findViewById<EditText>(R.id.deck_name)
         alert.setView(view)
 
         alert.setPositiveButton(context.getString(R.string.add)) { _, _ ->

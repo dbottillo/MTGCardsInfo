@@ -53,13 +53,13 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         super.onCreate(bundle)
         setContentView(R.layout.activity_search)
 
-        newSearch = findViewById(R.id.action_search) as ImageButton
-        scrollView = findViewById(R.id.search_scroll_view) as ScrollView
-        mtgCardsView = findViewById(R.id.cards_list_view) as MTGCardsView
-        searchView = findViewById(R.id.search_view) as MTGSearchView
-        closeButton = findViewById(R.id.close_button) as ImageButton
+        newSearch = findViewById<ImageButton>(R.id.action_search)
+        scrollView = findViewById<ScrollView>(R.id.search_scroll_view)
+        mtgCardsView = findViewById<MTGCardsView>(R.id.cards_list_view)
+        searchView = findViewById<MTGSearchView>(R.id.search_view)
+        closeButton = findViewById<ImageButton>(R.id.close_button)
 
-        toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_close)
         toolbar.setTitle(R.string.action_search)
         mtgCardsView.setEmptyString(R.string.empty_search)

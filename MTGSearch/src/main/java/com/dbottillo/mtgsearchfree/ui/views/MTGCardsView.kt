@@ -46,8 +46,8 @@ class MTGCardsView : RelativeLayout {
     private fun init(context: Context) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.fragment_set, this, true)
-        listView = view.findViewById(R.id.card_list) as RecyclerView
-        emptyView = view.findViewById(R.id.empty_view) as TextView
+        listView = view.findViewById<RecyclerView>(R.id.card_list)
+        emptyView = view.findViewById<TextView>(R.id.empty_view)
         footer = view.findViewById(R.id.search_bottom_container)
 
         itemDecorator = GridItemDecorator(resources.getDimensionPixelSize(R.dimen.cards_grid_space))
@@ -86,7 +86,7 @@ class MTGCardsView : RelativeLayout {
         }
 
         if (cards.size == CardDataSource.LIMIT) {
-            val moreResult = footer.findViewById(R.id.more_result) as TextView
+            val moreResult = footer.findViewById<TextView>(R.id.more_result)
             moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)
             UIUtil.setHeight(footer, UIUtil.dpToPx(context, 60))
         } else {

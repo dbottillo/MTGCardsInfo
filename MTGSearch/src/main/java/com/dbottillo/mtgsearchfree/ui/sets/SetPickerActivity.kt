@@ -15,7 +15,7 @@ import javax.inject.Inject
 class SetPickerActivity : BasicActivity(), SetPickerView {
 
     val list: RecyclerView by lazy {
-        findViewById(R.id.set_list) as RecyclerView
+        findViewById<RecyclerView>(R.id.set_list)
     }
 
     var adapter: SetsAdapter? = null
