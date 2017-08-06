@@ -9,6 +9,6 @@ interface OnCardListener {
     fun onCardsHeaderSelected()
     fun onCardsViewTypeSelected()
     fun onCardsSettingSelected()
-    fun onCardSelected(card: MTGCard, position: Int, view: View)
+    fun onCardSelected(card: MTGCard, position: Int)
     fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int)
 }

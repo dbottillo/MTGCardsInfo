@@ -16,7 +16,7 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
 
     var luckyCards = mutableListOf<MTGCard>()
     internal var currentCard: MTGCard? = null
-    internal lateinit var favs: MutableList<Int>
+    internal var favs: MutableList<Int>? = mutableListOf()
 
     override fun init(view: CardsLuckyView, bundle: Bundle?, intent: Intent?) {
         this.view = view
@@ -81,34 +81,38 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
     // TODO: this need testing
     override fun updateMenu() {
         logger.d()
-        if (favs.isEmpty()) {
-            // too early
-            return
-        }
-        if (currentCard != null && currentCard!!.multiVerseId > 0) {
-            view.showFavMenuItem()
-            if (favs.contains(currentCard?.multiVerseId)) {
-                view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
-            } else {
-                view.updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
+        favs?.let {
+            if (it.isEmpty()) {
+                // too early
+                return
             }
-        } else {
-            view.hideFavMenuItem()
+            if (currentCard != null && currentCard!!.multiVerseId > 0) {
+                view.showFavMenuItem()
+                if (it.contains(currentCard?.multiVerseId)) {
+                    view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
+                } else {
+                    view.updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
+                }
+            } else {
+                view.hideFavMenuItem()
+            }
+            view.setImageMenuItemChecked(cardsPreferences.showImage())
         }
-        view.setImageMenuItemChecked(cardsPreferences.showImage())
     }
 
     // TODO: this need testing
     override fun saveOrRemoveCard() {
-        currentCard?.let {
-            if (favs.contains(it.multiVerseId)) {
-                cardsInteractor.removeFromFavourite(it)
-                favs.remove(it.multiVerseId)
-            } else {
-                cardsInteractor.saveAsFavourite(it)
-                favs.add(it.multiVerseId)
+        currentCard?.let { card ->
+            favs?.let {
+                if (it.contains(card.multiVerseId)) {
+                    cardsInteractor.removeFromFavourite(card)
+                    it.remove(card.multiVerseId)
+                } else {
+                    cardsInteractor.saveAsFavourite(card)
+                    it.add(card.multiVerseId)
+                }
+                updateMenu()
             }
-            updateMenu()
         }
     }
 

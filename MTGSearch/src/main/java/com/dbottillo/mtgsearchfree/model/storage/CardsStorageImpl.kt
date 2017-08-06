@@ -19,7 +19,7 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         logger.d("loadSet " + set)
         val cards = mtgCardDataSource.getSet(set)
         val filter = cardsPreferences.load()
-        return CardsCollection(cardsHelper.filterCards(filter, cards), filter)
+        return CardsCollection(cardsHelper.filterCards(filter = filter, list = cards), filter)
     }
 
     override fun saveAsFavourite(card: MTGCard) {

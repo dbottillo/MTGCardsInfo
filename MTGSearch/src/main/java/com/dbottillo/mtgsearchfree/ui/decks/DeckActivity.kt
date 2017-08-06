@@ -83,7 +83,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
             }
 
-            override fun onCardSelected(card: MTGCard, position: Int, view: View) {
+            override fun onCardSelected(card: MTGCard, position: Int) {
                 startActivity(CardsActivity.newInstance(this@DeckActivity, deck, cardPositionWithoutSections(card)))
             }
 

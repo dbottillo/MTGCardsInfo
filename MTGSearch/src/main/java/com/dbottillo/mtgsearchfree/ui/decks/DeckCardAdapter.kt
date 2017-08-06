@@ -39,7 +39,7 @@ class DeckCardAdapter(private val mContext: Context,
         val card = cards[position]
         CardAdapterHelper.bindView(mContext, card, holder, false, true)
         CardAdapterHelper.setupMore(holder, mContext, card, position, menuRes, onCardListener)
-        holder.itemView.setOnClickListener { v -> onCardListener.onCardSelected(card, holder.adapterPosition, v) }
+        holder.itemView.setOnClickListener { onCardListener.onCardSelected(card, holder.adapterPosition) }
     }
 
     override fun getItemCount(): Int {
