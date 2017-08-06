@@ -47,8 +47,6 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        presenter.init(this)
-
         loader = view.findViewById<MTGLoader>(R.id.loader)
         view.findViewById<View>(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         view.findViewById<View>(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
@@ -69,6 +67,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
         setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
 
+        presenter.init(this)
     }
 
     override fun onResume() {

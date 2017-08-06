@@ -51,6 +51,29 @@ class SetsFragmentPresenterImplTest {
     fun setup() {
         underTest = SetsFragmentPresenterImpl(setsInteractor, cardsInteractor, cardsPreferences, generalData, logger)
         underTest.init(view)
+        Mockito.reset(view, generalData)
+    }
+
+    @Test
+    fun `init should load show grid if preference is grid`() {
+        `when`(generalData.isCardsShowTypeGrid).thenReturn(true)
+
+        underTest.init(view)
+
+        verify(view).showCardsGrid()
+        verify(generalData).isCardsShowTypeGrid
+        verifyNoMoreInteractions(setsInteractor, cardsInteractor, cardsPreferences, view, generalData)
+    }
+
+    @Test
+    fun `init should load show list if preference is not grid`() {
+        `when`(generalData.isCardsShowTypeGrid).thenReturn(false)
+
+        underTest.init(view)
+
+        verify(view).showCardsList()
+        verify(generalData).isCardsShowTypeGrid
+        verifyNoMoreInteractions(setsInteractor, cardsInteractor, cardsPreferences, view, generalData)
     }
 
     @Test
