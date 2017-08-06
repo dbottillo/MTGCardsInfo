@@ -334,7 +334,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     }
 
     public String toString() {
-        return "MTGCard: [" + name + "," + multiVerseId + "]";
+        return "MTGCard: [" + name + "," + multiVerseId + "," + colors + "," + rarity + "]";
     }
 
     public void addRuling(String rule) {

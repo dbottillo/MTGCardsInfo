@@ -49,8 +49,8 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     @Inject
     lateinit var presenter: SearchPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
         setContentView(R.layout.activity_search)
 
         newSearch = findViewById(R.id.action_search) as ImageButton
@@ -70,10 +70,10 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        if (savedInstanceState != null) {
-            searchOpen = savedInstanceState.getBoolean(SEARCH_OPEN)
-            scrollView.setBackgroundColor(savedInstanceState.getInt(BG_COLOR_SCROLLVIEW))
-            MaterialWrapper.setElevation(toolbar, savedInstanceState.getFloat(TOOLBAR_ELEVATION))
+        if (bundle != null) {
+            searchOpen = bundle.getBoolean(SEARCH_OPEN)
+            scrollView.setBackgroundColor(bundle.getInt(BG_COLOR_SCROLLVIEW))
+            MaterialWrapper.setElevation(toolbar, bundle.getFloat(TOOLBAR_ELEVATION))
             MaterialWrapper.setStatusBarColor(this, if (searchOpen) resources.getColor(R.color.color_accent_dark) else resources.getColor(R.color.status_bar))
             closeButton.setAlpha(if (searchOpen) 1 else 0)
         } else {
@@ -110,8 +110,8 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
         mtgApp.uiGraph.inject(this)
 
-        if (savedInstanceState != null) {
-            val searchParams = savedInstanceState.getParcelable<SearchParams>(SEARCH_PARAMS)
+        if (bundle != null) {
+            val searchParams = bundle.getParcelable<SearchParams>(SEARCH_PARAMS)
             if (searchParams != null) {
                 doSearch(searchParams)
             }
@@ -289,7 +289,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         fragment.show(supportFragmentManager, "cards_configurator")
     }
 
-    override fun onCardSelected(card: MTGCard, position: Int, view: View) {
+    override fun onCardSelected(card: MTGCard, position: Int) {
         LOG.d()
         val intent = CardsActivity.newInstance(this, searchView.searchParams, position, null)
         startActivity(intent)

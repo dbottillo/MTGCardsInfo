@@ -104,7 +104,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         }
     }
 
-    override fun onCardSelected(card: MTGCard, position: Int, view: View) {
+    override fun onCardSelected(card: MTGCard, position: Int) {
         TrackingManager.trackOpenCard(position)
         startActivity(CardsActivity.newInstance(context, presenter.set(), position, card))
     }

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.ui.sets
 
 import android.graphics.Typeface
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ class SetsAdapter(val sets: List<MTGSet>,
     override fun onBindViewHolder(holder: SetViewHolder, position: Int) {
         holder.name.text = sets[position].name
 
-        holder.name.setTextColor(holder.itemView.resources.getColor(if (position == currentPos) R.color.color_accent else R.color.color_primary))
+        holder.name.setTextColor(ContextCompat.getColor(holder.itemView.context, if (position == currentPos) R.color.color_accent else R.color.color_primary))
         holder.name.setTypeface(null, if (position == currentPos) Typeface.BOLD else Typeface.NORMAL)
         holder.itemView.setOnClickListener{
             if (position != currentPos){

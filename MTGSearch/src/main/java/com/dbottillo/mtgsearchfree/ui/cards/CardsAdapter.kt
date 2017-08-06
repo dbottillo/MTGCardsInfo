@@ -89,7 +89,7 @@ class CardsAdapter(val cards: List<MTGCard>,
                 checkSpannable(spannableString, cardFilter.uncommon, 15)
                 checkSpannable(spannableString, cardFilter.rare, 16)
                 checkSpannable(spannableString, cardFilter.mythic, 17)
-                holder.subTitle.text = spannableString as CharSequence?
+                holder.subTitle.text = spannableString
             }
             holder.itemView.setOnClickListener { listener.onCardsHeaderSelected() }
             return
@@ -118,8 +118,8 @@ class CardsAdapter(val cards: List<MTGCard>,
             CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
             CardAdapterHelper.setupMore(listCardViewHolder, context, card, position, configuration.menu, listener)
         }
-        holder.parent.setOnClickListener { v ->
-            listener.onCardSelected(card, holder.adapterPosition - 1, v.findViewById(R.id.grid_item_card_image))
+        holder.parent.setOnClickListener {
+            listener.onCardSelected(card, holder.adapterPosition - 1)
         }
     }
 

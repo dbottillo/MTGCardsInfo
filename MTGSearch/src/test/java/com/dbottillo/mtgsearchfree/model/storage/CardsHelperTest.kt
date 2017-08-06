@@ -2,22 +2,18 @@ package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SearchParams
+import org.hamcrest.core.Is.`is`
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.hamcrest.core.Is.`is`
-import org.junit.Assert.assertThat
-import org.junit.Assert.assertFalse
-import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 
 class CardsHelperTest {
 
     @JvmField @Rule
     val mockitoRule = MockitoJUnit.rule()!!
-
-    @Mock lateinit var searchParams: SearchParams
 
     lateinit var underTest: CardsHelper
 
@@ -27,11 +23,11 @@ class CardsHelperTest {
     }
 
     @Test
-    fun `filter cards should return all cards if filter is default and search is null`() {
+    fun `filter cards should return all cards if filter is default`() {
         val cardFilter = CardFilter()
         val cards = generateCards()
 
-        val result = underTest.filterCards(cardFilter, null, cards)
+        val result = underTest.filterCards(cardFilter, cards)
 
         assertThat(result, `is`(cards))
     }
@@ -51,7 +47,7 @@ class CardsHelperTest {
 
     @Test
     fun `filter cards should filter cards by color and rarity`() {
-         checkCondition(prepareFilter = {
+        checkCondition(prepareFilter = {
             it.white = false
             it.common = false
         }, validateCards = {
@@ -67,7 +63,7 @@ class CardsHelperTest {
             assertFalse(it.isUncommon)
         })
 
-        checkCondition(prepareFilter ={
+        checkCondition(prepareFilter = {
             it.red = false
             it.rare = false
         }, validateCards = {
@@ -75,7 +71,7 @@ class CardsHelperTest {
             assertFalse(it.isRare)
         })
 
-        checkCondition(prepareFilter ={
+        checkCondition(prepareFilter = {
             it.green = false
             it.mythic = false
         }, validateCards = {
@@ -83,7 +79,7 @@ class CardsHelperTest {
             assertFalse(it.isMythicRare)
         })
 
-        checkCondition(prepareFilter ={
+        checkCondition(prepareFilter = {
             it.black = false
             it.common = false
             it.uncommon = false
@@ -95,75 +91,65 @@ class CardsHelperTest {
     }
 
     @Test
-    fun `filter cards by color or rarity should return all cards if search is provided`() {
-        checkCards(searchParams){ it.white = false }
-        checkCards(searchParams){ it.blue = false }
-        checkCards(searchParams){ it.red = false }
-        checkCards(searchParams){ it.green = false }
-        checkCards(searchParams){ it.black = false }
-        checkCards(searchParams){ it.common = false }
-        checkCards(searchParams){ it.uncommon = false }
-        checkCards(searchParams){ it.rare = false }
-        checkCards(searchParams){ it.mythic = false }
+    fun `filter cards should filter and ordered cards by color`() {
+        val cardFilter = CardFilter()
+        cardFilter.sortWUBGR = true
+        val first = generateCard(name = "ZYX", colors = listOf(0))
+        val second = generateCard(name = "ABC", colors = listOf(4))
+        val cards = listOf(first, second)
+
+        val result = underTest.filterCards(cardFilter, cards)
+
+        assertThat(result[0], `is`(first))
+        assertThat(result[1], `is`(second))
     }
 
     @Test
-    fun `filter cards by color and rarity should return all cards if search is provided`() {
-        checkCards(searchParams) {
-            it.white = false
-            it.common = false
-        }
-        checkCards(searchParams) {
-            it.blue = false
-            it.uncommon = false
-        }
-        checkCards(searchParams) {
-            it.red = false
-            it.rare = false
-        }
-        checkCards(searchParams) {
-            it.green = false
-            it.mythic = false
-        }
-        checkCards(searchParams) {
-            it.black = false
-            it.common = false
-            it.uncommon = false
-        }
+    fun `filter cards should filter and ordered cards by name`() {
+        val cardFilter = CardFilter()
+        cardFilter.sortWUBGR = false
+        val first = generateCard(name = "ZYX", colors = listOf(0))
+        val second = generateCard(name = "ABC", colors = listOf(4))
+        val cards = listOf(first, second)
+
+        val result = underTest.filterCards(cardFilter, cards)
+
+        assertThat(result[0], `is`(second))
+        assertThat(result[1], `is`(first))
     }
 
-    internal fun checkCondition(prepareFilter: (CardFilter) -> Unit, validateCards: (MTGCard) -> Unit){
+    internal fun checkCondition(prepareFilter: (CardFilter) -> Unit, validateCards: (MTGCard) -> Unit) {
         val cardFilter = CardFilter()
         prepareFilter(cardFilter)
         val cards = generateCards()
-        val result = underTest.filterCards(cardFilter, null, cards)
-        result.forEach{
+        val result = underTest.filterCards(cardFilter, cards)
+
+        result.forEach {
             validateCards(it)
-            assertFalse(it.isBlue)
         }
     }
 
-    internal fun checkCards(searchParams: SearchParams, withFilter: (CardFilter) -> Unit){
-        val cardFilter = CardFilter()
-        withFilter(cardFilter)
-        val cards = generateCards()
-        val result = underTest.filterCards(cardFilter, searchParams, cards)
-        assertThat(result, `is`(cards))
-    }
-
-    internal fun generateCards() : List<MTGCard>{
+    internal fun generateCards(): List<MTGCard> {
         val list = mutableListOf<MTGCard>()
-        val colors = listOf("W", "B", "R", "G", "B")
+        val colors = listOf("W", "U", "B", "R", "G")
         val rarity = listOf("Common", "Uncommon", "Rare", "Mythic rare")
         colors.forEachIndexed { index, color ->
             rarity.forEach {
-                val card = MTGCard()
-                card.manaCost = color
-                card.rarity = it
-                card.colors = listOf(index)
-                list.add(card)
+                list.add(generateCard(cost = color, rarity = it, colors = listOf(index)))
             }
         }
         return list
+    }
+
+    internal fun generateCard(name: String = "Card",
+                              cost: String = "WU",
+                              rarity: String = "Common",
+                              colors: List<Int> = listOf()): MTGCard {
+        val card = MTGCard()
+        card.setCardName(name)
+        card.manaCost = cost
+        card.rarity = rarity
+        card.colors = colors
+        return card
     }
 }
