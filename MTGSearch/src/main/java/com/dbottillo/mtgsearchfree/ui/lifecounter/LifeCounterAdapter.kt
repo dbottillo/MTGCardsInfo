@@ -27,7 +27,7 @@ class LifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterL
         }
         if (viewType == TYPE_FOOTER) {
             val footerView = LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false)
-            footerView.findViewById(R.id.add_new_player).setOnClickListener { listener.onAddPlayer() }
+            footerView.findViewById<View>(R.id.add_new_player).setOnClickListener { listener.onAddPlayer() }
             return FooterViewHolder(footerView)
         }
         return PlayerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_life_counter, parent, false))
@@ -80,19 +80,19 @@ class LifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterL
 
     class PlayerViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
 
-        val card: CardView = row.findViewById(R.id.life_counter_card) as CardView
-        val name: TextView = row.findViewById(R.id.player_name) as TextView
-        val life: TextView = row.findViewById(R.id.player_life) as TextView
-        val poison: TextView = row.findViewById(R.id.player_poison) as TextView
+        val card: CardView = row.findViewById<CardView>(R.id.life_counter_card)
+        val name: TextView = row.findViewById<TextView>(R.id.player_name)
+        val life: TextView = row.findViewById<TextView>(R.id.player_life)
+        val poison: TextView = row.findViewById<TextView>(R.id.player_poison)
         val poisonContainer: View = row.findViewById(R.id.life_counter_poison_container)
-        val edit: ImageButton = row.findViewById(R.id.player_edit) as ImageButton
-        val remove: ImageButton = row.findViewById(R.id.player_remove) as ImageButton
-        val lifePlusOne: Button = row.findViewById(R.id.btn_life_plus_one) as Button
-        val lifeMinusOne: Button = row.findViewById(R.id.btn_life_minus_one) as Button
-        val lifePlusFive: Button = row.findViewById(R.id.btn_life_plus_five) as Button
-        val lifeMinusFive: Button = row.findViewById(R.id.btn_life_minus_five) as Button
-        val poisonPlusOne: Button = row.findViewById(R.id.btn_poison_plus_one) as Button
-        val poisonMinusOne: Button = row.findViewById(R.id.btn_poison_minus_one) as Button
+        val edit: ImageButton = row.findViewById<ImageButton>(R.id.player_edit)
+        val remove: ImageButton = row.findViewById<ImageButton>(R.id.player_remove)
+        val lifePlusOne: Button = row.findViewById<Button>(R.id.btn_life_plus_one)
+        val lifeMinusOne: Button = row.findViewById<Button>(R.id.btn_life_minus_one)
+        val lifePlusFive: Button = row.findViewById<Button>(R.id.btn_life_plus_five)
+        val lifeMinusFive: Button = row.findViewById<Button>(R.id.btn_life_minus_five)
+        val poisonPlusOne: Button = row.findViewById<Button>(R.id.btn_poison_plus_one)
+        val poisonMinusOne: Button = row.findViewById<Button>(R.id.btn_poison_minus_one)
     }
 
     private fun getColorOfPosition(context: Context, position: Int): Int {

@@ -6,5 +6,5 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 
 class SetViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
-    val name: TextView = row.findViewById(R.id.set_name) as TextView
+    val name: TextView = row.findViewById<TextView>(R.id.set_name)
 }

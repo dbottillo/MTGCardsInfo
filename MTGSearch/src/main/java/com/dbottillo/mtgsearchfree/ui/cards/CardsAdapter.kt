@@ -153,10 +153,10 @@ class CardsAdapter(val cards: List<MTGCard>,
         var settings: ImageButton
 
         init {
-            title = itemView.findViewById(R.id.title) as AppCompatTextView
-            subTitle = itemView.findViewById(R.id.sub_title) as TextView
-            type = itemView.findViewById(R.id.cards_view_type) as ImageButton
-            settings = itemView.findViewById(R.id.cards_settings) as ImageButton
+            title = itemView.findViewById<AppCompatTextView>(R.id.title)
+            subTitle = itemView.findViewById<TextView>(R.id.sub_title)
+            type = itemView.findViewById<ImageButton>(R.id.cards_view_type)
+            settings = itemView.findViewById<ImageButton>(R.id.cards_settings)
         }
     }
 

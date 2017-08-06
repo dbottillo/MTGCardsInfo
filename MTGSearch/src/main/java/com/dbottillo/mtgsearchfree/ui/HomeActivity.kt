@@ -40,7 +40,7 @@ class HomeActivity : BasicActivity() {
 
         bottomTabsHeight = resources?.getDimensionPixelSize(R.dimen.bottom_tabs_height)!!
 
-        bottomTabs = findViewById(R.id.bottom_tabs) as BottomTabs
+        bottomTabs = findViewById<BottomTabs>(R.id.bottom_tabs)
         bottomTabs.setBottomTabsListener(object : BottomTabs.BottomTabsListener {
             override fun tabSelected(selection: Int) {
                 when (selection) {

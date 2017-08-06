@@ -45,14 +45,14 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        chooseDeck = view.findViewById(R.id.choose_deck) as Spinner
-        chooseQuantity = view.findViewById(R.id.choose_quantity) as Spinner
-        sideboard = view.findViewById(R.id.add_to_deck_sideboard) as CheckBox
-        cardNameInputLayout = view.findViewById(R.id.new_deck_name_input_layout) as TextInputLayout
-        cardQuantityInputLayout = view.findViewById(R.id.new_deck_quantity_input_layout) as TextInputLayout
-        deckName = view.findViewById(R.id.new_deck_name) as EditText
-        cardQuantity = view.findViewById(R.id.new_deck_quantity) as EditText
-        view.findViewById(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
+        chooseDeck = view.findViewById<Spinner>(R.id.choose_deck)
+        chooseQuantity = view.findViewById<Spinner>(R.id.choose_quantity)
+        sideboard = view.findViewById<CheckBox>(R.id.add_to_deck_sideboard)
+        cardNameInputLayout = view.findViewById<TextInputLayout>(R.id.new_deck_name_input_layout)
+        cardQuantityInputLayout = view.findViewById<TextInputLayout>(R.id.new_deck_quantity_input_layout)
+        deckName = view.findViewById<EditText>(R.id.new_deck_name)
+        cardQuantity = view.findViewById<EditText>(R.id.new_deck_quantity)
+        view.findViewById<View>(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
 
         card = arguments.getParcelable<MTGCard>("card")
         cardQuantity.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 30))

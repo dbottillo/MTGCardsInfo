@@ -36,7 +36,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
 
         mtgApp.uiGraph.inject(this)
 
-        versionText = findViewById(R.id.about_version) as TextView
+        versionText = findViewById<TextView>(R.id.about_version)
         try {
             versionName = packageManager.getPackageInfo(packageName, 0).versionName
             versionText.text = Html.fromHtml("<b>" + getString(R.string.version) + "</b>: " + versionName)
@@ -45,11 +45,11 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
         }
 
         versionText.setOnTouchListener(this)
-        findViewById(R.id.send_feedback).setOnClickListener{
+        findViewById<View>(R.id.send_feedback).setOnClickListener{
             sendFeedback()
         }
 
-        findViewById(R.id.share_app).setOnClickListener(View.OnClickListener {
+        findViewById<View>(R.id.share_app).setOnClickListener(View.OnClickListener {
             TrackingManager.trackShareApp()
             val i = Intent(Intent.ACTION_SEND)
             i.type = "text/plain"
@@ -59,14 +59,14 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
             startActivity(Intent.createChooser(i, getString(R.string.share)))
         })
 
-        val cardContainer = findViewById(R.id.libraries_container) as LinearLayout
+        val cardContainer = findViewById<LinearLayout>(R.id.libraries_container)
 
         for (i in librariesName.indices) {
             val libraryView = View.inflate(this, R.layout.row_library, null)
-            val title = libraryView.findViewById(R.id.library_name) as TextView
-            title.setText(librariesName[i])
-            val author = libraryView.findViewById(R.id.library_author) as TextView
-            author.setText(librariesAuthor[i])
+            val title = libraryView.findViewById<TextView>(R.id.library_name)
+            title.text = librariesName[i]
+            val author = libraryView.findViewById<TextView>(R.id.library_author)
+            author.text = librariesAuthor[i]
             cardContainer.addView(libraryView)
             libraryView.tag = 0
             libraryView.setOnClickListener { v ->
@@ -79,7 +79,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
             }
         }
 
-        (findViewById(R.id.copyright) as TextView).text = getString(R.string.copyright)
+        findViewById<TextView>(R.id.copyright).setText(R.string.copyright)
     }
 
     private fun sendFeedback() {
