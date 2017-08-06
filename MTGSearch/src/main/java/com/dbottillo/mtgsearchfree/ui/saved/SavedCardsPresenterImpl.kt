@@ -14,6 +14,12 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
 
     override fun init(view: SavedCardsView) {
         this.view = view
+        if (generalData.isCardsShowTypeGrid){
+            view.showCardsGrid()
+        } else {
+            view.showCardsList()
+        }
+
     }
 
     override fun load() {

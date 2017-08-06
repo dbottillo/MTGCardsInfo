@@ -10,6 +10,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
@@ -37,6 +38,29 @@ class SavedCardsPresenterImplTest {
     fun setup() {
         underTest = SavedCardsPresenterImpl(interactor, generalData, logger)
         underTest.init(view)
+        Mockito.reset(view, generalData)
+    }
+
+    @Test
+    fun `init should load show grid if preference is grid`() {
+        `when`(generalData.isCardsShowTypeGrid).thenReturn(true)
+
+        underTest.init(view)
+
+        verify(view).showCardsGrid()
+        verify(generalData).isCardsShowTypeGrid
+        verifyNoMoreInteractions(interactor, view, generalData)
+    }
+
+    @Test
+    fun `init should load show list if preference is not grid`() {
+        `when`(generalData.isCardsShowTypeGrid).thenReturn(false)
+
+        underTest.init(view)
+
+        verify(view).showCardsList()
+        verify(generalData).isCardsShowTypeGrid
+        verifyNoMoreInteractions(interactor, view, generalData)
     }
 
     @Test

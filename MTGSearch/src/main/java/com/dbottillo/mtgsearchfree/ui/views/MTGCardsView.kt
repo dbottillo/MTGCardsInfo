@@ -23,7 +23,7 @@ import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 
 class MTGCardsView : RelativeLayout {
 
-    internal var grid = false
+    internal var grid = true
     private var adapter: CardsAdapter? = null
     private var itemDecorator: GridItemDecorator? = null
 

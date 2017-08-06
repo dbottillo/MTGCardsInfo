@@ -21,6 +21,12 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
 
     override fun init(view: SetsFragmentView) {
         this.view = view
+
+        if (generalData.isCardsShowTypeGrid){
+            view.showCardsGrid()
+        } else {
+            view.showCardsList()
+        }
     }
 
     override fun loadSets() {
