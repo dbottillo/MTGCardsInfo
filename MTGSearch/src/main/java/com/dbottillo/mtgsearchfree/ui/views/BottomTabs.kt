@@ -143,7 +143,7 @@ class BottomTabs : LinearLayout {
 
         companion object {
 
-            val CREATOR = object : Parcelable.Creator<BottomTabsState> {
+            @JvmField val CREATOR = object : Parcelable.Creator<BottomTabsState> {
                 override fun createFromParcel(`in`: Parcel) = BottomTabsState(`in`)
                 override fun newArray(size: Int): Array<BottomTabsState?> = arrayOfNulls(size)
             }
