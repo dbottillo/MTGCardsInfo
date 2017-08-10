@@ -130,11 +130,4 @@ abstract class BasicActivity : AppCompatActivity() {
         }
     }
 
-    override fun getSystemService(name: String): Any {
-        if ("Dagger" == name) {
-            return mtgApp.uiGraph
-        }
-        return super.getSystemService(name)
-    }
-
 }

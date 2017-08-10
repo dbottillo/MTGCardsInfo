@@ -25,8 +25,6 @@ import com.dbottillo.mtgsearchfree.util.UIUtil
 class HomeActivity : BasicActivity() {
 
     lateinit var bottomTabs: BottomTabs
-
-    @BindView(R.id.fragment_container)
     lateinit var fragmentContainer: FrameLayout
 
     var bottomTabsHeight: Int = 0
@@ -36,8 +34,8 @@ class HomeActivity : BasicActivity() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         setContentView(R.layout.activity_home)
-        ButterKnife.bind(this)
 
+        fragmentContainer = findViewById<FrameLayout>(R.id.fragment_container)
         bottomTabsHeight = resources?.getDimensionPixelSize(R.dimen.bottom_tabs_height)!!
 
         bottomTabs = findViewById<BottomTabs>(R.id.bottom_tabs)
