@@ -22,12 +22,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService;
+import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
@@ -93,15 +95,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
         View view = inflater.inflate(R.layout.view_mtg_card, this, true);
         ButterKnife.bind(this, view);
 
-        //noinspection ResourceType
-        UiComponent uiComponent = (UiComponent) context.getSystemService("Dagger");
-        uiComponent.inject(this);
-        cardPresenter.init(this);
-
-        setTCGPriceTitle();
-
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
@@ -113,6 +107,16 @@ public class MTGCardView extends RelativeLayout implements CardView {
             widthAvailable = size.x / 2 - paddingCard * 2;
         }
         UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
+        setTCGPriceTitle();
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        BasicActivity mainActivity = (BasicActivity) getContext();
+        mainActivity.getMtgApp().getUiGraph().inject(this);
+
+        cardPresenter.init(this);
     }
 
     private void setTCGPriceTitle(){

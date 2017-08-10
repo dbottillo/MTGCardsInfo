@@ -41,8 +41,6 @@ public interface UiComponent {
 
     void inject(AddToDeckFragment addToDeckFragment);
 
-    void inject(MTGCardView mtgCardView);
-
     void inject(LifeCounterFragment lifeCounterFragment);
 
     void inject(DecksFragment decksFragment);
@@ -54,4 +52,6 @@ public interface UiComponent {
     void inject(@NotNull CardsConfiguratorFragment cardsConfiguratorFragment);
 
     void inject(@NotNull SetPickerActivity setPickerActivity);
+
+    void inject(MTGCardView mtgCardView);
 }
