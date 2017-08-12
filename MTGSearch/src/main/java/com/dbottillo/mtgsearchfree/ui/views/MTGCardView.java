@@ -108,12 +108,8 @@ public class MTGCardView extends RelativeLayout implements CardView {
         }
         UIUtil.calculateSizeCardImage(cardImage, widthAvailable, getResources().getBoolean(R.bool.isTablet));
         setTCGPriceTitle();
-    }
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        BasicActivity mainActivity = (BasicActivity) getContext();
+        BasicActivity mainActivity = (BasicActivity) context;
         mainActivity.getMtgApp().getUiGraph().inject(this);
 
         cardPresenter.init(this);
