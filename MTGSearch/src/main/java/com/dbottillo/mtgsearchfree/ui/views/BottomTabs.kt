@@ -70,8 +70,8 @@ class BottomTabs : LinearLayout {
     }
 
     override fun onRestoreInstanceState(state: Parcelable?) {
-        super.onRestoreInstanceState(state)
         val bottomTabState = state as BottomTabsState
+        super.onRestoreInstanceState(state.superState)
         currentSelection = bottomTabState.selection
         refreshUI()
     }
