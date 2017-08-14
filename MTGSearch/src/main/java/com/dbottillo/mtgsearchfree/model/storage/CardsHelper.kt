@@ -19,6 +19,7 @@ class CardsHelper {
                     || (it.isBlack && filter.black)
                     || (it.isRed && filter.red)
                     || (it.isGreen && filter.green)
+                    || (it.isArtifact && filter.artifact)
                     || (it.isLand && filter.land)
                     || (it.isEldrazi && filter.eldrazi)
             if (toAdd) {
