@@ -4,6 +4,7 @@ import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import org.hamcrest.core.Is.`is`
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
@@ -29,7 +30,8 @@ class CardsHelperTest {
 
         val result = underTest.filterCards(cardFilter, cards)
 
-        assertThat(result, `is`(cards))
+        assertThat(result.size, `is`(cards.size))
+        assertTrue(result.containsAll(cards))
     }
 
     @Test
@@ -138,6 +140,20 @@ class CardsHelperTest {
                 list.add(generateCard(cost = color, rarity = it, colors = listOf(index)))
             }
         }
+        val artifactCard = MTGCard()
+        artifactCard.setAsArtifact(true)
+        artifactCard.setCardName("Card")
+        artifactCard.rarity = "Common"
+        list.add(artifactCard)
+        val landCard = MTGCard()
+        landCard.setAsALand(true)
+        landCard.setCardName("Card")
+        landCard.rarity = "Uncommon"
+        list.add(landCard)
+        val eldraziCard = MTGCard()
+        eldraziCard.setCardName("Card")
+        eldraziCard.rarity = "Rare"
+        list.add(eldraziCard)
         return list
     }
 
