@@ -160,7 +160,9 @@ public class MTGSet implements Parcelable {
         DUAL_DECKS_PHYREXIA_COALITION("DDE", "pvc"),
         FROM_THE_VAULT_RELICS("V10", "fvr"),
         FROM_THE_VAULT_LEGENDS("V11", "fvl"),
-        COMMANDER_ARSENAL("CM1", "cma");
+        COMMANDER_ARSENAL("CM1", "cma"),
+        KALADESH_INVENTIONS("MPS", "mpskld"),
+        AMONKHET_INVOCATIONS("MPS_AKH", "mpsakh");
 
         private String set;
         private String mapped;
