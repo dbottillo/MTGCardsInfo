@@ -144,7 +144,6 @@ public class MTGCardView extends RelativeLayout implements CardView {
     }
 
     private void load(MTGCard card){
-        LOG.e("card load: "+card.bigToString());
         LOG.d();
         this.card = card;
         String manaCost;
