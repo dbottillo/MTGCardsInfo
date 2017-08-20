@@ -150,7 +150,7 @@ public class MTGSet implements Parcelable {
         LORWYN("LRW", "lw"),
         MORNINGTIDE("MOR", "mt"),
         FROM_THE_VAULT_DRAGONS("DRB", "fvd"),
-        DUAL_DECKS_JACE_CHANDRA("DD2", "ddm"),
+        DUAL_DECKS_JACE_CHANDRA("DD2", "ddajvc"),
         CONFLUX("CON", "cfx"),
         DUAL_DECKS_DIVINE_DEMONIC("DDC", "ddadvd"),
         FROM_THE_VAULT_EXILED("V09", "fve"),

@@ -282,6 +282,12 @@ public class CreateDBAsyncTask extends AsyncTask<String, Void, ArrayList<Object>
         if (jsonObject.has("originalText")) {
             values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName(), jsonObject.getString("originalText"));
         }
+        if (jsonObject.has("mciNumber")) {
+            values.put(CardDataSource.COLUMNS.MCI_NUMBER.getName(), jsonObject.getString("mciNumber"));
+        }
+        if (jsonObject.has("colorIdentity")) {
+            values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.getName(), jsonObject.getString("colorIdentity"));
+        }
 
         return values;
     }

@@ -1,6 +1,6 @@
 buildscript {
     ext.number_of_set = 165
-    ext.database_version = 27
+    ext.database_version = 28
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'

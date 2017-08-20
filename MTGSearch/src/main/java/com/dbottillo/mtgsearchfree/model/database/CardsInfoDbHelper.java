@@ -18,7 +18,7 @@ import java.util.Set;
 public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "cardsinfo.db";
-    protected static final int DATABASE_VERSION = 7;
+    protected static final int DATABASE_VERSION = 8;
 
     public CardsInfoDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -79,6 +79,12 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
         }
         if (!columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName())) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_ORIGINAL_TEXT);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_MCI_NUMBER);
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.getName())) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_COLORS_IDENTITY);
         }
     }
 

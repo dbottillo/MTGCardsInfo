@@ -25,7 +25,6 @@ public final class CardDataSource {
     public static final int LIMIT = 400;
     public static final String TABLE = "MTGCard";
 
-
     private final SQLiteDatabase database;
     private final Gson gson;
 
@@ -58,7 +57,9 @@ public final class CardDataSource {
         LOYALTY("loyalty", "INTEGER"),
         PRINTINGS("printings", "TEXT"),
         LEGALITIES("legalities", "TEXT"),
-        ORIGINAL_TEXT("originalText", "TEXT");
+        ORIGINAL_TEXT("originalText", "TEXT"),
+        MCI_NUMBER("mciNumber", "TEXT"),
+        COLORS_IDENTITY("colorIdentity", "TEXT");
 
         private String name;
         private String type;
@@ -130,12 +131,20 @@ public final class CardDataSource {
             + TABLE + " ADD COLUMN "
             + COLUMNS.ORIGINAL_TEXT.getName() + " " + COLUMNS.ORIGINAL_TEXT.getType();
 
+    static final String SQL_ADD_COLUMN_MCI_NUMBER = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.MCI_NUMBER.getName() + " " + COLUMNS.MCI_NUMBER.getType();
+
+    static final String SQL_ADD_COLUMN_COLORS_IDENTITY = "ALTER TABLE "
+            + TABLE + " ADD COLUMN "
+            + COLUMNS.COLORS_IDENTITY.getName() + " " + COLUMNS.COLORS_IDENTITY.getType();
+
     public static String generateCreateTable() {
         StringBuilder builder = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
         builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ");
         for (COLUMNS column : COLUMNS.values()) {
             builder.append(column.name).append(' ').append(column.type);
-            if (column != COLUMNS.ORIGINAL_TEXT) {
+            if (column != COLUMNS.COLORS_IDENTITY) {
                 builder.append(',');
             }
         }
@@ -165,6 +174,9 @@ public final class CardDataSource {
                     || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS
                     || column == COLUMNS.LEGALITIES)|| column == COLUMNS.ORIGINAL_TEXT
                     && version <= 6) {
+                addColumn = false;
+            } else if ((column == COLUMNS.COLORS_IDENTITY || column == COLUMNS.MCI_NUMBER)
+                    && version <= 7) {
                 addColumn = false;
             }
             if (addColumn) {
@@ -276,6 +288,8 @@ public final class CardDataSource {
         values.put(COLUMNS.LOYALTY.getName(), card.getLoyalty());
         values.put(COLUMNS.PRINTINGS.getName(), gson.toJson(card.getPrintings()));
         values.put(COLUMNS.ORIGINAL_TEXT.getName(), card.getOriginalText());
+        values.put(COLUMNS.MCI_NUMBER.getName(), card.getMciNumber());
+        values.put(COLUMNS.COLORS_IDENTITY.getName(), gson.toJson(card.getColorsIdentity()));
 
         return values;
     }
@@ -409,6 +423,18 @@ public final class CardDataSource {
         }
         if (cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName()) != -1) {
             card.setOriginalText(cursor.getString(cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName())));
+        }
+
+        if (cursor.getColumnIndex(COLUMNS.MCI_NUMBER.getName()) != -1) {
+            card.setMciNumber(cursor.getString(cursor.getColumnIndex(COLUMNS.MCI_NUMBER.getName())));
+        }
+
+        if (cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.getName()) != -1) {
+            String colorsIdentity = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.getName()));
+            if (colorsIdentity != null) {
+                List<String> strings = gson.fromJson(colorsIdentity, type);
+                card.setColorsIdentity(strings);
+            }
         }
 
         return card;

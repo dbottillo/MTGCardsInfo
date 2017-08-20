@@ -5,9 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
-
 import com.dbottillo.mtgsearchfree.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +43,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     private int loyalty;
     private List<String> printings;
     private String originalText;
+    private String mciNumber;
+    private List<String> colorsIdentity;
 
     public MTGCard() {
         this.colors = new ArrayList<>();
@@ -54,6 +54,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         this.names = new ArrayList<>();
         this.superTypes = new ArrayList<>();
         this.printings = new ArrayList<>();
+        this.colorsIdentity = new ArrayList<>();
         this.quantity = 1;
         this.multiVerseId = -1;
     }
@@ -113,6 +114,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         dest.writeInt(loyalty);
         dest.writeStringList(printings);
         dest.writeString(originalText);
+        dest.writeString(mciNumber);
+        dest.writeStringList(colorsIdentity);
     }
 
     private void readFromParcel(Parcel in) {
@@ -145,6 +148,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         loyalty = in.readInt();
         in.readStringList(printings);
         originalText = in.readString();
+        mciNumber = in.readString();
+        in.readStringList(colorsIdentity);
     }
 
     public static final Parcelable.Creator<MTGCard> CREATOR = new Parcelable.Creator<MTGCard>() {
@@ -409,10 +414,26 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         return rarity.equalsIgnoreCase(CardFilter.FILTER_MYHTIC);
     }
 
+    public String getMciNumber() {
+        return mciNumber;
+    }
+
+    public void setMciNumber(String mciNumber) {
+        this.mciNumber = mciNumber;
+    }
+
+    public List<String> getColorsIdentity() {
+        return colorsIdentity;
+    }
+
+    public void setColorsIdentity(List<String> colorsIdentity) {
+        this.colorsIdentity = colorsIdentity;
+    }
+
     public String getImage() {
         if (number != null && number.length() > 0
-                && !set.getCode().equalsIgnoreCase("C17")) {
-            return "http://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + number + ".jpg";
+                && !set.getCode().equalsIgnoreCase("C17") && !types.contains("Plane")) {
+            return "http://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + getMciNumberOrMultiverseId() + ".jpg";
         }
         return getImageFromGatherer();
     }
@@ -422,6 +443,13 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             return "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + getMultiVerseId() + "&type=card";
         }
         return null;
+    }
+
+    private String getMciNumberOrMultiverseId(){
+        if (mciNumber == null || mciNumber.length() == 0){
+            return getNumber();
+        }
+        return mciNumber;
     }
 
     public List<String> getRulings() {
@@ -512,7 +540,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
             if (!Modifier.isStatic(field.getModifiers())) {
                 try {
                     if (field.get(this) != null && !field.get(this).equals(field.get(other))) {
-                        Log.e("CUSTOM", "error on: " + field.getName() + " with values: " + field.get(this) + " vs " + field.get(other));
+                        LOG.e( "error on: " + field.getName() + " with values: " + field.get(this) + " vs " + field.get(other));
                     }
                 } catch (IllegalAccessException e) {
                     LOG.e("impossible to read value");
@@ -593,6 +621,9 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
         if (!(printings == null && other.printings == null || (printings != null && other.printings != null && printings.equals(other.printings)))) {
             return false;
         }
+        if (!(colorsIdentity == null && other.colorsIdentity == null || (colorsIdentity != null && other.colorsIdentity != null && colorsIdentity.equals(other.colorsIdentity)))) {
+            return false;
+        }
         return true;
     }
 
@@ -665,6 +696,8 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
                 + ", loyalty=" + loyalty
                 + ", printings=" + printings
                 + ", originalText=" + originalText
+                + ", mciNumber=" + mciNumber
+                + ", colorsIdentity=" + colorsIdentity
                 + '}';
     }
 
