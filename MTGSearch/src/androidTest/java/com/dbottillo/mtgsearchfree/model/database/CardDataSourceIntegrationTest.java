@@ -49,7 +49,7 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
     public void test_generate_table_is_correct() {
         String query = CardDataSource.generateCreateTable();
         assertNotNull(query);
-        assertThat(query, is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT)"));
+        assertThat(query, is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,mciNumber TEXT,colorIdentity TEXT)"));
         assertThat(CardDataSource.generateCreateTable(1), is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"));
         assertThat(CardDataSource.generateCreateTable(2), is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"));
         assertThat(CardDataSource.generateCreateTable(3), is("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"));
@@ -111,6 +111,10 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
             assertThat(cardFromDb.getPrintings().get(i), is(card.getPrintings().get(i)));
         }
         assertThat(cardFromDb.getOriginalText(), is(card.getOriginalText()));
+
+        assertThat(cardFromDb.getColorsIdentity(), is(card.getColorsIdentity()));
+        assertThat(cardFromDb.getMciNumber(), is(card.getMciNumber()));
+
         cursor.close();
     }
 
@@ -184,6 +188,12 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
 
         assertThat(card.getOriginalText(), is("original text"));
 
+        assertThat(card.getMciNumber(), is("233"));
+        assertNotNull(card.getColorsIdentity());
+        assertThat(card.getColorsIdentity().size(), is(2));
+        assertThat(card.getColorsIdentity().get(0), is("U"));
+        assertThat(card.getColorsIdentity().get(1), is("W"));
+
     }
 
     @Test
@@ -248,6 +258,9 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.PRINTINGS.getName()), is(gson.toJson(card.getPrintings())));
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName()), is(card.getOriginalText()));
+
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MCI_NUMBER.getName()), is(card.getMciNumber()));
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), is(gson.toJson(card.getColorsIdentity())));
     }
 
     private void setupCursorCard() {
@@ -340,6 +353,12 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
 
         when(cursor.getColumnIndex(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName())).thenReturn(30);
         when(cursor.getString(30)).thenReturn("original text");
+
+        when(cursor.getColumnIndex(CardDataSource.COLUMNS.MCI_NUMBER.getName())).thenReturn(31);
+        when(cursor.getString(31)).thenReturn("233");
+
+        when(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.getName())).thenReturn(32);
+        when(cursor.getString(32)).thenReturn("[\"U\",\"W\"]");
     }
 
 }

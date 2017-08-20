@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -57,11 +58,38 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     @Test
     public void fetchesAllSets() throws JSONException {
         ArrayList<MTGSet> setsJ = FileHelper.readSetListJSON(context);
+        //MTGSet set = setsJ.get(180);
         for (MTGSet set : setsJ) {
             //LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
                 ArrayList<MTGCard> cardsJ = FileHelper.readSingleSetFile(set, context);
                 List<MTGCard> cards = underTest.getSet(set);
+                /*if (set.getId() == 180){
+                    LOG.e("checking set: " + cardsJ.size() + " - " + cards.size());
+                    for (MTGCard cardJ : cardsJ){
+                        LOG.e("card "+cardJ.toString());
+                    }
+                    for (MTGCard card : cards){
+                        LOG.e("card2 "+card.toString());
+                    }
+                    *//*for (MTGCard cardJ : cardsJ){
+                        LOG.e("checking card: " + cardJ.toString());
+                        boolean found = false;
+                        for (MTGCard card : cards){
+                            if (cardJ.equals(card)){
+                                found = true;
+                            }
+                        }
+                        if (!found){
+                            LOG.e("not found "+cardJ);
+                        }
+                    }*//*
+                    if (cardsJ.get(0).equals(cards.get(0))){
+                        LOG.e("found ");
+                    } else {
+                        LOG.e("not found ");
+                    }
+                }*/
                 assertThat(cardsJ.size(), is(cards.size()));
                 assertTrue(cards.containsAll(cardsJ));
             } catch (Resources.NotFoundException e) {

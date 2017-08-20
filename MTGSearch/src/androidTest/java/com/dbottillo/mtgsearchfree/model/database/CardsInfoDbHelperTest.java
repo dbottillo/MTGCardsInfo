@@ -239,6 +239,19 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
         assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName()), is(true));
     }
 
+    @Test
+    public void test_db_upgrade_from_version7_to_version8_does_not_generate_error() {
+        SQLiteDatabase db = cardsInfoDbHelper.getWritableDatabase();
+        downgradeDb(db, 7);
+        Set<String> columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.getName()), is(false));
+        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), is(false));
+        cardsInfoDbHelper.onUpgrade(db, 6, 7);
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE);
+        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.getName()), is(true));
+        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), is(true));
+    }
+
     private void assertRowDatabaseNumber(SQLiteDatabase db, String table, long howMany) {
         assertThat(db.compileStatement("select count(*) from " + table + ";").simpleQueryForLong(), is(howMany));
     }
@@ -297,6 +310,11 @@ public class CardsInfoDbHelperTest extends BaseContextTest {
         }
         if (version == 6) {
             db.execSQL(CardDataSource.generateCreateTable(6));
+            db.execSQL(PlayerDataSource.generateCreateTable());
+            db.execSQL(FavouritesDataSource.generateCreateTable());
+        }
+        if (version == 7) {
+            db.execSQL(CardDataSource.generateCreateTable(7));
             db.execSQL(PlayerDataSource.generateCreateTable());
             db.execSQL(FavouritesDataSource.generateCreateTable());
         }

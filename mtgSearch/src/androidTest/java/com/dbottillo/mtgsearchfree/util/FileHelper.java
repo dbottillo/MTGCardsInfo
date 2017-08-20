@@ -213,6 +213,16 @@ public final class FileHelper {
         if (jsonObject.has("originalText")) {
             card.setOriginalText(jsonObject.getString("originalText"));
         }
+        if (jsonObject.has("mciNumber")) {
+            card.setMciNumber(jsonObject.getString("mciNumber"));
+        }
+        if (jsonObject.has("colorIdentity")) {
+            String colorIdentity = jsonObject.getString("colorIdentity");
+            if (colorIdentity != null) {
+                List<String> strings = gson.fromJson(colorIdentity, type);
+                card.setColorsIdentity(strings);
+            }
+        }
         return card;
     }
 }
