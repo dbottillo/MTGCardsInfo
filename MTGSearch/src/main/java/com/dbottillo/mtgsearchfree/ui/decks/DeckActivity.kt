@@ -8,10 +8,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -22,12 +19,12 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import fr.castorflex.android.smoothprogressbar.SmoothProgressBar
 import java.util.*
 import javax.inject.Inject
 
@@ -36,10 +33,10 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     @Inject
     lateinit var presenter: DeckActivityPresenter
 
-    lateinit var container: View
-    lateinit var emptyView: TextView
-    lateinit var progressBar: SmoothProgressBar
-    lateinit var cardList: RecyclerView
+    private val container: View by lazy { findViewById<ViewGroup>(R.id.container) }
+    private val emptyView: TextView by lazy { findViewById<TextView>(R.id.empty_view) }
+    private val loader: MTGLoader by lazy { findViewById<MTGLoader>(R.id.loader) }
+    private val cardList: RecyclerView by lazy { findViewById<RecyclerView>(R.id.card_list) }
 
     lateinit var deck: Deck
 
@@ -49,11 +46,6 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         setContentView(R.layout.activity_deck)
-
-        container = findViewById(R.id.container)
-        emptyView = findViewById<TextView>(R.id.empty_view)
-        progressBar = findViewById<SmoothProgressBar>(R.id.progress)
-        cardList = findViewById<RecyclerView>(R.id.card_list)
 
         setupToolbar()
 
@@ -66,7 +58,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         }
 
         emptyView.setText(R.string.empty_deck)
-        
+
         cardList.setHasFixedSize(true)
         cardList.layoutManager = LinearLayoutManager(this)
 
@@ -160,7 +152,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     override fun deckLoaded(deckCollection: DeckCollection) {
         LOG.d()
-        progressBar.visibility = View.GONE
+        loader.visibility = View.GONE
         val sections = ArrayList<DeckCardSectionAdapter.Section>()
         cards.clear()
         if (deckCollection.size() == 0) {
@@ -216,15 +208,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
             exportDeckNotAllowed()
         }
     }
-
-   /* override fun showError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun showError(exception: MTGException) {
-
-    }*/
-
+    
     private fun exportDeck() {
         LOG.d()
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {

@@ -53,7 +53,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
         lifeCounterList.setHasFixedSize(true)
         lifeCounterList.layoutManager = LinearLayoutManager(view.context)
-        setupHomeActivityScroll(recyclerView = lifeCounterList)
+        setupHomeActivityScroll(viewRecycle = lifeCounterList)
 
         setupMenu()
 

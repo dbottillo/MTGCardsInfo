@@ -17,9 +17,8 @@ class DeckCardAdapter(private val mContext: Context,
                       private val onCardListener: OnCardListener) : RecyclerView.Adapter<ListCardViewHolder>() {
 
     fun add(card: MTGCard, position: Int) {
-        var position = position
-        position = if (position == -1) itemCount else position
-        cards.add(position, card)
+        val pos = if (position == -1) itemCount else position
+        cards.add(pos, card)
         notifyItemInserted(position)
     }
 
