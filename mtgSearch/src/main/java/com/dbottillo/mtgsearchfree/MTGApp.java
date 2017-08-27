@@ -22,6 +22,7 @@ import com.dbottillo.mtgsearchfree.dagger.PresentersModule;
 import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.ui.HomeActivity;
+import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.TrackingManager;
 import com.squareup.leakcanary.LeakCanary;
@@ -98,7 +99,7 @@ public class MTGApp extends Application {
 
     private void fireReleaseNotePush() {
         LOG.d();
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, ReleaseNoteActivity.class);
         intent.putExtra(INTENT_RELEASE_NOTE_PUSH, true);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(HomeActivity.class);
