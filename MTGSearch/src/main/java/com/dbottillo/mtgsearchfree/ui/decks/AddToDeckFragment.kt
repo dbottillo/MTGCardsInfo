@@ -59,7 +59,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
         setupQuantitySpinner()
 
-        mtgApp.uiGraph.inject(this)
+        app.uiGraph.inject(this)
         presenter.init(this)
         presenter.loadDecks()
     }
@@ -202,4 +202,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         }
     }
 
+    override fun getTitle(): String {
+        return "/add_to_deck"
+    }
 }

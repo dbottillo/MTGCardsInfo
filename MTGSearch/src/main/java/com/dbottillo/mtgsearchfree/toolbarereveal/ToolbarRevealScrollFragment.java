@@ -18,7 +18,7 @@ public abstract class ToolbarRevealScrollFragment extends BasicFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         toolbarRevealScrollHelper = new ToolbarRevealScrollHelper(this, getScrollViewId(),
-                R.color.white, heightToolbar, isStatusBarIncludedInReveal());
+                R.color.white, getHeightToolbar(), isStatusBarIncludedInReveal());
     }
 
     /**

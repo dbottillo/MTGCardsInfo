@@ -1,12 +1,14 @@
 package com.dbottillo.mtgsearchfree.util;
 
-import android.content.Context;
-import android.os.Bundle;
-
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.ContentViewEvent;
+import com.crashlytics.android.answers.CustomEvent;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
-import com.google.firebase.analytics.FirebaseAnalytics;
+
+import org.jetbrains.annotations.NotNull;
 
 public final class TrackingManager {
 
@@ -46,23 +48,13 @@ public final class TrackingManager {
     private static final String UA_ACTION_MOVE_ALL = "moveAll";
     private static final String UA_ACTION_EXPORT = "export";
 
-    static FirebaseAnalytics firebaseAnalytics;
-
-    public static void init(Context context) {
-        if (firebaseAnalytics == null) {
-            firebaseAnalytics = FirebaseAnalytics.getInstance(context);
-        }
-    }
-
     public static void trackCard(MTGSet gameSet, int position) {
         trackEvent(UA_CATEGORY_CARD, UA_ACTION_SELECT, gameSet.getName() + " pos:" + position);
     }
 
     public static void trackPage(String page) {
         if (page != null) {
-            Bundle bundle = new Bundle();
-            bundle.putString("page_name", page);
-            firebaseAnalytics.logEvent("page", bundle);
+            Answers.getInstance().logContentView(new ContentViewEvent().putContentName(page));
         }
     }
 
@@ -71,11 +63,10 @@ public final class TrackingManager {
     }
 
     private static void trackEvent(String category, String action, String label) {
-        Bundle bundle = new Bundle();
-        bundle.putString("category", category);
-        bundle.putString("action", action);
-        bundle.putString("label", label);
-        firebaseAnalytics.logEvent("event", bundle);
+        Answers.getInstance().logCustom(new CustomEvent("event")
+                .putCustomAttribute("category", category)
+                .putCustomAttribute("action", action)
+                .putCustomAttribute("label", label));
     }
 
     public static void trackSet(MTGSet gameSet, MTGSet mtgSet) {
@@ -230,5 +221,9 @@ public final class TrackingManager {
 
     public static void trackRemovePlayer() {
         trackEvent(UA_CATEGORY_LIFE_COUNTER, "removePlayer");
+    }
+
+    public static void logOnCreate(@NotNull String message) {
+        Crashlytics.log(message);
     }
 }
