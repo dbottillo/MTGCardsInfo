@@ -9,8 +9,9 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 
-class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener,
-                   val delete:(deck: Deck) -> Unit, val selected:(deck: Deck) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DecksAdapter(val decks: List<Deck>,
+                   val delete:(deck: Deck) -> Unit,
+                   val selected:(deck: Deck) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         private val TYPE_HEADER: Int = 0
@@ -24,7 +25,6 @@ class DecksAdapter(val decks: List<Deck>, val listener: OnDecksListener,
         }
         if (viewType == TYPE_FOOTER) {
             val footerView = LayoutInflater.from(parent.context).inflate(R.layout.decks_footer, parent, false)
-            footerView.findViewById<View>(R.id.add_new_deck).setOnClickListener { listener.onAddDeck() }
             return FooterViewHolder(footerView)
         }
         return DeckViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_deck, parent, false))

@@ -30,8 +30,8 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     @Inject
     lateinit var presenter: SetsFragmentPresenter
 
-    lateinit var mtgCardsView: MTGCardsView
-    lateinit var loader: MTGLoader
+    private lateinit var mtgCardsView: MTGCardsView
+    private lateinit var loader: MTGLoader
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -45,11 +45,14 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loader = view.findViewById<MTGLoader>(R.id.loader)
+        loader = view.findViewById(R.id.loader)
         view.findViewById<View>(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         view.findViewById<View>(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
+        view.findViewById<View>(R.id.change_set).setOnClickListener {
+            onTitleHeaderSelected()
+        }
 
-        mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
+        mtgCardsView = view.findViewById(R.id.cards)
         mtgCardsView.setEmptyString(R.string.empty_cards)
 
         setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
@@ -76,7 +79,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
     override fun showSet(set: MTGSet, cardsCollection: CardsCollection) {
         toolbarRevealScrollHelper.updateTitle(set.name)
-        mtgCardsView.loadCards(cardsCollection.list, this, set.name, R.drawable.ic_edit_grey, cardsCollection.filter, R.menu.card_option)
+        mtgCardsView.loadCards(cardsCollection.list, this, set.name, cardsCollection.filter, R.menu.card_option)
     }
 
     override fun onCardsViewTypeSelected() {
@@ -118,9 +121,8 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         mtgCardsView.setListOn()
     }
 
-    override fun onCardsHeaderSelected() {
-        val intent = Intent(activity, SetPickerActivity::class.java)
-        startActivity(intent)
+    override fun onTitleHeaderSelected() {
+        startActivity(Intent(activity, SetPickerActivity::class.java))
     }
 
     override fun hideLoading() {

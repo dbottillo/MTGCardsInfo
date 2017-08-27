@@ -261,7 +261,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     }
 
     override fun showSearch(data: CardsCollection) {
-        mtgCardsView.loadCards(data.list, this, R.string.search_result, -1)
+        mtgCardsView.loadCards(data.list, this, R.string.search_result)
     }
 
     override fun showCardsGrid() {
@@ -272,7 +272,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         mtgCardsView.setListOn()
     }
 
-    override fun onCardsHeaderSelected() {
+    override fun onTitleHeaderSelected() {
 
     }
 

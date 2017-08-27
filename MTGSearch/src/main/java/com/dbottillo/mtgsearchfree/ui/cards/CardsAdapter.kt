@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
-import android.graphics.PorterDuff
 import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.widget.AppCompatTextView
 import android.support.v7.widget.RecyclerView
 import android.text.Spannable
@@ -14,7 +12,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -25,7 +22,7 @@ import com.squareup.picasso.Picasso
 class CardsAdapter(var cards: List<MTGCard>,
                    val listener: OnCardListener,
                    val cardFilter: CardFilter?,
-                   val configuration: CardAdapterConfiguration): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+                   val configuration: CardAdapterConfiguration) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var colorFilterActive = -1
 
@@ -34,6 +31,10 @@ class CardsAdapter(var cards: List<MTGCard>,
 
         if (viewType == ITEM_VIEW_TYPE_HEADER) {
             return HeaderViewHolder(inflater.inflate(R.layout.cards_header, parent, false))
+        }
+
+        if (viewType == ITEM_VIEW_TYPE_FOOTER) {
+            return FooterViewHolder(inflater.inflate(R.layout.cards_footer, parent, false))
         }
 
         val context = parent.context
@@ -46,18 +47,9 @@ class CardsAdapter(var cards: List<MTGCard>,
         return if (configuration.isGrid) GridCardViewHolder(v) else ListCardViewHolder(v)
     }
 
-    override fun onBindViewHolder(originalHolder: RecyclerView.ViewHolder, position: Int) {
-        if (position == ITEM_VIEW_TYPE_HEADER) {
-            val holder = originalHolder as HeaderViewHolder
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is HeaderViewHolder) {
             holder.title.text = configuration.title
-            if (configuration.headerIconTitle > -1) {
-                //headerIconTitle = R.drawable.ic_edit_grey;
-                var drawable = ContextCompat.getDrawable(holder.itemView.context, configuration.headerIconTitle)
-                drawable = DrawableCompat.wrap(drawable)
-                DrawableCompat.setTint(drawable, ContextCompat.getColor(holder.itemView.context, R.color.color_primary))
-                DrawableCompat.setTintMode(drawable, PorterDuff.Mode.SRC_IN)
-                holder.title.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
-            }
             holder.type.setOnClickListener { listener.onCardsViewTypeSelected() }
             holder.settings.setOnClickListener { listener.onCardsSettingSelected() }
             if (configuration.isGrid) {
@@ -91,35 +83,37 @@ class CardsAdapter(var cards: List<MTGCard>,
                 checkSpannable(spannableString, cardFilter.mythic, 17)
                 holder.subTitle.text = spannableString
             }
-            holder.itemView.setOnClickListener { listener.onCardsHeaderSelected() }
+            holder.title.setOnClickListener { listener.onTitleHeaderSelected() }
+            holder.subTitle.setOnClickListener { listener.onCardsSettingSelected() }
             return
         }
 
-        val holder = originalHolder as CardViewHolder
-        val card = cards[position - 1]
-        val context = holder.parent.context
-        if (holder is GridCardViewHolder) {
-            val gridCardViewHolder = holder
-            gridCardViewHolder.loader.visibility = View.VISIBLE
-            gridCardViewHolder.image.contentDescription = card.name
-            Picasso.with(context.applicationContext).load(card.image)
-                    .error(R.drawable.left_debug)
-                    .into(gridCardViewHolder.image, object : Callback {
-                        override fun onSuccess() {
-                            gridCardViewHolder.loader.visibility = View.GONE
-                        }
+        if (holder is CardViewHolder) {
+            val card = cards[position - 1]
+            val context = holder.parent.context
+            if (holder is GridCardViewHolder) {
+                val gridCardViewHolder = holder
+                gridCardViewHolder.loader.visibility = View.VISIBLE
+                gridCardViewHolder.image.contentDescription = card.name
+                Picasso.with(context.applicationContext).load(card.image)
+                        .error(R.drawable.left_debug)
+                        .into(gridCardViewHolder.image, object : Callback {
+                            override fun onSuccess() {
+                                gridCardViewHolder.loader.visibility = View.GONE
+                            }
 
-                        override fun onError() {
-                            gridCardViewHolder.loader.visibility = View.GONE
-                        }
-                    })
-        } else {
-            val listCardViewHolder = holder as ListCardViewHolder
-            CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
-            CardAdapterHelper.setupMore(listCardViewHolder, context, card, position, configuration.menu, listener)
-        }
-        holder.parent.setOnClickListener {
-            listener.onCardSelected(card, holder.adapterPosition - 1)
+                            override fun onError() {
+                                gridCardViewHolder.loader.visibility = View.GONE
+                            }
+                        })
+            } else {
+                val listCardViewHolder = holder as ListCardViewHolder
+                CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
+                CardAdapterHelper.setupMore(listCardViewHolder, context, card, position, configuration.menu, listener)
+            }
+            holder.parent.setOnClickListener {
+                listener.onCardSelected(card, holder.adapterPosition - 1)
+            }
         }
     }
 
@@ -134,11 +128,15 @@ class CardsAdapter(var cards: List<MTGCard>,
     }
 
     override fun getItemCount(): Int {
-        return cards.size + 1
+        return cards.size + 2
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position == 0) ITEM_VIEW_TYPE_HEADER else ITEM_VIEW_TYPE_ITEM
+        return when(position){
+            0 -> ITEM_VIEW_TYPE_HEADER
+            cards.size+1 -> ITEM_VIEW_TYPE_FOOTER
+            else -> ITEM_VIEW_TYPE_ITEM
+        }
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView?) {
@@ -146,24 +144,17 @@ class CardsAdapter(var cards: List<MTGCard>,
     }
 
     internal inner class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var title: AppCompatTextView
-        var subTitle: TextView
-        var type: ImageButton
-        var settings: ImageButton
-
-        init {
-            title = itemView.findViewById<AppCompatTextView>(R.id.title)
-            subTitle = itemView.findViewById<TextView>(R.id.sub_title)
-            type = itemView.findViewById<ImageButton>(R.id.cards_view_type)
-            settings = itemView.findViewById<ImageButton>(R.id.cards_settings)
-        }
+        var title: AppCompatTextView = itemView.findViewById(R.id.title)
+        var subTitle: TextView = itemView.findViewById(R.id.sub_title)
+        var type: ImageButton = itemView.findViewById(R.id.cards_view_type)
+        var settings: ImageButton = itemView.findViewById(R.id.cards_settings)
     }
 
-    companion object {
-
-        private val ITEM_VIEW_TYPE_HEADER = 0
-        private val ITEM_VIEW_TYPE_ITEM = 1
-    }
-
+    internal inner class FooterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
+
+
+const val ITEM_VIEW_TYPE_HEADER = 0
+const val ITEM_VIEW_TYPE_ITEM = 1
+const val ITEM_VIEW_TYPE_FOOTER = 2
+

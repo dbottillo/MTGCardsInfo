@@ -1,38 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     tools:background="@color/white">
 
     <TextView
-        android:id="@+id/empty_decks_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:id="@+id/empty_decks_text_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:padding="40dp"
         android:paddingTop="20dp"
-        android:textColor="@color/color_primary"
         android:text="@string/empty_decks"
+        android:textColor="@color/color_primary"
         android:textStyle="italic"
-        android:visibility="visible" />
+        android:visibility="visible"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:layout_marginBottom="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_list_footer_add">
-
-        <Button
-            android:id="@+id/add_new_deck"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/add_new_deck"
-            style="@style/FooterBtn" />
-
-    </FrameLayout>
+    <View
+        android:layout_height="160dp"
+        android:layout_width="match_parent"/>
 </LinearLayout>

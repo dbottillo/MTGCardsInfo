@@ -50,6 +50,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         lifeCounterList = view.findViewById<RecyclerView>(R.id.life_counter_list)
         view.findViewById<View>(R.id.action_reset).setOnClickListener{ reset() }
         view.findViewById<View>(R.id.action_dice).setOnClickListener{ launchDice() }
+        view.findViewById<View>(R.id.add_new_deck).setOnClickListener { addPlayer() }
 
         lifeCounterList.setHasFixedSize(true)
         lifeCounterList.layoutManager = LinearLayoutManager(view.context)
@@ -130,7 +131,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         TrackingManager.trackRemovePlayer()
     }
 
-    override fun onAddPlayer() {
+    fun addPlayer() {
         LOG.d()
         if (lifeCounterList.adapter.itemCount == 10) {
             Toast.makeText(activity, R.string.maximum_player, Toast.LENGTH_SHORT).show()
