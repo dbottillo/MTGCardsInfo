@@ -15,20 +15,19 @@ import android.view.animation.Transformation
 import android.widget.ImageButton
 import android.widget.ScrollView
 import android.widget.Toast
-import butterknife.BindView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.util.*
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
+import com.dbottillo.mtgsearchfree.util.*
 import javax.inject.Inject
 
 class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView, OnCardListener {
@@ -37,8 +36,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     lateinit var scrollView: ScrollView
     lateinit var mtgCardsView: MTGCardsView
     lateinit var searchView: MTGSearchView
-
-    @BindView(R.id.close_button)
     lateinit var closeButton: ImageButton
 
     internal var newSearchAnimation: AnimationDrawable? = null

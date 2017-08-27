@@ -33,6 +33,7 @@ android {
         versionName "3.1.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled = false
     }
 
     signingConfigs {
@@ -46,8 +47,8 @@ android {
         releaseConfig {
             keyAlias 'dbottillo'
             storeFile file('../dbottillo.keystore')
-            keyPassword keystoreProperties['keyPassword']
-            storePassword keystoreProperties['storePassword']
+            keyPassword keystoreProperties['RELEASE_KEY_PASSWORD']
+            storePassword keystoreProperties['RELEASE_STORE_PASSWORD']
         }
     }
 
@@ -83,11 +84,12 @@ android {
         ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
     }
 
-    dexOptions{
-        preDexLibraries true
-    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    dexOptions {
+        preDexLibraries = false
     }
 }
 
@@ -102,8 +104,6 @@ dependencies {
     implementation "com.android.support:cardview-v7:$support_library_version"
     implementation "com.android.support:recyclerview-v7:$support_library_version"
     implementation "com.android.support:design:$support_library_version"
-    implementation "com.jakewharton:butterknife:$butterknife_version"
-    kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
     implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rx_android_version"
     implementation "com.google.code.gson:gson:$gson_version"
@@ -179,7 +179,7 @@ task pmd(type: Pmd) {
 }
 
 task quality
-quality.dependsOn 'checkstyle', 'pmd', 'findbugs'
+quality.dependsOn 'checkstyle', 'pmd'
 //quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease

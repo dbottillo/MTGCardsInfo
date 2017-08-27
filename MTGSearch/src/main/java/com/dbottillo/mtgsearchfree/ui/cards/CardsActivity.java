@@ -29,10 +29,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPageChangeListener, CardsActivityView {
 
     protected static final String KEY_SEARCH = "Search";
@@ -73,13 +69,9 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
     }
 
 
-    @BindView(R.id.cards_view_pager)
     ViewPager viewPager;
-    @BindView(R.id.cards_tab_layout)
     TabLayout tabLayout;
-    @BindView(R.id.card_add_to_deck)
     FloatingActionButton fabButton;
-    @BindView(R.id.loader)
     MTGLoader loader;
 
     private CardsPagerAdapter adapter;
@@ -91,7 +83,17 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         super.onCreate(bundle);
         setContentView(R.layout.activity_cards);
 
-        ButterKnife.bind(this);
+        viewPager = findViewById(R.id.cards_view_pager);
+        tabLayout = findViewById(R.id.cards_tab_layout);
+        loader = findViewById(R.id.loader);
+        fabButton = findViewById(R.id.card_add_to_deck);
+        fabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LOG.d();
+                openDialog("add_to_deck", AddToDeckFragment.Companion.newInstance(getCurrentCard()));
+            }
+        });
         setupView();
 
         getMtgApp().getUiGraph().inject(this);
@@ -194,12 +196,6 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
     public void setFabScale(float value) {
         fabButton.setScaleX(value);
         fabButton.setScaleY(value);
-    }
-
-    @OnClick(R.id.card_add_to_deck)
-    public void addToDeck(View view) {
-        LOG.d();
-        openDialog("add_to_deck", AddToDeckFragment.Companion.newInstance(getCurrentCard()));
     }
 
     @Override

@@ -7,7 +7,6 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.TextView
-import butterknife.ButterKnife
 import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -35,11 +34,6 @@ abstract class BasicFragment : DialogFragment() {
             heightToolbar = styledAttributes.getDimension(0, 0f).toInt()
             styledAttributes.recycle()
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        ButterKnife.bind(this, view)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

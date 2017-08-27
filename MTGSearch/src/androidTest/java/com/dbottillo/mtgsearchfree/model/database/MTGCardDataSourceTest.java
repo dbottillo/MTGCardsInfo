@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Log;
 
 import com.dbottillo.mtgsearchfree.model.IntParam;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -46,8 +45,8 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void setup() {
         CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
         SetDataSource setDataSource = new SetDataSource(mtgDatabaseHelper.getReadableDatabase());
-        for (MTGSet set : setDataSource.getSets()){
-            if (set.getName().equalsIgnoreCase("kaladesh")){
+        for (MTGSet set : setDataSource.getSets()) {
+            if (set.getName().equalsIgnoreCase("kaladesh")) {
                 kaladesh = set;
                 break;
             }

@@ -36,34 +36,15 @@ import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class MTGCardView extends RelativeLayout implements CardView {
 
-    @BindView(R.id.detail_card)
     TextView detailCard;
-
-    @BindView(R.id.price_on_tcg)
     TextView priceOnTcg;
-
-    @BindView(R.id.price_card)
     TextView cardPrice;
-
-    @BindView(R.id.image_card_retry)
     View retry;
-
-    @BindView(R.id.image_card)
     ImageView cardImage;
-
-    @BindView(R.id.image_card_loader)
     MTGLoader cardLoader;
-
-    @BindView(R.id.image_card_container)
     View cardImageContainer;
-
-    @BindView(R.id.card_flip)
     ImageButton flipCardButton;
 
     public final static float RATIO_CARD = 1.39622641509434f;
@@ -91,7 +72,34 @@ public class MTGCardView extends RelativeLayout implements CardView {
         super(context, attrs, defStyle);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.view_mtg_card, this, true);
-        ButterKnife.bind(this, view);
+
+        detailCard = view.findViewById(R.id.detail_card);
+        priceOnTcg = view.findViewById(R.id.price_on_tcg);
+        cardPrice = view.findViewById(R.id.price_card);
+        retry = view.findViewById(R.id.image_card_retry);
+        cardImage = view.findViewById(R.id.image_card);
+        cardLoader = view.findViewById(R.id.image_card_loader);
+        cardImageContainer = view.findViewById(R.id.image_card_container);
+        flipCardButton = view.findViewById(R.id.card_flip);
+
+        view.findViewById(R.id.image_card_retry_btn).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                retryImage(view);
+            }
+        });
+        view.findViewById(R.id.price_container).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPrice(view);
+            }
+        });
+        flipCardButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flipCard();
+            }
+        });
 
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -244,12 +252,10 @@ public class MTGCardView extends RelativeLayout implements CardView {
         cardLoader.setVisibility(View.GONE);
     }
 
-    @OnClick(R.id.image_card_retry_btn)
     public void retryImage(View view) {
         loadImage(false);
     }
 
-    @OnClick(R.id.price_container)
     public void openPrice(View view) {
         LOG.d();
         if (price != null && !price.isAnError()) {
@@ -268,7 +274,6 @@ public class MTGCardView extends RelativeLayout implements CardView {
         }
     }
 
-    @OnClick(R.id.card_flip)
     public void flipCard() {
         cardPresenter.loadOtherSideCard(card);
     }
