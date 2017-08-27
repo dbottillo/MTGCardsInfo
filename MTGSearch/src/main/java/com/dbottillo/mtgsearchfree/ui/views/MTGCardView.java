@@ -22,9 +22,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.dbottillo.mtgsearchfree.MTGApp;
 import com.dbottillo.mtgsearchfree.R;
-import com.dbottillo.mtgsearchfree.dagger.UiComponent;
 import com.dbottillo.mtgsearchfree.exceptions.MTGException;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.TCGPrice;
@@ -115,7 +113,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
         cardPresenter.init(this);
     }
 
-    private void setTCGPriceTitle(){
+    private void setTCGPriceTitle() {
         priceOnTcg.setText(Html.fromHtml("<i><u>TCG</i></u>"));
     }
 
@@ -143,7 +141,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
         load(card);
     }
 
-    private void load(MTGCard card){
+    private void load(MTGCard card) {
         LOG.d();
         this.card = card;
         String manaCost;
@@ -186,9 +184,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
         IntentFilter cardFilter = new IntentFilter(card.getMultiVerseId() + "");
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(priceReceiver, cardFilter);
 
-        if (card.isDoubleFaced()){
-            flipCardButton.setVisibility(View.VISIBLE);
-        }
+        flipCardButton.setVisibility(card.isDoubleFaced() ? View.VISIBLE : View.GONE);
     }
 
     private void updatePrice() {
@@ -210,7 +206,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
         cardImage.setVisibility(View.GONE);
         startCardLoader();
         String cardUrl = fallback ? card.getImageFromGatherer() : card.getImage();
-        LOG.d("loading: "+cardUrl);
+        LOG.d("loading: " + cardUrl);
         Picasso.with(getContext().getApplicationContext()).load(cardUrl)
                 .into(cardImage, new Callback() {
                     public void onSuccess() {
@@ -273,7 +269,7 @@ public class MTGCardView extends RelativeLayout implements CardView {
     }
 
     @OnClick(R.id.card_flip)
-    public void flipCard(){
+    public void flipCard() {
         cardPresenter.loadOtherSideCard(card);
     }
 

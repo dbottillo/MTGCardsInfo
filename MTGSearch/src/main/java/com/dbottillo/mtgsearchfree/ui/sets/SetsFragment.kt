@@ -12,16 +12,17 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
-import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.util.*
-import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
-import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
+import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
+import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
 
 class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
@@ -30,7 +31,6 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     lateinit var presenter: SetsFragmentPresenter
 
     lateinit var mtgCardsView: MTGCardsView
-    lateinit var tooltip: ViewGroup
     lateinit var loader: MTGLoader
 
     override fun onAttach(context: Context) {
@@ -48,20 +48,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         loader = view.findViewById<MTGLoader>(R.id.loader)
         view.findViewById<View>(R.id.action_search).setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         view.findViewById<View>(R.id.action_lucky).setOnClickListener { startActivity(Intent(activity, CardLuckyActivity::class.java)) }
-        view.findViewById<View>(R.id.main_tooltip_close).setOnClickListener {
-            generalData.setTooltipMainHide()
-            AnimationUtil.animateHeight(tooltip, 0)
-        }
 
-        tooltip = view.findViewById<ViewGroup>(R.id.main_tooltip)
         mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
         mtgCardsView.setEmptyString(R.string.empty_cards)
-
-        if (generalData.isTooltipMainToShow) {
-            MaterialWrapper.setElevation(tooltip, resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat())
-        } else {
-            UIUtil.setHeight(tooltip, 0)
-        }
 
         setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
 
@@ -97,7 +86,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onCardsSettingSelected() {
         val cardsConfigurator = CardsConfiguratorFragment()
         cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
-        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
+        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener {
             override fun onConfigurationChange() {
                 presenter.reloadSet()
             }
@@ -111,7 +100,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
-        when(menuItem.itemId){
+        when (menuItem.itemId) {
             R.id.action_add_to_deck -> DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card))
             R.id.action_add_to_favourites -> {
                 presenter.saveAsFavourite(card)
