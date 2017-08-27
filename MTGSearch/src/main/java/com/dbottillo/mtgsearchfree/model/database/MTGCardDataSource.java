@@ -84,7 +84,7 @@ public class MTGCardDataSource {
     public List<MTGCard> searchCards(SearchParams searchParams) {
         LOG.d("search cards  " + searchParams.toString());
         QueryComposer queryComposer = new QueryComposer("SELECT * FROM " + CardDataSource.TABLE);
-        queryComposer.addLikeParam(CardDataSource.COLUMNS.NAME.getName(), searchParams.getName().toLowerCase(Locale.getDefault()));
+        queryComposer.addLikeParam(CardDataSource.COLUMNS.NAME.getName(), searchParams.getName().trim().toLowerCase(Locale.getDefault()));
         if (searchParams.getTypes().length() > 0) {
             String[] types = searchParams.getTypes().split(" ");
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.TYPE.getName(), "LIKE", "AND", types);

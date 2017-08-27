@@ -60,7 +60,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:id="@+id/main_tooltip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -137,13 +137,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/main_tooltip"/>
+        android:layout_below="@+id/toolbar"/>
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
