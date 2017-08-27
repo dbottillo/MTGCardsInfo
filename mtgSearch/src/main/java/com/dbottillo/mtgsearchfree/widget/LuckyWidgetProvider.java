@@ -16,14 +16,12 @@ public class LuckyWidgetProvider extends AppWidgetProvider {
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
         super.onDeleted(context, appWidgetIds);
-        TrackingManager.init(context);
         TrackingManager.trackDeleteWidget();
     }
 
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
-        TrackingManager.init(context);
         TrackingManager.trackAddWidget();
     }
 

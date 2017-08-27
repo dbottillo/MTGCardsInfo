@@ -35,7 +35,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_saved, container, false)
-        mtgApp.uiGraph.inject(this)
+        app.uiGraph.inject(this)
         return rootView
     }
 

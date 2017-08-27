@@ -33,9 +33,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     lateinit var tooltip: ViewGroup
     lateinit var loader: MTGLoader
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
-        mtgApp.uiGraph.inject(this)
+        app.uiGraph.inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

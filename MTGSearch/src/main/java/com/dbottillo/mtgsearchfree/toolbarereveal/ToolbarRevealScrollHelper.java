@@ -146,14 +146,14 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     private void setupTitleAnimation(BasicFragment baseFragment, Context context) {
         int translationStart = UIUtil.dpToPx(context, TITLE_TRANSLATION_START_Y);
         int translationEnd = 0;
-        MaterialWrapper.setElevation(baseFragment.toolbar, 0);
-        baseFragment.toolbarTitle.setAlpha(0);
-        baseFragment.toolbarTitle.setTranslationY(translationStart);
-        if (baseFragment.toolbar.getNavigationIcon() != null) {
-            MaterialWrapper.setTint(baseFragment.toolbar.getNavigationIcon(), ContextCompat.getColor(context, R.color.color_primary));
+        MaterialWrapper.setElevation(baseFragment.getToolbar(), 0);
+        baseFragment.getToolbarTitle().setAlpha(0);
+        baseFragment.getToolbarTitle().setTranslationY(translationStart);
+        if (baseFragment.getToolbar().getNavigationIcon() != null) {
+            MaterialWrapper.setTint(baseFragment.getToolbar().getNavigationIcon(), ContextCompat.getColor(context, R.color.color_primary));
         }
-        setChildrenToolbarColor(baseFragment.toolbar, ContextCompat.getColor(context, R.color.color_primary));
-        baseFragment.toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(context, R.color.color_primary), PorterDuff.Mode.SRC_IN);
+        setChildrenToolbarColor(baseFragment.getToolbar(), ContextCompat.getColor(context, R.color.color_primary));
+        baseFragment.getToolbar().getOverflowIcon().setColorFilter(ContextCompat.getColor(context, R.color.color_primary), PorterDuff.Mode.SRC_IN);
         if (statusBarIncluded) {
             MaterialWrapper.setStatusBarColor(baseFragment.getActivity(), ContextCompat.getColor(baseFragment.getContext(), R.color.main_bg));
             MaterialWrapper.setLightStatusBar(baseFragment.getActivity().getWindow());
@@ -189,15 +189,15 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
         BasicFragment instance = fragment.get();
         if (instance != null) {
             float interval = calculateInterval();
-            instance.toolbarTitle.setAlpha(alphaInterpolator.getInterpolation(interval));
-            MaterialWrapper.setElevation(instance.toolbar, elevationInterpolator.getInterpolation(interval));
-            instance.toolbarTitle.setTranslationY(translationTitle.getInterpolation(interval));
-            instance.toolbar.setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval));
-            setChildrenToolbarColor(instance.toolbar, arrowToolbarEvaluator.getInterpolation(interval));
-            if (instance.toolbar.getNavigationIcon() != null) {
-                MaterialWrapper.setTint(instance.toolbar.getNavigationIcon(), arrowToolbarEvaluator.getInterpolation(interval));
+            instance.getToolbarTitle().setAlpha(alphaInterpolator.getInterpolation(interval));
+            MaterialWrapper.setElevation(instance.getToolbar(), elevationInterpolator.getInterpolation(interval));
+            instance.getToolbarTitle().setTranslationY(translationTitle.getInterpolation(interval));
+            instance.getToolbar().setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval));
+            setChildrenToolbarColor(instance.getToolbar(), arrowToolbarEvaluator.getInterpolation(interval));
+            if (instance.getToolbar().getNavigationIcon() != null) {
+                MaterialWrapper.setTint(instance.getToolbar().getNavigationIcon(), arrowToolbarEvaluator.getInterpolation(interval));
             }
-            instance.toolbar.getOverflowIcon().setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN);
+            instance.getToolbar().getOverflowIcon().setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN);
             if (statusBarIncluded) {
                 MaterialWrapper.setStatusBarColor(instance.getActivity(), statusBarColorEvaluator.getInterpolation(interval));
                 if (interval <= THRESHOLD_STATUS_BAR_COLOR) {

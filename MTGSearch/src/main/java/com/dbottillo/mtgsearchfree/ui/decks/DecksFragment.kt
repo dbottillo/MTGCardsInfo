@@ -40,7 +40,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_decks, container, false)
-        mtgApp.uiGraph.inject(this)
+        app.uiGraph.inject(this)
         dialogUtil.init(context)
         return rootView
     }

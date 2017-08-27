@@ -46,6 +46,8 @@ abstract class BasicActivity : AppCompatActivity() {
         if (theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
             sizeToolbar = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
         }
+
+        TrackingManager.logOnCreate("${javaClass.name} ${hashCode()}")
     }
 
     public override fun onResume() {

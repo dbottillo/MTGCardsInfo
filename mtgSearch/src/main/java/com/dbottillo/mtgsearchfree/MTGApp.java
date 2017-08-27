@@ -59,7 +59,6 @@ public class MTGApp extends Application {
                 .build();
 
         if (!isUnitTesting) {
-            TrackingManager.init(getApplicationContext());
             Fabric.with(this, new Crashlytics());
             Crashlytics.setString("git_sha", BuildConfig.GIT_SHA);
             checkReleaseNote();
