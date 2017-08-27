@@ -12,55 +12,33 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
 import com.dbottillo.mtgsearchfree.util.LOG;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
-public class FilterPickerView extends LinearLayout {
+public class FilterPickerView extends LinearLayout implements View.OnClickListener {
 
     public interface OnFilterPickerListener {
         void filterUpdated(CardFilter.TYPE type, boolean on);
     }
 
-    @BindView(R.id.filter_panel_container)
     View filterPanelContainer;
-    @BindView(R.id.filter_title)
     TextView filterTitle;
-    @BindView(R.id.filter_divisor)
     View filterDivisor;
 
-    @BindView(R.id.toggle_white)
     ToggleButton toggleW;
-    @BindView(R.id.toggle_blue)
     ToggleButton toggleU;
-    @BindView(R.id.toggle_black)
     ToggleButton toggleB;
-    @BindView(R.id.toggle_red)
     ToggleButton toggleR;
-    @BindView(R.id.toggle_green)
     ToggleButton toggleG;
 
-    @BindView(R.id.toggle_land)
     ToggleButton toggleLand;
-    @BindView(R.id.toggle_artifact)
     ToggleButton toggleArtifact;
-    @BindView(R.id.toggle_eldrazi)
     ToggleButton toggleEldrazi;
 
-    @BindView(R.id.toggle_common)
     ToggleButton toggleCommon;
-    @BindView(R.id.toggle_uncommon)
     ToggleButton toggleUncommon;
-    @BindView(R.id.toggle_rare)
     ToggleButton toggleRare;
-    @BindView(R.id.toggle_myhtic)
     ToggleButton toggleMythic;
 
-    @BindView(R.id.toggle_order)
     ToggleButton toggleOrder;
-    @BindView(R.id.order_title)
     TextView orderTitle;
-    @BindView(R.id.order_divisor)
     View orderDivisor;
 
     private OnFilterPickerListener listener;
@@ -80,7 +58,45 @@ public class FilterPickerView extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.view_filter_picker, this);
 
-        ButterKnife.bind(this, view);
+        filterPanelContainer = view.findViewById(R.id.filter_panel_container);
+        filterTitle = view.findViewById(R.id.filter_title);
+        filterDivisor = view.findViewById(R.id.filter_divisor);
+
+        toggleW = view.findViewById(R.id.toggle_white);
+        toggleU = view.findViewById(R.id.toggle_blue);
+        toggleB = view.findViewById(R.id.toggle_black);
+        toggleR = view.findViewById(R.id.toggle_red);
+        toggleG = view.findViewById(R.id.toggle_green);
+
+        toggleLand = view.findViewById(R.id.toggle_land);
+        toggleArtifact = view.findViewById(R.id.toggle_artifact);
+        toggleEldrazi = view.findViewById(R.id.toggle_eldrazi);
+
+        toggleCommon = view.findViewById(R.id.toggle_common);
+        toggleUncommon = view.findViewById(R.id.toggle_uncommon);
+        toggleRare = view.findViewById(R.id.toggle_rare);
+        toggleMythic = view.findViewById(R.id.toggle_myhtic);
+
+        toggleOrder = view.findViewById(R.id.toggle_order);
+        orderTitle = view.findViewById(R.id.order_title);
+        orderDivisor = view.findViewById(R.id.order_divisor);
+
+        toggleW.setOnClickListener(this);
+        toggleU.setOnClickListener(this);
+        toggleR.setOnClickListener(this);
+        toggleG.setOnClickListener(this);
+        toggleB.setOnClickListener(this);
+
+        toggleLand.setOnClickListener(this);
+        toggleArtifact.setOnClickListener(this);
+        toggleEldrazi.setOnClickListener(this);
+
+        toggleCommon.setOnClickListener(this);
+        toggleUncommon.setOnClickListener(this);
+        toggleRare.setOnClickListener(this);
+        toggleMythic.setOnClickListener(this);
+
+        toggleOrder.setOnClickListener(this);
     }
 
     public void setFilterPickerListener(OnFilterPickerListener list) {
@@ -104,11 +120,8 @@ public class FilterPickerView extends LinearLayout {
         toggleOrder.setChecked(filter.sortWUBGR);
     }
 
-    @OnClick({R.id.toggle_white, R.id.toggle_blue, R.id.toggle_black, R.id.toggle_red,
-            R.id.toggle_green, R.id.toggle_artifact, R.id.toggle_land, R.id.toggle_eldrazi,
-            R.id.toggle_common, R.id.toggle_uncommon,
-            R.id.toggle_rare, R.id.toggle_myhtic, R.id.toggle_order})
-    void onToggleClicked(View view) {
+    @Override
+    public void onClick(View view) {
         LOG.d();
         boolean on = ((ToggleButton) view).isChecked();
         switch (view.getId()) {

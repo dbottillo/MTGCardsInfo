@@ -7,9 +7,6 @@ import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 
 class BottomTabs : LinearLayout {

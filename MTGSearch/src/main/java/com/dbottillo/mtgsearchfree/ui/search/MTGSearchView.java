@@ -19,59 +19,33 @@ import com.dbottillo.mtgsearchfree.util.LOG;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MTGSearchView extends RelativeLayout {
 
     String[] operators = new String[]{"=", ">", "<", ">=", "<="};
     ArrayList<MTGSet> sets;
 
-    @BindView(R.id.search_name)
     AppCompatEditText name;
-    @BindView(R.id.search_types)
     AppCompatEditText types;
-    @BindView(R.id.search_text)
     AppCompatEditText text;
-    @BindView(R.id.search_cmc)
     AppCompatEditText cmc;
-    @BindView(R.id.search_power)
     AppCompatEditText power;
-    @BindView(R.id.search_tough)
     AppCompatEditText tough;
-    @BindView(R.id.search_power_operator)
     Spinner powerOp;
-    @BindView(R.id.search_toughness_operator)
     Spinner toughOp;
-    @BindView(R.id.search_cmc_operator)
     Spinner cmcOp;
-    @BindView(R.id.search_w)
     AppCompatCheckBox white;
-    @BindView(R.id.search_u)
     AppCompatCheckBox blue;
-    @BindView(R.id.search_b)
     AppCompatCheckBox black;
-    @BindView(R.id.search_r)
     AppCompatCheckBox red;
-    @BindView(R.id.search_g)
     AppCompatCheckBox green;
-    @BindView(R.id.search_m)
     AppCompatCheckBox multi;
-    @BindView(R.id.search_nm)
     AppCompatCheckBox noMulti;
-    @BindView(R.id.search_mno)
     AppCompatCheckBox multiNoOthers;
-    @BindView(R.id.search_l)
     AppCompatCheckBox land;
-    @BindView(R.id.search_common)
     AppCompatCheckBox common;
-    @BindView(R.id.search_uncommon)
     AppCompatCheckBox uncommon;
-    @BindView(R.id.search_rare)
     AppCompatCheckBox rare;
-    @BindView(R.id.search_mythic)
     AppCompatCheckBox mythic;
-    @BindView(R.id.search_set)
     Spinner set;
 
     private SearchSetAdapter searchSetAdapter;
@@ -91,7 +65,32 @@ public class MTGSearchView extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.search_form_view, this);
-        ButterKnife.bind(this);
+
+        name = findViewById(R.id.search_name);
+        types = findViewById(R.id.search_types);
+        text = findViewById(R.id.search_text);
+        cmc = findViewById(R.id.search_cmc);
+        power = findViewById(R.id.search_power);
+        tough = findViewById(R.id.search_tough);
+        powerOp = findViewById(R.id.search_power_operator);
+        toughOp = findViewById(R.id.search_toughness_operator);
+        cmcOp = findViewById(R.id.search_cmc_operator);
+        white = findViewById(R.id.search_w);
+        blue = findViewById(R.id.search_u);
+        black = findViewById(R.id.search_b);
+        red = findViewById(R.id.search_r);
+        green = findViewById(R.id.search_g);
+
+        multi = findViewById(R.id.search_m);
+        noMulti = findViewById(R.id.search_nm);
+        multiNoOthers = findViewById(R.id.search_mno);
+        land = findViewById(R.id.search_l);
+
+        common = findViewById(R.id.search_common);
+        uncommon = findViewById(R.id.search_uncommon);
+        rare = findViewById(R.id.search_rare);
+        mythic = findViewById(R.id.search_mythic);
+        set = findViewById(R.id.search_set);
 
         sets = new ArrayList<>();
         sets.add(new MTGSet(-1, getResources().getString(R.string.search_set_all)));
@@ -136,7 +135,7 @@ public class MTGSearchView extends RelativeLayout {
         multiNoOthers.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
+                if (isChecked) {
                     noMulti.setChecked(false);
                     multi.setChecked(false);
                 }

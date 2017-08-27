@@ -7,11 +7,11 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.widget.FrameLayout
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.ButterKnife
+import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
+import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
@@ -52,6 +52,11 @@ class HomeActivity : BasicActivity() {
 
         if (bundle == null) {
             changeFragment(SetsFragment(), "sets", false)
+        }
+
+        if (intent != null && intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)){
+            startActivity(Intent(this, ReleaseNoteActivity::class.java))
+            intent.putExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH, false)
         }
 
     }
