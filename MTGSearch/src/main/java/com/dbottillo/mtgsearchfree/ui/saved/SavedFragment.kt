@@ -92,7 +92,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     override fun showCards(cardsCollection: CardsCollection) {
         emptyContainer.visibility = View.GONE
         mtgCardsView.visibility = View.VISIBLE
-        mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), -1, cardsCollection.filter, R.menu.card_saved_option)
+        mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), cardsCollection.filter, R.menu.card_saved_option)
     }
 
     override fun showEmptyScreen() {
@@ -146,7 +146,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         startActivity(Intent(activity, SearchActivity::class.java))
     }
 
-    override fun onCardsHeaderSelected() {
+    override fun onTitleHeaderSelected() {
 
     }
 

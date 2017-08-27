@@ -18,7 +18,7 @@ class SetsInteractorImpl(private val storage: SetDataSource,
 
     override fun load(): Observable<List<MTGSet>> {
         logger.d("loadSet sets")
-        return Observable.just(storage.sets)
+        return Observable.fromCallable { storage.sets }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

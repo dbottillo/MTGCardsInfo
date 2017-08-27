@@ -59,18 +59,16 @@ class MTGCardsView : RelativeLayout {
         emptyView.setText(res)
     }
 
-    fun loadCards(cards: List<MTGCard>, listener: OnCardListener, title: Int, titleImage: Int) {
+    fun loadCards(cards: List<MTGCard>, listener: OnCardListener, title: Int) {
         loadCards(cards, listener, null, CardAdapterConfiguration(
                 title = context.getString(title),
-                headerIconTitle = titleImage,
                 isGrid = grid,
                 menu = R.menu.card_option))
     }
 
-    fun loadCards(cards: List<MTGCard>, listener: OnCardListener, title: String, titleImage: Int, cardFilter: CardFilter?, menuOption: Int) {
+    fun loadCards(cards: List<MTGCard>, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int) {
         loadCards(cards, listener, cardFilter, CardAdapterConfiguration(
                 title = title,
-                headerIconTitle = titleImage,
                 isGrid = grid,
                 menu = menuOption))
     }

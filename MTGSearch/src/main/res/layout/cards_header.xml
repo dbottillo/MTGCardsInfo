@@ -12,22 +12,23 @@
         android:id="@+id/title"
         style="@style/BigTitle"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="0dp"
-        android:drawablePadding="5dp"
         android:layout_toLeftOf="@+id/cards_settings"
         android:textSize="32sp"
-        tools:drawableLeft="@drawable/ic_edit_grey"
         tools:layout_height="wrap_content"
         tools:layout_width="wrap_content"
         tools:text="Duel Decks: Ravinca vs Guild"/>
 
     <TextView
         android:id="@+id/sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
-        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/cards_settings"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="8dp"
         tools:text="WUBRG - AL - CUMR"/>
 
     <ImageButton
@@ -50,9 +51,9 @@
         android:layout_gravity="center_vertical"
         android:layout_toLeftOf="@id/cards_view_type"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/cd_cards_sort"
+        android:contentDescription="@string/cd_filter"
         android:padding="8dp"
-        app:srcCompat="@drawable/ic_settings"
+        app:srcCompat="@drawable/filter"
         android:tint="@color/color_primary"/>
 
 </RelativeLayout>

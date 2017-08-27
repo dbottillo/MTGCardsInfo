@@ -16,14 +16,13 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
-import com.dbottillo.mtgsearchfree.ui.lifecounter.OnDecksListener
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
 
-class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, PermissionUtil.PermissionListener {
+class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.PermissionListener {
 
     private val READ_REQUEST_CODE = 42
 
@@ -52,12 +51,15 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
         view.findViewById<View>(R.id.action_import).setOnClickListener {
             importDeck()
         }
+        view.findViewById<View>(R.id.add_new_deck).setOnClickListener {
+            onAddDeck()
+        }
 
         decksList.setHasFixedSize(true)
         decksList.layoutManager = LinearLayoutManager(view.context)
         setupHomeActivityScroll(viewRecycle = decksList)
 
-        adapter = DecksAdapter(decks, this, delete = {
+        adapter = DecksAdapter(decks,  delete = {
             deleteDeck(it)
         }, selected = {
             LOG.d()
@@ -95,7 +97,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
         adapter.notifyDataSetChanged()
     }
 
-    override fun onAddDeck() {
+    fun onAddDeck() {
         dialogUtil.showAddDeck {
             presenter.addDeck(it)
             TrackingManager.trackNewDeck(it)

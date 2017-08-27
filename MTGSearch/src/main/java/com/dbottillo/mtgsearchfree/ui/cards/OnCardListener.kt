@@ -6,7 +6,7 @@ import android.view.View
 import com.dbottillo.mtgsearchfree.model.MTGCard
 
 interface OnCardListener {
-    fun onCardsHeaderSelected()
+    fun onTitleHeaderSelected()
     fun onCardsViewTypeSelected()
     fun onCardsSettingSelected()
     fun onCardSelected(card: MTGCard, position: Int)

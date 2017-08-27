@@ -26,9 +26,7 @@ class LifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterL
             return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_header, parent, false))
         }
         if (viewType == TYPE_FOOTER) {
-            val footerView = LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false)
-            footerView.findViewById<View>(R.id.add_new_player).setOnClickListener { listener.onAddPlayer() }
-            return FooterViewHolder(footerView)
+            return FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false))
         }
         return PlayerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_life_counter, parent, false))
     }

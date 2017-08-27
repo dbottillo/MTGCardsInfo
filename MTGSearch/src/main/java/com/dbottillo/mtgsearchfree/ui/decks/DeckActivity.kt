@@ -63,17 +63,11 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         cardList.layoutManager = LinearLayoutManager(this)
 
         val deckCardAdapter = DeckCardAdapter(this, cards, R.menu.deck_card, object : OnCardListener {
-            override fun onCardsHeaderSelected() {
+            override fun onTitleHeaderSelected() {}
 
-            }
+            override fun onCardsViewTypeSelected() {}
 
-            override fun onCardsViewTypeSelected() {
-
-            }
-
-            override fun onCardsSettingSelected() {
-
-            }
+            override fun onCardsSettingSelected() {}
 
             override fun onCardSelected(card: MTGCard, position: Int) {
                 startActivity(CardsActivity.newInstance(this@DeckActivity, deck, cardPositionWithoutSections(card)))
