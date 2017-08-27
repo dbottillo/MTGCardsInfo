@@ -17,7 +17,6 @@ import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import javax.inject.Inject
 
 abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListener {
@@ -82,9 +81,9 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
         return true
     }
 
-    protected fun setupHomeActivityScroll(recyclerView: RecyclerView) {
+    protected fun setupHomeActivityScroll(viewRecycle: RecyclerView) {
         if (activity is HomeActivity) {
-            recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            viewRecycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
                     if (dy > 0) {

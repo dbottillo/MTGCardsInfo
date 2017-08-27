@@ -12,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import butterknife.OnClick
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
@@ -56,7 +55,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, OnDecksListener, Pe
 
         decksList.setHasFixedSize(true)
         decksList.layoutManager = LinearLayoutManager(view.context)
-        setupHomeActivityScroll(recyclerView = decksList)
+        setupHomeActivityScroll(viewRecycle = decksList)
 
         adapter = DecksAdapter(decks, this, delete = {
             deleteDeck(it)

@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -65,7 +63,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
             UIUtil.setHeight(tooltip, 0)
         }
 
-        setupHomeActivityScroll(recyclerView = mtgCardsView.listView)
+        setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
 
         presenter.init(this)
     }
