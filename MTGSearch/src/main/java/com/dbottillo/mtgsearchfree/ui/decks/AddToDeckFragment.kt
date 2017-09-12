@@ -71,7 +71,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
         chooseQuantity.adapter = adapter
         chooseQuantity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 LOG.d()
                 if (position == 5) {
                     chooseQuantity.visibility = View.GONE
