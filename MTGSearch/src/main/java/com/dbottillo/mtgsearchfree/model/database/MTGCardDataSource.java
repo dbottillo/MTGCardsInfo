@@ -21,10 +21,12 @@ public class MTGCardDataSource {
         HOUR_OF_DEVASTATION(2, "Hour of Devastation"),
         AMONKHET_INVOCATIONS(3, "Masterpiece Series: Amonkhet Invocations"),
         AMONKHET(4, "Amonkhet"),
+        WELCOME_2017(5, "Welcome Deck 2017"),
         AETHER_REVOLT(8, "Aether Revolt"),
         KALADESH_INVENTIONS(11, "Kaladesh Inventions"),
         KALADESH(12, "Kaladesh"),
         ELDRITCH_MOON(15, "Eldritch Moon"),
+        WELCOME_2016(17, "Welcome Deck 2016"),
         SHADOWS_OVER_INNISTRAD(18, "Shadows over Innistrad"),
         OATH_GATEWATCH(20, "Oath of the Gatewatch"),
         BATTLE_ZENDIKAR(23, "Battle for Zendikar");

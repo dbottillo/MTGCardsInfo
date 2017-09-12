@@ -19,11 +19,11 @@ import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtil;
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -91,7 +91,9 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
             @Override
             public void onClick(View view) {
                 LOG.d();
-                openDialog("add_to_deck", AddToDeckFragment.Companion.newInstance(getCurrentCard()));
+                if (getCurrentCard() != null) {
+                    openDialog("add_to_deck", AddToDeckFragment.Companion.newInstance(getCurrentCard()));
+                }
             }
         });
         setupView();
