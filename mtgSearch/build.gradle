@@ -29,8 +29,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 71
-        versionName "3.1.0"
+        versionCode 72
+        versionName "3.1.1"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false

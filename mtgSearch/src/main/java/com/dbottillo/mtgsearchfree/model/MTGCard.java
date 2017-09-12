@@ -433,7 +433,7 @@ public class MTGCard implements Comparable<MTGCard>, Parcelable {
     public String getImage() {
         if (number != null && number.length() > 0
                 && !set.getCode().equalsIgnoreCase("C17") && !types.contains("Plane")) {
-            return "http://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + getMciNumberOrMultiverseId() + ".jpg";
+            return "https://magiccards.info/scans/en/" + set.getMagicCardsInfoCode() + "/" + getMciNumberOrMultiverseId() + ".jpg";
         }
         return getImageFromGatherer();
     }
