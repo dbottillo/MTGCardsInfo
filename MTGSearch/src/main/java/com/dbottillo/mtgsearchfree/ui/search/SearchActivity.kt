@@ -81,10 +81,10 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         scrollView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 sizeBig = scrollView.height
-                UIUtil.setMarginTop(mtgCardsView, sizeBig)
+                mtgCardsView.setMarginTop(sizeBig)
                 if (searchOpen) {
-                    UIUtil.setHeight(scrollView, 0)
-                    UIUtil.setMarginTop(mtgCardsView, 0)
+                    scrollView.setHeight(0)
+                    mtgCardsView.setMarginTop(0)
                     mtgCardsView.visibility = View.VISIBLE
                 }
                 scrollView.viewTreeObserver.removeOnGlobalLayoutListener(this)
@@ -193,8 +193,8 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
                 super.applyTransformation(interpolatedTime, t)
                 val `val` = backgroundInterpolator.getInterpolation(interpolatedTime).toInt()
-                UIUtil.setHeight(scrollView, `val`)
-                UIUtil.setMarginTop(mtgCardsView, `val`)
+                scrollView.setHeight(`val`)
+                mtgCardsView.setMarginTop(`val`)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     val color = argbEvaluator.evaluate(interpolatedTime, startColor, endColor) as Int
                     this@SearchActivity.window.statusBarColor = color

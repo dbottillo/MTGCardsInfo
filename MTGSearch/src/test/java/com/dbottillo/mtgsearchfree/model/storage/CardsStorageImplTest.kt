@@ -5,31 +5,24 @@ import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import junit.framework.Assert.*
-
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.ArgumentMatchers
 import org.mockito.Matchers
 import org.mockito.Mock
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-
-import java.util.Arrays
-
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
-import org.mockito.ArgumentMatchers
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
-import org.mockito.Mockito.verifyNoMoreInteractions
-import org.mockito.Mockito.`when`
+import java.util.*
 
 class CardsStorageImplTest {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    @Mock
-    private lateinit var deck: Deck
     @Mock
     private lateinit var card: MTGCard
     @Mock
@@ -50,26 +43,27 @@ class CardsStorageImplTest {
     lateinit var cardsPreferences: CardsPreferences
     @Mock
     lateinit var cardsHelper: CardsHelper
+    @Mock lateinit var searchParams: SearchParams
 
-    private val setCards = Arrays.asList(MTGCard(5), MTGCard(6))
-    private val setCardsFiltered = Arrays.asList(MTGCard(15), MTGCard(16))
-    private val luckyCards = Arrays.asList(MTGCard(8), MTGCard(9))
-    private val searchCards = Arrays.asList(MTGCard(12), MTGCard(13))
-    private val searchCardsFiltered = Arrays.asList(MTGCard(121), MTGCard(131))
+    private val setCards = Arrays.asList(MTGCard(5, 1), MTGCard(6, 2))
+    private val setCardsFiltered = Arrays.asList(MTGCard(15, 3), MTGCard(16, 4))
+    private val luckyCards = Arrays.asList(MTGCard(8, 5), MTGCard(9, 6))
+    private val searchCards = Arrays.asList(MTGCard(12, 7), MTGCard(13, 8))
+    private val searchCardsFiltered = Arrays.asList(MTGCard(121, 9), MTGCard(131, 10))
     private lateinit var favCards: List<MTGCard>
     private lateinit var underTest: CardsStorageImpl
 
     @Before
     fun setupStorage() {
-        val fav1 = MTGCard(7)
+        val fav1 = MTGCard(7, 11)
         fav1.multiVerseId = 100
-        val fav2 = MTGCard(8)
+        val fav2 = MTGCard(8, 12)
         fav1.multiVerseId = 101
         favCards = Arrays.asList(fav1, fav2)
         `when`(mtgCardDataSource.getSet(set)).thenReturn(setCards)
         `when`(favouritesDataSource.getCards(ArgumentMatchers.anyBoolean())).thenReturn(favCards)
         `when`(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards)
-        `when`(mtgCardDataSource.searchCards(Matchers.any(SearchParams::class.java))).thenReturn(searchCards)
+        `when`(mtgCardDataSource.searchCards(searchParams)).thenReturn(searchCards)
         `when`(mainSideCard.name).thenReturn("One")
         `when`(secondSideCard.name).thenReturn("Two")
         `when`(mtgCardDataSource.searchCard("Two")).thenReturn(secondSideCard)
@@ -128,22 +122,22 @@ class CardsStorageImplTest {
     @Test
     fun testGetFavourites() {
         val favs = underTest.getFavourites()
-        verify<FavouritesDataSource>(favouritesDataSource).getCards(true)
+        verify(favouritesDataSource).getCards(true)
         assertNotNull(favs)
         assertThat(favs, `is`<List<MTGCard>>(favCards))
     }
 
     @Test
-    fun testDoSearch() {
-        val searchParams = mock(SearchParams::class.java)
-        `when`(cardsHelper.filterCards(filter, searchCards)).thenReturn(searchCardsFiltered)
-
+    fun `should search cards and return them sorted`() {
         val cards = underTest.doSearch(searchParams)
 
-        assertThat(cards.list, `is`(searchCardsFiltered))
+        assertThat(cards.list, `is`(searchCards))
         assertNull(cards.filter)
         assertFalse(cards.isDeck)
-
+        verify(cardsHelper).sortCards(filter, searchCards)
+        verify(mtgCardDataSource).searchCards(searchParams)
+        verify(cardsPreferences).load()
+        verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)
     }
 
     @Test
@@ -170,7 +164,7 @@ class CardsStorageImplTest {
     @Test
     @Throws(Exception::class)
     fun loadOtherSide_shouldReturnTheSameCard_IfCardIsNotDouble() {
-        `when`(mainSideCard.names).thenReturn(null)
+        `when`(mainSideCard.names).thenReturn(listOf())
         val result = underTest.loadOtherSide(mainSideCard)
         assertThat(result, `is`(mainSideCard))
 

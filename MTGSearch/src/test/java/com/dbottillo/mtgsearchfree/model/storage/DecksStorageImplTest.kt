@@ -50,7 +50,7 @@ class DecksStorageImplTest {
     @Mock
     lateinit var logger: Logger
 
-    private val deckCards = Arrays.asList(MTGCard(18), MTGCard(19))
+    private val deckCards = Arrays.asList(MTGCard(18, 1), MTGCard(19, 2))
     private val decks = Arrays.asList(Deck(1), Deck(2))
 
     @Before

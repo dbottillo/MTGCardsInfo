@@ -67,9 +67,6 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
 
     override fun loadOtherSide(card: MTGCard): MTGCard {
         logger.d("do search other side card " + card.toString())
-        if (card.names == null) {
-            return card
-        }
         if (card.names.size < 2) {
             return card
         }

@@ -181,17 +181,13 @@
     <string name="share_card">Share card</string>
     <string name="row_card_name" translatable="false">%1$s%2$s</string>
     <string name="row_life_counter_name" translatable="false">%1$s - %2$d/20</string>
-    <string name="card_detail">
-    <![CDATA[
-     <b>Type</b>: %1$s <br/><br/>
-     <b>P/T</b>: %2$s/%3$s <br/><br/>
-     <b>Mana cost</b>: %4$s<br/><br/>
-     %5$s<br/><br/>
-     <b>Set</b>: %6$s<br/><br/>
-     <b>Original text</b>: %7$s<br/><br/>
-     <b>Rulings</b>: <br/>%8$s<br/><br/>
-    ]]>
-    </string>
+    <string name="card_detail_type">Type</string>
+    <string name="card_detail_pt">P/T</string>
+    <string name="card_detail_mana">Mana cost</string>
+    <string name="card_detail_set">Set</string>
+    <string name="card_detail_original_text">Original text</string>
+    <string name="card_detail_rulings">Rulings</string>
+    <string name="card_detail_legalities">Legalities</string>
     <string name="search_hint_name">Insert any part of the name</string>
     <string name="search_hint_type">Insert any type or subtype</string>
     <string name="search_hint_text">Insert any word of the text</string>

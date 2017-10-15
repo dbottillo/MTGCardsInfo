@@ -23,8 +23,8 @@ public class MTGCardTest {
         card = new MTGCard(1);
         card.setSideboard(true);
         card.setMultiVerseId(200);
-        card.setAsALand(false);
-        card.setAsArtifact(true);
+        card.setLand(false);
+        card.setArtifact(true);
         card.setCardName("Name");
         card.setCmc(2);
         card.setColors(Arrays.asList(1, 3));
@@ -81,10 +81,10 @@ public class MTGCardTest {
         other.setMultiColor(true);
         assertFalse(other.isEldrazi());
         other = new MTGCard(1);
-        other.setAsALand(true);
+        other.setLand(true);
         assertFalse(other.isEldrazi());
         other = new MTGCard(1);
-        other.setAsArtifact(true);
+        other.setArtifact(true);
         assertFalse(other.isEldrazi());
         other = new MTGCard(1);
         assertTrue(other.isEldrazi());

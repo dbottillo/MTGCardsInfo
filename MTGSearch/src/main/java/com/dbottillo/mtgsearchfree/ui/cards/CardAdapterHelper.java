@@ -39,7 +39,7 @@ public final class CardAdapterHelper {
             holder.getRarity().setText("");
         }
 
-        if (card.getManaCost() != null) {
+        if (!card.getManaCost().isEmpty()) {
             holder.getCost().setText(card.getManaCost().replace("{", "").replace("}", ""));
             holder.getCost().setTextColor(card.getMtgColor(context));
         } else {

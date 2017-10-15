@@ -17,9 +17,10 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.UIUtil
 import com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.util.dpToPx
+import com.dbottillo.mtgsearchfree.util.setHeight
 
 class MTGCardsView : RelativeLayout {
 
@@ -86,9 +87,9 @@ class MTGCardsView : RelativeLayout {
         if (cards.size == CardDataSource.LIMIT) {
             val moreResult = footer.findViewById<TextView>(R.id.more_result)
             moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)
-            UIUtil.setHeight(footer, UIUtil.dpToPx(context, 60))
+            footer.setHeight(context.dpToPx(60))
         } else {
-            UIUtil.setHeight(footer, 0)
+            footer.setHeight(0)
         }
         emptyView.visibility = if (adapter?.itemCount == 0) View.VISIBLE else View.GONE
     }

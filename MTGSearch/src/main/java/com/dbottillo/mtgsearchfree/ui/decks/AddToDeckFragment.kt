@@ -54,7 +54,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         cardQuantity = view.findViewById<EditText>(R.id.new_deck_quantity)
         view.findViewById<View>(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
 
-        card = arguments.getParcelable<MTGCard>("card")
+        card = arguments.getParcelable("card")
         cardQuantity.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 30))
 
         setupQuantitySpinner()

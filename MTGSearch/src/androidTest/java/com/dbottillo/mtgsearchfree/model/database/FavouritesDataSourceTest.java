@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
+import com.dbottillo.mtgsearchfree.util.LOG;
 import com.google.gson.Gson;
 
 import org.junit.Before;

@@ -23,7 +23,7 @@ import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
-import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.util.UIUtilKt;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -120,7 +120,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
             par.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         } else {
             par.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-            par.rightMargin = UIUtil.dpToPx(this, 16);
+            par.rightMargin = UIUtilKt.dpToPx(this, 16);
         }
         fabButton.setLayoutParams(par);
         viewPager.addOnPageChangeListener(this);

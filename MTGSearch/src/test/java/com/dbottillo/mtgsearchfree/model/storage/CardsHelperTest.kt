@@ -141,12 +141,12 @@ class CardsHelperTest {
             }
         }
         val artifactCard = MTGCard()
-        artifactCard.setAsArtifact(true)
+        artifactCard.isArtifact = true
         artifactCard.setCardName("Card")
         artifactCard.rarity = "Common"
         list.add(artifactCard)
         val landCard = MTGCard()
-        landCard.setAsALand(true)
+        landCard.isLand = true
         landCard.setCardName("Card")
         landCard.rarity = "Uncommon"
         list.add(landCard)
@@ -157,15 +157,15 @@ class CardsHelperTest {
         return list
     }
 
-    internal fun generateCard(name: String = "Card",
-                              cost: String = "WU",
-                              rarity: String = "Common",
-                              colors: List<Int> = listOf()): MTGCard {
+    private fun generateCard(name: String = "Card",
+                             cost: String = "WU",
+                             rarity: String = "Common",
+                             colors: List<Int> = listOf()): MTGCard {
         val card = MTGCard()
         card.setCardName(name)
         card.manaCost = cost
         card.rarity = rarity
-        card.colors = colors
+        card.colors = colors.toMutableList()
         return card
     }
 }
