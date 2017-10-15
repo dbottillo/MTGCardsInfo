@@ -18,7 +18,7 @@ import com.dbottillo.mtgsearchfree.R;
 import com.dbottillo.mtgsearchfree.ui.BasicFragment;
 import com.dbottillo.mtgsearchfree.util.AnimationUtil;
 import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
-import com.dbottillo.mtgsearchfree.util.UIUtil;
+import com.dbottillo.mtgsearchfree.util.UIUtilKt;
 
 import java.lang.ref.WeakReference;
 
@@ -89,7 +89,7 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
 
             mViewGroup = view.findViewById(scrollviewID);
             instance.setupToolbar(view);
-            maximumScroll = heightToolbar + UIUtil.dpToPx(view.getContext(), OFFSET_MAXIMUM_SCROLL);
+            maximumScroll = heightToolbar + UIUtilKt.dpToPx(view.getContext(), OFFSET_MAXIMUM_SCROLL);
             setupTitleAnimation(instance, view.getContext());
 
             if (mViewGroup instanceof ScrollView) {
@@ -144,7 +144,7 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
     }
 
     private void setupTitleAnimation(BasicFragment baseFragment, Context context) {
-        int translationStart = UIUtil.dpToPx(context, TITLE_TRANSLATION_START_Y);
+        int translationStart = UIUtilKt.dpToPx(context, TITLE_TRANSLATION_START_Y);
         int translationEnd = 0;
         MaterialWrapper.setElevation(baseFragment.getToolbar(), 0);
         baseFragment.getToolbarTitle().setAlpha(0);

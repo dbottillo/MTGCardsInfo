@@ -65,7 +65,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         syncMenu()
     }
 
-    public override fun getCurrentCard(): MTGCard {
+    public override fun getCurrentCard(): MTGCard? {
         LOG.d()
         return cardView.card
     }
@@ -85,10 +85,11 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         return super.onCreateOptionsMenu(menu)
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.action_add_to_deck) {
-            openDialog("add_to_deck", AddToDeckFragment.newInstance(cardView.card))
+            cardView.card?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it))  }
             return true
         }
         return super.onOptionsItemSelected(item)

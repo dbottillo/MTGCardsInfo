@@ -20,7 +20,7 @@ import com.dbottillo.mtgsearchfree.ui.views.BottomTabs
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.util.UIUtil
+import com.dbottillo.mtgsearchfree.util.setHeight
 
 class HomeActivity : BasicActivity() {
 
@@ -106,7 +106,7 @@ class HomeActivity : BasicActivity() {
         currentBottomTabsHeightAnimator?.cancel()
         currentBottomTabsHeightAnimator = ValueAnimator.ofInt(bottomTabs.height, targetHeight)
         currentBottomTabsHeightAnimator?.addUpdateListener { valueAnimator ->
-            UIUtil.setHeight(bottomTabs, valueAnimator.animatedValue as Int)
+            bottomTabs.setHeight(valueAnimator.animatedValue as Int)
         }
         currentBottomTabsHeightAnimator?.duration = 100
         currentBottomTabsHeightAnimator?.start()

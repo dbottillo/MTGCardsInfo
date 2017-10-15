@@ -24,7 +24,7 @@ public final class AnimationUtil {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int val = (Integer) valueAnimator.getAnimatedValue();
-                UIUtil.setHeight(view, val);
+                UIUtilKt.setHeight(view, val);
             }
         });
         anim.setDuration(DEFAULT_DURATION);

@@ -21,24 +21,24 @@ public class DeckBucketTest {
     private static final int NUMBER_OF_UNIQUE_CARDS = 12;
     private static final int NUMBER_OF_TOTAL_CARDS = 30;
 
-    MTGCard creature = new MTGCard(1, 101);
-    MTGCard creature2 = new MTGCard(2, 102);
-    MTGCard creature3 = new MTGCard(3, 103);
+    private MTGCard creature = new MTGCard(1, 101);
+    private MTGCard creature2 = new MTGCard(2, 102);
+    private MTGCard creature3 = new MTGCard(3, 103);
 
-    MTGCard instant = new MTGCard(4, 104);
-    MTGCard instant2 = new MTGCard(5, 105);
-    MTGCard sorcery = new MTGCard(6, 106);
+    private MTGCard instant = new MTGCard(4, 104);
+    private MTGCard instant2 = new MTGCard(5, 105);
+    private MTGCard sorcery = new MTGCard(6, 106);
 
-    MTGCard land = new MTGCard(7, 107);
-    MTGCard land2 = new MTGCard(8, 108);
+    private MTGCard land = new MTGCard(7, 107);
+    private MTGCard land2 = new MTGCard(8, 108);
 
-    MTGCard generic = new MTGCard(9, 109);
-    MTGCard generic2 = new MTGCard(10, 110);
-    MTGCard generic3 = new MTGCard(11, 111);
-    MTGCard generic4 = new MTGCard(12, 112);
+    private MTGCard generic = new MTGCard(9, 109);
+    private MTGCard generic2 = new MTGCard(10, 110);
+    private MTGCard generic3 = new MTGCard(11, 111);
+    private MTGCard generic4 = new MTGCard(12, 112);
 
-    List<MTGCard> input;
-    DeckBucket underTest;
+    private List<MTGCard> input;
+    private DeckBucket underTest;
 
     @Before
     public void setup() {
@@ -54,8 +54,8 @@ public class DeckBucketTest {
         instant2.setQuantity(4);
         sorcery.addType("Sorcery");
 
-        land.setAsALand(true);
-        land2.setAsALand(true);
+        land.setLand(true);
+        land2.setLand(true);
         land2.setQuantity(10);
 
         generic4.setSideboard(true);

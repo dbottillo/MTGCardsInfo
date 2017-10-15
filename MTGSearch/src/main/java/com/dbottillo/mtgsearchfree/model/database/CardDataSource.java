@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.model.CardProperties;
+import com.dbottillo.mtgsearchfree.model.Legality;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -352,7 +353,10 @@ public final class CardDataSource {
         }
 
         if (cursor.getColumnIndex(COLUMNS.MANA_COST.getName()) != -1) {
-            card.setManaCost(cursor.getString(cursor.getColumnIndex(COLUMNS.MANA_COST.getName())));
+            String manaCost = cursor.getString(cursor.getColumnIndex(COLUMNS.MANA_COST.getName()));
+            if (manaCost !=  null) {
+                card.setManaCost(manaCost);
+            }
         }
 
         card.setRarity(cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.getName())));
@@ -360,13 +364,16 @@ public final class CardDataSource {
         card.setToughness(cursor.getString(cursor.getColumnIndex(COLUMNS.TOUGHNESS.getName())));
 
         if (cursor.getColumnIndex(COLUMNS.TEXT.getName()) != -1) {
-            card.setText(cursor.getString(cursor.getColumnIndex(COLUMNS.TEXT.getName())));
+            String text = cursor.getString(cursor.getColumnIndex(COLUMNS.TEXT.getName()));
+            if (text != null) {
+                card.setText(text);
+            }
         }
 
         card.setCmc(cursor.getInt(cursor.getColumnIndex(COLUMNS.CMC.getName())));
         card.setMultiColor(cursor.getInt(cursor.getColumnIndex(COLUMNS.MULTICOLOR.getName())) == 1);
-        card.setAsALand(cursor.getInt(cursor.getColumnIndex(COLUMNS.LAND.getName())) == 1);
-        card.setAsArtifact(cursor.getInt(cursor.getColumnIndex(COLUMNS.ARTIFACT.getName())) == 1);
+        card.setLand(cursor.getInt(cursor.getColumnIndex(COLUMNS.LAND.getName())) == 1);
+        card.setArtifact(cursor.getInt(cursor.getColumnIndex(COLUMNS.ARTIFACT.getName())) == 1);
 
         String rulings = cursor.getString(cursor.getColumnIndex(COLUMNS.RULINGS.getName()));
         if (rulings != null) {
@@ -422,7 +429,10 @@ public final class CardDataSource {
             }
         }
         if (cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName()) != -1) {
-            card.setOriginalText(cursor.getString(cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName())));
+            String originalText = cursor.getString(cursor.getColumnIndex(COLUMNS.ORIGINAL_TEXT.getName()));
+            if (originalText != null) {
+                card.setOriginalText(originalText);
+            }
         }
 
         if (cursor.getColumnIndex(COLUMNS.MCI_NUMBER.getName()) != -1) {
@@ -434,6 +444,21 @@ public final class CardDataSource {
             if (colorsIdentity != null) {
                 List<String> strings = gson.fromJson(colorsIdentity, type);
                 card.setColorsIdentity(strings);
+            }
+        }
+
+        String legalities = cursor.getString(cursor.getColumnIndex(COLUMNS.LEGALITIES.getName()));
+        if (legalities != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(legalities);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject rule = jsonArray.getJSONObject(i);
+                    String format = rule.getString("format");
+                    String legality = rule.getString("legality");
+                    card.addLegality(new Legality(format, legality));
+                }
+            } catch (JSONException e) {
+                LOG.e(e);
             }
         }
 

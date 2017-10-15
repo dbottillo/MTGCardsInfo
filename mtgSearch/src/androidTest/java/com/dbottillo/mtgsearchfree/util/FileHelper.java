@@ -157,8 +157,8 @@ public final class FileHelper {
         }
         card.setCmc(cmc);
         card.setMultiColor(multicolor == 1);
-        card.setAsALand(land == 1);
-        card.setAsArtifact(artifact == 1);
+        card.setLand(land == 1);
+        card.setArtifact(artifact == 1);
 
         if (jsonObject.has("rulings")) {
             JSONArray rulingsJ = jsonObject.getJSONArray("rulings");

@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 
+import com.dbottillo.mtgsearchfree.model.Legality;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.LOG;
@@ -115,6 +116,15 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         assertThat(cardFromDb.getColorsIdentity(), is(card.getColorsIdentity()));
         assertThat(cardFromDb.getMciNumber(), is(card.getMciNumber()));
 
+        assertThat(cardFromDb.getRulings().size(), is(card.getRulings().size()));
+        for (int i = 0; i < cardFromDb.getRulings().size(); i++) {
+            assertThat(cardFromDb.getRulings().get(i), is(card.getRulings().get(i)));
+        }
+        assertThat(cardFromDb.getLegalities().size(), is(card.getLegalities().size()));
+        for (int i = 0; i < cardFromDb.getLegalities().size(); i++) {
+            assertThat(cardFromDb.getLegalities().get(i), is(card.getLegalities().get(i)));
+        }
+
         cursor.close();
     }
 
@@ -136,7 +146,7 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         setupCursorCard();
         MTGCard card = underTest.fromCursor(cursor);
 
-        assertThat(card.getId(), is(2L));
+        assertThat(card.getId(), is(2));
         assertThat(card.getMultiVerseId(), is(1001));
         assertThat(card.getName(), is("name"));
         assertThat(card.getType(), is("type"));
@@ -194,6 +204,11 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         assertThat(card.getColorsIdentity().get(0), is("U"));
         assertThat(card.getColorsIdentity().get(1), is("W"));
 
+        assertNotNull(card.getLegalities());
+        assertThat(card.getLegalities().size(), is(3));
+        assertThat(card.getLegalities().get(0), is(new Legality("Commander", "Legal")));
+        assertThat(card.getLegalities().get(1), is(new Legality("Vintage", "Banned")));
+        assertThat(card.getLegalities().get(2), is(new Legality("Standard", "Restricted")));
     }
 
     @Test
@@ -261,6 +276,21 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MCI_NUMBER.getName()), is(card.getMciNumber()));
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), is(gson.toJson(card.getColorsIdentity())));
+
+        if (card.getLegalities().size() > 0) {
+            JSONArray legalities = new JSONArray();
+            for (Legality legality : card.getLegalities()) {
+                JSONObject legalityJ = new JSONObject();
+                try {
+                    legalityJ.put("format", legality.getFormat());
+                    legalityJ.put("legality", legality.getLegality());
+                    legalities.put(legalityJ);
+                } catch (JSONException e) {
+                    LOG.e(e);
+                }
+            }
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.getName()), is(legalities.toString()));
+        }
     }
 
     private void setupCursorCard() {
@@ -359,6 +389,10 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
 
         when(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.getName())).thenReturn(32);
         when(cursor.getString(32)).thenReturn("[\"U\",\"W\"]");
+
+        when(cursor.getColumnIndex(CardDataSource.COLUMNS.LEGALITIES.getName())).thenReturn(33);
+        when(cursor.getString(20)).thenReturn("[{\"format\":\"Commander\",\"legality\":\"Legal\",\"format\":\"Vintage\",\"legality\":\"Banned\",\"format\":\"Standard\",\"legality\":\"Restricted\"}]");
+
     }
 
 }

@@ -165,17 +165,13 @@
     <string name="empty_decks">Non hai ancora nessun mazzo!</string>
 
     <string name="share_card">Condividi carta</string>
-    <string name="card_detail">
-    <![CDATA[
-     <b>Tipo</b>: %1$s <br/><br/>
-     <b>F/C</b>: %2$s/%3$s <br/><br/>
-     <b>Costo di mana</b>: %4$s<br/><br/>
-     %5$s<br/><br/>
-     <b>Set</b>: %6$s<br/><br/>
-     <b>Testo original</b>: %7$s<br/><br/>
-     <b>Regole</b>: <br/>%8$s<br/><br/>
-    ]]>
-    </string>
+    <string name="card_detail_type">Tipo</string>
+    <string name="card_detail_pt">F/C</string>
+    <string name="card_detail_mana">Costo di mano</string>
+    <string name="card_detail_set">Set</string>
+    <string name="card_detail_original_text">Testo originale</string>
+    <string name="card_detail_rulings">Regole</string>
+    <string name="card_detail_legalities">Legalitá</string>
     <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
     <string name="search_hint_type">Inserisci qualsiasi tipo e/o sottotipo</string>
     <string name="search_hint_text">Inserisci qualsiasi parte del testo</string>

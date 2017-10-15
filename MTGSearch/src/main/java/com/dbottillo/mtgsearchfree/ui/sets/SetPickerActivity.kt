@@ -10,7 +10,7 @@ import android.widget.ImageView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.util.UIUtil
+import com.dbottillo.mtgsearchfree.util.dpToPx
 import javax.inject.Inject
 
 class SetPickerActivity : BasicActivity(), SetPickerView {
@@ -67,7 +67,7 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
 
     class Divider(val drawable: Drawable) : RecyclerView.ItemDecoration(){
         override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State?){
-            val dividerLeft = UIUtil.dpToPx(parent.context, 16)
+            val dividerLeft = parent.context.dpToPx(16)
             val dividerRight = parent.width - dividerLeft
 
             val childCount = parent.childCount

@@ -37,7 +37,7 @@ public class CardDataSourceTest {
     public void setUp() throws Exception {
         underTest = new CardDataSource(database, new Gson());
         when(database.rawQuery("DELETE FROM MTGCard where _id=?", new String[]{"100"})).thenReturn(cursor);
-        when(card.getId()).thenReturn(100L);
+        when(card.getId()).thenReturn(100);
     }
 
     @Test
