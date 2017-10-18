@@ -2,7 +2,6 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.google.gson.Gson;
 
 import org.junit.Before;
@@ -22,7 +21,7 @@ public class FavouritesDataSourceTest extends BaseContextTest {
     private FavouritesDataSource underTest;
 
     @Before
-    public void setup(){
+    public void setup() {
         CardDataSource cardDataSource = new CardDataSource(cardsInfoDbHelper.getWritableDatabase(), new Gson());
         mtgCardDataSource = new MTGCardDataSource(mtgDatabaseHelper.getReadableDatabase(), cardDataSource);
         underTest = new FavouritesDataSource(cardsInfoDbHelper.getWritableDatabase(), cardDataSource);
