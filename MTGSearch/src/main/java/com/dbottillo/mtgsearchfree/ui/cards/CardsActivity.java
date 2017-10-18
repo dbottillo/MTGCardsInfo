@@ -33,16 +33,14 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
 
     protected static final String KEY_SEARCH = "Search";
     protected static final String KEY_SET = "Set";
-    protected static final String KEY_CARD = "Card";
     protected static final String KEY_FAV = "Fav";
     protected static final String KEY_DECK = "Deck";
     protected static final String POSITION = "Position";
 
-    public static Intent newInstance(Context context, MTGSet set, int position, MTGCard card) {
+    public static Intent newInstance(Context context, MTGSet set, int position) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SET, set);
-        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 
@@ -53,11 +51,10 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
         return intent;
     }
 
-    public static Intent newInstance(Context context, SearchParams search, int position, MTGCard card) {
+    public static Intent newInstance(Context context, SearchParams search, int position) {
         Intent intent = new Intent(context, CardsActivity.class);
         intent.putExtra(CardsActivity.POSITION, position);
         intent.putExtra(CardsActivity.KEY_SEARCH, search);
-        intent.putExtra(CardsActivity.KEY_CARD, card);
         return intent;
     }
 

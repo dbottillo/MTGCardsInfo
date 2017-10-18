@@ -2,11 +2,14 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.annotation.Nullable;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.LOG;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -103,7 +106,7 @@ public class MTGCardDataSource {
         if (searchParams.onlyMulti() || searchParams.isOnlyMultiNoOthers()) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "1");
         }
-        if (searchParams.isOnlyMultiNoOthers()){
+        if (searchParams.isOnlyMultiNoOthers()) {
             colorsOperator = "AND";
         }
         if (searchParams.getSetId() > 0) {
@@ -207,6 +210,20 @@ public class MTGCardDataSource {
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
                 + CardDataSource.COLUMNS.MULTIVERSE_ID.getName() + "=?";
         String[] selection = new String[]{String.valueOf(multiverseid)};
+        LOG.query(query);
+        Cursor cursor = database.rawQuery(query, selection);
+        MTGCard card = null;
+        if (cursor.moveToFirst()) {
+            card = cardDataSource.fromCursor(cursor);
+        }
+        cursor.close();
+        return card;
+    }
+
+    public MTGCard searchCardById(int id) {
+        LOG.d("search card <" + id + ">");
+        String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + "_id=?";
+        String[] selection = new String[]{String.valueOf(id)};
         LOG.query(query);
         Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;

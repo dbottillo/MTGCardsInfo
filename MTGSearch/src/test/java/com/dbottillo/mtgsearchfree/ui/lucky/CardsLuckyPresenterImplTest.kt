@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -94,11 +95,13 @@ class CardsLuckyPresenterImplTest {
         `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
         `when`(cardsCollection.list).thenReturn(cards)
         `when`(cardsPreferences.showImage()).thenReturn(false)
-        `when`(bundle.getParcelable<MTGCard>(CardsLuckyPresenterImpl.CARD)).thenReturn(cardInBundle)
+        `when`(interactor.loadCardById(5)).thenReturn(Single.just(cardInBundle))
+        `when`(bundle.getInt(CardsLuckyPresenterImpl.CARD)).thenReturn(5)
 
         underTest.init(view, bundle, null)
 
         verify(interactor).loadIdFav()
+        verify(interactor).loadCardById(5)
         verify(interactor).getLuckyCards(10)
         verify(cardsPreferences).showImage()
         verify(view).showCard(cardInBundle, false)
@@ -111,17 +114,19 @@ class CardsLuckyPresenterImplTest {
     }
 
     @Test
-    fun `init with bundle null and intent not null, should load idFavs and cards from interactor and show card in intent`() {
+    fun `init with bundle null and intent not null, should load idFavs and cards from interactor and show card in bundle`() {
         `when`(interactor.loadIdFav()).thenReturn(Observable.just(idFavs))
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
         `when`(cardsCollection.list).thenReturn(cards)
+        `when`(interactor.loadCardById(6)).thenReturn(Single.just(cardInIntent))
         `when`(intent.hasExtra(CardsLuckyPresenterImpl.CARD)).thenReturn(true)
-        `when`(intent.getParcelableExtra<MTGCard>(CardsLuckyPresenterImpl.CARD)).thenReturn(cardInIntent)
+        `when`(intent.getIntExtra(CardsLuckyPresenterImpl.CARD, 0)).thenReturn(6)
 
         underTest.init(view, null, intent)
 
         verify(interactor).loadIdFav()
+        verify(interactor).loadCardById(6)
         verify(interactor).getLuckyCards(10)
         verify(cardsPreferences).showImage()
         verify(view).showCard(cardInIntent, true)
@@ -140,13 +145,15 @@ class CardsLuckyPresenterImplTest {
         `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
         `when`(cardsCollection.list).thenReturn(cards)
         `when`(cardsPreferences.showImage()).thenReturn(false)
-        `when`(bundle.getParcelable<MTGCard>(CardsLuckyPresenterImpl.CARD)).thenReturn(cardInBundle)
+        `when`(intent.getIntExtra(CardsLuckyPresenterImpl.CARD, 0)).thenReturn(6)
         `when`(intent.hasExtra(CardsLuckyPresenterImpl.CARD)).thenReturn(true)
-        `when`(intent.getParcelableExtra<MTGCard>(CardsLuckyPresenterImpl.CARD)).thenReturn(cardInIntent)
+        `when`(interactor.loadCardById(5)).thenReturn(Single.just(cardInBundle))
+        `when`(bundle.getInt(CardsLuckyPresenterImpl.CARD)).thenReturn(5)
 
         underTest.init(view, bundle, intent)
 
         verify(interactor).loadIdFav()
+        verify(interactor).loadCardById(5)
         verify(interactor).getLuckyCards(10)
         verify(cardsPreferences).showImage()
         verify(view).showCard(cardInBundle, false)
@@ -227,11 +234,12 @@ class CardsLuckyPresenterImplTest {
 
     @Test
     fun `should save current card in save instance state bundle`() {
+        `when`(card1.id).thenReturn(4)
         underTest.currentCard = card1
 
         underTest.onSaveInstanceState(bundle)
 
-        verify(bundle).putParcelable(CardsLuckyPresenterImpl.CARD, card1)
+        verify(bundle).putInt(CardsLuckyPresenterImpl.CARD, 4)
         verifyNoMoreInteractions(bundle, interactor, cardsPreferences, view)
     }
 }

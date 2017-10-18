@@ -171,6 +171,21 @@ class CardsInteractorImplTest {
     }
 
     @Test
+    fun `load card with id should call storage and return observable`() {
+        `when`(cardsStorage.loadCardById(5)).thenReturn(card)
+        val testSubscriber = TestObserver<MTGCard>()
+
+        underTest.loadCardById(5).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(card)
+        verify(cardsStorage).loadCardById(5)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+    }
+
+    @Test
     fun `load other side of card should call storage and return observable`() {
         `when`(cardsStorage.loadOtherSide(card)).thenReturn(otherSideCard)
         val testSubscriber = TestObserver<MTGCard>()

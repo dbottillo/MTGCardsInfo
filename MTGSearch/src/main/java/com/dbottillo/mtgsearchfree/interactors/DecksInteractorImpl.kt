@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -23,9 +24,9 @@ constructor(val storage: DecksStorage,
         logger.d("created")
     }
 
-    override fun load(): Observable<List<Deck>> {
+    override fun load(): Single<List<Deck>> {
         logger.d("loadSet decks")
-        return Observable.fromCallable { storage.load() }
+        return Single.fromCallable { storage.load() }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

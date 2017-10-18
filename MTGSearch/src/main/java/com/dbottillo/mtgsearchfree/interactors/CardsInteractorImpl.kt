@@ -7,11 +7,11 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.Single
 
 class CardsInteractorImpl(private val storage: CardsStorage,
                           private val schedulerProvider: SchedulerProvider,
                           private val logger: Logger) : CardsInteractor {
-
     init {
         logger.d("created")
     }
@@ -70,6 +70,13 @@ class CardsInteractorImpl(private val storage: CardsStorage,
     override fun loadCard(multiverseId: Int): Observable<MTGCard> {
         logger.d("loading card with multiverse id: " + multiverseId)
         return Observable.fromCallable { storage.loadCard(multiverseId) }
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+    }
+
+    override fun loadCardById(id: Int): Single<MTGCard> {
+        logger.d("loading card with id: " + id)
+        return Single.fromCallable { storage.loadCardById(id) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

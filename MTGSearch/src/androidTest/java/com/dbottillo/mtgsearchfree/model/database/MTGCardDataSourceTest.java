@@ -489,6 +489,13 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         assertThat(card.getName(), is("Selfless Squire"));
     }
 
+    @Test
+    public void searchCardsById() {
+        MTGCard card = underTest.searchCardById(5);
+        assertNotNull(card);
+        assertThat(card.getName(), is("Bishop of Rebirth"));
+    }
+
     private static final int NUMBER = 5;
 
     private enum OPERATOR {

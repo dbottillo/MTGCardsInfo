@@ -1,7 +1,10 @@
 package com.dbottillo.mtgsearchfree.util
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
+import android.support.v4.app.NavUtils
+import android.support.v4.app.TaskStackBuilder
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
@@ -68,4 +71,13 @@ fun SpannableStringBuilder.newLine(total: Int = 1) {
 fun SpannableStringBuilder.boldTitledEntry(title: String, entry: String) {
     addBold(title)
     append(":").append(" ").append(entry).newLine(2)
+}
+
+fun Activity.goToParentActivity(){
+    val upIntent = NavUtils.getParentActivityIntent(this)
+    if (NavUtils.shouldUpRecreateTask(this, upIntent) || isTaskRoot) {
+        TaskStackBuilder.create(this).addNextIntentWithParentStack(upIntent).startActivities()
+    } else {
+        NavUtils.navigateUpTo(this, upIntent)
+    }
 }

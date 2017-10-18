@@ -146,8 +146,19 @@ class CardsStorageImplTest {
 
         val result = underTest.loadCard(MULTIVERSE_ID)
 
-        assertThat(result, `is`<MTGCard>(card))
-        verify<MTGCardDataSource>(mtgCardDataSource).searchCard(MULTIVERSE_ID)
+        assertThat(result, `is`(card))
+        verify(mtgCardDataSource).searchCard(MULTIVERSE_ID)
+        verifyNoMoreInteractions(mtgCardDataSource)
+    }
+
+    @Test
+    fun testShouldRetrieveCardsById() {
+        `when`(mtgCardDataSource.searchCardById(5)).thenReturn(card)
+
+        val result = underTest.loadCardById(5)
+
+        assertThat(result, `is`(card))
+        verify(mtgCardDataSource).searchCardById(5)
         verifyNoMoreInteractions(mtgCardDataSource)
     }
 

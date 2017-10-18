@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -47,7 +48,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `load decks, should call interactor and update view`() {
-        `when`(interactor.load()).thenReturn(Observable.just(decks))
+        `when`(interactor.load()).thenReturn(Single.just(decks))
 
         underTest.loadDecks()
 
@@ -59,7 +60,7 @@ class DecksFragmentPresenterImplTest {
     @Test
     fun `load decks, should call interactor and show error if there is an exception`() {
         `when`(exception.message).thenReturn("error")
-        `when`(interactor.load()).thenReturn(Observable.error(exception))
+        `when`(interactor.load()).thenReturn(Single.error(exception))
 
         underTest.loadDecks()
 

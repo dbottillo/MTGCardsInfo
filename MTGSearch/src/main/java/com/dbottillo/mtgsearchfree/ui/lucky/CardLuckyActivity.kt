@@ -8,10 +8,11 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.MaterialWrapper
+import com.dbottillo.mtgsearchfree.util.goToParentActivity
 import com.squareup.picasso.Picasso
 import javax.inject.Inject
 
@@ -36,7 +37,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
         setupToolbar()
         MaterialWrapper.setElevation(toolbar, 0f)
-        supportActionBar?.let{
+        supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
         }
@@ -87,12 +88,17 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == R.id.action_add_to_deck) {
-            cardView.card?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it))  }
-            return true
+        return when (item.itemId) {
+            R.id.action_add_to_deck -> {
+                cardView.card?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it)) }
+                true
+            }
+            android.R.id.home -> {
+                this.goToParentActivity()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun syncMenu() {
