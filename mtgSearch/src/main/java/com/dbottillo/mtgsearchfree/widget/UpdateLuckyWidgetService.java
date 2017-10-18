@@ -62,7 +62,7 @@ public class UpdateLuckyWidgetService extends Service {
                 index++;
 
                 Intent openIntent = new Intent(getApplicationContext(), CardLuckyActivity.class);
-                openIntent.putExtra(CardsLuckyPresenterImpl.Companion.getCARD(), card);
+                openIntent.putExtra(CardsLuckyPresenterImpl.Companion.getCARD(), card.getId());
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 remoteViews.setOnClickPendingIntent(R.id.image_card, pendingIntent);
 

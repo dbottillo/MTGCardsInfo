@@ -32,7 +32,12 @@
         <activity
             android:name=".ui.cards.CardsActivity"/>
 
-        <activity android:name=".ui.lucky.CardLuckyActivity"/>
+        <activity android:name=".ui.lucky.CardLuckyActivity"
+                  android:parentActivityName=".ui.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+        </activity>
 
         <activity android:name=".ui.about.AboutActivity"/>
 

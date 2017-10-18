@@ -289,7 +289,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         LOG.d()
-        val intent = CardsActivity.newInstance(this, searchView.searchParams, position, null)
+        val intent = CardsActivity.newInstance(this, searchView.searchParams, position)
         startActivity(intent)
     }
 

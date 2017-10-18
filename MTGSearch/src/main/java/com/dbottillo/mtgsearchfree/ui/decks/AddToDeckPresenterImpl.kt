@@ -1,51 +1,85 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
+import android.os.Bundle
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.interactors.AppSchedulerProvider
+import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.Completable
+import io.reactivex.Single
+import io.reactivex.functions.BiFunction
 import javax.inject.Inject
 
-class AddToDeckPresenterImpl @Inject constructor(private val interactor: DecksInteractor,
+class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDeckInteractor,
                                                  private val logger: Logger) : AddToDeckPresenter {
 
     lateinit var view: AddToDeckView
+    lateinit var card: MTGCard
 
     init {
         logger.d("created")
     }
 
-    override fun init(view: AddToDeckView) {
-        this.view = view
-    }
-
-    override fun loadDecks() {
+    override fun init(view: AddToDeckView, bundle: Bundle) {
         logger.d()
-        interactor.load().subscribe({
+        this.view = view
+
+        val cardId = bundle.getInt("card", -1)
+
+        interactor.init(cardId).subscribe({
             logger.d()
-            view.decksLoaded(it)
+            this.card = it.card
+            view.decksLoaded(decks = it.decks)
         }, {
-            showError(it)
+            if (it is MTGException) {
+                view.showError(it.message ?: it.localizedMessage)
+            } else {
+                view.showError(it.localizedMessage)
+            }
         })
     }
 
-    override fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int) {
+    override fun addCardToDeck(deck: Deck, quantity: Int, side: Boolean) {
         logger.d("add $card to $deck")
-        interactor.addCard(deck, card, quantity).subscribe()
+        card.isSideboard = side
+        interactor.addCard(deck, card, quantity)
     }
 
-    override fun addCardToDeck(newDeck: String, card: MTGCard, quantity: Int) {
+    override fun addCardToDeck(newDeck: String, quantity: Int, side: Boolean) {
         logger.d("add $card to $newDeck")
-        interactor.addCard(newDeck, card, quantity).subscribe()
-    }
-
-    internal fun showError(e: Throwable) {
-        if (e is MTGException) {
-            view.showError(e.message ?: e.localizedMessage)
-        } else {
-            view.showError(e.localizedMessage)
-        }
+        card.isSideboard = side
+        interactor.addCard(newDeck, card, quantity)
     }
 
 }
+
+class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksStorage,
+                                              private val cardsStorage: CardsStorage,
+                                              private val schedulerProvider: SchedulerProvider) {
+    fun init(cardId: Int): Single<AddToDeckData> {
+        val decksSingle = Single.fromCallable { decksStorage.load() }
+        val cardSingle = Single.fromCallable { cardsStorage.loadCardById(cardId) }
+        return Single.zip(decksSingle, cardSingle, BiFunction { decks: List<Deck>, card: MTGCard ->
+            AddToDeckData(decks, card)
+        }).subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.ui())
+    }
+
+    fun addCard(name: String, card: MTGCard, quantity: Int) {
+        Completable.fromCallable { decksStorage.addCard(name, card, quantity) }
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui()).subscribe()
+    }
+
+    fun addCard(deck: Deck, card: MTGCard, quantity: Int) {
+        Completable.fromCallable { decksStorage.addCard(deck, card, quantity) }
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui()).subscribe()
+    }
+
+}
+
+class AddToDeckData(val decks: List<Deck>, val card: MTGCard)

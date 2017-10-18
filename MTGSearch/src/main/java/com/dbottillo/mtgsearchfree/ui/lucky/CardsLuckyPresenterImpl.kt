@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
+@Suppress("CAST_NEVER_SUCCEEDS")
 class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
                               val cardsPreferences: CardsPreferences,
                               val logger: Logger) : CardsLuckyPresenter {
@@ -24,18 +25,23 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         cardsInteractor.loadIdFav().subscribe({
             favs = it.toMutableList()
 
+            var idCard: Int? = null
+
             intent?.let {
                 if (it.hasExtra(CARD)) {
-                    currentCard = it.getParcelableExtra<MTGCard>(CARD)
+                    idCard = it.getIntExtra(CARD, 0)
                 }
             }
 
             bundle?.let {
-                currentCard = bundle.getParcelable<MTGCard>(CARD)
+                idCard = bundle.getInt(CARD)
             }
 
-            currentCard?.let {
-                loadCurrentCard()
+            idCard?.let {
+                cardsInteractor.loadCardById(it).subscribe { card ->
+                    currentCard = card
+                    loadCurrentCard()
+                }
             }
 
             loadMoreCards()
@@ -68,14 +74,14 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         }
     }
 
-    internal fun loadCurrentCard() {
+    private fun loadCurrentCard() {
         currentCard?.let {
             view.showCard(it, cardsPreferences.showImage())
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putParcelable(CARD, currentCard)
+        currentCard?.let {  outState.putInt(CARD, it.id) }
     }
 
     // TODO: this need testing

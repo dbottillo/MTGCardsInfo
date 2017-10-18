@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
 import android.content.Context
-import android.os.Parcel
-import android.os.Parcelable
 import android.support.annotation.VisibleForTesting
 import com.dbottillo.mtgsearchfree.R
 
@@ -37,7 +35,7 @@ data class MTGCard(var id: Int = 0,
                    var originalText: String = "",
                    var mciNumber: String? = null,
                    var colorsIdentity: List<String> = listOf(),
-                   var legalities: MutableList<Legality> = mutableListOf()) : Comparable<MTGCard>, Parcelable {
+                   var legalities: MutableList<Legality> = mutableListOf()) : Comparable<MTGCard> {
 
     constructor(onlyId: Int) : this(id = onlyId)
 
@@ -190,91 +188,14 @@ data class MTGCard(var id: Int = 0,
         get() = layout.equals("double-faced", ignoreCase = true)
 
     override fun equals(other: Any?): Boolean {
-        return when{
+        return when {
             other !is MTGCard -> false
             multiVerseId > 0 && other.multiVerseId == multiVerseId -> true
-            name.isNotEmpty() && other.name.equals(name) -> true
+            name.isNotEmpty() && other.name == name -> true
             else -> false
         }
     }
 
-    constructor(source: Parcel) : this(
-            source.readInt(),
-            source.readString(),
-            source.readString(),
-            source.createStringArrayList(),
-            source.createStringArrayList(),
-            ArrayList<Int>().apply { source.readList(this, Int::class.java.classLoader) },
-            source.readInt(),
-            source.readString(),
-            source.readString(),
-            source.readString(),
-            source.readString(),
-            source.readString(),
-            1 == source.readInt(),
-            1 == source.readInt(),
-            1 == source.readInt(),
-            source.readInt(),
-            source.readParcelable<MTGSet>(MTGSet::class.java.classLoader),
-            source.readInt(),
-            1 == source.readInt(),
-            source.readString(),
-            source.readString(),
-            source.createStringArrayList(),
-            source.createStringArrayList(),
-            source.createStringArrayList(),
-            source.readString(),
-            source.readString(),
-            source.readInt(),
-            source.createStringArrayList(),
-            source.readString(),
-            source.readString(),
-            source.createStringArrayList()
-    )
-
-    override fun describeContents() = 0
-
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeInt(id)
-        writeString(name)
-        writeString(type)
-        writeStringList(types)
-        writeStringList(subTypes)
-        writeList(colors)
-        writeInt(cmc)
-        writeString(rarity)
-        writeString(power)
-        writeString(toughness)
-        writeString(manaCost)
-        writeString(text)
-        writeInt((if (isMultiColor) 1 else 0))
-        writeInt((if (isLand) 1 else 0))
-        writeInt((if (isArtifact) 1 else 0))
-        writeInt(multiVerseId)
-        writeParcelable(set, 0)
-        writeInt(quantity)
-        writeInt((if (isSideboard) 1 else 0))
-        writeString(layout)
-        writeString(number)
-        writeStringList(rulings)
-        writeStringList(names)
-        writeStringList(superTypes)
-        writeString(artist)
-        writeString(flavor)
-        writeInt(loyalty)
-        writeStringList(printings)
-        writeString(originalText)
-        writeString(mciNumber)
-        writeStringList(colorsIdentity)
-    }
-
-    companion object {
-        @JvmField
-        val CREATOR: Parcelable.Creator<MTGCard> = object : Parcelable.Creator<MTGCard> {
-            override fun createFromParcel(source: Parcel): MTGCard = MTGCard(source)
-            override fun newArray(size: Int): Array<MTGCard?> = arrayOfNulls(size)
-        }
-    }
 }
 
 class Legality(val format: String, val legality: String)

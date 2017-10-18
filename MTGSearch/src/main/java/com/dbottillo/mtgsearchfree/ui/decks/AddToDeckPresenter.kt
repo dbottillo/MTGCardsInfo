@@ -1,11 +1,10 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
+import android.os.Bundle
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.MTGCard
 
 interface AddToDeckPresenter {
-    fun init(view: AddToDeckView)
-    fun loadDecks()
-    fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int)
-    fun addCardToDeck(newDeck: String, card: MTGCard, quantity: Int)
+    fun init(view: AddToDeckView, bundle: Bundle)
+    fun addCardToDeck(deck: Deck, quantity: Int, side: Boolean)
+    fun addCardToDeck(newDeck: String, quantity: Int, side: Boolean)
 }

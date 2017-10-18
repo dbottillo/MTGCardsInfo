@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl;
+import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckInteractor;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckPresenter;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckActivityPresenter;
@@ -46,7 +47,7 @@ public class PresentersModule {
     }
 
     @Provides
-    AddToDeckPresenter provideDecksPresenter(DecksInteractor interactor, Logger logger) {
+    AddToDeckPresenter provideDecksPresenter(AddToDeckInteractor interactor, Logger logger) {
         return new AddToDeckPresenterImpl(interactor, logger);
     }
 

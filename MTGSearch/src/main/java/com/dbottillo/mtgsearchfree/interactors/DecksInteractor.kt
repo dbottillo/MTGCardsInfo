@@ -6,10 +6,11 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import io.reactivex.Observable
+import io.reactivex.Single
 
 interface DecksInteractor {
 
-    fun load(): Observable<List<Deck>>
+    fun load(): Single<List<Deck>>
 
     fun loadDeck(deck: Deck): Observable<DeckCollection>
 

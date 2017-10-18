@@ -65,6 +65,11 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         return mtgCardDataSource.searchCard(multiverseId)
     }
 
+    override fun loadCardById(id: Int): MTGCard {
+        logger.d("do search with id: " + id)
+        return mtgCardDataSource.searchCardById(id)
+    }
+
     override fun loadOtherSide(card: MTGCard): MTGCard {
         logger.d("do search other side card " + card.toString())
         if (card.names.size < 2) {

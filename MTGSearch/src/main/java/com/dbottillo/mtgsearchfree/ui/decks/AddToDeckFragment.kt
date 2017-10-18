@@ -33,7 +33,6 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     internal var quantityChoose: Array<String> = arrayOf()
 
     internal var decks: List<Deck> = mutableListOf()
-    lateinit var card: MTGCard
 
     @Inject
     lateinit var presenter: AddToDeckPresenter
@@ -54,14 +53,12 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         cardQuantity = view.findViewById<EditText>(R.id.new_deck_quantity)
         view.findViewById<View>(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
 
-        card = arguments.getParcelable("card")
         cardQuantity.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 30))
 
         setupQuantitySpinner()
 
         app.uiGraph.inject(this)
-        presenter.init(this)
-        presenter.loadDecks()
+        presenter.init(this, arguments)
     }
 
     private fun setupQuantitySpinner() {
@@ -149,15 +146,13 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
     private fun saveCard(quantity: Int, deck: Deck, side: Boolean) {
         LOG.d()
-        card.isSideboard = side
-        presenter.addCardToDeck(deck, card, quantity)
+        presenter.addCardToDeck(deck, quantity, side)
         TrackingManager.trackAddCardToDeck(quantity.toString() + " - existing")
     }
 
     private fun saveCard(quantity: Int, deck: String, side: Boolean) {
         LOG.d()
-        card.isSideboard = side
-        presenter.addCardToDeck(deck, card, quantity)
+        presenter.addCardToDeck(deck, quantity, side)
         TrackingManager.trackNewDeck(deck)
         TrackingManager.trackAddCardToDeck(quantity.toString() + " - existing")
     }
@@ -196,7 +191,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         fun newInstance(card: MTGCard): DialogFragment {
             val instance = AddToDeckFragment()
             val args = Bundle()
-            args.putParcelable("card", card)
+            args.putInt("card", card.id)
             instance.arguments = args
             return instance
         }

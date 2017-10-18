@@ -12,4 +12,5 @@ interface CardsStorage{
     fun doSearch(searchParams: SearchParams): CardsCollection
     fun loadCard(multiverseId: Int): MTGCard
     fun loadOtherSide(card: MTGCard): MTGCard
+    fun loadCardById(id: Int): MTGCard
 }
