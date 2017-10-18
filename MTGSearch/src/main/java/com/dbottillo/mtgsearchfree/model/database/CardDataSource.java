@@ -415,11 +415,13 @@ public final class CardDataSource {
         if (cursor.getColumnIndex(COLUMNS.LOYALTY.getName()) != -1) {
             card.setLoyalty(cursor.getInt(cursor.getColumnIndex(COLUMNS.LOYALTY.getName())));
         }
-        if (cursor.getColumnIndex(COLUMNS.ARTIST.getName()) != -1) {
-            card.setArtist(cursor.getString(cursor.getColumnIndex(COLUMNS.ARTIST.getName())));
+        String artist = getString(cursor, COLUMNS.ARTIST);
+        if (artist != null){
+            card.setArtist(artist);
         }
-        if (cursor.getColumnIndex(COLUMNS.FLAVOR.getName()) != -1) {
-            card.setFlavor(cursor.getString(cursor.getColumnIndex(COLUMNS.FLAVOR.getName())));
+        String flavor = getString(cursor, COLUMNS.FLAVOR);
+        if (flavor != null){
+            card.setFlavor(flavor);
         }
         if (cursor.getColumnIndex(COLUMNS.PRINTINGS.getName()) != -1) {
             String printings = cursor.getString(cursor.getColumnIndex(COLUMNS.PRINTINGS.getName()));
@@ -463,5 +465,12 @@ public final class CardDataSource {
         }
 
         return card;
+    }
+
+    private String getString(Cursor cursor, COLUMNS column){
+        if (cursor.getColumnIndex(column.getName()) != -1) {
+            return cursor.getString(cursor.getColumnIndex(column.getName()));
+        }
+        return null;
     }
 }

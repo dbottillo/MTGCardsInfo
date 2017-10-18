@@ -2,14 +2,11 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.Nullable;
 
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.LOG;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,18 +18,14 @@ public class MTGCardDataSource {
     private static final int LIMIT = 400;
 
     enum STANDARD {
+        IXALAN(1, "Ixalan"),
         HOUR_OF_DEVASTATION(3, "Hour of Devastation"),
         AMONKHET_INVOCATIONS(4, "Masterpiece Series: Amonkhet Invocations"),
         AMONKHET(5, "Amonkhet"),
         WELCOME_2017(6, "Welcome Deck 2017"),
         AETHER_REVOLT(9, "Aether Revolt"),
         KALADESH_INVENTIONS(12, "Kaladesh Inventions"),
-        KALADESH(13, "Kaladesh"),
-        ELDRITCH_MOON(16, "Eldritch Moon"),
-        WELCOME_2016(18, "Welcome Deck 2016"),
-        SHADOWS_OVER_INNISTRAD(19, "Shadows over Innistrad"),
-        OATH_GATEWATCH(21, "Oath of the Gatewatch"),
-        BATTLE_ZENDIKAR(24, "Battle for Zendikar");
+        KALADESH(13, "Kaladesh");
 
         public int setId;
         public String name;
