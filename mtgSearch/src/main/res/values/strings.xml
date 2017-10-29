@@ -216,7 +216,8 @@
     <string name="search_card_title">Card Name</string>
     <string name="search_card_types">Card Types</string>
     <string name="search_set_title">Set</string>
-    <string name="search_hint_numbers" translatable="false">0,1,2,3…</string>
+    <string name="search_hint_numbers" translatable="false">X,0,1…</string>
+    <string name="search_cmc_numbers" translatable="false">X,0,1,W…</string>
 
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
     <string name="search_card_text">Card text</string>

@@ -5,6 +5,9 @@ import android.os.Parcel;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
@@ -20,9 +23,9 @@ public class SearchParamsTest {
         searchParams.setName("jayce");
         searchParams.setTypes("creatures");
         searchParams.setText("text");
-        searchParams.setCmc(new IntParam("=", 4));
-        searchParams.setPower(new IntParam(">", 3));
-        searchParams.setTough(new IntParam("<", 1));
+        searchParams.setCmc(new CMCParam("=", 4, Collections.singletonList("4")));
+        searchParams.setPower(new PTParam(">", 3));
+        searchParams.setTough(new PTParam("<", 1));
         searchParams.setWhite(false);
         searchParams.setBlack(false);
         searchParams.setBlue(true);
@@ -80,15 +83,15 @@ public class SearchParamsTest {
         assertTrue(searchParams.isValid());
 
         searchParams = new SearchParams();
-        searchParams.setCmc(new IntParam("=", 4));
+        searchParams.setCmc(new CMCParam("=", 4, Collections.singletonList("4")));
         assertTrue(searchParams.isValid());
 
         searchParams = new SearchParams();
-        searchParams.setPower(new IntParam("=", 4));
+        searchParams.setPower(new PTParam("=", 4));
         assertTrue(searchParams.isValid());
 
         searchParams = new SearchParams();
-        searchParams.setTough(new IntParam("=", 4));
+        searchParams.setTough(new PTParam("=", 4));
         assertTrue(searchParams.isValid());
 
         searchParams = new SearchParams();
