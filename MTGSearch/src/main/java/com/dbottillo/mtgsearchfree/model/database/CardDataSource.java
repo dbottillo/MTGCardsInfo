@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
+import com.crashlytics.android.Crashlytics;
 import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.Legality;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
@@ -19,6 +20,7 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public final class CardDataSource {
@@ -274,6 +276,7 @@ public final class CardDataSource {
                     rulJ.put("text", rule);
                     rules.put(rulJ);
                 } catch (JSONException e) {
+                    Crashlytics.logException(e);
                     LOG.e(e);
                 }
             }
@@ -384,6 +387,7 @@ public final class CardDataSource {
                     card.addRuling(rule.getString("text"));
                 }
             } catch (JSONException e) {
+                Crashlytics.logException(e);
                 LOG.e(e);
             }
         }
@@ -460,7 +464,19 @@ public final class CardDataSource {
                     card.addLegality(new Legality(format, legality));
                 }
             } catch (JSONException e) {
-                LOG.e(e);
+                try {
+                    JSONObject legalitiesJ = new JSONObject(legalities);
+                    Iterator keys = legalitiesJ.keys();
+                    while(keys.hasNext()){
+                        String format = (String) keys.next();
+                        String legality = legalitiesJ.getString(format);
+                        card.addLegality(new Legality(format, legality));
+                    }
+                }catch (JSONException e2){
+                    Crashlytics.logException(e2);
+                    LOG.e(e2);
+                }
+
             }
         }
 
