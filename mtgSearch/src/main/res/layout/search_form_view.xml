@@ -101,8 +101,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_set_divisor"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
         android:layout_marginTop="@dimen/base_margin">
 
         <TextView
@@ -115,16 +113,14 @@
             android:id="@+id/search_cmc_operator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:visibility="gone"/>
+            tools:visibility="visible"/>
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/search_cmc"
             style="@style/MTG.EditText"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:digits="0123456789"
-            android:hint="@string/search_hint_numbers"
-            android:inputType="number"/>
+            android:hint="@string/search_cmc_numbers"/>
 
     </LinearLayout>
 
@@ -133,8 +129,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_cmc_container"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
@@ -156,9 +150,8 @@
             android:layout_width="0dp"
             android:layout_marginRight="@dimen/base_margin"
             android:layout_weight="1"
-            android:digits="0123456789"
-            android:hint="@string/search_hint_numbers"
-            android:inputType="number"/>
+            android:digits="0123456789*"
+            android:hint="@string/search_hint_numbers"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -178,9 +171,8 @@
             style="@style/MTG.EditText"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:digits="0123456789"
-            android:hint="@string/search_hint_numbers"
-            android:inputType="number"/>
+            android:digits="0123456789*"
+            android:hint="@string/search_hint_numbers"/>
 
     </LinearLayout>
 
