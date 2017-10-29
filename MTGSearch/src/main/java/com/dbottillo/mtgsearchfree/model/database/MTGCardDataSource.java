@@ -88,9 +88,9 @@ public class MTGCardDataSource {
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.TYPE.getName(), "LIKE", "AND", types);
         }
         queryComposer.addLikeParam(CardDataSource.COLUMNS.TEXT.getName(), searchParams.getText().trim());
-        queryComposer.addParam(CardDataSource.COLUMNS.CMC.getName(), searchParams.getCmc());
-        queryComposer.addParam(CardDataSource.COLUMNS.POWER.getName(), searchParams.getPower());
-        queryComposer.addParam(CardDataSource.COLUMNS.TOUGHNESS.getName(), searchParams.getTough());
+        queryComposer.addCMCParam(searchParams.getCmc());
+        queryComposer.addPTParam(CardDataSource.COLUMNS.POWER.getName(), searchParams.getPower());
+        queryComposer.addPTParam(CardDataSource.COLUMNS.TOUGHNESS.getName(), searchParams.getTough());
         String colorsOperator = "OR";
         if (searchParams.isNoMulti()) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.getName(), "==", "0");
@@ -149,10 +149,10 @@ public class MTGCardDataSource {
         queryComposer.append("ORDER BY " + CardDataSource.COLUMNS.MULTIVERSE_ID.getName() + " DESC LIMIT " + LIMIT);
 
         QueryComposer.Output output = queryComposer.build();
-        String[] sel = Arrays.copyOf(output.selection.toArray(), output.selection.size(), String[].class);
-        LOG.query(output.query, sel);
+        String[] sel = Arrays.copyOf(output.getSelection().toArray(), output.getSelection().size(), String[].class);
+        LOG.query(output.getQuery(), sel);
 
-        Cursor cursor = database.rawQuery(output.query, sel);
+        Cursor cursor = database.rawQuery(output.getQuery(), sel);
 
         ArrayList<MTGCard> cards = new ArrayList<>();
         if (cursor.moveToFirst()) {

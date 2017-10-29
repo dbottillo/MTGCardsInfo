@@ -3,9 +3,10 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.content.res.Resources;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.dbottillo.mtgsearchfree.model.IntParam;
+import com.dbottillo.mtgsearchfree.model.CMCParam;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
+import com.dbottillo.mtgsearchfree.model.PTParam;
 import com.dbottillo.mtgsearchfree.model.SearchParams;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.FileHelper;
@@ -18,6 +19,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -71,7 +74,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
                     for (MTGCard card : cards){
                         LOG.e("card2 "+card.toString());
                     }
-                    *//*for (MTGCard cardJ : cardsJ){
+                    for (MTGCard cardJ : cardsJ){
                         LOG.e("checking card: " + cardJ.toString());
                         boolean found = false;
                         for (MTGCard card : cards){
@@ -82,7 +85,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
                         if (!found){
                             LOG.e("not found "+cardJ);
                         }
-                    }*//*
+                    }
                     if (cardsJ.get(0).equals(cards.get(0))){
                         LOG.e("found ");
                     } else {
@@ -136,16 +139,81 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     }
 
     @Test
-    public void searchCardsByCMC() {
+    public void shouldSearchCardsByCmcEqualThan5(){
         SearchParams searchParams = new SearchParams();
-        for (int i = 0; i < OPERATOR.values().length; i++) {
-            OPERATOR operator = OPERATOR.values()[i];
-            searchParams.setCmc(operator.generateParam());
-            List<MTGCard> cards = underTest.searchCards(searchParams);
-            assertTrue(cards.size() > 0);
-            for (MTGCard card : cards) {
-                operator.assertOperator(card.getCmc());
-            }
+        searchParams.setCmc(new CMCParam("=", 5, Collections.singletonList("5")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), is(5));
+        }
+    }
+
+    @Test
+    public void shouldSearchCardsByCmcLessThan5(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setCmc(new CMCParam("<", 5, Collections.singletonList("5")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), lessThan(5));
+        }
+    }
+
+    @Test
+    public void shouldSearchCardsByCmcEqualThan2WU(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setCmc(new CMCParam("=", 4, Arrays.asList("2", "W", "U")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), is(4));
+            assertThat(card.getManaCost(), is("{2}{W}{U}"));
+        }
+    }
+
+    @Test
+    public void shouldSearchCardsByCmcGreaterOREqualThan2WWU(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setCmc(new CMCParam(">=", 5, Arrays.asList("2", "WW", "U")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), greaterThanOrEqualTo(5));
+            assertThat(card.getManaCost(), containsString("{W}{W}"));
+            assertThat(card.getManaCost(), containsString("{U}"));
+        }
+    }
+
+    @Test
+    public void shouldSearchCardsByCmcEqualThanX2U(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setCmc(new CMCParam("=", 3, Arrays.asList("X", "2", "U")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), is(3));
+            assertThat(card.getManaCost(), is("{X}{2}{U}"));
+        }
+    }
+
+    @Test
+    public void shouldSearchCardsByCmcGreaterOREqualThanX2U(){
+        SearchParams searchParams = new SearchParams();
+        searchParams.setCmc(new CMCParam(">=", 3, Arrays.asList("X", "2", "U")));
+
+        List<MTGCard> cards = underTest.searchCards(searchParams);
+
+        for (MTGCard card : cards) {
+            assertThat(card.getCmc(), greaterThanOrEqualTo(3));
+            assertThat(card.getManaCost(), containsString("{X}"));
+            assertThat(card.getManaCost(), containsString("{2}"));
+            assertThat(card.getManaCost(), containsString("{U}"));
         }
     }
 
@@ -154,14 +222,16 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         for (int i = 0; i < OPERATOR.values().length; i++) {
             OPERATOR operator = OPERATOR.values()[i];
-            searchParams.setPower(operator.generateParam());
+            searchParams.setPower(operator.generatePTParam());
             List<MTGCard> cards = underTest.searchCards(searchParams);
             assertTrue(cards.size() > 0);
             for (MTGCard card : cards) {
-                if (!card.getPower().equals("*")) {
-                    operator.assertOperator(Integer.parseInt(card.getPower()));
-                }
+                operator.assertOperator(Integer.parseInt(card.getPower()));
             }
+        }
+        List<MTGCard> cards = underTest.searchCards(searchParams.setPower(new PTParam("", -1)));
+        for (MTGCard card : cards) {
+            assertThat(card.getPower(), containsString("*"));
         }
     }
 
@@ -170,14 +240,16 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         SearchParams searchParams = new SearchParams();
         for (int i = 0; i < OPERATOR.values().length; i++) {
             OPERATOR operator = OPERATOR.values()[i];
-            searchParams.setTough(operator.generateParam());
+            searchParams.setTough(operator.generatePTParam());
             List<MTGCard> cards = underTest.searchCards(searchParams);
             assertTrue(cards.size() > 0);
             for (MTGCard card : cards) {
-                if (!card.getPower().equals("*")) {
-                    operator.assertOperator(Integer.parseInt(card.getToughness()));
-                }
+                operator.assertOperator(Integer.parseInt(card.getToughness()));
             }
+        }
+        List<MTGCard> cards = underTest.searchCards(searchParams.setTough(new PTParam("", -1)));
+        for (MTGCard card : cards) {
+            assertThat(card.getToughness(), containsString("*"));
         }
     }
 
@@ -440,8 +512,8 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         searchParams.setWhite(true);
         searchParams.setNoMulti(true);
         searchParams.setRare(true);
-        searchParams.setPower(new IntParam("=", 4));
-        searchParams.setTough(new IntParam("=", 4));
+        searchParams.setPower(new PTParam("=", 4));
+        searchParams.setTough(new PTParam("=", 4));
         List<MTGCard> cards = underTest.searchCards(searchParams);
         assertTrue(cards.size() > 0);
         for (MTGCard card : cards) {
@@ -539,8 +611,8 @@ public class MTGCardDataSourceTest extends BaseContextTest {
 
         public abstract void assertOperator(int value);
 
-        public IntParam generateParam() {
-            return new IntParam(operator, NUMBER);
+        public PTParam generatePTParam() {
+            return new PTParam(operator, NUMBER);
         }
     }
 
