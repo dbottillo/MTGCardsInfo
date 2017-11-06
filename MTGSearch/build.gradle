@@ -15,7 +15,12 @@ def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+if (keystorePropertiesFile.exists()){
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    keystoreProperties['RELEASE_KEY_PASSWORD'] = ""
+    keystoreProperties['RELEASE_STORE_PASSWORD'] = ""
+}
 
 kapt {
     generateStubs = true
