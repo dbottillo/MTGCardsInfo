@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_home"
+            android:checked="true"
+            android:icon="@drawable/left_home"
+            android:title="@string/action_home" />
+        <item
+            android:id="@+id/drawer_saved"
+            android:icon="@drawable/left_saved"
+            android:title="@string/action_saved" />
+        <item
+            android:id="@+id/drawer_life_counter"
+            android:icon="@drawable/left_life_counter"
+            android:title="@string/action_life_counter" />
+
+        <item
+            android:id="@+id/drawer_decks"
+            android:icon="@drawable/deck"
+            android:title="@string/action_decks" />
+        <item
+            android:id="@+id/drawer_rate"
+            android:icon="@drawable/left_rate"
+            android:title="@string/action_rate" />
+        <item
+            android:id="@+id/drawer_beta"
+            android:icon="@drawable/left_beta"
+            android:title="@string/action_join_beta" />
+        <item
+            android:id="@+id/drawer_release_note"
+            android:icon="@drawable/left_release_note"
+            android:title="@string/action_release_note" />
+        <item
+            android:id="@+id/drawer_about"
+            android:icon="@drawable/left_info"
+            android:title="@string/action_about" />
+    </group>
+</menu>

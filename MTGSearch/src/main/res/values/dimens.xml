@@ -1,0 +1,22 @@
+<resources>
+    <dimen name="collapsedHeight">50dp</dimen>
+    <dimen name="margin_divisor_filter">10dp</dimen>
+    <dimen name="row_set_title">14sp</dimen>
+    <dimen name="row_set_padding">10dp</dimen>
+    <dimen name="padding_card_image">10dp</dimen>
+    <dimen name="padding_card_image_half">5dp</dimen>
+    <dimen name="margin_top_card_image">0dp</dimen>
+    <dimen name="filter_toggle_size">55dp</dimen>
+    <dimen name="toolbar_elevation">5dp</dimen>
+    <dimen name="price_height_container">35dp</dimen>
+    <dimen name="base_margin">16dp</dimen>
+    <dimen name="fab_button_size">56dp</dimen>
+    <dimen name="search_icon_padding">12dp</dimen>
+    <dimen name="padding_spinner_row">5dp</dimen>
+    <dimen name="cards_grid_space">8dp</dimen>
+    <dimen name="default_elevation_toolbar">6dp</dimen>
+    <dimen name="toolbar_icon_size">32dp</dimen>
+    <dimen name="bottom_tabs_icon_size">24dp</dimen>
+    <dimen name="bottom_tabs_text_size">12sp</dimen>
+    <dimen name="bottom_tabs_height">56dp</dimen>
+</resources>

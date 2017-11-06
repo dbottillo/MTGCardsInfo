@@ -1,0 +1,36 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/main_bg"
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <include
+        layout="@layout/mtg_toolbar"
+        android:id="@+id/toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/card_list"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/empty_view"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="40dp"
+        android:paddingTop="20dp"
+        android:textStyle="italic"
+        android:visibility="gone"/>
+
+    <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+        android:id="@+id/loader"
+        android:layout_centerInParent="true"
+        android:layout_height="100dp"
+        android:layout_width="100dp"/>
+
+</RelativeLayout>

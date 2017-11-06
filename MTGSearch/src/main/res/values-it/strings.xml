@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MTG Cards Info</string>
+    <string name="app_long_name">MTG Cards Info</string>
+    <string name="action_about">About</string>
+    <string name="copyright">Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast.</string>
+    <string name="send_feedback">Invia Feedback</string>
+    <string name="feedback_text">
+        <![CDATA[
+		| Versione: %1$s |<br/>
+		| Livello API: %2$s |<br/>
+		| Dispositivo: %3$s |<br/>
+		| Modello: %4$s |<br/>
+		| Prodotto: %5$s |
+		<br/>
+		<br/>
+		]]>
+	</string>
+    <string name="version">Versione</string>
+    <string name="action_search">Cerca</string>
+    <string name="search_result">Risultati per:</string>
+    <plurals name="search_limit">
+        <item quantity="one">C\'é un limite di %d risultato,\n prova ad affinare la ricerca!</item>
+        <item quantity="other">C\'é un limite di %d risultati,\n prova ad affinare la ricerca!</item>
+        i
+    </plurals>
+    <string name="minimum_search">La ricerca richiede almeno tre lettere</string>
+
+    <!-- basic -->
+    <string name="add">Aggiungi</string>
+
+    <!-- filter panel -->
+    <string name="mtg_type_artifact">Artefatto</string>
+    <string name="mtg_type_land">Terra</string>
+    <string name="mtg_common">Co</string>
+    <string name="mtg_uncommon">N</string>
+    <string name="mtg_rare">R</string>
+    <string name="mtg_mythic_rare">M</string>
+
+    <!-- card fragment -->
+    <string name="share">Condividi</string>
+    <string name="favourite_add_long">Aggiungi ai preferiti</string>
+    <string name="favourite_remove">Rimuovi</string>
+    <string name="favourite_add">Salva</string>
+    <string name="action_saved">Preferiti</string>
+    <string name="action_home">Magic Set</string>
+    <string name="refresh">Refresh</string>
+    <string name="action_life_counter">Punti Vita</string>
+    <string name="maximum_player">Raggiunto il numero massimo di giocatori</string>
+    <string name="edit_player">Modifica nome</string>
+    <string name="save">Salva</string>
+    <string name="cancel">Annulla</string>
+    <string name="life_reset">Azzera</string>
+    <string name="life_dice">Lancia dado</string>
+    <string name="menu_life_poison">Poison</string>
+    <string name="empty_saved">Non hai ancora nessuna carta preferita, usa il pulsante stella nella pagina delle carte per aggiungerle ai preferiti.</string>
+    <string name="empty_search">Nessuna carta trovata con quel termine, perché non provi un\'altra ricerca?</string>
+    <string name="empty_deck">Nessuna carta presente nel mazzo, usa la sezione Magic Set e la ricerca per aggiungere carte al mazzo.</string>
+    <string name="error_load_image">Impossibile caricare l\'immagine al momento.</string>
+    <string name="image_retry">Carica immagine</string>
+    <string name="price_error">Impossibile caricare il prezzo</string>
+    <string name="add_to_deck_title">Aggiungi al mazzo</string>
+    <string name="menu_image">Mostra immagine</string>
+    <string name="action_crash">Crash!</string>
+    <string name="action_lucky">I feel lucky</string>
+    <string name="lucky_title">Fortunato?</string>
+    <string name="menu_life_screen_on">Display attivo</string>
+    <string name="menu_life_two_hg">2HG punti</string>
+    <string name="pick_sort_option">Ordina</string>
+    <string name="action_rate">Lascia Recensione</string>
+    <string name="share_app">Condividi App</string>
+    <string name="libraries">Librerie</string>
+    <string name="action_decks">Mazzi</string>
+    <string name="new_deck_hint">Nome mazzo</string>
+    <string name="Save">Salva</string>
+    <string name="deck_header_creatures">Creature</string>
+    <string name="deck_header_instant_sorceries">Istantanei e stregonerie</string>
+    <string name="deck_header_other">Altre</string>
+    <string name="deck_header_lands">Terre</string>
+    <string name="deck_header_sideboard">Sideboard</string>
+    <string name="action_add_one_more">Aggiungi un\'altra</string>
+    <string name="action_remove_one">Rimuovi una</string>
+    <string name="action_remove_all">Rimuovi tutte</string>
+    <string name="action_move_one">Sposta una</string>
+    <string name="action_move_all">Sposta tutte</string>
+
+    <string name="deck_title">Mazzo</string>
+    <string name="deck_subtitle">%d carte</string>
+    <string name="deck_delete_title">Cancellazione mazzo</string>
+    <string name="deck_delete_text">Ci sono carte in questo mazzo. Sei sicuro?</string>
+    <string name="deck_delete_confirmation">Cancella</string>
+    <string name="new_deck_quantity_hint">Quantità (massimo 30)</string>
+    <string name="deck_choose">Scegli mazzo</string>
+    <string name="deck_choose_quantity">Scegli quantità</string>
+    <string name="deck_new">Nuovo mazzo</string>
+    <string name="deck_specify">Scelta manuale</string>
+    <string name="release_note_title_push">Nuova versione di %s</string>
+    <string name="release_note_text">
+        - ricerca per Standard sistemata\n
+        - legalità delle carte include
+    </string>
+    <string name="release_note_text_full">
+        <b>Version 3.1.4:</b> \n
+        - ricerca per Standard sistemata\n
+        - legalità delle carte include\n\n
+        <b>Version 3.1.2:</b> \n
+        - NUOVO: Ixalan\n\n
+        <b>Version 3.1.1:</b> \n
+        - Risolto problema con le immagini delle carte\n\n
+        <b>Version 3.1.0:</b> \n
+        - Bug fixes\n\n
+        <b>Version 3.0.0:</b> \n
+        - Nuova interfaccia\n\n
+        <b>Version 2.8.4:</b> \n
+        - NUOVO: Hour of Devastation\n\n
+        <b>Version 2.8.3:</b> \n
+        - NUOVO: Amonkhet\n
+        - NUOVO: Duel Decks: Mind vs. Might\n\n
+        <b>Version 2.8.2:</b> \n
+        - NUOVO: Modern Masters 2017 Edition\n\n
+        <b>Version 2.8.1:</b> \n
+        - NUOVO: Planechase Anthology\n
+        - NUOVO: Aether Revolt\n\n
+        <b>Version 2.8.0</b>\n
+        - NUOVO: Supporto per split e double-side carte\n\n
+        <b>Versione 2.7.9:</b> \n
+        - NUOVO: Commander 2016\n
+        - NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa\n
+        - Bug fixes \n\n
+        <b>Versione 2.7.8:</b> \n
+        - NUOVO: Kaladesh\n
+        - NUOVO: Kaladesh Inventions \n\n
+        <b>Versione 2.7.7:</b> \n
+        - NUOVO: Conspiracy: Take the Crown\n
+        - NUOVO: From the Vault: Lore \n\n
+        <b>Versione 2.7.6:</b> \n
+        - NUOVO: Mazzi, risolti bug\n
+        - NUOVO: Opzione terra per ricerca \n\n
+        <b>Versione 2.7.5:</b> \n
+        - NUOVO: Eldritch Moon \n
+        - NEW: Eternal Masters \n
+        - NEW: Modalità griglia \n
+        - NEW: Importa mazzo (formato .dec) \n
+        - NEW: Duel Decks: Zendikar vs. Eldrazi \n\n
+        <b>Versione 2.7.4:</b> \n
+        - NUOVO: Shadows over Innistrad \n
+        - NUOVO: Duel Decks: Blessed vs. Cursed \n
+        - Sistemata la ricerca multicolore \n\n
+        <b>Versione 2.7.3:</b> \n
+        - NUOVO: Oath of the gatewatch \n
+        - NUOVO: Esporta mazzi \n
+        - NUOVO: Modifica nome mazzo \n
+        - Bug fixes \n\n
+        <b>Versione 2.7.2:</b> \n
+        - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
+        - NUOVO: Aggiunti i filtri ai preferiti \n
+        - Al primo avvio, i favoiriti migreranno ad un nuovo sistema\n\n
+        <b>Versione 2.7:</b> \n
+        - NUOVO: Ricerca avanzata, puoi cercare nomi, tipi, colori, set e rarità\n
+        - NUOVO: Filtri per carte Eldrazi \n\n
+        <b>Versione 2.6:</b> \n
+        - NUOVO: Commander 2015 \n
+        - NUOVO: Il dettaglio carta ora mostra le rulings \n
+        - FIX: Mazzi con multiple uguali carte
+    </string>
+    <string name="action_release_note">Novitá</string>
+    <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
+    <string name="empty_decks">Non hai ancora nessun mazzo!</string>
+
+    <string name="share_card">Condividi carta</string>
+    <string name="card_detail_type">Tipo</string>
+    <string name="card_detail_pt">F/C</string>
+    <string name="card_detail_mana">Costo di mano</string>
+    <string name="card_detail_set">Set</string>
+    <string name="card_detail_original_text">Testo originale</string>
+    <string name="card_detail_rulings">Regole</string>
+    <string name="card_detail_legalities">Legalitá</string>
+    <string name="search_hint_name">Inserisci qualsiasi parte del nome</string>
+    <string name="search_hint_type">Inserisci qualsiasi tipo e/o sottotipo</string>
+    <string name="search_hint_text">Inserisci qualsiasi parte del testo</string>
+    <string name="search_power_title">F</string>
+    <string name="search_toughness_title">C</string>
+    <string name="search_cmc_title">Costo di mana convertito</string>
+    <string name="white">Bianche</string>
+    <string name="black">Nere</string>
+    <string name="blue">Blu</string>
+    <string name="red">Rosse</string>
+    <string name="green">Verdi</string>
+    <string name="multicolor">Solo multicolore</string>
+    <string name="no_multi">No multicolore</string>
+    <string name="search_common">Comuni</string>
+    <string name="search_uncommon">Non comuni</string>
+    <string name="search_mythic">Mitiche</string>
+    <string name="search_rare">Rare</string>
+    <string name="search_set_all">Tutti</string>
+    <string name="search_set_standard">Standard</string>
+    <string name="search_color_title">Colori</string>
+    <string name="search_rarity_title">Raritá</string>
+    <string name="search_card_title">Nome carta</string>
+    <string name="search_card_types">Tipi carta</string>
+    <string name="search_card_text">Testo carta</string>
+    <string name="search_set_title">Set</string>
+
+    <string name="action_send_db">Copia db su sdcard</string>
+    <string name="action_copy_db">Sostituisci db da sdcard</string>
+    <string name="export">Esporta</string>
+    <string name="error_export_deck">Impossibile esportare il mazzo, controlla che lo storage esterno sia disponibile e poi riprova.</string>
+    <string name="error_export_db">Impossibile esportare il database, controlla che lo storage esterno sia disponibile e poi riprova.</string>
+    <string name="deck_exported">Mazzo salvato su sdcard</string>
+    <string name="db_exported">Database salvato su sdcard</string>
+    <string name="edit_deck">Modifica mazzo</string>
+    <string name="debug_mode_active">Modalitá debug attiva</string>
+    <string name="action_join_beta">Partecipa alla Beta</string>
+    <string name="join_beta_text">Partecipa al programma Beta su Google+ in modo da fornire feedback, richiedere nuove funzionalità e avere accesso a nuove versioni con rapidità. È necessario un account Google.</string>
+    <string name="join_beta_action">Join</string>
+    <string name="view_type_option">Tipo visualizzazione</string>
+    <string name="main_fragment_tooltip">NUOVO: ora puoi visualizzare le carte su griglia o su lista!</string>
+    <string name="sort_az">Alfabeticamente</string>
+    <string name="sort_color">WUBRG</string>
+    <string name="deck_not_imported">Impossibile caricare il mazzo</string>
+    <string name="move_card_to_deck">Sposta una nel mazzo</string>
+    <string name="move_card_to_sideboard">Sposta una nel side</string>
+    <string name="move_all_card_to_deck">Sposta tutte nel mazzo</string>
+    <string name="move_all_card_to_sideboard">Sposta tutte nel side</string>
+
+    <string name="card_migrator_title">Aggiornamento database in corso</string>
+    <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
+    <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
+    <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
+
+    <string name="add_new_player">Aggiungi giocatore</string>
+    <string name="add_new_deck">Aggiung mazzo</string>
+    <string name="multicolor_no_others">Solo multicolore, no colori non selezionati</string>
+    <string name="filter_title">Filtri</string>
+    <string name="order_title">Ordina</string>
+    <string name="set_choose">Scegli un set</string>
+
+    <string name="cd_price_go">Guarda Prezzo</string>
+    <string name="cd_drawer_header">Planeswalker</string>
+    <string name="cd_card_image">Immagine Carta</string>
+    <string name="cd_filter">Filtri</string>
+    <string name="cd_set_arrow">Sets</string>
+    <string name="cd_cards_sort">Ordinamento carte</string>
+    <string name="cd_cards_view_type">Tipo visualizzazione carte</string>
+    <string name="cd_again">Ancora</string>
+    <string name="cd_more_options">Altre opzioni</string>
+    <string name="cd_deck_icon">Icona mazzo</string>
+    <string name="cd_delete_deck">Cancella mazzo</string>
+    <string name="cd_library_icon">Icona libreria</string>
+    <string name="cd_edit">Modifica</string>
+    <string name="cd_remove">Rimuovi</string>
+    <string name="cd_action_search">Effettua ricerca</string>
+    <string name="cd_join_beta_header">Partecipa alla beta</string>
+    <string name="cd_close">Chiudi</string>
+    <string name="cd_tooltip_arrow">Chiudi aiuto</string>
+    <string name="cd_flip_card">Gira carta</string>
+    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
+    <string name="tooltip_line_2">Per cambiare Set</string>
+    <string name="tooltip_line_3">Per cambiare filtri</string>
+    <string name="ok_got_it">Ok, capito!</string>
+
+</resources>
