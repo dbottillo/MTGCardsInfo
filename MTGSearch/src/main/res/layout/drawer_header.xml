@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/color_primary_dark"
+    android:layout_height="120dp">
+
+    <TextView
+        android:id="@+id/drawer_header_title"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/drawer_header_pw"
+        tools:ignore="UnusedIds"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_margin"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        android:textSize="14sp"
+        tools:text="Niv-Mizzet, the Firemind"/>
+
+    <ImageView
+        android:id="@+id/drawer_header_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/cd_drawer_header"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/planeswalker" />
+
+    <TextView
+        android:id="@+id/drawer_header_text"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/drawer_header_pw"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/drawer_header_title"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        android:maxLines="4"
+        android:textStyle="italic"
+        android:textSize="12sp"
+        tools:text="(Z–>)90º—(E–N²W)90ºt = 1"/>
+
+
+</RelativeLayout>

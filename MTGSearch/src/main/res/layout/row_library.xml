@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:layout_marginTop="@dimen/base_margin"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/library_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/cd_library_icon"
+        android:src="@drawable/library_icon"
+        android:tint="@color/color_primary"
+        tools:ignore="UnusedIds" />
+
+    <TextView
+        android:id="@+id/library_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_toRightOf="@+id/library_icon"
+        android:textSize="14sp"
+        tools:text="Picasso" />
+
+    <TextView
+        android:id="@+id/library_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/library_name"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_toRightOf="@+id/library_icon"
+        android:textSize="12sp"
+        tools:text="Square" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_primary_light" />
+
+</RelativeLayout>

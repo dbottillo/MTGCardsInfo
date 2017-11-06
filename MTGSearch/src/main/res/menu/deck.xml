@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_edit_white"
+        android:orderInCategory="100"
+        android:title="@string/edit_deck"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_export"
+        android:icon="@drawable/ic_download"
+        android:orderInCategory="101"
+        android:title="@string/export"
+        app:showAsAction="ifRoom"/>
+
+</menu>

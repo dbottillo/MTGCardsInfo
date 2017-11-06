@@ -1,0 +1,64 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/white"
+       android:orientation="vertical"
+       tools:orientation="vertical"
+       tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/filter_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/filter_title"
+        android:textColor="@color/color_primary"
+        android:textSize="16sp"/>
+
+    <View
+        android:id="@+id/filter_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_primary"/>
+
+    <include
+        layout="@layout/filter_panel"/>
+
+    <TextView
+        android:id="@+id/order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/order_title"
+        android:textColor="@color/color_primary"
+        android:textSize="16sp"/>
+
+    <View
+        android:id="@+id/order_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_primary"/>
+
+    <ToggleButton
+        android:id="@+id/toggle_order"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_toggle_size"
+        android:layout_marginBottom="@dimen/base_margin"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        android:textColor="@drawable/toggle_text_color"
+        android:textOff="@string/sort_az"
+        android:textOn="@string/sort_color"/>
+
+</merge>

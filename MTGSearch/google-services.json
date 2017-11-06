@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "546887382192",
+    "firebase_url": "https://mtgsearch-10925.firebaseio.com",
+    "project_id": "mtgsearch-10925",
+    "storage_bucket": "mtgsearch-10925.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546887382192:android:c2a0ca719aeeb0ad",
+        "android_client_info": {
+          "package_name": "com.dbottillo.mtgsearchfree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546887382192-bvldtn6l06mobpc0en6msf4ms3h49t9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dbottillo.mtgsearchfree",
+            "certificate_hash": "F899BD6A182F91620A2150B7BF1EF2D08A3B4239"
+          }
+        },
+        {
+          "client_id": "546887382192-is0vev7vtgv3u0f8fk76hvu3u8ol09b7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dbottillo.mtgsearchfree",
+            "certificate_hash": "62977FFF28B2B96A98BD3991AF0CAD5AD0D2AF78"
+          }
+        },
+        {
+          "client_id": "546887382192-ogjp4g19e8ump5ejj83nnfp89qu8bhf2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "546887382192-61bo27r42svjdltlmcmlmli2srpml440.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "546887382192-s5o7cgauccdul9meoggi8540cfju027t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVt4dODIKY4N_7-wWtw6HFmuPYjJpv_VI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-48823803-2"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546887382192:android:9af5fd6ec9165221",
+        "android_client_info": {
+          "package_name": "com.dbottillo.mtgsearchfree.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546887382192-n8fjdshft3i4lh407ve8q73877fv6h6i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dbottillo.mtgsearchfree.debug",
+            "certificate_hash": "F899BD6A182F91620A2150B7BF1EF2D08A3B4239"
+          }
+        },
+        {
+          "client_id": "546887382192-ogjp4g19e8ump5ejj83nnfp89qu8bhf2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "546887382192-61bo27r42svjdltlmcmlmli2srpml440.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "546887382192-s5o7cgauccdul9meoggi8540cfju027t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVt4dODIKY4N_7-wWtw6HFmuPYjJpv_VI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-48823803-3"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
