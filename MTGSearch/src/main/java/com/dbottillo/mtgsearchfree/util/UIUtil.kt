@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.util
 import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
+import android.support.annotation.IdRes
 import android.support.v4.app.NavUtils
 import android.support.v4.app.TaskStackBuilder
 import android.text.Spannable
@@ -81,3 +82,10 @@ fun Activity.goToParentActivity(){
         NavUtils.navigateUpTo(this, upIntent)
     }
 }
+
+fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
+    @Suppress("UNCHECKED_CAST")
+    return unsafeLazy { findViewById<T>(idRes) }
+}
+
+private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
