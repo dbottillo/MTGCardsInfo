@@ -12,7 +12,7 @@ import com.dbottillo.mtgsearchfree.R
 class BottomTabs : LinearLayout {
 
     interface BottomTabsListener{
-        fun tabSelected(selection: Int) : Unit
+        fun tabSelected(selection: Int)
     }
 
     val scaleDefault: Float = 1.0f
@@ -77,7 +77,7 @@ class BottomTabs : LinearLayout {
         this.listener = listener
     }
 
-    private fun setSelection(selected: Int) {
+    fun setSelection(selected: Int) {
         currentSelection = selected
         refreshUI()
     }
