@@ -33,6 +33,7 @@
             android:name=".ui.cards.CardsActivity"/>
 
         <activity android:name=".ui.lucky.CardLuckyActivity"
+                  android:launchMode="singleTask"
                   android:parentActivityName=".ui.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -55,8 +56,6 @@
 
         <service android:name=".model.network.NetworkIntentService"/>
 
-        <service android:name=".widget.UpdateLuckyWidgetService"/>
-
         <service
             android:name=".util.CardMigratorService" android:exported="false"/>
 
@@ -72,10 +71,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/lucky_widget_info"/>
         </receiver>
-
-        <receiver android:name=".widget.LuckyWidgetReceiver"/>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
 
     </application>
 
