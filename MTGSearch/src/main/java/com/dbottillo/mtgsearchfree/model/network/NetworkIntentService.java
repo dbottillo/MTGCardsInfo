@@ -138,6 +138,7 @@ public class NetworkIntentService extends IntentService {
             if (tcgPrice.getHiPrice() == null) {
                 tcgPrice.setError(getApplicationContext().getString(R.string.price_error));
             }
+            in.close();
         } else {
             if (urlConnection.getResponseCode() == 500) {
                 tcgPrice.setNotFound(true);
