@@ -42,7 +42,8 @@ public class AddFavouritesAsyncTask extends AsyncTask<String, Void, ArrayList<Ob
         for (MTGCard card : cards) {
             favouritesDataSource.saveFavourites(card);
         }
-
+        cardsInfoDbHelper.close();
+        databaseHelper.close();
         return result;
     }
 

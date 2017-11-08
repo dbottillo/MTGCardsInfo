@@ -7,4 +7,5 @@ interface SavedCardsPresenter {
     fun load()
     fun removeFromFavourite(card: MTGCard)
     fun toggleCardTypeViewPreference()
+    fun onPause()
 }
