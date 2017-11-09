@@ -57,6 +57,11 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         savedCardsPresenter.load()
     }
 
+    override fun onPause() {
+        super.onPause()
+        savedCardsPresenter.onPause()
+    }
+
     override fun getScrollViewId(): Int {
         return R.id.card_list
     }
