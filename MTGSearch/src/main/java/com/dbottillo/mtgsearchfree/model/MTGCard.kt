@@ -89,8 +89,12 @@ data class MTGCard(var id: Int = 0,
         get() = rarity.equals(CardFilter.FILTER_MYHTIC, ignoreCase = true)
 
     val image: String?
-        get() = if (number != null && number!!.isNotEmpty() && !types.contains("Plane")) {
-            "https://magiccards.info/scans/en/" + set!!.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
+        get() = if (number != null && set != null && number!!.isNotEmpty()
+                && !types.contains("Plane")
+                && set?.code?.toUpperCase() != "6ED"
+                && set?.code?.toUpperCase() != "DDT"
+                && set?.code?.toUpperCase() != "IMA" ) {
+            "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
         } else imageFromGatherer
 
     val imageFromGatherer: String?
