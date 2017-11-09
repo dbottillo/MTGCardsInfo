@@ -1,6 +1,6 @@
 buildscript {
-    ext.number_of_set = 166
-    ext.database_version = 29
+    ext.number_of_set = 168
+    ext.database_version = 30
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -22,10 +22,6 @@ if (keystorePropertiesFile.exists()){
     keystoreProperties['RELEASE_STORE_PASSWORD'] = ""
 }
 
-kapt {
-    generateStubs = true
-}
-
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
@@ -34,8 +30,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 75
-        versionName "3.1.4"
+        versionCode 76
+        versionName "3.2.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false

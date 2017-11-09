@@ -24,7 +24,6 @@ import javax.inject.Inject
 open class MTGApp : Application() {
 
     lateinit var uiGraph: UiComponent
-    private var isUnitTesting = false
 
     @Inject
     lateinit var cardsPreferences: CardsPreferences
@@ -47,7 +46,7 @@ open class MTGApp : Application() {
                 .presentersModule(PresentersModule())
                 .build()
 
-        if (!isUnitTesting) {
+        if (!isTesting()) {
             if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
                 createNotificationChannel()
             }
@@ -67,8 +66,10 @@ open class MTGApp : Application() {
             }
             LeakCanary.install(this)
         }
+    }
 
-        fireReleaseNotePush()
+    protected open fun isTesting(): Boolean{
+        return false
     }
 
     protected open fun generateDataModule(): DataModule {

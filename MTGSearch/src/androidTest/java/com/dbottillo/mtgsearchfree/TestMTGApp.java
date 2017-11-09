@@ -9,4 +9,9 @@ public class TestMTGApp extends MTGApp {
     protected DataModule generateDataModule() {
         return new DataModuleForTest();
     }
+
+    @Override
+    protected boolean isTesting() {
+        return true;
+    }
 }
