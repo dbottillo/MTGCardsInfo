@@ -131,6 +131,7 @@ open class MTGApp : Application() {
     companion object {
         val INTENT_RELEASE_NOTE_PUSH = "Release push note"
         val NOTIFICATION_CHANNEL_ID = "Base Channel"
+        val TELEGRAM_LINK = "https://t.me/joinchat/B5gyzg14cbvCYiW7mtsWhQ"
     }
 
 }
