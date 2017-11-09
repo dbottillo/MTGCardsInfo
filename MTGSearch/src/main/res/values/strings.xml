@@ -113,9 +113,7 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Duel Decks: Merfolk vs. Goblins\n
-        - NEW: Iconic Masters\n
-        - Advanced search for CMC, power and toughness
+        - NEW: Duel Decks: Merfolk vs. Goblins\n- NEW: Iconic Masters\n- Advanced search for CMC, power and toughness
     </string>
     <string name="release_note_text_full">
         <b>Version 3.2.0:</b> \n
@@ -316,5 +314,6 @@
     <string name="tooltip_line_2">To change set</string>
     <string name="tooltip_line_3">To change filters</string>
     <string name="ok_got_it">Ok, got it!</string>
+    <string name="join_telegram">Join Telegram help group</string>
 
 </resources>
