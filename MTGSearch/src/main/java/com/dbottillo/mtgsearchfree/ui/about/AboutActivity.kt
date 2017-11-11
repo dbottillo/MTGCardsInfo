@@ -16,10 +16,7 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.util.addBold
-import com.dbottillo.mtgsearchfree.util.bind
+import com.dbottillo.mtgsearchfree.util.*
 import java.util.*
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
@@ -96,7 +93,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
         val text = String.format(getString(R.string.feedback_text), versionName,
                 Build.VERSION.SDK_INT.toString(), Build.DEVICE, Build.MODEL, Build.PRODUCT)
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getString(R.string.app_name))
-        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text))
+        emailIntent.putExtra(Intent.EXTRA_TEXT, text.toHtml())
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)))
     }
 

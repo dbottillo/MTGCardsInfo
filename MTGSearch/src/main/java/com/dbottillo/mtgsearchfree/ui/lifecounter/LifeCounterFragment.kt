@@ -37,8 +37,8 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     internal var diceShowed : Boolean = false
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_life_counter, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_life_counter, container, false)
         app.uiGraph.inject(this)
         dialogUtil.init(context)
         return rootView
@@ -85,7 +85,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     }
 
     override fun getTitle(): String {
-        return context.getString(R.string.action_life_counter)
+        return resources.getString(R.string.action_life_counter)
     }
 
     override fun showError(message: String?) {

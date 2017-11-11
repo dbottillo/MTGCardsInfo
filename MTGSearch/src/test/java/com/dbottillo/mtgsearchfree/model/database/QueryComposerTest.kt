@@ -2,9 +2,9 @@ package com.dbottillo.mtgsearchfree.model.database
 
 import com.dbottillo.mtgsearchfree.model.CMCParam
 import com.dbottillo.mtgsearchfree.model.PTParam
-import junit.framework.Assert.assertNotNull
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

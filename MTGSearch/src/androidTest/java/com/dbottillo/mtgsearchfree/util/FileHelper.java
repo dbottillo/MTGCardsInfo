@@ -50,7 +50,7 @@ public final class FileHelper {
     }
 
     public static ArrayList<MTGCard> readSingleSetFile(MTGSet set, Context context) throws JSONException {
-        String jsonSetString = loadFile(context, CreateDBAsyncTask.setToLoad(context, set.getCode()));
+        String jsonSetString = loadFile(context, CreateDBAsyncTask.Companion.setToLoad(context, set.getCode()));
         JSONObject jsonCards = new JSONObject(jsonSetString);
         JSONArray cardsJ = jsonCards.getJSONArray("cards");
         ArrayList<MTGCard> cards = new ArrayList<>();

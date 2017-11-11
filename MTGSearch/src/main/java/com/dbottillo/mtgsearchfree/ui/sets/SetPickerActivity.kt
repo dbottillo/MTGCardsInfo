@@ -65,7 +65,7 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
         finish()
     }
 
-    class Divider(val drawable: Drawable) : RecyclerView.ItemDecoration(){
+    class Divider(val drawable: Drawable?) : RecyclerView.ItemDecoration(){
         override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State?){
             val dividerLeft = parent.context.dpToPx(16)
             val dividerRight = parent.width - dividerLeft
@@ -77,10 +77,12 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
                 val params = child.layoutParams as RecyclerView.LayoutParams
 
                 val dividerTop = child.bottom + params.bottomMargin
-                val dividerBottom = dividerTop + drawable.intrinsicHeight
+                val dividerBottom = dividerTop + (drawable?.intrinsicHeight ?: 0)
 
-                drawable.setBounds(dividerLeft, dividerTop, dividerRight, dividerBottom)
-                drawable.draw(canvas)
+                drawable?.let {
+                    drawable.setBounds(dividerLeft, dividerTop, dividerRight, dividerBottom)
+                    drawable.draw(canvas)
+                }
             }
         }
     }

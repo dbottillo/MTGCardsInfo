@@ -23,13 +23,13 @@ if (keystorePropertiesFile.exists()){
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 76
         versionName "3.2.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"

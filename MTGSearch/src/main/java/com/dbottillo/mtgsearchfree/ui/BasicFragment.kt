@@ -30,7 +30,7 @@ abstract class BasicFragment : DialogFragment() {
         this.dbActivity = context as BasicActivity
         isPortrait = resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
         if (heightToolbar <= 0) {
-            val styledAttributes = activity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))
+            val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))
             heightToolbar = styledAttributes.getDimension(0, 0f).toInt()
             styledAttributes.recycle()
         }

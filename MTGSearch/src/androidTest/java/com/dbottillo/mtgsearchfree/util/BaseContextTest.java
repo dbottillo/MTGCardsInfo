@@ -13,8 +13,8 @@ import org.junit.Before;
 public abstract class BaseContextTest {
 
     protected Context context;
-    public CardsInfoDbHelper cardsInfoDbHelper;
-    public MTGDatabaseHelper mtgDatabaseHelper;
+    protected CardsInfoDbHelper cardsInfoDbHelper;
+    protected MTGDatabaseHelper mtgDatabaseHelper;
 
     @Before
     public void create_data_helper() throws Exception {
@@ -27,7 +27,9 @@ public abstract class BaseContextTest {
     @After
     public void close_data_helper() throws Exception {
         cardsInfoDbHelper.close();
-        mtgDatabaseHelper.close();
+        if (mtgDatabaseHelper != null) {
+            mtgDatabaseHelper.close();
+        }
     }
 
 }
