@@ -33,8 +33,8 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_saved, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_saved, container, false)
         app.uiGraph.inject(this)
         return rootView
     }
@@ -57,6 +57,11 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         savedCardsPresenter.load()
     }
 
+    override fun onPause() {
+        super.onPause()
+        savedCardsPresenter.onPause()
+    }
+
     override fun getScrollViewId(): Int {
         return R.id.card_list
     }
@@ -66,7 +71,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     }
 
     override fun getTitle(): String {
-        return context.getString(R.string.action_saved)
+        return resources.getString(R.string.action_saved)
     }
 
     override fun hideLoading() {

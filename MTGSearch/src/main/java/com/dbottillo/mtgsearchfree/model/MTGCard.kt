@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model
 
 import android.content.Context
 import android.support.annotation.VisibleForTesting
+import android.support.v4.content.ContextCompat
 import com.dbottillo.mtgsearchfree.R
 
 data class MTGCard(var id: Int = 0,
@@ -89,8 +90,12 @@ data class MTGCard(var id: Int = 0,
         get() = rarity.equals(CardFilter.FILTER_MYHTIC, ignoreCase = true)
 
     val image: String?
-        get() = if (number != null && number!!.isNotEmpty() && !types.contains("Plane")) {
-            "https://magiccards.info/scans/en/" + set!!.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
+        get() = if (number != null && set != null && number!!.isNotEmpty()
+                && !types.contains("Plane")
+                && set?.code?.toUpperCase() != "6ED"
+                && set?.code?.toUpperCase() != "DDT"
+                && set?.code?.toUpperCase() != "IMA") {
+            "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
         } else imageFromGatherer
 
     val imageFromGatherer: String?
@@ -147,21 +152,16 @@ data class MTGCard(var id: Int = 0,
         } else colors[0]
 
     fun getMtgColor(context: Context): Int {
-        var mtgColor = context.resources.getColor(R.color.mtg_other)
-        if (isMultiColor) {
-            mtgColor = context.resources.getColor(R.color.mtg_multi)
-        } else if (colors.contains(CardProperties.COLOR.WHITE.value)) {
-            mtgColor = context.resources.getColor(R.color.mtg_white)
-        } else if (colors.contains(CardProperties.COLOR.BLUE.value)) {
-            mtgColor = context.resources.getColor(R.color.mtg_blue)
-        } else if (colors.contains(CardProperties.COLOR.BLACK.value)) {
-            mtgColor = context.resources.getColor(R.color.mtg_black)
-        } else if (colors.contains(CardProperties.COLOR.RED.value)) {
-            mtgColor = context.resources.getColor(R.color.mtg_red)
-        } else if (colors.contains(CardProperties.COLOR.GREEN.value)) {
-            mtgColor = context.resources.getColor(R.color.mtg_green)
-        }
-        return mtgColor
+        return ContextCompat.getColor(context,
+                when {
+                    isMultiColor -> R.color.mtg_multi
+                    colors.contains(CardProperties.COLOR.WHITE.value) -> R.color.mtg_white
+                    colors.contains(CardProperties.COLOR.BLUE.value) -> R.color.mtg_blue
+                    colors.contains(CardProperties.COLOR.BLACK.value) -> R.color.mtg_black
+                    colors.contains(CardProperties.COLOR.RED.value) -> R.color.mtg_red
+                    colors.contains(CardProperties.COLOR.GREEN.value) -> R.color.mtg_green
+                    else -> R.color.mtg_other
+                })
     }
 
     val isWhite: Boolean

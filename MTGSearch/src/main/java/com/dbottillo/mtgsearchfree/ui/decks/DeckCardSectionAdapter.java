@@ -30,7 +30,7 @@ public class DeckCardSectionAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         SectionViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.text_section);
+            title = view.findViewById(R.id.text_section);
         }
     }
 

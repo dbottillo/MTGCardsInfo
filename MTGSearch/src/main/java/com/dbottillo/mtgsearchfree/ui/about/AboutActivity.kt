@@ -7,26 +7,28 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
+import android.text.SpannableStringBuilder
 import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.*
 import java.util.*
 
-class AboutActivity : BasicActivity(), View.OnTouchListener{
+class AboutActivity : BasicActivity(), View.OnTouchListener {
 
-    internal var librariesName = arrayOf("Smooth Progress Bar", "Picasso", "LeakMemory")
-    internal var librariesAuthor = arrayOf("Castorflex", "Square", "Square")
-    internal var librariesLink = arrayOf("https://github.com/castorflex/SmoothProgressBar", "http://square.github.io/picasso/", "https://github.com/square/leakcanary")
+    private var libraries = listOf(
+            DevLibrary("Picasso", "Square", "http://square.github.io/picasso/"),
+            DevLibrary("LeakMemory", "Square", "https://github.com/square/leakcanary"),
+            DevLibrary("RxJava", "ReactiveX", "https://github.com/ReactiveX/RxJava"))
 
-    internal var versionName: String = ""
-    internal lateinit var versionText : TextView
-    internal var firstTap: Long = 0
+    private lateinit var versionName: String
+    private val versionText: TextView by bind(R.id.about_version)
+    private var firstTap: Long = 0
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(bundle: Bundle?) {
@@ -35,51 +37,53 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
         setContentView(R.layout.activity_about)
 
         mtgApp.uiGraph.inject(this)
-
-        versionText = findViewById<TextView>(R.id.about_version)
         try {
             versionName = packageManager.getPackageInfo(packageName, 0).versionName
-            versionText.text = Html.fromHtml("<b>" + getString(R.string.version) + "</b>: " + versionName)
+            versionText.text = SpannableStringBuilder().apply {
+                addBold(getString(R.string.version))
+                append(" ")
+                append(versionName)
+            }
         } catch (e: PackageManager.NameNotFoundException) {
             LOG.e(e)
         }
 
         versionText.setOnTouchListener(this)
-        findViewById<View>(R.id.send_feedback).setOnClickListener{
+        findViewById<View>(R.id.send_feedback).setOnClickListener {
             sendFeedback()
         }
 
-        findViewById<View>(R.id.share_app).setOnClickListener(View.OnClickListener {
+        findViewById<View>(R.id.join_telegram).setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(MTGApp.TELEGRAM_LINK)))
+        }
+
+        findViewById<View>(R.id.share_app).setOnClickListener {
             TrackingManager.trackShareApp()
-            val i = Intent(Intent.ACTION_SEND)
-            i.type = "text/plain"
-            i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-            val url = "https://play.google.com/store/apps/details?id=com.dbottillo.mtgsearchfree"
-            i.putExtra(Intent.EXTRA_TEXT, url)
-            startActivity(Intent.createChooser(i, getString(R.string.share)))
-        })
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
+                putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.dbottillo.mtgsearchfree")
+            }
+            startActivity(Intent.createChooser(intent, getString(R.string.share)))
+        }
 
         val cardContainer = findViewById<LinearLayout>(R.id.libraries_container)
 
-        for (i in librariesName.indices) {
+        libraries.forEach { library ->
             val libraryView = View.inflate(this, R.layout.row_library, null)
             val title = libraryView.findViewById<TextView>(R.id.library_name)
-            title.text = librariesName[i]
+            title.text = library.name
             val author = libraryView.findViewById<TextView>(R.id.library_author)
-            author.text = librariesAuthor[i]
+            author.text = library.author
             cardContainer.addView(libraryView)
-            libraryView.tag = 0
-            libraryView.setOnClickListener { v ->
-                val tag = v.tag as Int
-                val uri = Uri.parse(librariesLink[tag])
+            libraryView.setOnClickListener {
+                val uri = Uri.parse(library.link)
                 val intent = Intent(Intent.ACTION_VIEW, uri)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
                 startActivity(intent)
-                TrackingManager.trackAboutLibrary(librariesLink[0])
+                TrackingManager.trackAboutLibrary(library.link)
             }
         }
-
-        findViewById<TextView>(R.id.copyright).setText(R.string.copyright)
     }
 
     private fun sendFeedback() {
@@ -89,13 +93,12 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
         val text = String.format(getString(R.string.feedback_text), versionName,
                 Build.VERSION.SDK_INT.toString(), Build.DEVICE, Build.MODEL, Build.PRODUCT)
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getString(R.string.app_name))
-        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text))
+        emailIntent.putExtra(Intent.EXTRA_TEXT, text.toHtml())
         startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)))
     }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouch(v: View, ev: MotionEvent): Boolean {
-
         when (ev.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> firstTap = Calendar.getInstance().timeInMillis
             MotionEvent.ACTION_CANCEL, MotionEvent.ACTION_UP -> {
@@ -108,8 +111,6 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
                 }
                 v.performClick()
             }
-            MotionEvent.ACTION_MOVE -> {
-            }
             else -> {
             }
         }
@@ -119,5 +120,6 @@ class AboutActivity : BasicActivity(), View.OnTouchListener{
     override fun getPageTrack(): String? {
         return "/about"
     }
-
 }
+
+class DevLibrary(val name: String, val author: String, val link: String)

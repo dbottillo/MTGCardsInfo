@@ -3,10 +3,13 @@ package com.dbottillo.mtgsearchfree.util
 import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
+import android.support.annotation.IdRes
 import android.support.v4.app.NavUtils
 import android.support.v4.app.TaskStackBuilder
+import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.text.Spanned
 import android.text.style.StyleSpan
 import android.util.TypedValue
 import android.view.View
@@ -73,11 +76,28 @@ fun SpannableStringBuilder.boldTitledEntry(title: String, entry: String) {
     append(":").append(" ").append(entry).newLine(2)
 }
 
-fun Activity.goToParentActivity(){
-    val upIntent = NavUtils.getParentActivityIntent(this)
-    if (NavUtils.shouldUpRecreateTask(this, upIntent) || isTaskRoot) {
-        TaskStackBuilder.create(this).addNextIntentWithParentStack(upIntent).startActivities()
+fun Activity.goToParentActivity() {
+    NavUtils.getParentActivityIntent(this)?.let {
+        if (NavUtils.shouldUpRecreateTask(this, it) || isTaskRoot) {
+            TaskStackBuilder.create(this).addNextIntentWithParentStack(it).startActivities()
+        } else {
+            NavUtils.navigateUpTo(this, it)
+        }
+    }
+}
+
+fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
+    @Suppress("UNCHECKED_CAST")
+    return unsafeLazy { findViewById<T>(idRes) }
+}
+
+private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
+
+@Suppress("DEPRECATION")
+fun String.toHtml(): Spanned {
+    return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
     } else {
-        NavUtils.navigateUpTo(this, upIntent)
+        Html.fromHtml(this)
     }
 }

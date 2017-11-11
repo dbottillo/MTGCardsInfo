@@ -48,7 +48,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         toolbarRevealScrollHelper.onSaveInstanceState(outState)
     }

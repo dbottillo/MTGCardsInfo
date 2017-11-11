@@ -37,8 +37,8 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     internal lateinit var adapter: DecksAdapter
     internal var decks: MutableList<Deck> = mutableListOf()
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_decks, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_decks, container, false)
         app.uiGraph.inject(this)
         dialogUtil.init(context)
         return rootView

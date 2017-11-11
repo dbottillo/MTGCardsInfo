@@ -8,9 +8,9 @@ public class SearchParams implements Parcelable {
     private String name;
     private String types;
     private String text;
-    private IntParam cmc;
-    private IntParam power;
-    private IntParam tough;
+    private CMCParam cmc;
+    private PTParam power;
+    private PTParam tough;
     private boolean white, blue, black, red, green, onlyMulti, noMulti, land, onlyMultiNoOthers;
     private boolean common, uncommon, rare, mythic;
     private int setId;
@@ -68,29 +68,29 @@ public class SearchParams implements Parcelable {
         return this;
     }
 
-    public IntParam getCmc() {
+    public CMCParam getCmc() {
         return cmc;
     }
 
-    public SearchParams setCmc(IntParam cmc) {
+    public SearchParams setCmc(CMCParam cmc) {
         this.cmc = cmc;
         return this;
     }
 
-    public IntParam getPower() {
+    public PTParam getPower() {
         return power;
     }
 
-    public SearchParams setPower(IntParam power) {
+    public SearchParams setPower(PTParam power) {
         this.power = power;
         return this;
     }
 
-    public IntParam getTough() {
+    public PTParam getTough() {
         return tough;
     }
 
-    public SearchParams setTough(IntParam tough) {
+    public SearchParams setTough(PTParam tough) {
         this.tough = tough;
         return this;
     }
@@ -242,9 +242,9 @@ public class SearchParams implements Parcelable {
         name = in.readString();
         types = in.readString();
         text = in.readString();
-        cmc = in.readParcelable(IntParam.class.getClassLoader());
-        power = in.readParcelable(IntParam.class.getClassLoader());
-        tough = in.readParcelable(IntParam.class.getClassLoader());
+        cmc = in.readParcelable(CMCParam.class.getClassLoader());
+        power = in.readParcelable(PTParam.class.getClassLoader());
+        tough = in.readParcelable(PTParam.class.getClassLoader());
         white = in.readInt() == 1;
         blue = in.readInt() == 1;
         black = in.readInt() == 1;
@@ -348,13 +348,10 @@ public class SearchParams implements Parcelable {
 
     public boolean isValid() {
         return ((name != null && name.length() > 0) || (types != null && types.length() > 0)
-                || (cmc != null && cmc.getValue() > 0)
-                || (power != null && power.getValue() > 0)
-                || (tough != null && tough.getValue() > 0)
-                || setId > 0
-                || (text != null && text.length() > 0)
-                || land
-                || atLeastOneColor() || atLeastOneRarity());
+                || (cmc != null && cmc.getNumericValue() > 0)
+                || (power != null) || (tough != null)
+                || setId > 0 || (text != null && text.length() > 0)
+                || land || atLeastOneColor() || atLeastOneRarity());
     }
 
     public void setLand(boolean land) {
