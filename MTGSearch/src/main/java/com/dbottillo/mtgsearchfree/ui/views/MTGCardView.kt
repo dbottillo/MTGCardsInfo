@@ -61,8 +61,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         cardImageContainer = view.findViewById(R.id.image_card_container)
         flipCardButton = view.findViewById(R.id.card_flip)
 
-        view.findViewById<View>(R.id.image_card_retry_btn).setOnClickListener { view -> retryImage(view) }
-        view.findViewById<View>(R.id.price_container).setOnClickListener { view -> openPrice(view) }
+        view.findViewById<View>(R.id.image_card_retry_btn).setOnClickListener { retryImage() }
+        view.findViewById<View>(R.id.price_container).setOnClickListener { openPrice() }
         flipCardButton.setOnClickListener { flipCard() }
 
         isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
@@ -220,11 +220,11 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         cardLoader.visibility = View.GONE
     }
 
-    private fun retryImage(view: View) {
+    private fun retryImage() {
         loadImage(false)
     }
 
-    private fun openPrice(view: View) {
+    private fun openPrice() {
         LOG.d()
         price?.let {
             if (!it.isAnError) {
