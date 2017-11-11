@@ -4,14 +4,12 @@ import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import junit.framework.Assert.*
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.ArgumentMatchers
-import org.mockito.Matchers
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit

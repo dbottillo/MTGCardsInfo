@@ -24,11 +24,11 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
         logger.d("created")
     }
 
-    override fun init(view: AddToDeckView, bundle: Bundle) {
+    override fun init(view: AddToDeckView, bundle: Bundle?) {
         logger.d()
         this.view = view
 
-        val cardId = bundle.getInt("card", -1)
+        val cardId = bundle?.getInt("card", -1) ?: -1
 
         interactor.init(cardId).subscribe({
             logger.d()

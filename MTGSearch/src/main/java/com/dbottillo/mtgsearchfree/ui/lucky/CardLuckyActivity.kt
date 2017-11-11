@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.lucky
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -45,6 +46,11 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         mtgApp.uiGraph.inject(this)
         presenter.init(this, bundle, intent)
         cardView.setOnClickListener { presenter.showNextCard() }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        presenter.init(this, null, intent)
     }
 
     public override fun onSaveInstanceState(outState: Bundle) {

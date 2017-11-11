@@ -5,16 +5,18 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.Disposable
 
 class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
                               val generalData: GeneralData,
                               val logger: Logger) : SavedCardsPresenter {
 
     lateinit var view: SavedCardsView
+    private var disposable: Disposable? = null
 
     override fun init(view: SavedCardsView) {
         this.view = view
-        if (generalData.isCardsShowTypeGrid){
+        if (generalData.isCardsShowTypeGrid) {
             view.showCardsGrid()
         } else {
             view.showCardsList()
@@ -24,11 +26,18 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
 
     override fun load() {
         logger.d()
-        view.showLoading()
-        interactor.load().subscribe {
-            view.hideLoading()
-            showCards(it)
-        }
+        disposable = interactor.load()
+                .doOnSubscribe {
+                    view.showLoading()
+                }
+                .subscribe {
+                    view.hideLoading()
+                    showCards(it)
+                }
+    }
+
+    override fun onPause() {
+        disposable?.dispose()
     }
 
     override fun removeFromFavourite(card: MTGCard) {
@@ -37,7 +46,7 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
         }
     }
 
-    internal fun showCards(collection: CardsCollection) {
+    private fun showCards(collection: CardsCollection) {
         if (collection.isEmpty()) {
             view.showEmptyScreen()
         } else {

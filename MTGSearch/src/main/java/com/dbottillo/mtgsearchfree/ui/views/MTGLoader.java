@@ -47,6 +47,7 @@ public class MTGLoader extends View {
     private void init() {
         argbEvaluator = new ArgbEvaluator();
         interpolator = new FastOutLinearInInterpolator();
+        paint.setAntiAlias(true);
         setPaintColor();
         MTGLoaderHandler loadingHandler = new MTGLoaderHandler(this);
         loadingHandler.sendEmptyMessage(0);

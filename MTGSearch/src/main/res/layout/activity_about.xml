@@ -1,101 +1,107 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/action_about"
-                android:layout_marginTop="32dp"
-                style="@style/BigTitle"/>
-
-            <TextView
-                android:id="@+id/copyright"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/base_margin"
-                android:textColor="@color/color_primary_dark"
-                tools:text="@string/copyright" />
-
-            <Button
-                android:id="@+id/send_feedback"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/base_margin"
-                android:layout_marginLeft="@dimen/base_margin"
-                android:layout_marginRight="@dimen/base_margin"
-                android:background="@drawable/btn_common"
-                android:text="@string/send_feedback"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <Button
-                android:id="@+id/share_app"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/base_margin"
-                android:layout_marginLeft="@dimen/base_margin"
-                android:layout_marginRight="@dimen/base_margin"
-                android:background="@drawable/btn_common"
-                android:text="@string/share_app"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/base_margin"
-                android:layout_marginLeft="@dimen/base_margin"
-                android:layout_marginRight="@dimen/base_margin"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="3dp">
-
-                <LinearLayout
-                    android:id="@+id/libraries_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/libraries"
-                        android:textColor="@color/color_primary_dark" />
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/about_version"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:textColor="@color/color_primary_dark"
-        android:textSize="14sp"
-        tools:text="MTG Cards version 2.2.0" />
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            style="@style/BigTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/action_about"/>
+
+        <TextView
+            android:id="@+id/about_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginRight="@dimen/base_margin"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="14sp"
+            tools:text="Version 2.2.0" />
+
+        <TextView
+            android:id="@+id/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/base_margin"
+            android:text="@string/copyright"
+            android:textColor="@color/color_primary_dark"/>
+
+        <Button
+            android:id="@+id/send_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginRight="@dimen/base_margin"
+            android:background="@drawable/btn_common"
+            android:text="@string/send_feedback"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/share_app"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginRight="@dimen/base_margin"
+            android:background="@drawable/btn_common"
+            android:text="@string/share_app"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/join_telegram"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginRight="@dimen/base_margin"
+            android:background="@drawable/btn_common"
+            android:text="@string/join_telegram"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginRight="@dimen/base_margin"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="3dp">
+
+            <LinearLayout
+                android:id="@+id/libraries_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/libraries"
+                    android:textColor="@color/color_primary_dark"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
+

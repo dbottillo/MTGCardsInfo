@@ -17,28 +17,25 @@ import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.views.BottomTabs
-import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.util.setHeight
+import com.dbottillo.mtgsearchfree.util.*
+import java.lang.ref.WeakReference
 
 class HomeActivity : BasicActivity() {
 
-    lateinit var bottomTabs: BottomTabs
-    lateinit var fragmentContainer: FrameLayout
+    private var fragments = mutableMapOf<String, WeakReference<BaseHomeFragment>>()
 
-    var bottomTabsHeight: Int = 0
-    var currentBottomTabsHeightAnimator: ValueAnimator? = null
-    var isUserScrollingDown: Boolean = false
+    private val bottomTabs: BottomTabs by bind(R.id.bottom_tabs)
+    private val fragmentContainer: FrameLayout by bind(R.id.fragment_container)
+    private var bottomTabsHeight: Int = 0
+    private var currentBottomTabsHeightAnimator: ValueAnimator? = null
+    private var isUserScrollingDown: Boolean = false
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         setContentView(R.layout.activity_home)
 
-        fragmentContainer = findViewById<FrameLayout>(R.id.fragment_container)
-        bottomTabsHeight = resources?.getDimensionPixelSize(R.dimen.bottom_tabs_height)!!
+        bottomTabsHeight = resources.getDimensionPixelSize(R.dimen.bottom_tabs_height)
 
-        bottomTabs = findViewById<BottomTabs>(R.id.bottom_tabs)
         bottomTabs.setBottomTabsListener(object : BottomTabs.BottomTabsListener {
             override fun tabSelected(selection: Int) {
                 when (selection) {
@@ -51,10 +48,10 @@ class HomeActivity : BasicActivity() {
         })
 
         if (bundle == null) {
-            changeFragment(SetsFragment(), "sets", false)
+            checkAndReplace("sets")
         }
 
-        if (intent != null && intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)){
+        if (intent != null && intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)) {
             startActivity(Intent(this, ReleaseNoteActivity::class.java))
             intent.putExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH, false)
         }
@@ -62,27 +59,34 @@ class HomeActivity : BasicActivity() {
     }
 
     private fun checkAndReplace(tag: String) {
-        if (supportFragmentManager.findFragmentByTag(tag) == null) {
-            changeFragment(getFragmentFromTag(tag), tag, false)
-        }
+        changeFragment(getFragmentFromTag(tag), tag, false)
     }
 
     override fun getPageTrack(): String {
         return "/home"
     }
 
-    private fun getFragmentFromTag(tag: String): BasicFragment {
-        if (tag == "sets") {
-            return SetsFragment()
+    private fun getFragmentFromTag(tag: String): BaseHomeFragment {
+        return when (tag) {
+            "sets" -> fragments[tag]?.get() ?: createAndSet(tag, SetsFragment())
+            "decks" -> fragments[tag]?.get() ?: createAndSet(tag, DecksFragment())
+            "saved" -> fragments[tag]?.get() ?: createAndSet(tag, SavedFragment())
+            else -> fragments[tag]?.get() ?: createAndSet(tag, LifeCounterFragment())
         }
-        if (tag == "decks") {
-            return DecksFragment()
+    }
+
+    private fun createAndSet(tag: String, fragment: BaseHomeFragment): BaseHomeFragment {
+        fragments.put(tag, WeakReference(fragment))
+        return fragment
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.findFragmentById(R.id.fragment_container) !is SetsFragment) {
+            checkAndReplace("sets")
+            bottomTabs.setSelection(0)
+        } else {
+            super.onBackPressed()
         }
-        if (tag == "saved") {
-            return SavedFragment()
-        }
-        // life
-        return LifeCounterFragment()
     }
 
     fun scrollingUp() {
@@ -102,7 +106,7 @@ class HomeActivity : BasicActivity() {
         isUserScrollingDown = true
     }
 
-    internal fun animateBottomTabs(targetHeight: Int) {
+    private fun animateBottomTabs(targetHeight: Int) {
         currentBottomTabsHeightAnimator?.cancel()
         currentBottomTabsHeightAnimator = ValueAnimator.ofInt(bottomTabs.height, targetHeight)
         currentBottomTabsHeightAnimator?.addUpdateListener { valueAnimator ->
@@ -161,4 +165,8 @@ class HomeActivity : BasicActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        fragments.clear()
+    }
 }
