@@ -5,14 +5,14 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
                               val generalData: GeneralData,
                               val logger: Logger) : SavedCardsPresenter {
 
     lateinit var view: SavedCardsView
-    val disposables = CompositeDisposable()
+    private var disposable: Disposable? = null
 
     override fun init(view: SavedCardsView) {
         this.view = view
@@ -26,16 +26,18 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
 
     override fun load() {
         logger.d()
-        view.showLoading()
-        disposables.add(
-                interactor.load().subscribe {
+        disposable = interactor.load()
+                .doOnSubscribe {
+                    view.showLoading()
+                }
+                .subscribe {
                     view.hideLoading()
                     showCards(it)
-                })
+                }
     }
 
     override fun onPause() {
-        disposables.dispose()
+        disposable?.dispose()
     }
 
     override fun removeFromFavourite(card: MTGCard) {
