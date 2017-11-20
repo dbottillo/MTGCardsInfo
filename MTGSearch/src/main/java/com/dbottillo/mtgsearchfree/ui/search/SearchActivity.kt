@@ -32,11 +32,11 @@ import javax.inject.Inject
 
 class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView, OnCardListener {
 
-    lateinit var newSearch: ImageButton
-    lateinit var scrollView: ScrollView
-    lateinit var mtgCardsView: MTGCardsView
-    lateinit var searchView: MTGSearchView
-    lateinit var closeButton: ImageButton
+    private val newSearch: ImageButton by bind(R.id.action_search)
+    private val scrollView: ScrollView by bind(R.id.search_scroll_view)
+    private val mtgCardsView: MTGCardsView by bind(R.id.cards_list_view)
+    private val searchView: MTGSearchView by bind(R.id.search_view)
+    private val closeButton: ImageButton by bind(R.id.close_button)
 
     internal var newSearchAnimation: AnimationDrawable? = null
     internal var argbEvaluator = ArgbEvaluator()
@@ -51,13 +51,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         super.onCreate(bundle)
         setContentView(R.layout.activity_search)
 
-        newSearch = findViewById<ImageButton>(R.id.action_search)
-        scrollView = findViewById<ScrollView>(R.id.search_scroll_view)
-        mtgCardsView = findViewById<MTGCardsView>(R.id.cards_list_view)
-        searchView = findViewById<MTGSearchView>(R.id.search_view)
-        closeButton = findViewById<ImageButton>(R.id.close_button)
-
-        toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_close)
         toolbar.setTitle(R.string.action_search)
         mtgCardsView.setEmptyString(R.string.empty_search)
