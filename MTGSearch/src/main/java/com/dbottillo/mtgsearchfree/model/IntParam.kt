@@ -59,21 +59,21 @@ fun cmcParamCreator(operator: String, value: String?): CMCParam? {
     input.forEach { char ->
         try {
             numbers.add(parseInt(char.toString()).toString())
-        } catch (e: NumberFormatException){
+        } catch (e: NumberFormatException) {
             val current = letters[char.toString()]
             letters[char.toString()] = current?.plus(1) ?: 1
         }
     }
-    var numericValue = numbers.fold("", { total, next -> total + next}).toInt()
+    var numericValue = if (numbers.size > 0) numbers.fold("", { total, next -> total + next }).toInt() else 0
     val stringValues = mutableListOf<String>()
-    if (letters.containsKey("X")){
+    if (letters.containsKey("X")) {
         stringValues.add("X")
         letters.remove("X")
     }
-    stringValues.add(numericValue.toString())
+    if (numericValue > 0) stringValues.add(numericValue.toString())
     letters.forEach {
         var singleLetter = ""
-        for (i in 1..it.value){
+        for (i in 1..it.value) {
             singleLetter += it.key
         }
         stringValues.add(singleLetter)
