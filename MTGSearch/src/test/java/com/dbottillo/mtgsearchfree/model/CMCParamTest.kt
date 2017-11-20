@@ -106,4 +106,16 @@ class CMCParamTest {
             assertThat(it.stringValues, `is`(listOf("X", "2", "U")))
         }
     }
+
+    @Test
+    fun `should create cmc param for greater or equal than UW`() {
+        val result = cmcParamCreator(">=", "UW")
+
+        assertNotNull(result)
+        result?.let {
+            assertThat(it.operator, `is`(">="))
+            assertThat(it.numericValue, `is`(2))
+            assertThat(it.stringValues, `is`(listOf("U", "W")))
+        }
+    }
 }
