@@ -36,6 +36,18 @@ class CMCParamTest {
     }
 
     @Test
+    fun `should create cmc param for = WW`() {
+        val result = cmcParamCreator("=", "ww")
+
+        assertNotNull(result)
+        result?.let {
+            assertThat(it.operator, `is`("="))
+            assertThat(it.numericValue, `is`(2))
+            assertThat(it.stringValues, `is`(listOf("WW")))
+        }
+    }
+
+    @Test
     fun `should create cmc param for = 2WU`() {
         val result = cmcParamCreator("=", "2wu")
 
