@@ -112,7 +112,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile 'com.google.firebase:firebase-core:11.4.2'
+    compile 'com.google.firebase:firebase-core:11.6.0'
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
