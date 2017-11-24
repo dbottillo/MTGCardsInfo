@@ -10,15 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
-
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration
-import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.setHeight
 
@@ -29,8 +28,8 @@ class MTGCardsView : RelativeLayout {
     private var itemDecorator: GridItemDecorator? = null
 
     lateinit var listView: RecyclerView
-    lateinit var emptyView: TextView
-    lateinit var footer: View
+    private lateinit var emptyView: TextView
+    private lateinit var footer: View
 
     constructor(ctx: Context) : super(ctx) {
         init(ctx)
@@ -47,8 +46,8 @@ class MTGCardsView : RelativeLayout {
     private fun init(context: Context) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.fragment_set, this, true)
-        listView = view.findViewById<RecyclerView>(R.id.card_list)
-        emptyView = view.findViewById<TextView>(R.id.empty_view)
+        listView = view.findViewById(R.id.card_list)
+        emptyView = view.findViewById(R.id.empty_view)
         footer = view.findViewById(R.id.search_bottom_container)
 
         itemDecorator = GridItemDecorator(resources.getDimensionPixelSize(R.dimen.cards_grid_space))
@@ -74,12 +73,12 @@ class MTGCardsView : RelativeLayout {
                 menu = menuOption))
     }
 
-    fun loadCards(cards: List<MTGCard>, listener: OnCardListener,
-                  cardFilter: CardFilter?, configuration: CardAdapterConfiguration) {
+    private fun loadCards(cards: List<MTGCard>, listener: OnCardListener,
+                          cardFilter: CardFilter?, configuration: CardAdapterConfiguration) {
         LOG.d()
 
         adapter = CardsAdapter(cards, listener, cardFilter, configuration)
-        adapter?.let{
+        adapter?.let {
             listView.adapter = adapter
             it.notifyDataSetChanged()
         }
@@ -91,7 +90,7 @@ class MTGCardsView : RelativeLayout {
         } else {
             footer.setHeight(0)
         }
-        emptyView.visibility = if (adapter?.itemCount == 0) View.VISIBLE else View.GONE
+        emptyView.visibility = if (cards.isEmpty()) View.VISIBLE else View.GONE
     }
 
     fun setGridOn() {

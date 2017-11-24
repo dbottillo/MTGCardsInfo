@@ -21,12 +21,12 @@ internal class QueryComposer(initial: String) {
         cmcParam?.let {
             checkFirstParam()
             if (it.operator == "=") {
-                if (it.stringValues.size == 1 && it.stringValues[0].toInt() == it.numericValue){
+                if (it.stringValues.size == 1 && it.stringValues[0].toIntOrNull() == it.numericValue){
                     stringBuilder.append("cmc").append(it.operator).append("?")
                     addSelection(it.operator, it.numericValue.toString())
                 } else {
                     stringBuilder.append("manaCost").append(" ").append(it.operator).append(" ?")
-                    addSelection(it.operator, it.stringValues.fold("", { total, next -> "$total{$next}" }))
+                    addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("", { total, next -> "$total{$next}" }))
                 }
             } else {
                 stringBuilder.append("cmc").append(it.operator).append("?")

@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:padding="40dp"
-        android:paddingTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="@string/empty_search"
         android:textStyle="italic"
         android:visibility="gone"

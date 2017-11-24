@@ -314,4 +314,30 @@ class QueryComposerTest {
         assertThat(output.selection[2], `is`("%{2}%"))
         assertThat(output.selection[3], `is`("%{U}%"))
     }
+
+    @Test
+    fun `should generate cmc param for EQUAL to BBG`() {
+        val intParam = CMCParam("=", 3, listOf("2", "BB", "G"))
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addCMCParam(intParam)
+
+        val output = queryComposer.build()
+
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("{2}{B}{B}{G}"))
+    }
+
+    @Test
+    fun `should generate cmc param for EQUAL to WW`() {
+        val intParam = CMCParam("=", 2, listOf("WW"))
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addCMCParam(intParam)
+
+        val output = queryComposer.build()
+
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("{W}{W}"))
+    }
 }
