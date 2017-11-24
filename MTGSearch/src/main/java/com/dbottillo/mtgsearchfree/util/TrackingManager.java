@@ -66,7 +66,7 @@ public final class TrackingManager {
         Answers.getInstance().logCustom(new CustomEvent("event")
                 .putCustomAttribute("category", category)
                 .putCustomAttribute("action", action)
-                .putCustomAttribute("label", label.substring(0, 100)));
+                .putCustomAttribute("label", label));
     }
 
     public static void trackSet(MTGSet gameSet, MTGSet mtgSet) {
