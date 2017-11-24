@@ -52,10 +52,10 @@ internal class QueryComposer(initial: String) {
                     checkFirstParam()
                     stringBuilder.append("(")
                     stringBuilder.appendCast(name)
-                    stringBuilder.append(ptParam.operator)
+                    stringBuilder.append(if (ptParam.operator == "IS") "=" else ptParam.operator)
                     stringBuilder.append(" ? AND ")
-                    stringBuilder.appendCast(name)
-                    stringBuilder.append("> 0)")
+                    stringBuilder.append(name)
+                    stringBuilder.append(" GLOB '*[0-9]*')")
                     addSelection(ptParam.operator, ptParam.value.toString())
                 }
             }

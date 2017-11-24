@@ -44,19 +44,6 @@ class QueryComposerTest {
     }
 
     @Test
-    fun `should generate power-toughness param`() {
-        val intParam = PTParam(">", 3)
-        val queryComposer = QueryComposer("SELECT * from TABLE")
-        queryComposer.addPTParam("NAME", intParam)
-
-        val output = queryComposer.build()
-
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(NAME as integer) > ? AND CAST(NAME as integer) > 0)"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("3"))
-    }
-
-    @Test
     fun generateQueryWithLikeParameter() {
         val queryComposer = QueryComposer("SELECT * from TABLE")
         queryComposer.addLikeParam("NAME", "island")
@@ -180,6 +167,50 @@ class QueryComposerTest {
         assertThat(output.selection[0], `is`("%island%"))
         assertThat(output.selection[1], `is`("Uncommon"))
         assertThat(output.selection[2], `is`("Rare"))
+    }
+
+    @Test
+    fun `should generate query for power = 0`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "=", value = 0))
+
+        val output = queryComposer.build()
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '*[0-9]*')"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("0"))
+    }
+
+    @Test
+    fun `should generate query for toughness = 2`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = "IS", value = 2))
+
+        val output = queryComposer.build()
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '*[0-9]*')"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("2"))
+    }
+
+    @Test
+    fun `should generate query for power LESS THAN 2`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "<", value = 2))
+
+        val output = queryComposer.build()
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(power as integer) < ? AND power GLOB '*[0-9]*')"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("2"))
+    }
+
+    @Test
+    fun `should generate query for toughness GRETER OR EQUAL THAN 3`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = ">=", value = 3))
+
+        val output = queryComposer.build()
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(toughness as integer) >= ? AND toughness GLOB '*[0-9]*')"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("3"))
     }
 
     @Test

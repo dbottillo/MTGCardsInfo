@@ -233,7 +233,12 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         for (MTGCard card : cards) {
             assertThat(card.getPower(), containsString("*"));
         }
+        cards = underTest.searchCards(searchParams.setPower(new PTParam("=", 0)));
+        for (MTGCard card : cards) {
+            assertThat(card.getPower(), is("0"));
+        }
     }
+
 
     @Test
     public void searchCardsByToughness() {
@@ -250,6 +255,10 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         List<MTGCard> cards = underTest.searchCards(searchParams.setTough(new PTParam("", -1)));
         for (MTGCard card : cards) {
             assertThat(card.getToughness(), containsString("*"));
+        }
+        cards = underTest.searchCards(searchParams.setTough(new PTParam(">=", 2)));
+        for (MTGCard card : cards) {
+            assertTrue(Integer.parseInt(card.getToughness()) >= 2);
         }
     }
 
