@@ -69,7 +69,7 @@
     <string name="life_dice">Roll dice</string>
     <string name="menu_life_poison">Poison count</string>
     <string name="empty_saved">You don\'t have any favourite cards yet, use the star button on the card page to add it as a favourite.</string>
-    <string name="empty_search">No cards found with that term, why don\'t you try something else??</string>
+    <string name="empty_search">No cards found, why don\'t you try something else??</string>
     <string name="empty_deck">No cards found in this deck, use Sets section or search to find cards to add.</string>
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Load image</string>
@@ -113,9 +113,11 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - NEW: Duel Decks: Merfolk vs. Goblins\n- NEW: Iconic Masters\n- Advanced search for CMC, power and toughness
+        - Bug fixes
     </string>
     <string name="release_note_text_full">
+        <b>Version 3.2.1:</b> \n
+        - bug fixes\n\n
         <b>Version 3.2.0:</b> \n
         - NEW: Duel Decks: Merfolk vs. Goblins\n
         - NEW: Iconic Masters\n

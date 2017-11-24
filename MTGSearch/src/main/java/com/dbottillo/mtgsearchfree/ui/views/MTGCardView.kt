@@ -180,28 +180,32 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             cardImage.visibility = View.GONE
             startCardLoader()
             val cardUrl = if (fallback) it.imageFromGatherer else it.image
-            LOG.d("loading: " + cardUrl!!)
-            Picasso.with(context.applicationContext).load(cardUrl)
-                    .into(cardImage, object : Callback {
-                        override fun onSuccess() {
-                            cardImage.visibility = View.VISIBLE
-                            stopCardLoader()
-                        }
+            cardUrl?.let {
+                LOG.d("loading: " + cardUrl)
+                Picasso.with(context.applicationContext).load(cardUrl)
+                        .into(cardImage, object : Callback {
+                            override fun onSuccess() {
+                                cardImage.visibility = View.VISIBLE
+                                stopCardLoader()
+                            }
 
-                        override fun onError() {
-                            if (!fallback) {
-                                // need to try to loadSet from gatherer
-                                loadImage(true)
-                                return
+                            override fun onError() {
+                                if (!fallback) {
+                                    // need to try to loadSet from gatherer
+                                    loadImage(true)
+                                    return
+                                }
+                                stopCardLoader()
+                                cardImage.visibility = View.GONE
+                                retry.visibility = View.VISIBLE
+                                if (isNetworkAvailable) {
+                                    TrackingManager.trackImageError(cardUrl)
+                                }
                             }
-                            stopCardLoader()
-                            cardImage.visibility = View.GONE
-                            retry.visibility = View.VISIBLE
-                            if (isNetworkAvailable) {
-                                TrackingManager.trackImageError(it.image)
-                            }
-                        }
-                    })
+                        })
+            } ?: if (isNetworkAvailable) {
+                TrackingManager.trackImageError(it.image)
+            }
         }
     }
 
@@ -255,6 +259,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     }
 
     companion object {
-        @JvmField val RATIO_CARD = 1.39622641509434f
+        @JvmField
+        val RATIO_CARD = 1.39622641509434f
     }
 }
