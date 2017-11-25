@@ -42,7 +42,7 @@ class AddToDeckInteractorTest {
     @Test
     fun `init should zip load to decks and card`() {
         `when`(decksStorage.load()).thenReturn(decks)
-        `when`(cardsStorage.loadCardById(4)).thenReturn(card)
+        `when`(cardsStorage.loadCard(4)).thenReturn(card)
         val testObserver = TestObserver<AddToDeckData>()
 
         underTest.init(4).subscribe(testObserver)
@@ -51,7 +51,7 @@ class AddToDeckInteractorTest {
         assertThat(testObserver.values()[0].card, `is`(card))
         assertThat(testObserver.values()[0].decks, `is`(decks))
         verify(decksStorage).load()
-        verify(cardsStorage).loadCardById(4)
+        verify(cardsStorage).loadCard(4)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verifyNoMoreInteractions(decksStorage, cardsStorage, schedulerProvider)
