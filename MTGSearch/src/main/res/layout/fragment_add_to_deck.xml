@@ -4,14 +4,17 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               style="@style/MTGSearchTheme"
+              tools:background="@color/white"
               android:padding="16dp">
 
     <TextView
+        android:id="@+id/add_card_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/add_to_deck_title"
+        tools:text="Add Counterspell to deck"
         android:textColor="@color/color_primary"
+        android:gravity="center"
         android:textSize="16sp" />
 
     <View

@@ -33,6 +33,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
         interactor.init(cardId).subscribe({
             logger.d()
             this.card = it.card
+            view.setCardTitle(card.name)
             view.decksLoaded(decks = it.decks)
         }, {
             if (it is MTGException) {
@@ -62,7 +63,7 @@ class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksSto
                                               private val schedulerProvider: SchedulerProvider) {
     fun init(cardId: Int): Single<AddToDeckData> {
         val decksSingle = Single.fromCallable { decksStorage.load() }
-        val cardSingle = Single.fromCallable { cardsStorage.loadCardById(cardId) }
+        val cardSingle = Single.fromCallable { cardsStorage.loadCard(cardId) }
         return Single.zip(decksSingle, cardSingle, BiFunction { decks: List<Deck>, card: MTGCard ->
             AddToDeckData(decks, card)
         }).subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.ui())
