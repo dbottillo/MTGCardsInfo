@@ -28,6 +28,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     lateinit var deckName: EditText
     lateinit var cardQuantityInputLayout: TextInputLayout
     lateinit var cardQuantity: EditText
+    lateinit var title: TextView
 
     internal var decksChoose: MutableList<String> = mutableListOf()
     internal var quantityChoose: Array<String> = arrayOf()
@@ -44,13 +45,14 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        chooseDeck = view.findViewById<Spinner>(R.id.choose_deck)
-        chooseQuantity = view.findViewById<Spinner>(R.id.choose_quantity)
-        sideboard = view.findViewById<CheckBox>(R.id.add_to_deck_sideboard)
-        cardNameInputLayout = view.findViewById<TextInputLayout>(R.id.new_deck_name_input_layout)
-        cardQuantityInputLayout = view.findViewById<TextInputLayout>(R.id.new_deck_quantity_input_layout)
-        deckName = view.findViewById<EditText>(R.id.new_deck_name)
-        cardQuantity = view.findViewById<EditText>(R.id.new_deck_quantity)
+        title = view.findViewById(R.id.add_card_title)
+        chooseDeck = view.findViewById(R.id.choose_deck)
+        chooseQuantity = view.findViewById(R.id.choose_quantity)
+        sideboard = view.findViewById(R.id.add_to_deck_sideboard)
+        cardNameInputLayout = view.findViewById(R.id.new_deck_name_input_layout)
+        cardQuantityInputLayout = view.findViewById(R.id.new_deck_quantity_input_layout)
+        deckName = view.findViewById(R.id.new_deck_name)
+        cardQuantity = view.findViewById(R.id.new_deck_quantity)
         view.findViewById<View>(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
 
         cardQuantity.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 30))
@@ -161,6 +163,10 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
+    override fun setCardTitle(cardName: String) {
+        title.text = getString(R.string.add_to_deck_title, cardName)
+    }
+
     override fun decksLoaded(decks: List<Deck>) {
         LOG.d()
         setupDecksSpinner(decks)
@@ -191,7 +197,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         fun newInstance(card: MTGCard): DialogFragment {
             val instance = AddToDeckFragment()
             val args = Bundle()
-            args.putInt("card", card.id)
+            args.putInt("card", card.multiVerseId)
             instance.arguments = args
             return instance
         }

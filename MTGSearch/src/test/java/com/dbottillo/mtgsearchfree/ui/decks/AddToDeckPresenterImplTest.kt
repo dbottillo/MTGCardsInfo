@@ -37,6 +37,7 @@ class AddToDeckPresenterImplTest {
         `when`(bundle.getInt("card", -1)).thenReturn(4)
         `when`(addToDeckData.card).thenReturn(card)
         `when`(addToDeckData.decks).thenReturn(decks)
+        `when`(card.name).thenReturn("Counterspell")
         `when`(interactor.init(4)).thenReturn(Single.just(addToDeckData))
         underTest = AddToDeckPresenterImpl(interactor, logger)
     }
@@ -47,6 +48,7 @@ class AddToDeckPresenterImplTest {
 
         verify(interactor).init(4)
         verify(view).decksLoaded(decks)
+        verify(view).setCardTitle("Counterspell")
         verifyNoMoreInteractions(view, interactor)
     }
 
