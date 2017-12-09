@@ -59,7 +59,10 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
     private fun buildLayout(context: Context, appWidgetId: Int, card: MTGCard): RemoteViews {
         val remoteViews = RemoteViews(context.packageName, R.layout.lucky_widget_layout)
-        Picasso.with(context).load(card.image).into(remoteViews, R.id.image_card, intArrayOf(appWidgetId))
+        card.image?.let {
+            TrackingManager.trackImage(it)
+            Picasso.with(context).load(it).into(remoteViews, R.id.image_card, intArrayOf(appWidgetId))
+        }
 
         // refresh
         val refreshIntent = Intent(context, LuckyWidgetProvider::class.java)
@@ -76,6 +79,7 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
         return remoteViews
     }
+
 }
 
 const val REFRESH_ACTION = "com.dbottillo.mtgsearchfree.luckywidgetprovider.REFRESH"

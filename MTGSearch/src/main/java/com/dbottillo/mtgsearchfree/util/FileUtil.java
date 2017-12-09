@@ -122,7 +122,7 @@ public class FileUtil {
             return false;
         }
         OutputStreamWriter writer;
-        TrackingManager.trackDatabaseExport();
+        TrackingManager.INSTANCE.trackDatabaseExport();
         try {
             writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
             writer.append("//");
@@ -141,7 +141,7 @@ public class FileUtil {
             writer.close();
             return true;
         } catch (IOException e) {
-            TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
+            TrackingManager.INSTANCE.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
     }
