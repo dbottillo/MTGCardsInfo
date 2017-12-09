@@ -27,7 +27,6 @@ class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList
 
             val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource)
             deckDataSource.deleteAllDecks(db)
-            db.close()
 
             val r = Random()
             for (i in 0..98) {
@@ -40,6 +39,8 @@ class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList
                     deckDataSource.addCardToDeckWithoutCheck(deck, card, quantity)
                 }
             }
+
+            db.close()
         }
 
         return result
