@@ -79,7 +79,7 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
         return remoteViews
     }
-    
+
 }
 
 const val REFRESH_ACTION = "com.dbottillo.mtgsearchfree.luckywidgetprovider.REFRESH"

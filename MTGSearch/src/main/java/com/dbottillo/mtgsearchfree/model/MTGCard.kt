@@ -92,9 +92,7 @@ data class MTGCard(var id: Int = 0,
     val image: String?
         get() = if (number != null && set != null && number!!.isNotEmpty()
                 && !types.contains("Plane")
-                && set?.code?.toUpperCase() != "6ED"
-                && set?.code?.toUpperCase() != "DDT"
-                && set?.code?.toUpperCase() != "IMA") {
+                && set?.code?.toUpperCase() != "6ED") {
             "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
         } else imageFromGatherer
 
