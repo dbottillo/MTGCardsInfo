@@ -182,6 +182,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             val cardUrl = if (fallback) it.imageFromGatherer else it.image
             cardUrl?.let {
                 LOG.d("loading: " + cardUrl)
+                TrackingManager.trackImage(cardUrl)
                 Picasso.with(context.applicationContext).load(cardUrl)
                         .into(cardImage, object : Callback {
                             override fun onSuccess() {

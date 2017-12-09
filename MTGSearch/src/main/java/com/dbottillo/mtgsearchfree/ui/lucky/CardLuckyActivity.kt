@@ -63,7 +63,9 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     }
 
     override fun preFetchCardImage(card: MTGCard) {
-        Picasso.with(applicationContext).load(card.image).fetch()
+        card.image?.let {
+            Picasso.with(applicationContext).load(card.image).fetch()
+        }
     }
 
     override fun showCard(card: MTGCard, showImage: Boolean) {

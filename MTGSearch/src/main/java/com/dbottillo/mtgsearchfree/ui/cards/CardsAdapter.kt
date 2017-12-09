@@ -16,6 +16,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -95,17 +96,20 @@ class CardsAdapter(var cards: List<MTGCard>,
                 val gridCardViewHolder = holder
                 gridCardViewHolder.loader.visibility = View.VISIBLE
                 gridCardViewHolder.image.contentDescription = card.name
-                Picasso.with(context.applicationContext).load(card.image)
-                        .error(R.drawable.left_debug)
-                        .into(gridCardViewHolder.image, object : Callback {
-                            override fun onSuccess() {
-                                gridCardViewHolder.loader.visibility = View.GONE
-                            }
+                card.image?.let {
+                    TrackingManager.trackImage(card.image)
+                    Picasso.with(context.applicationContext).load(card.image)
+                            .error(R.drawable.left_debug)
+                            .into(gridCardViewHolder.image, object : Callback {
+                                override fun onSuccess() {
+                                    gridCardViewHolder.loader.visibility = View.GONE
+                                }
 
-                            override fun onError() {
-                                gridCardViewHolder.loader.visibility = View.GONE
-                            }
-                        })
+                                override fun onError() {
+                                    gridCardViewHolder.loader.visibility = View.GONE
+                                }
+                            })
+                }
             } else {
                 val listCardViewHolder = holder as ListCardViewHolder
                 CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
@@ -132,9 +136,9 @@ class CardsAdapter(var cards: List<MTGCard>,
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(position){
+        return when (position) {
             0 -> ITEM_VIEW_TYPE_HEADER
-            cards.size+1 -> ITEM_VIEW_TYPE_FOOTER
+            cards.size + 1 -> ITEM_VIEW_TYPE_FOOTER
             else -> ITEM_VIEW_TYPE_ITEM
         }
     }
