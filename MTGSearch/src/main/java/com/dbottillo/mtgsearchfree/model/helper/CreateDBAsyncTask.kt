@@ -61,12 +61,12 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                                 set.code = setJ.getString("code")
                                 //for (int k=0; k<1; k++){
 
-                                (0..cards.length()).forEach { index ->
+                                (0..(cards.length() - 1)).forEach { index ->
                                     val cardJ = cards.getJSONObject(index)
-                                    //Log.e("BBM", "cardJ "+cardJ);
+                                    //Log.e("BBM", "cardJ "+cardJ)
 
                                     val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
-                                    //Log.e("MTG", "row id card"+newRowId2);
+                                    //Log.e("MTG", "row id card"+newRowId2)
                                     //result.add(MTGCard.createCardFromJson(i, cardJ));
                                 }
                             } catch (e: Resources.NotFoundException) {
@@ -190,7 +190,11 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 values.put(CardDataSource.COLUMNS.TYPES.getName(), types.toString())
             }
 
-            artifact = if (jsonObject.getString("type").contains("Artifact")) { 1 } else { 0 }
+            artifact = if (jsonObject.getString("type").contains("Artifact")) {
+                1
+            } else {
+                0
+            }
 
             if (jsonObject.has("manaCost")) {
                 values.put(CardDataSource.COLUMNS.MANA_COST.getName(), jsonObject.getString("manaCost"))
