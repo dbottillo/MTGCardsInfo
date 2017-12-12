@@ -86,7 +86,7 @@ public class DeckDataSource {
             cardsCursor.moveToFirst();
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
         }
-        if (currentCard + quantity < 0) {
+        if (currentCard + quantity <= 0) {
             LOG.d("the quantity is negative and is bigger than the current quantity so needs to be removed");
             cardsCursor.close();
             removeCardFromDeck(deckId, card);
@@ -95,7 +95,7 @@ public class DeckDataSource {
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
             LOG.d("just need to update the quantity");
-            updateQuantity(deckId,  currentCard + quantity, card.getMultiVerseId(), sid);
+            updateQuantity(deckId, currentCard + quantity, card.getMultiVerseId(), sid);
             cardsCursor.close();
             return;
         }
@@ -133,7 +133,7 @@ public class DeckDataSource {
         database.insert(TABLE_JOIN, null, values);
     }
 
-    public Deck getDeck(long deckId){
+    public Deck getDeck(long deckId) {
         String query = "select * from " + TABLE + " where rowid =?";
         Cursor cursor = database.rawQuery(query, new String[]{deckId + ""});
         LOG.query(query);
@@ -253,15 +253,15 @@ public class DeckDataSource {
         moveCardInDeck(deckId, card, quantity, false);
     }
 
-    private void moveCardInDeck(long deckId, MTGCard card, int quantity, boolean fromDeckToSide){
+    private void moveCardInDeck(long deckId, MTGCard card, int quantity, boolean fromDeckToSide) {
         boolean removeCard = false;
         int before = fromDeckToSide ? 0 : 1;
         int after = fromDeckToSide ? 1 : 0;
 
         Cursor cursor = runQuery("select quantity from deck_card where deck_id=? and card_id=? and side = ?",
                 String.valueOf(deckId), String.valueOf(card.getMultiVerseId()), String.valueOf(before));
-        if (cursor.moveToFirst()){
-            if (cursor.getInt(0) - quantity <= 0){
+        if (cursor.moveToFirst()) {
+            if (cursor.getInt(0) - quantity <= 0) {
                 removeCard = true;
             } else {
                 updateQuantity(deckId, cursor.getInt(0) - quantity, card.getMultiVerseId(), before);
@@ -271,7 +271,7 @@ public class DeckDataSource {
 
         Cursor cursorSideboard = runQuery("select quantity from deck_card where deck_id=? and card_id=? and side = ?",
                 String.valueOf(deckId), String.valueOf(card.getMultiVerseId()), String.valueOf(after));
-        if (cursorSideboard.moveToFirst()){
+        if (cursorSideboard.moveToFirst()) {
             updateQuantity(deckId, cursorSideboard.getInt(0) + quantity, card.getMultiVerseId(), after);
         } else {
             // card wasn't in the deck
@@ -280,16 +280,16 @@ public class DeckDataSource {
         }
         cursorSideboard.close();
 
-        if (removeCard){
+        if (removeCard) {
             card.setSideboard(before == 1);
             removeCardFromDeck(deckId, card);
         }
     }
 
-    public void updateQuantity(long deckId, int quantity, int multiverseId, int sid){
+    public void updateQuantity(long deckId, int quantity, int multiverseId, int sid) {
         ContentValues values = new ContentValues();
         values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
-        String query = "UPDATE " +TABLE_JOIN+" SET quantity=? WHERE "+COLUMNSJOIN.DECK_ID.getName() + " = ? and "
+        String query = "UPDATE " + TABLE_JOIN + " SET quantity=? WHERE " + COLUMNSJOIN.DECK_ID.getName() + " = ? and "
                 + COLUMNSJOIN.CARD_ID.getName() + " = ? and " + COLUMNSJOIN.SIDE.getName() + " = ?";
         String[] args = new String[]{String.valueOf(quantity), deckId + "", multiverseId + "", sid + ""};
         Cursor cursor = runQuery(query, args);
@@ -310,13 +310,13 @@ public class DeckDataSource {
         return deck;
     }
 
-    private Cursor runQuery(String query, String... args){
+    private Cursor runQuery(String query, String... args) {
         Cursor cursor = database.rawQuery(query, args);
         LOG.query(query, args);
         return cursor;
     }
 
-    private void runQueryAndClose(String query, String... args){
+    private void runQueryAndClose(String query, String... args) {
         runQuery(query, args).close();
     }
 

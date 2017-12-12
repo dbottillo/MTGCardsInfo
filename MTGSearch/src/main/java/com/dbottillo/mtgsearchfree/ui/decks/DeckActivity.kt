@@ -19,7 +19,6 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -40,8 +39,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     lateinit var deck: Deck
 
-    private var cards: MutableList<MTGCard> = mutableListOf()
-    private var deckCardSectionAdapter: DeckCardSectionAdapter? = null
+    private val deckAdapter = DeckAdapter()
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -49,7 +47,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         setupToolbar()
 
-        deck = intent.getParcelableExtra<Deck>("deck")
+        deck = intent.getParcelableExtra("deck")
         title = if (deck.name == null) getString(R.string.deck_title) else deck.name
 
         supportActionBar?.let {
@@ -62,18 +60,12 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         cardList.setHasFixedSize(true)
         cardList.layoutManager = LinearLayoutManager(this)
 
-        val deckCardAdapter = DeckCardAdapter(this, cards, R.menu.deck_card, object : OnCardListener {
-            override fun onTitleHeaderSelected() {}
-
-            override fun onCardsViewTypeSelected() {}
-
-            override fun onCardsSettingSelected() {}
-
-            override fun onCardSelected(card: MTGCard, position: Int) {
-                startActivity(CardsActivity.newInstance(this@DeckActivity, deck, cardPositionWithoutSections(card)))
+        deckAdapter.cardListener = object : OnDeckCardListener{
+            override fun onCardSelected(card: MTGCard) {
+                startActivity(CardsActivity.newInstance(this@DeckActivity, deck, deckAdapter.getCards().indexOf(card)))
             }
 
-            override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
+            override fun onOptionSelected(menuItem: MenuItem, card: MTGCard) {
                 if (menuItem.itemId == R.id.action_add_one_more) {
                     TrackingManager.trackAddCardToDeck()
                     presenter.addCardToDeck(deck, card, 1)
@@ -103,19 +95,13 @@ class DeckActivity : BasicActivity(), DeckActivityView {
                     }
                 }
             }
-        })
-        deckCardSectionAdapter = DeckCardSectionAdapter(this, deckCardAdapter)
-        cardList.adapter = deckCardSectionAdapter
+
+        }
+        cardList.adapter = deckAdapter
 
         mtgApp.uiGraph.inject(this)
         presenter.init(this)
         presenter.loadDeck(deck)
-    }
-
-    private fun cardPositionWithoutSections(card: MTGCard): Int {
-        val positionWithoutSections = cards.indices.firstOrNull { cards[it] == card }
-                ?: 0
-        return positionWithoutSections
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -145,45 +131,22 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     }
 
     override fun deckLoaded(deckCollection: DeckCollection) {
-        LOG.d()
+        LOG.d(deckCollection.toCardsCollection().list.toString())
         loader.visibility = View.GONE
-        val sections = ArrayList<DeckCardSectionAdapter.Section>()
-        cards.clear()
+        val sections = ArrayList<DeckSection>()
         if (deckCollection.size() == 0) {
             emptyView.visibility = View.VISIBLE
             title = deck.name
         } else {
-            var startingPoint = 0
-            if (deckCollection.getNumberOfUniqueCreatures() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + deckCollection.getNumberOfCreatures() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueCreatures()
-                cards.addAll(deckCollection.creatures)
-            }
-            if (deckCollection.getNumberOfUniqueInstantAndSorceries() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + deckCollection.getNumberOfInstantAndSorceries() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueInstantAndSorceries()
-                cards.addAll(deckCollection.instantAndSorceries)
-            }
-            if (deckCollection.getNumberOfUniqueOther() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + deckCollection.getNumberOfOther() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueOther()
-                cards.addAll(deckCollection.other)
-            }
-            if (deckCollection.getNumberOfUniqueLands() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + deckCollection.getNumberOfLands() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueLands()
-                cards.addAll(deckCollection.lands)
-            }
-            if (deckCollection.numberOfUniqueCardsInSideboard() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + deckCollection.numberOfCardsInSideboard() + ")"))
-                cards.addAll(deckCollection.side)
-            }
-
+            sections.add(DeckSection(getString(R.string.deck_header_creatures) + " (" + deckCollection.getNumberOfCreatures() + ")", deckCollection.creatures))
+            sections.add(DeckSection(getString(R.string.deck_header_instant_sorceries) + " (" + deckCollection.getNumberOfInstantAndSorceries() + ")", deckCollection.instantAndSorceries))
+            sections.add(DeckSection(getString(R.string.deck_header_other) + " (" + deckCollection.getNumberOfOther() + ")", deckCollection.other))
+            sections.add(DeckSection(getString(R.string.deck_header_lands) + " (" + deckCollection.getNumberOfLands() + ")", deckCollection.lands))
+            sections.add(DeckSection(getString(R.string.deck_header_sideboard) + " (" + deckCollection.numberOfCardsInSideboard() + ")", deckCollection.side))
             title = deck.name + " (" + deckCollection.numberOfCardsWithoutSideboard() + "/" + deckCollection.numberOfCardsInSideboard() + ")"
 
         }
-        deckCardSectionAdapter?.setSections(sections.toTypedArray())
-        deckCardSectionAdapter?.notifyDataSetChanged()
+        deckAdapter.setSections(sections)
     }
 
     override fun deckExported(success: Boolean) {
@@ -202,12 +165,12 @@ class DeckActivity : BasicActivity(), DeckActivityView {
             exportDeckNotAllowed()
         }
     }
-    
+
     private fun exportDeck() {
         LOG.d()
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
-                presenter.exportDeck(deck, CardsCollection(cards, null, false))
+                presenter.exportDeck(deck, CardsCollection(deckAdapter.getCards(), null, false))
             }
 
             override fun permissionNotGranted() {
