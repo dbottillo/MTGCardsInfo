@@ -59,14 +59,11 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         view.showLoading()
         cardsInteractor.loadIdFav().subscribe({
             favs.addAll(it.toList())
-            if (set != null) {
-                set?.let { loadData(cardsInteractor.loadSet(it)) }
-            } else if (deck != null) {
-                deck?.let { loadDeck(decksInteractor.loadDeck(it)) }
-            } else if (search != null) {
-                search?.let { loadData(cardsInteractor.doSearch(it)) }
-            } else {
-                loadData(savedCardsInteractor.load())
+            when {
+                set != null -> set?.let { loadData(cardsInteractor.loadSet(it)) }
+                deck != null -> deck?.let { loadDeck(decksInteractor.loadDeck(it)) }
+                search != null -> search?.let { loadData(cardsInteractor.doSearch(it)) }
+                else -> loadData(savedCardsInteractor.load())
             }
         }, {
             view.hideLoading()
@@ -74,7 +71,7 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         })
     }
 
-    internal fun loadData(obs: Observable<CardsCollection>) {
+    private fun loadData(obs: Observable<CardsCollection>) {
         logger.d()
         obs.subscribe({
             view.hideLoading()
