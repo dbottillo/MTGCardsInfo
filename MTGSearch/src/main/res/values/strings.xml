@@ -113,9 +113,14 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        - Bug fixes
+        -NEW: Unstable\n-NEW: Explorers of Ixalan
     </string>
     <string name="release_note_text_full">
+        <b>Version 3.2.3:</b> \n
+        - NEW: Unstable\n
+        - NEW: Explorers of Ixalan\n
+        - Fix crash on widget\n
+        - Fix bug of deck with 0 quantity cards\n\n
         <b>Version 3.2.2:</b> \n
         - bug fixes\n\n
         <b>Version 3.2.1:</b> \n
