@@ -97,9 +97,14 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - Bug fixes
+        -NUOVO: Unstable\n-NUOVO./g: Explorers of Ixalan
     </string>
     <string name="release_note_text_full">
+        <b>Version 3.2.3:</b> \n
+        - NUOVO: Unstable\n
+        - NUOVO: Explorers of Ixalan\n
+        - Sistemato crash riguardo il widget\n
+        - Sistemato bug riguardo 0 copie di carte nei mazzi\n\n
         <b>Version 3.2.2:</b> \n
         - bug fixes\n\n
         <b>Version 3.2.1:</b> \n
