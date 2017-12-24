@@ -11,9 +11,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.verifyNoMoreInteractions
-import org.mockito.Mockito.verify
-import org.mockito.Mockito.`when`
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class DecksFragmentPresenterImplTest {
@@ -37,7 +35,8 @@ class DecksFragmentPresenterImplTest {
     @Mock
     lateinit var genericException: Exception
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     val mockitoRule = MockitoJUnit.rule()
 
     @Before
@@ -127,7 +126,7 @@ class DecksFragmentPresenterImplTest {
     }
 
     @Test
-    fun `umport deck, should call interactor and show error if there is an exception`() {
+    fun `import deck, should call interactor and show error if there is an exception`() {
         `when`(genericException.localizedMessage).thenReturn("error")
         `when`(interactor.importDeck(uri)).thenReturn(Observable.error(genericException))
 
@@ -138,5 +137,27 @@ class DecksFragmentPresenterImplTest {
         verifyNoMoreInteractions(view, interactor)
     }
 
+    @Test
+    fun `copy deck, should call interactor and update view`() {
+        `when`(interactor.copy(deck)).thenReturn(Single.just(decks))
+
+        underTest.copyDeck(deck)
+
+        verify(view).decksLoaded(decks)
+        verify(interactor).copy(deck)
+        verifyNoMoreInteractions(view, interactor)
+    }
+
+    @Test
+    fun `copy deck, should call interactor and show error if there is an exception`() {
+        `when`(genericException.localizedMessage).thenReturn("error")
+        `when`(interactor.copy(deck)).thenReturn(Single.error(genericException))
+
+        underTest.copyDeck(deck)
+
+        verify(view).showError("error")
+        verify(interactor).copy(deck)
+        verifyNoMoreInteractions(view, interactor)
+    }
 
 }

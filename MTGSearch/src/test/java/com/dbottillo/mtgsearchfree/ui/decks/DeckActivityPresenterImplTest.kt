@@ -7,18 +7,18 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.Mockito.verify
-import org.mockito.Mockito.verifyNoMoreInteractions
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class DeckActivityPresenterImplTest {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     val mockitoRule = MockitoJUnit.rule()
 
     @Mock
@@ -35,6 +35,8 @@ class DeckActivityPresenterImplTest {
     lateinit var cards: DeckCollection
     @Mock
     lateinit var cardsToExport: CardsCollection
+    @Mock
+    lateinit var decks: List<Deck>
 
     lateinit var underTest: DeckActivityPresenter
 
@@ -46,7 +48,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `load deck, should call interactor and update view`() {
-        Mockito.`when`(interactor.loadDeck(deck)).thenReturn(Observable.just(cards))
+        `when`(interactor.loadDeck(deck)).thenReturn(Observable.just(cards))
 
         underTest.loadDeck(deck)
 
@@ -57,7 +59,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `add card to deck, should call interactor and update view`() {
-        Mockito.`when`(interactor.addCard(deck, card, 6)).thenReturn(Observable.just(cards))
+        `when`(interactor.addCard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.addCardToDeck(deck, card, 6)
 
@@ -68,7 +70,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `remove card from deck, should call interactor and update view`() {
-        Mockito.`when`(interactor.removeCard(deck, card)).thenReturn(Observable.just(cards))
+        `when`(interactor.removeCard(deck, card)).thenReturn(Observable.just(cards))
 
         underTest.removeCardFromDeck(deck, card)
 
@@ -79,7 +81,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `remove all cards from deck, should call interactor and update view`() {
-        Mockito.`when`(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards))
+        `when`(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards))
 
         underTest.removeAllCardFromDeck(deck, card)
 
@@ -90,7 +92,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `move card from sideboard, should call interactor and update view`() {
-        Mockito.`when`(interactor.moveCardFromSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
+        `when`(interactor.moveCardFromSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.moveCardFromSideBoard(deck, card, 6)
 
@@ -101,7 +103,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `move card to sideboard, should call interactor and update view`() {
-        Mockito.`when`(interactor.moveCardToSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
+        `when`(interactor.moveCardToSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.moveCardToSideBoard(deck, card, 6)
 
@@ -112,7 +114,7 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `edit deck name, should call interactor and update view`() {
-        Mockito.`when`(interactor.editDeck(deck, "new name")).thenReturn(Observable.just(cards))
+        `when`(interactor.editDeck(deck, "new name")).thenReturn(Observable.just(cards))
 
         underTest.editDeck(deck, "new name")
 
@@ -123,12 +125,23 @@ class DeckActivityPresenterImplTest {
 
     @Test
     fun `export deck, should call interactor and update view`() {
-        Mockito.`when`(interactor.exportDeck(deck, cardsToExport)).thenReturn(Observable.just(true))
+        `when`(interactor.exportDeck(deck, cardsToExport)).thenReturn(Observable.just(true))
 
         underTest.exportDeck(deck, cardsToExport)
 
         verify(view).deckExported(true)
         verify(interactor).exportDeck(deck, cardsToExport)
+        verifyNoMoreInteractions(view, interactor)
+    }
+
+    @Test
+    fun `copy deck, should call interactor and update view`() {
+        `when`(interactor.copy(deck)).thenReturn(Single.just(decks))
+
+        underTest.copyDeck(deck)
+
+        verify(view).deckCopied()
+        verify(interactor).copy(deck)
         verifyNoMoreInteractions(view, interactor)
     }
 }
