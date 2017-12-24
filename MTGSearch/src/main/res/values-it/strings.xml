@@ -240,13 +240,20 @@
     <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
     <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
     <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
-
     <string name="add_new_player">Aggiungi giocatore</string>
     <string name="add_new_deck">Aggiung mazzo</string>
     <string name="multicolor_no_others">Solo multicolore, no colori non selezionati</string>
     <string name="filter_title">Filtri</string>
     <string name="order_title">Ordina</string>
     <string name="set_choose">Scegli un set</string>
+    <string name="ok_got_it">Ok, capito!</string>
+    <string name="join_telegram">Telegram gruppo</string>
+    <string name="copy">Copia</string>
+    <string name="deck_copied">Mazzo copiato</string>
+
+    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
+    <string name="tooltip_line_2">Per cambiare Set</string>
+    <string name="tooltip_line_3">Per cambiare filtri</string>
 
     <string name="cd_price_go">Guarda Prezzo</string>
     <string name="cd_drawer_header">Planeswalker</string>
@@ -267,10 +274,6 @@
     <string name="cd_close">Chiudi</string>
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
     <string name="cd_flip_card">Gira carta</string>
-    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
-    <string name="tooltip_line_2">Per cambiare Set</string>
-    <string name="tooltip_line_3">Per cambiare filtri</string>
-    <string name="ok_got_it">Ok, capito!</string>
-    <string name="join_telegram">Telegram gruppo</string>
+    <string name="cd_copy_deck">Copia mazzo</string>
 
 </resources>

@@ -14,4 +14,5 @@ interface DeckActivityPresenter {
     fun moveCardToSideBoard(deck: Deck, card: MTGCard, quantity: Int)
     fun exportDeck(deck: Deck, cards: CardsCollection)
     fun editDeck(deck: Deck, name: String)
+    fun copyDeck(deck: Deck)
 }

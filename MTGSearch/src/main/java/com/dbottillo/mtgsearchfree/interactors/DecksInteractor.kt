@@ -22,4 +22,5 @@ interface DecksInteractor {
     fun exportDeck(deck: Deck, cards: CardsCollection): Observable<Boolean>
     fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection>
     fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection>
+    fun copy(deck: Deck): Single<List<Deck>>
 }

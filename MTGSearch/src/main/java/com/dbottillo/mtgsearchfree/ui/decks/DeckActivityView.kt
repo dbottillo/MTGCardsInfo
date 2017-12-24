@@ -5,4 +5,5 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 interface DeckActivityView{
     fun deckLoaded(deckCollection: DeckCollection)
     fun deckExported(success: Boolean)
+    fun deckCopied()
 }

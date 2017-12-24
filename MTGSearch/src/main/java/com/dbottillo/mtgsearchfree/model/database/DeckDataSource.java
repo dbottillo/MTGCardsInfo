@@ -245,6 +245,22 @@ public class DeckDataSource {
         cursor2.close();
     }
 
+    public void copy(Deck deck) {
+        database.beginTransaction();
+        try {
+            long copyDeckId = addDeck(deck.getName() + " copy");
+            List<MTGCard> cards = getCards(deck);
+            for (MTGCard card : cards) {
+                addCardToDeck(copyDeckId, card, card.getQuantity());
+            }
+            database.setTransactionSuccessful();
+        } catch (Exception e) {
+            LOG.e(e);
+        } finally {
+            database.endTransaction();
+        }
+    }
+
     public void moveCardToSideBoard(long deckId, MTGCard card, int quantity) {
         moveCardInDeck(deckId, card, quantity, true);
     }
@@ -286,7 +302,7 @@ public class DeckDataSource {
         }
     }
 
-    public void updateQuantity(long deckId, int quantity, int multiverseId, int sid) {
+    private void updateQuantity(long deckId, int quantity, int multiverseId, int sid) {
         ContentValues values = new ContentValues();
         values.put(COLUMNSJOIN.QUANTITY.getName(), quantity);
         String query = "UPDATE " + TABLE_JOIN + " SET quantity=? WHERE " + COLUMNSJOIN.DECK_ID.getName() + " = ? and "

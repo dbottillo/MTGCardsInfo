@@ -237,4 +237,19 @@ class DecksInteractorImplTest {
         verify(schedulerProvider).ui()
         testSubscriber.assertError(exception)
     }
+
+    @Test
+    fun `should copy deck in the background`() {
+        `when`(storage.copy(deck)).thenReturn(decks)
+        val testSubscriber = TestObserver<List<Deck>>()
+
+        underTest.copy(deck).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(decks)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verify(storage).copy(deck)
+        verifyNoMoreInteractions(storage, fileUtil, schedulerProvider)
+    }
 }
