@@ -70,4 +70,10 @@ class DeckActivityPresenterImpl @Inject constructor(
         })
     }
 
+    override fun copyDeck(deck: Deck) {
+        interactor.copy(deck).subscribe({
+            view.deckCopied()
+        }, {})
+    }
+
 }

@@ -430,6 +430,19 @@ public class DeckDataSourceTest extends BaseContextTest {
         assertQuantityAndSideboard(deckId, 12, 0);
     }
 
+    @Test
+    public void test_deck_can_be_copied() {
+        generateDeckWithSmallAmountOfCards();
+        Deck deck = underTest.getDecks().get(0);
+        List<MTGCard> originalCards = underTest.getCards(deck);
+        underTest.copy(deck);
+        List<Deck> decks = underTest.getDecks();
+        assertThat(decks.size(), is(2));
+        assertThat(decks.get(1).getName(), is("new deck copy"));
+        List<MTGCard> copiedCards = underTest.getCards(decks.get(1));
+        assertThat(copiedCards, is(originalCards));
+    }
+
     private long generateDeckWithSmallAmountOfCards() {
         long id = underTest.addDeck("new deck");
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(SMALL_NUMBER_OF_CARDS);

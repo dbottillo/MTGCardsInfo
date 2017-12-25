@@ -47,7 +47,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        decksList = view.findViewById<RecyclerView>(R.id.decks_list)
+        decksList = view.findViewById(R.id.decks_list)
         view.findViewById<View>(R.id.action_import).setOnClickListener {
             importDeck()
         }
@@ -59,14 +59,19 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         decksList.layoutManager = LinearLayoutManager(view.context)
         setupHomeActivityScroll(viewRecycle = decksList)
 
-        adapter = DecksAdapter(decks,  delete = {
-            deleteDeck(it)
-        }, selected = {
-            LOG.d()
-            val intent = Intent(activity, DeckActivity::class.java)
-            intent.putExtra("deck", it)
-            startActivity(intent)
-        })
+        adapter = DecksAdapter(decks,
+                copy = {
+                    presenter.copyDeck(it)
+                },
+                delete = {
+                    deleteDeck(it)
+                },
+                selected = {
+                    LOG.d()
+                    val intent = Intent(activity, DeckActivity::class.java)
+                    intent.putExtra("deck", it)
+                    startActivity(intent)
+                })
         decksList.adapter = adapter
 
         presenter.init(this)
@@ -118,7 +123,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         }
     }
 
-    internal fun importDeck(){
+    internal fun importDeck() {
         LOG.d()
         dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this)
     }

@@ -26,10 +26,12 @@ class DecksStorageImplTest {
 
     lateinit var underTest: DecksStorage
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var exception = ExpectedException.none()
 
     @Mock
@@ -164,6 +166,15 @@ class DecksStorageImplTest {
         val e = Exception("error")
         `when`(fileUtil.readFileContent(uri)).thenThrow(e)
         underTest.importDeck(uri)
+    }
+
+    @Test
+    fun `should copy deck`() {
+        val result = underTest.copy(deck)
+
+        verify(deckDataSource).copy(deck)
+        verify(deckDataSource).decks
+        assertThat(result, `is`(decks))
     }
 
     companion object {

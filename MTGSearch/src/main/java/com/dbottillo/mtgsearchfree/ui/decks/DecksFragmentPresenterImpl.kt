@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 class DecksFragmentPresenterImpl @Inject constructor(private val interactor: DecksInteractor,
                                                      private val logger: Logger) : DecksFragmentPresenter {
-
     lateinit var decksView: DecksFragmentView
 
     init {
@@ -51,6 +50,15 @@ class DecksFragmentPresenterImpl @Inject constructor(private val interactor: Dec
     override fun importDeck(uri: Uri) {
         logger.d("import " + uri.toString())
         interactor.importDeck(uri).subscribe({
+            decksView.decksLoaded(it)
+        }, {
+            showError(it)
+        })
+    }
+
+    override fun copyDeck(deck: Deck) {
+        logger.d("copy $deck")
+        interactor.copy(deck).subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)

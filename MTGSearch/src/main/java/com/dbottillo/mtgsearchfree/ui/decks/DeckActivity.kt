@@ -20,10 +20,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
-import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.*
 import java.util.*
 import javax.inject.Inject
 
@@ -60,7 +57,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         cardList.setHasFixedSize(true)
         cardList.layoutManager = LinearLayoutManager(this)
 
-        deckAdapter.cardListener = object : OnDeckCardListener{
+        deckAdapter.cardListener = object : OnDeckCardListener {
             override fun onCardSelected(card: MTGCard) {
                 startActivity(CardsActivity.newInstance(this@DeckActivity, deck, deckAdapter.getCards().indexOf(card)))
             }
@@ -106,24 +103,31 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.deck, menu)
+        menu.findItem(R.id.action_copy).setTintColor(this, R.color.white)
+        menu.findItem(R.id.action_export).setTintColor(this, R.color.white)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == android.R.id.home) {
-            finish()
-            return true
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            R.id.action_export -> {
+                exportDeck()
+                return true
+            }
+            R.id.action_edit -> {
+                editDeckName()
+                return true
+            }
+            R.id.action_copy -> {
+                presenter.copyDeck(deck)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        if (id == R.id.action_export) {
-            exportDeck()
-            return true
-
-        } else if (id == R.id.action_edit) {
-            editDeckName()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun getPageTrack(): String? {
@@ -147,6 +151,10 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         }
         deckAdapter.setSections(sections)
+    }
+
+    override fun deckCopied() {
+        Snackbar.make(container, getString(R.string.deck_copied), Snackbar.LENGTH_LONG).show()
     }
 
     override fun deckExported(success: Boolean) {

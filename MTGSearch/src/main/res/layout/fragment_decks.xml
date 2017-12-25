@@ -1,11 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:background="@color/white"
-                android:orientation="vertical"
-                tools:context=".view.activities.MainActivity">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.HomeActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -34,8 +35,8 @@
             android:contentDescription="@string/export"
             android:src="@drawable/ic_upload"
             android:tint="@color/white"
-            tools:tint="@color/color_primary"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            tools:tint="@color/color_primary"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -43,16 +44,17 @@
         android:id="@+id/decks_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar"
+        tools:listitem="@layout/row_deck"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_new_deck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/ic_add_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
         android:tint="@color/white"
-        android:layout_margin="16dp" />
+        app:srcCompat="@drawable/ic_add_black_24dp"/>
 
 </RelativeLayout>

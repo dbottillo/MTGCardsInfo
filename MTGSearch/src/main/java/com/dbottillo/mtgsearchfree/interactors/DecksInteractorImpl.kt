@@ -38,6 +38,13 @@ constructor(val storage: DecksStorage,
                 .observeOn(schedulerProvider.ui())
     }
 
+    override fun copy(deck: Deck): Single<List<Deck>> {
+        logger.d("copy deck")
+        return Single.fromCallable { storage.copy(deck) }
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+    }
+
     override fun addDeck(name: String): Observable<List<Deck>> {
         logger.d("create deck with name: " + name)
         return Observable.fromCallable {storage.addDeck(name)}
