@@ -17,7 +17,6 @@ import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
@@ -68,9 +67,9 @@ abstract class BasicActivity : AppCompatActivity() {
     }
 
     protected fun setupToolbar() {
-        toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        MaterialWrapper.setElevation(toolbar, resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat())
+        toolbar.elevation = resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat()
     }
 
     fun changeFragment(fragment: BasicFragment, tag: String, addToBackStack: Boolean) {
@@ -93,7 +92,7 @@ abstract class BasicActivity : AppCompatActivity() {
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
         try {
             startActivity(goToMarket)
-        } catch (e: ActivityNotFoundException) {
+        } catch (e: Throwable) {
             val goToPlay = Intent(Intent.ACTION_VIEW, play)
             goToPlay.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(goToPlay)

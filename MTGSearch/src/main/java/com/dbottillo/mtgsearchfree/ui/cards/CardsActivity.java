@@ -22,7 +22,6 @@ import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity;
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment;
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.MaterialWrapper;
 import com.dbottillo.mtgsearchfree.util.UIUtilKt;
 
 import org.jetbrains.annotations.NotNull;
@@ -106,7 +105,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        MaterialWrapper.setElevation(getToolbar(), 0f);
+        getToolbar().setElevation(0f);
 
         /*pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
         pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
@@ -231,7 +230,7 @@ public class CardsActivity extends CommonCardsActivity implements ViewPager.OnPa
 
     @Override
     public void setImageMenuItemChecked(boolean checked) {
-        if (imageMenuItem != null){
+        if (imageMenuItem != null) {
             imageMenuItem.setChecked(checked);
         }
     }
