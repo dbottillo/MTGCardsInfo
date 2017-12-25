@@ -9,4 +9,5 @@ interface DecksFragmentPresenter{
     fun addDeck(name: String)
     fun deleteDeck(deck: Deck)
     fun importDeck(uri: Uri)
+    fun copyDeck(deck: Deck)
 }

@@ -270,6 +270,11 @@
     <string name="order_title">Order</string>
     <string name="set_choose">Choose a set</string>
 
+    <string name="ok_got_it">OK, got it!</string>
+    <string name="join_telegram">Join Telegram help group</string>
+    <string name="copy">Copy</string>
+    <string name="deck_copied">Deck copied</string>
+
     <string-array name="header_title_flavor" translatable="false">
         <item>Niv-Mizzet, the Firemind</item>
         <item>Pacifism</item>
@@ -300,6 +305,10 @@
         <item>Goblin lessons include the 2,071 tips for survival. Frek only remembered 2,070.</item>
     </string-array>
 
+    <string name="tooltip_line_1">The UI has changed!\nBut everything still works the same!</string>
+    <string name="tooltip_line_2">To change set</string>
+    <string name="tooltip_line_3">To change filters</string>
+
     <string name="cd_price_go">See price</string>
     <string name="cd_drawer_header">Planeswalker</string>
     <string name="cd_card_image">Card Image</string>
@@ -319,10 +328,6 @@
     <string name="cd_close">Close</string>
     <string name="cd_tooltip_arrow">Close tooltip</string>
     <string name="cd_flip_card">Other side card</string>
-    <string name="tooltip_line_1">The UI has changed!\nBut everything still works the same!</string>
-    <string name="tooltip_line_2">To change set</string>
-    <string name="tooltip_line_3">To change filters</string>
-    <string name="ok_got_it">OK, got it!</string>
-    <string name="join_telegram">Join Telegram help group</string>
+    <string name="cd_copy_deck">Copy deck</string>
 
 </resources>

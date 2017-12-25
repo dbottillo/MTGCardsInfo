@@ -1,73 +1,84 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout
     android:id="@+id/deck_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_card"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
+    android:background="@drawable/bg_card">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/deck_image"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:contentDescription="@string/cd_deck_icon"
+        android:src="@drawable/deck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/cd_deck_icon"
-            android:src="@drawable/deck" />
+    <TextView
+        android:id="@+id/deck_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:textColor="@color/color_primary_almost_dark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/deck_copy"
+        app:layout_constraintStart_toEndOf="@id/deck_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="U/R aggro"/>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="8dp"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/deck_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/base_margin"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:ellipsize="end"
+        android:textColor="#555"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/deck_copy"
+        app:layout_constraintStart_toEndOf="@id/deck_image"
+        app:layout_constraintTop_toBottomOf="@+id/deck_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="23 bucket"/>
 
-            <TextView
-                android:id="@+id/deck_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:ellipsize="end"
-                android:textColor="@color/color_primary_almost_dark"
-                android:textSize="18sp"
-                tools:text="U/R aggro" />
+    <ImageButton
+        android:id="@+id/deck_copy"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/cd_copy_deck"
+        android:src="@drawable/ic_content_copy_24dp"
+        android:tint="@color/color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delete_deck"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:id="@+id/deck_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:ellipsize="end"
-                android:textColor="#555"
-                android:textSize="12sp"
-                tools:text="23 bucket" />
+    <ImageButton
+        android:id="@+id/delete_deck"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/cd_delete_deck"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:tint="@color/color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        </LinearLayout>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       android:background="@color/light_grey" />
 
-        <ImageButton
-            android:id="@+id/delete_deck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tint="@color/color_primary"
-            android:padding="8dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/sel_trash_grey"
-            android:contentDescription="@string/cd_delete_deck" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_grey" />
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

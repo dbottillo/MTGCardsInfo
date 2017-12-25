@@ -15,7 +15,6 @@ class DecksStorageImpl @Inject
 constructor(private val fileUtil: FileUtil,
             private val deckDataSource: DeckDataSource,
             private val logger: Logger) : DecksStorage {
-
     init {
         logger.d("created")
     }
@@ -28,6 +27,12 @@ constructor(private val fileUtil: FileUtil,
     override fun addDeck(name: String): List<Deck> {
         logger.d("add " + name)
         deckDataSource.addDeck(name)
+        return load()
+    }
+
+    override fun copy(deck: Deck): List<Deck> {
+        logger.d("copy $deck")
+        deckDataSource.copy(deck)
         return load()
     }
 

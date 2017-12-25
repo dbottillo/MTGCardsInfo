@@ -6,18 +6,22 @@ import android.graphics.Typeface
 import android.support.annotation.IdRes
 import android.support.v4.app.NavUtils
 import android.support.v4.app.TaskStackBuilder
+import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.StyleSpan
 import android.util.TypedValue
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
+
 
 fun Context.dpToPx(value: Int): Int {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()
@@ -102,14 +106,20 @@ fun String.toHtml(): Spanned {
     }
 }
 
-fun View.show(){
+fun View.show() {
     this.visibility = View.VISIBLE
 }
 
-fun View.hide(){
+fun View.hide() {
     this.visibility = View.INVISIBLE
 }
 
-fun View.gone(){
+fun View.gone() {
     this.visibility = View.GONE
+}
+
+fun MenuItem.setTintColor(context: Context, color: Int) {
+    val wrapDrawable = DrawableCompat.wrap(icon)
+    DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context, color))
+    icon = wrapDrawable
 }
