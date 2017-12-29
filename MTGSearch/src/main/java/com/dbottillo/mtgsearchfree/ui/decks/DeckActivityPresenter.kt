@@ -1,18 +1,62 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.util.Logger
+import javax.inject.Inject
 
-interface DeckActivityPresenter {
-    fun init(view: DeckActivityView)
-    fun loadDeck(deck: Deck)
-    fun addCardToDeck(deck: Deck, card: MTGCard, quantity: Int)
-    fun removeCardFromDeck(deck: Deck, card: MTGCard)
-    fun removeAllCardFromDeck(deck: Deck, card: MTGCard)
-    fun moveCardFromSideBoard(deck: Deck, card: MTGCard, quantity: Int)
-    fun moveCardToSideBoard(deck: Deck, card: MTGCard, quantity: Int)
-    fun exportDeck(deck: Deck, cards: CardsCollection)
-    fun editDeck(deck: Deck, name: String)
-    fun copyDeck(deck: Deck)
+class DeckActivityPresenter @Inject constructor(
+        private val interactor: DecksInteractor,
+        private val logger: Logger) {
+
+    lateinit var view: DeckActivityView
+    lateinit var deck: Deck
+
+    init {
+        logger.d("created")
+    }
+
+    fun init(view: DeckActivityView, deck: Deck) {
+        logger.d()
+        this.view = view
+        this.deck = deck
+    }
+
+    fun load(){
+        if (deck.numberOfCards == 0){
+            view.showEmptyScreen()
+            view.showTitle(deck.name)
+        } else {
+            view.showDeck(deck)
+            deckLoaded()
+        }
+    }
+
+    fun editDeck(name: String) {
+        interactor.editDeck(deck, name).subscribe({
+            this.deck = it
+            deckLoaded()
+        }, {})
+    }
+
+    fun exportDeck() {
+        interactor.exportDeck(deck).subscribe({
+            view.deckExported()
+        }, {
+            view.deckNotExported()
+        })
+    }
+
+    fun copyDeck() {
+        interactor.copy(deck).subscribe({
+            view.deckCopied()
+        }, {})
+    }
+
+    private fun deckLoaded(){
+        view.showTitle("${deck.name} (${deck.numberOfCards-deck.sizeOfSideboard}/${deck.sizeOfSideboard})")
+    }
+
 }
