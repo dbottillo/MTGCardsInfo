@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.dagger;
 import com.dbottillo.mtgsearchfree.ActivityScope;
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment;
+import com.dbottillo.mtgsearchfree.ui.decks.DeckFragment;
+import com.dbottillo.mtgsearchfree.ui.decks.DeckStartingHandFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment;
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment;
@@ -54,4 +56,8 @@ public interface UiComponent {
     void inject(@NotNull SetPickerActivity setPickerActivity);
 
     void inject(MTGCardView mtgCardView);
+
+    void inject(@NotNull DeckFragment deckFragment);
+
+    void inject(@NotNull DeckStartingHandFragment deckStartingHandFragment);
 }
