@@ -1,27 +1,37 @@
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/main_bg"
     android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:background="@color/main_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
-        layout="@layout/mtg_toolbar"
-        android:id="@+id/toolbar"/>
+        android:id="@+id/toolbar"
+        layout="@layout/mtg_toolbar"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/card_list"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/deck_cards_tab_layout"
+        style="@style/CardsTabLayout"
+        android:background="@color/color_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
+        app:tabMode="fixed"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/deck_view_pager"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:layout_below="@+id/deck_cards_tab_layout"/>
 
     <TextView
-        android:gravity="center_horizontal"
         android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
         android:padding="40dp"
         android:paddingTop="20dp"
         android:textStyle="italic"
@@ -29,8 +39,8 @@
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
-        android:layout_centerInParent="true"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_width="100dp"/>
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

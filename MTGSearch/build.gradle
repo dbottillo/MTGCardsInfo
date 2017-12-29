@@ -10,6 +10,7 @@ apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 apply plugin: 'jacoco'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
@@ -20,6 +21,10 @@ if (keystorePropertiesFile.exists()){
 } else {
     keystoreProperties['RELEASE_KEY_PASSWORD'] = ""
     keystoreProperties['RELEASE_STORE_PASSWORD'] = ""
+}
+
+androidExtensions {
+    experimental = true
 }
 
 android {
@@ -126,6 +131,7 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.easytesting:fest-assert-core:$fest_version"
+    testCompile "com.nhaarman:mockito-kotlin:1.5.0"
 
     androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     androidTestImplementation "com.android.support.test:runner:$support_runner_version"

@@ -75,6 +75,7 @@
     <string name="image_retry">Load image</string>
     <string name="price_error">Error retrieving price</string>
     <string name="add_to_deck_title">Add %1$s to deck</string>
+    <string name="add_one_to_deck">Add 1 to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
     <string name="menu_fullscreen_image" translatable="false">Full screen</string>
@@ -329,5 +330,8 @@
     <string name="cd_tooltip_arrow">Close tooltip</string>
     <string name="cd_flip_card">Other side card</string>
     <string name="cd_copy_deck">Copy deck</string>
+    <string name="deck_list">Cards</string>
+    <string name="deck_starting_hand">Opening hand</string>
+    <string name="cd_next">Next</string>
 
 </resources>

@@ -12,7 +12,7 @@ interface DecksStorage {
     fun copy(deck: Deck): List<Deck>
     fun deleteDeck(deck: Deck): List<Deck>
     fun loadDeck(deck: Deck): DeckCollection
-    fun editDeck(deck: Deck, name: String): DeckCollection
+    fun editDeck(deck: Deck, name: String): Deck
     fun addCard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection
     fun addCard(name: String, card: MTGCard, quantity: Int): DeckCollection
     fun removeCard(deck: Deck, card: MTGCard): DeckCollection
