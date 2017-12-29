@@ -48,10 +48,10 @@ constructor(private val fileUtil: FileUtil,
         return DeckCollection().addCards(cards)
     }
 
-    override fun editDeck(deck: Deck, name: String): DeckCollection {
+    override fun editDeck(deck: Deck, name: String): Deck {
         logger.d("edit $deck with $name")
         deckDataSource.renameDeck(deck.id, name)
-        return loadDeck(deck)
+        return deckDataSource.getDeck(deck.id)
     }
 
     override fun addCard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {

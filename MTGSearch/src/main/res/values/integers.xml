@@ -2,4 +2,5 @@
 <resources>
     <integer name="search_anim_duration">30</integer>
     <integer name="cards_grid_column_count">2</integer>
+    <integer name="starting_hand_grid_column_count">3</integer>
 </resources>

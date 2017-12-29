@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.interactors
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
+import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -11,9 +12,14 @@ import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
+import junit.framework.Assert.assertNull
+import junit.framework.Assert.assertTrue
+import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
@@ -21,29 +27,22 @@ import java.util.*
 
 class DecksInteractorImplTest {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var deck: Deck
-    @Mock
-    lateinit var card: MTGCard
-    @Mock
-    lateinit var storage: DecksStorage
-    @Mock
-    lateinit var fileUtil: FileUtil
-    @Mock
-    lateinit var uri: Uri
-    @Mock
-    lateinit var logger: Logger
+    @Mock lateinit var deck: Deck
+    @Mock lateinit var editedDeck: Deck
+    @Mock lateinit var card: MTGCard
+    @Mock lateinit var cards: List<MTGCard>
+    @Mock lateinit var storage: DecksStorage
+    @Mock lateinit var fileUtil: FileUtil
+    @Mock lateinit var uri: Uri
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var deckCollection: DeckCollection
+    @Mock lateinit var schedulerProvider: SchedulerProvider
 
     private val decks = Arrays.asList(Deck(2), Deck(3))
-
-    @Mock
-    lateinit var deckCollection: DeckCollection
-
-    @Mock
-    lateinit var schedulerProvider: SchedulerProvider
 
     lateinit var underTest: DecksInteractor
 
@@ -116,13 +115,13 @@ class DecksInteractorImplTest {
 
     @Test
     fun testEditDeck() {
-        `when`(storage.editDeck(deck, "new name")).thenReturn(deckCollection)
-        val testSubscriber = TestObserver<DeckCollection>()
+        `when`(storage.editDeck(deck, "new name")).thenReturn(editedDeck)
+        val testSubscriber = TestObserver<Deck>()
 
         underTest.editDeck(deck, "new name").subscribe(testSubscriber)
 
         testSubscriber.assertNoErrors()
-        testSubscriber.assertValue(deckCollection)
+        testSubscriber.assertValue(editedDeck)
         verify(storage).editDeck(deck, "new name")
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
@@ -217,14 +216,23 @@ class DecksInteractorImplTest {
         verify<DecksStorage>(storage).importDeck(uri)
     }
 
-    /* @Test
-    public void exportsDeck() {
-        when(fileUtil.downloadDeckToSdCard(deck, deckCards)).thenReturn(true);
-        TestObserver<Boolean> testSubscriber = new TestObserver<>();
-        underTest.exportDeck(deck, deckCards).subscribe(testSubscriber);
-        testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(true);
-    }*/
+    @Test
+    fun `export deck should load card, call file util and complete if successfull`() {
+        `when`(storage.loadDeck(deck)).thenReturn(deckCollection)
+        `when`(deckCollection.allCards()).thenReturn(cards)
+        val captor = ArgumentCaptor.forClass(CardsCollection::class.java)
+        `when`(fileUtil.downloadDeckToSdCard(eq(deck), captor.capture())).thenReturn(true)
+
+        val testObserver = underTest.exportDeck(deck).test()
+
+        testObserver.assertComplete()
+        verify(storage).loadDeck(deck)
+        verify(fileUtil).downloadDeckToSdCard(deck, captor.value)
+        assertThat(captor.value.list, `is`(cards))
+        assertNull(captor.value.filter)
+        assertTrue(captor.value.isDeck)
+        verifyNoMoreInteractions(storage, fileUtil)
+    }
 
     @Test
     @Throws(MTGException::class)

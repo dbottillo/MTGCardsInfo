@@ -61,6 +61,7 @@
     <string name="image_retry">Carica immagine</string>
     <string name="price_error">Impossibile caricare il prezzo</string>
     <string name="add_to_deck_title">Aggiungi %1$s al mazzo</string>
+    <string name="add_one_to_deck">Aggiung 1 al mazzo</string>
     <string name="menu_image">Mostra immagine</string>
     <string name="action_crash">Crash!</string>
     <string name="action_lucky">I feel lucky</string>
@@ -275,5 +276,8 @@
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
     <string name="cd_flip_card">Gira carta</string>
     <string name="cd_copy_deck">Copia mazzo</string>
+    <string name="deck_list">Carte</string>
+    <string name="deck_starting_hand">Mano iniziale</string>
+    <string name="cd_next">Prossima</string>
 
 </resources>
