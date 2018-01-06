@@ -3,9 +3,7 @@ package com.dbottillo.mtgsearchfree.model.storage
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import org.hamcrest.core.Is.`is`
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
-import org.junit.Assert.assertThat
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -13,7 +11,8 @@ import org.mockito.junit.MockitoJUnit
 
 class CardsHelperTest {
 
-    @JvmField @Rule
+    @JvmField
+    @Rule
     val mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: CardsHelper
@@ -28,7 +27,7 @@ class CardsHelperTest {
         val cardFilter = CardFilter()
         val cards = generateCards()
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterCards(cardFilter, cards, true)
 
         assertThat(result.size, `is`(cards.size))
         assertTrue(result.containsAll(cards))
@@ -100,7 +99,7 @@ class CardsHelperTest {
         val second = generateCard(name = "ABC", colors = listOf(4))
         val cards = listOf(first, second)
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterCards(cardFilter, cards, true)
 
         assertThat(result[0], `is`(first))
         assertThat(result[1], `is`(second))
@@ -114,24 +113,55 @@ class CardsHelperTest {
         val second = generateCard(name = "ABC", colors = listOf(4))
         val cards = listOf(first, second)
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterCards(cardFilter, cards, true)
 
         assertThat(result[0], `is`(second))
         assertThat(result[1], `is`(first))
     }
 
-    internal fun checkCondition(prepareFilter: (CardFilter) -> Unit, validateCards: (MTGCard) -> Unit) {
+    @Test
+    fun `should sort all type of cards`() {
+        val cards = listOf(
+                generateCard(name = "Multicolor", colors = listOf(0, 2), colorsIdentity = listOf("W", "B"), isMulticolor = true),
+                generateCard(name = "Colorless", colors = listOf(), colorsIdentity = listOf("R"), cost = "{3}{R}"),
+                generateCard(name = "Artifact", isArtifact = true),
+                generateCard(name = "Land", colorsIdentity = listOf("G"), isLand = true),
+                generateCard(name = "Green card", colors = listOf(4), colorsIdentity = listOf("G")),
+                generateCard(name = "Red card", colors = listOf(3), colorsIdentity = listOf("R")),
+                generateCard(name = "Black card", colors = listOf(2), colorsIdentity = listOf("B")),
+                generateCard(name = "White Artifact", isArtifact = true, colors = listOf(0), colorsIdentity = listOf("W")),
+                generateCard(name = "Blue card", colors = listOf(1), colorsIdentity = listOf("U")),
+                generateCard(name = "Eldrazi"),
+                generateCard(name = "White card", colors = listOf(0), colorsIdentity = listOf("W")))
+
+        underTest.sortCards(CardFilter().also { it.sortWUBGR = true }, cards, false)
+
+        assertThat(cards.size, `is`(11))
+        assertThat(cards[0].name, `is`("Eldrazi"))
+        assertThat(cards[1].name, `is`("White Artifact"))
+        assertThat(cards[2].name, `is`("White card"))
+        assertThat(cards[3].name, `is`("Blue card"))
+        assertThat(cards[4].name, `is`("Black card"))
+        assertThat(cards[5].name, `is`("Colorless"))
+        assertThat(cards[6].name, `is`("Red card"))
+        assertThat(cards[7].name, `is`("Green card"))
+        assertThat(cards[8].name, `is`("Multicolor"))
+        assertThat(cards[9].name, `is`("Artifact"))
+        assertThat(cards[10].name, `is`("Land"))
+    }
+
+    private fun checkCondition(prepareFilter: (CardFilter) -> Unit, validateCards: (MTGCard) -> Unit) {
         val cardFilter = CardFilter()
         prepareFilter(cardFilter)
         val cards = generateCards()
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterCards(cardFilter, cards, true)
 
         result.forEach {
             validateCards(it)
         }
     }
 
-    internal fun generateCards(): List<MTGCard> {
+    private fun generateCards(): List<MTGCard> {
         val list = mutableListOf<MTGCard>()
         val colors = listOf("W", "U", "B", "R", "G")
         val rarity = listOf("Common", "Uncommon", "Rare", "Mythic rare")
@@ -160,12 +190,20 @@ class CardsHelperTest {
     private fun generateCard(name: String = "Card",
                              cost: String = "WU",
                              rarity: String = "Common",
-                             colors: List<Int> = listOf()): MTGCard {
+                             colors: List<Int> = listOf(),
+                             colorsIdentity: List<String> = listOf(),
+                             isLand: Boolean = false,
+                             isArtifact: Boolean = false,
+                             isMulticolor: Boolean = false): MTGCard {
         val card = MTGCard()
         card.setCardName(name)
         card.manaCost = cost
         card.rarity = rarity
         card.colors = colors.toMutableList()
+        card.colorsIdentity = colorsIdentity
+        card.isLand = isLand
+        card.isArtifact = isArtifact
+        card.isMultiColor = isMulticolor
         return card
     }
 }
