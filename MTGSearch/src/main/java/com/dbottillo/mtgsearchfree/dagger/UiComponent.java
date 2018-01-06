@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.dagger;
 
 import com.dbottillo.mtgsearchfree.ActivityScope;
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity;
+import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckFragment;
 import com.dbottillo.mtgsearchfree.ui.decks.DeckStartingHandFragment;
@@ -40,6 +41,8 @@ public interface UiComponent {
     void inject(CardLuckyActivity luckyActivity);
 
     void inject(DeckActivity deckActivity);
+
+    void inject(ReleaseNoteActivity activity);
 
     void inject(AddToDeckFragment addToDeckFragment);
 

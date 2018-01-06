@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
@@ -23,6 +24,7 @@ import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
+import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
@@ -132,5 +134,11 @@ public class DataModule {
     @Singleton
     CardsHelper provideCardsHelper() {
         return new CardsHelper();
+    }
+
+    @Provides
+    @Singleton
+    ReleaseNoteStorage provideReleaseNoteStorage(FileLoader fileLoader, Gson gson){
+        return new ReleaseNoteStorage(fileLoader, gson);
     }
 }

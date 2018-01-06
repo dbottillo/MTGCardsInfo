@@ -8,10 +8,12 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
+import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
@@ -39,11 +41,15 @@ public interface AppComponent {
 
     FileUtil getFileUtil();
 
+    FileLoader getFileLoader();
+
     Logger getLogger();
 
     DialogUtil getDialogUtil();
 
     CardsHelper getCardsHelper();
+
+    ReleaseNoteStorage getReleaseNoteStorage();
 
     void inject(MTGApp app);
 
