@@ -19,7 +19,7 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         logger.d("loadSet " + set)
         val cards = mtgCardDataSource.getSet(set)
         val filter = cardsPreferences.load()
-        return CardsCollection(cardsHelper.filterCards(filter = filter, list = cards), filter)
+        return CardsCollection(cardsHelper.filterCards(filter = filter, list = cards, useId = true), filter)
     }
 
     override fun saveAsFavourite(card: MTGCard) {
@@ -56,7 +56,7 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         logger.d("do search " + searchParams)
         val cards = mtgCardDataSource.searchCards(searchParams)
         val filter = cardsPreferences.load()
-        cardsHelper.sortCards(filter, cards)
+        cardsHelper.sortCards(filter, cards, useId = true)
         return CardsCollection(cards, null)
     }
 
