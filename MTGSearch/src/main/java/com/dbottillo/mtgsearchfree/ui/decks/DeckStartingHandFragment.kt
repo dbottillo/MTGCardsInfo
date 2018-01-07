@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
+import android.annotation.SuppressLint
 import android.graphics.Rect
 import android.os.Bundle
 import android.os.Parcelable
@@ -151,7 +152,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
 
     private fun newStartingHand() {
         val initial: MutableList<StartingHandCard> = mutableListOf()
-        (0..min(6, cards.size)).forEach {
+        (1..min(7, cards.size)).forEach {
             initial.add(cards.removeAt(0))
         }
         view.showOpeningHands(initial)
@@ -165,5 +166,6 @@ interface StartingHandView {
     fun clear()
 }
 
+@SuppressLint("ParcelCreator")
 @Parcelize
 data class StartingHandCard(val image: String?, val name: String) : Parcelable
