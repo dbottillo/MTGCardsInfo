@@ -4,10 +4,12 @@ import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor;
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
+import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
+import com.dbottillo.mtgsearchfree.ui.about.ReleaseNotePresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter;
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter;
@@ -30,9 +32,9 @@ import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenterImpl;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter;
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl;
-import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter;
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl;
+import com.dbottillo.mtgsearchfree.util.Logger;
 
 import dagger.Module;
 import dagger.Provides;
@@ -115,5 +117,10 @@ public class PresentersModule {
                                                             CardsPreferences cardsPreferences,
                                                             Logger logger) {
         return new CardsLuckyPresenterImpl(cardsInteractor, cardsPreferences, logger);
+    }
+
+    @Provides
+    ReleaseNotePresenter providesReleaseNotePresenter(ReleaseNoteInteractor interactor) {
+        return new ReleaseNotePresenter(interactor);
     }
 }

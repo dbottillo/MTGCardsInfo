@@ -146,7 +146,7 @@ public class FileUtil {
         }
     }
 
-    public CardsBucket readFileContent(Uri uri) throws Exception{
+    public CardsBucket readFileContent(Uri uri) throws Exception {
         InputStream is = fileLoader.loadUri(uri);
         CardsBucket bucket;
         try {
@@ -205,4 +205,5 @@ public class FileUtil {
         card.setCardName(rest);
         return card;
     }
+
 }
