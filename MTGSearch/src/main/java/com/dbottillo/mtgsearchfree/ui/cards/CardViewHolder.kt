@@ -13,7 +13,7 @@ abstract class CardViewHolder(row: View) : RecyclerView.ViewHolder(row) {
     var parent: View = row.findViewById(R.id.card_parent)
 }
 
-class ListCardViewHolder(row: View) : CardViewHolder(row){
+class ListCardViewHolder(row: View) : CardViewHolder(row) {
     var name: TextView = row.findViewById(R.id.card_name)
     var setName: TextView = row.findViewById(R.id.card_set_name)
     var rarity: TextView = row.findViewById(R.id.card_rarity)
@@ -22,7 +22,7 @@ class ListCardViewHolder(row: View) : CardViewHolder(row){
     var more: ImageButton = row.findViewById(R.id.card_more_option)
 }
 
-class GridCardViewHolder(row: View): CardViewHolder(row){
+class GridCardViewHolder(row: View) : CardViewHolder(row) {
     var image: ImageView = row.findViewById(R.id.grid_item_card_image)
     var loader: MTGLoader = row.findViewById(R.id.grid_item_card_loader)
 }

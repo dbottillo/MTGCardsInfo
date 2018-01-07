@@ -114,83 +114,9 @@
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
     <string name="release_note_text">
-        -NEW: Unstable\n-NEW: Explorers of Ixalan
+        -NEW: copy deck\n-NEW: starting hand feature
     </string>
-    <string name="release_note_text_full">
-        <b>Version 3.2.3:</b> \n
-        - NEW: Unstable\n
-        - NEW: Explorers of Ixalan\n
-        - Fix crash on widget\n
-        - Fix bug of deck with 0 quantity cards\n\n
-        <b>Version 3.2.2:</b> \n
-        - bug fixes\n\n
-        <b>Version 3.2.1:</b> \n
-        - bug fixes\n\n
-        <b>Version 3.2.0:</b> \n
-        - NEW: Duel Decks: Merfolk vs. Goblins\n
-        - NEW: Iconic Masters\n
-        - Advanced search for CMC, power and toughness\n\n
-        <b>Version 3.1.4:</b> \n
-        - search for Standard updated\n
-        - show legalities\n\n
-        <b>Version 3.1.2:</b> \n
-        - NEW: Ixalan\n\n
-        <b>Version 3.1.1:</b> \n
-        - Restored card images\n\n
-        <b>Version 3.1.0:</b> \n
-        - Bug fixes\n\n
-        <b>Version 3.0.0:</b> \n
-        - Revamped UI\n\n
-        <b>Version 2.8.4:</b> \n
-        - NEW: Hour of Devastation\n\n
-        <b>Version 2.8.3:</b> \n
-        - NEW: Amonkhet\n
-        - NEW: Duel Decks: Mind vs. Might\n\n
-        <b>Version 2.8.2:</b> \n
-        - NEW: Modern Masters 2017 Edition\n\n
-        <b>Version 2.8.1:</b> \n
-        - NEW: Planechase Anthology\n
-        - NEW: Aether Revolt\n\n
-        <b>Version 2.8.0:</b> \n
-        - NEW: Split and double-side cards support\n\n
-        <b>Version 2.7.9:</b> \n
-        - NEW: Commander 2016\n
-        - NEW: Move cards between deck and sideboard\n
-        - Bug fixes \n\n
-        <b>Version 2.7.8:</b> \n
-        - NEW: Kaladesh\n
-        - NEW: Kaladesh Inventions \n\n
-        <b>Version 2.7.6:</b> \n
-        - NEW: Deck fixes \n
-        - NEW: Land option in Search \n\n
-        <b>Version 2.7.5:</b> \n
-        - NEW: Eldritch Moon \n
-        - NEW: Eternal Masters \n
-        - NEW: Grid option view \n
-        - NEW: Import deck (.dec format) \n
-        - NEW: Duel Decks: Zendikar vs. Eldrazi \n\n
-        <b>Version 2.7.4:</b> \n
-        - NEW: Shadows over Innistrad \n
-        - NEW: Duel Decks: Blessed vs. Cursed \n
-        - Fix search issue with multicolor \n\n
-        <b>Version 2.7.3:</b> \n
-        - NEW: Oath of the gatewatch \n
-        - NEW: Export deck \n
-        - NEW: Rename deck \n
-        - Fix major issue on One Plus Two \n
-        - Bug fixes \n\n
-        <b>Version 2.7.2:</b> \n
-        - NEW: Advanced Search now includes card text (you can search for lifelink, vigilance, …) \n
-        - NEW: Filter added to favourites \n
-        - On the first start, favourites will migrate to a new system \n\n
-        <b>Version 2.7:</b> \n
-        - NEW: Advanced Search, you can search card name, types, color, sets and rarity \n
-        - NEW: Filter Eldrazi cards \n\n
-        <b>Version 2.6:</b> \n
-        - NEW: Commander 2015 \n
-        - NEW: Rulings added to card detail \n
-        - FIX: Bug with multiple same cards in a deck
-    </string>
+
     <string name="action_release_note">Release Note</string>
     <string name="empty_cards">No cards available with the current filters.</string>
     <string name="empty_decks">You don\'t have any decks yet!</string>
