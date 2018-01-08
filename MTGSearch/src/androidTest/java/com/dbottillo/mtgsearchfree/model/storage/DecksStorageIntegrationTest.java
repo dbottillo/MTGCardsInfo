@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.storage;
 
+import android.content.res.Resources;
 import android.net.Uri;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -15,6 +16,7 @@ import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.google.gson.Gson;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -182,6 +184,12 @@ public class DecksStorageIntegrationTest extends BaseContextTest {
         @Override
         public InputStream loadUri(Uri uri) throws FileNotFoundException {
             return getClass().getClassLoader().getResourceAsStream(uri.toString());
+        }
+
+        @NotNull
+        @Override
+        public String loadRaw(int raw) throws Resources.NotFoundException {
+            return null;
         }
     }
 
