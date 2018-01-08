@@ -72,6 +72,23 @@ class StartingHandPresenterTest {
     }
 
     @Test
+    fun `load deck should call interactor if bundle is null and handle deck with less than 7 cards`() {
+        val smallDeckCollection = DeckCollection()
+        smallDeckCollection.creatures.add(MTGCard(name = "creature", quantity = 2, isSideboard = false))
+        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(smallDeckCollection))
+
+        underTest.loadDeck(null)
+
+        verify(interactor).loadDeck(deck)
+        argumentCaptor<MutableList<StartingHandCard>>().apply {
+            verify(view).showOpeningHands(capture())
+
+            assertThat(firstValue.size, `is`(2))
+        }
+        verifyNoMoreInteractions(view, interactor)
+    }
+
+    @Test
     fun `load deck should call interactor if bundle is not null and it doesn't contain cards`() {
         whenever(bundle.getParcelableArray(BUNDLE_KEY_LEFT)).thenReturn(arrayOf<StartingHandCard>())
         whenever(bundle.getParcelableArray(BUNDLE_KEY_SHOWN)).thenReturn(arrayOf<StartingHandCard>())
