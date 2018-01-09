@@ -12,7 +12,6 @@ import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.MaterialWrapper
 import com.dbottillo.mtgsearchfree.util.goToParentActivity
 import com.squareup.picasso.Picasso
 import javax.inject.Inject
@@ -37,7 +36,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
         setupToolbar()
-        MaterialWrapper.setElevation(toolbar, 0f)
+        toolbar.elevation = 0f
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
@@ -63,7 +62,9 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     }
 
     override fun preFetchCardImage(card: MTGCard) {
-        Picasso.with(applicationContext).load(card.image).fetch()
+        card.image?.let {
+            Picasso.with(applicationContext).load(card.image).fetch()
+        }
     }
 
     override fun showCard(card: MTGCard, showImage: Boolean) {

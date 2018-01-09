@@ -28,7 +28,9 @@ import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.lessThan;
@@ -235,7 +237,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
         }
         cards = underTest.searchCards(searchParams.setPower(new PTParam("=", 0)));
         for (MTGCard card : cards) {
-            assertThat(card.getPower(), is("0"));
+            assertThat(card.toString(), card.getPower(), anyOf(equalTo("0"), equalTo("+0")));
         }
     }
 
@@ -574,7 +576,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsById() {
         MTGCard card = underTest.searchCardById(5);
         assertNotNull(card);
-        assertThat(card.getName(), is("Ajani's Pridemate"));
+        assertThat(card.getName(), is("Veteran's Reflexes"));
     }
 
     private static final int NUMBER = 5;

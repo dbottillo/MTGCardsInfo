@@ -1,8 +1,12 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
-import com.dbottillo.mtgsearchfree.model.DeckCollection
+import com.dbottillo.mtgsearchfree.model.Deck
 
 interface DeckActivityView{
-    fun deckLoaded(deckCollection: DeckCollection)
-    fun deckExported(success: Boolean)
+    fun deckExported()
+    fun deckNotExported()
+    fun deckCopied()
+    fun showEmptyScreen()
+    fun showTitle(title: String)
+    fun showDeck(deck: Deck)
 }

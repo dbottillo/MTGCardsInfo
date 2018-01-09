@@ -65,11 +65,11 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         if (bundle != null) {
             searchOpen = bundle.getBoolean(SEARCH_OPEN)
             scrollView.setBackgroundColor(bundle.getInt(BG_COLOR_SCROLLVIEW))
-            MaterialWrapper.setElevation(toolbar, bundle.getFloat(TOOLBAR_ELEVATION))
-            MaterialWrapper.setStatusBarColor(this, if (searchOpen) ContextCompat.getColor(this, R.color.color_accent_dark) else ContextCompat.getColor(this, R.color.status_bar))
+            toolbar.elevation = bundle.getFloat(TOOLBAR_ELEVATION)
+            window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.color_accent_dark else R.color.status_bar)
             closeButton.imageAlpha = if (searchOpen) 1 else 0
         } else {
-            MaterialWrapper.setElevation(toolbar, 0f)
+            toolbar.elevation = 0f
         }
 
         scrollView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {

@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor;
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor;
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractorImpl;
+import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor;
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl;
 import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider;
@@ -19,6 +20,7 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
@@ -74,6 +76,13 @@ class InteractorsModule {
     @Provides
     SchedulerProvider provideSchedulerProvider(){
         return new AppSchedulerProvider();
+    }
+
+    @Provides
+    ReleaseNoteInteractor provideReleaseNoteInteractor(ReleaseNoteStorage storage,
+                                                       SchedulerProvider schedulerProvider,
+                                                       Logger logger){
+        return new ReleaseNoteInteractor(storage, schedulerProvider, logger);
     }
 }
 
