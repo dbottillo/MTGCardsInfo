@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/card_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list_footer_add">
+
+    <com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView
+        android:id="@+id/grid_item_card_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/ic_file_download_black_24dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_cirle_primary_dark"
+        android:contentDescription="@string/cd_next"
+        android:padding="8dp"
+        android:src="@drawable/plus"
+        android:tint="@color/white"/>
+</FrameLayout>

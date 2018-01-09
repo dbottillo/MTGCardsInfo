@@ -39,7 +39,7 @@ class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSour
     override fun load(): CardsCollection {
         logger.d()
         val filter = cardsPreferences.load()
-        val cards = cardsHelper.filterCards(filter = filter, list =  favouritesDataSource.getCards(true))
+        val cards = cardsHelper.filterCards(filter = filter, list =  favouritesDataSource.getCards(true), useId = false)
         return CardsCollection(cards, filter)
     }
 }

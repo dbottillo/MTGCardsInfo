@@ -15,7 +15,6 @@ class DecksStorageImpl @Inject
 constructor(private val fileUtil: FileUtil,
             private val deckDataSource: DeckDataSource,
             private val logger: Logger) : DecksStorage {
-
     init {
         logger.d("created")
     }
@@ -31,6 +30,12 @@ constructor(private val fileUtil: FileUtil,
         return load()
     }
 
+    override fun copy(deck: Deck): List<Deck> {
+        logger.d("copy $deck")
+        deckDataSource.copy(deck)
+        return load()
+    }
+
     override fun deleteDeck(deck: Deck): List<Deck> {
         logger.d("delete " + deck)
         deckDataSource.deleteDeck(deck)
@@ -43,10 +48,10 @@ constructor(private val fileUtil: FileUtil,
         return DeckCollection().addCards(cards)
     }
 
-    override fun editDeck(deck: Deck, name: String): DeckCollection {
+    override fun editDeck(deck: Deck, name: String): Deck {
         logger.d("edit $deck with $name")
         deckDataSource.renameDeck(deck.id, name)
-        return loadDeck(deck)
+        return deckDataSource.getDeck(deck.id)
     }
 
     override fun addCard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {

@@ -52,7 +52,7 @@ public abstract class CommonCardsActivity extends BasicActivity {
         }
         if (id == R.id.action_share) {
             MTGCard currentCard = getCurrentCard();
-            TrackingManager.trackShareCard(currentCard);
+            TrackingManager.INSTANCE.trackShareCard(currentCard);
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, currentCard.getName());

@@ -6,26 +6,20 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import android.support.design.widget.TabLayout
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.view.*
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.DeckCollection
-import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
-import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
-import java.util.*
+import com.dbottillo.mtgsearchfree.util.*
 import javax.inject.Inject
 
 class DeckActivity : BasicActivity(), DeckActivityView {
@@ -33,15 +27,11 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     @Inject
     lateinit var presenter: DeckActivityPresenter
 
-    private val container: View by lazy { findViewById<ViewGroup>(R.id.container) }
-    private val emptyView: TextView by lazy { findViewById<TextView>(R.id.empty_view) }
-    private val loader: MTGLoader by lazy { findViewById<MTGLoader>(R.id.loader) }
-    private val cardList: RecyclerView by lazy { findViewById<RecyclerView>(R.id.card_list) }
-
-    lateinit var deck: Deck
-
-    private var cards: MutableList<MTGCard> = mutableListOf()
-    private var deckCardSectionAdapter: DeckCardSectionAdapter? = null
+    private val container: View by lazy(LazyThreadSafetyMode.NONE) { findViewById<ViewGroup>(R.id.container) }
+    private val emptyView: TextView by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.empty_view) }
+    private val loader: MTGLoader by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGLoader>(R.id.loader) }
+    private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById<ViewPager>(R.id.deck_view_pager) }
+    private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById<TabLayout>(R.id.deck_cards_tab_layout) }
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -49,8 +39,8 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         setupToolbar()
 
-        deck = intent.getParcelableExtra<Deck>("deck")
-        title = if (deck.name == null) getString(R.string.deck_title) else deck.name
+        val deck = intent.getParcelableExtra("deck") as Deck
+        title = if (deck.name.isEmpty()) getString(R.string.deck_title) else deck.name
 
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
@@ -59,155 +49,91 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         emptyView.setText(R.string.empty_deck)
 
-        cardList.setHasFixedSize(true)
-        cardList.layoutManager = LinearLayoutManager(this)
-
-        val deckCardAdapter = DeckCardAdapter(this, cards, R.menu.deck_card, object : OnCardListener {
-            override fun onTitleHeaderSelected() {}
-
-            override fun onCardsViewTypeSelected() {}
-
-            override fun onCardsSettingSelected() {}
-
-            override fun onCardSelected(card: MTGCard, position: Int) {
-                startActivity(CardsActivity.newInstance(this@DeckActivity, deck, cardPositionWithoutSections(card)))
-            }
-
-            override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
-                if (menuItem.itemId == R.id.action_add_one_more) {
-                    TrackingManager.trackAddCardToDeck()
-                    presenter.addCardToDeck(deck, card, 1)
-
-                } else if (menuItem.itemId == R.id.action_remove_one) {
-                    TrackingManager.trackRemoveCardFromDeck()
-                    presenter.removeCardFromDeck(deck, card)
-
-                } else if (menuItem.itemId == R.id.action_remove_all) {
-                    TrackingManager.trackRemoveAllCardsFromDeck()
-                    presenter.removeAllCardFromDeck(deck, card)
-
-                } else if (menuItem.itemId == R.id.action_move_one) {
-                    TrackingManager.trackMoveOneCardFromDeck()
-                    if (card.isSideboard) {
-                        presenter.moveCardFromSideBoard(deck, card, 1)
-                    } else {
-                        presenter.moveCardToSideBoard(deck, card, 1)
-                    }
-
-                } else if (menuItem.itemId == R.id.action_move_all) {
-                    TrackingManager.trackMoveAllCardFromDeck()
-                    if (card.isSideboard) {
-                        presenter.moveCardFromSideBoard(deck, card, card.quantity)
-                    } else {
-                        presenter.moveCardToSideBoard(deck, card, card.quantity)
-                    }
-                }
-            }
-        })
-        deckCardSectionAdapter = DeckCardSectionAdapter(this, deckCardAdapter)
-        cardList.adapter = deckCardSectionAdapter
+        tabLayout.setupWithViewPager(viewPager)
 
         mtgApp.uiGraph.inject(this)
-        presenter.init(this)
-        presenter.loadDeck(deck)
-    }
-
-    private fun cardPositionWithoutSections(card: MTGCard): Int {
-        val positionWithoutSections = cards.indices.firstOrNull { cards[it] == card }
-                ?: 0
-        return positionWithoutSections
+        presenter.init(this, deck)
+        presenter.load()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.deck, menu)
+        menu.findItem(R.id.action_copy).setTintColor(this, R.color.white)
+        menu.findItem(R.id.action_export).setTintColor(this, R.color.white)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == android.R.id.home) {
-            finish()
-            return true
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            R.id.action_export -> {
+                exportDeck()
+                return true
+            }
+            R.id.action_edit -> {
+                editDeckName()
+                return true
+            }
+            R.id.action_copy -> {
+                presenter.copyDeck()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        if (id == R.id.action_export) {
-            exportDeck()
-            return true
-
-        } else if (id == R.id.action_edit) {
-            editDeckName()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun getPageTrack(): String? {
         return "/deck"
     }
 
-    override fun deckLoaded(deckCollection: DeckCollection) {
-        LOG.d()
-        loader.visibility = View.GONE
-        val sections = ArrayList<DeckCardSectionAdapter.Section>()
-        cards.clear()
-        if (deckCollection.size() == 0) {
-            emptyView.visibility = View.VISIBLE
-            title = deck.name
-        } else {
-            var startingPoint = 0
-            if (deckCollection.getNumberOfUniqueCreatures() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_creatures) + " (" + deckCollection.getNumberOfCreatures() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueCreatures()
-                cards.addAll(deckCollection.creatures)
-            }
-            if (deckCollection.getNumberOfUniqueInstantAndSorceries() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_instant_sorceries) + " (" + deckCollection.getNumberOfInstantAndSorceries() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueInstantAndSorceries()
-                cards.addAll(deckCollection.instantAndSorceries)
-            }
-            if (deckCollection.getNumberOfUniqueOther() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_other) + " (" + deckCollection.getNumberOfOther() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueOther()
-                cards.addAll(deckCollection.other)
-            }
-            if (deckCollection.getNumberOfUniqueLands() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_lands) + " (" + deckCollection.getNumberOfLands() + ")"))
-                startingPoint += deckCollection.getNumberOfUniqueLands()
-                cards.addAll(deckCollection.lands)
-            }
-            if (deckCollection.numberOfUniqueCardsInSideboard() > 0) {
-                sections.add(DeckCardSectionAdapter.Section(startingPoint, getString(R.string.deck_header_sideboard) + " (" + deckCollection.numberOfCardsInSideboard() + ")"))
-                cards.addAll(deckCollection.side)
-            }
-
-            title = deck.name + " (" + deckCollection.numberOfCardsWithoutSideboard() + "/" + deckCollection.numberOfCardsInSideboard() + ")"
-
-        }
-        deckCardSectionAdapter?.setSections(sections.toTypedArray())
-        deckCardSectionAdapter?.notifyDataSetChanged()
+    override fun showTitle(title: String) {
+        this.title = title
     }
 
-    override fun deckExported(success: Boolean) {
-        if (success) {
-            val snackbar = Snackbar
-                    .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
-                    .setAction(getString(R.string.share)) {
-                        val intent = Intent(Intent.ACTION_SEND)
-                        intent.type = "text/plain"
-                        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(deck)))
-                        startActivity(Intent.createChooser(intent, getString(R.string.share)))
-                        TrackingManager.trackDeckExport()
-                    }
-            snackbar.show()
-        } else {
-            exportDeckNotAllowed()
-        }
+    override fun showEmptyScreen() {
+        loader.gone()
+        tabLayout.gone()
+        emptyView.show()
     }
-    
+
+    override fun showDeck(deck: Deck) {
+        loader.gone()
+        tabLayout.show()
+        viewPager.show()
+        toolbar.elevation = 0f
+        viewPager.adapter = DeckPagerAdapter(supportFragmentManager, deck,
+                listOf(getString(R.string.deck_list), getString(R.string.deck_starting_hand)))
+    }
+
+    override fun deckCopied() {
+        Snackbar.make(container, getString(R.string.deck_copied), Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun deckExported() {
+        val snackbar = Snackbar
+                .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
+                .setAction(getString(R.string.share)) {
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(presenter.deck)))
+                    startActivity(Intent.createChooser(intent, getString(R.string.share)))
+                    TrackingManager.trackDeckExport()
+                }
+        snackbar.show()
+    }
+
+    override fun deckNotExported(){
+        exportDeckNotAllowed()
+    }
+
     private fun exportDeck() {
         LOG.d()
         requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
-                presenter.exportDeck(deck, CardsCollection(cards, null, false))
+                presenter.exportDeck()
             }
 
             override fun permissionNotGranted() {
@@ -234,16 +160,17 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         val layoutInflater = LayoutInflater.from(this)
         @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
         val editText = view.findViewById<EditText>(R.id.edit_text)
-        editText.setText(deck.name)
-        editText.setSelection(deck.name.length)
+        editText.setText(presenter.deck.name)
+        editText.setSelection(presenter.deck.name.length)
         alert.setView(view)
 
-        alert.setPositiveButton(getString(R.string.save)) { _, _ ->
+        alert.setPositiveButton(getString(R.string.save)) { dialog, _ ->
             val value = editText.text.toString()
-            presenter.editDeck(deck, value)
+            presenter.editDeck(value)
             TrackingManager.trackEditDeck()
-            deck.name = value
-            title = deck.name
+            presenter.deck.name = value
+            title = presenter.deck.name
+            dialog.dismiss()
         }
 
         alert.setNegativeButton(getString(R.string.cancel)) { _, _ ->
@@ -251,5 +178,25 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         }
 
         alert.show()
+    }
+}
+
+class DeckPagerAdapter(fragmentManager: FragmentManager,
+                       val deck: Deck,
+                       private val titleList: List<String>): FragmentPagerAdapter(fragmentManager) {
+
+    override fun getItem(position: Int): Fragment {
+        return when(position){
+            0 -> {
+                DeckFragment().apply { arguments = Bundle().apply { putParcelable(DECK_KEY, deck) } }
+            }
+            else -> DeckStartingHandFragment().apply { arguments = Bundle().apply { putParcelable(DECK_KEY, deck) } }
+        }
+    }
+
+    override fun getCount() = 2
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return titleList[position]
     }
 }

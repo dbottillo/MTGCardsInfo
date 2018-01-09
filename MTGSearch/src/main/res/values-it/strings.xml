@@ -61,6 +61,7 @@
     <string name="image_retry">Carica immagine</string>
     <string name="price_error">Impossibile caricare il prezzo</string>
     <string name="add_to_deck_title">Aggiungi %1$s al mazzo</string>
+    <string name="add_one_to_deck">Aggiung 1 al mazzo</string>
     <string name="menu_image">Mostra immagine</string>
     <string name="action_crash">Crash!</string>
     <string name="action_lucky">I feel lucky</string>
@@ -97,79 +98,7 @@
     <string name="deck_specify">Scelta manuale</string>
     <string name="release_note_title_push">Nuova versione di %s</string>
     <string name="release_note_text">
-        - Bug fixes
-    </string>
-    <string name="release_note_text_full">
-        <b>Version 3.2.2:</b> \n
-        - bug fixes\n\n
-        <b>Version 3.2.1:</b> \n
-        - bug fixes\n\n
-        <b>Version 3.2.0:</b> \n
-        - NUOVO: Duel Decks: Merfolk vs. Goblins\n
-        - NUOVO: Iconic Masters\n
-        - ricerca avanzata per CMC, forza e costituzione\n\n
-        <b>Version 3.1.4:</b> \n
-        - ricerca per Standard sistemata\n
-        - legalità delle carte include\n\n
-        <b>Version 3.1.2:</b> \n
-        - NUOVO: Ixalan\n\n
-        <b>Version 3.1.1:</b> \n
-        - Risolto problema con le immagini delle carte\n\n
-        <b>Version 3.1.0:</b> \n
-        - Bug fixes\n\n
-        <b>Version 3.0.0:</b> \n
-        - Nuova interfaccia\n\n
-        <b>Version 2.8.4:</b> \n
-        - NUOVO: Hour of Devastation\n\n
-        <b>Version 2.8.3:</b> \n
-        - NUOVO: Amonkhet\n
-        - NUOVO: Duel Decks: Mind vs. Might\n\n
-        <b>Version 2.8.2:</b> \n
-        - NUOVO: Modern Masters 2017 Edition\n\n
-        <b>Version 2.8.1:</b> \n
-        - NUOVO: Planechase Anthology\n
-        - NUOVO: Aether Revolt\n\n
-        <b>Version 2.8.0</b>\n
-        - NUOVO: Supporto per split e double-side carte\n\n
-        <b>Versione 2.7.9:</b> \n
-        - NUOVO: Commander 2016\n
-        - NUOVO: Ora é possibile spostare le carta dal mazzo al side e viceversa\n
-        - Bug fixes \n\n
-        <b>Versione 2.7.8:</b> \n
-        - NUOVO: Kaladesh\n
-        - NUOVO: Kaladesh Inventions \n\n
-        <b>Versione 2.7.7:</b> \n
-        - NUOVO: Conspiracy: Take the Crown\n
-        - NUOVO: From the Vault: Lore \n\n
-        <b>Versione 2.7.6:</b> \n
-        - NUOVO: Mazzi, risolti bug\n
-        - NUOVO: Opzione terra per ricerca \n\n
-        <b>Versione 2.7.5:</b> \n
-        - NUOVO: Eldritch Moon \n
-        - NEW: Eternal Masters \n
-        - NEW: Modalità griglia \n
-        - NEW: Importa mazzo (formato .dec) \n
-        - NEW: Duel Decks: Zendikar vs. Eldrazi \n\n
-        <b>Versione 2.7.4:</b> \n
-        - NUOVO: Shadows over Innistrad \n
-        - NUOVO: Duel Decks: Blessed vs. Cursed \n
-        - Sistemata la ricerca multicolore \n\n
-        <b>Versione 2.7.3:</b> \n
-        - NUOVO: Oath of the gatewatch \n
-        - NUOVO: Esporta mazzi \n
-        - NUOVO: Modifica nome mazzo \n
-        - Bug fixes \n\n
-        <b>Versione 2.7.2:</b> \n
-        - NUOVO: La ricerca avanzata ora include anche il testo della carta \n
-        - NUOVO: Aggiunti i filtri ai preferiti \n
-        - Al primo avvio, i favoiriti migreranno ad un nuovo sistema\n\n
-        <b>Versione 2.7:</b> \n
-        - NUOVO: Ricerca avanzata, puoi cercare nomi, tipi, colori, set e rarità\n
-        - NUOVO: Filtri per carte Eldrazi \n\n
-        <b>Versione 2.6:</b> \n
-        - NUOVO: Commander 2015 \n
-        - NUOVO: Il dettaglio carta ora mostra le rulings \n
-        - FIX: Mazzi con multiple uguali carte
+        -NUOVO: copia mazzo\n-NUOVO: prova mano di apertura mazzo
     </string>
     <string name="action_release_note">Novitá</string>
     <string name="empty_cards">Non ci sono carte disponibili con i filtri attuali.</string>
@@ -235,13 +164,20 @@
     <string name="card_migrator_notification_title">L\'applicazione sta aggiornando il database per supportare nuove funzionalità.</string>
     <string name="card_migrator_text">L\'applicazione sta aggiornando il database per supportare nuove funzionalità. \n\nControlla le notifiche per vedere se l\'aggiornamento è finito.</string>
     <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
-
     <string name="add_new_player">Aggiungi giocatore</string>
     <string name="add_new_deck">Aggiung mazzo</string>
     <string name="multicolor_no_others">Solo multicolore, no colori non selezionati</string>
     <string name="filter_title">Filtri</string>
     <string name="order_title">Ordina</string>
     <string name="set_choose">Scegli un set</string>
+    <string name="ok_got_it">Ok, capito!</string>
+    <string name="join_telegram">Telegram gruppo</string>
+    <string name="copy">Copia</string>
+    <string name="deck_copied">Mazzo copiato</string>
+
+    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
+    <string name="tooltip_line_2">Per cambiare Set</string>
+    <string name="tooltip_line_3">Per cambiare filtri</string>
 
     <string name="cd_price_go">Guarda Prezzo</string>
     <string name="cd_drawer_header">Planeswalker</string>
@@ -262,10 +198,9 @@
     <string name="cd_close">Chiudi</string>
     <string name="cd_tooltip_arrow">Chiudi aiuto</string>
     <string name="cd_flip_card">Gira carta</string>
-    <string name="tooltip_line_1">L\'interfaccia è cambiata!\nMa le funzionalità sono le stesse!</string>
-    <string name="tooltip_line_2">Per cambiare Set</string>
-    <string name="tooltip_line_3">Per cambiare filtri</string>
-    <string name="ok_got_it">Ok, capito!</string>
-    <string name="join_telegram">Telegram gruppo</string>
+    <string name="cd_copy_deck">Copia mazzo</string>
+    <string name="deck_list">Carte</string>
+    <string name="deck_starting_hand">Mano iniziale</string>
+    <string name="cd_next">Prossima</string>
 
 </resources>

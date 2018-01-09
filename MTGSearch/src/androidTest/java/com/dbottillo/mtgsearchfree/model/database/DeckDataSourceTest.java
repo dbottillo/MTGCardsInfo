@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.List;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.Matchers.is;
@@ -158,6 +159,25 @@ public class DeckDataSourceTest extends BaseContextTest {
     }
 
     @Test
+    public void test_minus_1_with_1_will_remove_card() {
+        long id = underTest.addDeck("new deck");
+        MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
+
+        underTest.addCardToDeck(id, card, 1);
+        Deck deck = underTest.getDecks().get(0);
+        List<MTGCard> cards = underTest.getCards(deck);
+        assertFalse(cards.isEmpty());
+        assertThat(deck.getNumberOfCards(), is(1));
+        assertThat(cards.get(0).getQuantity(), is(1));
+
+        underTest.addCardToDeck(id, card, -1);
+        deck = underTest.getDecks().get(0);
+        cards = underTest.getCards(deck);
+        assertTrue(cards.isEmpty());
+        assertThat(deck.getNumberOfCards(), is(0));
+    }
+
+    @Test
     public void test_add_sideboard_cards_are_independent() {
         long id = underTest.addDeck("new deck");
         MTGCard card = mtgCardDataSource.getRandomCard(1).get(0);
@@ -281,7 +301,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     }
 
     @Test
-    public void movesCardFromDeckToSideBoard(){
+    public void movesCardFromDeckToSideBoard() {
         long deckId = underTest.addDeck("new deck");
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
 
@@ -346,7 +366,7 @@ public class DeckDataSourceTest extends BaseContextTest {
     }
 
     @Test
-    public void movesCardFromSideBoardToDeck(){
+    public void movesCardFromSideBoardToDeck() {
         long deckId = underTest.addDeck("new deck");
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(3);
 
@@ -410,6 +430,19 @@ public class DeckDataSourceTest extends BaseContextTest {
         assertQuantityAndSideboard(deckId, 12, 0);
     }
 
+    @Test
+    public void test_deck_can_be_copied() {
+        generateDeckWithSmallAmountOfCards();
+        Deck deck = underTest.getDecks().get(0);
+        List<MTGCard> originalCards = underTest.getCards(deck);
+        underTest.copy(deck);
+        List<Deck> decks = underTest.getDecks();
+        assertThat(decks.size(), is(2));
+        assertThat(decks.get(1).getName(), is("new deck copy"));
+        List<MTGCard> copiedCards = underTest.getCards(decks.get(1));
+        assertThat(copiedCards, is(originalCards));
+    }
+
     private long generateDeckWithSmallAmountOfCards() {
         long id = underTest.addDeck("new deck");
         List<MTGCard> cards = mtgCardDataSource.getRandomCard(SMALL_NUMBER_OF_CARDS);
@@ -419,7 +452,7 @@ public class DeckDataSourceTest extends BaseContextTest {
         return id;
     }
 
-    private void assertQuantityAndSideboard(long deckId, int quantity, int sideboard){
+    private void assertQuantityAndSideboard(long deckId, int quantity, int sideboard) {
         List<Deck> decks = underTest.getDecks();
         assertThat(decks.size(), is(1));
         Deck deck = decks.get(0);

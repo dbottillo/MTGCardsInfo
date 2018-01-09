@@ -13,16 +13,16 @@ abstract class CardViewHolder(row: View) : RecyclerView.ViewHolder(row) {
     var parent: View = row.findViewById(R.id.card_parent)
 }
 
-class ListCardViewHolder(row: View) : CardViewHolder(row){
-    var name: TextView = row.findViewById<TextView>(R.id.card_name)
-    var setName: TextView = row.findViewById<TextView>(R.id.card_set_name)
-    var rarity: TextView = row.findViewById<TextView>(R.id.card_rarity)
-    var cost: TextView = row.findViewById<TextView>(R.id.card_cost)
+class ListCardViewHolder(row: View) : CardViewHolder(row) {
+    var name: TextView = row.findViewById(R.id.card_name)
+    var setName: TextView = row.findViewById(R.id.card_set_name)
+    var rarity: TextView = row.findViewById(R.id.card_rarity)
+    var cost: TextView = row.findViewById(R.id.card_cost)
     var indicator: View = row.findViewById(R.id.card_indicator)
-    var more: ImageButton = row.findViewById<ImageButton>(R.id.card_more_option)
+    var more: ImageButton = row.findViewById(R.id.card_more_option)
 }
 
-class GridCardViewHolder(row: View): CardViewHolder(row){
-    var image: ImageView = row.findViewById<ImageView>(R.id.grid_item_card_image)
-    var loader: MTGLoader = row.findViewById<MTGLoader>(R.id.grid_item_card_loader)
+class GridCardViewHolder(row: View) : CardViewHolder(row) {
+    var image: ImageView = row.findViewById(R.id.grid_item_card_image)
+    var loader: MTGLoader = row.findViewById(R.id.grid_item_card_loader)
 }

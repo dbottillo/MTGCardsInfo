@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
@@ -23,7 +24,9 @@ import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
+import com.dbottillo.mtgsearchfree.util.FileLoader;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
+import com.dbottillo.mtgsearchfree.util.GsonUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.google.gson.Gson;
@@ -127,10 +130,21 @@ public class DataModule {
         return new Gson();
     }
 
+    @Provides
+    @Singleton
+    GsonUtil providesGsonUtil(Gson gson){
+        return new GsonUtil(gson);
+    }
 
     @Provides
     @Singleton
     CardsHelper provideCardsHelper() {
         return new CardsHelper();
+    }
+
+    @Provides
+    @Singleton
+    ReleaseNoteStorage provideReleaseNoteStorage(FileLoader fileLoader, GsonUtil gsonUtil){
+        return new ReleaseNoteStorage(fileLoader, gsonUtil);
     }
 }

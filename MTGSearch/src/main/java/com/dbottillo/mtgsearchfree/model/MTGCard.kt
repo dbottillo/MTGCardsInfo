@@ -92,9 +92,7 @@ data class MTGCard(var id: Int = 0,
     val image: String?
         get() = if (number != null && set != null && number!!.isNotEmpty()
                 && !types.contains("Plane")
-                && set?.code?.toUpperCase() != "6ED"
-                && set?.code?.toUpperCase() != "DDT"
-                && set?.code?.toUpperCase() != "IMA") {
+                && set?.code?.toUpperCase() != "6ED") {
             "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
         } else imageFromGatherer
 
@@ -104,7 +102,7 @@ data class MTGCard(var id: Int = 0,
         } else null
 
     private val mciNumberOrMultiverseId: String?
-        get() = if (mciNumber == null || mciNumber!!.length == 0) {
+        get() = if (mciNumber.isNullOrEmpty()) {
             number
         } else mciNumber
 
@@ -118,13 +116,13 @@ data class MTGCard(var id: Int = 0,
         if (isLand) {
             return 1
         }
-        if (isArtifact && other.isArtifact) {
+        if (isColorlessArtifact && other.isColorlessArtifact) {
             return 0
         }
-        if (!isArtifact && other.isArtifact) {
+        if (!isColorlessArtifact && other.isColorlessArtifact) {
             return -1
         }
-        if (isArtifact) {
+        if (isColorlessArtifact) {
             return 1
         }
         if (isMultiColor && other.isMultiColor) {
@@ -136,20 +134,30 @@ data class MTGCard(var id: Int = 0,
         if (isMultiColor) {
             return 1
         }
-
         if (other.singleColor == this.singleColor) {
             return 0
         }
         return if (singleColor < other.singleColor) {
             -1
-        } else 1
+        } else {
+            1
+        }
     }
+
+    private val isColorlessArtifact: Boolean
+        get() = colorsIdentity.isEmpty() && isArtifact
 
     val singleColor: Int
         @VisibleForTesting
-        get() = if (isMultiColor || colors.isEmpty()) {
+        get() = if (isMultiColor || (colors.isEmpty() && colorsIdentity.isEmpty())) {
             -1
-        } else colors[0]
+        } else {
+            if (!colors.isEmpty()) {
+                colors[0]
+            } else {
+                colorsIdentity[0].toColorInt()
+            }
+        }
 
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(context,
@@ -165,22 +173,22 @@ data class MTGCard(var id: Int = 0,
     }
 
     val isWhite: Boolean
-        get() = manaCost.contains("W")
+        get() = manaCost.contains("W") || colorsIdentity.contains("W")
 
     val isBlue: Boolean
-        get() = manaCost.contains("U")
+        get() = manaCost.contains("U") || colorsIdentity.contains("U")
 
     val isBlack: Boolean
-        get() = manaCost.contains("B")
+        get() = manaCost.contains("B") || colorsIdentity.contains("B")
 
     val isRed: Boolean
-        get() = manaCost.contains("R")
+        get() = manaCost.contains("R") || colorsIdentity.contains("R")
 
     val isGreen: Boolean
-        get() = manaCost.contains("G")
+        get() = manaCost.contains("G") || colorsIdentity.contains("G")
 
     fun hasNoColor(): Boolean {
-        return !manaCost.matches(".*[WUBRG].*".toRegex())
+        return !manaCost.matches(".*[WUBRG].*".toRegex()) && colorsIdentity.isEmpty()
     }
 
     val isDoubleFaced: Boolean
@@ -198,3 +206,14 @@ data class MTGCard(var id: Int = 0,
 }
 
 class Legality(val format: String, val legality: String)
+
+fun String.toColorInt(): Int {
+    return when (this) {
+        "W" -> 0
+        "U" -> 1
+        "B" -> 2
+        "R" -> 3
+        "G" -> 4
+        else -> 1
+    }
+}

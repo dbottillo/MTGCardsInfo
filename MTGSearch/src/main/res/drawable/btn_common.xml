@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_pressed="true"
-        android:state_enabled="true"
-        android:drawable="@drawable/btn_pressed" />
-    <item
-        android:state_focused="false"
-        android:state_enabled="false"
-        android:drawable="@drawable/btn_normal" />
-
-    <item android:drawable="@drawable/btn_normal"/>
-</selector>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:color="@color/color_primary_dark"
+        tools:ignore="NewApi">
+    <item android:drawable="@drawable/btn_normal" />
+</ripple>

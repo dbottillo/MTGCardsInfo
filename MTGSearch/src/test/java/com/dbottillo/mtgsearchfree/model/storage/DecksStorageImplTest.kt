@@ -26,26 +26,20 @@ class DecksStorageImplTest {
 
     lateinit var underTest: DecksStorage
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var exception = ExpectedException.none()
 
-    @Mock
-    lateinit var deckDataSource: DeckDataSource
-
-    @Mock
-    lateinit var deck: Deck
-
-    @Mock
-    lateinit var card: MTGCard
-
-    @Mock
-    lateinit var fileUtil: FileUtil
-
-    @Mock
-    lateinit var cardsBucket: CardsBucket
+    @Mock lateinit var deckDataSource: DeckDataSource
+    @Mock lateinit var deck: Deck
+    @Mock lateinit var editedDeck: Deck
+    @Mock lateinit var card: MTGCard
+    @Mock lateinit var fileUtil: FileUtil
+    @Mock lateinit var cardsBucket: CardsBucket
 
     @Mock
     lateinit var logger: Logger
@@ -95,9 +89,13 @@ class DecksStorageImplTest {
 
     @Test
     fun testEditDeck() {
-        val cards = underTest.editDeck(deck, "new")
+        `when`(deckDataSource.getDeck(DECK_ID)).thenReturn(editedDeck)
+
+        val deck = underTest.editDeck(deck, "new")
+
         verify(deckDataSource).renameDeck(DECK_ID, "new")
-        assertThat(cards.allCards(), `is`(deckCards))
+        verify(deckDataSource).getDeck(DECK_ID)
+        assertThat(deck, `is`(editedDeck))
     }
 
     @Test
@@ -164,6 +162,15 @@ class DecksStorageImplTest {
         val e = Exception("error")
         `when`(fileUtil.readFileContent(uri)).thenThrow(e)
         underTest.importDeck(uri)
+    }
+
+    @Test
+    fun `should copy deck`() {
+        val result = underTest.copy(deck)
+
+        verify(deckDataSource).copy(deck)
+        verify(deckDataSource).decks
+        assertThat(result, `is`(decks))
     }
 
     companion object {

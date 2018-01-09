@@ -122,7 +122,7 @@ public class FileUtil {
             return false;
         }
         OutputStreamWriter writer;
-        TrackingManager.trackDatabaseExport();
+        TrackingManager.INSTANCE.trackDatabaseExport();
         try {
             writer = new OutputStreamWriter(new FileOutputStream(deckFile), "UTF-8");
             writer.append("//");
@@ -141,12 +141,12 @@ public class FileUtil {
             writer.close();
             return true;
         } catch (IOException e) {
-            TrackingManager.trackDatabaseExportError(e.getLocalizedMessage());
+            TrackingManager.INSTANCE.trackDatabaseExportError(e.getLocalizedMessage());
             return false;
         }
     }
 
-    public CardsBucket readFileContent(Uri uri) throws Exception{
+    public CardsBucket readFileContent(Uri uri) throws Exception {
         InputStream is = fileLoader.loadUri(uri);
         CardsBucket bucket;
         try {
@@ -205,4 +205,5 @@ public class FileUtil {
         card.setCardName(rest);
         return card;
     }
+
 }
