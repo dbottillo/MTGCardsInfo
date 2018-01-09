@@ -35,7 +35,7 @@ data class MTGCard(var id: Int = 0,
                    var printings: List<String> = listOf(),
                    var originalText: String = "",
                    var mciNumber: String? = null,
-                   var colorsIdentity: List<String> = listOf(),
+                   var colorsIdentity: List<String>? = null,
                    var legalities: MutableList<Legality> = mutableListOf()) : Comparable<MTGCard> {
 
     constructor(onlyId: Int) : this(id = onlyId)
@@ -145,19 +145,17 @@ data class MTGCard(var id: Int = 0,
     }
 
     private val isColorlessArtifact: Boolean
-        get() = colorsIdentity.isEmpty() && isArtifact
+        get() = colorsIdentity?.let { it.isEmpty() && isArtifact } ?: isArtifact
 
     val singleColor: Int
         @VisibleForTesting
-        get() = if (isMultiColor || (colors.isEmpty() && colorsIdentity.isEmpty())) {
-            -1
-        } else {
-            if (!colors.isEmpty()) {
-                colors[0]
-            } else {
-                colorsIdentity[0].toColorInt()
+        get() =
+            when {
+                isMultiColor -> -1
+                colorsIdentity != null -> colorsIdentity!![0].toColorInt()
+                colors.isNotEmpty() -> colors[0]
+                else -> -1
             }
-        }
 
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(context,
@@ -173,22 +171,22 @@ data class MTGCard(var id: Int = 0,
     }
 
     val isWhite: Boolean
-        get() = manaCost.contains("W") || colorsIdentity.contains("W")
+        get() = manaCost.contains("W") || colorsIdentity?.contains("W") ?: false
 
     val isBlue: Boolean
-        get() = manaCost.contains("U") || colorsIdentity.contains("U")
+        get() = manaCost.contains("U") || colorsIdentity?.contains("U") ?: false
 
     val isBlack: Boolean
-        get() = manaCost.contains("B") || colorsIdentity.contains("B")
+        get() = manaCost.contains("B") || colorsIdentity?.contains("B") ?: false
 
     val isRed: Boolean
-        get() = manaCost.contains("R") || colorsIdentity.contains("R")
+        get() = manaCost.contains("R") || colorsIdentity?.contains("R") ?: false
 
     val isGreen: Boolean
-        get() = manaCost.contains("G") || colorsIdentity.contains("G")
+        get() = manaCost.contains("G") || colorsIdentity?.contains("G") ?: false
 
     fun hasNoColor(): Boolean {
-        return !manaCost.matches(".*[WUBRG].*".toRegex()) && colorsIdentity.isEmpty()
+        return !manaCost.matches(".*[WUBRG].*".toRegex()) && colorsIdentity?.isEmpty() ?: false
     }
 
     val isDoubleFaced: Boolean
