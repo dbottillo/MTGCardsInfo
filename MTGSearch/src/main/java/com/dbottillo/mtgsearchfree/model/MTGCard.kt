@@ -152,7 +152,7 @@ data class MTGCard(var id: Int = 0,
         get() =
             when {
                 isMultiColor -> -1
-                colorsIdentity != null -> colorsIdentity!![0].toColorInt()
+                colorsIdentity?.isNotEmpty() ?: false -> colorsIdentity!![0].toColorInt()
                 colors.isNotEmpty() -> colors[0]
                 else -> -1
             }
