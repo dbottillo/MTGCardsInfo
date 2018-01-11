@@ -74,7 +74,7 @@ class CardsStorageImplTest {
 
     @Test
     fun testLoad() {
-        `when`(cardsHelper.filterCards(filter, setCards, true)).thenReturn(setCardsFiltered)
+        `when`(cardsHelper.filterCards(filter, setCards)).thenReturn(setCardsFiltered)
 
         val cards = underTest.load(set)
 
@@ -132,7 +132,7 @@ class CardsStorageImplTest {
         assertThat(cards.list, `is`(searchCards))
         assertNull(cards.filter)
         assertFalse(cards.isDeck)
-        verify(cardsHelper).sortCards(filter, searchCards, true)
+        verify(cardsHelper).sortCards(filter, searchCards)
         verify(mtgCardDataSource).searchCards(searchParams)
         verify(cardsPreferences).load()
         verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)
