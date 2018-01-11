@@ -7,7 +7,7 @@ import java.util.*
 
 class CardsHelper {
 
-    fun filterCards(filter: CardFilter?, list: List<MTGCard>, useId: Boolean): List<MTGCard> {
+    fun filterCards(filter: CardFilter?, list: List<MTGCard>): List<MTGCard> {
         if (filter == null) {
             return list
         }
@@ -31,26 +31,22 @@ class CardsHelper {
                 cards.add(it)
             }
         }
-        sortCards(filter.sortWUBGR, cards, useId)
+        sortCards(filter.sortWUBGR, cards)
         return cards
     }
 
-    private fun sortCards(wubrgSort: Boolean, list: List<MTGCard>, useId: Boolean) {
+    private fun sortCards(wubrgSort: Boolean, list: List<MTGCard>) {
         Collections.sort(list) { left, right ->
             if (wubrgSort) {
-                if (useId) {
-                    left.id.compareTo(right.id)
-                } else {
-                    left.compareTo(right)
-                }
+                left.compareTo(right)
             } else {
                 left.name.compareTo(right.name)
             }
         }
     }
 
-    fun sortCards(filter: CardFilter, list: List<MTGCard>, useId: Boolean) {
-        sortCards(filter.sortWUBGR, list, useId)
+    fun sortCards(filter: CardFilter, list: List<MTGCard>) {
+        sortCards(filter.sortWUBGR, list)
     }
 
 }

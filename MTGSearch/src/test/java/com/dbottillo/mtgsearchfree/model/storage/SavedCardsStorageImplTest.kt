@@ -34,7 +34,7 @@ class SavedCardsStorageImplTest {
     fun setUp() {
         Mockito.`when`(favouriteDataSource.getCards(true)).thenReturn(cards)
         Mockito.`when`(cardsPreferences.load()).thenReturn(filter)
-        Mockito.`when`(cardsHelper.filterCards(filter, cards, false)).thenReturn(filteredCards)
+        Mockito.`when`(cardsHelper.filterCards(filter, cards)).thenReturn(filteredCards)
         underTest = SavedCardsStorageImpl(favouriteDataSource, cardsHelper, cardsPreferences, logger)
     }
 
@@ -46,7 +46,7 @@ class SavedCardsStorageImplTest {
         assertThat(result.filter, `is`(filter))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
-        verify(cardsHelper).filterCards(filter, cards, false)
+        verify(cardsHelper).filterCards(filter, cards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 
@@ -58,7 +58,7 @@ class SavedCardsStorageImplTest {
         assertThat(result.filter, `is`(filter))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
-        verify(cardsHelper).filterCards(filter, cards, false)
+        verify(cardsHelper).filterCards(filter, cards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 }
