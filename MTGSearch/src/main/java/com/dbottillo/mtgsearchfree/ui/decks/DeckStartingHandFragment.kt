@@ -56,8 +56,8 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putParcelableArray(BUNDLE_KEY_LEFT, presenter.cards.toTypedArray())
-        outState.putParcelableArray(BUNDLE_KEY_SHOWN, adapter?.cards?.toTypedArray())
+        outState.putParcelableArrayList(BUNDLE_KEY_LEFT, ArrayList(presenter.cards))
+        outState.putParcelableArrayList(BUNDLE_KEY_SHOWN, adapter?.cards?.let { ArrayList(it) })
     }
 
     override fun clear() {
@@ -113,11 +113,11 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
 
     fun loadDeck(bundle: Bundle?) {
         bundle?.let {
-            val array = bundle.getParcelableArray(BUNDLE_KEY_LEFT) as Array<StartingHandCard>
-            val shown = bundle.getParcelableArray(BUNDLE_KEY_SHOWN) as Array<StartingHandCard>
+            val array = bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)
+            val shown = bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)
             if (shown.isNotEmpty() && array.isNotEmpty()) {
-                view.showOpeningHands(shown.toMutableList())
-                cards = array.toMutableList()
+                view.showOpeningHands(shown)
+                cards = array
             } else {
                 loadDeck()
             }
