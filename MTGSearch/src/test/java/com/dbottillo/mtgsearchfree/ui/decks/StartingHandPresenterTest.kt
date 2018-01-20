@@ -107,8 +107,8 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should restore bundle if contains cards`() {
-        whenever(bundle.getParcelableArray(BUNDLE_KEY_LEFT)).thenReturn(arrayOf(StartingHandCard("image1", "name1")))
-        whenever(bundle.getParcelableArray(BUNDLE_KEY_SHOWN)).thenReturn(arrayOf(StartingHandCard("image2", "name2")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard("image1", "name1")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard("image2", "name2")))
 
         underTest.loadDeck(bundle)
 
