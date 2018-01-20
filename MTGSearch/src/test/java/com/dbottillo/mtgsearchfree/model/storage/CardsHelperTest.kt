@@ -27,7 +27,7 @@ class CardsHelperTest {
         val cardFilter = CardFilter()
         val cards = generateCards()
 
-        val result = underTest.filterCards(cardFilter, cards, true)
+        val result = underTest.filterCards(cardFilter, cards)
 
         assertThat(result.size, `is`(cards.size))
         assertTrue(result.containsAll(cards))
@@ -99,7 +99,7 @@ class CardsHelperTest {
         val second = generateCard(name = "ABC", colors = listOf(4))
         val cards = listOf(first, second)
 
-        val result = underTest.filterCards(cardFilter, cards, true)
+        val result = underTest.filterCards(cardFilter, cards)
 
         assertThat(result[0], `is`(first))
         assertThat(result[1], `is`(second))
@@ -113,7 +113,7 @@ class CardsHelperTest {
         val second = generateCard(name = "ABC", colors = listOf(4))
         val cards = listOf(first, second)
 
-        val result = underTest.filterCards(cardFilter, cards, true)
+        val result = underTest.filterCards(cardFilter, cards)
 
         assertThat(result[0], `is`(second))
         assertThat(result[1], `is`(first))
@@ -134,7 +134,7 @@ class CardsHelperTest {
                 generateCard(name = "Eldrazi"),
                 generateCard(name = "White card", colors = listOf(0), colorsIdentity = listOf("W")))
 
-        underTest.sortCards(CardFilter().also { it.sortWUBGR = true }, cards, false)
+        underTest.sortCards(CardFilter().also { it.sortWUBGR = true }, cards)
 
         assertThat(cards.size, `is`(11))
         assertThat(cards[0].name, `is`("Eldrazi"))
@@ -154,7 +154,7 @@ class CardsHelperTest {
         val cardFilter = CardFilter()
         prepareFilter(cardFilter)
         val cards = generateCards()
-        val result = underTest.filterCards(cardFilter, cards, true)
+        val result = underTest.filterCards(cardFilter, cards)
 
         result.forEach {
             validateCards(it)

@@ -576,7 +576,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     public void searchCardsById() {
         MTGCard card = underTest.searchCardById(5);
         assertNotNull(card);
-        assertThat(card.getName(), is("Veteran's Reflexes"));
+        assertThat(card.getName(), is("Divine Verdict"));
     }
 
     private static final int NUMBER = 5;

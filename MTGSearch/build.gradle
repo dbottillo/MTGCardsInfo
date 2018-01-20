@@ -1,6 +1,6 @@
 buildscript {
-    ext.number_of_set = 170
-    ext.database_version = 31
+    ext.number_of_set = 172
+    ext.database_version = 32
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -35,8 +35,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 84
-        versionName "3.2.6"
+        versionCode 85
+        versionName "3.2.7"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false

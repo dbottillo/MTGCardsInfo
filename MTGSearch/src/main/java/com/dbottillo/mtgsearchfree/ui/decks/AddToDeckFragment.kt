@@ -63,6 +63,11 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         presenter.init(this, arguments)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        presenter.onDestroyView()
+    }
+
     private fun setupQuantitySpinner() {
         LOG.d()
         quantityChoose = arrayOf(getString(R.string.deck_choose_quantity), "1", "2", "3", "4", getString(R.string.deck_specify))

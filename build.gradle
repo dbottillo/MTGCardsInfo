@@ -17,7 +17,7 @@ buildscript {
     ext.fest_version = '2.0M10'
     ext.support_runner_version = '0.5'
     ext.dexmaker_mockito_version = '1.2'
-    ext.kotlin_version = '1.2.0'
+    ext.kotlin_version = '1.2.20'
     ext.constraint_layout_version = '1.0.0-beta5'
 
     dependencies {

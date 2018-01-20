@@ -92,7 +92,8 @@ data class MTGCard(var id: Int = 0,
     val image: String?
         get() = if (number != null && set != null && number!!.isNotEmpty()
                 && !types.contains("Plane")
-                && set?.code?.toUpperCase() != "6ED") {
+                && set?.code?.toUpperCase() != "6ED"
+                && set?.code?.toUpperCase() != "RIX") {
             "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
         } else imageFromGatherer
 
@@ -199,6 +200,42 @@ data class MTGCard(var id: Int = 0,
             name.isNotEmpty() && other.name == name -> true
             else -> false
         }
+    }
+
+    override fun hashCode(): Int {
+        var result = id
+        result = 31 * result + name.hashCode()
+        result = 31 * result + type.hashCode()
+        result = 31 * result + types.hashCode()
+        result = 31 * result + subTypes.hashCode()
+        result = 31 * result + colors.hashCode()
+        result = 31 * result + cmc
+        result = 31 * result + rarity.hashCode()
+        result = 31 * result + power.hashCode()
+        result = 31 * result + toughness.hashCode()
+        result = 31 * result + manaCost.hashCode()
+        result = 31 * result + text.hashCode()
+        result = 31 * result + isMultiColor.hashCode()
+        result = 31 * result + isLand.hashCode()
+        result = 31 * result + isArtifact.hashCode()
+        result = 31 * result + multiVerseId
+        result = 31 * result + (set?.hashCode() ?: 0)
+        result = 31 * result + quantity
+        result = 31 * result + isSideboard.hashCode()
+        result = 31 * result + layout.hashCode()
+        result = 31 * result + (number?.hashCode() ?: 0)
+        result = 31 * result + rulings.hashCode()
+        result = 31 * result + names.hashCode()
+        result = 31 * result + superTypes.hashCode()
+        result = 31 * result + artist.hashCode()
+        result = 31 * result + (flavor?.hashCode() ?: 0)
+        result = 31 * result + loyalty
+        result = 31 * result + printings.hashCode()
+        result = 31 * result + originalText.hashCode()
+        result = 31 * result + (mciNumber?.hashCode() ?: 0)
+        result = 31 * result + (colorsIdentity?.hashCode() ?: 0)
+        result = 31 * result + legalities.hashCode()
+        return result
     }
 
 }
