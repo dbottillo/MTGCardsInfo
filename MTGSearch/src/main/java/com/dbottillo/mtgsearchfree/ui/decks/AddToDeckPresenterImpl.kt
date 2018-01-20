@@ -11,6 +11,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Completable
 import io.reactivex.Single
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
 import javax.inject.Inject
 
@@ -19,6 +20,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
 
     lateinit var view: AddToDeckView
     lateinit var card: MTGCard
+    private var disposable: CompositeDisposable = CompositeDisposable()
 
     init {
         logger.d("created")
@@ -30,7 +32,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
 
         val cardId = bundle?.getInt("card", -1) ?: -1
 
-        interactor.init(cardId).subscribe({
+        disposable.add(interactor.init(cardId).subscribe({
             logger.d()
             this.card = it.card
             view.setCardTitle(card.name)
@@ -41,7 +43,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
             } else {
                 view.showError(it.localizedMessage)
             }
-        })
+        }))
     }
 
     override fun addCardToDeck(deck: Deck, quantity: Int, side: Boolean) {
@@ -56,6 +58,9 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
         interactor.addCard(newDeck, card, quantity)
     }
 
+    override fun onDestroyView() {
+        disposable.clear()
+    }
 }
 
 class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksStorage,
