@@ -268,7 +268,7 @@ public class DeckDataSourceTest extends BaseContextTest {
             boolean found = false;
             int index = 0;
             for (int i = 0; i < cardNames.length; i++) {
-                if (StringUtil.contains(card.getName(), cardNames[i])) {
+                if (card.getName().contains(cardNames[i])) {
                     found = true;
                     index = i;
                     break;

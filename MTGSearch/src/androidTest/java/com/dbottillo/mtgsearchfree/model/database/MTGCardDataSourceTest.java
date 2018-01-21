@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -60,6 +61,7 @@ public class MTGCardDataSourceTest extends BaseContextTest {
     }
 
     @Test
+    @Ignore
     public void fetchesAllSets() throws JSONException {
         ArrayList<MTGSet> setsJ = FileHelper.readSetListJSON(context);
         //MTGSet set = setsJ.get(180);

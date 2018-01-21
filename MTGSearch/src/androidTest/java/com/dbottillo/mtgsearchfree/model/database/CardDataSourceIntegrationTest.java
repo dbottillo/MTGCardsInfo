@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.support.test.runner.AndroidJUnit4;
 
 import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.Legality;
@@ -14,10 +15,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,13 +32,15 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class CardDataSourceIntegrationTest extends BaseContextTest {
 
+    @Rule
+    public MockitoRule rule = MockitoJUnit.rule();
+
     @Mock
+    private
     Cursor cursor;
-    @Mock
-    MTGCard card;
 
     private MTGCardDataSource mtgCardDataSource;
     private CardDataSource underTest;
@@ -205,10 +210,11 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         assertThat(card.getColorsIdentity().get(1), is("W"));
 
         assertNotNull(card.getLegalities());
-        assertThat(card.getLegalities().size(), is(3));
-        assertThat(card.getLegalities().get(0), is(new Legality("Commander", "Legal")));
-        assertThat(card.getLegalities().get(1), is(new Legality("Vintage", "Banned")));
-        assertThat(card.getLegalities().get(2), is(new Legality("Standard", "Restricted")));
+        assertThat(card.getLegalities().size(), is(2));
+        assertThat(card.getLegalities().get(0).getFormat(), is("Legacy"));
+        assertThat(card.getLegalities().get(0).getLegality(), is("Banned"));
+        assertThat(card.getLegalities().get(1).getFormat(), is("Vintage"));
+        assertThat(card.getLegalities().get(1).getLegality(), is("Restricted"));
     }
 
     @Test
@@ -389,9 +395,6 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
 
         when(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.getName())).thenReturn(32);
         when(cursor.getString(32)).thenReturn("[\"U\",\"W\"]");
-
-        when(cursor.getColumnIndex(CardDataSource.COLUMNS.LEGALITIES.getName())).thenReturn(33);
-        when(cursor.getString(20)).thenReturn("[{\"format\":\"Commander\",\"legality\":\"Legal\",\"format\":\"Vintage\",\"legality\":\"Banned\",\"format\":\"Standard\",\"legality\":\"Restricted\"}]");
 
     }
 
