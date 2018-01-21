@@ -3,11 +3,11 @@ package com.dbottillo.mtgsearchfree.model.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 
+import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.Legality;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
 import com.dbottillo.mtgsearchfree.util.LOG;
-import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -224,15 +224,15 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.getName()), is(card.getSet().getCode()));
 
         if (card.getColors().size() > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.getName()), is(StringUtil.joinListOfColors(card.getColors(), ",")));
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.getName()), is(joinListOfColors(card.getColors(), ",")));
         }
 
         if (card.getTypes().size() > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.getName()), is(StringUtil.joinListOfStrings(card.getTypes(), ",")));
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.getName()), is(joinListOfStrings(card.getTypes(), ",")));
         }
 
         if (card.getSubTypes().size() > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.getName()), is(StringUtil.joinListOfStrings(card.getSubTypes(), ",")));
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.getName()), is(joinListOfStrings(card.getSubTypes(), ",")));
         }
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.getName()), is(card.getManaCost()));
@@ -393,6 +393,37 @@ public class CardDataSourceIntegrationTest extends BaseContextTest {
         when(cursor.getColumnIndex(CardDataSource.COLUMNS.LEGALITIES.getName())).thenReturn(33);
         when(cursor.getString(20)).thenReturn("[{\"format\":\"Commander\",\"legality\":\"Legal\",\"format\":\"Vintage\",\"legality\":\"Banned\",\"format\":\"Standard\",\"legality\":\"Restricted\"}]");
 
+    }
+
+    private static String joinListOfStrings(List<String> list, String separator) {
+        StringBuilder joined = new StringBuilder("");
+        if (list.size() == 0) {
+            return joined.toString();
+        }
+        for (int i = 0; i < list.size(); i++) {
+            String value = list.get(i);
+            joined.append(value);
+            if (i < list.size() - 1) {
+                joined.append(separator);
+            }
+        }
+        return joined.toString();
+    }
+
+    private static String joinListOfColors(List<Integer> list, String separator) {
+        StringBuilder joined = new StringBuilder("");
+        if (list.size() == 0) {
+            return joined.toString();
+        }
+        for (int i = 0; i < list.size(); i++) {
+            int value = list.get(i);
+            String color = CardProperties.COLOR.getStringFromNumber(value);
+            joined.append(color);
+            if (i < list.size() - 1) {
+                joined.append(separator);
+            }
+        }
+        return joined.toString();
     }
 
 }
