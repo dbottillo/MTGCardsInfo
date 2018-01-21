@@ -7,7 +7,6 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket;
 import com.dbottillo.mtgsearchfree.model.Deck;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
 import com.dbottillo.mtgsearchfree.util.BaseContextTest;
-import com.dbottillo.mtgsearchfree.util.StringUtil;
 import com.google.gson.Gson;
 
 import org.junit.Before;

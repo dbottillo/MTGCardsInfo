@@ -2,9 +2,7 @@ package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
-import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.util.StringUtil
 import java.util.*
 
 open class PlayersStorageImpl(private val playerDataSource: PlayerDataSource,
@@ -66,7 +64,7 @@ open class PlayersStorageImpl(private val playerDataSource: PlayerDataSource,
             pickedNumber = rand.nextInt(names.size)
             var founded = false
             for (player in players) {
-                if (StringUtil.contains(player.name, names[pickedNumber])) {
+                if (player.name.contains(names[pickedNumber], true)) {
                     founded = true
                     continue
                 }
