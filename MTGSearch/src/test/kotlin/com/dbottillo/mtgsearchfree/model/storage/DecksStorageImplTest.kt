@@ -9,7 +9,6 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.util.MTGExceptionMatcher
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertThat
@@ -156,7 +155,6 @@ class DecksStorageImplTest {
     @Throws(Exception::class)
     fun DecksStorage_willNotImportNullDeck() {
         exception.expect(MTGException::class.java)
-        exception.expect(MTGExceptionMatcher.hasCode(ExceptionCode.DECK_NOT_IMPORTED))
 
         val uri = mock(Uri::class.java)
         val e = Exception("error")
