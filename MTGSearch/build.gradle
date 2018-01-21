@@ -136,13 +136,14 @@ dependencies {
 
     androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     androidTestImplementation "com.android.support.test:runner:$support_runner_version"
-    androidTestImplementation "com.google.dexmaker:dexmaker-mockito:$dexmaker_mockito_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espresso_version"
     androidTestImplementation "com.android.support:support-annotations:$support_library_version"
     androidTestImplementation "com.android.support:appcompat-v7:$support_library_version"
     androidTestImplementation "com.android.support:recyclerview-v7:$support_library_version"
     androidTestImplementation "com.android.support:design:$support_library_version"
+    androidTestImplementation 'org.mockito:mockito-android:2.6.3'
+
 }
 
 task checkstyle(type: Checkstyle) {
