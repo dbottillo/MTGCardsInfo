@@ -294,6 +294,22 @@ public final class CardDataSource {
         values.put(COLUMNS.ORIGINAL_TEXT.getName(), card.getOriginalText());
         values.put(COLUMNS.MCI_NUMBER.getName(), card.getMciNumber());
         values.put(COLUMNS.COLORS_IDENTITY.getName(), gson.toJson(card.getColorsIdentity()));
+        List<Legality> legalities = card.getLegalities();
+        if (legalities.size() > 0) {
+            JSONArray legalitiesJ = new JSONArray();
+            for (Legality legality : legalities) {
+                JSONObject legJ = new JSONObject();
+                try {
+                    legJ.put("format", legality.getFormat());
+                    legJ.put("legality", legality.getLegality());
+                    legalitiesJ.put(legJ);
+                } catch (JSONException e) {
+                    Crashlytics.logException(e);
+                    LOG.e(e);
+                }
+            }
+            values.put(COLUMNS.LEGALITIES.getName(), legalitiesJ.toString());
+        }
 
         return values;
     }
