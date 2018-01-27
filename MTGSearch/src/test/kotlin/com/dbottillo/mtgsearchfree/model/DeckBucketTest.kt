@@ -1,20 +1,18 @@
 package com.dbottillo.mtgsearchfree.model
 
+import org.junit.Assert.assertTrue
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
-
-import java.util.ArrayList
-
-import junit.framework.Assert.assertTrue
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
+import java.util.*
 
 class DeckBucketTest {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     var mockitoRule = MockitoJUnit.rule()
 
     private val creature = MTGCard(1, 101)
@@ -33,7 +31,7 @@ class DeckBucketTest {
     private val generic3 = MTGCard(11, 111)
     private val generic4 = MTGCard(12, 112)
 
-    lateinit var input: ArrayList<MTGCard> 
+    lateinit var input: ArrayList<MTGCard>
     lateinit var underTest: DeckBucket
 
     @Before

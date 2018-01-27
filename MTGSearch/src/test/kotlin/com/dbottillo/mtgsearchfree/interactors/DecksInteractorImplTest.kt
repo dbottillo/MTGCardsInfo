@@ -13,9 +13,9 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import junit.framework.Assert.assertNull
-import junit.framework.Assert.assertTrue
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
