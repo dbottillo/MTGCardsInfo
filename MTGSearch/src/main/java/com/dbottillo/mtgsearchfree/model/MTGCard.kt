@@ -89,18 +89,11 @@ data class MTGCard(var id: Int = 0,
     val isMythicRare: Boolean
         get() = rarity.equals(CardFilter.FILTER_MYHTIC, ignoreCase = true)
 
-    val image: String?
-        get() = if (number != null && set != null && number!!.isNotEmpty()
-                && !types.contains("Plane")
-                && set?.code?.toUpperCase() != "6ED"
-                && set?.code?.toUpperCase() != "RIX") {
-            "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
-        } else imageFromGatherer
+    val mtgCardsInfoImage
+        get() = "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
 
-    val imageFromGatherer: String?
-        get() = if (multiVerseId > 0) {
-            "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
-        } else null
+    val gathererImage
+        get () = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
 
     private val mciNumberOrMultiverseId: String?
         get() = if (mciNumber.isNullOrEmpty()) {

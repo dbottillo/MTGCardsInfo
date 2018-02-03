@@ -16,9 +16,8 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
-import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
+import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
+import com.dbottillo.mtgsearchfree.util.loadInto
 
 class CardsAdapter(var cards: List<MTGCard>,
                    val listener: OnCardListener,
@@ -42,7 +41,7 @@ class CardsAdapter(var cards: List<MTGCard>,
         val columns = context.resources.getInteger(R.integer.cards_grid_column_count)
         val v = inflater.inflate(if (configuration.isGrid) R.layout.grid_item_card else R.layout.row_card, parent, false)
         if (configuration.isGrid) {
-            val height = (parent.measuredWidth / columns.toDouble() * MTGCardView.RATIO_CARD).toInt()
+            val height = (parent.measuredWidth / columns.toDouble() * RATIO_CARD).toInt()
             v.minimumHeight = height
         }
         return if (configuration.isGrid) GridCardViewHolder(v) else ListCardViewHolder(v)
@@ -93,23 +92,7 @@ class CardsAdapter(var cards: List<MTGCard>,
             val card = cards[position - 1]
             val context = holder.parent.context
             if (holder is GridCardViewHolder) {
-                val gridCardViewHolder = holder
-                gridCardViewHolder.loader.visibility = View.VISIBLE
-                gridCardViewHolder.image.contentDescription = card.name
-                card.image?.let {
-                    TrackingManager.trackImage(card.image)
-                    Picasso.with(context.applicationContext).load(card.image)
-                            .error(R.drawable.left_debug)
-                            .into(gridCardViewHolder.image, object : Callback {
-                                override fun onSuccess() {
-                                    gridCardViewHolder.loader.visibility = View.GONE
-                                }
-
-                                override fun onError() {
-                                    gridCardViewHolder.loader.visibility = View.GONE
-                                }
-                            })
-                }
+                card.loadInto(holder.loader, holder.image)
             } else {
                 val listCardViewHolder = holder as ListCardViewHolder
                 CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
