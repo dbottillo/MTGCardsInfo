@@ -7,6 +7,8 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
+import com.bumptech.glide.request.target.AppWidgetTarget
+import com.dbottillo.mtgsearchfree.GlideApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
@@ -16,7 +18,7 @@ import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
+
 
 class LuckyWidgetProvider : AppWidgetProvider() {
 
@@ -36,7 +38,8 @@ class LuckyWidgetProvider : AppWidgetProvider() {
         if (intent?.action.equals(REFRESH_ACTION)) {
             val manager = AppWidgetManager.getInstance(context)
             val cn = ComponentName(context, LuckyWidgetProvider::class.java)
-            val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) } ?: manager.getAppWidgetIds(cn)
+            val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) }
+                    ?: manager.getAppWidgetIds(cn)
             onUpdate(context, manager, appWidgetIds)
         }
 
@@ -59,9 +62,13 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
     private fun buildLayout(context: Context, appWidgetId: Int, card: MTGCard): RemoteViews {
         val remoteViews = RemoteViews(context.packageName, R.layout.lucky_widget_layout)
-        card.image?.let {
+        card.mtgCardsInfoImage?.let {
             TrackingManager.trackImage(it)
-            Picasso.with(context).load(it).into(remoteViews, R.id.image_card, intArrayOf(appWidgetId))
+            GlideApp
+                    .with(context.applicationContext)
+                    .asBitmap()
+                    .load(it)
+                    .into(AppWidgetTarget(context, R.id.image_card, remoteViews, appWidgetId))
         }
 
         // refresh
