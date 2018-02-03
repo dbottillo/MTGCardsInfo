@@ -14,7 +14,7 @@ class MTGCardImageView : AppCompatImageView {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        val height = (measuredWidth * MTGCardView.RATIO_CARD).toInt()
+        val height = (measuredWidth * RATIO_CARD).toInt()
         setMeasuredDimension(measuredWidth, height)
     }
 
