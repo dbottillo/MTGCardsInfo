@@ -10,7 +10,7 @@ buildscript {
     ext.mockito_version = '2.1.0'
     ext.rx_java_version = '2.0.3'
     ext.rx_android_version = '2.0.1'
-    ext.picasso_version = '2.5.2'
+    ext.glide_version = '4.6.1'
     ext.crashlytics_version = '2.7.1'
     ext.junit_version = '4.12'
     ext.hamcrest_version = '1.3'

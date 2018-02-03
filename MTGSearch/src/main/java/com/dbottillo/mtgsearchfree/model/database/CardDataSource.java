@@ -175,7 +175,7 @@ public final class CardDataSource {
             } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES
                     || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST
                     || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS
-                    || column == COLUMNS.LEGALITIES)|| column == COLUMNS.ORIGINAL_TEXT
+                    || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT
                     && version <= 6) {
                 addColumn = false;
             } else if ((column == COLUMNS.COLORS_IDENTITY || column == COLUMNS.MCI_NUMBER)
@@ -294,6 +294,22 @@ public final class CardDataSource {
         values.put(COLUMNS.ORIGINAL_TEXT.getName(), card.getOriginalText());
         values.put(COLUMNS.MCI_NUMBER.getName(), card.getMciNumber());
         values.put(COLUMNS.COLORS_IDENTITY.getName(), gson.toJson(card.getColorsIdentity()));
+        List<Legality> legalities = card.getLegalities();
+        if (legalities.size() > 0) {
+            JSONArray legalitiesJ = new JSONArray();
+            for (Legality legality : legalities) {
+                JSONObject legJ = new JSONObject();
+                try {
+                    legJ.put("format", legality.getFormat());
+                    legJ.put("legality", legality.getLegality());
+                    legalitiesJ.put(legJ);
+                } catch (JSONException e) {
+                    Crashlytics.logException(e);
+                    LOG.e(e);
+                }
+            }
+            values.put(COLUMNS.LEGALITIES.getName(), legalitiesJ.toString());
+        }
 
         return values;
     }
@@ -357,7 +373,7 @@ public final class CardDataSource {
 
         if (cursor.getColumnIndex(COLUMNS.MANA_COST.getName()) != -1) {
             String manaCost = cursor.getString(cursor.getColumnIndex(COLUMNS.MANA_COST.getName()));
-            if (manaCost !=  null) {
+            if (manaCost != null) {
                 card.setManaCost(manaCost);
             }
         }
@@ -420,11 +436,11 @@ public final class CardDataSource {
             card.setLoyalty(cursor.getInt(cursor.getColumnIndex(COLUMNS.LOYALTY.getName())));
         }
         String artist = getString(cursor, COLUMNS.ARTIST);
-        if (artist != null){
+        if (artist != null) {
             card.setArtist(artist);
         }
         String flavor = getString(cursor, COLUMNS.FLAVOR);
-        if (flavor != null){
+        if (flavor != null) {
             card.setFlavor(flavor);
         }
         if (cursor.getColumnIndex(COLUMNS.PRINTINGS.getName()) != -1) {
@@ -467,12 +483,12 @@ public final class CardDataSource {
                 try {
                     JSONObject legalitiesJ = new JSONObject(legalities);
                     Iterator keys = legalitiesJ.keys();
-                    while(keys.hasNext()){
+                    while (keys.hasNext()) {
                         String format = (String) keys.next();
                         String legality = legalitiesJ.getString(format);
                         card.addLegality(new Legality(format, legality));
                     }
-                }catch (JSONException e2){
+                } catch (JSONException e2) {
                     Crashlytics.logException(e2);
                     LOG.e(e2);
                 }
@@ -483,7 +499,7 @@ public final class CardDataSource {
         return card;
     }
 
-    private String getString(Cursor cursor, COLUMNS column){
+    private String getString(Cursor cursor, COLUMNS column) {
         if (cursor.getColumnIndex(column.getName()) != -1) {
             return cursor.getString(cursor.getColumnIndex(column.getName()));
         }

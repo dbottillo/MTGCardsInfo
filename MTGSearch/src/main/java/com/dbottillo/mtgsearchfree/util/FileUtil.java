@@ -113,7 +113,7 @@ public class FileUtil {
         if (root == null) {
             return null;
         }
-        return new File(root, StringUtil.clearDeckName(deck) + ".dec");
+        return new File(root, StringUtilKt.toDeckName(deck) + ".dec");
     }
 
     public boolean downloadDeckToSdCard(Deck deck, CardsCollection cards) {
