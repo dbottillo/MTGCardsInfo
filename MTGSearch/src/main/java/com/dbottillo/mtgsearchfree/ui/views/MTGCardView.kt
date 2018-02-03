@@ -25,8 +25,6 @@ import com.dbottillo.mtgsearchfree.model.TCGPrice
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.*
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
 import javax.inject.Inject
 
 class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle), CardView {
@@ -34,8 +32,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     private var detailCard: TextView
     private var priceOnTcg: TextView
     private var cardPrice: TextView
-    internal var retry: View
-    internal var cardImage: ImageView
+    private var retry: View
+    private var cardImage: ImageView
     private var cardLoader: MTGLoader
     private var cardImageContainer: View
     private var flipCardButton: ImageButton
@@ -44,7 +42,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     var card: MTGCard? = null
     internal var price: TCGPrice? = null
 
-    @Inject lateinit var cardPresenter: CardPresenter
+    @Inject
+    lateinit var cardPresenter: CardPresenter
 
     @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
 
@@ -147,8 +146,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
         retry.visibility = View.GONE
 
-        if (showImage && card.image != null) {
-            loadImage(false)
+        if (showImage) {
+            loadImage()
         } else {
             cardLoader.visibility = View.GONE
             cardImageContainer.visibility = View.GONE
@@ -172,42 +171,9 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         }
     }
 
-    private fun loadImage(fallback: Boolean) {
+    private fun loadImage() {
         LOG.d()
-        card?.let {
-            retry.visibility = View.GONE
-            cardImageContainer.visibility = View.VISIBLE
-            cardImage.visibility = View.GONE
-            startCardLoader()
-            val cardUrl = if (fallback) it.imageFromGatherer else it.image
-            cardUrl?.let {
-                LOG.d("loading: " + cardUrl)
-                TrackingManager.trackImage(cardUrl)
-                Picasso.with(context.applicationContext).load(cardUrl)
-                        .into(cardImage, object : Callback {
-                            override fun onSuccess() {
-                                cardImage.visibility = View.VISIBLE
-                                stopCardLoader()
-                            }
-
-                            override fun onError() {
-                                if (!fallback) {
-                                    // need to try to loadSet from gatherer
-                                    loadImage(true)
-                                    return
-                                }
-                                stopCardLoader()
-                                cardImage.visibility = View.GONE
-                                retry.visibility = View.VISIBLE
-                                if (isNetworkAvailable) {
-                                    TrackingManager.trackImageError(cardUrl)
-                                }
-                            }
-                        })
-            } ?: if (isNetworkAvailable) {
-                TrackingManager.trackImageError(it.image)
-            }
-        }
+        card?.loadInto(cardLoader, cardImage)
     }
 
     private val isNetworkAvailable: Boolean
@@ -217,16 +183,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             return activeNetworkInfo != null && activeNetworkInfo.isConnected
         }
 
-    private fun startCardLoader() {
-        cardLoader.visibility = View.VISIBLE
-    }
-
-    private fun stopCardLoader() {
-        cardLoader.visibility = View.GONE
-    }
-
     private fun retryImage() {
-        loadImage(false)
+        loadImage()
     }
 
     private fun openPrice() {
@@ -242,8 +200,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     fun toggleImage(showImage: Boolean) {
         LOG.d()
         card?.let {
-            if (showImage && it.image != null) {
-                loadImage(false)
+            if (showImage) {
+                loadImage()
             } else {
                 cardLoader.visibility = View.GONE
                 cardImageContainer.visibility = View.GONE
@@ -259,8 +217,6 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         load(card)
     }
 
-    companion object {
-        @JvmField
-        val RATIO_CARD = 1.39622641509434f
-    }
 }
+
+const val RATIO_CARD = 1.39622641509434f

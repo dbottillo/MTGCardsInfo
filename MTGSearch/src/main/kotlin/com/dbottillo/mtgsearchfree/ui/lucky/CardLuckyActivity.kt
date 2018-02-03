@@ -13,7 +13,7 @@ import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.goToParentActivity
-import com.squareup.picasso.Picasso
+import com.dbottillo.mtgsearchfree.util.prefetchImage
 import javax.inject.Inject
 
 class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
@@ -62,9 +62,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     }
 
     override fun preFetchCardImage(card: MTGCard) {
-        card.image?.let {
-            Picasso.with(applicationContext).load(card.image).fetch()
-        }
+        card.prefetchImage(this)
     }
 
     override fun showCard(card: MTGCard, showImage: Boolean) {

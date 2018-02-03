@@ -8,8 +8,8 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.cards.GridCardViewHolder
 import com.dbottillo.mtgsearchfree.ui.cards.ITEM_VIEW_TYPE_FOOTER
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
+import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
+import com.dbottillo.mtgsearchfree.util.loadInto
 
 class StartingHandGridAdapter(var cards: MutableList<StartingHandCard>,
                               val columns: Int,
@@ -24,21 +24,7 @@ class StartingHandGridAdapter(var cards: MutableList<StartingHandCard>,
         when (holder) {
             is GridCardViewHolder -> {
                 val card = cards[position]
-                holder.loader.visibility = View.VISIBLE
-                holder.image.contentDescription = card.name
-                card.image?.let {
-                    Picasso.with(holder.itemView.context.applicationContext).load(card.image)
-                            .error(R.drawable.left_debug)
-                            .into(holder.image, object : Callback {
-                                override fun onSuccess() {
-                                    holder.loader.visibility = View.GONE
-                                }
-
-                                override fun onError() {
-                                    holder.loader.visibility = View.GONE
-                                }
-                            })
-                }
+                Triple(card.name, card.mtgCardsInfoImage, card.gathererImage).loadInto(holder.loader, holder.image)
                 holder.itemView.setOnClickListener(null)
             }
             is NextCardViewHolder -> {
@@ -49,7 +35,7 @@ class StartingHandGridAdapter(var cards: MutableList<StartingHandCard>,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val height = (parent.measuredWidth / columns.toDouble() * MTGCardView.RATIO_CARD).toInt()
+        val height = (parent.measuredWidth / columns.toDouble() * RATIO_CARD).toInt()
 
         when (viewType) {
             ITEM_VIEW_TYPE_FOOTER -> {
