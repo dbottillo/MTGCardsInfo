@@ -107,8 +107,8 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should restore bundle if contains cards`() {
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard("image1", "name1")))
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard("image2", "name2")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image11", gathererImage = "image12", name =  "name1")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image21", gathererImage = "image22", name =  "name2")))
 
         underTest.loadDeck(bundle)
 
@@ -117,7 +117,8 @@ class StartingHandPresenterTest {
 
             assertThat(firstValue.size, `is`(1))
             assertThat(firstValue[0].name, `is`("name2"))
-            assertThat(firstValue[0].image, `is`("image2"))
+            assertThat(firstValue[0].mtgCardsInfoImage, `is`("image21"))
+            assertThat(firstValue[0].gathererImage, `is`("image22"))
         }
         verifyNoMoreInteractions(view, interactor)
     }

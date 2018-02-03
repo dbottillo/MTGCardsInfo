@@ -19,7 +19,8 @@ import kotlin.math.min
 
 class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
-    @Inject lateinit var presenter: StartingHandPresenter
+    @Inject
+    lateinit var presenter: StartingHandPresenter
 
     lateinit var grid: RecyclerView
     private var adapter: StartingHandGridAdapter? = null
@@ -97,8 +98,8 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
     }
 }
 
-val BUNDLE_KEY_SHOWN = "BUNDLE_KEY_SHOWN"
-val BUNDLE_KEY_LEFT = "BUNDLE_KEY_LEFT"
+const val BUNDLE_KEY_SHOWN = "BUNDLE_KEY_SHOWN"
+const val BUNDLE_KEY_LEFT = "BUNDLE_KEY_LEFT"
 
 class StartingHandPresenter @Inject constructor(private val interactor: DecksInteractor) {
 
@@ -131,7 +132,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
                     .filter { !it.isSideboard }
                     .forEach { card ->
                         (1..card.quantity).forEach {
-                            cards.add(StartingHandCard(card.image, card.name))
+                            cards.add(StartingHandCard(card.mtgCardsInfoImage, card.gathererImage, card.name))
                         }
                     }
             cards.shuffle()
@@ -168,4 +169,4 @@ interface StartingHandView {
 
 @SuppressLint("ParcelCreator")
 @Parcelize
-data class StartingHandCard(val image: String?, val name: String) : Parcelable
+data class StartingHandCard(val mtgCardsInfoImage: String, val gathererImage: String, val name: String) : Parcelable

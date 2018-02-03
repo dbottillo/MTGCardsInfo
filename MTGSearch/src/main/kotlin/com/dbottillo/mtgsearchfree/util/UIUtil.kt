@@ -24,6 +24,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
+import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 
 
 fun Context.dpToPx(value: Int): Int {
@@ -48,7 +49,7 @@ fun View.setMarginTop(value: Int) {
 
 fun ImageView.calculateSizeCardImage(widthAvailable: Int, isTablet: Boolean) {
     var wImage = widthAvailable
-    var hImage = (widthAvailable * MTGCardView.RATIO_CARD).toInt()
+    var hImage = (widthAvailable * RATIO_CARD).toInt()
     if (isTablet) {
         wImage = (wImage * 0.8).toInt()
         hImage = (hImage * 0.8).toInt()
