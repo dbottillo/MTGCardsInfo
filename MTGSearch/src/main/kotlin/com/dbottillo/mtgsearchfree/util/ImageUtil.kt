@@ -15,29 +15,44 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 
 fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
-    Triple(name, mtgCardsInfoImage, gathererImage).loadInto(loader, imageView, retry)
+    val second = if (!number.isNullOrEmpty() && set != null && !types.contains("Plane")
+            && set?.code?.toUpperCase() != "6ED"
+            && set?.code?.toUpperCase() != "RIX") {
+        mtgCardsInfoImage
+    } else null
+    Triple(name, second, gathererImage).loadInto(loader, imageView, retry)
 }
 
-fun Triple<String, String, String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
+fun Triple<String, String?, String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
     loader?.show()
     retry?.hide()
     imageView.contentDescription = first
-    TrackingManager.trackImage(second)
-    GlideApp.with(imageView.context)
-            .load(second)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .listener(withListener(loader, retry, false))
-            .error(R.drawable.left_debug)
-            .error(GlideApp
-                    .with(imageView.context)
-                    .load(third)
-                    .listener(withListener(loader, retry,true))
-                    .error(R.drawable.left_debug))
-            .into(imageView)
+    if (second != null) {
+        TrackingManager.trackImage(second)
+        GlideApp.with(imageView.context)
+                .load(second)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .listener(withListener(loader = loader, retryView = retry, hideOnError = false))
+                .error(R.drawable.left_debug)
+                .error(GlideApp
+                        .with(imageView.context)
+                        .load(third)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .listener(withListener(loader = loader, retryView = retry, hideOnError = true))
+                        .error(R.drawable.left_debug))
+                .into(imageView)
+    } else {
+        GlideApp.with(imageView.context)
+                .load(third)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .listener(withListener(loader = loader, retryView = retry, hideOnError = true))
+                .error(R.drawable.left_debug)
+                .into(imageView)
+    }
 }
 
 fun withListener(loader: MTGLoader? = null,
-                 retry: View? = null,
+                 retryView: View? = null,
                  hideOnError: Boolean): RequestListener<Drawable> {
     return object : RequestListener<Drawable> {
         override fun onLoadFailed(e: GlideException?,
@@ -46,7 +61,7 @@ fun withListener(loader: MTGLoader? = null,
                                   isFirstResource: Boolean): Boolean {
             if (hideOnError) {
                 loader?.hide()
-                retry?.show()
+                retryView?.show()
             }
             return false
         }
