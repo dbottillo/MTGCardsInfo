@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.util
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
@@ -8,11 +9,14 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.target.Target
+import com.bumptech.glide.request.transition.Transition
 import com.dbottillo.mtgsearchfree.GlideApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+
 
 fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
     val second = if (!number.isNullOrEmpty() && set != null && !types.contains("Plane")
@@ -98,4 +102,21 @@ fun MTGCard.prefetchImage(context: Context) {
 
             })
             .preload()
+}
+
+fun MTGCard.getBitmap(context: Context, callback: (Bitmap) -> Unit) {
+    val uri = if (!number.isNullOrEmpty() && set != null && !types.contains("Plane")
+            && set?.code?.toUpperCase() != "6ED"
+            && set?.code?.toUpperCase() != "RIX") {
+        mtgCardsInfoImage
+    } else gathererImage
+
+    GlideApp.with(context)
+            .asBitmap()
+            .load(uri)
+            .into(object : SimpleTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    callback(resource)
+                }
+            })
 }

@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
@@ -8,7 +10,10 @@ import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -23,36 +28,22 @@ class CardsActivityPresenterImplTest {
     var mockitoRule = MockitoJUnit.rule()
 
     lateinit var underTest: CardsActivityPresenter
-    internal val idFavs = intArrayOf(2, 3, 4)
+    private val idFavs = intArrayOf(2, 3, 4)
 
-    @Mock
-    lateinit var cardsInteractor: CardsInteractor
-    @Mock
-    lateinit var savedCardsInteractor: SavedCardsInteractor
-    @Mock
-    lateinit var decksInteractor: DecksInteractor
-    @Mock
-    lateinit var cardsPreferences: CardsPreferences
-    @Mock
-    lateinit var view: CardsActivityView
-    @Mock
-    internal lateinit var logger: Logger
-    @Mock
-    internal lateinit var intent: Intent
-    @Mock
-    internal lateinit var set: MTGSet
-    @Mock
-    internal lateinit var deck: Deck
-    @Mock
-    internal lateinit var cards: CardsCollection
-    @Mock
-    internal lateinit var deckCollection: DeckCollection
-    @Mock
-    internal lateinit var error: Throwable
-    @Mock
-    internal lateinit var searchParams: SearchParams
-    @Mock
-    internal lateinit var card: MTGCard
+    @Mock lateinit var cardsInteractor: CardsInteractor
+    @Mock lateinit var savedCardsInteractor: SavedCardsInteractor
+    @Mock lateinit var decksInteractor: DecksInteractor
+    @Mock lateinit var cardsPreferences: CardsPreferences
+    @Mock lateinit var view: CardsActivityView
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var intent: Intent
+    @Mock lateinit var set: MTGSet
+    @Mock lateinit var deck: Deck
+    @Mock lateinit var cards: CardsCollection
+    @Mock lateinit var deckCollection: DeckCollection
+    @Mock lateinit var error: Throwable
+    @Mock lateinit var searchParams: SearchParams
+    @Mock lateinit var card: MTGCard
 
     @Before
     fun setUp() {
@@ -70,10 +61,10 @@ class CardsActivityPresenterImplTest {
 
     @Test
     fun `init view with intent that contains a not recognizable should call finish`() {
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_SEARCH)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_FAV)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SEARCH)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_FAV)).thenReturn(false)
 
         underTest.init(view, intent)
 
@@ -84,9 +75,9 @@ class CardsActivityPresenterImplTest {
     @Test
     fun `init view with intent that contains set should load favourites and then set`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(true)
-        `when`(intent.getParcelableExtra<MTGSet>(CardsActivity.KEY_SET)).thenReturn(set)
-        `when`(intent.getIntExtra(CardsActivity.POSITION, 0)).thenReturn(5)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(true)
+        `when`(intent.getParcelableExtra<MTGSet>(KEY_SET)).thenReturn(set)
+        `when`(intent.getIntExtra(POSITION, 0)).thenReturn(5)
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(cardsInteractor.loadSet(set)).thenReturn(Observable.just(cards))
         `when`(set.name).thenReturn("Set name")
@@ -107,9 +98,9 @@ class CardsActivityPresenterImplTest {
     fun `init view with intent that contains set should load show error if observable fails`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
         `when`(error.localizedMessage).thenReturn("error message")
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(true)
-        `when`(intent.getParcelableExtra<MTGSet>(CardsActivity.KEY_SET)).thenReturn(set)
-        `when`(intent.getIntExtra(CardsActivity.POSITION, 0)).thenReturn(5)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(true)
+        `when`(intent.getParcelableExtra<MTGSet>(KEY_SET)).thenReturn(set)
+        `when`(intent.getIntExtra(POSITION, 0)).thenReturn(5)
         `when`(cardsInteractor.loadSet(set)).thenReturn(Observable.error(error))
         `when`(set.name).thenReturn("Set name")
 
@@ -127,10 +118,10 @@ class CardsActivityPresenterImplTest {
     @Test
     fun `init view with intent that contains deck should load favourites and then deck`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(true)
-        `when`(intent.getParcelableExtra<Deck>(CardsActivity.KEY_DECK)).thenReturn(deck)
-        `when`(intent.getIntExtra(CardsActivity.POSITION, 0)).thenReturn(5)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(true)
+        `when`(intent.getParcelableExtra<Deck>(KEY_DECK)).thenReturn(deck)
+        `when`(intent.getIntExtra(POSITION, 0)).thenReturn(5)
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(deckCollection.toCardsCollection()).thenReturn(cards)
         `when`(decksInteractor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
@@ -152,10 +143,10 @@ class CardsActivityPresenterImplTest {
      fun `init view with intent that contains deck should load show error if observable fails`() {
          `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
          `when`(error.localizedMessage).thenReturn("error message")
-         `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-         `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(true)
-         `when`(intent.getParcelableExtra<Deck>(CardsActivity.KEY_DECK)).thenReturn(deck)
-         `when`(intent.getIntExtra(CardsActivity.POSITION, 0)).thenReturn(5)
+         `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+         `when`(intent.hasExtra(KEY_DECK)).thenReturn(true)
+         `when`(intent.getParcelableExtra<Deck>(KEY_DECK)).thenReturn(deck)
+         `when`(intent.getIntExtra(POSITION, 0)).thenReturn(5)
          `when`(decksInteractor.loadDeck(deck)).thenReturn(Observable.error(error))
          `when`(deck.name).thenReturn("Deck name")
 
@@ -173,10 +164,10 @@ class CardsActivityPresenterImplTest {
     @Test
     fun `init view with intent that contains search should load favourites and then perform search`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_SEARCH)).thenReturn(true)
-        `when`(intent.getParcelableExtra<SearchParams>(CardsActivity.KEY_SEARCH)).thenReturn(searchParams)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SEARCH)).thenReturn(true)
+        `when`(intent.getParcelableExtra<SearchParams>(KEY_SEARCH)).thenReturn(searchParams)
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(cardsInteractor.doSearch(searchParams)).thenReturn(Observable.just(cards))
 
@@ -196,10 +187,10 @@ class CardsActivityPresenterImplTest {
     fun `init view with intent that contains search should load show error if observable fails`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
         `when`(error.localizedMessage).thenReturn("error message")
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_SEARCH)).thenReturn(true)
-        `when`(intent.getParcelableExtra<SearchParams>(CardsActivity.KEY_SEARCH)).thenReturn(searchParams)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SEARCH)).thenReturn(true)
+        `when`(intent.getParcelableExtra<SearchParams>(KEY_SEARCH)).thenReturn(searchParams)
         `when`(cardsInteractor.doSearch(searchParams)).thenReturn(Observable.error(error))
 
         underTest.init(view, intent)
@@ -216,10 +207,10 @@ class CardsActivityPresenterImplTest {
     @Test
     fun `init view with intent that contains favourites should load favourites and then favourites' cards`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_SEARCH)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_FAV)).thenReturn(true)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SEARCH)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_FAV)).thenReturn(true)
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(savedCardsInteractor.load()).thenReturn(Observable.just(cards))
 
@@ -239,10 +230,10 @@ class CardsActivityPresenterImplTest {
     fun `init view with intent that contains favourites should load show error if observable fails`() {
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
         `when`(error.localizedMessage).thenReturn("error message")
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_DECK)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_SEARCH)).thenReturn(false)
-        `when`(intent.hasExtra(CardsActivity.KEY_FAV)).thenReturn(true)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_DECK)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_SEARCH)).thenReturn(false)
+        `when`(intent.hasExtra(KEY_FAV)).thenReturn(true)
         `when`(savedCardsInteractor.load()).thenReturn(Observable.error(error))
 
         underTest.init(view, intent)
@@ -377,11 +368,40 @@ class CardsActivityPresenterImplTest {
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
     }
 
-    internal fun prepareAfterInit(){
+    @Test
+    fun `share bitmap should get artwork and share it on view`() {
+        prepareAfterInit()
+        val bitmap = mock<Bitmap>()
+        val uri = mock<Uri>()
+        whenever(cardsInteractor.getArtworkUri(bitmap)).thenReturn(Single.just(uri))
+
+        underTest.shareImage(bitmap)
+
+        verify(view).shareUri(uri)
+        verify(cardsInteractor).getArtworkUri(bitmap)
+        verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
+    }
+
+    @Test
+    fun `share bitmap should should show error if get artwork uri fails`() {
+        prepareAfterInit()
+        val bitmap = mock<Bitmap>()
+        val throwable = mock<Throwable>()
+        whenever(throwable.localizedMessage).thenReturn("message")
+        whenever(cardsInteractor.getArtworkUri(bitmap)).thenReturn(Single.error(throwable))
+
+        underTest.shareImage(bitmap)
+
+        verify(view).showError("message")
+        verify(cardsInteractor).getArtworkUri(bitmap)
+        verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
+    }
+
+    private fun prepareAfterInit(){
         `when`(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
-        `when`(intent.hasExtra(CardsActivity.KEY_SET)).thenReturn(true)
-        `when`(intent.getParcelableExtra<MTGSet>(CardsActivity.KEY_SET)).thenReturn(set)
-        `when`(intent.getIntExtra(CardsActivity.POSITION, 0)).thenReturn(5)
+        `when`(intent.hasExtra(KEY_SET)).thenReturn(true)
+        `when`(intent.getParcelableExtra<MTGSet>(KEY_SET)).thenReturn(set)
+        `when`(intent.getIntExtra(POSITION, 0)).thenReturn(5)
         `when`(cardsPreferences.showImage()).thenReturn(true)
         `when`(cardsInteractor.loadSet(set)).thenReturn(Observable.just(cards))
         `when`(set.name).thenReturn("Set name")

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.ui.lucky
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
@@ -81,7 +82,7 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        currentCard?.let {  outState.putInt(CARD, it.id) }
+        currentCard?.let { outState.putInt(CARD, it.id) }
     }
 
     // TODO: this need testing
@@ -122,8 +123,15 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
         }
     }
 
-    companion object {
-        val CARD = "CARD"
-        val LUCKY_BATCH_CARDS = 10
+    override fun shareImage(bitmap: Bitmap) {
+        cardsInteractor.getArtworkUri(bitmap).subscribe({
+            view.shareUri(it)
+        }, {
+            view.showError(it.localizedMessage)
+        })
     }
+
 }
+
+const val CARD = "CARD"
+const val LUCKY_BATCH_CARDS = 10

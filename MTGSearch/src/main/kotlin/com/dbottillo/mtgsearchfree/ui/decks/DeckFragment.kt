@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.util.TrackingManager
@@ -45,7 +46,7 @@ class DeckFragment : BasicFragment(), DeckView {
 
         deckAdapter.cardListener = object : OnDeckCardListener {
             override fun onCardSelected(card: MTGCard) {
-                startActivity(CardsActivity.newInstance(view.context, presenter.deck, deckAdapter.getCards().indexOf(card)))
+                startActivity(view.context.startCardsActivity(presenter.deck, deckAdapter.getCards().indexOf(card)))
             }
 
             override fun onOptionSelected(menuItem: MenuItem, card: MTGCard) {

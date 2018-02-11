@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.ui.lucky.CARD
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl
 import com.dbottillo.mtgsearchfree.util.TrackingManager
@@ -80,7 +81,7 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
         // tap on image
         val openIntent = Intent(context, CardLuckyActivity::class.java)
-        openIntent.putExtra(CardsLuckyPresenterImpl.CARD, card.id)
+        openIntent.putExtra(CARD, card.id)
         val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)
         remoteViews.setOnClickPendingIntent(R.id.image_card, pendingIntent)
 

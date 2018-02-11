@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
+import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import javax.inject.Inject
@@ -117,7 +118,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         TrackingManager.trackOpenCard(position)
-        startActivity(CardsActivity.newFavInstance(context, position))
+        startActivity(context?.startCardsActivity(position))
     }
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
