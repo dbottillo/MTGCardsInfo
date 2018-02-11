@@ -13,8 +13,8 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
@@ -98,7 +98,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         TrackingManager.trackOpenCard(position)
-        startActivity(CardsActivity.newInstance(context,  presenter.set(), position))
+        startActivity(presenter.set()?.let { context?.startCardsActivity(it, position) })
     }
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {

@@ -1,12 +1,15 @@
 package com.dbottillo.mtgsearchfree.ui.lucky
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import io.reactivex.Single
 import org.junit.Before
@@ -96,7 +99,7 @@ class CardsLuckyPresenterImplTest {
         `when`(cardsCollection.list).thenReturn(cards)
         `when`(cardsPreferences.showImage()).thenReturn(false)
         `when`(interactor.loadCardById(5)).thenReturn(Single.just(cardInBundle))
-        `when`(bundle.getInt(CardsLuckyPresenterImpl.CARD)).thenReturn(5)
+        `when`(bundle.getInt(CARD)).thenReturn(5)
 
         underTest.init(view, bundle, null)
 
@@ -120,8 +123,8 @@ class CardsLuckyPresenterImplTest {
         `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
         `when`(cardsCollection.list).thenReturn(cards)
         `when`(interactor.loadCardById(6)).thenReturn(Single.just(cardInIntent))
-        `when`(intent.hasExtra(CardsLuckyPresenterImpl.CARD)).thenReturn(true)
-        `when`(intent.getIntExtra(CardsLuckyPresenterImpl.CARD, 0)).thenReturn(6)
+        `when`(intent.hasExtra(CARD)).thenReturn(true)
+        `when`(intent.getIntExtra(CARD, 0)).thenReturn(6)
 
         underTest.init(view, null, intent)
 
@@ -145,10 +148,10 @@ class CardsLuckyPresenterImplTest {
         `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
         `when`(cardsCollection.list).thenReturn(cards)
         `when`(cardsPreferences.showImage()).thenReturn(false)
-        `when`(intent.getIntExtra(CardsLuckyPresenterImpl.CARD, 0)).thenReturn(6)
-        `when`(intent.hasExtra(CardsLuckyPresenterImpl.CARD)).thenReturn(true)
+        `when`(intent.getIntExtra(CARD, 0)).thenReturn(6)
+        `when`(intent.hasExtra(CARD)).thenReturn(true)
         `when`(interactor.loadCardById(5)).thenReturn(Single.just(cardInBundle))
-        `when`(bundle.getInt(CardsLuckyPresenterImpl.CARD)).thenReturn(5)
+        `when`(bundle.getInt(CARD)).thenReturn(5)
 
         underTest.init(view, bundle, intent)
 
@@ -239,7 +242,46 @@ class CardsLuckyPresenterImplTest {
 
         underTest.onSaveInstanceState(bundle)
 
-        verify(bundle).putInt(CardsLuckyPresenterImpl.CARD, 4)
+        verify(bundle).putInt(CARD, 4)
+        verifyNoMoreInteractions(bundle, interactor, cardsPreferences, view)
+    }
+
+    @Test
+    fun `share bitmap should get artwork and share it on view`() {
+        `when`(interactor.loadIdFav()).thenReturn(Observable.just(idFavs))
+        `when`(cardsPreferences.showImage()).thenReturn(true)
+        `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
+        `when`(cardsCollection.list).thenReturn(cards)
+        underTest.init(view, null, null)
+        Mockito.reset(interactor, cardsPreferences, view)
+        val bitmap = com.nhaarman.mockito_kotlin.mock<Bitmap>()
+        val uri = com.nhaarman.mockito_kotlin.mock<Uri>()
+        whenever(interactor.getArtworkUri(bitmap)).thenReturn(Single.just(uri))
+
+        underTest.shareImage(bitmap)
+
+        verify(view).shareUri(uri)
+        verify(interactor).getArtworkUri(bitmap)
+        verifyNoMoreInteractions(bundle, interactor, cardsPreferences, view)
+    }
+
+    @Test
+    fun `share bitmap should should show error if get artwork uri fails`() {
+        `when`(interactor.loadIdFav()).thenReturn(Observable.just(idFavs))
+        `when`(cardsPreferences.showImage()).thenReturn(true)
+        `when`(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
+        `when`(cardsCollection.list).thenReturn(cards)
+        underTest.init(view, null, null)
+        Mockito.reset(interactor, cardsPreferences, view)
+        val bitmap = com.nhaarman.mockito_kotlin.mock<Bitmap>()
+        val throwable = com.nhaarman.mockito_kotlin.mock<Throwable>()
+        whenever(throwable.localizedMessage).thenReturn("message")
+        whenever(interactor.getArtworkUri(bitmap)).thenReturn(Single.error(throwable))
+
+        underTest.shareImage(bitmap)
+
+        verify(view).showError("message")
+        verify(interactor).getArtworkUri(bitmap)
         verifyNoMoreInteractions(bundle, interactor, cardsPreferences, view)
     }
 }
