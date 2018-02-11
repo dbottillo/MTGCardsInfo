@@ -27,10 +27,10 @@ import java.util.List;
 
 public class FileUtil {
 
-    private FileLoader fileLoader;
+    private FileManager fileManager;
 
-    public FileUtil(FileLoader fileLoader) {
-        this.fileLoader = fileLoader;
+    public FileUtil(FileManager fileManager) {
+        this.fileManager = fileManager;
     }
 
     public static File copyDbToSdCard(Context ctx, String name) {
@@ -147,7 +147,7 @@ public class FileUtil {
     }
 
     public CardsBucket readFileContent(Uri uri) throws Exception {
-        InputStream is = fileLoader.loadUri(uri);
+        InputStream is = fileManager.loadUri(uri);
         CardsBucket bucket;
         try {
             bucket = readFileStream(is);

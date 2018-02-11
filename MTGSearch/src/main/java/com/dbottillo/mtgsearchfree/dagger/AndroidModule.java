@@ -9,8 +9,7 @@ import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
-import com.dbottillo.mtgsearchfree.util.FileLoader;
-import com.dbottillo.mtgsearchfree.util.FileLoaderImpl;
+import com.dbottillo.mtgsearchfree.util.FileManager;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
@@ -74,13 +73,8 @@ public class AndroidModule {
     }
 
     @Provides
-    FileUtil provideFileUtil(FileLoader fileLoader) {
-        return new FileUtil(fileLoader);
-    }
-
-    @Provides
-    FileLoader provideFileLoader() {
-        return new FileLoaderImpl(app.getApplicationContext());
+    FileUtil provideFileUtil(FileManager fileManager) {
+        return new FileUtil(fileManager);
     }
 
     @Provides

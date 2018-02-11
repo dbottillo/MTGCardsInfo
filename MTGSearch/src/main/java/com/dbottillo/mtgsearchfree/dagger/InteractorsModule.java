@@ -22,6 +22,7 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
+import com.dbottillo.mtgsearchfree.util.FileManager;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
@@ -39,9 +40,10 @@ class InteractorsModule {
 
     @Provides
     CardsInteractor provideCardsInteractor(CardsStorage cardsStorage,
+                                           FileManager fileManager,
                                            SchedulerProvider schedulerProvider,
                                            Logger logger) {
-        return new CardsInteractorImpl(cardsStorage, schedulerProvider, logger);
+        return new CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger);
     }
 
     @Provides
@@ -69,19 +71,19 @@ class InteractorsModule {
     @Provides
     SavedCardsInteractor provideSavedCardsInteractor(SavedCardsStorage storage,
                                                      SchedulerProvider schedulerProvider,
-                                                     Logger logger){
+                                                     Logger logger) {
         return new SavedCardsInteractorImpl(storage, schedulerProvider, logger);
     }
 
     @Provides
-    SchedulerProvider provideSchedulerProvider(){
+    SchedulerProvider provideSchedulerProvider() {
         return new AppSchedulerProvider();
     }
 
     @Provides
     ReleaseNoteInteractor provideReleaseNoteInteractor(ReleaseNoteStorage storage,
                                                        SchedulerProvider schedulerProvider,
-                                                       Logger logger){
+                                                       Logger logger) {
         return new ReleaseNoteInteractor(storage, schedulerProvider, logger);
     }
 }

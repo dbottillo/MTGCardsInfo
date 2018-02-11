@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.ui.BaseCardsView
 
@@ -11,4 +12,5 @@ interface CardsActivityView : BaseCardsView {
     fun showError(errorMessage: String)
     fun showLoading()
     fun hideLoading()
+    fun shareUri(uri: Uri)
 }

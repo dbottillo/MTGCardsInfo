@@ -24,6 +24,7 @@ import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
+import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
@@ -283,8 +284,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         LOG.d()
-        val intent = CardsActivity.newInstance(this, searchView.searchParams, position)
-        startActivity(intent)
+        startActivity(this.startCardsActivity(searchView.searchParams, position))
     }
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
