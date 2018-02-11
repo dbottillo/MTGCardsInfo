@@ -1,11 +1,15 @@
 package com.dbottillo.mtgsearchfree.interactors
 
+import android.graphics.Bitmap
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.mock
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
@@ -40,23 +44,17 @@ class CardsInteractorImplTest {
 
     private val favCards = Arrays.asList(MTGCard(3), MTGCard(4))
 
-    @Mock
-    lateinit var lukcyCardsCollection: CardsCollection
-
-    @Mock
-    lateinit var setCollection: CardsCollection
-
-    @Mock
-    lateinit var searchCardsCollection: CardsCollection
-
-    @Mock
-    lateinit var schedulerProvider: SchedulerProvider
+    @Mock lateinit var lukcyCardsCollection: CardsCollection
+    @Mock lateinit var setCollection: CardsCollection
+    @Mock lateinit var searchCardsCollection: CardsCollection
+    @Mock lateinit var schedulerProvider: SchedulerProvider
+    @Mock lateinit var fileManager: FileManager
 
     @Before
     fun setup() {
         `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
         `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
-        underTest = CardsInteractorImpl(cardsStorage, schedulerProvider, logger)
+        underTest = CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger)
     }
 
     @Test
@@ -200,4 +198,20 @@ class CardsInteractorImplTest {
         verifyNoMoreInteractions(cardsStorage, schedulerProvider)
     }
 
+    @Test
+    fun `get artwork uri should defer to fie loader`() {
+        val bitmap = mock<Bitmap>()
+        val uri = mock<Uri>()
+        `when`(fileManager.saveBitmapToFile(bitmap)).thenReturn(uri)
+        val testSubscriber = TestObserver<Uri>()
+
+        underTest.getArtworkUri(bitmap).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(uri)
+        verify(fileManager).saveBitmapToFile(bitmap)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, fileManager)
+    }
 }

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
 import android.content.Intent
+import android.graphics.Bitmap
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
@@ -145,4 +146,13 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
         logger.e(throwable)
         view.showError(throwable.localizedMessage)
     }
+
+    override fun shareImage(bitmap: Bitmap) {
+        cardsInteractor.getArtworkUri(bitmap).subscribe({
+            view.shareUri(it)
+        },{
+            showError(it)
+        })
+    }
+
 }
