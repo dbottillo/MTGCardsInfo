@@ -15,18 +15,23 @@
         android:orderInCategory="102"
         android:title="@string/menu_fullscreen_image"
         app:showAsAction="ifRoom"/>
-
     <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_menu_share"
-        android:orderInCategory="104"
+        android:orderInCategory="103"
         android:title="@string/share"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_share_artwork"
+        android:icon="@drawable/ic_menu_share"
+        android:orderInCategory="104"
+        android:title="@string/share_artwork"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_image"
         android:checkable="true"
         android:icon="@null"
-        android:orderInCategory="104"
+        android:orderInCategory="105"
         android:title="@string/menu_image"
         app:showAsAction="never"/>
 </menu>

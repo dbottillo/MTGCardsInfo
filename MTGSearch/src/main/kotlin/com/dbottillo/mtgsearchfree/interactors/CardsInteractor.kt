@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
+import android.graphics.Bitmap
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
@@ -18,4 +20,5 @@ interface CardsInteractor {
     fun loadCard(multiverseId: Int): Observable<MTGCard>
     fun loadCardById(id: Int): Single<MTGCard>
     fun loadOtherSideCard(card: MTGCard): Observable<MTGCard>
+    fun getArtworkUri(bitmap: Bitmap):Single<Uri>
 }
