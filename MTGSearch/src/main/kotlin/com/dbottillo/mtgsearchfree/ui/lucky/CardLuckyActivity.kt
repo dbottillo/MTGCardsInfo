@@ -1,11 +1,14 @@
 package com.dbottillo.mtgsearchfree.ui.lucky
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
@@ -21,17 +24,14 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     @Inject
     lateinit var presenter: CardsLuckyPresenter
 
-    lateinit var cardView: MTGCardView
-    lateinit var titleCard: TextView
+    private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view)}
+    private val titleCard  by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card)}
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         setContentView(R.layout.activity_lucky_card)
 
         setTitle(R.string.lucky_title)
-
-        cardView = findViewById<MTGCardView>(R.id.card_view)
-        titleCard = findViewById<TextView>(R.id.title_card)
 
         findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
@@ -71,10 +71,10 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         syncMenu()
     }
 
-    public override fun getCurrentCard(): MTGCard? {
-        LOG.d()
-        return cardView.card
-    }
+    public override val currentCard: MTGCard?
+        get() {
+            return cardView.card
+        }
 
     public override fun toggleImage(show: Boolean) {
         LOG.d()
@@ -126,4 +126,17 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     override fun setImageMenuItemChecked(checked: Boolean) {
         imageMenuItem?.isChecked = checked
     }
+
+    override fun shareImage(bitmap: Bitmap) {
+        currentCard?.let { presenter.shareImage(bitmap) }
+    }
+
+    override fun shareUri(uri: Uri) {
+        shareUriArtwork(currentCard?.name ?: "", uri)
+    }
+
+    override fun showError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
 }

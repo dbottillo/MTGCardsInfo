@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource;
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource;
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource;
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource;
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource;
+import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl;
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage;
@@ -21,14 +21,14 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralData;
 import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage;
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl;
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl;
 import com.dbottillo.mtgsearchfree.util.AppInfo;
-import com.dbottillo.mtgsearchfree.util.FileLoader;
+import com.dbottillo.mtgsearchfree.util.FileManager;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.GsonUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
-import com.dbottillo.mtgsearchfree.model.storage.CardsHelper;
 import com.google.gson.Gson;
 
 import javax.inject.Named;
@@ -42,13 +42,13 @@ public class DataModule {
 
     @Provides
     @Singleton
-    SharedPreferences provideSharedPreferences(Context context){
+    SharedPreferences provideSharedPreferences(Context context) {
         return context.getSharedPreferences("General", Context.MODE_PRIVATE);
     }
 
     @Provides
     @Singleton
-    AppInfo providesAppInfo(Context context){
+    AppInfo providesAppInfo(Context context) {
         return new AppInfo(context);
     }
 
@@ -66,7 +66,7 @@ public class DataModule {
 
     @Provides
     @Singleton
-    CardDataSource providesCardDataSource(@Named("storageDB") SQLiteDatabase database, Gson gson){
+    CardDataSource providesCardDataSource(@Named("storageDB") SQLiteDatabase database, Gson gson) {
         return new CardDataSource(database, gson);
     }
 
@@ -120,19 +120,19 @@ public class DataModule {
     @Provides
     @Singleton
     SavedCardsStorage provideSavedCardsStorage(FavouritesDataSource favouritesDataSource, CardsHelper cardsHelper,
-                                               CardsPreferences cardsPreferences, Logger logger){
+                                               CardsPreferences cardsPreferences, Logger logger) {
         return new SavedCardsStorageImpl(favouritesDataSource, cardsHelper, cardsPreferences, logger);
     }
 
     @Provides
     @Singleton
-    Gson providesGson(){
+    Gson providesGson() {
         return new Gson();
     }
 
     @Provides
     @Singleton
-    GsonUtil providesGsonUtil(Gson gson){
+    GsonUtil providesGsonUtil(Gson gson) {
         return new GsonUtil(gson);
     }
 
@@ -144,7 +144,7 @@ public class DataModule {
 
     @Provides
     @Singleton
-    ReleaseNoteStorage provideReleaseNoteStorage(FileLoader fileLoader, GsonUtil gsonUtil){
-        return new ReleaseNoteStorage(fileLoader, gsonUtil);
+    ReleaseNoteStorage provideReleaseNoteStorage(FileManager fileManager, GsonUtil gsonUtil) {
+        return new ReleaseNoteStorage(fileManager, gsonUtil);
     }
 }

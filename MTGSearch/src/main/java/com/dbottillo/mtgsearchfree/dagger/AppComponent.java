@@ -13,7 +13,7 @@ import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage;
 import com.dbottillo.mtgsearchfree.ui.BasicActivity;
 import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl;
 import com.dbottillo.mtgsearchfree.util.DialogUtil;
-import com.dbottillo.mtgsearchfree.util.FileLoader;
+import com.dbottillo.mtgsearchfree.util.FileManager;
 import com.dbottillo.mtgsearchfree.util.FileUtil;
 import com.dbottillo.mtgsearchfree.util.Logger;
 
@@ -41,7 +41,7 @@ public interface AppComponent {
 
     FileUtil getFileUtil();
 
-    FileLoader getFileLoader();
+    FileManager getFileManager();
 
     Logger getLogger();
 

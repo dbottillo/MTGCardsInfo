@@ -1,17 +1,22 @@
 package com.dbottillo.mtgsearchfree.interactors
 
+import android.graphics.Bitmap
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
 import io.reactivex.Single
 
 class CardsInteractorImpl(private val storage: CardsStorage,
+                          private val fileManager: FileManager,
                           private val schedulerProvider: SchedulerProvider,
                           private val logger: Logger) : CardsInteractor {
+
     init {
         logger.d("created")
     }
@@ -30,7 +35,7 @@ class CardsInteractorImpl(private val storage: CardsStorage,
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun saveAsFavourite(card: MTGCard){
+    override fun saveAsFavourite(card: MTGCard) {
         logger.d("save as favourite")
         Observable.fromCallable { storage.saveAsFavourite(card) }
                 .subscribeOn(schedulerProvider.io())
@@ -85,6 +90,14 @@ class CardsInteractorImpl(private val storage: CardsStorage,
         logger.d("loading other side of card: " + card.toString())
         return Observable.fromCallable { storage.loadOtherSide(card) }
                 .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+    }
+
+    override fun getArtworkUri(bitmap: Bitmap): Single<Uri> {
+        logger.d("get artwork uri from bitmap")
+        return Single.defer<Uri> {
+            Single.just(fileManager.saveBitmapToFile(bitmap))
+        }.subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 }
