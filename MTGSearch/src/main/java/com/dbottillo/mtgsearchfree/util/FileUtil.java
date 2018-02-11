@@ -27,9 +27,9 @@ import java.util.List;
 
 public class FileUtil {
 
-    private FileManager fileManager;
+    private FileManagerI fileManager;
 
-    public FileUtil(FileManager fileManager) {
+    public FileUtil(FileManagerI fileManager) {
         this.fileManager = fileManager;
     }
 

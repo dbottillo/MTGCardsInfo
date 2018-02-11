@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.content.res.Resources
+import android.graphics.Bitmap
 import android.net.Uri
 import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
@@ -8,10 +9,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
-import com.dbottillo.mtgsearchfree.util.FileLoader
-import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.util.Logger
+import com.dbottillo.mtgsearchfree.util.*
 import com.google.gson.Gson
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
@@ -31,7 +29,7 @@ class DecksStorageIntegrationTest : BaseContextTest() {
     @Before
     @Throws(FileNotFoundException::class)
     fun setup() {
-        val fileUtil = FileUtil(FileLoaderLocal())
+        val fileUtil = FileUtil(FileManagerForTest())
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         val mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
         val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
@@ -171,7 +169,11 @@ class DecksStorageIntegrationTest : BaseContextTest() {
         assertTrue(card?.isSideboard == true)
     }
 
-    private inner class FileLoaderLocal : FileLoader {
+    private inner class FileManagerForTest : FileManagerI {
+        override fun saveBitmapToFile(bitmap: Bitmap): Uri {
+            return Uri.parse("")
+        }
+
         @Throws(FileNotFoundException::class)
         override fun loadUri(uri: Uri): InputStream {
             return javaClass.classLoader.getResourceAsStream(uri.toString())

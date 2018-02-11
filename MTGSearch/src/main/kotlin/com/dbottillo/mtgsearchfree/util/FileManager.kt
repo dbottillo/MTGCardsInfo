@@ -9,15 +9,15 @@ import com.dbottillo.mtgsearchfree.BuildConfig
 import java.io.*
 import javax.inject.Inject
 
-class FileManager @Inject constructor(private val context: Context) {
+class FileManager @Inject constructor(private val context: Context) : FileManagerI {
 
     @Throws(FileNotFoundException::class)
-    fun loadUri(uri: Uri): InputStream {
+    override fun loadUri(uri: Uri): InputStream {
         return context.contentResolver.openInputStream(uri)
     }
 
     @Throws(Resources.NotFoundException::class)
-    fun loadRaw(raw: Int): String {
+    override fun loadRaw(raw: Int): String {
         val inputStream = context.resources?.openRawResource(raw)
                 ?: throw Resources.NotFoundException("impossible to open $raw")
         return loadFile(inputStream) ?: throw Resources.NotFoundException("impossible to open $raw")
@@ -45,7 +45,7 @@ class FileManager @Inject constructor(private val context: Context) {
     }
 
     @Throws(FileNotFoundException::class)
-    fun saveBitmapToFile(bitmap: Bitmap): Uri {
+    override fun saveBitmapToFile(bitmap: Bitmap): Uri {
         val path = File(context.filesDir, "images")
         if (!path.exists()) {
             val created = path.mkdirs()
@@ -59,4 +59,10 @@ class FileManager @Inject constructor(private val context: Context) {
         outputStream?.close()
         return getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
     }
+}
+
+interface FileManagerI{
+    fun loadUri(uri: Uri): InputStream
+    fun loadRaw(raw: Int): String
+    fun saveBitmapToFile(bitmap: Bitmap): Uri
 }
