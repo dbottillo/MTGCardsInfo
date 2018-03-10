@@ -18,15 +18,15 @@ public class MTGCardDataSource {
     private static final int LIMIT = 400;
 
     enum STANDARD {
-        RIVALS_OF_IXALAN(1, "Rivals of Ixalan"),
-        IXALAN(6, "Ixalan"),
-        HOUR_OF_DEVASTATION(8, "Hour of Devastation"),
-        AMONKHET_INVOCATIONS(9, "Masterpiece Series: Amonkhet Invocations"),
-        AMONKHET(10, "Amonkhet"),
-        WELCOME_2017(11, "Welcome Deck 2017"),
-        AETHER_REVOLT(14, "Aether Revolt"),
-        KALADESH_INVENTIONS(17, "Kaladesh Inventions"),
-        KALADESH(18, "Kaladesh");
+        RIVALS_OF_IXALAN(2, "Rivals of Ixalan"),
+        IXALAN(7, "Ixalan"),
+        HOUR_OF_DEVASTATION(9, "Hour of Devastation"),
+        AMONKHET_INVOCATIONS(10, "Masterpiece Series: Amonkhet Invocations"),
+        AMONKHET(11, "Amonkhet"),
+        WELCOME_2017(12, "Welcome Deck 2017"),
+        AETHER_REVOLT(15, "Aether Revolt"),
+        KALADESH_INVENTIONS(18, "Kaladesh Inventions"),
+        KALADESH(19, "Kaladesh");
 
         public int setId;
         public String name;
