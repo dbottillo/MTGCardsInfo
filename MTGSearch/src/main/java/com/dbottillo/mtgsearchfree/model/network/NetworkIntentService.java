@@ -46,20 +46,20 @@ public class NetworkIntentService extends IntentService {
 
         String url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=" + setName + "&p=" + cardName;
 
-        LOG.d("loading price for card " + cardName);
+        LOG.INSTANCE.d("loading price for card " + cardName);
         try {
             res = doNetworkRequest(url);
         } catch (Exception e) {
-            LOG.e(e);
+            LOG.INSTANCE.e(e);
         }
 
         if (res != null && (res.getLowprice() == null || res.getLowprice().equalsIgnoreCase("0")) && setName != null && setName.length() > 0) {
             url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=" + cardName;
-            LOG.d("try again without set for card " + cardName);
+            LOG.INSTANCE.d("try again without set for card " + cardName);
             try {
                 res = doNetworkRequest(url);
             } catch (Exception e) {
-                LOG.e(e);
+                LOG.INSTANCE.e(e);
             }
         }
 

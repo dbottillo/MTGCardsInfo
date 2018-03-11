@@ -12,7 +12,6 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
-import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -23,6 +22,7 @@ import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.showDialog
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -105,7 +105,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
         when (menuItem.itemId) {
-            R.id.action_add_to_deck -> DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card))
+            R.id.action_add_to_deck -> dbActivity.showDialog("add_to_deck", AddToDeckFragment.newInstance(card))
             R.id.action_add_to_favourites -> {
                 presenter.saveAsFavourite(card)
             }

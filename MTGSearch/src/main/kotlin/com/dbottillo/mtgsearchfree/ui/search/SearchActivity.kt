@@ -20,7 +20,6 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -287,7 +286,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         if (menuItem.itemId == R.id.action_add_to_deck) {
-            DialogHelper.open(this, "add_to_deck", AddToDeckFragment.newInstance(card))
+            this.showDialog("add_to_deck", AddToDeckFragment.newInstance(card))
 
         } else if (menuItem.itemId == R.id.action_add_to_favourites) {
             presenter.saveAsFavourite(card)

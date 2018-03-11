@@ -120,7 +120,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
                 .setAction(getString(R.string.share)) {
                     val intent = Intent(Intent.ACTION_SEND)
                     intent.type = "text/plain"
-                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(FileUtil.fileNameForDeck(presenter.deck)))
+                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(presenter.deck.fileNameForDeck()))
                     startActivity(Intent.createChooser(intent, getString(R.string.share)))
                     TrackingManager.trackDeckExport()
                 }
@@ -133,7 +133,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     private fun exportDeck() {
         LOG.d()
-        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
                 presenter.exportDeck()
             }

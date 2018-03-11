@@ -14,15 +14,13 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+import com.dbottillo.mtgsearchfree.util.*
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -87,27 +85,27 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         loader.visibility = View.VISIBLE
     }
 
-    override fun showError(message: String?) {
+    override fun showError(message: String) {
         LOG.d()
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         TrackingManager.trackSearchError(message)
     }
 
-    override fun showError(exception: MTGException?) {
+    override fun showError(exception: MTGException) {
         LOG.d()
-        Toast.makeText(activity, exception?.message, Toast.LENGTH_SHORT).show()
-        TrackingManager.trackSearchError(exception?.message)
+        Toast.makeText(activity, exception.message, Toast.LENGTH_SHORT).show()
+        TrackingManager.trackSearchError(exception.message)
     }
 
     override fun showCards(cardsCollection: CardsCollection) {
-        emptyContainer.visibility = View.GONE
-        mtgCardsView.visibility = View.VISIBLE
+        emptyContainer.gone()
+        mtgCardsView.show()
         mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), cardsCollection.filter, R.menu.card_saved_option)
     }
 
     override fun showEmptyScreen() {
-        mtgCardsView.visibility = View.GONE
-        emptyContainer.visibility = View.VISIBLE
+        mtgCardsView.gone()
+        emptyContainer.show()
     }
 
     override fun showCardsGrid() {
@@ -128,7 +126,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
         when(menuItem.itemId){
-            R.id.action_add_to_deck -> DialogHelper.open(dbActivity, "add_to_deck", AddToDeckFragment.newInstance(card))
+            R.id.action_add_to_deck -> dbActivity.showDialog("add_to_deck", AddToDeckFragment.newInstance(card))
             R.id.action_remove -> {
                 savedCardsPresenter.removeFromFavourite(card)
                 savedCardsPresenter.load()

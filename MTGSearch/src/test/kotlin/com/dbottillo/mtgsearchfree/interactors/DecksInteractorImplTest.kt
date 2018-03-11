@@ -10,6 +10,8 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.argumentCaptor
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import junit.framework.Assert.assertNull
@@ -19,7 +21,6 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
@@ -218,19 +219,15 @@ class DecksInteractorImplTest {
 
     @Test
     fun `export deck should load card, call file util and complete if successfull`() {
-        `when`(storage.loadDeck(deck)).thenReturn(deckCollection)
-        `when`(deckCollection.allCards()).thenReturn(cards)
-        val captor = ArgumentCaptor.forClass(CardsCollection::class.java)
-        `when`(fileUtil.downloadDeckToSdCard(eq(deck), captor.capture())).thenReturn(true)
+        whenever(storage.loadDeck(deck)).thenReturn(deckCollection)
+        whenever(deckCollection.allCards()).thenReturn(cards)
+        whenever(fileUtil.downloadDeckToSdCard(deck, cards)).thenReturn(true)
 
         val testObserver = underTest.exportDeck(deck).test()
 
         testObserver.assertComplete()
         verify(storage).loadDeck(deck)
-        verify(fileUtil).downloadDeckToSdCard(deck, captor.value)
-        assertThat(captor.value.list, `is`(cards))
-        assertNull(captor.value.filter)
-        assertTrue(captor.value.isDeck)
+        verify(fileUtil).downloadDeckToSdCard(deck, cards)
         verifyNoMoreInteractions(storage, fileUtil)
     }
 

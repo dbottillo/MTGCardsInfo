@@ -15,9 +15,7 @@ import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.*
 import javax.inject.Inject
 
 abstract class BasicActivity : AppCompatActivity() {
@@ -110,13 +108,13 @@ abstract class BasicActivity : AppCompatActivity() {
 
     private var permissionListener: PermissionUtil.PermissionListener? = null
 
-    fun requestPermission(type: PermissionUtil.TYPE, listener: PermissionUtil.PermissionListener) {
+    fun requestPermission(permission: PermissionAvailable, listener: PermissionUtil.PermissionListener) {
         this.permissionListener = listener
-        if (PermissionUtil.permissionGranted(this, type)) {
+        if (PermissionUtil.permissionGranted(this, permission)) {
             listener.permissionGranted()
             return
         }
-        PermissionUtil.requestPermission(this, type)
+        this.request(permission)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {

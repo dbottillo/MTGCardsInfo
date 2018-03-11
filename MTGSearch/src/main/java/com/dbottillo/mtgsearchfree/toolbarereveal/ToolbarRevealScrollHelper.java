@@ -157,12 +157,12 @@ public class ToolbarRevealScrollHelper implements ViewTreeObserver.OnScrollChang
             UIUtilKt.setLightStatusBar(baseFragment.getActivity());
         }
 
-        alphaInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(1.0f);
-        elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.getResources().getDimension(R.dimen.default_elevation_toolbar));
-        translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart).toValue(translationEnd);
-        toolbarBackgroundEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, backgroundColor)).toValue(toolbarColor);
-        statusBarColorEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.white)).toValue(statusBarColor);
-        arrowToolbarEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.color_primary)).toValue(ContextCompat.getColor(context, R.color.white));
+        alphaInterpolator = AnimationUtil.INSTANCE.createLinearInterpolator().fromValue(0.0f).toValue(1.0f);
+        elevationInterpolator = AnimationUtil.INSTANCE.createLinearInterpolator().fromValue(0.0f).toValue(context.getResources().getDimension(R.dimen.default_elevation_toolbar));
+        translationTitle = AnimationUtil.INSTANCE.createLinearInterpolator().fromValue(translationStart).toValue(translationEnd);
+        toolbarBackgroundEvaluator = AnimationUtil.INSTANCE.createArgbInterpolator().fromValue(ContextCompat.getColor(context, backgroundColor)).toValue(toolbarColor);
+        statusBarColorEvaluator = AnimationUtil.INSTANCE.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.white)).toValue(statusBarColor);
+        arrowToolbarEvaluator = AnimationUtil.INSTANCE.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.color_primary)).toValue(ContextCompat.getColor(context, R.color.white));
 
         if (mViewGroup instanceof ScrollView) {
             mViewGroup.setVerticalFadingEdgeEnabled(false);
