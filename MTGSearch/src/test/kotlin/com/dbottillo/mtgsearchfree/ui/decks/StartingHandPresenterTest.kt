@@ -5,6 +5,8 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DECK_KEY
+import com.dbottillo.mtgsearchfree.ui.decks.startingHand.*
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
@@ -107,8 +109,8 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should restore bundle if contains cards`() {
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image11", gathererImage = "image12", name =  "name1")))
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image21", gathererImage = "image22", name =  "name2")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image11", gathererImage = "image12", name = "name1")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image21", gathererImage = "image22", name = "name2")))
 
         underTest.loadDeck(bundle)
 

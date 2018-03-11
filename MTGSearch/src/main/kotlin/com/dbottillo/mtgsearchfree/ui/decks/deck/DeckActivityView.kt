@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.deck
 
 import com.dbottillo.mtgsearchfree.model.Deck
 

@@ -1,6 +1,7 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.startingHand
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
 import android.os.Parcelable
@@ -10,12 +11,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.parcel.Parcelize
 import javax.inject.Inject
-import kotlin.math.min
 
 class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
@@ -27,9 +26,13 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
     private val numberOfColumns: Int by lazy { resources.getInteger(R.integer.starting_hand_grid_column_count) }
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        app.uiGraph.inject(this)
         presenter.init(this, arguments)
     }
 
@@ -100,72 +103,6 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
 const val BUNDLE_KEY_SHOWN = "BUNDLE_KEY_SHOWN"
 const val BUNDLE_KEY_LEFT = "BUNDLE_KEY_LEFT"
-
-class StartingHandPresenter @Inject constructor(private val interactor: DecksInteractor) {
-
-    lateinit var view: StartingHandView
-    lateinit var deck: Deck
-    lateinit var cards: MutableList<StartingHandCard>
-
-    fun init(view: StartingHandView, arguments: Bundle?) {
-        this.view = view
-        deck = arguments?.get(DECK_KEY) as Deck
-    }
-
-    fun loadDeck(bundle: Bundle?) {
-        bundle?.let {
-            val array = bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)
-            val shown = bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)
-            if (shown.isNotEmpty() && array.isNotEmpty()) {
-                view.showOpeningHands(shown)
-                cards = array
-            } else {
-                loadDeck()
-            }
-        } ?: loadDeck()
-    }
-
-    private fun loadDeck() {
-        interactor.loadDeck(deck).subscribe({
-            cards = mutableListOf()
-            it.allCards()
-                    .filter { !it.isSideboard }
-                    .forEach { card ->
-                        (1..card.quantity).forEach {
-                            cards.add(StartingHandCard(card.mtgCardsInfoImage, card.gathererImage, card.name))
-                        }
-                    }
-            cards.shuffle()
-            newStartingHand()
-        })
-    }
-
-    fun repeat() {
-        view.clear()
-        loadDeck()
-    }
-
-    fun next() {
-        if (cards.isNotEmpty()) {
-            view.newCard(cards.removeAt(0))
-        }
-    }
-
-    private fun newStartingHand() {
-        val initial: MutableList<StartingHandCard> = mutableListOf()
-        (1..min(7, cards.size)).forEach {
-            initial.add(cards.removeAt(0))
-        }
-        view.showOpeningHands(initial)
-    }
-
-}
-
-interface StartingHandView {
-    fun showOpeningHands(cards: MutableList<StartingHandCard>)
-    fun newCard(cards: StartingHandCard)
-    fun clear()
-}
 
 @SuppressLint("ParcelCreator")
 @Parcelize

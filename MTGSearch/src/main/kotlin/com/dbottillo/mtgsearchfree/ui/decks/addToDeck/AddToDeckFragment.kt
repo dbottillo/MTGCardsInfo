@@ -1,6 +1,7 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.addToDeck
 
 import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TextInputLayout
 import android.support.v4.app.DialogFragment
@@ -18,6 +19,9 @@ import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
+import dagger.android.support.AndroidSupportInjection
+
+
 
 class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
@@ -37,6 +41,11 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
     @Inject
     lateinit var presenter: AddToDeckPresenter
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_add_to_deck, container, false)
@@ -59,7 +68,6 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
         setupQuantitySpinner()
 
-        app.uiGraph.inject(this)
         presenter.init(this, arguments)
     }
 

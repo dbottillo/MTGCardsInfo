@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,14 +16,14 @@ import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
+import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
@@ -34,10 +35,13 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_saved, container, false)
-        app.uiGraph.inject(this)
-        return rootView
+        return inflater.inflate(R.layout.fragment_saved, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

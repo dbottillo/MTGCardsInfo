@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.addToDeck
 
 import android.os.Bundle
 import com.dbottillo.mtgsearchfree.model.Deck

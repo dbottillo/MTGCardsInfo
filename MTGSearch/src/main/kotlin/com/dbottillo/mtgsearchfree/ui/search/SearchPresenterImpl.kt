@@ -16,6 +16,7 @@ class SearchPresenterImpl(val setsInteractor: SetsInteractor,
 
     override fun init(view: SearchActivityView) {
         this.view = view
+        logger.d("created")
         if (generalData.isCardsShowTypeGrid) {
             view.showCardsGrid()
         } else {
