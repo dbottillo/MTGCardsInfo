@@ -94,7 +94,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         return resources.getString(R.string.action_life_counter)
     }
 
-    override fun showError(message: String?) {
+    override fun showError(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
@@ -105,8 +105,8 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         adapter.notifyDataSetChanged()
     }
 
-    override fun showError(exception: MTGException?) {
-        Toast.makeText(activity, exception?.localizedMessage, Toast.LENGTH_SHORT).show()
+    override fun showError(exception: MTGException) {
+        Toast.makeText(activity, exception.localizedMessage, Toast.LENGTH_SHORT).show()
     }
 
     override fun onLifeCountChange(player: Player, value: Int) {

@@ -118,7 +118,7 @@ class HomeActivity : BasicActivity() {
     }
 
     fun recreateDb() {
-        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
                 CreateDBAsyncTask(applicationContext, application.packageName).execute()
             }
@@ -130,9 +130,9 @@ class HomeActivity : BasicActivity() {
     }
 
     fun copyDBToSdCard() {
-        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
-                val file = FileUtil.copyDbToSdCard(applicationContext, CardsInfoDbHelper.DATABASE_NAME)
+                val file = applicationContext.copyDbToSdCard(CardsInfoDbHelper.DATABASE_NAME)
                 if (file != null) {
                     val snackbar = Snackbar
                             .make(fragmentContainer, getString(R.string.db_exported), Snackbar.LENGTH_LONG)

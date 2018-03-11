@@ -45,7 +45,7 @@ constructor(val storage: DecksStorage,
     }
 
     override fun addDeck(name: String): Observable<List<Deck>> {
-        logger.d("create deck with name: " + name)
+        logger.d("create deck with name: $name")
         return Observable.fromCallable { storage.addDeck(name) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
@@ -107,7 +107,7 @@ constructor(val storage: DecksStorage,
     override fun exportDeck(deck: Deck): Completable {
         return Completable.fromCallable {
             val cards = storage.loadDeck(deck).allCards()
-            val exported = fileUtil.downloadDeckToSdCard(deck, CardsCollection(cards, null, true))
+            val exported = fileUtil.downloadDeckToSdCard(deck, cards)
             if (exported){
                 Completable.complete()
             } else {

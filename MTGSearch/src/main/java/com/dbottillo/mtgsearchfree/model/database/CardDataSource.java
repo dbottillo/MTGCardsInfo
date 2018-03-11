@@ -277,7 +277,7 @@ public final class CardDataSource {
                     rules.put(rulJ);
                 } catch (JSONException e) {
                     Crashlytics.logException(e);
-                    LOG.e(e);
+                    LOG.INSTANCE.e(e);
                 }
             }
             values.put(COLUMNS.RULINGS.getName(), rules.toString());
@@ -305,7 +305,7 @@ public final class CardDataSource {
                     legalitiesJ.put(legJ);
                 } catch (JSONException e) {
                     Crashlytics.logException(e);
-                    LOG.e(e);
+                    LOG.INSTANCE.e(e);
                 }
             }
             values.put(COLUMNS.LEGALITIES.getName(), legalitiesJ.toString());
@@ -404,7 +404,7 @@ public final class CardDataSource {
                 }
             } catch (JSONException e) {
                 Crashlytics.logException(e);
-                LOG.e(e);
+                LOG.INSTANCE.e(e);
             }
         }
 
@@ -490,7 +490,7 @@ public final class CardDataSource {
                     }
                 } catch (JSONException e2) {
                     Crashlytics.logException(e2);
-                    LOG.e(e2);
+                    LOG.INSTANCE.e(e2);
                 }
 
             }

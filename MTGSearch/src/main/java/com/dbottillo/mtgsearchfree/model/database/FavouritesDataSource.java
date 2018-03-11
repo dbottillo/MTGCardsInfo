@@ -30,7 +30,7 @@ public class FavouritesDataSource {
 
 
     public long saveFavourites(MTGCard card) {
-        LOG.d("saving " + card.toString() + " as favourite");
+        LOG.INSTANCE.d("saving " + card.toString() + " as favourite");
         Cursor current = database.rawQuery("select * from MTGCard where multiVerseId=?", new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() == 0) {
             // need to add the card
@@ -43,10 +43,10 @@ public class FavouritesDataSource {
     }
 
     public List<MTGCard> getCards(boolean fullCard) {
-        LOG.d("get cards, flag full: " + fullCard);
+        LOG.INSTANCE.d("get cards, flag full: " + fullCard);
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "select P.* from MTGCard P inner join Favourites H on (H._id = P.multiVerseId)";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -61,10 +61,10 @@ public class FavouritesDataSource {
     }
 
     public void removeFavourites(MTGCard card) {
-        LOG.d("remove card  " + card.toString() + " from favourites");
+        LOG.INSTANCE.d("remove card  " + card.toString() + " from favourites");
         String[] args = new String[]{card.getMultiVerseId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
@@ -72,7 +72,7 @@ public class FavouritesDataSource {
 
     public void clear() {
         String query = "DELETE FROM " + TABLE;
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         cursor.close();

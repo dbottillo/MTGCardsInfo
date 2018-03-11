@@ -62,9 +62,9 @@ public class MTGCardDataSource {
     }
 
     public List<MTGCard> getSet(MTGSet set) {
-        LOG.d("get set  " + set.toString());
+        LOG.INSTANCE.d("get set  " + set.toString());
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.getName() + " = '" + set.getCode() + "';";
-        LOG.query(query, set.getCode());
+        LOG.INSTANCE.query(query, set.getCode());
 
         ArrayList<MTGCard> cards = new ArrayList<>();
         Cursor cursor = database.rawQuery(query, null);
@@ -81,7 +81,7 @@ public class MTGCardDataSource {
     }
 
     public List<MTGCard> searchCards(SearchParams searchParams) {
-        LOG.d("search cards  " + searchParams.toString());
+        LOG.INSTANCE.d("search cards  " + searchParams.toString());
         QueryComposer queryComposer = new QueryComposer("SELECT * FROM " + CardDataSource.TABLE);
         queryComposer.addLikeParam(CardDataSource.COLUMNS.NAME.getName(), searchParams.getName().trim().toLowerCase(Locale.getDefault()));
         if (searchParams.getTypes().length() > 0) {
@@ -151,7 +151,7 @@ public class MTGCardDataSource {
 
         QueryComposer.Output output = queryComposer.build();
         String[] sel = Arrays.copyOf(output.getSelection().toArray(), output.getSelection().size(), String[].class);
-        LOG.query(output.getQuery(), sel);
+        LOG.INSTANCE.query(output.getQuery(), sel);
 
         Cursor cursor = database.rawQuery(output.getQuery(), sel);
 
@@ -169,9 +169,9 @@ public class MTGCardDataSource {
 
 
     public List<MTGCard> getRandomCard(int number) {
-        LOG.d("get random card  " + number);
+        LOG.INSTANCE.d("get random card  " + number);
         String query = "SELECT * FROM " + CardDataSource.TABLE + " ORDER BY RANDOM() LIMIT " + number;
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         ArrayList<MTGCard> cards = new ArrayList<>(number);
         Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
@@ -185,11 +185,11 @@ public class MTGCardDataSource {
     }
 
     public MTGCard searchCard(String name) {
-        LOG.d("search card <" + name + ">");
+        LOG.INSTANCE.d("search card <" + name + ">");
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
                 + CardDataSource.COLUMNS.NAME.getName() + "=?";
         String[] selection = new String[]{name};
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;
         if (cursor.moveToFirst()) {
@@ -200,11 +200,11 @@ public class MTGCardDataSource {
     }
 
     public MTGCard searchCard(int multiverseid) {
-        LOG.d("search card <" + multiverseid + ">");
+        LOG.INSTANCE.d("search card <" + multiverseid + ">");
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE "
                 + CardDataSource.COLUMNS.MULTIVERSE_ID.getName() + "=?";
         String[] selection = new String[]{String.valueOf(multiverseid)};
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;
         if (cursor.moveToFirst()) {
@@ -215,10 +215,10 @@ public class MTGCardDataSource {
     }
 
     public MTGCard searchCardById(int id) {
-        LOG.d("search card <" + id + ">");
+        LOG.INSTANCE.d("search card <" + id + ">");
         String query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + "_id=?";
         String[] selection = new String[]{String.valueOf(id)};
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, selection);
         MTGCard card = null;
         if (cursor.moveToFirst()) {
