@@ -72,7 +72,7 @@ public class SetDataSource {
                 cursor.moveToNext();
             }
         }
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         cursor.close();
         return sets;
     }
@@ -83,7 +83,7 @@ public class SetDataSource {
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
-        LOG.query(query, args);
+        LOG.INSTANCE.query(query, args);
     }
 
     public MTGSet fromCursor(Cursor cursor) {

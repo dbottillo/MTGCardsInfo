@@ -11,6 +11,7 @@ import com.dbottillo.mtgsearchfree.model.database.CreateDatabaseHelper
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -84,7 +85,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 errorMessage = e.localizedMessage
             }
 
-            FileUtil.copyDbToSdCard(context.get(), "MTGCardsInfo.db")
+            context.get()?.copyDbToSdCard("MTGCardsInfo.db")
         }
 
         return result

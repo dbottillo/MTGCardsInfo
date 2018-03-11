@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.dbottillo.mtgsearchfree.util.downloadDeckToSdCard
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -107,7 +108,7 @@ constructor(val storage: DecksStorage,
     override fun exportDeck(deck: Deck): Completable {
         return Completable.fromCallable {
             val cards = storage.loadDeck(deck).allCards()
-            val exported = fileUtil.downloadDeckToSdCard(deck, CardsCollection(cards, null, true))
+            val exported = deck.downloadDeckToSdCard(CardsCollection(cards, null, true))
             if (exported){
                 Completable.complete()
             } else {

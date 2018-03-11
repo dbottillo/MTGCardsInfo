@@ -18,10 +18,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
 import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
-import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.*
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -130,7 +127,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
 
     internal fun importDeck() {
         LOG.d()
-        dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this)
+        dbActivity.requestPermission(PermissionAvailable.ReadStorage, this)
     }
 
     override fun showError(message: String?) {
