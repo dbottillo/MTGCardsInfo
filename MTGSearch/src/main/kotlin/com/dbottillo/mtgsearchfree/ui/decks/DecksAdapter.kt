@@ -14,13 +14,7 @@ class DecksAdapter(val decks: List<Deck>,
                    val delete:(deck: Deck) -> Unit,
                    val selected:(deck: Deck) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    companion object {
-        private val TYPE_HEADER: Int = 0
-        private val TYPE_DECK: Int = 1
-        private val TYPE_FOOTER: Int = 2
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == TYPE_HEADER) {
             return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.decks_header, parent, false))
         }
@@ -79,3 +73,7 @@ class DecksAdapter(val decks: List<Deck>,
     }
 
 }
+
+const val TYPE_HEADER: Int = 0
+const val TYPE_DECK: Int = 1
+const val TYPE_FOOTER: Int = 2

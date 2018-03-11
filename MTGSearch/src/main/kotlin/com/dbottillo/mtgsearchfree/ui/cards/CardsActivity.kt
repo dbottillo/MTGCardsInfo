@@ -9,18 +9,19 @@ import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.show
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, CardsActivityView {
@@ -35,6 +36,9 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     @Inject
     lateinit var cardsPresenter: CardsActivityPresenter
 
+    @Inject
+    lateinit var cardPresenter: CardPresenter
+
     public override val currentCard: MTGCard?
         get() {
             LOG.d()
@@ -42,6 +46,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         }
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
         setContentView(R.layout.activity_cards)
 
@@ -50,8 +55,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
             currentCard?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it)) }
         }
         setupView()
-
-        mtgApp.uiGraph.inject(this)
 
         cardsPresenter.init(this, intent)
     }
@@ -91,7 +94,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
 
     override fun updateAdapter(cards: CardsCollection, showImage: Boolean, startPosition: Int) {
         LOG.d()
-        adapter = CardsPagerAdapter(this, showImage, cards)
+        adapter = CardsPagerAdapter(context = this, showImage = showImage, cards = cards, cardPresenter = cardPresenter)
         viewPager.adapter = adapter
         viewPager.currentItem = startPosition
         syncMenu()

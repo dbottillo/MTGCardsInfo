@@ -12,11 +12,13 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.goToParentActivity
 import com.dbottillo.mtgsearchfree.util.prefetchImage
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
@@ -24,10 +26,14 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     @Inject
     lateinit var presenter: CardsLuckyPresenter
 
+    @Inject
+    lateinit var cardsPresenter: CardPresenter
+
     private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view)}
     private val titleCard  by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card)}
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
         setContentView(R.layout.activity_lucky_card)
 
@@ -42,8 +48,8 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-        mtgApp.uiGraph.inject(this)
         presenter.init(this, bundle, intent)
+        cardView.init(cardsPresenter)
         cardView.setOnClickListener { presenter.showNextCard() }
     }
 

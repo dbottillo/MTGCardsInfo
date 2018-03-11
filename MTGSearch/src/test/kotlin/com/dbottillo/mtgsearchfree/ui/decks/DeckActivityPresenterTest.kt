@@ -4,6 +4,8 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityPresenter
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityView
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Completable

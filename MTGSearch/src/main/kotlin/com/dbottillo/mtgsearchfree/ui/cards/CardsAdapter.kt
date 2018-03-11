@@ -126,10 +126,6 @@ class CardsAdapter(var cards: List<MTGCard>,
         }
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView?) {
-        super.onAttachedToRecyclerView(recyclerView)
-    }
-
     internal inner class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: AppCompatTextView = itemView.findViewById(R.id.title)
         var subTitle: TextView = itemView.findViewById(R.id.sub_title)

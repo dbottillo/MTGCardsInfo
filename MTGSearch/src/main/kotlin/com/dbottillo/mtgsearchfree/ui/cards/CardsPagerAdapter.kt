@@ -7,11 +7,13 @@ import android.view.ViewGroup
 
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 
 class CardsPagerAdapter(private val context: Context,
                         private val showImage: Boolean,
-                        private val cards: CardsCollection) : PagerAdapter() {
+                        private val cards: CardsCollection,
+                        private val cardPresenter: CardPresenter) : PagerAdapter() {
 
     override fun getCount(): Int {
         return cards.list.size
@@ -23,6 +25,7 @@ class CardsPagerAdapter(private val context: Context,
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = MTGCardView(context)
+        view.init(cardPresenter)
         view.load(cards.list[position], showImage)
         container.addView(view)
         return view

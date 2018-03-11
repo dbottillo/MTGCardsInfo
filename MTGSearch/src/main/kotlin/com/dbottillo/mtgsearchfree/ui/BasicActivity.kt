@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui
 
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -36,8 +35,6 @@ abstract class BasicActivity : AppCompatActivity() {
     public override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         LOG.d("============================================")
-
-        mtgApp.uiGraph.inject(this)
 
         isPortrait = resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
