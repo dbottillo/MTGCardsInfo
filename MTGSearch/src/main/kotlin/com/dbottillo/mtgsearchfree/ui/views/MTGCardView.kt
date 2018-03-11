@@ -42,7 +42,6 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     var card: MTGCard? = null
     internal var price: TCGPrice? = null
 
-    @Inject
     lateinit var cardPresenter: CardPresenter
 
     @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
@@ -78,8 +77,10 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         cardImage.calculateSizeCardImage(widthAvailable, resources.getBoolean(R.bool.isTablet))
         priceOnTcg.setBoldAndItalic("TCG")
 
-        (context as BasicActivity).mtgApp.uiGraph.inject(this)
+    }
 
+    fun init(cardPresenter: CardPresenter){
+        this.cardPresenter = cardPresenter
         cardPresenter.init(this)
     }
 

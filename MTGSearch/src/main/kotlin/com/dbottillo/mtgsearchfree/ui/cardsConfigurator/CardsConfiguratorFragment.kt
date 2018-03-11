@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.views.FilterPickerView
+import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 class CardsConfiguratorFragment(val showFilter: Boolean = true,
@@ -26,9 +27,9 @@ class CardsConfiguratorFragment(val showFilter: Boolean = true,
 
     lateinit var listener: CardsConfiguratorListener
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
         super.onAttach(context)
-        (context as BasicActivity).mtgApp.uiGraph.inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

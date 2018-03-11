@@ -11,6 +11,8 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.dpToPx
+import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
 import javax.inject.Inject
 
 class SetPickerActivity : BasicActivity(), SetPickerView {
@@ -29,8 +31,8 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
     lateinit var presenter: SetPickerPresenter
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
-        mtgApp.uiGraph.inject(this)
         setContentView(R.layout.activity_set_picker)
 
         setupToolbar()

@@ -5,6 +5,9 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DECK_KEY
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckPresenter
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckView
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
 import org.junit.Before

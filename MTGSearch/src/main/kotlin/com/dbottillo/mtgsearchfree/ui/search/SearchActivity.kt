@@ -6,7 +6,6 @@ import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
-import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
@@ -22,13 +21,13 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.DialogHelper
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.ui.decks.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.util.*
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView, OnCardListener {
@@ -49,6 +48,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     lateinit var presenter: SearchPresenter
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
         setContentView(R.layout.activity_search)
 
@@ -100,8 +100,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             newSearch.elevation = 6.0f // TODO: pre-lollipop version
         }
-
-        mtgApp.uiGraph.inject(this)
 
         if (bundle != null) {
             val searchParams = bundle.getParcelable<SearchParams>(SEARCH_PARAMS)

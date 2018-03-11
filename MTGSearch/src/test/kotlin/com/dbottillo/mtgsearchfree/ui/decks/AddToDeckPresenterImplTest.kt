@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.*
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
 import org.junit.Before

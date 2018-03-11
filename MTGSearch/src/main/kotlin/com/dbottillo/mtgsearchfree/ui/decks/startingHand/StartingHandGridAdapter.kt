@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.startingHand
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.cards.GridCardViewHolder
 import com.dbottillo.mtgsearchfree.ui.cards.ITEM_VIEW_TYPE_FOOTER
-import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
