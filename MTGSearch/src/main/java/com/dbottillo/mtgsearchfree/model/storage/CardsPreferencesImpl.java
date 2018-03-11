@@ -21,7 +21,7 @@ public class CardsPreferencesImpl implements CardsPreferences{
 
     @Override
     public CardFilter load() {
-        LOG.d();
+        LOG.INSTANCE.d("");
         CardFilter res = new CardFilter();
         res.white = sharedPreferences.getBoolean(CardProperties.COLOR.WHITE.getKey(), true);
         res.blue = sharedPreferences.getBoolean(CardProperties.COLOR.BLUE.getKey(), true);
@@ -45,7 +45,7 @@ public class CardsPreferencesImpl implements CardsPreferences{
 
     @Override
     public void sync(CardFilter filter) {
-        LOG.d();
+        LOG.INSTANCE.d("");
         sharedPreferences.edit()
                 .putBoolean(CardProperties.COLOR.WHITE.getKey(), filter.white)
                 .putBoolean(CardProperties.COLOR.BLUE.getKey(), filter.blue)
