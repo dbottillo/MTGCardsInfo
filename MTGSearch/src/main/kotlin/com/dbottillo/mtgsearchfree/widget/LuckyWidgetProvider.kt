@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.ui.lucky.CARD
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
 
@@ -63,14 +62,12 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
     private fun buildLayout(context: Context, appWidgetId: Int, card: MTGCard): RemoteViews {
         val remoteViews = RemoteViews(context.packageName, R.layout.lucky_widget_layout)
-        card.mtgCardsInfoImage?.let {
-            TrackingManager.trackImage(it)
-            GlideApp
-                    .with(context.applicationContext)
-                    .asBitmap()
-                    .load(it)
-                    .into(AppWidgetTarget(context, R.id.image_card, remoteViews, appWidgetId))
-        }
+        TrackingManager.trackImage(card.mtgCardsInfoImage)
+        GlideApp
+                .with(context.applicationContext)
+                .asBitmap()
+                .load(card.mtgCardsInfoImage)
+                .into(AppWidgetTarget(context, R.id.image_card, remoteViews, appWidgetId))
 
         // refresh
         val refreshIntent = Intent(context, LuckyWidgetProvider::class.java)

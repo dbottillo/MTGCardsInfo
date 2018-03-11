@@ -65,7 +65,8 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                                     val cardJ = cards.getJSONObject(index)
                                     //Log.e("BBM", "cardJ "+cardJ)
 
-                                    val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                                    //val newRowId2 =
+                                    db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
                                     //Log.e("MTG", "row id card"+newRowId2)
                                     //result.add(MTGCard.createCardFromJson(i, cardJ));
                                 }
