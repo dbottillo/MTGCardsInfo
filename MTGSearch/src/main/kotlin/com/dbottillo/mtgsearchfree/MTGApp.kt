@@ -8,25 +8,35 @@ import android.os.Build
 import android.os.Build.VERSION_CODES
 import android.os.StrictMode
 import android.support.annotation.RequiresApi
+import android.support.v4.app.Fragment
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.TaskStackBuilder
 import android.support.v4.content.ContextCompat
 import com.crashlytics.android.Crashlytics
-import com.dbottillo.mtgsearchfree.dagger.*
+import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
+import com.dbottillo.mtgsearchfree.dagger.DataModule
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.ui.HomeActivity
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.squareup.leakcanary.LeakCanary
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
+import dagger.android.support.HasSupportFragmentInjector
 import io.fabric.sdk.android.Fabric
 import javax.inject.Inject
 
-open class MTGApp : Application() {
-
-    lateinit var uiGraph: UiComponent
+open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject
     lateinit var cardsPreferences: CardsPreferences
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+
+    @Inject
+    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onCreate() {
         super.onCreate()
@@ -35,16 +45,7 @@ open class MTGApp : Application() {
         LOG.d("            MTGApp created")
         LOG.d("============================================")
 
-        val graph = DaggerAppComponent.builder()
-                .androidModule(generateAndroidModule())
-                .dataModule(generateDataModule())
-                .build()
-        graph.inject(this)
-
-        uiGraph = DaggerUiComponent.builder()
-                .appComponent(graph)
-                .presentersModule(PresentersModule())
-                .build()
+        initDagger()
 
         if (!isTesting()) {
             if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
@@ -68,7 +69,15 @@ open class MTGApp : Application() {
         }
     }
 
-    protected open fun isTesting(): Boolean{
+    override fun activityInjector(): AndroidInjector<Activity> {
+        return dispatchingAndroidInjector
+    }
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> {
+        return fragmentDispatchingAndroidInjector
+    }
+
+    protected open fun isTesting(): Boolean {
         return false
     }
 
@@ -76,8 +85,11 @@ open class MTGApp : Application() {
         return DataModule()
     }
 
-    private fun generateAndroidModule(): AndroidModule {
-        return AndroidModule(this)
+    private fun initDagger() {
+        DaggerAppComponent.builder()
+                .application(this)
+                .build()
+                .inject(this)
     }
 
     private fun checkReleaseNote() {
@@ -109,12 +121,12 @@ open class MTGApp : Application() {
                 .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.release_note_text)))
                 .setContentIntent(resultPendingIntent).apply {
 
-            if (Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-                setCategory(Notification.CATEGORY_RECOMMENDATION)
-            }
+                    if (Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+                        setCategory(Notification.CATEGORY_RECOMMENDATION)
+                    }
 
-            (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(1, build())
-        }
+                    (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(1, build())
+                }
     }
 
     @RequiresApi(VERSION_CODES.O)
@@ -128,10 +140,8 @@ open class MTGApp : Application() {
         (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
     }
 
-    companion object {
-        val INTENT_RELEASE_NOTE_PUSH = "Release push note"
-        val NOTIFICATION_CHANNEL_ID = "Base Channel"
-        val TELEGRAM_LINK = "https://t.me/joinchat/B5gyzg14cbvCYiW7mtsWhQ"
-    }
-
 }
+
+const val INTENT_RELEASE_NOTE_PUSH = "Release push note"
+const val NOTIFICATION_CHANNEL_ID = "Base Channel"
+const val TELEGRAM_LINK = "https://t.me/joinchat/B5gyzg14cbvCYiW7mtsWhQ"

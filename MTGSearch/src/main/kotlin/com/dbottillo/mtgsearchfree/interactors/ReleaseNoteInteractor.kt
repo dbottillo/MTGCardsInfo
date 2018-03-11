@@ -4,8 +4,9 @@ import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteItem
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
+import javax.inject.Inject
 
-class ReleaseNoteInteractor(val repo: ReleaseNoteStorage,
+class ReleaseNoteInteractor @Inject constructor(val repo: ReleaseNoteStorage,
                             val schedulerProvider: SchedulerProvider,
                             val logger: Logger) {
 

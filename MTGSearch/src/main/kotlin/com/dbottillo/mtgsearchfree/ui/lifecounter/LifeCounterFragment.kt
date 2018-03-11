@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.lifecounter
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -16,6 +17,7 @@ import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import dagger.android.support.AndroidSupportInjection
 import java.util.*
 import javax.inject.Inject
 
@@ -37,9 +39,13 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     internal var diceShowed : Boolean = false
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_life_counter, container, false)
-        app.uiGraph.inject(this)
         dialogUtil.init(context)
         return rootView
     }

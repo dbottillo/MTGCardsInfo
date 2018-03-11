@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.deck
 
 import android.graphics.drawable.GradientDrawable
 import android.support.v7.widget.PopupMenu
@@ -42,7 +42,7 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return cardsMap.map { it.value }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is DeckHeaderViewHolder) {
             holder.bind(sectionsMap.getValue(position))
             return

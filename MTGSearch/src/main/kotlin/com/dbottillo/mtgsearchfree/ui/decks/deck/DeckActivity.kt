@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.decks
+package com.dbottillo.mtgsearchfree.ui.decks.deck
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -18,8 +18,10 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
+import com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.*
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class DeckActivity : BasicActivity(), DeckActivityView {
@@ -34,6 +36,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById<TabLayout>(R.id.deck_cards_tab_layout) }
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
         setContentView(R.layout.activity_deck)
 
@@ -51,7 +54,6 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         tabLayout.setupWithViewPager(viewPager)
 
-        mtgApp.uiGraph.inject(this)
         presenter.init(this, deck)
         presenter.load()
     }
