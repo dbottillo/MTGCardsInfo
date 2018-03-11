@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
 import android.support.annotation.IdRes
+import android.support.v4.app.DialogFragment
 import android.support.v4.app.NavUtils
 import android.support.v4.app.TaskStackBuilder
 import android.support.v4.content.ContextCompat
@@ -136,4 +137,15 @@ fun Activity?.setLightStatusBar() {
 
 fun Activity?.setDarkStatusBar() {
     this?.window?.decorView?.systemUiVisibility = 0
+}
+
+fun AppCompatActivity.showDialog(tag: String, fragment: DialogFragment) {
+    LOG.d()
+    val ft = supportFragmentManager.beginTransaction()
+    val prev = supportFragmentManager.findFragmentByTag(tag)
+    if (prev != null) {
+        ft.remove(prev)
+    }
+    ft.addToBackStack(null)
+    fragment.show(ft, tag)
 }

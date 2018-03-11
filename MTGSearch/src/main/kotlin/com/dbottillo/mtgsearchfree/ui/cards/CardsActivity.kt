@@ -114,8 +114,8 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         cardsPresenter.updateMenu(currentCard)
     }
 
-    override fun showError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    override fun showError(errorMessage: String) {
+        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
     override fun onPageScrollStateChanged(state: Int) {
