@@ -16,7 +16,7 @@ def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-if (keystorePropertiesFile.exists()){
+if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 } else {
     keystoreProperties['RELEASE_KEY_PASSWORD'] = ""
@@ -25,6 +25,10 @@ if (keystorePropertiesFile.exists()){
 
 androidExtensions {
     experimental = true
+}
+
+kapt {
+    useBuildCache = true
 }
 
 android {
