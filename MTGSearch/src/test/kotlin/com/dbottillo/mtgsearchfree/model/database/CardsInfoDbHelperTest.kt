@@ -1,20 +1,36 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.database.sqlite.SQLiteDatabase
-import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
 import com.google.gson.Gson
+import junit.framework.Assert.assertFalse
+import junit.framework.Assert.assertTrue
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import java.util.*
 
-@RunWith(AndroidJUnit4::class)
-class CardsInfoDbHelperTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class CardsInfoDbHelperTest {
+
+    private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+
+    @Before
+    fun setup() {
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+    }
 
     @Test
     fun test_tables_are_created() {
@@ -31,17 +47,17 @@ class CardsInfoDbHelperTest : BaseContextTest() {
     fun test_tables_are_cleared() {
         val db = cardsInfoDbHelper.writableDatabase
         addDummyData(db)
-        assertRowDatabaseNumber(db, CardDataSource.TABLE, 1L)
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE, 1L)
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_JOIN, 1L)
-        assertRowDatabaseNumber(db, PlayerDataSource.TABLE, 1L)
-        assertRowDatabaseNumber(db, FavouritesDataSource.TABLE, 1L)
+        assertTableExist(db, CardDataSource.TABLE)
+        assertTableExist(db, DeckDataSource.TABLE)
+        assertTableExist(db, DeckDataSource.TABLE_JOIN)
+        assertTableExist(db, PlayerDataSource.TABLE)
+        assertTableExist(db, FavouritesDataSource.TABLE)
         cardsInfoDbHelper.clear()
-        assertRowDatabaseNumber(db, CardDataSource.TABLE, 0L)
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE, 0L)
-        assertRowDatabaseNumber(db, DeckDataSource.TABLE_JOIN, 0L)
-        assertRowDatabaseNumber(db, PlayerDataSource.TABLE, 0L)
-        assertRowDatabaseNumber(db, FavouritesDataSource.TABLE, 0L)
+        assertTableDontExist(db, CardDataSource.TABLE)
+        assertTableDontExist(db, DeckDataSource.TABLE)
+        assertTableDontExist(db, DeckDataSource.TABLE_JOIN)
+        assertTableDontExist(db, PlayerDataSource.TABLE)
+        assertTableDontExist(db, FavouritesDataSource.TABLE)
     }
 
     @Test
@@ -246,9 +262,21 @@ class CardsInfoDbHelperTest : BaseContextTest() {
         assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), `is`(true))
     }
 
-    private fun assertRowDatabaseNumber(db: SQLiteDatabase, table: String, howMany: Long) {
-        assertThat(db.compileStatement("select count(*) from $table;").simpleQueryForLong(), `is`(howMany))
+    private fun assertTableExistance(db: SQLiteDatabase, table: String, exist: Boolean) {
+        var isExist = false
+        val cursor = db.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '$table'", null)
+        if (cursor != null) {
+            if (cursor.count > 0) {
+                isExist = true
+            }
+            cursor.close()
+        }
+        assertTrue(isExist == exist)
     }
+
+    private fun assertTableExist(db: SQLiteDatabase, table: String) = assertTableExistance(db, table, true)
+
+    private fun assertTableDontExist(db: SQLiteDatabase, table: String) = assertTableExistance(db, table, false)
 
     private fun readTables(cardsInfoDbHelper: CardsInfoDbHelper): Set<String> {
         return readTables(cardsInfoDbHelper.readableDatabase)
@@ -268,7 +296,7 @@ class CardsInfoDbHelperTest : BaseContextTest() {
 
     private fun addDummyData(db: SQLiteDatabase) {
         val card = MTGCard()
-        card.belongsTo(MTGSet(1, "Zendikar"))
+        card.belongsTo(MTGSet(id = 1, name = "Zendikar", code = "ZDK"))
         val cardDataSource = CardDataSource(db, Gson())
         val mtgCardDataSource = MTGCardDataSource(db, cardDataSource)
         val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource)

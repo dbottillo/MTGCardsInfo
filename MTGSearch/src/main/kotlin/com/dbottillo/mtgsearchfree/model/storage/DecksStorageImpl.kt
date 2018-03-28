@@ -1,20 +1,20 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.net.Uri
-
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CardsBucket
+import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.DeckCollection
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
-
 import javax.inject.Inject
 
-class DecksStorageImpl @Inject
-constructor(private val fileUtil: FileUtil,
-            private val deckDataSource: DeckDataSource,
-            private val logger: Logger) : DecksStorage {
+class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
+                                           private val deckDataSource: DeckDataSource,
+                                           private val logger: Logger) : DecksStorage {
     init {
         logger.d("created")
     }
@@ -25,7 +25,7 @@ constructor(private val fileUtil: FileUtil,
     }
 
     override fun addDeck(name: String): List<Deck> {
-        logger.d("add " + name)
+        logger.d("add $name")
         deckDataSource.addDeck(name)
         return load()
     }
@@ -37,13 +37,13 @@ constructor(private val fileUtil: FileUtil,
     }
 
     override fun deleteDeck(deck: Deck): List<Deck> {
-        logger.d("delete " + deck)
+        logger.d("delete $deck")
         deckDataSource.deleteDeck(deck)
         return load()
     }
 
     override fun loadDeck(deck: Deck): DeckCollection {
-        logger.d("loadDeck " + deck)
+        logger.d("loadDeck $deck")
         val cards = deckDataSource.getCards(deck)
         return DeckCollection().addCards(cards)
     }
@@ -86,10 +86,6 @@ constructor(private val fileUtil: FileUtil,
             bucket = fileUtil.readFileContent(uri)
         } catch (e: Exception) {
             throw MTGException(ExceptionCode.DECK_NOT_IMPORTED, "file not valid")
-        }
-
-        if (bucket == null) {
-            throw MTGException(ExceptionCode.DECK_NOT_IMPORTED, "bucket null")
         }
         deckDataSource.addDeck(bucket)
         return deckDataSource.decks

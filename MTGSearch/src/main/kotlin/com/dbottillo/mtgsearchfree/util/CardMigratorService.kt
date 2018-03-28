@@ -43,7 +43,7 @@ class CardMigratorService : IntentService("CardMigratorService") {
             val card = cards[i]
             var fromMTG = mtgCardDataSource.searchCard(card.multiVerseId)
             if (fromMTG == null) {
-                val searchCards = mtgCardDataSource.searchCards(SearchParams().setName(card.name))
+                val searchCards = mtgCardDataSource.searchCards(SearchParams(name = card.name))
                 if (searchCards != null && searchCards.size > 0) {
                     fromMTG = searchCards[0]
                 }

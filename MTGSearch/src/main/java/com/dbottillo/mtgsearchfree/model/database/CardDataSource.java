@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.VisibleForTesting;
 
 import com.crashlytics.android.Crashlytics;
-import com.dbottillo.mtgsearchfree.model.CardProperties;
 import com.dbottillo.mtgsearchfree.model.Legality;
 import com.dbottillo.mtgsearchfree.model.MTGCard;
+import com.dbottillo.mtgsearchfree.model.MTGCardKt;
 import com.dbottillo.mtgsearchfree.model.MTGSet;
 import com.dbottillo.mtgsearchfree.util.LOG;
 import com.google.gson.Gson;
@@ -227,7 +227,7 @@ public final class CardDataSource {
         if (colors.size() > 0) {
             StringBuilder col = new StringBuilder();
             for (int k = 0; k < colors.size(); k++) {
-                String color = CardProperties.COLOR.getStringFromNumber(colors.get(k));
+                String color = MTGCardKt.toColor(colors.get(k));
                 col.append(color);
                 if (k < colors.size() - 1) {
                     col.append(',');
@@ -334,12 +334,9 @@ public final class CardDataSource {
         card.setCardName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
 
         int setId = cursor.getInt(cursor.getColumnIndex(COLUMNS.SET_ID.getName()));
-        MTGSet set = new MTGSet(setId);
-        set.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.getName())));
+        MTGSet set = new MTGSet(setId, null, cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.getName())));
         if (cursor.getColumnIndex(COLUMNS.SET_CODE.getName()) > -1) {
             set.setCode(cursor.getString(cursor.getColumnIndex(COLUMNS.SET_CODE.getName())));
-        } else {
-            set.setCode(null);
         }
         card.belongsTo(set);
 

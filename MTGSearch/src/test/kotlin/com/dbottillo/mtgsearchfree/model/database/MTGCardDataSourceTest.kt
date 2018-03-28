@@ -1,29 +1,35 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.res.Resources
-import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.model.*
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
-import com.dbottillo.mtgsearchfree.util.FileHelper
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.readSetListJSON
+import com.dbottillo.mtgsearchfree.util.readSingleSetFile
 import com.google.gson.Gson
 import org.hamcrest.Matchers.*
 import org.hamcrest.core.Is.`is`
 import org.hamcrest.core.IsCollectionContaining.hasItem
+import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import java.util.*
 
-@RunWith(AndroidJUnit4::class)
-class MTGCardDataSourceTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class MTGCardDataSourceTest {
 
+    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
+    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
     lateinit var underTest: MTGCardDataSource
     lateinit var kaladesh: MTGSet
 
     @Before
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         val setDataSource = SetDataSource(mtgDatabaseHelper.readableDatabase)
         for (set in setDataSource.sets) {
@@ -35,14 +41,21 @@ class MTGCardDataSourceTest : BaseContextTest() {
         underTest = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
     }
 
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+        cardsInfoDbHelper.close()
+        mtgDatabaseHelper.close()
+    }
+
     @Test
     fun fetchesAllSets() {
-        val setsJ = FileHelper.readSetListJSON(context)
+        val setsJ = readSetListJSON()
         //MTGSet set = setsJ.get(180);
         for (set in setsJ) {
             //LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
-                val cardsJ = FileHelper.readSingleSetFile(set, context)
+                val cardsJ = readSingleSetFile(set)
                 val cards = underTest.getSet(set)
                 /*if (set.getId() == 180){
                     LOG.e("checking set: " + cardsJ.size() + " - " + cards.size());
@@ -208,11 +221,13 @@ class MTGCardDataSourceTest : BaseContextTest() {
                 operator.assertOperator(Integer.parseInt(power))
             }
         }
-        var cards = underTest.searchCards(searchParams.setPower(PTParam("", -1)))
+        searchParams.power = PTParam("", -1)
+        var cards = underTest.searchCards(searchParams)
         for ((_, _, _, _, _, _, _, _, power) in cards) {
             assertThat(power, containsString("*"))
         }
-        cards = underTest.searchCards(searchParams.setPower(PTParam("=", 0)))
+        searchParams.power = PTParam("=", 0)
+        cards = underTest.searchCards(searchParams)
         for (card in cards) {
             assertThat(card.toString(), card.power, anyOf(equalTo("0"), equalTo("+0")))
         }
@@ -231,11 +246,13 @@ class MTGCardDataSourceTest : BaseContextTest() {
                 operator.assertOperator(Integer.parseInt(toughness))
             }
         }
-        var cards = underTest.searchCards(searchParams.setTough(PTParam("", -1)))
+        searchParams.tough = PTParam("", -1)
+        var cards = underTest.searchCards(searchParams)
         for ((_, _, _, _, _, _, _, _, _, toughness) in cards) {
             assertThat(toughness, containsString("*"))
         }
-        cards = underTest.searchCards(searchParams.setTough(PTParam(">=", 2)))
+        searchParams.tough = PTParam(">=", 2)
+        cards = underTest.searchCards(searchParams)
         for ((_, _, _, _, _, _, _, _, _, toughness) in cards) {
             assertTrue(Integer.parseInt(toughness) >= 2)
         }

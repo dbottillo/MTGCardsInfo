@@ -1,23 +1,32 @@
 package com.dbottillo.mtgsearchfree.model.database
 
-import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.After
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 
-@RunWith(AndroidJUnit4::class)
-class PlayerDataSourceTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class PlayerDataSourceTest {
 
-    lateinit var underTest: PlayerDataSource
+    private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    private lateinit var underTest: PlayerDataSource
 
     @Before
     fun setup() {
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         underTest = PlayerDataSource(cardsInfoDbHelper.writableDatabase)
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+        cardsInfoDbHelper.close()
     }
 
     @Test
@@ -37,7 +46,7 @@ class PlayerDataSourceTest : BaseContextTest() {
         cursor.moveToFirst()
         val playerFromDb = underTest.fromCursor(cursor)
         assertNotNull(playerFromDb)
-        assertPlayerSame(playerFromDb, player)
+        assertPlayer(playerFromDb, player)
         cursor.close()
     }
 
@@ -67,7 +76,7 @@ class PlayerDataSourceTest : BaseContextTest() {
         cursor.moveToFirst()
         val playerFromDb = underTest.fromCursor(cursor)
         assertNotNull(playerFromDb)
-        assertPlayerSame(playerFromDb, player2)
+        assertPlayer(playerFromDb, player2)
         cursor.close()
     }
 
@@ -82,21 +91,16 @@ class PlayerDataSourceTest : BaseContextTest() {
         val player = underTest.players
         assertNotNull(player)
         assertThat(player.size, `is`(3))
-        assertPlayerSame(player[0], player1)
-        assertPlayerSame(player[1], player2)
-        assertPlayerSame(player[2], player3)
+        assertPlayer(player[0], player1)
+        assertPlayer(player[1], player2)
+        assertPlayer(player[2], player3)
     }
 
     private fun generatePlayer(id: Int = 10, name: String = "Jayce", life: Int = 15, poison: Int = 2): Player {
-        val player = Player()
-        player.id = id
-        player.name = name
-        player.life = life
-        player.poisonCount = poison
-        return player
+        return Player(id = id, name = name, life = life, poisonCount = poison)
     }
 
-    private fun assertPlayerSame(one: Player, two: Player) {
+    private fun assertPlayer(one: Player, two: Player) {
         assertThat(one.id, `is`(two.id))
         assertThat(one.name, `is`(two.name))
         assertThat(one.life, `is`(two.life))
