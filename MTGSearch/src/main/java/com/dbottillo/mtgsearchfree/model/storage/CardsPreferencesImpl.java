@@ -6,14 +6,28 @@ import android.support.annotation.VisibleForTesting;
 
 import com.dbottillo.mtgsearchfree.BuildConfig;
 import com.dbottillo.mtgsearchfree.model.CardFilter;
-import com.dbottillo.mtgsearchfree.model.CardProperties;
-import com.dbottillo.mtgsearchfree.util.LOG;
 import com.dbottillo.mtgsearchfree.ui.BasicFragment;
+import com.dbottillo.mtgsearchfree.util.LOG;
 
-public class CardsPreferencesImpl implements CardsPreferences{
+public class CardsPreferencesImpl implements CardsPreferences {
 
     private final static String PREFS_NAME = "Filter";
     private SharedPreferences sharedPreferences;
+
+    private final static String WHITE = "White";
+    private final static String BLUE = "Blue";
+    private final static String BLACK = "Black";
+    private final static String RED = "Red";
+    private final static String GREEN = "Green";
+
+    private final static String ARTIFACT = "Artifact";
+    private final static String LAND = "Land";
+    private final static String ELDRAZI = "Eldrazi";
+
+    private final static String COMMON = "Common";
+    private final static String UNCOMMON = "Uncommon";
+    private final static String RARE = "Rare";
+    private final static String MYTHIC = "Mythic Rare";
 
     public CardsPreferencesImpl(Context context) {
         sharedPreferences = context.getSharedPreferences(PREFS_NAME, 0);
@@ -23,22 +37,22 @@ public class CardsPreferencesImpl implements CardsPreferences{
     public CardFilter load() {
         LOG.INSTANCE.d("");
         CardFilter res = new CardFilter();
-        res.white = sharedPreferences.getBoolean(CardProperties.COLOR.WHITE.getKey(), true);
-        res.blue = sharedPreferences.getBoolean(CardProperties.COLOR.BLUE.getKey(), true);
-        res.black = sharedPreferences.getBoolean(CardProperties.COLOR.BLACK.getKey(), true);
-        res.red = sharedPreferences.getBoolean(CardProperties.COLOR.RED.getKey(), true);
-        res.green = sharedPreferences.getBoolean(CardProperties.COLOR.GREEN.getKey(), true);
+        res.setWhite(sharedPreferences.getBoolean(WHITE, true));
+        res.setBlue(sharedPreferences.getBoolean(BLUE, true));
+        res.setBlack(sharedPreferences.getBoolean(BLACK, true));
+        res.setRed(sharedPreferences.getBoolean(RED, true));
+        res.setGreen(sharedPreferences.getBoolean(GREEN, true));
 
-        res.artifact = sharedPreferences.getBoolean(CardProperties.TYPE.ARTIFACT.getKey(), true);
-        res.land = sharedPreferences.getBoolean(CardProperties.TYPE.LAND.getKey(), true);
-        res.eldrazi = sharedPreferences.getBoolean(CardProperties.TYPE.ELDRAZI.getKey(), true);
+        res.setArtifact(sharedPreferences.getBoolean(ARTIFACT, true));
+        res.setLand(sharedPreferences.getBoolean(LAND, true));
+        res.setEldrazi(sharedPreferences.getBoolean(ELDRAZI, true));
 
-        res.common = sharedPreferences.getBoolean(CardProperties.RARITY.COMMON.getKey(), true);
-        res.uncommon = sharedPreferences.getBoolean(CardProperties.RARITY.UNCOMMON.getKey(), true);
-        res.rare = sharedPreferences.getBoolean(CardProperties.RARITY.RARE.getKey(), true);
-        res.mythic = sharedPreferences.getBoolean(CardProperties.RARITY.MYTHIC.getKey(), true);
+        res.setCommon(sharedPreferences.getBoolean(COMMON, true));
+        res.setUncommon(sharedPreferences.getBoolean(UNCOMMON, true));
+        res.setRare(sharedPreferences.getBoolean(RARE, true));
+        res.setMythic(sharedPreferences.getBoolean(MYTHIC, true));
 
-        res.sortWUBGR = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true);
+        res.setSortWUBGR(sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true));
 
         return res;
     }
@@ -47,19 +61,19 @@ public class CardsPreferencesImpl implements CardsPreferences{
     public void sync(CardFilter filter) {
         LOG.INSTANCE.d("");
         sharedPreferences.edit()
-                .putBoolean(CardProperties.COLOR.WHITE.getKey(), filter.white)
-                .putBoolean(CardProperties.COLOR.BLUE.getKey(), filter.blue)
-                .putBoolean(CardProperties.COLOR.BLACK.getKey(), filter.black)
-                .putBoolean(CardProperties.COLOR.RED.getKey(), filter.red)
-                .putBoolean(CardProperties.COLOR.GREEN.getKey(), filter.green)
-                .putBoolean(CardProperties.TYPE.ARTIFACT.getKey(), filter.artifact)
-                .putBoolean(CardProperties.TYPE.LAND.getKey(), filter.land)
-                .putBoolean(CardProperties.TYPE.ELDRAZI.getKey(), filter.eldrazi)
-                .putBoolean(CardProperties.RARITY.COMMON.getKey(), filter.common)
-                .putBoolean(CardProperties.RARITY.UNCOMMON.getKey(), filter.uncommon)
-                .putBoolean(CardProperties.RARITY.RARE.getKey(), filter.rare)
-                .putBoolean(CardProperties.RARITY.MYTHIC.getKey(), filter.mythic)
-                .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.sortWUBGR)
+                .putBoolean(WHITE, filter.getWhite())
+                .putBoolean(BLUE, filter.getBlue())
+                .putBoolean(BLACK, filter.getBlack())
+                .putBoolean(RED, filter.getRed())
+                .putBoolean(GREEN, filter.getGreen())
+                .putBoolean(ARTIFACT, filter.getArtifact())
+                .putBoolean(LAND, filter.getLand())
+                .putBoolean(ELDRAZI, filter.getEldrazi())
+                .putBoolean(COMMON, filter.getCommon())
+                .putBoolean(UNCOMMON, filter.getUncommon())
+                .putBoolean(RARE, filter.getRare())
+                .putBoolean(MYTHIC, filter.getMythic())
+                .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.getSortWUBGR())
                 .apply();
     }
 
@@ -132,7 +146,7 @@ public class CardsPreferencesImpl implements CardsPreferences{
     }
 
     @VisibleForTesting
-    public void clear(){
+    public void clear() {
         sharedPreferences.edit().clear().apply();
     }
 }

@@ -2,9 +2,15 @@ package com.dbottillo.mtgsearchfree.model
 
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.*
+import org.junit.Rule
 import org.junit.Test
+import org.mockito.junit.MockitoJUnit
 
 class PTParamTest {
+
+    @Rule
+    @JvmField
+    var mockitoRule = MockitoJUnit.rule()
 
     @Test
     fun `should create pt param null if value is null`() {

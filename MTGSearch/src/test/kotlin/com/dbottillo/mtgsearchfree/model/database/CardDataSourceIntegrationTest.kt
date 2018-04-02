@@ -1,15 +1,14 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.database.Cursor
-import android.support.test.runner.AndroidJUnit4
-import com.dbottillo.mtgsearchfree.model.CardProperties
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
+import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import org.hamcrest.Matchers.`is`
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -18,10 +17,12 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnit
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import java.util.*
 
-@RunWith(AndroidJUnit4::class)
-class CardDataSourceIntegrationTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class CardDataSourceIntegrationTest {
 
     @Rule @JvmField
     var rule = MockitoJUnit.rule()
@@ -30,12 +31,23 @@ class CardDataSourceIntegrationTest : BaseContextTest() {
     lateinit var cursor: Cursor
 
     lateinit var mtgCardDataSource: MTGCardDataSource
+    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     lateinit var underTest: CardDataSource
 
     @Before
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         underTest = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.writableDatabase, underTest)
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+        cardsInfoDbHelper.close()
+        mtgDatabaseHelper.close()
     }
 
     @Test
@@ -405,12 +417,12 @@ class CardDataSourceIntegrationTest : BaseContextTest() {
 
     private fun joinListOfColors(list: List<Int>, separator: String): String {
         val joined = StringBuilder("")
-        if (list.size == 0) {
+        if (list.isEmpty()) {
             return joined.toString()
         }
         for (i in list.indices) {
             val value = list[i]
-            val color = CardProperties.COLOR.getStringFromNumber(value)
+            val color = value.toColor()
             joined.append(color)
             if (i < list.size - 1) {
                 joined.append(separator)

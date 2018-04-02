@@ -1,54 +1,14 @@
 package com.dbottillo.mtgsearchfree.model
 
-import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.lang.Integer.parseInt
 
-data class CMCParam(val operator: String, val numericValue: Int, val stringValues: List<String>) : Parcelable {
-    constructor(source: Parcel) : this(
-            source.readString(),
-            source.readInt(),
-            source.createStringArrayList()
-    )
+@Parcelize
+data class CMCParam(val operator: String, val numericValue: Int, val stringValues: List<String>) : Parcelable
 
-    override fun describeContents() = 0
-
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(operator)
-        writeInt(numericValue)
-        writeStringList(stringValues)
-    }
-
-    companion object {
-        @JvmField
-        val CREATOR: Parcelable.Creator<CMCParam> = object : Parcelable.Creator<CMCParam> {
-            override fun createFromParcel(source: Parcel): CMCParam = CMCParam(source)
-            override fun newArray(size: Int): Array<CMCParam?> = arrayOfNulls(size)
-        }
-    }
-}
-
-data class PTParam(val operator: String, val value: Int) : Parcelable {
-    constructor(source: Parcel) : this(
-            source.readString(),
-            source.readInt()
-    )
-
-    override fun describeContents() = 0
-
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(operator)
-        writeInt(value)
-    }
-
-    companion object {
-        @JvmField
-        val CREATOR: Parcelable.Creator<PTParam> = object : Parcelable.Creator<PTParam> {
-            override fun createFromParcel(source: Parcel): PTParam = PTParam(source)
-            override fun newArray(size: Int): Array<PTParam?> = arrayOfNulls(size)
-        }
-    }
-}
+@Parcelize
+data class PTParam(val operator: String, val value: Int) : Parcelable
 
 fun cmcParamCreator(operator: String, value: String?): CMCParam? {
     if (value == null || value.isEmpty()) return null

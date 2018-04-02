@@ -13,7 +13,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-class DataModule {
+open class DataModule {
 
     @Provides
     @Singleton
@@ -29,13 +29,13 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun providesGeneralData(sharedPreferences: SharedPreferences, appInfo: AppInfo): GeneralData {
+    open fun providesGeneralData(sharedPreferences: SharedPreferences, appInfo: AppInfo): GeneralData {
         return GeneralPreferences(sharedPreferences, appInfo)
     }
 
     @Provides
     @Singleton
-    fun provideGeneralPreferences(context: Context): CardsPreferences {
+    open fun provideGeneralPreferences(context: Context): CardsPreferences {
         return CardsPreferencesImpl(context)
     }
 

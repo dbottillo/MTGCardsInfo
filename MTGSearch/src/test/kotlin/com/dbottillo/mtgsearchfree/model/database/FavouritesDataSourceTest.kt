@@ -1,23 +1,38 @@
 package com.dbottillo.mtgsearchfree.model.database
 
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
 import com.google.gson.Gson
-import org.hamcrest.Matchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.`is`
+import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 
-class FavouritesDataSourceTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class FavouritesDataSourceTest {
 
     lateinit var mtgCardDataSource: MTGCardDataSource
+    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     lateinit var underTest: FavouritesDataSource
 
     @Before
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
         underTest = FavouritesDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource)
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+        cardsInfoDbHelper.close()
+        mtgDatabaseHelper.close()
     }
 
     @Test

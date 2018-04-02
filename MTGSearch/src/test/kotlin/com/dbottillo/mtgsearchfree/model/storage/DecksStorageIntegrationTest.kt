@@ -3,37 +3,49 @@ package com.dbottillo.mtgsearchfree.model.storage
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.net.Uri
-import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.model.database.*
+import com.dbottillo.mtgsearchfree.util.FileManagerI
+import com.dbottillo.mtgsearchfree.util.FileUtil
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.After
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
 import java.io.FileNotFoundException
 import java.io.InputStream
 
-@RunWith(AndroidJUnit4::class)
-class DecksStorageIntegrationTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class DecksStorageIntegrationTest {
 
+    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     lateinit var storage: DecksStorage
 
     @Before
-    @Throws(FileNotFoundException::class)
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val fileUtil = FileUtil(FileManagerForTest())
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         val mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
         val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
         storage = DecksStorageImpl(fileUtil, deckDataSource, Logger())
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.close()
+        mtgDatabaseHelper.close()
     }
 
     @Test
@@ -176,7 +188,8 @@ class DecksStorageIntegrationTest : BaseContextTest() {
 
         @Throws(FileNotFoundException::class)
         override fun loadUri(uri: Uri): InputStream {
-            return javaClass.classLoader.getResourceAsStream(uri.toString())
+            var inputStream = RuntimeEnvironment.application.classLoader.getResourceAsStream(uri.lastPathSegment)
+            return inputStream
         }
 
         @Throws(Resources.NotFoundException::class)

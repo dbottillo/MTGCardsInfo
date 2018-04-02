@@ -1,7 +1,5 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
-import android.support.test.runner.AndroidJUnit4
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Assert.assertFalse
@@ -9,15 +7,17 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 
-@RunWith(AndroidJUnit4::class)
-class CardsPreferencesImplTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class CardsPreferencesImplTest {
 
     lateinit var underTest: CardsPreferencesImpl
 
     @Before
     fun setup() {
-        underTest = CardsPreferencesImpl(context)
+        underTest = CardsPreferencesImpl(RuntimeEnvironment.application)
         underTest.clear()
     }
 

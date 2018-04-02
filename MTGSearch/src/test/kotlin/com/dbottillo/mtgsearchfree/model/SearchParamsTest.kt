@@ -1,21 +1,17 @@
 package com.dbottillo.mtgsearchfree.model
 
-import android.os.Parcel
-import android.support.test.runner.AndroidJUnit4
-
-import org.junit.Before
-import org.junit.Test
-
-import java.util.Collections
-
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertThat
-import org.junit.Assert.assertTrue
-import org.junit.runner.RunWith
+import org.junit.Assert.*
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
+import org.mockito.junit.MockitoJUnit
 
-@RunWith(AndroidJUnit4::class)
 class SearchParamsTest {
+
+    @Rule
+    @JvmField
+    var mockitoRule = MockitoJUnit.rule()
 
     lateinit var searchParams: SearchParams
 
@@ -39,16 +35,6 @@ class SearchParamsTest {
         searchParams.isRare = false
         searchParams.isMythic = false
         searchParams.setId = 3
-    }
-
-    @Test
-    fun searchParams_ParcelableWriteRead() {
-        val parcel = Parcel.obtain()
-        searchParams.writeToParcel(parcel, searchParams.describeContents())
-        parcel.setDataPosition(0)
-
-        val createdFromParcel = SearchParams.CREATOR.createFromParcel(parcel)
-        assertThat(createdFromParcel, `is`(searchParams))
     }
 
     @Test

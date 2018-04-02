@@ -9,7 +9,6 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.CreateDatabaseHelper
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource
-import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import org.json.JSONArray
@@ -57,9 +56,9 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                                 val jsonCards = JSONObject(jsonSetString)
                                 val cards = jsonCards.getJSONArray("cards")
 
-                                val set = MTGSet(newRowId.toInt())
-                                set.name = setJ.getString("name")
-                                set.code = setJ.getString("code")
+                                val set = MTGSet(newRowId.toInt(),
+                                        setJ.getString("name"),
+                                        setJ.getString("code"))
                                 //for (int k=0; k<1; k++){
 
                                 (0..(cards.length() - 1)).forEach { index ->
@@ -126,21 +125,25 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
     companion object {
 
-        fun setToLoad(context: Context, code: String): Int {
-            var stringToLoad = code.toLowerCase(Locale.getDefault())
-            when {
-                stringToLoad.equals("10e", ignoreCase = true) -> stringToLoad = "e10"
-                stringToLoad.equals("9ed", ignoreCase = true) -> stringToLoad = "ed9"
-                stringToLoad.equals("5dn", ignoreCase = true) -> stringToLoad = "dn5"
-                stringToLoad.equals("8ed", ignoreCase = true) -> stringToLoad = "ed8"
-                stringToLoad.equals("7ed", ignoreCase = true) -> stringToLoad = "ed7"
-                stringToLoad.equals("6ed", ignoreCase = true) -> stringToLoad = "ed6"
-                stringToLoad.equals("5ed", ignoreCase = true) -> stringToLoad = "ed5"
-                stringToLoad.equals("4ed", ignoreCase = true) -> stringToLoad = "ed4"
-                stringToLoad.equals("3ed", ignoreCase = true) -> stringToLoad = "ed3"
-                stringToLoad.equals("2ed", ignoreCase = true) -> stringToLoad = "ed2"
+        fun adjustCode(code: String?): String? {
+            val stringToLoad = code?.toLowerCase(Locale.getDefault())
+            return when {
+                stringToLoad.equals("10e", ignoreCase = true) -> "e10"
+                stringToLoad.equals("9ed", ignoreCase = true) -> "ed9"
+                stringToLoad.equals("5dn", ignoreCase = true) -> "dn5"
+                stringToLoad.equals("8ed", ignoreCase = true) -> "ed8"
+                stringToLoad.equals("7ed", ignoreCase = true) -> "ed7"
+                stringToLoad.equals("6ed", ignoreCase = true) -> "ed6"
+                stringToLoad.equals("5ed", ignoreCase = true) -> "ed5"
+                stringToLoad.equals("4ed", ignoreCase = true) -> "ed4"
+                stringToLoad.equals("3ed", ignoreCase = true) -> "ed3"
+                stringToLoad.equals("2ed", ignoreCase = true) -> "ed2"
+                else -> stringToLoad
             }
-            return context.resources.getIdentifier(stringToLoad + "_x", "raw", context.packageName)
+        }
+
+        fun setToLoad(context: Context, code: String?): Int {
+            return context.resources.getIdentifier(adjustCode(code) + "_x", "raw", context.packageName)
         }
 
         @Throws(JSONException::class)

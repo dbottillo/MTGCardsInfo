@@ -1,27 +1,34 @@
 package com.dbottillo.mtgsearchfree.model.database
 
-import android.support.test.runner.AndroidJUnit4
-import com.dbottillo.mtgsearchfree.debug.test.BuildConfig
+import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
-import com.dbottillo.mtgsearchfree.util.FileHelper
+import com.dbottillo.mtgsearchfree.util.readSetListJSON
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
-import org.json.JSONException
+import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 
-@RunWith(AndroidJUnit4::class)
-class SetDataSourceTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class SetDataSourceTest {
 
-    lateinit var underTest: SetDataSource
+    private lateinit var underTest: SetDataSource
+    private lateinit var mtgDatabaseHelper: MTGDatabaseHelper
 
     @Before
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
         underTest = SetDataSource(mtgDatabaseHelper.writableDatabase)
+    }
+
+    @After
+    fun close_data_helper() {
+        mtgDatabaseHelper.close()
     }
 
     @Test
@@ -33,9 +40,7 @@ class SetDataSourceTest : BaseContextTest() {
 
     @Test
     fun test_set_can_be_saved_in_database() {
-        val set = MTGSet(5000)
-        set.name = "Commander"
-        set.code = "CMX"
+        val set = MTGSet(id = 5000, name = "Commander", code = "CMX")
         val id = underTest.saveSet(set)
         val cursor = mtgDatabaseHelper.readableDatabase.rawQuery("select * from " + SetDataSource.TABLE + " where rowid =?", arrayOf(id.toString() + ""))
         assertNotNull(cursor)
@@ -60,7 +65,7 @@ class SetDataSourceTest : BaseContextTest() {
 
     @Test
     fun test_all_set_are_loaded_correctly() {
-        val fromJson = FileHelper.readSetListJSON(context)
+        val fromJson = readSetListJSON()
         val sets = underTest.sets
         assertNotNull(fromJson)
         assertTrue(fromJson.containsAll(sets))
