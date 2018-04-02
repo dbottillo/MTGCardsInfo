@@ -4,25 +4,12 @@ import android.content.Context
 import android.net.Uri
 import android.os.Environment
 import android.text.TextUtils
-
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardsBucket
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.InputStream
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
-import java.nio.channels.FileChannel
-import java.nio.charset.Charset
-import java.util.ArrayList
-import java.util.Arrays
+import java.io.*
+import java.util.*
 
 class FileUtil(private val fileManager: FileManagerI) {
 
@@ -31,32 +18,27 @@ class FileUtil(private val fileManager: FileManagerI) {
         val `is` = fileManager.loadUri(uri)
         val bucket: CardsBucket
         try {
-            bucket = readFileStream(`is`)
-            if (bucket.key == null) {
-                bucket.key = uri.lastPathSegment
-            }
+            bucket = `is`.readFileStream(uri.lastPathSegment)
         } catch (e: Exception) {
             `is`.close()
             throw e
         }
-
         return bucket
     }
 
-    @Throws(Exception::class)
-    private fun readFileStream(input: InputStream): CardsBucket {
-        val cards = ArrayList<MTGCard>()
-        val bucket = CardsBucket()
-        val br = BufferedReader(InputStreamReader(input, "UTF-8"))
 
+    fun InputStream.readFileStream(deckName: String?): CardsBucket {
+        val cards = ArrayList<MTGCard>()
+        val br = BufferedReader(InputStreamReader(this, "UTF-8"))
+        var name: String? = null
         var side = false
         var numberOfEmptyLines = 0
         var line = br.readLine()
         while (line != null) {
             if (line.startsWith("//")) {
                 // title
-                if (bucket.key == null) {
-                    bucket.key = line.replace("//", "")
+                if (name == null) {
+                    name = line.replace("//", "")
                 }
             } else if (line.isEmpty()) {
                 numberOfEmptyLines++
@@ -76,8 +58,7 @@ class FileUtil(private val fileManager: FileManagerI) {
             line = br.readLine()
         }
         br.close()
-        bucket.cards = cards
-        return bucket
+        return CardsBucket(name ?: deckName ?: "", cards)
     }
 
     private fun generateCard(line: String): MTGCard {

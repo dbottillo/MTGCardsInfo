@@ -10,8 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.util.gone
 
 class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -98,9 +97,9 @@ class DeckCardViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val resources = row.context.resources
         name.text = resources.getString(R.string.row_card_name, card.quantity.toString() + " ", card.name)
         rarity.setTextColor(when (card.rarity.toLowerCase()) {
-            CardFilter.FILTER_COMMON -> R.color.common
-            CardFilter.FILTER_UNCOMMON -> R.color.uncommon
-            CardFilter.FILTER_RARE -> R.color.rare
+            FILTER_COMMON -> R.color.common
+            FILTER_UNCOMMON -> R.color.uncommon
+            FILTER_RARE -> R.color.rare
             else -> R.color.mythic
         })
         rarity.text = if (card.rarity.isNotEmpty()) card.rarity else ""

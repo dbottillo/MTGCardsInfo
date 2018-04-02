@@ -1,30 +1,42 @@
 package com.dbottillo.mtgsearchfree.model.database
 
-import android.support.test.runner.AndroidJUnit4
 import com.dbottillo.mtgsearchfree.model.CardsBucket
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.util.BaseContextTest
 import com.google.gson.Gson
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
+import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import java.util.*
 
-@RunWith(AndroidJUnit4::class)
-class DeckDataSourceTest : BaseContextTest() {
+@RunWith(RobolectricTestRunner::class)
+class DeckDataSourceTest {
 
+    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     lateinit var mtgCardDataSource: MTGCardDataSource
     lateinit var cardDataSource: CardDataSource
     lateinit var underTest: DeckDataSource
 
     @Before
     fun setup() {
+        mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
+        cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
         underTest = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
+    }
+
+    @After
+    fun tearDown() {
+        cardsInfoDbHelper.clear()
+        cardsInfoDbHelper.close()
+        mtgDatabaseHelper.close()
     }
 
     @Test
@@ -222,8 +234,7 @@ class DeckDataSourceTest : BaseContextTest() {
 
     @Test
     fun test_add_deck_with_empty_bucket() {
-        val bucket = CardsBucket()
-        bucket.key = "deck"
+        val bucket = CardsBucket(key = "deck")
         val deckId = underTest.addDeck(bucket)
         assertTrue(deckId > 0)
         val (_, name, _, numberOfCards) = underTest.getDeck(deckId)
@@ -236,8 +247,7 @@ class DeckDataSourceTest : BaseContextTest() {
         val cardNames = arrayOf("Counterspell", "Oath of Jace", "Fireball", "Thunderbolt", "Countersquall")
         val quantities = intArrayOf(2, 3, 4, 1, 3)
         val side = booleanArrayOf(true, true, false, false, true)
-        val bucket = CardsBucket()
-        bucket.key = "deck"
+        val bucket = CardsBucket(key = "deck")
         val namedCards = ArrayList<MTGCard>(cardNames.size)
         for (i in cardNames.indices) {
             val card = MTGCard()
@@ -273,8 +283,7 @@ class DeckDataSourceTest : BaseContextTest() {
     fun test_add_deck_with_ignore_non_card_name() {
         val cardNames = arrayOf("Counterspell", "Eistein")
         val quantities = intArrayOf(2, 3)
-        val bucket = CardsBucket()
-        bucket.key = "deck"
+        val bucket = CardsBucket(key = "deck")
         val namedCards = ArrayList<MTGCard>(cardNames.size)
         for (i in cardNames.indices) {
             val card = MTGCard()

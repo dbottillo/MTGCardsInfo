@@ -8,7 +8,6 @@ apply plugin: 'io.fabric'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
-apply plugin: 'jacoco'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
@@ -97,11 +96,18 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
+        test.resources.srcDirs += ['src/test/resources', 'src/debug/res/raw']
         androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
 
     dexOptions {
         preDexLibraries = false
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -125,10 +131,10 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    compile "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-core:12.0.0'
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
@@ -141,7 +147,8 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.easytesting:fest-assert-core:$fest_version"
-    testCompile "com.nhaarman:mockito-kotlin:1.5.0"
+    testImplementation "org.robolectric:robolectric:$robolectric_version"
+    testImplementation "com.nhaarman:mockito-kotlin:1.5.0"
 
     androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     androidTestImplementation "com.android.support.test:runner:$support_runner_version"
@@ -203,29 +210,11 @@ quality.dependsOn 'checkstyle', 'pmd'
 //quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease
-testPreRelease.dependsOn 'testReleaseUnitTest', 'connectedAndroidTest'
+//testPreRelease.dependsOn 'testReleaseUnitTest', 'connectedAndroidTest'
+testPreRelease.dependsOn 'testReleaseUnitTest'
 
 task release
 release.dependsOn 'assembleRelease', 'quality', 'testPreRelease'
-
-task devTestAndCoverage(type: JacocoReport) {
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-
-    jacocoClasspath = configurations['androidJacocoAnt']
-
-    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
-    def mainSrc = "${project.projectDir}/src/main/java"
-
-    sourceDirectories = files([mainSrc])
-    classDirectories = files([debugTree])
-    executionData = files(["${buildDir}/jacoco/testDevDebugUnitTest.exec",
-                           "${buildDir}/outputs/code-coverage/connected/coverage.ec"])
-}
-devTestAndCoverage.dependsOn 'createDevDebugCoverageReport', 'testDebugUnitTest'
 
 task devTest
 devTest.dependsOn 'testDebugUnitTest', 'connectedAndroidTest'

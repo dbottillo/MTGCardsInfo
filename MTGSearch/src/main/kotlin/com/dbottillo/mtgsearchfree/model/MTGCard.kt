@@ -55,7 +55,7 @@ data class MTGCard(var id: Int = 0,
     }
 
     fun addColor(color: String) {
-        colors.add(CardProperties.COLOR.getNumberFromString(color))
+        colors.add(color.toColorInt())
     }
 
     val isEldrazi: Boolean
@@ -78,16 +78,16 @@ data class MTGCard(var id: Int = 0,
     }
 
     val isCommon: Boolean
-        get() = rarity.equals(CardFilter.FILTER_COMMON, ignoreCase = true)
+        get() = rarity.equals(FILTER_COMMON, ignoreCase = true)
 
     val isUncommon: Boolean
-        get() = rarity.equals(CardFilter.FILTER_UNCOMMON, ignoreCase = true)
+        get() = rarity.equals(FILTER_UNCOMMON, ignoreCase = true)
 
     val isRare: Boolean
-        get() = rarity.equals(CardFilter.FILTER_RARE, ignoreCase = true)
+        get() = rarity.equals(FILTER_RARE, ignoreCase = true)
 
     val isMythicRare: Boolean
-        get() = rarity.equals(CardFilter.FILTER_MYHTIC, ignoreCase = true)
+        get() = rarity.equals(FILTER_MYHTIC, ignoreCase = true)
 
     val mtgCardsInfoImage
         get() = "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
@@ -146,7 +146,8 @@ data class MTGCard(var id: Int = 0,
         get() =
             when {
                 isMultiColor -> -1
-                colorsIdentity?.isNotEmpty() ?: false -> colorsIdentity!![0].toColorInt()
+                colorsIdentity?.isNotEmpty()
+                        ?: false -> colorsIdentity!![0].fromIdentityColorToInt()
                 colors.isNotEmpty() -> colors[0]
                 else -> -1
             }
@@ -155,11 +156,11 @@ data class MTGCard(var id: Int = 0,
         return ContextCompat.getColor(context,
                 when {
                     isMultiColor -> R.color.mtg_multi
-                    colors.contains(CardProperties.COLOR.WHITE.value) -> R.color.mtg_white
-                    colors.contains(CardProperties.COLOR.BLUE.value) -> R.color.mtg_blue
-                    colors.contains(CardProperties.COLOR.BLACK.value) -> R.color.mtg_black
-                    colors.contains(CardProperties.COLOR.RED.value) -> R.color.mtg_red
-                    colors.contains(CardProperties.COLOR.GREEN.value) -> R.color.mtg_green
+                    colors.contains(0) -> R.color.mtg_white
+                    colors.contains(1) -> R.color.mtg_blue
+                    colors.contains(2) -> R.color.mtg_black
+                    colors.contains(3) -> R.color.mtg_red
+                    colors.contains(4) -> R.color.mtg_green
                     else -> R.color.mtg_other
                 })
     }
@@ -235,13 +236,35 @@ data class MTGCard(var id: Int = 0,
 
 class Legality(val format: String, val legality: String)
 
-fun String.toColorInt(): Int {
+fun String.fromIdentityColorToInt(): Int {
     return when (this) {
         "W" -> 0
         "U" -> 1
         "B" -> 2
         "R" -> 3
         "G" -> 4
-        else -> 1
+        else -> -1
+    }
+}
+
+fun String.toColorInt(): Int {
+    return when (this) {
+        "White" -> 0
+        "Blue" -> 1
+        "Black" -> 2
+        "Red" -> 3
+        "Green" -> 4
+        else -> -1
+    }
+}
+
+fun Int.toColor(): String? {
+    return when (this) {
+        0 -> "White"
+        1 -> "Blue"
+        2 -> "Black"
+        3 -> "Red"
+        4 -> "Green"
+        else -> null
     }
 }

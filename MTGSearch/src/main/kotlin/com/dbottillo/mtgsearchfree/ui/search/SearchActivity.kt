@@ -22,6 +22,8 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_FILTER
+import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_ORDER
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
@@ -270,7 +272,11 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     }
 
     override fun onCardsSettingSelected() {
-        val fragment = CardsConfiguratorFragment(false, true)
+        val fragment = CardsConfiguratorFragment()
+        fragment.arguments = Bundle().apply {
+            putBoolean(CARDS_CONFIGURATION_SHOW_FILTER, false)
+            putBoolean(CARDS_CONFIGURATION_SHOW_ORDER, true)
+        }
         fragment.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener {
             override fun onConfigurationChange() {
                 presenter.doSearch(searchView.searchParams)

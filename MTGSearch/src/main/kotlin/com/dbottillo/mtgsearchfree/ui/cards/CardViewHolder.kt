@@ -11,8 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.show
@@ -34,9 +33,9 @@ class ListCardViewHolder(row: View) : CardViewHolder(row) {
 
         val rarityColor =
                 when {
-                    card.rarity.equals(CardFilter.FILTER_UNCOMMON, ignoreCase = true) -> R.color.uncommon
-                    card.rarity.equals(CardFilter.FILTER_RARE, ignoreCase = true) -> R.color.rare
-                    card.rarity.equals(CardFilter.FILTER_MYHTIC, ignoreCase = true) -> R.color.mythic
+                    card.rarity.equals(FILTER_UNCOMMON, ignoreCase = true) -> R.color.uncommon
+                    card.rarity.equals(FILTER_RARE, ignoreCase = true) -> R.color.rare
+                    card.rarity.equals(FILTER_MYHTIC, ignoreCase = true) -> R.color.mythic
                     else -> R.color.common
                 }
         rarity.setTextColor(ContextCompat.getColor(context, rarityColor))

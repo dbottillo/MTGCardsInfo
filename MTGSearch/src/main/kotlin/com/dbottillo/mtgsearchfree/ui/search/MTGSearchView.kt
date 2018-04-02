@@ -16,7 +16,7 @@ import com.dbottillo.mtgsearchfree.util.LOG
 class MTGSearchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = -1) : RelativeLayout(context, attrs, defStyleAttr) {
 
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
-    private var sets = mutableListOf(MTGSet(-1, resources.getString(R.string.search_set_all)), MTGSet(-2, resources.getString(R.string.search_set_standard)))
+    private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))
 
     val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_name) }
     val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_types) }
@@ -48,7 +48,6 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
         get() {
             val searchParams = SearchParams()
             searchParams.name = name.text.toString()
-
             searchParams.types = types.text.toString()
             searchParams.text = text.text.toString()
             searchParams.cmc = cmcParamCreator(operators[cmcOp.selectedItemPosition], cmc.text.toString())

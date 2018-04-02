@@ -88,11 +88,11 @@ public class PlayerDataSource {
     }
 
     public Player fromCursor(Cursor cursor) {
-        Player player = new Player();
-        player.setId(cursor.getInt(cursor.getColumnIndex("_id")));
-        player.setLife(cursor.getInt(cursor.getColumnIndex(COLUMNS.LIFE.getName())));
-        player.setPoisonCount(cursor.getInt(cursor.getColumnIndex(COLUMNS.POISON.getName())));
-        player.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
-        return player;
+        return new Player(
+                cursor.getInt(cursor.getColumnIndex("_id")),
+                cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())),
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.LIFE.getName())),
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.POISON.getName())),
+                0);
     }
 }
