@@ -17,20 +17,14 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideSharedPreferences(context: Context): SharedPreferences {
-        return context.getSharedPreferences("General", Context.MODE_PRIVATE)
-    }
-
-    @Provides
-    @Singleton
     fun providesAppInfo(context: Context): AppInfo {
         return AppInfo(context)
     }
 
     @Provides
     @Singleton
-    open fun providesGeneralData(sharedPreferences: SharedPreferences, appInfo: AppInfo): GeneralData {
-        return GeneralPreferences(sharedPreferences, appInfo)
+    open fun providesGeneralData(context: Context, appInfo: AppInfo): GeneralData {
+        return GeneralPreferences(context, appInfo)
     }
 
     @Provides
