@@ -21,9 +21,9 @@ class GeneralPreferencesForTest : GeneralData {
         typeList = false
     }
 
-    override fun isCardsShowTypeGrid(): Boolean {
-        return !typeList
-    }
+
+    override val isCardsShowTypeGrid: Boolean
+        get() = !typeList
 
     override fun setTooltipMainHide() {
 

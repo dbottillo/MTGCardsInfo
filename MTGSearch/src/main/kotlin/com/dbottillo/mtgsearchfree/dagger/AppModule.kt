@@ -16,7 +16,6 @@ import dagger.Provides
 import javax.inject.Named
 import javax.inject.Singleton
 
-//@Module(subcomponents = [BasicActivityComponent::class])
 @Module
 class AppModule {
 
