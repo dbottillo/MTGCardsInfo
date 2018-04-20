@@ -57,8 +57,8 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                                 val cards = jsonCards.getJSONArray("cards")
 
                                 val set = MTGSet(newRowId.toInt(),
-                                        setJ.getString("name"),
-                                        setJ.getString("code"))
+                                        setJ.getString("code"),
+                                        setJ.getString("name"))
                                 //for (int k=0; k<1; k++){
 
                                 (0..(cards.length() - 1)).forEach { index ->
