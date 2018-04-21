@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.model.CardFilter
 
-class CardsConfiguratorPresenterImpl(val cardFilterInteractor: CardFilterInteractor) : CardsConfiguratorPresenter {
+class CardsConfiguratorPresenterImpl(private val cardFilterInteractor: CardFilterInteractor) : CardsConfiguratorPresenter {
 
     lateinit var view: CardsConfiguratorView
 
@@ -14,29 +14,29 @@ class CardsConfiguratorPresenterImpl(val cardFilterInteractor: CardFilterInterac
 
         cardFilterInteractor.load().subscribe({
             filter = it
-            view.loadFilter(it)
+            view.loadFilter(filter = it, refresh = false)
         })
     }
 
     override fun update(type: CardFilter.TYPE, on: Boolean) {
-        filter?.let { 
+        filter?.let { filter ->
             when (type) {
-                CardFilter.TYPE.WHITE -> it.white = on
-                CardFilter.TYPE.BLUE -> it.blue = on
-                CardFilter.TYPE.RED -> it.red = on
-                CardFilter.TYPE.BLACK -> it.black = on
-                CardFilter.TYPE.GREEN -> it.green = on
-                CardFilter.TYPE.LAND -> it.land = on
-                CardFilter.TYPE.ELDRAZI -> it.eldrazi = on
-                CardFilter.TYPE.ARTIFACT -> it.artifact = on
-                CardFilter.TYPE.COMMON -> it.common = on
-                CardFilter.TYPE.UNCOMMON -> it.uncommon = on
-                CardFilter.TYPE.RARE -> it.rare = on
-                CardFilter.TYPE.MYTHIC -> it.mythic = on
-                CardFilter.TYPE.SORT_WUBGR -> it.sortWUBGR = on
+                CardFilter.TYPE.WHITE -> filter.white = on
+                CardFilter.TYPE.BLUE -> filter.blue = on
+                CardFilter.TYPE.RED -> filter.red = on
+                CardFilter.TYPE.BLACK -> filter.black = on
+                CardFilter.TYPE.GREEN -> filter.green = on
+                CardFilter.TYPE.LAND -> filter.land = on
+                CardFilter.TYPE.ELDRAZI -> filter.eldrazi = on
+                CardFilter.TYPE.ARTIFACT -> filter.artifact = on
+                CardFilter.TYPE.COMMON -> filter.common = on
+                CardFilter.TYPE.UNCOMMON -> filter.uncommon = on
+                CardFilter.TYPE.RARE -> filter.rare = on
+                CardFilter.TYPE.MYTHIC -> filter.mythic = on
+                CardFilter.TYPE.SORT_WUBGR -> filter.sortWUBGR = on
             }
-            cardFilterInteractor.sync(it)
-            view.loadFilter(it)
+            cardFilterInteractor.sync(filter)
+            view.loadFilter(filter = filter, refresh = true)
         }
     }
 

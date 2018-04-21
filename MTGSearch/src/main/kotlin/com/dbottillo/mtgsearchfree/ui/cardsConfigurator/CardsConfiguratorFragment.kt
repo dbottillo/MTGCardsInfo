@@ -45,9 +45,9 @@ class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfigurator
         presenter.init(this)
     }
 
-    override fun loadFilter(filter: CardFilter) {
+    override fun loadFilter(filter: CardFilter, refresh: Boolean) {
         filterPickerView.refresh(filter)
-        listener.onConfigurationChange()
+        if (refresh) listener.onConfigurationChange()
     }
 
     override fun filterUpdated(type: CardFilter.TYPE, on: Boolean) {

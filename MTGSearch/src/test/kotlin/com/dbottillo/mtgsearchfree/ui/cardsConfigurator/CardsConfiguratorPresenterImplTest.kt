@@ -2,13 +2,13 @@ package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.nhaarman.mockito_kotlin.argumentCaptor
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import org.junit.Assert.assertTrue
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.verify
@@ -20,18 +20,15 @@ class CardsConfiguratorPresenterImplTest {
     @Rule @JvmField
     var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var cardFilterInteractor: CardFilterInteractor
-    @Mock
-    lateinit var view: CardsConfiguratorView
-    @Mock
-    lateinit var filter: CardFilter
+    @Mock lateinit var cardFilterInteractor: CardFilterInteractor
+    @Mock lateinit var view: CardsConfiguratorView
 
+    private var filter = CardFilter()
     lateinit var underTest: CardsConfiguratorPresenter
 
     @Before
     fun setUp() {
-        Mockito.`when`(cardFilterInteractor.load()).thenReturn(Observable.just(filter))
+        whenever(cardFilterInteractor.load()).thenReturn(Observable.just(filter))
         underTest = CardsConfiguratorPresenterImpl(cardFilterInteractor)
     }
 
@@ -40,23 +37,23 @@ class CardsConfiguratorPresenterImplTest {
         underTest.init(view)
 
         verify(cardFilterInteractor).load()
-        verify(view).loadFilter(filter)
+        verify(view).loadFilter(filter = filter, refresh = false)
         verifyNoMoreInteractions(view, cardFilterInteractor)
     }
 
-    // TODO: find a way to fix this argument captor not working
     @Test
-    @Ignore
     fun `update filter, should call interactor and view with updated filter`() {
         underTest.init(view)
         Mockito.reset(view, cardFilterInteractor)
 
         underTest.update(CardFilter.TYPE.BLUE, true)
 
-        val captor = ArgumentCaptor.forClass(CardFilter::class.java)
-        verify(cardFilterInteractor).sync(captor.capture())
-        assertTrue(captor.value.blue)
-        verify(view).loadFilter(captor.value)
+        argumentCaptor<CardFilter>().apply {
+            verify(cardFilterInteractor).sync(capture())
+            assertTrue(firstValue.blue)
+            verify(view).loadFilter(filter = firstValue, refresh = true)
+        }
+
         verifyNoMoreInteractions(view, cardFilterInteractor)
     }
 
