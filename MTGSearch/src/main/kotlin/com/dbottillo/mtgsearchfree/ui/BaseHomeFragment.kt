@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.util.FileUtil
+import com.dbottillo.mtgsearchfree.util.copyDbFromSdCard
 import javax.inject.Inject
 
 abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListener {
@@ -74,7 +75,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             R.id.action_crash -> throw RuntimeException("This is a crash")
             R.id.action_send_db -> (activity as HomeActivity).copyDBToSdCard()
             R.id.action_copy_db -> {
-                val copied = FileUtil.copyDbFromSdCard(app.applicationContext, CardsInfoDbHelper.DATABASE_NAME)
+                val copied = app.applicationContext.copyDbFromSdCard(CardsInfoDbHelper.DATABASE_NAME)
                 Toast.makeText(app.applicationContext, if (copied) "database copied" else "database not copied", Toast.LENGTH_LONG).show()
             }
         }

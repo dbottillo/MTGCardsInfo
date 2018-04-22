@@ -28,7 +28,7 @@ class CardsBucketTest {
 
     @Before
     fun setup() {
-        `when`(set.getName()).thenReturn("Zendikar")
+        `when`(set.name).thenReturn("Zendikar")
         cardsSetBucket = CardsBucket(set, setCards)
         genericBucket = CardsBucket("fav", genericCards)
     }
@@ -45,9 +45,9 @@ class CardsBucketTest {
     @Test
     @Throws(Exception::class)
     fun testIsValid() {
-        assertTrue(cardsSetBucket.isValid(set.getName()))
+        assertTrue(cardsSetBucket.isValid(set.name))
         assertFalse(cardsSetBucket.isValid("fav"))
-        assertFalse(genericBucket.isValid(set.getName()))
+        assertFalse(genericBucket.isValid(set.name))
         assertTrue(genericBucket.isValid("fav"))
     }
 
@@ -61,7 +61,7 @@ class CardsBucketTest {
     @Test
     @Throws(Exception::class)
     fun testGetKey() {
-        assertThat(cardsSetBucket.getKey(), `is`(set.getName()))
-        assertThat(genericBucket.getKey(), `is`("fav"))
+        assertThat(cardsSetBucket.key, `is`(set.name))
+        assertThat(genericBucket.key, `is`("fav"))
     }
 }

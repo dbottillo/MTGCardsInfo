@@ -1,10 +1,15 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.*
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.CARDS_SHOW_TYPE
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.CARD_MIGRATION_REQUIRED
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.DEBUG
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.TOOLTIP_MAIN_SHOWN
 import com.dbottillo.mtgsearchfree.util.AppInfo
+import com.nhaarman.mockito_kotlin.whenever
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -30,11 +35,15 @@ class GeneralPreferencesTest {
     lateinit var sharedPreferences: SharedPreferences
 
     @Mock
+    lateinit var appContext: Context
+
+    @Mock
     lateinit var editor: Editor
 
     @Before
     fun setup() {
-        underTest = GeneralPreferences(sharedPreferences, appInfo)
+        whenever(appContext.getSharedPreferences("General", Context.MODE_PRIVATE)).thenReturn(sharedPreferences)
+        underTest = GeneralPreferences(appContext, appInfo)
         `when`(sharedPreferences.edit()).thenReturn(editor)
         `when`(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor)
         `when`(editor.putString(anyString(), anyString())).thenReturn(editor)
@@ -82,7 +91,7 @@ class GeneralPreferencesTest {
         `when`(appInfo.firstInstallTime).thenReturn(200L)
         `when`(appInfo.lastUpdateTime).thenReturn(400L)
 
-        assertTrue(underTest.isTooltipMainToShow)
+        assertTrue(underTest.isTooltipMainToShow())
     }
 
     @Test
@@ -90,7 +99,7 @@ class GeneralPreferencesTest {
         `when`(appInfo.firstInstallTime).thenReturn(200L)
         `when`(appInfo.lastUpdateTime).thenReturn(200L)
 
-        assertFalse(underTest.isTooltipMainToShow)
+        assertFalse(underTest.isTooltipMainToShow())
     }
 
     @Test
@@ -99,7 +108,7 @@ class GeneralPreferencesTest {
         `when`(appInfo.firstInstallTime).thenReturn(200L)
         `when`(appInfo.lastUpdateTime).thenReturn(400L)
 
-        assertFalse(underTest.isTooltipMainToShow)
+        assertFalse(underTest.isTooltipMainToShow())
     }
 
     @Test

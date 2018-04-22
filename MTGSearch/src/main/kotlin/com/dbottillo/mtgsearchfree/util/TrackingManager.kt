@@ -66,9 +66,9 @@ object TrackingManager {
                 .putCustomAttribute("url", url))
     }
 
-    fun trackSet(gameSet: MTGSet, mtgSet: MTGSet) {
+    /*fun trackSet(gameSet: MTGSet, mtgSet: MTGSet) {
         trackEvent(UA_CATEGORY_SET, UA_ACTION_SELECT, mtgSet.code)
-    }
+    }*/
 
     fun trackShareApp() {
         trackEvent(UA_CATEGORY_UI, UA_ACTION_SHARE, "app")

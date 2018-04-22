@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.decks
 
 import android.annotation.TargetApi
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -15,18 +16,15 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
 import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
-import com.dbottillo.mtgsearchfree.util.DialogUtil
-import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.*
+import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.PermissionListener {
 
-    private val READ_REQUEST_CODE = 42
-
-    lateinit var decksList: RecyclerView
+    private lateinit var decksList: RecyclerView
 
     @Inject
     lateinit var presenter: DecksFragmentPresenter
@@ -37,9 +35,13 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     internal lateinit var adapter: DecksAdapter
     internal var decks: MutableList<Deck> = mutableListOf()
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_decks, container, false)
-        app.uiGraph.inject(this)
         dialogUtil.init(context)
         return rootView
     }
@@ -125,7 +127,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
 
     internal fun importDeck() {
         LOG.d()
-        dbActivity.requestPermission(PermissionUtil.TYPE.READ_STORAGE, this)
+        dbActivity.requestPermission(PermissionAvailable.ReadStorage, this)
     }
 
     override fun showError(message: String?) {
@@ -135,11 +137,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     @TargetApi(Build.VERSION_CODES.KITKAT)
     override fun permissionGranted() {
         val intent = Intent()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            intent.action = Intent.ACTION_OPEN_DOCUMENT
-        } else {
-            intent.action = Intent.ACTION_GET_CONTENT
-        }
+        intent.action = Intent.ACTION_OPEN_DOCUMENT
         intent.type = "*/*"
         startActivityForResult(intent, READ_REQUEST_CODE)
     }
@@ -164,3 +162,5 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         }
     }
 }
+
+private const val READ_REQUEST_CODE = 42
