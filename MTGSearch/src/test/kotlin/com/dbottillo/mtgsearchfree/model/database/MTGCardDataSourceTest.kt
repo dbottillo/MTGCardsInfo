@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.res.Resources
+import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
@@ -568,7 +569,7 @@ class MTGCardDataSourceTest {
     fun searchCardsById() {
         val card = underTest.searchCardById(5)
         assertNotNull(card)
-        assertThat(card.name, `is`("Armageddon"))
+        assertThat(card.name, `is`(BuildConfig.MTG_CARD_FIFTH_NAME))
     }
 
     private enum class OPERATOR constructor(private val operator: String) {
