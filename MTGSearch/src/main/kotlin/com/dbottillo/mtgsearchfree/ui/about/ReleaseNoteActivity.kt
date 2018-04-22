@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.hide
 import com.dbottillo.mtgsearchfree.util.show
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 
@@ -25,6 +26,7 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
     private val emptyView: TextView by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.empty_view) }
 
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
 
         setContentView(R.layout.activity_release_note)
@@ -34,8 +36,6 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
             supportActionBar?.setTitle(R.string.action_release_note)
             it.setNavigationIcon(R.drawable.ic_close)
         }
-
-        mtgApp.uiGraph.inject(this)
 
         presenter.init(this)
         presenter.load()

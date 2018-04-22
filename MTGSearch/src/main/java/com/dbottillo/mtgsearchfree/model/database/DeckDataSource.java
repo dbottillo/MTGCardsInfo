@@ -79,22 +79,22 @@ public class DeckDataSource {
         int sid = card.isSideboard() ? 1 : 0;
         int currentCard = 0;
         String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)";
-        LOG.query(query, deckId + "", card.getMultiVerseId() + "", sid + "");
+        LOG.INSTANCE.query(query, deckId + "", card.getMultiVerseId() + "", sid + "");
         Cursor cardsCursor = database.rawQuery(query, new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""});
         if (cardsCursor.getCount() > 0) {
-            LOG.d("card already in the database");
+            LOG.INSTANCE.d("card already in the database");
             cardsCursor.moveToFirst();
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.getName()));
         }
         if (currentCard + quantity <= 0) {
-            LOG.d("the quantity is negative and is bigger than the current quantity so needs to be removed");
+            LOG.INSTANCE.d("the quantity is negative and is bigger than the current quantity so needs to be removed");
             cardsCursor.close();
             removeCardFromDeck(deckId, card);
             return;
         }
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
-            LOG.d("just need to update the quantity");
+            LOG.INSTANCE.d("just need to update the quantity");
             updateQuantity(deckId, currentCard + quantity, card.getMultiVerseId(), sid);
             cardsCursor.close();
             return;
@@ -105,7 +105,7 @@ public class DeckDataSource {
 
     public void addCardToDeckWithoutCheck(long deckId, MTGCard card, int quantity) {
         String query = "select * from MTGCard where multiVerseId=?";
-        LOG.query(query, card.getMultiVerseId() + "");
+        LOG.INSTANCE.query(query, card.getMultiVerseId() + "");
         Cursor current = database.rawQuery(query, new String[]{card.getMultiVerseId() + ""});
         if (current.getCount() > 0) {
             // card already added
@@ -115,7 +115,7 @@ public class DeckDataSource {
                 current.moveToNext();
                 while (!current.isAfterLast()) {
                     String query2 = "delete from MTGCard where _id=?";
-                    LOG.query(query2, current.getString(0));
+                    LOG.INSTANCE.query(query2, current.getString(0));
                     database.rawQuery(query2, new String[]{current.getString(0)}).moveToFirst();
                     current.moveToNext();
                 }
@@ -136,7 +136,7 @@ public class DeckDataSource {
     public Deck getDeck(long deckId) {
         String query = "select * from " + TABLE + " where rowid =?";
         Cursor cursor = database.rawQuery(query, new String[]{deckId + ""});
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         cursor.moveToFirst();
         Deck deck = fromCursor(cursor);
         cursor.close();
@@ -146,7 +146,7 @@ public class DeckDataSource {
     public List<Deck> getDecks() {
         ArrayList<Deck> decks = new ArrayList<>();
         String query = "Select * from decks";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor deckCursor = database.rawQuery(query, null);
         deckCursor.moveToFirst();
         while (!deckCursor.isAfterLast()) {
@@ -166,7 +166,7 @@ public class DeckDataSource {
         //Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
         //Cursor cursor = database.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
         String query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (side ? 1 : 0) + " group by DC.deck_id";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -192,7 +192,7 @@ public class DeckDataSource {
     public List<MTGCard> getCards(long deckId) {
         ArrayList<MTGCard> cards = new ArrayList<>();
         String query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)";
-        LOG.query(query, deckId + "");
+        LOG.INSTANCE.query(query, deckId + "");
         Cursor cursor = database.rawQuery(query, new String[]{deckId + ""});
 
         cursor.moveToFirst();
@@ -213,7 +213,7 @@ public class DeckDataSource {
         int sid = card.isSideboard() ? 1 : 0;
         String[] args = new String[]{deckId + "", card.getMultiVerseId() + "", sid + ""};
         String query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?";
-        LOG.query(query, args);
+        LOG.INSTANCE.query(query, args);
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
@@ -222,7 +222,7 @@ public class DeckDataSource {
     public void deleteDeck(Deck deck) {
         String[] args = new String[]{deck.getId() + ""};
         String query = "DELETE FROM deck_card where deck_id=? ";
-        LOG.query(query, args);
+        LOG.INSTANCE.query(query, args);
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
@@ -234,12 +234,12 @@ public class DeckDataSource {
 
     public void deleteAllDecks(SQLiteDatabase db) {
         String query = "DELETE FROM deck_card";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         cursor.close();
         String query2 = "DELETE FROM decks";
-        LOG.query(query2);
+        LOG.INSTANCE.query(query2);
         Cursor cursor2 = db.rawQuery(query2, null);
         cursor2.moveToFirst();
         cursor2.close();
@@ -255,7 +255,7 @@ public class DeckDataSource {
             }
             database.setTransactionSuccessful();
         } catch (Exception e) {
-            LOG.e(e);
+            LOG.INSTANCE.e(e);
         } finally {
             database.endTransaction();
         }
@@ -328,7 +328,7 @@ public class DeckDataSource {
 
     private Cursor runQuery(String query, String... args) {
         Cursor cursor = database.rawQuery(query, args);
-        LOG.query(query, args);
+        LOG.INSTANCE.query(query, args);
         return cursor;
     }
 

@@ -52,7 +52,7 @@ public class PlayerDataSource {
     }
 
     public long savePlayer(Player player) {
-        LOG.d("saving " + player.toString());
+        LOG.INSTANCE.d("saving " + player.toString());
         ContentValues values = new ContentValues();
         values.put("_id", player.getId());
         values.put(COLUMNS.LIFE.getName(), player.getLife());
@@ -62,9 +62,9 @@ public class PlayerDataSource {
     }
 
     public List<Player> getPlayers() {
-        LOG.d("get players");
+        LOG.INSTANCE.d("get players");
         String query = "SELECT * FROM " + TABLE + " order by _ID ASC";
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         Cursor cursor = database.rawQuery(query, null);
         ArrayList<Player> players = new ArrayList<>();
         if (cursor.moveToFirst()) {
@@ -78,21 +78,21 @@ public class PlayerDataSource {
     }
 
     public void removePlayer(Player player) {
-        LOG.d("remove " + player.toString());
+        LOG.INSTANCE.d("remove " + player.toString());
         String[] args = new String[]{player.getId() + ""};
         String query = "DELETE FROM " + TABLE + " where _id=? ";
-        LOG.query(query, player.getId() + "");
+        LOG.INSTANCE.query(query, player.getId() + "");
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
     }
 
     public Player fromCursor(Cursor cursor) {
-        Player player = new Player();
-        player.setId(cursor.getInt(cursor.getColumnIndex("_id")));
-        player.setLife(cursor.getInt(cursor.getColumnIndex(COLUMNS.LIFE.getName())));
-        player.setPoisonCount(cursor.getInt(cursor.getColumnIndex(COLUMNS.POISON.getName())));
-        player.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
-        return player;
+        return new Player(
+                cursor.getInt(cursor.getColumnIndex("_id")),
+                cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())),
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.LIFE.getName())),
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.POISON.getName())),
+                0);
     }
 }

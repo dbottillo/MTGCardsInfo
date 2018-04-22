@@ -15,7 +15,6 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
@@ -95,8 +94,8 @@ class CardsAdapter(var cards: List<MTGCard>,
                 card.loadInto(holder.loader, holder.image)
             } else {
                 val listCardViewHolder = holder as ListCardViewHolder
-                CardAdapterHelper.bindView(context, card, listCardViewHolder, configuration.isSearch)
-                CardAdapterHelper.setupMore(listCardViewHolder, context, card, position, configuration.menu, listener)
+                listCardViewHolder.bind(card, configuration.isSearch,  context)
+                listCardViewHolder.setupMore(context, card, position, configuration.menu, listener)
             }
             holder.parent.setOnClickListener {
                 listener.onCardSelected(card, holder.adapterPosition - 1)
@@ -126,10 +125,6 @@ class CardsAdapter(var cards: List<MTGCard>,
         }
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView?) {
-        super.onAttachedToRecyclerView(recyclerView)
-    }
-
     internal inner class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: AppCompatTextView = itemView.findViewById(R.id.title)
         var subTitle: TextView = itemView.findViewById(R.id.sub_title)
@@ -144,4 +139,3 @@ class CardsAdapter(var cards: List<MTGCard>,
 const val ITEM_VIEW_TYPE_HEADER = 0
 const val ITEM_VIEW_TYPE_ITEM = 1
 const val ITEM_VIEW_TYPE_FOOTER = 2
-

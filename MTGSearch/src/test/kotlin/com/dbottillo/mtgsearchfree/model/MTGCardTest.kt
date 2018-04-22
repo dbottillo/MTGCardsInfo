@@ -6,14 +6,13 @@ import org.junit.Before
 import org.junit.Test
 import java.util.*
 
-class MTGCardTest{
-    
+class MTGCardTest {
+
     private lateinit var card: MTGCard
 
     @Before
     fun setup() {
-        val set = MTGSet(2, "Zendikar")
-        set.setCode("ZEN")
+        val set = MTGSet(id = 2, code = "ZEN", name = "Zendicar")
         card = MTGCard(1)
         card.isSideboard = true
         card.multiVerseId = 200
@@ -29,7 +28,7 @@ class MTGCardTest{
         card.number = "23"
         card.power = "2"
         card.quantity = 23
-        card.rarity = CardProperties.RARITY.MYTHIC.key
+        card.rarity = "Mythic Rare"
         card.text = "text"
         card.toughness = "4"
         card.type = "Creature"
@@ -44,22 +43,22 @@ class MTGCardTest{
     @Test
     fun `should parse color properly`() {
         val other = MTGCard(2)
-        other.addColor(CardProperties.COLOR.WHITE.key)
-        assertTrue(other.colors.contains(CardProperties.COLOR.WHITE.value))
-        other.addColor(CardProperties.COLOR.BLUE.key)
-        assertTrue(other.colors.contains(CardProperties.COLOR.BLUE.value))
-        other.addColor(CardProperties.COLOR.BLACK.key)
-        assertTrue(other.colors.contains(CardProperties.COLOR.BLACK.value))
-        other.addColor(CardProperties.COLOR.RED.key)
-        assertTrue(other.colors.contains(CardProperties.COLOR.RED.value))
-        other.addColor(CardProperties.COLOR.GREEN.key)
-        assertTrue(other.colors.contains(CardProperties.COLOR.GREEN.value))
+        other.addColor("White")
+        assertTrue(other.colors.contains(0))
+        other.addColor("Blue")
+        assertTrue(other.colors.contains(1))
+        other.addColor("Black")
+        assertTrue(other.colors.contains(2))
+        other.addColor("Red")
+        assertTrue(other.colors.contains(3))
+        other.addColor("Green")
+        assertTrue(other.colors.contains(4))
     }
 
     @Test
     fun `should detect eldrazi`() {
         var other = MTGCard(1)
-        other.addColor(CardProperties.COLOR.WHITE.key)
+        other.addColor("White")
         assertFalse(other.isEldrazi)
         other = MTGCard(1)
         other.isMultiColor = true
@@ -77,12 +76,12 @@ class MTGCardTest{
     @Test
     fun `should retrieve single color`() {
         var card = MTGCard(1)
-        card.addColor(CardProperties.COLOR.WHITE.key)
-        card.addColor(CardProperties.COLOR.BLUE.key)
+        card.addColor("White")
+        card.addColor("Blue")
         card.isMultiColor = true
-        assertThat(card.singleColor, `is`<Int>(-1))
+        assertThat(card.singleColor, `is`(-1))
         card = MTGCard(1)
-        card.addColor(CardProperties.COLOR.BLUE.key)
-        assertThat(card.singleColor, `is`<Int>(CardProperties.COLOR.BLUE.value))
+        card.addColor("Blue")
+        assertThat(card.singleColor, `is`(1))
     }
 }

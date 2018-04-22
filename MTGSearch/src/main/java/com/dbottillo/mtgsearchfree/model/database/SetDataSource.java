@@ -72,7 +72,7 @@ public class SetDataSource {
                 cursor.moveToNext();
             }
         }
-        LOG.query(query);
+        LOG.INSTANCE.query(query);
         cursor.close();
         return sets;
     }
@@ -83,14 +83,13 @@ public class SetDataSource {
         Cursor cursor = database.rawQuery(query, args);
         cursor.moveToFirst();
         cursor.close();
-        LOG.query(query, args);
+        LOG.INSTANCE.query(query, args);
     }
 
     public MTGSet fromCursor(Cursor cursor) {
-        MTGSet set = new MTGSet(cursor.getInt(cursor.getColumnIndex("_id")));
-        set.setName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
-        set.setCode(cursor.getString(cursor.getColumnIndex(COLUMNS.CODE.getName())));
-        return set;
+        return new MTGSet(cursor.getInt(cursor.getColumnIndex("_id")),
+                cursor.getString(cursor.getColumnIndex(COLUMNS.CODE.getName())),
+                cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.getName())));
     }
 
     public ContentValues fromJSON(JSONObject object) throws JSONException {

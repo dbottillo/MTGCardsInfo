@@ -27,6 +27,7 @@
     <issue id="LogConditional">
         <ignore regexp="SQLiteAssetHelper.java"/>
     </issue>
+    <issue id="ParcelCreator" severity="ignore" />
     <!--<issue id="NewerVersionAvailable">
         <ignore regexp="*leakcanary*"/>
     </issue>-->

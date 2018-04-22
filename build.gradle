@@ -1,30 +1,30 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.dagger_version = '2.10'
-    ext.support_library_version = '27.0.2'
+    ext.dagger_version = '2.15'
+    ext.support_library_version = '27.1.1'
     ext.smooth_pb_version = '1.1.0'
     ext.leak_canary_version = '1.5.4'
     ext.gson_version = '2.8.0'
-    ext.espresso_version = '2.2.2'
+    ext.espresso_version = '3.0.1'
     ext.mockito_version = '2.1.0'
     ext.rx_java_version = '2.0.3'
-    ext.rx_android_version = '2.0.1'
+    ext.rx_android_version = '2.0.2'
     ext.glide_version = '4.6.1'
     ext.crashlytics_version = '2.7.1'
     ext.junit_version = '4.12'
     ext.hamcrest_version = '1.3'
     ext.fest_version = '2.0M10'
-    ext.support_runner_version = '0.5'
+    ext.support_runner_version = '1.0.1'
     ext.dexmaker_mockito_version = '1.2'
-    ext.kotlin_version = '1.2.20'
-    ext.constraint_layout_version = '1.0.0-beta5'
+    ext.kotlin_version = '1.2.31'
+    ext.constraint_layout_version = '1.1.0'
+    ext.robolectric_version = '3.8'
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.google.gms:google-services:3.1.2'
-        classpath 'io.fabric.tools:gradle:1.25.1'
-        classpath 'com.google.gms:google-services:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.google.gms:google-services:3.2.0'
+        classpath 'io.fabric.tools:gradle:1.25.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 
@@ -40,6 +40,7 @@ buildscript {
         maven {
             url 'https://maven.fabric.io/public'
         }
+        google()
     }
 }
 

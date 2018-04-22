@@ -94,11 +94,12 @@ public class CardsInfoDbHelper extends SQLiteOpenHelper {
 
     public synchronized void clear() {
         SQLiteDatabase db = getWritableDatabase();
-        db.delete(CardDataSource.TABLE, null, null);
-        db.delete(DeckDataSource.TABLE, null, null);
-        db.delete(DeckDataSource.TABLE_JOIN, null, null);
-        db.delete(PlayerDataSource.TABLE, null, null);
-        db.delete(FavouritesDataSource.TABLE, null, null);
+        db.execSQL("DROP TABLE IF EXISTS '" + CardDataSource.TABLE + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + DeckDataSource.TABLE + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + DeckDataSource.TABLE + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + DeckDataSource.TABLE_JOIN + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + PlayerDataSource.TABLE + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + FavouritesDataSource.TABLE + "'");
     }
 
     Set<String> readColumnTable(SQLiteDatabase db, String table) {

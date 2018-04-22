@@ -1,25 +1,30 @@
 package com.dbottillo.mtgsearchfree.model
 
-import org.junit.Test
-
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
+import org.junit.Rule
+import org.junit.Test
+import org.mockito.junit.MockitoJUnit
 
 class CardPropertiesTest {
 
-    @Test
-    fun CardProperties_areCorrect() {
-        assertThat(CardProperties.COLOR.getNumberFromString("White"), `is`(0))
-        assertThat(CardProperties.COLOR.getNumberFromString("Blue"), `is`(1))
-        assertThat(CardProperties.COLOR.getNumberFromString("Black"), `is`(2))
-        assertThat(CardProperties.COLOR.getNumberFromString("Red"), `is`(3))
-        assertThat(CardProperties.COLOR.getNumberFromString("Green"), `is`(4))
+    @Rule
+    @JvmField
+    var mockitoRule = MockitoJUnit.rule()
 
-        assertThat(CardProperties.COLOR.getStringFromNumber(0), `is`("White"))
-        assertThat(CardProperties.COLOR.getStringFromNumber(1), `is`("Blue"))
-        assertThat(CardProperties.COLOR.getStringFromNumber(2), `is`("Black"))
-        assertThat(CardProperties.COLOR.getStringFromNumber(3), `is`("Red"))
-        assertThat(CardProperties.COLOR.getStringFromNumber(4), `is`("Green"))
+    @Test
+    fun `conversion from string to color and vice versa is correct`() {
+        assertThat("White".toColorInt(), `is`(0))
+        assertThat("Blue".toColorInt(), `is`(1))
+        assertThat("Black".toColorInt(), `is`(2))
+        assertThat("Red".toColorInt(), `is`(3))
+        assertThat("Green".toColorInt(), `is`(4))
+
+        assertThat(0.toColor(), `is`("White"))
+        assertThat(1.toColor(), `is`("Blue"))
+        assertThat(2.toColor(), `is`("Black"))
+        assertThat(3.toColor(), `is`("Red"))
+        assertThat(4.toColor(), `is`("Green"))
     }
 
 }

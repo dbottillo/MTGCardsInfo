@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.widget.FrameLayout
 import android.widget.Toast
+import com.dbottillo.mtgsearchfree.INTENT_RELEASE_NOTE_PUSH
 import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
@@ -51,9 +52,9 @@ class HomeActivity : BasicActivity() {
             checkAndReplace("sets")
         }
 
-        if (intent != null && intent.hasExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH)) {
+        if (intent != null && intent.hasExtra(INTENT_RELEASE_NOTE_PUSH)) {
             startActivity(Intent(this, ReleaseNoteActivity::class.java))
-            intent.putExtra(MTGApp.INTENT_RELEASE_NOTE_PUSH, false)
+            intent.putExtra(INTENT_RELEASE_NOTE_PUSH, false)
         }
 
     }
@@ -117,7 +118,7 @@ class HomeActivity : BasicActivity() {
     }
 
     fun recreateDb() {
-        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
                 CreateDBAsyncTask(applicationContext, application.packageName).execute()
             }
@@ -129,9 +130,9 @@ class HomeActivity : BasicActivity() {
     }
 
     fun copyDBToSdCard() {
-        requestPermission(PermissionUtil.TYPE.WRITE_STORAGE, object : PermissionUtil.PermissionListener {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
-                val file = FileUtil.copyDbToSdCard(applicationContext, CardsInfoDbHelper.DATABASE_NAME)
+                val file = applicationContext.copyDbToSdCard(CardsInfoDbHelper.DATABASE_NAME)
                 if (file != null) {
                     val snackbar = Snackbar
                             .make(fragmentContainer, getString(R.string.db_exported), Snackbar.LENGTH_LONG)
