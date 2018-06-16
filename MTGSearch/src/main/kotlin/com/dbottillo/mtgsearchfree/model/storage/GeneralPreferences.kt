@@ -29,6 +29,10 @@ class GeneralPreferences(context: Context, private val appInfo: AppInfo) : Gener
     override val isCardsShowTypeGrid: Boolean
         get() = sharedPreferences.getString(CARDS_SHOW_TYPE, "Grid")!!.equals("Grid", ignoreCase = true)
 
+    override var lastDeckSelected: Long
+        get() = sharedPreferences.getLong(LAST_DECK_SELECTED, -1)
+        set(value) = sharedPreferences.edit().putLong(LAST_DECK_SELECTED, value).apply()
+
     override fun setTooltipMainHide() {
         sharedPreferences.edit().putBoolean(TOOLTIP_MAIN_SHOWN, false).apply()
     }
@@ -55,15 +59,13 @@ class GeneralPreferences(context: Context, private val appInfo: AppInfo) : Gener
         sharedPreferences.edit().putBoolean(CARD_MIGRATION_REQUIRED, false).apply()
     }
 
-    companion object {
-
-        internal val DEBUG = "debug"
-        internal val CARDS_SHOW_TYPE = "cardShowType"
-        internal val TOOLTIP_MAIN_SHOWN = "tooltipMainShow2"
-        internal val CARD_MIGRATION_REQUIRED = "cardMigrationRequired"
-    }
-
 }
+
+const val DEBUG = "debug"
+const val CARDS_SHOW_TYPE = "cardShowType"
+const val TOOLTIP_MAIN_SHOWN = "tooltipMainShow2"
+const val CARD_MIGRATION_REQUIRED = "cardMigrationRequired"
+const val LAST_DECK_SELECTED = "lastDeckSelected"
 
 interface GeneralData {
     fun isDebugEnabled(): Boolean
@@ -77,5 +79,6 @@ interface GeneralData {
     fun setTooltipMainHide()
     fun cardMigrationRequired(): Boolean
     fun markCardMigrationStarted()
+    var lastDeckSelected: Long
 }
 

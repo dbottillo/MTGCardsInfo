@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -35,7 +36,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
             logger.d()
             this.card = it.card
             view.setCardTitle(card.name)
-            view.decksLoaded(decks = it.decks)
+            view.decksLoaded(decks = it.decks, selecetedDeck = it.selectedDeck)
         }, {
             if (it is MTGException) {
                 view.showError(it.message ?: it.localizedMessage)
@@ -64,12 +65,13 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
 
 class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksStorage,
                                               private val cardsStorage: CardsStorage,
+                                              private val generalData: GeneralData,
                                               private val schedulerProvider: SchedulerProvider) {
     fun init(cardId: Int): Single<AddToDeckData> {
         val decksSingle = Single.fromCallable { decksStorage.load() }
         val cardSingle = Single.fromCallable { cardsStorage.loadCard(cardId) }
         return Single.zip(decksSingle, cardSingle, BiFunction { decks: List<Deck>, card: MTGCard ->
-            AddToDeckData(decks, card)
+            AddToDeckData(decks, generalData.lastDeckSelected, card)
         }).subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.ui())
     }
 
@@ -87,4 +89,4 @@ class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksSto
 
 }
 
-class AddToDeckData(val decks: List<Deck>, val card: MTGCard)
+class AddToDeckData(val decks: List<Deck>, val selectedDeck: Long, val card: MTGCard)
