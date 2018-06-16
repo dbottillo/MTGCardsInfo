@@ -4,14 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.CARDS_SHOW_TYPE
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.CARD_MIGRATION_REQUIRED
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.DEBUG
-import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences.Companion.TOOLTIP_MAIN_SHOWN
 import com.dbottillo.mtgsearchfree.util.AppInfo
 import com.nhaarman.mockito_kotlin.whenever
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -44,9 +40,9 @@ class GeneralPreferencesTest {
     fun setup() {
         whenever(appContext.getSharedPreferences("General", Context.MODE_PRIVATE)).thenReturn(sharedPreferences)
         underTest = GeneralPreferences(appContext, appInfo)
-        `when`(sharedPreferences.edit()).thenReturn(editor)
-        `when`(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor)
-        `when`(editor.putString(anyString(), anyString())).thenReturn(editor)
+        whenever(sharedPreferences.edit()).thenReturn(editor)
+        whenever(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor)
+        whenever(editor.putString(anyString(), anyString())).thenReturn(editor)
     }
 
     @Test
@@ -87,26 +83,26 @@ class GeneralPreferencesTest {
 
     @Test
     fun isTooltipMainToShow_shouldReturnTrueIfItsNotAFreshInstall_AndSharedPreferencesIsTrue() {
-        `when`(sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true)).thenReturn(true)
-        `when`(appInfo.firstInstallTime).thenReturn(200L)
-        `when`(appInfo.lastUpdateTime).thenReturn(400L)
+        whenever(sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true)).thenReturn(true)
+        whenever(appInfo.firstInstallTime).thenReturn(200L)
+        whenever(appInfo.lastUpdateTime).thenReturn(400L)
 
         assertTrue(underTest.isTooltipMainToShow())
     }
 
     @Test
     fun isTooltipMainToShow_shouldReturnFalseIfItsAFreshInstall() {
-        `when`(appInfo.firstInstallTime).thenReturn(200L)
-        `when`(appInfo.lastUpdateTime).thenReturn(200L)
+        whenever(appInfo.firstInstallTime).thenReturn(200L)
+        whenever(appInfo.lastUpdateTime).thenReturn(200L)
 
         assertFalse(underTest.isTooltipMainToShow())
     }
 
     @Test
     fun isTooltipMainToShow_shouldReturnFalseIfItsNotAFreshInstall_AnsSharedPreferencesIsFalse() {
-        `when`(sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true)).thenReturn(false)
-        `when`(appInfo.firstInstallTime).thenReturn(200L)
-        `when`(appInfo.lastUpdateTime).thenReturn(400L)
+        whenever(sharedPreferences.getBoolean(TOOLTIP_MAIN_SHOWN, true)).thenReturn(false)
+        whenever(appInfo.firstInstallTime).thenReturn(200L)
+        whenever(appInfo.lastUpdateTime).thenReturn(400L)
 
         assertFalse(underTest.isTooltipMainToShow())
     }
@@ -120,4 +116,28 @@ class GeneralPreferencesTest {
         verify(editor).apply()
     }
 
+    @Test
+    fun `should return last selected deck from shared pref`() {
+        whenever(sharedPreferences.getLong(LAST_DECK_SELECTED, -1)).thenReturn(4)
+
+        val result = underTest.lastDeckSelected
+        
+        assertThat(result, `is`(4L))
+        verify(appContext).getSharedPreferences("General", Context.MODE_PRIVATE)
+        verify(sharedPreferences).getLong(LAST_DECK_SELECTED, -1)
+        verifyNoMoreInteractions(sharedPreferences, appContext, appInfo)
+    }
+
+    @Test
+    fun `should save last selected deck in shared pref`() {
+        whenever(editor.putLong(LAST_DECK_SELECTED, 4L)).thenReturn(editor)
+
+        underTest.lastDeckSelected = 4L
+
+        verify(appContext).getSharedPreferences("General", Context.MODE_PRIVATE)
+        verify(sharedPreferences).edit()
+        verify(editor).putLong(LAST_DECK_SELECTED, 4L)
+        verify(editor).apply()
+        verifyNoMoreInteractions(sharedPreferences, appContext, appInfo)
+    }
 }

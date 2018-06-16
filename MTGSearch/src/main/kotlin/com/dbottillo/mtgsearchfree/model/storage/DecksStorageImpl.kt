@@ -14,6 +14,7 @@ import javax.inject.Inject
 
 class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
                                            private val deckDataSource: DeckDataSource,
+                                           private val generalData: GeneralData,
                                            private val logger: Logger) : DecksStorage {
     init {
         logger.d("created")
@@ -57,6 +58,7 @@ class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
     override fun addCard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("add $quantity $card to $deck")
         deckDataSource.addCardToDeck(deck.id, card, quantity)
+        generalData.lastDeckSelected = deck.id
         return loadDeck(deck)
     }
 
@@ -64,6 +66,7 @@ class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
         logger.d("add $quantity $card with new deck name $name")
         val deckId = deckDataSource.addDeck(name)
         deckDataSource.addCardToDeck(deckId, card, quantity)
+        generalData.lastDeckSelected = deckId
         return DeckCollection().addCards(deckDataSource.getCards(deckId))
     }
 
