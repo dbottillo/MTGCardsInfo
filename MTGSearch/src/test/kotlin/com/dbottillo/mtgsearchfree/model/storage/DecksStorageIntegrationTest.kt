@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.util.FileManagerI
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
+import com.nhaarman.mockito_kotlin.mock
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.After
@@ -18,6 +19,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mockito.mock
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
@@ -27,8 +29,8 @@ import java.io.InputStream
 @RunWith(RobolectricTestRunner::class)
 class DecksStorageIntegrationTest {
 
-    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
-    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
+    private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    private lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     lateinit var storage: DecksStorage
 
     @Before
@@ -39,7 +41,8 @@ class DecksStorageIntegrationTest {
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         val mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
         val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
-        storage = DecksStorageImpl(fileUtil, deckDataSource, Logger())
+        val generalData = mock<GeneralData>()
+        storage = DecksStorageImpl(fileUtil, deckDataSource, generalData, Logger())
     }
 
     @After
