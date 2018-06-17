@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
 import io.reactivex.observers.TestObserver
@@ -31,6 +32,7 @@ class AddToDeckInteractorTest {
     @Mock lateinit var card: MTGCard
     @Mock lateinit var decks: List<Deck>
     @Mock lateinit var deck: Deck
+    @Mock lateinit var generalData: GeneralData
 
     private lateinit var underTest: AddToDeckInteractor
 
@@ -38,7 +40,7 @@ class AddToDeckInteractorTest {
     fun setup() {
         `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
         `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
-        underTest = AddToDeckInteractor(decksStorage, cardsStorage, schedulerProvider)
+        underTest = AddToDeckInteractor(decksStorage, cardsStorage, generalData, schedulerProvider)
     }
 
     @Test
