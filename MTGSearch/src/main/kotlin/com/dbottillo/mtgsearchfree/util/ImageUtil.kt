@@ -20,8 +20,7 @@ import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 
 fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
     val second = if (!number.isNullOrEmpty() && set != null && !types.contains("Plane")
-            && set?.code?.toUpperCase() != "6ED"
-            && set?.code?.toUpperCase() != "RIX") {
+            && set?.code?.toUpperCase() != "6ED") {
         mtgCardsInfoImage
     } else null
     Triple(name, second, gathererImage).loadInto(loader, imageView, retry)

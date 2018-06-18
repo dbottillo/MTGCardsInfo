@@ -82,8 +82,8 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, logger: Logger): DecksStorage {
-        return DecksStorageImpl(fileUtil, deckDataSource, logger)
+    fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage {
+        return DecksStorageImpl(fileUtil, deckDataSource, generalData, logger)
     }
 
     @Provides
