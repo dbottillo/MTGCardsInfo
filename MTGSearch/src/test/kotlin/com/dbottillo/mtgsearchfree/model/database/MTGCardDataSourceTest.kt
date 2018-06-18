@@ -243,8 +243,8 @@ class MTGCardDataSourceTest {
             searchParams.tough = operator.generatePTParam()
             val cards = underTest.searchCards(searchParams)
             assertTrue(cards.size > 0)
-            for ((_, _, _, _, _, _, _, _, _, toughness) in cards) {
-                operator.assertOperator(Integer.parseInt(toughness))
+            cards.forEach {
+                operator.assertOperator(it.toughness.toInt())
             }
         }
         searchParams.tough = PTParam("", -1)
