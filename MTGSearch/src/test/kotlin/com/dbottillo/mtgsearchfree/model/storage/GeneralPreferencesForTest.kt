@@ -48,4 +48,6 @@ class GeneralPreferencesForTest : GeneralData {
     override fun markCardMigrationStarted() {
 
     }
+
+    override var lastDeckSelected: Long = 2
 }

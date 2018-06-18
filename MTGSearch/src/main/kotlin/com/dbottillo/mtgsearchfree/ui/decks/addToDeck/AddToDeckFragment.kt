@@ -21,8 +21,6 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
 import dagger.android.support.AndroidSupportInjection
 
-
-
 class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
     lateinit var chooseDeck: Spinner
@@ -110,7 +108,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         return "/add_to_deck"
     }
 
-    private fun setupDecksSpinner(decks: List<Deck>) {
+    private fun setupDecksSpinner(decks: List<Deck>, selectedDeck: Long) {
         LOG.d()
         this.decks = decks
         decksChoose.clear()
@@ -120,6 +118,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         val adapter = ArrayAdapter<CharSequence>(activity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
         chooseDeck.adapter = adapter
+        chooseDeck.setSelection(decks.indexOf(decks.find { it.id == selectedDeck }) + 1)
         chooseDeck.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 if (position == decks.size + 1) {
@@ -180,9 +179,9 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         title.text = getString(R.string.add_to_deck_title, cardName)
     }
 
-    override fun decksLoaded(decks: List<Deck>) {
+    override fun decksLoaded(decks: List<Deck>, selectedDeck: Long) {
         LOG.d()
-        setupDecksSpinner(decks)
+        setupDecksSpinner(decks, selectedDeck)
     }
 
     class InputFilterMinMax(private val min: Int, private val max: Int) : InputFilter {

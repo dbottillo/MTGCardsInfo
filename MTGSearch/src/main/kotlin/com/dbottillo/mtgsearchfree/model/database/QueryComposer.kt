@@ -55,7 +55,7 @@ internal class QueryComposer(initial: String) {
                     stringBuilder.append(if (ptParam.operator == "IS") "=" else ptParam.operator)
                     stringBuilder.append(" ? AND ")
                     stringBuilder.append(name)
-                    stringBuilder.append(" GLOB '*[0-9]*')")
+                    stringBuilder.append(" GLOB '[0-9]')")
                     addSelection(ptParam.operator, ptParam.value.toString())
                 }
             }

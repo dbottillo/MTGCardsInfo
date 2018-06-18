@@ -27,7 +27,7 @@ class FileUtil(private val fileManager: FileManagerI) {
     }
 
 
-    fun InputStream.readFileStream(deckName: String?): CardsBucket {
+    private fun InputStream.readFileStream(deckName: String?): CardsBucket {
         val cards = ArrayList<MTGCard>()
         val br = BufferedReader(InputStreamReader(this, "UTF-8"))
         var name: String? = null

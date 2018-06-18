@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.*
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
@@ -16,9 +17,7 @@ import org.mockito.junit.MockitoJUnit
 
 class AddToDeckPresenterImplTest {
 
-    @Rule
-    @JvmField
-    val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()
 
     lateinit var underTest: AddToDeckPresenter
 
@@ -35,28 +34,30 @@ class AddToDeckPresenterImplTest {
 
     @Before
     fun setUp() {
-        `when`(bundle.getInt("card", -1)).thenReturn(4)
-        `when`(addToDeckData.card).thenReturn(card)
-        `when`(addToDeckData.decks).thenReturn(decks)
-        `when`(card.name).thenReturn("Counterspell")
-        `when`(interactor.init(4)).thenReturn(Single.just(addToDeckData))
+        whenever(bundle.getInt("card", -1)).thenReturn(4)
+        whenever(addToDeckData.card).thenReturn(card)
+        whenever(addToDeckData.decks).thenReturn(decks)
+        whenever(card.name).thenReturn("Counterspell")
+        whenever(interactor.init(4)).thenReturn(Single.just(addToDeckData))
         underTest = AddToDeckPresenterImpl(interactor, logger)
     }
 
     @Test
     fun `load decks should call interactor and update view`() {
+        whenever(addToDeckData.selectedDeck).thenReturn(2)
+        
         underTest.init(view, bundle)
 
         verify(interactor).init(4)
-        verify(view).decksLoaded(decks)
+        verify(view).decksLoaded(decks, 2)
         verify(view).setCardTitle("Counterspell")
         verifyNoMoreInteractions(view, interactor)
     }
 
     @Test
     fun `load decks should call interactor and show error it if fails`() {
-        `when`(throwable.localizedMessage).thenReturn("error message")
-        `when`(interactor.init(4)).thenReturn(Single.error(throwable))
+        whenever(throwable.localizedMessage).thenReturn("error message")
+        whenever(interactor.init(4)).thenReturn(Single.error(throwable))
 
         underTest.init(view, bundle)
 
@@ -67,8 +68,8 @@ class AddToDeckPresenterImplTest {
 
     @Test
     fun `load decks should call interactor and show error it if fails with a mtg exception`() {
-        `when`(mtgException.message).thenReturn("error message")
-        `when`(interactor.init(4)).thenReturn(Single.error(mtgException))
+        whenever(mtgException.message).thenReturn("error message")
+        whenever(interactor.init(4)).thenReturn(Single.error(mtgException))
 
         underTest.init(view, bundle)
 
