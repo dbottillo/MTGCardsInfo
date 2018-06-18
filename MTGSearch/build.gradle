@@ -1,7 +1,7 @@
 buildscript {
-    ext.number_of_set = 175
-    ext.database_version = 35
-    ext.name_fifth_mtg_card = "Elvish Archdruid"
+    ext.number_of_set = 178
+    ext.database_version = 36
+    ext.name_fifth_mtg_card = "Bosh, Iron Golem"
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -39,8 +39,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 93
-        versionName "3.3.2"
+        versionCode 95
+        versionName "3.4.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false
@@ -137,7 +137,7 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
