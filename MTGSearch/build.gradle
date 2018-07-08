@@ -1,7 +1,7 @@
 buildscript {
-    ext.number_of_set = 178
-    ext.database_version = 36
-    ext.name_fifth_mtg_card = "Bosh, Iron Golem"
+    ext.number_of_set = 179
+    ext.database_version = 37
+    ext.name_fifth_mtg_card = "Ajani's Pridemate"
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -11,6 +11,7 @@ apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "com.github.ben-manes.versions"
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
@@ -39,8 +40,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 95
-        versionName "3.4.0"
+        versionCode 96
+        versionName "3.4.1"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false
