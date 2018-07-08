@@ -1,31 +1,33 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.dagger_version = '2.15'
+    ext.dagger_version = '2.16'
     ext.support_library_version = '27.1.1'
     ext.smooth_pb_version = '1.1.0'
     ext.leak_canary_version = '1.5.4'
     ext.gson_version = '2.8.0'
     ext.espresso_version = '3.0.2'
-    ext.mockito_version = '2.1.0'
-    ext.rx_java_version = '2.0.3'
+    ext.mockito_version = '2.19.0'
+    ext.rx_java_version = '2.1.16'
     ext.rx_android_version = '2.0.2'
-    ext.glide_version = '4.6.1'
-    ext.crashlytics_version = '2.7.1'
+    ext.glide_version = '4.7.1'
+    ext.crashlytics_version = '2.9.4'
     ext.junit_version = '4.12'
     ext.hamcrest_version = '1.3'
     ext.fest_version = '2.0M10'
     ext.support_runner_version = '1.0.2'
     ext.dexmaker_mockito_version = '1.2'
-    ext.kotlin_version = '1.2.50'
+    ext.kotlin_version = '1.2.51'
     ext.constraint_layout_version = '1.1.2'
     ext.robolectric_version = '3.8'
+    ext.versions_plugin_version = '0.20.0'
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.3'
         classpath 'com.google.gms:google-services:4.0.1'
         classpath 'io.fabric.tools:gradle:1.25.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.ben-manes:gradle-versions-plugin:$versions_plugin_version"
     }
 
     repositories {
