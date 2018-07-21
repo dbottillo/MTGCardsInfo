@@ -24,8 +24,7 @@ import java.util.*
 @RunWith(RobolectricTestRunner::class)
 class CardDataSourceIntegrationTest {
 
-    @Rule @JvmField
-    var rule = MockitoJUnit.rule()
+    @Rule @JvmField var rule = MockitoJUnit.rule()!!
 
     @Mock
     lateinit var cursor: Cursor
@@ -40,7 +39,7 @@ class CardDataSourceIntegrationTest {
         mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         underTest = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
-        mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.writableDatabase, underTest)
+        mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, underTest)
     }
 
     @After

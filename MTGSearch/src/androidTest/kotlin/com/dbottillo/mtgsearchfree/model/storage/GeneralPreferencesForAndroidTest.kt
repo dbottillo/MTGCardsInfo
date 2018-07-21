@@ -21,9 +21,8 @@ class GeneralPreferencesForAndroidTest : GeneralData {
         typeList = false
     }
 
-    override fun isCardsShowTypeGrid(): Boolean {
-        return !typeList
-    }
+    override val isCardsShowTypeGrid: Boolean
+        get() = !typeList
 
     override fun setTooltipMainHide() {
 
@@ -48,4 +47,6 @@ class GeneralPreferencesForAndroidTest : GeneralData {
     override fun markCardMigrationStarted() {
 
     }
+
+    override var lastDeckSelected: Long = 2
 }
