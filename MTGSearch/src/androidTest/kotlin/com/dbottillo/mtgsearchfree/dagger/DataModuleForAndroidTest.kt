@@ -16,7 +16,7 @@ class DataModuleForAndroidTest : DataModule() {
 
     @Provides
     @Singleton
-    override fun providesGeneralData(sharedPreferences: SharedPreferences, appInfo: AppInfo): GeneralData {
+    override fun providesGeneralData(context: Context, appInfo: AppInfo): GeneralData {
         return GeneralPreferencesForAndroidTest()
     }
 
