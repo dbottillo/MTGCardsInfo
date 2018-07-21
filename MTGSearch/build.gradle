@@ -1,6 +1,6 @@
 buildscript {
     ext.number_of_set = 179
-    ext.database_version = 37
+    ext.database_version = 38
     ext.name_fifth_mtg_card = "Ajani's Pridemate"
 }
 apply plugin: 'com.android.application'
@@ -152,7 +152,7 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.easytesting:fest-assert-core:$fest_version"
     testImplementation "org.robolectric:robolectric:$robolectric_version"
-    testImplementation "com.nhaarman:mockito-kotlin:1.5.0"
+    testImplementation "com.nhaarman:mockito-kotlin:1.6.0"
 
     androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
     androidTestImplementation "com.android.support.test:runner:$support_runner_version"
@@ -162,7 +162,7 @@ dependencies {
     androidTestImplementation "com.android.support:appcompat-v7:$support_library_version"
     androidTestImplementation "com.android.support:recyclerview-v7:$support_library_version"
     androidTestImplementation "com.android.support:design:$support_library_version"
-    androidTestImplementation 'org.mockito:mockito-android:2.6.3'
+    androidTestImplementation 'org.mockito:mockito-android:2.19.0'
 
 }
 
@@ -221,6 +221,7 @@ task release
 release.dependsOn 'assembleRelease', 'quality', 'testPreRelease'
 
 task devTest
-devTest.dependsOn 'testDebugUnitTest', 'connectedAndroidTest'
+//devTest.dependsOn 'testDebugUnitTest', 'connectedAndroidTest'
+devTest.dependsOn 'testDebugUnitTest'
 
 apply plugin: 'com.google.gms.google-services'

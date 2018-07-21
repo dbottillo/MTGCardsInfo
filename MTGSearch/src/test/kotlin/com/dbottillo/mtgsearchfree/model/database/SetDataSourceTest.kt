@@ -23,7 +23,7 @@ class SetDataSourceTest {
     @Before
     fun setup() {
         mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
-        underTest = SetDataSource(mtgDatabaseHelper.writableDatabase)
+        underTest = SetDataSource(mtgDatabaseHelper.readableDatabase)
     }
 
     @After
