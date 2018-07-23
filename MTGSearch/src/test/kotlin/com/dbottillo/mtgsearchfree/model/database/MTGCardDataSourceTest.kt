@@ -114,7 +114,7 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.types = "creature"
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, type) in cards) {
             assertTrue(type.toLowerCase(Locale.getDefault()).contains("creature"))
         }
@@ -125,7 +125,7 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.text = "lifelink"
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, _, text) in cards) {
             assertTrue(text.toLowerCase(Locale.getDefault()).contains("lifelink"))
         }
@@ -242,7 +242,7 @@ class MTGCardDataSourceTest {
             val operator = OPERATOR.values()[i]
             searchParams.tough = operator.generatePTParam()
             val cards = underTest.searchCards(searchParams)
-            assertTrue(cards.size > 0)
+            assertTrue(cards.isNotEmpty())
             cards.forEach {
                 operator.assertOperator(it.toughness.toInt())
             }
@@ -264,35 +264,35 @@ class MTGCardDataSourceTest {
         var searchParams = SearchParams()
         searchParams.isWhite = true
         var cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost) in cards) {
             assertThat(manaCost, containsString("W"))
         }
         searchParams = SearchParams()
         searchParams.isBlue = true
         cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost) in cards) {
             assertThat(manaCost, containsString("U"))
         }
         searchParams = SearchParams()
         searchParams.isRed = true
         cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost) in cards) {
             assertThat(manaCost, containsString("R"))
         }
         searchParams = SearchParams()
         searchParams.isBlack = true
         cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost) in cards) {
             assertThat(manaCost, containsString("B"))
         }
         searchParams = SearchParams()
         searchParams.isGreen = true
         cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost) in cards) {
             assertThat(manaCost, containsString("G"))
         }
@@ -392,7 +392,7 @@ class MTGCardDataSourceTest {
         searchParams.isBlue = true
         searchParams.isNoMulti = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, manaCost, _, isMultiColor) in cards) {
             assertFalse(isMultiColor)
             assertTrue(manaCost.contains("W") && !manaCost.contains("U") || manaCost.contains("U") && !manaCost.contains("W"))
@@ -490,9 +490,9 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.setId = -2
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, set) in cards) {
-            assertThat(MTGCardDataSource.STANDARD.getSetNames(), hasItem(set?.name))
+            assertTrue(MTGCardDataSource.STANDARD.values().map { it.set }.contains(set?.name))
         }
     }
 
@@ -538,7 +538,7 @@ class MTGCardDataSourceTest {
         for (name in toTest) {
             card = underTest.searchCard(name)
             assertNotNull(card)
-            assertThat(card.name, `is`(name))
+            assertThat(card?.name, `is`(name))
         }
         card = underTest.searchCard("Obama")
         assertNull(card)
@@ -551,7 +551,7 @@ class MTGCardDataSourceTest {
         searchParams.isLand = true
         val cards = underTest.searchCards(searchParams)
         assertNotNull(cards)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, name, _, _, _, _, _, _, _, _, _, _, _, isLand) in cards) {
             assertTrue(name.toLowerCase(Locale.getDefault()).contains("island"))
             assertTrue(isLand)
@@ -562,14 +562,14 @@ class MTGCardDataSourceTest {
     fun searchCardsByMultiverseId() {
         val card = underTest.searchCard(420621)
         assertNotNull(card)
-        assertThat(card.name, `is`("Selfless Squire"))
+        assertThat(card?.name, `is`("Selfless Squire"))
     }
 
     @Test
     fun searchCardsById() {
         val card = underTest.searchCardById(5)
         assertNotNull(card)
-        assertThat(card.name, `is`(BuildConfig.MTG_CARD_FIFTH_NAME))
+        assertThat(card?.name, `is`(BuildConfig.MTG_CARD_FIFTH_NAME))
     }
 
     private enum class OPERATOR constructor(private val operator: String) {

@@ -8,9 +8,7 @@ import org.mockito.junit.MockitoJUnit
 
 class CardPropertiesTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Test
     fun `conversion from string to color and vice versa is correct`() {

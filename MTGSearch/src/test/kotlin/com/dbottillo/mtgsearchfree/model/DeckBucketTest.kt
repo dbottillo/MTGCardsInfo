@@ -11,9 +11,7 @@ import java.util.*
 
 class DeckBucketTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     private val creature = MTGCard(1, 101)
     private val creature2 = MTGCard(2, 102)
