@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.ui.views.CardView
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
+import com.nhaarman.mockito_kotlin.whenever
 
 import org.junit.Before
 import org.junit.Rule
@@ -19,25 +20,15 @@ import org.mockito.Mockito.*
 
 class CardPresenterImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: CardPresenter
 
-    @Mock
-    lateinit var cardsInteractor: CardsInteractor
-
-    @Mock
-    lateinit var logger: Logger
-
-    @Mock
-    lateinit var view: CardView
-
-    @Mock
-    lateinit var card: MTGCard
-
-    @Mock
-    lateinit var otherCard: MTGCard
+    @Mock lateinit var cardsInteractor: CardsInteractor
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var view: CardView
+    @Mock lateinit var card: MTGCard
+    @Mock lateinit var otherCard: MTGCard
 
     @Before
     fun setUp() {
@@ -47,7 +38,7 @@ class CardPresenterImplTest {
 
     @Test
     fun `load other side card should call interactor and update view`() {
-        `when`(cardsInteractor.loadOtherSideCard(card)).thenReturn(Observable.just(otherCard))
+        whenever(cardsInteractor.loadOtherSideCard(card)).thenReturn(Observable.just(otherCard))
         
         underTest.loadOtherSideCard(card)
 

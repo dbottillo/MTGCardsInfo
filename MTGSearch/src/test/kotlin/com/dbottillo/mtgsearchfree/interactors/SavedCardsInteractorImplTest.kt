@@ -4,47 +4,41 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
 class SavedCardsInteractorImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var logger: Logger
-    @Mock
-    lateinit var storage: SavedCardsStorage
-    @Mock
-    lateinit var collection: CardsCollection
-    @Mock
-    lateinit var schedulerProvider: SchedulerProvider
-    @Mock
-    lateinit var card: MTGCard
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var storage: SavedCardsStorage
+    @Mock lateinit var collection: CardsCollection
+    @Mock lateinit var schedulerProvider: SchedulerProvider
+    @Mock lateinit var card: MTGCard
 
     lateinit var underTest: SavedCardsInteractor
     var idFavs = intArrayOf()
 
     @Before
     fun setup() {
-        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
-        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
-        underTest = SavedCardsInteractorImpl(storage,schedulerProvider, logger)
+        whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        underTest = SavedCardsInteractorImpl(storage, schedulerProvider, logger)
     }
 
     @Test
     fun `load should call storage and returns observable`() {
         val testSubscriber = TestObserver<CardsCollection>()
-        `when`(storage.load()).thenReturn(collection)
+        whenever(storage.load()).thenReturn(collection)
 
         underTest.load().subscribe(testSubscriber)
 
@@ -59,7 +53,7 @@ class SavedCardsInteractorImplTest {
     @Test
     fun `save card should call storage and returns observable`() {
         val testSubscriber = TestObserver<CardsCollection>()
-        `when`(storage.load()).thenReturn(collection)
+        whenever(storage.load()).thenReturn(collection)
 
         underTest.save(card).subscribe(testSubscriber)
 
@@ -75,7 +69,7 @@ class SavedCardsInteractorImplTest {
     @Test
     fun `remove card should call storage and returns observable`() {
         val testSubscriber = TestObserver<CardsCollection>()
-        `when`(storage.load()).thenReturn(collection)
+        whenever(storage.load()).thenReturn(collection)
 
         underTest.remove(card).subscribe(testSubscriber)
 
@@ -91,7 +85,7 @@ class SavedCardsInteractorImplTest {
     @Test
     fun `load id favs should call storage and returns observable`() {
         val testSubscriber = TestObserver<IntArray>()
-        `when`(storage.loadIdFav()).thenReturn(idFavs)
+        whenever(storage.loadIdFav()).thenReturn(idFavs)
 
         underTest.loadId().subscribe(testSubscriber)
 

@@ -16,17 +16,11 @@ import org.mockito.Mockito.*
 
 class CardFilterInteractorImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var cardFilter: CardFilter
-
-    @Mock
-    lateinit var cardsPreferences: CardsPreferencesImpl
-
-    @Mock
-    lateinit var logger: Logger
+    @Mock lateinit var cardFilter: CardFilter
+    @Mock lateinit var cardsPreferences: CardsPreferencesImpl
+    @Mock lateinit var logger: Logger
 
     lateinit var underTest: CardFilterInteractor
 

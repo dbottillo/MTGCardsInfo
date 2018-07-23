@@ -27,7 +27,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
     private var errorMessage: String? = null
 
     private val context: WeakReference<Context> = WeakReference(inputContext)
-    private val mDbHelper: CreateDatabaseHelper = CreateDatabaseHelper(context.get())
+    private val mDbHelper: CreateDatabaseHelper = CreateDatabaseHelper(context.get()!!)
 
     override fun doInBackground(vararg params: String): ArrayList<Any> {
         val result = ArrayList<Any>()
@@ -150,11 +150,11 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
         private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues {
             val values = ContentValues()
 
-            values.put(CardDataSource.COLUMNS.NAME.getName(), jsonObject.getString("name"))
-            values.put(CardDataSource.COLUMNS.TYPE.getName(), jsonObject.getString("type"))
-            values.put(CardDataSource.COLUMNS.SET_ID.getName(), set.id)
-            values.put(CardDataSource.COLUMNS.SET_NAME.getName(), set.name)
-            values.put(CardDataSource.COLUMNS.SET_CODE.getName(), set.code)
+            values.put(CardDataSource.COLUMNS.NAME.name, jsonObject.getString("name"))
+            values.put(CardDataSource.COLUMNS.TYPE.name, jsonObject.getString("type"))
+            values.put(CardDataSource.COLUMNS.SET_ID.name, set.id)
+            values.put(CardDataSource.COLUMNS.SET_NAME.name, set.name)
+            values.put(CardDataSource.COLUMNS.SET_CODE.name, set.code)
 
             val multicolor: Int
             var land: Int
@@ -170,7 +170,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                         colors.append(',')
                     }
                 }
-                values.put(CardDataSource.COLUMNS.COLORS.getName(), colors.toString())
+                values.put(CardDataSource.COLUMNS.COLORS.name, colors.toString())
 
                 if (colorsJ.length() > 1) {
                     multicolor = 1
@@ -192,7 +192,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                         types.append(',')
                     }
                 }
-                values.put(CardDataSource.COLUMNS.TYPES.getName(), types.toString())
+                values.put(CardDataSource.COLUMNS.TYPES.name, types.toString())
             }
 
             artifact = if (jsonObject.getString("type").contains("Artifact")) {
@@ -202,82 +202,82 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             }
 
             if (jsonObject.has("manaCost")) {
-                values.put(CardDataSource.COLUMNS.MANA_COST.getName(), jsonObject.getString("manaCost"))
+                values.put(CardDataSource.COLUMNS.MANA_COST.name, jsonObject.getString("manaCost"))
                 land = 0
             }
-            values.put(CardDataSource.COLUMNS.RARITY.getName(), jsonObject.getString("rarity"))
+            values.put(CardDataSource.COLUMNS.RARITY.name, jsonObject.getString("rarity"))
 
             if (jsonObject.has("multiverseid")) {
-                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.getName(), jsonObject.getInt("multiverseid"))
+                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.name, jsonObject.getInt("multiverseid"))
             }
 
             var power = ""
             if (jsonObject.has("power")) {
                 power = jsonObject.getString("power")
             }
-            values.put(CardDataSource.COLUMNS.POWER.getName(), power)
+            values.put(CardDataSource.COLUMNS.POWER.name, power)
 
             var toughness = ""
             if (jsonObject.has("toughness")) {
                 toughness = jsonObject.getString("toughness")
             }
-            values.put(CardDataSource.COLUMNS.TOUGHNESS.getName(), toughness)
+            values.put(CardDataSource.COLUMNS.TOUGHNESS.name, toughness)
 
             if (jsonObject.has("text")) {
-                values.put(CardDataSource.COLUMNS.TEXT.getName(), jsonObject.getString("text"))
+                values.put(CardDataSource.COLUMNS.TEXT.name, jsonObject.getString("text"))
             }
 
             var cmc = -1
             if (jsonObject.has("cmc")) {
                 cmc = jsonObject.getInt("cmc")
             }
-            values.put(CardDataSource.COLUMNS.CMC.getName(), cmc)
-            values.put(CardDataSource.COLUMNS.MULTICOLOR.getName(), multicolor)
-            values.put(CardDataSource.COLUMNS.LAND.getName(), land)
-            values.put(CardDataSource.COLUMNS.ARTIFACT.getName(), artifact)
+            values.put(CardDataSource.COLUMNS.CMC.name, cmc)
+            values.put(CardDataSource.COLUMNS.MULTICOLOR.name, multicolor)
+            values.put(CardDataSource.COLUMNS.LAND.name, land)
+            values.put(CardDataSource.COLUMNS.ARTIFACT.name, artifact)
 
             if (jsonObject.has("rulings")) {
                 val rulingsJ = jsonObject.getJSONArray("rulings")
-                values.put(CardDataSource.COLUMNS.RULINGS.getName(), rulingsJ.toString())
+                values.put(CardDataSource.COLUMNS.RULINGS.name, rulingsJ.toString())
             }
 
             if (jsonObject.has("layout")) {
-                values.put(CardDataSource.COLUMNS.LAYOUT.getName(), jsonObject.getString("layout"))
+                values.put(CardDataSource.COLUMNS.LAYOUT.name, jsonObject.getString("layout"))
             }
 
             if (jsonObject.has("number")) {
-                values.put(CardDataSource.COLUMNS.NUMBER.getName(), jsonObject.getString("number"))
+                values.put(CardDataSource.COLUMNS.NUMBER.name, jsonObject.getString("number"))
             }
 
             if (jsonObject.has("names")) {
-                values.put(CardDataSource.COLUMNS.NAMES.getName(), jsonObject.getString("names"))
+                values.put(CardDataSource.COLUMNS.NAMES.name, jsonObject.getString("names"))
             }
             if (jsonObject.has("supertypes")) {
-                values.put(CardDataSource.COLUMNS.SUPER_TYPES.getName(), jsonObject.getString("supertypes"))
+                values.put(CardDataSource.COLUMNS.SUPER_TYPES.name, jsonObject.getString("supertypes"))
             }
             if (jsonObject.has("flavor")) {
-                values.put(CardDataSource.COLUMNS.FLAVOR.getName(), jsonObject.getString("flavor"))
+                values.put(CardDataSource.COLUMNS.FLAVOR.name, jsonObject.getString("flavor"))
             }
             if (jsonObject.has("artist")) {
-                values.put(CardDataSource.COLUMNS.ARTIST.getName(), jsonObject.getString("artist"))
+                values.put(CardDataSource.COLUMNS.ARTIST.name, jsonObject.getString("artist"))
             }
             if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
-                values.put(CardDataSource.COLUMNS.LOYALTY.getName(), jsonObject.getInt("loyalty"))
+                values.put(CardDataSource.COLUMNS.LOYALTY.name, jsonObject.getInt("loyalty"))
             }
             if (jsonObject.has("printings")) {
-                values.put(CardDataSource.COLUMNS.PRINTINGS.getName(), jsonObject.getString("printings"))
+                values.put(CardDataSource.COLUMNS.PRINTINGS.name, jsonObject.getString("printings"))
             }
             if (jsonObject.has("legalities")) {
-                values.put(CardDataSource.COLUMNS.LEGALITIES.getName(), jsonObject.getString("legalities"))
+                values.put(CardDataSource.COLUMNS.LEGALITIES.name, jsonObject.getString("legalities"))
             }
             if (jsonObject.has("originalText")) {
-                values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName(), jsonObject.getString("originalText"))
+                values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.name, jsonObject.getString("originalText"))
             }
             if (jsonObject.has("mciNumber")) {
-                values.put(CardDataSource.COLUMNS.MCI_NUMBER.getName(), jsonObject.getString("mciNumber"))
+                values.put(CardDataSource.COLUMNS.MCI_NUMBER.name, jsonObject.getString("mciNumber"))
             }
             if (jsonObject.has("colorIdentity")) {
-                values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.getName(), jsonObject.getString("colorIdentity"))
+                values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.name, jsonObject.getString("colorIdentity"))
             }
 
             return values
