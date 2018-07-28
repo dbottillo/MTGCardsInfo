@@ -18,9 +18,7 @@ import org.mockito.junit.MockitoJUnit
 
 class ReleaseNoteInteractorTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var schedulerProvider: SchedulerProvider
     @Mock lateinit var storage: ReleaseNoteStorage

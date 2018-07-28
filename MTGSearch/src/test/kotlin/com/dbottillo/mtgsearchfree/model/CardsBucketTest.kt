@@ -1,26 +1,23 @@
 package com.dbottillo.mtgsearchfree.model
 
+import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnit
 import java.util.*
 
 class CardsBucketTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()
 
-    @Mock
-    lateinit var set: MTGSet
+    @Mock lateinit var set: MTGSet
 
-    lateinit var cardsSetBucket: CardsBucket
-    lateinit var genericBucket: CardsBucket
+    private lateinit var cardsSetBucket: CardsBucket
+    private lateinit var genericBucket: CardsBucket
 
     private val setCards = Arrays.asList(MTGCard(5), MTGCard(6))
     private val genericCards = Arrays.asList(MTGCard(8), MTGCard(9))
@@ -28,7 +25,7 @@ class CardsBucketTest {
 
     @Before
     fun setup() {
-        `when`(set.name).thenReturn("Zendikar")
+        whenever(set.name).thenReturn("Zendikar")
         cardsSetBucket = CardsBucket(set, setCards)
         genericBucket = CardsBucket("fav", genericCards)
     }

@@ -4,6 +4,7 @@ import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.*
 import org.junit.Before
@@ -17,11 +18,11 @@ import org.mockito.junit.MockitoJUnit
 
 class SavedCardsStorageImplTest {
 
-    @JvmField @Rule var mockitoRule = MockitoJUnit.rule()
+    @JvmField @Rule var mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: SavedCardsStorage
 
-    @Mock lateinit var favouriteDataSource : FavouritesDataSource
+    @Mock private lateinit var favouriteDataSource : FavouritesDataSource
     @Mock lateinit var cardsPreferences : CardsPreferences
     @Mock lateinit var cardsHelper : CardsHelper
     @Mock lateinit var logger : Logger
@@ -32,9 +33,9 @@ class SavedCardsStorageImplTest {
 
     @Before
     fun setUp() {
-        Mockito.`when`(favouriteDataSource.getCards(true)).thenReturn(cards)
-        Mockito.`when`(cardsPreferences.load()).thenReturn(filter)
-        Mockito.`when`(cardsHelper.filterCards(filter, cards)).thenReturn(filteredCards)
+        whenever(favouriteDataSource.getCards(true)).thenReturn(cards)
+        whenever(cardsPreferences.load()).thenReturn(filter)
+        whenever(cardsHelper.filterCards(filter, cards)).thenReturn(filteredCards)
         underTest = SavedCardsStorageImpl(favouriteDataSource, cardsHelper, cardsPreferences, logger)
     }
 
