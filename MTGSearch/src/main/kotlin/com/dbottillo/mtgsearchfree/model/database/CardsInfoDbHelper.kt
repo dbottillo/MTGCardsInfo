@@ -92,7 +92,7 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 
     internal fun readColumnTable(db: SQLiteDatabase, table: String): Set<String> {
-        val dbCursor = db.rawQuery("PRAGMA table_info(MTGCard)", null)
+        val dbCursor = db.rawQuery("PRAGMA table_info($table)", null)
         val columns = HashSet<String>(dbCursor.count)
         if (dbCursor.moveToFirst()) {
             do {

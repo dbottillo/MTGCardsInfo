@@ -36,7 +36,7 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
             logger.d()
             this.card = it.card
             view.setCardTitle(card.name)
-            view.decksLoaded(decks = it.decks, selecetedDeck = it.selectedDeck)
+            view.decksLoaded(decks = it.decks, selectedDeck = it.selectedDeck)
         }, {
             if (it is MTGException) {
                 view.showError(it.message ?: it.localizedMessage)
