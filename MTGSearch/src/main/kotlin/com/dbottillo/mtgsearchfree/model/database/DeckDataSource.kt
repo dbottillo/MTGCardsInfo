@@ -104,7 +104,7 @@ class DeckDataSource(private val database: SQLiteDatabase,
             }
         } else {
             // need to add the card
-            val cardId = cardDataSource.saveCard(card)
+            cardDataSource.saveCard(card)
         }
         current.close()
         val values = ContentValues()

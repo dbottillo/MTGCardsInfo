@@ -26,7 +26,8 @@ class CardMigratorService : IntentService("CardMigratorService") {
         super.onCreate()
 
         mNotifyManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        mBuilder = NotificationCompat.Builder(this)
+        // TODO: before re-using this class it needs to create a channel
+        mBuilder = NotificationCompat.Builder(this, "CHANNEL")
         mBuilder.setContentTitle(getString(R.string.card_migrator_notification_title))
                 .setSmallIcon(R.drawable.ic_stat_notification_generic)
     }
@@ -44,7 +45,7 @@ class CardMigratorService : IntentService("CardMigratorService") {
             var fromMTG = mtgCardDataSource.searchCard(card.multiVerseId)
             if (fromMTG == null) {
                 val searchCards = mtgCardDataSource.searchCards(SearchParams(name = card.name))
-                if (searchCards != null && searchCards.size > 0) {
+                if (searchCards.isNotEmpty()) {
                     fromMTG = searchCards[0]
                 }
             }

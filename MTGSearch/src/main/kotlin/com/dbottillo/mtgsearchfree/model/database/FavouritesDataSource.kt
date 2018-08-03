@@ -34,10 +34,7 @@ class FavouritesDataSource(private val database: SQLiteDatabase,
         val cursor = database.rawQuery(query, null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
-            val card = cardDataSource.fromCursor(cursor, fullCard)
-            if (card != null) {
-                cards.add(card)
-            }
+            cards.add(cardDataSource.fromCursor(cursor, fullCard))
             cursor.moveToNext()
         }
         cursor.close()
