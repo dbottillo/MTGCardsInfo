@@ -11,28 +11,23 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
                         private val cardDataSource: CardDataSource) {
 
     internal enum class STANDARD(var setId: Int, var set: String) {
-        CORE_19(1, "Core Set 2019"),
-        DOMINARIA(6, "Dominaria"),
-        RIVALS_OF_IXALAN(8, "Rivals of Ixalan"),
-        IXALAN(13, "Ixalan"),
-        HOUR_OF_DEVASTATION(15, "Hour of Devastation"),
-        AMONKHET_INVOCATIONS(16, "Masterpiece Series: Amonkhet Invocations"),
-        AMONKHET(17, "Amonkhet"),
-        WELCOME_2017(18, "Welcome Deck 2017"),
-        AETHER_REVOLT(21, "Aether Revolt"),
-        KALADESH_INVENTIONS(24, "Kaladesh Inventions"),
-        KALADESH(25, "Kaladesh");
+        CORE_19(2, "Core Set 2019"),
+        DOMINARIA(7, "Dominaria"),
+        RIVALS_OF_IXALAN(9, "Rivals of Ixalan"),
+        IXALAN(14, "Ixalan"),
+        HOUR_OF_DEVASTATION(16, "Hour of Devastation"),
+        AMONKHET_INVOCATIONS(17, "Masterpiece Series: Amonkhet Invocations"),
+        AMONKHET(18, "Amonkhet"),
+        WELCOME_2017(19, "Welcome Deck 2017"),
+        AETHER_REVOLT(22, "Aether Revolt"),
+        KALADESH_INVENTIONS(25, "Kaladesh Inventions"),
+        KALADESH(26, "Kaladesh");
 
         companion object {
 
             val setIds: Array<String>
                 get() {
                     return STANDARD.values().map { it.setId.toString() }.toTypedArray()
-                }
-
-            val setNames: List<String>
-                get() {
-                    return STANDARD.values().map { it.set }
                 }
         }
     }

@@ -4,4 +4,5 @@ interface SetPickerPresenter {
     fun init(view: SetPickerView)
     fun loadSets()
     fun setSelected(pos: Int)
+    fun search(text: String)
 }

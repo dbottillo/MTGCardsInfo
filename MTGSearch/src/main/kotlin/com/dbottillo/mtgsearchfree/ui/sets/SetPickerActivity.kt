@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.SearchView
+import android.util.Log
+import android.view.Menu
 import android.widget.ImageView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
@@ -57,10 +60,32 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
     }
 
     override fun showSets(sets: List<MTGSet>, selectedPos: Int) {
-        adapter = SetsAdapter(sets, selectedPos, {
+        adapter = SetsAdapter(sets, selectedPos) {
             presenter.setSelected(it)
-        })
+        }
         list.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_search_set, menu)
+
+        val mSearch = menu.findItem(R.id.action_search)
+
+        val mSearchView = mSearch.actionView as SearchView
+        mSearchView.queryHint = getString(R.string.menu_search_set)
+
+        mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                presenter.search(newText)
+                return true
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun close() {
@@ -73,7 +98,7 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
             val dividerRight = parent.width - dividerLeft
 
             val childCount = parent.childCount
-            for (i in 0..childCount - 1 - 1) {
+            for (i in 0 until childCount - 1) {
                 val child = parent.getChildAt(i)
 
                 val params = child.layoutParams as RecyclerView.LayoutParams
