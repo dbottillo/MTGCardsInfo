@@ -167,6 +167,10 @@ dependencies {
 
 }
 
+tasks.withType(Test) {
+    jvmArgs '-XX:CompileCommand=exclude,org/robolectric/internal/bytecode/SandboxClassLoader*.*'
+}
+
 task checkstyle(type: Checkstyle) {
     configFile = new File(checkstyleConfigDir, "checkstyle.xml")
     configProperties.checkstyleConfigDir = checkstyleConfigDir
