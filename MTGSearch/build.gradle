@@ -168,7 +168,9 @@ dependencies {
 }
 
 tasks.withType(Test) {
-    jvmArgs '-XX:CompileCommand=exclude,org/robolectric/internal/bytecode/SandboxClassLoader*.*'
+    jvmArgs '-XX:CompileCommand=exclude,org/robolectric/internal/bytecode/SandboxClassLoader*.*',
+            '-XX:CompileCommand=exclude,com/activeandroid/query/From*.*',
+            '-XX:CompileCommand=exclude,android/support/v7/app/AppCompatViewInflater*.*'
 }
 
 task checkstyle(type: Checkstyle) {
