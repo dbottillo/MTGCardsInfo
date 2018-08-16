@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.interactors
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 
 import org.junit.Rule
 import org.junit.Test
@@ -16,33 +17,25 @@ import org.mockito.Mockito.*
 
 class SetsInteractorImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    private lateinit var logger: Logger
-
-    @Mock
-    private lateinit var dataSource: SetDataSource
-
-    @Mock
-    private lateinit var sets: List<MTGSet>
-
-    @Mock
-    lateinit var schedulerProvider: SchedulerProvider
+    @Mock private lateinit var logger: Logger
+    @Mock private lateinit var dataSource: SetDataSource
+    @Mock private lateinit var sets: List<MTGSet>
+    @Mock lateinit var schedulerProvider: SchedulerProvider
 
     private lateinit var underTest: SetsInteractor
 
     @Before
     fun setUp() {
-        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
-        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
         underTest = SetsInteractorImpl(dataSource, schedulerProvider, logger)
     }
 
     @Test
     fun `load should call interactor and return observable`() {
-        `when`(dataSource.sets).thenReturn(sets)
+        whenever(dataSource.sets).thenReturn(sets)
 
         val result = underTest.load()
 

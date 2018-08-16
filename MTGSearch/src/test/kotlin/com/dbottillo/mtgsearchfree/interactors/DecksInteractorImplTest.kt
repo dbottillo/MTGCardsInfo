@@ -3,34 +3,27 @@ package com.dbottillo.mtgsearchfree.interactors
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.ExceptionCode
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
-import junit.framework.Assert.assertNull
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 import java.util.*
 
 class DecksInteractorImplTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var deck: Deck
     @Mock lateinit var editedDeck: Deck
@@ -49,15 +42,15 @@ class DecksInteractorImplTest {
 
     @Before
     fun setup() {
-        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
-        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
         underTest = DecksInteractorImpl(storage, fileUtil, schedulerProvider, logger)
     }
 
     @Test
     fun `load should call storage and returns observable`() {
         val testSubscriber = TestObserver<List<Deck>>()
-        `when`(storage.load()).thenReturn(decks)
+        whenever(storage.load()).thenReturn(decks)
 
         underTest.load().subscribe(testSubscriber)
 
@@ -71,7 +64,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testLoadDeck() {
-        `when`(storage.loadDeck(deck)).thenReturn(deckCollection)
+        whenever(storage.loadDeck(deck)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.loadDeck(deck).subscribe(testSubscriber)
@@ -86,7 +79,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testAddDeck() {
-        `when`(storage.addDeck("deck")).thenReturn(decks)
+        whenever(storage.addDeck("deck")).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
 
         underTest.addDeck("deck").subscribe(testSubscriber)
@@ -101,7 +94,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testDeleteDeck() {
-        `when`(storage.deleteDeck(deck)).thenReturn(decks)
+        whenever(storage.deleteDeck(deck)).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
 
         underTest.deleteDeck(deck).subscribe(testSubscriber)
@@ -116,7 +109,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testEditDeck() {
-        `when`(storage.editDeck(deck, "new name")).thenReturn(editedDeck)
+        whenever(storage.editDeck(deck, "new name")).thenReturn(editedDeck)
         val testSubscriber = TestObserver<Deck>()
 
         underTest.editDeck(deck, "new name").subscribe(testSubscriber)
@@ -131,7 +124,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testAddCard() {
-        `when`(storage.addCard(deck, card, 2)).thenReturn(deckCollection)
+        whenever(storage.addCard(deck, card, 2)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.addCard(deck, card, 2).subscribe(testSubscriber)
@@ -146,7 +139,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testAddCardWithNewDeck() {
-        `when`(storage.addCard("name", card, 2)).thenReturn(deckCollection)
+        whenever(storage.addCard("name", card, 2)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.addCard("name", card, 2).subscribe(testSubscriber)
@@ -161,7 +154,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testRemoveCard() {
-        `when`(storage.removeCard(deck, card)).thenReturn(deckCollection)
+        whenever(storage.removeCard(deck, card)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
         underTest.removeCard(deck, card).subscribe(testSubscriber)
@@ -174,7 +167,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun testRemoveAllCard() {
-        `when`(storage.removeAllCard(deck, card)).thenReturn(deckCollection)
+        whenever(storage.removeAllCard(deck, card)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
         underTest.removeAllCard(deck, card).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
@@ -207,7 +200,7 @@ class DecksInteractorImplTest {
     @Test
     @Throws(Throwable::class)
     fun testImportDeck() {
-        `when`(storage.importDeck(uri)).thenReturn(decks)
+        whenever(storage.importDeck(uri)).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
         underTest.importDeck(uri).subscribe(testSubscriber)
         testSubscriber.assertNoErrors()
@@ -235,7 +228,7 @@ class DecksInteractorImplTest {
     @Throws(MTGException::class)
     fun throwErrorIfImportFails() {
         val exception = MTGException(ExceptionCode.DECK_NOT_IMPORTED, "error")
-        `when`(storage.importDeck(uri)).thenThrow(exception)
+        whenever(storage.importDeck(uri)).thenThrow(exception)
         val testSubscriber = TestObserver<List<Deck>>()
         underTest.importDeck(uri).subscribe(testSubscriber)
         verify(schedulerProvider).io()
@@ -245,7 +238,7 @@ class DecksInteractorImplTest {
 
     @Test
     fun `should copy deck in the background`() {
-        `when`(storage.copy(deck)).thenReturn(decks)
+        whenever(storage.copy(deck)).thenReturn(decks)
         val testSubscriber = TestObserver<List<Deck>>()
 
         underTest.copy(deck).subscribe(testSubscriber)

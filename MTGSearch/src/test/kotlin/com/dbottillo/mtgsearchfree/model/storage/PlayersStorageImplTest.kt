@@ -3,6 +3,9 @@ package com.dbottillo.mtgsearchfree.model.storage
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.anyOrNull
+import com.nhaarman.mockito_kotlin.argumentCaptor
+import com.nhaarman.mockito_kotlin.whenever
 
 import org.junit.Before
 import org.junit.Rule
@@ -20,17 +23,11 @@ import org.mockito.Mockito.*
 
 class PlayersStorageImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var playerDataSource: PlayerDataSource
-
-    @Mock
-    lateinit var player: Player
-
-    @Mock
-    lateinit var logger: Logger
+    @Mock lateinit var playerDataSource: PlayerDataSource
+    @Mock lateinit var player: Player
+    @Mock lateinit var logger: Logger
 
     private val players = Arrays.asList(Player(1, "Jayce"), Player(2, "Liliana"))
 
@@ -38,7 +35,7 @@ class PlayersStorageImplTest {
 
     @Before
     fun setup() {
-        `when`(playerDataSource.players).thenReturn(players)
+        whenever(playerDataSource.players).thenReturn(players)
         underTest = PlayersStorageImpl(playerDataSource, logger)
     }
 
@@ -53,11 +50,11 @@ class PlayersStorageImplTest {
 
     @Test
     fun shouldReturnAtLeastOnePlayer_whenStorageReturnsEmpty() {
-        `when`(playerDataSource.players).thenReturn(listOf())
+        whenever(playerDataSource.players).thenReturn(listOf())
 
         underTest.load()
 
-        verify(playerDataSource).savePlayer(ArgumentMatchers.any(Player::class.java))
+        verify(playerDataSource).savePlayer(argumentCaptor<Player>().capture())
         verify(playerDataSource, times(3)).players
     }
 
@@ -65,7 +62,7 @@ class PlayersStorageImplTest {
     fun testAddPlayer() {
         val result = underTest.addPlayer()
 
-        verify(playerDataSource).savePlayer(ArgumentMatchers.any(Player::class.java))
+        verify(playerDataSource).savePlayer(argumentCaptor<Player>().capture())
         verify(playerDataSource, times(2)).players
 
         assertThat(result, `is`(players))

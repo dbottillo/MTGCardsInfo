@@ -65,7 +65,7 @@ class AppModule {
     @Provides
     @Singleton
     fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource {
-        return MTGCardDataSource(database, cardDataSource);
+        return MTGCardDataSource(database, cardDataSource)
     }
 
     @Provides
