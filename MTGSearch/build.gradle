@@ -1,7 +1,7 @@
 buildscript {
-    ext.number_of_set = 179
-    ext.database_version = 38
-    ext.name_fifth_mtg_card = "Ajani's Pridemate"
+    ext.number_of_set = 180
+    ext.database_version = 39
+    ext.name_fifth_mtg_card = "Magus of the Balance"
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -40,8 +40,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 96
-        versionName "3.4.1"
+        versionCode 97
+        versionName "3.4.2"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false
@@ -165,6 +165,12 @@ dependencies {
     androidTestImplementation "com.android.support:design:$support_library_version"
     androidTestImplementation 'org.mockito:mockito-android:2.19.0'
 
+}
+
+tasks.withType(Test) {
+    jvmArgs '-XX:CompileCommand=exclude,org/robolectric/internal/bytecode/SandboxClassLoader*.*',
+            '-XX:CompileCommand=exclude,com/activeandroid/query/From*.*',
+            '-XX:CompileCommand=exclude,android/support/v7/app/AppCompatViewInflater*.*'
 }
 
 task checkstyle(type: Checkstyle) {

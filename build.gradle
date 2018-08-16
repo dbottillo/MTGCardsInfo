@@ -17,13 +17,13 @@ buildscript {
     ext.fest_version = '2.0M10'
     ext.support_runner_version = '1.0.2'
     ext.dexmaker_mockito_version = '1.2'
-    ext.kotlin_version = '1.2.51'
+    ext.kotlin_version = '1.2.60'
     ext.constraint_layout_version = '1.1.2'
     ext.robolectric_version = '3.8'
     ext.versions_plugin_version = '0.20.0'
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0-beta04'
+        classpath 'com.android.tools.build:gradle:3.2.0-beta05'
         classpath 'com.google.gms:google-services:4.0.2'
         classpath 'io.fabric.tools:gradle:1.25.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
