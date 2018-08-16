@@ -8,9 +8,7 @@ import org.mockito.junit.MockitoJUnit
 
 class CMCParamTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Test
     fun `should create cmc param null if value is null`() {

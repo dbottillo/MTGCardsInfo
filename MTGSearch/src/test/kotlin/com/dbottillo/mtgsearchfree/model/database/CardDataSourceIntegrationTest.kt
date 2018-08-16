@@ -4,6 +4,7 @@ import android.database.Cursor
 import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
+import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.Matchers.`is`
 import org.json.JSONArray
 import org.json.JSONException
@@ -24,8 +25,7 @@ import java.util.*
 @RunWith(RobolectricTestRunner::class)
 class CardDataSourceIntegrationTest {
 
-    @Rule @JvmField
-    var rule = MockitoJUnit.rule()
+    @Rule @JvmField var rule = MockitoJUnit.rule()!!
 
     @Mock
     lateinit var cursor: Cursor
@@ -40,7 +40,7 @@ class CardDataSourceIntegrationTest {
         mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         underTest = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
-        mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.writableDatabase, underTest)
+        mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, underTest)
     }
 
     @After
@@ -222,36 +222,36 @@ class CardDataSourceIntegrationTest {
         val card = mtgCardDataSource.getRandomCard(1)[0]
         val contentValues = underTest.createContentValue(card)
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.getName()), `is`(card.name))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.getName()), `is`(card.type))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.noun), `is`(card.name))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.noun), `is`(card.type))
 
-        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.SET_ID.getName()), `is`(card.set?.id))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_NAME.getName()), `is`(card.set?.name))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.getName()), `is`(card.set?.code))
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.SET_ID.noun), `is`(card.set?.id))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_NAME.noun), `is`(card.set?.name))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.noun), `is`(card.set?.code))
 
         if (card.colors.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.getName()), `is`(joinListOfColors(card.colors, ",")))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun), `is`(joinListOfColors(card.colors, ",")))
         }
 
         if (card.types.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.getName()), `is`(joinListOfStrings(card.types, ",")))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.noun), `is`(joinListOfStrings(card.types, ",")))
         }
 
         if (card.subTypes.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.getName()), `is`(joinListOfStrings(card.subTypes, ",")))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun), `is`(joinListOfStrings(card.subTypes, ",")))
         }
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.getName()), `is`(card.manaCost))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RARITY.getName()), `is`(card.rarity))
-        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.MULTIVERSE_ID.getName()), `is`(card.multiVerseId))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.POWER.getName()), `is`(card.power))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TOUGHNESS.getName()), `is`(card.toughness))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TEXT.getName()), `is`(card.text))
-        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.CMC.getName()), `is`(card.cmc))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.noun), `is`(card.manaCost))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RARITY.noun), `is`(card.rarity))
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.MULTIVERSE_ID.noun), `is`(card.multiVerseId))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.POWER.noun), `is`(card.power))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TOUGHNESS.noun), `is`(card.toughness))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TEXT.noun), `is`(card.text))
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.CMC.noun), `is`(card.cmc))
 
-        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.MULTICOLOR.getName()), `is`(card.isMultiColor))
-        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.LAND.getName()), `is`(card.isLand))
-        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.ARTIFACT.getName()), `is`(card.isArtifact))
+        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.MULTICOLOR.noun), `is`(card.isMultiColor))
+        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.LAND.noun), `is`(card.isLand))
+        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.ARTIFACT.noun), `is`(card.isArtifact))
 
         if (card.rulings.size > 0) {
             val rules = JSONArray()
@@ -265,24 +265,24 @@ class CardDataSourceIntegrationTest {
                 }
 
             }
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RULINGS.getName()), `is`(rules.toString()))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RULINGS.noun), `is`(rules.toString()))
         }
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LAYOUT.getName()), `is`(card.layout))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NUMBER.getName()), `is`<String>(card.number))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LAYOUT.noun), `is`(card.layout))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NUMBER.noun), `is`<String>(card.number))
 
         val gson = Gson()
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAMES.getName()), `is`(gson.toJson(card.names)))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUPER_TYPES.getName()), `is`(gson.toJson(card.superTypes)))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.FLAVOR.getName()), `is`<String>(card.flavor))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ARTIST.getName()), `is`(card.artist))
-        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.LOYALTY.getName()), `is`(card.loyalty))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.PRINTINGS.getName()), `is`(gson.toJson(card.printings)))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAMES.noun), `is`(gson.toJson(card.names)))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUPER_TYPES.noun), `is`(gson.toJson(card.superTypes)))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.FLAVOR.noun), `is`<String>(card.flavor))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ARTIST.noun), `is`(card.artist))
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.LOYALTY.noun), `is`(card.loyalty))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.PRINTINGS.noun), `is`(gson.toJson(card.printings)))
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName()), `is`(card.originalText))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun), `is`(card.originalText))
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MCI_NUMBER.getName()), `is`<String>(card.mciNumber))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.getName()), `is`(gson.toJson(card.colorsIdentity)))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`<String>(card.mciNumber))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(gson.toJson(card.colorsIdentity)))
 
         if (card.legalities.size > 0) {
             val legalities = JSONArray()
@@ -297,106 +297,106 @@ class CardDataSourceIntegrationTest {
                 }
 
             }
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.getName()), `is`(legalities.toString()))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.noun), `is`(legalities.toString()))
         }
     }
 
     private fun setupCursorCard() {
-        `when`(cursor.getColumnIndex("_id")).thenReturn(1)
-        `when`(cursor.getInt(1)).thenReturn(2)
+        whenever(cursor.getColumnIndex("_id")).thenReturn(1)
+        whenever(cursor.getInt(1)).thenReturn(2)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.MULTIVERSE_ID.getName())).thenReturn(2)
-        `when`(cursor.getInt(2)).thenReturn(1001)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.MULTIVERSE_ID.noun)).thenReturn(2)
+        whenever(cursor.getInt(2)).thenReturn(1001)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.NAME.getName())).thenReturn(3)
-        `when`(cursor.getString(3)).thenReturn("name")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.NAME.noun)).thenReturn(3)
+        whenever(cursor.getString(3)).thenReturn("name")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.TYPE.getName())).thenReturn(4)
-        `when`(cursor.getString(4)).thenReturn("type")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TYPE.noun)).thenReturn(4)
+        whenever(cursor.getString(4)).thenReturn("type")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.TYPES.getName())).thenReturn(5)
-        `when`(cursor.getString(5)).thenReturn("Artifact,Creature")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TYPES.noun)).thenReturn(5)
+        whenever(cursor.getString(5)).thenReturn("Artifact,Creature")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.SUB_TYPES.getName())).thenReturn(6)
-        `when`(cursor.getString(6)).thenReturn("Creature,Artifact")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SUB_TYPES.noun)).thenReturn(6)
+        whenever(cursor.getString(6)).thenReturn("Creature,Artifact")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS.getName())).thenReturn(7)
-        `when`(cursor.getString(7)).thenReturn("Blue,Black")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS.noun)).thenReturn(7)
+        whenever(cursor.getString(7)).thenReturn("Blue,Black")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.CMC.getName())).thenReturn(8)
-        `when`(cursor.getInt(8)).thenReturn(1)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.CMC.noun)).thenReturn(8)
+        whenever(cursor.getInt(8)).thenReturn(1)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.RARITY.getName())).thenReturn(9)
-        `when`(cursor.getString(9)).thenReturn("Rare")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.RARITY.noun)).thenReturn(9)
+        whenever(cursor.getString(9)).thenReturn("Rare")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.POWER.getName())).thenReturn(10)
-        `when`(cursor.getString(10)).thenReturn("2")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.POWER.noun)).thenReturn(10)
+        whenever(cursor.getString(10)).thenReturn("2")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.TOUGHNESS.getName())).thenReturn(11)
-        `when`(cursor.getString(11)).thenReturn("3")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TOUGHNESS.noun)).thenReturn(11)
+        whenever(cursor.getString(11)).thenReturn("3")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.MANA_COST.getName())).thenReturn(12)
-        `when`(cursor.getString(12)).thenReturn("3{U}{B}")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.MANA_COST.noun)).thenReturn(12)
+        whenever(cursor.getString(12)).thenReturn("3{U}{B}")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.TEXT.getName())).thenReturn(13)
-        `when`(cursor.getString(13)).thenReturn("text")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TEXT.noun)).thenReturn(13)
+        whenever(cursor.getString(13)).thenReturn("text")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.MULTICOLOR.getName())).thenReturn(14)
-        `when`(cursor.getInt(14)).thenReturn(0)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.MULTICOLOR.noun)).thenReturn(14)
+        whenever(cursor.getInt(14)).thenReturn(0)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.LAND.getName())).thenReturn(15)
-        `when`(cursor.getInt(15)).thenReturn(1)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.LAND.noun)).thenReturn(15)
+        whenever(cursor.getInt(15)).thenReturn(1)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.ARTIFACT.getName())).thenReturn(16)
-        `when`(cursor.getInt(16)).thenReturn(0)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.ARTIFACT.noun)).thenReturn(16)
+        whenever(cursor.getInt(16)).thenReturn(0)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_ID.getName())).thenReturn(17)
-        `when`(cursor.getInt(17)).thenReturn(10)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_ID.noun)).thenReturn(17)
+        whenever(cursor.getInt(17)).thenReturn(10)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_NAME.getName())).thenReturn(18)
-        `when`(cursor.getString(18)).thenReturn("Commander 2016")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_NAME.noun)).thenReturn(18)
+        whenever(cursor.getString(18)).thenReturn("Commander 2016")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_CODE.getName())).thenReturn(19)
-        `when`(cursor.getString(19)).thenReturn("C16")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SET_CODE.noun)).thenReturn(19)
+        whenever(cursor.getString(19)).thenReturn("C16")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.RULINGS.getName())).thenReturn(20)
-        `when`(cursor.getString(20)).thenReturn("[{\"date\":\"2007-10-01\",\"text\":\"If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.\"}]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.RULINGS.noun)).thenReturn(20)
+        whenever(cursor.getString(20)).thenReturn("[{\"date\":\"2007-10-01\",\"text\":\"If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.\"}]")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.LAYOUT.getName())).thenReturn(21)
-        `when`(cursor.getString(21)).thenReturn("layout")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.LAYOUT.noun)).thenReturn(21)
+        whenever(cursor.getString(21)).thenReturn("layout")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.NUMBER.getName())).thenReturn(22)
-        `when`(cursor.getString(22)).thenReturn("29")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.NUMBER.noun)).thenReturn(22)
+        whenever(cursor.getString(22)).thenReturn("29")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.NAMES.getName())).thenReturn(23)
-        `when`(cursor.getString(23)).thenReturn("[\"Order\",\"Chaos\"]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.NAMES.noun)).thenReturn(23)
+        whenever(cursor.getString(23)).thenReturn("[\"Order\",\"Chaos\"]")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.SUPER_TYPES.getName())).thenReturn(24)
-        `when`(cursor.getString(24)).thenReturn("[\"Creature\",\"Artifact\"]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SUPER_TYPES.noun)).thenReturn(24)
+        whenever(cursor.getString(24)).thenReturn("[\"Creature\",\"Artifact\"]")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.FLAVOR.getName())).thenReturn(25)
-        `when`(cursor.getString(25)).thenReturn("flavor")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.FLAVOR.noun)).thenReturn(25)
+        whenever(cursor.getString(25)).thenReturn("flavor")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.ARTIST.getName())).thenReturn(26)
-        `when`(cursor.getString(26)).thenReturn("artist")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.ARTIST.noun)).thenReturn(26)
+        whenever(cursor.getString(26)).thenReturn("artist")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.LOYALTY.getName())).thenReturn(27)
-        `when`(cursor.getInt(27)).thenReturn(4)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.LOYALTY.noun)).thenReturn(27)
+        whenever(cursor.getInt(27)).thenReturn(4)
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.PRINTINGS.getName())).thenReturn(28)
-        `when`(cursor.getString(28)).thenReturn("[\"C16\",\"C17\"]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.PRINTINGS.noun)).thenReturn(28)
+        whenever(cursor.getString(28)).thenReturn("[\"C16\",\"C17\"]")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.LEGALITIES.getName())).thenReturn(29)
-        `when`(cursor.getString(29)).thenReturn("[{\"format\":\"Legacy\", \"legality\" : \"Banned\" }, { \"format\" : \"Vintage\", \"legality\" : \"Restricted\" } ]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.LEGALITIES.noun)).thenReturn(29)
+        whenever(cursor.getString(29)).thenReturn("[{\"format\":\"Legacy\", \"legality\" : \"Banned\" }, { \"format\" : \"Vintage\", \"legality\" : \"Restricted\" } ]")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.ORIGINAL_TEXT.getName())).thenReturn(30)
-        `when`(cursor.getString(30)).thenReturn("original text")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)).thenReturn(30)
+        whenever(cursor.getString(30)).thenReturn("original text")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.MCI_NUMBER.getName())).thenReturn(31)
-        `when`(cursor.getString(31)).thenReturn("233")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.MCI_NUMBER.noun)).thenReturn(31)
+        whenever(cursor.getString(31)).thenReturn("233")
 
-        `when`(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.getName())).thenReturn(32)
-        `when`(cursor.getString(32)).thenReturn("[\"U\",\"W\"]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).thenReturn(32)
+        whenever(cursor.getString(32)).thenReturn("[\"U\",\"W\"]")
 
     }
 

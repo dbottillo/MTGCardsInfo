@@ -3,11 +3,11 @@ package com.dbottillo.mtgsearchfree.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Deck @JvmOverloads constructor(var id: Long,
-                                          var name: String = "",
-                                          var isArchived: Boolean = false,
-                                          var numberOfCards: Int = 0,
-                                          var sizeOfSideboard: Int = 0) : Parcelable {
+data class Deck constructor(var id: Long,
+                            var name: String = "",
+                            var isArchived: Boolean = false,
+                            var numberOfCards: Int = 0,
+                            var sizeOfSideboard: Int = 0) : Parcelable {
 
     constructor(parcelIn: Parcel) :
             this(parcelIn.readLong(), parcelIn.readString(),

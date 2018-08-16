@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.interactors
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
@@ -14,33 +15,26 @@ import org.mockito.junit.MockitoJUnit
 
 class PlayerInteractorImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    internal lateinit var storage: PlayersStorage
-    @Mock
-    internal lateinit var player: Player
-    @Mock
-    internal lateinit var logger: Logger
-    @Mock
-    lateinit var players: List<Player>
+    @Mock internal lateinit var storage: PlayersStorage
+    @Mock internal lateinit var player: Player
+    @Mock internal lateinit var logger: Logger
+    @Mock lateinit var players: List<Player>
+    @Mock lateinit var schedulerProvider: SchedulerProvider
     
     private lateinit var underTest: PlayerInteractor
 
-    @Mock
-    lateinit var schedulerProvider: SchedulerProvider
-
     @Before
     fun setup() {
-        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
-        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
         underTest = PlayerInteractorImpl(storage, schedulerProvider, logger)
     }
 
     @Test
     fun `load players, should call storage and return observable`() {
-        `when`(storage.load()).thenReturn(players)
+        whenever(storage.load()).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
 
         val result = underTest.load()
@@ -56,7 +50,7 @@ class PlayerInteractorImplTest {
 
     @Test
     fun `add player, should call storage and return observable`() {
-        `when`(storage.addPlayer()).thenReturn(players)
+        whenever(storage.addPlayer()).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
 
         underTest.addPlayer().subscribe(testSubscriber)
@@ -71,7 +65,7 @@ class PlayerInteractorImplTest {
 
     @Test
     fun `edit player, should call storage and return observable`() {
-        `when`(storage.editPlayer(player)).thenReturn(players)
+        whenever(storage.editPlayer(player)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
         
         underTest.editPlayer(player).subscribe(testSubscriber)
@@ -86,7 +80,7 @@ class PlayerInteractorImplTest {
 
     @Test
     fun `edit players, should call storage and return observable`() {
-        `when`(storage.editPlayers(players)).thenReturn(players)
+        whenever(storage.editPlayers(players)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
         
         underTest.editPlayers(players).subscribe(testSubscriber)
@@ -101,7 +95,7 @@ class PlayerInteractorImplTest {
 
     @Test
     fun `remove player, should call storage and return observable`() {
-        `when`(storage.removePlayer(player)).thenReturn(players)
+        whenever(storage.removePlayer(player)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
         
         underTest.removePlayer(player).subscribe(testSubscriber)

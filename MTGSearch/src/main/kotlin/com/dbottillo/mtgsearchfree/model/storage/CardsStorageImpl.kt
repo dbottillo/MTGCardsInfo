@@ -61,13 +61,13 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
     }
 
     override fun loadCard(multiverseId: Int): MTGCard {
-        logger.d("do search with multiverse: " + multiverseId)
-        return mtgCardDataSource.searchCard(multiverseId)
+        logger.d("do search with multiverse: $multiverseId")
+        return mtgCardDataSource.searchCard(multiverseId) ?: throw UnsupportedOperationException("can't find card with multi-verse id $multiverseId")
     }
 
     override fun loadCardById(id: Int): MTGCard {
-        logger.d("do search with id: " + id)
-        return mtgCardDataSource.searchCardById(id)
+        logger.d("do search with id: $id")
+        return mtgCardDataSource.searchCardById(id)?: throw UnsupportedOperationException("can't find card with id $id")
     }
 
     override fun loadOtherSide(card: MTGCard): MTGCard {
@@ -79,6 +79,6 @@ open class CardsStorageImpl(private val mtgCardDataSource: MTGCardDataSource,
         if (name.equals(card.name, ignoreCase = true)) {
             name = card.names[1]
         }
-        return mtgCardDataSource.searchCard(name)
+        return mtgCardDataSource.searchCard(name)?: throw UnsupportedOperationException("can't find other side of $card")
     }
 }

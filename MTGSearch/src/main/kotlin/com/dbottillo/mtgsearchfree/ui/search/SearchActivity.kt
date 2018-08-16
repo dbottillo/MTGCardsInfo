@@ -6,6 +6,9 @@ import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.SearchView
+import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
@@ -39,11 +42,10 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     private val searchView: MTGSearchView by bind(R.id.search_view)
     private val closeButton: ImageButton by bind(R.id.close_button)
 
-    internal var newSearchAnimation: AnimationDrawable? = null
-    internal var argbEvaluator = ArgbEvaluator()
-
-    internal var sizeBig = 0
-    internal var searchOpen = false
+    private var newSearchAnimation: AnimationDrawable? = null
+    private var argbEvaluator = ArgbEvaluator()
+    private var sizeBig = 0
+    private var searchOpen = false
 
     @Inject
     lateinit var presenter: SearchPresenter
@@ -299,11 +301,9 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         }
     }
 
-    companion object {
-
-        private val SEARCH_OPEN = "searchOpen"
-        private val BG_COLOR_SCROLLVIEW = "bgColorScrollview"
-        private val TOOLBAR_ELEVATION = "toolbarElevation"
-        private val SEARCH_PARAMS = "searchParams"
-    }
 }
+
+private const val SEARCH_OPEN = "searchOpen"
+private const val BG_COLOR_SCROLLVIEW = "bgColorScrollview"
+private const val TOOLBAR_ELEVATION = "toolbarElevation"
+private const val SEARCH_PARAMS = "searchParams"
