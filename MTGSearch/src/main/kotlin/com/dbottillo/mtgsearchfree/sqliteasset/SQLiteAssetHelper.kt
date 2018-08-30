@@ -58,6 +58,7 @@ open class SQLiteAssetHelper(private val context: Context,
         if (db == null || db.version < version) {
             Log.e(TAG, if (db == null) "database is null" else "database version ${db.version} is lower than ${version}")
             Log.e(TAG, "will try to copy from asset")
+            db?.close()
             copyDatabaseFromAssets()
 
             db = returnDatabase()
