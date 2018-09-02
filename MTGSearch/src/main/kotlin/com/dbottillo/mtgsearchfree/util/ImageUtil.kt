@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.util
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -30,22 +31,26 @@ fun Triple<String, String?, String>.loadInto(loader: MTGLoader? = null, imageVie
     loader?.show()
     retry?.hide()
     imageView.contentDescription = first
+    val context = imageView.context
+    if (context is Activity && (context.isFinishing || context.isDestroyed)) {
+        return
+    }
     if (second != null) {
         TrackingManager.trackImage(second)
-        GlideApp.with(imageView.context)
+        GlideApp.with(context)
                 .load(second)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .listener(withListener(loader = loader, retryView = retry, hideOnError = false))
                 .error(R.drawable.left_debug)
                 .error(GlideApp
-                        .with(imageView.context)
+                        .with(context)
                         .load(third)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .listener(withListener(loader = loader, retryView = retry, hideOnError = true))
                         .error(R.drawable.left_debug))
                 .into(imageView)
     } else {
-        GlideApp.with(imageView.context)
+        GlideApp.with(context)
                 .load(third)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .listener(withListener(loader = loader, retryView = retry, hideOnError = true))
@@ -104,18 +109,13 @@ fun MTGCard.prefetchImage(context: Context) {
 }
 
 fun MTGCard.getBitmap(context: Context, callback: (Bitmap) -> Unit) {
-    val uri = if (!number.isNullOrEmpty() && set != null && !types.contains("Plane")
-            && set?.code?.toUpperCase() != "6ED"
-            && set?.code?.toUpperCase() != "RIX") {
-        mtgCardsInfoImage
-    } else gathererImage
-
     GlideApp.with(context)
             .asBitmap()
-            .load(uri)
+            .load(gathererImage)
             .into(object : SimpleTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     callback(resource)
                 }
             })
+
 }

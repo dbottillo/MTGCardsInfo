@@ -32,7 +32,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
     }
 
     private fun loadDeck() {
-        interactor.loadDeck(deck).subscribe({
+        interactor.loadDeck(deck).subscribe {
             cards = mutableListOf()
             it.allCards()
                     .filter { !it.isSideboard }
@@ -43,7 +43,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
                     }
             cards.shuffle()
             newStartingHand()
-        })
+        }
     }
 
     fun repeat() {

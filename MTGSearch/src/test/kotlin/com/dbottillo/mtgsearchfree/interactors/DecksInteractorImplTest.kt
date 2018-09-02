@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.whenever
@@ -30,7 +31,7 @@ class DecksInteractorImplTest {
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cards: List<MTGCard>
     @Mock lateinit var storage: DecksStorage
-    @Mock lateinit var fileUtil: FileUtil
+    @Mock lateinit var fileManager: FileManager
     @Mock lateinit var uri: Uri
     @Mock lateinit var logger: Logger
     @Mock lateinit var deckCollection: DeckCollection
@@ -44,7 +45,7 @@ class DecksInteractorImplTest {
     fun setup() {
         whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
         whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
-        underTest = DecksInteractorImpl(storage, fileUtil, schedulerProvider, logger)
+        underTest = DecksInteractorImpl(storage, fileManager, schedulerProvider, logger)
     }
 
     @Test
@@ -207,21 +208,21 @@ class DecksInteractorImplTest {
         testSubscriber.assertValue(decks)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verify<DecksStorage>(storage).importDeck(uri)
+        verify(storage).importDeck(uri)
     }
 
     @Test
     fun `export deck should load card, call file util and complete if successfull`() {
         whenever(storage.loadDeck(deck)).thenReturn(deckCollection)
         whenever(deckCollection.allCards()).thenReturn(cards)
-        whenever(fileUtil.downloadDeckToSdCard(deck, cards)).thenReturn(true)
+        whenever(fileManager.saveDeckToFile(deck, cards)).thenReturn(uri)
 
         val testObserver = underTest.exportDeck(deck).test()
 
-        testObserver.assertComplete()
+        testObserver.assertValue(uri)
         verify(storage).loadDeck(deck)
-        verify(fileUtil).downloadDeckToSdCard(deck, cards)
-        verifyNoMoreInteractions(storage, fileUtil)
+        verify(fileManager).saveDeckToFile(deck, cards)
+        verifyNoMoreInteractions(storage, fileManager)
     }
 
     @Test
@@ -248,6 +249,6 @@ class DecksInteractorImplTest {
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verify(storage).copy(deck)
-        verifyNoMoreInteractions(storage, fileUtil, schedulerProvider)
+        verifyNoMoreInteractions(storage, fileManager, schedulerProvider)
     }
 }

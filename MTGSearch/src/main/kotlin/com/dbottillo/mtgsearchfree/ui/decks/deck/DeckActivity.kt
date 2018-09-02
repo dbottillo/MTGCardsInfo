@@ -114,43 +114,23 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         Snackbar.make(container, getString(R.string.deck_copied), Snackbar.LENGTH_LONG).show()
     }
 
-    override fun deckExported() {
-        val snackbar = Snackbar
-                .make(container, getString(R.string.deck_exported), Snackbar.LENGTH_LONG)
-                .setAction(getString(R.string.share)) {
-                    val intent = Intent(Intent.ACTION_SEND)
-                    intent.type = "text/plain"
-                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(presenter.deck.fileNameForDeck()))
-                    startActivity(Intent.createChooser(intent, getString(R.string.share)))
-                    TrackingManager.trackDeckExport()
-                }
-        snackbar.show()
+    override fun deckExported(uri: Uri) {
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        shareIntent.type = "text/plain"
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.deck_title)))
     }
 
     override fun deckNotExported(){
-        exportDeckNotAllowed()
+        Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show()
+        TrackingManager.trackDeckExportError()
     }
 
     private fun exportDeck() {
         LOG.d()
-        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
-            override fun permissionGranted() {
-                presenter.exportDeck()
-            }
-
-            override fun permissionNotGranted() {
-                exportDeckNotAllowed()
-            }
-        })
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    }
-
-    private fun exportDeckNotAllowed() {
-        Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show()
-        TrackingManager.trackDeckExportError()
+        presenter.exportDeck()
     }
 
     private fun editDeckName() {

@@ -17,13 +17,13 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_share"
-        android:icon="@drawable/ic_menu_share"
+        android:icon="@drawable/ic_share_24px"
         android:orderInCategory="103"
         android:title="@string/share"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_share_artwork"
-        android:icon="@drawable/ic_menu_share"
+        android:icon="@drawable/ic_share_24px"
         android:orderInCategory="104"
         android:title="@string/share_artwork"
         app:showAsAction="never"/>

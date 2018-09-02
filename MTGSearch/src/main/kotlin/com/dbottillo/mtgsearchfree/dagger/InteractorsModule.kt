@@ -42,10 +42,10 @@ class InteractorsModule {
 
     @Provides
     fun provideDecksInteractor(decksStorage: DecksStorage,
-                               fileUtil: FileUtil,
+                               fileManager: FileManager,
                                schedulerProvider: SchedulerProvider,
                                logger: Logger): DecksInteractor {
-        return DecksInteractorImpl(decksStorage, fileUtil, schedulerProvider, logger)
+        return DecksInteractorImpl(decksStorage, fileManager, schedulerProvider, logger)
     }
 
     @Provides
