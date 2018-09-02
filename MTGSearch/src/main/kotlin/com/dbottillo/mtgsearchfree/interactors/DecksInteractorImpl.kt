@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Completable
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 class DecksInteractorImpl @Inject
 constructor(val storage: DecksStorage,
-            val fileUtil: FileUtil,
+            private val fileManager: FileManager,
             val schedulerProvider: SchedulerProvider,
             val logger: Logger) : DecksInteractor {
 
@@ -95,26 +96,21 @@ constructor(val storage: DecksStorage,
 
     override fun importDeck(uri: Uri): Observable<List<Deck>> {
         logger.d("import " + uri.toString())
-        try {
-            return Observable.fromCallable { storage.importDeck(uri) }
+        return try {
+            Observable.fromCallable { storage.importDeck(uri) }
                     .subscribeOn(schedulerProvider.io())
                     .observeOn(schedulerProvider.ui())
         } catch (throwable: Throwable) {
-            return Observable.error<List<Deck>>(throwable)
+            Observable.error<List<Deck>>(throwable)
         }
     }
 
-    override fun exportDeck(deck: Deck): Completable {
-        return Completable.fromCallable {
+    override fun exportDeck(deck: Deck): Single<Uri> {
+        logger.d("export deck to file/uri")
+        return Single.defer<Uri> {
             val cards = storage.loadDeck(deck).allCards()
-            val exported = fileUtil.downloadDeckToSdCard(deck, cards)
-            if (exported){
-                Completable.complete()
-            } else {
-                Completable.error(Throwable("deck not exported"))
-            }
-        }
-                .subscribeOn(schedulerProvider.io())
+            Single.just(fileManager.saveDeckToFile(deck, cards))
+        }.subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 

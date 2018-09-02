@@ -4,6 +4,7 @@ import android.content.res.Resources
 import android.graphics.Bitmap
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
+import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.*
 import com.dbottillo.mtgsearchfree.util.FileManagerI
@@ -185,6 +186,10 @@ class DecksStorageIntegrationTest {
     }
 
     private inner class FileManagerForTest : FileManagerI {
+        override fun saveDeckToFile(deck: Deck, cards: List<MTGCard>): Uri {
+            return Uri.parse("")
+        }
+
         override fun saveBitmapToFile(bitmap: Bitmap): Uri {
             return Uri.parse("")
         }

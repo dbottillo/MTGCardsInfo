@@ -102,8 +102,8 @@ abstract class BasicActivity : AppCompatActivity() {
         if (prev != null) {
             ft.remove(prev)
         }
-        ft.addToBackStack(null)
-        fragment.show(ft, tag)
+        ft.add(fragment, tag)
+        ft.commitNowAllowingStateLoss()
     }
 
     private var permissionListener: PermissionUtil.PermissionListener? = null
