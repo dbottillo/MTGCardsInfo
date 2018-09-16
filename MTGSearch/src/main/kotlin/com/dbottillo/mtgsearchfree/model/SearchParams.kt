@@ -36,8 +36,7 @@ data class SearchParams(var name: String = "",
 
     val isValid: Boolean
         get() = (name.isNotEmpty() || types.isNotEmpty()
-                || cmc != null && cmc!!.numericValue > 0
-                || power != null || tough != null
+                || cmc != null || power != null || tough != null
                 || setId > 0 || text.isNotEmpty()
                 || isLand || atLeastOneColor() || atLeastOneRarity())
 
