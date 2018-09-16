@@ -139,7 +139,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     fun addPlayer() {
         LOG.d()
-        if (lifeCounterList.adapter.itemCount == 10) {
+        if (lifeCounterList.adapter?.itemCount == 10) {
             Toast.makeText(activity, R.string.maximum_player, Toast.LENGTH_SHORT).show()
             return
         }
