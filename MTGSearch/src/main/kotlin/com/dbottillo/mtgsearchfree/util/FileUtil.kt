@@ -72,11 +72,6 @@ class FileUtil(private val fileManager: FileManagerI) {
     }
 }
 
-fun Deck.fileNameForDeck(): File? {
-    val root = mtgSearchDirectory ?: return null
-    return File(root, toDeckName() + ".dec")
-}
-
 private val mtgSearchDirectory: File?
     get() {
         val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")
