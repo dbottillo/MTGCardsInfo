@@ -85,7 +85,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     protected fun setupHomeActivityScroll(viewRecycle: RecyclerView) {
         if (activity is HomeActivity) {
             viewRecycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
                     if (dy > 0) {
                         (activity as HomeActivity).scrollingUp()
