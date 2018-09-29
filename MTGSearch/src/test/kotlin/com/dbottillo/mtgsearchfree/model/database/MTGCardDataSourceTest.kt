@@ -84,7 +84,7 @@ class MTGCardDataSourceTest {
                         LOG.e("not found ");
                     }
                 }*/
-                assertThat(cardsJ.size, `is`(cards.size))
+                assertThat("checking $set", cardsJ.size, `is`(cards.size))
                 assertTrue(cards.containsAll(cardsJ))
             } catch (e: Resources.NotFoundException) {
                 LOG.e(set.code + " file not found")
@@ -479,7 +479,7 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.setId = set.id
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, set1) in cards) {
             assertThat<MTGSet>(set1, `is`(set))
         }

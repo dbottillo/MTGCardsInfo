@@ -26,14 +26,10 @@ import org.mockito.junit.MockitoJUnit
 
 class StartingHandPresenterTest {
 
-    @Rule
-    @JvmField
-    val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()
 
-    @Mock
-    lateinit var interactor: DecksInteractor
-    @Mock
-    internal lateinit var logger: Logger
+    @Mock lateinit var interactor: DecksInteractor
+    @Mock internal lateinit var logger: Logger
     @Mock lateinit var view: StartingHandView
     @Mock lateinit var deck: Deck
     @Mock lateinit var bundle: Bundle
@@ -109,8 +105,8 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should restore bundle if contains cards`() {
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image11", gathererImage = "image12", name = "name1")))
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(mtgCardsInfoImage = "image21", gathererImage = "image22", name = "name2")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(gathererImage = "image12", name = "name1")))
+        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(gathererImage = "image22", name = "name2")))
 
         underTest.loadDeck(bundle)
 
@@ -119,7 +115,6 @@ class StartingHandPresenterTest {
 
             assertThat(firstValue.size, `is`(1))
             assertThat(firstValue[0].name, `is`("name2"))
-            assertThat(firstValue[0].mtgCardsInfoImage, `is`("image21"))
             assertThat(firstValue[0].gathererImage, `is`("image22"))
         }
         verifyNoMoreInteractions(view, interactor)

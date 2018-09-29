@@ -123,8 +123,7 @@ class ReleaseNoteActivityModule {
 class SetPickerActivityModule {
     @Provides
     fun providesSetPickerPresenter(setsInteractor: SetsInteractor,
-                                            cardsPreferences: CardsPreferences,
-                                            logger: Logger): SetPickerPresenter {
-        return SetPickerPresenterImpl(setsInteractor, cardsPreferences, logger)
+                                            cardsPreferences: CardsPreferences): SetPickerPresenter {
+        return SetPickerPresenterImpl(setsInteractor, cardsPreferences)
     }
 }

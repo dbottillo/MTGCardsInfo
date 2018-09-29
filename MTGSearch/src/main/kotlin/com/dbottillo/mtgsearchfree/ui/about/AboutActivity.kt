@@ -6,19 +6,21 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.text.SpannableStringBuilder
 import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.MTGApp
+import com.dbottillo.mtgsearchfree.PRIVACY_POLICY
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.TELEGRAM_LINK
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.util.*
-import dagger.android.AndroidInjection
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.addBold
+import com.dbottillo.mtgsearchfree.util.bind
+import com.dbottillo.mtgsearchfree.util.toHtml
 import java.util.*
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
@@ -56,6 +58,10 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
         findViewById<View>(R.id.join_telegram).setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(TELEGRAM_LINK)))
+        }
+
+        findViewById<View>(R.id.privacy_policy).setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY)))
         }
 
         findViewById<View>(R.id.share_app).setOnClickListener {

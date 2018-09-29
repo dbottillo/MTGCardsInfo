@@ -7,9 +7,8 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
 class SetPickerPresenterImpl(
-        val setsInteractor: SetsInteractor,
-        val cardsPreferences: CardsPreferences,
-        val logger: Logger) : SetPickerPresenter {
+        private val setsInteractor: SetsInteractor,
+        private val cardsPreferences: CardsPreferences) : SetPickerPresenter {
 
     lateinit var view: SetPickerView
 
@@ -35,8 +34,8 @@ class SetPickerPresenterImpl(
         }
     }
 
-    override fun setSelected(pos: Int) {
-        cardsPreferences.saveSetPosition(pos)
+    override fun setSelected(set: MTGSet) {
+        cardsPreferences.saveSetPosition(sets?.indexOf(set) ?: 0)
         view.close()
     }
 }
