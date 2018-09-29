@@ -95,7 +95,7 @@ class ReleaseNoteHolder(view: View) : RecyclerView.ViewHolder(view) {
 class ReleaseNoteFooter(val height: Int) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-        if (parent.getChildAdapterPosition(view) == parent.adapter.itemCount - 1) {
+        if (parent.getChildAdapterPosition(view) == parent.adapter!!.itemCount - 1) {
             outRect.set(0, 0, 0, height)
         } else {
             outRect.setEmpty()

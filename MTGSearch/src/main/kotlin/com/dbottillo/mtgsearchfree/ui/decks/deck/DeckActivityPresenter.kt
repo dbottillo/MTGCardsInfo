@@ -41,7 +41,7 @@ class DeckActivityPresenter @Inject constructor(
 
     fun exportDeck() {
         interactor.exportDeck(deck).subscribe({
-            view.deckExported()
+            view.deckExported(it)
         }, {
             view.deckNotExported()
         })

@@ -10,7 +10,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 
 class SetsAdapter(val sets: List<MTGSet>,
                   val currentPos: Int,
-                  val selected: (pos: Int) -> Unit) : RecyclerView.Adapter<SetViewHolder>() {
+                  val selected: (set: MTGSet) -> Unit) : RecyclerView.Adapter<SetViewHolder>() {
 
     override fun getItemCount(): Int {
         return sets.size
@@ -23,7 +23,7 @@ class SetsAdapter(val sets: List<MTGSet>,
         holder.name.setTypeface(null, if (position == currentPos) Typeface.BOLD else Typeface.NORMAL)
         holder.itemView.setOnClickListener{
             if (position != currentPos){
-                selected(position)
+                selected(sets[position])
             }
         }
     }

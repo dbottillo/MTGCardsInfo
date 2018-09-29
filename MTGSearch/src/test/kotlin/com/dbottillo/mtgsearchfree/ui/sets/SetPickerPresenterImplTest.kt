@@ -24,14 +24,13 @@ class SetPickerPresenterImplTest {
     @Mock lateinit var view: SetPickerView
     @Mock lateinit var interactor: SetsInteractor
     @Mock lateinit var cardsPreferences: CardsPreferences
-    @Mock lateinit var logger: Logger
     @Mock lateinit var sets: List<MTGSet>
 
     lateinit var underTest: SetPickerPresenter
 
     @Before
     fun setup() {
-        underTest = SetPickerPresenterImpl(interactor, cardsPreferences, logger)
+        underTest = SetPickerPresenterImpl(interactor, cardsPreferences)
         underTest.init(view)
     }
 
@@ -53,10 +52,22 @@ class SetPickerPresenterImplTest {
 
     @Test
     fun `set selected should update position and close screen`() {
-        underTest.setSelected(6)
+        val firstSet = MTGSet(id = 1, name = "Commander", code = "COM")
+        val selectedSet = MTGSet(id = 2, name = "Kaladesh", code = "KAL")
+        val thirdSet = MTGSet(id = 3, name = "Jayce vs Vraska", code = "JVV")
+        whenever(cardsPreferences.setPosition).thenReturn(1)
+        whenever(sets[1]).thenReturn(selectedSet)
+        whenever(sets.indexOf(selectedSet)).thenReturn(2)
+        whenever(interactor.load()).thenReturn(Observable.just(listOf(firstSet, selectedSet, thirdSet)))
+        underTest.loadSets()
+        Mockito.reset(view)
+
+        underTest.setSelected(thirdSet)
 
         verify(view).close()
-        verify(cardsPreferences).saveSetPosition(6)
+        verify(interactor).load()
+        verify(cardsPreferences).setPosition
+        verify(cardsPreferences).saveSetPosition(2)
         verifyNoMoreInteractions(interactor, cardsPreferences, view)
     }
 

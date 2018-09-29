@@ -25,7 +25,7 @@ class MTGCardsView : RelativeLayout {
 
     internal var grid = true
     private var adapter: CardsAdapter? = null
-    private var itemDecorator: GridItemDecorator? = null
+    private lateinit var itemDecorator: GridItemDecorator
 
     lateinit var listView: RecyclerView
     private lateinit var emptyView: TextView
@@ -132,7 +132,7 @@ class MTGCardsView : RelativeLayout {
     private inner class GridItemDecorator(private val space: Int) : RecyclerView.ItemDecoration() {
 
         override fun getItemOffsets(outRect: Rect, view: View,
-                                    parent: RecyclerView, state: RecyclerView.State?) {
+                                    parent: RecyclerView, state: RecyclerView.State) {
             if (parent.getChildLayoutPosition(view) == 0) {
                 outRect.left = 0
                 outRect.right = 0

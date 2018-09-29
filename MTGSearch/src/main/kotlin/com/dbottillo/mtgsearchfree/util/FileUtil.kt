@@ -70,38 +70,6 @@ class FileUtil(private val fileManager: FileManagerI) {
         card.setCardName(rest)
         return card
     }
-
-    fun downloadDeckToSdCard(deck: Deck, cards: List<MTGCard>): Boolean {
-        val deckFile = deck.fileNameForDeck() ?: return false
-        val writer: OutputStreamWriter
-        TrackingManager.trackDatabaseExport()
-        try {
-            writer = OutputStreamWriter(FileOutputStream(deckFile), "UTF-8")
-            writer.append("//")
-            writer.append(deck.name)
-            writer.append("\n")
-            for ((_, name, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in cards) {
-                if (isSideboard) {
-                    writer.append("SB: ")
-                }
-                writer.append(quantity.toString())
-                writer.append(" ")
-                writer.append(name)
-                writer.append("\n")
-            }
-            writer.flush()
-            writer.close()
-            return true
-        } catch (e: IOException) {
-            TrackingManager.trackDatabaseExportError(e.localizedMessage)
-            return false
-        }
-    }
-}
-
-fun Deck.fileNameForDeck(): File? {
-    val root = mtgSearchDirectory ?: return null
-    return File(root, toDeckName() + ".dec")
 }
 
 private val mtgSearchDirectory: File?

@@ -20,7 +20,7 @@ interface DecksInteractor {
     fun removeCard(deck: Deck, card: MTGCard): Observable<DeckCollection>
     fun removeAllCard(deck: Deck, card: MTGCard): Observable<DeckCollection>
     fun importDeck(uri: Uri): Observable<List<Deck>>
-    fun exportDeck(deck: Deck): Completable
+    fun exportDeck(deck: Deck): Single<Uri>
     fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection>
     fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection>
     fun copy(deck: Deck): Single<List<Deck>>

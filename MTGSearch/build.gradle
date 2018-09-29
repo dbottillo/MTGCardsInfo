@@ -1,8 +1,9 @@
 buildscript {
-    ext.number_of_set = 180
-    ext.database_version = 39
-    ext.name_fifth_mtg_card = "Magus of the Balance"
+    ext.number_of_set = 181
+    ext.database_version = 40
+    ext.name_fifth_mtg_card = "Collar the Culprit"
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
@@ -33,15 +34,15 @@ kapt {
 }
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
-        targetSdkVersion 27
-        versionCode 98
-        versionName "3.4.3"
+        targetSdkVersion 28
+        versionCode 100
+        versionName "3.5.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false
@@ -139,7 +140,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
@@ -163,8 +164,7 @@ dependencies {
     androidTestImplementation "com.android.support:appcompat-v7:$support_library_version"
     androidTestImplementation "com.android.support:recyclerview-v7:$support_library_version"
     androidTestImplementation "com.android.support:design:$support_library_version"
-    androidTestImplementation 'org.mockito:mockito-android:2.19.0'
-
+    androidTestImplementation 'org.mockito:mockito-android:2.22.0'
 }
 
 tasks.withType(Test) {
@@ -213,6 +213,19 @@ task pmd(type: Pmd) {
     reports {
         xml.enabled = false
         html.enabled = true
+    }
+}
+
+dependencyUpdates.resolutionStrategy {
+    componentSelection { rules ->
+        rules.all { ComponentSelection selection ->
+            boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm'].any { qualifier ->
+                selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+            }
+            if (rejected) {
+                selection.reject('Release candidate')
+            }
+        }
     }
 }
 

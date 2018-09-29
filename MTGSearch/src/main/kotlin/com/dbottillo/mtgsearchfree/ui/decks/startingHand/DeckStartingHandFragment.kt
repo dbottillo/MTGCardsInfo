@@ -92,7 +92,7 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
     class GridItemDecorator(private val space: Int) : RecyclerView.ItemDecoration() {
 
         override fun getItemOffsets(outRect: Rect, view: View,
-                                    parent: RecyclerView, state: RecyclerView.State?) {
+                                    parent: RecyclerView, state: RecyclerView.State) {
             outRect.left = space / 2
             outRect.right = space / 2
             outRect.bottom = space / 2
@@ -106,4 +106,4 @@ const val BUNDLE_KEY_LEFT = "BUNDLE_KEY_LEFT"
 
 @SuppressLint("ParcelCreator")
 @Parcelize
-data class StartingHandCard(val mtgCardsInfoImage: String, val gathererImage: String, val name: String) : Parcelable
+data class StartingHandCard(val gathererImage: String, val name: String) : Parcelable
