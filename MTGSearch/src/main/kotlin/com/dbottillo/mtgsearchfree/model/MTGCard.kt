@@ -89,16 +89,8 @@ data class MTGCard(var id: Int = 0,
     val isMythicRare: Boolean
         get() = rarity.equals(FILTER_MYHTIC, ignoreCase = true)
 
-    val mtgCardsInfoImage
-        get() = "https://magiccards.info/scans/en/" + set?.magicCardsInfoCode + "/" + mciNumberOrMultiverseId + ".jpg"
-
     val gathererImage
         get () = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
-
-    private val mciNumberOrMultiverseId: String?
-        get() = if (mciNumber.isNullOrEmpty()) {
-            number
-        } else mciNumber
 
     override fun compareTo(other: MTGCard): Int {
         if (isLand && other.isLand) {

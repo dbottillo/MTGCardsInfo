@@ -6,6 +6,8 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.support.v4.content.FileProvider.getUriForFile
 import com.dbottillo.mtgsearchfree.BuildConfig
+import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import java.io.*
 import javax.inject.Inject
 
@@ -59,10 +61,46 @@ class FileManager @Inject constructor(private val context: Context) : FileManage
         outputStream?.close()
         return getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
     }
+
+    @Throws(FileNotFoundException::class)
+    override fun saveDeckToFile(deck: Deck, cards: List<MTGCard>): Uri {
+        val path = File(context.filesDir, "decks")
+        if (!path.exists()) {
+            val created = path.mkdirs()
+            if (!created) {
+                throw FileNotFoundException()
+            }
+        }
+        val file = File(path, "deck_share.dec")
+        val outputStream = FileOutputStream(file) as FileOutputStream?
+        deck.toFile(outputStream, cards)
+        outputStream?.close()
+        return getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
+    }
 }
 
 interface FileManagerI{
     fun loadUri(uri: Uri): InputStream
     fun loadRaw(raw: Int): String
     fun saveBitmapToFile(bitmap: Bitmap): Uri
+    fun saveDeckToFile(deck: Deck, cards: List<MTGCard>): Uri
+}
+
+private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard>){
+    TrackingManager.trackDatabaseExport()
+    val writer = OutputStreamWriter(fileOutputStream, "UTF-8")
+    writer.append("//")
+    writer.append(name)
+    writer.append("\n")
+    for ((_, name, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in cards) {
+        if (isSideboard) {
+            writer.append("SB: ")
+        }
+        writer.append(quantity.toString())
+        writer.append(" ")
+        writer.append(name)
+        writer.append("\n")
+    }
+    writer.flush()
+    writer.close()
 }

@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
+import android.net.Uri
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
@@ -31,6 +32,7 @@ class DeckActivityPresenterTest {
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cards: DeckCollection
     @Mock lateinit var decks: List<Deck>
+    @Mock lateinit var uri: Uri
 
     lateinit var underTest: DeckActivityPresenter
 
@@ -81,18 +83,18 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `export deck, should call interactor and update view`() {
-        `when`(interactor.exportDeck(deck)).thenReturn(Completable.complete())
+        `when`(interactor.exportDeck(deck)).thenReturn(Single.just(uri))
 
         underTest.exportDeck()
 
-        verify(view).deckExported()
+        verify(view).deckExported(uri)
         verify(interactor).exportDeck(deck)
         verifyNoMoreInteractions(view, interactor)
     }
 
     @Test
     fun `export deck, should react to a failure in the interactor`() {
-        `when`(interactor.exportDeck(deck)).thenReturn(Completable.error(Throwable("error")))
+        `when`(interactor.exportDeck(deck)).thenReturn(Single.error(Throwable("error")))
 
         underTest.exportDeck()
 

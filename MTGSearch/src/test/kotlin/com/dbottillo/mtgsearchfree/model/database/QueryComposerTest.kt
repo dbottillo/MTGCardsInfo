@@ -371,4 +371,17 @@ class QueryComposerTest {
         assertThat(output.selection.size, `is`(1))
         assertThat(output.selection[0], `is`("{W}{W}"))
     }
+
+    @Test
+    fun `should generate cmc param for 0 and blue card`() {
+        val intParam = CMCParam("=", 0, emptyList())
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addCMCParam(intParam)
+
+        val output = queryComposer.build()
+
+        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc=?"))
+        assertThat(output.selection.size, `is`(1))
+        assertThat(output.selection[0], `is`("0"))
+    }
 }

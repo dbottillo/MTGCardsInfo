@@ -32,18 +32,18 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
     }
 
     private fun loadDeck() {
-        interactor.loadDeck(deck).subscribe({
+        interactor.loadDeck(deck).subscribe {
             cards = mutableListOf()
             it.allCards()
                     .filter { !it.isSideboard }
                     .forEach { card ->
                         (1..card.quantity).forEach {
-                            cards.add(StartingHandCard(card.mtgCardsInfoImage, card.gathererImage, card.name))
+                            cards.add(StartingHandCard(card.gathererImage, card.name))
                         }
                     }
             cards.shuffle()
             newStartingHand()
-        })
+        }
     }
 
     fun repeat() {

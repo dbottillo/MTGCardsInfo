@@ -3,7 +3,9 @@ package com.dbottillo.mtgsearchfree.model.helper
 import android.content.ContentValues
 import android.content.Context
 import android.content.res.Resources
+import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
+import android.util.Log
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
@@ -35,6 +37,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
         context.get()?.let {
 
             val db = mDbHelper.writableDatabase
+            db.disableWriteAheadLogging()
             db.delete(SetDataSource.TABLE, null, null)
             db.delete(CardDataSource.TABLE, null, null)
 
@@ -46,37 +49,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 (json.length() - 1 downTo 0)
                         .map { json.getJSONObject(it) }
                         .forEach { setJ ->
-                            try {
-                                val setToLoad = setToLoad(it, setJ.getString("code"))
-                                val jsonSetString = loadFile(setToLoad)
-
-                                val newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
-                                LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
-
-                                val jsonCards = JSONObject(jsonSetString)
-                                val cards = jsonCards.getJSONArray("cards")
-
-                                val set = MTGSet(newRowId.toInt(),
-                                        setJ.getString("code"),
-                                        setJ.getString("name"))
-                                //for (int k=0; k<1; k++){
-
-                                (0..(cards.length() - 1)).forEach { index ->
-                                    val cardJ = cards.getJSONObject(index)
-                                    //Log.e("BBM", "cardJ "+cardJ)
-
-                                    //val newRowId2 =
-                                    db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
-                                    //Log.e("MTG", "row id card"+newRowId2)
-                                    //result.add(MTGCard.createCardFromJson(i, cardJ));
-                                }
-                            } catch (e: Resources.NotFoundException) {
-                                LOG.e(setJ.getString("code") + " file not found")
-                            }
-
-                            /*
-                        Danieles-MacBook-Pro:~ danielebottillo$ adb pull /sdcard/MTGCardsInfo.db
-                        */
+                            loadSet(it, db, setDataSource, setJ)
                         }
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
@@ -88,6 +61,36 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
         }
 
         return result
+    }
+
+    @Suppress("UNUSED_VARIABLE")
+    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject){
+        try {
+            val setToLoad = setToLoad(context, setJ.getString("code"))
+            val jsonSetString = loadFile(setToLoad)
+
+            val newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
+            LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
+
+            val jsonCards = JSONObject(jsonSetString)
+            val cards = jsonCards.getJSONArray("cards")
+
+            val set = MTGSet(newRowId.toInt(),
+                    setJ.getString("code"),
+                    setJ.getString("name"))
+            //for (int k=0; k<1; k++){
+
+            (0..(cards.length() - 1)).forEach { index ->
+                val cardJ = cards.getJSONObject(index)
+                //Log.e("MTG", "cardJ $cardJ")
+
+                val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                //Log.e("MTG", "row id card $newRowId2")
+                //result.add(MTGCard.createCardFromJson(i, cardJ));
+            }
+        } catch (e: Resources.NotFoundException) {
+            LOG.e(setJ.getString("code") + " file not found")
+        }
     }
 
     @Throws(Resources.NotFoundException::class)

@@ -33,7 +33,7 @@ class NetworkIntentService : IntentService("NetworkIntentService") {
             cardName = cardName.replace(" ", "%20").replace("Æ", "ae")
         }
 
-        var url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=$setName&p=$cardName"
+        var url = "https://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=$setName&p=$cardName"
 
         LOG.d("loading price for card $cardName")
         try {
@@ -43,7 +43,7 @@ class NetworkIntentService : IntentService("NetworkIntentService") {
         }
 
         if (res != null && (res.lowprice == null || res.lowprice!!.equals("0", ignoreCase = true)) && setName != null && setName.isNotEmpty()) {
-            url = "http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=$cardName"
+            url = "https://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=$cardName"
             LOG.d("try again without set for card $cardName")
             try {
                 res = doNetworkRequest(url)
