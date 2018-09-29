@@ -1,7 +1,7 @@
 buildscript {
-    ext.number_of_set = 180
-    ext.database_version = 39
-    ext.name_fifth_mtg_card = "Magus of the Balance"
+    ext.number_of_set = 181
+    ext.database_version = 40
+    ext.name_fifth_mtg_card = "Collar the Culprit"
 }
 
 apply plugin: 'com.android.application'
@@ -41,8 +41,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 99
-        versionName "3.4.4"
+        versionCode 100
+        versionName "3.5.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false

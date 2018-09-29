@@ -106,4 +106,4 @@ const val BUNDLE_KEY_LEFT = "BUNDLE_KEY_LEFT"
 
 @SuppressLint("ParcelCreator")
 @Parcelize
-data class StartingHandCard(val mtgCardsInfoImage: String, val gathererImage: String, val name: String) : Parcelable
+data class StartingHandCard(val gathererImage: String, val name: String) : Parcelable

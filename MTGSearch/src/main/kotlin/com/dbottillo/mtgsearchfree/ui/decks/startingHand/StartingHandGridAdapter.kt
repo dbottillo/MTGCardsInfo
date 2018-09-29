@@ -23,7 +23,7 @@ class StartingHandGridAdapter(var cards: MutableList<StartingHandCard>,
         when (holder) {
             is GridCardViewHolder -> {
                 val card = cards[position]
-                Triple(card.name, card.mtgCardsInfoImage, card.gathererImage).loadInto(holder.loader, holder.image)
+                Pair(card.name, card.gathererImage).loadInto(holder.loader, holder.image)
                 holder.itemView.setOnClickListener(null)
             }
             is NextCardViewHolder -> {

@@ -38,7 +38,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
                     .filter { !it.isSideboard }
                     .forEach { card ->
                         (1..card.quantity).forEach {
-                            cards.add(StartingHandCard(card.mtgCardsInfoImage, card.gathererImage, card.name))
+                            cards.add(StartingHandCard(card.gathererImage, card.name))
                         }
                     }
             cards.shuffle()
