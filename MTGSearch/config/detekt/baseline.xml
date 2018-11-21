@@ -1,0 +1,398 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist timestamp="1532376381009"></Blacklist>
+  <Whitelist timestamp="1542837115924">
+    <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT &amp;&amp; version &lt;= 6</ID>
+    <ID>ComplexCondition:CardsHelper.kt$CardsHelper$(it.isCommon &amp;&amp; !filter.common) || (it.isUncommon &amp;&amp; !filter.uncommon) || (it.isRare &amp;&amp; !filter.rare) || (it.isMythicRare &amp;&amp; !filter.mythic)</ID>
+    <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
+    <ID>ComplexCondition:NetworkIntentService.kt$NetworkIntentService$res != null &amp;&amp; (res.lowprice == null || res.lowprice!!.equals("0", ignoreCase = true)) &amp;&amp; setName != null &amp;&amp; setName.isNotEmpty()</ID>
+    <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$internal fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$@VisibleForTesting fun generateCreateTable(version: Int): String</ID>
+    <ID>ComplexMethod:CardViewHolder.kt$ListCardViewHolder$fun bind(card: MTGCard, isASearch: Boolean, context: Context)</ID>
+    <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
+    <ID>ComplexMethod:CardsAdapter.kt$CardsAdapter$override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int)</ID>
+    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
+    <ID>ComplexMethod:CardsInfoDbHelper.kt$CardsInfoDbHelper$override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int)</ID>
+    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
+    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
+    <ID>ComplexMethod:DeckAdapter.kt$DeckCardViewHolder$fun bind(card: MTGCard, listener: OnDeckCardListener?)</ID>
+    <ID>ComplexMethod:DeckDataSource.kt$DeckDataSource$private fun moveCardInDeck(deckId: Long, card: MTGCard, quantity: Int, fromDeckToSide: Boolean)</ID>
+    <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
+    <ID>ComplexMethod:FileUtil.kt$FileUtil$private fun InputStream.readFileStream(deckName: String?): CardsBucket</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$fun configure(showFilter: Boolean, showOrder: Boolean)</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
+    <ID>ComplexMethod:IntParam.kt$fun cmcParamCreator(operator: String, value: String?): CMCParam?</ID>
+    <ID>ComplexMethod:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
+    <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>ComplexMethod:MTGCardView.kt$MTGCardView$private fun load(card: MTGCard)</ID>
+    <ID>ComplexMethod:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
+    <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onClick(v: View)</ID>
+    <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
+    <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
+    <ID>EmptySecondaryConstructor:MTGCardView.kt$MTGCardView${}</ID>
+    <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
+    <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>
+    <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
+    <ID>ForbiddenComment:SearchActivity.kt$SearchActivity$// TODO: pre-lollipop version</ID>
+    <ID>LargeClass:CardDataSource.kt$CardDataSource</ID>
+    <ID>LargeClass:DeckDataSource.kt$DeckDataSource</ID>
+    <ID>LargeClass:SearchActivity.kt$SearchActivity : BasicActivityOnClickListenerSearchActivityViewOnCardListener</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$internal fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
+    <ID>LongMethod:MTGCard.kt$MTGCard$override fun hashCode(): Int</ID>
+    <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>LongMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
+    <ID>MagicNumber:AboutActivity.kt$AboutActivity$1000</ID>
+    <ID>MagicNumber:AboutActivity.kt$AboutActivity$5</ID>
+    <ID>MagicNumber:AddFavouritesAsyncTask.kt$AddFavouritesAsyncTask$600</ID>
+    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment$30</ID>
+    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment.&lt;no name provided&gt;$5</ID>
+    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$200</ID>
+    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
+    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$3</ID>
+    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
+    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$7</ID>
+    <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$3</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$4</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$0.5</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$16</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$14</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$15</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$16</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$17</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$3</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$32f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$4</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$40f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$8</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$9</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
+    <ID>MagicNumber:CreateDBAsyncTask.kt$CreateDBAsyncTask$1024</ID>
+    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$30</ID>
+    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$4</ID>
+    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$98</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
+    <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
+    <ID>MagicNumber:HomeActivity.kt$HomeActivity$100</ID>
+    <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided&gt;$3</ID>
+    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
+    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
+    <ID>MagicNumber:MTGCard.kt$3</ID>
+    <ID>MagicNumber:MTGCard.kt$4</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$3</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$4</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$3</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$8</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.IXALAN$15</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.RIVALS_OF_IXALAN$10</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$4</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$6f</ID>
+    <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
+    <ID>MagicNumber:NetworkIntentService.kt$NetworkIntentService$200</ID>
+    <ID>MagicNumber:NetworkIntentService.kt$NetworkIntentService$500</ID>
+    <ID>MagicNumber:PermissionUtil.kt$PermissionUtil$23</ID>
+    <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$400</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$6.0f</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$9</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$9f</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity.&lt;no name provided&gt;$100</ID>
+    <ID>MagicNumber:SetPickerActivity.kt$SetPickerActivity.Divider$16</ID>
+    <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
+    <ID>MagicNumber:TCGPrice.kt$TCGPrice$5</ID>
+    <ID>MagicNumber:UIUtil.kt$0.8</ID>
+    <ID>MaxLineLength:ActivityBuilder.kt$com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, quantityChoose)</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment.InputFilterMinMax$override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence?</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment.kt</ID>
+    <ID>MaxLineLength:AppModule.kt$AppModule$@Provides @Singleton fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource</ID>
+    <ID>MaxLineLength:BaseHomeFragment.kt$com.dbottillo.mtgsearchfree.ui.BaseHomeFragment.kt</ID>
+    <ID>MaxLineLength:BasicFragment.kt$BasicFragment$val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))</ID>
+    <ID>MaxLineLength:CardMigratorService.kt$CardMigratorService$val mtgCardDataSource = MTGCardDataSource(MTGDatabaseHelper(applicationContext).readableDatabase, cardDataSource)</ID>
+    <ID>MaxLineLength:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
+    <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$val v = inflater.inflate(if (configuration.isGrid) R.layout.grid_item_card else R.layout.row_card, parent, false)</ID>
+    <ID>MaxLineLength:CardsAdapter.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt</ID>
+    <ID>MaxLineLength:CardsConfiguratorFragment.kt$CardsConfiguratorFragment : BottomSheetDialogFragmentCardsConfiguratorViewOnFilterPickerListener</ID>
+    <ID>MaxLineLength:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl : CardsConfiguratorPresenter</ID>
+    <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
+    <ID>MaxLineLength:CardsStorageImpl.kt$com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl.kt</ID>
+    <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask : AsyncTask</ID>
+    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDeckDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource): DeckDataSource</ID>
+    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage</ID>
+    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideFavouritesDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource): FavouritesDataSource</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;TabLayout&gt;(R.id.deck_cards_tab_layout) }</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;ViewPager&gt;(R.id.deck_view_pager) }</ID>
+    <ID>MaxLineLength:DeckAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckAdapter.kt</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.model.database.DeckDataSource.kt</ID>
+    <ID>MaxLineLength:DeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment.kt</ID>
+    <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
+    <ID>MaxLineLength:FileUtil.kt$val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")</ID>
+    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView : LinearLayoutOnClickListener</ID>
+    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
+    <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
+    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter : Adapter</ID>
+    <ID>MaxLineLength:LifeCounterAdapter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterAdapter.kt</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) } ?: manager.getAppWidgetIds(cn)</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:MTGApp.kt$MTGApp$val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT).apply { description = "MTG Cards Notifications" enableLights(true) lightColor = Color.BLUE enableVibration(true) }</ID>
+    <ID>MaxLineLength:MTGApp.kt$MTGApp$val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + "=?")</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val sel = Arrays.copyOf&lt;String, Any&gt;(output.selection.toTypedArray(), output.selection.size, Array&lt;String&gt;::class.java)</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource.kt</ID>
+    <ID>MaxLineLength:MTGCardView.kt$MTGCardView : RelativeLayoutCardView</ID>
+    <ID>MaxLineLength:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
+    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$fun loadCards(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
+    <ID>MaxLineLength:MTGCardsView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt</ID>
+    <ID>MaxLineLength:MTGGAppGlideModule.kt$com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView : RelativeLayout</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_common) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val multiNoOthers: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_mno) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_mythic) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val noMulti: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_nm) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_power) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_tough) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_types) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_uncommon) }</ID>
+    <ID>MaxLineLength:NetworkIntentService.kt$com.dbottillo.mtgsearchfree.model.network.NetworkIntentService.kt</ID>
+    <ID>MaxLineLength:PlayersStorageImpl.kt$PlayersStorageImpl$private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")</ID>
+    <ID>MaxLineLength:QueryComposer.kt$com.dbottillo.mtgsearchfree.model.database.QueryComposer.kt</ID>
+    <ID>MaxLineLength:ReleaseNoteActivity.kt$ReleaseNoteActivity$private val releaseNoteList: RecyclerView by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;RecyclerView&gt;(R.id.release_note_list) }</ID>
+    <ID>MaxLineLength:SQLiteAssetHelper.kt$com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper.kt</ID>
+    <ID>MaxLineLength:SavedFragment.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedFragment.kt</ID>
+    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (amount &lt; 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
+    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (scrollView.scrollY &lt; 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
+    <ID>MaxLineLength:SearchActivity.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivity.kt</ID>
+    <ID>MaxLineLength:SetsAdapter.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsAdapter.kt</ID>
+    <ID>MaxLineLength:SetsFragment.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragment.kt</ID>
+    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
+    <ID>MaxLineLength:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
+    <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>
+    <ID>NestedBlockDepth:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
+    <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
+    <ID>NewLineAtEndOfFile:AboutActivity.kt$com.dbottillo.mtgsearchfree.ui.about.AboutActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckView.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckView.kt</ID>
+    <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgsearchfree.dagger.AppComponent.kt</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgsearchfree.dagger.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:AppSchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactors.AppSchedulerProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseCardsView.kt$com.dbottillo.mtgsearchfree.ui.BaseCardsView.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseHomeFragment.kt$com.dbottillo.mtgsearchfree.ui.BaseHomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:BasicActivityModule.kt$com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt</ID>
+    <ID>NewLineAtEndOfFile:CardAdapterConfiguration.kt$com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration.kt</ID>
+    <ID>NewLineAtEndOfFile:CardFilter.kt$com.dbottillo.mtgsearchfree.model.CardFilter.kt</ID>
+    <ID>NewLineAtEndOfFile:CardFilterInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:CardLuckyActivity.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:CardPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:CardView.kt$com.dbottillo.mtgsearchfree.ui.views.CardView.kt</ID>
+    <ID>NewLineAtEndOfFile:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsActivityView.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsActivityView.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsAdapter.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsCollection.kt$com.dbottillo.mtgsearchfree.model.CardsCollection.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsConfiguratorFragment.kt$com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsHelper.kt$com.dbottillo.mtgsearchfree.model.storage.CardsHelper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsInfoDbHelper.kt$com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsLuckyPresenter.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsLuckyPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsLuckyView.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyView.kt</ID>
+    <ID>NewLineAtEndOfFile:CommonCardsActivity.kt$com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:DataModule.kt$com.dbottillo.mtgsearchfree.dagger.DataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivity.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivityPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivityView.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityView.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckStartingHandFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckView.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckView.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksAdapter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentView.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentView.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:DialogUtil.kt$com.dbottillo.mtgsearchfree.util.DialogUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:FileManager.kt$com.dbottillo.mtgsearchfree.util.FileManager.kt</ID>
+    <ID>NewLineAtEndOfFile:FragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt</ID>
+    <ID>NewLineAtEndOfFile:GsonUtil.kt$com.dbottillo.mtgsearchfree.util.GsonUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:ImageUtil.kt$com.dbottillo.mtgsearchfree.util.ImageUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:IntParam.kt$com.dbottillo.mtgsearchfree.model.IntParam.kt</ID>
+    <ID>NewLineAtEndOfFile:LifeCounterPresenter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:LifeCounterView.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterView.kt</ID>
+    <ID>NewLineAtEndOfFile:LuckyWidgetProvider.kt$com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGCard.kt$com.dbottillo.mtgsearchfree.model.MTGCard.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGGAppGlideModule.kt$com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGLoader.kt$com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt</ID>
+    <ID>NewLineAtEndOfFile:OnCardListener.kt$com.dbottillo.mtgsearchfree.ui.cards.OnCardListener.kt</ID>
+    <ID>NewLineAtEndOfFile:PermissionUtil.kt$com.dbottillo.mtgsearchfree.util.PermissionUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:PlayerInteractor.kt$com.dbottillo.mtgsearchfree.interactors.PlayerInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:ReleaseNoteActivity.kt$com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:ReleaseNotePresenter.kt$com.dbottillo.mtgsearchfree.ui.about.ReleaseNotePresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsPresenter.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsView.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsView.kt</ID>
+    <ID>NewLineAtEndOfFile:SchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactors.SchedulerProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchActivity.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchActivityView.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivityView.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchPresenter.kt$com.dbottillo.mtgsearchfree.ui.search.SearchPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.search.SearchPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SetDataSource.kt$com.dbottillo.mtgsearchfree.model.database.SetDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentView.kt</ID>
+    <ID>NewLineAtEndOfFile:SetsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandGridAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandGridAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandView.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandView.kt</ID>
+    <ID>NewLineAtEndOfFile:StringUtil.kt$com.dbottillo.mtgsearchfree.util.StringUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:TCGPrice.kt$com.dbottillo.mtgsearchfree.model.TCGPrice.kt</ID>
+    <ID>NewLineAtEndOfFile:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
+    <ID>NewLineAtEndOfFile:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
+    <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$private val DEFAULT_DURATION = 200</ID>
+    <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$val `val` = valueAnimator.animatedValue as Int</ID>
+    <ID>ObjectPropertyNaming:LOG.kt$LOG$private val NOT_FOUND = StackTraceElement("", "", "", 0)</ID>
+    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_FOOTER: Int = 2</ID>
+    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_HEADER: Int = 0</ID>
+    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_PLAYER: Int = 1</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_ADD_CARD = "addCard"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_CLOSE = "close"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_DELETE = "delete"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXPORT = "export"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXTERNAL_LINK = "externalLink"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_LUCKY = "lucky"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ALL = "moveAll"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ONE = "moveOne"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_ONE_MORE = "oneMore"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_OPEN = "open"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_RATE = "rate"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ALL = "removeALL"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ONE = "removeOne"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SAVE = "saved"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SELECT = "select"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SHARE = "share"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_TOGGLE = "toggle"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_UNSAVED = "unsaved"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_APP_WIDGET = "appWidget"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_CARD = "card"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_DECK = "deck"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_ERROR = "error"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FAVOURITE = "favourite"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FILTER = "filter"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_LIFE_COUNTER = "lifeCounter"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_POPUP = "popup"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_RELEASE_NOTE = "releaseNote"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SEARCH = "search"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SET = "set"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_UI = "ui"</ID>
+    <ID>PackageNaming:AddToDeckFragment.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckPresenter.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckPresenterImpl.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckView.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
+    <ID>PackageNaming:CardsConfiguratorFragment.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorPresenter.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorPresenterImpl.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorView.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:DeckStartingHandFragment.kt$package com.dbottillo.mtgsearchfree.ui.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandGridAdapter.kt$package com.dbottillo.mtgsearchfree.ui.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandPresenter.kt$package com.dbottillo.mtgsearchfree.ui.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandView.kt$package com.dbottillo.mtgsearchfree.ui.decks.startingHand</ID>
+    <ID>ReturnCount:AddToDeckFragment.kt$AddToDeckFragment.InputFilterMinMax$override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence?</ID>
+    <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
+    <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:FileUtil.kt$fun Context.copyDbFromSdCard(name: String): Boolean</ID>
+    <ID>ReturnCount:FileUtil.kt$fun Context.copyDbToSdCard(name: String): File?</ID>
+    <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
+    <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String?</ID>
+    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
+    <ID>ReturnCount:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
+    <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
+    <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.MANA_COST.noun, "LIKE", colorsOperator, *Arrays.copyOf&lt;String, Any&gt;(colors.toTypedArray(), colors.size, Array&lt;String&gt;::class.java))</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *Arrays.copyOf&lt;String, Any&gt;(rarities.toTypedArray(), rarities.size, Array&lt;String&gt;::class.java))</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.SET_ID.noun, "==", "OR", *STANDARD.setIds)</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.TYPE.noun, "LIKE", "AND", *types)</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(output.query, *sel)</ID>
+    <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
+    <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:DeckDataSource.kt$DeckDataSource$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
+    <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:MTGGAppGlideModule.kt$MTGGAppGlideModule$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NetworkIntentService.kt$NetworkIntentService$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
+    <ID>TooGenericExceptionThrown:BaseHomeFragment.kt$BaseHomeFragment$throw RuntimeException("This is a crash")</ID>
+    <ID>TooGenericExceptionThrown:MTGGAppGlideModule.kt$MTGGAppGlideModule$throw RuntimeException(e)</ID>
+    <ID>TooManyFunctions:AddToDeckFragment.kt$AddToDeckFragment : BasicFragmentAddToDeckView</ID>
+    <ID>TooManyFunctions:CardLuckyActivity.kt$CardLuckyActivity : CommonCardsActivityCardsLuckyView</ID>
+    <ID>TooManyFunctions:CardsActivity.kt$CardsActivity : CommonCardsActivityOnPageChangeListenerCardsActivityView</ID>
+    <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor</ID>
+    <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl : CardsInteractor</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl : CardsPreferences</ID>
+    <ID>TooManyFunctions:DataModule.kt$DataModule</ID>
+    <ID>TooManyFunctions:DeckActivity.kt$DeckActivity : BasicActivityDeckActivityView</ID>
+    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection</ID>
+    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource</ID>
+    <ID>TooManyFunctions:DecksFragment.kt$DecksFragment : BaseHomeFragmentDecksFragmentViewPermissionListener</ID>
+    <ID>TooManyFunctions:DecksInteractor.kt$DecksInteractor</ID>
+    <ID>TooManyFunctions:DecksInteractorImpl.kt$DecksInteractorImpl : DecksInteractor</ID>
+    <ID>TooManyFunctions:DecksStorage.kt$DecksStorage</ID>
+    <ID>TooManyFunctions:DecksStorageImpl.kt$DecksStorageImpl : DecksStorage</ID>
+    <ID>TooManyFunctions:HomeActivity.kt$HomeActivity : BasicActivity</ID>
+    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment : BaseHomeFragmentLifeCounterViewOnLifeCounterListener</ID>
+    <ID>TooManyFunctions:MTGCard.kt$MTGCard : Comparable</ID>
+    <ID>TooManyFunctions:MTGCardView.kt$MTGCardView : RelativeLayoutCardView</ID>
+    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer</ID>
+    <ID>TooManyFunctions:SavedFragment.kt$SavedFragment : BaseHomeFragmentSavedCardsViewOnCardListener</ID>
+    <ID>TooManyFunctions:SearchActivity.kt$SearchActivity : BasicActivityOnClickListenerSearchActivityViewOnCardListener</ID>
+    <ID>TooManyFunctions:SetsFragment.kt$SetsFragment : BaseHomeFragmentSetsFragmentViewOnCardListener</ID>
+    <ID>TooManyFunctions:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper : OnScrollChangedListener</ID>
+    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager</ID>
+    <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
+    <ID>VariableNaming:FileUtil.kt$FileUtil$val `is` = fileManager.loadUri(uri)</ID>
+    <ID>VariableNaming:QueryComposer.kt$QueryComposer$private val LIKE_OPERATOR = "LIKE"</ID>
+  </Whitelist>
+</SmellBaseline>
