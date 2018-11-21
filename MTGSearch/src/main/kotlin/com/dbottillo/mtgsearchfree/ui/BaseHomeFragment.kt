@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
-import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.copyDbFromSdCard
 import javax.inject.Inject
 
@@ -25,13 +24,12 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     lateinit var toolbarRevealScrollHelper: ToolbarRevealScrollHelper
 
     @Inject
-    lateinit var generalData : GeneralData
+    lateinit var generalData: GeneralData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, getScrollViewId(),
                 R.color.white, heightToolbar, true)
-
     }
 
     abstract fun getScrollViewId(): Int
@@ -46,7 +44,6 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             toolbar.inflateMenu(R.menu.main_user_debug)
         }
         toolbar.setOnMenuItemClickListener(this)
-
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -96,5 +93,4 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             })
         }
     }
-
 }

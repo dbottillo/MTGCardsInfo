@@ -17,5 +17,4 @@ class MTGCardImageView : AppCompatImageView {
         val height = (measuredWidth * RATIO_CARD).toInt()
         setMeasuredDimension(measuredWidth, height)
     }
-
 }

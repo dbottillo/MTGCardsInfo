@@ -19,7 +19,6 @@ import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
 
-
 class LuckyWidgetProvider : AppWidgetProvider() {
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
@@ -84,7 +83,6 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
         return remoteViews
     }
-
 }
 
 const val REFRESH_ACTION = "com.dbottillo.mtgsearchfree.luckywidgetprovider.REFRESH"

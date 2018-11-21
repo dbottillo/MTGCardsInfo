@@ -1,11 +1,32 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
-import com.dbottillo.mtgsearchfree.model.database.*
-import com.dbottillo.mtgsearchfree.model.storage.*
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
+import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
+import com.dbottillo.mtgsearchfree.model.database.SetDataSource
+import com.dbottillo.mtgsearchfree.model.storage.CardsHelper
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.model.storage.DecksStorageImpl
+import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.model.storage.GeneralPreferences
+import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
+import com.dbottillo.mtgsearchfree.model.storage.PlayersStorageImpl
+import com.dbottillo.mtgsearchfree.model.storage.ReleaseNoteStorage
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
+import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorageImpl
+import com.dbottillo.mtgsearchfree.util.AppInfo
+import com.dbottillo.mtgsearchfree.util.FileManager
+import com.dbottillo.mtgsearchfree.util.FileUtil
+import com.dbottillo.mtgsearchfree.util.GsonUtil
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -47,11 +68,13 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideCardsStorage(mtgCardDataSource: MTGCardDataSource,
-                            favouritesDataSource: FavouritesDataSource,
-                            cardsPreferences: CardsPreferences,
-                            cardsHelper: CardsHelper,
-                            logger: Logger): CardsStorage {
+    fun provideCardsStorage(
+        mtgCardDataSource: MTGCardDataSource,
+        favouritesDataSource: FavouritesDataSource,
+        cardsPreferences: CardsPreferences,
+        cardsHelper: CardsHelper,
+        logger: Logger
+    ): CardsStorage {
         return CardsStorageImpl(mtgCardDataSource,
                 favouritesDataSource, cardsPreferences, cardsHelper, logger)
     }
@@ -88,8 +111,12 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideSavedCardsStorage(favouritesDataSource: FavouritesDataSource, cardsHelper: CardsHelper,
-                                 cardsPreferences: CardsPreferences, logger: Logger): SavedCardsStorage {
+    fun provideSavedCardsStorage(
+        favouritesDataSource: FavouritesDataSource,
+        cardsHelper: CardsHelper,
+        cardsPreferences: CardsPreferences,
+        logger: Logger
+    ): SavedCardsStorage {
         return SavedCardsStorageImpl(favouritesDataSource, cardsHelper, cardsPreferences, logger)
     }
 

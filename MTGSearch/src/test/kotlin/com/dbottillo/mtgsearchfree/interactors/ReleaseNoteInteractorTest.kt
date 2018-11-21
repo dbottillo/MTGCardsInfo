@@ -49,5 +49,4 @@ class ReleaseNoteInteractorTest {
         verify(schedulerProvider).ui()
         verifyNoMoreInteractions(storage, schedulerProvider)
     }
-
 }

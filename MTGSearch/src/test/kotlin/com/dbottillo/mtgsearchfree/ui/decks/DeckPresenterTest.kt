@@ -9,24 +9,22 @@ import com.dbottillo.mtgsearchfree.ui.decks.deck.DECK_KEY
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckPresenter
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckView
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class DeckPresenterTest {
 
-    @Rule
-    @JvmField
-    val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var interactor: DecksInteractor
-    @Mock
-    internal lateinit var logger: Logger
+    @Mock lateinit var interactor: DecksInteractor
+    @Mock lateinit var logger: Logger
     @Mock lateinit var view: DeckView
     @Mock lateinit var deck: Deck
     @Mock lateinit var bundle: Bundle
@@ -37,17 +35,17 @@ class DeckPresenterTest {
 
     @Before
     fun setup() {
-        `when`(bundle.get(DECK_KEY)).thenReturn(deck)
-        `when`(deck.name).thenReturn("name")
-        `when`(cards.numberOfCardsWithoutSideboard()).thenReturn(60)
-        `when`(cards.numberOfCardsInSideboard()).thenReturn(15)
+        whenever(bundle.get(DECK_KEY)).thenReturn(deck)
+        whenever(deck.name).thenReturn("name")
+        whenever(cards.numberOfCardsWithoutSideboard()).thenReturn(60)
+        whenever(cards.numberOfCardsInSideboard()).thenReturn(15)
         underTest = DeckPresenter(interactor, logger)
         underTest.init(view, bundle)
     }
 
     @Test
     fun `load deck, should call interactor and update view`() {
-        `when`(interactor.loadDeck(deck)).thenReturn(Observable.just(cards))
+        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(cards))
 
         underTest.loadDeck()
 
@@ -58,7 +56,7 @@ class DeckPresenterTest {
 
     @Test
     fun `add card to deck, should call interactor and update view`() {
-        `when`(interactor.addCard(deck, card, 6)).thenReturn(Observable.just(cards))
+        whenever(interactor.addCard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.addCardToDeck(card, 6)
 
@@ -69,7 +67,7 @@ class DeckPresenterTest {
 
     @Test
     fun `remove card from deck, should call interactor and update view`() {
-        `when`(interactor.removeCard(deck, card)).thenReturn(Observable.just(cards))
+        whenever(interactor.removeCard(deck, card)).thenReturn(Observable.just(cards))
 
         underTest.removeCardFromDeck(card)
 
@@ -80,7 +78,7 @@ class DeckPresenterTest {
 
     @Test
     fun `remove all cards from deck, should call interactor and update view`() {
-        `when`(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards))
+        whenever(interactor.removeAllCard(deck, card)).thenReturn(Observable.just(cards))
 
         underTest.removeAllCardFromDeck(card)
 
@@ -91,7 +89,7 @@ class DeckPresenterTest {
 
     @Test
     fun `move card from sideboard, should call interactor and update view`() {
-        `when`(interactor.moveCardFromSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
+        whenever(interactor.moveCardFromSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.moveCardFromSideBoard(card, 6)
 
@@ -102,7 +100,7 @@ class DeckPresenterTest {
 
     @Test
     fun `move card to sideboard, should call interactor and update view`() {
-        `when`(interactor.moveCardToSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
+        whenever(interactor.moveCardToSideboard(deck, card, 6)).thenReturn(Observable.just(cards))
 
         underTest.moveCardToSideBoard(card, 6)
 
@@ -110,5 +108,4 @@ class DeckPresenterTest {
         verify(interactor).moveCardToSideboard(deck, card, 6)
         verifyNoMoreInteractions(view, interactor)
     }
-
 }

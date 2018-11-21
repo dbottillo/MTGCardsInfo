@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.Player
 
-interface PlayersStorage{
+interface PlayersStorage {
     fun load(): List<Player>
     fun addPlayer(): List<Player>
     fun editPlayer(player: Player): List<Player>

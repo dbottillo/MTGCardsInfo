@@ -5,12 +5,12 @@ import com.dbottillo.mtgsearchfree.model.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
-class SetsInteractorImpl(private val storage: SetDataSource,
-                         private val schedulerProvider: SchedulerProvider,
-                         private val logger: Logger) : SetsInteractor {
+class SetsInteractorImpl(
+    private val storage: SetDataSource,
+    private val schedulerProvider: SchedulerProvider,
+    private val logger: Logger
+) : SetsInteractor {
 
     init {
         logger.d("created")
@@ -22,5 +22,4 @@ class SetsInteractorImpl(private val storage: SetDataSource,
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
-
 }

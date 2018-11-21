@@ -20,5 +20,5 @@ interface CardsInteractor {
     fun loadCard(multiverseId: Int): Observable<MTGCard>
     fun loadCardById(id: Int): Single<MTGCard>
     fun loadOtherSideCard(card: MTGCard): Observable<MTGCard>
-    fun getArtworkUri(bitmap: Bitmap):Single<Uri>
+    fun getArtworkUri(bitmap: Bitmap): Single<Uri>
 }

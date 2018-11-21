@@ -1,6 +1,11 @@
 package com.dbottillo.mtgsearchfree
 
-import android.app.*
+import android.app.Activity
+import android.app.Application
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -139,7 +144,6 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
         }
         (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
     }
-
 }
 
 const val INTENT_RELEASE_NOTE_PUSH = "Release push note"

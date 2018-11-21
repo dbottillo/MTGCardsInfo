@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import android.content.Context
-import android.content.SharedPreferences
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesForAndroidTest
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData

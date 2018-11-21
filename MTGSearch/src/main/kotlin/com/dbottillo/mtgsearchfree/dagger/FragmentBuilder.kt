@@ -1,13 +1,20 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import com.dbottillo.mtgsearchfree.ActivityScope
-import com.dbottillo.mtgsearchfree.interactors.*
+import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
+import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
+import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
+import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.decks.*
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenter
+import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter
@@ -61,17 +68,18 @@ abstract class FragmentBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [CardsConfiguratorFragmentModule::class])
     abstract fun contributeCardsConfiguratorFragmentInjector(): CardsConfiguratorFragment
-
 }
 
 @Module
 class SetsFragmentModule {
     @Provides
-    fun providesSetsFragmentPresenter(setsInteractor: SetsInteractor,
-                                      cardsInteractor: CardsInteractor,
-                                      cardsPreferences: CardsPreferences,
-                                      generalData: GeneralData,
-                                      logger: Logger): SetsFragmentPresenter {
+    fun providesSetsFragmentPresenter(
+        setsInteractor: SetsInteractor,
+        cardsInteractor: CardsInteractor,
+        cardsPreferences: CardsPreferences,
+        generalData: GeneralData,
+        logger: Logger
+    ): SetsFragmentPresenter {
         return SetsFragmentPresenterImpl(setsInteractor, cardsInteractor, cardsPreferences, generalData, logger)
     }
 }
@@ -79,8 +87,10 @@ class SetsFragmentModule {
 @Module
 class DecksFragmentModule {
     @Provides
-    fun providesDecksFragmentPresenter(interactor: DecksInteractor,
-                                       logger: Logger): DecksFragmentPresenter {
+    fun providesDecksFragmentPresenter(
+        interactor: DecksInteractor,
+        logger: Logger
+    ): DecksFragmentPresenter {
         return DecksFragmentPresenterImpl(interactor, logger)
     }
 }
@@ -88,9 +98,11 @@ class DecksFragmentModule {
 @Module
 class SavedFragmentModule {
     @Provides
-    fun providesSavedFragmentPresenter(interactor: SavedCardsInteractor,
-                                       generalData: GeneralData,
-                                       logger: Logger): SavedCardsPresenter {
+    fun providesSavedFragmentPresenter(
+        interactor: SavedCardsInteractor,
+        generalData: GeneralData,
+        logger: Logger
+    ): SavedCardsPresenter {
         return SavedCardsPresenterImpl(interactor, generalData, logger)
     }
 }
@@ -98,8 +110,10 @@ class SavedFragmentModule {
 @Module
 class LifeCounterFragmentModule {
     @Provides
-    fun providesLifeCounterFragmentPresenter(interactor: PlayerInteractor,
-                                             logger: Logger): LifeCounterPresenter {
+    fun providesLifeCounterFragmentPresenter(
+        interactor: PlayerInteractor,
+        logger: Logger
+    ): LifeCounterPresenter {
         return LifeCounterPresenterImpl(interactor, logger)
     }
 }

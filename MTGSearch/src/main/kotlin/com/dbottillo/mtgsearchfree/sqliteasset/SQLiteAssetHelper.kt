@@ -5,11 +5,17 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import java.io.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 
-open class SQLiteAssetHelper(private val context: Context,
-                             private val name: String,
-                             private val version: Int) : SQLiteOpenHelper(context, name, null, version) {
+open class SQLiteAssetHelper(
+    private val context: Context,
+    private val name: String,
+    private val version: Int
+) : SQLiteOpenHelper(context, name, null, version) {
 
     private var database: SQLiteDatabase? = null
     private var isInitializing = false
@@ -40,7 +46,7 @@ open class SQLiteAssetHelper(private val context: Context,
         var db = returnDatabase()
 
         if (db == null || db.version < version) {
-            Log.e(TAG, if (db == null) "database is null" else "database version ${db.version} is lower than ${version}")
+            Log.e(TAG, if (db == null) "database is null" else "database version ${db.version} is lower than $version")
             Log.e(TAG, "will try to copy from asset")
             db?.close()
             copyDatabaseFromAssets()
@@ -90,13 +96,12 @@ open class SQLiteAssetHelper(private val context: Context,
 
     private fun returnDatabase(): SQLiteDatabase? {
         return try {
-            Log.i(TAG, "successfully opened database $name");
+            Log.i(TAG, "successfully opened database $name")
             SQLiteDatabase.openDatabase("$databasePath/$name", null, SQLiteDatabase.OPEN_READWRITE)
         } catch (e: SQLiteException) {
             Log.w(TAG, "could not open database " + name + " - " + e.message)
             null
         }
-
     }
 
     @Throws(SQLiteAssetException::class)
@@ -121,20 +126,17 @@ open class SQLiteAssetHelper(private val context: Context,
             }
             inputStream.writeExtractedFileToDisk(FileOutputStream(dest))
             Log.w(TAG, "database copy complete")
-
         } catch (e: IOException) {
             val se = SQLiteAssetException("Unable to write $dest to data directory")
             se.stackTrace = e.stackTrace
             throw se
         }
-
     }
 
     companion object {
         private val TAG = SQLiteAssetHelper::class.java.simpleName
         private const val ASSET_DB_PATH = "databases"
     }
-
 }
 
 class SQLiteAssetException(error: String) : SQLiteException(error)

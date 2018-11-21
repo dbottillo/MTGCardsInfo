@@ -6,9 +6,11 @@ import com.dbottillo.mtgsearchfree.model.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
 
-class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
-                               private val schedulerProvider: SchedulerProvider,
-                               private val logger: Logger) : SavedCardsInteractor {
+class SavedCardsInteractorImpl(
+    private val storage: SavedCardsStorage,
+    private val schedulerProvider: SchedulerProvider,
+    private val logger: Logger
+) : SavedCardsInteractor {
 
     init {
         logger.d("created")
@@ -46,4 +48,3 @@ class SavedCardsInteractorImpl(private val storage: SavedCardsStorage,
                 .observeOn(schedulerProvider.ui())
     }
 }
-

@@ -12,10 +12,12 @@ import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
-class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
-                                           private val deckDataSource: DeckDataSource,
-                                           private val generalData: GeneralData,
-                                           private val logger: Logger) : DecksStorage {
+class DecksStorageImpl @Inject constructor(
+    private val fileUtil: FileUtil,
+    private val deckDataSource: DeckDataSource,
+    private val generalData: GeneralData,
+    private val logger: Logger
+) : DecksStorage {
     init {
         logger.d("created")
     }
@@ -106,4 +108,3 @@ class DecksStorageImpl @Inject constructor(private val fileUtil: FileUtil,
         return loadDeck(deck)
     }
 }
-

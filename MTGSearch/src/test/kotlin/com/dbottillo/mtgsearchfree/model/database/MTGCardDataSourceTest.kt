@@ -2,22 +2,35 @@ package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.res.Resources
 import com.dbottillo.mtgsearchfree.BuildConfig
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CMCParam
+import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.PTParam
+import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
 import com.dbottillo.mtgsearchfree.util.readSingleSetFile
 import com.google.gson.Gson
-import org.hamcrest.Matchers.*
+import org.hamcrest.CoreMatchers.anyOf
+import org.hamcrest.CoreMatchers.containsString
+import org.hamcrest.CoreMatchers.equalTo
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.greaterThan
+import org.hamcrest.Matchers.greaterThanOrEqualTo
+import org.hamcrest.Matchers.lessThan
+import org.hamcrest.Matchers.lessThanOrEqualTo
 import org.hamcrest.core.Is.`is`
-import org.hamcrest.core.IsCollectionContaining.hasItem
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import java.util.*
+import java.util.Locale
 
 @RunWith(RobolectricTestRunner::class)
 class MTGCardDataSourceTest {
@@ -52,9 +65,9 @@ class MTGCardDataSourceTest {
     @Test
     fun fetchesAllSets() {
         val setsJ = readSetListJSON()
-        //MTGSet set = setsJ.get(180);
+        // MTGSet set = setsJ.get(180);
         for (set in setsJ) {
-            //LOG.e("checking set: " + set.getId() + " - " + set.getName());
+            // LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
                 val cardsJ = readSingleSetFile(set)
                 val cards = underTest.getSet(set)
@@ -89,7 +102,6 @@ class MTGCardDataSourceTest {
             } catch (e: Resources.NotFoundException) {
                 LOG.e(set.code + " file not found")
             }
-
         }
     }
 
@@ -158,7 +170,7 @@ class MTGCardDataSourceTest {
     @Test
     fun shouldSearchCardsByCmcEqualThan2WU() {
         val searchParams = SearchParams()
-        searchParams.cmc = CMCParam("=", 4, Arrays.asList("2", "W", "U"))
+        searchParams.cmc = CMCParam("=", 4, listOf("2", "W", "U"))
 
         val cards = underTest.searchCards(searchParams)
 
@@ -171,7 +183,7 @@ class MTGCardDataSourceTest {
     @Test
     fun shouldSearchCardsByCmcGreaterOREqualThan2WWU() {
         val searchParams = SearchParams()
-        searchParams.cmc = CMCParam(">=", 5, Arrays.asList("2", "WW", "U"))
+        searchParams.cmc = CMCParam(">=", 5, listOf("2", "WW", "U"))
 
         val cards = underTest.searchCards(searchParams)
 
@@ -185,7 +197,7 @@ class MTGCardDataSourceTest {
     @Test
     fun shouldSearchCardsByCmcEqualThanX2U() {
         val searchParams = SearchParams()
-        searchParams.cmc = CMCParam("=", 3, Arrays.asList("X", "2", "U"))
+        searchParams.cmc = CMCParam("=", 3, listOf("X", "2", "U"))
 
         val cards = underTest.searchCards(searchParams)
 
@@ -198,7 +210,7 @@ class MTGCardDataSourceTest {
     @Test
     fun shouldSearchCardsByCmcGreaterOREqualThanX2U() {
         val searchParams = SearchParams()
-        searchParams.cmc = CMCParam(">=", 3, Arrays.asList("X", "2", "U"))
+        searchParams.cmc = CMCParam(">=", 3, listOf("X", "2", "U"))
 
         val cards = underTest.searchCards(searchParams)
 
@@ -233,7 +245,6 @@ class MTGCardDataSourceTest {
             assertThat(card.toString(), card.power, anyOf(equalTo("0"), equalTo("+0")))
         }
     }
-
 
     @Test
     fun searchCardsByToughness() {
@@ -309,7 +320,7 @@ class MTGCardDataSourceTest {
 
         assertThat(cards.size, `is`(20))
         for (card in cards) {
-            //assertTrue(containsString("W") || containsString("U"));
+            // assertTrue(containsString("W") || containsString("U"));
             assertTrue(card.isRed || card.isBlue)
             assertTrue(card.text.toLowerCase().contains("energy"))
         }
@@ -352,7 +363,6 @@ class MTGCardDataSourceTest {
         assertTrue(card.text.toLowerCase().contains("energy"))
     }
 
-
     @Test
     fun searchKaladeshCardsWithTwoColorsNoMulticolor() {
         val searchParams = SearchParams()
@@ -378,7 +388,7 @@ class MTGCardDataSourceTest {
         searchParams.isBlue = true
         searchParams.setOnlyMulti(true)
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for (card in cards) {
             assertTrue(card.isMultiColor)
             assertTrue(card.isWhite || card.isBlue)
@@ -605,7 +615,6 @@ class MTGCardDataSourceTest {
             return PTParam(operator, NUMBER)
         }
     }
-
 }
 
 const val NUMBER = 5

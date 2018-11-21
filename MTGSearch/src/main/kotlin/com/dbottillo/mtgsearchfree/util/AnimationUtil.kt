@@ -1,6 +1,10 @@
 package com.dbottillo.mtgsearchfree.util
 
-import android.animation.*
+import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.TimeInterpolator
+import android.animation.ValueAnimator
 import android.view.View
 
 object AnimationUtil {
@@ -92,5 +96,4 @@ object AnimationUtil {
             return argbEvaluator.evaluate(input, mStartValue, mEndValue) as Int
         }
     }
-
 }

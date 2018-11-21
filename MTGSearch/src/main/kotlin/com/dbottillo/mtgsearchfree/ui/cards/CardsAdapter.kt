@@ -18,10 +18,12 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
-class CardsAdapter(var cards: List<MTGCard>,
-                   val listener: OnCardListener,
-                   val cardFilter: CardFilter?,
-                   val configuration: CardAdapterConfiguration) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CardsAdapter(
+    var cards: List<MTGCard>,
+    val listener: OnCardListener,
+    val cardFilter: CardFilter?,
+    val configuration: CardAdapterConfiguration
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var colorFilterActive = -1
 
@@ -94,7 +96,7 @@ class CardsAdapter(var cards: List<MTGCard>,
                 card.loadInto(holder.loader, holder.image)
             } else {
                 val listCardViewHolder = holder as ListCardViewHolder
-                listCardViewHolder.bind(card, configuration.isSearch,  context)
+                listCardViewHolder.bind(card, configuration.isSearch, context)
                 listCardViewHolder.setupMore(context, card, position, configuration.menu, listener)
             }
             holder.parent.setOnClickListener {
@@ -134,7 +136,6 @@ class CardsAdapter(var cards: List<MTGCard>,
 
     internal inner class FooterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
-
 
 const val ITEM_VIEW_TYPE_HEADER = 0
 const val ITEM_VIEW_TYPE_ITEM = 1

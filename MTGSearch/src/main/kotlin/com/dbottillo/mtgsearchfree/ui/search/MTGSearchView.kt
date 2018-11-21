@@ -10,7 +10,10 @@ import android.widget.ArrayAdapter
 import android.widget.RelativeLayout
 import android.widget.Spinner
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.cmcParamCreator
+import com.dbottillo.mtgsearchfree.model.ptParamCreator
 import com.dbottillo.mtgsearchfree.util.LOG
 
 class MTGSearchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = -1) : RelativeLayout(context, attrs, defStyleAttr) {

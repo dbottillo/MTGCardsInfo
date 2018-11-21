@@ -10,9 +10,11 @@ import com.dbottillo.mtgsearchfree.ui.cards.ITEM_VIEW_TYPE_FOOTER
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
-class StartingHandGridAdapter(var cards: MutableList<StartingHandCard>,
-                              val columns: Int,
-                              val next: () -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class StartingHandGridAdapter(
+    var cards: MutableList<StartingHandCard>,
+    val columns: Int,
+    val next: () -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int {
         if (cards.isEmpty()) return 0

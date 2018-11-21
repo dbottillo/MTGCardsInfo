@@ -154,7 +154,7 @@ class SetsFragmentPresenterImplTest {
         verifyNoMoreInteractions(setsInteractor, cardsInteractor, view, generalData)
     }
 
-    internal fun afterFirstLoadSets(){
+    internal fun afterFirstLoadSets() {
         `when`(setsInteractor.load()).thenReturn(Observable.just(sets))
         `when`(cardsInteractor.loadSet(set)).thenReturn(Observable.just(cards))
         `when`(cardsPreferences.setPosition).thenReturn(5)

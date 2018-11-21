@@ -45,5 +45,4 @@ class SearchSetAdapter(context: Context, sets: List<MTGSet>) : ArrayAdapter<MTGS
     class SetHolder(row: View) {
         var name = row.findViewById<TextView>(android.R.id.text1)
     }
-
 }

@@ -12,7 +12,7 @@ fun StringBuilder.appendCast(name: String) {
 internal class QueryComposer(initial: String) {
 
     private val LIKE_OPERATOR = "LIKE"
-    private val stringBuilder: StringBuilder = StringBuilder(initial)  //NOPMD
+    private val stringBuilder: StringBuilder = StringBuilder(initial) // NOPMD
     private val selection = mutableListOf<String>()
 
     internal class Output(var query: String, var selection: List<String>)
@@ -21,7 +21,7 @@ internal class QueryComposer(initial: String) {
         cmcParam?.let {
             checkFirstParam()
             if (it.operator == "=") {
-                if ((it.stringValues.size == 1 && it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()){
+                if ((it.stringValues.size == 1 && it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()) {
                     stringBuilder.append("cmc").append(it.operator).append("?")
                     addSelection(it.operator, it.numericValue.toString())
                 } else {
@@ -139,5 +139,4 @@ internal class QueryComposer(initial: String) {
     fun build(): Output {
         return Output(stringBuilder.toString(), selection)
     }
-
 }

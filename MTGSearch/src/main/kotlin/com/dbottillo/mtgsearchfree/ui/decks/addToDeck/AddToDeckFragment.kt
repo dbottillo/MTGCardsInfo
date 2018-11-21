@@ -5,13 +5,20 @@ import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TextInputLayout
 import android.support.v4.app.DialogFragment
+import android.support.v4.app.FragmentActivity
 import android.text.InputFilter
 import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.Spinner
+import android.widget.TextView
+import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -77,7 +84,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     private fun setupQuantitySpinner() {
         LOG.d()
         quantityChoose = arrayOf(getString(R.string.deck_choose_quantity), "1", "2", "3", "4", getString(R.string.deck_specify))
-        val adapter = ArrayAdapter<CharSequence>(activity, R.layout.add_to_deck_spinner_item, quantityChoose)
+        val adapter = ArrayAdapter<CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, quantityChoose)
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
         chooseQuantity.adapter = adapter
         chooseQuantity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -91,7 +98,6 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-
             }
         }
     }
@@ -100,7 +106,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         LOG.d()
         val dialog = super.onCreateDialog(savedInstanceState)
         // request a window without the title
-        dialog.window.requestFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
         return dialog
     }
 
@@ -115,7 +121,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         decksChoose.add(getString(R.string.deck_choose))
         decks.forEach { decksChoose.add(it.name) }
         decksChoose.add(getString(R.string.deck_new))
-        val adapter = ArrayAdapter<CharSequence>(activity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())
+        val adapter = ArrayAdapter<CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
         chooseDeck.adapter = adapter
         chooseDeck.setSelection(decks.indexOf(decks.find { it.id == selectedDeck }) + 1)
@@ -129,7 +135,6 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-
             }
         }
     }

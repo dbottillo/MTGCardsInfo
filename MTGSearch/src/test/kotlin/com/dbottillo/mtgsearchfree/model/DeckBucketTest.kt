@@ -7,7 +7,6 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class DeckBucketTest {
 
@@ -123,7 +122,6 @@ class DeckBucketTest {
             assertTrue(input.contains(card))
         }
     }
-
 }
 
 const val NUMBER_OF_UNIQUE_CARDS = 12

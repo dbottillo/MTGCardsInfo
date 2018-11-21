@@ -10,9 +10,11 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
 @Suppress("CAST_NEVER_SUCCEEDS")
-class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
-                              val cardsPreferences: CardsPreferences,
-                              val logger: Logger) : CardsLuckyPresenter {
+class CardsLuckyPresenterImpl(
+    val cardsInteractor: CardsInteractor,
+    val cardsPreferences: CardsPreferences,
+    val logger: Logger
+) : CardsLuckyPresenter {
 
     lateinit var view: CardsLuckyView
 
@@ -130,7 +132,6 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
             view.showError(it.localizedMessage)
         })
     }
-
 }
 
 const val CARD = "CARD"

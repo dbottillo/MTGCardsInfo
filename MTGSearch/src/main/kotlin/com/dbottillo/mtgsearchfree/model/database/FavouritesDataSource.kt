@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.ContentValues
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -9,9 +8,10 @@ import com.dbottillo.mtgsearchfree.util.LOG
 
 import java.util.ArrayList
 
-class FavouritesDataSource(private val database: SQLiteDatabase,
-                           private val cardDataSource: CardDataSource) {
-
+class FavouritesDataSource(
+    private val database: SQLiteDatabase,
+    private val cardDataSource: CardDataSource
+) {
 
     fun saveFavourites(card: MTGCard): Long {
         LOG.d("saving " + card.toString() + " as favourite")

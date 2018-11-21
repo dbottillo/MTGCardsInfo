@@ -5,36 +5,32 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import com.dbottillo.mtgsearchfree.util.AppInfo
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.ArgumentMatchers.anyBoolean
+import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 @SuppressLint("CommitPrefEdits")
 class GeneralPreferencesTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: GeneralPreferences
 
-    @Mock
-    lateinit var appInfo: AppInfo
-
-    @Mock
-    lateinit var sharedPreferences: SharedPreferences
-
-    @Mock
-    lateinit var appContext: Context
-
-    @Mock
-    lateinit var editor: Editor
+    @Mock lateinit var appInfo: AppInfo
+    @Mock lateinit var sharedPreferences: SharedPreferences
+    @Mock lateinit var appContext: Context
+    @Mock lateinit var editor: Editor
 
     @Before
     fun setup() {
@@ -121,7 +117,7 @@ class GeneralPreferencesTest {
         whenever(sharedPreferences.getLong(LAST_DECK_SELECTED, -1)).thenReturn(4)
 
         val result = underTest.lastDeckSelected
-        
+
         assertThat(result, `is`(4L))
         verify(appContext).getSharedPreferences("General", Context.MODE_PRIVATE)
         verify(sharedPreferences).getLong(LAST_DECK_SELECTED, -1)

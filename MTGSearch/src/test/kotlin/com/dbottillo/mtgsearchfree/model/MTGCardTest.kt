@@ -1,10 +1,11 @@
 package com.dbottillo.mtgsearchfree.model
 
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import java.util.*
 
 class MTGCardTest {
 
@@ -20,7 +21,7 @@ class MTGCardTest {
         card.isArtifact = true
         card.setCardName("Name")
         card.cmc = 2
-        card.colors = Arrays.asList(1, 3)
+        card.colors = mutableListOf(1, 3)
         card.belongsTo(set)
         card.layout = "layout"
         card.manaCost = "3UW"
@@ -32,12 +33,12 @@ class MTGCardTest {
         card.text = "text"
         card.toughness = "4"
         card.type = "Creature"
-        card.names = Arrays.asList("one", "two")
-        card.superTypes = Arrays.asList("legendary", "creature")
+        card.names = listOf("one", "two")
+        card.superTypes = listOf("legendary", "creature")
         card.flavor = "flavor"
         card.artist = "artist"
         card.loyalty = 2
-        card.printings = Arrays.asList("C16", "C15")
+        card.printings = listOf("C16", "C15")
     }
 
     @Test

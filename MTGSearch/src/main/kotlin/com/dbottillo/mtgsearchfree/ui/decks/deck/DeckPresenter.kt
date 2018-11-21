@@ -8,8 +8,10 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
-class DeckPresenter @Inject constructor(private val interactor: DecksInteractor,
-                                        private val logger: Logger) {
+class DeckPresenter @Inject constructor(
+    private val interactor: DecksInteractor,
+    private val logger: Logger
+) {
 
     lateinit var view: DeckView
     lateinit var deck: Deck
@@ -22,42 +24,41 @@ class DeckPresenter @Inject constructor(private val interactor: DecksInteractor,
 
     fun loadDeck() {
         disposable.add(interactor.loadDeck(deck).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
     fun addCardToDeck(card: MTGCard, quantity: Int) {
         disposable.add(interactor.addCard(deck, card, quantity).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
     fun removeCardFromDeck(card: MTGCard) {
         disposable.add(interactor.removeCard(deck, card).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
     fun removeAllCardFromDeck(card: MTGCard) {
         disposable.add(interactor.removeAllCard(deck, card).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
     fun moveCardFromSideBoard(card: MTGCard, quantity: Int) {
         disposable.add(interactor.moveCardFromSideboard(deck, card, quantity).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
     fun moveCardToSideBoard(card: MTGCard, quantity: Int) {
         disposable.add(interactor.moveCardToSideboard(deck, card, quantity).subscribe({
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})",it)
+            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
         }))
     }
 
-    fun onDestroyView(){
+    fun onDestroyView() {
         disposable.dispose()
     }
-
 }

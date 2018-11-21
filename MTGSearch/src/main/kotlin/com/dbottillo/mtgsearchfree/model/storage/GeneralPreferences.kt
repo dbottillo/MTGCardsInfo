@@ -58,7 +58,6 @@ class GeneralPreferences(context: Context, private val appInfo: AppInfo) : Gener
     override fun markCardMigrationStarted() {
         sharedPreferences.edit().putBoolean(CARD_MIGRATION_REQUIRED, false).apply()
     }
-
 }
 
 const val DEBUG = "debug"
@@ -81,4 +80,3 @@ interface GeneralData {
     fun markCardMigrationStarted()
     var lastDeckSelected: Long
 }
-

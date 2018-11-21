@@ -7,7 +7,6 @@ import android.util.Log
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 object LOG {
@@ -19,11 +18,11 @@ object LOG {
     private fun determineCaller(): StackTraceElement {
         var validElement = NOT_FOUND
         for (element in RuntimeException().stackTrace) {
-            if (element.className != LOG::class.java.name
-                    && element.className != BasicActivity::class.java.name
-                    && element.className != BasicFragment::class.java.name
-                    && element.className != Logger::class.java.name
-                    && element.className != Instrumentation::class.java.name) {
+            if (element.className != LOG::class.java.name &&
+                    element.className != BasicActivity::class.java.name &&
+                    element.className != BasicFragment::class.java.name &&
+                    element.className != Logger::class.java.name &&
+                    element.className != Instrumentation::class.java.name) {
                 validElement = element
                 break
             }
@@ -102,8 +101,6 @@ object LOG {
             } catch (e: Exception) {
                 d("Error dumping object: " + e.localizedMessage)
             }
-
         }
     }
-
 }

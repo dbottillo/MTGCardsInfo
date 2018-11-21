@@ -64,5 +64,4 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
         }
         view.showOpeningHands(initial)
     }
-
 }

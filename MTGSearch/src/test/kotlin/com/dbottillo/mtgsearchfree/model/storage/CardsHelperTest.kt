@@ -2,8 +2,10 @@ package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -11,9 +13,7 @@ import org.mockito.junit.MockitoJUnit
 
 class CardsHelperTest {
 
-    @JvmField
-    @Rule
-    val mockitoRule = MockitoJUnit.rule()!!
+    @JvmField @Rule val mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: CardsHelper
 
@@ -187,14 +187,16 @@ class CardsHelperTest {
         return list
     }
 
-    private fun generateCard(name: String = "Card",
-                             cost: String = "WU",
-                             rarity: String = "Common",
-                             colors: List<Int> = listOf(),
-                             colorsIdentity: List<String> = listOf(),
-                             isLand: Boolean = false,
-                             isArtifact: Boolean = false,
-                             isMulticolor: Boolean = false): MTGCard {
+    private fun generateCard(
+        name: String = "Card",
+        cost: String = "WU",
+        rarity: String = "Common",
+        colors: List<Int> = listOf(),
+        colorsIdentity: List<String> = listOf(),
+        isLand: Boolean = false,
+        isArtifact: Boolean = false,
+        isMulticolor: Boolean = false
+    ): MTGCard {
         val card = MTGCard()
         card.setCardName(name)
         card.manaCost = cost

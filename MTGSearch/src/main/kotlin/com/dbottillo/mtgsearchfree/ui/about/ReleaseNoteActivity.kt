@@ -17,7 +17,6 @@ import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
-
 class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
 
     @Inject lateinit var presenter: ReleaseNotePresenter
@@ -70,7 +69,6 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }
 
 class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapter<ReleaseNoteHolder>() {
@@ -84,7 +82,6 @@ class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapte
     }
 
     override fun getItemCount() = items.size
-
 }
 
 class ReleaseNoteHolder(view: View) : RecyclerView.ViewHolder(view) {

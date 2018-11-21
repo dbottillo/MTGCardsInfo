@@ -8,7 +8,6 @@ import android.support.design.widget.Snackbar
 import android.widget.FrameLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.INTENT_RELEASE_NOTE_PUSH
-import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
@@ -18,8 +17,13 @@ import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.views.BottomTabs
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.PermissionAvailable
+import com.dbottillo.mtgsearchfree.util.PermissionUtil
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 import java.lang.ref.WeakReference
+import com.dbottillo.mtgsearchfree.util.bind
+import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
+import com.dbottillo.mtgsearchfree.util.setHeight
 
 class HomeActivity : BasicActivity() {
 
@@ -56,7 +60,6 @@ class HomeActivity : BasicActivity() {
             startActivity(Intent(this, ReleaseNoteActivity::class.java))
             intent.putExtra(INTENT_RELEASE_NOTE_PUSH, false)
         }
-
     }
 
     private fun checkAndReplace(tag: String) {

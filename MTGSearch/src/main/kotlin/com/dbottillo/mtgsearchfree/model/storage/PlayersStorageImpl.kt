@@ -3,10 +3,12 @@ package com.dbottillo.mtgsearchfree.model.storage
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import java.util.*
+import java.util.Random
 
-open class PlayersStorageImpl(private val playerDataSource: PlayerDataSource,
-                              private val logger: Logger) : PlayersStorage {
+open class PlayersStorageImpl(
+    private val playerDataSource: PlayerDataSource,
+    private val logger: Logger
+) : PlayersStorage {
 
     private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")
 
@@ -76,7 +78,6 @@ open class PlayersStorageImpl(private val playerDataSource: PlayerDataSource,
         return names[pickedNumber]
     }
 
-
     private fun uniqueIdForPlayer(players: List<Player>): Int {
         var id = 0
         if (players.isEmpty()) {
@@ -85,5 +86,4 @@ open class PlayersStorageImpl(private val playerDataSource: PlayerDataSource,
         id = players.last().id + 1
         return id
     }
-
 }

@@ -73,8 +73,12 @@ class MTGCardsView : RelativeLayout {
                 menu = menuOption))
     }
 
-    private fun loadCards(cards: List<MTGCard>, listener: OnCardListener,
-                          cardFilter: CardFilter?, configuration: CardAdapterConfiguration) {
+    private fun loadCards(
+        cards: List<MTGCard>,
+        listener: OnCardListener,
+        cardFilter: CardFilter?,
+        configuration: CardAdapterConfiguration
+    ) {
         LOG.d()
 
         adapter = CardsAdapter(cards, listener, cardFilter, configuration)
@@ -131,8 +135,12 @@ class MTGCardsView : RelativeLayout {
 
     private inner class GridItemDecorator(private val space: Int) : RecyclerView.ItemDecoration() {
 
-        override fun getItemOffsets(outRect: Rect, view: View,
-                                    parent: RecyclerView, state: RecyclerView.State) {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
             if (parent.getChildLayoutPosition(view) == 0) {
                 outRect.left = 0
                 outRect.right = 0

@@ -1,7 +1,9 @@
 package com.dbottillo.mtgsearchfree.model
 
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.junit.MockitoJUnit

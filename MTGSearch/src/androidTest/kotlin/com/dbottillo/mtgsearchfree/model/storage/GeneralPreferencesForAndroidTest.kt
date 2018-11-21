@@ -25,7 +25,6 @@ class GeneralPreferencesForAndroidTest : GeneralData {
         get() = !typeList
 
     override fun setTooltipMainHide() {
-
     }
 
     override fun isTooltipMainToShow(): Boolean {
@@ -45,7 +44,6 @@ class GeneralPreferencesForAndroidTest : GeneralData {
     }
 
     override fun markCardMigrationStarted() {
-
     }
 
     override var lastDeckSelected: Long = 2

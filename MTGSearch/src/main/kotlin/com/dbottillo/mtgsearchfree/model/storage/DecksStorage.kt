@@ -21,4 +21,3 @@ interface DecksStorage {
     fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection
     fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection
 }
-

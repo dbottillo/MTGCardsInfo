@@ -8,6 +8,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertNotNull
@@ -17,9 +20,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class DecksStorageImplTest {
 
@@ -37,8 +38,8 @@ class DecksStorageImplTest {
     @Mock lateinit var generalData: GeneralData
     @Mock lateinit var logger: Logger
 
-    private val deckCards = Arrays.asList(MTGCard(18, 1), MTGCard(19, 2))
-    private val decks = Arrays.asList(Deck(1), Deck(2))
+    private val deckCards = listOf(MTGCard(18, 1), MTGCard(19, 2))
+    private val decks = listOf(Deck(1), Deck(2))
 
     @Before
     fun setup() {
@@ -167,7 +168,7 @@ class DecksStorageImplTest {
     @Test
     @Throws(Throwable::class)
     fun `should import deck from uri`() {
-        val uri = mock(Uri::class.java)
+        val uri = mock<Uri>()
         whenever(fileUtil.readFileContent(uri)).thenReturn(cardsBucket)
 
         val decksLoaded = underTest.importDeck(uri)
@@ -184,7 +185,7 @@ class DecksStorageImplTest {
     @Throws(Exception::class)
     fun `should not import null deck`() {
         exception.expect(MTGException::class.java)
-        val uri = mock(Uri::class.java)
+        val uri = mock<Uri>()
         val e = Exception("error")
         whenever(fileUtil.readFileContent(uri)).thenThrow(e)
 

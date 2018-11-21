@@ -4,20 +4,26 @@ import android.os.Bundle
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.*
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckData
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenterImpl
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckView
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.reset
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class AddToDeckPresenterImplTest {
 
-    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: AddToDeckPresenter
 
@@ -45,7 +51,7 @@ class AddToDeckPresenterImplTest {
     @Test
     fun `load decks should call interactor and update view`() {
         whenever(addToDeckData.selectedDeck).thenReturn(2)
-        
+
         underTest.init(view, bundle)
 
         verify(interactor).init(4)
@@ -99,5 +105,4 @@ class AddToDeckPresenterImplTest {
         verify(interactor).addCard("new deck", card, 5)
         verifyNoMoreInteractions(view, interactor)
     }
-
 }

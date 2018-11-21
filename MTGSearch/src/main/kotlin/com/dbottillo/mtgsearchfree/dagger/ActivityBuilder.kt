@@ -1,7 +1,11 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import com.dbottillo.mtgsearchfree.ActivityScope
-import com.dbottillo.mtgsearchfree.interactors.*
+import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
+import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
+import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
@@ -63,11 +67,13 @@ abstract class ActivityBuilder {
 @Module
 class CardsActivityModule {
     @Provides
-    fun providesCardsActivityPresenter(cardsInteractor: CardsInteractor,
-                                       savedCardsInteractor: SavedCardsInteractor,
-                                       decksInteractor: DecksInteractor,
-                                       cardsPreferences: CardsPreferences,
-                                       logger: Logger): CardsActivityPresenter {
+    fun providesCardsActivityPresenter(
+        cardsInteractor: CardsInteractor,
+        savedCardsInteractor: SavedCardsInteractor,
+        decksInteractor: DecksInteractor,
+        cardsPreferences: CardsPreferences,
+        logger: Logger
+    ): CardsActivityPresenter {
         return CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, logger)
     }
 
@@ -80,9 +86,11 @@ class CardsActivityModule {
 @Module
 class CardsLuckyActivityModule {
     @Provides
-    fun providesCardsLuckyActivityPresenter(cardsInteractor: CardsInteractor,
-                                                     cardsPreferences: CardsPreferences,
-                                                     logger: Logger): CardsLuckyPresenter {
+    fun providesCardsLuckyActivityPresenter(
+        cardsInteractor: CardsInteractor,
+        cardsPreferences: CardsPreferences,
+        logger: Logger
+    ): CardsLuckyPresenter {
         return CardsLuckyPresenterImpl(cardsInteractor, cardsPreferences, logger)
     }
 
@@ -103,10 +111,12 @@ class DeckActivityModule {
 @Module
 class SearchActivityModule {
     @Provides
-    fun providesSearchActivityPresenter(setsInteratcor: SetsInteractor,
-                                                 cardsInteractor: CardsInteractor,
-                                                 generalData: GeneralData,
-                                                 logger: Logger): SearchPresenter {
+    fun providesSearchActivityPresenter(
+        setsInteratcor: SetsInteractor,
+        cardsInteractor: CardsInteractor,
+        generalData: GeneralData,
+        logger: Logger
+    ): SearchPresenter {
         return SearchPresenterImpl(setsInteratcor, cardsInteractor, generalData, logger)
     }
 }
@@ -122,8 +132,10 @@ class ReleaseNoteActivityModule {
 @Module
 class SetPickerActivityModule {
     @Provides
-    fun providesSetPickerPresenter(setsInteractor: SetsInteractor,
-                                            cardsPreferences: CardsPreferences): SetPickerPresenter {
+    fun providesSetPickerPresenter(
+        setsInteractor: SetsInteractor,
+        cardsPreferences: CardsPreferences
+    ): SetPickerPresenter {
         return SetPickerPresenterImpl(setsInteractor, cardsPreferences)
     }
 }

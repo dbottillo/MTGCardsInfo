@@ -1,11 +1,9 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 

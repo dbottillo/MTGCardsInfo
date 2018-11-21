@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.decks.deck
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.Deck
 
-interface DeckActivityView{
+interface DeckActivityView {
     fun deckExported(uri: Uri)
     fun deckNotExported()
     fun deckCopied()

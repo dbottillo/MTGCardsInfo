@@ -56,6 +56,4 @@ class CardsConfiguratorPresenterImplTest {
 
         verifyNoMoreInteractions(view, cardFilterInteractor)
     }
-
-
 }

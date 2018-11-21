@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui
 
-interface BaseCardsView{
+interface BaseCardsView {
     fun showFavMenuItem()
     fun updateFavMenuItem(text: Int, icon: Int)
     fun hideFavMenuItem()

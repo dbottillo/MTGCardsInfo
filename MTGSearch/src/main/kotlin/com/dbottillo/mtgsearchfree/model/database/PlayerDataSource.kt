@@ -5,7 +5,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.util.LOG
-import java.util.*
 
 class PlayerDataSource(private val database: SQLiteDatabase) {
 

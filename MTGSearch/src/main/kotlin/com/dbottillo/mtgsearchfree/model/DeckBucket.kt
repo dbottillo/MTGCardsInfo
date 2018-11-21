@@ -1,10 +1,12 @@
 package com.dbottillo.mtgsearchfree.model
 
-data class DeckBucket(val creatures: MutableList<MTGCard> = mutableListOf(),
-                      val instantAndSorceries: MutableList<MTGCard> = mutableListOf(),
-                      val other: MutableList<MTGCard> = mutableListOf(),
-                      val lands: MutableList<MTGCard> = mutableListOf(),
-                      val side: MutableList<MTGCard> = mutableListOf()) {
+data class DeckBucket(
+    val creatures: MutableList<MTGCard> = mutableListOf(),
+    val instantAndSorceries: MutableList<MTGCard> = mutableListOf(),
+    val other: MutableList<MTGCard> = mutableListOf(),
+    val lands: MutableList<MTGCard> = mutableListOf(),
+    val side: MutableList<MTGCard> = mutableListOf()
+) {
 
     var cards: List<MTGCard>
         get() {
