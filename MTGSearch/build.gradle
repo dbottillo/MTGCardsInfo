@@ -13,6 +13,7 @@ apply plugin: 'checkstyle'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "com.github.ben-manes.versions"
+apply from: '../githooks.gradle'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')

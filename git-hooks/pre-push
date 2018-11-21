@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Copy to .git/hooks in the project root
+# E.g. cp pre-push ../.git/hooks/ && chmod +x ../.git/hooks/pre-push
+
+CMD="./gradlew spotlessCheck"
+
+$CMD
+
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+ echo "Failure: $CMD"
+ exit 1
+fi
+exit 0
