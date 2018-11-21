@@ -8,7 +8,6 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
-import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
@@ -20,7 +19,6 @@ import org.mockito.Mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class DecksInteractorImplTest {
 
@@ -37,7 +35,7 @@ class DecksInteractorImplTest {
     @Mock lateinit var deckCollection: DeckCollection
     @Mock lateinit var schedulerProvider: SchedulerProvider
 
-    private val decks = Arrays.asList(Deck(2), Deck(3))
+    private val decks = listOf(Deck(2), Deck(3))
 
     lateinit var underTest: DecksInteractor
 

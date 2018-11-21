@@ -5,10 +5,13 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.util.LOG
-import java.util.*
+import java.util.Arrays
+import java.util.Locale
 
-class MTGCardDataSource(private val database: SQLiteDatabase,
-                        private val cardDataSource: CardDataSource) {
+class MTGCardDataSource(
+    private val database: SQLiteDatabase,
+    private val cardDataSource: CardDataSource
+) {
 
     internal enum class STANDARD(var setId: Int, var set: String) {
         GUILDS_OF_RAVNICA(1, "Guilds of Ravnica"),
@@ -60,7 +63,7 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
         var colorsOperator = "OR"
         if (searchParams.isNoMulti) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "0")
-            //colorsOperator = "OR";
+            // colorsOperator = "OR";
         }
         if (searchParams.onlyMulti() || searchParams.isOnlyMultiNoOthers) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "1")
@@ -131,7 +134,6 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
         cursor.close()
         return cards
     }
-
 
     fun getRandomCard(number: Int): List<MTGCard> {
         LOG.d("get random card  $number")

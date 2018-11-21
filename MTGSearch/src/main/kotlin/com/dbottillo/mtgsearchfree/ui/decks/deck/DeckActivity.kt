@@ -11,7 +11,11 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -20,7 +24,11 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.gone
+import com.dbottillo.mtgsearchfree.util.setTintColor
+import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -123,7 +131,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         startActivity(Intent.createChooser(shareIntent, getString(R.string.deck_title)))
     }
 
-    override fun deckNotExported(){
+    override fun deckNotExported() {
         Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show()
         TrackingManager.trackDeckExportError()
     }
@@ -163,12 +171,14 @@ class DeckActivity : BasicActivity(), DeckActivityView {
     }
 }
 
-class DeckPagerAdapter(fragmentManager: FragmentManager,
-                       val deck: Deck,
-                       private val titleList: List<String>): FragmentPagerAdapter(fragmentManager) {
+class DeckPagerAdapter(
+    fragmentManager: FragmentManager,
+    val deck: Deck,
+    private val titleList: List<String>
+) : FragmentPagerAdapter(fragmentManager) {
 
     override fun getItem(position: Int): Fragment {
-        return when(position){
+        return when (position) {
             0 -> {
                 DeckFragment().apply { arguments = Bundle().apply { putParcelable(DECK_KEY, deck) } }
             }

@@ -20,13 +20,10 @@ import android.util.TypedValue
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
-
 
 fun Context.dpToPx(value: Int): Int {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()
@@ -139,7 +136,7 @@ fun Activity?.setDarkStatusBar() {
     this?.window?.decorView?.systemUiVisibility = 0
 }
 
-fun AppCompatActivity.showDialog(tag: String, fragment: DialogFragment) {
+fun AppCompatActivity.show(tag: String, fragment: DialogFragment) {
     LOG.d()
     val ft = supportFragmentManager.beginTransaction()
     val prev = supportFragmentManager.findFragmentByTag(tag)

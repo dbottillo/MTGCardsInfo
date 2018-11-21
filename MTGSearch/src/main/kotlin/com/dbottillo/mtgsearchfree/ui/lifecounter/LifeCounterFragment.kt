@@ -18,12 +18,12 @@ import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.AndroidSupportInjection
-import java.util.*
+import java.util.Random
 import javax.inject.Inject
 
 class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterListener {
 
-    lateinit var lifeCounterList: RecyclerView
+    private lateinit var lifeCounterList: RecyclerView
 
     @Inject
     internal lateinit var lifeCounterPresenter: LifeCounterPresenter
@@ -32,12 +32,12 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     internal lateinit var cardsPreferences: CardsPreferences
 
     @Inject
-    lateinit var dialogUtil : DialogUtil
+    lateinit var dialogUtil: DialogUtil
 
     internal lateinit var adapter: LifeCounterAdapter
     internal var players: MutableList<Player> = mutableListOf()
 
-    internal var diceShowed : Boolean = false
+    internal var diceShowed: Boolean = false
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -54,8 +54,8 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         super.onViewCreated(view, savedInstanceState)
 
         lifeCounterList = view.findViewById<RecyclerView>(R.id.life_counter_list)
-        view.findViewById<View>(R.id.action_reset).setOnClickListener{ reset() }
-        view.findViewById<View>(R.id.action_dice).setOnClickListener{ launchDice() }
+        view.findViewById<View>(R.id.action_reset).setOnClickListener { reset() }
+        view.findViewById<View>(R.id.action_dice).setOnClickListener { launchDice() }
         view.findViewById<View>(R.id.add_new_deck).setOnClickListener { addPlayer() }
 
         lifeCounterList.setHasFixedSize(true)
@@ -69,7 +69,6 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
         lifeCounterPresenter.init(this)
         lifeCounterPresenter.loadPlayers()
-
     }
 
     override fun onResume() {
@@ -124,7 +123,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     override fun onEditPlayer(player: Player) {
         LOG.d()
-        dialogUtil.showEditPlayer(player){
+        dialogUtil.showEditPlayer(player) {
             player.name = it
             lifeCounterPresenter.editPlayer(player)
             TrackingManager.trackEditPlayer()
@@ -147,13 +146,13 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         TrackingManager.trackAddPlayer()
     }
 
-    internal fun setupMenu(){
+    internal fun setupMenu() {
         toolbar.inflateMenu(R.menu.life_counter)
 
         refreshMenu()
     }
 
-    internal fun refreshMenu(){
+    internal fun refreshMenu() {
         val poison = toolbar.menu.findItem(R.id.action_poison)
         poison.isChecked = cardsPreferences.showPoison()
         val screenOn = toolbar.menu.findItem(R.id.action_screen_on)
@@ -163,7 +162,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     }
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
-        when(item?.itemId){
+        when (item?.itemId) {
             R.id.action_poison -> poisonChanged()
             R.id.action_screen_on -> screenOnChanged()
             R.id.action_two_hg -> twoHGChanged()
@@ -180,7 +179,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         TrackingManager.trackHGLifeCounter()
     }
 
-    fun poisonChanged(){
+    fun poisonChanged() {
         TrackingManager.trackChangePoisonSetting()
         val showPoison = !cardsPreferences.showPoison()
         cardsPreferences.showPoison(showPoison)
@@ -189,7 +188,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         adapter.notifyDataSetChanged()
     }
 
-    fun screenOnChanged(){
+    fun screenOnChanged() {
         val screenOn = cardsPreferences.screenOn()
         cardsPreferences.setScreenOn(!screenOn)
         refreshMenu()
@@ -214,15 +213,14 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         lifeCounterPresenter.editPlayers(players)
     }
 
-    fun reset(){
+    fun reset() {
         resetLifeCounter()
         TrackingManager.trackResetLifeCounter()
     }
 
-    fun launchDice(){
+    fun launchDice() {
         if (diceShowed) {
             players.forEach { it.diceResult = -1 }
-
         } else {
             players.forEach { it.diceResult = Random().nextInt(20) + 1 }
         }

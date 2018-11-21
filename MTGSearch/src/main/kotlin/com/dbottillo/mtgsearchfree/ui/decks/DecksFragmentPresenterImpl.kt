@@ -7,8 +7,10 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
-class DecksFragmentPresenterImpl @Inject constructor(private val interactor: DecksInteractor,
-                                                     private val logger: Logger) : DecksFragmentPresenter {
+class DecksFragmentPresenterImpl @Inject constructor(
+    private val interactor: DecksInteractor,
+    private val logger: Logger
+) : DecksFragmentPresenter {
     lateinit var decksView: DecksFragmentView
 
     init {
@@ -72,5 +74,4 @@ class DecksFragmentPresenterImpl @Inject constructor(private val interactor: Dec
             decksView.showError(e.localizedMessage)
         }
     }
-
 }

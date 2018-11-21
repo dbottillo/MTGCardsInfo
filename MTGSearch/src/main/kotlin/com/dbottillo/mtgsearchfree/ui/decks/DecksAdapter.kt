@@ -9,10 +9,12 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 
-class DecksAdapter(val decks: List<Deck>,
-                   val copy:(deck: Deck) -> Unit,
-                   val delete:(deck: Deck) -> Unit,
-                   val selected:(deck: Deck) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DecksAdapter(
+    val decks: List<Deck>,
+    val copy: (deck: Deck) -> Unit,
+    val delete: (deck: Deck) -> Unit,
+    val selected: (deck: Deck) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == TYPE_HEADER) {
@@ -28,7 +30,7 @@ class DecksAdapter(val decks: List<Deck>,
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) == TYPE_FOOTER) {
             holder as FooterViewHolder
-            if (decks.isEmpty()){
+            if (decks.isEmpty()) {
                 holder.emptyText.visibility = View.VISIBLE
             } else {
                 holder.emptyText.visibility = View.GONE
@@ -37,12 +39,12 @@ class DecksAdapter(val decks: List<Deck>,
 
         if (getItemViewType(position) == TYPE_DECK) {
             holder as DeckViewHolder
-            val deck = decks[position-1]
+            val deck = decks[position - 1]
             holder.name.text = deck.name
             holder.number.text = holder.row.context?.getString(R.string.deck_subtitle, deck.numberOfCards)
-            holder.delete.setOnClickListener{ delete(deck) }
-            holder.copy.setOnClickListener{ copy(deck) }
-            holder.parent.setOnClickListener{ selected(deck) }
+            holder.delete.setOnClickListener { delete(deck) }
+            holder.copy.setOnClickListener { copy(deck) }
+            holder.parent.setOnClickListener { selected(deck) }
         }
     }
 
@@ -51,7 +53,7 @@ class DecksAdapter(val decks: List<Deck>,
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(position){
+        return when (position) {
             0 -> TYPE_HEADER
             decks.size + 1 -> TYPE_FOOTER
             else -> TYPE_DECK
@@ -61,7 +63,7 @@ class DecksAdapter(val decks: List<Deck>,
     class HeaderViewHolder(val row: View) : RecyclerView.ViewHolder(row)
 
     class FooterViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
-        val emptyText : TextView = row.findViewById(R.id.empty_decks_text_view)
+        val emptyText: TextView = row.findViewById(R.id.empty_decks_text_view)
     }
 
     class DeckViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
@@ -71,7 +73,6 @@ class DecksAdapter(val decks: List<Deck>,
         val copy: ImageButton = row.findViewById(R.id.deck_copy)
         val delete: ImageButton = row.findViewById(R.id.delete_deck)
     }
-
 }
 
 const val TYPE_HEADER: Int = 0

@@ -1,0 +1,27 @@
+static def isLinuxOrMacOs() {
+    def osName = System.getProperty('os.name').toLowerCase(Locale.ROOT)
+    return osName.contains('linux') || osName.contains('mac os') || osName.contains('macos')
+}
+
+task copyGitHooks(type: Copy) {
+    description 'Copies the Git hooks from scripts/git-hooks to the .git/hooks folder.'
+    from("${rootDir}/git-hooks/") {
+        include '**/*'
+    }
+    into "${rootDir}/.git/hooks"
+}
+
+task enableGitHooks(type: Exec) {
+    description 'Enables Git hooks copied from scripts/git-hooks.'
+    group 'git hooks'
+    workingDir rootDir
+    commandLine 'chmod'
+    args '-R', '+x', '.git/hooks/'
+    onlyIf { isLinuxOrMacOs() }
+}
+
+afterEvaluate {
+    tasks['clean'].dependsOn copyGitHooks
+    tasks['clean'].dependsOn enableGitHooks
+    tasks['enableGitHooks'].mustRunAfter copyGitHooks
+}

@@ -8,38 +8,30 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class SearchPresenterImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock
-    lateinit var view: SearchActivityView
-    @Mock
-    lateinit var setsInteractor: SetsInteractor
-    @Mock
-    lateinit var cardsInteractor: CardsInteractor
-    @Mock
-    lateinit var generalData: GeneralData
-    @Mock
-    lateinit var logger: Logger
-    @Mock
-    lateinit var sets: List<MTGSet>
-    @Mock
-    lateinit var searchParams: SearchParams
-    @Mock
-    lateinit var cards: CardsCollection
-    @Mock
-    lateinit var card: MTGCard
+    @Mock lateinit var view: SearchActivityView
+    @Mock lateinit var setsInteractor: SetsInteractor
+    @Mock lateinit var cardsInteractor: CardsInteractor
+    @Mock lateinit var generalData: GeneralData
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var sets: List<MTGSet>
+    @Mock lateinit var searchParams: SearchParams
+    @Mock lateinit var cards: CardsCollection
+    @Mock lateinit var card: MTGCard
 
     lateinit var underTest: SearchPresenter
 
@@ -50,7 +42,7 @@ class SearchPresenterImplTest {
 
     @Test
     fun `init should show grid if general data is set to grid`() {
-        `when`(generalData.isCardsShowTypeGrid).thenReturn(true)
+        whenever(generalData.isCardsShowTypeGrid).thenReturn(true)
 
         underTest.init(view)
 
@@ -61,7 +53,7 @@ class SearchPresenterImplTest {
 
     @Test
     fun `init should show list if general data is set to list`() {
-        `when`(generalData.isCardsShowTypeGrid).thenReturn(false)
+        whenever(generalData.isCardsShowTypeGrid).thenReturn(false)
 
         underTest.init(view)
 
@@ -74,7 +66,7 @@ class SearchPresenterImplTest {
     fun `load set should call interactor and update view`() {
         underTest.init(view)
         Mockito.reset(setsInteractor, cardsInteractor, generalData, view)
-        `when`(setsInteractor.load()).thenReturn(Observable.just(sets))
+        whenever(setsInteractor.load()).thenReturn(Observable.just(sets))
 
         underTest.loadSet()
 
@@ -87,7 +79,7 @@ class SearchPresenterImplTest {
     fun `do search should call interactor and update view`() {
         underTest.init(view)
         Mockito.reset(setsInteractor, cardsInteractor, generalData, view)
-        `when`(cardsInteractor.doSearch(searchParams)).thenReturn(Observable.just(cards))
+        whenever(cardsInteractor.doSearch(searchParams)).thenReturn(Observable.just(cards))
 
         underTest.doSearch(searchParams)
 
@@ -100,7 +92,7 @@ class SearchPresenterImplTest {
     fun `toggle card view preference should switch to list if it was grid`() {
         underTest.init(view)
         Mockito.reset(setsInteractor, cardsInteractor, generalData, view)
-        `when`(generalData.isCardsShowTypeGrid).thenReturn(true)
+        whenever(generalData.isCardsShowTypeGrid).thenReturn(true)
 
         underTest.toggleCardTypeViewPreference()
 
@@ -114,7 +106,7 @@ class SearchPresenterImplTest {
     fun `toggle card view preference should switch to grid if it was list`() {
         underTest.init(view)
         Mockito.reset(setsInteractor, cardsInteractor, generalData, view)
-        `when`(generalData.isCardsShowTypeGrid).thenReturn(false)
+        whenever(generalData.isCardsShowTypeGrid).thenReturn(false)
 
         underTest.toggleCardTypeViewPreference()
 

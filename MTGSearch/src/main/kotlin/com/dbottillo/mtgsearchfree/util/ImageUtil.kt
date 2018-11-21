@@ -22,7 +22,7 @@ fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: Vie
     Pair(name, gathererImage).loadInto(loader, imageView, retry)
 }
 
-fun Pair<String,String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
+fun Pair<String, String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
     loader?.show()
     retry?.hide()
     imageView.contentDescription = first
@@ -38,14 +38,18 @@ fun Pair<String,String>.loadInto(loader: MTGLoader? = null, imageView: ImageView
             .into(imageView)
 }
 
-fun withListener(loader: MTGLoader? = null,
-                 retryView: View? = null,
-                 hideOnError: Boolean): RequestListener<Drawable> {
+fun withListener(
+    loader: MTGLoader? = null,
+    retryView: View? = null,
+    hideOnError: Boolean
+): RequestListener<Drawable> {
     return object : RequestListener<Drawable> {
-        override fun onLoadFailed(e: GlideException?,
-                                  model: Any?,
-                                  target: Target<Drawable>?,
-                                  isFirstResource: Boolean): Boolean {
+        override fun onLoadFailed(
+            e: GlideException?,
+            model: Any?,
+            target: Target<Drawable>?,
+            isFirstResource: Boolean
+        ): Boolean {
             if (hideOnError) {
                 loader?.hide()
                 retryView?.show()
@@ -53,15 +57,16 @@ fun withListener(loader: MTGLoader? = null,
             return false
         }
 
-        override fun onResourceReady(resource: Drawable?,
-                                     model: Any?,
-                                     target: Target<Drawable>?,
-                                     dataSource: DataSource?,
-                                     isFirstResource: Boolean): Boolean {
+        override fun onResourceReady(
+            resource: Drawable?,
+            model: Any?,
+            target: Target<Drawable>?,
+            dataSource: DataSource?,
+            isFirstResource: Boolean
+        ): Boolean {
             loader?.hide()
             return false
         }
-
     }
 }
 
@@ -81,5 +86,4 @@ fun MTGCard.getBitmap(context: Context, callback: (Bitmap) -> Unit) {
                     callback(resource)
                 }
             })
-
 }

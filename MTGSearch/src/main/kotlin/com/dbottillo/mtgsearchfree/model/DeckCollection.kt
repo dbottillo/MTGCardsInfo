@@ -1,14 +1,16 @@
 package com.dbottillo.mtgsearchfree.model
 
-class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
-                          val instantAndSorceries: MutableList<MTGCard> = mutableListOf<MTGCard>(),
-                          val other: MutableList<MTGCard> = mutableListOf<MTGCard>(),
-                          val lands: MutableList<MTGCard> = mutableListOf<MTGCard>(),
-                          val side: MutableList<MTGCard> = mutableListOf<MTGCard>()){
+class DeckCollection(
+    val creatures: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+    val instantAndSorceries: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+    val other: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+    val lands: MutableList<MTGCard> = mutableListOf<MTGCard>(),
+    val side: MutableList<MTGCard> = mutableListOf<MTGCard>()
+) {
 
-    fun addCards(newCards: List<MTGCard>) : DeckCollection{
+    fun addCards(newCards: List<MTGCard>): DeckCollection {
         newCards.forEach {
-            when{
+            when {
                 it.isSideboard -> side.add(it)
                 it.isLand -> lands.add(it)
                 it.types.contains("Creature") -> creatures.add(it)
@@ -19,13 +21,13 @@ class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard
         return this
     }
 
-    fun size(): Int{
+    fun size(): Int {
         return sizeOfSingleList(creatures) + sizeOfSingleList(instantAndSorceries) +
                 sizeOfSingleList(other) + sizeOfSingleList(lands) +
                 sizeOfSingleList(side)
     }
 
-    fun sizeOfUniqueCards(): Int{
+    fun sizeOfUniqueCards(): Int {
         return creatures.size + instantAndSorceries.size +
                 other.size + lands.size + side.size
     }
@@ -78,7 +80,7 @@ class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard
         return sizeOfSingleList(other)
     }
 
-    fun allCards(): List<MTGCard>{
+    fun allCards(): List<MTGCard> {
         val newList = mutableListOf<MTGCard>()
         newList.addAll(creatures)
         newList.addAll(instantAndSorceries)
@@ -88,13 +90,13 @@ class DeckCollection(val creatures: MutableList<MTGCard> = mutableListOf<MTGCard
         return newList
     }
 
-    fun toCardsCollection() : CardsCollection{
+    fun toCardsCollection(): CardsCollection {
         return CardsCollection(list = allCards(), filter = null, isDeck = true)
     }
 
-    internal fun sizeOfSingleList(list: List<MTGCard>): Int{
+    internal fun sizeOfSingleList(list: List<MTGCard>): Int {
         var total = 0
-        list.forEach { total+=it.quantity }
+        list.forEach { total += it.quantity }
         return total
     }
 }

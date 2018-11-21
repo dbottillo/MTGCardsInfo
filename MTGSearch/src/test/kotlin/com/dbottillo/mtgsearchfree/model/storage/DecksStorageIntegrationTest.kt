@@ -6,7 +6,11 @@ import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.*
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.util.FileManagerI
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
@@ -20,10 +24,8 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito.mock
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import org.robolectric.annotation.Config
 import java.io.FileNotFoundException
 import java.io.InputStream
 
@@ -205,5 +207,4 @@ class DecksStorageIntegrationTest {
             return ""
         }
     }
-
 }

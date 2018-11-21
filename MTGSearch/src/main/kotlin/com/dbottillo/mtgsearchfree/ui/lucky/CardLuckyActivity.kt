@@ -29,8 +29,8 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     @Inject
     lateinit var cardsPresenter: CardPresenter
 
-    private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view)}
-    private val titleCard  by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card)}
+    private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view) }
+    private val titleCard by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card) }
 
     override fun onCreate(bundle: Bundle?) {
         AndroidInjection.inject(this)
@@ -97,7 +97,6 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         return super.onCreateOptionsMenu(menu)
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_add_to_deck -> {
@@ -144,5 +143,4 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     override fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
 }

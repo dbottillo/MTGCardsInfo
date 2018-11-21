@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
 import android.view.MenuItem
-import android.view.View
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
 

@@ -11,7 +11,7 @@ import com.dbottillo.mtgsearchfree.R
 
 class BottomTabs : LinearLayout {
 
-    interface BottomTabsListener{
+    interface BottomTabsListener {
         fun tabSelected(selection: Int)
     }
 
@@ -24,14 +24,14 @@ class BottomTabs : LinearLayout {
     var decksTab: LinearLayout
     var savedTab: LinearLayout
     var lifeCounterTab: LinearLayout
-    
+
     var homeTabImage: ImageView
     var decksTabImage: ImageView
     var savedTabImage: ImageView
     var lifeCounterTabImage: ImageView
 
     var currentSelection = 0
-    var listener : BottomTabsListener? = null
+    var listener: BottomTabsListener? = null
 
     constructor(context: Context) : this(context, null)
 
@@ -73,7 +73,7 @@ class BottomTabs : LinearLayout {
         refreshUI()
     }
 
-    fun setBottomTabsListener(listener: BottomTabsListener){
+    fun setBottomTabsListener(listener: BottomTabsListener) {
         this.listener = listener
     }
 

@@ -4,11 +4,11 @@ import android.annotation.SuppressLint
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.util.Logger
 
 class SetPickerPresenterImpl(
-        private val setsInteractor: SetsInteractor,
-        private val cardsPreferences: CardsPreferences) : SetPickerPresenter {
+    private val setsInteractor: SetsInteractor,
+    private val cardsPreferences: CardsPreferences
+) : SetPickerPresenter {
 
     lateinit var view: SetPickerView
 

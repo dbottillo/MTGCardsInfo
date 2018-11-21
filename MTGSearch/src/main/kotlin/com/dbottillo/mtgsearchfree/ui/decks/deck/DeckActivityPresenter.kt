@@ -6,8 +6,9 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
 class DeckActivityPresenter @Inject constructor(
-        private val interactor: DecksInteractor,
-        private val logger: Logger) {
+    private val interactor: DecksInteractor,
+    private val logger: Logger
+) {
 
     lateinit var view: DeckActivityView
     lateinit var deck: Deck
@@ -22,8 +23,8 @@ class DeckActivityPresenter @Inject constructor(
         this.deck = deck
     }
 
-    fun load(){
-        if (deck.numberOfCards == 0){
+    fun load() {
+        if (deck.numberOfCards == 0) {
             view.showEmptyScreen()
             view.showTitle(deck.name)
         } else {
@@ -53,8 +54,7 @@ class DeckActivityPresenter @Inject constructor(
         }, {})
     }
 
-    private fun deckLoaded(){
-        view.showTitle("${deck.name} (${deck.numberOfCards-deck.sizeOfSideboard}/${deck.sizeOfSideboard})")
+    private fun deckLoaded() {
+        view.showTitle("${deck.name} (${deck.numberOfCards - deck.sizeOfSideboard}/${deck.sizeOfSideboard})")
     }
-
 }

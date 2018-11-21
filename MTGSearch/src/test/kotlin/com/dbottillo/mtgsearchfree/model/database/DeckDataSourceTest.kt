@@ -6,13 +6,14 @@ import com.google.gson.Gson
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import java.util.*
 
 @RunWith(RobolectricTestRunner::class)
 class DeckDataSourceTest {
@@ -457,7 +458,6 @@ class DeckDataSourceTest {
         assertThat(numberOfCards, `is`(quantity))
         assertThat(sizeOfSideboard, `is`(sideboard))
     }
-
 }
 
 const val SMALL_NUMBER_OF_CARDS = 4

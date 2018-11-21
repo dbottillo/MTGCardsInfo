@@ -3,10 +3,14 @@ package com.dbottillo.mtgsearchfree.model.helper
 import android.content.Context
 import android.os.AsyncTask
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.model.database.*
+import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
+import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
 import com.google.gson.Gson
 import java.lang.ref.WeakReference
-import java.util.*
+import java.util.Random
 
 /*
     This class is used only on debug to generate random decks
@@ -34,7 +38,7 @@ class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList
                 val cards = mtgCardDataSource.getRandomCard(30)
                 for (card in cards) {
                     val quantity = r.nextInt(4) + 1
-                    //LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
+                    // LOG.e("adding " + quantity + " " + card.getName() + " to " + deck);
                     card.isSideboard = quantity == 1
                     deckDataSource.addCardToDeckWithoutCheck(deck, card, quantity)
                 }
@@ -51,5 +55,4 @@ class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList
             Toast.makeText(it, "finished", Toast.LENGTH_SHORT).show()
         }
     }
-
 }

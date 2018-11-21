@@ -8,21 +8,19 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityPresenter
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityView
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
-import io.reactivex.Completable
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class DeckActivityPresenterTest {
 
-    @Rule
-    @JvmField
-    val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var interactor: DecksInteractor
     @Mock internal lateinit var logger: Logger
@@ -72,7 +70,7 @@ class DeckActivityPresenterTest {
         whenever(editedDeck.name).thenReturn("new name")
         whenever(editedDeck.numberOfCards).thenReturn(75)
         whenever(editedDeck.sizeOfSideboard).thenReturn(15)
-        `when`(interactor.editDeck(deck, "new name")).thenReturn(Single.just(editedDeck))
+        whenever(interactor.editDeck(deck, "new name")).thenReturn(Single.just(editedDeck))
 
         underTest.editDeck("new name")
 
@@ -83,7 +81,7 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `export deck, should call interactor and update view`() {
-        `when`(interactor.exportDeck(deck)).thenReturn(Single.just(uri))
+        whenever(interactor.exportDeck(deck)).thenReturn(Single.just(uri))
 
         underTest.exportDeck()
 
@@ -94,7 +92,7 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `export deck, should react to a failure in the interactor`() {
-        `when`(interactor.exportDeck(deck)).thenReturn(Single.error(Throwable("error")))
+        whenever(interactor.exportDeck(deck)).thenReturn(Single.error(Throwable("error")))
 
         underTest.exportDeck()
 
@@ -105,7 +103,7 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `copy deck, should call interactor and update view`() {
-        `when`(interactor.copy(deck)).thenReturn(Single.just(decks))
+        whenever(interactor.copy(deck)).thenReturn(Single.just(decks))
 
         underTest.copyDeck()
 

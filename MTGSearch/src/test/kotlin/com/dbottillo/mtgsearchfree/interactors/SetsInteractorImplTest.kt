@@ -3,17 +3,17 @@ package com.dbottillo.mtgsearchfree.interactors
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
-import org.mockito.Mockito.*
 
 class SetsInteractorImplTest {
 

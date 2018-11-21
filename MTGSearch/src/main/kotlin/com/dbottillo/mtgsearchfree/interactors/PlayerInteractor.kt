@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.interactors
 
-
 import com.dbottillo.mtgsearchfree.model.Player
 
 import io.reactivex.Observable

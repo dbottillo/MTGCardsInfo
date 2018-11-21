@@ -6,8 +6,10 @@ import com.dbottillo.mtgsearchfree.util.Logger
 
 import io.reactivex.Observable
 
-class CardFilterInteractorImpl(private val cardsPreferences: CardsPreferences,
-                               private val logger: Logger) : CardFilterInteractor {
+class CardFilterInteractorImpl(
+    private val cardsPreferences: CardsPreferences,
+    private val logger: Logger
+) : CardFilterInteractor {
 
     init {
         logger.d("created")
@@ -22,5 +24,4 @@ class CardFilterInteractorImpl(private val cardsPreferences: CardsPreferences,
         logger.d("sync")
         cardsPreferences.sync(filter)
     }
-
 }

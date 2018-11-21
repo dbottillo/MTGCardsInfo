@@ -48,4 +48,3 @@ abstract class ToolbarRevealScrollFragment : BasicFragment() {
 
     open fun isStatusBarIncludedInReveal() = true
 }
-

@@ -7,7 +7,6 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.util.LOG
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.*
 
 class SetDataSource(private val database: SQLiteDatabase) {
 
@@ -75,7 +74,7 @@ class SetDataSource(private val database: SQLiteDatabase) {
     }
 }
 
-fun ContentValues.fromJson(name: String, jsonObject: JSONObject){
+fun ContentValues.fromJson(name: String, jsonObject: JSONObject) {
     put(name, jsonObject.getString(name))
 }
 

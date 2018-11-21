@@ -65,7 +65,7 @@ class LifeCounterAdapter(val players: List<Player>, val listener: OnLifeCounterL
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(position){
+        return when (position) {
             0 -> TYPE_HEADER
             players.size + 1 -> TYPE_FOOTER
             else -> TYPE_PLAYER

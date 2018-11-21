@@ -12,7 +12,6 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 
-import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -50,7 +49,6 @@ class NetworkIntentService : IntentService("NetworkIntentService") {
             } catch (e: Exception) {
                 LOG.e(e)
             }
-
         }
 
         if (res == null) {
@@ -102,7 +100,6 @@ class NetworkIntentService : IntentService("NetworkIntentService") {
                     if (name == "link") {
                         isLink = true
                     }
-
                 } else if (event == XmlPullParser.TEXT) {
                     if (isHiPrice) {
                         tcgPrice.hiPrice = myparser.text
@@ -116,13 +113,11 @@ class NetworkIntentService : IntentService("NetworkIntentService") {
                     if (isLink) {
                         tcgPrice.link = myparser.text
                     }
-
                 } else if (event == XmlPullParser.END_TAG) {
                     isHiPrice = false
                     isLowPrice = false
                     isAvgPrice = false
                     isLink = false
-
                 }
                 event = myparser.next()
             }

@@ -4,12 +4,13 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.google.gson.Gson
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class CardDataSourceTest {

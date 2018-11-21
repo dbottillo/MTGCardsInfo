@@ -3,23 +3,19 @@ package com.dbottillo.mtgsearchfree.model.storage
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.nhaarman.mockito_kotlin.anyOrNull
 import com.nhaarman.mockito_kotlin.argumentCaptor
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.times
+import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.whenever
-
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import org.mockito.junit.MockitoRule
-
 import java.util.Arrays
-
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
-import org.mockito.ArgumentMatchers
-import org.mockito.Mockito.*
 
 class PlayersStorageImplTest {
 
@@ -77,8 +73,8 @@ class PlayersStorageImplTest {
 
     @Test
     fun testEditPlayers() {
-        val player1 = mock(Player::class.java)
-        val player2 = mock(Player::class.java)
+        val player1 = mock<Player>()
+        val player2 = mock<Player>()
         val toEdit = Arrays.asList(player1, player2)
         val result = underTest.editPlayers(toEdit)
         verify(playerDataSource).savePlayer(player1)

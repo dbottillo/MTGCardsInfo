@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.res.Resources
 import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
-import android.util.Log
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
@@ -21,7 +20,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.io.StringWriter
 import java.lang.ref.WeakReference
-import java.util.*
+import java.util.Locale
 
 class CreateDBAsyncTask(inputContext: Context, private val packageName: String) : AsyncTask<String, Void, ArrayList<Any>>() {
 
@@ -64,7 +63,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
     }
 
     @Suppress("UNUSED_VARIABLE")
-    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject){
+    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
             val jsonSetString = loadFile(setToLoad)
@@ -78,15 +77,15 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             val set = MTGSet(newRowId.toInt(),
                     setJ.getString("code"),
                     setJ.getString("name"))
-            //for (int k=0; k<1; k++){
+            // for (int k=0; k<1; k++){
 
             (0..(cards.length() - 1)).forEach { index ->
                 val cardJ = cards.getJSONObject(index)
-                //Log.e("MTG", "cardJ $cardJ")
+                // Log.e("MTG", "cardJ $cardJ")
 
                 val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
-                //Log.e("MTG", "row id card $newRowId2")
-                //result.add(MTGCard.createCardFromJson(i, cardJ));
+                // Log.e("MTG", "row id card $newRowId2")
+                // result.add(MTGCard.createCardFromJson(i, cardJ));
             }
         } catch (e: Resources.NotFoundException) {
             LOG.e(setJ.getString("code") + " file not found")
@@ -284,5 +283,4 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             return values
         }
     }
-
 }

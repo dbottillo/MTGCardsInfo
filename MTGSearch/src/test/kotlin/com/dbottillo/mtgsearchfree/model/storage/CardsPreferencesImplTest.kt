@@ -34,5 +34,4 @@ class CardsPreferencesImplTest {
         underTest.setShowImage(false)
         assertFalse(underTest.showImage())
     }
-
 }

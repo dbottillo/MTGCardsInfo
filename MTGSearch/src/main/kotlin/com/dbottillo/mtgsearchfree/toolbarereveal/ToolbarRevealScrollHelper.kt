@@ -24,13 +24,15 @@ import java.lang.ref.WeakReference
  * This class expect the concrete fragment to specify a scrollview with its content and this class will
  * handle the transition to reveal the toolbar during the scroll
  */
-class ToolbarRevealScrollHelper @JvmOverloads constructor(baseFragment: BasicFragment,
-                                                          private val scrollviewID: Int,
-                                                          private val backgroundColor: Int,
-                                                          private val heightToolbar: Int,
-                                                          private val statusBarIncluded: Boolean,
-                                                          toolbarColor: Int = R.color.color_primary,
-                                                          statusBarColor: Int = R.color.color_primary) : ViewTreeObserver.OnScrollChangedListener {
+class ToolbarRevealScrollHelper @JvmOverloads constructor(
+    baseFragment: BasicFragment,
+    private val scrollviewID: Int,
+    private val backgroundColor: Int,
+    private val heightToolbar: Int,
+    private val statusBarIncluded: Boolean,
+    toolbarColor: Int = R.color.color_primary,
+    statusBarColor: Int = R.color.color_primary
+) : ViewTreeObserver.OnScrollChangedListener {
 
     private var mViewGroup: ViewGroup? = null
     private lateinit var alphaInterpolator: AnimationUtil.LinearInterpolator
@@ -74,7 +76,7 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(baseFragment: BasicFra
             setupTitleAnimation(instance, view.context)
 
             mViewGroup?.let {
-                if (it is ScrollView){
+                if (it is ScrollView) {
                     val mScrollViewContentLayout = it.getChildAt(0) as ViewGroup
                     mScrollViewContentLayout.addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
                         val totalScroll = v.height - it.height
@@ -227,7 +229,6 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(baseFragment: BasicFra
         val instance = fragment.get()
         instance?.setTitle(name)
     }
-
 }
 
 private const val CURRENT_SCROLL = "currentScroll"

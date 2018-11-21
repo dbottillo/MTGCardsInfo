@@ -6,17 +6,23 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CardsCollection
+import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.DeckCollection
+import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity.*
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
 
-class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
-                                 val savedCardsInteractor: SavedCardsInteractor,
-                                 val decksInteractor: DecksInteractor,
-                                 val cardsPreferences: CardsPreferences,
-                                 val logger: Logger) : CardsActivityPresenter {
+class CardsActivityPresenterImpl(
+    val cardsInteractor: CardsInteractor,
+    val savedCardsInteractor: SavedCardsInteractor,
+    val decksInteractor: DecksInteractor,
+    val cardsPreferences: CardsPreferences,
+    val logger: Logger
+) : CardsActivityPresenter {
 
     var set: MTGSet? = null
     var search: SearchParams? = null
@@ -35,15 +41,12 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
             if (intent.hasExtra(KEY_SET)) {
                 set = intent.getParcelableExtra(KEY_SET)
                 set?.let { view.updateTitle(it.name) }
-
             } else if (intent.hasExtra(KEY_SEARCH)) {
                 search = intent.getParcelableExtra(KEY_SEARCH)
                 view.updateTitle(R.string.action_search)
-
             } else if (intent.hasExtra(KEY_DECK)) {
                 deck = intent.getParcelableExtra(KEY_DECK)
                 deck?.let { view.updateTitle(it.name) }
-
             } else if (intent.hasExtra(KEY_FAV)) {
                 isFavs = true
                 view.updateTitle(R.string.action_saved)
@@ -150,9 +153,8 @@ class CardsActivityPresenterImpl(val cardsInteractor: CardsInteractor,
     override fun shareImage(bitmap: Bitmap) {
         cardsInteractor.getArtworkUri(bitmap).subscribe({
             view.shareUri(it)
-        },{
+        }, {
             showError(it)
         })
     }
-
 }

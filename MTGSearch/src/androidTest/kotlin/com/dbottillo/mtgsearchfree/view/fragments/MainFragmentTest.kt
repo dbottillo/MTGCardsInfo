@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.view.fragments
 
-
 class MainFragmentTest/*@Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
 

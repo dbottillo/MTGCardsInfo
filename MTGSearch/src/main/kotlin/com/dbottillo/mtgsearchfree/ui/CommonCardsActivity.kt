@@ -6,12 +6,12 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.view.Menu
 import android.view.MenuItem
-
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.util.*
-
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.getBitmap
 import javax.inject.Inject
 
 abstract class CommonCardsActivity : BasicActivity() {
@@ -66,7 +66,7 @@ abstract class CommonCardsActivity : BasicActivity() {
             }
             R.id.action_share_artwork -> {
                 currentCard?.let {
-                    it.getBitmap(this){bitmap ->
+                    it.getBitmap(this) { bitmap ->
                         shareImage(bitmap)
                     }
                 }
@@ -91,5 +91,4 @@ abstract class CommonCardsActivity : BasicActivity() {
         shareIntent.type = "image/*"
         startActivity(Intent.createChooser(shareIntent, name))
     }
-
 }

@@ -4,7 +4,6 @@ import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -18,7 +17,11 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
 import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.DialogUtil
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.PermissionAvailable
+import com.dbottillo.mtgsearchfree.util.PermissionUtil
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -118,7 +121,6 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
                 presenter.deleteDeck(it)
                 TrackingManager.trackDeleteDeck(deck.name)
             })
-
         } else {
             presenter.deleteDeck(deck)
             TrackingManager.trackDeleteDeck(deck.name)
@@ -154,10 +156,8 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
             // Instead, a URI to that document will be contained in the return intent
             // provided to this method as a parameter.
             // Pull that URI using resultData.getData().
-            val uri: Uri
-            if (resultData != null) {
-                uri = resultData.data
-                presenter.importDeck(uri)
+            resultData?.data?.let {
+                presenter.importDeck(it)
             }
         }
     }

@@ -7,7 +7,6 @@ import android.content.Intent
 import android.support.v4.app.NotificationCompat
 
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
@@ -66,5 +65,4 @@ class CardMigratorService : IntentService("CardMigratorService") {
         // Displays the progress bar for the first time.
         mNotifyManager.notify(id, mBuilder.setOngoing(true).build())
     }
-
 }

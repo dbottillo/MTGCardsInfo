@@ -4,26 +4,28 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class SearchParams(var name: String = "",
-                        var types: String = "",
-                        var text: String = "",
-                        var cmc: CMCParam? = null,
-                        var power: PTParam? = null,
-                        var tough: PTParam? = null,
-                        var isWhite: Boolean = false,
-                        var isBlue: Boolean = false,
-                        var isBlack: Boolean = false,
-                        var isRed: Boolean = false,
-                        var isGreen: Boolean = false,
-                        private var onlyMulti: Boolean = false,
-                        private var noMulti: Boolean = false,
-                        var isLand: Boolean = false,
-                        var isOnlyMultiNoOthers: Boolean = false,
-                        var isCommon: Boolean = false,
-                        var isUncommon: Boolean = false,
-                        var isRare: Boolean = false,
-                        var isMythic: Boolean = false,
-                        var setId: Int = -1) : Parcelable {
+data class SearchParams(
+    var name: String = "",
+    var types: String = "",
+    var text: String = "",
+    var cmc: CMCParam? = null,
+    var power: PTParam? = null,
+    var tough: PTParam? = null,
+    var isWhite: Boolean = false,
+    var isBlue: Boolean = false,
+    var isBlack: Boolean = false,
+    var isRed: Boolean = false,
+    var isGreen: Boolean = false,
+    private var onlyMulti: Boolean = false,
+    private var noMulti: Boolean = false,
+    var isLand: Boolean = false,
+    var isOnlyMultiNoOthers: Boolean = false,
+    var isCommon: Boolean = false,
+    var isUncommon: Boolean = false,
+    var isRare: Boolean = false,
+    var isMythic: Boolean = false,
+    var setId: Int = -1
+) : Parcelable {
 
     var isNoMulti: Boolean
         get() = noMulti
@@ -35,11 +37,10 @@ data class SearchParams(var name: String = "",
         }
 
     val isValid: Boolean
-        get() = (name.isNotEmpty() || types.isNotEmpty()
-                || cmc != null || power != null || tough != null
-                || setId > 0 || text.isNotEmpty()
-                || isLand || atLeastOneColor() || atLeastOneRarity())
-
+        get() = (name.isNotEmpty() || types.isNotEmpty() ||
+                cmc != null || power != null || tough != null ||
+                setId > 0 || text.isNotEmpty() ||
+                isLand || atLeastOneColor() || atLeastOneRarity())
 
     fun onlyMulti(): Boolean {
         return onlyMulti
@@ -59,5 +60,4 @@ data class SearchParams(var name: String = "",
     fun atLeastOneRarity(): Boolean {
         return isCommon || isUncommon || isRare || isMythic
     }
-
 }

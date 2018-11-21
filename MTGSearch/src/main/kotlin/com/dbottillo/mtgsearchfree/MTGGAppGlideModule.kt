@@ -55,5 +55,4 @@ class MTGGAppGlideModule : AppGlideModule() {
             throw RuntimeException(e)
         }
     }
-
 }

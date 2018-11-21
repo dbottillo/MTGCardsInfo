@@ -6,9 +6,11 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
 import javax.inject.Inject
 
-class ReleaseNoteInteractor @Inject constructor(val repo: ReleaseNoteStorage,
-                            val schedulerProvider: SchedulerProvider,
-                            val logger: Logger) {
+class ReleaseNoteInteractor @Inject constructor(
+    val repo: ReleaseNoteStorage,
+    val schedulerProvider: SchedulerProvider,
+    val logger: Logger
+) {
 
     init {
         logger.d("created")
@@ -20,5 +22,4 @@ class ReleaseNoteInteractor @Inject constructor(val repo: ReleaseNoteStorage,
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
-
 }

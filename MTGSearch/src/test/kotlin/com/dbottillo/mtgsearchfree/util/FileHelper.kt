@@ -14,7 +14,6 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.io.StringWriter
-import java.util.*
 
 @Throws(JSONException::class)
 fun readSetListJSON(): ArrayList<MTGSet> {
@@ -28,7 +27,6 @@ fun readSetListJSON(): ArrayList<MTGSet> {
         } catch (e: Resources.NotFoundException) {
             LOG.e("e: " + e.localizedMessage)
         }
-
     }
     return sets
 }
@@ -166,7 +164,6 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
 
     val gson = Gson()
     val type = object : TypeToken<List<String>>() {
-
     }.type
 
     if (jsonObject.has("names")) {

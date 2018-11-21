@@ -7,10 +7,12 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
 
-class SearchPresenterImpl(val setsInteractor: SetsInteractor,
-                          val cardsInteractor: CardsInteractor,
-                          val generalData: GeneralData,
-                          val logger: Logger) : SearchPresenter {
+class SearchPresenterImpl(
+    val setsInteractor: SetsInteractor,
+    val cardsInteractor: CardsInteractor,
+    val generalData: GeneralData,
+    val logger: Logger
+) : SearchPresenter {
 
     lateinit var view: SearchActivityView
 

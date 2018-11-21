@@ -39,5 +39,4 @@ class CardsConfiguratorPresenterImpl(private val cardFilterInteractor: CardFilte
             view.loadFilter(filter = filter, refresh = true)
         }
     }
-
 }

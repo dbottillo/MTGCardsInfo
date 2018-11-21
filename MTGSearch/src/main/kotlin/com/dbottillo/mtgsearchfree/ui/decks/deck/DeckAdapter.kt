@@ -10,7 +10,10 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.FILTER_COMMON
+import com.dbottillo.mtgsearchfree.model.FILTER_RARE
+import com.dbottillo.mtgsearchfree.model.FILTER_UNCOMMON
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.gone
 
 class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -54,7 +57,6 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int = sectionsMap.size + cardsMap.size
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
@@ -69,7 +71,6 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
         return TYPE_CARD
     }
-
 }
 
 const val TYPE_HEADER: Int = 0

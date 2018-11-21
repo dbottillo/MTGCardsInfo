@@ -70,7 +70,7 @@ abstract class BasicFragment : DialogFragment() {
         setTitle(getTitle())
     }
 
-    fun setTitle(title: String?){
+    fun setTitle(title: String?) {
         toolbarTitle?.text = title
     }
 
@@ -80,6 +80,4 @@ abstract class BasicFragment : DialogFragment() {
         @JvmField val PREF_TWO_HG_ENABLED = "two_hg"
         @JvmField val PREF_SORT_WUBRG = "sort_wubrg"
     }
-
 }
-

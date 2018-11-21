@@ -15,8 +15,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
 import javax.inject.Inject
 
-class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDeckInteractor,
-                                                 private val logger: Logger) : AddToDeckPresenter {
+class AddToDeckPresenterImpl @Inject constructor(
+    private val interactor: AddToDeckInteractor,
+    private val logger: Logger
+) : AddToDeckPresenter {
 
     lateinit var view: AddToDeckView
     lateinit var card: MTGCard
@@ -63,10 +65,12 @@ class AddToDeckPresenterImpl @Inject constructor(private val interactor: AddToDe
     }
 }
 
-class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksStorage,
-                                              private val cardsStorage: CardsStorage,
-                                              private val generalData: GeneralData,
-                                              private val schedulerProvider: SchedulerProvider) {
+class AddToDeckInteractor @Inject constructor(
+    private val decksStorage: DecksStorage,
+    private val cardsStorage: CardsStorage,
+    private val generalData: GeneralData,
+    private val schedulerProvider: SchedulerProvider
+) {
     fun init(cardId: Int): Single<AddToDeckData> {
         val decksSingle = Single.fromCallable { decksStorage.load() }
         val cardSingle = Single.fromCallable { cardsStorage.loadCard(cardId) }
@@ -86,7 +90,6 @@ class AddToDeckInteractor @Inject constructor(private val decksStorage: DecksSto
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui()).subscribe()
     }
-
 }
 
 class AddToDeckData(val decks: List<Deck>, val selectedDeck: Long, val card: MTGCard)

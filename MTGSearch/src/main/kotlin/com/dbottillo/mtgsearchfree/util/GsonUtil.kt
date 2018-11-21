@@ -9,5 +9,4 @@ class GsonUtil(val gson: Gson) {
     fun toListReleaseNote(input: String): List<ReleaseNoteItem> {
         return gson.fromJson(input, object : TypeToken<List<ReleaseNoteItem>>() {}.type)
     }
-
 }

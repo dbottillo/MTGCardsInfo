@@ -53,15 +53,12 @@ class DeckFragment : BasicFragment(), DeckView {
                 if (menuItem.itemId == R.id.action_add_one_more) {
                     TrackingManager.trackAddCardToDeck()
                     presenter.addCardToDeck(card, 1)
-
                 } else if (menuItem.itemId == R.id.action_remove_one) {
                     TrackingManager.trackRemoveCardFromDeck()
                     presenter.removeCardFromDeck(card)
-
                 } else if (menuItem.itemId == R.id.action_remove_all) {
                     TrackingManager.trackRemoveAllCardsFromDeck()
                     presenter.removeAllCardFromDeck(card)
-
                 } else if (menuItem.itemId == R.id.action_move_one) {
                     TrackingManager.trackMoveOneCardFromDeck()
                     if (card.isSideboard) {
@@ -69,7 +66,6 @@ class DeckFragment : BasicFragment(), DeckView {
                     } else {
                         presenter.moveCardToSideBoard(card, 1)
                     }
-
                 } else if (menuItem.itemId == R.id.action_move_all) {
                     TrackingManager.trackMoveAllCardFromDeck()
                     if (card.isSideboard) {
@@ -79,7 +75,6 @@ class DeckFragment : BasicFragment(), DeckView {
                     }
                 }
             }
-
         }
         cardList.adapter = deckAdapter
 
@@ -87,7 +82,6 @@ class DeckFragment : BasicFragment(), DeckView {
         cardList.layoutManager = LinearLayoutManager(view.context)
 
         presenter.loadDeck()
-
     }
 
     override fun onDestroyView() {
@@ -111,7 +105,6 @@ class DeckFragment : BasicFragment(), DeckView {
     override fun getPageTrack(): String = "/deck"
 
     override fun getTitle(): String = presenter.deck.name
-
 }
 
 const val DECK_KEY = "deck"

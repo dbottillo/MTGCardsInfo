@@ -5,22 +5,23 @@ import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.whenever
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnit
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import java.util.*
 
 @RunWith(RobolectricTestRunner::class)
 class CardDataSourceIntegrationTest {
@@ -155,10 +156,10 @@ class CardDataSourceIntegrationTest {
         assertThat(multiVerseId, `is`(1001))
         assertThat(name, `is`("name"))
         assertThat(type, `is`("type"))
-        assertThat<List<String>>(types, `is`(Arrays.asList("Artifact", "Creature")))
-        assertThat<List<String>>(subTypes, `is`(Arrays.asList("Creature", "Artifact")))
+        assertThat<List<String>>(types, `is`(listOf("Artifact", "Creature")))
+        assertThat<List<String>>(subTypes, `is`(listOf("Creature", "Artifact")))
 
-        assertThat<List<Int>>(colors, `is`(Arrays.asList(1, 2)))
+        assertThat<List<Int>>(colors, `is`(listOf(1, 2)))
         assertThat(cmc, `is`(1))
         assertThat(rarity, `is`("Rare"))
         assertThat(power, `is`("2"))
@@ -263,7 +264,6 @@ class CardDataSourceIntegrationTest {
                 } catch (e: JSONException) {
                     LOG.e(e)
                 }
-
             }
             assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RULINGS.noun), `is`(rules.toString()))
         }
@@ -295,7 +295,6 @@ class CardDataSourceIntegrationTest {
                 } catch (e: JSONException) {
                     LOG.e(e)
                 }
-
             }
             assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.noun), `is`(legalities.toString()))
         }
@@ -397,7 +396,6 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).thenReturn(32)
         whenever(cursor.getString(32)).thenReturn("[\"U\",\"W\"]")
-
     }
 
     private fun joinListOfStrings(list: List<String>, separator: String): String {
@@ -430,5 +428,4 @@ class CardDataSourceIntegrationTest {
         }
         return joined.toString()
     }
-
 }

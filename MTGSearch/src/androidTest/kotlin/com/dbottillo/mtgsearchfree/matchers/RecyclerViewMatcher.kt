@@ -28,7 +28,6 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
                     } catch (var4: Resources.NotFoundException) {
                         idDescription = String.format("%s (resource name not found)", recyclerViewId)
                     }
-
                 }
 
                 description.appendText("with id: " + idDescription)
@@ -53,7 +52,6 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
                     val targetView = childView!!.findViewById<View>(targetViewId)
                     return view === targetView
                 }
-
             }
         }
     }

@@ -10,10 +10,12 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 
-class CardsPagerAdapter(private val context: Context,
-                        private val showImage: Boolean,
-                        private val cards: CardsCollection,
-                        private val cardPresenter: CardPresenter) : PagerAdapter() {
+class CardsPagerAdapter(
+    private val context: Context,
+    private val showImage: Boolean,
+    private val cards: CardsCollection,
+    private val cardPresenter: CardPresenter
+) : PagerAdapter() {
 
     override fun getCount(): Int {
         return cards.list.size
@@ -46,5 +48,4 @@ class CardsPagerAdapter(private val context: Context,
     fun getItem(currentItem: Int): MTGCard {
         return cards.list[currentItem]
     }
-
 }
