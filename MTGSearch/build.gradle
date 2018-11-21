@@ -4,6 +4,10 @@ buildscript {
     ext.name_fifth_mtg_card = "Collar the Culprit"
 }
 
+plugins{
+    id "io.gitlab.arturbosch.detekt" version "1.0.0-RC10"
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
@@ -14,6 +18,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "com.github.ben-manes.versions"
 apply from: '../githooks.gradle'
+apply plugin: 'io.gitlab.arturbosch.detekt'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
@@ -238,8 +243,20 @@ spotless {
     }
 }
 
+detekt {
+    config = files("$projectDir/config/detekt/config.yml")
+    baseline = file("$projectDir/config/detekt/baseline.xml")
+
+    reports {
+        html {
+            enabled = true
+            destination = file("$rootDir/detekt.html")
+        }
+    }
+}
+
 task quality
-quality.dependsOn 'checkstyle', 'pmd'
+quality.dependsOn 'checkstyle', 'pmd', 'detekt'
 //quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease
