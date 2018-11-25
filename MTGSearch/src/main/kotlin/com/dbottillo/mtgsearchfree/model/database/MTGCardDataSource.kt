@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.model.database
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.util.LOG
 import java.util.Arrays
@@ -99,16 +100,16 @@ class MTGCardDataSource(
         if (searchParams.atLeastOneRarity()) {
             val rarities = ArrayList<String>()
             if (searchParams.isCommon) {
-                rarities.add("Common")
+                rarities.add(Rarity.COMMON.value)
             }
             if (searchParams.isUncommon) {
-                rarities.add("Uncommon")
+                rarities.add(Rarity.UNCOMMON.value)
             }
             if (searchParams.isRare) {
-                rarities.add("Rare")
+                rarities.add(Rarity.RARE.value)
             }
             if (searchParams.isMythic) {
-                rarities.add("Mythic Rare")
+                rarities.add(Rarity.MYTHIC.value)
             }
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *Arrays.copyOf<String, Any>(rarities.toTypedArray(), rarities.size, Array<String>::class.java))
         }

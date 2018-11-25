@@ -69,9 +69,6 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_ORIGINAL_TEXT)
         }
-        if (!columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun)) {
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_MCI_NUMBER)
-        }
         if (!columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_COLORS_IDENTITY)
         }

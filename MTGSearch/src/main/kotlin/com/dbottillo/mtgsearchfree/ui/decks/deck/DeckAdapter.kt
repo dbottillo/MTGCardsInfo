@@ -10,9 +10,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.FILTER_COMMON
-import com.dbottillo.mtgsearchfree.model.FILTER_RARE
-import com.dbottillo.mtgsearchfree.model.FILTER_UNCOMMON
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.gone
 
@@ -97,13 +94,8 @@ class DeckCardViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
     fun bind(card: MTGCard, listener: OnDeckCardListener?) {
         val resources = row.context.resources
         name.text = resources.getString(R.string.row_card_name, card.quantity.toString() + " ", card.name)
-        rarity.setTextColor(when (card.rarity.toLowerCase()) {
-            FILTER_COMMON -> R.color.common
-            FILTER_UNCOMMON -> R.color.uncommon
-            FILTER_RARE -> R.color.rare
-            else -> R.color.mythic
-        })
-        rarity.text = if (card.rarity.isNotEmpty()) card.rarity else ""
+        rarity.setTextColor(card.rarityColor)
+        rarity.text = card.rarity.value
         if (card.manaCost.isNotEmpty()) {
             cost.text = card.manaCost.replace("{", "").replace("}", "")
             cost.setTextColor(card.getMtgColor(row.context))

@@ -86,14 +86,14 @@ class QueryComposerTest {
     @Test
     fun generateQueryWithMultipleParamValues() {
         val queryComposer = QueryComposer("SELECT * from TABLE")
-        queryComposer.addMultipleParam("rarity", "=", "OR", "Uncommon", "Rare")
+        queryComposer.addMultipleParam("rarity", "=", "OR", "uncommon", "rare")
 
         val output = queryComposer.build()
 
         assertThat(output.query, `is`("SELECT * from TABLE WHERE (rarity = ? OR rarity = ?)"))
         assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("Uncommon"))
-        assertThat(output.selection[1], `is`("Rare"))
+        assertThat(output.selection[0], `is`("uncommon"))
+        assertThat(output.selection[1], `is`("rare"))
     }
 
     @Test
@@ -158,15 +158,15 @@ class QueryComposerTest {
     fun generateQueryWithNameAndMultipleParamValues() {
         val queryComposer = QueryComposer("SELECT * from TABLE")
         queryComposer.addParam("NAME", "LIKE", "island")
-        queryComposer.addMultipleParam("rarity", "=", "OR", "Uncommon", "Rare")
+        queryComposer.addMultipleParam("rarity", "=", "OR", "uncommon", "rare")
 
         val output = queryComposer.build()
 
         assertThat(output.query, `is`("SELECT * from TABLE WHERE NAME LIKE ? AND (rarity = ? OR rarity = ?)"))
         assertThat(output.selection.size, `is`(3))
         assertThat(output.selection[0], `is`("%island%"))
-        assertThat(output.selection[1], `is`("Uncommon"))
-        assertThat(output.selection[2], `is`("Rare"))
+        assertThat(output.selection[1], `is`("uncommon"))
+        assertThat(output.selection[2], `is`("rare"))
     }
 
     @Test

@@ -13,7 +13,7 @@ data class MTGCard(
     val subTypes: MutableList<String> = mutableListOf(),
     var colors: MutableList<Int> = mutableListOf(),
     var cmc: Int = 0,
-    var rarity: String = "",
+    var rarity: Rarity = Rarity.COMMON,
     var power: String = "",
     var toughness: String = "",
     var manaCost: String = "",
@@ -35,7 +35,6 @@ data class MTGCard(
     var loyalty: Int = 0,
     var printings: List<String> = listOf(),
     var originalText: String = "",
-    var mciNumber: String? = null,
     var colorsIdentity: List<String>? = null,
     var legalities: MutableList<Legality> = mutableListOf()
 ) : Comparable<MTGCard> {
@@ -80,16 +79,32 @@ data class MTGCard(
     }
 
     val isCommon: Boolean
-        get() = rarity.equals(FILTER_COMMON, ignoreCase = true)
+        get() = rarity == Rarity.COMMON
 
     val isUncommon: Boolean
-        get() = rarity.equals(FILTER_UNCOMMON, ignoreCase = true)
+        get() = rarity == Rarity.UNCOMMON
 
     val isRare: Boolean
-        get() = rarity.equals(FILTER_RARE, ignoreCase = true)
+        get() = rarity == Rarity.RARE
 
     val isMythicRare: Boolean
-        get() = rarity.equals(FILTER_MYHTIC, ignoreCase = true)
+        get() = rarity == Rarity.MYTHIC
+
+    val displayRarity: Int
+        get() = when (rarity) {
+            Rarity.COMMON -> R.string.search_common
+            Rarity.UNCOMMON -> R.string.search_uncommon
+            Rarity.RARE -> R.string.search_rare
+            Rarity.MYTHIC -> R.string.search_mythic
+        }
+
+    val rarityColor: Int
+        get() = when (rarity) {
+            Rarity.COMMON -> R.color.uncommon
+            Rarity.UNCOMMON -> R.color.uncommon
+            Rarity.RARE -> R.color.rare
+            Rarity.MYTHIC -> R.color.mythic
+        }
 
     val gathererImage
         get() = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
@@ -220,7 +235,6 @@ data class MTGCard(
         result = 31 * result + loyalty
         result = 31 * result + printings.hashCode()
         result = 31 * result + originalText.hashCode()
-        result = 31 * result + (mciNumber?.hashCode() ?: 0)
         result = 31 * result + (colorsIdentity?.hashCode() ?: 0)
         result = 31 * result + legalities.hashCode()
         return result

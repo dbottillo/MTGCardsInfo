@@ -37,7 +37,9 @@ data class CardFilter(
     }
 }
 
-const val FILTER_COMMON = "Common"
-const val FILTER_UNCOMMON = "Uncommon"
-const val FILTER_RARE = "Rare"
-const val FILTER_MYHTIC = "Mythic Rare"
+enum class Rarity(val value: String) {
+    COMMON("common"),
+    UNCOMMON("uncommon"),
+    RARE("rare"),
+    MYTHIC("mythic")
+}

@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.util
 import android.content.res.Resources
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -115,7 +116,13 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         card.manaCost = jsonObject.getString("manaCost")
         land = 0
     }
-    card.rarity = jsonObject.getString("rarity")
+
+    card.rarity = when (jsonObject.getString("rarity")) {
+        "uncommon", "timeshifted uncommon" -> Rarity.UNCOMMON
+        "rare", "timeshifted rare" -> Rarity.RARE
+        "mythic", "timeshifted mythic" -> Rarity.MYTHIC
+        else -> Rarity.COMMON
+    }
 
     if (jsonObject.has("multiverseid")) {
         card.multiVerseId = jsonObject.getInt("multiverseid")
@@ -187,7 +194,7 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         card.artist = jsonObject.getString("artist")
     }
     if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
-        card.loyalty = jsonObject.getInt("loyalty")
+        card.loyalty = jsonObject.getString("loyalty").toIntOrNull() ?: 0
     }
     if (jsonObject.has("printings")) {
         val printings = jsonObject.getString("printings")
@@ -198,9 +205,6 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     }
     if (jsonObject.has("originalText")) {
         card.originalText = jsonObject.getString("originalText")
-    }
-    if (jsonObject.has("mciNumber")) {
-        card.mciNumber = jsonObject.getString("mciNumber")
     }
     if (jsonObject.has("colorIdentity")) {
         val colorIdentity = jsonObject.getString("colorIdentity")

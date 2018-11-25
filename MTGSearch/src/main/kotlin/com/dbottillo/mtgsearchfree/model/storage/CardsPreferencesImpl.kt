@@ -6,6 +6,7 @@ import android.support.annotation.VisibleForTesting
 
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 
@@ -26,10 +27,10 @@ open class CardsPreferencesImpl(context: Context) : CardsPreferences {
             land = sharedPreferences.getBoolean(LAND, true)
             eldrazi = sharedPreferences.getBoolean(ELDRAZI, true)
 
-            common = sharedPreferences.getBoolean(COMMON, true)
-            uncommon = sharedPreferences.getBoolean(UNCOMMON, true)
-            rare = sharedPreferences.getBoolean(RARE, true)
-            mythic = sharedPreferences.getBoolean(MYTHIC, true)
+            common = sharedPreferences.getBoolean(Rarity.COMMON.value, true)
+            uncommon = sharedPreferences.getBoolean(Rarity.UNCOMMON.value, true)
+            rare = sharedPreferences.getBoolean(Rarity.RARE.value, true)
+            mythic = sharedPreferences.getBoolean(Rarity.MYTHIC.value, true)
 
             sortWUBGR = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         }
@@ -46,10 +47,10 @@ open class CardsPreferencesImpl(context: Context) : CardsPreferences {
                 .putBoolean(ARTIFACT, filter.artifact)
                 .putBoolean(LAND, filter.land)
                 .putBoolean(ELDRAZI, filter.eldrazi)
-                .putBoolean(COMMON, filter.common)
-                .putBoolean(UNCOMMON, filter.uncommon)
-                .putBoolean(RARE, filter.rare)
-                .putBoolean(MYTHIC, filter.mythic)
+                .putBoolean(Rarity.COMMON.value, filter.common)
+                .putBoolean(Rarity.UNCOMMON.value, filter.uncommon)
+                .putBoolean(Rarity.RARE.value, filter.rare)
+                .putBoolean(Rarity.MYTHIC.value, filter.mythic)
                 .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.sortWUBGR)
                 .apply()
     }
@@ -123,10 +124,6 @@ private const val GREEN = "Green"
 private const val ARTIFACT = "Artifact"
 private const val LAND = "Land"
 private const val ELDRAZI = "Eldrazi"
-private const val COMMON = "Common"
-private const val UNCOMMON = "Uncommon"
-private const val RARE = "Rare"
-private const val MYTHIC = "Mythic Rare"
 
 interface CardsPreferences {
     val versionCode: Int
