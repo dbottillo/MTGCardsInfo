@@ -252,11 +252,9 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 7)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`(false))
         assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(false))
         cardsInfoDbHelper.onUpgrade(db, 6, 7)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`(true))
         assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(true))
     }
 

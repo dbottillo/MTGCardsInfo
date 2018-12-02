@@ -20,6 +20,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.io.StringWriter
 import java.lang.ref.WeakReference
+import java.math.BigDecimal
 import java.util.Locale
 
 class CreateDBAsyncTask(inputContext: Context, private val packageName: String) : AsyncTask<String, Void, ArrayList<Any>>() {
@@ -50,6 +51,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                         .forEach { setJ ->
                             loadSet(it, db, setDataSource, setJ)
                         }
+                // loadSet(it, db, setDataSource, json.getJSONObject(json.length() - 1))
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
                 error = true
@@ -159,7 +161,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             values.put(CardDataSource.COLUMNS.SET_CODE.noun, set.code)
 
             val multicolor: Int
-            var land: Int
+            var land = 0
             val artifact: Int = if (jsonObject.getString("type").contains("Artifact")) {
                 1
             } else {
@@ -178,24 +180,26 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 }
                 values.put(CardDataSource.COLUMNS.COLORS.noun, colors.toString())
 
-                if (colorsJ.length() > 1) {
-                    multicolor = 1
+                multicolor = if (colorsJ.length() > 1) {
+                    1
                 } else {
-                    multicolor = 0
+                    0
                 }
-                land = 0
             } else {
                 multicolor = 0
-                land = 1
             }
 
             if (jsonObject.has("types")) {
                 val typesJ = jsonObject.getJSONArray("types")
                 val types = StringBuilder()
                 for (k in 0 until typesJ.length()) {
-                    types.append(typesJ.getString(k))
+                    val type = typesJ.getString(k)
+                    types.append(type)
                     if (k < typesJ.length() - 1) {
                         types.append(',')
+                    }
+                    if (type == "Land") {
+                        land = 1
                     }
                 }
                 values.put(CardDataSource.COLUMNS.TYPES.noun, types.toString())
@@ -203,12 +207,11 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
             if (jsonObject.has("manaCost")) {
                 values.put(CardDataSource.COLUMNS.MANA_COST.noun, jsonObject.getString("manaCost"))
-                land = 0
             }
             values.put(CardDataSource.COLUMNS.RARITY.noun, jsonObject.getString("rarity"))
 
-            if (jsonObject.has("multiverseid")) {
-                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.noun, jsonObject.getInt("multiverseid"))
+            if (jsonObject.has("multiverseId")) {
+                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.noun, jsonObject.getInt("multiverseId"))
             }
 
             var power = ""
@@ -227,11 +230,11 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 values.put(CardDataSource.COLUMNS.TEXT.noun, jsonObject.getString("text"))
             }
 
-            var cmc = -1
-            if (jsonObject.has("cmc")) {
-                cmc = jsonObject.getInt("cmc")
+            var cmc = -1.0f
+            if (jsonObject.has("convertedManaCost")) {
+                cmc = BigDecimal.valueOf(jsonObject.getDouble("convertedManaCost")).toFloat()
             }
-            values.put(CardDataSource.COLUMNS.CMC.noun, cmc)
+            values.put(CardDataSource.COLUMNS.CMC.noun, cmc.toInt())
             values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
             values.put(CardDataSource.COLUMNS.LAND.noun, land)
             values.put(CardDataSource.COLUMNS.ARTIFACT.noun, artifact)
@@ -255,14 +258,14 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             if (jsonObject.has("supertypes")) {
                 values.put(CardDataSource.COLUMNS.SUPER_TYPES.noun, jsonObject.getString("supertypes"))
             }
-            if (jsonObject.has("flavor")) {
-                values.put(CardDataSource.COLUMNS.FLAVOR.noun, jsonObject.getString("flavor"))
+            if (jsonObject.has("flavorText")) {
+                values.put(CardDataSource.COLUMNS.FLAVOR.noun, jsonObject.getString("flavorText"))
             }
             if (jsonObject.has("artist")) {
                 values.put(CardDataSource.COLUMNS.ARTIST.noun, jsonObject.getString("artist"))
             }
             if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
-                values.put(CardDataSource.COLUMNS.LOYALTY.noun, jsonObject.getInt("loyalty"))
+                values.put(CardDataSource.COLUMNS.LOYALTY.noun, jsonObject.getString("loyalty").toIntOrNull())
             }
             if (jsonObject.has("printings")) {
                 values.put(CardDataSource.COLUMNS.PRINTINGS.noun, jsonObject.getString("printings"))
@@ -273,13 +276,9 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             if (jsonObject.has("originalText")) {
                 values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun, jsonObject.getString("originalText"))
             }
-            if (jsonObject.has("mciNumber")) {
-                values.put(CardDataSource.COLUMNS.MCI_NUMBER.noun, jsonObject.getString("mciNumber"))
-            }
             if (jsonObject.has("colorIdentity")) {
                 values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, jsonObject.getString("colorIdentity"))
             }
-
             return values
         }
     }

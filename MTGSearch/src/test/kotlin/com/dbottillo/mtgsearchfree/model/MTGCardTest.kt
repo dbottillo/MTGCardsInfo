@@ -29,7 +29,7 @@ class MTGCardTest {
         card.number = "23"
         card.power = "2"
         card.quantity = 23
-        card.rarity = "Mythic Rare"
+        card.rarity = Rarity.MYTHIC
         card.text = "text"
         card.toughness = "4"
         card.type = "Creature"

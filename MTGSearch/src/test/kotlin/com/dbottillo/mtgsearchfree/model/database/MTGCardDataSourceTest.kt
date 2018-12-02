@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.CMCParam
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.PTParam
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
@@ -414,9 +415,9 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.isCommon = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, rarity) in cards) {
-            assertTrue(rarity.equals("Common", ignoreCase = true))
+            assertTrue(rarity == Rarity.COMMON)
         }
     }
 
@@ -425,9 +426,9 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.isUncommon = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, rarity) in cards) {
-            assertTrue(rarity.equals("Uncommon", ignoreCase = true))
+            assertTrue(rarity == Rarity.UNCOMMON)
         }
     }
 
@@ -436,9 +437,9 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.isRare = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, rarity) in cards) {
-            assertTrue(rarity.equals("Rare", ignoreCase = true))
+            assertTrue(rarity == Rarity.RARE)
         }
     }
 
@@ -447,9 +448,9 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.isMythic = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, rarity) in cards) {
-            assertTrue(rarity.equals("Mythic Rare", ignoreCase = true))
+            assertTrue(rarity == Rarity.MYTHIC)
         }
     }
 
@@ -459,9 +460,9 @@ class MTGCardDataSourceTest {
         searchParams.isRare = true
         searchParams.isMythic = true
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, _, _, _, _, _, rarity) in cards) {
-            assertTrue(rarity.equals("Rare", ignoreCase = true) || rarity.equals("Mythic Rare", ignoreCase = true))
+            assertTrue(rarity == Rarity.RARE || rarity == Rarity.MYTHIC)
         }
     }
 
@@ -470,13 +471,13 @@ class MTGCardDataSourceTest {
         val searchParams = SearchParams()
         searchParams.types = "creature angel"
         val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.size > 0)
+        assertTrue(cards.isNotEmpty())
         for ((_, _, type) in cards) {
             assertTrue(type.toLowerCase(Locale.getDefault()).contains("creature") && type.toLowerCase(Locale.getDefault()).contains("angel"))
         }
         searchParams.types = "creature angel ally"
         val cards2 = underTest.searchCards(searchParams)
-        assertTrue(cards2.size > 0)
+        assertTrue(cards2.isNotEmpty())
         for ((_, _, type) in cards2) {
             assertTrue(type.toLowerCase(Locale.getDefault()).contains("creature") && type.toLowerCase(Locale.getDefault()).contains("angel") && type.toLowerCase(Locale.getDefault()).contains("ally"))
         }
@@ -537,7 +538,7 @@ class MTGCardDataSourceTest {
             assertTrue(manaCost.contains("W"))
             assertTrue(Integer.parseInt(power) == 4)
             assertTrue(Integer.parseInt(toughness) == 4)
-            assertTrue(rarity.equals("Rare", ignoreCase = true))
+            assertTrue(rarity == Rarity.RARE)
         }
     }
 

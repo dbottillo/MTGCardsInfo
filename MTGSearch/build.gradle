@@ -1,6 +1,6 @@
 buildscript {
     ext.number_of_set = 181
-    ext.database_version = 40
+    ext.database_version = 41
     ext.name_fifth_mtg_card = "Collar the Culprit"
 }
 

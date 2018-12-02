@@ -8,6 +8,7 @@ import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.model.Legality
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
@@ -63,7 +64,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         PRINTINGS("printings", "TEXT"),
         LEGALITIES("legalities", "TEXT"),
         ORIGINAL_TEXT("originalText", "TEXT"),
-        MCI_NUMBER("mciNumber", "TEXT"),
         COLORS_IDENTITY("colorIdentity", "TEXT")
     }
 
@@ -120,7 +120,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             values.put(COLUMNS.SUB_TYPES.noun, typ.toString())
         }
         values.put(COLUMNS.MANA_COST.noun, card.manaCost)
-        values.put(COLUMNS.RARITY.noun, card.rarity)
+        values.put(COLUMNS.RARITY.noun, card.rarity.value)
         values.put(COLUMNS.MULTIVERSE_ID.noun, card.multiVerseId)
         values.put(COLUMNS.POWER.noun, card.power)
         values.put(COLUMNS.TOUGHNESS.noun, card.toughness)
@@ -154,7 +154,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         values.put(COLUMNS.LOYALTY.noun, card.loyalty)
         values.put(COLUMNS.PRINTINGS.noun, gson.toJson(card.printings))
         values.put(COLUMNS.ORIGINAL_TEXT.noun, card.originalText)
-        values.put(COLUMNS.MCI_NUMBER.noun, card.mciNumber)
         values.put(COLUMNS.COLORS_IDENTITY.noun, gson.toJson(card.colorsIdentity))
         val legalities = card.legalities
         if (legalities.size > 0) {
@@ -223,7 +222,13 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
         }
 
-        card.rarity = cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.noun))
+        val rarity: Rarity = when (cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.noun))) {
+            "uncommon", "timeshifted uncommon" -> Rarity.UNCOMMON
+            "rare", "timeshifted rare" -> Rarity.RARE
+            "mythic", "timeshifted mythic" -> Rarity.MYTHIC
+            else -> Rarity.COMMON
+        }
+        card.rarity = rarity
         card.power = cursor.getString(cursor.getColumnIndex(COLUMNS.POWER.noun))
         card.toughness = cursor.getString(cursor.getColumnIndex(COLUMNS.TOUGHNESS.noun))
 
@@ -296,10 +301,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             if (originalText != null) {
                 card.originalText = originalText
             }
-        }
-
-        if (cursor.getColumnIndex(COLUMNS.MCI_NUMBER.noun) != -1) {
-            card.mciNumber = cursor.getString(cursor.getColumnIndex(COLUMNS.MCI_NUMBER.noun))
         }
 
         if (cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun) != -1) {
@@ -397,10 +398,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 TABLE + " ADD COLUMN " +
                 COLUMNS.ORIGINAL_TEXT.noun + " " + COLUMNS.ORIGINAL_TEXT.type)
 
-        internal val SQL_ADD_COLUMN_MCI_NUMBER = ("ALTER TABLE " +
-                TABLE + " ADD COLUMN " +
-                COLUMNS.MCI_NUMBER.noun + " " + COLUMNS.MCI_NUMBER.type)
-
         internal val SQL_ADD_COLUMN_COLORS_IDENTITY = ("ALTER TABLE " +
                 TABLE + " ADD COLUMN " +
                 COLUMNS.COLORS_IDENTITY.noun + " " + COLUMNS.COLORS_IDENTITY.type)
@@ -438,7 +435,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                                 column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
                                 column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT && version <= 6) {
                     addColumn = false
-                } else if ((column == COLUMNS.COLORS_IDENTITY || column == COLUMNS.MCI_NUMBER) && version <= 7) {
+                } else if (column == COLUMNS.COLORS_IDENTITY && version <= 7) {
                     addColumn = false
                 }
                 if (addColumn) {

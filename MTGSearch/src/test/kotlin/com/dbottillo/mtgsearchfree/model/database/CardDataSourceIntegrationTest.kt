@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.database.Cursor
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
@@ -55,7 +56,7 @@ class CardDataSourceIntegrationTest {
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,mciNumber TEXT,colorIdentity TEXT)"))
+        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT)"))
         assertThat(CardDataSource.generateCreateTable(1), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"))
         assertThat(CardDataSource.generateCreateTable(2), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"))
         assertThat(CardDataSource.generateCreateTable(3), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"))
@@ -119,7 +120,6 @@ class CardDataSourceIntegrationTest {
         assertThat(cardFromDb.originalText, `is`(card.originalText))
 
         assertThat<List<String>>(cardFromDb.colorsIdentity, `is`<List<String>>(card.colorsIdentity))
-        assertThat<String>(cardFromDb.mciNumber, `is`<String>(card.mciNumber))
 
         assertThat(cardFromDb.rulings.size, `is`(card.rulings.size))
         for (i in 0 until cardFromDb.rulings.size) {
@@ -150,7 +150,7 @@ class CardDataSourceIntegrationTest {
     @Test
     fun parsesCardFromCursor() {
         setupCursorCard()
-        val (id, name, type, types, subTypes, colors, cmc, rarity, power, toughness, manaCost, text, isMultiColor, isLand, isArtifact, multiVerseId, set, _, _, layout, number, rulings, names, superTypes, artist, flavor, loyalty, printings, originalText, mciNumber, colorsIdentity, legalities) = underTest.fromCursor(cursor)
+        val (id, name, type, types, subTypes, colors, cmc, rarity, power, toughness, manaCost, text, isMultiColor, isLand, isArtifact, multiVerseId, set, _, _, layout, number, rulings, names, superTypes, artist, flavor, loyalty, printings, originalText, colorsIdentity, legalities) = underTest.fromCursor(cursor)
 
         assertThat(id, `is`(2))
         assertThat(multiVerseId, `is`(1001))
@@ -161,7 +161,7 @@ class CardDataSourceIntegrationTest {
 
         assertThat<List<Int>>(colors, `is`(listOf(1, 2)))
         assertThat(cmc, `is`(1))
-        assertThat(rarity, `is`("Rare"))
+        assertThat(rarity, `is`(Rarity.RARE))
         assertThat(power, `is`("2"))
         assertThat(toughness, `is`("3"))
 
@@ -204,7 +204,6 @@ class CardDataSourceIntegrationTest {
 
         assertThat(originalText, `is`("original text"))
 
-        assertThat<String>(mciNumber, `is`("233"))
         assertNotNull(colorsIdentity)
         assertThat(colorsIdentity?.size, `is`(2))
         assertThat(colorsIdentity!![0], `is`("U"))
@@ -243,7 +242,7 @@ class CardDataSourceIntegrationTest {
         }
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.noun), `is`(card.manaCost))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RARITY.noun), `is`(card.rarity))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.RARITY.noun), `is`(card.rarity.value))
         assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.MULTIVERSE_ID.noun), `is`(card.multiVerseId))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.POWER.noun), `is`(card.power))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TOUGHNESS.noun), `is`(card.toughness))
@@ -281,7 +280,6 @@ class CardDataSourceIntegrationTest {
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun), `is`(card.originalText))
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`<String>(card.mciNumber))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(gson.toJson(card.colorsIdentity)))
 
         if (card.legalities.size > 0) {
@@ -326,7 +324,7 @@ class CardDataSourceIntegrationTest {
         whenever(cursor.getInt(8)).thenReturn(1)
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.RARITY.noun)).thenReturn(9)
-        whenever(cursor.getString(9)).thenReturn("Rare")
+        whenever(cursor.getString(9)).thenReturn("rare")
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.POWER.noun)).thenReturn(10)
         whenever(cursor.getString(10)).thenReturn("2")
@@ -391,11 +389,8 @@ class CardDataSourceIntegrationTest {
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)).thenReturn(30)
         whenever(cursor.getString(30)).thenReturn("original text")
 
-        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.MCI_NUMBER.noun)).thenReturn(31)
-        whenever(cursor.getString(31)).thenReturn("233")
-
-        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).thenReturn(32)
-        whenever(cursor.getString(32)).thenReturn("[\"U\",\"W\"]")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).thenReturn(31)
+        whenever(cursor.getString(31)).thenReturn("[\"U\",\"W\"]")
     }
 
     private fun joinListOfStrings(list: List<String>, separator: String): String {

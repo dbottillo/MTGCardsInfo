@@ -1,1 +1,3676 @@
-{"name":"Deckmasters","code":"DKM","releaseDate":"2001-12-01","border":"white","type":"box","cards":[{"layout":"normal","type":"Creature — Specter","types":["Creature"],"colors":["Black"],"name":"Abyssal Specter","subtypes":["Specter"],"originalType":"Creature — Specter","cmc":4,"rarity":"Special","artist":"Ruth Thompson","power":"2","toughness":"3","manaCost":"{2}{B}{B}","text":"Flying\n\nWhenever Abyssal Specter deals damage to a player, that player discards a card.","originalText":"Flying\n\nWhenever Abyssal Specter deals damage to a player, that player discards a card from his or her hand.","flavor":"\"Open the gates, and bid them enter.\"\n\n—Lim-Dûl, the Necromancer","imageName":"abyssal specter","foreignNames":[{"language":"French","name":"Spectre des abysses"},{"language":"German","name":"Unterweltgespenst"},{"language":"Italian","name":"Spettro dell'Abisso"},{"language":"Portuguese (Brazil)","name":"Espectro Abissal"},{"language":"Spanish","name":"Espectro abismal"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Classic Sixth Edition","Battle Royale Box Set","Seventh Edition","Deckmasters","Eighth Edition","Duel Decks: Divine vs. Demonic","Duels of the Planeswalkers"],"number":"1"},{"layout":"normal","type":"Creature — Bear","types":["Creature"],"colors":["Green"],"name":"Balduvian Bears","subtypes":["Bear"],"originalType":"Creature — Bear","cmc":2,"rarity":"Special","artist":"Quinton Hoover","power":"2","toughness":"2","manaCost":"{1}{G}","flavor":"\"They're a hardy bunch, but I'd still bet that they just slept through the worst of the cold times.\"\n\n—Disa the Restless, journal entry","imageName":"balduvian bears","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters"],"number":"22"},{"layout":"normal","type":"Creature — Human Barbarian","types":["Creature"],"colors":["Red"],"name":"Balduvian Horde","subtypes":["Human","Barbarian"],"originalType":"Creature — Barbarians","cmc":4,"rarity":"Special","artist":"Brian Snoddy","power":"5","toughness":"5","manaCost":"{2}{R}{R}","text":"When Balduvian Horde enters the battlefield, sacrifice it unless you discard a card at random.","originalText":"When Balduvian Horde comes into play, sacrifice it unless you discard a card at random from your hand.","flavor":"\"Peace will come only when we have taken Varchild's head.\"\n\n—Lovisa Coldeyes,\n\nBalduvian Chieftain","rulings":[{"date":"2004-10-04","text":"You choose whether to discard or not on resolution. If not, then you sacrifice this card. You can choose to not discard even if you no longer control this card on resolution."}],"imageName":"balduvian horde","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Classic Sixth Edition","Beatdown Box Set","Deckmasters","Masters Edition"],"number":"10"},{"layout":"normal","type":"Artifact","types":["Artifact"],"name":"Barbed Sextant","originalType":"Artifact","cmc":1,"rarity":"Special","artist":"Amy Weber","manaCost":"{1}","text":"{1}, {T}, Sacrifice Barbed Sextant: Add one mana of any color to your mana pool. Draw a card at the beginning of the next turn's upkeep.","originalText":"{1}, {T}, Sacrifice Barbed Sextant: Add one mana of any color to your mana pool. Draw a card at the beginning of next turn's upkeep.","imageName":"barbed sextant","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Deckmasters","Masters Edition II"],"number":"34"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Green"],"name":"Bounty of the Hunt","originalType":"Instant","cmc":5,"rarity":"Special","artist":"Jeff A. Menges","manaCost":"{3}{G}{G}","text":"You may exile a green card from your hand rather than pay Bounty of the Hunt's mana cost.\n\nDistribute three +1/+1 counters among one, two, or three target creatures. For each +1/+1 counter you put on a creature this way, remove a +1/+1 counter from that creature at the beginning of the next cleanup step.","originalText":"You may remove a green card in your hand from the game rather than pay Bounty of the Hunt's mana cost.\nChoose one — Target creature gets +3/+3 until end of turn; or target creature gets +2/+2 and another target creature gets +1/+1 until end of turn; or three target creatures each get +1/+1 until end of turn.","imageName":"bounty of the hunt","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition II"],"number":"23"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Black"],"name":"Contagion","originalType":"Instant","cmc":5,"rarity":"Special","artist":"Mike Raabe","manaCost":"{3}{B}{B}","text":"You may pay 1 life and exile a black card from your hand rather than pay Contagion's mana cost.\n\nDistribute two -2/-1 counters among one or two target creatures.","originalText":"You may pay 1 life and remove a black card in your hand from the game rather than pay Contagion's mana cost.\n\nPut two -2/-1 counters, distributed as you choose, on one or two target creatures.","imageName":"contagion","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition"],"number":"2"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Black"],"name":"Dark Banishing","originalType":"Instant","cmc":3,"rarity":"Special","artist":"Drew Tucker","manaCost":"{2}{B}","text":"Destroy target nonblack creature. It can't be regenerated.","originalText":"Destroy target nonblack creature. It can't be regenerated.","flavor":"\"Will not the mountains quake and hills melt at the coming of the darkness? Share this vision with your enemies, Lim-Dûl, and they shall wither.\"\n\n—Leshrac, Walker of Night","imageName":"dark banishing","foreignNames":[{"language":"Chinese Traditional","name":"闇境放逐"},{"language":"Chinese Simplified","name":"黯境放逐"},{"language":"French","name":"Obscur bannissement"},{"language":"German","name":"Dunkle Verbannung"},{"language":"Italian","name":"Esilio Oscuro"},{"language":"Japanese","name":"闇への追放"},{"language":"Korean","name":"암흑의 유형"},{"language":"Portuguese (Brazil)","name":"Banimento Sombrio"},{"language":"Russian","name":"Темное изгнание"},{"language":"Spanish","name":"Destierro sombrío"}],"legalities":{"Modern":"Legal","Tempest Block":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Mirage","Tempest","Seventh Edition","Deckmasters","Eighth Edition","Ninth Edition","Masters Edition II","Duel Decks: Divine vs. Demonic"],"number":"3"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Black"],"name":"Dark Ritual","originalType":"Interrupt","cmc":1,"rarity":"Special","artist":"Justin Hampton","manaCost":"{B}","text":"Add {B}{B}{B} to your mana pool.","originalText":"Add {B}{B}{B} to your mana pool.","flavor":"\"Leshrac, my liege, grant me the power I am due.\"\n\n—Lim-Dûl, the Necromancer","imageName":"dark ritual","foreignNames":[{"language":"Japanese","name":"暗黒の儀式"}],"legalities":{"Masques Block":"Legal","Urza Block":"Legal","Tempest Block":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Mirage","Introductory Two-Player Set","Fifth Edition","Tempest","Urza's Saga","Mercadian Masques","Battle Royale Box Set","Beatdown Box Set","Deckmasters","Duel Decks: Divine vs. Demonic","Planechase","Duel Decks: Phyrexia vs. the Coalition","Masters Edition IV","From the Vault: Twenty","Rivals Quick Start Set"],"number":"4"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Red"],"name":"Death Spark","originalType":"Instant","cmc":1,"rarity":"Special","artist":"Mark Tedin","manaCost":"{R}","text":"Death Spark deals 1 damage to target creature or player.\n\nAt the beginning of your upkeep, if Death Spark is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return Death Spark to your hand.","originalText":"Death Spark deals 1 damage to target creature or player.\n\nAt the beginning of your upkeep, if Death Spark is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return Death Spark to your hand.","rulings":[{"date":"2008-10-01","text":"A card is \"directly above\" another card in your graveyard if it was put into that graveyard later and there are no cards in between the two."},{"date":"2008-10-01","text":"layers may not rearrange the cards in their graveyards."},{"date":"2008-10-01","text":"If an effect or rule puts two or more cards into the same graveyard at the same time, the owner of those cards may arrange them in any order."},{"date":"2008-10-01","text":"The last thing that happens to a resolving instant or sorcery spell is that it's put into its owner's graveyard. Example: You cast Wrath of God. All creatures on the battlefield are destroyed. You arrange all the cards put into your graveyard this way in any order you want. The other players in the game do the same to the cards that are put into their graveyards. Then you put Wrath of God into your graveyard, on top of the other cards."},{"date":"2008-10-01","text":"Say you're the owner of both a permanent and an Aura that's attached to it. If both the permanent and the Aura are destroyed at the same time (by Akroma's Vengeance, for example), you decide the order they're put into your graveyard. If just the enchanted permanent is destroyed, it's put into your graveyard first. Then, after state-based actions are checked, the Aura (which is no longer attached to anything) is put into your graveyard on top of it."}],"imageName":"death spark","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition II"],"number":"11"},{"layout":"normal","type":"Artifact","types":["Artifact"],"name":"Elkin Bottle","originalType":"Artifact","cmc":3,"rarity":"Special","artist":"Quinton Hoover","manaCost":"{3}","text":"{3}, {T}: Exile the top card of your library. Until the beginning of your next upkeep, you may play that card.","originalText":"{3}, {T}: Remove the top card of your library from the game face up. Until the beginning of your next upkeep, you may play that card as though it were in your hand. At the beginning of your next upkeep, if you haven't played the card, put it into your graveyard.","rulings":[{"date":"2004-10-04","text":"This is not considered to be drawing a card."},{"date":"2004-10-04","text":"If the Bottle leaves the battlefield or your control, the cards remain waiting until played or until the beginning of your next upkeep. The card is in the \"Exile\" zone."},{"date":"2004-10-04","text":"The card is not part of your hand in any way. You can't be forced to discard it due to a discard from hand effect, and you can't discard it to pay a cost."},{"date":"2004-10-04","text":"To \"play a card\" is to either cast a spell or to put a land onto the battlefield using the main phase special action."},{"date":"2008-08-01","text":"If you do not play the card before your next upkeep, it remains exiled; you just lose the ability to play it."},{"date":"2008-10-01","text":"The exiled card is played using the normal timing rules for its card type, as well as any other applicable restrictions such as \"Cast [this card] only during combat.\" For example, you can't play the card during an opponent's turn unless it's an instant or has flash. Similarly, if the exiled card is a land, you can't play it if you've already played a land that turn. If it's a nonland card, you'll have to pay its mana cost. The only thing that's different is you're playing it from the Exile zone."}],"imageName":"elkin bottle","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Deckmasters","Masters Edition II"],"number":"33"},{"layout":"normal","type":"Creature — Elf Shaman","types":["Creature"],"colors":["Green"],"name":"Elvish Bard","subtypes":["Elf","Shaman"],"originalType":"Creature — Elf","cmc":5,"rarity":"Special","artist":"Susan Van Camp","power":"2","toughness":"4","manaCost":"{3}{G}{G}","text":"All creatures able to block Elvish Bard do so.","originalText":"All creatures able to block Elvish Bard do so.","imageName":"elvish bard","foreignNames":[{"language":"Chinese Simplified","name":"地精吟游诗人"},{"language":"French","name":"Barde elfe"},{"language":"German","name":"Elfenbarde"},{"language":"Italian","name":"Bardo degli Elfi"},{"language":"Japanese","name":"エルフの吟遊詩人"},{"language":"Portuguese (Brazil)","name":"Bardo Elfo"},{"language":"Russian","name":"Эльфийский бард"},{"language":"Spanish","name":"Bardo élfico"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Ninth Edition"],"number":"24"},{"layout":"normal","type":"Creature — Dryad","types":["Creature"],"colors":["Green"],"name":"Folk of the Pines","subtypes":["Dryad"],"originalType":"Creature — Dryads","cmc":5,"rarity":"Special","artist":"NéNé Thomas & Catherine Buck","power":"2","toughness":"5","manaCost":"{4}{G}","text":"{1}{G}: Folk of the Pines gets +1/+0 until end of turn.","originalText":"{1}{G}: Folk of the Pines gets +1/+0 until end of turn.","flavor":"\"Our friends of the forest take many forms, yet all serve the will of Freyalise.\"\n\n—Laina of the Elvish Council","imageName":"folk of the pines","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition II"],"number":"25"},{"layout":"normal","supertypes":["Basic"],"type":"Basic Land — Forest","types":["Land"],"name":"Forest","subtypes":["Forest"],"originalType":"Land","rarity":"Basic Land","artist":"Pat Morrissey","text":"G","originalText":"{G}","imageName":"forest1","foreignNames":[{"language":"Chinese Simplified","name":"树林"},{"language":"Chinese Traditional","name":"樹林"},{"language":"French","name":"Forêt"},{"language":"German","name":"Wald"},{"language":"Italian","name":"Foresta"},{"language":"Japanese","name":"森"},{"language":"Korean","name":"숲"},{"language":"Portuguese (Brazil)","name":"Floresta"},{"language":"Russian","name":"Лес"},{"language":"Spanish","name":"Bosque"}],"legalities":{"Standard":"Legal","Modern":"Legal","Extended":"Legal","Theros Block":"Legal","Return to Ravnica Block":"Legal","Innistrad Block":"Legal","Scars of Mirrodin Block":"Legal","Zendikar Block":"Legal","Shards of Alara Block":"Legal","Lorwyn-Shadowmoor Block":"Legal","Time Spiral Block":"Legal","Ravnica Block":"Legal","Kamigawa Block":"Legal","Mirrodin Block":"Legal","Onslaught Block":"Legal","Odyssey Block":"Legal","Invasion Block":"Legal","Masques Block":"Legal","Urza Block":"Legal","Tempest Block":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Un-Sets":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Tribal Wars Standard":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Mirage","Introductory Two-Player Set","Fifth Edition","Portal","Tempest","Portal Second Age","Unglued","Urza's Saga","Anthologies","Classic Sixth Edition","Portal Three Kingdoms","Starter 1999","Mercadian Masques","Battle Royale Box Set","Starter 2000","Beatdown Box Set","Invasion","Seventh Edition","Odyssey","Deckmasters","Onslaught","Eighth Edition","Mirrodin","Champions of Kamigawa","Unhinged","Ninth Edition","Ravnica: City of Guilds","Time Spiral","Tenth Edition","Masters Edition","Lorwyn","Duel Decks: Elves vs. Goblins","Shadowmoor","Shards of Alara","Magic 2010","Planechase","Masters Edition III","Zendikar","Duel Decks: Garruk vs. Liliana","Premium Deck Series: Slivers","Duel Decks: Phyrexia vs. the Coalition","Rise of the Eldrazi","Archenemy","Magic 2011","Scars of Mirrodin","Mirrodin Besieged","Duel Decks: Knights vs. Dragons","New Phyrexia","Magic: The Gathering-Commander","Magic 2012","Duel Decks: Ajani vs. Nicol Bolas","Innistrad","Avacyn Restored","Planechase 2012 Edition","Magic 2013","Duel Decks: Izzet vs. Golgari","Return to Ravnica","Magic 2014 Core Set","Duel Decks: Heroes vs. Monsters","Theros","Commander 2013 Edition","Duel Decks: Jace vs. Vraska","Duels of the Planeswalkers","Rivals Quick Start Set"],"number":"48"},{"layout":"normal","type":"Creature — Spirit","types":["Creature"],"colors":["Black"],"name":"Foul Familiar","subtypes":["Spirit"],"originalType":"Creature — Spirit","cmc":3,"rarity":"Special","artist":"Anson Maddocks","power":"3","toughness":"1","manaCost":"{2}{B}","text":"Foul Familiar can't block.\n\n{B}, Pay 1 life: Return Foul Familiar to its owner's hand.","originalText":"Foul Familiar can't black.\n\n{B}, Pay 1 life: Return Foul Familiar to its owner's hand.","flavor":"\"Serve me, and live forever.\"\n\n—Lim-Dûl, the Necromancer","rulings":[{"date":"2004-10-04","text":"The ability can only be activated while this card is on the battlefield."}],"imageName":"foul familiar","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition II"],"number":"5"},{"layout":"normal","type":"Creature — Elf Druid","types":["Creature"],"colors":["Green"],"name":"Fyndhorn Elves","subtypes":["Elf","Druid"],"originalType":"Creature — Elves","cmc":1,"rarity":"Special","artist":"Justin Hampton","power":"1","toughness":"1","manaCost":"{G}","text":"{T}: Add {G} to your mana pool.","originalText":"{T}: Add {G} to your mana pool.","flavor":"\"Living side by side with the Elves for so long leaves me with no doubt that we serve the same goddess.\"\n\n—Kolbjörn, Elder Druid of the Juniper Order","imageName":"fyndhorn elves","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition","From the Vault: Twenty"],"number":"26"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Green"],"name":"Giant Growth","originalType":"Instant","cmc":1,"rarity":"Special","artist":"L. A. Williams","manaCost":"{G}","text":"Target creature gets +3/+3 until end of turn.","originalText":"Target creature gets +3/+3 until end of turn.","flavor":"\"Here in Fyndhorn, the goddess Freyalise is generous to her children.\"\n\n—Kolbjörn, Elder Druid of the Juniper Order","imageName":"giant growth","foreignNames":[{"language":"Chinese Simplified","name":"变巨术"},{"language":"Chinese Traditional","name":"變巨術"},{"language":"French","name":"Croissance gigantesque"},{"language":"German","name":"Riesenwuchs"},{"language":"Italian","name":"Crescita Gigante"},{"language":"Japanese","name":"巨大化"},{"language":"Korean","name":"거대화"},{"language":"Portuguese (Brazil)","name":"Crescimento Desenfreado"},{"language":"Portuguese","name":"Crescimento Desenfreado"},{"language":"Russian","name":"Исполинский рост"},{"language":"Spanish","name":"Crecimiento gigante"}],"legalities":{"Standard":"Legal","Modern":"Legal","Extended":"Legal","Return to Ravnica Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Tribal Wars Standard":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Fifth Edition","Anthologies","Classic Sixth Edition","Battle Royale Box Set","Starter 2000","Beatdown Box Set","Seventh Edition","Deckmasters","Eighth Edition","Ninth Edition","Tenth Edition","Duel Decks: Elves vs. Goblins","Masters Edition II","Magic 2010","Masters Edition III","Duel Decks: Garruk vs. Liliana","Magic 2011","Masters Edition IV","Return to Ravnica","Magic 2014 Core Set","Duels of the Planeswalkers"],"number":"27"},{"layout":"normal","type":"Creature — Spider","types":["Creature"],"colors":["Red","Green"],"name":"Giant Trap Door Spider","subtypes":["Spider"],"originalType":"Creature — Spider","cmc":3,"rarity":"Special","artist":"Heather Hudson","power":"2","toughness":"3","manaCost":"{1}{R}{G}","text":"{1}{R}{G}, {T}: Exile Giant Trap Door Spider and target creature without flying that's attacking you.","originalText":"{1}{R}{G}, {T}: Remove from the game Giant Trap Door Spider and target creature without flying that's attacking you.","flavor":"\"So large and so quiet—a combination best avoided.\"\n\n—Disa the Restless, journal entry","rulings":[{"date":"2004-10-04","text":"If Giant Trap Door Spider leaves the battlefield before its ability resolves, the ability will still resolve as normal. The targeted creature will be exiled."},{"date":"2004-10-04","text":"If the targeted creature leaves the battlefield (or otherwise becomes an illegal target) before the ability resolves, the ability will be countered. Giant Trap Door Spider will remain on the battlefield."}],"imageName":"giant trap door spider","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition II"],"number":"33"},{"layout":"normal","type":"Creature — Goblin Mutant","types":["Creature"],"colors":["Red"],"name":"Goblin Mutant","subtypes":["Goblin","Mutant"],"originalType":"Creature — Goblin","cmc":4,"rarity":"Special","artist":"Daniel Gelon","power":"5","toughness":"3","manaCost":"{2}{R}{R}","text":"Trample\n\nGoblin Mutant can't attack if defending player controls an untapped creature with power 3 or greater.\n\nGoblin Mutant can't block creatures with power 3 or greater.","originalText":"Trample\n\nGoblin Mutant can't attack if defending player controls an untapped creature with power 3 or greater.\n\nGoblin Mutant can't block creatures with power 3 or greater.","flavor":"If only it had three brains, too.","imageName":"goblin mutant","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Anthologies","Deckmasters","Masters Edition"],"number":"12"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Red"],"name":"Guerrilla Tactics","originalType":"Instant","cmc":2,"rarity":"Special","artist":"Amy Weber","manaCost":"{1}{R}","text":"Guerrilla Tactics deals 2 damage to target creature or player.\n\nWhen a spell or ability an opponent controls causes you to discard Guerrilla Tactics, Guerrilla Tactics deals 4 damage to target creature or player.","originalText":"Guerrilla Tactics deals 2 damage to target creature or player.\n\nWhen a spell or ability an opponent controls causes you to discard Guerrilla Tactics from your hand, Guerrilla Tactics deals 4 damage to target creature or player.","rulings":[{"date":"2004-10-04","text":"If it is discarded, the damage done by it is done by this card due to an ability and not by a spell."},{"date":"2004-10-04","text":"The second ability will trigger even on an optional discard caused by an opponent."},{"date":"2004-10-04","text":"Discarding as a cost to cast a spell will not trigger the ability. Only discarding as an effect will trigger the ability."}],"imageName":"guerrilla tactics","foreignNames":[{"language":"Chinese Simplified","name":"游击策略"},{"language":"Chinese Traditional","name":"游擊策略"},{"language":"French","name":"Tactiques de guérilla"},{"language":"German","name":"Guerillataktik"},{"language":"Italian","name":"Tattiche di Guerriglia"},{"language":"Japanese","name":"ゲリラ戦術"},{"language":"Portuguese (Brazil)","name":"Táticas de Guerrilha"},{"language":"Russian","name":"Партизанская тактика"},{"language":"Spanish","name":"Guerra de guerrillas"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Eighth Edition","Ninth Edition","Tenth Edition"],"number":"13a"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Green"],"name":"Hurricane","originalType":"Sorcery","cmc":1,"rarity":"Special","artist":"Cornelius Brudi","manaCost":"{X}{G}","text":"Hurricane deals X damage to each creature with flying and each player.","originalText":"Hurricane deals X damage to each creature with flying and each player.","flavor":"\"This was quite possibly the least pleasant occurrence on the entire expedition.\"\n\n—Disa the Restless, journal entry","rulings":[{"date":"2004-10-04","text":"Whether or not a creature has flying is only checked on resolution."}],"imageName":"hurricane","foreignNames":[{"language":"Chinese Simplified","name":"飓风"},{"language":"Chinese Traditional","name":"颶風"},{"language":"French","name":"Ouragan"},{"language":"German","name":"Hurrikan"},{"language":"Italian","name":"Uragano"},{"language":"Japanese","name":"ハリケーン"},{"language":"Portuguese (Brazil)","name":"Furacão"},{"language":"Russian","name":"Ураган"},{"language":"Spanish","name":"Huracán"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Fifth Edition","Portal","Portal Second Age","Anthologies","Classic Sixth Edition","Battle Royale Box Set","Seventh Edition","Deckmasters","Tenth Edition"],"number":"28"},{"layout":"normal","type":"Artifact","types":["Artifact"],"name":"Icy Manipulator","originalType":"Artifact","cmc":4,"rarity":"Special","artist":"Amy Weber","manaCost":"{4}","text":"{1}, {T}: Tap target artifact, creature, or land.","originalText":"{1},{T}: Tap target artifact, creature, or land.","flavor":"\"The scavengers who first found it called it the ‘Bone Crank.' Not a bad name, I'd say.\"\n\n—Arcum Dagsson, Soldevi Machinist","rulings":[{"date":"2004-10-04","text":"Tapping a card with an effect like this will never pay the cost of an ability. For example, tapping a land with this card will not put mana into a player's pool."},{"date":"2004-10-04","text":"Icy Manipulator can't be used to stop someone from using an ability of the permanent you plan to tap. It can be used to make a player use the ability now or to not use it."},{"date":"2004-10-04","text":"The ability can target a tapped card, but tapping a tapped card does nothing useful. And it will not trigger \"if the card becomes tapped\" effects."},{"date":"2004-10-04","text":"If you want to stop someone from attacking with a creature by using this card, you must do so before attackers are declared. You can't wait until after attackers are declared and then try to use it to make a creature stop attacking. Note that your opponent can't start declaring attackers without letting you use the Icy Manipulator."},{"date":"2004-10-04","text":"Tapping an attacking creature which did not tap to attack does not remove the creature from the attack or cause the creature to stop dealing damage."}],"imageName":"icy manipulator","foreignNames":[{"language":"Chinese Simplified","name":"寒冰操弄器"},{"language":"Chinese Traditional","name":"寒冰操弄器"},{"language":"French","name":"Manipulateur glacial"},{"language":"German","name":"Eiskalter Manipulator"},{"language":"Italian","name":"Manipolatore Glaciale"},{"language":"Japanese","name":"氷の干渉器"},{"language":"Portuguese (Brazil)","name":"Manipulador Gélido"},{"language":"Russian","name":"Ледяной манипулятор"},{"language":"Spanish","name":"Manipulador gélido"}],"legalities":{"Modern":"Legal","Mirrodin Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Ice Age","Deckmasters","Mirrodin","Ninth Edition","Tenth Edition","Masters Edition IV","Duel Decks: Ajani vs. Nicol Bolas"],"number":"36"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Red"],"name":"Incinerate","originalType":"Instant","cmc":2,"rarity":"Special","artist":"Mark Poole","manaCost":"{1}{R}","text":"Incinerate deals 3 damage to target creature or player. A creature dealt damage this way can't be regenerated this turn.","originalText":"Incinerate deals 3 damage to target creature or player. A creature dealt damage this way can't be regenerated this turn.","flavor":"\"Yes, I think ‘toast' is an appropriate description.\"\n\n—Jaya Ballard, Task Mage","rulings":[{"date":"2007-07-15","text":"Regeneration abilities that would affect that creature can still be activated; they just won't do anything. The creature can't be regenerated for any reason, even if an effect other than Incinerate would deal lethal damage to it or otherwise destroy it."}],"imageName":"incinerate","foreignNames":[{"language":"Chinese Traditional","name":"焚化"},{"language":"Chinese Simplified","name":"焚化"},{"language":"French","name":"Incinération"},{"language":"German","name":"Einäscherung"},{"language":"Italian","name":"Incenerire"},{"language":"Japanese","name":"火葬"},{"language":"Portuguese (Brazil)","name":"Incinerar"},{"language":"Russian","name":"Сжигание"},{"language":"Spanish","name":"Incinerar"}],"legalities":{"Modern":"Legal","Extended":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Mirage","Fifth Edition","Deckmasters","Tenth Edition","Masters Edition II","Duel Decks: Jace vs. Chandra","Magic 2012","Duels of the Planeswalkers"],"number":"14"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Red"],"name":"Jokulhaups","originalType":"Sorcery","cmc":6,"rarity":"Special","artist":"Richard Thomas","manaCost":"{4}{R}{R}","text":"Destroy all artifacts, creatures, and lands. They can't be regenerated.","originalText":"Destroy all artifacts, creatures, and lands. They can't be regenerated.","flavor":"\"I was shocked when I first saw the aftermath of the Yavimaya Valley disaster. The raging waters had swept away trees, bridges, and even houses. My healers had much work to do.\"\n\n—Halvor Arenson, Kjeldoran Priest","imageName":"jokulhaups","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Classic Sixth Edition","Deckmasters","Masters Edition"],"number":"15"},{"layout":"normal","type":"Land","types":["Land"],"name":"Karplusan Forest","originalType":"Land","rarity":"Special","artist":"Nicola Leonard","text":"{T}: Add {1} to your mana pool.\n\n{T}: Add {R} or {G} to your mana pool. Karplusan Forest deals 1 damage to you.","originalText":"{T}: Add one colorless mana to your mana pool.\n\n{T}: Add {R} or {G} to your mana pool. Karplusan Forest deals 1 damage to you.","imageName":"karplusan forest","foreignNames":[{"language":"Chinese Simplified","name":"卡普路桑森林"},{"language":"Chinese Traditional","name":"卡普路桑森林"},{"language":"French","name":"Forêt de Karpluse"},{"language":"German","name":"Karplusanischer Wald"},{"language":"Italian","name":"Foresta di Karplus"},{"language":"Japanese","name":"カープルーザンの森"},{"language":"Portuguese (Brazil)","name":"Floresta Karplusana"},{"language":"Russian","name":"Карплюсанский лес"},{"language":"Spanish","name":"Foresta karplusana"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Classic Sixth Edition","Seventh Edition","Deckmasters","Ninth Edition","Tenth Edition"],"number":"39"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Red"],"name":"Lava Burst","originalType":"Sorcery","cmc":1,"rarity":"Special","artist":"Tom Wänerstrand","manaCost":"{X}{R}","text":"Lava Burst deals X damage to target creature or player. If Lava Burst would deal damage to a creature, that damage can't be prevented or dealt instead to another creature or player.","originalText":"Lava Burst deals X damage to target creature or player. If Lava Burst would deal damage to a creature, that damage can't be prevented or dealt instead to another creature or player.","flavor":"\"Overkill? This isn't a game of Kick-the-Ouphe\"\n\n—Jaya Ballard, Task Mage","rulings":[{"date":"2008-10-01","text":"Prevention and redirection effects will have no effect on damage dealt by Lava Burst to a creature. However, they will work on damage that Lava Burst would deal to a player."},{"date":"2008-10-01","text":"A creature dealt damage by Lava Burst may be regenerated."}],"imageName":"lava burst","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition II"],"number":"16"},{"layout":"normal","type":"Creature — Lhurgoyf","types":["Creature"],"colors":["Green"],"name":"Lhurgoyf","subtypes":["Lhurgoyf"],"originalType":"Creature — Lhurgoyf","cmc":4,"rarity":"Special","artist":"Pete Venters","power":"*","toughness":"1+*","manaCost":"{2}{G}{G}","text":"Lhurgoyf's power is equal to the number of creature cards in all graveyards and its toughness is equal to that number plus 1.","originalText":"Lhurgoyf's power is equal to the number of creature cards in all graveyards and its toughness is equal to that number plus 1.","flavor":"\"Ach Hans, run It's the Lhurgoyf\"\n\n—Saffi Eriksdotter, last words","rulings":[{"date":"2008-04-01","text":"A \"creature card\" is any card with the type Creature, even if it has other types such as Artifact, Enchantment, or Land. Older cards of type Summon are also Creature cards."}],"imageName":"lhurgoyf","foreignNames":[{"language":"French","name":"lhurgoyf"},{"language":"Japanese","name":"ルアゴイフ"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Battle Royale Box Set","Deckmasters","Eighth Edition","Magic: The Gathering-Commander"],"border":"black","number":"29"},{"layout":"normal","supertypes":["Basic"],"type":"Basic Land — Mountain","types":["Land"],"name":"Mountain","subtypes":["Mountain"],"originalType":"Land","rarity":"Basic Land","artist":"Tom Wänerstrand","text":"R","originalText":"{R}","imageName":"mountain1","foreignNames":[{"language":"Chinese Simplified","name":"山脉"},{"language":"Chinese Traditional","name":"山脈"},{"language":"French","name":"Montagne"},{"language":"German","name":"Gebirge"},{"language":"Italian","name":"Montagna"},{"language":"Japanese","name":"山"},{"language":"Korean","name":"산"},{"language":"Portuguese (Brazil)","name":"Montanha"},{"language":"Russian","name":"Гора"},{"language":"Spanish","name":"Montaña"}],"legalities":{"Standard":"Legal","Modern":"Legal","Extended":"Legal","Theros Block":"Legal","Return to Ravnica Block":"Legal","Innistrad Block":"Legal","Scars of Mirrodin Block":"Legal","Zendikar Block":"Legal","Shards of Alara Block":"Legal","Lorwyn-Shadowmoor Block":"Legal","Time Spiral Block":"Legal","Ravnica Block":"Legal","Kamigawa Block":"Legal","Mirrodin Block":"Legal","Onslaught Block":"Legal","Odyssey Block":"Legal","Invasion Block":"Legal","Masques Block":"Legal","Urza Block":"Legal","Tempest Block":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Un-Sets":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Tribal Wars Standard":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Arabian Nights","Revised Edition","Fourth Edition","Ice Age","Mirage","Introductory Two-Player Set","Fifth Edition","Portal","Tempest","Portal Second Age","Unglued","Urza's Saga","Anthologies","Classic Sixth Edition","Portal Three Kingdoms","Starter 1999","Mercadian Masques","Battle Royale Box Set","Starter 2000","Beatdown Box Set","Invasion","Seventh Edition","Odyssey","Deckmasters","Onslaught","Eighth Edition","Mirrodin","Champions of Kamigawa","Unhinged","Ninth Edition","Ravnica: City of Guilds","Time Spiral","Tenth Edition","Masters Edition","Lorwyn","Duel Decks: Elves vs. Goblins","Shadowmoor","Shards of Alara","Duel Decks: Jace vs. Chandra","Magic 2010","Planechase","Masters Edition III","Zendikar","Premium Deck Series: Slivers","Duel Decks: Phyrexia vs. the Coalition","Rise of the Eldrazi","Archenemy","Magic 2011","Scars of Mirrodin","Premium Deck Series: Fire and Lightning","Mirrodin Besieged","Duel Decks: Knights vs. Dragons","New Phyrexia","Magic: The Gathering-Commander","Magic 2012","Duel Decks: Ajani vs. Nicol Bolas","Innistrad","Duel Decks: Venser vs. Koth","Avacyn Restored","Planechase 2012 Edition","Magic 2013","Duel Decks: Izzet vs. Golgari","Return to Ravnica","Duel Decks: Sorin vs. Tibalt","Magic 2014 Core Set","Duel Decks: Heroes vs. Monsters","Theros","Commander 2013 Edition","Duels of the Planeswalkers","Rivals Quick Start Set"],"number":"45"},{"layout":"normal","type":"Enchantment","types":["Enchantment"],"colors":["Black"],"name":"Necropotence","originalType":"Enchantment","cmc":3,"rarity":"Special","artist":"Mark Tedin","manaCost":"{B}{B}{B}","text":"Skip your draw step.\n\nWhenever you discard a card, exile that card from your graveyard.\n\nPay 1 life: Exile the top card of your library face down. Put that card into your hand at the beginning of your next end step.","originalText":"Skip your draw step.\n\nIf you would discard a card from your hand, remove that card from the game instead.\n\nPay 1 life: Remove the top card of your library from the game face down. At the end of your turn, put that card into your hand.","rulings":[{"date":"2004-10-04","text":"Removing Necropotence from the battlefield will not stop the cards from the life-payment ability from being put into your hand in the end step."}],"imageName":"necropotence","legalities":{"Ice Age Block":"Legal","Legacy":"Banned","Vintage":"Restricted","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Restricted","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Deckmasters","Masters Edition II","From the Vault: Exiled"],"border":"black","number":"7"},{"layout":"normal","type":"Creature — Orc Warrior","types":["Creature"],"colors":["Red"],"name":"Orcish Cannoneers","subtypes":["Orc","Warrior"],"originalType":"Creature — Orcs","cmc":3,"rarity":"Special","artist":"Dan Frazier","power":"1","toughness":"3","manaCost":"{1}{R}{R}","text":"{T}: Orcish Cannoneers deals 2 damage to target creature or player and 3 damage to you.","originalText":"{T}: Orcish Cannoneers deals 2 damage to target creature or player and 3 damage to you.","flavor":"\"It's a thankless job, and you'll probably die in an explosion. But the pay is pretty good.\"\n\n—Toothlicker Harj, Orcish Captain","imageName":"orcish cannoneers","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition II"],"number":"17"},{"layout":"normal","type":"Creature — Illusion","types":["Creature"],"colors":["Black"],"name":"Phantasmal Fiend","subtypes":["Illusion"],"originalType":"Creature — Phantasm","cmc":4,"rarity":"Special","artist":"Scott Kirschner","power":"1","toughness":"5","manaCost":"{3}{B}","text":"{B}: Phantasmal Fiend gets +1/-1 until end of turn.\n\n{1}{U}: Switch Phantasmal Fiend's power and toughness until end of turn.","originalText":"{B}: Phantasmal Fiend gets +1/-1 until end of turn.\n\n{1}{U}: Switch Phantasmal Fiend's power and toughness until end of turn. Effects that would alter Phantasmal Fiend's power this turn alter its toughness instead, and vice versa.","rulings":[{"date":"2005-11-01","text":"Note that the wording \"Effects that alter the creature's power alter its toughness instead, and vice versa, this turn\" has been removed."},{"date":"2008-10-01","text":"Effects that switch power and toughness are always applied last when determining a creature's power and toughness, even if other power/toughness-changing effects are created later in the turn. For example, if you activate Phantasmal Fiend's first ability, it will become 2/4. Then if you activate its second ability, it will become 4/2. Then if you activate its first ability again, it will become 3/3."},{"date":"2013-04-15","text":"Effects that switch power and toughness apply after all other effects that change power and/or toughness, regardless of which effect was created first."},{"date":"2013-04-15","text":"Switching a creature's power and toughness twice (or any even number of times) effectively returns the creature to the power and toughness it had before any switches."}],"imageName":"phantasmal fiend","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition II"],"number":"8a"},{"layout":"normal","type":"Artifact Creature — Beast","types":["Artifact","Creature"],"name":"Phyrexian War Beast","subtypes":["Beast"],"originalType":"Artifact Creature","cmc":3,"rarity":"Special","artist":"Bill Sienkiewicz","power":"3","toughness":"4","manaCost":"{3}","text":"When Phyrexian War Beast leaves the battlefield, sacrifice a land and Phyrexian War Beast deals 1 damage to you.","originalText":"When Phyrexian War Beast leaves play, sacrifice a land and Phyrexian War Beast deals 1 damage to you.","flavor":"\"Deal with the spawn of Phyrexia cautiously; only with time may we control them.\"\n\n—Arcum Dagsson,\n\nSoldevi Machinist","imageName":"phyrexian war beast","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition"],"number":"37a"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Red"],"name":"Pillage","originalType":"Sorcery","cmc":3,"rarity":"Special","artist":"Richard Kane Ferguson","manaCost":"{1}{R}{R}","text":"Destroy target artifact or land. It can't be regenerated.","originalText":"Destroy target artifact or land. It can't be regenerated.","flavor":"\"Were they to reduce us to ash, we would clog their throats and sting their eyes in payment.\"\n\n—Lovisa Coldeyes,\n\nBalduvian Chieftain","imageName":"pillage","foreignNames":[{"language":"German","name":"Plünderung"}],"legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Classic Sixth Edition","Seventh Edition","Deckmasters","Masters Edition II","Premium Deck Series: Fire and Lightning"],"number":"18"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Red"],"name":"Pyroclasm","originalType":"Sorcery","cmc":2,"rarity":"Special","artist":"Pat Morrissey","manaCost":"{1}{R}","text":"Pyroclasm deals 2 damage to each creature.","originalText":"Pyroclasm deals 2 damage to each creature.","flavor":"\"Leaves more room for the big ones to fight in, you know.\"\n\n—Jaya Ballard, Task Mage","imageName":"pyroclasm","foreignNames":[{"language":"Chinese Simplified","name":"烈火断层"},{"language":"Chinese Traditional","name":"烈火斷層"},{"language":"French","name":"Pyroclasme"},{"language":"German","name":"Feuermasse"},{"language":"Italian","name":"Piroclasma"},{"language":"Japanese","name":"紅蓮地獄"},{"language":"Portuguese (Brazil)","name":"Piroclasma"},{"language":"Russian","name":"Пироклазм"},{"language":"Spanish","name":"Detonación ígnea"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Portal","Seventh Edition","Deckmasters","Eighth Edition","Ninth Edition","Tenth Edition","Magic 2010","Magic 2011","Duel Decks: Sorin vs. Tibalt","Duel Decks: Heroes vs. Monsters"],"number":"19"},{"layout":"normal","type":"Instant","types":["Instant"],"colors":["Red"],"name":"Shatter","originalType":"Instant","cmc":2,"rarity":"Special","artist":"Bryon Wackwitz","manaCost":"{1}{R}","text":"Destroy target artifact.","originalText":"Destroy target artifact.","flavor":"\"Let the past be the past. Do not call up that which you cannot put down. Destroy that which destroyed us, so long ago.\"\n\n—Sorine Relicbane, Soldevi Heretic","rulings":[{"date":"2004-10-04","text":"Regenerating artifacts can regenerate from this."}],"imageName":"shatter","foreignNames":[{"language":"Chinese Simplified","name":"粉碎"},{"language":"Chinese Traditional","name":"粉碎"},{"language":"French","name":"Fracasser"},{"language":"German","name":"Zersplittern"},{"language":"Italian","name":"Distruggi Artefatto"},{"language":"Japanese","name":"粉砕"},{"language":"Portuguese (Brazil)","name":"Estilhaçar"},{"language":"Russian","name":"Раскол"},{"language":"Spanish","name":"Romper"}],"legalities":{"Modern":"Legal","Extended":"Legal","Scars of Mirrodin Block":"Legal","Mirrodin Block":"Legal","Tempest Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Fifth Edition","Tempest","Classic Sixth Edition","Seventh Edition","Deckmasters","Eighth Edition","Mirrodin","Ninth Edition","Magic 2010","Scars of Mirrodin"],"number":"20"},{"layout":"normal","type":"Sorcery","types":["Sorcery"],"colors":["Black"],"name":"Soul Burn","originalType":"Sorcery","cmc":3,"rarity":"Special","artist":"Rob Alexander","manaCost":"{X}{2}{B}","text":"Spend only black and/or red mana on X.\n\nSoul Burn deals X damage to target creature or player. You gain life equal to the damage dealt, but not more than the amount of {B} spent on X, the player's life total before Soul Burn dealt damage, or the creature's toughness.","originalText":"Spend only black and/or red mana on X.\n\nSoul Burn deals X damage to target creature or player. You gain life equal to the damage dealt, but not more than the amount of {B} spent on X, the player's life total before Soul Burn dealt damage, or the creature's toughness.","rulings":[{"date":"2004-10-04","text":"Will give 1 life for each black mana used, but not more life than the amount of unprevented damage that is dealt."}],"imageName":"soul burn","foreignNames":[{"language":"French","name":"Brûlure des âmes"},{"language":"German","name":"Seelenfeuer"}],"legalities":{"Invasion Block":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Invasion","Deckmasters"],"number":"9"},{"layout":"normal","type":"Creature — Human Cleric Shaman","types":["Creature"],"colors":["Red"],"name":"Storm Shaman","subtypes":["Human","Cleric","Shaman"],"originalType":"Creature — Cleric","cmc":3,"rarity":"Special","artist":"Carol Heyer","power":"0","toughness":"4","manaCost":"{2}{R}","text":"{R}: Storm Shaman gets +1/+0 until end of turn.","originalText":"{R}: Storm Shaman gets +1/+0 until end of turn.","flavor":"\"Embrace the storm. Its voice shall echo within you, and its fire shall become your touch!\"\n\n—Lovisa Coldeyes, Balduvian chieftain","imageName":"storm shaman","foreignNames":[{"language":"French","name":"Shamane de l'orage"},{"language":"German","name":"Sturmschamane"}],"legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Seventh Edition","Deckmasters"],"number":"21a"},{"layout":"normal","type":"Land","types":["Land"],"name":"Sulfurous Springs","originalType":"Land","rarity":"Special","artist":"Phil Foglio","text":"{T}: Add {1} to your mana pool.\n\n{T}: Add {B} or {R} to your mana pool. Sulfurous Springs deals 1 damage to you.","originalText":"{T}: Add one colorless mana to your mana pool.\n\n{T}: Add {B} or {R} to your mana pool. Sulfurous Springs deals 1 damage to you.","imageName":"sulfurous springs","foreignNames":[{"language":"Chinese Simplified","name":"硫磺温泉"},{"language":"Chinese Traditional","name":"硫磺溫泉"},{"language":"French","name":"Sources sulfureuses"},{"language":"German","name":"Schwefelquellen"},{"language":"Italian","name":"Sorgenti Sulfuree"},{"language":"Japanese","name":"硫黄泉"},{"language":"Portuguese (Brazil)","name":"Fontes Sulfurosas"},{"language":"Russian","name":"Серные источники"},{"language":"Spanish","name":"Manantiales sulfurosos"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Classic Sixth Edition","Seventh Edition","Deckmasters","Ninth Edition","Tenth Edition"],"number":"40"},{"layout":"normal","supertypes":["Basic"],"type":"Basic Land — Swamp","types":["Land"],"name":"Swamp","subtypes":["Swamp"],"originalType":"Land","rarity":"Basic Land","artist":"Douglas Shuler","text":"B","originalText":"{B}","imageName":"swamp1","foreignNames":[{"language":"Chinese Simplified","name":"沼泽"},{"language":"Chinese Traditional","name":"沼澤"},{"language":"French","name":"Marais"},{"language":"German","name":"Sumpf"},{"language":"Italian","name":"Palude"},{"language":"Japanese","name":"沼"},{"language":"Korean","name":"늪"},{"language":"Portuguese (Brazil)","name":"Pântano"},{"language":"Russian","name":"Болото"},{"language":"Spanish","name":"Pantano"}],"legalities":{"Standard":"Legal","Modern":"Legal","Extended":"Legal","Theros Block":"Legal","Return to Ravnica Block":"Legal","Innistrad Block":"Legal","Scars of Mirrodin Block":"Legal","Zendikar Block":"Legal","Shards of Alara Block":"Legal","Lorwyn-Shadowmoor Block":"Legal","Time Spiral Block":"Legal","Ravnica Block":"Legal","Kamigawa Block":"Legal","Mirrodin Block":"Legal","Onslaught Block":"Legal","Odyssey Block":"Legal","Invasion Block":"Legal","Masques Block":"Legal","Urza Block":"Legal","Tempest Block":"Legal","Mirage Block":"Legal","Ice Age Block":"Legal","Un-Sets":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Tribal Wars Standard":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Limited Edition Alpha","Limited Edition Beta","Unlimited Edition","Revised Edition","Fourth Edition","Ice Age","Mirage","Introductory Two-Player Set","Fifth Edition","Portal","Tempest","Portal Second Age","Unglued","Urza's Saga","Anthologies","Classic Sixth Edition","Portal Three Kingdoms","Starter 1999","Mercadian Masques","Battle Royale Box Set","Starter 2000","Beatdown Box Set","Invasion","Seventh Edition","Odyssey","Deckmasters","Onslaught","Eighth Edition","Mirrodin","Champions of Kamigawa","Unhinged","Ninth Edition","Ravnica: City of Guilds","Time Spiral","Tenth Edition","Masters Edition","Lorwyn","Shadowmoor","Shards of Alara","Duel Decks: Divine vs. Demonic","Magic 2010","Planechase","Masters Edition III","Zendikar","Duel Decks: Garruk vs. Liliana","Premium Deck Series: Slivers","Duel Decks: Phyrexia vs. the Coalition","Rise of the Eldrazi","Archenemy","Magic 2011","Scars of Mirrodin","Mirrodin Besieged","New Phyrexia","Magic: The Gathering-Commander","Magic 2012","Duel Decks: Ajani vs. Nicol Bolas","Innistrad","Premium Deck Series: Graveborn","Avacyn Restored","Planechase 2012 Edition","Magic 2013","Duel Decks: Izzet vs. Golgari","Return to Ravnica","Duel Decks: Sorin vs. Tibalt","Magic 2014 Core Set","Theros","Commander 2013 Edition","Duel Decks: Jace vs. Vraska","Duels of the Planeswalkers","Rivals Quick Start Set"],"number":"42"},{"layout":"normal","type":"Land","types":["Land"],"name":"Underground River","originalType":"Land","rarity":"Special","artist":"NéNé Thomas","text":"{T}: Add {1} to your mana pool.\n\n{T}: Add {U} or {B} to your mana pool. Underground River deals 1 damage to you.","originalText":"{T}: Add one colorless mana to your mana pool.\n\n{T}: Add {U} or {B} to your mana pool. Underground River deals 1 damage to you.","imageName":"underground river","foreignNames":[{"language":"Chinese Simplified","name":"伏流"},{"language":"Chinese Traditional","name":"伏流"},{"language":"French","name":"Rivière souterraine"},{"language":"German","name":"Unterirdischer Fluss"},{"language":"Italian","name":"Fiume Sotterraneo"},{"language":"Japanese","name":"地底の大河"},{"language":"Portuguese (Brazil)","name":"Rio Subterrâneo"},{"language":"Russian","name":"Подземная река"},{"language":"Spanish","name":"Río subterráneo"}],"legalities":{"Modern":"Legal","Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Fifth Edition","Classic Sixth Edition","Seventh Edition","Deckmasters","Ninth Edition","Tenth Edition"],"number":"41"},{"layout":"normal","type":"Artifact Creature — Wall","types":["Artifact","Creature"],"name":"Walking Wall","subtypes":["Wall"],"originalType":"Artifact Creature","cmc":4,"rarity":"Special","artist":"Anthony S. Waters","power":"0","toughness":"6","manaCost":"{4}","text":"Defender\n\n{3}: Walking Wall gets +3/-1 until end of turn and can attack this turn as though it didn't have defender. Activate this ability only once each turn.","originalText":"(Walls can't attack.)\n\n{3}: Walking Wall gets +3/-1 until end of turn and may attack this turn as though it weren't a Wall. Play this ability only once each turn.","flavor":"\"The fortress is not what it seems.\"\n\n—Arcum Dagsson, Soldevi Machinist","imageName":"walking wall","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Deckmasters","Masters Edition"],"number":"38"},{"layout":"normal","type":"Creature — Spider","types":["Creature"],"colors":["Green"],"name":"Woolly Spider","subtypes":["Spider"],"originalType":"Creature — Spider","cmc":3,"rarity":"Special","artist":"Daniel Gelon","power":"2","toughness":"3","manaCost":"{1}{G}{G}","text":"Reach (This creature can block creatures with flying.)\n\nWhenever Woolly Spider blocks a creature with flying, Woolly Spider gets +0/+2 until end of turn.","originalText":"Woolly Spider may block as though it had flying.\n\nWhenever Woolly Spider blocks a creature with flying, Woolly Spider gets +0/+2 until end of turn.","flavor":"\"We need not fear the forces of the air; I've yet to see a Spider without an appetite.\"\n\n—Taaveti of Kelsinko, Elvish Hunter","imageName":"woolly spider","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Ice Age","Anthologies","Beatdown Box Set","Deckmasters","Masters Edition II"],"number":"30"},{"layout":"normal","type":"Creature — Treefolk","types":["Creature"],"colors":["Green"],"name":"Yavimaya Ancients","subtypes":["Treefolk"],"originalType":"Creature — Treefolk","cmc":5,"rarity":"Special","artist":"Quinton Hoover","power":"2","toughness":"7","manaCost":"{3}{G}{G}","text":"{G}: Yavimaya Ancients gets +1/-2 until end of turn.","originalText":"{G}: Yavimaya Ancients gets +1/-2 until end of turn.","flavor":"\"We orphans of Fyndhorn have found no welcome in this alient place.\"\n\n — Taaveti of Kelsinko, elvish hunter","imageName":"yavimaya ancients","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition II"],"number":"31a"},{"layout":"normal","type":"Creature — Insect","types":["Creature"],"colors":["Green"],"name":"Yavimaya Ants","subtypes":["Insect"],"originalType":"Creature — Swarm","cmc":4,"rarity":"Special","artist":"Pat Morrissey","power":"5","toughness":"1","manaCost":"{2}{G}{G}","text":"Trample, haste\n\nCumulative upkeep {G}{G} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)","originalText":"Trample; haste (This creature may attack and {T} the turn it comes under your control.)\n\nCumulative upkeep {G}{G} (At the beginning of your upkeep, put an age counter on this creature, then sacrifice it unless you pay {G}{G} for each age counter on it.)","flavor":"\"Few natural forces are as devastating as hunger.\"\n\n—Kaysa, Elder Druid of the Juniper Order","rulings":[{"date":"2008-10-01","text":"Paying cumulative upkeep is always optional. If it's not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can't be made. For example, if a permanent with \"cumulative upkeep {1}\" has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."}],"imageName":"yavimaya ants","legalities":{"Ice Age Block":"Legal","Legacy":"Legal","Vintage":"Legal","Freeform":"Legal","Prismatic":"Legal","Tribal Wars Legacy":"Legal","Classic":"Legal","Singleton 100":"Legal","Commander":"Legal"},"printings":["Alliances","Deckmasters","Masters Edition"],"number":"32"}]}
+{
+    "baseSetSize": 0,
+    "cards": [
+        {
+            "artist": "Ruth Thompson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Open the gates, and bid them enter.\" —Lim-Dûl, the Necromancer",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}{B}",
+            "name": "Abyssal Specter",
+            "number": "1",
+            "power": "2",
+            "printings": [
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "BRB",
+                "DDC",
+                "DKM",
+                "DPA",
+                "DVD",
+                "ICE",
+                "MM3",
+                "PS11"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Specter"
+            ],
+            "supertypes": [],
+            "text": "Flying\nWhenever Abyssal Specter deals damage to a player, that player discards a card.",
+            "toughness": "3",
+            "type": "Creature — Specter",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "5e2465d3-405d-487d-b6e9-d2ec8b920201"
+        },
+        {
+            "artist": "Mike Raabe",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}{B}",
+            "name": "Contagion",
+            "number": "2",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME1",
+                "PRM",
+                "WC97"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "You may pay 1 life and exile a black card from your hand rather than pay this spell's mana cost.\nDistribute two -2/-1 counters among one or two target creatures.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "94d0e916-26c5-4a27-9ea5-69120160b25b"
+        },
+        {
+            "artist": "Drew Tucker",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Will not the mountains quake and hills melt at the coming of the darkness? Share this vision with your enemies, Lim-Dûl, and they shall wither.\" —Leshrac, Walker of Night",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "name": "Dark Banishing",
+            "number": "3",
+            "printings": [
+                "7ED",
+                "8ED",
+                "9ED",
+                "CST",
+                "DDC",
+                "DKM",
+                "DVD",
+                "ICE",
+                "ME2",
+                "MIR",
+                "PSAL",
+                "PTC",
+                "TMP",
+                "TPR",
+                "WC03"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Destroy target nonblack creature. It can't be regenerated.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "a49acc0d-49a1-4b3e-b848-35febc4b761f"
+        },
+        {
+            "artist": "Justin Hampton",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Leshrac, my liege, grant me the power I am due.\" —Lim-Dûl, the Necromancer",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}",
+            "name": "Dark Ritual",
+            "number": "4",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "A25",
+                "BRB",
+                "BTD",
+                "CED",
+                "CEI",
+                "CST",
+                "DDC",
+                "DDE",
+                "DKM",
+                "DVD",
+                "FBB",
+                "G09",
+                "HOP",
+                "ICE",
+                "ITP",
+                "LEA",
+                "LEB",
+                "ME4",
+                "MIR",
+                "MMQ",
+                "MP2",
+                "PRM",
+                "PTC",
+                "RQS",
+                "SUM",
+                "TMP",
+                "TPR",
+                "USG",
+                "V13",
+                "VMA",
+                "WC01",
+                "WC99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Add {B}{B}{B}.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "d59811dd-7e9d-47a2-99f0-4e0cbd220a8f"
+        },
+        {
+            "artist": "Anson Maddocks",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Serve me, and live forever.\" —Lim-Dûl, the Necromancer",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "name": "Foul Familiar",
+            "number": "5",
+            "power": "3",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "The ability can only be activated while this card is on the battlefield."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Spirit"
+            ],
+            "supertypes": [],
+            "text": "Foul Familiar can't block.\n{B}, Pay 1 life: Return Foul Familiar to its owner's hand.",
+            "toughness": "1",
+            "type": "Creature — Spirit",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "1ce0ebd0-19ca-42e3-a5f7-ca5c6f7a2bda"
+        },
+        {
+            "artist": "Anson Maddocks",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"The Guard will forever stand ready. For them, death is merely an inconvenience, not an ending.\" —Chaeska, Keeper of Tresserhorn",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}{B}",
+            "name": "Lim-Dûl's High Guard (a)",
+            "number": "6a",
+            "power": "2",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Skeleton"
+            ],
+            "supertypes": [],
+            "text": "First strike\n{1}{B}: Regenerate Lim-Dûl's High Guard.",
+            "toughness": "1",
+            "type": "Creature — Skeleton",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a872ab74-1f75-4ed9-b517-e1ed04517009"
+        },
+        {
+            "artist": "Anson Maddocks",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"The Guard will forever stand ready. For them, death is merely an inconvenience, not an ending.\" —Chaeska, Keeper of Tresserhorn",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}{B}",
+            "name": "Lim-Dûl's High Guard (b)",
+            "number": "6b",
+            "power": "2",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Skeleton"
+            ],
+            "supertypes": [],
+            "text": "First strike\n{1}{B}: Regenerate Lim-Dûl's High Guard.",
+            "toughness": "1",
+            "type": "Creature — Skeleton",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "692c668d-3061-4bdf-921f-94af32b4878c"
+        },
+        {
+            "artist": "Mark Tedin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Banned",
+                "vintage": "Restricted"
+            },
+            "manaCost": "{B}{B}{B}",
+            "name": "Necropotence",
+            "number": "7",
+            "printings": [
+                "5ED",
+                "DKM",
+                "EMA",
+                "ICE",
+                "IMA",
+                "ME2",
+                "PTC",
+                "V09",
+                "VMA"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2017-11-17",
+                    "text": "If a discarded card isn’t put into your graveyard (due to an effect such as that of Obstinate Baloth) or leaves your graveyard (perhaps because another effect returned it to your hand), it won’t be exiled."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If you discard a card with madness and wish to cast it, Necropotence’s ability won’t exile that card. If you don’t wish to cast it, you choose whether it ends up exiled or in your graveyard."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "Necropotence’s last ability creates a delayed triggered ability that will put the exiled card into your hand. That ability still triggers even if Necropotence is removed from the battlefield before your end step."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Skip your draw step.\nWhenever you discard a card, exile that card from your graveyard.\nPay 1 life: Exile the top card of your library face down. Put that card into your hand at the beginning of your next end step.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "70511f69-8615-4e45-bd4e-76acfe9e4278"
+        },
+        {
+            "artist": "Scott Kirschner",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}",
+            "name": "Phantasmal Fiend (a)",
+            "number": "8a",
+            "power": "1",
+            "printings": [
+                "ALL",
+                "CST",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2005-11-01",
+                    "text": "Note that the wording “Effects that alter the creature’s power alter its toughness instead, and vice versa, this turn” has been removed."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Effects that switch power and toughness are always applied last when determining a creature’s power and toughness, even if other power/toughness-changing effects are created later in the turn. For example, if you activate Phantasmal Fiend’s first ability, it will become 2/4. Then if you activate its second ability, it will become 4/2. Then if you activate its first ability again, it will become 3/3."
+                },
+                {
+                    "date": "2013-04-15",
+                    "text": "Effects that switch power and toughness apply after all other effects that change power and/or toughness, regardless of which effect was created first."
+                },
+                {
+                    "date": "2013-04-15",
+                    "text": "Switching a creature’s power and toughness twice (or any even number of times) effectively returns the creature to the power and toughness it had before any switches."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Illusion"
+            ],
+            "supertypes": [],
+            "text": "{B}: Phantasmal Fiend gets +1/-1 until end of turn.\n{1}{U}: Switch Phantasmal Fiend's power and toughness until end of turn.",
+            "toughness": "5",
+            "type": "Creature — Illusion",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a327ec15-f654-4e17-8234-baeacb575ed7"
+        },
+        {
+            "artist": "Scott Kirschner",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}",
+            "name": "Phantasmal Fiend (b)",
+            "number": "8b",
+            "power": "1",
+            "printings": [
+                "ALL",
+                "CST",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2005-11-01",
+                    "text": "Note that the wording “Effects that alter the creature’s power alter its toughness instead, and vice versa, this turn” has been removed."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Effects that switch power and toughness are always applied last when determining a creature’s power and toughness, even if other power/toughness-changing effects are created later in the turn. For example, if you activate Phantasmal Fiend’s first ability, it will become 2/4. Then if you activate its second ability, it will become 4/2. Then if you activate its first ability again, it will become 3/3."
+                },
+                {
+                    "date": "2013-04-15",
+                    "text": "Effects that switch power and toughness apply after all other effects that change power and/or toughness, regardless of which effect was created first."
+                },
+                {
+                    "date": "2013-04-15",
+                    "text": "Switching a creature’s power and toughness twice (or any even number of times) effectively returns the creature to the power and toughness it had before any switches."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Illusion"
+            ],
+            "supertypes": [],
+            "text": "{B}: Phantasmal Fiend gets +1/-1 until end of turn.\n{1}{U}: Switch Phantasmal Fiend's power and toughness until end of turn.",
+            "toughness": "5",
+            "type": "Creature — Illusion",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "4f6c475a-a03e-4439-8cd0-51445fc2b711"
+        },
+        {
+            "artist": "Rob Alexander",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{2}{B}",
+            "name": "Soul Burn",
+            "number": "9",
+            "printings": [
+                "CST",
+                "DKM",
+                "ICE",
+                "INV",
+                "PTC"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "Will give 1 life for each black mana used, but not more life than the amount of unprevented damage that is dealt."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Spend only black and/or red mana on X.\nSoul Burn deals X damage to any target. You gain life equal to the damage dealt, but not more than the amount of {B} spent on X, the player's life total before the damage was dealt, the planeswalker's loyalty before the damage was dealt, or the creature's toughness.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "3a416b4f-a99f-4bd9-935a-85c9fd3c12d0"
+        },
+        {
+            "artist": "Brian Snõddy",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Peace will come only when we have taken Varchild's head.\" —Lovisa Coldeyes, Balduvian Chieftain",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R}{R}",
+            "name": "Balduvian Horde",
+            "number": "10",
+            "power": "5",
+            "printings": [
+                "6ED",
+                "A25",
+                "ALL",
+                "BTD",
+                "DKM",
+                "ME1",
+                "PRM",
+                "PWOR"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "You choose whether to discard or not on resolution. If not, then you sacrifice this card. You can choose to not discard even if you no longer control this card on resolution."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Barbarian"
+            ],
+            "supertypes": [],
+            "text": "When Balduvian Horde enters the battlefield, sacrifice it unless you discard a card at random.",
+            "toughness": "5",
+            "type": "Creature — Human Barbarian",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "34eb627d-d711-4c5b-a0b1-744ce0bb0cf0"
+        },
+        {
+            "artist": "Mark Tedin",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{R}",
+            "name": "Death Spark",
+            "number": "11",
+            "printings": [
+                "ALL",
+                "CST",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "A card is “directly above” another card in your graveyard if it was put into that graveyard later and there are no cards in between the two."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Players may not rearrange the cards in their graveyards."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "If an effect or rule puts two or more cards into the same graveyard at the same time, the owner of those cards may arrange them in any order."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "The last thing that happens to a resolving instant or sorcery spell is that it’s put into its owner’s graveyard. Example: You cast Wrath of God. All creatures on the battlefield are destroyed. You arrange all the cards put into your graveyard this way in any order you want. The other players in the game do the same to the cards that are put into their graveyards. Then you put Wrath of God into your graveyard, on top of the other cards."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Say you’re the owner of both a permanent and an Aura that’s attached to it. If both the permanent and the Aura are destroyed at the same time (by Akroma’s Vengeance, for example), you decide the order they’re put into your graveyard. If just the enchanted permanent is destroyed, it’s put into your graveyard first. Then, after state-based actions are checked, the Aura (which is no longer attached to anything) is put into your graveyard on top of it."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Death Spark deals 1 damage to any target.\nAt the beginning of your upkeep, if Death Spark is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return Death Spark to your hand.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "a110f75e-3870-4437-92e2-b4655baaa7b9"
+        },
+        {
+            "artist": "Daniel Gelon",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "If only it had three brains, too.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R}{R}",
+            "name": "Goblin Mutant",
+            "number": "12",
+            "power": "5",
+            "printings": [
+                "ATH",
+                "DKM",
+                "ICE",
+                "ME1"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Goblin",
+                "Mutant"
+            ],
+            "supertypes": [],
+            "text": "Trample\nGoblin Mutant can't attack if defending player controls an untapped creature with power 3 or greater.\nGoblin Mutant can't block creatures with power 3 or greater.",
+            "toughness": "3",
+            "type": "Creature — Goblin Mutant",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "8ae01cc1-e339-4b3e-a482-ef33bebbf04f"
+        },
+        {
+            "artist": "Amy Weber",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Guerrilla Tactics (a)",
+            "number": "13a",
+            "printings": [
+                "10E",
+                "8ED",
+                "9ED",
+                "ALL",
+                "DKM"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "If it is discarded, the damage done by it is done by this card due to an ability and not by a spell."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "The second ability will trigger even on an optional discard caused by an opponent."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "Discarding as a cost to cast a spell will not trigger the ability. Only discarding as an effect will trigger the ability."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Guerrilla Tactics deals 2 damage to any target.\nWhen a spell or ability an opponent controls causes you to discard Guerrilla Tactics, Guerrilla Tactics deals 4 damage to any target.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "0da436c2-5cc9-49a6-bbf0-6fa3133a56c5"
+        },
+        {
+            "artist": "Randy Asplund-Faith",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Guerrilla Tactics (b)",
+            "number": "13b",
+            "printings": [
+                "10E",
+                "8ED",
+                "9ED",
+                "ALL",
+                "DKM"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "If it is discarded, the damage done by it is done by this card due to an ability and not by a spell."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "The second ability will trigger even on an optional discard caused by an opponent."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "Discarding as a cost to cast a spell will not trigger the ability. Only discarding as an effect will trigger the ability."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Guerrilla Tactics deals 2 damage to any target.\nWhen a spell or ability an opponent controls causes you to discard Guerrilla Tactics, Guerrilla Tactics deals 4 damage to any target.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "bc0eefcb-2201-449a-bcbe-e4f9396e45c1"
+        },
+        {
+            "artist": "Mark Poole",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"Yes, I think 'toast' is an appropriate description.\" —Jaya Ballard, Task Mage",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Incinerate (a)",
+            "number": "14",
+            "printings": [
+                "10E",
+                "5ED",
+                "CST",
+                "DD2",
+                "DKM",
+                "DPA",
+                "ICE",
+                "JVC",
+                "M12",
+                "ME2",
+                "MIR",
+                "P08",
+                "PLGM",
+                "PRM",
+                "PS11",
+                "PTC",
+                "WC97",
+                "WC98"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2007-07-15",
+                    "text": "Regeneration abilities that would affect that creature can still be activated; they just won’t do anything. The creature can’t be regenerated for any reason, even if an effect other than Incinerate would deal lethal damage to it or otherwise destroy it."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Incinerate deals 3 damage to any target. A creature dealt damage this way can't be regenerated this turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "749927a8-3bf3-43de-9fc5-15d31603c3db"
+        },
+        {
+            "artist": "Mark Poole",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"Yes, I think 'toast' is an appropriate description.\" —Jaya Ballard, Task Mage",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Incinerate (b)",
+            "number": "14s",
+            "printings": [
+                "10E",
+                "5ED",
+                "CST",
+                "DD2",
+                "DKM",
+                "DPA",
+                "ICE",
+                "JVC",
+                "M12",
+                "ME2",
+                "MIR",
+                "P08",
+                "PLGM",
+                "PRM",
+                "PS11",
+                "PTC",
+                "WC97",
+                "WC98"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2007-07-15",
+                    "text": "Regeneration abilities that would affect that creature can still be activated; they just won’t do anything. The creature can’t be regenerated for any reason, even if an effect other than Incinerate would deal lethal damage to it or otherwise destroy it."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Incinerate deals 3 damage to any target. A creature dealt damage this way can't be regenerated this turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "38df2956-8588-4da7-b092-c0ea752b2979"
+        },
+        {
+            "artist": "Richard Thomas",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "\"I was shocked when I first saw the aftermath of the Yavimaya Valley disaster. The raging waters had swept away trees, bridges, and even houses. My healers had much work to do.\" —Halvor Arenson, Kjeldoran Priest",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{R}{R}",
+            "name": "Jokulhaups",
+            "number": "15",
+            "printings": [
+                "5ED",
+                "6ED",
+                "DKM",
+                "ICE",
+                "ME1"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Destroy all artifacts, creatures, and lands. They can't be regenerated.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "e76168ec-d2ba-4633-95f6-8fb06444ea0f"
+        },
+        {
+            "artist": "Tom Wänerstrand",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Overkill? This isn't a game of Kick-the-Ouphe!\" —Jaya Ballard, Task Mage",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{R}",
+            "name": "Lava Burst",
+            "number": "16",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Prevention and redirection effects will have no effect on damage dealt by Lava Burst to a creature. However, they will work on damage that Lava Burst would deal to a player."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "A creature dealt damage by Lava Burst may be regenerated."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Lava Burst deals X damage to any target. If Lava Burst would deal damage to a creature, that damage can't be prevented or dealt instead to another permanent or player.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "5585087b-85b0-4e42-a6a5-33ef1b0b4ba4"
+        },
+        {
+            "artist": "Dan Frazier",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"It's a thankless job, and you'll probably die in an explosion. But the pay is pretty good.\" —Toothlicker Harj, Orcish Captain",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}{R}",
+            "name": "Orcish Cannoneers",
+            "number": "17",
+            "power": "1",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Orc",
+                "Warrior"
+            ],
+            "supertypes": [],
+            "text": "{T}: Orcish Cannoneers deals 2 damage to any target and 3 damage to you.",
+            "toughness": "3",
+            "type": "Creature — Orc Warrior",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "8c8f69b2-ccd2-4ba3-b6d9-127163b02aca"
+        },
+        {
+            "artist": "Richard Kane Ferguson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Were they to reduce us to ash, we would clog their throats and sting their eyes in payment.\" —Lovisa Coldeyes, Balduvian Chieftain",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}{R}",
+            "name": "Pillage",
+            "number": "18",
+            "printings": [
+                "6ED",
+                "7ED",
+                "A25",
+                "ALL",
+                "DKM",
+                "ME2",
+                "PAL00",
+                "PD2",
+                "PRM",
+                "WC97",
+                "WC99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Destroy target artifact or land. It can't be regenerated.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "5886cdc7-fb7b-4426-91f3-c10e968b5c3f"
+        },
+        {
+            "artist": "Pat Morrissey",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"Leaves more room for the big ones to fight in, you know.\" —Jaya Ballard, Task Mage",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Pyroclasm",
+            "number": "19",
+            "printings": [
+                "10E",
+                "7ED",
+                "8ED",
+                "9ED",
+                "A25",
+                "DDK",
+                "DDL",
+                "DKM",
+                "ICE",
+                "M10",
+                "M11",
+                "MM3",
+                "P06",
+                "POR",
+                "PRM",
+                "PSAL",
+                "WC01",
+                "WC03",
+                "WC04"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Pyroclasm deals 2 damage to each creature.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "9003f168-0bf3-4655-ac2d-d1a56e2327d9"
+        },
+        {
+            "artist": "Bryon Wackwitz",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"Let the past be the past. Do not call up that which you cannot put down. Destroy that which destroyed us, so long ago.\" —Sorine Relicbane, Soldevi Heretic",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}",
+            "name": "Shatter",
+            "number": "20",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "9ED",
+                "CED",
+                "CEI",
+                "DKM",
+                "FBB",
+                "ICE",
+                "KTK",
+                "LEA",
+                "LEB",
+                "M10",
+                "MRD",
+                "PTC",
+                "RIX",
+                "SOM",
+                "SUM",
+                "TMP",
+                "TPR"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "Regenerating artifacts can regenerate from this."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Destroy target artifact.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "c7641b57-a224-4a55-94ed-135e7c6da0bf"
+        },
+        {
+            "artist": "Carol Heyer",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Embrace the storm. Its voice shall echo within you, and its fire shall become your touch!\" —Lovisa Coldeyes, Balduvian chieftain",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R}",
+            "name": "Storm Shaman (a)",
+            "number": "21a",
+            "power": "0",
+            "printings": [
+                "7ED",
+                "ALL",
+                "DKM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Cleric",
+                "Shaman"
+            ],
+            "supertypes": [],
+            "text": "{R}: Storm Shaman gets +1/+0 until end of turn.",
+            "toughness": "4",
+            "type": "Creature — Human Cleric Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "e08b23e1-a36c-4ca7-b7f6-cac03d6a6dd9"
+        },
+        {
+            "artist": "Carol Heyer",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Embrace the storm. Its voice shall echo within you, and its fire shall become your touch!\" —Lovisa Coldeyes, Balduvian chieftain",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R}",
+            "name": "Storm Shaman (b)",
+            "number": "21b",
+            "power": "0",
+            "printings": [
+                "7ED",
+                "ALL",
+                "DKM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Cleric",
+                "Shaman"
+            ],
+            "supertypes": [],
+            "text": "{R}: Storm Shaman gets +1/+0 until end of turn.",
+            "toughness": "4",
+            "type": "Creature — Human Cleric Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "86a62e94-7681-4124-8248-14c950e52c51"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"They're a hardy bunch, but I'd still bet that they just slept through the worst of the cold times.\" —Disa the Restless, journal entry",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "name": "Balduvian Bears",
+            "number": "22",
+            "power": "2",
+            "printings": [
+                "DKM",
+                "ICE"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Bear"
+            ],
+            "supertypes": [],
+            "text": "",
+            "toughness": "2",
+            "type": "Creature — Bear",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "662dc886-ce6b-4db1-a806-cc0d4fc504f6"
+        },
+        {
+            "artist": "Jeff A. Menges",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{G}{G}",
+            "name": "Bounty of the Hunt",
+            "number": "23",
+            "printings": [
+                "ALL",
+                "CST",
+                "DKM",
+                "ME2",
+                "WC97"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "You may exile a green card from your hand rather than pay this spell's mana cost.\nDistribute three +1/+1 counters among one, two, or three target creatures. For each +1/+1 counter you put on a creature this way, remove a +1/+1 counter from that creature at the beginning of the next cleanup step.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "3c4c507a-34dd-41bd-89b6-8cefd4b60f93"
+        },
+        {
+            "artist": "Susan Van Camp",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{G}{G}",
+            "name": "Elvish Bard",
+            "number": "24",
+            "power": "2",
+            "printings": [
+                "9ED",
+                "ALL",
+                "DKM"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Elf",
+                "Shaman"
+            ],
+            "supertypes": [],
+            "text": "All creatures able to block Elvish Bard do so.",
+            "toughness": "4",
+            "type": "Creature — Elf Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "fdaad5e4-1e25-4c6d-b1b4-6d1a86272581"
+        },
+        {
+            "artist": "NéNé Thomas & Catherine Buck",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"Our friends of the forest take many forms, yet all serve the will of Freyalise.\" —Laina of the Elvish Council",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}",
+            "name": "Folk of the Pines",
+            "number": "25",
+            "power": "2",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Dryad"
+            ],
+            "supertypes": [],
+            "text": "{1}{G}: Folk of the Pines gets +1/+0 until end of turn.",
+            "toughness": "5",
+            "type": "Creature — Dryad",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "b39b4626-71d3-422d-9575-87f4298c8c0b"
+        },
+        {
+            "artist": "Justin Hampton",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Living side by side with the Elves for so long leaves me with no doubt that we serve the same goddess.\" —Kolbjörn, Elder Druid of the Juniper Order",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "name": "Fyndhorn Elves",
+            "number": "26",
+            "power": "1",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME1",
+                "PRM",
+                "PTC",
+                "V13",
+                "VMA",
+                "WC97"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Elf",
+                "Druid"
+            ],
+            "supertypes": [],
+            "text": "{T}: Add {G}.",
+            "toughness": "1",
+            "type": "Creature — Elf Druid",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "e30053d3-f6b2-4f8c-b24e-9ed518c25bfd"
+        },
+        {
+            "artist": "Allen Williams",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Here in Fyndhorn, the goddess Freyalise is generous to her children.\" —Kolbjörn, Elder Druid of the Juniper Order",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "name": "Giant Growth",
+            "number": "27",
+            "printings": [
+                "10E",
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "9ED",
+                "A25",
+                "ATH",
+                "BBD",
+                "BRB",
+                "BTD",
+                "CED",
+                "CEI",
+                "DD1",
+                "DDD",
+                "DKM",
+                "DPA",
+                "E02",
+                "EVG",
+                "FBB",
+                "FNM",
+                "GVL",
+                "ICE",
+                "LEA",
+                "LEB",
+                "M10",
+                "M11",
+                "M14",
+                "ME2",
+                "ME3",
+                "ME4",
+                "P06",
+                "PJJT",
+                "PRM",
+                "PS11",
+                "PSUS",
+                "RTR",
+                "S00",
+                "SUM",
+                "WC97",
+                "WC99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Target creature gets +3/+3 until end of turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "aa028813-82dc-4121-b105-d7d5e926f68f"
+        },
+        {
+            "artist": "Cornelius Brudi",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"This was quite possibly the least pleasant occurrence on the entire expedition.\" —Disa the Restless, journal entry",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{G}",
+            "name": "Hurricane",
+            "number": "28",
+            "printings": [
+                "10E",
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "ATH",
+                "BRB",
+                "CED",
+                "CEI",
+                "DKM",
+                "FBB",
+                "ICE",
+                "LEA",
+                "LEB",
+                "P02",
+                "POR",
+                "PS11",
+                "PTC",
+                "SUM",
+                "WC99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "Whether or not a creature has flying is only checked on resolution."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "Hurricane deals X damage to each creature with flying and each player.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "d2891f77-00ad-45f1-aab6-164c081e2be9"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Ach! Hans, run! It's the Lhurgoyf!\" —Saffi Eriksdotter, last words",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "name": "Lhurgoyf",
+            "number": "29",
+            "power": "*",
+            "printings": [
+                "5ED",
+                "8ED",
+                "BRB",
+                "CM2",
+                "CMD",
+                "DKM",
+                "ICE",
+                "WC97"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Lhurgoyf"
+            ],
+            "supertypes": [],
+            "text": "Lhurgoyf's power is equal to the number of creature cards in all graveyards and its toughness is equal to that number plus 1.",
+            "toughness": "1+*",
+            "type": "Creature — Lhurgoyf",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "4c3c1846-0fff-41bf-8eea-4d120dcfa92f"
+        },
+        {
+            "artist": "Daniel Gelon",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"We need not fear the forces of the air; I've yet to see a Spider without an appetite.\" —Taaveti of Kelsinko, Elvish Hunter",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}{G}",
+            "name": "Woolly Spider",
+            "number": "30",
+            "power": "2",
+            "printings": [
+                "ATH",
+                "BTD",
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Spider"
+            ],
+            "supertypes": [],
+            "text": "Reach (This creature can block creatures with flying.)\nWhenever Woolly Spider blocks a creature with flying, Woolly Spider gets +0/+2 until end of turn.",
+            "toughness": "3",
+            "type": "Creature — Spider",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "9c5a655b-dc0a-4466-aff3-8f17f1600942"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"We orphans of Fyndhorn have found no welcome in this alient place.\" —Taaveti of Kelsinko, elvish hunter",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{G}{G}",
+            "name": "Yavimaya Ancients (a)",
+            "number": "31a",
+            "power": "2",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Treefolk"
+            ],
+            "supertypes": [],
+            "text": "{G}: Yavimaya Ancients gets +1/-2 until end of turn.",
+            "toughness": "7",
+            "type": "Creature — Treefolk",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "9c80412d-f20b-4139-9608-e7878880b531"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"We orphans of Fyndhorn have found no welcome in this alient place.\" —Taaveti of Kelsinko, elvish hunter",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{G}{G}",
+            "name": "Yavimaya Ancients (b)",
+            "number": "31b",
+            "power": "2",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME2"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Treefolk"
+            ],
+            "supertypes": [],
+            "text": "{G}: Yavimaya Ancients gets +1/-2 until end of turn.",
+            "toughness": "7",
+            "type": "Creature — Treefolk",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "df3c2df9-a6cf-400b-9bac-9a68269ce58c"
+        },
+        {
+            "artist": "Pat Morrissey",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Few natural forces are as devastating as hunger.\" —Kaysa, Elder Druid of the Juniper Order",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "name": "Yavimaya Ants",
+            "number": "32",
+            "power": "5",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME1"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Insect"
+            ],
+            "supertypes": [],
+            "text": "Trample, haste\nCumulative upkeep {G}{G} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
+            "toughness": "1",
+            "type": "Creature — Insect",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "520c8068-1da8-480b-93fe-1e609476daa9"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [
+                "G",
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"So large and so quiet—a combination best avoided.\" —Disa the Restless, journal entry",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{R}{G}",
+            "name": "Giant Trap Door Spider",
+            "number": "33",
+            "power": "2",
+            "printings": [
+                "CST",
+                "DKM",
+                "ICE",
+                "ME2"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "If Giant Trap Door Spider leaves the battlefield before its ability resolves, the ability will still resolve as normal. The targeted creature will be exiled."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "If the targeted creature leaves the battlefield (or otherwise becomes an illegal target) before the ability resolves, the ability won’t resolve. Giant Trap Door Spider will remain on the battlefield."
+                }
+            ],
+            "starter": true,
+            "subtypes": [
+                "Spider"
+            ],
+            "supertypes": [],
+            "text": "{1}{R}{G}, {T}: Exile Giant Trap Door Spider and target creature without flying that's attacking you.",
+            "toughness": "3",
+            "type": "Creature — Spider",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "2f108d7f-4db8-4295-8234-f86e3def0f15"
+        },
+        {
+            "artist": "Amy Weber",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}",
+            "name": "Barbed Sextant",
+            "number": "34",
+            "printings": [
+                "5ED",
+                "CST",
+                "DKM",
+                "ICE",
+                "ME2",
+                "PTC"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{1}, {T}, Sacrifice Barbed Sextant: Add one mana of any color. Draw a card at the beginning of the next turn's upkeep.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "9ebde2cc-480d-4425-915a-ddb2c043a573"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}",
+            "name": "Elkin Bottle",
+            "number": "35",
+            "printings": [
+                "5ED",
+                "DKM",
+                "ICE",
+                "ME2",
+                "PTC"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "This is not considered to be drawing a card."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "If the Bottle leaves the battlefield or your control, the cards remain waiting until played or until the beginning of your next upkeep. The card is in the “Exile” zone."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "The card is not part of your hand in any way. You can’t be forced to discard it due to a discard from hand effect, and you can’t discard it to pay a cost."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "To “play a card” is to either cast a spell or to put a land onto the battlefield using the main phase special action."
+                },
+                {
+                    "date": "2008-08-01",
+                    "text": "If you do not play the card before your next upkeep, it remains exiled; you just lose the ability to play it."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "The exiled card is played using the normal timing rules for its card type, as well as any other applicable restrictions such as “Cast [this card] only during combat.” For example, you can’t play the card during an opponent’s turn unless it’s an instant or has flash. Similarly, if the exiled card is a land, you can’t play it if you’ve already played a land that turn. If it’s a nonland card, you’ll have to pay its mana cost. The only thing that’s different is you’re playing it from the Exile zone."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{3}, {T}: Exile the top card of your library. Until the beginning of your next upkeep, you may play that card.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "c8b8a286-26cc-4080-82a5-553c16a9b298"
+        },
+        {
+            "artist": "Amy Weber",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"The scavengers who first found it called it the 'Bone Crank.' Not a bad name, I'd say.\" —Arcum Dagsson, Soldevi Machinist",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}",
+            "name": "Icy Manipulator (a)",
+            "number": "36",
+            "printings": [
+                "10E",
+                "2ED",
+                "9ED",
+                "CED",
+                "CEI",
+                "DDH",
+                "DKM",
+                "DOM",
+                "F05",
+                "ICE",
+                "LEA",
+                "LEB",
+                "ME4",
+                "MRD",
+                "PRM",
+                "PTC"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2018-04-27",
+                    "text": "Once a player announces that they’re casting a spell or activating an ability, no player may take other actions until the spell or ability has been paid for. Notably, other players can’t try to tap that player’s permanents to stop them from paying {T} or to stop them from producing enough mana."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{1}, {T}: Tap target artifact, creature, or land.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "c1709854-3647-4482-8495-fba5703ad6ec"
+        },
+        {
+            "artist": "Amy Weber",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"The scavengers who first found it called it the 'Bone Crank.' Not a bad name, I'd say.\" —Arcum Dagsson, Soldevi Machinist",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}",
+            "name": "Icy Manipulator (b)",
+            "number": "36s",
+            "printings": [
+                "10E",
+                "2ED",
+                "9ED",
+                "CED",
+                "CEI",
+                "DDH",
+                "DKM",
+                "DOM",
+                "F05",
+                "ICE",
+                "LEA",
+                "LEB",
+                "ME4",
+                "MRD",
+                "PRM",
+                "PTC"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2018-04-27",
+                    "text": "Once a player announces that they’re casting a spell or activating an ability, no player may take other actions until the spell or ability has been paid for. Notably, other players can’t try to tap that player’s permanents to stop them from paying {T} or to stop them from producing enough mana."
+                }
+            ],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{1}, {T}: Tap target artifact, creature, or land.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "f4e5992d-22c2-4f9c-93db-2dc1e71f5672"
+        },
+        {
+            "artist": "Bill Sienkiewicz",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Deal with the spawn of Phyrexia cautiously; only with time may we control them.\" —Arcum Dagsson, Soldevi Machinist",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}",
+            "name": "Phyrexian War Beast (a)",
+            "number": "37a",
+            "power": "3",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME1"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "text": "When Phyrexian War Beast leaves the battlefield, sacrifice a land and Phyrexian War Beast deals 1 damage to you.",
+            "toughness": "4",
+            "type": "Artifact Creature — Beast",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "ef20bb8a-9aa1-4323-a047-21ecbe57d885"
+        },
+        {
+            "artist": "Bill Sienkiewicz",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Deal with the spawn of Phyrexia cautiously; only with time may we control them.\" —Arcum Dagsson, Soldevi Machinist",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}",
+            "name": "Phyrexian War Beast (b)",
+            "number": "37b",
+            "power": "3",
+            "printings": [
+                "ALL",
+                "DKM",
+                "ME1"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "text": "When Phyrexian War Beast leaves the battlefield, sacrifice a land and Phyrexian War Beast deals 1 damage to you.",
+            "toughness": "4",
+            "type": "Artifact Creature — Beast",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "709ffe6d-8e04-4749-92c3-f8b5a3b6ce33"
+        },
+        {
+            "artist": "Anthony S. Waters",
+            "borderColor": "white",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"The fortress is not what it seems.\" —Arcum Dagsson, Soldevi Machinist",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}",
+            "name": "Walking Wall",
+            "number": "38",
+            "power": "0",
+            "printings": [
+                "DKM",
+                "ICE",
+                "ME1"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Wall"
+            ],
+            "supertypes": [],
+            "text": "Defender\n{3}: Walking Wall gets +3/-1 until end of turn and can attack this turn as though it didn't have defender. Activate this ability only once each turn.",
+            "toughness": "6",
+            "type": "Artifact Creature — Wall",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "d80ab112-032a-41e5-a6b8-82dc9b389b02"
+        },
+        {
+            "artist": "Nicola Leonard",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Karplusan Forest",
+            "number": "39",
+            "printings": [
+                "10E",
+                "5ED",
+                "6ED",
+                "7ED",
+                "9ED",
+                "C16",
+                "DKM",
+                "ICE",
+                "PTC",
+                "WC00",
+                "WC01",
+                "WC02",
+                "WC98"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{T}: Add {C}.\n{T}: Add {R} or {G}. Karplusan Forest deals 1 damage to you.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "3c7740b9-f2a9-40fc-b865-ce040f947212"
+        },
+        {
+            "artist": "Phil Foglio",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Sulfurous Springs",
+            "number": "40",
+            "printings": [
+                "10E",
+                "5ED",
+                "6ED",
+                "7ED",
+                "9ED",
+                "DKM",
+                "ICE",
+                "PTC",
+                "WC01",
+                "WC97"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{T}: Add {C}.\n{T}: Add {B} or {R}. Sulfurous Springs deals 1 damage to you.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "a5812d36-b81d-496f-b855-ac2dfc68682a"
+        },
+        {
+            "artist": "NéNé Thomas",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Underground River",
+            "number": "41",
+            "printings": [
+                "10E",
+                "5ED",
+                "6ED",
+                "7ED",
+                "9ED",
+                "C16",
+                "CM2",
+                "DKM",
+                "ICE",
+                "WC01",
+                "WC02",
+                "WC97",
+                "WC98"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "text": "{T}: Add {C}.\n{T}: Add {U} or {B}. Underground River deals 1 damage to you.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "fd57fe1d-257a-4440-92e5-604c830a5af6"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Swamp",
+            "number": "42",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "0ca85e6a-8440-4e3f-8a5c-50e31ee5ec72"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Swamp",
+            "number": "43",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "eb164225-2044-47c1-b9b5-e1f8c29c48c4"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Swamp",
+            "number": "44",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c07f510d-452c-435a-ac50-389113ad2503"
+        },
+        {
+            "artist": "Tom Wänerstrand",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Mountain",
+            "number": "45",
+            "printings": [
+                "AKH",
+                "AVR",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDL",
+                "DDN",
+                "DDP",
+                "DDS",
+                "DDT",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "JVC",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Mountain"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {R}.)",
+            "type": "Basic Land — Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "32c95782-bdce-4b59-a4f4-32b25726a4c2"
+        },
+        {
+            "artist": "Tom Wänerstrand",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Mountain",
+            "number": "46",
+            "printings": [
+                "AKH",
+                "AVR",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDL",
+                "DDN",
+                "DDP",
+                "DDS",
+                "DDT",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "JVC",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Mountain"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {R}.)",
+            "type": "Basic Land — Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c000d567-0db9-4ec5-b90d-97f12822332f"
+        },
+        {
+            "artist": "Tom Wänerstrand",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Mountain",
+            "number": "47",
+            "printings": [
+                "AKH",
+                "AVR",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDL",
+                "DDN",
+                "DDP",
+                "DDS",
+                "DDT",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "JVC",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Mountain"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {R}.)",
+            "type": "Basic Land — Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "aa7bdca9-985e-42e9-be14-f6769e474a21"
+        },
+        {
+            "artist": "Pat Morrissey",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Forest",
+            "number": "48",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "5bebc54f-e51e-4c98-8ecf-790d37a5c637"
+        },
+        {
+            "artist": "Pat Morrissey",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Forest",
+            "number": "49",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "33bf5c9d-3b64-4625-b8ab-b690df0eeeff"
+        },
+        {
+            "artist": "Pat Morrissey",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "isReserved": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "name": "Forest",
+            "number": "50",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PGP17",
+                "PRM",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "431f2031-7eb1-4bae-bec0-b85887c8809f"
+        }
+    ],
+    "code": "dkm",
+    "meta": {
+        "date": "2018-11-11",
+        "version": "4.1.0"
+    },
+    "mtgoCode": null,
+    "name": "Deckmasters",
+    "releaseDate": "2001-12-01",
+    "tokens": [],
+    "totalSetSize": 58,
+    "type": "box"
+}
