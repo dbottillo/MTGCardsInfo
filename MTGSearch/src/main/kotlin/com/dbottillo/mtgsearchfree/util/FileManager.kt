@@ -100,11 +100,11 @@ private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard
     writer.append("//")
     writer.append(name)
     writer.append("\n")
-    for ((_, name, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in cards) {
-        if (isSideboard) {
+    for (card in cards) {
+        if (card.isSideboard) {
             writer.append("SB: ")
         }
-        writer.append(quantity.toString())
+        writer.append(card.quantity.toString())
         writer.append(" ")
         writer.append(name)
         writer.append("\n")

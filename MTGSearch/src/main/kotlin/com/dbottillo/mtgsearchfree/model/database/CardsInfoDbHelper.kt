@@ -72,6 +72,9 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_COLORS_IDENTITY)
         }
+        if (!columns.contains(CardDataSource.COLUMNS.UUID.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_UUID)
+        }
     }
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
@@ -104,4 +107,4 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 }
 
-private const val DATABASE_VERSION = 8
+private const val DATABASE_VERSION = 9

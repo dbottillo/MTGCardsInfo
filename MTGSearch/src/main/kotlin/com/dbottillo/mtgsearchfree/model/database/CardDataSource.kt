@@ -64,7 +64,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         PRINTINGS("printings", "TEXT"),
         LEGALITIES("legalities", "TEXT"),
         ORIGINAL_TEXT("originalText", "TEXT"),
-        COLORS_IDENTITY("colorIdentity", "TEXT")
+        COLORS_IDENTITY("colorIdentity", "TEXT"),
+        UUID("uuid", "TEXT")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -171,6 +172,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
             values.put(COLUMNS.LEGALITIES.noun, legalitiesJ.toString())
         }
+        values.put(COLUMNS.UUID.noun, card.uuid)
 
         return values
     }
@@ -336,6 +338,10 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
         }
 
+        if (cursor.getColumnIndex(COLUMNS.UUID.noun) != -1) {
+            card.uuid = cursor.getString(cursor.getColumnIndex(COLUMNS.UUID.noun))
+        }
+
         return card
     }
 
@@ -402,28 +408,38 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 TABLE + " ADD COLUMN " +
                 COLUMNS.COLORS_IDENTITY.noun + " " + COLUMNS.COLORS_IDENTITY.type)
 
+        internal val SQL_ADD_COLUMN_UUID = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.UUID.noun + " " + COLUMNS.UUID.type)
+
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.COLORS_IDENTITY) {
+                if (column != COLUMNS.UUID) {
                     builder.append(',')
                 }
             }
             return builder.append(')').toString()
         }
 
+        private fun getLastColumn(version: Int): CardDataSource.COLUMNS {
+            return when {
+                version < TWO -> COLUMNS.SET_NAME
+                version < THREE -> COLUMNS.LAYOUT
+                version < SEVEN -> COLUMNS.NUMBER
+                version < EIGTH -> COLUMNS.ORIGINAL_TEXT
+                version < NINE -> COLUMNS.COLORS_IDENTITY
+                else -> COLUMNS.ORIGINAL_TEXT
+            }
+        }
+
         @VisibleForTesting
         fun generateCreateTable(version: Int): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
-            var lastColumn = COLUMNS.ORIGINAL_TEXT
-            when {
-                version < 2 -> lastColumn = COLUMNS.SET_NAME
-                version < 3 -> lastColumn = COLUMNS.LAYOUT
-                version < 7 -> lastColumn = COLUMNS.NUMBER
-            }
+            val lastColumn = getLastColumn(version)
             for (column in COLUMNS.values()) {
                 var addColumn = true
                 if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
@@ -435,7 +451,9 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                                 column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
                                 column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT && version <= 6) {
                     addColumn = false
-                } else if (column == COLUMNS.COLORS_IDENTITY && version <= 7) {
+                } else if (column == COLUMNS.COLORS_IDENTITY && version <= SEVEN) {
+                    addColumn = false
+                } else if (column == COLUMNS.UUID && version <= NINE) {
                     addColumn = false
                 }
                 if (addColumn) {
@@ -449,3 +467,9 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         }
     }
 }
+
+private const val TWO = 2
+private const val THREE = 3
+private const val SEVEN = 7
+private const val EIGTH = 8
+private const val NINE = 9

@@ -25,7 +25,7 @@ class CardsLuckyPresenterImpl(
     override fun init(view: CardsLuckyView, bundle: Bundle?, intent: Intent?) {
         this.view = view
 
-        cardsInteractor.loadIdFav().subscribe({
+        cardsInteractor.loadIdFav().subscribe {
             favs = it.toMutableList()
 
             var idCard: Int? = null
@@ -48,7 +48,7 @@ class CardsLuckyPresenterImpl(
             }
 
             loadMoreCards()
-        })
+        }
     }
 
     private fun loadMoreCards() {

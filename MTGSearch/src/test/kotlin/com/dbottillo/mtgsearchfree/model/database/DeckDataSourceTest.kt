@@ -264,19 +264,19 @@ class DeckDataSourceTest {
         assertThat(name, `is`("deck"))
         val deckCards = underTest.getCards(deckId)
         assertThat(deckCards.size, `is`(cardNames.size))
-        for ((_, name1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in deckCards) {
+        for (card in deckCards) {
             var found = false
             var index = 0
             for (i in cardNames.indices) {
-                if (name1.contains(cardNames[i])) {
+                if (card.name.contains(cardNames[i])) {
                     found = true
                     index = i
                     break
                 }
             }
             assertTrue(found)
-            assertThat(quantity, `is`(quantities[index]))
-            assertThat(isSideboard, `is`(side[index]))
+            assertThat(card.quantity, `is`(quantities[index]))
+            assertThat(card.isSideboard, `is`(side[index]))
         }
     }
 
