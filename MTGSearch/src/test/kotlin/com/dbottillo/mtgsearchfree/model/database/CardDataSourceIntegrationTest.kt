@@ -56,7 +56,7 @@ class CardDataSourceIntegrationTest {
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT)"))
+        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT)"))
         assertThat(CardDataSource.generateCreateTable(1), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"))
         assertThat(CardDataSource.generateCreateTable(2), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"))
         assertThat(CardDataSource.generateCreateTable(3), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"))
@@ -130,7 +130,7 @@ class CardDataSourceIntegrationTest {
             assertThat(cardFromDb.legalities[i].format, `is`(card.legalities[i].format))
             assertThat(cardFromDb.legalities[i].legality, `is`(card.legalities[i].legality))
         }
-
+        assertThat(cardFromDb.uuid, `is`(card.uuid))
         cursor.close()
     }
 
@@ -150,10 +150,11 @@ class CardDataSourceIntegrationTest {
     @Test
     fun parsesCardFromCursor() {
         setupCursorCard()
-        val (id, name, type, types, subTypes, colors, cmc, rarity, power, toughness, manaCost, text, isMultiColor, isLand, isArtifact, multiVerseId, set, _, _, layout, number, rulings, names, superTypes, artist, flavor, loyalty, printings, originalText, colorsIdentity, legalities) = underTest.fromCursor(cursor)
+        val (id, uuid, name, type, types, subTypes, colors, cmc, rarity, power, toughness, manaCost, text, isMultiColor, isLand, isArtifact, multiVerseId, set, _, _, layout, number, rulings, names, superTypes, artist, flavor, loyalty, printings, originalText, colorsIdentity, legalities) = underTest.fromCursor(cursor)
 
         assertThat(id, `is`(2))
         assertThat(multiVerseId, `is`(1001))
+        assertThat(uuid, `is`("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe"))
         assertThat(name, `is`("name"))
         assertThat(type, `is`("type"))
         assertThat<List<String>>(types, `is`(listOf("Artifact", "Creature")))
@@ -222,6 +223,7 @@ class CardDataSourceIntegrationTest {
         val card = mtgCardDataSource.getRandomCard(1)[0]
         val contentValues = underTest.createContentValue(card)
 
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.UUID.noun), `is`(card.uuid))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.noun), `is`(card.name))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.noun), `is`(card.type))
 
@@ -391,11 +393,14 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).thenReturn(31)
         whenever(cursor.getString(31)).thenReturn("[\"U\",\"W\"]")
+
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.UUID.noun)).thenReturn(32)
+        whenever(cursor.getString(32)).thenReturn("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe")
     }
 
     private fun joinListOfStrings(list: List<String>, separator: String): String {
         val joined = StringBuilder("")
-        if (list.size == 0) {
+        if (list.isEmpty()) {
             return joined.toString()
         }
         for (i in list.indices) {

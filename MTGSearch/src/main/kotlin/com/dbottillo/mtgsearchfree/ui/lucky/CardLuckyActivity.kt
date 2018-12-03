@@ -23,11 +23,8 @@ import javax.inject.Inject
 
 class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
-    @Inject
-    lateinit var presenter: CardsLuckyPresenter
-
-    @Inject
-    lateinit var cardsPresenter: CardPresenter
+    @Inject lateinit var presenter: CardsLuckyPresenter
+    @Inject lateinit var cardsPresenter: CardPresenter
 
     private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view) }
     private val titleCard by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card) }

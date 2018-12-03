@@ -61,11 +61,11 @@ class LuckyWidgetProvider : AppWidgetProvider() {
 
     private fun buildLayout(context: Context, appWidgetId: Int, card: MTGCard): RemoteViews {
         val remoteViews = RemoteViews(context.packageName, R.layout.lucky_widget_layout)
-        TrackingManager.trackImage(card.gathererImage)
+        TrackingManager.trackImage(card.scryfallImage)
         GlideApp
                 .with(context.applicationContext)
                 .asBitmap()
-                .load(card.gathererImage)
+                .load(card.scryfallImage)
                 .into(AppWidgetTarget(context, R.id.image_card, remoteViews, appWidgetId))
 
         // refresh

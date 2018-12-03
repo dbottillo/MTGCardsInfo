@@ -19,7 +19,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 
 fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
-    Pair(name, gathererImage).loadInto(loader, imageView, retry)
+    Pair(name, scryfallImage).loadInto(loader, imageView, retry)
 }
 
 fun Pair<String, String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
@@ -71,16 +71,16 @@ fun withListener(
 }
 
 fun MTGCard.prefetchImage(context: Context) {
-    TrackingManager.trackImage(gathererImage)
+    TrackingManager.trackImage(scryfallImage)
     GlideApp.with(context)
-            .load(gathererImage)
+            .load(scryfallImage)
             .preload()
 }
 
 fun MTGCard.getBitmap(context: Context, callback: (Bitmap) -> Unit) {
     GlideApp.with(context)
             .asBitmap()
-            .load(gathererImage)
+            .load(scryfallImage)
             .into(object : SimpleTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     callback(resource)

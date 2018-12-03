@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.R
 
 data class MTGCard(
     var id: Int = 0,
+    var uuid: String = "",
     var name: String = "",
     var type: String = "",
     val types: MutableList<String> = mutableListOf(),
@@ -108,6 +109,11 @@ data class MTGCard(
 
     val gathererImage
         get() = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
+
+    val scryfallImage
+        get() = if (uuid.isNotEmpty()) {
+            "https://api.scryfall.com/cards/$uuid?format=image"
+        } else gathererImage
 
     override fun compareTo(other: MTGCard): Int {
         if (isLand && other.isLand) {

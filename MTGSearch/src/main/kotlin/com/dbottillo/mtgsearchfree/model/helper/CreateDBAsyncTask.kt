@@ -279,6 +279,9 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             if (jsonObject.has("colorIdentity")) {
                 values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, jsonObject.getString("colorIdentity"))
             }
+            if (jsonObject.has("uuid")) {
+                values.put(CardDataSource.COLUMNS.UUID.noun, jsonObject.getString("uuid"))
+            }
             return values
         }
     }
