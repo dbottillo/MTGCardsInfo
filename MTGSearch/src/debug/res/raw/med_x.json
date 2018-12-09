@@ -44,8 +44,11 @@
             },
             "loyalty": "4",
             "manaCost": "{2}{W}{W}",
+            "multiverseId": 456589,
             "name": "Elspeth, Knight-Errant",
             "number": "GR1",
+            "originalText": "+1: Create a 1/1 white Soldier creature token.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n−8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
+            "originalType": "Legendary Planeswalker — Elspeth",
             "printings": [
                 "ALA",
                 "DDF",
@@ -71,6 +74,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175241,
             "text": "+1: Create a 1/1 white Soldier creature token.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n−8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
@@ -105,8 +109,11 @@
             },
             "loyalty": "3",
             "manaCost": "{1}{B}{B}",
+            "multiverseId": 456590,
             "name": "Liliana, the Last Hope",
             "number": "GR2",
+            "originalText": "+1: Up to one target creature gets -2/-1 until your next turn.\n−2: Put the top two cards of your library into your graveyard, then you may return a creature card from your graveyard to your hand.\n−7: You get an emblem with \"At the beginning of your end step, create X 2/2 black Zombie creature tokens, where X is two plus the number of Zombies you control.\"",
+            "originalType": "Legendary Planeswalker — Liliana",
             "printings": [
                 "EMN",
                 "MED",
@@ -135,6 +142,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175244,
             "text": "+1: Up to one target creature gets -2/-1 until your next turn.\n−2: Put the top two cards of your library into your graveyard, then you may return a creature card from your graveyard to your hand.\n−7: You get an emblem with \"At the beginning of your end step, create X 2/2 black Zombie creature tokens, where X is two plus the number of Zombies you control.\"",
             "type": "Legendary Planeswalker — Liliana",
             "types": [
@@ -169,8 +177,11 @@
             },
             "loyalty": "3",
             "manaCost": "{1}{B}{R}",
+            "multiverseId": 456591,
             "name": "Daretti, Ingenious Iconoclast",
             "number": "GR3",
+            "originalText": "+1: Create a 1/1 colorless Construct artifact creature token with defender.\n−1: You may sacrifice an artifact. If you do, destroy target artifact or creature.\n−6: Choose target artifact card in a graveyard or artifact on the battlefield. Create three tokens that are copies of it.",
+            "originalType": "Legendary Planeswalker — Daretti",
             "printings": [
                 "CN2",
                 "MED",
@@ -194,6 +205,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175245,
             "text": "+1: Create a 1/1 colorless Construct artifact creature token with defender.\n−1: You may sacrifice an artifact. If you do, destroy target artifact or creature.\n−6: Choose target artifact card in a graveyard or artifact on the battlefield. Create three tokens that are copies of it.",
             "type": "Legendary Planeswalker — Daretti",
             "types": [
@@ -231,8 +243,11 @@
             },
             "loyalty": "5",
             "manaCost": "{4}{U}{B}{B}{R}",
+            "multiverseId": 456592,
             "name": "Nicol Bolas, Planeswalker",
             "number": "GR4",
+            "originalText": "+3: Destroy target noncreature permanent.\n−2: Gain control of target creature.\n−9: Nicol Bolas, Planeswalker deals 7 damage to target player or planeswalker. That player or that planeswalker's controller discards seven cards, then sacrifices seven permanents.",
+            "originalType": "Legendary Planeswalker — Bolas",
             "printings": [
                 "CON",
                 "DDH",
@@ -263,6 +278,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175247,
             "text": "+3: Destroy target noncreature permanent.\n−2: Gain control of target creature.\n−9: Nicol Bolas, Planeswalker deals 7 damage to target player or planeswalker. That player or that planeswalker's controller discards seven cards, then sacrifices seven permanents.",
             "type": "Legendary Planeswalker — Bolas",
             "types": [
@@ -302,8 +318,11 @@
             },
             "loyalty": "5",
             "manaCost": "{3}{U}{R}",
+            "multiverseId": 456593,
             "name": "Ral, Izzet Viceroy",
             "number": "GR5",
+            "originalText": "+1: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.\n−3: Ral, Izzet Viceroy deals damage to target creature equal to the total number of instant and sorcery cards you own in exile and in your graveyard.\n−8: You get an emblem with \"Whenever you cast an instant or sorcery spell, this emblem deals 4 damage to any target and you draw two cards.\"",
+            "originalType": "Legendary Planeswalker — Ral",
             "printings": [
                 "GRN",
                 "MED"
@@ -338,6 +357,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175246,
             "text": "+1: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.\n-3: Ral, Izzet Viceroy deals damage to target creature equal to the total number of instant and sorcery cards you own in exile and in your graveyard.\n-8: You get an emblem with \"Whenever you cast an instant or sorcery spell, this emblem deals 4 damage to any target and you draw two cards.\"",
             "type": "Legendary Planeswalker — Ral",
             "types": [
@@ -377,8 +397,11 @@
             },
             "loyalty": "4",
             "manaCost": "{3}{W}{U}",
+            "multiverseId": 456594,
             "name": "Teferi, Hero of Dominaria",
             "number": "GR6",
+            "originalText": "+1: Draw a card. At the beginning of the next end step, untap two lands.\n−3: Put target nonland permanent into its owner's library third from the top.\n−8: You get an emblem with \"Whenever you draw a card, exile target permanent an opponent controls.\"",
+            "originalType": "Legendary Planeswalker — Teferi",
             "printings": [
                 "DOM",
                 "MED",
@@ -402,6 +425,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175242,
             "text": "+1: Draw a card. At the beginning of the next end step, untap up to two lands.\n−3: Put target nonland permanent into its owner's library third from the top.\n−8: You get an emblem with \"Whenever you draw a card, exile target permanent an opponent controls.\"",
             "type": "Legendary Planeswalker — Teferi",
             "types": [
@@ -437,8 +461,11 @@
             },
             "loyalty": "3",
             "manaCost": "{2}{U}{B}",
+            "multiverseId": 456595,
             "name": "Tezzeret, Agent of Bolas",
             "number": "GR7",
+            "originalText": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n−1: Target artifact becomes an artifact creature with base power and toughness 5/5.\n−4: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
+            "originalType": "Legendary Planeswalker — Tezzeret",
             "printings": [
                 "MBS",
                 "MED"
@@ -469,6 +496,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 175243,
             "text": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n−1: Target artifact becomes an artifact creature with base power and toughness 5/5.\n−4: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
             "type": "Legendary Planeswalker — Tezzeret",
             "types": [
@@ -508,12 +536,15 @@
             },
             "loyalty": "4",
             "manaCost": "{2}{B}{G}",
+            "multiverseId": 456596,
             "name": "Vraska, Golgari Queen",
             "names": [
                 "Vraska, Golgari Queen",
                 "Vraska, Golgari Queen Emblem"
             ],
             "number": "GR8",
+            "originalText": "+2: You may sacrifice another permanent. If you do, you gain 1 life and draw a card.\n−3: Destroy target nonland permanent with converted mana cost 3 or less.\n−9: You get an emblem with \"Whenever a creature you control deals combat damage to a player, that player loses the game.\"",
+            "originalType": "Legendary Planeswalker — Vraska",
             "printings": [
                 "GRN",
                 "MED"
@@ -540,6 +571,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 176849,
             "text": "+2: You may sacrifice another permanent. If you do, you gain 1 life and draw a card.\n-3: Destroy target nonland permanent with converted mana cost 3 or less.\n-9: You get an emblem with \"Whenever a creature you control deals combat damage to a player, that player loses the game.\"",
             "type": "Legendary Planeswalker — Vraska",
             "types": [
@@ -551,12 +583,13 @@
     "code": "med",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-07",
+        "version": "4.1.3"
     },
-    "mtgoCode": null,
+    "mtgoCode": "ms4",
     "name": "Mythic Edition",
     "releaseDate": null,
+    "tcgplayerGroupId": 2326,
     "tokens": [
         {
             "artist": "Goran Josic",

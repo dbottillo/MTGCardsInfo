@@ -67,6 +67,7 @@
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 101887,
             "text": "When Avenger of Zendikar enters the battlefield, create a 0/1 green Plant creature token for each land you control.\nLandfall — Whenever a land enters the battlefield under your control, you may put a +1/+1 counter on each Plant creature you control.",
             "toughness": "5",
             "type": "Creature — Elemental",
@@ -129,6 +130,7 @@
                 "Hound"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104198,
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nWhen Affa Guard Hound enters the battlefield, target creature gets +0/+3 until end of turn.",
             "toughness": "2",
             "type": "Creature — Hound",
@@ -212,6 +214,7 @@
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104206,
             "text": "Level up {2} ({2}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 1-4\n2/2\nLEVEL 5+\n5/5\nFirst strike",
             "toughness": "1",
             "type": "Creature — Human Knight",
@@ -294,6 +297,7 @@
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104207,
             "text": "Level up {2}{W} ({2}{W}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-4\n3/6\nOther creatures you control get +1/+1.\nLEVEL 5+\n4/8\nOther creatures you control get +2/+2.",
             "toughness": "4",
             "type": "Creature — Human Knight",
@@ -377,6 +381,7 @@
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104208,
             "text": "Level up {3} ({3}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 1-3\n2/3\nFlying\nLEVEL 4+\n4/4\nFlying, vigilance",
             "toughness": "2",
             "type": "Creature — Kor Knight",
@@ -439,6 +444,7 @@
                 "Griffin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104209,
             "text": "Flying",
             "toughness": "4",
             "type": "Creature — Griffin",
@@ -517,6 +523,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104210,
             "text": "Put target creature into its owner's library second from the top. Its controller gains 3 life.",
             "type": "Sorcery",
             "types": [
@@ -592,6 +599,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104211,
             "text": "Tap up to two target creatures.\nDraw a card.",
             "type": "Instant",
             "types": [
@@ -674,6 +682,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 103471,
             "text": "Destroy target tapped creature.\nAwaken 3—{5}{W} (If you cast this spell for {5}{W}, also put three +1/+1 counters on target land you control and it becomes a 0/0 Elemental creature with haste. It's still a land.)",
             "type": "Sorcery",
             "types": [
@@ -754,6 +763,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104201,
             "text": "Level up {2}{G} ({2}{G}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 1-3\n4/4\nLEVEL 4+\n6/6\nTrample",
             "toughness": "2",
             "type": "Creature — Human Warrior",
@@ -822,6 +832,7 @@
                 "Basilisk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104212,
             "text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)",
             "toughness": "2",
             "type": "Creature — Basilisk",
@@ -884,6 +895,7 @@
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104213,
             "text": "{3}{G}, {T}: Search your library for a basic land card and put it onto the battlefield tapped. Then shuffle your library.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
@@ -948,6 +960,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104214,
             "text": "Trample\nWhenever Graypelt Hunter or another Ally enters the battlefield under your control, you may put a +1/+1 counter on Graypelt Hunter.",
             "toughness": "2",
             "type": "Creature — Human Warrior Ally",
@@ -1022,6 +1035,7 @@
                 "Antelope"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104215,
             "text": "Landfall — Whenever a land enters the battlefield under your control, you may gain 2 life.",
             "toughness": "2",
             "type": "Creature — Antelope",
@@ -1101,6 +1115,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104216,
             "text": "Target creature gets +2/+2 until end of turn.\nLandfall — If you had a land enter the battlefield under your control this turn, that creature gets +4/+4 until end of turn instead.",
             "type": "Instant",
             "types": [
@@ -1180,6 +1195,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104217,
             "text": "As an additional cost to cast this spell, sacrifice a land.\nSearch your library for up to two basic land cards, put them onto the battlefield, then shuffle your library.",
             "type": "Instant",
             "types": [
@@ -1248,6 +1264,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104218,
             "text": "Whenever Joraga Bard or another Ally enters the battlefield under your control, you may have Ally creatures you control gain vigilance until end of turn.",
             "toughness": "4",
             "type": "Creature — Elf Rogue Ally",
@@ -1315,6 +1332,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104219,
             "text": "Landfall — Whenever a land enters the battlefield under your control, you may put a quest counter on Khalni Heart Expedition.\nRemove three quest counters from Khalni Heart Expedition and sacrifice it: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle your library.",
             "type": "Enchantment",
             "types": [
@@ -1379,6 +1397,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104220,
             "text": "When Ondu Giant enters the battlefield, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
             "toughness": "4",
             "type": "Creature — Giant Druid",
@@ -1446,6 +1465,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104221,
             "text": "Choose two —\n• Target player gains 7 life.\n• Put target noncreature permanent on top of its owner's library.\n• Target player shuffles their graveyard into their library.\n• Search your library for a creature card, reveal it, put it into your hand, then shuffle your library.",
             "type": "Sorcery",
             "types": [
@@ -1516,6 +1536,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 103472,
             "text": "Landfall — Whenever a land enters the battlefield under your control, choose one —\n• Put a +1/+1 counter on target creature.\n• You gain 2 life.",
             "type": "Enchantment",
             "types": [
@@ -1584,6 +1605,7 @@
                 "Insect"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104222,
             "text": "At the beginning of your upkeep, if you control five or more lands, put four +1/+1 counters on Scute Mob.",
             "toughness": "1",
             "type": "Creature — Insect",
@@ -1654,6 +1676,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104223,
             "text": "Whenever Tajuru Archer or another Ally enters the battlefield under your control, you may have Tajuru Archer deal damage to target creature with flying equal to the number of Allies you control.",
             "toughness": "2",
             "type": "Creature — Elf Archer Ally",
@@ -1739,6 +1762,7 @@
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104224,
             "text": "Landfall — Whenever a land enters the battlefield under your control, Territorial Baloth gets +2/+2 until end of turn.",
             "toughness": "4",
             "type": "Creature — Beast",
@@ -1828,6 +1852,7 @@
                 "Basilisk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104225,
             "text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nLandfall — Whenever a land enters the battlefield under your control, you may have target creature block Turntimber Basilisk this turn if able.",
             "toughness": "1",
             "type": "Creature — Basilisk",
@@ -1893,6 +1918,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104226,
             "text": "{8}: Target creature gets +5/+5 and gains trample until end of turn.",
             "toughness": "3",
             "type": "Creature — Elf Shaman",
@@ -1975,6 +2001,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 103470,
             "text": "Veteran Warleader's power and toughness are each equal to the number of creatures you control.\nTap another untapped Ally you control: Veteran Warleader gains your choice of first strike, vigilance, or trample until end of turn.",
             "toughness": "*",
             "type": "Creature — Human Soldier Ally",
@@ -2030,6 +2057,7 @@
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104227,
             "text": "Whenever equipped creature attacks, look at the top card of your library. If it's a land card, you may put it onto the battlefield tapped.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
@@ -2102,6 +2130,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104228,
             "text": "Landfall — Whenever a land enters the battlefield under your control, you may pay {2}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
@@ -2158,6 +2187,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104229,
             "text": "",
             "toughness": "2",
             "type": "Artifact Creature — Cat Ally",
@@ -2245,6 +2275,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104230,
             "text": "{T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
             "type": "Land",
             "types": [
@@ -2302,6 +2333,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104231,
             "text": "Graypelt Refuge enters the battlefield tapped.\nWhen Graypelt Refuge enters the battlefield, you gain 1 life.\n{T}: Add {G} or {W}.",
             "type": "Land",
             "types": [
@@ -2366,6 +2398,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104232,
             "text": "Stirring Wildwood enters the battlefield tapped.\n{T}: Add {G} or {W}.\n{1}{G}{W}: Until end of turn, Stirring Wildwood becomes a 3/4 green and white Elemental creature with reach. It's still a land.",
             "type": "Land",
             "types": [
@@ -2419,6 +2452,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104233,
             "text": "Turntimber Grove enters the battlefield tapped.\nWhen Turntimber Grove enters the battlefield, target creature gets +1/+1 until end of turn.\n{T}: Add {G}.",
             "type": "Land",
             "types": [
@@ -2502,6 +2536,7 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2529,7 +2564,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f9706bb7-4fcb-4561-981d-aef34e23756b"
+            "uuid": "f9706bb7-4fcb-4561-981d-aef34e23756b",
+            "variations": [
+                "b7de212e-93d3-430d-b4b8-242b7b526eda",
+                "c577a2c0-88e3-49da-9586-6148f19e5c27"
+            ]
         },
         {
             "artist": "Jung Park",
@@ -2607,6 +2646,7 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2634,7 +2674,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "b7de212e-93d3-430d-b4b8-242b7b526eda"
+            "uuid": "b7de212e-93d3-430d-b4b8-242b7b526eda",
+            "variations": [
+                "f9706bb7-4fcb-4561-981d-aef34e23756b",
+                "c577a2c0-88e3-49da-9586-6148f19e5c27"
+            ]
         },
         {
             "artist": "Vincent Proce",
@@ -2712,6 +2756,7 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2739,7 +2784,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c577a2c0-88e3-49da-9586-6148f19e5c27"
+            "uuid": "c577a2c0-88e3-49da-9586-6148f19e5c27",
+            "variations": [
+                "f9706bb7-4fcb-4561-981d-aef34e23756b",
+                "b7de212e-93d3-430d-b4b8-242b7b526eda"
+            ]
         },
         {
             "artist": "John Avon",
@@ -2814,6 +2863,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2841,7 +2891,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "47c223fa-8173-4da2-abb0-753ffb4fc51c"
+            "uuid": "47c223fa-8173-4da2-abb0-753ffb4fc51c",
+            "variations": [
+                "1a181800-f5ef-4019-b93d-35d8f1dbf953",
+                "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec"
+            ]
         },
         {
             "artist": "Véronique Meignaud",
@@ -2916,6 +2970,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2943,7 +2998,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "1a181800-f5ef-4019-b93d-35d8f1dbf953"
+            "uuid": "1a181800-f5ef-4019-b93d-35d8f1dbf953",
+            "variations": [
+                "47c223fa-8173-4da2-abb0-753ffb4fc51c",
+                "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec"
+            ]
         },
         {
             "artist": "Vincent Proce",
@@ -3018,6 +3077,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -3045,7 +3105,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec"
+            "uuid": "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec",
+            "variations": [
+                "47c223fa-8173-4da2-abb0-753ffb4fc51c",
+                "1a181800-f5ef-4019-b93d-35d8f1dbf953"
+            ]
         },
         {
             "artist": "Aleksi Briclot",
@@ -3107,6 +3171,7 @@
                 "Eldrazi"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 101888,
             "text": "When you cast this spell, target opponent exiles the top four cards of their library, then you may put any number of land cards that player owns from exile onto the battlefield under your control.",
             "toughness": "8",
             "type": "Creature — Eldrazi",
@@ -3178,6 +3243,7 @@
                 "Eldrazi"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104200,
             "text": "When you cast this spell, you may return target creature card from your graveyard to the battlefield.\nAnnihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents.)",
             "toughness": "9",
             "type": "Creature — Eldrazi",
@@ -3267,6 +3333,7 @@
                 "Eldrazi"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104234,
             "text": "Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents.)\nWhenever an opponent sacrifices a nontoken permanent, put that card onto the battlefield under your control.",
             "toughness": "11",
             "type": "Creature — Eldrazi",
@@ -3339,6 +3406,7 @@
                 "Eldrazi"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104235,
             "text": "Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents.)\nUlamog's Crusher attacks each combat if able.",
             "toughness": "8",
             "type": "Creature — Eldrazi",
@@ -3402,6 +3470,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104202,
             "text": "{8}: Target player loses 3 life and you gain 3 life.",
             "toughness": "1",
             "type": "Creature — Vampire Shaman",
@@ -3477,6 +3546,7 @@
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104203,
             "text": "Sacrifice a creature: Bloodthrone Vampire gets +2/+2 until end of turn.",
             "toughness": "1",
             "type": "Creature — Vampire",
@@ -3562,6 +3632,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104204,
             "text": "Flying\nWhenever Butcher of Malakir or another creature you control dies, each opponent sacrifices a creature.",
             "toughness": "4",
             "type": "Creature — Vampire Warrior",
@@ -3627,6 +3698,7 @@
                 "Imp"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104205,
             "text": "Flying\nWhen Cadaver Imp enters the battlefield, you may return target creature card from your graveyard to your hand.",
             "toughness": "1",
             "type": "Creature — Imp",
@@ -3686,6 +3758,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104236,
             "text": "Destroy each creature with converted mana cost 3 or less. They can't be regenerated.",
             "type": "Instant",
             "types": [
@@ -3744,6 +3817,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104237,
             "text": "Destroy target nonblack creature. Create two 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this creature: Add {C}.\"",
             "type": "Sorcery",
             "types": [
@@ -3836,6 +3910,7 @@
                 "Drone"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 103468,
             "text": "Devoid (This card has no color.)\nIngest (Whenever this creature deals combat damage to a player, that player exiles the top card of their library.)\nWhen Dominator Drone enters the battlefield, if you control another colorless creature, each opponent loses 2 life.",
             "toughness": "2",
             "type": "Creature — Eldrazi Drone",
@@ -3896,6 +3971,7 @@
                 "Insect"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104238,
             "text": "Kicker {2}{B} (You may pay an additional {2}{B} as you cast this spell.)\nFlying\nWhen Heartstabber Mosquito enters the battlefield, if it was kicked, destroy target creature.",
             "toughness": "2",
             "type": "Creature — Insect",
@@ -3955,6 +4031,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104239,
             "text": "As an additional cost to cast this spell, reveal a creature card from your hand.\nTarget creature gets -X/-X until end of turn, where X is the revealed card's converted mana cost.",
             "type": "Instant",
             "types": [
@@ -4010,6 +4087,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104240,
             "text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nCreatures target player controls get -1/-1 until end of turn. If this spell was kicked, those creatures get -2/-2 until end of turn instead.",
             "type": "Sorcery",
             "types": [
@@ -4082,6 +4160,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104241,
             "text": "Whenever Pawn of Ulamog or another nontoken creature you control dies, you may create a 0/1 colorless Eldrazi Spawn creature token. It has \"Sacrifice this creature: Add {C}.\"",
             "toughness": "2",
             "type": "Creature — Vampire Shaman",
@@ -4166,6 +4245,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104242,
             "text": "Scry 2, then draw two cards. You lose 2 life. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Sorcery",
             "types": [
@@ -4240,6 +4320,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104243,
             "text": "Destroy target creature with converted mana cost 3 or less. It can't be regenerated.",
             "type": "Instant",
             "types": [
@@ -4308,6 +4389,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104244,
             "text": "Flying, deathtouch, lifelink",
             "toughness": "3",
             "type": "Creature — Vampire Shaman",
@@ -4375,6 +4457,7 @@
                 "Drone"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104245,
             "text": "When Emrakul's Hatcher enters the battlefield, create three 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this creature: Add {C}.\"",
             "toughness": "3",
             "type": "Creature — Eldrazi Drone",
@@ -4437,6 +4520,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104246,
             "text": "Forked Bolt deals 2 damage divided as you choose among one or two targets.",
             "type": "Sorcery",
             "types": [
@@ -4500,6 +4584,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104247,
             "text": "Sacrifice all creatures you control, then create that many 4/4 red Hellion creature tokens.",
             "type": "Sorcery",
             "types": [
@@ -4566,6 +4651,7 @@
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104248,
             "text": "{1}, Sacrifice a nonland permanent: Magmaw deals 1 damage to any target.",
             "toughness": "4",
             "type": "Creature — Elemental",
@@ -4628,6 +4714,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104249,
             "text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)\nWhen Torch Slinger enters the battlefield, if it was kicked, it deals 2 damage to target creature.",
             "toughness": "2",
             "type": "Creature — Goblin Shaman",
@@ -4710,6 +4797,7 @@
                 "Drone"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 103469,
             "text": "Devoid (This card has no color.)\n{1}: Target colorless creature gains haste until end of turn.",
             "toughness": "2",
             "type": "Creature — Eldrazi Drone",
@@ -4775,6 +4863,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104250,
             "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice Mind Stone: Draw a card.",
             "type": "Artifact",
             "types": [
@@ -4839,6 +4928,7 @@
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 104251,
             "text": "When Runed Servitor dies, each player draws a card.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -4899,6 +4989,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104199,
             "text": "Akoum Refuge enters the battlefield tapped.\nWhen Akoum Refuge enters the battlefield, you gain 1 life.\n{T}: Add {B} or {R}.",
             "type": "Land",
             "types": [
@@ -4956,6 +5047,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104252,
             "text": "{T}: Add {C}.\n{T}: Add {C}{C}. Spend this mana only to cast colorless Eldrazi spells or activate abilities of colorless Eldrazi.",
             "type": "Land",
             "types": [
@@ -5012,6 +5104,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 104253,
             "text": "Rocky Tar Pit enters the battlefield tapped.\n{T}, Sacrifice Rocky Tar Pit: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle your library.",
             "type": "Land",
             "types": [
@@ -5092,6 +5185,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5119,7 +5213,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ab891f92-bd3c-4ef7-bfe2-855fb01f583e"
+            "uuid": "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
+            "variations": [
+                "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456",
+                "2fe8fd6b-f6b0-442a-950e-65144a019b74"
+            ]
         },
         {
             "artist": "Véronique Meignaud",
@@ -5194,6 +5292,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5221,7 +5320,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456"
+            "uuid": "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456",
+            "variations": [
+                "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
+                "2fe8fd6b-f6b0-442a-950e-65144a019b74"
+            ]
         },
         {
             "artist": "Véronique Meignaud",
@@ -5296,6 +5399,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5323,7 +5427,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2fe8fd6b-f6b0-442a-950e-65144a019b74"
+            "uuid": "2fe8fd6b-f6b0-442a-950e-65144a019b74",
+            "variations": [
+                "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
+                "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456"
+            ]
         },
         {
             "artist": "James Paick",
@@ -5400,6 +5508,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5427,7 +5536,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "fd16edd0-4d4e-4db6-9da9-4bb5994fa047"
+            "uuid": "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
+            "variations": [
+                "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf",
+                "ad25a56c-607b-4896-a34a-aeb2712b2a08"
+            ]
         },
         {
             "artist": "James Paick",
@@ -5504,6 +5617,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5531,7 +5645,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf"
+            "uuid": "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf",
+            "variations": [
+                "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
+                "ad25a56c-607b-4896-a34a-aeb2712b2a08"
+            ]
         },
         {
             "artist": "James Paick",
@@ -5608,6 +5726,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5635,47 +5754,39 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ad25a56c-607b-4896-a34a-aeb2712b2a08"
-        },
+            "uuid": "ad25a56c-607b-4896-a34a-aeb2712b2a08",
+            "variations": [
+                "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
+                "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf"
+            ]
+        }
+    ],
+    "code": "ddp",
+    "meta": {
+        "date": "2018-12-07",
+        "version": "4.1.3"
+    },
+    "mtgoCode": null,
+    "name": "Duel Decks: Zendikar vs. Eldrazi",
+    "releaseDate": "2015-08-28",
+    "tcgplayerGroupId": 1641,
+    "tokens": [
         {
             "artist": "Aleksi Briclot",
             "borderColor": "black",
             "colorIdentity": [],
             "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 401718,
-            "name": "Eldrazi Spawn (a)",
+            "name": "Eldrazi Spawn",
             "number": "76",
             "power": "0",
-            "printings": [
-                "DDP",
-                "TC17",
-                "TMM2",
-                "TPCA",
-                "TROE"
+            "reverseRelated": [
+                "Corpsehatch",
+                "Pawn of Ulamog",
+                "Emrakul's Hatcher"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Eldrazi",
-                "Spawn"
-            ],
-            "supertypes": [],
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "3616dc24-69fb-4cd1-b14b-526e91612361"
         },
         {
@@ -5683,40 +5794,17 @@
             "borderColor": "black",
             "colorIdentity": [],
             "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 401719,
-            "name": "Eldrazi Spawn (b)",
+            "name": "Eldrazi Spawn",
             "number": "77",
             "power": "0",
-            "printings": [
-                "DDP",
-                "TC17",
-                "TMM2",
-                "TPCA",
-                "TROE"
+            "reverseRelated": [
+                "Corpsehatch",
+                "Pawn of Ulamog",
+                "Emrakul's Hatcher"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Eldrazi",
-                "Spawn"
-            ],
-            "supertypes": [],
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "7787eae2-7dfb-44ab-8e92-56fdfc0bb39e"
         },
         {
@@ -5724,40 +5812,17 @@
             "borderColor": "black",
             "colorIdentity": [],
             "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 401720,
-            "name": "Eldrazi Spawn (c)",
+            "name": "Eldrazi Spawn",
             "number": "78",
             "power": "0",
-            "printings": [
-                "DDP",
-                "TC17",
-                "TMM2",
-                "TPCA",
-                "TROE"
+            "reverseRelated": [
+                "Corpsehatch",
+                "Pawn of Ulamog",
+                "Emrakul's Hatcher"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Eldrazi",
-                "Spawn"
-            ],
-            "supertypes": [],
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "f4703aeb-4255-461f-9d46-443143a8ca3b"
         },
         {
@@ -5769,42 +5834,15 @@
             "colors": [
                 "R"
             ],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 401721,
             "name": "Hellion",
-            "names": [
-                "Hellion Eruption",
-                "Hellion"
-            ],
             "number": "79",
             "power": "4",
-            "printings": [
-                "DDP",
-                "TM13",
-                "TPCA",
-                "TROE"
+            "reverseRelated": [
+                "Hellion Eruption"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Hellion"
-            ],
-            "supertypes": [],
             "text": "",
             "toughness": "4",
             "type": "Token Creature — Hellion",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "da59fb40-b218-452f-b161-3bde15e30c74"
         },
         {
@@ -5816,55 +5854,18 @@
             "colors": [
                 "G"
             ],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": true,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
             "name": "Plant",
-            "names": [
-                "Avenger of Zendikar",
-                "Plant"
-            ],
             "number": "80",
             "power": "0",
-            "printings": [
-                "DDP",
-                "DDR",
-                "TC18",
-                "TOGW",
-                "TPCA",
-                "TWWK"
+            "reverseRelated": [
+                "Avenger of Zendikar"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Plant"
-            ],
-            "supertypes": [],
             "text": "",
             "toughness": "1",
             "type": "Token Creature — Plant",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "d365bf32-74a3-436b-b1cc-1a7d3254257a"
         }
     ],
-    "code": "ddp",
-    "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
-    },
-    "mtgoCode": null,
-    "name": "Duel Decks: Zendikar vs. Eldrazi",
-    "releaseDate": "2015-08-28",
-    "tokens": [],
     "totalSetSize": 80,
     "type": "duel_deck"
 }

@@ -59,6 +59,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121167,
             "text": "({2/B} can be paid with any two mana or with {B}. This card's converted mana cost is 6.)\nSearch your library for a card with converted mana cost less than or equal to the number of lands you control, reveal it, and put it into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
@@ -107,6 +108,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121168,
             "text": "Add {B}{B}{B}.\nThreshold — Add {B}{B}{B}{B}{B} instead if seven or more cards are in your graveyard.",
             "type": "Instant",
             "types": [
@@ -172,6 +174,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121169,
             "text": "Search your library for a white card, a blue card, a black card, a red card, and a green card. Reveal those cards and put them into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
@@ -231,6 +234,7 @@
                 "Legendary",
                 "Snow"
             ],
+            "tcgplayerProductId": 121170,
             "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create a legendary 20/20 black Avatar creature token with flying and indestructible named Marit Lage.",
             "type": "Legendary Snow Land",
             "types": [
@@ -294,6 +298,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 121171,
             "text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
             "toughness": "3",
             "type": "Legendary Creature — Zombie Elf",
@@ -344,6 +349,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 121172,
             "text": "{1}, {T}: Exile target creature you control.\n{7}, {T}: Exile target creature you don't control.\nWhen Helvault is put into a graveyard from the battlefield, return all cards exiled with it to the battlefield under their owners' control.",
             "type": "Legendary Artifact",
             "types": [
@@ -404,6 +410,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 121174,
             "text": "{1}{U}{U}: Target permanent becomes an artifact in addition to its other types. (This effect lasts indefinitely.)\n{3}{U}: Gain control of target artifact. (This effect lasts indefinitely.)",
             "toughness": "5",
             "type": "Legendary Artifact Creature — Wizard",
@@ -480,6 +487,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121175,
             "text": "Shuffle your library. Then exile the top card of your library. Until end of turn, you may play that card without paying its mana cost. (If it has X in its mana cost, X is 0.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "type": "Sorcery",
             "types": [
@@ -539,6 +547,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 121176,
             "text": "Whenever you cast a green creature spell, you may search your library for a creature card and reveal it. If you do, shuffle your library and put that card on top of it.\nWhenever you cast a blue creature spell, reveal the top card of your library. If it's a creature card, put that card into your hand.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Wizard",
@@ -597,6 +606,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121177,
             "text": "At the beginning of your upkeep, if you have exactly 1 life, you win the game.",
             "type": "Enchantment",
             "types": [
@@ -651,6 +661,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121178,
             "text": "This spell can't be countered.\nDestroy all artifacts, creatures, and lands. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
@@ -700,6 +711,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121179,
             "text": "As Phyrexian Processor enters the battlefield, pay any amount of life.\n{4}, {T}: Create an X/X black Minion creature token, where X is the life paid as Phyrexian Processor entered the battlefield.",
             "type": "Artifact",
             "types": [
@@ -748,6 +760,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121180,
             "text": "Tolaria West enters the battlefield tapped.\n{T}: Add {U}.\nTransmute {1}{U}{U} ({1}{U}{U}, Discard this card: Search your library for a card with converted mana cost 0, reveal it, and put it into your hand. Then shuffle your library. Transmute only as a sorcery.)",
             "type": "Land",
             "types": [
@@ -818,6 +831,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 121181,
             "text": "Whenever equipped creature deals combat damage, put two charge counters on Umezawa's Jitte.\nRemove a charge counter from Umezawa's Jitte: Choose one —\n• Equipped creature gets +2/+2 until end of turn.\n• Target creature gets -1/-1 until end of turn.\n• You gain 2 life.\nEquip {2}",
             "type": "Legendary Artifact — Equipment",
             "types": [
@@ -868,13 +882,26 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 121182,
             "text": "You may exile a black card from your hand rather than pay this spell's mana cost.\nTarget player reveals their hand. You choose a nonland card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
             "uuid": "555c6135-5723-44c6-8c29-d5b57a2b3220"
-        },
+        }
+    ],
+    "code": "v16",
+    "isFoilOnly": true,
+    "meta": {
+        "date": "2018-12-07",
+        "version": "4.1.3"
+    },
+    "mtgoCode": "v16",
+    "name": "From the Vault: Lore",
+    "releaseDate": "2016-08-19",
+    "tcgplayerGroupId": 1821,
+    "tokens": [
         {
             "artist": "Stephan Martiniere",
             "borderColor": "black",
@@ -884,55 +911,18 @@
             "colors": [
                 "B"
             ],
-            "convertedManaCost": 0.0,
-            "flavorText": "Marit Lage lies dreaming, not dead. When will she awake from her icy prison?",
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": true,
-            "hasNonFoil": false,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
             "name": "Marit Lage",
-            "names": [
-                "Dark Depths",
-                "Marit Lage"
-            ],
             "number": "16",
             "power": "20",
-            "printings": [
-                "TCSP",
-                "V16"
-            ],
-            "rarity": "rare",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Avatar"
-            ],
-            "supertypes": [
-                "Legendary"
+            "reverseRelated": [
+                "Dark Depths"
             ],
             "text": "Flying\nIndestructible",
             "toughness": "20",
             "type": "Token Legendary Creature — Avatar",
-            "types": [
-                "Token",
-                "Creature"
-            ],
             "uuid": "53085c6f-b6ef-4846-8d67-40bef9609418"
         }
     ],
-    "code": "v16",
-    "isFoilOnly": true,
-    "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
-    },
-    "mtgoCode": "v16",
-    "name": "From the Vault: Lore",
-    "releaseDate": "2016-08-19",
-    "tokens": [],
     "totalSetSize": 16,
     "type": "from_the_vault"
 }

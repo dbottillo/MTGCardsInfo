@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1542837115924">
+  <Whitelist timestamp="1544373009879">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:CardsHelper.kt$CardsHelper$(it.isCommon &amp;&amp; !filter.common) || (it.isUncommon &amp;&amp; !filter.uncommon) || (it.isRare &amp;&amp; !filter.rare) || (it.isMythicRare &amp;&amp; !filter.mythic)</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
@@ -10,20 +10,14 @@
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$internal fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$@VisibleForTesting fun generateCreateTable(version: Int): String</ID>
-    <ID>ComplexMethod:CardViewHolder.kt$ListCardViewHolder$fun bind(card: MTGCard, isASearch: Boolean, context: Context)</ID>
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
-    <ID>ComplexMethod:CardsAdapter.kt$CardsAdapter$override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int)</ID>
     <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
     <ID>ComplexMethod:CardsInfoDbHelper.kt$CardsInfoDbHelper$override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int)</ID>
     <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
     <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
-    <ID>ComplexMethod:DeckAdapter.kt$DeckCardViewHolder$fun bind(card: MTGCard, listener: OnDeckCardListener?)</ID>
-    <ID>ComplexMethod:DeckDataSource.kt$DeckDataSource$private fun moveCardInDeck(deckId: Long, card: MTGCard, quantity: Int, fromDeckToSide: Boolean)</ID>
     <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
-    <ID>ComplexMethod:FileUtil.kt$FileUtil$private fun InputStream.readFileStream(deckName: String?): CardsBucket</ID>
     <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$fun configure(showFilter: Boolean, showOrder: Boolean)</ID>
     <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
-    <ID>ComplexMethod:IntParam.kt$fun cmcParamCreator(operator: String, value: String?): CMCParam?</ID>
     <ID>ComplexMethod:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
     <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
     <ID>ComplexMethod:MTGCardView.kt$MTGCardView$private fun load(card: MTGCard)</ID>
@@ -55,9 +49,7 @@
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
-    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$3</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
-    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$7</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
     <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$3</ID>
     <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$4</ID>
@@ -99,10 +91,10 @@
     <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
     <ID>MagicNumber:MTGCard.kt$MTGCard$4</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$3</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$8</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.IXALAN$15</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.RIVALS_OF_IXALAN$10</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$4</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$9</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.IXALAN$16</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.RIVALS_OF_IXALAN$11</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
     <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
@@ -202,89 +194,6 @@
     <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>
     <ID>NestedBlockDepth:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
-    <ID>NewLineAtEndOfFile:AboutActivity.kt$com.dbottillo.mtgsearchfree.ui.about.AboutActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
-    <ID>NewLineAtEndOfFile:AddToDeckPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:AddToDeckPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:AddToDeckView.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckView.kt</ID>
-    <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgsearchfree.dagger.AppComponent.kt</ID>
-    <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgsearchfree.dagger.AppModule.kt</ID>
-    <ID>NewLineAtEndOfFile:AppSchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactors.AppSchedulerProvider.kt</ID>
-    <ID>NewLineAtEndOfFile:BaseCardsView.kt$com.dbottillo.mtgsearchfree.ui.BaseCardsView.kt</ID>
-    <ID>NewLineAtEndOfFile:BaseHomeFragment.kt$com.dbottillo.mtgsearchfree.ui.BaseHomeFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:BasicActivityModule.kt$com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt</ID>
-    <ID>NewLineAtEndOfFile:CardAdapterConfiguration.kt$com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration.kt</ID>
-    <ID>NewLineAtEndOfFile:CardFilter.kt$com.dbottillo.mtgsearchfree.model.CardFilter.kt</ID>
-    <ID>NewLineAtEndOfFile:CardFilterInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:CardLuckyActivity.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:CardPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:CardView.kt$com.dbottillo.mtgsearchfree.ui.views.CardView.kt</ID>
-    <ID>NewLineAtEndOfFile:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsActivityView.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsActivityView.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsAdapter.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsCollection.kt$com.dbottillo.mtgsearchfree.model.CardsCollection.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsConfiguratorFragment.kt$com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsHelper.kt$com.dbottillo.mtgsearchfree.model.storage.CardsHelper.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsInfoDbHelper.kt$com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyPresenter.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyView.kt$com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyView.kt</ID>
-    <ID>NewLineAtEndOfFile:CommonCardsActivity.kt$com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:DataModule.kt$com.dbottillo.mtgsearchfree.dagger.DataModule.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckActivity.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckActivityPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckActivityView.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityView.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckAdapter.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckStartingHandFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckView.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckView.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksAdapter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksFragmentPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksFragmentPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksFragmentView.kt$com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentView.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:DialogUtil.kt$com.dbottillo.mtgsearchfree.util.DialogUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:FileManager.kt$com.dbottillo.mtgsearchfree.util.FileManager.kt</ID>
-    <ID>NewLineAtEndOfFile:FragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt</ID>
-    <ID>NewLineAtEndOfFile:GsonUtil.kt$com.dbottillo.mtgsearchfree.util.GsonUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:ImageUtil.kt$com.dbottillo.mtgsearchfree.util.ImageUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:IntParam.kt$com.dbottillo.mtgsearchfree.model.IntParam.kt</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterPresenter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterView.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterView.kt</ID>
-    <ID>NewLineAtEndOfFile:LuckyWidgetProvider.kt$com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGCard.kt$com.dbottillo.mtgsearchfree.model.MTGCard.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGGAppGlideModule.kt$com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGLoader.kt$com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt</ID>
-    <ID>NewLineAtEndOfFile:OnCardListener.kt$com.dbottillo.mtgsearchfree.ui.cards.OnCardListener.kt</ID>
-    <ID>NewLineAtEndOfFile:PermissionUtil.kt$com.dbottillo.mtgsearchfree.util.PermissionUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:PlayerInteractor.kt$com.dbottillo.mtgsearchfree.interactors.PlayerInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNoteActivity.kt$com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNotePresenter.kt$com.dbottillo.mtgsearchfree.ui.about.ReleaseNotePresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:SavedCardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:SavedCardsPresenter.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:SavedCardsPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:SavedCardsView.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedCardsView.kt</ID>
-    <ID>NewLineAtEndOfFile:SchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactors.SchedulerProvider.kt</ID>
-    <ID>NewLineAtEndOfFile:SearchActivity.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:SearchActivityView.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivityView.kt</ID>
-    <ID>NewLineAtEndOfFile:SearchPresenter.kt$com.dbottillo.mtgsearchfree.ui.search.SearchPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:SearchPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.search.SearchPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:SetDataSource.kt$com.dbottillo.mtgsearchfree.model.database.SetDataSource.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentView.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:StartingHandGridAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandGridAdapter.kt</ID>
-    <ID>NewLineAtEndOfFile:StartingHandPresenter.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:StartingHandView.kt$com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandView.kt</ID>
-    <ID>NewLineAtEndOfFile:StringUtil.kt$com.dbottillo.mtgsearchfree.util.StringUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:TCGPrice.kt$com.dbottillo.mtgsearchfree.model.TCGPrice.kt</ID>
-    <ID>NewLineAtEndOfFile:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
-    <ID>NewLineAtEndOfFile:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
     <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$private val DEFAULT_DURATION = 200</ID>
     <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$val `val` = valueAnimator.animatedValue as Int</ID>
     <ID>ObjectPropertyNaming:LOG.kt$LOG$private val NOT_FOUND = StackTraceElement("", "", "", 0)</ID>

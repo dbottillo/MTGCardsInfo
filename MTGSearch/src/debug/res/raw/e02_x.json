@@ -55,71 +55,13 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149288,
             "text": "Double target player's life total. Shuffle Beacon of Immortality into its owner's library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
             "uuid": "1c35c626-3693-44d8-a308-d3d5dcf77c93"
-        },
-        {
-            "artist": "Joseph Meehan",
-            "borderColor": "black",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [
-                "G"
-            ],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "name": "Saproling",
-            "number": "T1",
-            "power": "1",
-            "printings": [
-                "E02",
-                "MPR",
-                "T10E",
-                "TALA",
-                "TC15",
-                "TC16",
-                "TCM2",
-                "TCMA",
-                "TDDE",
-                "TDDH",
-                "TDDJ",
-                "TDOM",
-                "TM12",
-                "TM13",
-                "TM14",
-                "TMM2",
-                "TMM3",
-                "TMMA",
-                "TPCA",
-                "TRIX",
-                "TRTR"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Saproling"
-            ],
-            "supertypes": [],
-            "text": "",
-            "toughness": "1",
-            "type": "Token Creature — Saproling",
-            "types": [
-                "Token",
-                "Creature"
-            ],
-            "uuid": "eac3b55f-ebf8-413e-b987-3b92e89ca7c5"
         },
         {
             "artist": "Vincent Proce",
@@ -165,6 +107,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149289,
             "text": "Destroy all creatures.",
             "type": "Sorcery",
             "types": [
@@ -230,6 +173,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152474,
             "text": "Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle their library.",
             "type": "Instant",
             "types": [
@@ -278,6 +222,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152475,
             "text": "Enchant creature\nEnchanted creature has indestructible.\nWhenever a creature enters the battlefield, you may attach Shielded by Faith to that creature.",
             "type": "Enchantment — Aura",
             "types": [
@@ -326,6 +271,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152476,
             "text": "Target creature gets +1/+1 until end of turn. Untap that creature.",
             "type": "Instant",
             "types": [
@@ -378,6 +324,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152477,
             "text": "Enchant creature\nEnchanted creature gets +2/+2, has vigilance, and can't attack you or a planeswalker you control.",
             "type": "Enchantment — Aura",
             "types": [
@@ -430,6 +377,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152478,
             "text": "Return six target nonland permanents to their owners' hands.",
             "type": "Sorcery",
             "types": [
@@ -486,6 +434,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149290,
             "text": "For each opponent, gain control of target permanent that player controls.",
             "type": "Sorcery",
             "types": [
@@ -539,6 +488,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152479,
             "text": "Draw three cards.",
             "type": "Sorcery",
             "types": [
@@ -597,6 +547,7 @@
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149291,
             "text": "Other Merfolk creatures you control get +1/+1.\n{T}: Target Merfolk creature can't be blocked this turn.",
             "toughness": "2",
             "type": "Creature — Merfolk",
@@ -662,6 +613,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149292,
             "text": "Enchant creature with converted mana cost 2 or less\nYou control enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
@@ -719,6 +671,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149293,
             "text": "Target player takes an extra turn after this one.",
             "type": "Sorcery",
             "types": [
@@ -793,6 +746,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152480,
             "text": "Return target creature to its owner's hand.",
             "type": "Instant",
             "types": [
@@ -845,6 +799,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152481,
             "text": "Enchant creature\nEnchanted creature gets +2/+2, has flying, and can't attack you or a planeswalker you control.",
             "type": "Enchantment — Aura",
             "types": [
@@ -912,6 +867,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152482,
             "text": "Whenever you gain life, put a +1/+1 counter on Bloodbond Vampire.",
             "toughness": "3",
             "type": "Creature — Vampire Shaman Ally",
@@ -978,6 +934,7 @@
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152483,
             "text": "Lifelink (Damage dealt by this creature also causes you to gain that much life.)",
             "toughness": "1",
             "type": "Creature — Vampire",
@@ -1029,6 +986,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152484,
             "text": "Target creature gets +1/+2 and gains deathtouch until end of turn. (Any amount of damage it deals to a creature is enough to destroy it.)",
             "type": "Instant",
             "types": [
@@ -1086,6 +1044,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152485,
             "text": "Destroy target nonblack creature.",
             "type": "Instant",
             "types": [
@@ -1143,6 +1102,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152486,
             "text": "Each player sacrifices a creature.",
             "type": "Sorcery",
             "types": [
@@ -1198,6 +1158,7 @@
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152487,
             "text": "Flying\nWhenever a creature you control deals combat damage to a player, put that many +1/+1 counters on it.",
             "toughness": "5",
             "type": "Creature — Vampire",
@@ -1260,6 +1221,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152488,
             "text": "Target creature gets -3/-3 until end of turn. You may tap any number of untapped Vampire creatures you control. If you do, put a +1/+1 counter on each of those Vampires.",
             "type": "Instant",
             "types": [
@@ -1313,6 +1275,7 @@
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152489,
             "text": "Flying\nVampire Interloper can't block.",
             "toughness": "1",
             "type": "Creature — Vampire Scout",
@@ -1374,6 +1337,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152490,
             "text": "Flying, deathtouch, lifelink",
             "toughness": "3",
             "type": "Creature — Vampire Shaman",
@@ -1427,6 +1391,7 @@
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152491,
             "text": "",
             "toughness": "2",
             "type": "Creature — Vampire",
@@ -1483,6 +1448,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149294,
             "text": "{3}{R}{R}: Untap all creatures you control. After this main phase, there is an additional combat phase followed by an additional main phase. Activate this ability only any time you could cast a sorcery.",
             "type": "Enchantment",
             "types": [
@@ -1533,6 +1499,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152492,
             "text": "As an additional cost to cast this spell, reveal a creature card from your hand.\nDisaster Radius deals X damage to each creature your opponents control, where X is the revealed card's converted mana cost.",
             "type": "Sorcery",
             "types": [
@@ -1598,6 +1565,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 151648,
             "text": "For each opponent, gain control of up to one target creature that player controls until end of turn. Untap those creatures. They gain haste until end of turn.",
             "type": "Sorcery",
             "types": [
@@ -1648,6 +1616,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152493,
             "text": "Target creature gets +2/+1 and gains trample until end of turn.",
             "type": "Instant",
             "types": [
@@ -1704,6 +1673,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149295,
             "text": "Whenever a creature you control attacks, it gets +1/+0 until end of turn for each other attacking creature that shares a creature type with it.",
             "type": "Enchantment",
             "types": [
@@ -1755,6 +1725,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152494,
             "text": "Enchant creature\nEnchanted creature gets +2/+2, has first strike, and can't attack you or a planeswalker you control.",
             "type": "Enchantment — Aura",
             "types": [
@@ -1810,6 +1781,7 @@
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152495,
             "text": "When Borderland Ranger enters the battlefield, you may search your library for a basic land card, reveal it, and put it into your hand. If you do, shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Scout",
@@ -1901,6 +1873,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152496,
             "text": "Target creature gets +3/+3 until end of turn.",
             "type": "Instant",
             "types": [
@@ -1951,6 +1924,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152497,
             "text": "Until end of turn, target creature gets +3/+3 and gains trample and \"Whenever this creature deals combat damage to a player, draw that many cards.\"",
             "type": "Sorcery",
             "types": [
@@ -2016,6 +1990,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 151649,
             "text": "Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)",
             "type": "Sorcery",
             "types": [
@@ -2082,6 +2057,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152498,
             "text": "Enchant creature\nEnchanted creature gets +2/+0 and has trample.\nWhen Rancor is put into a graveyard from the battlefield, return Rancor to its owner's hand.",
             "type": "Enchantment — Aura",
             "types": [
@@ -2141,6 +2117,7 @@
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152499,
             "text": "Trample\nWhenever another nontoken creature enters the battlefield under your control, you may draw a card.",
             "toughness": "6",
             "type": "Creature — Elemental",
@@ -2194,6 +2171,7 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 152500,
             "text": "Enchant creature\nEnchanted creature gets +3/+3, has trample, and can't attack you or a planeswalker you control.",
             "type": "Enchantment — Aura",
             "types": [
@@ -2248,6 +2226,7 @@
                 "Wall"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 151652,
             "text": "Defender (This creature can't attack.)\nWhen Jungle Barrier enters the battlefield, draw a card.",
             "toughness": "6",
             "type": "Creature — Plant Wall",
@@ -2311,6 +2290,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152501,
             "text": "Lightning Helix deals 3 damage to any target and you gain 3 life.",
             "type": "Instant",
             "types": [
@@ -2375,6 +2355,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152502,
             "text": "Destroy target creature or enchantment.",
             "type": "Instant",
             "types": [
@@ -2427,6 +2408,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 151655,
             "text": "Until end of turn, creatures you control get +1/+1 and creatures your opponents control get -1/-1.",
             "type": "Instant",
             "types": [
@@ -2485,6 +2467,7 @@
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149296,
             "text": "As Adaptive Automaton enters the battlefield, choose a creature type.\nAdaptive Automaton is the chosen type in addition to its other types.\nOther creatures you control of the chosen type get +1/+1.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -2534,6 +2517,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152503,
             "text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",
             "type": "Artifact",
             "types": [
@@ -2591,6 +2575,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149297,
             "text": "{4}, {T}: You may put a creature card from your hand onto the battlefield.",
             "type": "Artifact",
             "types": [
@@ -2645,6 +2630,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 151658,
             "text": "Crumbling Necropolis enters the battlefield tapped.\n{T}: Add {U}, {B}, or {R}.",
             "type": "Land",
             "types": [
@@ -2697,6 +2683,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 151660,
             "text": "Jungle Shrine enters the battlefield tapped.\n{T}: Add {R}, {G}, or {W}.",
             "type": "Land",
             "types": [
@@ -2742,6 +2729,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 152504,
             "text": "{T}: Add {C}.\n{T}: Add {W} or {B}. Activate this ability only if you control a Swamp.",
             "type": "Land",
             "types": [
@@ -2752,13 +2740,33 @@
     ],
     "code": "e02",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-07",
+        "version": "4.1.3"
     },
     "mtgoCode": null,
     "name": "Explorers of Ixalan",
     "releaseDate": "2017-11-24",
-    "tokens": [],
+    "tcgplayerGroupId": 2077,
+    "tokens": [
+        {
+            "artist": "Joseph Meehan",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Saproling",
+            "number": "T1",
+            "power": "1",
+            "reverseRelated": [],
+            "text": "",
+            "toughness": "1",
+            "type": "Token Creature — Saproling",
+            "uuid": "eac3b55f-ebf8-413e-b987-3b92e89ca7c5"
+        }
+    ],
     "totalSetSize": 48,
     "type": "box"
 }

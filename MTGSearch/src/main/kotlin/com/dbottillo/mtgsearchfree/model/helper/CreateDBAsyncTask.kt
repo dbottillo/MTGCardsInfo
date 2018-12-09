@@ -34,7 +34,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
     override fun doInBackground(vararg params: String): ArrayList<Any> {
         val result = ArrayList<Any>()
 
-        context.get()?.let {
+        context.get()?.let { context ->
 
             val db = mDbHelper.writableDatabase
             db.disableWriteAheadLogging()
@@ -43,14 +43,20 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
             val setDataSource = SetDataSource(mDbHelper.writableDatabase)
             try {
-                val setList = it.resources?.getIdentifier("set_list", "raw", packageName) ?: -1
+                val setList = context.resources?.getIdentifier("set_list", "raw", packageName) ?: -1
                 val jsonString = loadFile(setList)
                 val json = JSONArray(jsonString)
                 (json.length() - 1 downTo 0)
                         .map { json.getJSONObject(it) }
                         .forEach { setJ ->
-                            loadSet(it, db, setDataSource, setJ)
+                            loadSet(context, db, setDataSource, setJ)
                         }
+                /*(json.length() - 1 downTo 0)
+                        .map { json.getJSONObject(it) }
+                        .filter {  it.getString("code") == "10E" }
+                        .forEach { setJ ->
+                            loadSet(context, db, setDataSource, setJ)
+                        }*/
                 // loadSet(it, db, setDataSource, json.getJSONObject(json.length() - 1))
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
@@ -58,7 +64,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 errorMessage = e.localizedMessage
             }
 
-            context.get()?.copyDbToSdCard("MTGCardsInfo.db")
+            context.copyDbToSdCard("MTGCardsInfo.db")
         }
 
         return result
