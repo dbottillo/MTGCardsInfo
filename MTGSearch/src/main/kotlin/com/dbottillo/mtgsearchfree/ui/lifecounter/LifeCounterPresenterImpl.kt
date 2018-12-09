@@ -6,8 +6,10 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject
 
 class LifeCounterPresenterImpl @Inject
-constructor(val interactor: PlayerInteractor,
-            val logger: Logger) : LifeCounterPresenter {
+constructor(
+    val interactor: PlayerInteractor,
+    val logger: Logger
+) : LifeCounterPresenter {
 
     private lateinit var playerView: LifeCounterView
 
@@ -54,5 +56,4 @@ constructor(val interactor: PlayerInteractor,
         logger.e(throwable)
         playerView.showError(throwable.localizedMessage)
     }
-
 }

@@ -8,7 +8,15 @@ import android.support.v4.content.FileProvider.getUriForFile
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import java.io.*
+import java.io.BufferedReader
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.io.StringWriter
 import javax.inject.Inject
 
 class FileManager @Inject constructor(private val context: Context) : FileManagerI {
@@ -79,24 +87,24 @@ class FileManager @Inject constructor(private val context: Context) : FileManage
     }
 }
 
-interface FileManagerI{
+interface FileManagerI {
     fun loadUri(uri: Uri): InputStream
     fun loadRaw(raw: Int): String
     fun saveBitmapToFile(bitmap: Bitmap): Uri
     fun saveDeckToFile(deck: Deck, cards: List<MTGCard>): Uri
 }
 
-private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard>){
+private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard>) {
     TrackingManager.trackDatabaseExport()
     val writer = OutputStreamWriter(fileOutputStream, "UTF-8")
     writer.append("//")
     writer.append(name)
     writer.append("\n")
-    for ((_, name, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in cards) {
-        if (isSideboard) {
+    for (card in cards) {
+        if (card.isSideboard) {
             writer.append("SB: ")
         }
-        writer.append(quantity.toString())
+        writer.append(card.quantity.toString())
         writer.append(" ")
         writer.append(name)
         writer.append("\n")

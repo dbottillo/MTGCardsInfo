@@ -24,5 +24,4 @@ class CardPropertiesTest {
         assertThat(3.toColor(), `is`("Red"))
         assertThat(4.toColor(), `is`("Green"))
     }
-
 }

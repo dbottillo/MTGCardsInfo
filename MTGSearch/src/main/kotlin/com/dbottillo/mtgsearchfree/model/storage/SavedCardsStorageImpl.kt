@@ -5,10 +5,12 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 
-class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSource,
-                            private val cardsHelper: CardsHelper,
-                            private val cardsPreferences: CardsPreferences,
-                            private val logger: Logger) : SavedCardsStorage {
+class SavedCardsStorageImpl(
+    private val favouritesDataSource: FavouritesDataSource,
+    private val cardsHelper: CardsHelper,
+    private val cardsPreferences: CardsPreferences,
+    private val logger: Logger
+) : SavedCardsStorage {
 
     init {
         logger.d("created")
@@ -39,7 +41,7 @@ class SavedCardsStorageImpl(private val favouritesDataSource: FavouritesDataSour
     override fun load(): CardsCollection {
         logger.d()
         val filter = cardsPreferences.load()
-        val cards = cardsHelper.filterCards(filter = filter, list =  favouritesDataSource.getCards(true))
+        val cards = cardsHelper.filterCards(filter = filter, list = favouritesDataSource.getCards(true))
         return CardsCollection(cards, filter)
     }
 }

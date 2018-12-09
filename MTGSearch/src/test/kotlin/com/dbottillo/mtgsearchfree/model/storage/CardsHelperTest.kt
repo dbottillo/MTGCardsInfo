@@ -2,8 +2,11 @@ package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.Rarity
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -11,9 +14,7 @@ import org.mockito.junit.MockitoJUnit
 
 class CardsHelperTest {
 
-    @JvmField
-    @Rule
-    val mockitoRule = MockitoJUnit.rule()!!
+    @JvmField @Rule val mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: CardsHelper
 
@@ -164,7 +165,7 @@ class CardsHelperTest {
     private fun generateCards(): List<MTGCard> {
         val list = mutableListOf<MTGCard>()
         val colors = listOf("W", "U", "B", "R", "G")
-        val rarity = listOf("Common", "Uncommon", "Rare", "Mythic rare")
+        val rarity = listOf(Rarity.COMMON, Rarity.UNCOMMON, Rarity.RARE, Rarity.MYTHIC)
         colors.forEachIndexed { index, color ->
             rarity.forEach {
                 list.add(generateCard(cost = color, rarity = it, colors = listOf(index)))
@@ -173,28 +174,30 @@ class CardsHelperTest {
         val artifactCard = MTGCard()
         artifactCard.isArtifact = true
         artifactCard.setCardName("Card")
-        artifactCard.rarity = "Common"
+        artifactCard.rarity = Rarity.COMMON
         list.add(artifactCard)
         val landCard = MTGCard()
         landCard.isLand = true
         landCard.setCardName("Card")
-        landCard.rarity = "Uncommon"
+        landCard.rarity = Rarity.UNCOMMON
         list.add(landCard)
         val eldraziCard = MTGCard()
         eldraziCard.setCardName("Card")
-        eldraziCard.rarity = "Rare"
+        eldraziCard.rarity = Rarity.RARE
         list.add(eldraziCard)
         return list
     }
 
-    private fun generateCard(name: String = "Card",
-                             cost: String = "WU",
-                             rarity: String = "Common",
-                             colors: List<Int> = listOf(),
-                             colorsIdentity: List<String> = listOf(),
-                             isLand: Boolean = false,
-                             isArtifact: Boolean = false,
-                             isMulticolor: Boolean = false): MTGCard {
+    private fun generateCard(
+        name: String = "Card",
+        cost: String = "WU",
+        rarity: Rarity = Rarity.COMMON,
+        colors: List<Int> = listOf(),
+        colorsIdentity: List<String> = listOf(),
+        isLand: Boolean = false,
+        isArtifact: Boolean = false,
+        isMulticolor: Boolean = false
+    ): MTGCard {
         val card = MTGCard()
         card.setCardName(name)
         card.manaCost = cost

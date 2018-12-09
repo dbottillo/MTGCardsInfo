@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.Context
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -70,11 +69,11 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_ORIGINAL_TEXT)
         }
-        if (!columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun)) {
-            db.execSQL(CardDataSource.SQL_ADD_COLUMN_MCI_NUMBER)
-        }
         if (!columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_COLORS_IDENTITY)
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.UUID.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_UUID)
         }
     }
 
@@ -106,7 +105,6 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     companion object {
         const val DATABASE_NAME = "cardsinfo.db"
     }
-
 }
 
-private const val DATABASE_VERSION = 8
+private const val DATABASE_VERSION = 9

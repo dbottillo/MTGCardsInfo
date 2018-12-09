@@ -9,9 +9,8 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.show
@@ -31,19 +30,8 @@ class ListCardViewHolder(row: View) : CardViewHolder(row) {
     fun bind(card: MTGCard, isASearch: Boolean, context: Context) {
         name.text = context.getString(R.string.row_card_name, "", card.name)
 
-        val rarityColor =
-                when {
-                    card.rarity.equals(FILTER_UNCOMMON, ignoreCase = true) -> R.color.uncommon
-                    card.rarity.equals(FILTER_RARE, ignoreCase = true) -> R.color.rare
-                    card.rarity.equals(FILTER_MYHTIC, ignoreCase = true) -> R.color.mythic
-                    else -> R.color.common
-                }
-        rarity.setTextColor(ContextCompat.getColor(context, rarityColor))
-        if (card.rarity.isNotEmpty()) {
-            rarity.text = card.rarity
-        } else {
-            rarity.text = ""
-        }
+        rarity.setTextColor(ContextCompat.getColor(context, card.rarityColor))
+        rarity.text = card.rarity.value
 
         if (!card.manaCost.isEmpty()) {
             cost.text = card.manaCost.replace("{", "").replace("}", "")
@@ -63,11 +51,13 @@ class ListCardViewHolder(row: View) : CardViewHolder(row) {
         indicator.setColor(card.getMtgColor(context))
     }
 
-    fun setupMore(context: Context,
-                  card: MTGCard,
-                  position: Int,
-                  menuRes: Int,
-                  onCardListener: OnCardListener?) {
+    fun setupMore(
+        context: Context,
+        card: MTGCard,
+        position: Int,
+        menuRes: Int,
+        onCardListener: OnCardListener?
+    ) {
         if (menuRes > 0 && onCardListener != null) {
             more.setOnClickListener {
                 val popupMenu = PopupMenu(context, more)

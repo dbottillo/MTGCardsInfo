@@ -2,13 +2,15 @@ package com.dbottillo.mtgsearchfree.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.util.*
+import java.util.Locale
 
 @Suppress("EqualsOrHashCode")
 @Parcelize
-data class MTGSet(var id: Int,
-                  var code: String? = null,
-                  var name: String) : Parcelable {
+data class MTGSet(
+    var id: Int,
+    var code: String? = null,
+    var name: String
+) : Parcelable {
 
     val magicCardsInfoCode: String
         get() {

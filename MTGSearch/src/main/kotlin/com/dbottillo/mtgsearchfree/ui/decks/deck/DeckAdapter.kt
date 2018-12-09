@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.gone
 
 class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -54,7 +54,6 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int = sectionsMap.size + cardsMap.size
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
@@ -69,7 +68,6 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
         return TYPE_CARD
     }
-
 }
 
 const val TYPE_HEADER: Int = 0
@@ -96,13 +94,8 @@ class DeckCardViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
     fun bind(card: MTGCard, listener: OnDeckCardListener?) {
         val resources = row.context.resources
         name.text = resources.getString(R.string.row_card_name, card.quantity.toString() + " ", card.name)
-        rarity.setTextColor(when (card.rarity.toLowerCase()) {
-            FILTER_COMMON -> R.color.common
-            FILTER_UNCOMMON -> R.color.uncommon
-            FILTER_RARE -> R.color.rare
-            else -> R.color.mythic
-        })
-        rarity.text = if (card.rarity.isNotEmpty()) card.rarity else ""
+        rarity.setTextColor(card.rarityColor)
+        rarity.text = card.rarity.value
         if (card.manaCost.isNotEmpty()) {
             cost.text = card.manaCost.replace("{", "").replace("}", "")
             cost.setTextColor(card.getMtgColor(row.context))

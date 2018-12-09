@@ -1,7 +1,9 @@
 package com.dbottillo.mtgsearchfree.model
 
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -9,9 +11,7 @@ import org.mockito.junit.MockitoJUnit
 
 class SearchParamsTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()
 
     lateinit var searchParams: SearchParams
 

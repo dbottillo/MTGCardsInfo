@@ -8,6 +8,9 @@ import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.hamcrest.CoreMatchers.`is`
@@ -16,14 +19,11 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class AddToDeckInteractorTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var schedulerProvider: SchedulerProvider
 
@@ -38,15 +38,15 @@ class AddToDeckInteractorTest {
 
     @Before
     fun setup() {
-        `when`(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
-        `when`(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
+        whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
         underTest = AddToDeckInteractor(decksStorage, cardsStorage, generalData, schedulerProvider)
     }
 
     @Test
     fun `init should zip load to decks and card`() {
-        `when`(decksStorage.load()).thenReturn(decks)
-        `when`(cardsStorage.loadCard(4)).thenReturn(card)
+        whenever(decksStorage.load()).thenReturn(decks)
+        whenever(cardsStorage.loadCard(4)).thenReturn(card)
         val testObserver = TestObserver<AddToDeckData>()
 
         underTest.init(4).subscribe(testObserver)

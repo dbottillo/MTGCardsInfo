@@ -14,7 +14,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import java.util.*
 
 @RunWith(RobolectricTestRunner::class)
 class CardsInfoDbHelperTest {
@@ -52,11 +51,11 @@ class CardsInfoDbHelperTest {
         assertTableExist(db, PlayerDataSource.TABLE)
         assertTableExist(db, FavouritesDataSource.TABLE)
         cardsInfoDbHelper.clear()
-        assertTableDontExist(db, CardDataSource.TABLE)
-        assertTableDontExist(db, DeckDataSource.TABLE)
-        assertTableDontExist(db, DeckDataSource.TABLE_JOIN)
-        assertTableDontExist(db, PlayerDataSource.TABLE)
-        assertTableDontExist(db, FavouritesDataSource.TABLE)
+        assertTableDoesNotExist(db, CardDataSource.TABLE)
+        assertTableDoesNotExist(db, DeckDataSource.TABLE)
+        assertTableDoesNotExist(db, DeckDataSource.TABLE_JOIN)
+        assertTableDoesNotExist(db, PlayerDataSource.TABLE)
+        assertTableDoesNotExist(db, FavouritesDataSource.TABLE)
     }
 
     @Test
@@ -253,15 +252,24 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 7)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`(false))
         assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(false))
-        cardsInfoDbHelper.onUpgrade(db, 6, 7)
+        cardsInfoDbHelper.onUpgrade(db, 7, 8)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.MCI_NUMBER.noun), `is`(true))
         assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(true))
     }
 
-    private fun assertTableExistance(db: SQLiteDatabase, table: String, exist: Boolean) {
+    @Test
+    fun test_db_upgrade_from_version8_to_version9_does_not_generate_error() {
+        val db = cardsInfoDbHelper.writableDatabase
+        downgradeDb(db, 8)
+        var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun), `is`(false))
+        cardsInfoDbHelper.onUpgrade(db, 8, 9)
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun), `is`(true))
+    }
+
+    private fun assertTableExist(db: SQLiteDatabase, table: String, exist: Boolean) {
         var isExist = false
         val cursor = db.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '$table'", null)
         if (cursor != null) {
@@ -273,9 +281,9 @@ class CardsInfoDbHelperTest {
         assertTrue(isExist == exist)
     }
 
-    private fun assertTableExist(db: SQLiteDatabase, table: String) = assertTableExistance(db, table, true)
+    private fun assertTableExist(db: SQLiteDatabase, table: String) = assertTableExist(db, table, true)
 
-    private fun assertTableDontExist(db: SQLiteDatabase, table: String) = assertTableExistance(db, table, false)
+    private fun assertTableDoesNotExist(db: SQLiteDatabase, table: String) = assertTableExist(db, table, false)
 
     private fun readTables(cardsInfoDbHelper: CardsInfoDbHelper): Set<String> {
         return readTables(cardsInfoDbHelper.readableDatabase)
@@ -339,6 +347,10 @@ class CardsInfoDbHelperTest {
             db.execSQL(PlayerDataSource.generateCreateTable())
             db.execSQL(FavouritesDataSource.generateCreateTable())
         }
+        if (version == 8) {
+            db.execSQL(CardDataSource.generateCreateTable(8))
+            db.execSQL(PlayerDataSource.generateCreateTable())
+            db.execSQL(FavouritesDataSource.generateCreateTable())
+        }
     }
-
 }

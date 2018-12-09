@@ -1,24 +1,23 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
-import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
-import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 import javax.inject.Inject
 
 class DecksInteractorImpl @Inject
-constructor(val storage: DecksStorage,
-            private val fileManager: FileManager,
-            val schedulerProvider: SchedulerProvider,
-            val logger: Logger) : DecksInteractor {
+constructor(
+    val storage: DecksStorage,
+    private val fileManager: FileManager,
+    val schedulerProvider: SchedulerProvider,
+    val logger: Logger
+) : DecksInteractor {
 
     init {
         logger.d("created")
@@ -127,5 +126,4 @@ constructor(val storage: DecksStorage,
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
-
 }

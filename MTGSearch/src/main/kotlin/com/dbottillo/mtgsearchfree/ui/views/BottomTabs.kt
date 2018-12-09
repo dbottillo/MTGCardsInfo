@@ -11,7 +11,7 @@ import com.dbottillo.mtgsearchfree.R
 
 class BottomTabs : LinearLayout {
 
-    interface BottomTabsListener{
+    interface BottomTabsListener {
         fun tabSelected(selection: Int)
     }
 
@@ -24,14 +24,14 @@ class BottomTabs : LinearLayout {
     var decksTab: LinearLayout
     var savedTab: LinearLayout
     var lifeCounterTab: LinearLayout
-    
+
     var homeTabImage: ImageView
     var decksTabImage: ImageView
     var savedTabImage: ImageView
     var lifeCounterTabImage: ImageView
 
     var currentSelection = 0
-    var listener : BottomTabsListener? = null
+    var listener: BottomTabsListener? = null
 
     constructor(context: Context) : this(context, null)
 
@@ -43,15 +43,15 @@ class BottomTabs : LinearLayout {
         orientation = LinearLayout.HORIZONTAL
         setBackgroundColor(ContextCompat.getColor(context, R.color.color_primary))
 
-        homeTab = view.findViewById<LinearLayout>(R.id.home_tab)
-        decksTab = view.findViewById<LinearLayout>(R.id.decks_tab)
-        savedTab = view.findViewById<LinearLayout>(R.id.saved_tab)
-        lifeCounterTab = view.findViewById<LinearLayout>(R.id.life_counter_tab)
+        homeTab = view.findViewById(R.id.home_tab)
+        decksTab = view.findViewById(R.id.decks_tab)
+        savedTab = view.findViewById(R.id.saved_tab)
+        lifeCounterTab = view.findViewById(R.id.life_counter_tab)
 
-        homeTabImage = view.findViewById<ImageView>(R.id.home_tab_image)
-        decksTabImage = view.findViewById<ImageView>(R.id.decks_tab_image)
-        savedTabImage = view.findViewById<ImageView>(R.id.saved_tab_image)
-        lifeCounterTabImage = view.findViewById<ImageView>(R.id.life_counter_tab_image)
+        homeTabImage = view.findViewById(R.id.home_tab_image)
+        decksTabImage = view.findViewById(R.id.decks_tab_image)
+        savedTabImage = view.findViewById(R.id.saved_tab_image)
+        lifeCounterTabImage = view.findViewById(R.id.life_counter_tab_image)
 
         homeTab.setOnClickListener { homeTabTapped() }
         decksTab.setOnClickListener { decksTabTapped() }
@@ -73,7 +73,7 @@ class BottomTabs : LinearLayout {
         refreshUI()
     }
 
-    fun setBottomTabsListener(listener: BottomTabsListener){
+    fun setBottomTabsListener(listener: BottomTabsListener) {
         this.listener = listener
     }
 

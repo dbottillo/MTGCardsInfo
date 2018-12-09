@@ -5,38 +5,40 @@ import android.support.annotation.VisibleForTesting
 import android.support.v4.content.ContextCompat
 import com.dbottillo.mtgsearchfree.R
 
-data class MTGCard(var id: Int = 0,
-                   var name: String = "",
-                   var type: String = "",
-                   val types: MutableList<String> = mutableListOf(),
-                   val subTypes: MutableList<String> = mutableListOf(),
-                   var colors: MutableList<Int> = mutableListOf(),
-                   var cmc: Int = 0,
-                   var rarity: String = "",
-                   var power: String = "",
-                   var toughness: String = "",
-                   var manaCost: String = "",
-                   var text: String = "",
-                   var isMultiColor: Boolean = false,
-                   var isLand: Boolean = false,
-                   var isArtifact: Boolean = false,
-                   var multiVerseId: Int = 0,
-                   var set: MTGSet? = null,
-                   var quantity: Int = 1,
-                   var isSideboard: Boolean = false,
-                   var layout: String = "normal",
-                   var number: String? = null,
-                   val rulings: MutableList<String> = mutableListOf(),
-                   var names: List<String> = listOf(),
-                   var superTypes: List<String> = listOf(),
-                   var artist: String = "",
-                   var flavor: String? = null,
-                   var loyalty: Int = 0,
-                   var printings: List<String> = listOf(),
-                   var originalText: String = "",
-                   var mciNumber: String? = null,
-                   var colorsIdentity: List<String>? = null,
-                   var legalities: MutableList<Legality> = mutableListOf()) : Comparable<MTGCard> {
+data class MTGCard(
+    var id: Int = 0,
+    var uuid: String = "",
+    var name: String = "",
+    var type: String = "",
+    val types: MutableList<String> = mutableListOf(),
+    val subTypes: MutableList<String> = mutableListOf(),
+    var colors: MutableList<Int> = mutableListOf(),
+    var cmc: Int = 0,
+    var rarity: Rarity = Rarity.COMMON,
+    var power: String = "",
+    var toughness: String = "",
+    var manaCost: String = "",
+    var text: String = "",
+    var isMultiColor: Boolean = false,
+    var isLand: Boolean = false,
+    var isArtifact: Boolean = false,
+    var multiVerseId: Int = 0,
+    var set: MTGSet? = null,
+    var quantity: Int = 1,
+    var isSideboard: Boolean = false,
+    var layout: String = "normal",
+    var number: String? = null,
+    val rulings: MutableList<String> = mutableListOf(),
+    var names: List<String> = listOf(),
+    var superTypes: List<String> = listOf(),
+    var artist: String = "",
+    var flavor: String? = null,
+    var loyalty: Int = 0,
+    var printings: List<String> = listOf(),
+    var originalText: String = "",
+    var colorsIdentity: List<String>? = null,
+    var legalities: MutableList<Legality> = mutableListOf()
+) : Comparable<MTGCard> {
 
     constructor(onlyId: Int) : this(id = onlyId)
 
@@ -78,19 +80,40 @@ data class MTGCard(var id: Int = 0,
     }
 
     val isCommon: Boolean
-        get() = rarity.equals(FILTER_COMMON, ignoreCase = true)
+        get() = rarity == Rarity.COMMON
 
     val isUncommon: Boolean
-        get() = rarity.equals(FILTER_UNCOMMON, ignoreCase = true)
+        get() = rarity == Rarity.UNCOMMON
 
     val isRare: Boolean
-        get() = rarity.equals(FILTER_RARE, ignoreCase = true)
+        get() = rarity == Rarity.RARE
 
     val isMythicRare: Boolean
-        get() = rarity.equals(FILTER_MYHTIC, ignoreCase = true)
+        get() = rarity == Rarity.MYTHIC
+
+    val displayRarity: Int
+        get() = when (rarity) {
+            Rarity.COMMON -> R.string.search_common
+            Rarity.UNCOMMON -> R.string.search_uncommon
+            Rarity.RARE -> R.string.search_rare
+            Rarity.MYTHIC -> R.string.search_mythic
+        }
+
+    val rarityColor: Int
+        get() = when (rarity) {
+            Rarity.COMMON -> R.color.uncommon
+            Rarity.UNCOMMON -> R.color.uncommon
+            Rarity.RARE -> R.color.rare
+            Rarity.MYTHIC -> R.color.mythic
+        }
 
     val gathererImage
-        get () = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
+        get() = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
+
+    val scryfallImage
+        get() = if (uuid.isNotEmpty()) {
+            "https://api.scryfall.com/cards/$uuid?format=image"
+        } else gathererImage
 
     override fun compareTo(other: MTGCard): Int {
         if (isLand && other.isLand) {
@@ -218,12 +241,10 @@ data class MTGCard(var id: Int = 0,
         result = 31 * result + loyalty
         result = 31 * result + printings.hashCode()
         result = 31 * result + originalText.hashCode()
-        result = 31 * result + (mciNumber?.hashCode() ?: 0)
         result = 31 * result + (colorsIdentity?.hashCode() ?: 0)
         result = 31 * result + legalities.hashCode()
         return result
     }
-
 }
 
 class Legality(val format: String, val legality: String)

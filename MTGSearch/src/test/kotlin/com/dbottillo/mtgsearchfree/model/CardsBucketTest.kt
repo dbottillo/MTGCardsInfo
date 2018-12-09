@@ -2,13 +2,14 @@ package com.dbottillo.mtgsearchfree.model
 
 import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class CardsBucketTest {
 
@@ -19,9 +20,8 @@ class CardsBucketTest {
     private lateinit var cardsSetBucket: CardsBucket
     private lateinit var genericBucket: CardsBucket
 
-    private val setCards = Arrays.asList(MTGCard(5), MTGCard(6))
-    private val genericCards = Arrays.asList(MTGCard(8), MTGCard(9))
-
+    private val setCards = listOf(MTGCard(5), MTGCard(6))
+    private val genericCards = listOf(MTGCard(8), MTGCard(9))
 
     @Before
     fun setup() {

@@ -1,53 +1,48 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
+import com.nhaarman.mockito_kotlin.whenever
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.ArgumentMatchers
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class CardsStorageImplTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()
 
-    @Mock
-    private lateinit var card: MTGCard
-    @Mock
-    private lateinit var set: MTGSet
-    @Mock
-    private lateinit var mainSideCard: MTGCard
-    @Mock
-    private lateinit var secondSideCard: MTGCard
-    @Mock
-    lateinit var filter: CardFilter
-    @Mock
-    private lateinit var logger: Logger
-    @Mock
-    internal lateinit var mtgCardDataSource: MTGCardDataSource
-    @Mock
-    internal lateinit var favouritesDataSource: FavouritesDataSource
-    @Mock
-    lateinit var cardsPreferences: CardsPreferences
-    @Mock
-    lateinit var cardsHelper: CardsHelper
+    @Mock private lateinit var card: MTGCard
+    @Mock private lateinit var set: MTGSet
+    @Mock private lateinit var mainSideCard: MTGCard
+    @Mock private lateinit var secondSideCard: MTGCard
+    @Mock lateinit var filter: CardFilter
+    @Mock private lateinit var logger: Logger
+    @Mock internal lateinit var mtgCardDataSource: MTGCardDataSource
+    @Mock internal lateinit var favouritesDataSource: FavouritesDataSource
+    @Mock lateinit var cardsPreferences: CardsPreferences
+    @Mock lateinit var cardsHelper: CardsHelper
     @Mock lateinit var searchParams: SearchParams
 
-    private val setCards = Arrays.asList(MTGCard(5, 1), MTGCard(6, 2))
-    private val setCardsFiltered = Arrays.asList(MTGCard(15, 3), MTGCard(16, 4))
-    private val luckyCards = Arrays.asList(MTGCard(8, 5), MTGCard(9, 6))
-    private val searchCards = Arrays.asList(MTGCard(12, 7), MTGCard(13, 8))
-    private val searchCardsFiltered = Arrays.asList(MTGCard(121, 9), MTGCard(131, 10))
+    private val setCards = listOf(MTGCard(5, 1), MTGCard(6, 2))
+    private val setCardsFiltered = listOf(MTGCard(15, 3), MTGCard(16, 4))
+    private val luckyCards = listOf(MTGCard(8, 5), MTGCard(9, 6))
+    private val searchCards = listOf(MTGCard(12, 7), MTGCard(13, 8))
+    private val searchCardsFiltered = listOf(MTGCard(121, 9), MTGCard(131, 10))
     private lateinit var favCards: List<MTGCard>
     private lateinit var underTest: CardsStorageImpl
 
@@ -57,24 +52,24 @@ class CardsStorageImplTest {
         fav1.multiVerseId = 100
         val fav2 = MTGCard(8, 12)
         fav1.multiVerseId = 101
-        favCards = Arrays.asList(fav1, fav2)
-        `when`(mtgCardDataSource.getSet(set)).thenReturn(setCards)
-        `when`(favouritesDataSource.getCards(ArgumentMatchers.anyBoolean())).thenReturn(favCards)
-        `when`(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards)
-        `when`(mtgCardDataSource.searchCards(searchParams)).thenReturn(searchCards)
-        `when`(mainSideCard.name).thenReturn("One")
-        `when`(secondSideCard.name).thenReturn("Two")
-        `when`(mtgCardDataSource.searchCard("Two")).thenReturn(secondSideCard)
-        `when`(mtgCardDataSource.searchCard("One")).thenReturn(mainSideCard)
-        `when`(mainSideCard.names).thenReturn(Arrays.asList("One", "Two"))
-        `when`(secondSideCard.names).thenReturn(Arrays.asList("One", "Two"))
-        `when`(cardsPreferences.load()).thenReturn(filter)
+        favCards = listOf(fav1, fav2)
+        whenever(mtgCardDataSource.getSet(set)).thenReturn(setCards)
+        whenever(favouritesDataSource.getCards(ArgumentMatchers.anyBoolean())).thenReturn(favCards)
+        whenever(mtgCardDataSource.getRandomCard(2)).thenReturn(luckyCards)
+        whenever(mtgCardDataSource.searchCards(searchParams)).thenReturn(searchCards)
+        whenever(mainSideCard.name).thenReturn("One")
+        whenever(secondSideCard.name).thenReturn("Two")
+        whenever(mtgCardDataSource.searchCard("Two")).thenReturn(secondSideCard)
+        whenever(mtgCardDataSource.searchCard("One")).thenReturn(mainSideCard)
+        whenever(mainSideCard.names).thenReturn(listOf("One", "Two"))
+        whenever(secondSideCard.names).thenReturn(listOf("One", "Two"))
+        whenever(cardsPreferences.load()).thenReturn(filter)
         underTest = CardsStorageImpl(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper, logger)
     }
 
     @Test
     fun testLoad() {
-        `when`(cardsHelper.filterCards(filter, setCards)).thenReturn(setCardsFiltered)
+        whenever(cardsHelper.filterCards(filter, setCards)).thenReturn(setCardsFiltered)
 
         val cards = underTest.load(set)
 
@@ -140,7 +135,7 @@ class CardsStorageImplTest {
 
     @Test
     fun testShouldRetrieveCardsByMultiverseId() {
-        `when`(mtgCardDataSource.searchCard(MULTIVERSE_ID)).thenReturn(card)
+        whenever(mtgCardDataSource.searchCard(MULTIVERSE_ID)).thenReturn(card)
 
         val result = underTest.loadCard(MULTIVERSE_ID)
 
@@ -151,7 +146,7 @@ class CardsStorageImplTest {
 
     @Test
     fun testShouldRetrieveCardsById() {
-        `when`(mtgCardDataSource.searchCardById(5)).thenReturn(card)
+        whenever(mtgCardDataSource.searchCardById(5)).thenReturn(card)
 
         val result = underTest.loadCardById(5)
 
@@ -173,11 +168,11 @@ class CardsStorageImplTest {
     @Test
     @Throws(Exception::class)
     fun loadOtherSide_shouldReturnTheSameCard_IfCardIsNotDouble() {
-        `when`(mainSideCard.names).thenReturn(listOf())
+        whenever(mainSideCard.names).thenReturn(listOf())
         val result = underTest.loadOtherSide(mainSideCard)
         assertThat(result, `is`(mainSideCard))
 
-        `when`(mainSideCard.names).thenReturn(Arrays.asList("One"))
+        whenever(mainSideCard.names).thenReturn(listOf("One"))
         val result2 = underTest.loadOtherSide(mainSideCard)
         assertThat(result2, `is`(mainSideCard))
     }

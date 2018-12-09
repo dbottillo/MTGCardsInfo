@@ -6,13 +6,14 @@ import com.google.gson.Gson
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
-import java.util.*
 
 @RunWith(RobolectricTestRunner::class)
 class DeckDataSourceTest {
@@ -263,19 +264,19 @@ class DeckDataSourceTest {
         assertThat(name, `is`("deck"))
         val deckCards = underTest.getCards(deckId)
         assertThat(deckCards.size, `is`(cardNames.size))
-        for ((_, name1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, quantity, isSideboard) in deckCards) {
+        for (card in deckCards) {
             var found = false
             var index = 0
             for (i in cardNames.indices) {
-                if (name1.contains(cardNames[i])) {
+                if (card.name.contains(cardNames[i])) {
                     found = true
                     index = i
                     break
                 }
             }
             assertTrue(found)
-            assertThat(quantity, `is`(quantities[index]))
-            assertThat(isSideboard, `is`(side[index]))
+            assertThat(card.quantity, `is`(quantities[index]))
+            assertThat(card.isSideboard, `is`(side[index]))
         }
     }
 
@@ -457,7 +458,6 @@ class DeckDataSourceTest {
         assertThat(numberOfCards, `is`(quantity))
         assertThat(sizeOfSideboard, `is`(sideboard))
     }
-
 }
 
 const val SMALL_NUMBER_OF_CARDS = 4

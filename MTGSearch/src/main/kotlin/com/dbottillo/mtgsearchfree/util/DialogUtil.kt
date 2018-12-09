@@ -10,16 +10,16 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.Player
 import java.lang.ref.WeakReference
 
-class DialogUtil{
+class DialogUtil {
 
     lateinit var refContext: WeakReference<Context>
 
-    fun init(context: Context?){
+    fun init(context: Context?) {
         this.refContext = WeakReference<Context>(context)
     }
 
-    fun showEditPlayer(player: Player, listener: (newName: String) -> Unit){
-        if (refContext.get() == null){
+    fun showEditPlayer(player: Player, listener: (newName: String) -> Unit) {
+        if (refContext.get() == null) {
             return
         }
         val context = refContext.get()!!
@@ -42,8 +42,8 @@ class DialogUtil{
         alert.show()
     }
 
-    fun showAddDeck(listener: (newName: String) -> Unit){
-        if (refContext.get() == null){
+    fun showAddDeck(listener: (newName: String) -> Unit) {
+        if (refContext.get() == null) {
             return
         }
         val context = refContext.get()!!
@@ -64,8 +64,8 @@ class DialogUtil{
         alert.show()
     }
 
-    fun deleteDeck(deck: Deck, listener: (deck: Deck) -> Unit){
-        if (refContext.get() == null){
+    fun deleteDeck(deck: Deck, listener: (deck: Deck) -> Unit) {
+        if (refContext.get() == null) {
             return
         }
         val context = refContext.get()!!
@@ -78,5 +78,4 @@ class DialogUtil{
                 .setNegativeButton(R.string.cancel, null)
                 .show()
     }
-
 }

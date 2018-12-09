@@ -8,13 +8,15 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
 
-class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
-                                val cardsInteractor: CardsInteractor,
-                                val cardsPreferences: CardsPreferences,
-                                val generalData: GeneralData,
-                                val logger: Logger) : SetsFragmentPresenter {
+class SetsFragmentPresenterImpl(
+    val setsInteractor: SetsInteractor,
+    val cardsInteractor: CardsInteractor,
+    val cardsPreferences: CardsPreferences,
+    val generalData: GeneralData,
+    val logger: Logger
+) : SetsFragmentPresenter {
 
-    var set: MTGSet?=null
+    var set: MTGSet? = null
     var currentPos: Int = -1
 
     lateinit var view: SetsFragmentView
@@ -22,7 +24,7 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
     override fun init(view: SetsFragmentView) {
         this.view = view
 
-        if (generalData.isCardsShowTypeGrid){
+        if (generalData.isCardsShowTypeGrid) {
             view.showCardsGrid()
         } else {
             view.showCardsList()
@@ -46,9 +48,9 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
         loadSet()
     }
 
-    internal fun loadSet(){
+    internal fun loadSet() {
         view.showLoading()
-        set?.let{
+        set?.let {
             cardsInteractor.loadSet(it).subscribe {
                 data ->
                 run {
@@ -76,5 +78,4 @@ class SetsFragmentPresenterImpl(val setsInteractor: SetsInteractor,
     override fun saveAsFavourite(card: MTGCard) {
         cardsInteractor.saveAsFavourite(card)
     }
-
 }

@@ -10,6 +10,8 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
@@ -17,9 +19,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
-import java.util.*
 
 class CardsInteractorImplTest {
 
@@ -41,7 +41,7 @@ class CardsInteractorImplTest {
     @Mock lateinit var schedulerProvider: SchedulerProvider
     @Mock lateinit var fileManager: FileManager
 
-    private val favCards = Arrays.asList(MTGCard(3), MTGCard(4))
+    private val favCards = listOf(MTGCard(3), MTGCard(4))
 
     @Before
     fun setup() {
@@ -54,9 +54,9 @@ class CardsInteractorImplTest {
     fun `get lucky cards should call storage and return observable`() {
         whenever(cardsStorage.getLuckyCards(2)).thenReturn(lukcyCardsCollection)
         val testSubscriber = TestObserver<CardsCollection>()
-        
+
         underTest.getLuckyCards(2).subscribe(testSubscriber)
-        
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(lukcyCardsCollection)
         verify(cardsStorage).getLuckyCards(2)

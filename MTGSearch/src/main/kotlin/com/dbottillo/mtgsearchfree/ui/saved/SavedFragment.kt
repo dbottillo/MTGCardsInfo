@@ -11,16 +11,20 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CardsCollection
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
+import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.gone
+import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -28,7 +32,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     lateinit var loader: MTGLoader
     lateinit var mtgCardsView: MTGCardsView
-    lateinit var emptyContainer : LinearLayout
+    lateinit var emptyContainer: LinearLayout
 
     @Inject
     lateinit var savedCardsPresenter: SavedCardsPresenter
@@ -48,7 +52,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
         loader = view.findViewById<MTGLoader>(R.id.loader)
         emptyContainer = view.findViewById<LinearLayout>(R.id.empty_saved_cards_container)
-        view.findViewById<View>(R.id.empty_cards_action).setOnClickListener{ openSearch() }
+        view.findViewById<View>(R.id.empty_cards_action).setOnClickListener { openSearch() }
 
         setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
 
@@ -125,8 +129,8 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
-        when(menuItem.itemId){
-            R.id.action_add_to_deck -> dbActivity.showDialog("add_to_deck", AddToDeckFragment.newInstance(card))
+        when (menuItem.itemId) {
+            R.id.action_add_to_deck -> dbActivity.show("add_to_deck", AddToDeckFragment.newInstance(card))
             R.id.action_remove -> {
                 savedCardsPresenter.removeFromFavourite(card)
                 savedCardsPresenter.load()
@@ -140,22 +144,20 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     }
 
     override fun onCardsSettingSelected() {
-        val cardsConfigurator= CardsConfiguratorFragment()
+        val cardsConfigurator = CardsConfiguratorFragment()
         cardsConfigurator.show(dbActivity.supportFragmentManager, "cards_configurator")
-        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener{
+        cardsConfigurator.listener = object : CardsConfiguratorFragment.CardsConfiguratorListener {
             override fun onConfigurationChange() {
                 savedCardsPresenter.load()
             }
         }
     }
 
-    fun openSearch(){
+    fun openSearch() {
         LOG.d()
         startActivity(Intent(activity, SearchActivity::class.java))
     }
 
     override fun onTitleHeaderSelected() {
-
     }
-
 }

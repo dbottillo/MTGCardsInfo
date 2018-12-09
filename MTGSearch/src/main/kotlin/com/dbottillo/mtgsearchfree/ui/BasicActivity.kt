@@ -15,7 +15,11 @@ import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.PermissionAvailable
+import com.dbottillo.mtgsearchfree.util.PermissionUtil
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.request
 import javax.inject.Inject
 
 abstract class BasicActivity : AppCompatActivity() {
@@ -125,5 +129,4 @@ abstract class BasicActivity : AppCompatActivity() {
             permissionListener!!.permissionNotGranted()
         }
     }
-
 }

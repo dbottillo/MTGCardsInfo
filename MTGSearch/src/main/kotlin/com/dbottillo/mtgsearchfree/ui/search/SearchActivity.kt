@@ -6,9 +6,6 @@ import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
-import android.support.v7.widget.SearchView
-import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
@@ -30,7 +27,13 @@ import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
-import com.dbottillo.mtgsearchfree.util.*
+import com.dbottillo.mtgsearchfree.util.AnimationUtil
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.bind
+import com.dbottillo.mtgsearchfree.util.setHeight
+import com.dbottillo.mtgsearchfree.util.setMarginTop
+import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -225,7 +228,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             }
 
             override fun onAnimationRepeat(animation: Animation) {
-
             }
         })
         anim.duration = 200
@@ -266,7 +268,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     }
 
     override fun onTitleHeaderSelected() {
-
     }
 
     override fun onCardsViewTypeSelected() {
@@ -294,13 +295,11 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         if (menuItem.itemId == R.id.action_add_to_deck) {
-            this.showDialog("add_to_deck", AddToDeckFragment.newInstance(card))
-
+            this.show("add_to_deck", AddToDeckFragment.newInstance(card))
         } else if (menuItem.itemId == R.id.action_add_to_favourites) {
             presenter.saveAsFavourite(card)
         }
     }
-
 }
 
 private const val SEARCH_OPEN = "searchOpen"

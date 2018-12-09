@@ -6,6 +6,8 @@ import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.ui.views.CardView
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 
 import org.junit.Before
@@ -13,10 +15,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-
 import io.reactivex.Observable
-
-import org.mockito.Mockito.*
 
 class CardPresenterImplTest {
 
@@ -39,12 +38,11 @@ class CardPresenterImplTest {
     @Test
     fun `load other side card should call interactor and update view`() {
         whenever(cardsInteractor.loadOtherSideCard(card)).thenReturn(Observable.just(otherCard))
-        
+
         underTest.loadOtherSideCard(card)
 
         verify(cardsInteractor).loadOtherSideCard(card)
         verify(view).otherSideCardLoaded(otherCard)
         verifyNoMoreInteractions(cardsInteractor, view)
     }
-
 }

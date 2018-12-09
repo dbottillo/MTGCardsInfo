@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.interactors
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
@@ -10,7 +12,6 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class PlayerInteractorImplTest {
@@ -22,7 +23,7 @@ class PlayerInteractorImplTest {
     @Mock internal lateinit var logger: Logger
     @Mock lateinit var players: List<Player>
     @Mock lateinit var schedulerProvider: SchedulerProvider
-    
+
     private lateinit var underTest: PlayerInteractor
 
     @Before
@@ -67,9 +68,9 @@ class PlayerInteractorImplTest {
     fun `edit player, should call storage and return observable`() {
         whenever(storage.editPlayer(player)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
-        
+
         underTest.editPlayer(player).subscribe(testSubscriber)
-        
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayer(player)
@@ -82,9 +83,9 @@ class PlayerInteractorImplTest {
     fun `edit players, should call storage and return observable`() {
         whenever(storage.editPlayers(players)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
-        
+
         underTest.editPlayers(players).subscribe(testSubscriber)
-        
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).editPlayers(players)
@@ -97,9 +98,9 @@ class PlayerInteractorImplTest {
     fun `remove player, should call storage and return observable`() {
         whenever(storage.removePlayer(player)).thenReturn(players)
         val testSubscriber = TestObserver<List<Player>>()
-        
+
         underTest.removePlayer(player).subscribe(testSubscriber)
-        
+
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(players)
         verify(storage).removePlayer(player)

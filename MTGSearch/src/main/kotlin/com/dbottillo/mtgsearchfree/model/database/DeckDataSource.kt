@@ -11,9 +11,11 @@ import com.dbottillo.mtgsearchfree.util.LOG
 
 import java.util.ArrayList
 
-class DeckDataSource(private val database: SQLiteDatabase,
-                     private val cardDataSource: CardDataSource,
-                     private val mtgCardDataSource: MTGCardDataSource) {
+class DeckDataSource(
+    private val database: SQLiteDatabase,
+    private val cardDataSource: CardDataSource,
+    private val mtgCardDataSource: MTGCardDataSource
+) {
 
     val decks: List<Deck>
         get() {
@@ -127,9 +129,9 @@ class DeckDataSource(private val database: SQLiteDatabase,
 
     private fun setQuantityOfCards(decks: ArrayList<Deck>, side: Boolean) {
         // need to loadSet cards now
-        //select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
-        //Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
-        //Cursor cursor = database.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
+        // select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
+        // Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
+        // Cursor cursor = database.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
         val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"
         LOG.query(query)
         val cursor = database.rawQuery(query, null)
@@ -270,8 +272,8 @@ class DeckDataSource(private val database: SQLiteDatabase,
     private fun updateQuantity(deckId: Long, quantity: Int, multiverseId: Int, sid: Int) {
         val values = ContentValues()
         values.put(COLUMNSJOIN.QUANTITY.noun, quantity)
-        val query = ("UPDATE " + TABLE_JOIN + " SET quantity=? WHERE " + COLUMNSJOIN.DECK_ID.noun + " = ? and "
-                + COLUMNSJOIN.CARD_ID.noun + " = ? and " + COLUMNSJOIN.SIDE.noun + " = ?")
+        val query = ("UPDATE " + TABLE_JOIN + " SET quantity=? WHERE " + COLUMNSJOIN.DECK_ID.noun + " = ? and " +
+                COLUMNSJOIN.CARD_ID.noun + " = ? and " + COLUMNSJOIN.SIDE.noun + " = ?")
         val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")
         val cursor = runQuery(query, *args)
         cursor.moveToFirst()

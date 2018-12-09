@@ -6,8 +6,10 @@ import com.dbottillo.mtgsearchfree.util.Logger
 
 import javax.inject.Inject
 
-class CardPresenterImpl @Inject constructor(private val interactor: CardsInteractor,
-                                            private val logger: Logger) : CardPresenter {
+class CardPresenterImpl @Inject constructor(
+    private val interactor: CardsInteractor,
+    private val logger: Logger
+) : CardPresenter {
 
     private lateinit var cardView: CardView
 
@@ -20,9 +22,8 @@ class CardPresenterImpl @Inject constructor(private val interactor: CardsInterac
     }
 
     override fun loadOtherSideCard(card: MTGCard) {
-        interactor.loadOtherSideCard(card).subscribe{
+        interactor.loadOtherSideCard(card).subscribe {
             cardView.otherSideCardLoaded(it)
         }
     }
-
 }

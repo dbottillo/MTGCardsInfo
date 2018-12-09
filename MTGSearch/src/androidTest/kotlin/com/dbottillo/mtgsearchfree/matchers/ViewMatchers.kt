@@ -21,7 +21,6 @@ object ViewMatchers {
             override fun matchesSafely(item: MTGSet): Boolean {
                 return name == item.name
             }
-
         }
     }
 
@@ -35,7 +34,6 @@ object ViewMatchers {
             override fun matchesSafely(item: MTGCard): Boolean {
                 return name == item.name
             }
-
         }
     }
 
@@ -46,5 +44,4 @@ object ViewMatchers {
     fun noDrawable(): Matcher<View> {
         return DrawableMatcher(-1)
     }
-
 }

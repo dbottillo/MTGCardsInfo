@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.views
 
-
 import android.animation.ArgbEvaluator
 import android.content.Context
 import android.graphics.Canvas
@@ -98,7 +97,6 @@ class MTGLoader : View {
             }
             currentStep = 0f
         }
-
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -124,5 +122,4 @@ class MTGLoader : View {
         private const val STEP = 0.05f
         private const val DELAY_MILLIS = 40
     }
-
 }

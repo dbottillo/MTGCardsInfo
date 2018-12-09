@@ -7,7 +7,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
-import android.util.Log
 import android.view.Menu
 import android.widget.ImageView
 import com.dbottillo.mtgsearchfree.R
@@ -15,7 +14,6 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
 import javax.inject.Inject
 
 class SetPickerActivity : BasicActivity(), SetPickerView {
@@ -92,8 +90,8 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
         finish()
     }
 
-    class Divider(val drawable: Drawable?) : RecyclerView.ItemDecoration(){
-        override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State){
+    class Divider(val drawable: Drawable?) : RecyclerView.ItemDecoration() {
+        override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State) {
             val dividerLeft = parent.context.dpToPx(16)
             val dividerRight = parent.width - dividerLeft
 

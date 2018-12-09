@@ -19,10 +19,10 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 
 fun MTGCard.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
-    Pair(name, gathererImage).loadInto(loader, imageView, retry)
+    Pair(name, scryfallImage).loadInto(loader, imageView, retry)
 }
 
-fun Pair<String,String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
+fun Pair<String, String>.loadInto(loader: MTGLoader? = null, imageView: ImageView, retry: View? = null) {
     loader?.show()
     retry?.hide()
     imageView.contentDescription = first
@@ -38,14 +38,18 @@ fun Pair<String,String>.loadInto(loader: MTGLoader? = null, imageView: ImageView
             .into(imageView)
 }
 
-fun withListener(loader: MTGLoader? = null,
-                 retryView: View? = null,
-                 hideOnError: Boolean): RequestListener<Drawable> {
+fun withListener(
+    loader: MTGLoader? = null,
+    retryView: View? = null,
+    hideOnError: Boolean
+): RequestListener<Drawable> {
     return object : RequestListener<Drawable> {
-        override fun onLoadFailed(e: GlideException?,
-                                  model: Any?,
-                                  target: Target<Drawable>?,
-                                  isFirstResource: Boolean): Boolean {
+        override fun onLoadFailed(
+            e: GlideException?,
+            model: Any?,
+            target: Target<Drawable>?,
+            isFirstResource: Boolean
+        ): Boolean {
             if (hideOnError) {
                 loader?.hide()
                 retryView?.show()
@@ -53,33 +57,33 @@ fun withListener(loader: MTGLoader? = null,
             return false
         }
 
-        override fun onResourceReady(resource: Drawable?,
-                                     model: Any?,
-                                     target: Target<Drawable>?,
-                                     dataSource: DataSource?,
-                                     isFirstResource: Boolean): Boolean {
+        override fun onResourceReady(
+            resource: Drawable?,
+            model: Any?,
+            target: Target<Drawable>?,
+            dataSource: DataSource?,
+            isFirstResource: Boolean
+        ): Boolean {
             loader?.hide()
             return false
         }
-
     }
 }
 
 fun MTGCard.prefetchImage(context: Context) {
-    TrackingManager.trackImage(gathererImage)
+    TrackingManager.trackImage(scryfallImage)
     GlideApp.with(context)
-            .load(gathererImage)
+            .load(scryfallImage)
             .preload()
 }
 
 fun MTGCard.getBitmap(context: Context, callback: (Bitmap) -> Unit) {
     GlideApp.with(context)
             .asBitmap()
-            .load(gathererImage)
+            .load(scryfallImage)
             .into(object : SimpleTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     callback(resource)
                 }
             })
-
 }

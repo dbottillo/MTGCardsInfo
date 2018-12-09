@@ -4,14 +4,15 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class TCGPrice(var hiPrice: String? = null,
-               var lowprice: String? = null,
-               var avgPrice: String? = null,
-               var link: String? = null,
-               var errorPrice: String? = null,
-               var isAnError: Boolean = false,
-               var isNotFound: Boolean = false) : Parcelable {
-
+class TCGPrice(
+    var hiPrice: String? = null,
+    var lowprice: String? = null,
+    var avgPrice: String? = null,
+    var link: String? = null,
+    var errorPrice: String? = null,
+    var isAnError: Boolean = false,
+    var isNotFound: Boolean = false
+) : Parcelable {
 
     fun setError(errorPrice: String) {
         isAnError = true

@@ -53,7 +53,6 @@ class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfigurator
     override fun filterUpdated(type: CardFilter.TYPE, on: Boolean) {
         presenter.update(type, on)
     }
-
 }
 
 const val CARDS_CONFIGURATION_SHOW_FILTER = "CARDS_CONFIGURATION_SHOW_FILTER"

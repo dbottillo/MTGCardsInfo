@@ -12,7 +12,6 @@ class AppInfo(private val context: Context) {
             } catch (ignored: PackageManager.NameNotFoundException) {
                 -1
             }
-
         }
 
     val lastUpdateTime: Long
@@ -22,6 +21,5 @@ class AppInfo(private val context: Context) {
             } catch (ignored: PackageManager.NameNotFoundException) {
                 -1
             }
-
         }
 }

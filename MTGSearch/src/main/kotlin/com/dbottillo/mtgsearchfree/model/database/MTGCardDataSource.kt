@@ -3,19 +3,23 @@ package com.dbottillo.mtgsearchfree.model.database
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.util.LOG
-import java.util.*
+import java.util.Arrays
+import java.util.Locale
 
-class MTGCardDataSource(private val database: SQLiteDatabase,
-                        private val cardDataSource: CardDataSource) {
+class MTGCardDataSource(
+    private val database: SQLiteDatabase,
+    private val cardDataSource: CardDataSource
+) {
 
     internal enum class STANDARD(var setId: Int, var set: String) {
-        GUILDS_OF_RAVNICA(1, "Guilds of Ravnica"),
-        CORE_19(3, "Core Set 2019"),
-        DOMINARIA(8, "Dominaria"),
-        RIVALS_OF_IXALAN(10, "Rivals of Ixalan"),
-        IXALAN(15, "Ixalan");
+        GUILDS_OF_RAVNICA(2, "Guilds of Ravnica"),
+        CORE_19(4, "Core Set 2019"),
+        DOMINARIA(9, "Dominaria"),
+        RIVALS_OF_IXALAN(11, "Rivals of Ixalan"),
+        IXALAN(16, "Ixalan");
 
         companion object {
 
@@ -60,7 +64,7 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
         var colorsOperator = "OR"
         if (searchParams.isNoMulti) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "0")
-            //colorsOperator = "OR";
+            // colorsOperator = "OR";
         }
         if (searchParams.onlyMulti() || searchParams.isOnlyMultiNoOthers) {
             queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "1")
@@ -96,16 +100,16 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
         if (searchParams.atLeastOneRarity()) {
             val rarities = ArrayList<String>()
             if (searchParams.isCommon) {
-                rarities.add("Common")
+                rarities.add(Rarity.COMMON.value)
             }
             if (searchParams.isUncommon) {
-                rarities.add("Uncommon")
+                rarities.add(Rarity.UNCOMMON.value)
             }
             if (searchParams.isRare) {
-                rarities.add("Rare")
+                rarities.add(Rarity.RARE.value)
             }
             if (searchParams.isMythic) {
-                rarities.add("Mythic Rare")
+                rarities.add(Rarity.MYTHIC.value)
             }
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *Arrays.copyOf<String, Any>(rarities.toTypedArray(), rarities.size, Array<String>::class.java))
         }
@@ -131,7 +135,6 @@ class MTGCardDataSource(private val database: SQLiteDatabase,
         cursor.close()
         return cards
     }
-
 
     fun getRandomCard(number: Int): List<MTGCard> {
         LOG.d("get random card  $number")

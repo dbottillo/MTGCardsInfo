@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.ToggleButton
 
 import com.dbottillo.mtgsearchfree.R
@@ -115,4 +114,3 @@ class FilterPickerView(context: Context, attrs: AttributeSet?, defStyle: Int) : 
         orderTitle.visibility = if (showOrder) View.VISIBLE else View.GONE
     }
 }
-

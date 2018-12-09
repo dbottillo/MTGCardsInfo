@@ -7,7 +7,7 @@ import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
 class DrawableMatcher(private val expectedId: Int) : TypeSafeMatcher<View>(View::class.java) {
-    
+
     internal var resourceName: String? = null
 
     override fun matchesSafely(target: View): Boolean {
@@ -29,7 +29,6 @@ class DrawableMatcher(private val expectedId: Int) : TypeSafeMatcher<View>(View:
         val otherBitmap = (expectedDrawable as BitmapDrawable).bitmap
         return bitmap.sameAs(otherBitmap)
     }
-
 
     override fun describeTo(description: Description) {
         description.appendText("with drawable from resource id: ")

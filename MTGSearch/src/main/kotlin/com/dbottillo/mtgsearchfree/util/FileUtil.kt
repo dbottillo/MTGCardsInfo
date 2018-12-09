@@ -6,10 +6,13 @@ import android.os.Environment
 import android.text.TextUtils
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardsBucket
-import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import java.io.*
-import java.util.*
+import java.io.BufferedReader
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.io.InputStreamReader
 
 class FileUtil(private val fileManager: FileManagerI) {
 
@@ -25,7 +28,6 @@ class FileUtil(private val fileManager: FileManagerI) {
         }
         return bucket
     }
-
 
     private fun InputStream.readFileStream(deckName: String?): CardsBucket {
         val cards = ArrayList<MTGCard>()
@@ -62,7 +64,7 @@ class FileUtil(private val fileManager: FileManagerI) {
     }
 
     private fun generateCard(line: String): MTGCard {
-        val items = ArrayList(Arrays.asList(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()))
+        val items = ArrayList(listOf(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()))
         val first = items.removeAt(0)
         val rest = TextUtils.join(" ", items)
         val card = MTGCard()

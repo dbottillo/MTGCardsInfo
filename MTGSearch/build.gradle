@@ -1,7 +1,11 @@
 buildscript {
-    ext.number_of_set = 181
-    ext.database_version = 40
-    ext.name_fifth_mtg_card = "Collar the Culprit"
+    ext.number_of_set = 182
+    ext.database_version = 41
+    ext.name_fifth_mtg_card = "Karn Liberated"
+}
+
+plugins{
+    id "io.gitlab.arturbosch.detekt" version "1.0.0-RC10"
 }
 
 apply plugin: 'com.android.application'
@@ -13,6 +17,8 @@ apply plugin: 'checkstyle'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "com.github.ben-manes.versions"
+apply from: '../githooks.gradle'
+apply plugin: 'io.gitlab.arturbosch.detekt'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 def checkstyleConfigDir = new File(buildscript.sourceFile.parentFile, 'config/checkstyle')
@@ -41,8 +47,8 @@ android {
         applicationId 'com.dbottillo.mtgsearchfree'
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 100
-        versionName "3.5.0"
+        versionCode 101
+        versionName "3.6.0"
         testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = false
@@ -140,7 +146,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
-    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation("com.crashlytics.sdk.android:crashlytics:$crashlytics_version@aar") {
         transitive = true
     }
@@ -164,7 +170,7 @@ dependencies {
     androidTestImplementation "com.android.support:appcompat-v7:$support_library_version"
     androidTestImplementation "com.android.support:recyclerview-v7:$support_library_version"
     androidTestImplementation "com.android.support:design:$support_library_version"
-    androidTestImplementation 'org.mockito:mockito-android:2.22.0'
+    androidTestImplementation 'org.mockito:mockito-android:2.23.4'
 }
 
 tasks.withType(Test) {
@@ -229,8 +235,28 @@ dependencyUpdates.resolutionStrategy {
     }
 }
 
+apply plugin: 'com.diffplug.gradle.spotless'
+spotless {
+    kotlin {
+        target 'src/**/*.kt'
+        ktlint('0.28.0')
+    }
+}
+
+detekt {
+    config = files("$projectDir/config/detekt/config.yml")
+    baseline = file("$projectDir/config/detekt/baseline.xml")
+
+    reports {
+        html {
+            enabled = true
+            destination = file("$rootDir/build/detekt.html")
+        }
+    }
+}
+
 task quality
-quality.dependsOn 'checkstyle', 'pmd'
+quality.dependsOn 'checkstyle', 'pmd', 'detekt'
 //quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
 
 task testPreRelease

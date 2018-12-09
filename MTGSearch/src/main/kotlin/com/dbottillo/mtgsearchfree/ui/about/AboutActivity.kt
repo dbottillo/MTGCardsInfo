@@ -21,7 +21,7 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
 import com.dbottillo.mtgsearchfree.util.bind
 import com.dbottillo.mtgsearchfree.util.toHtml
-import java.util.*
+import java.util.Calendar
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
 

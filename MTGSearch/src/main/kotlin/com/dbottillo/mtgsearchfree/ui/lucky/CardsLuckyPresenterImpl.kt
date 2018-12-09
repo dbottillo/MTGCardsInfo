@@ -10,9 +10,11 @@ import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
 @Suppress("CAST_NEVER_SUCCEEDS")
-class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
-                              val cardsPreferences: CardsPreferences,
-                              val logger: Logger) : CardsLuckyPresenter {
+class CardsLuckyPresenterImpl(
+    val cardsInteractor: CardsInteractor,
+    val cardsPreferences: CardsPreferences,
+    val logger: Logger
+) : CardsLuckyPresenter {
 
     lateinit var view: CardsLuckyView
 
@@ -23,7 +25,7 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
     override fun init(view: CardsLuckyView, bundle: Bundle?, intent: Intent?) {
         this.view = view
 
-        cardsInteractor.loadIdFav().subscribe({
+        cardsInteractor.loadIdFav().subscribe {
             favs = it.toMutableList()
 
             var idCard: Int? = null
@@ -46,7 +48,7 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
             }
 
             loadMoreCards()
-        })
+        }
     }
 
     private fun loadMoreCards() {
@@ -130,7 +132,6 @@ class CardsLuckyPresenterImpl(val cardsInteractor: CardsInteractor,
             view.showError(it.localizedMessage)
         })
     }
-
 }
 
 const val CARD = "CARD"

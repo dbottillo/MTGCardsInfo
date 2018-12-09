@@ -12,7 +12,11 @@ import android.support.v4.view.ViewPager
 import android.widget.RelativeLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.*
+import com.dbottillo.mtgsearchfree.model.CardsCollection
+import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
@@ -188,7 +192,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun shareUri(uri: Uri) {
         shareUriArtwork(currentCard?.name ?: "", uri)
     }
-
 }
 
 fun Context.startCardsActivity(deck: Deck, position: Int): Intent {

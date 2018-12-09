@@ -7,9 +7,11 @@ import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.Disposable
 
-class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
-                              val generalData: GeneralData,
-                              val logger: Logger) : SavedCardsPresenter {
+class SavedCardsPresenterImpl(
+    val interactor: SavedCardsInteractor,
+    val generalData: GeneralData,
+    val logger: Logger
+) : SavedCardsPresenter {
 
     lateinit var view: SavedCardsView
     private var disposable: Disposable? = null
@@ -21,7 +23,6 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
         } else {
             view.showCardsList()
         }
-
     }
 
     override fun load() {
@@ -63,5 +64,4 @@ class SavedCardsPresenterImpl(val interactor: SavedCardsInteractor,
             view.showCardsGrid()
         }
     }
-
 }

@@ -5,39 +5,31 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
+import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 
 class DecksFragmentPresenterImplTest {
 
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
+
     lateinit var underTest: DecksFragmentPresenter
 
-    @Mock
-    lateinit var interactor: DecksInteractor
-    @Mock
-    lateinit var logger: Logger
-    @Mock
-    lateinit var view: DecksFragmentView
-    @Mock
-    lateinit var decks: List<Deck>
-    @Mock
-    lateinit var deck: Deck
-    @Mock
-    lateinit var uri: Uri
-    @Mock
-    lateinit var exception: MTGException
-    @Mock
-    lateinit var genericException: Exception
-
-    @Rule
-    @JvmField
-    val mockitoRule = MockitoJUnit.rule()
+    @Mock lateinit var interactor: DecksInteractor
+    @Mock lateinit var logger: Logger
+    @Mock lateinit var view: DecksFragmentView
+    @Mock lateinit var decks: List<Deck>
+    @Mock lateinit var deck: Deck
+    @Mock lateinit var uri: Uri
+    @Mock lateinit var exception: MTGException
+    @Mock lateinit var genericException: Exception
 
     @Before
     fun setUp() {
@@ -47,7 +39,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `load decks, should call interactor and update view`() {
-        `when`(interactor.load()).thenReturn(Single.just(decks))
+        whenever(interactor.load()).thenReturn(Single.just(decks))
 
         underTest.loadDecks()
 
@@ -58,8 +50,8 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `load decks, should call interactor and show error if there is an exception`() {
-        `when`(exception.message).thenReturn("error")
-        `when`(interactor.load()).thenReturn(Single.error(exception))
+        whenever(exception.message).thenReturn("error")
+        whenever(interactor.load()).thenReturn(Single.error(exception))
 
         underTest.loadDecks()
 
@@ -70,7 +62,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `add deck, should call interactor and update view`() {
-        `when`(interactor.addDeck("new deck")).thenReturn(Observable.just(decks))
+        whenever(interactor.addDeck("new deck")).thenReturn(Observable.just(decks))
 
         underTest.addDeck("new deck")
 
@@ -81,8 +73,8 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `add deck, should call interactor and show error if there is an exception`() {
-        `when`(genericException.localizedMessage).thenReturn("error")
-        `when`(interactor.addDeck("new deck")).thenReturn(Observable.error(genericException))
+        whenever(genericException.localizedMessage).thenReturn("error")
+        whenever(interactor.addDeck("new deck")).thenReturn(Observable.error(genericException))
 
         underTest.addDeck("new deck")
 
@@ -93,8 +85,8 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `delete deck, should call interactor and update view`() {
-        `when`(exception.message).thenReturn("error")
-        `when`(interactor.deleteDeck(deck)).thenReturn(Observable.error(exception))
+        whenever(exception.message).thenReturn("error")
+        whenever(interactor.deleteDeck(deck)).thenReturn(Observable.error(exception))
 
         underTest.deleteDeck(deck)
 
@@ -105,7 +97,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `delete deck, should call interactor and show error if there is an exception`() {
-        `when`(interactor.deleteDeck(deck)).thenReturn(Observable.just(decks))
+        whenever(interactor.deleteDeck(deck)).thenReturn(Observable.just(decks))
 
         underTest.deleteDeck(deck)
 
@@ -116,7 +108,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `import deck, should call interactor and update view`() {
-        `when`(interactor.importDeck(uri)).thenReturn(Observable.just(decks))
+        whenever(interactor.importDeck(uri)).thenReturn(Observable.just(decks))
 
         underTest.importDeck(uri)
 
@@ -127,8 +119,8 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `import deck, should call interactor and show error if there is an exception`() {
-        `when`(genericException.localizedMessage).thenReturn("error")
-        `when`(interactor.importDeck(uri)).thenReturn(Observable.error(genericException))
+        whenever(genericException.localizedMessage).thenReturn("error")
+        whenever(interactor.importDeck(uri)).thenReturn(Observable.error(genericException))
 
         underTest.importDeck(uri)
 
@@ -139,7 +131,7 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `copy deck, should call interactor and update view`() {
-        `when`(interactor.copy(deck)).thenReturn(Single.just(decks))
+        whenever(interactor.copy(deck)).thenReturn(Single.just(decks))
 
         underTest.copyDeck(deck)
 
@@ -150,8 +142,8 @@ class DecksFragmentPresenterImplTest {
 
     @Test
     fun `copy deck, should call interactor and show error if there is an exception`() {
-        `when`(genericException.localizedMessage).thenReturn("error")
-        `when`(interactor.copy(deck)).thenReturn(Single.error(genericException))
+        whenever(genericException.localizedMessage).thenReturn("error")
+        whenever(interactor.copy(deck)).thenReturn(Single.error(genericException))
 
         underTest.copyDeck(deck)
 
@@ -159,5 +151,4 @@ class DecksFragmentPresenterImplTest {
         verify(interactor).copy(deck)
         verifyNoMoreInteractions(view, interactor)
     }
-
 }

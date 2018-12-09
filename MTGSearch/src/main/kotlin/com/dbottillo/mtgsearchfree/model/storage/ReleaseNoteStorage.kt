@@ -9,8 +9,10 @@ import com.google.gson.JsonSyntaxException
 import io.reactivex.Single
 import javax.inject.Inject
 
-class ReleaseNoteStorage @Inject constructor(private val fileManager: FileManager,
-                                             private val gsonUtil: GsonUtil) {
+class ReleaseNoteStorage @Inject constructor(
+    private val fileManager: FileManager,
+    private val gsonUtil: GsonUtil
+) {
 
     fun load(): Single<List<ReleaseNoteItem>> {
         return try {
@@ -25,5 +27,4 @@ class ReleaseNoteStorage @Inject constructor(private val fileManager: FileManage
             Single.error(throwable)
         }
     }
-
 }

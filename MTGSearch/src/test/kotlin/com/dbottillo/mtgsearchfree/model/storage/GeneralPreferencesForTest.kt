@@ -21,12 +21,10 @@ class GeneralPreferencesForTest : GeneralData {
         typeList = false
     }
 
-
     override val isCardsShowTypeGrid: Boolean
         get() = !typeList
 
     override fun setTooltipMainHide() {
-
     }
 
     override fun isTooltipMainToShow(): Boolean {
@@ -46,7 +44,6 @@ class GeneralPreferencesForTest : GeneralData {
     }
 
     override fun markCardMigrationStarted() {
-
     }
 
     override var lastDeckSelected: Long = 2

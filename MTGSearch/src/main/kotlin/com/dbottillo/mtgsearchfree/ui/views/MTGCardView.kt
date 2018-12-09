@@ -23,9 +23,14 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.TCGPrice
 import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService
-import com.dbottillo.mtgsearchfree.ui.BasicActivity
-import com.dbottillo.mtgsearchfree.util.*
-import javax.inject.Inject
+import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.addBold
+import com.dbottillo.mtgsearchfree.util.boldTitledEntry
+import com.dbottillo.mtgsearchfree.util.calculateSizeCardImage
+import com.dbottillo.mtgsearchfree.util.loadInto
+import com.dbottillo.mtgsearchfree.util.newLine
+import com.dbottillo.mtgsearchfree.util.setBoldAndItalic
 
 class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle), CardView {
 
@@ -76,10 +81,9 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         }
         cardImage.calculateSizeCardImage(widthAvailable, resources.getBoolean(R.bool.isTablet))
         priceOnTcg.setBoldAndItalic("TCG")
-
     }
 
-    fun init(cardPresenter: CardPresenter){
+    fun init(cardPresenter: CardPresenter) {
         this.cardPresenter = cardPresenter
         cardPresenter.init(this)
     }
@@ -217,7 +221,6 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     override fun otherSideCardLoaded(card: MTGCard) {
         load(card)
     }
-
 }
 
 const val RATIO_CARD = 1.39622641509434f

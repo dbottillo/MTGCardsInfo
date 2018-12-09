@@ -4,21 +4,18 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.support.annotation.VisibleForTesting
-
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.model.Legality
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.*
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.Rarity
+import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-
-import java.lang.reflect.Type
 import java.util.ArrayList
 
 class CardDataSource(private val database: SQLiteDatabase, private val gson: Gson) {
@@ -67,8 +64,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         PRINTINGS("printings", "TEXT"),
         LEGALITIES("legalities", "TEXT"),
         ORIGINAL_TEXT("originalText", "TEXT"),
-        MCI_NUMBER("mciNumber", "TEXT"),
-        COLORS_IDENTITY("colorIdentity", "TEXT")
+        COLORS_IDENTITY("colorIdentity", "TEXT"),
+        UUID("uuid", "TEXT")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -124,7 +121,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             values.put(COLUMNS.SUB_TYPES.noun, typ.toString())
         }
         values.put(COLUMNS.MANA_COST.noun, card.manaCost)
-        values.put(COLUMNS.RARITY.noun, card.rarity)
+        values.put(COLUMNS.RARITY.noun, card.rarity.value)
         values.put(COLUMNS.MULTIVERSE_ID.noun, card.multiVerseId)
         values.put(COLUMNS.POWER.noun, card.power)
         values.put(COLUMNS.TOUGHNESS.noun, card.toughness)
@@ -145,7 +142,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                     Crashlytics.logException(e)
                     LOG.e(e)
                 }
-
             }
             values.put(COLUMNS.RULINGS.noun, rules.toString())
         }
@@ -159,7 +155,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         values.put(COLUMNS.LOYALTY.noun, card.loyalty)
         values.put(COLUMNS.PRINTINGS.noun, gson.toJson(card.printings))
         values.put(COLUMNS.ORIGINAL_TEXT.noun, card.originalText)
-        values.put(COLUMNS.MCI_NUMBER.noun, card.mciNumber)
         values.put(COLUMNS.COLORS_IDENTITY.noun, gson.toJson(card.colorsIdentity))
         val legalities = card.legalities
         if (legalities.size > 0) {
@@ -174,10 +169,10 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                     Crashlytics.logException(e)
                     LOG.e(e)
                 }
-
             }
             values.put(COLUMNS.LEGALITIES.noun, legalitiesJ.toString())
         }
+        values.put(COLUMNS.UUID.noun, card.uuid)
 
         return values
     }
@@ -229,7 +224,13 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
         }
 
-        card.rarity = cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.noun))
+        val rarity: Rarity = when (cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.noun))) {
+            "uncommon", "timeshifted uncommon" -> Rarity.UNCOMMON
+            "rare", "timeshifted rare" -> Rarity.RARE
+            "mythic", "timeshifted mythic" -> Rarity.MYTHIC
+            else -> Rarity.COMMON
+        }
+        card.rarity = rarity
         card.power = cursor.getString(cursor.getColumnIndex(COLUMNS.POWER.noun))
         card.toughness = cursor.getString(cursor.getColumnIndex(COLUMNS.TOUGHNESS.noun))
 
@@ -257,7 +258,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 Crashlytics.logException(e)
                 LOG.e(e)
             }
-
         }
 
         val type = object : TypeToken<List<String>>() {}.type
@@ -305,10 +305,6 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
         }
 
-        if (cursor.getColumnIndex(COLUMNS.MCI_NUMBER.noun) != -1) {
-            card.mciNumber = cursor.getString(cursor.getColumnIndex(COLUMNS.MCI_NUMBER.noun))
-        }
-
         if (cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun) != -1) {
             val colorsIdentity = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun))
             if (colorsIdentity != null) {
@@ -339,9 +335,11 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                     Crashlytics.logException(e2)
                     LOG.e(e2)
                 }
-
             }
+        }
 
+        if (cursor.getColumnIndex(COLUMNS.UUID.noun) != -1) {
+            card.uuid = cursor.getString(cursor.getColumnIndex(COLUMNS.UUID.noun)) ?: ""
         }
 
         return card
@@ -358,96 +356,104 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         const val LIMIT = 400
         const val TABLE = "MTGCard"
 
-        internal val SQL_ADD_COLUMN_RULINGS = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.RULINGS.noun + " " + COLUMNS.RULINGS.type)
+        internal val SQL_ADD_COLUMN_RULINGS = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.RULINGS.noun + " " + COLUMNS.RULINGS.type)
 
-        internal val SQL_ADD_COLUMN_LAYOUT = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.LAYOUT.noun + " " + COLUMNS.LAYOUT.type)
+        internal val SQL_ADD_COLUMN_LAYOUT = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.LAYOUT.noun + " " + COLUMNS.LAYOUT.type)
 
-        internal val SQL_ADD_COLUMN_SET_CODE = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.SET_CODE.noun + " " + COLUMNS.SET_CODE.type)
+        internal val SQL_ADD_COLUMN_SET_CODE = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.SET_CODE.noun + " " + COLUMNS.SET_CODE.type)
 
-        internal val SQL_ADD_COLUMN_NUMBER = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.NUMBER.noun + " " + COLUMNS.NUMBER.type)
+        internal val SQL_ADD_COLUMN_NUMBER = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.NUMBER.noun + " " + COLUMNS.NUMBER.type)
 
-        internal val SQL_ADD_COLUMN_NAMES = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.NAMES.noun + " " + COLUMNS.NAMES.type)
+        internal val SQL_ADD_COLUMN_NAMES = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.NAMES.noun + " " + COLUMNS.NAMES.type)
 
-        internal val SQL_ADD_COLUMN_SUPER_TYPES = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.SUPER_TYPES.noun + " " + COLUMNS.SUPER_TYPES.type)
+        internal val SQL_ADD_COLUMN_SUPER_TYPES = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.SUPER_TYPES.noun + " " + COLUMNS.SUPER_TYPES.type)
 
-        internal val SQL_ADD_COLUMN_FLAVOR = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.FLAVOR.noun + " " + COLUMNS.FLAVOR.type)
+        internal val SQL_ADD_COLUMN_FLAVOR = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.FLAVOR.noun + " " + COLUMNS.FLAVOR.type)
 
-        internal val SQL_ADD_COLUMN_ARTIST = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.ARTIST.noun + " " + COLUMNS.ARTIST.type)
+        internal val SQL_ADD_COLUMN_ARTIST = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.ARTIST.noun + " " + COLUMNS.ARTIST.type)
 
-        internal val SQL_ADD_COLUMN_LOYALTY = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.LOYALTY.noun + " " + COLUMNS.LOYALTY.type)
+        internal val SQL_ADD_COLUMN_LOYALTY = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.LOYALTY.noun + " " + COLUMNS.LOYALTY.type)
 
-        internal val SQL_ADD_COLUMN_PRINTINGS = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.PRINTINGS.noun + " " + COLUMNS.PRINTINGS.type)
+        internal val SQL_ADD_COLUMN_PRINTINGS = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.PRINTINGS.noun + " " + COLUMNS.PRINTINGS.type)
 
-        internal val SQL_ADD_COLUMN_LEGALITIES = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.LEGALITIES.noun + " " + COLUMNS.LEGALITIES.type)
+        internal val SQL_ADD_COLUMN_LEGALITIES = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.LEGALITIES.noun + " " + COLUMNS.LEGALITIES.type)
 
-        internal val SQL_ADD_COLUMN_ORIGINAL_TEXT = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.ORIGINAL_TEXT.noun + " " + COLUMNS.ORIGINAL_TEXT.type)
+        internal val SQL_ADD_COLUMN_ORIGINAL_TEXT = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.ORIGINAL_TEXT.noun + " " + COLUMNS.ORIGINAL_TEXT.type)
 
-        internal val SQL_ADD_COLUMN_MCI_NUMBER = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.MCI_NUMBER.noun + " " + COLUMNS.MCI_NUMBER.type)
+        internal val SQL_ADD_COLUMN_COLORS_IDENTITY = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.COLORS_IDENTITY.noun + " " + COLUMNS.COLORS_IDENTITY.type)
 
-        internal val SQL_ADD_COLUMN_COLORS_IDENTITY = ("ALTER TABLE "
-                + TABLE + " ADD COLUMN "
-                + COLUMNS.COLORS_IDENTITY.noun + " " + COLUMNS.COLORS_IDENTITY.type)
+        internal val SQL_ADD_COLUMN_UUID = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.UUID.noun + " " + COLUMNS.UUID.type)
 
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.COLORS_IDENTITY) {
+                if (column != COLUMNS.UUID) {
                     builder.append(',')
                 }
             }
             return builder.append(')').toString()
         }
 
+        private fun getLastColumn(version: Int): CardDataSource.COLUMNS {
+            return when {
+                version < TWO -> COLUMNS.SET_NAME
+                version < THREE -> COLUMNS.LAYOUT
+                version < SEVEN -> COLUMNS.NUMBER
+                version < EIGTH -> COLUMNS.ORIGINAL_TEXT
+                version < NINE -> COLUMNS.COLORS_IDENTITY
+                else -> COLUMNS.ORIGINAL_TEXT
+            }
+        }
+
         @VisibleForTesting
         fun generateCreateTable(version: Int): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
-            var lastColumn = COLUMNS.ORIGINAL_TEXT
-            when {
-                version < 2 -> lastColumn = COLUMNS.SET_NAME
-                version < 3 -> lastColumn = COLUMNS.LAYOUT
-                version < 7 -> lastColumn = COLUMNS.NUMBER
-            }
+            val lastColumn = getLastColumn(version)
             for (column in COLUMNS.values()) {
                 var addColumn = true
                 if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
                     addColumn = false
                 } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
                     addColumn = false
-                } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES
-                                || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST
-                                || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS
-                                || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT && version <= 6) {
+                } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES ||
+                                column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST ||
+                                column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
+                                column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT && version <= 6) {
                     addColumn = false
-                } else if ((column == COLUMNS.COLORS_IDENTITY || column == COLUMNS.MCI_NUMBER) && version <= 7) {
+                } else if (column == COLUMNS.COLORS_IDENTITY && version <= SEVEN) {
+                    addColumn = false
+                } else if (column == COLUMNS.UUID && version <= NINE) {
                     addColumn = false
                 }
                 if (addColumn) {
@@ -461,3 +467,9 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         }
     }
 }
+
+private const val TWO = 2
+private const val THREE = 3
+private const val SEVEN = 7
+private const val EIGTH = 8
+private const val NINE = 9
