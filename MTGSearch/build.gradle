@@ -1,7 +1,7 @@
 buildscript {
-    ext.number_of_set = 181
+    ext.number_of_set = 182
     ext.database_version = 41
-    ext.name_fifth_mtg_card = "Collar the Culprit"
+    ext.name_fifth_mtg_card = "Karn Liberated"
 }
 
 plugins{
@@ -250,7 +250,7 @@ detekt {
     reports {
         html {
             enabled = true
-            destination = file("$rootDir/detekt.html")
+            destination = file("$rootDir/build/detekt.html")
         }
     }
 }

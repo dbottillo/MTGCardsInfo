@@ -67,6 +67,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 162812,
             "text": "{G}: Regenerate another target Elf.\n{2}{G}{G}{G}: Elf creatures you control get +3/+3 and gain trample until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Warrior",
@@ -139,6 +140,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 162813,
             "text": "Reach\nOther Elf creatures you control get +1/+1.\nWhenever Dwynen, Gilt-Leaf Daen attacks, you gain 1 life for each attacking Elf you control.",
             "toughness": "4",
             "type": "Legendary Creature — Elf Warrior",
@@ -201,6 +203,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162814,
             "text": "When Dwynen's Elite enters the battlefield, if you control another Elf, create a 1/1 green Elf Warrior creature token.",
             "toughness": "2",
             "type": "Creature — Elf Warrior",
@@ -284,6 +287,7 @@
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162815,
             "text": "{T}: Add {G}{G}{G}.\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, and put it into your hand, then shuffle your library.)",
             "toughness": "5",
             "type": "Creature — Elf Mutant",
@@ -359,6 +363,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162817,
             "text": "Other Elf creatures you control get +1/+1.\n{T}: Add {G} for each Elf you control.",
             "toughness": "2",
             "type": "Creature — Elf Druid",
@@ -435,6 +440,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162819,
             "text": "{T}: Until end of turn, target Forest becomes an X/X Treefolk creature in addition to its other types, where X is the number of Elves you control.",
             "toughness": "2",
             "type": "Creature — Elf Druid",
@@ -503,6 +509,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162820,
             "text": "{T}: Add {G}.",
             "toughness": "1",
             "type": "Creature — Elf Druid",
@@ -571,6 +578,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162821,
             "text": "Whenever another Elf enters the battlefield, put a +1/+1 counter on Elvish Vanguard.",
             "toughness": "1",
             "type": "Creature — Elf Warrior",
@@ -639,6 +647,7 @@
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162822,
             "text": "Reach (This creature can block creatures with flying.)\nWhenever Ezuri's Archers blocks a creature with flying, Ezuri's Archers gets +3/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Elf Archer",
@@ -700,6 +709,7 @@
                 "Elf"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162823,
             "text": "When Fierce Empath enters the battlefield, you may search your library for a creature card with converted mana cost 6 or greater, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "1",
             "type": "Creature — Elf",
@@ -788,6 +798,7 @@
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162824,
             "text": "When Gladehart Cavalry enters the battlefield, support 6. (Put a +1/+1 counter on each of up to six other target creatures.)\nWhenever a creature you control with a +1/+1 counter on it dies, you gain 2 life.",
             "toughness": "6",
             "type": "Creature — Elf Knight",
@@ -860,6 +871,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162825,
             "text": "Whenever another green creature enters the battlefield under your control, put a +1/+1 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Elf Warrior",
@@ -922,6 +934,7 @@
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162826,
             "text": "Jagged-Scar Archers's power and toughness are each equal to the number of Elves you control.\n{T}: Jagged-Scar Archers deals damage equal to its power to target creature with flying.",
             "toughness": "*",
             "type": "Creature — Elf Archer",
@@ -1006,6 +1019,7 @@
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162827,
             "text": "Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.)\nWhen you cycle Krosan Tusker, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle your library. (Do this before you draw.)",
             "toughness": "5",
             "type": "Creature — Boar Beast",
@@ -1075,6 +1089,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162828,
             "text": "When Kujar Seedsculptor enters the battlefield, put a +1/+1 counter on target creature you control.",
             "toughness": "2",
             "type": "Creature — Elf Druid",
@@ -1134,6 +1149,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162831,
             "text": "Look at the top five cards of your library. You may reveal any number of creature cards from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.",
             "type": "Sorcery",
             "types": [
@@ -1199,6 +1215,7 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162834,
             "text": "{T}: Add {G}.",
             "toughness": "1",
             "type": "Creature — Elf Druid",
@@ -1262,6 +1279,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162835,
             "text": "When Llanowar Empath enters the battlefield, scry 2, then reveal the top card of your library. If it's a creature card, put it into your hand. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "toughness": "2",
             "type": "Creature — Elf Shaman",
@@ -1345,6 +1363,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162840,
             "text": "Destroy target artifact or enchantment.",
             "type": "Instant",
             "types": [
@@ -1420,6 +1439,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162841,
             "text": "Target creature you control gains vigilance and trample until end of turn. It deals damage equal to its power to target creature you don't control.",
             "type": "Sorcery",
             "types": [
@@ -1497,6 +1517,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162842,
             "text": "Support 2. (Put a +1/+1 counter on each of up to two target creatures.)\nChoose up to one target creature an opponent controls. Each creature you control with a +1/+1 counter on it deals damage equal to its power to that creature.",
             "type": "Sorcery",
             "types": [
@@ -1562,6 +1583,7 @@
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162843,
             "text": "When Regal Force enters the battlefield, draw a card for each green creature you control.",
             "toughness": "5",
             "type": "Creature — Elemental",
@@ -1636,6 +1658,7 @@
                 "Ally"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162844,
             "text": "Vigilance\nAs long as you control six or more lands, Sylvan Advocate and land creatures you control get +2/+2.",
             "toughness": "3",
             "type": "Creature — Elf Druid Ally",
@@ -1700,6 +1723,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162845,
             "text": "Cast this spell only if you've cast another green spell this turn.\nTrample",
             "toughness": "3",
             "type": "Creature — Elf Warrior",
@@ -1766,6 +1790,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162846,
             "text": "When Viridian Shaman enters the battlefield, destroy target artifact.",
             "toughness": "2",
             "type": "Creature — Elf Shaman",
@@ -1831,6 +1856,7 @@
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162847,
             "text": "{8}: Target creature gets +5/+5 and gains trample until end of turn.",
             "toughness": "3",
             "type": "Creature — Elf Shaman",
@@ -1903,6 +1929,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 162848,
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nYou may cast green creature spells as though they had flash.",
             "toughness": "4",
             "type": "Legendary Creature — Elf Shaman",
@@ -1968,6 +1995,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162878,
             "text": "Oran-Rief, the Vastwood enters the battlefield tapped.\n{T}: Add {G}.\n{T}: Put a +1/+1 counter on each green creature that entered the battlefield this turn.",
             "type": "Land",
             "types": [
@@ -2038,6 +2066,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162879,
             "text": "Tranquil Thicket enters the battlefield tapped.\n{T}: Add {G}.\nCycling {G} ({G}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
@@ -2107,6 +2136,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162880,
             "text": "Treetop Village enters the battlefield tapped.\n{T}: Add {G}.\n{1}{G}: Treetop Village becomes a 3/3 green Ape creature with trample until end of turn. It's still a land. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
             "type": "Land",
             "types": [
@@ -2212,6 +2242,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2239,7 +2270,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "5c284c81-195b-49e5-bfdd-3e0447103469"
+            "uuid": "5c284c81-195b-49e5-bfdd-3e0447103469",
+            "variations": [
+                "5257440c-ab4e-4b9e-a694-f7ff54feaa1b",
+                "88e1bf57-cb14-4dfe-abb1-d8ed9c051f1a",
+                "bb0e5fc9-1b11-45c0-a0c7-668507cfabfb"
+            ]
         },
         {
             "artist": "Volkan Baga",
@@ -2339,6 +2375,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2366,7 +2403,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "5257440c-ab4e-4b9e-a694-f7ff54feaa1b"
+            "uuid": "5257440c-ab4e-4b9e-a694-f7ff54feaa1b",
+            "variations": [
+                "5c284c81-195b-49e5-bfdd-3e0447103469",
+                "88e1bf57-cb14-4dfe-abb1-d8ed9c051f1a",
+                "bb0e5fc9-1b11-45c0-a0c7-668507cfabfb"
+            ]
         },
         {
             "artist": "Jim Nelson",
@@ -2466,6 +2508,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2493,7 +2536,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "88e1bf57-cb14-4dfe-abb1-d8ed9c051f1a"
+            "uuid": "88e1bf57-cb14-4dfe-abb1-d8ed9c051f1a",
+            "variations": [
+                "5c284c81-195b-49e5-bfdd-3e0447103469",
+                "5257440c-ab4e-4b9e-a694-f7ff54feaa1b",
+                "bb0e5fc9-1b11-45c0-a0c7-668507cfabfb"
+            ]
         },
         {
             "artist": "Mark Tedin",
@@ -2593,6 +2641,7 @@
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -2620,7 +2669,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "bb0e5fc9-1b11-45c0-a0c7-668507cfabfb"
+            "uuid": "bb0e5fc9-1b11-45c0-a0c7-668507cfabfb",
+            "variations": [
+                "5c284c81-195b-49e5-bfdd-3e0447103469",
+                "5257440c-ab4e-4b9e-a694-f7ff54feaa1b",
+                "88e1bf57-cb14-4dfe-abb1-d8ed9c051f1a"
+            ]
         },
         {
             "artist": "Victor Adame Minguez",
@@ -2680,6 +2734,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162805,
             "text": "{T}: Choose target artifact a player controls and target artifact card in that player's graveyard. If both targets are still legal as this ability resolves, that player simultaneously sacrifices the artifact and returns the artifact card to the battlefield.",
             "toughness": "1",
             "type": "Creature — Goblin Artificer",
@@ -2745,6 +2800,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162797,
             "text": "Draw two cards. If you control no artifacts, discard a card.",
             "type": "Instant",
             "types": [
@@ -2823,6 +2879,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162798,
             "text": "Artifact spells you cast cost {1} less to cast.",
             "toughness": "2",
             "type": "Artifact Creature — Vedalken Artificer",
@@ -2889,6 +2946,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162799,
             "text": "Flying\nWhen Faerie Mechanist enters the battlefield, look at the top three cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
             "toughness": "2",
             "type": "Artifact Creature — Faerie Artificer",
@@ -2952,6 +3010,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162800,
             "text": "Whenever you cast an artifact spell, you may draw a card. If you do, discard a card.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
@@ -3018,6 +3077,7 @@
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162801,
             "text": "When Treasure Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 6 or greater, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
@@ -3087,6 +3147,7 @@
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162802,
             "text": "When Trinket Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 1 or less, reveal that card, and put it into your hand. If you do, shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
@@ -3157,6 +3218,7 @@
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162803,
             "text": "When Trophy Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 3, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
@@ -3230,6 +3292,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162804,
             "text": "When Whirler Rogue enters the battlefield, create two 1/1 colorless Thopter artifact creature tokens with flying.\nTap two untapped artifacts you control: Target creature can't be blocked this turn.",
             "toughness": "2",
             "type": "Creature — Human Rogue Artificer",
@@ -3292,6 +3355,7 @@
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162806,
             "text": "{T}, Sacrifice an artifact: Barrage Ogre deals 2 damage to any target.",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
@@ -3348,6 +3412,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162807,
             "text": "Galvanic Blast deals 2 damage to any target.\nMetalcraft — Galvanic Blast deals 4 damage to that permanent or player instead if you control three or more artifacts.",
             "type": "Instant",
             "types": [
@@ -3411,6 +3476,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162808,
             "text": "When Ghirapur Gearcrafter enters the battlefield, create a 1/1 colorless Thopter artifact creature token with flying. (A creature with flying can't be blocked except by creatures with flying or reach.)",
             "toughness": "1",
             "type": "Creature — Human Artificer",
@@ -3475,6 +3541,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 162809,
             "text": "When Pia and Kiran Nalaar enters the battlefield, create two 1/1 colorless Thopter artifact creature tokens with flying.\n{2}{R}, Sacrifice an artifact: Pia and Kiran Nalaar deals 2 damage to any target.",
             "toughness": "2",
             "type": "Legendary Creature — Human Artificer",
@@ -3548,6 +3615,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162810,
             "text": "As an additional cost to cast this spell, sacrifice an artifact.\nShrapnel Blast deals 5 damage to any target.",
             "type": "Instant",
             "types": [
@@ -3616,6 +3684,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162811,
             "text": "Welding Sparks deals X damage to target creature, where X is 3 plus the number of artifacts you control.",
             "type": "Instant",
             "types": [
@@ -3712,6 +3781,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162849,
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhen Maverick Thopterist enters the battlefield, create two 1/1 colorless Thopter artifact creature tokens with flying.",
             "toughness": "2",
             "type": "Creature — Human Artificer",
@@ -3786,6 +3856,7 @@
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162850,
             "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\nWhen Reclusive Artificer enters the battlefield, you may have it deal damage to target creature equal to the number of artifacts you control.",
             "toughness": "3",
             "type": "Creature — Human Artificer",
@@ -3816,8 +3887,11 @@
                 "vintage": "Legal"
             },
             "manaCost": "{3}",
+            "multiverseId": 442788,
             "name": "Darksteel Plate",
             "number": "52",
+            "originalText": "Indestructible\nEquipped creature has indestructible.\nEquip {2}",
+            "originalType": "Artifact — Equipment",
             "printings": [
                 "DDU",
                 "MBS"
@@ -3829,6 +3903,7 @@
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162851,
             "text": "Indestructible\nEquipped creature has indestructible.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
@@ -3886,6 +3961,7 @@
                 "Fox"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162852,
             "text": "When Filigree Familiar enters the battlefield, you gain 2 life.\nWhen Filigree Familiar dies, draw a card.",
             "toughness": "2",
             "type": "Artifact Creature — Fox",
@@ -3949,6 +4025,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162853,
             "text": "When Ichor Wellspring enters the battlefield or is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
@@ -4009,6 +4086,7 @@
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162854,
             "text": "Equipped creature gets +1/+2.\nWhenever an Artificer enters the battlefield under your control, you may attach Inventor's Goggles to it.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
@@ -4071,6 +4149,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162869,
             "text": "When Mycosynth Wellspring enters the battlefield or is put into a graveyard from the battlefield, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle your library.",
             "type": "Artifact",
             "types": [
@@ -4143,6 +4222,7 @@
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162870,
             "text": "When Myr Battlesphere enters the battlefield, create four 1/1 colorless Myr artifact creature tokens.\nWhenever Myr Battlesphere attacks, you may tap X untapped Myr you control. If you do, Myr Battlesphere gets +X/+0 until end of turn and deals X damage to the player or planeswalker it's attacking.",
             "toughness": "7",
             "type": "Artifact Creature — Myr Construct",
@@ -4205,6 +4285,7 @@
                 "Myr"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162871,
             "text": "When Myr Sire dies, create a 1/1 colorless Myr artifact creature token.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -4270,6 +4351,7 @@
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162872,
             "text": "{1}{U}, Sacrifice Neurok Replica: Return target creature to its owner's hand.",
             "toughness": "4",
             "type": "Artifact Creature — Wizard",
@@ -4328,6 +4410,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162873,
             "text": "{R}, Sacrifice Pyrite Spellbomb: It deals 2 damage to any target.\n{1}, Sacrifice Pyrite Spellbomb: Draw a card.",
             "type": "Artifact",
             "types": [
@@ -4390,6 +4473,7 @@
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162874,
             "text": "Scuttling Doom Engine can't be blocked by creatures with power 2 or less.\nWhen Scuttling Doom Engine dies, it deals 6 damage to target opponent or planeswalker.",
             "toughness": "6",
             "type": "Artifact Creature — Construct",
@@ -4452,6 +4536,7 @@
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162875,
             "text": "When Solemn Simulacrum enters the battlefield, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle your library.\nWhen Solemn Simulacrum dies, you may draw a card.",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -4516,6 +4601,7 @@
                 "Thopter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 162876,
             "text": "Flying\nAt the beginning of your upkeep, if you control no Thopters other than Thopter Assembly, return Thopter Assembly to its owner's hand and create five 1/1 colorless Thopter artifact creature tokens with flying.",
             "toughness": "5",
             "type": "Artifact Creature — Thopter",
@@ -4571,6 +4657,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162877,
             "text": "{2}, Sacrifice Voyager Staff: Exile target creature. Return the exiled card to the battlefield under its owner's control at the beginning of the next end step.",
             "type": "Artifact",
             "types": [
@@ -4637,6 +4724,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162885,
             "text": "Indestructible\n{T}: Add {C}.",
             "type": "Artifact Land",
             "types": [
@@ -4692,6 +4780,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162886,
             "text": "{T}: Add {C}.\n{5}, {T}, Sacrifice Foundry of the Consuls: Create two 1/1 colorless Thopter artifact creature tokens with flying.",
             "type": "Land",
             "types": [
@@ -4751,6 +4840,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162887,
             "text": "{T}: Add {R}.",
             "type": "Artifact Land",
             "types": [
@@ -4810,6 +4900,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162889,
             "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice an artifact: You gain 1 life.",
             "type": "Land",
             "types": [
@@ -4870,6 +4961,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162888,
             "text": "(Seat of the Synod isn't a spell.)\n{T}: Add {U}.",
             "type": "Artifact Land",
             "types": [
@@ -4939,6 +5031,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162890,
             "text": "{T}: Add {C}.\n{T}: Add {U} or {R}. Shivan Reef deals 1 damage to you.",
             "type": "Land",
             "types": [
@@ -5000,6 +5093,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162891,
             "text": "Swiftwater Cliffs enters the battlefield tapped.\nWhen Swiftwater Cliffs enters the battlefield, you gain 1 life.\n{T}: Add {U} or {R}.",
             "type": "Land",
             "types": [
@@ -5052,6 +5146,7 @@
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 162892,
             "text": "Temple of Epiphany enters the battlefield tapped.\nWhen Temple of Epiphany enters the battlefield, scry 1. (Look at the top card of your library. You may put that card on the bottom of your library.)\n{T}: Add {U} or {R}.",
             "type": "Land",
             "types": [
@@ -5136,7 +5231,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -5148,6 +5242,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5175,7 +5270,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c0229fef-746c-417a-beb9-150f286da14a"
+            "uuid": "c0229fef-746c-417a-beb9-150f286da14a",
+            "variations": [
+                "e4f4b3e7-7c8e-42c9-895d-4c8b802ed4f7"
+            ]
         },
         {
             "artist": "Johannes Voss",
@@ -5254,7 +5352,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -5266,6 +5363,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5293,7 +5391,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e4f4b3e7-7c8e-42c9-895d-4c8b802ed4f7"
+            "uuid": "e4f4b3e7-7c8e-42c9-895d-4c8b802ed4f7",
+            "variations": [
+                "c0229fef-746c-417a-beb9-150f286da14a"
+            ]
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -5383,6 +5484,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5410,7 +5512,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "b55b57b3-6cbd-4571-8163-b6ba76904d9d"
+            "uuid": "b55b57b3-6cbd-4571-8163-b6ba76904d9d",
+            "variations": [
+                "e13ee385-ad54-410a-b1db-19a0267294e1"
+            ]
         },
         {
             "artist": "Eytan Zana",
@@ -5500,6 +5605,7 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
                 "PRWK",
@@ -5527,17 +5633,21 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e13ee385-ad54-410a-b1db-19a0267294e1"
+            "uuid": "e13ee385-ad54-410a-b1db-19a0267294e1",
+            "variations": [
+                "b55b57b3-6cbd-4571-8163-b6ba76904d9d"
+            ]
         }
     ],
     "code": "ddu",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-07",
+        "version": "4.1.3"
     },
     "mtgoCode": "ddu",
     "name": "Duel Decks: Elves vs. Inventors",
     "releaseDate": "2018-04-06",
+    "tcgplayerGroupId": 2207,
     "tokens": [
         {
             "artist": "William O'Connor",

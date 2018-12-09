@@ -15,11 +15,11 @@ class MTGCardDataSource(
 ) {
 
     internal enum class STANDARD(var setId: Int, var set: String) {
-        GUILDS_OF_RAVNICA(1, "Guilds of Ravnica"),
-        CORE_19(3, "Core Set 2019"),
-        DOMINARIA(8, "Dominaria"),
-        RIVALS_OF_IXALAN(10, "Rivals of Ixalan"),
-        IXALAN(15, "Ixalan");
+        GUILDS_OF_RAVNICA(2, "Guilds of Ravnica"),
+        CORE_19(4, "Core Set 2019"),
+        DOMINARIA(9, "Dominaria"),
+        RIVALS_OF_IXALAN(11, "Rivals of Ixalan"),
+        IXALAN(16, "Ixalan");
 
         companion object {
 
