@@ -339,7 +339,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         }
 
         if (cursor.getColumnIndex(COLUMNS.UUID.noun) != -1) {
-            card.uuid = cursor.getString(cursor.getColumnIndex(COLUMNS.UUID.noun))
+            card.uuid = cursor.getString(cursor.getColumnIndex(COLUMNS.UUID.noun)) ?: ""
         }
 
         return card
