@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1544373009879">
+  <Whitelist timestamp="1544962302458">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:CardsHelper.kt$CardsHelper$(it.isCommon &amp;&amp; !filter.common) || (it.isUncommon &amp;&amp; !filter.uncommon) || (it.isRare &amp;&amp; !filter.rare) || (it.isMythicRare &amp;&amp; !filter.mythic)</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>

@@ -4,7 +4,9 @@
 *.iml
 keystore.properties
 .idea/*
+/captures
 /build
+*/build
 crashlytics.properties
 crashlytics-build.properties
 com_crashlytics_export_strings.xml

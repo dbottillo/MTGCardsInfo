@@ -5,7 +5,6 @@ import android.content.res.Resources
 import android.graphics.Bitmap
 import android.net.Uri
 import android.support.v4.content.FileProvider.getUriForFile
-import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import java.io.BufferedReader
@@ -67,7 +66,7 @@ class FileManager @Inject constructor(private val context: Context) : FileManage
         val outputStream = FileOutputStream(file) as FileOutputStream?
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
         outputStream?.close()
-        return getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
+        return getUriForFile(context, "${context.packageName}.provider", file)
     }
 
     @Throws(FileNotFoundException::class)
@@ -83,7 +82,7 @@ class FileManager @Inject constructor(private val context: Context) : FileManage
         val outputStream = FileOutputStream(file) as FileOutputStream?
         deck.toFile(outputStream, cards)
         outputStream?.close()
-        return getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
+        return getUriForFile(context, "${context.packageName}.provider", file)
     }
 }
 

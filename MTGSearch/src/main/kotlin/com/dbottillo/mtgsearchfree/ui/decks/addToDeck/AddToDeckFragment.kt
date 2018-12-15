@@ -181,7 +181,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     }
 
     override fun setCardTitle(cardName: String) {
-        title.text = getString(R.string.add_to_deck_title, cardName)
+        title.text = getString(R.string.add_to_deck_title)
     }
 
     override fun decksLoaded(decks: List<Deck>, selectedDeck: Long) {

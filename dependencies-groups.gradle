@@ -1,0 +1,56 @@
+def Group(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+    core = Group {
+        implementation deps.google.support.support
+        implementation deps.google.support.appcompat
+        implementation deps.kotlin.core
+        implementation deps.kotlin.reflect
+        implementation deps.dagger.core
+        implementation deps.dagger.androidSupport
+        kapt deps.dagger.compiler
+        kapt deps.dagger.processor
+        implementation deps.rxjava.core
+        implementation deps.rxjava.android
+        implementation deps.rxjava.android
+        implementation deps.gson
+    }
+    ui = Group {
+        implementation deps.google.support.cardview
+        implementation deps.google.support.recyclerview
+        implementation deps.google.support.design
+        implementation deps.google.support.constraintLayout
+    }
+    monitoring = Group {
+        implementation deps.google.firebase.core
+        implementation (deps.google.firebase.crashlytics) { transitive = true }
+    }
+    network = Group {
+        implementation deps.glide.core
+        implementation deps.glide.okhttp
+        kapt deps.glide.compiler
+    }
+    debug = Group {
+        debugImplementation deps.leakCanary
+        releaseImplementation deps.leakCanaryNoOp
+        testImplementation deps.leakCanaryNoOp
+    }
+    test = Group {
+        testImplementation deps.junit
+        testImplementation deps.mockito
+        testImplementation deps.mockitoKotlin
+        testImplementation deps.hamcrest
+        testImplementation deps.fest
+        testImplementation deps.robolectric
+    }
+    instrumentation = Group {
+        androidTestImplementation deps.hamcrest
+        androidTestImplementation deps.google.testSupport.runner
+        androidTestImplementation deps.google.espresso.core
+        androidTestImplementation deps.google.espresso.contrib
+        androidTestImplementation deps.mockitoAndroid
+    }
+}
