@@ -64,7 +64,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     }
 
     private fun setupView() {
-        setupToolbar()
+        setupToolbar(R.id.toolbar)
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)

@@ -143,7 +143,7 @@
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.model.database.DeckDataSource.kt</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource.kt</ID>
     <ID>MaxLineLength:DeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment.kt</ID>
     <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
     <ID>MaxLineLength:FileUtil.kt$val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")</ID>

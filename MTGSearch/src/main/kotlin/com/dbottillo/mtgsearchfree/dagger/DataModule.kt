@@ -2,12 +2,12 @@ package com.dbottillo.mtgsearchfree.dagger
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
-import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
-import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
-import com.dbottillo.mtgsearchfree.model.database.SetDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.PlayerDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.SetDataSource
 import com.dbottillo.mtgsearchfree.model.storage.CardsHelper
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl

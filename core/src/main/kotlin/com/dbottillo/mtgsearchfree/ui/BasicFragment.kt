@@ -8,7 +8,6 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 
@@ -63,10 +62,10 @@ abstract class BasicFragment : DialogFragment() {
         return false
     }
 
-    fun setupToolbar(rootView: View) {
-        toolbar = rootView.findViewById<View>(R.id.toolbar) as Toolbar
+    fun setupToolbar(rootView: View, toolbarId: Int, toolbarTitleId: Int) {
+        toolbar = rootView.findViewById<View>(toolbarId) as Toolbar
         toolbar.title = ""
-        toolbarTitle = toolbar.findViewById<View>(R.id.toolbar_title) as TextView
+        toolbarTitle = toolbar.findViewById<View>(toolbarTitleId) as TextView
         setTitle(getTitle())
     }
 
@@ -75,9 +74,9 @@ abstract class BasicFragment : DialogFragment() {
     }
 
     companion object {
-        @JvmField val PREF_SHOW_IMAGE = "show_image"
-        @JvmField val PREF_SCREEN_ON = "screen_on"
-        @JvmField val PREF_TWO_HG_ENABLED = "two_hg"
-        @JvmField val PREF_SORT_WUBRG = "sort_wubrg"
+        const val PREF_SHOW_IMAGE = "show_image"
+        const val PREF_SCREEN_ON = "screen_on"
+        const val PREF_TWO_HG_ENABLED = "two_hg"
+        const val PREF_SORT_WUBRG = "sort_wubrg"
     }
 }

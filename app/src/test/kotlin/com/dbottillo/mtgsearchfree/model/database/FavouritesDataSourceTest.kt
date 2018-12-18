@@ -1,5 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database
 
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
 import com.google.gson.Gson
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`

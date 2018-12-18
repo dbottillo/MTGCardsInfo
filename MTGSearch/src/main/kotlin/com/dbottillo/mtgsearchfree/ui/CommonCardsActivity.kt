@@ -54,7 +54,7 @@ abstract class CommonCardsActivity : BasicActivity() {
             }
             R.id.action_share -> {
                 currentCard?.also {
-                    TrackingManager.trackShareCard(it)
+                    TrackingManager.trackShareCard(it.name)
                     val i = Intent(Intent.ACTION_SEND)
                     i.type = "text/plain"
                     i.putExtra(Intent.EXTRA_SUBJECT, it.name)

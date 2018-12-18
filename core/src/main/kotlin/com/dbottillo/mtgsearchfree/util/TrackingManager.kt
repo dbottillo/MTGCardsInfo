@@ -4,9 +4,6 @@ import com.crashlytics.android.Crashlytics
 import com.crashlytics.android.answers.Answers
 import com.crashlytics.android.answers.ContentViewEvent
 import com.crashlytics.android.answers.CustomEvent
-import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.model.SearchParams
 
 object TrackingManager {
 
@@ -43,8 +40,8 @@ object TrackingManager {
     private val UA_ACTION_MOVE_ALL = "moveAll"
     private val UA_ACTION_EXPORT = "export"
 
-    fun trackCard(gameSet: MTGSet, position: Int) {
-        trackEvent(UA_CATEGORY_CARD, UA_ACTION_SELECT, gameSet.name + " pos:" + position)
+    fun trackCard(setName: String, position: Int) {
+        trackEvent(UA_CATEGORY_CARD, UA_ACTION_SELECT, "$setName pos:$position")
     }
 
     fun trackPage(page: String?) {
@@ -86,9 +83,9 @@ object TrackingManager {
         trackEvent(UA_CATEGORY_ERROR, "image", image)
     }
 
-    fun trackShareCard(card: MTGCard?) {
-        if (card != null) {
-            trackEvent(UA_CATEGORY_CARD, UA_ACTION_SHARE, card.name)
+    fun trackShareCard(cardName: String?) {
+        if (cardName != null) {
+            trackEvent(UA_CATEGORY_CARD, UA_ACTION_SHARE, cardName)
         }
     }
 
@@ -148,8 +145,8 @@ object TrackingManager {
         trackEvent(UA_CATEGORY_DECK, UA_ACTION_MOVE_ALL)
     }
 
-    fun trackSearch(searchParams: SearchParams?) {
-        trackEvent(UA_CATEGORY_SEARCH, "done", searchParams?.toString() ?: "null")
+    fun trackSearch(searchParams: String?) {
+        trackEvent(UA_CATEGORY_SEARCH, "done", searchParams ?: "null")
     }
 
     fun trackOpenFeedback() {

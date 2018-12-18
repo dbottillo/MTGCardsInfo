@@ -3,10 +3,10 @@ package com.dbottillo.mtgsearchfree.dagger
 import android.app.Application
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.FileUtil
@@ -17,7 +17,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-class AppModule {
+class CoreModule {
 
     @Provides
     @Singleton
@@ -32,8 +32,8 @@ class AppModule {
     }
 
     @Provides
-    fun provideDialogUtil(): DialogUtil {
-        return DialogUtil()
+    fun provideFileUtil(fileManager: FileManager): FileUtil {
+        return FileUtil(fileManager)
     }
 
     @Provides
@@ -69,7 +69,7 @@ class AppModule {
     }
 
     @Provides
-    fun provideFileUtil(fileManager: FileManager): FileUtil {
-        return FileUtil(fileManager)
+    fun provideDialogUtil(): DialogUtil {
+        return DialogUtil()
     }
 }

@@ -12,8 +12,8 @@ import android.support.v7.widget.Toolbar
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.dbottillo.mtgsearchfree.BuildConfig
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.BuildConfig
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
@@ -65,19 +65,10 @@ abstract class BasicActivity : AppCompatActivity() {
         currentFocus?.clearFocus()
     }
 
-    protected fun setupToolbar() {
-        toolbar = findViewById(R.id.toolbar)
+    protected fun setupToolbar(toolbarId: Int) {
+        toolbar = findViewById(toolbarId)
         setSupportActionBar(toolbar)
         toolbar.elevation = resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat()
-    }
-
-    fun changeFragment(fragment: BasicFragment, tag: String, addToBackStack: Boolean) {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        if (addToBackStack) {
-            fragmentTransaction.addToBackStack(tag)
-        }
-        fragmentTransaction.commit()
     }
 
     fun openRateTheApp() {

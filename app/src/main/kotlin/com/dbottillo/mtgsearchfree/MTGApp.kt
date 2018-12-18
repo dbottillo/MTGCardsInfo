@@ -116,7 +116,7 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
         stackBuilder.addNextIntent(intent)
         val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)
 
-        NotificationCompat.Builder(this,Constants.NOTIFICATION_CHANNEL_ID)
+        NotificationCompat.Builder(this, Constants.NOTIFICATION_CHANNEL_ID)
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_stat_notification_generic)
                 .setPriority(NotificationCompat.PRIORITY_LOW)

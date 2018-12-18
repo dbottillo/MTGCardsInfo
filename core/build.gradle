@@ -1,12 +1,31 @@
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
 
+ext.database_version = 41
+
 android {
+    buildTypes {
+        debug {
+            buildConfigField 'Boolean', 'LOG_THREAD', 'true'
+            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
+        }
+
+        release {
+            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
+            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
+        }
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        test.resources.srcDirs += ['src/test/resources']
     }
 }
 
 dependencies{
     core()
+    monitoring()
+
+    test()
 }

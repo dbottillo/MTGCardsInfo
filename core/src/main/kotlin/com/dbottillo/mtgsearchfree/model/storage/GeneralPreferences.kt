@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.model.storage
 import android.content.Context
 import android.content.SharedPreferences
 
-import com.dbottillo.mtgsearchfree.BuildConfig
+import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.util.AppInfo
 
 class GeneralPreferences(context: Context, private val appInfo: AppInfo) : GeneralData {

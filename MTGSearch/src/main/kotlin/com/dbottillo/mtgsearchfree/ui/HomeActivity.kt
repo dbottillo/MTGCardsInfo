@@ -173,4 +173,13 @@ class HomeActivity : BasicActivity() {
         super.onDestroy()
         fragments.clear()
     }
+
+    private fun changeFragment(fragment: BasicFragment, tag: String, addToBackStack: Boolean) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        if (addToBackStack) {
+            fragmentTransaction.addToBackStack(tag)
+        }
+        fragmentTransaction.commit()
+    }
 }

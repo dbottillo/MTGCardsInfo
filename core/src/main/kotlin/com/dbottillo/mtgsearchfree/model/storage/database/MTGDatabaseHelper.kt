@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database
 
 import android.content.Context
 
-import com.dbottillo.mtgsearchfree.BuildConfig
+import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper
 
 /**

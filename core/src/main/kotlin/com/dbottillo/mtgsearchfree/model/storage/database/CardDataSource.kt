@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.model.database
+package com.dbottillo.mtgsearchfree.model.storage.database
 
 import android.content.ContentValues
 import android.database.Cursor
@@ -22,7 +22,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
 
     val cards: List<MTGCard>
         get() {
-            val cursor = database.rawQuery("select * from " + CardDataSource.TABLE, null)
+            val cursor = database.rawQuery("select * from " + TABLE, null)
             val cards = ArrayList<MTGCard>()
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast) {
@@ -424,7 +424,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             return builder.append(')').toString()
         }
 
-        private fun getLastColumn(version: Int): CardDataSource.COLUMNS {
+        private fun getLastColumn(version: Int): COLUMNS {
             return when {
                 version < TWO -> COLUMNS.SET_NAME
                 version < THREE -> COLUMNS.LAYOUT

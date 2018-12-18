@@ -8,6 +8,8 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.PTParam
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
 import com.dbottillo.mtgsearchfree.util.readSingleSetFile

@@ -6,9 +6,9 @@ import android.net.Uri
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.util.FileManagerI

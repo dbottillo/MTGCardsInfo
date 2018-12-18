@@ -3,6 +3,8 @@ package com.dbottillo.mtgsearchfree.model.database
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.SetDataSource
 
 /**
  * Helper for create the database from the json in debug mode

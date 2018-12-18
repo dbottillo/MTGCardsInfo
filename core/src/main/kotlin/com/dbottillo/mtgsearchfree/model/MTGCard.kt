@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.model
 import android.content.Context
 import android.support.annotation.VisibleForTesting
 import android.support.v4.content.ContextCompat
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.R
 
 data class MTGCard(
     var id: Int = 0,

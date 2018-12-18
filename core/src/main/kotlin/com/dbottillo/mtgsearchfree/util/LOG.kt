@@ -3,8 +3,7 @@ package com.dbottillo.mtgsearchfree.util
 import android.app.Instrumentation
 import android.text.TextUtils
 import android.util.Log
-
-import com.dbottillo.mtgsearchfree.BuildConfig
+import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.google.gson.GsonBuilder

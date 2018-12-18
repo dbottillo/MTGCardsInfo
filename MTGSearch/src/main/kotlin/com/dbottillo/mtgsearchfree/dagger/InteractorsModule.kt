@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl
 import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl
-import com.dbottillo.mtgsearchfree.model.database.SetDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.SetDataSource
 import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.model.storage.DecksStorage

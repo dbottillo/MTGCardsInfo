@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import java.util.Arrays
 import java.util.Locale

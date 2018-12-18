@@ -1,6 +1,5 @@
 buildscript {
     ext.number_of_set = 182
-    ext.database_version = 41
     ext.name_fifth_mtg_card = "Karn Liberated"
 }
 
@@ -13,16 +12,12 @@ android {
     buildTypes {
         debug {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
         release {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }

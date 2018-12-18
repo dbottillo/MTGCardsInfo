@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.model.database
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions

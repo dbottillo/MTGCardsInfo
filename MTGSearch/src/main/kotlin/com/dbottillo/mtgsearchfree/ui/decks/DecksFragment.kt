@@ -108,7 +108,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     }
 
     fun onAddDeck() {
-        dialogUtil.showAddDeck {
+        dialogUtil.showAddDeck(R.layout.dialog_add_new_deck, R.id.deck_name) {
             presenter.addDeck(it)
             TrackingManager.trackNewDeck(it)
         }

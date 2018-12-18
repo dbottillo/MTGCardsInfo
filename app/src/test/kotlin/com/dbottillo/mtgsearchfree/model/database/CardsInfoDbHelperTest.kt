@@ -4,6 +4,10 @@ import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Player
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.PlayerDataSource
 import com.google.gson.Gson
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`

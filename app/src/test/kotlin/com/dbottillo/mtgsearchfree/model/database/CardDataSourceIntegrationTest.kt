@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.model.database
 
 import android.database.Cursor
 import com.dbottillo.mtgsearchfree.model.Rarity
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson

@@ -8,7 +8,7 @@ import android.support.v4.app.NotificationCompat
 
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper

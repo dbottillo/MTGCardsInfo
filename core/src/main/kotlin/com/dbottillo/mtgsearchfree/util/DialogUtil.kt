@@ -5,7 +5,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.EditText
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.Player
 import java.lang.ref.WeakReference
@@ -18,7 +18,7 @@ class DialogUtil {
         this.refContext = WeakReference<Context>(context)
     }
 
-    fun showEditPlayer(player: Player, listener: (newName: String) -> Unit) {
+    fun showEditPlayer(layoutId: Int, editTextId: Int, player: Player, listener: (newName: String) -> Unit) {
         if (refContext.get() == null) {
             return
         }
@@ -28,8 +28,10 @@ class DialogUtil {
         alert.setTitle(context.getString(R.string.edit_player))
 
         val layoutInflater = LayoutInflater.from(context)
-        @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
-        val editText = view.findViewById<EditText>(R.id.edit_text)
+        /*@SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
+        val editText = view.findViewById(R.id.edit_text)*/
+        @SuppressLint("InflateParams") val view = layoutInflater.inflate(layoutId, null)
+        val editText = view.findViewById<EditText>(editTextId)
         editText.setText(player.name)
         editText.setSelection(player.name.length)
         alert.setView(view)
@@ -42,7 +44,7 @@ class DialogUtil {
         alert.show()
     }
 
-    fun showAddDeck(listener: (newName: String) -> Unit) {
+    fun showAddDeck(layoutId: Int, editTextId: Int, listener: (newName: String) -> Unit) {
         if (refContext.get() == null) {
             return
         }
@@ -52,8 +54,8 @@ class DialogUtil {
         alert.setTitle(context.getString(R.string.new_deck_hint))
 
         val layoutInflater = LayoutInflater.from(context)
-        @SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_add_new_deck, null)
-        val editText = view.findViewById<EditText>(R.id.deck_name)
+        @SuppressLint("InflateParams") val view = layoutInflater.inflate(layoutId, null)
+        val editText = view.findViewById<EditText>(editTextId)
         alert.setView(view)
 
         alert.setPositiveButton(context.getString(R.string.add)) { _, _ ->

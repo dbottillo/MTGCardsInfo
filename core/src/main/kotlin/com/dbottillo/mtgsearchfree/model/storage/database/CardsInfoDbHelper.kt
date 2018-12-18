@@ -3,6 +3,10 @@ package com.dbottillo.mtgsearchfree.model.database
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.PlayerDataSource
 
 import java.util.HashSet
 

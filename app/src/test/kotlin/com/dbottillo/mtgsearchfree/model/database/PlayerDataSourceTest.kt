@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.database
 
 import com.dbottillo.mtgsearchfree.model.Player
+import com.dbottillo.mtgsearchfree.model.storage.database.PlayerDataSource
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.After
 import org.junit.Assert.assertNotNull

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.model.database
+package com.dbottillo.mtgsearchfree.model.storage.database
 
 import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase

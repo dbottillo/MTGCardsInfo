@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Environment
 import android.text.TextUtils
-import com.dbottillo.mtgsearchfree.BuildConfig
+import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardsBucket
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import java.io.BufferedReader
