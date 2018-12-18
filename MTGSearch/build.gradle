@@ -6,10 +6,6 @@ buildscript {
 
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
-apply plugin: 'io.fabric'
-apply plugin: 'findbugs'
-apply plugin: 'pmd'
-apply plugin: 'checkstyle'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 
@@ -34,16 +30,8 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
-        test.resources.srcDirs += ['src/test/resources', 'src/debug/res/raw']
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        test.resources.srcDirs += ['src/test/resources']
     }
-
-    testOptions {
-        unitTests {
-            includeAndroidResources = true
-        }
-    }
-
 }
 
 checkstyle {
@@ -61,5 +49,3 @@ dependencies {
     test()
     instrumentation()
 }
-
-apply plugin: 'com.google.gms.google-services'

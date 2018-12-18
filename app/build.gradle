@@ -57,6 +57,14 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        test.resources.srcDirs += ['src/test/resources', 'src/debug/res/raw']
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -68,4 +76,8 @@ dependencies {
     ui()
     monitoring()
     debug()
+    test()
+    robolectric()
 }
+
+apply plugin: 'com.google.gms.google-services'

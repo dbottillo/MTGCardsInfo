@@ -79,7 +79,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         cursor.close()
     }
 
-    internal fun createContentValue(card: MTGCard): ContentValues {
+    fun createContentValue(card: MTGCard): ContentValues {
         val values = ContentValues()
         values.put(COLUMNS.NAME.noun, card.name)
         values.put(COLUMNS.TYPE.noun, card.type)

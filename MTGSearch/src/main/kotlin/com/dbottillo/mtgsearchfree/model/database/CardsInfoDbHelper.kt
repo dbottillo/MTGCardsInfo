@@ -90,7 +90,7 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         db.execSQL("DROP TABLE IF EXISTS '" + FavouritesDataSource.TABLE + "'")
     }
 
-    internal fun readColumnTable(db: SQLiteDatabase, table: String): Set<String> {
+    fun readColumnTable(db: SQLiteDatabase, table: String): Set<String> {
         val dbCursor = db.rawQuery("PRAGMA table_info($table)", null)
         val columns = HashSet<String>(dbCursor.count)
         if (dbCursor.moveToFirst()) {

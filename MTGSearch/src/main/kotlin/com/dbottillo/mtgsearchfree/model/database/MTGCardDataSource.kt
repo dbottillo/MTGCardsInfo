@@ -14,7 +14,7 @@ class MTGCardDataSource(
     private val cardDataSource: CardDataSource
 ) {
 
-    internal enum class STANDARD(var setId: Int, var set: String) {
+    enum class STANDARD(var setId: Int, var set: String) {
         GUILDS_OF_RAVNICA(2, "Guilds of Ravnica"),
         CORE_19(4, "Core Set 2019"),
         DOMINARIA(9, "Dominaria"),

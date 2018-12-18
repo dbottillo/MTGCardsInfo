@@ -44,6 +44,8 @@ ext {
         testImplementation deps.mockitoKotlin
         testImplementation deps.hamcrest
         testImplementation deps.fest
+    }
+    robolectric = Group {
         testImplementation deps.robolectric
     }
     instrumentation = Group {

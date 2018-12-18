@@ -319,7 +319,7 @@ class DeckDataSource(
     companion object {
 
         const val TABLE = "decks"
-        internal const val TABLE_JOIN = "deck_card"
+        const val TABLE_JOIN = "deck_card"
 
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
