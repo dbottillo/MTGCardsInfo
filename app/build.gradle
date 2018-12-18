@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply from: '../config-android.gradle'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    keystoreProperties['RELEASE_KEY_PASSWORD'] = ""
+    keystoreProperties['RELEASE_STORE_PASSWORD'] = ""
+}
+
+android {
+    defaultConfig {
+        applicationId 'com.dbottillo.mtgsearchfree'
+        testInstrumentationRunner "com.dbottillo.mtgsearchfree.TestMTGRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled = true
+    }
+
+    signingConfigs {
+        debugConfig {
+            keyAlias 'androiddebugkey'
+            storeFile file('../debug.keystore')
+            keyPassword 'android'
+            storePassword 'android'
+        }
+
+        releaseConfig {
+            keyAlias 'dbottillo'
+            storeFile file('../dbottillo.keystore')
+            keyPassword keystoreProperties['RELEASE_KEY_PASSWORD']
+            storePassword keystoreProperties['RELEASE_STORE_PASSWORD']
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "_dev"
+            signingConfig signingConfigs.debugConfig
+            debuggable true
+            testCoverageEnabled true
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+}
+
+dependencies {
+    implementation project(':MTGSearch')
+
+    core()
+}

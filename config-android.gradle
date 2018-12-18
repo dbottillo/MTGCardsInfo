@@ -1,0 +1,53 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 101
+        versionName "3.6.0"
+    }
+
+    buildTypes {
+        release {}
+        debug {}
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+
+    lintOptions {
+        xmlReport false
+        checkAllWarnings true
+        checkReleaseBuilds false
+        lintConfig file("config/lint/lint.xml")
+        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
+    }
+}
+
+androidExtensions {
+    experimental = true // Added so we can use @Parcelize
+}
+
+kapt {
+    useBuildCache = true
+}
