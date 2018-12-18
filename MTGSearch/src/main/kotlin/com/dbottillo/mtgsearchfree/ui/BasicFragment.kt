@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui
 
+import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
@@ -7,7 +8,6 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
@@ -20,7 +20,7 @@ abstract class BasicFragment : DialogFragment() {
     var toolbarTitle: TextView? = null
     protected var heightToolbar: Int = 0
 
-    protected val app: MTGApp
+    protected val app: Application
         get() = dbActivity.mtgApp
 
     override fun onAttach(context: Context) {

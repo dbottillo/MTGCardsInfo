@@ -1,6 +1,12 @@
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
 
+android {
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
 dependencies{
     core()
 }

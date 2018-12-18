@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.widget.FrameLayout
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.INTENT_RELEASE_NOTE_PUSH
+import com.dbottillo.mtgsearchfree.Constants
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
@@ -56,9 +56,9 @@ class HomeActivity : BasicActivity() {
             checkAndReplace("sets")
         }
 
-        if (intent != null && intent.hasExtra(INTENT_RELEASE_NOTE_PUSH)) {
+        if (intent != null && intent.hasExtra(Constants.INTENT_RELEASE_NOTE_PUSH)) {
             startActivity(Intent(this, ReleaseNoteActivity::class.java))
-            intent.putExtra(INTENT_RELEASE_NOTE_PUSH, false)
+            intent.putExtra(Constants.INTENT_RELEASE_NOTE_PUSH, false)
         }
     }
 

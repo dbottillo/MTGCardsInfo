@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui
 
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -12,7 +13,6 @@ import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.dbottillo.mtgsearchfree.BuildConfig
-import com.dbottillo.mtgsearchfree.MTGApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -31,8 +31,8 @@ abstract class BasicActivity : AppCompatActivity() {
     @Inject
     lateinit var generalData: GeneralData
 
-    val mtgApp: MTGApp
-        get() = application as MTGApp
+    val mtgApp: Application
+        get() = application
 
     public override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)

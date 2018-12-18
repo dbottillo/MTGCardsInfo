@@ -54,10 +54,18 @@ android {
     dexOptions {
         preDexLibraries = false
     }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
     implementation project(':MTGSearch')
+    implementation project(":core")
 
     core()
+    ui()
+    monitoring()
+    debug()
 }

@@ -57,7 +57,6 @@ dependencies {
     ui()
     monitoring()
     network()
-    debug()
 
     test()
     instrumentation()

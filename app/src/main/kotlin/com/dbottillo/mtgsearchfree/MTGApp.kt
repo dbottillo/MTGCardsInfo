@@ -111,12 +111,12 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
     private fun fireReleaseNotePush() {
         LOG.d()
         val intent = Intent(this, HomeActivity::class.java)
-        intent.putExtra(INTENT_RELEASE_NOTE_PUSH, true)
+        intent.putExtra(Constants.INTENT_RELEASE_NOTE_PUSH, true)
         val stackBuilder = TaskStackBuilder.create(this)
         stackBuilder.addNextIntent(intent)
         val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)
 
-        NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
+        NotificationCompat.Builder(this,Constants.NOTIFICATION_CHANNEL_ID)
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_stat_notification_generic)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
@@ -136,7 +136,7 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
 
     @RequiresApi(VERSION_CODES.O)
     private fun createNotificationChannel() {
-        val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT).apply {
+        val channel = NotificationChannel(Constants.NOTIFICATION_CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT).apply {
             description = "MTG Cards Notifications"
             enableLights(true)
             lightColor = Color.BLUE
@@ -145,8 +145,3 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
         (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
     }
 }
-
-const val INTENT_RELEASE_NOTE_PUSH = "Release push note"
-const val NOTIFICATION_CHANNEL_ID = "Base Channel"
-const val TELEGRAM_LINK = "https://t.me/joinchat/B5gyzg14cbvCYiW7mtsWhQ"
-const val PRIVACY_POLICY = "http://mtgcardsinfo.s3-website.eu-west-2.amazonaws.com/"
