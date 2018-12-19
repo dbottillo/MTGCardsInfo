@@ -14,7 +14,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.core.R
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
 import com.dbottillo.mtgsearchfree.util.PermissionUtil

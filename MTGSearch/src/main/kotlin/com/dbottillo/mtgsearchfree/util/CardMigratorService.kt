@@ -8,10 +8,10 @@ import android.support.v4.app.NotificationCompat
 
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
-import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.database.CardDataSource
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
+import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
 import com.google.gson.Gson
 
 class CardMigratorService : IntentService("CardMigratorService") {

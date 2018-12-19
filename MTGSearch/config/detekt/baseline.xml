@@ -96,7 +96,7 @@
     <ID>MaxLineLength:CardsConfiguratorFragment.kt$CardsConfiguratorFragment : BottomSheetDialogFragmentCardsConfiguratorViewOnFilterPickerListener</ID>
     <ID>MaxLineLength:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl : CardsConfiguratorPresenter</ID>
     <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
-    <ID>MaxLineLength:CardsStorageImpl.kt$com.dbottillo.mtgsearchfree.model.storage.CardsStorageImpl.kt</ID>
+    <ID>MaxLineLength:CardsStorageImpl.kt$com.dbottillo.mtgsearchfree.storage.CardsStorageImpl.kt</ID>
     <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask : AsyncTask</ID>
     <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDeckDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource): DeckDataSource</ID>
     <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage</ID>

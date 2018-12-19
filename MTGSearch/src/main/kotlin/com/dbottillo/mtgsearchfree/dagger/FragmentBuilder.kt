@@ -7,8 +7,8 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl

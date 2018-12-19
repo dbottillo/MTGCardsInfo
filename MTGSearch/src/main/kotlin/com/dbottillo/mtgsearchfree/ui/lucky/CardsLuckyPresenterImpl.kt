@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
 @Suppress("CAST_NEVER_SUCCEEDS")

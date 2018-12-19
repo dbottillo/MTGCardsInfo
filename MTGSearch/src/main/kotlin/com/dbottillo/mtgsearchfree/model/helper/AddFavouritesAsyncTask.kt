@@ -3,11 +3,11 @@ package com.dbottillo.mtgsearchfree.model.helper
 import android.content.Context
 import android.os.AsyncTask
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
-import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
-import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
-import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.database.CardDataSource
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
+import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
 import com.google.gson.Gson
 import java.lang.ref.WeakReference
 

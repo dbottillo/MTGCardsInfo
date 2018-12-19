@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 
 import io.reactivex.Observable

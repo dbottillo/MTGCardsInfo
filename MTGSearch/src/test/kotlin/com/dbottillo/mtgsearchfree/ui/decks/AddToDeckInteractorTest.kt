@@ -3,9 +3,9 @@ package com.dbottillo.mtgsearchfree.ui.decks
 import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
-import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckData
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
 import com.nhaarman.mockito_kotlin.verify

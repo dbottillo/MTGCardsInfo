@@ -6,8 +6,8 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity

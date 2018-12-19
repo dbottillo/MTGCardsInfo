@@ -13,7 +13,7 @@ import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
+import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration
 import com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener

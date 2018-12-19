@@ -41,15 +41,15 @@
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource.kt</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.database.DeckDataSource.kt</ID>
     <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
     <ID>MaxLineLength:FileUtil.kt$val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")</ID>
     <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + "=?")</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val sel = Arrays.copyOf&lt;String, Any&gt;(output.selection.toTypedArray(), output.selection.size, Array&lt;String&gt;::class.java)</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource.kt</ID>
-    <ID>MaxLineLength:QueryComposer.kt$com.dbottillo.mtgsearchfree.model.database.QueryComposer.kt</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt</ID>
+    <ID>MaxLineLength:QueryComposer.kt$com.dbottillo.mtgsearchfree.database.QueryComposer.kt</ID>
     <ID>MaxLineLength:SQLiteAssetHelper.kt$com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper.kt</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>

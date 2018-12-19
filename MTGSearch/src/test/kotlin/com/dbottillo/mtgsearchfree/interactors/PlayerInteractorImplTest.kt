@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.model.storage.PlayersStorage
+import com.dbottillo.mtgsearchfree.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
