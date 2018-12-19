@@ -11,7 +11,7 @@ import com.bumptech.glide.request.target.AppWidgetTarget
 import com.dbottillo.mtgsearchfree.GlideApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.ui.lucky.CARD

@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify

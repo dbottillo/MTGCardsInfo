@@ -123,7 +123,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     override fun onEditPlayer(player: Player) {
         LOG.d()
-        dialogUtil.showEditPlayer(player) {
+        dialogUtil.showEditPlayer(R.layout.dialog_edit_deck, R.id.edit_text, player) {
             player.name = it
             lifeCounterPresenter.editPlayer(player)
             TrackingManager.trackEditPlayer()

@@ -5,7 +5,7 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.CardsBucket
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.mock

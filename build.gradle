@@ -63,6 +63,10 @@ subprojects {
             }
         }
     }
+
+    apply plugin: 'findbugs'
+    apply plugin: 'pmd'
+    apply plugin: 'checkstyle'
 }
 
 apply plugin: 'com.github.ben-manes.versions'

@@ -38,7 +38,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
         findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
-        setupToolbar()
+        setupToolbar(R.id.toolbar)
         toolbar.elevation = 0f
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)

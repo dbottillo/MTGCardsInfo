@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.model.storage
 
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.model.database.PlayerDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import java.util.Random
 

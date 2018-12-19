@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist timestamp="1545156794726"></Blacklist>
+  <Whitelist timestamp="1545156794726">
+    <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT &amp;&amp; version &lt;= 6</ID>
+    <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$@VisibleForTesting fun generateCreateTable(version: Int): String</ID>
+    <ID>ComplexMethod:CardsInfoDbHelper.kt$CardsInfoDbHelper$override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int)</ID>
+    <ID>ComplexMethod:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
+    <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>LargeClass:CardDataSource.kt$CardDataSource</ID>
+    <ID>LargeClass:DeckDataSource.kt$DeckDataSource</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>LongMethod:MTGCard.kt$MTGCard$override fun hashCode(): Int</ID>
+    <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
+    <ID>MagicNumber:MTGCard.kt$3</ID>
+    <ID>MagicNumber:MTGCard.kt$4</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$3</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
+    <ID>MagicNumber:MTGCard.kt$MTGCard$4</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$4</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$9</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.IXALAN$16</ID>
+    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.RIVALS_OF_IXALAN$11</ID>
+    <ID>MagicNumber:PermissionUtil.kt$PermissionUtil$23</ID>
+    <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
+    <ID>MagicNumber:TCGPrice.kt$TCGPrice$5</ID>
+    <ID>MaxLineLength:BasicFragment.kt$BasicFragment$val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))</ID>
+    <ID>MaxLineLength:CoreModule.kt$CoreModule$@Provides @Singleton fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource.kt</ID>
+    <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
+    <ID>MaxLineLength:FileUtil.kt$val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")</ID>
+    <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + "=?")</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val sel = Arrays.copyOf&lt;String, Any&gt;(output.selection.toTypedArray(), output.selection.size, Array&lt;String&gt;::class.java)</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource.kt</ID>
+    <ID>MaxLineLength:QueryComposer.kt$com.dbottillo.mtgsearchfree.model.database.QueryComposer.kt</ID>
+    <ID>MaxLineLength:SQLiteAssetHelper.kt$com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper.kt</ID>
+    <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>
+    <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
+    <ID>ObjectPropertyNaming:LOG.kt$LOG$private val NOT_FOUND = StackTraceElement("", "", "", 0)</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_ADD_CARD = "addCard"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_CLOSE = "close"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_DELETE = "delete"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXPORT = "export"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXTERNAL_LINK = "externalLink"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_LUCKY = "lucky"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ALL = "moveAll"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ONE = "moveOne"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_ONE_MORE = "oneMore"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_OPEN = "open"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_RATE = "rate"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ALL = "removeALL"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ONE = "removeOne"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SAVE = "saved"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SELECT = "select"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_SHARE = "share"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_TOGGLE = "toggle"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_UNSAVED = "unsaved"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_APP_WIDGET = "appWidget"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_CARD = "card"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_DECK = "deck"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_ERROR = "error"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FAVOURITE = "favourite"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FILTER = "filter"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_LIFE_COUNTER = "lifeCounter"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_POPUP = "popup"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_RELEASE_NOTE = "releaseNote"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SEARCH = "search"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SET = "set"</ID>
+    <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_UI = "ui"</ID>
+    <ID>ReturnCount:FileUtil.kt$fun Context.copyDbFromSdCard(name: String): Boolean</ID>
+    <ID>ReturnCount:FileUtil.kt$fun Context.copyDbToSdCard(name: String): File?</ID>
+    <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
+    <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String?</ID>
+    <ID>ReturnCount:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
+    <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
+    <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.MANA_COST.noun, "LIKE", colorsOperator, *Arrays.copyOf&lt;String, Any&gt;(colors.toTypedArray(), colors.size, Array&lt;String&gt;::class.java))</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *Arrays.copyOf&lt;String, Any&gt;(rarities.toTypedArray(), rarities.size, Array&lt;String&gt;::class.java))</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.SET_ID.noun, "==", "OR", *STANDARD.setIds)</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.TYPE.noun, "LIKE", "AND", *types)</ID>
+    <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(output.query, *sel)</ID>
+    <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
+    <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:DeckDataSource.kt$DeckDataSource$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
+    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection</ID>
+    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource</ID>
+    <ID>TooManyFunctions:MTGCard.kt$MTGCard : Comparable</ID>
+    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer</ID>
+    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager</ID>
+    <ID>VariableNaming:FileUtil.kt$FileUtil$val `is` = fileManager.loadUri(uri)</ID>
+    <ID>VariableNaming:QueryComposer.kt$QueryComposer$private val LIKE_OPERATOR = "LIKE"</ID>
+  </Whitelist>
+</SmellBaseline>

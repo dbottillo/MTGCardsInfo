@@ -7,7 +7,7 @@ import com.dbottillo.mtgsearchfree.model.CardsBucket
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.database.DeckDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import javax.inject.Inject

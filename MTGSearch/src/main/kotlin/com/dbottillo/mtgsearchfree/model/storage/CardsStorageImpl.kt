@@ -4,7 +4,7 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.model.storage.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.model.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 
@@ -28,12 +28,12 @@ open class CardsStorageImpl(
     }
 
     override fun saveAsFavourite(card: MTGCard) {
-        logger.d("save as fav " + card)
+        logger.d("save as fav $card")
         favouritesDataSource.saveFavourites(card)
     }
 
     override fun removeFromFavourite(card: MTGCard) {
-        logger.d("remove as fav " + card)
+        logger.d("remove as fav $card")
         favouritesDataSource.removeFavourites(card)
     }
 

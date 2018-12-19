@@ -1,15 +1,10 @@
 buildscript {
     ext.number_of_set = 182
-    ext.database_version = 41
     ext.name_fifth_mtg_card = "Karn Liberated"
 }
 
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
-apply plugin: 'io.fabric'
-apply plugin: 'findbugs'
-apply plugin: 'pmd'
-apply plugin: 'checkstyle'
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 
@@ -17,16 +12,12 @@ android {
     buildTypes {
         debug {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
         release {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'int', 'DATABASE_VERSION', "$database_version"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField 'Boolean', 'LOG_THREAD', 'false'
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
@@ -34,16 +25,8 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
-        test.resources.srcDirs += ['src/test/resources', 'src/debug/res/raw']
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        test.resources.srcDirs += ['src/test/resources']
     }
-
-    testOptions {
-        unitTests {
-            includeAndroidResources = true
-        }
-    }
-
 }
 
 checkstyle {
@@ -57,10 +40,7 @@ dependencies {
     ui()
     monitoring()
     network()
-    debug()
 
     test()
     instrumentation()
 }
-
-apply plugin: 'com.google.gms.google-services'

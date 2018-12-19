@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        100% — FF
+        95% — F2
+        90% — E6
+        85% — D9
+        80% — CC
+        75% — BF
+        70% — B3
+        65% — A6
+        60% — 99
+        55% — 8C
+        50% — 80
+        45% — 73
+        40% — 66
+        35% — 59
+        30% — 4D
+        25% — 40
+        20% — 33
+        15% — 26
+        10% — 1A
+        5% — 0D
+        0% — 00-->
+
+    <color name="color_primary">#00a7f7</color>
+    <color name="color_primary_slightly_dark">#0193e8</color>
+    <color name="color_primary_middle_dark">#0086d4</color>
+    <color name="color_primary_almost_dark">#0075bf</color>
+    <color name="color_primary_dark">#00559d</color>
+    <color name="color_accent">#FF41B4</color>
+    <color name="color_accent_dark">#C1147D</color>
+    <color name="color_primary_light">#b2e5fe</color>
+
+    <color name="main_bg">#FAFAFA</color>
+    <color name="main">#2C4E6B</color>
+    <color name="sub_main">#294259</color>
+
+    <color name="white">#FFF</color>
+    <color name="light_grey">#F2F2F2</color>
+    <color name="grey">#aab4ba</color>
+    <color name="dark_grey">#555</color>
+    <color name="black_a5">#26000000</color>
+
+    <color name="black_30">#4d000000</color>
+    <!--<color NAME="black_50">#b3000000</color>-->
+
+    <color name="player_1">#716BBE</color>
+    <color name="player_2">#1CACFF</color>
+    <color name="player_3">#46B446</color>
+    <color name="player_4">#FF1C1C</color>
+    <color name="player_5">#FF9900</color>
+
+    <color name="common">#222</color>
+    <color name="uncommon">#888</color>
+    <color name="rare">#BD9723</color>
+    <color name="mythic">#D46805</color>
+
+    <color name="mtg_white">#a5a504</color>
+    <color name="mtg_blue">#00a8ff</color>
+    <color name="mtg_black">#000000</color>
+    <color name="mtg_red">#ff0000</color>
+    <color name="mtg_green">#319c1f</color>
+    <color name="mtg_multi">#b727af</color>
+    <color name="mtg_other">#aab4ba</color>
+
+
+</resources>
