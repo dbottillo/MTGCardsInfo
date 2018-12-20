@@ -1,7 +1,9 @@
 package com.dbottillo.mtgsearchfree.storage
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
@@ -11,6 +13,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.junit.MockitoJUnit
+import java.util.Random
 
 class CardsHelperTest {
 
@@ -28,7 +31,7 @@ class CardsHelperTest {
         val cardFilter = CardFilter()
         val cards = generateCards()
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterAndSortSet(cardFilter, cards)
 
         assertThat(result.size, `is`(cards.size))
         assertTrue(result.containsAll(cards))
@@ -93,69 +96,74 @@ class CardsHelperTest {
     }
 
     @Test
-    fun `filter cards should filter and ordered cards by color`() {
+    fun `filter cards should order cards in a set by set-number`() {
         val cardFilter = CardFilter()
-        cardFilter.sortWUBGR = true
-        val first = generateCard(name = "ZYX", colors = listOf(0))
-        val second = generateCard(name = "ABC", colors = listOf(4))
-        val cards = listOf(first, second)
+        cardFilter.sortSetNumber = true
+        val zyx = generateCard(name = "ZYX", number = "2").also { it.set = MTGSet(1, "AAA", "setA") }
+        val abc = generateCard(name = "ABC", number = "1").also { it.set = MTGSet(1, "AAA", "setA") }
+        val cards = listOf(zyx, abc)
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterAndSortSet(cardFilter, cards)
 
-        assertThat(result[0], `is`(first))
-        assertThat(result[1], `is`(second))
+        assertThat(result[0], `is`(abc))
+        assertThat(result[1], `is`(zyx))
     }
 
     @Test
-    fun `filter cards should filter and ordered cards by name`() {
+    fun `filter cards should order cards across sets by set-number`() {
         val cardFilter = CardFilter()
-        cardFilter.sortWUBGR = false
-        val first = generateCard(name = "ZYX", colors = listOf(0))
-        val second = generateCard(name = "ABC", colors = listOf(4))
-        val cards = listOf(first, second)
+        cardFilter.sortSetNumber = true
+        val lmn = generateCard(name = "LMN", number = "2").also { it.set = MTGSet(1, "AAA", "setA") }
+        val def = generateCard(name = "DEF", number = "1").also { it.set = MTGSet(1, "AAA", "setA") }
+        val zyx = generateCard(name = "ZYX", number = "2").also { it.set = MTGSet(2, "BBB", "setB") }
+        val abc = generateCard(name = "ABC", number = "1").also { it.set = MTGSet(2, "BBB", "setB") }
+        val cards = listOf(lmn, def, zyx, abc)
 
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterAndSortMultipleSets(cardFilter, cards)
 
-        assertThat(result[0], `is`(second))
-        assertThat(result[1], `is`(first))
+        assertThat(result[0], `is`(def))
+        assertThat(result[1], `is`(lmn))
+        assertThat(result[2], `is`(abc))
+        assertThat(result[3], `is`(zyx))
     }
 
     @Test
-    fun `should sort all type of cards`() {
-        val cards = listOf(
-                generateCard(name = "Multicolor", colors = listOf(0, 2), colorsIdentity = listOf("W", "B"), isMulticolor = true),
-                generateCard(name = "Colorless", colors = listOf(), colorsIdentity = listOf("R"), cost = "{3}{R}"),
-                generateCard(name = "Artifact", isArtifact = true),
-                generateCard(name = "Land", colorsIdentity = listOf("G"), isLand = true),
-                generateCard(name = "Green card", colors = listOf(4), colorsIdentity = listOf("G")),
-                generateCard(name = "Red card", colors = listOf(3), colorsIdentity = listOf("R")),
-                generateCard(name = "Black card", colors = listOf(2), colorsIdentity = listOf("B")),
-                generateCard(name = "White Artifact", isArtifact = true, colors = listOf(0), colorsIdentity = listOf("W")),
-                generateCard(name = "Blue card", colors = listOf(1), colorsIdentity = listOf("U")),
-                generateCard(name = "Eldrazi"),
-                generateCard(name = "White card", colors = listOf(0), colorsIdentity = listOf("W")))
+    fun `filter cards should order cards in a set by name`() {
+        val cardFilter = CardFilter()
+        cardFilter.sortSetNumber = false
+        val zyx = generateCard(name = "ZYX", number = "1").also { it.set = MTGSet(1, "AAA", "setA") }
+        val abc = generateCard(name = "ABC", number = "2").also { it.set = MTGSet(1, "AAA", "setA") }
+        val cards = listOf(zyx, abc)
 
-        underTest.sortCards(CardFilter().also { it.sortWUBGR = true }, cards)
+        val result = underTest.filterAndSortSet(cardFilter, cards)
 
-        assertThat(cards.size, `is`(11))
-        assertThat(cards[0].name, `is`("Eldrazi"))
-        assertThat(cards[1].name, `is`("White Artifact"))
-        assertThat(cards[2].name, `is`("White card"))
-        assertThat(cards[3].name, `is`("Blue card"))
-        assertThat(cards[4].name, `is`("Black card"))
-        assertThat(cards[5].name, `is`("Colorless"))
-        assertThat(cards[6].name, `is`("Red card"))
-        assertThat(cards[7].name, `is`("Green card"))
-        assertThat(cards[8].name, `is`("Multicolor"))
-        assertThat(cards[9].name, `is`("Artifact"))
-        assertThat(cards[10].name, `is`("Land"))
+        assertThat(result[0], `is`(abc))
+        assertThat(result[1], `is`(zyx))
+    }
+
+    @Test
+    fun `filter cards should order cards across sets by name`() {
+        val cardFilter = CardFilter()
+        cardFilter.sortSetNumber = false
+        val lmn = generateCard(name = "LMN", number = "2").also { it.set = MTGSet(1, "AAA", "setA") }
+        val def = generateCard(name = "DEF", number = "1").also { it.set = MTGSet(1, "AAA", "setA") }
+        val zyx = generateCard(name = "ZYX", number = "2").also { it.set = MTGSet(2, "BBB", "setB") }
+        val abc = generateCard(name = "ABC", number = "1").also { it.set = MTGSet(2, "BBB", "setB") }
+        val cards = listOf(lmn, def, zyx, abc)
+
+        val result = underTest.filterAndSortMultipleSets(cardFilter, cards)
+
+        assertThat(result[0], `is`(abc))
+        assertThat(result[1], `is`(def))
+        assertThat(result[2], `is`(lmn))
+        assertThat(result[3], `is`(zyx))
     }
 
     private fun checkCondition(prepareFilter: (CardFilter) -> Unit, validateCards: (MTGCard) -> Unit) {
         val cardFilter = CardFilter()
         prepareFilter(cardFilter)
         val cards = generateCards()
-        val result = underTest.filterCards(cardFilter, cards)
+        val result = underTest.filterAndSortSet(cardFilter, cards)
 
         result.forEach {
             validateCards(it)
@@ -165,25 +173,36 @@ class CardsHelperTest {
     private fun generateCards(): List<MTGCard> {
         val list = mutableListOf<MTGCard>()
         val colors = listOf("W", "U", "B", "R", "G")
+        val colorsIdentity = listOf(Color.WHITE, Color.BLUE, Color.BLACK, Color.RED, Color.GREEN)
         val rarity = listOf(Rarity.COMMON, Rarity.UNCOMMON, Rarity.RARE, Rarity.MYTHIC)
+        var number = 0
         colors.forEachIndexed { index, color ->
-            rarity.forEach {
-                list.add(generateCard(cost = color, rarity = it, colors = listOf(index)))
+            rarity.forEach { rarity ->
+                list.add(generateCard(cost = color, rarity = rarity,
+                        number = number.toString(), colors = listOf(color),
+                        colorsIdentity = listOf(colorsIdentity[index])))
+                number++
             }
         }
         val artifactCard = MTGCard()
         artifactCard.isArtifact = true
-        artifactCard.setCardName("Card")
+        artifactCard.setCardName("Card $number")
         artifactCard.rarity = Rarity.COMMON
+        artifactCard.number = number.toString()
+        number++
         list.add(artifactCard)
         val landCard = MTGCard()
         landCard.isLand = true
-        landCard.setCardName("Card")
+        landCard.setCardName("Card $number")
         landCard.rarity = Rarity.UNCOMMON
+        landCard.number = number.toString()
+        number++
         list.add(landCard)
         val eldraziCard = MTGCard()
-        eldraziCard.setCardName("Card")
+        eldraziCard.setCardName("Card $number")
+        eldraziCard.type = "Eldrazi"
         eldraziCard.rarity = Rarity.RARE
+        eldraziCard.number = number.toString()
         list.add(eldraziCard)
         return list
     }
@@ -191,22 +210,25 @@ class CardsHelperTest {
     private fun generateCard(
         name: String = "Card",
         cost: String = "WU",
+        number: String,
         rarity: Rarity = Rarity.COMMON,
-        colors: List<Int> = listOf(),
-        colorsIdentity: List<String> = listOf(),
+        colors: List<String> = listOf(),
+        colorsIdentity: List<Color> = listOf(),
         isLand: Boolean = false,
         isArtifact: Boolean = false,
         isMulticolor: Boolean = false
     ): MTGCard {
         val card = MTGCard()
-        card.setCardName(name)
+        card.uuid = Random().nextInt().toString()
+        card.setCardName("$name $number")
         card.manaCost = cost
         card.rarity = rarity
-        card.colors = colors.toMutableList()
+        card.colorsDisplay = colors
         card.colorsIdentity = colorsIdentity
         card.isLand = isLand
         card.isArtifact = isArtifact
         card.isMultiColor = isMulticolor
+        card.number = number
         return card
     }
 }

@@ -17,7 +17,7 @@ data class CardFilter(
     var uncommon: Boolean = true,
     var rare: Boolean = true,
     var mythic: Boolean = true,
-    var sortWUBGR: Boolean = true
+    var sortSetNumber: Boolean = true
 ) : Parcelable {
 
     enum class TYPE {
@@ -33,7 +33,7 @@ data class CardFilter(
         UNCOMMON,
         RARE,
         MYTHIC,
-        SORT_WUBGR
+        SORT_SET_NUMBER
     }
 }
 

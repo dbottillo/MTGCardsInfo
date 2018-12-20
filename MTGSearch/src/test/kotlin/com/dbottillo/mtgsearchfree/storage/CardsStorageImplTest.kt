@@ -24,7 +24,7 @@ import org.mockito.junit.MockitoJUnit
 
 class CardsStorageImplTest {
 
-    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock private lateinit var card: MTGCard
     @Mock private lateinit var set: MTGSet
@@ -69,7 +69,7 @@ class CardsStorageImplTest {
 
     @Test
     fun testLoad() {
-        whenever(cardsHelper.filterCards(filter, setCards)).thenReturn(setCardsFiltered)
+        whenever(cardsHelper.filterAndSortSet(filter, setCards)).thenReturn(setCardsFiltered)
 
         val cards = underTest.load(set)
 
@@ -97,7 +97,7 @@ class CardsStorageImplTest {
     @Test
     fun testLoadIdFav() {
         val favs = underTest.loadIdFav()
-        verify<FavouritesDataSource>(favouritesDataSource).getCards(false)
+        verify(favouritesDataSource).getCards(false)
         assertThat(favs.size, `is`(2))
         assertThat(favs[0], `is`(favCards[0].multiVerseId))
         assertThat(favs[1], `is`(favCards[1].multiVerseId))
@@ -107,7 +107,7 @@ class CardsStorageImplTest {
     fun testGetLuckyCards() {
         val lucky = underTest.getLuckyCards(2)
 
-        verify<MTGCardDataSource>(mtgCardDataSource).getRandomCard(2)
+        verify(mtgCardDataSource).getRandomCard(2)
         assertThat(lucky.list.size, `is`(2))
         assertThat(lucky.list, `is`(luckyCards))
     }
@@ -122,12 +122,14 @@ class CardsStorageImplTest {
 
     @Test
     fun `should search cards and return them sorted`() {
+        whenever(cardsHelper.filterAndSortMultipleSets(filter, searchCards)).thenReturn(searchCardsFiltered)
+
         val cards = underTest.doSearch(searchParams)
 
-        assertThat(cards.list, `is`(searchCards))
+        assertThat(cards.list, `is`(searchCardsFiltered))
         assertNull(cards.filter)
         assertFalse(cards.isDeck)
-        verify(cardsHelper).sortCards(filter, searchCards)
+        verify(cardsHelper).filterAndSortMultipleSets(filter, searchCards)
         verify(mtgCardDataSource).searchCards(searchParams)
         verify(cardsPreferences).load()
         verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)
@@ -176,9 +178,6 @@ class CardsStorageImplTest {
         val result2 = underTest.loadOtherSide(mainSideCard)
         assertThat(result2, `is`(mainSideCard))
     }
-
-    companion object {
-
-        private val MULTIVERSE_ID = 180607
-    }
 }
+
+private const val MULTIVERSE_ID = 180607

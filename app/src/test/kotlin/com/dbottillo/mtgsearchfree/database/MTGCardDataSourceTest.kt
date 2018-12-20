@@ -66,40 +66,27 @@ class MTGCardDataSourceTest {
     @Test
     fun fetchesAllSets() {
         val setsJ = readSetListJSON()
-        // MTGSet set = setsJ.get(180);
+        // val set = setsJ[0]
         for (set in setsJ) {
             // LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
                 val cardsJ = readSingleSetFile(set)
                 val cards = underTest.getSet(set)
-                /*if (set.getId() == 180){
-                    LOG.e("checking set: " + cardsJ.size() + " - " + cards.size());
-                    for (MTGCard cardJ : cardsJ){
-                        LOG.e("card "+cardJ.toString());
-                    }
-                    for (MTGCard card : cards){
-                        LOG.e("card2 "+card.toString());
-                    }
-                    for (MTGCard cardJ : cardsJ){
-                        LOG.e("checking card: " + cardJ.toString());
-                        boolean found = false;
-                        for (MTGCard card : cards){
-                            if (cardJ.equals(card)){
-                                found = true;
-                            }
+                /*LOG.e("checking set: " + cardsJ.size + " - " + cards.size)
+                cardsJ.forEach {cardJ ->
+                    var found = false
+                    cards.forEach { card ->
+                        if (card == cardJ){
+                            found = true
                         }
-                        if (!found){
-                            LOG.e("not found "+cardJ);
-                        }
+
                     }
-                    if (cardsJ.get(0).equals(cards.get(0))){
-                        LOG.e("found ");
-                    } else {
-                        LOG.e("not found ");
+                    if (!found){
+                        LOG.e("not found $cardJ")
                     }
                 }*/
                 assertThat("checking $set", cardsJ.size, `is`(cards.size))
-                assertTrue(cards.containsAll(cardsJ))
+                assertTrue("set failing $set", cards.containsAll(cardsJ))
             } catch (e: Resources.NotFoundException) {
                 LOG.e(set.code + " file not found")
             }

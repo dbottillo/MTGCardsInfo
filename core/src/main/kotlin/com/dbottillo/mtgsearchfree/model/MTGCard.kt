@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
 import android.content.Context
-import android.support.annotation.VisibleForTesting
 import android.support.v4.content.ContextCompat
 import com.dbottillo.mtgsearchfree.core.R
 
@@ -12,7 +11,6 @@ data class MTGCard(
     var type: String = "",
     val types: MutableList<String> = mutableListOf(),
     val subTypes: MutableList<String> = mutableListOf(),
-    var colors: MutableList<Int> = mutableListOf(),
     var cmc: Int = 0,
     var rarity: Rarity = Rarity.COMMON,
     var power: String = "",
@@ -27,7 +25,7 @@ data class MTGCard(
     var quantity: Int = 1,
     var isSideboard: Boolean = false,
     var layout: String = "normal",
-    var number: String? = null,
+    var number: String = "",
     val rulings: MutableList<String> = mutableListOf(),
     var names: List<String> = listOf(),
     var superTypes: List<String> = listOf(),
@@ -36,9 +34,10 @@ data class MTGCard(
     var loyalty: Int = 0,
     var printings: List<String> = listOf(),
     var originalText: String = "",
-    var colorsIdentity: List<String>? = null,
+    var colorsDisplay: List<String> = listOf(),
+    var colorsIdentity: List<Color> = mutableListOf(),
     var legalities: MutableList<Legality> = mutableListOf()
-) : Comparable<MTGCard> {
+) {
 
     constructor(onlyId: Int) : this(id = onlyId)
 
@@ -56,19 +55,15 @@ data class MTGCard(
         this.subTypes.add(subType)
     }
 
-    fun addColor(color: String) {
-        colors.add(color.toColorInt())
-    }
-
     val isEldrazi: Boolean
-        get() = !isMultiColor && !isLand && !isArtifact && colors.size == 0
+        get() = type.contains("Eldrazi")
 
     fun belongsTo(set: MTGSet) {
         this.set = set
     }
 
     override fun toString(): String {
-        return "MTGCard: [$id,$name,$multiVerseId,$colors,$rarity,$quantity]"
+        return "MTGCard: [$id,$name,$multiVerseId,$colorsIdentity,$rarity,$quantity]"
     }
 
     fun addRuling(rule: String) {
@@ -101,7 +96,7 @@ data class MTGCard(
 
     val rarityColor: Int
         get() = when (rarity) {
-            Rarity.COMMON -> R.color.uncommon
+            Rarity.COMMON -> R.color.common
             Rarity.UNCOMMON -> R.color.uncommon
             Rarity.RARE -> R.color.rare
             Rarity.MYTHIC -> R.color.mythic
@@ -115,99 +110,47 @@ data class MTGCard(
             "https://api.scryfall.com/cards/$uuid?format=image"
         } else gathererImage
 
-    override fun compareTo(other: MTGCard): Int {
-        if (isLand && other.isLand) {
-            return 0
-        }
-        if (!isLand && other.isLand) {
-            return -1
-        }
-        if (isLand) {
-            return 1
-        }
-        if (isColorlessArtifact && other.isColorlessArtifact) {
-            return 0
-        }
-        if (!isColorlessArtifact && other.isColorlessArtifact) {
-            return -1
-        }
-        if (isColorlessArtifact) {
-            return 1
-        }
-        if (isMultiColor && other.isMultiColor) {
-            return 0
-        }
-        if (!isMultiColor && other.isMultiColor) {
-            return -1
-        }
-        if (isMultiColor) {
-            return 1
-        }
-        if (other.singleColor == this.singleColor) {
-            return 0
-        }
-        return if (singleColor < other.singleColor) {
-            -1
-        } else {
-            1
-        }
-    }
-
-    private val isColorlessArtifact: Boolean
-        get() = colorsIdentity?.let { it.isEmpty() && isArtifact } ?: isArtifact
-
-    val singleColor: Int
-        @VisibleForTesting
-        get() =
-            when {
-                isMultiColor -> -1
-                colorsIdentity?.isNotEmpty()
-                        ?: false -> colorsIdentity!![0].fromIdentityColorToInt()
-                colors.isNotEmpty() -> colors[0]
-                else -> -1
-            }
-
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(context,
                 when {
-                    isMultiColor -> R.color.mtg_multi
-                    colors.contains(0) -> R.color.mtg_white
-                    colors.contains(1) -> R.color.mtg_blue
-                    colors.contains(2) -> R.color.mtg_black
-                    colors.contains(3) -> R.color.mtg_red
-                    colors.contains(4) -> R.color.mtg_green
+                    colorsIdentity.size > 1 -> R.color.mtg_multi
+                    colorsIdentity.isEmpty() -> R.color.mtg_other
+                    colorsIdentity[0] == Color.WHITE -> R.color.mtg_white
+                    colorsIdentity[0] == Color.BLUE -> R.color.mtg_blue
+                    colorsIdentity[0] == Color.BLACK -> R.color.mtg_black
+                    colorsIdentity[0] == Color.RED -> R.color.mtg_red
+                    colorsIdentity[0] == Color.GREEN -> R.color.mtg_green
                     else -> R.color.mtg_other
                 })
     }
 
     val isWhite: Boolean
-        get() = manaCost.contains("W") || colorsIdentity?.contains("W") ?: false
+        get() = manaCost.contains("W") || colorsIdentity.contains(Color.WHITE)
 
     val isBlue: Boolean
-        get() = manaCost.contains("U") || colorsIdentity?.contains("U") ?: false
+        get() = manaCost.contains("U") || colorsIdentity.contains(Color.BLUE)
 
     val isBlack: Boolean
-        get() = manaCost.contains("B") || colorsIdentity?.contains("B") ?: false
+        get() = manaCost.contains("B") || colorsIdentity.contains(Color.BLACK)
 
     val isRed: Boolean
-        get() = manaCost.contains("R") || colorsIdentity?.contains("R") ?: false
+        get() = manaCost.contains("R") || colorsIdentity.contains(Color.RED)
 
     val isGreen: Boolean
-        get() = manaCost.contains("G") || colorsIdentity?.contains("G") ?: false
+        get() = manaCost.contains("G") || colorsIdentity.contains(Color.GREEN)
 
     fun hasNoColor(): Boolean {
-        return !manaCost.matches(".*[WUBRG].*".toRegex()) && colorsIdentity?.isEmpty() ?: false
+        return colorsIdentity.isEmpty()
     }
 
     val isDoubleFaced: Boolean
         get() = layout.equals("double-faced", ignoreCase = true)
 
     override fun equals(other: Any?): Boolean {
-        return when {
-            other !is MTGCard -> false
-            multiVerseId > 0 && other.multiVerseId == multiVerseId -> true
-            name.isNotEmpty() && other.name == name -> true
-            else -> false
+        return when (other) {
+            !is MTGCard -> false
+            multiVerseId > 0 && multiVerseId == other.multiVerseId -> true
+            else -> uuid == other.uuid
         }
     }
 
@@ -217,7 +160,7 @@ data class MTGCard(
         result = 31 * result + type.hashCode()
         result = 31 * result + types.hashCode()
         result = 31 * result + subTypes.hashCode()
-        result = 31 * result + colors.hashCode()
+        result = 31 * result + colorsDisplay.hashCode()
         result = 31 * result + cmc
         result = 31 * result + rarity.hashCode()
         result = 31 * result + power.hashCode()
@@ -232,7 +175,7 @@ data class MTGCard(
         result = 31 * result + quantity
         result = 31 * result + isSideboard.hashCode()
         result = 31 * result + layout.hashCode()
-        result = 31 * result + (number?.hashCode() ?: 0)
+        result = 31 * result + number.hashCode()
         result = 31 * result + rulings.hashCode()
         result = 31 * result + names.hashCode()
         result = 31 * result + superTypes.hashCode()
@@ -241,7 +184,7 @@ data class MTGCard(
         result = 31 * result + loyalty
         result = 31 * result + printings.hashCode()
         result = 31 * result + originalText.hashCode()
-        result = 31 * result + (colorsIdentity?.hashCode() ?: 0)
+        result = 31 * result + colorsIdentity.hashCode()
         result = 31 * result + legalities.hashCode()
         return result
     }
@@ -249,35 +192,6 @@ data class MTGCard(
 
 class Legality(val format: String, val legality: String)
 
-fun String.fromIdentityColorToInt(): Int {
-    return when (this) {
-        "W" -> 0
-        "U" -> 1
-        "B" -> 2
-        "R" -> 3
-        "G" -> 4
-        else -> -1
-    }
-}
-
-fun String.toColorInt(): Int {
-    return when (this) {
-        "White" -> 0
-        "Blue" -> 1
-        "Black" -> 2
-        "Red" -> 3
-        "Green" -> 4
-        else -> -1
-    }
-}
-
-fun Int.toColor(): String? {
-    return when (this) {
-        0 -> "White"
-        1 -> "Blue"
-        2 -> "Black"
-        3 -> "Red"
-        4 -> "Green"
-        else -> null
-    }
+enum class Color {
+    WHITE, BLUE, BLACK, RED, GREEN
 }

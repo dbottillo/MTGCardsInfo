@@ -80,7 +80,7 @@ class FilterPickerView(context: Context, attrs: AttributeSet?, defStyle: Int) : 
         toggleUncommon.isChecked = filter.uncommon
         toggleRare.isChecked = filter.rare
         toggleMythic.isChecked = filter.mythic
-        toggleOrder.isChecked = filter.sortWUBGR
+        toggleOrder.isChecked = filter.sortSetNumber
     }
 
     override fun onClick(view: View) {
@@ -99,7 +99,7 @@ class FilterPickerView(context: Context, attrs: AttributeSet?, defStyle: Int) : 
             R.id.toggle_uncommon -> listener?.filterUpdated(CardFilter.TYPE.UNCOMMON, on)
             R.id.toggle_rare -> listener?.filterUpdated(CardFilter.TYPE.RARE, on)
             R.id.toggle_myhtic -> listener?.filterUpdated(CardFilter.TYPE.MYTHIC, on)
-            R.id.toggle_order -> listener?.filterUpdated(CardFilter.TYPE.SORT_WUBGR, on)
+            R.id.toggle_order -> listener?.filterUpdated(CardFilter.TYPE.SORT_SET_NUMBER, on)
             else -> {
             }
         }

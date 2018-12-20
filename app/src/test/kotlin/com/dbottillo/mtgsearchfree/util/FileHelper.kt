@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.util
 
 import android.content.res.Resources
+import com.dbottillo.mtgsearchfree.database.mapColor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
@@ -73,29 +74,30 @@ private fun loadFile(file: String): String? {
 private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     val card = MTGCard()
 
+    card.uuid = jsonObject.getString("uuid")
     card.setCardName(jsonObject.getString("name"))
     card.type = jsonObject.getString("type")
     card.belongsTo(set)
 
-    val multicolor: Int
+    var multicolor = false
     var land: Int
-    val artifact: Int
+    val artifact: Int = if (jsonObject.getString("type").contains("Artifact")) {
+        1
+    } else {
+        0
+    }
 
     if (jsonObject.has("colors")) {
         val colorsJ = jsonObject.getJSONArray("colors")
+        val colors = mutableListOf<String>()
         for (k in 0 until colorsJ.length()) {
             val color = colorsJ.getString(k)
-            card.addColor(color)
+            colors.add(color)
         }
+        card.colorsDisplay = colors
 
-        if (colorsJ.length() > 1) {
-            multicolor = 1
-        } else {
-            multicolor = 0
-        }
         land = 0
     } else {
-        multicolor = 0
         land = 1
     }
 
@@ -104,12 +106,6 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         for (k in 0 until typesJ.length()) {
             card.addType(typesJ.getString(k))
         }
-    }
-
-    if (jsonObject.getString("type").contains("Artifact")) {
-        artifact = 1
-    } else {
-        artifact = 0
     }
 
     if (jsonObject.has("manaCost")) {
@@ -149,7 +145,6 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         cmc = jsonObject.getInt("cmc")
     }
     card.cmc = cmc
-    card.isMultiColor = multicolor == 1
     card.isLand = land == 1
     card.isArtifact = artifact == 1
 
@@ -208,10 +203,15 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     }
     if (jsonObject.has("colorIdentity")) {
         val colorIdentity = jsonObject.getString("colorIdentity")
+        val colorsIdentityJ = jsonObject.getJSONArray("colorIdentity")
         if (colorIdentity != null) {
             val strings = gson.fromJson<List<String>>(colorIdentity, type)
-            card.colorsIdentity = strings
+            card.colorsIdentity = strings.map { it.mapColor() }
+            if (colorsIdentityJ.length() > 1) {
+                multicolor = true
+            }
         }
     }
+    card.isMultiColor = multicolor
     return card
 }

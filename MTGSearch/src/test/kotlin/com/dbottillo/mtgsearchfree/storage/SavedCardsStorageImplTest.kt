@@ -34,7 +34,7 @@ class SavedCardsStorageImplTest {
     fun setUp() {
         whenever(favouriteDataSource.getCards(true)).thenReturn(cards)
         whenever(cardsPreferences.load()).thenReturn(filter)
-        whenever(cardsHelper.filterCards(filter, cards)).thenReturn(filteredCards)
+        whenever(cardsHelper.filterAndSortMultipleSets(filter, cards)).thenReturn(filteredCards)
         underTest = SavedCardsStorageImpl(favouriteDataSource, cardsHelper, cardsPreferences, logger)
     }
 
@@ -46,7 +46,7 @@ class SavedCardsStorageImplTest {
         assertThat(result.filter, `is`(filter))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
-        verify(cardsHelper).filterCards(filter, cards)
+        verify(cardsHelper).filterAndSortMultipleSets(filter, cards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 
@@ -58,7 +58,7 @@ class SavedCardsStorageImplTest {
         assertThat(result.filter, `is`(filter))
         verify(favouriteDataSource).getCards(true)
         verify(cardsPreferences).load()
-        verify(cardsHelper).filterCards(filter, cards)
+        verify(cardsHelper).filterAndSortMultipleSets(filter, cards)
         verifyNoMoreInteractions(filteredCards, favouriteDataSource, cardsHelper)
     }
 }

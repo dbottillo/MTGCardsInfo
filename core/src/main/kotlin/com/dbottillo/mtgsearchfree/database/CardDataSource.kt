@@ -5,11 +5,11 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.support.annotation.VisibleForTesting
 import com.crashlytics.android.Crashlytics
+import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Legality
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
-import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -22,7 +22,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
 
     val cards: List<MTGCard>
         get() {
-            val cursor = database.rawQuery("select * from " + TABLE, null)
+            val cursor = database.rawQuery("select * from $TABLE", null)
             val cards = ArrayList<MTGCard>()
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast) {
@@ -86,18 +86,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         values.put(COLUMNS.SET_ID.noun, card.set!!.id)
         values.put(COLUMNS.SET_NAME.noun, card.set!!.name)
         values.put(COLUMNS.SET_CODE.noun, card.set!!.code)
-        val colors = card.colors
-        if (colors.size > 0) {
-            val col = StringBuilder()
-            for (k in colors.indices) {
-                val color = colors[k].toColor()
-                col.append(color)
-                if (k < colors.size - 1) {
-                    col.append(',')
-                }
-            }
-            values.put(COLUMNS.COLORS.noun, col.toString())
-        }
+        values.put(COLUMNS.COLORS.noun, card.colorsDisplay.joinToString(","))
         val types = card.types
         if (types.size > 0) {
             val typ = StringBuilder()
@@ -155,7 +144,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         values.put(COLUMNS.LOYALTY.noun, card.loyalty)
         values.put(COLUMNS.PRINTINGS.noun, gson.toJson(card.printings))
         values.put(COLUMNS.ORIGINAL_TEXT.noun, card.originalText)
-        values.put(COLUMNS.COLORS_IDENTITY.noun, gson.toJson(card.colorsIdentity))
+        values.put(COLUMNS.COLORS_IDENTITY.noun, gson.toJson(card.colorsIdentity.map { it.unmap() }))
         val legalities = card.legalities
         if (legalities.size > 0) {
             val legalitiesJ = JSONArray()
@@ -200,9 +189,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
 
         if (cursor.getColumnIndex(COLUMNS.COLORS.noun) != -1) {
             val colors = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS.noun))
-            colors?.split(",")?.forEach {
-                card.addColor(it)
-            }
+            card.colorsDisplay = if (colors.isNullOrEmpty()) listOf() else colors.split(",")
         }
         if (cursor.getColumnIndex(COLUMNS.TYPES.noun) != -1) {
             val types = cursor.getString(cursor.getColumnIndex(COLUMNS.TYPES.noun))
@@ -308,7 +295,10 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         if (cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun) != -1) {
             val colorsIdentity = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun))
             if (colorsIdentity != null) {
-                card.colorsIdentity = gson.fromJson<List<String>>(colorsIdentity, type)
+                val colors = gson.fromJson<List<String>>(colorsIdentity, type)
+                if (colors.isNotEmpty()) {
+                    card.colorsIdentity = colors.map { it.mapColor() }
+                }
             }
         }
 
@@ -465,6 +455,27 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             }
             return builder.append(')').toString()
         }
+    }
+}
+
+fun String.mapColor(): Color {
+    return when (this) {
+        "W" -> Color.WHITE
+        "U" -> Color.BLUE
+        "B" -> Color.BLACK
+        "R" -> Color.RED
+        "G" -> Color.GREEN
+        else -> throw UnsupportedOperationException("color not supported")
+    }
+}
+
+fun Color.unmap(): String {
+    return when (this) {
+        Color.WHITE -> "W"
+        Color.BLUE -> "U"
+        Color.BLACK -> "B"
+        Color.RED -> "R"
+        Color.GREEN -> "G"
     }
 }
 

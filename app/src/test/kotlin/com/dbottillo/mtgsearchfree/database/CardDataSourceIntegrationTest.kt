@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.database
 
 import android.database.Cursor
+import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Rarity
-import com.dbottillo.mtgsearchfree.model.toColor
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.whenever
@@ -78,9 +78,9 @@ class CardDataSourceIntegrationTest {
         for (i in 0 until cardFromDb.subTypes.size) {
             assertThat(cardFromDb.subTypes[i], `is`(card.subTypes[i]))
         }
-        assertThat(cardFromDb.colors.size, `is`(card.colors.size))
-        for (i in 0 until cardFromDb.colors.size) {
-            assertThat(cardFromDb.colors[i], `is`(card.colors[i]))
+        assertThat(cardFromDb.colorsDisplay.size, `is`(card.colorsDisplay.size))
+        for (i in 0 until cardFromDb.colorsDisplay.size) {
+            assertThat(cardFromDb.colorsDisplay[i], `is`(card.colorsDisplay[i]))
         }
         assertThat(cardFromDb.cmc, `is`(card.cmc))
         assertThat(cardFromDb.rarity, `is`(card.rarity))
@@ -119,7 +119,7 @@ class CardDataSourceIntegrationTest {
         }
         assertThat(cardFromDb.originalText, `is`(card.originalText))
 
-        assertThat<List<String>>(cardFromDb.colorsIdentity, `is`<List<String>>(card.colorsIdentity))
+        assertThat<List<Color>>(cardFromDb.colorsIdentity, `is`<List<Color>>(card.colorsIdentity))
 
         assertThat(cardFromDb.rulings.size, `is`(card.rulings.size))
         for (i in 0 until cardFromDb.rulings.size) {
@@ -150,72 +150,72 @@ class CardDataSourceIntegrationTest {
     @Test
     fun parsesCardFromCursor() {
         setupCursorCard()
-        val (id, uuid, name, type, types, subTypes, colors, cmc, rarity, power, toughness, manaCost, text, isMultiColor, isLand, isArtifact, multiVerseId, set, _, _, layout, number, rulings, names, superTypes, artist, flavor, loyalty, printings, originalText, colorsIdentity, legalities) = underTest.fromCursor(cursor)
+        val card = underTest.fromCursor(cursor)
 
-        assertThat(id, `is`(2))
-        assertThat(multiVerseId, `is`(1001))
-        assertThat(uuid, `is`("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe"))
-        assertThat(name, `is`("name"))
-        assertThat(type, `is`("type"))
-        assertThat<List<String>>(types, `is`(listOf("Artifact", "Creature")))
-        assertThat<List<String>>(subTypes, `is`(listOf("Creature", "Artifact")))
+        assertThat(card.id, `is`(2))
+        assertThat(card.multiVerseId, `is`(1001))
+        assertThat(card.uuid, `is`("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe"))
+        assertThat(card.name, `is`("name"))
+        assertThat(card.type, `is`("type"))
+        assertThat(card.types, `is`(listOf("Artifact", "Creature")))
+        assertThat(card.subTypes, `is`(listOf("Creature", "Artifact")))
 
-        assertThat<List<Int>>(colors, `is`(listOf(1, 2)))
-        assertThat(cmc, `is`(1))
-        assertThat(rarity, `is`(Rarity.RARE))
-        assertThat(power, `is`("2"))
-        assertThat(toughness, `is`("3"))
+        assertThat(card.colorsDisplay, `is`(listOf("U", "W")))
+        assertThat(card.cmc, `is`(1))
+        assertThat(card.rarity, `is`(Rarity.RARE))
+        assertThat(card.power, `is`("2"))
+        assertThat(card.toughness, `is`("3"))
 
-        assertThat(manaCost, `is`("3{U}{B}"))
-        assertThat(text, `is`("text"))
+        assertThat(card.manaCost, `is`("3{U}{B}"))
+        assertThat(card.text, `is`("text"))
 
-        assertFalse(isMultiColor)
-        assertTrue(isLand)
-        assertFalse(isArtifact)
+        assertFalse(card.isMultiColor)
+        assertTrue(card.isLand)
+        assertFalse(card.isArtifact)
 
-        assertThat(set?.id, `is`(10))
-        assertThat(set?.name, `is`("Commander 2016"))
-        assertThat(set?.code, `is`("C16"))
+        assertThat(card.set?.id, `is`(10))
+        assertThat(card.set?.name, `is`("Commander 2016"))
+        assertThat(card.set?.code, `is`("C16"))
 
-        assertNotNull(rulings)
-        assertThat(rulings.size, `is`(1))
-        assertThat(rulings[0], `is`("If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times."))
+        assertNotNull(card.rulings)
+        assertThat(card.rulings.size, `is`(1))
+        assertThat(card.rulings[0], `is`("If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times."))
 
-        assertThat(layout, `is`("layout"))
-        assertThat<String>(number, `is`("29"))
+        assertThat(card.layout, `is`("layout"))
+        assertThat(card.number, `is`("29"))
 
-        assertNotNull(names)
-        assertThat(names.size, `is`(2))
-        assertThat(names[0], `is`("Order"))
-        assertThat(names[1], `is`("Chaos"))
+        assertNotNull(card.names)
+        assertThat(card.names.size, `is`(2))
+        assertThat(card.names[0], `is`("Order"))
+        assertThat(card.names[1], `is`("Chaos"))
 
-        assertNotNull(superTypes)
-        assertThat(superTypes.size, `is`(2))
-        assertThat(superTypes[0], `is`("Creature"))
-        assertThat(superTypes[1], `is`("Artifact"))
+        assertNotNull(card.superTypes)
+        assertThat(card.superTypes.size, `is`(2))
+        assertThat(card.superTypes[0], `is`("Creature"))
+        assertThat(card.superTypes[1], `is`("Artifact"))
 
-        assertThat<String>(flavor, `is`("flavor"))
-        assertThat(artist, `is`("artist"))
-        assertThat(loyalty, `is`(4))
+        assertThat(card.flavor, `is`("flavor"))
+        assertThat(card.artist, `is`("artist"))
+        assertThat(card.loyalty, `is`(4))
 
-        assertNotNull(printings)
-        assertThat(printings.size, `is`(2))
-        assertThat(printings[0], `is`("C16"))
-        assertThat(printings[1], `is`("C17"))
+        assertNotNull(card.printings)
+        assertThat(card.printings.size, `is`(2))
+        assertThat(card.printings[0], `is`("C16"))
+        assertThat(card.printings[1], `is`("C17"))
 
-        assertThat(originalText, `is`("original text"))
+        assertThat(card.originalText, `is`("original text"))
 
-        assertNotNull(colorsIdentity)
-        assertThat(colorsIdentity?.size, `is`(2))
-        assertThat(colorsIdentity!![0], `is`("U"))
-        assertThat(colorsIdentity[1], `is`("W"))
+        assertNotNull(card.colorsIdentity)
+        assertThat(card.colorsIdentity.size, `is`(2))
+        assertThat(card.colorsIdentity[0], `is`(Color.BLUE))
+        assertThat(card.colorsIdentity[1], `is`(Color.WHITE))
 
-        assertNotNull(legalities)
-        assertThat(legalities.size, `is`(2))
-        assertThat(legalities[0].format, `is`("Legacy"))
-        assertThat(legalities[0].legality, `is`("Banned"))
-        assertThat(legalities[1].format, `is`("Vintage"))
-        assertThat(legalities[1].legality, `is`("Restricted"))
+        assertNotNull(card.legalities)
+        assertThat(card.legalities.size, `is`(2))
+        assertThat(card.legalities[0].format, `is`("Legacy"))
+        assertThat(card.legalities[0].legality, `is`("Banned"))
+        assertThat(card.legalities[1].format, `is`("Vintage"))
+        assertThat(card.legalities[1].legality, `is`("Restricted"))
     }
 
     @Test
@@ -231,16 +231,16 @@ class CardDataSourceIntegrationTest {
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_NAME.noun), `is`(card.set?.name))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.noun), `is`(card.set?.code))
 
-        if (card.colors.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun), `is`(joinListOfColors(card.colors, ",")))
+        if (card.colorsDisplay.isNotEmpty()) {
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun), `is`(card.colorsDisplay.joinToString(",")))
         }
 
         if (card.types.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.noun), `is`(joinListOfStrings(card.types, ",")))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPES.noun), `is`(card.types.joinToString(",")))
         }
 
         if (card.subTypes.size > 0) {
-            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun), `is`(joinListOfStrings(card.subTypes, ",")))
+            assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun), `is`(card.subTypes.joinToString(",")))
         }
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.noun), `is`(card.manaCost))
@@ -282,7 +282,7 @@ class CardDataSourceIntegrationTest {
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun), `is`(card.originalText))
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(gson.toJson(card.colorsIdentity)))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(gson.toJson(card.colorsIdentity.map { it.unmap() })))
 
         if (card.legalities.size > 0) {
             val legalities = JSONArray()
@@ -320,7 +320,7 @@ class CardDataSourceIntegrationTest {
         whenever(cursor.getString(6)).thenReturn("Creature,Artifact")
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.COLORS.noun)).thenReturn(7)
-        whenever(cursor.getString(7)).thenReturn("Blue,Black")
+        whenever(cursor.getString(7)).thenReturn("U,W")
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.CMC.noun)).thenReturn(8)
         whenever(cursor.getInt(8)).thenReturn(1)
@@ -396,36 +396,5 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.UUID.noun)).thenReturn(32)
         whenever(cursor.getString(32)).thenReturn("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe")
-    }
-
-    private fun joinListOfStrings(list: List<String>, separator: String): String {
-        val joined = StringBuilder("")
-        if (list.isEmpty()) {
-            return joined.toString()
-        }
-        for (i in list.indices) {
-            val value = list[i]
-            joined.append(value)
-            if (i < list.size - 1) {
-                joined.append(separator)
-            }
-        }
-        return joined.toString()
-    }
-
-    private fun joinListOfColors(list: List<Int>, separator: String): String {
-        val joined = StringBuilder("")
-        if (list.isEmpty()) {
-            return joined.toString()
-        }
-        for (i in list.indices) {
-            val value = list[i]
-            val color = value.toColor()
-            joined.append(color)
-            if (i < list.size - 1) {
-                joined.append(separator)
-            }
-        }
-        return joined.toString()
     }
 }

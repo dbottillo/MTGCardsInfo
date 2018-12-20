@@ -17,7 +17,7 @@ class SavedCardsStorageImpl(
     }
 
     override fun saveAsFavourite(card: MTGCard): IntArray {
-        logger.d("save as fav " + card)
+        logger.d("save as fav $card")
         favouritesDataSource.saveFavourites(card)
         return loadIdFav()
     }
@@ -33,7 +33,7 @@ class SavedCardsStorageImpl(
     }
 
     override fun removeFromFavourite(card: MTGCard): IntArray {
-        logger.d("remove as fav " + card)
+        logger.d("remove as fav $card")
         favouritesDataSource.removeFavourites(card)
         return loadIdFav()
     }
@@ -41,7 +41,7 @@ class SavedCardsStorageImpl(
     override fun load(): CardsCollection {
         logger.d()
         val filter = cardsPreferences.load()
-        val cards = cardsHelper.filterCards(filter = filter, list = favouritesDataSource.getCards(true))
+        val cards = cardsHelper.filterAndSortMultipleSets(filter, favouritesDataSource.getCards(true))
         return CardsCollection(cards, filter)
     }
 }

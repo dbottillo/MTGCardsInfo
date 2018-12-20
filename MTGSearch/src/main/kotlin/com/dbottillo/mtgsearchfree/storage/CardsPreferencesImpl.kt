@@ -32,7 +32,7 @@ open class CardsPreferencesImpl(context: Context) : CardsPreferences {
             rare = sharedPreferences.getBoolean(Rarity.RARE.value, true)
             mythic = sharedPreferences.getBoolean(Rarity.MYTHIC.value, true)
 
-            sortWUBGR = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
+            sortSetNumber = sharedPreferences.getBoolean(BasicFragment.PREF_SORT_WUBRG, true)
         }
     }
 
@@ -51,7 +51,7 @@ open class CardsPreferencesImpl(context: Context) : CardsPreferences {
                 .putBoolean(Rarity.UNCOMMON.value, filter.uncommon)
                 .putBoolean(Rarity.RARE.value, filter.rare)
                 .putBoolean(Rarity.MYTHIC.value, filter.mythic)
-                .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.sortWUBGR)
+                .putBoolean(BasicFragment.PREF_SORT_WUBRG, filter.sortSetNumber)
                 .apply()
     }
 
