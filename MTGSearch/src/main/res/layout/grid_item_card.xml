@@ -13,7 +13,8 @@
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView
         android:id="@+id/grid_item_card_image"
-        tools:src="@drawable/ic_file_download_black_24dp"
+        tools:src="@drawable/left_debug"
+        android:scaleType="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>
