@@ -47,7 +47,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     var card: MTGCard? = null
     internal var price: TCGPrice? = null
 
-    lateinit var cardPresenter: CardPresenter
+    private lateinit var cardPresenter: CardPresenter
 
     @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
 
@@ -178,7 +178,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
     private fun loadImage() {
         LOG.d()
-        card?.loadInto(cardLoader, cardImage)
+        card?.loadInto(cardLoader, cardImage, retry)
     }
 
     private val isNetworkAvailable: Boolean
