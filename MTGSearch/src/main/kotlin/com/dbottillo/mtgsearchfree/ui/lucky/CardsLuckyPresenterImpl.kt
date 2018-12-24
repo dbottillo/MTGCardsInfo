@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 
 @Suppress("CAST_NEVER_SUCCEEDS")
 class CardsLuckyPresenterImpl(
@@ -18,14 +19,16 @@ class CardsLuckyPresenterImpl(
 
     lateinit var view: CardsLuckyView
 
-    var luckyCards = mutableListOf<MTGCard>()
-    internal var currentCard: MTGCard? = null
-    internal var favs: MutableList<Int>? = mutableListOf()
+    private var luckyCards = mutableListOf<MTGCard>()
+    private var currentCard: MTGCard? = null
+    private var favs: MutableList<Int>? = mutableListOf()
+
+    private var disposable: CompositeDisposable = CompositeDisposable()
 
     override fun init(view: CardsLuckyView, bundle: Bundle?, intent: Intent?) {
         this.view = view
 
-        cardsInteractor.loadIdFav().subscribe {
+        disposable.add(cardsInteractor.loadIdFav().subscribe {
             favs = it.toMutableList()
 
             var idCard: Int? = null
@@ -48,11 +51,11 @@ class CardsLuckyPresenterImpl(
             }
 
             loadMoreCards()
-        }
+        })
     }
 
     private fun loadMoreCards() {
-        cardsInteractor.getLuckyCards(LUCKY_BATCH_CARDS).subscribe {
+        disposable.add(cardsInteractor.getLuckyCards(LUCKY_BATCH_CARDS).subscribe {
             luckyCards.addAll(it.list)
             if (currentCard == null) {
                 showNextCard()
@@ -60,7 +63,7 @@ class CardsLuckyPresenterImpl(
             luckyCards.forEach {
                 view.preFetchCardImage(it)
             }
-        }
+        })
     }
 
     override fun showNextCard() {
@@ -126,11 +129,15 @@ class CardsLuckyPresenterImpl(
     }
 
     override fun shareImage(bitmap: Bitmap) {
-        cardsInteractor.getArtworkUri(bitmap).subscribe({
+        disposable.add(cardsInteractor.getArtworkUri(bitmap).subscribe({
             view.shareUri(it)
         }, {
             view.showError(it.localizedMessage)
-        })
+        }))
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }
 
