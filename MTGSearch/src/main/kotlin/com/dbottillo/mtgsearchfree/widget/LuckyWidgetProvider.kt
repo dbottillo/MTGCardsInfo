@@ -10,12 +10,13 @@ import android.widget.RemoteViews
 import com.bumptech.glide.request.target.AppWidgetTarget
 import com.dbottillo.mtgsearchfree.GlideApp
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.lucky.CARD
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
+import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
 
@@ -62,10 +63,12 @@ class LuckyWidgetProvider : AppWidgetProvider() {
     private fun buildLayout(context: Context, appWidgetId: Int, card: MTGCard): RemoteViews {
         val remoteViews = RemoteViews(context.packageName, R.layout.lucky_widget_layout)
         TrackingManager.trackImage(card.scryfallImage)
+        val width = context.resources.getDimensionPixelSize(R.dimen.widget_min_width)
         GlideApp
                 .with(context.applicationContext)
                 .asBitmap()
                 .load(card.scryfallImage)
+                .override(width, (width * RATIO_CARD).toInt())
                 .into(AppWidgetTarget(context, R.id.image_card, remoteViews, appWidgetId))
 
         // refresh
