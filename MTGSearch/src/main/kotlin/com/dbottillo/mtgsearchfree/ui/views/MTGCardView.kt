@@ -121,9 +121,12 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             boldTitledEntry(resources.getString(R.string.card_detail_type), card.type)
             boldTitledEntry(resources.getString(R.string.card_detail_pt), "${card.power} / ${card.toughness}")
             boldTitledEntry(resources.getString(R.string.card_detail_mana), if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - ")
+            boldTitledEntry(resources.getString(R.string.card_detail_rarity), resources.getString(card.displayRarity))
             append(card.text).newLine(2)
             card.set?.let { boldTitledEntry(resources.getString(R.string.card_detail_set), it.name) }
-            boldTitledEntry(resources.getString(R.string.card_detail_original_text), card.originalText)
+            if (card.originalText != card.text) {
+                boldTitledEntry(resources.getString(R.string.card_detail_original_text), card.originalText)
+            }
             if (card.rulings.isNotEmpty()) {
                 addBold(resources.getString(R.string.card_detail_rulings))
                 append(":").newLine()

@@ -11,4 +11,5 @@ interface CardsLuckyPresenter {
     fun onSaveInstanceState(outState: Bundle)
     fun saveOrRemoveCard()
     fun shareImage(bitmap: Bitmap)
+    fun onDestroy()
 }

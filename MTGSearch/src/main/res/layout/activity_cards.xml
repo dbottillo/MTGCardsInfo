@@ -13,6 +13,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/cards_tab_layout"
         style="@style/CardsTabLayout"
+        android:background="@color/color_primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
