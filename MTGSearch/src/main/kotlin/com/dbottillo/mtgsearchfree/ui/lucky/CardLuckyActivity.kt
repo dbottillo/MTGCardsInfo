@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
@@ -25,6 +26,8 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
     @Inject lateinit var presenter: CardsLuckyPresenter
     @Inject lateinit var cardsPresenter: CardPresenter
+
+    private val requestManager by lazy { Glide.with(this) }
 
     private val cardView by lazy(LazyThreadSafetyMode.NONE) { findViewById<MTGCardView>(R.id.card_view) }
     private val titleCard by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.title_card) }
@@ -139,5 +142,10 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
     override fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        requestManager.onDestroy()
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialLayout="@layout/lucky_widget_layout"
-    android:minHeight="180dp"
-    android:minWidth="128dp"
+    android:minHeight="@dimen/widget_min_height"
+    android:minWidth="@dimen/widget_min_width"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="900000">
 </appwidget-provider>
