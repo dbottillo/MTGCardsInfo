@@ -16,7 +16,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -53,6 +52,7 @@
                     "text": "If a card is exiled “until” another permanent leaves the battlefield, the exiled card returns to the battlefield immediately after that permanent leaves the battlefield during Austere Command’s resolution, and it may be destroyed by a later mode."
                 }
             ],
+            "scryfallId": "dbbf55bc-6bb3-458a-8cf0-1f603bb2acb3",
             "subtypes": [],
             "supertypes": [],
             "text": "Choose two —\n• Destroy all artifacts.\n• Destroy all enchantments.\n• Destroy all creatures with converted mana cost 3 or less.\n• Destroy all creatures with converted mana cost 4 or greater.",
@@ -60,7 +60,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dbbf55bc-6bb3-458a-8cf0-1f603bb2acb3"
+            "uuid": "73696537-43d9-56d1-837e-20390d92ddab"
         },
         {
             "artist": "Jose Cabrera",
@@ -76,7 +76,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -119,6 +118,7 @@
                     "text": "After the search is complete, the entire library is shuffled."
                 }
             ],
+            "scryfallId": "58bb576b-8ec9-49ed-bacb-d8b42ba2e787",
             "subtypes": [
                 "Bird",
                 "Wizard"
@@ -130,7 +130,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "58bb576b-8ec9-49ed-bacb-d8b42ba2e787"
+            "uuid": "25980770-235a-5163-bce8-494f58f91341"
         },
         {
             "artist": "Igor Kieryluk",
@@ -146,7 +146,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -171,22 +170,27 @@
             "rarity": "mythic",
             "rulings": [
                 {
-                    "date": "2014-11-07",
-                    "text": "Containment Priest’s last ability won’t affect any nontoken creatures that were cast, including ones cast from unusual zones such as your graveyard."
+                    "date": "2018-12-07",
+                    "text": "Containment Priest’s last ability won’t affect any creatures that were cast, including ones cast from unusual zones such as your graveyard."
                 },
                 {
-                    "date": "2014-11-07",
+                    "date": "2018-12-07",
                     "text": "Containment Priest’s last ability doesn’t stop creature tokens from entering the battlefield. It also doesn’t affect creatures that were already on the battlefield."
                 },
                 {
-                    "date": "2014-11-07",
-                    "text": "If Containment Priest enters the battlefield without being cast, it won’t exile itself."
+                    "date": "2018-12-07",
+                    "text": "If a noncreature card wasn’t cast and is entering the battlefield as a creature (due to an effect such as that of March of the Machines), it will be exiled. Similarly, if a creature card wasn’t cast and is entering the battlefield as a noncreature permanent (for example, Heliod, God of the Sun with insufficient devotion), it won’t be exiled."
                 },
                 {
-                    "date": "2014-11-07",
+                    "date": "2018-12-07",
+                    "text": "If Containment Priest enters the battlefield without being cast, its ability won’t exile itself."
+                },
+                {
+                    "date": "2018-12-07",
                     "text": "If Containment Priest enters the battlefield at the same time as other creatures, its ability won’t affect those creatures."
                 }
             ],
+            "scryfallId": "bd9a01b1-15a1-4590-8700-fbd4872c0bf9",
             "subtypes": [
                 "Human",
                 "Cleric"
@@ -198,7 +202,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "bd9a01b1-15a1-4590-8700-fbd4872c0bf9"
+            "uuid": "db061fe5-772c-5d0b-a5e8-36599d473247"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -214,7 +218,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -245,6 +248,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "6d80f9af-e841-4d38-9136-367153fdd2a5",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -256,7 +260,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6d80f9af-e841-4d38-9136-367153fdd2a5"
+            "uuid": "6a7c5c84-b509-5652-9018-572be95cbbda"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -272,7 +276,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -286,10 +289,7 @@
             "manaCost": "{3}{W}",
             "multiverseId": 429864,
             "name": "Oketra the True",
-            "names": [
-                "Oketra the True",
-                "Warrior"
-            ],
+            "names": [],
             "number": "5",
             "originalText": "Double strike, indestructible\nOketra the True can't attack or block unless you control at least three other creatures.\n{3}{W}: Create a 1/1 white Warrior creature token with vigilance.",
             "originalType": "Legendary Creature — God",
@@ -310,6 +310,7 @@
                     "text": "You don’t have to attack with three other creatures for Oketra to be able to attack. The same is true of blocking."
                 }
             ],
+            "scryfallId": "b3aa8c17-e37e-430e-a940-d016c4ab5852",
             "subtypes": [
                 "God"
             ],
@@ -322,7 +323,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b3aa8c17-e37e-430e-a940-d016c4ab5852"
+            "uuid": "0d4feedd-730c-5716-a414-b7411d7ebfad"
         },
         {
             "artist": "Cliff Childs",
@@ -338,7 +339,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -373,6 +373,7 @@
                     "text": "Worship does not prevent damage. It causes some damage to be unable to lower your life total. So any damage rendered useless by Worship was still dealt and is counted by effects that track the amount of damage done to a player. In addition, Worship does not prevent loss of life, so loss of life bypasses Worship."
                 }
             ],
+            "scryfallId": "d64f89e7-a91b-4c67-bc64-8b6f03820a4d",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a creature, damage that would reduce your life total to less than 1 reduces it to 1 instead.",
@@ -380,7 +381,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d64f89e7-a91b-4c67-bc64-8b6f03820a4d"
+            "uuid": "81d61969-c525-5862-b838-e009faa75c60"
         },
         {
             "artist": "Titus Lunter",
@@ -396,7 +397,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -444,6 +444,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "4351bf97-0b9e-44a5-bb7c-1098a683b18d",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy all creatures. They can't be regenerated.",
@@ -451,7 +452,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4351bf97-0b9e-44a5-bb7c-1098a683b18d"
+            "uuid": "9fa33e42-5382-5806-8c40-573ac56591b4"
         },
         {
             "artist": "Lius Lasahido",
@@ -467,7 +468,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -504,6 +504,7 @@
                     "text": "If each player controls a Consecrated Sphinx, their abilities will cause each other to trigger until one player chooses not to draw cards."
                 }
             ],
+            "scryfallId": "da566bc8-6350-481d-99aa-9cea76da2a56",
             "subtypes": [
                 "Sphinx"
             ],
@@ -514,7 +515,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "da566bc8-6350-481d-99aa-9cea76da2a56"
+            "uuid": "8aeafb6f-b053-52a9-abd2-a215282d28bf"
         },
         {
             "artist": "Joseph Meehan",
@@ -530,7 +531,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -561,6 +561,7 @@
                     "text": "If an opponent casts half of a split card (for example, Hit), it won’t be countered if you reveal that same split card. The converted mana cost of a split card is determined by the combined mana cost of its two halves, but the converted mana cost of Hit is determined using only that half’s mana cost."
                 }
             ],
+            "scryfallId": "3f4a8acd-1d49-4fa7-a88e-83cfe741de89",
             "subtypes": [],
             "supertypes": [],
             "text": "Whenever an opponent casts a spell, you may reveal the top card of your library. If you do, counter that spell if it has the same converted mana cost as the revealed card.",
@@ -568,7 +569,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3f4a8acd-1d49-4fa7-a88e-83cfe741de89"
+            "uuid": "bec49438-1b02-5375-80f6-a9abbba17bc4"
         },
         {
             "artist": "Chase Stone",
@@ -584,7 +585,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -628,7 +628,6 @@
                 "PLGM",
                 "PRM",
                 "PTC",
-                "S00",
                 "S99",
                 "SS1",
                 "SUM",
@@ -643,6 +642,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "3126d20f-1082-4ebc-b2fa-b12be3ba1bac",
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target spell.",
@@ -650,7 +650,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "3126d20f-1082-4ebc-b2fa-b12be3ba1bac"
+            "uuid": "b0e38e20-2244-570a-9932-4a5dbbbeb957"
         },
         {
             "artist": "Richard Wright",
@@ -666,7 +666,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -702,6 +701,7 @@
                     "text": "Look at both chosen modes to determine how many targets Cryptic Command has, if any. If it has at least one target, and all its targets are illegal when it tries to resolve, then it won’t resolve and none of its effects will happen. For example, if you choose the second and fourth modes, and the permanent is an illegal target when Cryptic Command tries to resolve, you won’t draw a card."
                 }
             ],
+            "scryfallId": "a2a384c1-a05f-4f00-bd77-f897d9819971",
             "subtypes": [],
             "supertypes": [],
             "text": "Choose two —\n• Counter target spell.\n• Return target permanent to its owner's hand.\n• Tap all creatures your opponents control.\n• Draw a card.",
@@ -709,7 +709,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "a2a384c1-a05f-4f00-bd77-f897d9819971"
+            "uuid": "dafb2f91-3b77-5aed-b528-f0b10091a286"
         },
         {
             "artist": "Richard Wright",
@@ -725,7 +725,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -756,6 +755,7 @@
                     "text": "If another effect causes Daze to cost more, you must pay that additional cost even if you pay its alternative cost."
                 }
             ],
+            "scryfallId": "a9b037f1-3298-4ba8-92a8-0843f6e497d7",
             "subtypes": [],
             "supertypes": [],
             "text": "You may return an Island you control to its owner's hand rather than pay this spell's mana cost.\nCounter target spell unless its controller pays {1}.",
@@ -763,7 +763,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "a9b037f1-3298-4ba8-92a8-0843f6e497d7"
+            "uuid": "267b4ac5-2fe4-5b5d-9644-d235c2ec4696"
         },
         {
             "artist": "Igor Kieryluk",
@@ -779,7 +779,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -800,6 +799,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "0251408a-aa3c-45f6-8012-822355a6ec25",
             "subtypes": [],
             "supertypes": [],
             "text": "Change the target of target spell with a single target unless that spell's controller pays {2}.",
@@ -807,7 +807,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "0251408a-aa3c-45f6-8012-822355a6ec25"
+            "uuid": "9031c372-0459-5a62-82f5-1a4bfa8aa268"
         },
         {
             "artist": "Jaime Jones",
@@ -823,7 +823,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -856,6 +855,7 @@
                     "text": "If another effect causes Force of Will to cost more, you must pay that additional cost even if you pay its alternative cost."
                 }
             ],
+            "scryfallId": "026983a4-03ca-4812-b129-5ea523596942",
             "subtypes": [],
             "supertypes": [],
             "text": "You may pay 1 life and exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target spell.",
@@ -863,7 +863,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "026983a4-03ca-4812-b129-5ea523596942"
+            "uuid": "3909239a-ee7a-5bd6-9316-9454839f74f5"
         },
         {
             "artist": "Jose Cabrera",
@@ -879,7 +879,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -913,6 +912,7 @@
                     "text": "While resolving Kefnet’s activated ability, you don’t choose which land to return to its owner’s hand (or whether you’ll return one at all) until you see the card you draw."
                 }
             ],
+            "scryfallId": "ef2d627d-60ec-4f68-bdfd-086841483b18",
             "subtypes": [
                 "God"
             ],
@@ -925,7 +925,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ef2d627d-60ec-4f68-bdfd-086841483b18"
+            "uuid": "df72dc7a-b700-5e66-8e90-d287509f7463"
         },
         {
             "artist": "Titus Lunter",
@@ -944,7 +944,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -973,6 +972,7 @@
                     "text": "Although originally printed with a characteristic-defining ability that defined its color, this card now has a color indicator. This color indicator can’t be affected by text-changing effects (such as the one created by Crystal Spray), although color-changing effects can still overwrite it."
                 }
             ],
+            "scryfallId": "3ab90299-547a-4538-a31c-f55afab10c50",
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target spell.\nAt the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.",
@@ -980,7 +980,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "3ab90299-547a-4538-a31c-f55afab10c50"
+            "uuid": "01f14bab-11aa-5b3d-8317-9db9af400a93"
         },
         {
             "artist": "Joseph Meehan",
@@ -996,7 +996,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1025,6 +1024,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "eef1f68a-b27c-4e81-9a3c-dccb86771bec",
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target noncreature spell unless its controller pays {2}.",
@@ -1032,7 +1032,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "eef1f68a-b27c-4e81-9a3c-dccb86771bec"
+            "uuid": "2f399a5e-6d80-5d36-b28a-0f013db3e3a7"
         },
         {
             "artist": "Cliff Childs",
@@ -1048,7 +1048,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1086,6 +1085,7 @@
                     "text": "It can target delayed triggered abilities. For example, a card that says “Whenever a player cycles a card, you may exile target creature. If you do, return that creature to the battlefield at the beginning of the end step.” triggers when a player cycles a card and creates a delayed trigger that happens at the beginning of the end step. You can choose to target the “at the beginning of the end step” trigger when it is placed on the stack at end of turn."
                 }
             ],
+            "scryfallId": "ea24228f-da16-46eb-9dcf-a377286b6168",
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target activated or triggered ability. (Mana abilities can't be targeted.)",
@@ -1093,7 +1093,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "ea24228f-da16-46eb-9dcf-a377286b6168"
+            "uuid": "5025d851-3219-54a8-b63a-d58baa7a135c"
         },
         {
             "artist": "Jose Cabrera",
@@ -1109,7 +1109,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1131,6 +1130,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "948bcca4-6e7a-4884-82f8-21926db8bdd5",
             "subtypes": [],
             "supertypes": [],
             "text": "{B}, Sacrifice a creature: Destroy target nonblack creature.",
@@ -1138,7 +1138,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "948bcca4-6e7a-4884-82f8-21926db8bdd5"
+            "uuid": "7b452845-d56f-5afa-9a5a-499de4fd8abb"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -1154,7 +1154,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1196,6 +1195,7 @@
                     "text": "In a Two-Headed Giant game, Bontu’s activated ability causes the opposing team to lose 2 life and you gain 1 life."
                 }
             ],
+            "scryfallId": "57ebd0f2-3f5b-48ef-a530-ea6f667ee195",
             "subtypes": [
                 "God"
             ],
@@ -1208,7 +1208,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "57ebd0f2-3f5b-48ef-a530-ea6f667ee195"
+            "uuid": "8564610e-82c3-5c85-ac96-21551bf58829"
         },
         {
             "artist": "Richard Wright",
@@ -1224,7 +1224,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1280,6 +1279,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "2bbcbe12-b615-47e6-8b6b-c59f92f16c3d",
             "subtypes": [],
             "supertypes": [],
             "text": "Add {B}{B}{B}.",
@@ -1287,7 +1287,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "2bbcbe12-b615-47e6-8b6b-c59f92f16c3d"
+            "uuid": "5c898e61-ec87-56c0-a5c1-700f6719191c"
         },
         {
             "artist": "Joseph Meehan",
@@ -1303,7 +1303,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1338,6 +1337,7 @@
                     "text": "Players can only respond once this spell has been cast and all its costs have been paid. No one can try to destroy the creature you sacrificed to prevent you from casting this spell."
                 }
             ],
+            "scryfallId": "6b34a328-8d6a-4baf-99de-c8b050b23e10",
             "subtypes": [],
             "supertypes": [],
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nSearch your library for a card and put that card into your hand. Then shuffle your library.",
@@ -1345,7 +1345,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6b34a328-8d6a-4baf-99de-c8b050b23e10"
+            "uuid": "7f2b2f8c-3cf5-535d-8116-690217b773fc"
         },
         {
             "artist": "Eytan Zana",
@@ -1361,7 +1361,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1388,6 +1387,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "466d6254-4d5c-4f66-a018-eb4a3ec1881c",
             "subtypes": [],
             "supertypes": [],
             "text": "Search your library for a card and put that card into your graveyard. Then shuffle your library.",
@@ -1395,7 +1395,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "466d6254-4d5c-4f66-a018-eb4a3ec1881c"
+            "uuid": "3573841d-41af-58fd-b2ad-80ee6e56ca2e"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1411,7 +1411,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -1442,6 +1441,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "5dd68790-cd9a-4527-8e53-798822ee2c6c",
             "subtypes": [],
             "supertypes": [],
             "text": "Target player discards X cards at random.",
@@ -1449,7 +1449,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5dd68790-cd9a-4527-8e53-798822ee2c6c"
+            "uuid": "e735ece7-1bc9-5e68-8927-0bf1edc3cd2d"
         },
         {
             "artist": "Greg Opalinski",
@@ -1465,7 +1465,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1496,6 +1495,7 @@
                     "text": "You will normally use this during your post-combat main phase so you can untap any creatures that attacked."
                 }
             ],
+            "scryfallId": "6bcaa16c-4841-4962-88ca-b17175189e5c",
             "subtypes": [],
             "supertypes": [],
             "text": "{3}{R}{R}: Untap all creatures you control. After this main phase, there is an additional combat phase followed by an additional main phase. Activate this ability only any time you could cast a sorcery.",
@@ -1503,7 +1503,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6bcaa16c-4841-4962-88ca-b17175189e5c"
+            "uuid": "439c4908-8679-52da-b6ed-73f2f43d9adb"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1519,7 +1519,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1576,6 +1575,7 @@
                     "text": "If the targeted permanent or player is an illegal target when Chain Lightning tries to resolve, the spell doesn’t resolve. It can’t be copied."
                 }
             ],
+            "scryfallId": "14bd3d19-033e-41a7-8710-02b73ba0b4e4",
             "subtypes": [],
             "supertypes": [],
             "text": "Chain Lightning deals 3 damage to any target. Then that player or that permanent's controller may pay {R}{R}. If the player does, they may copy this spell and may choose a new target for that copy.",
@@ -1583,7 +1583,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "14bd3d19-033e-41a7-8710-02b73ba0b4e4"
+            "uuid": "88a05ef3-f26c-569c-8584-97473820b2db"
         },
         {
             "artist": "Joseph Meehan",
@@ -1599,7 +1599,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1633,6 +1632,7 @@
                     "text": "In a Two-Headed Giant game, Hazoret’s activated ability causes 2 damage to be dealt to each opponent, which is 4 damage to the opposing team."
                 }
             ],
+            "scryfallId": "f582e3c3-c329-40bb-9ffb-c4812a7aedd5",
             "subtypes": [
                 "God"
             ],
@@ -1645,7 +1645,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f582e3c3-c329-40bb-9ffb-c4812a7aedd5"
+            "uuid": "14cbbb5a-d2b2-5281-a567-2946bf15b662"
         },
         {
             "artist": "Jack Wang",
@@ -1661,7 +1661,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1695,6 +1694,7 @@
                     "text": "You don’t have to attack with another creature with power 4 or greater for Rhonas to be able to attack. The same is true of blocking."
                 }
             ],
+            "scryfallId": "453d854c-5092-4e00-a388-499353f246c3",
             "subtypes": [
                 "God"
             ],
@@ -1707,7 +1707,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "453d854c-5092-4e00-a388-499353f246c3"
+            "uuid": "90b4fe9d-15e7-56fb-8059-f9dcf5cd8369"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1725,7 +1725,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1754,21 +1753,26 @@
             "rulings": [
                 {
                     "date": "2009-05-01",
-                    "text": "Maelstrom Pulse has only one target. If that permanent is an illegal target as Maelstrom Pulse tries to resolve, it won’t resolve and none of its effects will happen. Nothing will be destroyed."
-                },
-                {
-                    "date": "2009-05-01",
-                    "text": "The name of a creature token is the same as its creature types unless the token is a copy of another creature or the effect that created the token specifically gives it a different name. For example, a 1/1 Soldier creature token is named “Soldier.”"
-                },
-                {
-                    "date": "2009-05-01",
                     "text": "A face-down creature has no name, so it doesn’t have the same name as anything else."
                 },
                 {
-                    "date": "2013-07-01",
-                    "text": "If Maelstrom Pulse resolves but the targeted permanent isn’t destroyed (perhaps because it regenerates or has indestructible), all other permanents with the same name as it will still be destroyed (unless they also have indestructible."
+                    "date": "2018-12-07",
+                    "text": "Maelstrom Pulse has only one target. Other permanents with the same name will be destroyed even if they have hexproof or protection."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If the target permanent becomes an illegal target for Maelstrom Pulse, the spell doesn’t resolve. Nothing is destroyed."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "The name of a creature token is the same as the creature types it was created with unless the token is a copy of another creature or the effect that created the token specifically gives it a different name. For example, a 1/1 red Elemental creature token created by Young Pyromancer and a 4/4 green Elemental creature token created by Walker of the Grove are both named “Elemental.”"
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If Maelstrom Pulse resolves but the target permanent isn’t destroyed (perhaps because it regenerates or has indestructible), all other permanents with the same name as it will still be destroyed."
                 }
             ],
+            "scryfallId": "e2d85423-ebd8-4a6e-aedf-90e52f918764",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target nonland permanent and all other permanents with the same name as that permanent.",
@@ -1776,7 +1780,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e2d85423-ebd8-4a6e-aedf-90e52f918764"
+            "uuid": "d26b45b7-55e1-5a01-ac9a-974661608655"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1794,7 +1798,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1820,6 +1823,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "97aeb745-5b98-4240-a1a8-861c06d616cc",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target permanent.",
@@ -1827,7 +1831,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "97aeb745-5b98-4240-a1a8-861c06d616cc"
+            "uuid": "7752bf1b-3902-5d61-bd17-47700a626a7f"
         },
         {
             "artist": "Florian de Gesincourt",
@@ -1843,7 +1847,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1888,6 +1891,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "685dcf04-1453-4db5-b81b-9ef9a444ed71",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy all lands.",
@@ -1895,7 +1899,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "685dcf04-1453-4db5-b81b-9ef9a444ed71"
+            "uuid": "bba5fbae-6318-5b91-a8f6-e2459fb8a87a"
         },
         {
             "artist": "Cliff Childs",
@@ -1911,7 +1915,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1938,6 +1941,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "122c819d-2b13-49af-92dc-af96d4de45de",
             "subtypes": [],
             "supertypes": [],
             "text": "Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.)\nReturn target permanent to its owner's hand.",
@@ -1945,7 +1949,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "122c819d-2b13-49af-92dc-af96d4de45de"
+            "uuid": "4e339a25-d6d6-5adf-aa66-9fc8956966f7"
         },
         {
             "artist": "Richard Wright",
@@ -1961,7 +1965,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1987,6 +1990,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "14a9cc52-a45b-4cde-8aff-d672b35c3118",
             "subtypes": [],
             "supertypes": [],
             "text": "Buyback—Discard two cards. (You may discard two cards in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.)\nCounter target spell.",
@@ -1994,7 +1998,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "14a9cc52-a45b-4cde-8aff-d672b35c3118"
+            "uuid": "542fb922-9a6e-5122-b5c5-ae9fcd5cc3b2"
         },
         {
             "artist": "Josh Hass",
@@ -2010,7 +2014,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2055,6 +2058,7 @@
                     "text": "Once you cast Omniscience, if it’s your turn, you’ll have priority immediately after it resolves. You can cast another spell before any player can attempt to remove Omniscience with spells or abilities."
                 }
             ],
+            "scryfallId": "5b04f5e9-6728-45be-af2e-b2584cb67e1c",
             "subtypes": [],
             "supertypes": [],
             "text": "You may cast spells from your hand without paying their mana costs.",
@@ -2062,7 +2066,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5b04f5e9-6728-45be-af2e-b2584cb67e1c"
+            "uuid": "2a47dc35-3840-5290-80cf-2c637163b954"
         },
         {
             "artist": "Svetlin Velinov",
@@ -2078,7 +2082,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2102,6 +2105,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "07574b6a-de37-42a4-8584-2e3f440315be",
             "subtypes": [],
             "supertypes": [],
             "text": "Tap an untapped creature you control: Tap target artifact, creature, or land.",
@@ -2109,7 +2113,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "07574b6a-de37-42a4-8584-2e3f440315be"
+            "uuid": "03fa0ade-aba5-567f-ad6d-1da195128507"
         },
         {
             "artist": "Titus Lunter",
@@ -2125,7 +2129,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2151,6 +2154,7 @@
                     "text": "Only affects lands on the battlefield."
                 }
             ],
+            "scryfallId": "30053742-35e4-4ae0-a90e-d687a5f298d9",
             "subtypes": [],
             "supertypes": [],
             "text": "Return all lands to their owners' hands.",
@@ -2158,7 +2162,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "30053742-35e4-4ae0-a90e-d687a5f298d9"
+            "uuid": "b568508f-4e6d-5a7f-9bad-b1cd89ab766a"
         },
         {
             "artist": "Yongjae Choi",
@@ -2174,7 +2178,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2211,6 +2214,7 @@
                     "text": "Tokens usually have a converted mana cost of 0."
                 }
             ],
+            "scryfallId": "d827178a-dba3-4036-a0a8-50200d377d56",
             "subtypes": [
                 "Aura"
             ],
@@ -2220,7 +2224,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d827178a-dba3-4036-a0a8-50200d377d56"
+            "uuid": "b72a5c2f-9379-5652-8c16-483a79d7e178"
         },
         {
             "artist": "Igor Kieryluk",
@@ -2236,7 +2240,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2273,6 +2276,7 @@
                     "text": "The converted mana cost of this card is still 8, even if you only pay {B}{B} to cast it."
                 }
             ],
+            "scryfallId": "34c9ef22-ea59-4bf6-b8b6-29e83e9a8e57",
             "subtypes": [
                 "Avatar"
             ],
@@ -2283,7 +2287,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "34c9ef22-ea59-4bf6-b8b6-29e83e9a8e57"
+            "uuid": "c4645634-133c-5079-9b17-0ca4cc185dd5"
         },
         {
             "artist": "Zack Stella",
@@ -2299,7 +2303,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2330,6 +2333,7 @@
                     "text": "This is the timeshifted version of Wrath of God."
                 }
             ],
+            "scryfallId": "c916a119-9eee-440d-90ef-05ab35bf3fbe",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy all creatures. They can't be regenerated.",
@@ -2337,7 +2341,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c916a119-9eee-440d-90ef-05ab35bf3fbe"
+            "uuid": "e8a8653f-1cb0-522f-9a55-f436f0dda9ea"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -2354,7 +2358,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2376,6 +2379,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "92874f7e-504f-4320-bc44-f626ddffe641",
             "subtypes": [
                 "Angel"
             ],
@@ -2386,7 +2390,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "92874f7e-504f-4320-bc44-f626ddffe641"
+            "uuid": "90ee6a32-22c8-5fe0-a927-67f9a20c97e9"
         },
         {
             "artist": "Daarken",
@@ -2402,7 +2406,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2430,6 +2433,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "f6986173-56e2-41d8-9387-ab86721ed92e",
             "subtypes": [],
             "supertypes": [],
             "text": "Target player sacrifices a creature.",
@@ -2437,7 +2441,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "f6986173-56e2-41d8-9387-ab86721ed92e"
+            "uuid": "1325121a-b8bd-561f-aa0c-789252befa09"
         },
         {
             "artist": "Jaime Jones",
@@ -2453,7 +2457,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -2486,6 +2489,7 @@
                     "text": "If your graveyard and library combined contain fewer than five cards, all of those cards will wind up in your library."
                 }
             ],
+            "scryfallId": "0e14c264-d2ce-414c-b2aa-4d3e1433d5a7",
             "subtypes": [],
             "supertypes": [],
             "text": "Search your library and graveyard for five cards and exile the rest. Put the chosen cards on top of your library in any order. You lose half your life, rounded up.",
@@ -2493,7 +2497,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0e14c264-d2ce-414c-b2aa-4d3e1433d5a7"
+            "uuid": "60ea1798-39a5-585e-b0e8-7e3240a0d011"
         },
         {
             "artist": "Jonas De Ro",
@@ -2509,7 +2513,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2535,6 +2538,7 @@
                     "text": "If the damage to you is all prevented or redirected, then damage was not dealt to you, and this does not trigger."
                 }
             ],
+            "scryfallId": "96af17e0-91fa-4b99-8313-9dabea8685ea",
             "subtypes": [],
             "supertypes": [],
             "text": "Whenever a creature deals damage to you, destroy it.",
@@ -2542,7 +2546,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "96af17e0-91fa-4b99-8313-9dabea8685ea"
+            "uuid": "c9e394e9-a006-5580-aa40-f7595ee088cf"
         },
         {
             "artist": "Josh Hass",
@@ -2561,7 +2565,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2589,6 +2592,7 @@
                     "text": "Although originally printed with a characteristic-defining ability that defined its color, this card now has a color indicator. This color indicator can’t be affected by text-changing effects (such as the one created by Crystal Spray), although color-changing effects can still overwrite it."
                 }
             ],
+            "scryfallId": "bc8475bd-bdd4-421c-ace7-c6262f7405ce",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target nonblack creature.\nAt the beginning of your next upkeep, pay {2}{B}. If you don't, you lose the game.",
@@ -2596,7 +2600,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "bc8475bd-bdd4-421c-ace7-c6262f7405ce"
+            "uuid": "6e64cbfe-69bf-5272-8d0c-0acf89c669ee"
         },
         {
             "artist": "James Ryman",
@@ -2612,7 +2616,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2645,6 +2648,7 @@
                     "text": "If you target yourself with this spell, you must reveal your entire hand to the other players just as any other player would."
                 }
             ],
+            "scryfallId": "ea5ec419-8392-4f1b-9557-5404ba632bf1",
             "subtypes": [],
             "supertypes": [],
             "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card. You lose 2 life.",
@@ -2652,7 +2656,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ea5ec419-8392-4f1b-9557-5404ba632bf1"
+            "uuid": "205ea3d4-8ed4-5796-acbd-16177a1ff206"
         },
         {
             "artist": "Christine Choi",
@@ -2668,7 +2672,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2713,6 +2716,7 @@
                     "text": "If a nonbasic land has an ability that triggers “when” it enters the battlefield, it will lose that ability before it triggers."
                 }
             ],
+            "scryfallId": "547e80f7-7ec3-4c72-ad51-3245d429af3c",
             "subtypes": [],
             "supertypes": [],
             "text": "Nonbasic lands are Mountains.",
@@ -2720,7 +2724,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "547e80f7-7ec3-4c72-ad51-3245d429af3c"
+            "uuid": "2eca01e6-a88b-5bf2-85bc-52064e9cdbcb"
         },
         {
             "artist": "Philip Straub",
@@ -2736,7 +2740,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2765,6 +2768,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "f84e0bcd-13f5-41c9-aa7b-06ef4cf8543a",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy all Islands.",
@@ -2772,7 +2776,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "f84e0bcd-13f5-41c9-aa7b-06ef4cf8543a"
+            "uuid": "e99f04c7-5008-5b95-b071-ff70022e5c35"
         },
         {
             "artist": "Johann Bodin",
@@ -2788,7 +2792,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2816,6 +2819,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "9378ca0c-72b6-4020-8bb6-ea2b7581887a",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy all artifacts. They can't be regenerated.",
@@ -2823,7 +2827,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9378ca0c-72b6-4020-8bb6-ea2b7581887a"
+            "uuid": "0bf9981f-1d3e-58e3-9980-f5c1bda7a56b"
         },
         {
             "artist": "Darek Zabrocki",
@@ -2839,7 +2843,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2884,6 +2887,7 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "789196df-143d-4a60-a8e4-5bdcfdfd7ba8",
             "subtypes": [
                 "Arcane"
             ],
@@ -2893,7 +2897,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "789196df-143d-4a60-a8e4-5bdcfdfd7ba8"
+            "uuid": "9badbb31-b4aa-525a-902a-6655c2c240f7"
         },
         {
             "artist": "Florian de Gesincourt",
@@ -2909,7 +2913,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2933,6 +2936,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "f4b586d8-3b8a-46ed-b2c3-b257bbbaf882",
             "subtypes": [],
             "supertypes": [],
             "text": "Islands don't untap during their controllers' untap steps.",
@@ -2940,7 +2944,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f4b586d8-3b8a-46ed-b2c3-b257bbbaf882"
+            "uuid": "12e3d24d-f505-57e4-9851-f1f9bde6bd84"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -2958,7 +2962,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2972,10 +2975,7 @@
             "manaCost": "{4}{U}{R}",
             "multiverseId": 430686,
             "name": "The Locust God",
-            "names": [
-                "The Locust God",
-                "Insect"
-            ],
+            "names": [],
             "number": "51",
             "originalText": "Flying\nWhenever you draw a card, create a 1/1 blue and red Insect creature token with flying and haste.\n{2}{U}{R}: Draw a card, then discard a card.\nWhen The Locust God dies, return it to its owner's hand at the beginning of the next end step.",
             "originalType": "Legendary Creature — God",
@@ -3000,6 +3000,7 @@
                     "text": "The “next end step” refers to the next end step that occurs, not the end step of the next turn. If this creature dies before a turn’s end step (for example, during combat), it will be returned to its owner’s hand at the beginning of that turn’s end step."
                 }
             ],
+            "scryfallId": "cba0603a-37aa-47b5-bfda-6be2c0138f03",
             "subtypes": [
                 "God"
             ],
@@ -3012,7 +3013,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "cba0603a-37aa-47b5-bfda-6be2c0138f03"
+            "uuid": "aedea05f-d45d-596d-a8c6-7756f41a9503"
         },
         {
             "artist": "Jason A. Engle",
@@ -3030,7 +3031,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3054,7 +3054,17 @@
                 "UMA"
             ],
             "rarity": "mythic",
-            "rulings": [],
+            "rulings": [
+                {
+                    "date": "2018-12-07",
+                    "text": "The ability that defines Lord of Extinction’s power and toughness works in all zones, not just the battlefield. If Lord of Extinction is in your graveyard, it will count itself."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If an instant or sorcery spell deals damage to Lord of Extinction or lowers its toughness, that spell is put into its owner’s graveyard before state-based actions are performed. That card will raise Lord of Extinction’s toughness before the game checks to see if it dies."
+                }
+            ],
+            "scryfallId": "c1a7890c-4b93-4181-900f-d95aeb6a8db3",
             "subtypes": [
                 "Elemental"
             ],
@@ -3065,7 +3075,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c1a7890c-4b93-4181-900f-d95aeb6a8db3"
+            "uuid": "e256e6f7-d595-5801-898f-7b3083163c65"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -3083,7 +3093,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3141,6 +3150,7 @@
                     "text": "The “next end step” refers to the next end step that occurs, not the end step of the next turn. If this creature dies before a turn’s end step (for example, during combat), it will be returned to its owner’s hand at the beginning of that turn’s end step."
                 }
             ],
+            "scryfallId": "456b330e-5ff7-4192-bc6f-2f2b4654bee7",
             "subtypes": [
                 "God"
             ],
@@ -3153,7 +3163,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "456b330e-5ff7-4192-bc6f-2f2b4654bee7"
+            "uuid": "c39b74b1-f5e4-5f3c-95c6-67b859b117f5"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -3171,7 +3181,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3213,6 +3222,7 @@
                     "text": "The “next end step” refers to the next end step that occurs, not the end step of the next turn. If this creature dies before a turn’s end step (for example, during combat), it will be returned to its owner’s hand at the beginning of that turn’s end step."
                 }
             ],
+            "scryfallId": "f3653b53-1f68-4443-813f-58930f3c2715",
             "subtypes": [
                 "God"
             ],
@@ -3225,18 +3235,19 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f3653b53-1f68-4443-813f-58930f3c2715"
+            "uuid": "22c03212-41a8-560a-b409-0705e2d1be12"
         }
     ],
     "code": "mp2",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "ms3",
     "name": "Amonkhet Invocations",
-    "releaseDate": null,
+    "releaseDate": "2017-04-28",
+    "tcgplayerGroupId": -1,
     "tokens": [],
     "totalSetSize": 54,
     "type": "masterpiece"

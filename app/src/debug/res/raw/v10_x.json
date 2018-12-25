@@ -11,7 +11,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -46,15 +45,17 @@
                     "text": "If a card in a player’s hand has {X} in its mana cost, X is considered to be 0."
                 }
             ],
+            "scryfallId": "d93510d4-7772-4260-b862-6dc096496404",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36756,
             "text": "At the beginning of your upkeep, you may put a charge counter on Aether Vial.\n{T}: You may put a creature card with converted mana cost equal to the number of charge counters on Aether Vial from your hand onto the battlefield.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d93510d4-7772-4260-b862-6dc096496404"
+            "uuid": "c6f12b61-ed6d-546c-acce-53a50f4a1699"
         },
         {
             "artist": "Dan Scott",
@@ -66,7 +67,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -107,15 +107,17 @@
                     "text": "If the chosen player has four or fewer cards in their hand as Black Vise’s ability resolves, the ability just won’t do anything that turn."
                 }
             ],
+            "scryfallId": "4bcbfa94-1de7-4770-b18d-c959738011ab",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36757,
             "text": "As Black Vise enters the battlefield, choose an opponent.\nAt the beginning of the chosen player's upkeep, Black Vise deals X damage to that player, where X is the number of cards in their hand minus 4.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4bcbfa94-1de7-4770-b18d-c959738011ab"
+            "uuid": "710659e4-30ce-5a53-bf5d-68078ebc8747"
         },
         {
             "artist": "Chippy",
@@ -127,7 +129,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -182,15 +183,17 @@
                     "text": "The converted mana cost of a split card is determined by the combined mana cost of its two halves. When you activate the second ability, you may choose to cast either half of the split card, but you may not cast both halves."
                 }
             ],
+            "scryfallId": "c6b7a27e-a275-4af2-84f6-a51f3120bdae",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36758,
             "text": "Imprint — When Isochron Scepter enters the battlefield, you may exile an instant card with converted mana cost 2 or less from your hand.\n{2}, {T}: You may copy the exiled card. If you do, you may cast the copy without paying its mana cost.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c6b7a27e-a275-4af2-84f6-a51f3120bdae"
+            "uuid": "a5f0e02d-fabe-5912-893b-fe96c0571480"
         },
         {
             "artist": "Jason Chan",
@@ -203,7 +206,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -237,15 +239,17 @@
                     "text": "If you have four or fewer cards in your hand when Ivory Tower’s ability resolves, the ability has no effect."
                 }
             ],
+            "scryfallId": "c3d44dad-dbb0-4642-b7dd-5b18bb09f7cc",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36759,
             "text": "At the beginning of your upkeep, you gain X life, where X is the number of cards in your hand minus 4.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c3d44dad-dbb0-4642-b7dd-5b18bb09f7cc"
+            "uuid": "7b3536fa-b91d-5e63-b525-fdc2db981408"
         },
         {
             "artist": "D. Alexander Gregory",
@@ -258,7 +262,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -288,15 +291,17 @@
                     "text": "If the player has less than 3 cards in their library, just exile all the cards that are there."
                 }
             ],
+            "scryfallId": "387c94bc-2981-405d-9def-7f8cda7aab40",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36760,
             "text": "{2}, {T}, Sacrifice Jester's Cap: Search target player's library for three cards and exile them. Then that player shuffles their library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "387c94bc-2981-405d-9def-7f8cda7aab40"
+            "uuid": "3aa58176-f096-544d-90f4-c0ebb46198ae"
         },
         {
             "artist": "Mark Zug",
@@ -345,6 +350,7 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "18fb9c27-0027-4b77-87bf-af0d0bd2278b",
             "starter": true,
             "subtypes": [
                 "Golem"
@@ -352,6 +358,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 36761,
             "text": "Whenever Karn, Silver Golem blocks or becomes blocked, it gets -4/+4 until end of turn.\n{1}: Target noncreature artifact becomes an artifact creature with power and toughness each equal to its converted mana cost until end of turn.",
             "toughness": "4",
             "type": "Legendary Artifact Creature — Golem",
@@ -359,7 +366,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "18fb9c27-0027-4b77-87bf-af0d0bd2278b"
+            "uuid": "2d49eea9-a1c1-5dca-8818-9f846c7a7f94"
         },
         {
             "artist": "Steven Belledin",
@@ -397,11 +404,13 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "e65cc594-cfa1-42d8-82a1-a99986b9ebb3",
             "starter": true,
             "subtypes": [
                 "Masticore"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36762,
             "text": "At the beginning of your upkeep, sacrifice Masticore unless you discard a card.\n{2}: Masticore deals 1 damage to target creature.\n{2}: Regenerate Masticore.",
             "toughness": "4",
             "type": "Artifact Creature — Masticore",
@@ -409,7 +418,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e65cc594-cfa1-42d8-82a1-a99986b9ebb3"
+            "uuid": "b6bc2c2e-c658-5b5c-995b-4e6492a2ab7a"
         },
         {
             "artist": "Donato Giancola",
@@ -448,15 +457,17 @@
                     "text": "You can’t look at the cards you exiled until they return to your hand."
                 }
             ],
+            "scryfallId": "37dbe1a3-3c44-452b-9fb9-37f5d793d0b5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36763,
             "text": "{T}, Sacrifice Memory Jar: Each player exiles all cards from their hand face down and draws seven cards. At the beginning of the next end step, each player discards their hand and returns to their hand each card they exiled this way.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "37dbe1a3-3c44-452b-9fb9-37f5d793d0b5"
+            "uuid": "0eddb0bf-07fd-5485-b95f-32a81a664d0c"
         },
         {
             "artist": "Donato Giancola",
@@ -469,7 +480,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -524,17 +534,19 @@
                     "text": "You are not required to choose new targets. If you do choose, then the targets must be legal. If you don’t change them, the spell is placed on the stack whether or not the targets are legal. The legality of the targets is always checked on resolution of the spell, so the spell may be countered at that time if all of its targets are illegal."
                 }
             ],
+            "scryfallId": "3356d686-c2f7-474d-bbdb-01148d086006",
             "starter": true,
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 36764,
             "text": "Whenever you cast an instant or sorcery spell, you may pay {3}. If you do, copy that spell. You may choose new targets for the copy.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3356d686-c2f7-474d-bbdb-01148d086006"
+            "uuid": "a3538a64-4271-5edd-934a-49b2e2c0575f"
         },
         {
             "artist": "Volkan Baga",
@@ -573,15 +585,17 @@
                     "text": "If you don’t discard a land card, Mox Diamond never enters the battlefield. It won’t trigger abilities that look for something entering the battlefield, and you won’t get the opportunity to tap it for mana."
                 }
             ],
+            "scryfallId": "fadb218d-29e2-42d1-a7a1-1066741d63ad",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36765,
             "text": "If Mox Diamond would enter the battlefield, you may discard a land card instead. If you do, put Mox Diamond onto the battlefield. If you don't, put it into its owner's graveyard.\n{T}: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fadb218d-29e2-42d1-a7a1-1066741d63ad"
+            "uuid": "8873cc86-7087-54b0-9ad6-a477df68f948"
         },
         {
             "artist": "Steve Argyle",
@@ -593,7 +607,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -639,15 +652,17 @@
                     "text": "You don’t sacrifice Nevinyrral’s Disk to activate its ability. It’s destroyed as part of the ability’s resolution if it’s still on the battlefield. If an effect gives Nevinyrral’s Disk indestructible or regenerates it, it stays on the battlefield."
                 }
             ],
+            "scryfallId": "52cb8c89-d8f3-4879-8ef7-a954b09ddce5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36766,
             "text": "Nevinyrral's Disk enters the battlefield tapped.\n{1}, {T}: Destroy all artifacts, creatures, and enchantments.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "52cb8c89-d8f3-4879-8ef7-a954b09ddce5"
+            "uuid": "398a5bd9-12d6-5eff-a9f3-67ade9c6315e"
         },
         {
             "artist": "Mike Bierek",
@@ -660,7 +675,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -703,15 +717,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "073bfdca-d7b8-4f4b-93f3-6e7c44bc0b0a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36767,
             "text": "{T}: Add {C}{C}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "073bfdca-d7b8-4f4b-93f3-6e7c44bc0b0a"
+            "uuid": "65ab6e4e-e32e-5c5a-80e4-d5d6a8e92635"
         },
         {
             "artist": "Jim Murray",
@@ -723,7 +739,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -766,11 +781,13 @@
                     "text": "If a land has more than one basic land type, it can be chosen more than once."
                 }
             ],
+            "scryfallId": "43aaef82-aa0b-499e-a78f-3e11e20e6ff5",
             "starter": true,
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36768,
             "text": "When Sundering Titan enters the battlefield or leaves the battlefield, choose a land of each basic land type, then destroy those lands.",
             "toughness": "10",
             "type": "Artifact Creature — Golem",
@@ -778,7 +795,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "43aaef82-aa0b-499e-a78f-3e11e20e6ff5"
+            "uuid": "35f624cb-f7e1-5db9-8e1e-914d067fea70"
         },
         {
             "artist": "Chris Rahn",
@@ -790,7 +807,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -818,17 +834,19 @@
                     "text": "If there are fewer than ten cards in that player’s library, that player puts all the cards from their library into their graveyard."
                 }
             ],
+            "scryfallId": "5bc29686-a89c-46e6-b32c-a70733aba389",
             "starter": true,
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36769,
             "text": "Equipped creature gets +2/+2 and has protection from green and from blue.\nWhenever equipped creature deals combat damage to a player, you create a 2/2 green Wolf creature token and that player puts the top ten cards of their library into their graveyard.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5bc29686-a89c-46e6-b32c-a70733aba389"
+            "uuid": "ff73c35e-85dc-582d-ac3a-1df0251b9dac"
         },
         {
             "artist": "Ryan Pancoast",
@@ -841,7 +859,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -865,26 +882,29 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "2ad373f3-c5f9-44a0-bbc4-518f80b08cfd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36770,
             "text": "Sacrifice a land: You gain 2 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2ad373f3-c5f9-44a0-bbc4-518f80b08cfd"
+            "uuid": "ef0c4ed7-ac6a-5b04-9b99-fac48a612e3d"
         }
     ],
     "code": "v10",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v10",
     "name": "From the Vault: Relics",
     "releaseDate": "2010-08-27",
+    "tcgplayerGroupId": 50,
     "tokens": [],
     "totalSetSize": 15,
     "type": "from_the_vault"

@@ -16,7 +16,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -52,6 +51,7 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "1c35c626-3693-44d8-a308-d3d5dcf77c93",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -61,7 +61,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "1c35c626-3693-44d8-a308-d3d5dcf77c93"
+            "uuid": "a6cd1f33-f00f-5cae-8a3d-42c6cd886e8d"
         },
         {
             "artist": "Vincent Proce",
@@ -77,7 +77,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -104,6 +103,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "da6dbb49-1e70-439e-9866-c755b3236bdd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -113,7 +113,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "da6dbb49-1e70-439e-9866-c755b3236bdd"
+            "uuid": "9f61b628-89b2-5f6c-848d-f199c98be592"
         },
         {
             "artist": "Todd Lockwood",
@@ -129,7 +129,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -170,6 +169,7 @@
                     "text": "The controller of the exiled creature isn’t required to search their library for a basic land. If that player doesn’t, the player won’t shuffle their library."
                 }
             ],
+            "scryfallId": "30b68ec2-bdb8-46ab-a741-36259926fd6f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -179,7 +179,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "30b68ec2-bdb8-46ab-a741-36259926fd6f"
+            "uuid": "19fa36d6-1453-58fa-a7ee-d6db80e7686d"
         },
         {
             "artist": "David Palumbo",
@@ -195,7 +195,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -217,6 +216,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "066ac822-7417-4dc4-93ba-bfba2252f47b",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -228,7 +228,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "066ac822-7417-4dc4-93ba-bfba2252f47b"
+            "uuid": "c0843f70-3a4c-5039-9476-cebd562fb066"
         },
         {
             "artist": "Scott Chou",
@@ -245,7 +245,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -268,6 +267,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1ba8b52a-af98-4a7d-83e5-ab94e058d9a7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -277,7 +277,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "1ba8b52a-af98-4a7d-83e5-ab94e058d9a7"
+            "uuid": "e0769550-a0b8-5940-8ff2-cdf309752d22"
         },
         {
             "artist": "Wayne Reynolds",
@@ -294,7 +294,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -319,6 +318,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bb43ab42-0c5e-4c71-b678-a258fec3bf48",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -330,7 +330,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "bb43ab42-0c5e-4c71-b678-a258fec3bf48"
+            "uuid": "d5097a68-265b-5171-a5a5-a3ef2ec43743"
         },
         {
             "artist": "Jack Wang",
@@ -347,7 +347,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -374,6 +373,7 @@
                     "text": "You must choose six different legal targets in order to cast Aether Gale. If some, but not all, of those targets become illegal before Aether Gale resolves, the remaining legal targets will be put into their owners’ hands."
                 }
             ],
+            "scryfallId": "1352ede2-9eb4-44db-b323-58b7b6409242",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -383,7 +383,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1352ede2-9eb4-44db-b323-58b7b6409242"
+            "uuid": "d544c078-de56-5ceb-b0a8-befa16f8b027"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -400,7 +400,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -431,6 +430,7 @@
                     "text": "You gain control of only one permanent from each player."
                 }
             ],
+            "scryfallId": "bb500b63-a61f-4d62-a666-61c7bca94b18",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -440,7 +440,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bb500b63-a61f-4d62-a666-61c7bca94b18"
+            "uuid": "7d20ff0d-aaef-5a24-bb3c-5ad9efeb60b9"
         },
         {
             "artist": "rk post",
@@ -457,7 +457,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -485,6 +484,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "64f6ac9a-e0a6-4334-ac98-63b2c5bdccd2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -494,7 +494,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "64f6ac9a-e0a6-4334-ac98-63b2c5bdccd2"
+            "uuid": "af17f8cc-c0bd-5137-80b9-39c6d12a372a"
         },
         {
             "artist": "Slawomir Maniak",
@@ -511,7 +511,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -542,6 +541,7 @@
                     "text": "To have any effect, Merfolk Sovereign’s activated ability must be activated before the declare blockers step begins. Once a Merfolk has become blocked, activating Merfolk Sovereign’s ability won’t change that."
                 }
             ],
+            "scryfallId": "0b1a55bc-7a62-4d0f-9885-db98e4324ff7",
             "starter": true,
             "subtypes": [
                 "Merfolk"
@@ -554,7 +554,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0b1a55bc-7a62-4d0f-9885-db98e4324ff7"
+            "uuid": "a25f3ef4-e294-5e92-bf3c-46bc49070b4d"
         },
         {
             "artist": "Anthony S. Waters",
@@ -571,7 +571,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -608,6 +607,7 @@
                     "text": "Tokens usually have a converted mana cost of 0."
                 }
             ],
+            "scryfallId": "0c4a061e-45ac-47b5-a955-5744199589b1",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -619,7 +619,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0c4a061e-45ac-47b5-a955-5744199589b1"
+            "uuid": "7f3c88fd-8e2d-5c9d-8e0e-935f66f7916b"
         },
         {
             "artist": "Jon Foster",
@@ -636,7 +636,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -668,6 +667,7 @@
                     "text": "If multiple “extra turn” effects resolve in the same turn, take them in the reverse of the order that the effects resolved."
                 }
             ],
+            "scryfallId": "87fe8637-9be1-4b57-832f-38cf92d23482",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -677,7 +677,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "87fe8637-9be1-4b57-832f-38cf92d23482"
+            "uuid": "8c1058d2-d32f-532e-a0b5-2ea8ff1a4864"
         },
         {
             "artist": "Izzy",
@@ -694,7 +694,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -743,6 +742,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fe499edd-2a65-4cbc-8d0c-6b3b6277edcc",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -752,7 +752,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "fe499edd-2a65-4cbc-8d0c-6b3b6277edcc"
+            "uuid": "8ecdd0c9-e3d4-55d0-8808-db4c8feda33e"
         },
         {
             "artist": "Erica Yang",
@@ -769,7 +769,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -794,6 +793,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "940379f0-55ae-49b2-9aef-d18e509ed05b",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -805,7 +805,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "940379f0-55ae-49b2-9aef-d18e509ed05b"
+            "uuid": "916af32b-f584-51c3-a863-94eeaf28a48a"
         },
         {
             "artist": "Anna Steinbauer",
@@ -822,7 +822,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -860,6 +859,7 @@
                     "text": "In a Two-Headed Giant game, life gained by your teammate won’t cause the ability to trigger, even though it causes your team’s life total to increase."
                 }
             ],
+            "scryfallId": "6c2b7878-d66a-437a-967d-d6070e425c2c",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -874,7 +874,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6c2b7878-d66a-437a-967d-d6070e425c2c"
+            "uuid": "be8476aa-a67c-5403-a1d3-3405fbb488e0"
         },
         {
             "artist": "Ash Wood",
@@ -891,7 +891,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -929,19 +928,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d01884e2-40e7-4af4-964c-52b6cbae2dae",
             "starter": true,
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [],
             "tcgplayerProductId": 152483,
-            "text": "Lifelink (Damage dealt by this creature also causes you to gain that much life.)",
+            "text": "Lifelink",
             "toughness": "1",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "d01884e2-40e7-4af4-964c-52b6cbae2dae"
+            "uuid": "0ab2df55-ef24-5cc5-8c24-cfc8f68c5526"
         },
         {
             "artist": "Johann Bodin",
@@ -958,7 +958,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -983,6 +982,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cc4baf68-7399-40f1-b60c-44f078b65e75",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -992,7 +992,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "cc4baf68-7399-40f1-b60c-44f078b65e75"
+            "uuid": "6c0fc7d7-db93-5cb3-80a8-b5544accc892"
         },
         {
             "artist": "Chippy",
@@ -1009,7 +1009,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1041,6 +1040,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "7e89b4da-a095-4790-b1b7-2369fa221aa4",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1050,7 +1050,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "7e89b4da-a095-4790-b1b7-2369fa221aa4"
+            "uuid": "7448fbcb-cddd-5683-9c00-a7b9f3cb42dd"
         },
         {
             "artist": "Carl Critchlow",
@@ -1067,7 +1067,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1099,6 +1098,7 @@
                     "text": "You can cast Innocent Blood even if some (or all) players control no creatures. Those players are simply unaffected."
                 }
             ],
+            "scryfallId": "f4b83306-bb1d-4c44-bb77-1c9b048313dc",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1108,7 +1108,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f4b83306-bb1d-4c44-bb77-1c9b048313dc"
+            "uuid": "424177a0-855a-5ed5-aa03-66005d80e110"
         },
         {
             "artist": "Winona Nelson",
@@ -1125,7 +1125,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1153,6 +1152,7 @@
                     "text": "If that creature deals combat damage to a player at the same time it’s dealt lethal damage (perhaps because it has trample and was blocked), it will die before the triggered ability resolves and puts +1/+1 counters on it."
                 }
             ],
+            "scryfallId": "6ff29341-b947-415b-a939-46bfa4800dbe",
             "starter": true,
             "subtypes": [
                 "Vampire"
@@ -1165,7 +1165,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6ff29341-b947-415b-a939-46bfa4800dbe"
+            "uuid": "3c9f33ce-a246-525b-b715-f4dc57a50e6f"
         },
         {
             "artist": "Johann Bodin",
@@ -1181,7 +1181,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1218,6 +1217,7 @@
                     "text": "If the targeted creature is an illegal target by the time Urge to Feed resolves, the entire spell doesn’t resolve. You can’t tap any Vampires."
                 }
             ],
+            "scryfallId": "ff8e3bff-1502-4dac-9d2d-784a988e5565",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1227,7 +1227,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "ff8e3bff-1502-4dac-9d2d-784a988e5565"
+            "uuid": "17378039-b6f0-58d6-b586-26d2fc4df337"
         },
         {
             "artist": "James Ryman",
@@ -1244,7 +1244,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1269,6 +1268,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e22b76e5-4b37-4638-9002-089d5d967cd3",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -1282,7 +1282,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e22b76e5-4b37-4638-9002-089d5d967cd3"
+            "uuid": "d31ccced-593d-5d39-9181-236dec1d6f12"
         },
         {
             "artist": "Jason Chan",
@@ -1298,7 +1298,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1331,6 +1330,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2c0cbb60-d75c-4bb4-9f20-b3382481b288",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -1344,7 +1344,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2c0cbb60-d75c-4bb4-9f20-b3382481b288"
+            "uuid": "95099821-f5fc-5edc-8d96-05e37974238e"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -1361,7 +1361,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1386,19 +1385,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "19068744-60df-4099-8b1c-9784ba331362",
             "starter": true,
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [],
             "tcgplayerProductId": 152491,
-            "text": "",
             "toughness": "2",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "19068744-60df-4099-8b1c-9784ba331362"
+            "uuid": "31c81d7f-bb18-5dc8-81ca-3c080d014c64"
         },
         {
             "artist": "Greg Staples",
@@ -1414,7 +1413,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1445,6 +1443,7 @@
                     "text": "You will normally use this during your post-combat main phase so you can untap any creatures that attacked."
                 }
             ],
+            "scryfallId": "8f9fa105-6829-431c-8386-8e3e9deff2db",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1454,7 +1453,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8f9fa105-6829-431c-8386-8e3e9deff2db"
+            "uuid": "5a03e870-3ee0-580a-b641-166782a14628"
         },
         {
             "artist": "James Paick",
@@ -1470,7 +1469,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1496,6 +1494,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a7a4ef98-2b74-40e6-90ff-23179fb962da",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1505,7 +1504,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a7a4ef98-2b74-40e6-90ff-23179fb962da"
+            "uuid": "8acacc49-541f-550f-b56e-371dd1bd6daa"
         },
         {
             "artist": "Sidharth Chaturvedi",
@@ -1522,7 +1521,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1562,6 +1560,7 @@
                     "text": "Gaining control of a creature doesn’t cause you to gain control of any Auras or Equipment attached to it. However, if you gain control of a creature enchanted by an Aura with totem armor and that creature would be destroyed that turn, instead the Aura will be destroyed and the creature will survive."
                 }
             ],
+            "scryfallId": "461aaf42-9b96-4960-b6c8-ba80cf4ef349",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1571,7 +1570,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "461aaf42-9b96-4960-b6c8-ba80cf4ef349"
+            "uuid": "739b422d-ed9f-5d60-b363-8fdd50e5e99c"
         },
         {
             "artist": "Chris Rallis",
@@ -1588,7 +1587,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1613,6 +1611,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "024eea40-6d8f-4b4e-9bcc-e55a9f12bf64",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1622,7 +1621,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "024eea40-6d8f-4b4e-9bcc-e55a9f12bf64"
+            "uuid": "c7320d6e-7973-57a8-b4a0-4cc241c7049e"
         },
         {
             "artist": "Chuck Lukacs",
@@ -1639,7 +1638,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1670,6 +1668,7 @@
                     "text": "In a Two-Headed Giant game, only creatures you control trigger the ability and get the bonus, but your teammate’s attacking creatures are included in the calculation of those bonuses."
                 }
             ],
+            "scryfallId": "ca5feaf7-3ca0-4ad7-b56b-b76d39e4bec7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1679,7 +1678,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ca5feaf7-3ca0-4ad7-b56b-b76d39e4bec7"
+            "uuid": "c7fa2468-c71b-5044-8deb-edc0b279a780"
         },
         {
             "artist": "Svetlin Velinov",
@@ -1696,7 +1695,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1720,6 +1718,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "520762c5-ca7c-4be3-b9aa-a5ae87c00da4",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -1731,7 +1730,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "520762c5-ca7c-4be3-b9aa-a5ae87c00da4"
+            "uuid": "b109bcf8-150f-5264-88e1-27a827eaf3ad"
         },
         {
             "artist": "Zoltan Boros",
@@ -1748,7 +1747,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1775,6 +1773,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "12124073-518a-498c-a817-400547ae7040",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -1788,7 +1787,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "12124073-518a-498c-a817-400547ae7040"
+            "uuid": "2d020e72-1317-5860-8e88-631a59baa5ef"
         },
         {
             "artist": "Matt Cavotta",
@@ -1804,7 +1803,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1863,13 +1861,13 @@
                 "PS11",
                 "PSUS",
                 "RTR",
-                "S00",
                 "SUM",
                 "WC97",
                 "WC99"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f237ecfe-ecb0-42e6-852f-4a7c61652803",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1879,7 +1877,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "f237ecfe-ecb0-42e6-852f-4a7c61652803"
+            "uuid": "860bd789-b56d-5a8a-9a17-efb1e4683ce9"
         },
         {
             "artist": "Greg Staples",
@@ -1896,7 +1894,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1921,6 +1918,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2c0e5ac0-48f2-44c2-814e-9bc90ff01760",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1930,7 +1928,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2c0e5ac0-48f2-44c2-814e-9bc90ff01760"
+            "uuid": "5fdadfed-db6c-5fe4-b271-fc14e99d2b65"
         },
         {
             "artist": "Deruchenko Alexander",
@@ -1947,7 +1945,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1983,10 +1980,11 @@
             "rarity": "common",
             "rulings": [
                 {
-                    "date": "2018-10-05",
-                    "text": "If either or both targets are illegal when Prey Upon tries to resolve, no creature will deal or be dealt damage."
+                    "date": "2018-12-07",
+                    "text": "If either target is an illegal target as Prey Upon resolves, no creature will deal or be dealt damage."
                 }
             ],
+            "scryfallId": "eac2c4a6-54b9-41ac-9265-39dd0be75726",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1996,7 +1994,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "eac2c4a6-54b9-41ac-9265-39dd0be75726"
+            "uuid": "e4ad40d0-646a-5f45-be54-14e7914c6a7d"
         },
         {
             "artist": "Kev Walker",
@@ -2012,7 +2010,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2052,6 +2049,7 @@
                     "text": "If the creature this Aura would enchant is an illegal target by the time Rancor tries to resolve, the Aura spell doesn’t resolve. It won’t enter the battlefield, so it won’t be put into a graveyard from the battlefield and its ability won’t trigger."
                 }
             ],
+            "scryfallId": "38e281ab-3437-4a2c-a668-9a148bc3eaf7",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -2063,7 +2061,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "38e281ab-3437-4a2c-a668-9a148bc3eaf7"
+            "uuid": "4b13f828-229a-5d39-86b9-eb44773db611"
         },
         {
             "artist": "Eytan Zana",
@@ -2080,7 +2078,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2112,6 +2109,7 @@
                     "text": "A creature card that enters the battlefield as a copy of a token creature is still a nontoken creature. You’ll be able to draw a card."
                 }
             ],
+            "scryfallId": "4a4ad065-cfab-4aad-b265-211143c1c69d",
             "starter": true,
             "subtypes": [
                 "Elemental"
@@ -2124,7 +2122,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4a4ad065-cfab-4aad-b265-211143c1c69d"
+            "uuid": "29a36b6e-ac7b-5bbf-9c15-01857f34fff4"
         },
         {
             "artist": "Jim Pavelec",
@@ -2141,7 +2139,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2166,6 +2163,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e1c4cea1-e06b-468e-86ef-07c3958ab10b",
             "starter": true,
             "subtypes": [
                 "Aura"
@@ -2177,7 +2175,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e1c4cea1-e06b-468e-86ef-07c3958ab10b"
+            "uuid": "f2cf22fe-843f-5ce5-85d4-859445634100"
         },
         {
             "artist": "Christine Choi",
@@ -2196,7 +2194,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2220,6 +2217,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8be6060c-f6df-451d-86cd-c4e2564095ba",
             "starter": true,
             "subtypes": [
                 "Plant",
@@ -2233,7 +2231,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8be6060c-f6df-451d-86cd-c4e2564095ba"
+            "uuid": "9cc726bf-c464-5f02-be18-05bd35daa52c"
         },
         {
             "artist": "Kev Walker",
@@ -2252,7 +2250,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2287,6 +2284,7 @@
                     "text": "If the chosen target is illegal when Lightning Helix tries to resolve, it won’t resolve and none of its effects will happen. You won’t gain 3 life."
                 }
             ],
+            "scryfallId": "79d1f0c1-9271-47e7-8bee-a102cdc396e9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2296,7 +2294,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "79d1f0c1-9271-47e7-8bee-a102cdc396e9"
+            "uuid": "aa327c13-ea6e-59ae-b121-8ce7247d5937"
         },
         {
             "artist": "Nils Hamm",
@@ -2315,7 +2313,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2343,7 +2340,9 @@
                 "E02",
                 "GPT",
                 "P07",
-                "PRM"
+                "PRM",
+                "PRNA",
+                "RNA"
             ],
             "rarity": "uncommon",
             "rulings": [
@@ -2352,6 +2351,7 @@
                     "text": "This spell isn’t Modal. When it resolves, it will destroy the target if it’s a creature or an enchantment, even if it changed from one to the other between targeting and resolution."
                 }
             ],
+            "scryfallId": "7dc4eced-d8b1-4e77-bacd-ba1dae56bfa6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2361,7 +2361,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "7dc4eced-d8b1-4e77-bacd-ba1dae56bfa6"
+            "uuid": "47e744ed-d9a9-5602-869f-85db1440c262"
         },
         {
             "artist": "Sara Winters",
@@ -2380,7 +2380,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2405,6 +2404,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "00963993-ff4d-4cc6-a7e0-ed8adac40bfd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2414,7 +2414,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "00963993-ff4d-4cc6-a7e0-ed8adac40bfd"
+            "uuid": "d41f29ba-17fe-5e50-96ef-ad36978bb4bc"
         },
         {
             "artist": "Igor Kieryluk",
@@ -2426,7 +2426,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2462,6 +2461,7 @@
                     "text": "Even though Adaptive Automaton is a Construct, other Construct creatures you control won’t get +1/+1 (unless you chose Construct as Adaptive Automaton entered the battlefield)."
                 }
             ],
+            "scryfallId": "a3a74bb9-b850-4d94-81f4-ffe062e91c49",
             "starter": true,
             "subtypes": [
                 "Construct"
@@ -2475,7 +2475,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a3a74bb9-b850-4d94-81f4-ffe062e91c49"
+            "uuid": "b462a093-6304-5df7-bc6f-4592051c9436"
         },
         {
             "artist": "Alan Pollack",
@@ -2488,7 +2488,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2514,6 +2513,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "eb3da3e2-fdef-4ff4-bef6-85e57dc4c56d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2523,7 +2523,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "eb3da3e2-fdef-4ff4-bef6-85e57dc4c56d"
+            "uuid": "3c8226b1-42b3-5991-96dd-82e684de2d45"
         },
         {
             "artist": "Brad Rigney",
@@ -2536,7 +2536,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2572,6 +2571,7 @@
                     "text": "You don’t pay any costs of that creature card, including additional costs."
                 }
             ],
+            "scryfallId": "ab053d73-31a9-4e70-9310-4e250862ad6b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2581,7 +2581,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "ab053d73-31a9-4e70-9310-4e250862ad6b"
+            "uuid": "01882524-ac77-5a62-97de-674120a5bbb0"
         },
         {
             "artist": "Volkan Baga",
@@ -2598,7 +2598,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2627,6 +2626,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "478bc89c-ad53-41e8-9304-60837914c590",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2636,7 +2636,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "478bc89c-ad53-41e8-9304-60837914c590"
+            "uuid": "68b8f444-895d-5596-a0fc-676713f8b62d"
         },
         {
             "artist": "Rob Alexander",
@@ -2653,7 +2653,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2680,6 +2679,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0a3c12f1-5988-49a4-969a-cc7f678468d8",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2689,7 +2689,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0a3c12f1-5988-49a4-969a-cc7f678468d8"
+            "uuid": "af93844e-41b1-52d0-8cab-ae139b6ba94f"
         },
         {
             "artist": "Don Hazeltine",
@@ -2704,7 +2704,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2726,6 +2725,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "cb4125db-b44f-49b8-b74d-e131844e5510",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2735,13 +2735,13 @@
             "types": [
                 "Land"
             ],
-            "uuid": "cb4125db-b44f-49b8-b74d-e131844e5510"
+            "uuid": "6c8e5471-2be3-5c53-a3ca-1a02abbeb58c"
         }
     ],
     "code": "e02",
     "meta": {
-        "date": "2018-12-07",
-        "version": "4.1.3"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Explorers of Ixalan",
@@ -2761,10 +2761,10 @@
             "number": "T1",
             "power": "1",
             "reverseRelated": [],
-            "text": "",
+            "scryfallId": "eac3b55f-ebf8-413e-b987-3b92e89ca7c5",
             "toughness": "1",
             "type": "Token Creature — Saproling",
-            "uuid": "eac3b55f-ebf8-413e-b987-3b92e89ca7c5"
+            "uuid": "d2cd7a9f-3377-5b90-86e8-34446c68bcee"
         }
     ],
     "totalSetSize": 48,

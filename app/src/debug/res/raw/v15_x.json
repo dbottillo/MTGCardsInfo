@@ -15,7 +15,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -58,6 +57,7 @@
                     "text": "The “legend rule” cares about legendary permanents with the exact same English name. You can control Akroma, Angel of Fury and Akroma, Angel of Wrath at the same time."
                 }
             ],
+            "scryfallId": "77bd8a6f-895c-4434-9eaf-644650b4e42c",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -65,13 +65,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 100612,
             "text": "This spell can't be countered.\nFlying, trample, protection from white and from blue\n{R}: Akroma, Angel of Fury gets +1/+0 until end of turn.\nMorph {3}{R}{R}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
             "toughness": "6",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "77bd8a6f-895c-4434-9eaf-644650b4e42c"
+            "uuid": "4e7cf89a-bdd5-5a7b-933c-0f8ee7432af5"
         },
         {
             "artist": "Terese Nielsen",
@@ -88,7 +89,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -120,6 +120,7 @@
                     "text": "The “legend rule” cares about legendary permanents with the exact same English name. You can control Akroma, Angel of Wrath and Akroma, Angel of Fury at the same time."
                 }
             ],
+            "scryfallId": "8010cc08-7035-4daf-a4c4-e8d8959e1e82",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -127,13 +128,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 100611,
             "text": "Flying, first strike, vigilance, trample, haste, protection from black and from red",
             "toughness": "6",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "8010cc08-7035-4daf-a4c4-e8d8959e1e82"
+            "uuid": "da7e8699-6670-54ef-9cb2-8a11772525bf"
         },
         {
             "artist": "Greg Staples",
@@ -149,7 +151,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -193,18 +194,20 @@
                     "text": "As soon as Archangel of Strife leaves the battlefield, the bonus stops applying. If it returns to the battlefield, players will be able to make new choices."
                 }
             ],
+            "scryfallId": "433c0d70-93ac-4dbc-b963-4a13f2215c4b",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102777,
             "text": "Flying\nAs Archangel of Strife enters the battlefield, each player chooses war or peace.\nCreatures controlled by players who chose war get +3/+0.\nCreatures controlled by players who chose peace get +0/+3.",
             "toughness": "6",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "433c0d70-93ac-4dbc-b963-4a13f2215c4b"
+            "uuid": "f7ded46c-dc0e-5f0a-aa2e-daf5200dec98"
         },
         {
             "artist": "Slawomir Maniak",
@@ -223,7 +226,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -260,6 +262,7 @@
                     "text": "If Aurelia is put onto the battlefield attacking, the triggered ability won’t trigger."
                 }
             ],
+            "scryfallId": "fd455e45-8139-41ea-b738-828f89ee72d6",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -267,13 +270,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 102778,
             "text": "Flying, vigilance, haste\nWhenever Aurelia, the Warleader attacks for the first time each turn, untap all creatures you control. After this phase, there is an additional combat phase.",
             "toughness": "4",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "fd455e45-8139-41ea-b738-828f89ee72d6"
+            "uuid": "02c744ed-b109-5dae-bf7d-8aca78f9ddb1"
         },
         {
             "artist": "Jason Chan",
@@ -290,7 +294,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -334,6 +337,7 @@
                     "text": "A planeswalker with indestructible still loses loyalty as it’s dealt damage. It is put into its owner’s graveyard if its loyalty becomes 0."
                 }
             ],
+            "scryfallId": "6d2ecaad-2e10-4aef-8d7c-fc9f3f756f40",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -341,13 +345,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 101468,
             "text": "Flying, vigilance, indestructible\nOther permanents you control have indestructible.",
             "toughness": "8",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d2ecaad-2e10-4aef-8d7c-fc9f3f756f40"
+            "uuid": "cb1a83c1-b654-5e7b-a5ec-e9f8db310a17"
         },
         {
             "artist": "Greg Staples",
@@ -364,7 +369,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -393,18 +397,20 @@
                     "text": "“Protection from Demons and from Dragons” means the following: -- Baneslayer Angel can't be blocked by creatures with the creature type Demon or the creature type Dragon. -- Baneslayer Angel can't be targeted abilities from sources with the creature type Demon or the creature type Dragon, or by spells with either of those types. -- All damage that would be dealt to Baneslayer Angel by sources with the creature type Demon or the creature type Dragon is prevented. -- Baneslayer Angel can't be enchanted by Auras or equipped by artifacts that have somehow gotten the creature type Demon or the creature type Dragon."
                 }
             ],
+            "scryfallId": "c24806a1-c3b0-40ba-ac51-dbf0b29b35e7",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102779,
             "text": "Flying, first strike, lifelink, protection from Demons and from Dragons",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "c24806a1-c3b0-40ba-ac51-dbf0b29b35e7"
+            "uuid": "6f7cbb5f-a776-53da-b0c5-943e47cd2218"
         },
         {
             "artist": "Todd Lockwood",
@@ -417,10 +423,10 @@
             ],
             "convertedManaCost": 3.0,
             "foreignData": [],
+            "frameEffect": "miracle",
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -497,15 +503,17 @@
                     "text": "Miracle is an alternative cost to cast the spell with miracle. It can’t be combined with other alternative costs, such as casting a spell “without paying its mana cost.”"
                 }
             ],
+            "scryfallId": "5ae63280-c39a-4e1a-9407-1b4a82b23135",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 102780,
             "text": "Create X 4/4 white Angel creature tokens with flying.\nMiracle {X}{W}{W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5ae63280-c39a-4e1a-9407-1b4a82b23135"
+            "uuid": "f5c980a2-9aed-5ec5-bc11-c764d25fc542"
         },
         {
             "artist": "Tyler Jacobson",
@@ -521,7 +529,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -552,18 +559,20 @@
                     "text": "You only gain the life when the triggered ability resolves. If you are reduced to zero life before the ability resolves, you will lose before gaining the life."
                 }
             ],
+            "scryfallId": "9d2d48db-b206-47cc-9634-6c0f2d6b020c",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102781,
             "text": "Flying\nWhenever Exalted Angel deals damage, you gain that much life.\nMorph {2}{W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "9d2d48db-b206-47cc-9634-6c0f2d6b020c"
+            "uuid": "52db4f63-e3e0-54af-8734-28b0db5df1ec"
         },
         {
             "artist": "Jason Chan",
@@ -580,7 +589,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -613,6 +621,7 @@
                     "text": "Once the color is chosen, it’s too late for opponents to respond by casting spells of that color. Iona is not yet in the battlefield at the time the color is chosen, so, for example, there’s no way for an opponent to destroy it by casting Doom Blade if the chosen color is black."
                 }
             ],
+            "scryfallId": "08a75fdb-05c0-4095-9eca-f24313571d1e",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -620,13 +629,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 101469,
             "text": "Flying\nAs Iona, Shield of Emeria enters the battlefield, choose a color.\nYour opponents can't cast spells of the chosen color.",
             "toughness": "7",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "08a75fdb-05c0-4095-9eca-f24313571d1e"
+            "uuid": "4ff4e054-8e0a-5a85-bb89-40d53f759e6f"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -645,7 +655,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -672,18 +681,20 @@
                     "text": "This card has Protection from Black, from Blue, from Red, from White, and from Green. This is the definition of “All Colors”. This means it is possible to use an effect that removes one color of protection, such as just black, on this card."
                 }
             ],
+            "scryfallId": "b0769d87-62f7-469a-936f-5a4f6b9360b6",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102782,
             "text": "Flying, protection from all colors",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "b0769d87-62f7-469a-936f-5a4f6b9360b6"
+            "uuid": "d6d85f2b-ab80-57c1-b7de-eeba80ffc377"
         },
         {
             "artist": "Chris Rahn",
@@ -704,7 +715,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -727,6 +737,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "23350274-4df3-4c70-be86-9869e6bcd957",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -734,13 +745,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 102783,
             "text": "Flying\n{1}{W}: Put a +1/+1 counter on Jenara, Asura of War.",
             "toughness": "3",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "23350274-4df3-4c70-be86-9869e6bcd957"
+            "uuid": "243da903-6b88-50d4-aa3e-5fde8088130c"
         },
         {
             "artist": "rk post",
@@ -761,7 +773,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -786,18 +797,20 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "e3fe3179-c32f-460c-a590-77f193100180",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102784,
             "text": "Flying, vigilance, haste",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3fe3179-c32f-460c-a590-77f193100180"
+            "uuid": "49550232-16c7-5f14-886d-7cdb6acb0283"
         },
         {
             "artist": "Brom",
@@ -810,7 +823,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -860,11 +872,13 @@
                     "text": "If you control Platinum Angel in a Two-Headed Giant game, your team can’t lose the game and the opposing team can’t win the game."
                 }
             ],
+            "scryfallId": "4e5780f1-f561-415f-99e3-907447d8280e",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102785,
             "text": "Flying\nYou can't lose the game and your opponents can't win the game.",
             "toughness": "4",
             "type": "Artifact Creature — Angel",
@@ -872,7 +886,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "4e5780f1-f561-415f-99e3-907447d8280e"
+            "uuid": "1db0b21e-dc41-587d-996f-ec8247e0d4dc"
         },
         {
             "artist": "Rebecca Guay",
@@ -889,7 +903,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -954,18 +967,20 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "d9d994b6-d043-42af-8e95-f4e856a7f8b4",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 102786,
             "text": "Flying, vigilance",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "d9d994b6-d043-42af-8e95-f4e856a7f8b4"
+            "uuid": "e8905dca-9bcf-5706-bc02-f869f4f50edb"
         },
         {
             "artist": "Wayne Reynolds",
@@ -986,7 +1001,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1019,6 +1033,7 @@
                     "text": "The creature card is chosen at random from among creature cards in the target opponent’s graveyard as the ability resolves. Players can respond to the ability knowing the targeted player, but they won’t know which creature card is about to enter the battlefield."
                 }
             ],
+            "scryfallId": "9b348957-f351-4b93-856a-f67a3fbf616e",
             "starter": true,
             "subtypes": [
                 "Angel"
@@ -1026,24 +1041,26 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 102787,
             "text": "Flying, vigilance\n{T}: Choose a creature card at random from target opponent's graveyard. Put that card onto the battlefield under your control.",
             "toughness": "7",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "9b348957-f351-4b93-856a-f67a3fbf616e"
+            "uuid": "e22add32-e8e0-52c5-96e5-76e94e063cb2"
         }
     ],
     "code": "v15",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v15",
     "name": "From the Vault: Angels",
     "releaseDate": "2015-08-21",
+    "tcgplayerGroupId": 1577,
     "tokens": [],
     "totalSetSize": 15,
     "type": "from_the_vault"

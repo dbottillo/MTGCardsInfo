@@ -33,7 +33,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{5}{W}",
@@ -48,17 +47,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3d0076e3-e538-4f4f-87fb-467851a8d8dd",
             "subtypes": [
                 "Igpay"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37823,
             "text": "Oubleday ikestray\nEnwhay ouyay eakspay ay onnay-igpay-atinlay ordway, acrificesay Atinlay Igpay.",
             "toughness": "3",
             "type": "Eaturecray — Igpay",
             "types": [
                 "Eaturecray"
             ],
-            "uuid": "3d0076e3-e538-4f4f-87fb-467851a8d8dd"
+            "uuid": "19dc53fc-7e81-5ce0-b6ad-99ae00601617"
         },
         {
             "artist": "Stephen Tappin",
@@ -74,12 +75,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
             "multiverseId": 74231,
-            "name": "AWOL (a)",
+            "name": "AWOL",
             "number": "2",
             "originalText": "Remove target attacking creature from the game. Then remove it from the removed-from-game zone and put it into the absolutely-removed-from-the-freaking-game-forever zone.",
             "originalType": "Instant",
@@ -88,14 +88,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fcf3447a-ec7d-47d7-bf6b-e2bbe0ac58df",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37825,
             "text": "Exile target attacking creature. Then remove it from the game. Then put it into the absolutely-removed-from-the-freaking-game-forever zone.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fcf3447a-ec7d-47d7-bf6b-e2bbe0ac58df"
+            "uuid": "7e046f38-e2e3-5eca-bdc1-2bf65dee2902"
         },
         {
             "artist": "Stephen Tappin",
@@ -111,7 +113,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
@@ -122,6 +123,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e0c94a52-fc1e-4f5d-a95c-47e6d6c8bef9",
             "subtypes": [],
             "supertypes": [],
             "text": "Exile target attacking creature. Then remove it from the game. Then put it into the absolutely-removed-from-the-freaking-game-forever zone.",
@@ -129,7 +131,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "e0c94a52-fc1e-4f5d-a95c-47e6d6c8bef9"
+            "uuid": "e7a34c07-e56a-5340-a55e-53dfad1ba6b9"
         },
         {
             "artist": "Dan Scott",
@@ -146,7 +148,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{W}",
@@ -161,18 +162,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f9701ab2-acb5-431a-a442-8df33bcb75a3",
             "subtypes": [
                 "Elephant",
                 "Townsfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37831,
             "text": "Whenever you cast a spell, you may gain ½ life for each word in that spell's name.",
             "toughness": "4",
             "type": "Creature — Elephant Townsfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "f9701ab2-acb5-431a-a442-8df33bcb75a3"
+            "uuid": "181112c5-a064-5962-afe9-7db9d147e911"
         },
         {
             "artist": "Richard Sardinha",
@@ -188,12 +191,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}",
             "multiverseId": 74244,
-            "name": "Cardpecker (a)",
+            "name": "Cardpecker",
             "number": "4",
             "originalText": "Flying\nGotcha Whenever an opponent touches the table with his or her hand, you may say \"Gotcha\" If you do, return Cardpecker from your graveyard to your hand.",
             "originalType": "Creature - Bird",
@@ -203,17 +205,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "408e0273-133f-4326-91d4-a1281b388d2c",
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37834,
             "text": "Flying\nGotcha — If an opponent touches the table with their hand, you may say \"Gotcha\" When you do, return Cardpecker from your graveyard to your hand.",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "408e0273-133f-4326-91d4-a1281b388d2c"
+            "uuid": "fb9d5906-6a14-59de-a729-2ab99dd3c4d8"
         },
         {
             "artist": "Richard Sardinha",
@@ -229,7 +233,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}",
@@ -241,6 +244,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a42bbacc-b9ad-42fe-b726-e2dccf030bb8",
             "subtypes": [
                 "Bird"
             ],
@@ -251,7 +255,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a42bbacc-b9ad-42fe-b726-e2dccf030bb8"
+            "uuid": "07bca6d4-137d-506c-8bbd-7409c1846fb3"
         },
         {
             "artist": "Randy Gallegos",
@@ -268,7 +272,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}",
@@ -283,18 +286,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "44c3f0ea-d4b5-428c-abd2-93e09998d63c",
             "subtypes": [
                 "Donkey",
                 "Townsfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37836,
             "text": "Spells you cast cost {½} less to cast.",
             "toughness": "3.5",
             "type": "Creature — Donkey Townsfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "44c3f0ea-d4b5-428c-abd2-93e09998d63c"
+            "uuid": "1598e2ba-23ae-5e05-bc2c-680f253472da"
         },
         {
             "artist": "Jim “Stop the Da Vinci Beatdown” Pavelec",
@@ -310,7 +315,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}",
@@ -325,14 +329,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "edbdb5ed-2d8a-4c95-b0fd-f19ff82e1302",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37838,
             "text": "As Circle of Protection: Art enters the battlefield, choose an artist.\n{1}{W}: The next time a source of your choice with art by the chosen artist would deal damage to you this turn, prevent that damage.\n{1}{W}: Return Circle of Protection: Art to its owner's hand.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "edbdb5ed-2d8a-4c95-b0fd-f19ff82e1302"
+            "uuid": "350061c6-1263-5f7f-8a5b-9c9f04984110"
         },
         {
             "artist": "Christopher Rush",
@@ -349,7 +355,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{W}{W}",
@@ -364,18 +369,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "7de4c754-dfff-4c0b-93c6-3725ad1efbb0",
             "subtypes": [
                 "Human",
                 "Gamer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37840,
             "text": "{W}, Give an opponent a nonland card you own from outside the game: Prevent the next 1 damage that would be dealt to you or Collector Protector this turn.",
             "toughness": "5",
             "type": "Creature — Human Gamer",
             "types": [
                 "Creature"
             ],
-            "uuid": "7de4c754-dfff-4c0b-93c6-3725ad1efbb0"
+            "uuid": "6a0ea8c2-2bae-5ba8-9de6-0a11a59cd855"
         },
         {
             "artist": "Pete “Fear Me” Venters",
@@ -392,7 +399,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}{W}",
@@ -406,14 +412,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "50fa9cd0-2152-4c01-a5d7-d257ae109d0f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37845,
             "text": "As Drawn Together enters the battlefield, choose an artist.\nCreatures with art by the chosen artist get +2/+2.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "50fa9cd0-2152-4c01-a5d7-d257ae109d0f"
+            "uuid": "0dad95dc-bc01-5190-85db-89f57f98a900"
         },
         {
             "artist": "Quinton Hoover",
@@ -430,12 +438,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
             "multiverseId": 73944,
-            "name": "Emcee (a)",
+            "name": "Emcee",
             "number": "9",
             "originalText": "Whenever another creature comes into play, you may stand up and say in a deep, booming voice \"Presenting . . . \" and that creature's name. If you do, put a +1/+1 counter on that creature.",
             "originalType": "Creature - Human Rogue",
@@ -445,18 +452,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "dcef9e39-c9e9-401a-b389-962877b3d763",
             "subtypes": [
                 "Human",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37849,
             "text": "Whenever another creature enters the battlefield, you may stand up and say in a deep, booming voice, \"Presenting . . . \" and that creature's name. If you do, put a +1/+1 counter on that creature.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "dcef9e39-c9e9-401a-b389-962877b3d763"
+            "uuid": "9685099e-0d51-59f8-ab4e-065224fc7b25"
         },
         {
             "artist": "Quinton Hoover",
@@ -473,7 +482,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
@@ -485,6 +493,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d9109252-2630-4550-a815-98a6c3725591",
             "subtypes": [
                 "Human",
                 "Rogue"
@@ -496,7 +505,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d9109252-2630-4550-a815-98a6c3725591"
+            "uuid": "46893af2-ade9-569a-a294-2c3d78e3e5db"
         },
         {
             "artist": "Pete “Yes the Urza's Legacy One” Venters",
@@ -513,7 +522,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
@@ -532,14 +540,16 @@
                     "text": "This card recieved errata for its flavor text on Gatherer: http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=74275"
                 }
             ],
+            "scryfallId": "f3f3d2a7-3c62-4aaa-bfa4-5a97af6c276a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37851,
             "text": "If you control two or more white permanents that share an artist, you may cast Erase (Not the Urza's Legacy One) without paying its mana cost.\nExile target enchantment.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f3f3d2a7-3c62-4aaa-bfa4-5a97af6c276a"
+            "uuid": "3368662b-adc4-5d63-b1f7-fc829b590644"
         },
         {
             "artist": "Edward P. “Feed Me” Beard, Jr.",
@@ -556,7 +566,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}{W}",
@@ -571,18 +580,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a4d2f904-3d68-4192-aa8d-9521b9747fbd",
             "subtypes": [
                 "Human",
                 "Horror"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37855,
             "text": "{W}{W}: Fascist Art Director gains protection from the artist of your choice until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "a4d2f904-3d68-4192-aa8d-9521b9747fbd"
+            "uuid": "7bae88df-d3f6-56cf-a644-62f45bdc59f2"
         },
         {
             "artist": "Thomas Gianni",
@@ -599,7 +610,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}",
@@ -613,14 +623,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b8affab3-be32-4b9b-b4d1-8d2d7299580b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37857,
             "text": "Each attacking or blocking creature with the lowest collector number among attacking or blocking creatures has first strike.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b8affab3-be32-4b9b-b4d1-8d2d7299580b"
+            "uuid": "387ac8e4-e74a-5a94-8f97-1e8798024380"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -637,7 +649,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}{W}",
@@ -652,6 +663,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5b884afa-705c-432c-9783-22df4dd658b2",
             "subtypes": [
                 "Elephant",
                 "Rogue"
@@ -659,13 +671,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37863,
             "text": "At the beginning of your upkeep, you may ask target player a yes-or-no question. If you do, that player answers the question truthfully and abides by that answer if able until end of turn.",
             "toughness": "3",
             "type": "Legendary Creature — Elephant Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "5b884afa-705c-432c-9783-22df4dd658b2"
+            "uuid": "fbb49c35-d02a-57ea-bf93-5849eaccb36d"
         },
         {
             "artist": "Thomas Gianni",
@@ -681,7 +694,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{W}",
@@ -695,14 +707,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a9a209e1-9171-4433-ad04-07cd849ad71f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37873,
             "text": "You and target opponent play Seven Questions with the top card of that player's library. If you win, prevent all damage that would be dealt this turn by a source of your choice. (To play Seven Questions, that player looks at the card, then you ask up to six yes-or-no questions about the card that they answer truthfully. You guess the card's name—that's question seven—then the player reveals the card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a9a209e1-9171-4433-ad04-07cd849ad71f"
+            "uuid": "31f365d6-6862-5e0d-8fb6-10dd4e239eb8"
         },
         {
             "artist": "Ron Spears",
@@ -719,7 +733,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{W}",
@@ -734,18 +747,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2f1a661c-7acd-44cb-ae18-35a1f1e860e9",
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37879,
             "text": "Flying\nSpells cast by players wearing at least one item of women's clothing cost {1} less to cast. (You can define women's clothing as you see fit. Be reasonable.)",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "2f1a661c-7acd-44cb-ae18-35a1f1e860e9"
+            "uuid": "95ba797b-c9b4-578e-9f17-f5159f6cb7cc"
         },
         {
             "artist": "Rebecca Guay",
@@ -762,7 +777,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{HW}",
@@ -776,18 +790,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "90f17b85-a866-48e8-aae0-55330109550e",
             "subtypes": [
                 "Human",
                 "Child"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 37883,
             "toughness": ".5",
             "type": "Creature — Human Child",
             "types": [
                 "Creature"
             ],
-            "uuid": "90f17b85-a866-48e8-aae0-55330109550e"
+            "uuid": "e52e00ac-3910-5704-ba83-2273b04b2e19"
         },
         {
             "artist": "spork;",
@@ -803,7 +818,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
@@ -817,14 +831,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c1f9c8f9-dbb4-408f-835a-4b6c6abfdc74",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37884,
             "text": "As Look at Me, I'm R&D enters the battlefield, choose a number and a second number one higher or one lower than the first number.\nAll instances of the first chosen number in the full text of each permanent, spell, and card in any zone are changed to the second chosen number.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c1f9c8f9-dbb4-408f-835a-4b6c6abfdc74"
+            "uuid": "a72a0f9e-06ef-584d-8358-5569571d5334"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -841,7 +857,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}{W}",
@@ -856,18 +871,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "95a45371-46b2-416c-a850-021fbf32ed51",
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37887,
             "text": "As long as you're shorter than an opponent, Man of Measure gets +0/+1 and has first strike.\nAs long as you're taller than an opponent, Man of Measure gets +1/+0.",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "95a45371-46b2-416c-a850-021fbf32ed51"
+            "uuid": "b56aee6e-63b2-58d4-a7c8-d385261fd448"
         },
         {
             "artist": "Ray Lago",
@@ -884,7 +901,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{W}",
@@ -898,14 +914,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ba47805c-c8f2-4bcd-bf14-b3fa950039b6",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37923,
             "text": "Choose one —\n• Target player gains 2½ life.\n• Prevent the next 2½ damage that would be dealt to target creature this turn.\nGotcha — If an opponent says \"save\" or \"life,\" you may say \"Gotcha\" When you do, return Save Life from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ba47805c-c8f2-4bcd-bf14-b3fa950039b6"
+            "uuid": "d6c3a5ec-7d2a-5944-ab03-5646850b64fa"
         },
         {
             "artist": "Randy Gallegos",
@@ -922,12 +940,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}{W}",
             "multiverseId": 74343,
-            "name": "Standing Army (a)",
+            "name": "Standing Army",
             "number": "20",
             "originalText": "As long as you're standing, Standing Army has vigilance. (Attacking doesn't cause it to tap.)",
             "originalType": "Creature - Human Soldier",
@@ -937,18 +954,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0dba002c-d955-46d1-ae40-3467c863f42b",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37929,
             "text": "As long as you're standing, Standing Army has vigilance.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0dba002c-d955-46d1-ae40-3467c863f42b"
+            "uuid": "8223faa5-1a40-51a2-ab34-09e26c7aaa29"
         },
         {
             "artist": "Randy Gallegos",
@@ -965,7 +984,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}{W}",
@@ -977,6 +995,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0bc3790b-9fc9-4788-bebc-a978d39d09e9",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -988,7 +1007,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0bc3790b-9fc9-4788-bebc-a978d39d09e9"
+            "uuid": "07b92872-9ef6-5eec-98be-2a3cb5d08fc9"
         },
         {
             "artist": "Richard Sardinha",
@@ -1005,7 +1024,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}",
@@ -1019,14 +1037,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "924127a5-a364-489a-804f-a4f4174064ae",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37930,
             "text": "\"Until end of turn\" and \"this turn\" effects don't end.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "924127a5-a364-489a-804f-a4f4174064ae"
+            "uuid": "0c946f0b-0e32-5a45-af32-ce55ad49d5e9"
         },
         {
             "artist": "Ron Spencer",
@@ -1043,7 +1063,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{W}",
@@ -1057,16 +1076,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "433e15af-194e-4456-8b5e-c66e8e1bbe27",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37951,
             "text": "Enchant creature\nEnchanted creature gets +1/+1 for each word in its name.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "433e15af-194e-4456-8b5e-c66e8e1bbe27"
+            "uuid": "ef4697fa-89b0-54a1-9238-d5f4dea0b566"
         },
         {
             "artist": "Ron Spears",
@@ -1083,7 +1104,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{U}",
@@ -1098,17 +1118,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5aa90ab6-2686-4462-8725-5d4370c05437",
             "subtypes": [
                 "Shapeshifter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37817,
             "text": "{1}: This card's name becomes the card name of your choice. Activate this ability anywhere, anytime.",
             "toughness": "1",
             "type": "Creature — Shapeshifter",
             "types": [
                 "Creature"
             ],
-            "uuid": "5aa90ab6-2686-4462-8725-5d4370c05437"
+            "uuid": "268571e5-6d60-5b3e-a3de-b4be1218d9a0"
         },
         {
             "artist": "Stephen Daniele",
@@ -1124,7 +1146,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
@@ -1138,14 +1159,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6f834c86-cd38-40bf-9aad-b4098895de86",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37819,
             "text": "Whenever a player plays a spell that counters a spell that has been played or a player plays a spell that comes into play with counters, that player may counter the next spell played or put an additional counter on a permanent that has already been played, but not countered.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6f834c86-cd38-40bf-9aad-b4098895de86"
+            "uuid": "963515f5-24e9-53a2-8149-519426aedf69"
         },
         {
             "artist": "Heather “Erica Gassalasca-Jape” Hudson",
@@ -1162,7 +1185,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -1177,18 +1199,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0f3ba2a4-3784-4bb5-8a60-7bae80e97eba",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37820,
             "text": "{T}: Draw a card, then discard a card.\nWhenever a permanent that shares an artist with another permanent you control enters the battlefield, untap Artful Looter.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "0f3ba2a4-3784-4bb5-8a60-7bae80e97eba"
+            "uuid": "8f580462-e477-5ca0-8321-f741048fa721"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -1204,7 +1228,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
@@ -1219,17 +1242,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8d07cd08-42db-4fff-bd63-c1da48966cba",
             "subtypes": [
                 "Avatar"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37824,
             "text": "This spell costs {1} more to cast for each ten years you've been alive.\nAvatar of Me's power is equal to your height in feet and its toughness is equal to your American shoe size. Round to the nearest ½.\nAvatar of Me is the color of your eyes.",
             "toughness": "*",
             "type": "Creature — Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d07cd08-42db-4fff-bd63-c1da48966cba"
+            "uuid": "26d16a1e-58b7-51f7-9b6b-52eddfe62a9f"
         },
         {
             "artist": "Ron “Don't You Dare Change Me” Spears",
@@ -1246,7 +1271,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{U}",
@@ -1261,18 +1285,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6fdacb38-8f75-4d4f-bcb1-d2641f4d817f",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37832,
             "text": "{T}: Target permanent's artist becomes the artist of your choice until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "6fdacb38-8f75-4d4f-bcb1-d2641f4d817f"
+            "uuid": "ccaa9c46-d5ee-5618-9bee-1fb125162af3"
         },
         {
             "artist": "David “Beeblemania” Martin",
@@ -1289,7 +1315,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -1304,17 +1329,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1d7262a7-f48c-411b-8a0e-c5bd8f646145",
             "subtypes": [
                 "Beeble"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37833,
             "text": "Bursting Beebles can't be blocked as long as defending player controls two or more nonland permanents that share an artist.",
             "toughness": "2",
             "type": "Creature — Beeble",
             "types": [
                 "Creature"
             ],
-            "uuid": "1d7262a7-f48c-411b-8a0e-c5bd8f646145"
+            "uuid": "2ba5f862-7708-5841-bcb1-18a4f63f57e3"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -1331,7 +1358,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{U}",
@@ -1346,17 +1372,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "db678d7f-4d9a-450a-be92-b6aeaf06d120",
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37835,
             "text": "Flying\nAt the beginning of your upkeep, sacrifice Carnivorous Death-Parrot unless you say its flavor text.",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "db678d7f-4d9a-450a-be92-b6aeaf06d120"
+            "uuid": "8cabb96a-6ad3-5507-8d49-fc0bdfad0a39"
         },
         {
             "artist": "Doug Chaffee",
@@ -1372,7 +1400,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{U}{U}{U}",
@@ -1387,17 +1414,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ab857e73-ac20-4013-bc34-ed675de84c7c",
             "subtypes": [
                 "Efreet"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37837,
             "text": "If Cheatyface is in your hand, you may sneak Cheatyface onto the battlefield. If an opponent catches you right away, that player may exile Cheatyface.\nFlying",
             "toughness": "2",
             "type": "Creature — Efreet",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab857e73-ac20-4013-bc34-ed675de84c7c"
+            "uuid": "eb94e523-b87c-59d3-809c-14070ac9ea70"
         },
         {
             "artist": "Richard Sardinha",
@@ -1414,7 +1443,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{U}{U}",
@@ -1429,17 +1457,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "532c9c9f-a622-4bc3-b9be-38ed70b5c0f1",
             "subtypes": [
                 "Drake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37844,
             "text": "Flying\nWhen Double Header enters the battlefield, you may return target permanent with a two-word name to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "532c9c9f-a622-4bc3-b9be-38ed70b5c0f1"
+            "uuid": "30365623-ea2a-5b43-861b-ce563b5bf780"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -1456,7 +1486,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -1470,14 +1499,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "409cb48a-572a-40df-ae1a-a43feab6bdfd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37858,
             "text": "Counter target spell unless its controller pays {3}{½}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "409cb48a-572a-40df-ae1a-a43feab6bdfd"
+            "uuid": "c6158aff-9dea-54a3-bf44-2f1cc7ed9054"
         },
         {
             "artist": "Alan “Don't Feel Like You Have to Pick Me” Pollack",
@@ -1494,7 +1525,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{U}",
@@ -1508,14 +1538,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ccf8efc4-ac10-4195-b389-181732c12ada",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37862,
             "text": "Choose an artist. Tap all untapped permanents with art by that artist or untap all tapped permanents with art by that artist.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ccf8efc4-ac10-4195-b389-181732c12ada"
+            "uuid": "397347ad-8230-5771-a4c4-718b2b764b51"
         },
         {
             "artist": "Greg “Six-Pack” Staples",
@@ -1531,12 +1563,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{6}{U}{U}",
             "multiverseId": 74296,
-            "name": "Greater Morphling (a)",
+            "name": "Greater Morphling",
             "number": "34",
             "originalText": "{2}: Greater Morphling gains your choice of banding, bushido 1, double strike, fear, flying, first strike, haste, landwalk of your choice, protection from a color of your choice, provoke, rampage 1, shadow, or trample until end of turn.\n{2}: Greater Morphling becomes the colors of your choice until end of turn.\n{2}: Greater Morphling's type becomes the creature type of your choice until end of turn.\n{2}: Greater Morphling's expansion symbol becomes the symbol of your choice until end of turn.\n{2}: Greater Morphling's artist becomes the artist of your choice until end of turn.\n{2}: Greater Morphling gets +2/-2 or -2/+2 until end of turn.\n{2}: Untap Greater Morphling.",
             "originalType": "Creature - Shapeshifter",
@@ -1546,17 +1577,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d5ec1ebe-805d-41f5-a131-cc4113ffab44",
             "subtypes": [
                 "Shapeshifter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37872,
             "text": "{2}: Greater Morphling gains your choice of banding, bushido 1, double strike, fear, flying, first strike, haste, landwalk of your choice, protection from a color of your choice, provoke, rampage 1, shadow, or trample until end of turn.\n{2}: Greater Morphling becomes the colors of your choice until end of turn.\n{2}: Greater Morphling becomes the creature type of your choice until end of turn.\n{2}: Greater Morphling's expansion symbol becomes the symbol of your choice until end of turn.\n{2}: Greater Morphling's art becomes by the artist of your choice until end of turn.\n{2}: Greater Morphling gets +2/-2 or -2/+2 until end of turn.\n{2}: Untap Greater Morphling.",
             "toughness": "5",
             "type": "Creature — Shapeshifter",
             "types": [
                 "Creature"
             ],
-            "uuid": "d5ec1ebe-805d-41f5-a131-cc4113ffab44"
+            "uuid": "c4b7bffd-cf5e-56f6-8b4c-599471b2a3ef"
         },
         {
             "artist": "Greg “Six-Pack” Staples",
@@ -1572,7 +1605,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{6}{U}{U}",
@@ -1584,6 +1616,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d31ed653-86ca-4962-8030-c8cba979129b",
             "subtypes": [
                 "Shapeshifter"
             ],
@@ -1594,7 +1627,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d31ed653-86ca-4962-8030-c8cba979129b"
+            "uuid": "b282af3a-15de-52aa-9b94-6c033ab6fd8b"
         },
         {
             "artist": "Kensuke Okabayashi",
@@ -1611,7 +1644,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
@@ -1626,6 +1658,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "eff24f82-afd6-48be-ba99-2f9e8a3d0231",
             "subtypes": [
                 "Human",
                 "Gamer"
@@ -1633,13 +1666,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37876,
             "text": "{4}: Search your library for a card, put that card into your hand, then shuffle your library.",
             "toughness": "1",
             "type": "Legendary Creature — Human Gamer",
             "types": [
                 "Creature"
             ],
-            "uuid": "eff24f82-afd6-48be-ba99-2f9e8a3d0231"
+            "uuid": "db788e43-aa51-50b3-9048-2fe3777f1a99"
         },
         {
             "artist": "John Matson",
@@ -1656,7 +1690,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{U}",
@@ -1670,16 +1703,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b3a2f131-e0d1-4583-929f-c009aee8bc20",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37885,
             "text": "Enchant creature\nAs Loose Lips enters the battlefield, choose a sentence with eight or fewer words.\nEnchanted creature has flying.\nWhenever enchanted creature deals damage to an opponent, that player may say the chosen sentence. If they don't, you draw two cards.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b3a2f131-e0d1-4583-929f-c009aee8bc20"
+            "uuid": "a43cbba1-23be-5681-be09-65695b590ed9"
         },
         {
             "artist": "Doug Chaffee",
@@ -1696,7 +1731,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{U}",
@@ -1711,18 +1745,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "651626f5-aca6-4653-aa27-36c919566cb0",
             "subtypes": [
                 "Human",
                 "Gamer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37886,
             "text": "{U}: Change the text of target spell or permanent by replacing all instances of + with -, and vice versa, until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Gamer",
             "types": [
                 "Creature"
             ],
-            "uuid": "651626f5-aca6-4653-aa27-36c919566cb0"
+            "uuid": "54004749-9b06-5e6f-b999-9c4e8d6407ef"
         },
         {
             "artist": "Matt Cavotta",
@@ -1739,7 +1775,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{U}",
@@ -1754,14 +1789,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0039b1f3-6bcd-4578-af5b-e13fb2036ef2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37891,
             "text": "Choose a nonland card name, then reveal the top card of your library. If that card has the chosen name, you draw three cards.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0039b1f3-6bcd-4578-af5b-e13fb2036ef2"
+            "uuid": "5abe034e-75d2-54a6-b5a8-718502bc29d1"
         },
         {
             "artist": "Keith Garletts",
@@ -1777,7 +1814,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -1792,18 +1828,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0697ef17-6aa5-4fe0-96ae-9aa0f4c92f21",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37892,
             "text": "{U}, Say your middle name: Moniker Mage gains shroud until end of turn.\n{U}, Say an opponent's middle name: Moniker Mage gains flying until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "0697ef17-6aa5-4fe0-96ae-9aa0f4c92f21"
+            "uuid": "2fbd3fae-85c0-512d-a9d5-ec4023a7730d"
         },
         {
             "artist": "Alan Pollack",
@@ -1820,7 +1858,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{U}",
@@ -1834,14 +1871,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ae9307a6-7eb1-4e20-afd4-8a723db89048",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37897,
             "text": "Choose target opponent and target creature they control. You and that player have a breath-holding contest. If you win, you gain control of that creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ae9307a6-7eb1-4e20-afd4-8a723db89048"
+            "uuid": "b0f58ec3-ea52-5d2a-8fd6-a1c625400dcb"
         },
         {
             "artist": "Tony Szczudlo",
@@ -1858,7 +1897,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{U}{U}",
@@ -1872,14 +1910,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "95c790e6-340f-42c2-af88-e458b7b9690c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37902,
             "text": "At the beginning of your upkeep, if you control permanents with names that include all twenty-six letters of the English alphabet, you win the game.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "95c790e6-340f-42c2-af88-e458b7b9690c"
+            "uuid": "ea1d6279-1ffd-578f-84f6-7f66a5ef7cb3"
         },
         {
             "artist": "Stephen Daniele",
@@ -1896,7 +1936,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -1910,14 +1949,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "498e31d8-8d4f-4335-9191-1369302632d5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37903,
             "text": "Return target permanent to its owner's hand.\nGotcha — If an opponent says a number, you may say \"Gotcha\" When you do, return Number Crunch from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "498e31d8-8d4f-4335-9191-1369302632d5"
+            "uuid": "e8af588e-130e-58b8-98d1-d7b3bb25b1a5"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -1934,12 +1975,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
             "multiverseId": 74294,
-            "name": "Question Elemental? (a)",
+            "name": "Question Elemental?",
             "number": "43",
             "originalText": "Flying\nAre you aware that when you say something that isn't a question, the player who first points out this fact gains control of Question Elemental?",
             "originalType": "Creature - Elemental",
@@ -1949,17 +1989,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "72ec2c53-2958-46d0-8322-b673cf0b79d4",
             "subtypes": [
                 "Elemental?"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37913,
             "text": "Did you know this creature has flying?\nAre you aware that any time you say something that isn't a question, when a player points out this fact first, they gain control of Question Elemental?",
             "toughness": "4",
             "type": "Creature — Elemental?",
             "types": [
                 "Creature"
             ],
-            "uuid": "72ec2c53-2958-46d0-8322-b673cf0b79d4"
+            "uuid": "a896523b-881c-540b-b365-b025a64997cb"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -1976,7 +2018,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
@@ -1988,6 +2029,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e7e92e32-1b13-4f31-a2ce-b3d9308a5de2",
             "subtypes": [
                 "Elemental?"
             ],
@@ -1998,7 +2040,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e7e92e32-1b13-4f31-a2ce-b3d9308a5de2"
+            "uuid": "0309e0d8-e975-5d4e-b6d6-36d638fd07bc"
         },
         {
             "artist": "Dave Dorman",
@@ -2015,12 +2057,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{U}{U}",
             "multiverseId": 74250,
-            "name": "Richard Garfield, Ph.D. (a)",
+            "name": "Richard Garfield, Ph.D.",
             "number": "44",
             "originalText": "You may play cards as though they were other Magic cards of your choice with the same mana cost. (Mana cost includes color.) You can't choose the same card twice.",
             "originalType": "Legendary Creature - Human Designer",
@@ -2030,6 +2071,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "08b8afa9-9e9d-4552-8709-4ba4af79ead3",
             "subtypes": [
                 "Human",
                 "Designer"
@@ -2037,13 +2079,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37918,
             "text": "You may play cards as though they were other cards of your choice with the same mana cost. You can't choose the same card twice. (Mana cost includes color.)",
             "toughness": "2",
             "type": "Legendary Creature — Human Designer",
             "types": [
                 "Creature"
             ],
-            "uuid": "08b8afa9-9e9d-4552-8709-4ba4af79ead3"
+            "uuid": "1d90abbf-fb9a-5c26-9999-a93f19343e16"
         },
         {
             "artist": "Dave Dorman",
@@ -2060,7 +2103,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{U}{U}",
@@ -2072,6 +2114,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "493f3c04-2e12-44b3-957e-50c7861c4667",
             "subtypes": [
                 "Human",
                 "Designer"
@@ -2085,7 +2128,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "493f3c04-2e12-44b3-957e-50c7861c4667"
+            "uuid": "672380a0-066b-5bea-9298-493bce0102de"
         },
         {
             "artist": "Trevor Hairsine",
@@ -2102,7 +2145,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -2117,18 +2159,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "090e83c2-375d-4470-a559-c37e8e7cefca",
             "subtypes": [
                 "Donkey",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37927,
             "text": "Whenever Smart Ass attacks, choose a card name. If defending player has no cards with the chosen name in their hand, they may reveal their hand. If they don't reveal their hand, Smart Ass can't be blocked this turn.",
             "toughness": "1",
             "type": "Creature — Donkey Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "090e83c2-375d-4470-a559-c37e8e7cefca"
+            "uuid": "19926594-bb53-5cec-9fe3-44199cd5a3dd"
         },
         {
             "artist": "Doug Chaffee",
@@ -2145,7 +2189,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}{U}",
@@ -2159,14 +2202,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e3d323f0-334f-49d1-b338-24c4b854a112",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37928,
             "text": "Counter target spell.\nGotcha — If an opponent says \"spell\" or \"counter,\" you may say \"Gotcha\" When you do, return Spell Counter from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e3d323f0-334f-49d1-b338-24c4b854a112"
+            "uuid": "96bc5855-1b27-5efb-a3c1-e50b876b9e90"
         },
         {
             "artist": "Jeff Miracola",
@@ -2183,7 +2228,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -2202,14 +2246,16 @@
                     "text": "Topsy Turvy was printed upside down relative to the Magic card back on the other side. Topsy Turvy is “upright” when the artwork is oriented at the bottom. That’s the joke! For more information, see http://magic.wizards.com/en/articles/archive/making-magic/get-it-unhinged-edition-part-1-2017-08-14"
                 }
             ],
+            "scryfallId": "cdca743d-f861-4aec-b9cb-b7490dd3425a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37941,
             "text": "The phases of each player's turn are reversed. (The phases are, in reverse order, ending, postcombat main, combat, precombat main, and beginning.)\nAs long as there are more than two players in the game, the turn order is reversed.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "cdca743d-f861-4aec-b9cb-b7490dd3425a"
+            "uuid": "fb5f3e11-6ad0-570e-9ae7-fd12a39bead1"
         },
         {
             "artist": "David “Help Me” Martin",
@@ -2225,12 +2271,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}",
             "multiverseId": 74284,
-            "name": "Aesthetic Consultation (a)",
+            "name": "Aesthetic Consultation",
             "number": "48",
             "originalText": "Name an artist. Remove the top six cards of your library from the game, then reveal cards from the top of your library until you reveal a card by the named artist. Put that card in your hand, then remove all the other cards revealed this way from the game.",
             "originalType": "Instant",
@@ -2239,14 +2284,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0464a507-20e5-42d5-8aca-12504a869f21",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37818,
             "text": "Choose an artist. Exile the top six cards of your library, then reveal cards from the top of your library until you reveal a card with art by the chosen artist. Put that card in your hand and exile all other cards revealed this way.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0464a507-20e5-42d5-8aca-12504a869f21"
+            "uuid": "144b0db4-f0f7-5f40-ac5e-676b620cf041"
         },
         {
             "artist": "David “Help Me” Martin",
@@ -2262,7 +2309,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}",
@@ -2273,6 +2319,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0fee7b1f-e300-411a-957d-5253300c36cf",
             "subtypes": [],
             "supertypes": [],
             "text": "Choose an artist. Exile the top six cards of your library, then reveal cards from the top of your library until you reveal a card with art by the chosen artist. Put that card in your hand and exile all other cards revealed this way.",
@@ -2280,7 +2327,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "0fee7b1f-e300-411a-957d-5253300c36cf",
+            "uuid": "5c88a4c4-4bc1-58c6-b433-4f506e9588f0",
             "watermark": "flavor"
         },
         {
@@ -2298,12 +2345,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}{B}",
             "multiverseId": 74350,
-            "name": "Bad Ass (a)",
+            "name": "Bad Ass",
             "number": "49",
             "originalText": "{1}{B}, Growl: Regenerate Bad Ass.",
             "originalType": "Creature - Donkey Zombie",
@@ -2313,18 +2359,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "33b41832-f549-42e3-871e-e3a03372dbba",
             "subtypes": [
                 "Donkey",
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37826,
             "text": "{1}{B}, Growl: Regenerate Bad Ass.",
             "toughness": "1",
             "type": "Creature — Donkey Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "33b41832-f549-42e3-871e-e3a03372dbba"
+            "uuid": "8f884745-5520-53b0-8843-a715ece41fc5"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -2341,7 +2389,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}{B}",
@@ -2353,6 +2400,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2ee08949-7cd4-4099-a109-de041a201529",
             "subtypes": [
                 "Donkey",
                 "Zombie"
@@ -2364,7 +2412,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2ee08949-7cd4-4099-a109-de041a201529"
+            "uuid": "c5162bd9-f4d6-5a17-a601-5ba96714bd50"
         },
         {
             "artist": "Daren Bader",
@@ -2381,7 +2429,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}",
@@ -2401,17 +2448,19 @@
                     "text": "This card recieved errata for its flavor text on Gatherer: http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=73979"
                 }
             ],
+            "scryfallId": "53556e90-1da6-4721-8ab4-da98de52a1a5",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37829,
             "text": "When the names of three or more nonland permanents begin with the same letter, sacrifice Bloodletter. If you do, it deals 2 damage to each creature and each player.",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "53556e90-1da6-4721-8ab4-da98de52a1a5"
+            "uuid": "0ddf9878-99bf-5312-ae04-effce2366022"
         },
         {
             "artist": "Christopher Rush",
@@ -2428,7 +2477,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}",
@@ -2443,14 +2491,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c3a5b25e-c5af-417e-8675-162ab18ac2b1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37830,
             "text": "Open a sealed Magic booster pack, reveal the cards, and put one of those cards into your hand. (Remove that card from your deck before beginning a new game.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c3a5b25e-c5af-417e-8675-162ab18ac2b1"
+            "uuid": "59f9820f-4c5a-5395-849a-0cf80fdfd4ab"
         },
         {
             "artist": "Dave Dorman",
@@ -2467,7 +2517,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}",
@@ -2481,14 +2530,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fa5b9b30-4950-4c9c-9ce8-6d271bb7aa01",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37846,
             "text": "Destroy target creature with reminder text. (Reminder text is any italicized text in parentheses that explains rules you already know.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fa5b9b30-4950-4c9c-9ce8-6d271bb7aa01"
+            "uuid": "dba023c1-3474-5c73-ba38-490ccc9d0271"
         },
         {
             "artist": "Luca Zontini",
@@ -2504,7 +2555,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}{B}",
@@ -2518,14 +2568,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "96f85f32-5bc3-46c1-82a5-7a8d8f03effb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37850,
             "text": "Players play a Magic subgame under the table, starting at 5 life and using their libraries as their decks. The winner searches their library for two cards, puts those cards into their hand, then shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "96f85f32-5bc3-46c1-82a5-7a8d8f03effb"
+            "uuid": "5bebd0f5-272a-5a2a-88a8-c04071605913"
         },
         {
             "artist": "Michael Sutfin",
@@ -2542,7 +2594,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}",
@@ -2556,14 +2607,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0276e9da-73fc-4d27-bbf1-726a37f5d5a0",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37852,
             "text": "You and target creature's controller have a staring contest. If you win, destroy that creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0276e9da-73fc-4d27-bbf1-726a37f5d5a0"
+            "uuid": "575f598f-b397-5c9a-8728-786df437d7d3"
         },
         {
             "artist": "Corey D. Macourek",
@@ -2579,7 +2632,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}{B}",
@@ -2594,17 +2646,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b458a3a2-b047-4edb-a621-87aee8be3a3c",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37938,
             "text": "The Fallen Apart enters the battlefield with two arms and two legs.\nWhenever damage is dealt to The Fallen Apart, remove an arm or a leg from it.\nThe Fallen Apart can't attack if it has no legs and can't block if it has no arms.",
             "toughness": "4",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "b458a3a2-b047-4edb-a621-87aee8be3a3c"
+            "uuid": "425586a5-c581-5b9a-a4be-d4671fc940bd"
         },
         {
             "artist": "Ron Lemen",
@@ -2620,12 +2674,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}{B}",
             "multiverseId": 74300,
-            "name": "Farewell to Arms (a)",
+            "name": "Farewell to Arms",
             "number": "56",
             "originalText": "As Farewell to Arms comes into play, choose a hand attached to an opponent's arm.\nWhen the chosen hand isn't behind its owner's back, sacrifice Farewell to Arms. If you do, that player discards his or her hand . . . of cards. (The lawyers wouldn't let us do it the other way.)",
             "originalType": "Enchantment",
@@ -2634,14 +2687,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "71bc23dc-ae0e-499b-824a-7eb0e20a3282",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37854,
             "text": "As Farewell to Arms enters the battlefield, choose a hand attached to an opponent's arm.\nWhen the chosen hand isn't behind its owner's back, sacrifice Farewell to Arms. If you do, that player discards their hand . . . of cards. (The lawyers wouldn't let us do it the other way.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "71bc23dc-ae0e-499b-824a-7eb0e20a3282"
+            "uuid": "ee3e10f9-c859-5a48-859d-2c6a06ddb22d"
         },
         {
             "artist": "Ron Lemen",
@@ -2657,7 +2712,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}{B}",
@@ -2668,6 +2722,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "47b61c3a-5e76-4529-9878-603e49c82743",
             "subtypes": [],
             "supertypes": [],
             "text": "As Farewell to Arms enters the battlefield, choose a hand attached to an opponent's arm.\nWhen the chosen hand isn't behind its owner's back, sacrifice Farewell to Arms. If you do, that player discards their hand . . . of cards. (The lawyers wouldn't let us do it the other way.)",
@@ -2675,7 +2730,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "47b61c3a-5e76-4529-9878-603e49c82743",
+            "uuid": "27f270e9-4a8c-500a-b0b9-4ba7486e8fdf",
             "watermark": "flavor"
         },
         {
@@ -2692,7 +2747,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{8}{B}{B}",
@@ -2707,18 +2761,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4033e627-9c4f-4b36-adfc-1afe97174c98",
             "subtypes": [
                 "Demon",
                 "Child"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37874,
             "text": "Flying, first strike, trample\nOnce each turn, while you're searching your library, you may pay {1}{B}, reveal Infernal Spawn of Infernal Spawn of Evil from your library and say \"I'm coming, too\" If you do, Infernal Spawn of Infernal Spawn of Evil deals 2 damage to a player of your choice.",
             "toughness": "8",
             "type": "Creature — Demon Child",
             "types": [
                 "Creature"
             ],
-            "uuid": "4033e627-9c4f-4b36-adfc-1afe97174c98"
+            "uuid": "e7af2b18-d23e-5847-8821-a8ef2db0fb01"
         },
         {
             "artist": "Corey D. Macourek",
@@ -2735,7 +2791,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}{B}",
@@ -2749,14 +2804,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "49dd5a66-101d-4f88-b1ba-e2368203d408",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37878,
             "text": "Destroy target nonblack creature.\nGotcha — If an opponent says \"kill\" or \"destroy,\" you may say \"Gotcha\" When you do, return Kill Destroy from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "49dd5a66-101d-4f88-b1ba-e2368203d408"
+            "uuid": "6810b24b-5206-593a-bcef-e318043472b4"
         },
         {
             "artist": "Darrell Riche",
@@ -2773,7 +2830,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}",
@@ -2788,18 +2844,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3e6c3e15-ecae-4719-9b00-eb088223632b",
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37895,
             "text": "Whenever a creature an opponent controls dies, sacrifice Mother of Goons unless you insult that creature.",
             "toughness": "2",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "3e6c3e15-ecae-4719-9b00-eb088223632b"
+            "uuid": "3b96e2bc-e8e0-587a-a228-d92b09068a64"
         },
         {
             "artist": "Mark Tedin",
@@ -2815,7 +2873,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}{B}{B}",
@@ -2829,14 +2886,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ead51a23-db13-4424-9191-dc992c510921",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37901,
             "text": "Skip your untap step.\nAt the beginning of your upkeep, you may pay X life. If you do, untap X permanents.\nPay ½ life: Exile the top card of your library face down. Put that card into your hand at the beginning of the next end step.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ead51a23-db13-4424-9191-dc992c510921"
+            "uuid": "724910a9-7ecc-5ae7-9d95-2f2f30b7e74c"
         },
         {
             "artist": "Rebecca “Don't Mess with Me” Guay",
@@ -2853,7 +2912,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}{B}",
@@ -2867,14 +2925,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5acfbc21-ffd7-4253-9f79-a1a3217f243a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37907,
             "text": "Choose an artist other than Rebecca Guay. Target player reveals their hand and discards all nonland cards with art by the chosen artist.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5acfbc21-ffd7-4253-9f79-a1a3217f243a"
+            "uuid": "f56ca870-0b75-5cde-bfba-8306429a0517"
         },
         {
             "artist": "Kev Walker",
@@ -2890,7 +2950,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{B}",
@@ -2905,17 +2964,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "340903b7-992c-43c2-9ee5-a1d76819fccf",
             "subtypes": [
                 "Horror"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37908,
             "text": "Flying, trample\nAt the beginning of your upkeep, exile the top card of your library and balance it on your body.\nWhen a balanced card falls or touches another balanced card, sacrifice Phyrexian Librarian.",
             "toughness": "3",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "340903b7-992c-43c2-9ee5-a1d76819fccf"
+            "uuid": "6f094b98-20f3-5f9a-bb5e-4acf6a5e1dc2"
         },
         {
             "artist": "Anson Maddocks",
@@ -2932,7 +2993,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{B}",
@@ -2946,14 +3006,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e24f8edd-0998-4a59-b5b1-9e494626b166",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37932,
             "text": "Target player discards a card.\nGotcha — If an opponent audibly flicks the cards in their hand, you may say \"Gotcha\" When you do, return Stop That from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e24f8edd-0998-4a59-b5b1-9e494626b166"
+            "uuid": "664dd19d-87f1-588f-8d7c-21bb591a6c8d"
         },
         {
             "artist": "Mark Zug",
@@ -2970,7 +3032,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}",
@@ -2985,17 +3046,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "91ef1259-c415-46f5-be9f-dfd6cd76d2c3",
             "subtypes": [
                 "Monkey"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37937,
             "text": "{T}: Choose a word. Target player puts the top card of their library into their graveyard. If that card has the chosen word in its text box, that player loses 3 life.",
             "toughness": "1",
             "type": "Creature — Monkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "91ef1259-c415-46f5-be9f-dfd6cd76d2c3"
+            "uuid": "8170abe8-d5b5-529e-8233-2abc058a14be"
         },
         {
             "artist": "Tony Szczudlo",
@@ -3011,7 +3074,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}",
@@ -3026,17 +3088,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "333be977-050e-4885-b631-70fd043ebeca",
             "subtypes": [
                 "Ooze"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37946,
             "text": "Whenever a player's skin or fingernail touches Vile Bile, that player loses 2 life.",
             "toughness": "2.5",
             "type": "Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "333be977-050e-4885-b631-70fd043ebeca"
+            "uuid": "d5c5b48e-5f92-512d-92dd-0b0da19c6db0"
         },
         {
             "artist": "Greg Staples",
@@ -3053,7 +3117,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}{B}",
@@ -3067,14 +3130,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "943f1d16-4781-4f65-bbe8-79fad472396c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37948,
             "text": "Wet Willie of the Damned deals 2½ damage to any target and you gain 2½ life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "943f1d16-4781-4f65-bbe8-79fad472396c"
+            "uuid": "8d454e1c-c2d0-5348-8825-8f1b06da8d6f"
         },
         {
             "artist": "Ray Lago",
@@ -3091,12 +3156,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{B}",
             "multiverseId": 74274,
-            "name": "When Fluffy Bunnies Attack (a)",
+            "name": "When Fluffy Bunnies Attack",
             "number": "67",
             "originalText": "Target creature gets -X/-X until end of turn, where X is the number of times the letter of your choice appears in that creature's name.",
             "originalType": "Instant",
@@ -3105,14 +3169,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a62d1ce8-9c41-41f8-9f96-d8b6177b85a4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37949,
             "text": "Target creature gets -X/-X until end of turn, where X is the number of times the letter of your choice appears in that creature's name.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a62d1ce8-9c41-41f8-9f96-d8b6177b85a4"
+            "uuid": "2c35229a-b02f-556b-8e17-0501d8479f95"
         },
         {
             "artist": "Ray Lago",
@@ -3129,7 +3195,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{B}",
@@ -3140,6 +3205,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "21960405-d7a4-4b10-9fde-3cb0d2456f07",
             "subtypes": [],
             "supertypes": [],
             "text": "Target creature gets -X/-X until end of turn, where X is the number of times the letter of your choice appears in that creature's name.",
@@ -3147,7 +3213,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "21960405-d7a4-4b10-9fde-3cb0d2456f07",
+            "uuid": "eb02da1b-ad1b-505f-b9fb-ddfe3548b54b",
             "watermark": "flavor"
         },
         {
@@ -3165,7 +3231,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}",
@@ -3180,17 +3245,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b5a5e4c9-8452-4fdc-a5f0-5fd168e18050",
             "subtypes": [
                 "Mummy"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37952,
             "text": "As Working Stiff enters the battlefield, straighten your arms.\nWhen you bend an elbow, sacrifice Working Stiff.",
             "toughness": "2",
             "type": "Creature — Mummy",
             "types": [
                 "Creature"
             ],
-            "uuid": "b5a5e4c9-8452-4fdc-a5f0-5fd168e18050"
+            "uuid": "c101f0a2-772e-55fc-a7ac-143f7d4583cb"
         },
         {
             "artist": "Matt “I'm Your Boy” Cavotta",
@@ -3207,7 +3274,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}",
@@ -3222,18 +3288,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "963fb55a-7cf6-4984-844f-afbcdb4db551",
             "subtypes": [
                 "Zombie",
                 "Gamer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37955,
             "text": "As Zombie Fanboy enters the battlefield, choose an artist.\nWhenever a permanent with art by the chosen artist is put into a graveyard, put two +1/+1 counters on Zombie Fanboy.",
             "toughness": "1",
             "type": "Creature — Zombie Gamer",
             "types": [
                 "Creature"
             ],
-            "uuid": "963fb55a-7cf6-4984-844f-afbcdb4db551"
+            "uuid": "e7e1d36b-ed5a-5b70-98be-d9f834815aa8"
         },
         {
             "artist": "Pete Venters",
@@ -3250,7 +3318,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{B}{B}",
@@ -3264,14 +3331,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d1ead203-b976-46d7-81c7-86ada091a4ec",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37956,
             "text": "At the beginning of your upkeep, destroy all nonland permanents with the first name alphabetically among nonland permanents.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d1ead203-b976-46d7-81c7-86ada091a4ec"
+            "uuid": "7ca08023-f94d-50a8-a11e-3473b68d318d"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -3288,7 +3357,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{R}",
@@ -3303,17 +3371,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9b13248b-5abb-4246-b639-1a8a6681a157",
             "subtypes": [
                 "Donkey"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37822,
             "text": "Each other Donkey gets +1½/+1½.\nWhenever another Donkey enters the battlefield, untap target creature and gain control of it until end of turn. That creature gains haste until end of turn.",
             "toughness": "3.5",
             "type": "Creature — Donkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "9b13248b-5abb-4246-b639-1a8a6681a157"
+            "uuid": "41be22f8-52f7-518a-a694-fa2a7a1ad1e0"
         },
         {
             "artist": "Douglas Shuler",
@@ -3326,15 +3396,15 @@
             ],
             "convertedManaCost": 3.0,
             "foreignData": [],
+            "frameEffect": "tombstone",
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}",
             "multiverseId": 74227,
-            "name": "Blast from the Past (a)",
+            "name": "Blast from the Past",
             "number": "72",
             "originalText": "Madness {R}, cycling {1}{R}, kicker {2}{R}, flashback {3}{R}, buyback {4}{R}\nBlast from the Past deals 2 damage to target creature or player.\nIf the kicker cost was paid, put a 1/1 red Goblin creature token into play.",
             "originalType": "Instant",
@@ -3343,14 +3413,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5ca23782-80d3-4656-afba-f8440c813253",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37828,
             "text": "Madness {R}, cycling {1}{R}, kicker {2}{R}, flashback {3}{R}, buyback {4}{R}\nBlast from the Past deals 2 damage to any target. If this spell was kicked, create a 1/1 red Goblin creature token.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5ca23782-80d3-4656-afba-f8440c813253"
+            "uuid": "1026b985-7231-5903-97a1-5ddd4b51d620"
         },
         {
             "artist": "Douglas Shuler",
@@ -3363,10 +3435,10 @@
             ],
             "convertedManaCost": 3.0,
             "foreignData": [],
+            "frameEffect": "tombstone",
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}",
@@ -3377,6 +3449,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "aa30bf92-5281-4b74-8d2a-dc7b0467cb0a",
             "subtypes": [],
             "supertypes": [],
             "text": "Madness {R}, cycling {1}{R}, kicker {2}{R}, flashback {3}{R}, buyback {4}{R}\nBlast from the Past deals 2 damage to any target. If this spell was kicked, create a 1/1 red Goblin creature token.",
@@ -3384,7 +3457,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "aa30bf92-5281-4b74-8d2a-dc7b0467cb0a"
+            "uuid": "0be2b6b4-f562-5e8e-9e32-d461b2ea1557"
         },
         {
             "artist": "Matt Thompson",
@@ -3396,11 +3469,11 @@
                 "R"
             ],
             "convertedManaCost": 6.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {},
             "multiverseId": 73956,
@@ -3416,6 +3489,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c01e8089-c3a9-413b-ae2d-39ede87516d3",
             "side": "b",
             "subtypes": [
                 "Penguin"
@@ -3427,7 +3501,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c01e8089-c3a9-413b-ae2d-39ede87516d1"
+            "uuid": "c1905623-dd68-5c8b-8f2f-ae872d0a03df"
         },
         {
             "artist": "Matt Thompson",
@@ -3439,11 +3513,11 @@
                 "R"
             ],
             "convertedManaCost": 6.0,
+            "faceConvertedManaCost": 6.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {},
             "manaCost": "{4}{R}{R}",
@@ -3461,17 +3535,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c01e8089-c3a9-413b-ae2d-39ede87516d3",
             "side": "a",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37842,
             "text": "Enchant creature\nCurse of the Fire Penguin consumes and confuses enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c01e8089-c3a9-413b-ae2d-39ede87516d0"
+            "uuid": "0de24b1f-0b9d-5d21-99f9-3a7172fe0c35"
         },
         {
             "artist": "Scott M. Fischer",
@@ -3488,7 +3564,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}{R}",
@@ -3502,14 +3577,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "de905517-983d-4996-a680-3a5cf91bfe11",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37843,
             "text": "Deal Damage deals 4 damage to any target.\nGotcha — If an opponent says \"deal\" or \"damage,\" you may say \"Gotcha\" When you do, return Deal Damage from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "de905517-983d-4996-a680-3a5cf91bfe11"
+            "uuid": "37ec32bc-3139-5e7f-8c39-883ab35246af"
         },
         {
             "artist": "Bradley Williams",
@@ -3526,7 +3603,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}",
@@ -3541,18 +3617,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7cd769b2-8823-4c1e-b92f-c1bccc0b6026",
             "subtypes": [
                 "Donkey",
                 "Barbarian"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37847,
             "text": "At the beginning of your upkeep, flip a coin. If you lose the flip, target opponent chooses whether Dumb Ass attacks this turn.",
             "toughness": "2",
             "type": "Creature — Donkey Barbarian",
             "types": [
                 "Creature"
             ],
-            "uuid": "7cd769b2-8823-4c1e-b92f-c1bccc0b6026"
+            "uuid": "58338bf6-fd3a-5685-a12c-3e238506165f"
         },
         {
             "artist": "Randy Gallegos",
@@ -3569,7 +3647,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
@@ -3583,14 +3660,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "64c93900-1af7-4c6b-a844-055bb7e27ddb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37853,
             "text": "You and target opponent play a best two-out-of-three Rock, Paper, Scissors match. If you win, Face to Face deals 5 damage to that player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "64c93900-1af7-4c6b-a844-055bb7e27ddb"
+            "uuid": "b13c36b8-1053-5f56-bf38-59cb0162d30c"
         },
         {
             "artist": "Jim Pavelec",
@@ -3607,12 +3686,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
             "multiverseId": 73941,
-            "name": "Frazzled Editor (a)",
+            "name": "Frazzled Editor",
             "number": "77",
             "originalText": "Protection from wordy (Something is wordy if it has four or more lines of text in its text box.)",
             "originalType": "Creature - Human Bureaucrat",
@@ -3622,18 +3700,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4c08bd24-5710-4548-8966-9c5e81744680",
             "subtypes": [
                 "Human",
                 "Bureaucrat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37864,
             "text": "Protection from wordy (Something is wordy if it has four or more lines of rules text.)",
             "toughness": "2",
             "type": "Creature — Human Bureaucrat",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c08bd24-5710-4548-8966-9c5e81744680"
+            "uuid": "0b343342-10bd-5e5b-8e19-a3b55e81f5a6"
         },
         {
             "artist": "Jim Pavelec",
@@ -3649,7 +3729,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
@@ -3661,6 +3740,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8bae110a-d76f-4433-bb1b-ccb311656af5",
             "subtypes": [
                 "Human",
                 "Bureaucrat"
@@ -3672,7 +3752,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8bae110a-d76f-4433-bb1b-ccb311656af5"
+            "uuid": "56a29bf6-8799-5565-9b72-940829a2e66f"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -3689,12 +3769,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
             "multiverseId": 74221,
-            "name": "Goblin Mime (a)",
+            "name": "Goblin Mime",
             "number": "78",
             "originalText": "When you speak, sacrifice Goblin Mime.",
             "originalType": "Creature - Goblin Mime",
@@ -3705,18 +3784,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "52b3f29a-b3a3-4dad-94ea-28999286bccc",
             "subtypes": [
                 "Goblin",
                 "Mime"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37867,
             "text": "When you speak, sacrifice Goblin Mime.",
             "toughness": "2",
             "type": "Creature — Goblin Mime",
             "types": [
                 "Creature"
             ],
-            "uuid": "52b3f29a-b3a3-4dad-94ea-28999286bccc"
+            "uuid": "b8463514-5763-5b1f-ac98-8b74e0914dc8"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -3733,7 +3814,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
@@ -3746,6 +3826,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d9ca4db3-9ef0-4d0b-a03b-2e8437a72ba7",
             "subtypes": [
                 "Goblin",
                 "Mime"
@@ -3757,7 +3838,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d9ca4db3-9ef0-4d0b-a03b-2e8437a72ba7"
+            "uuid": "848e63a6-9a87-57ae-a35f-d7575352fce1"
         },
         {
             "artist": "Tony Szczudlo",
@@ -3774,7 +3855,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}",
@@ -3789,18 +3869,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "219d9bf5-2145-4805-8128-eda990c97739",
             "subtypes": [
                 "Goblin",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37869,
             "text": "First strike\nAt the beginning of your upkeep, reveal a card from your hand at random.",
             "toughness": "2",
             "type": "Creature — Goblin Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "219d9bf5-2145-4805-8128-eda990c97739"
+            "uuid": "fad3e3ca-bab8-5686-9811-d0f014d1bbe4"
         },
         {
             "artist": "Eric Deschamps",
@@ -3817,7 +3899,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
@@ -3832,18 +3913,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "91848051-4c72-44be-b779-53dbb528e265",
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37868,
             "text": "Say \"Goblin S.W.A.T. Team\": Put a +1/+1 counter on Goblin S.W.A.T. Team unless an opponent swats the table within five seconds. Activate this ability only once each turn.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "91848051-4c72-44be-b779-53dbb528e265"
+            "uuid": "9d020435-54a3-555a-ac16-6a2b1ccd8420"
         },
         {
             "artist": "Paolo “That's Actually Me” Parente",
@@ -3860,7 +3943,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}",
@@ -3874,14 +3956,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4f2c83a1-b06a-4a3c-b025-f58b04caec3e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37888,
             "text": "Add {R} for each nonland permanent with art by the artist of your choice.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4f2c83a1-b06a-4a3c-b025-f58b04caec3e"
+            "uuid": "41609454-9ac6-54c9-b5e2-5a3b398848b4"
         },
         {
             "artist": "Pete Venters",
@@ -3898,12 +3982,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{R}",
             "multiverseId": 73957,
-            "name": "Mons's Goblin Waiters (a)",
+            "name": "Mons's Goblin Waiters",
             "number": "82",
             "originalText": "Sacrifice a creature or land: Add {HR} to your mana pool.",
             "originalType": "Creature - Goblin Waiter",
@@ -3913,18 +3996,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "729238ee-b3ea-4c1d-852c-2dc9a2c58356",
             "subtypes": [
                 "Goblin",
                 "Waiter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37894,
             "text": "Sacrifice a creature or land: Add {HR}.",
             "toughness": "1",
             "type": "Creature — Goblin Waiter",
             "types": [
                 "Creature"
             ],
-            "uuid": "729238ee-b3ea-4c1d-852c-2dc9a2c58356"
+            "uuid": "93fb2b7e-a407-5115-be78-42e8760fb166"
         },
         {
             "artist": "Pete Venters",
@@ -3941,7 +4026,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{R}",
@@ -3953,6 +4037,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ae733007-3089-43fc-a14d-7c1919554923",
             "subtypes": [
                 "Goblin",
                 "Waiter"
@@ -3964,7 +4049,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ae733007-3089-43fc-a14d-7c1919554923"
+            "uuid": "bc7e3164-e1d2-5af8-90aa-cea30732279e"
         },
         {
             "artist": "Matt Thompson",
@@ -3981,7 +4066,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}",
@@ -3996,18 +4080,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5864cddb-7b2e-434c-8cb6-4e44b802add6",
             "subtypes": [
                 "Orc",
                 "Paratrooper"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37905,
             "text": "When Orcish Paratroopers enters the battlefield, flip it from a height of at least one foot. Sacrifice Orcish Paratroopers unless it turns over completely at least once during the flip and lands face up.",
             "toughness": "4",
             "type": "Creature — Orc Paratrooper",
             "types": [
                 "Creature"
             ],
-            "uuid": "5864cddb-7b2e-434c-8cb6-4e44b802add6"
+            "uuid": "bfc3dfbf-fe11-5d76-a613-ed1a1aa16b82"
         },
         {
             "artist": "Jim Pavelec",
@@ -4024,7 +4110,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
@@ -4038,14 +4123,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "79b90711-1bf8-446c-9431-df693b8d8d79",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37911,
             "text": "Punctuate deals damage to target creature equal to half the number of punctuation marks in that creature's text box. (The punctuation marks are ? , ; : - — ( ) / \" \" ' ' &amp; .)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "79b90711-1bf8-446c-9431-df693b8d8d79"
+            "uuid": "71a12a57-9c4f-5817-9497-4681561de3b3"
         },
         {
             "artist": "Eric Deschamps",
@@ -4062,7 +4149,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}{R}",
@@ -4077,17 +4163,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "af443b8c-203f-46f0-9233-60f962e5baa6",
             "subtypes": [
                 "Giant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37912,
             "text": "{R}, {T}, Sacrifice a creature: Pygmy Giant deals X damage to target creature, where X is a number in the sacrificed creature's text box.",
             "toughness": "2",
             "type": "Creature — Giant",
             "types": [
                 "Creature"
             ],
-            "uuid": "af443b8c-203f-46f0-9233-60f962e5baa6"
+            "uuid": "7a062ee4-306e-5b09-a4ab-faa72f637abd"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -4104,7 +4192,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}{R}",
@@ -4119,17 +4206,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8f65a9d6-12d8-472c-b9d4-cc2460aa58ae",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37916,
             "text": "Whenever Red-Hot Hottie deals damage to a creature, put a third-degree-burn counter on that creature. It gains \"At the beginning of each end step, sacrifice this creature unless you scream 'Aaah' at the top of your lungs.\"",
             "toughness": "5",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f65a9d6-12d8-472c-b9d4-cc2460aa58ae"
+            "uuid": "7eb9dd4d-7620-502e-9bc4-af7e0adcb904"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -4145,7 +4234,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
@@ -4165,17 +4253,19 @@
                     "text": "The flavor text unscrambles to “Did you go through all the trouble to unscramble this?“"
                 }
             ],
+            "scryfallId": "e405361f-70df-459d-9385-2210fbe7e115",
             "subtypes": [
                 "Slug"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37919,
             "text": "Super haste (This may attack the turn before you cast it. (You may put this card from your hand onto the battlefield tapped and attacking during your declare attackers step. If you do, you lose the game at the beginning of your next turn's end step unless you pay this card's mana cost during that turn.))",
             "toughness": "1",
             "type": "Creature — Slug",
             "types": [
                 "Creature"
             ],
-            "uuid": "e405361f-70df-459d-9385-2210fbe7e115"
+            "uuid": "30d81d7d-dd64-5f90-984c-59fd95eb8c3b"
         },
         {
             "artist": "Jeff Miracola",
@@ -4192,7 +4282,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{R}{R}",
@@ -4206,14 +4295,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "85cbebbb-7ea4-4140-933f-186cad08697d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37922,
             "text": "Sauté deals 3½ damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "85cbebbb-7ea4-4140-933f-186cad08697d"
+            "uuid": "2e630fd3-3c4b-5740-b3b3-9d6c0101444a"
         },
         {
             "artist": "Anson Maddocks",
@@ -4230,7 +4321,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
@@ -4245,17 +4335,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0379c99c-94b1-4c48-b62d-7accb594ef1a",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37926,
             "text": "As Six-y Beast enters the battlefield, you secretly put six or fewer +1/+1 counters on it, then an opponent guesses the number of counters. If that player guesses right, sacrifice Six-y Beast after it enters the battlefield.",
             "toughness": "0",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "0379c99c-94b1-4c48-b62d-7accb594ef1a"
+            "uuid": "afef2a1a-487c-56d7-9429-27984a82c013"
         },
         {
             "artist": "Ben Thompson",
@@ -4272,12 +4364,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
             "multiverseId": 74349,
-            "name": "Touch and Go (a)",
+            "name": "Touch and Go",
             "number": "90",
             "originalText": "Destroy target land.\nGotcha Whenever an opponent touches his or her face, you may say \"Gotcha\" If you do, return Touch and Go from your graveyard to your hand.",
             "originalType": "Sorcery",
@@ -4286,14 +4377,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5eec8666-9417-49df-9261-38bfb550088d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37942,
             "text": "Destroy target land.\nGotcha — If an opponent touches their face, you may say \"Gotcha\" When you do, return Touch and Go from your graveyard to your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5eec8666-9417-49df-9261-38bfb550088d"
+            "uuid": "6b2052be-8cda-58e3-9b87-af93c5ecc0f7"
         },
         {
             "artist": "Ben Thompson",
@@ -4310,7 +4403,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}",
@@ -4321,6 +4413,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3fed3d84-b68f-4eec-95f4-3e3366cecdfc",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target land.\nGotcha — If an opponent touches their face, you may say \"Gotcha\" When you do, return Touch and Go from your graveyard to your hand.",
@@ -4328,7 +4421,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3fed3d84-b68f-4eec-95f4-3e3366cecdfc"
+            "uuid": "62f5120a-fc62-5083-ac4f-10f22181ecab"
         },
         {
             "artist": "David Day",
@@ -4345,7 +4438,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{R}{R}",
@@ -4359,14 +4451,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e731ba8c-e909-4053-84ae-0793a7319540",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37954,
             "text": "All creatures have haste.\nPlayers play with the top card of their libraries revealed.\nNoninstant, nonsorcery cards on top of a library are on the battlefield under their owner's control in addition to being in that library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e731ba8c-e909-4053-84ae-0793a7319540"
+            "uuid": "e2fa7884-d1ce-5428-ab65-c8dd1fe2f12d"
         },
         {
             "artist": "Ron Spencer",
@@ -4383,7 +4477,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}",
@@ -4398,17 +4491,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "dc4dabd2-2d1c-44e6-80a7-67e0af9bf468",
             "subtypes": [
                 "Hound"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37827,
             "text": "Trample\nWhenever a player casts a spell, put a chip counter on its converted mana cost.\nB-I-N-G-O gets +9/+9 for each set of three numbers in a row with chip counters on them.",
             "toughness": "1",
             "type": "Creature — Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc4dabd2-2d1c-44e6-80a7-67e0af9bf468"
+            "uuid": "24a1a6de-3f74-5864-a74f-221c8955352c"
         },
         {
             "artist": "Jeff Easley",
@@ -4425,7 +4520,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{G}",
@@ -4440,17 +4534,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "13ac8bde-7a3e-4d14-91f4-f4325c93f6a8",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37841,
             "text": "Gotcha — If an opponent says \"creature\" or \"guy,\" you may say \"Gotcha\" When you do, return Creature Guy from your graveyard to your hand.",
             "toughness": "3",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "13ac8bde-7a3e-4d14-91f4-f4325c93f6a8"
+            "uuid": "eb2c646f-6e08-5e29-acfd-8bc1039694f1"
         },
         {
             "artist": "Thomas Manning",
@@ -4467,7 +4563,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{G}{G}",
@@ -4482,18 +4577,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f6301ea0-cf66-49ba-87c5-dde566ce5d01",
             "subtypes": [
                 "Elf",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37848,
             "text": "Elvish House Party's power and toughness are each equal to the current hour, using the twelve-hour system.",
             "toughness": "*",
             "type": "Creature — Elf Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6301ea0-cf66-49ba-87c5-dde566ce5d01"
+            "uuid": "87b70d47-7172-5b72-8ec2-0c715f270763"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -4510,7 +4607,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{G}",
@@ -4525,18 +4621,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8fc72766-06a0-4874-92c4-9debfaa97e05",
             "subtypes": [
                 "Donkey",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37856,
             "text": "Fat Ass gets +2/+2 and has trample as long as you're eating. (Gum isn't food. We checked.)",
             "toughness": "3.5",
             "type": "Creature — Donkey Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "8fc72766-06a0-4874-92c4-9debfaa97e05"
+            "uuid": "9c6f16e0-9f40-5a63-8cfd-ecabcbf4e9d1"
         },
         {
             "artist": "Carl Critchlow",
@@ -4552,7 +4650,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{G}",
@@ -4566,14 +4663,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2241203c-1219-4e75-9973-7e1a44885341",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37860,
             "text": "As Form of the Squirrel enters the battlefield, create a 1/1 green Squirrel creature token. You lose the game when that creature leaves the battlefield.\nCreatures can't attack you.\nYou have shroud.\nYou can't cast spells.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2241203c-1219-4e75-9973-7e1a44885341"
+            "uuid": "6661e155-0594-5f67-9fce-b9c0390405ea"
         },
         {
             "artist": "Mark Poole",
@@ -4590,7 +4689,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
@@ -4605,18 +4703,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "86d42015-6cab-485f-9266-428db0b2b773",
             "subtypes": [
                 "Human",
                 "Hero"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37861,
             "text": "{G}, {T}: Return target card with a ½ on it from your graveyard to your hand.",
             "toughness": "1.5",
             "type": "Creature — Human Hero",
             "types": [
                 "Creature"
             ],
-            "uuid": "86d42015-6cab-485f-9266-428db0b2b773"
+            "uuid": "58facd1f-1948-5d32-8f6a-0080bdcf5ae5"
         },
         {
             "artist": "Jeff Easley",
@@ -4632,7 +4732,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{G}{G}",
@@ -4647,17 +4746,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aa7626ff-814f-4d9f-9595-ac7fa5334d4b",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37866,
             "text": "As Gluetius Maximus enters the battlefield, an opponent chooses one of your fingers. (Thumbs are fingers, too.)\nWhen the chosen finger isn't touching Gluetius Maximus, sacrifice Gluetius Maximus.",
             "toughness": "5",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "aa7626ff-814f-4d9f-9595-ac7fa5334d4b"
+            "uuid": "732f7014-9e96-58a1-a5c7-93ecc211da62"
         },
         {
             "artist": "Joel Thomas",
@@ -4674,7 +4775,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{7}{G}",
@@ -4689,14 +4789,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "949269fa-5d90-4ed5-b148-ee06de227e99",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37870,
             "text": "You gain life equal to your age.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "949269fa-5d90-4ed5-b148-ee06de227e99"
+            "uuid": "25d07b61-22bd-59e9-84c1-376bcb2cfd13"
         },
         {
             "artist": "Wayne “King of” England",
@@ -4713,7 +4815,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
@@ -4727,14 +4828,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b92ab617-2b06-4030-a15b-5a6db3e5b1fb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37871,
             "text": "All creatures with art by the artist of your choice get +2/+2 and gain trample until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b92ab617-2b06-4030-a15b-5a6db3e5b1fb"
+            "uuid": "5ab54203-b036-54e3-83e6-e3481fa9f85d"
         },
         {
             "artist": "Dany Orizio",
@@ -4751,12 +4854,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
             "multiverseId": 73971,
-            "name": "Keeper of the Sacred Word (a)",
+            "name": "Keeper of the Sacred Word",
             "number": "101",
             "originalText": "As Keeper of the Sacred Word comes into play, choose a word.\nWhenever an opponent says the chosen word, Keeper of the Sacred Word gets +3/+3 until end of turn.",
             "originalType": "Creature - Human Druid",
@@ -4766,18 +4868,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e8100f78-0dd1-4750-8a8a-d4fda30d8432",
             "subtypes": [
                 "Human",
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37877,
             "text": "As Keeper of the Sacred Word enters the battlefield, choose a word.\nWhenever an opponent says the chosen word, Keeper of the Sacred Word gets +3/+3 until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "e8100f78-0dd1-4750-8a8a-d4fda30d8432"
+            "uuid": "9005ed6b-1d56-53a0-8318-40af0bf77be7"
         },
         {
             "artist": "Dany Orizio",
@@ -4794,7 +4898,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
@@ -4806,6 +4909,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2a2c5b9d-ee0a-4d36-a099-00483882fb24",
             "subtypes": [
                 "Human",
                 "Druid"
@@ -4817,7 +4921,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2a2c5b9d-ee0a-4d36-a099-00483882fb24"
+            "uuid": "ddbddc4c-f2e3-5de3-8e21-e77b3013a8f8"
         },
         {
             "artist": "Jim Nelson",
@@ -4833,7 +4937,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{G}{G}",
@@ -4847,14 +4950,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1a457d88-268c-4be0-bfd7-e57dd1ac364c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37880,
             "text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle your library. If you sang a song the whole time you were searching and shuffling, you may untap that land.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1a457d88-268c-4be0-bfd7-e57dd1ac364c"
+            "uuid": "a36cc43b-c76f-5e5e-82d4-9e973223962f"
         },
         {
             "artist": "Mark Poole",
@@ -4871,12 +4976,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}",
             "multiverseId": 74293,
-            "name": "Laughing Hyena (a)",
+            "name": "Laughing Hyena",
             "number": "103",
             "originalText": "Gotcha Whenever an opponent laughs, you may say \"Gotcha\" If you do, return Laughing Hyena from your graveyard to your hand.",
             "originalType": "Creature - Hyena",
@@ -4886,17 +4990,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "52e8440d-fce1-4a02-8029-f20a7617ae4f",
             "subtypes": [
                 "Hyena"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37881,
             "text": "Gotcha — If an opponent laughs, you may say \"Gotcha\" When you do, return Laughing Hyena from your graveyard to your hand.",
             "toughness": "2",
             "type": "Creature — Hyena",
             "types": [
                 "Creature"
             ],
-            "uuid": "52e8440d-fce1-4a02-8029-f20a7617ae4f"
+            "uuid": "947fdb38-bf41-5871-aed8-4dcf4751109d"
         },
         {
             "artist": "Mark Poole",
@@ -4913,7 +5019,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}",
@@ -4925,6 +5030,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6c0712ff-c689-42fa-9384-f36d1f75c1dd",
             "subtypes": [
                 "Hyena"
             ],
@@ -4935,7 +5041,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6c0712ff-c689-42fa-9384-f36d1f75c1dd"
+            "uuid": "870bf368-8d0d-5aa2-9534-9f3203e9bf84"
         },
         {
             "artist": "Liz Danforth",
@@ -4952,12 +5058,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{G}",
             "multiverseId": 74233,
-            "name": "Monkey Monkey Monkey (a)",
+            "name": "Monkey Monkey Monkey",
             "number": "104",
             "originalText": "As Monkey Monkey Monkey comes into play, choose a letter.\nMonkey Monkey Monkey gets +1/+1 for each nonland permanent whose name begins with the chosen letter.",
             "originalType": "Creature - Ape",
@@ -4967,17 +5072,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "39a7c17f-b5fc-4c58-945b-4972bce4614e",
             "subtypes": [
                 "Monkey"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37893,
             "text": "As Monkey Monkey Monkey enters the battlefield, choose a letter.\nMonkey Monkey Monkey gets +1/+1 for each nonland permanent whose name begins with the chosen letter.",
             "toughness": "1",
             "type": "Creature — Monkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "39a7c17f-b5fc-4c58-945b-4972bce4614e"
+            "uuid": "f1f58761-92d0-53de-9c1d-83322ca839db"
         },
         {
             "artist": "Liz Danforth",
@@ -4994,7 +5101,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}{G}",
@@ -5006,6 +5112,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "08588205-11d8-4f0c-9ed0-e9b5ed66de4b",
             "subtypes": [
                 "Monkey"
             ],
@@ -5016,7 +5123,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "08588205-11d8-4f0c-9ed0-e9b5ed66de4b",
+            "uuid": "a4766a56-a9b9-5d52-9cee-3c69f2464657",
             "watermark": "flavor"
         },
         {
@@ -5034,7 +5141,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}",
@@ -5048,14 +5154,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9cb8f650-9e47-4649-a8e2-8c6ff4e72d9e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37900,
             "text": "Gotcha — If an opponent says a word that's in the name of a card in your graveyard, you may say \"Gotcha\" When you do, return that card to your hand.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9cb8f650-9e47-4649-a8e2-8c6ff4e72d9e"
+            "uuid": "cb638625-b491-5eba-9670-78ff8bb0b001"
         },
         {
             "artist": "Douglas Shuler",
@@ -5072,30 +5180,33 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{G}{G}",
             "multiverseId": 74235,
-            "name": "Old Fogey (a)",
+            "name": "Old Fogey",
             "number": "106",
             "originalText": "Phasing, cumulative upkeep {1}, echo, fading 3, bands with other Dinosaurs, protection from Homarids, snow-covered plainswalk, flanking, rampage 2",
             "originalType": "Summon - Dinosaur",
+            "power": "7",
             "printings": [
                 "UNH"
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e6ce51c4-16ea-48e8-a976-402b15450b88",
             "subtypes": [
                 "Dinosaur"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37904,
             "text": "Phasing, cumulative upkeep {1}, echo {G}{G}, fading 3, bands with other Dinosaurs, protection from Homarids, snow-covered plainswalk, flanking, rampage 2",
+            "toughness": "7",
             "type": "Summon — Dinosaur",
             "types": [
                 "Summon"
             ],
-            "uuid": "e6ce51c4-16ea-48e8-a976-402b15450b88"
+            "uuid": "bc11e55c-bb70-5ef8-8d28-dd33e470f2ce"
         },
         {
             "artist": "Douglas Shuler",
@@ -5112,27 +5223,29 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{G}{G}",
             "name": "Old Fogey (b)",
             "number": "106★",
+            "power": "7",
             "printings": [
                 "UNH"
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ac29717c-c586-4adb-94a3-f41096cce110",
             "subtypes": [
                 "Dinosaur"
             ],
             "supertypes": [],
             "text": "Phasing, cumulative upkeep {1}, echo {G}{G}, fading 3, bands with other Dinosaurs, protection from Homarids, snow-covered plainswalk, flanking, rampage 2",
+            "toughness": "7",
             "type": "Summon — Dinosaur",
             "types": [
                 "Summon"
             ],
-            "uuid": "ac29717c-c586-4adb-94a3-f41096cce110"
+            "uuid": "76fee228-3a8a-5820-b73b-72adfcf8b459"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -5149,7 +5262,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}{G}",
@@ -5164,6 +5276,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5c1f3f52-cb9b-4b2a-bb02-6175897ae76e",
             "subtypes": [
                 "Elemental"
             ],
@@ -5174,7 +5287,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5c1f3f52-cb9b-4b2a-bb02-6175897ae76e"
+            "uuid": "2f0449d3-5f37-5e1c-b6e2-96c97fd4a46b"
         },
         {
             "artist": "Lars Grant-“Wild Wild”-West",
@@ -5191,7 +5304,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
@@ -5205,14 +5317,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "98fa7c0b-8104-47c9-9fb2-6cb50259fae2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37917,
             "text": "If you control two or more green permanents that share an artist, you may cast this spell without paying its mana cost.\nExile target artifact.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "98fa7c0b-8104-47c9-9fb2-6cb50259fae2"
+            "uuid": "de647c55-06b7-536b-a8f3-d972e2063b51"
         },
         {
             "artist": "Francis Tsai",
@@ -5229,12 +5343,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{G}",
             "multiverseId": 74332,
-            "name": "Shoe Tree (a)",
+            "name": "Shoe Tree",
             "number": "109",
             "originalText": "Shoe Tree comes into play with up to two shoe counters on it. Use your shoes as counters.\nShoe Tree gets +1/+1 for each shoe counter on it.",
             "originalType": "Creature - Treefolk",
@@ -5244,17 +5357,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "73fa1912-cced-491a-867d-7f21acaf1e3b",
             "subtypes": [
                 "Treefolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37924,
             "text": "Shoe Tree enters the battlefield with up to two shoe counters on it. Use your shoes as counters.\nShoe Tree gets +1/+1 for each shoe counter on it.",
             "toughness": "3",
             "type": "Creature — Treefolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "73fa1912-cced-491a-867d-7f21acaf1e3b"
+            "uuid": "ed9849a6-de55-5af2-9c89-a1b46a15a66d"
         },
         {
             "artist": "Dave Dorman",
@@ -5271,7 +5386,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{G}",
@@ -5283,6 +5397,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8c08e26f-70c6-481e-b68b-3fad145a07e7",
             "subtypes": [
                 "Treefolk"
             ],
@@ -5293,7 +5408,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8c08e26f-70c6-481e-b68b-3fad145a07e7",
+            "uuid": "44ed5e16-0fae-54b9-a7c2-6bde168267dc",
             "watermark": "flavor"
         },
         {
@@ -5311,7 +5426,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}",
@@ -5325,14 +5439,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a8512b3c-9a44-4c15-8217-0f13898846cd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37925,
             "text": "You and target opponent arm-wrestle. If you win, create a 3/3 green Ape creature token.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a8512b3c-9a44-4c15-8217-0f13898846cd"
+            "uuid": "d435d0eb-71dd-52fc-b8f1-c21b389d2b0c"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -5348,7 +5464,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{G}",
@@ -5363,17 +5478,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f77a2e16-f729-44ec-969f-d7011c623907",
             "subtypes": [
                 "Ooze"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37921,
             "text": "You may have S.N.O.T. enter the battlefield stuck to another creature named S.N.O.T. If you do, all those creatures form a single creature.\nS.N.O.T.'s power and toughness are each equal to the square of the number of cards named S.N.O.T. stuck together to form it. (One is a 1/1, two are a 4/4, three are a 9/9, and four are a 16/16. If you manage to get -1 S.N.O.T.s stuck together, it's a 1/1.)",
             "toughness": "*²",
             "type": "Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "f77a2e16-f729-44ec-969f-d7011c623907"
+            "uuid": "545e6617-513e-5e90-ad27-e2fc82e9e62f"
         },
         {
             "artist": "Don Hazeltine",
@@ -5389,7 +5506,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}{G}",
@@ -5404,17 +5520,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d1768bb4-1626-47c8-a96f-374895c816e3",
             "subtypes": [
                 "Basilisk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37931,
             "text": "Whenever Stone-Cold Basilisk blocks or becomes blocked by a creature with fewer letters in its name, destroy that creature at end of combat. (Punctuation and spaces aren't letters.)\nWhenever an opponent reads Stone-Cold Basilisk, that player is turned to stone until end of turn. Stoned players can't attack, block, cast spells, or activate abilities.",
             "toughness": "5",
             "type": "Creature — Basilisk",
             "types": [
                 "Creature"
             ],
-            "uuid": "d1768bb4-1626-47c8-a96f-374895c816e3"
+            "uuid": "12cf508a-df6c-5093-b2dc-972879e3c96e"
         },
         {
             "artist": "DiTerlizzi",
@@ -5431,7 +5549,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{G}",
@@ -5445,14 +5562,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cfb07d9b-947d-475f-b4fd-2590b95a7f91",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37934,
             "text": "Target creature gets +3½/+3½ until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cfb07d9b-947d-475f-b4fd-2590b95a7f91"
+            "uuid": "352a7668-32a3-50b0-b566-4503c6375eea"
         },
         {
             "artist": "Liz Danforth",
@@ -5469,7 +5588,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{G}{G}",
@@ -5483,14 +5601,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9480a100-19a0-4964-b5d0-27ff9987497e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37936,
             "text": "Create a 1/1 colorless Expansion-Symbol creature token for each different expansion symbol among permanents you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9480a100-19a0-4964-b5d0-27ff9987497e"
+            "uuid": "6fd26d92-bfae-5bf4-a9b9-550ddb907a83"
         },
         {
             "artist": "Una Fricker",
@@ -5507,7 +5627,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{5}{G}{G}{G}",
@@ -5522,17 +5641,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "bd6d8520-0a7c-489c-8ae9-aed07c7df6df",
             "subtypes": [
                 "Ape"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37944,
             "text": "Trample\nWhen Uktabi Kong enters the battlefield, destroy all artifacts.\nTap two untapped Apes you control: Create a 1/1 green Ape creature token.",
             "toughness": "8",
             "type": "Creature — Ape",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd6d8520-0a7c-489c-8ae9-aed07c7df6df"
+            "uuid": "bf2998e8-6216-57ca-9efc-2befaeb2677f"
         },
         {
             "artist": "Quinton Hoover",
@@ -5550,7 +5671,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{R}{R}{G}{G}",
@@ -5564,14 +5684,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "84f2c8f5-8e11-4639-b7de-00e4a2cbabee",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37816,
             "text": "At the beginning of your upkeep, you may say \"Ach Hans, run It's the . . .\" and the name of a creature card. If you do, search your library for a card with that name, put it onto the battlefield, then shuffle your library. That creature gains haste. Exile it at the beginning of the next end step.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "84f2c8f5-8e11-4639-b7de-00e4a2cbabee"
+            "uuid": "a0d8b78a-97ab-5f6d-be96-e1abb74b92ff"
         },
         {
             "artist": "Don Hazeltine",
@@ -5590,7 +5712,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}{W}{B}",
@@ -5605,14 +5726,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "fbbf33d6-e00d-4d60-9c7f-c56c3b1f84c0",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37821,
             "text": "Destroy target silver-bordered permanent in any game you can see from your seat.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "fbbf33d6-e00d-4d60-9c7f-c56c3b1f84c0"
+            "uuid": "774f38de-76c8-59fc-9b75-891ccf5bdd8b"
         },
         {
             "artist": "Christopher Moeller",
@@ -5631,7 +5754,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{W}{U}",
@@ -5646,18 +5768,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5c86f1b5-d95d-4f44-8078-4572101997b4",
             "subtypes": [
                 "Human",
                 "Child"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37890,
             "text": "As Meddling Kids enters the battlefield, choose a word with four or more letters.\nSpells with the chosen word in their text box can't be cast.",
             "toughness": "3",
             "type": "Creature — Human Child",
             "types": [
                 "Creature"
             ],
-            "uuid": "5c86f1b5-d95d-4f44-8078-4572101997b4"
+            "uuid": "1b430115-cf13-5936-a900-2036b904885b"
         },
         {
             "artist": "John Matson",
@@ -5676,7 +5800,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}{B}{R}",
@@ -5690,14 +5813,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "09274a32-c764-4239-bab0-675ddcb57c13",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37915,
             "text": "Each player sacrifices all permanents that are rare or mythic rare, then each player reveals their hand and discards all cards that are rare or mythic rare.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "09274a32-c764-4239-bab0-675ddcb57c13"
+            "uuid": "a5f63a59-baf0-561e-a33d-5ed3982f4ee0"
         },
         {
             "artist": "Dan Frazier",
@@ -5712,12 +5837,12 @@
             "colors": [
                 "R"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 13.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {},
             "manaCost": "{2}{R}",
@@ -5736,6 +5861,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd6",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target artifact.",
@@ -5743,7 +5869,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd1"
+            "uuid": "2ce74077-a67a-58a3-8265-1e2a569ae7e8"
         },
         {
             "artist": "Dan Frazier",
@@ -5758,12 +5884,12 @@
             "colors": [
                 "U"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 13.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {},
             "manaCost": "{2}{U}",
@@ -5782,6 +5908,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd6",
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target creature spell.",
@@ -5789,7 +5916,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd2"
+            "uuid": "5b8f33e2-00c5-5d66-859b-137b0a716608"
         },
         {
             "artist": "Dan Frazier",
@@ -5804,12 +5931,12 @@
             "colors": [
                 "B"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 13.0,
+            "faceConvertedManaCost": 4.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {},
             "manaCost": "{3}{B}",
@@ -5828,6 +5955,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd6",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target land.",
@@ -5835,7 +5963,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd3"
+            "uuid": "9c8fe60f-cf32-5f5a-9d20-5167684a8a1c"
         },
         {
             "artist": "Dan Frazier",
@@ -5850,12 +5978,12 @@
             "colors": [
                 "G"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 13.0,
+            "faceConvertedManaCost": 2.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {},
             "manaCost": "{1}{G}",
@@ -5874,6 +6002,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd6",
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target enchantment.",
@@ -5881,7 +6010,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd4"
+            "uuid": "3278645c-b6e4-5d7c-bc7f-221daf9dcbfd"
         },
         {
             "artist": "Dan Frazier",
@@ -5896,12 +6025,12 @@
             "colors": [
                 "W"
             ],
-            "convertedManaCost": 1,
+            "convertedManaCost": 13.0,
+            "faceConvertedManaCost": 1,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {},
             "manaCost": "{X}{W}",
@@ -5922,6 +6051,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd6",
             "subtypes": [],
             "supertypes": [],
             "text": "Target player gains X life.",
@@ -5929,7 +6059,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "8987644d-5a31-4a4e-9a8a-3d6260ed0fd0"
+            "uuid": "9e03305d-5cde-508e-835c-d5606cc4c42e"
         },
         {
             "artist": "Richard Thomas",
@@ -5942,12 +6072,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1000000}",
             "multiverseId": 73947,
-            "name": "Gleemax (a)",
+            "name": "Gleemax",
             "number": "121",
             "originalText": "You choose all targets for all spells and abilities.",
             "originalType": "Legendary Artifact",
@@ -5956,16 +6085,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "77fe1662-7927-4909-8d25-6924e6fc27eb",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37865,
             "text": "You choose all targets for all spells and abilities.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "77fe1662-7927-4909-8d25-6924e6fc27eb"
+            "uuid": "a76c5b2a-48c9-5993-94ee-52bf9f6cd427"
         },
         {
             "artist": "Richard Thomas",
@@ -5978,7 +6109,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1000000}",
@@ -5989,6 +6119,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2a2b9db1-c091-4ccc-b7b6-061de7132a18",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
@@ -5998,7 +6129,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "2a2b9db1-c091-4ccc-b7b6-061de7132a18"
+            "uuid": "4faf9640-1d5a-50e3-91f9-f47809417630"
         },
         {
             "artist": "Daniel Gelon",
@@ -6011,12 +6142,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{6}",
             "multiverseId": 74232,
-            "name": "Letter Bomb (a)",
+            "name": "Letter Bomb",
             "number": "122",
             "originalText": "When Letter Bomb comes into play, sign it and shuffle it into target player's library. That player reveals each card he or she draws until Letter Bomb is drawn. When that player draws Letter Bomb, it deals 19½ damage to him or her.",
             "originalType": "Artifact",
@@ -6025,14 +6155,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "20ed7580-1b92-446b-b074-99517116fb6a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37882,
             "text": "When Letter Bomb enters the battlefield, sign it and shuffle it into target player's library. That player reveals each card they draw until they draw Letter Bomb. When that player draws Letter Bomb, it deals 19½ damage to them.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "20ed7580-1b92-446b-b074-99517116fb6a"
+            "uuid": "0cf423c6-3521-5170-954f-6f6f5e2c5811"
         },
         {
             "artist": "Daniel Gelon",
@@ -6045,7 +6177,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{6}",
@@ -6056,6 +6187,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d2cec1cd-c122-4508-a302-517f174a2b3c",
             "subtypes": [],
             "supertypes": [],
             "text": "When Letter Bomb enters the battlefield, sign it and shuffle it into target player's library. That player reveals each card they draw until they draw Letter Bomb. When that player draws Letter Bomb, it deals 19½ damage to them.",
@@ -6063,7 +6195,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "d2cec1cd-c122-4508-a302-517f174a2b3c"
+            "uuid": "a1fd1576-ec69-5768-848b-e13465bd9b0f"
         },
         {
             "artist": "Mike Raabe",
@@ -6076,12 +6208,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}",
             "multiverseId": 73955,
-            "name": "Mana Screw (a)",
+            "name": "Mana Screw",
             "number": "123",
             "originalText": "{1}: Flip a coin. If you win the flip, add {2} to your mana pool. Play this ability only any time you could play an instant.",
             "originalType": "Artifact",
@@ -6090,14 +6221,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "fd58d98d-9597-4d5a-be06-6747a5ba8406",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37889,
             "text": "{1}: Flip a coin. If you win the flip, add {C}{C}. Activate this ability only any time you could cast an instant.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fd58d98d-9597-4d5a-be06-6747a5ba8406"
+            "uuid": "f2fc59a2-cc84-5bb7-bba0-f707a0caae20"
         },
         {
             "artist": "Mike Raabe",
@@ -6110,7 +6243,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}",
@@ -6121,6 +6253,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6ebad46e-a069-49d4-9bb3-1a07434bc61d",
             "subtypes": [],
             "supertypes": [],
             "text": "{1}: Flip a coin. If you win the flip, add {C}{C}. Activate this ability only any time you could cast an instant.",
@@ -6128,7 +6261,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "6ebad46e-a069-49d4-9bb3-1a07434bc61d",
+            "uuid": "e4ddcdd3-dfa7-5252-a405-d14606bfe2cd",
             "watermark": "flavor"
         },
         {
@@ -6141,12 +6274,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{15}",
             "multiverseId": 74323,
-            "name": "Mox Lotus (a)",
+            "name": "Mox Lotus",
             "number": "124",
             "originalText": "{T}: Add {∞} to your mana pool.\n{100}: Add one mana of any color to your mana pool.\nYou don't lose life due to mana burn.",
             "originalType": "Artifact",
@@ -6155,14 +6287,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e8241a53-8b88-474e-a46c-44b3d1f3b0df",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37898,
             "text": "{T}: Add {∞}.\n{100}: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e8241a53-8b88-474e-a46c-44b3d1f3b0df"
+            "uuid": "1945a3eb-0c27-556d-9c1b-285205e99c85"
         },
         {
             "artist": "Kevin Dobler",
@@ -6174,7 +6308,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{15}",
@@ -6185,6 +6318,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "afcb7f1b-ef9d-4fb4-93e4-d03702375d0c",
             "subtypes": [],
             "supertypes": [],
             "text": "{T}: Add {∞}.\n{100}: Add one mana of any color.",
@@ -6192,7 +6326,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "afcb7f1b-ef9d-4fb4-93e4-d03702375d0c",
+            "uuid": "4601f51a-d2d8-5690-9d22-d4a68c6d81ef",
             "watermark": "flavor"
         },
         {
@@ -6206,12 +6340,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}",
             "multiverseId": 73945,
-            "name": "My First Tome (a)",
+            "name": "My First Tome",
             "number": "125",
             "originalText": "{1}, {T}: Say the flavor text on a card in your hand. Target opponent guesses that card's name. You may reveal that card. If you do and your opponent guessed wrong, draw a card.",
             "originalType": "Artifact",
@@ -6220,14 +6353,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e56ccbd2-c17d-4625-bc11-181d36a84936",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37899,
             "text": "{1}, {T}: Say the flavor text on a card in your hand. Target opponent guesses that card's name. You may reveal that card. If you do and they guessed wrong, you draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e56ccbd2-c17d-4625-bc11-181d36a84936"
+            "uuid": "5f04f25b-0ff5-51bd-a602-c8a182b5b83b"
         },
         {
             "artist": "Heather Hudson",
@@ -6240,7 +6375,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}",
@@ -6251,6 +6385,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "334316ea-f0a0-4616-9aed-4bed3b9cef60",
             "subtypes": [],
             "supertypes": [],
             "text": "{1}, {T}: Say the flavor text on a card in your hand. Target opponent guesses that card's name. You may reveal that card. If you do and they guessed wrong, you draw a card.",
@@ -6258,7 +6393,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "334316ea-f0a0-4616-9aed-4bed3b9cef60",
+            "uuid": "d5aca018-0a66-5c87-97e1-115c499423a9",
             "watermark": "flavor"
         },
         {
@@ -6272,7 +6407,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{4}",
@@ -6286,14 +6420,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5695a3e9-e30f-4569-ae0f-a395230f653c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37910,
             "text": "{3}, {T}: Spin Pointy Finger of Doom in the middle of the table so that it rotates completely at least once, then destroy the closest permanent the finger points to.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5695a3e9-e30f-4569-ae0f-a395230f653c"
+            "uuid": "3e714dd6-2203-5b9d-bea3-af60d10663ba"
         },
         {
             "artist": "Mark Brill",
@@ -6306,7 +6442,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{1}",
@@ -6320,14 +6455,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "cfe7ff52-aa0e-4a97-8a36-b67518a020d7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37920,
             "text": "{2}, {T}: Rod of Spanking deals 1 damage to target player. Then untap Rod of Spanking unless that player says \"Thank you, sir. May I have another?\"",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cfe7ff52-aa0e-4a97-8a36-b67518a020d7"
+            "uuid": "3817b3cc-8a5a-5538-8c1b-a324af54e394"
         },
         {
             "artist": "John Avon",
@@ -6339,12 +6476,11 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{5}",
             "multiverseId": 74342,
-            "name": "Time Machine (a)",
+            "name": "Time Machine",
             "number": "128",
             "originalText": "{T}: Remove Time Machine and target nontoken creature you own from the game. Return both cards to play at the beginning of your upkeep on your turn X of the next game you play with the same opponent, where X is the removed creature's converted mana cost.",
             "originalType": "Artifact",
@@ -6353,14 +6489,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "39b5f1eb-172b-40e5-92dd-ff1f5889001f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37939,
             "text": "{T}: Exile Time Machine and target nontoken creature you own. Return them to the battlefield at the beginning of your upkeep on your turn X in the next game you play with one of your opponents in this game, where X is the converted mana cost of the exiled creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "39b5f1eb-172b-40e5-92dd-ff1f5889001f"
+            "uuid": "0adbffdb-4a6a-582e-be73-66ff447f4e13"
         },
         {
             "artist": "John Avon",
@@ -6372,7 +6510,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{5}",
@@ -6383,6 +6520,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "583f4691-d3cb-41f0-b718-75d022d81ef1",
             "subtypes": [],
             "supertypes": [],
             "text": "{T}: Exile Time Machine and target nontoken creature you own. Return them to the battlefield at the beginning of your upkeep on your turn X in the next game you play with one of your opponents in this game, where X is the converted mana cost of the exiled creature.",
@@ -6390,7 +6528,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "583f4691-d3cb-41f0-b718-75d022d81ef1"
+            "uuid": "980e45c8-1e6d-53e8-996f-4e21228f62a1"
         },
         {
             "artist": "Dan Frazier",
@@ -6402,7 +6540,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}",
@@ -6417,10 +6554,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "046cd853-0cde-4d44-9111-962d6670710b",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37940,
             "text": "Togglodyte enters the battlefield turned on.\nWhenever a player casts a spell, toggle Togglodyte's ON/OFF switch.\nAs long as Togglodyte is turned off, it can't attack or block, and prevent all damage it would deal.",
             "toughness": "4",
             "type": "Artifact Creature — Golem",
@@ -6428,7 +6567,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "046cd853-0cde-4d44-9111-962d6670710b"
+            "uuid": "6abb725d-b614-5344-bd16-596e638e3968"
         },
         {
             "artist": "Lars Grant-West",
@@ -6440,7 +6579,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}",
@@ -6455,10 +6593,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f000911c-5a4a-4498-bb69-6f6e13f45447",
             "subtypes": [
                 "Ship"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37943,
             "text": "Cumulative upkeep—Say \"Toy Boat\" quickly. (At the beginning of your upkeep, put an age counter on Toy Boat, then sacrifice it unless you say \"Toy Boat\" once for each age counter on it—without pausing between or fumbling it.)",
             "toughness": "3",
             "type": "Artifact Creature — Ship",
@@ -6466,7 +6606,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f000911c-5a4a-4498-bb69-6f6e13f45447"
+            "uuid": "8658aeae-74b3-5c2e-ae88-291381e467c7"
         },
         {
             "artist": "Stephen Tappin",
@@ -6479,7 +6619,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}",
@@ -6493,14 +6632,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "7e17722a-3509-45ac-ae5c-c230482c69e4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37945,
             "text": "{2}, Discard a card: Search your library for a card that shares a complete word in its name with the discarded card, reveal it, put it into your hand, then shuffle your library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7e17722a-3509-45ac-ae5c-c230482c69e4"
+            "uuid": "a60b101f-dd6d-5c4b-a79a-46757cc9b310"
         },
         {
             "artist": "Mark Brill",
@@ -6512,7 +6653,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{2}",
@@ -6526,14 +6666,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3002ffee-28ec-4aa4-8433-a009273a4ada",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37947,
             "text": "As Water Gun Balloon Game enters the battlefield, each player puts a pop counter on a 0.\nWhenever a player casts a spell, move that player's pop counter up 1.\nWhenever a player's pop counter hits 5, that player creates a 5/5 pink Giant Teddy Bear creature token and resets all pop counters to 0.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3002ffee-28ec-4aa4-8433-a009273a4ada"
+            "uuid": "8d4439af-77f1-50a2-af88-480f1891ae7d"
         },
         {
             "artist": "Alan Rabinowitz",
@@ -6546,7 +6688,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{5}",
@@ -6560,14 +6701,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "fd1be145-cf42-4a9a-8d0a-d7174d96834e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37953,
             "text": "{5}, Sacrifice World-Bottling Kit: Choose a Magic set. Exile all permanents with that set's expansion symbol except for basic lands.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fd1be145-cf42-4a9a-8d0a-d7174d96834e"
+            "uuid": "876ba7fc-4aeb-5e26-bead-53cc88862ae1"
         },
         {
             "artist": "John Avon",
@@ -6580,7 +6723,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "multiverseId": 74327,
@@ -6593,14 +6735,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "726fe2e7-bd1b-4c11-a098-6c8abfbdf06e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37839,
             "text": "City of Ass enters the battlefield tapped.\n{T}: Add one and one-half mana of any one color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "726fe2e7-bd1b-4c11-a098-6c8abfbdf06e"
+            "uuid": "0ead6658-6138-5f48-bfc5-a4d850bce58e"
         },
         {
             "artist": "John Avon",
@@ -6613,7 +6757,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "multiverseId": 73967,
@@ -6626,16 +6769,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9bfdc6a9-0a44-43ef-b065-02ef5d6110dc",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37914,
             "text": "Play cards as written. Ignore all errata.\n{T}: Add {C} to your mana pool. (This mana is still added to your mana pool.)",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "9bfdc6a9-0a44-43ef-b065-02ef5d6110dc"
+            "uuid": "8af12d54-9c32-51c6-9f26-0561fa33c445"
         },
         {
             "artist": "John Avon",
@@ -6649,7 +6794,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6699,7 +6843,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -6712,8 +6855,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -6727,6 +6872,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1d7dba1c-a702-43c0-8fca-e47bbad4a00f",
             "subtypes": [
                 "Plains"
             ],
@@ -6738,7 +6884,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "1d7dba1c-a702-43c0-8fca-e47bbad4a00f"
+            "uuid": "90e07d09-e6fa-5ebd-8ba6-d077c772f66a"
         },
         {
             "artist": "John Avon",
@@ -6752,7 +6898,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6803,7 +6948,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -6815,8 +6959,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -6830,6 +6976,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0c4eaecf-dd4c-45ab-9b50-2abe987d35d4",
             "subtypes": [
                 "Island"
             ],
@@ -6841,7 +6988,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0c4eaecf-dd4c-45ab-9b50-2abe987d35d4"
+            "uuid": "82de8923-1a91-50a1-8d2b-5549426f37fe"
         },
         {
             "artist": "John Avon",
@@ -6855,7 +7002,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6915,8 +7061,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -6930,6 +7078,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8365ab45-6d78-47ad-a6ed-282069b0fabc",
             "subtypes": [
                 "Swamp"
             ],
@@ -6941,7 +7090,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "8365ab45-6d78-47ad-a6ed-282069b0fabc"
+            "uuid": "a057560a-9243-55ef-8897-76d5bb261576"
         },
         {
             "artist": "John Avon",
@@ -6955,7 +7104,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6977,7 +7125,6 @@
             "originalType": "(none)",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -7017,8 +7164,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7032,6 +7181,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "42232ea6-e31d-46a6-9f94-b2ad2416d79b",
             "subtypes": [
                 "Mountain"
             ],
@@ -7043,7 +7193,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "42232ea6-e31d-46a6-9f94-b2ad2416d79b"
+            "uuid": "2ede197c-4dbd-5244-8b79-2c800214c924"
         },
         {
             "artist": "John Avon",
@@ -7057,7 +7207,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7111,14 +7260,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7132,6 +7282,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "19e71532-3f79-4fec-974f-b0e85c7fe701",
             "subtypes": [
                 "Forest"
             ],
@@ -7143,7 +7294,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "19e71532-3f79-4fec-974f-b0e85c7fe701"
+            "uuid": "b35c9701-25bf-5900-a25f-f91bf50390ea"
         },
         {
             "artist": "Dan Frazier",
@@ -7156,7 +7307,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {},
             "manaCost": "{3}",
@@ -7170,24 +7320,27 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "45af7f55-9a69-43dd-969f-65411711b13e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37933,
             "text": "Premium spells cost {1} less to cast.\nPremium creatures get +1/+1.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "45af7f55-9a69-43dd-969f-65411711b13e"
+            "uuid": "002c9178-47c3-5431-9c3e-89af87a8f9a5"
         }
     ],
     "code": "unh",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Unhinged",
     "releaseDate": "2004-11-19",
+    "tcgplayerGroupId": 114,
     "tokens": [],
     "totalSetSize": 168,
     "type": "funny"

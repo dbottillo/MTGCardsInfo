@@ -39,7 +39,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -59,6 +58,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "871ad2f3-1dd2-45ea-881d-529aad3b76ec",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.\nCast this spell only during combat.\nCreate a 4/4 white Angel creature token with flying. Exile it at the beginning of the next end step.",
@@ -66,7 +66,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "871ad2f3-1dd2-45ea-881d-529aad3b76ec"
+            "uuid": "c7460648-b302-5051-8b0c-3fefd3ad9bde"
         },
         {
             "artist": "Ron Spencer",
@@ -105,7 +105,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -126,6 +125,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "fcf6f711-c0bc-4e12-b9d0-41581924e13c",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -137,7 +137,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "fcf6f711-c0bc-4e12-b9d0-41581924e13c"
+            "uuid": "b2dd8a4c-c1e2-5465-a943-d52aee3f61fe"
         },
         {
             "artist": "Todd Lockwood",
@@ -177,7 +177,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -207,6 +206,7 @@
                     "text": "If you are damaged by more than one, the effects are cumulative and you skip multiple combat phases."
                 }
             ],
+            "scryfallId": "48c25553-6554-4e31-9012-c50da1f0a171",
             "subtypes": [
                 "Angel"
             ],
@@ -217,7 +217,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "48c25553-6554-4e31-9012-c50da1f0a171"
+            "uuid": "142bd76b-4cd8-5249-b40e-ba635d60d4ff"
         },
         {
             "artist": "Dany Orizio",
@@ -257,7 +257,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -284,6 +283,7 @@
                     "text": "Chieftain en-Dal does give itself first strike when attacking."
                 }
             ],
+            "scryfallId": "0c1f49bc-d144-466f-8795-c0dae7afdc10",
             "subtypes": [
                 "Human",
                 "Knight"
@@ -295,7 +295,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0c1f49bc-d144-466f-8795-c0dae7afdc10"
+            "uuid": "f9620fa1-a243-59ae-b94e-ad8c600750d5"
         },
         {
             "artist": "Bradley Williams",
@@ -334,7 +334,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -357,6 +356,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e7b224b7-d5f7-4515-beca-523f305ee3b8",
             "subtypes": [
                 "Human",
                 "Cleric"
@@ -368,7 +368,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e7b224b7-d5f7-4515-beca-523f305ee3b8"
+            "uuid": "ab16df52-c34b-5d35-a6de-675922348ccf"
         },
         {
             "artist": "Heather Hudson",
@@ -407,7 +407,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -438,6 +437,7 @@
                     "text": "You do not have to find a Rebel card if you do not want to."
                 }
             ],
+            "scryfallId": "4c80032b-daeb-4661-9a66-61abe9d12ddd",
             "subtypes": [
                 "Rebel",
                 "Bird"
@@ -449,7 +449,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4c80032b-daeb-4661-9a66-61abe9d12ddd"
+            "uuid": "858d1983-c8e7-51fe-bdcc-f92b96910c0a"
         },
         {
             "artist": "Pete Venters",
@@ -488,7 +488,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -517,6 +516,7 @@
                     "text": "You do not have to find a Rebel card if you do not want to."
                 }
             ],
+            "scryfallId": "4c0bd267-59ec-41df-b0b7-37f6e6d6b073",
             "subtypes": [
                 "Human",
                 "Rebel"
@@ -528,7 +528,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4c0bd267-59ec-41df-b0b7-37f6e6d6b073"
+            "uuid": "057785d0-9f8f-5c40-9773-0faeab18acb0"
         },
         {
             "artist": "Massimilano Frezzato",
@@ -568,7 +568,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -589,6 +588,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "be0ed1fb-d380-4e3e-a43f-c39660a996e9",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice a creature: Regenerate target creature.",
@@ -596,7 +596,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "be0ed1fb-d380-4e3e-a43f-c39660a996e9"
+            "uuid": "988a853c-0125-50f4-b492-563db5fe928d"
         },
         {
             "artist": "Hannibal King",
@@ -636,7 +636,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -658,6 +657,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fd7451cc-4126-4518-a103-2558fa81323f",
             "subtypes": [
                 "Aura"
             ],
@@ -667,7 +667,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "fd7451cc-4126-4518-a103-2558fa81323f"
+            "uuid": "c7b991e2-5eb6-540e-be4e-588e08c6227d"
         },
         {
             "artist": "Matt Cavotta",
@@ -707,7 +707,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -729,6 +728,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2d76b7e3-6890-4120-8575-732909c8bdff",
             "subtypes": [
                 "Kor",
                 "Rebel"
@@ -740,7 +740,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2d76b7e3-6890-4120-8575-732909c8bdff"
+            "uuid": "9ef702c6-0705-5663-9993-c82bb6c6222f"
         },
         {
             "artist": "Paolo Parente",
@@ -780,7 +780,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -802,6 +801,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "19451993-7a53-4a50-bfca-ddc9cdfbe168",
             "subtypes": [
                 "Kor",
                 "Rebel"
@@ -813,7 +813,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "19451993-7a53-4a50-bfca-ddc9cdfbe168"
+            "uuid": "764e3708-fe56-5ca7-bec5-ebed3ea26472"
         },
         {
             "artist": "rk post",
@@ -852,7 +852,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -878,6 +877,7 @@
                     "text": "You do not have to find a Rebel card if you do not want to."
                 }
             ],
+            "scryfallId": "e574e522-2632-4cd4-8545-c582ac3b641f",
             "subtypes": [
                 "Human",
                 "Rebel"
@@ -891,7 +891,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e574e522-2632-4cd4-8545-c582ac3b641f"
+            "uuid": "7a337ae6-d8f1-579d-8862-3db1bd384d67"
         },
         {
             "artist": "Matt Cavotta",
@@ -931,7 +931,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -959,6 +958,7 @@
                     "text": "The ability only does something if used before attackers are declared during a turn. If used after the creature is declared as an attacker, nothing happens."
                 }
             ],
+            "scryfallId": "2190649d-f898-4693-8ccf-80e6709d8496",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -970,7 +970,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2190649d-f898-4693-8ccf-80e6709d8496"
+            "uuid": "d4bafac4-ef48-5b85-b1d9-e6dc62a9755d"
         },
         {
             "artist": "Greg Hildebrandt & Tim Hildebrandt",
@@ -1010,7 +1010,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1036,6 +1035,7 @@
                     "text": "Triggers once per creature you have that blocks. Does not trigger multiple times when a single creature blocks more than one attacker."
                 }
             ],
+            "scryfallId": "5f53ab12-7c16-43b1-b9f9-a5e523cf431b",
             "subtypes": [],
             "supertypes": [],
             "text": "Whenever a creature you control blocks, you gain 2 life.",
@@ -1043,7 +1043,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5f53ab12-7c16-43b1-b9f9-a5e523cf431b"
+            "uuid": "da1f9bce-7ef1-5cc7-a259-e2ed7408b11e"
         },
         {
             "artist": "Jeff Miracola",
@@ -1083,7 +1083,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1110,6 +1109,7 @@
                     "text": "The ability only does something if used before attackers or blockers (as appropriate) are declared during a turn. If used after the creature is declared as an attacker or blocker, nothing happens."
                 }
             ],
+            "scryfallId": "adafe5c4-8de0-4d38-919f-de96bc70c21b",
             "subtypes": [],
             "supertypes": [],
             "text": "Target creature can't attack or block this turn.",
@@ -1117,7 +1117,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "adafe5c4-8de0-4d38-919f-de96bc70c21b"
+            "uuid": "7fa3d3c6-dee4-53d3-99cb-94c9f6f756f4"
         },
         {
             "artist": "Dany Orizio",
@@ -1157,7 +1157,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1182,6 +1181,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e2e0ea3e-9826-408d-835b-18dfecaac8af",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -1193,7 +1193,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e2e0ea3e-9826-408d-835b-18dfecaac8af"
+            "uuid": "6730f9a8-4be1-5967-bb5a-d947b3f1b0d6"
         },
         {
             "artist": "Greg Staples",
@@ -1232,7 +1232,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1254,6 +1253,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "cef789e8-e4cc-4f61-bc15-debc2487777f",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Wave: Exile target creature.\nWhen Parallax Wave leaves the battlefield, each player returns to the battlefield all cards they own exiled with Parallax Wave.",
@@ -1261,7 +1261,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "cef789e8-e4cc-4f61-bc15-debc2487777f"
+            "uuid": "b2050209-345b-53ad-8602-1cf764153f28"
         },
         {
             "artist": "Christopher Moeller",
@@ -1301,7 +1301,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1335,6 +1334,7 @@
                     "text": "This is not modal. If the target changes from an artifact to an enchantment or vice versa, this still destroys it."
                 }
             ],
+            "scryfallId": "af6c921e-1b82-412c-9979-adfdf83440f7",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice Seal of Cleansing: Destroy target artifact or enchantment.",
@@ -1342,7 +1342,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "af6c921e-1b82-412c-9979-adfdf83440f7"
+            "uuid": "9112b2f1-2f58-537c-93ed-e2cd73727a7a"
         },
         {
             "artist": "Mark Brill",
@@ -1382,7 +1382,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1405,6 +1404,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3480efc4-1078-4c63-a94c-d00a7507f6b1",
             "subtypes": [
                 "Kor",
                 "Soldier"
@@ -1416,7 +1416,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3480efc4-1078-4c63-a94c-d00a7507f6b1"
+            "uuid": "30deac74-5d4d-5130-9264-36237d9680dd"
         },
         {
             "artist": "Greg Hildebrandt & Tim Hildebrandt",
@@ -1456,7 +1456,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1478,6 +1477,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "93741517-90ed-46fe-a505-fe6299f188bf",
             "subtypes": [
                 "Kor",
                 "Soldier"
@@ -1489,7 +1489,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "93741517-90ed-46fe-a505-fe6299f188bf"
+            "uuid": "b412ce60-8db4-5325-a9ee-3ba4b2d56987"
         },
         {
             "artist": "Kev Walker",
@@ -1528,7 +1528,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1548,6 +1547,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "132112a0-0fb0-4a80-927d-39d34cf10159",
             "subtypes": [],
             "supertypes": [],
             "text": "If an opponent controls a Mountain and you control a Plains, you may cast this spell without paying its mana cost.\nPrevent all damage that would be dealt this turn to creatures you control.",
@@ -1555,7 +1555,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "132112a0-0fb0-4a80-927d-39d34cf10159"
+            "uuid": "dded784a-d74f-5470-94dd-ef90f18f42d7"
         },
         {
             "artist": "Jeff Miracola",
@@ -1594,7 +1594,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1614,6 +1613,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9d15f7b5-5070-4742-a05c-623822d874fb",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.\nAll damage that would be dealt to target creature this turn is dealt to you instead.",
@@ -1621,7 +1621,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "9d15f7b5-5070-4742-a05c-623822d874fb"
+            "uuid": "c42716b0-a4f6-5aae-8c7c-53f0875fd26d"
         },
         {
             "artist": "Matt Cavotta",
@@ -1661,7 +1661,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1681,6 +1680,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e5eea354-2d92-4b57-aec7-25260ab7a70f",
             "subtypes": [],
             "supertypes": [],
             "text": "Creatures and lands you control have shroud. (They can't be the targets of spells or abilities.)\nWhen a creature you control attacks, sacrifice Spiritual Asylum.",
@@ -1688,7 +1688,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e5eea354-2d92-4b57-aec7-25260ab7a70f"
+            "uuid": "d4f4e81a-b03c-59f7-9b90-fec794a27ceb"
         },
         {
             "artist": "Daren Bader",
@@ -1728,7 +1728,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1755,6 +1754,7 @@
                     "text": "It can only target a creature with the greatest power. This means you pick such a creature on announcement, and if that creature is not still the one with greatest power on resolution, then this spell doesn’t resolve since its target is illegal."
                 }
             ],
+            "scryfallId": "a7c25c67-4214-4318-a718-7d351e713f80",
             "subtypes": [],
             "supertypes": [],
             "text": "Exile target creature with the greatest power among creatures on the battlefield. (If two or more creatures are tied for greatest power, target any one of them.)",
@@ -1762,7 +1762,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a7c25c67-4214-4318-a718-7d351e713f80"
+            "uuid": "972712b6-568f-5a25-a23b-46a6b5f47ad9"
         },
         {
             "artist": "rk post",
@@ -1802,7 +1802,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1824,6 +1823,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "40377e3d-77d9-4d86-ac8c-4e27803e48d8",
             "subtypes": [
                 "Angel"
             ],
@@ -1834,7 +1834,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "40377e3d-77d9-4d86-ac8c-4e27803e48d8"
+            "uuid": "60382a8e-c072-5352-b389-a6a1850d1042"
         },
         {
             "artist": "Randy Gallegos",
@@ -1874,7 +1874,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1905,6 +1904,7 @@
                     "text": "Because Accumulated Knowledge is still on the stack as you perform its instructions, it isn’t in your graveyard and won’t add to the number of cards drawn."
                 }
             ],
+            "scryfallId": "ab061406-38f4-40e7-a9ea-e3cbcaabc127",
             "subtypes": [],
             "supertypes": [],
             "text": "Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.",
@@ -1912,7 +1912,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "ab061406-38f4-40e7-a9ea-e3cbcaabc127"
+            "uuid": "cea94a45-116d-5810-ab03-430dccfa3990"
         },
         {
             "artist": "David Martin",
@@ -1952,7 +1952,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1972,6 +1971,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "36298f9f-12cc-43bd-adda-ccabd67a9568",
             "subtypes": [],
             "supertypes": [],
             "text": "Whenever a player casts a creature spell, that player sacrifices a permanent unless they pay {1}.",
@@ -1979,7 +1979,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "36298f9f-12cc-43bd-adda-ccabd67a9568"
+            "uuid": "e9c8a7d0-14cc-5e4f-b743-3007da26fa14"
         },
         {
             "artist": "Donato Giancola",
@@ -2019,7 +2019,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2041,6 +2040,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a7363c6f-53a3-4f41-b451-8120bc24f1ee",
             "subtypes": [
                 "Aura"
             ],
@@ -2050,7 +2050,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a7363c6f-53a3-4f41-b451-8120bc24f1ee"
+            "uuid": "8bf6f079-312b-5c3d-a7e7-39e2baa6e043"
         },
         {
             "artist": "Carl Critchlow",
@@ -2089,7 +2089,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2111,6 +2110,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e7f97e50-3aeb-4c79-81b1-505a2f32d8ac",
             "subtypes": [
                 "Illusion"
             ],
@@ -2121,7 +2121,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e7f97e50-3aeb-4c79-81b1-505a2f32d8ac"
+            "uuid": "5e3f421c-aa49-5740-9a8e-ea654648220b"
         },
         {
             "artist": "Matthew D. Wilson",
@@ -2160,7 +2160,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2191,6 +2190,7 @@
                     "text": "If another effect causes Daze to cost more, you must pay that additional cost even if you pay its alternative cost."
                 }
             ],
+            "scryfallId": "d03bff25-0d5e-4dcf-8d75-6df846afea3b",
             "subtypes": [],
             "supertypes": [],
             "text": "You may return an Island you control to its owner's hand rather than pay this spell's mana cost.\nCounter target spell unless its controller pays {1}.",
@@ -2198,7 +2198,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "d03bff25-0d5e-4dcf-8d75-6df846afea3b"
+            "uuid": "1d7a9241-d055-537f-beb0-eddee32dcbb8"
         },
         {
             "artist": "Scott Hampton",
@@ -2238,7 +2238,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2259,6 +2258,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "63b2dcb1-8c3e-434c-865a-196d4d799706",
             "subtypes": [],
             "supertypes": [],
             "text": "Gain control of target creature with converted mana cost X or less.",
@@ -2266,7 +2266,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "63b2dcb1-8c3e-434c-865a-196d4d799706"
+            "uuid": "9cf102d0-2088-5f2f-8ec0-0b4f9cda9893"
         },
         {
             "artist": "Gao Yan",
@@ -2306,7 +2306,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2326,6 +2325,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "055b344a-4eb1-4579-ac50-973b18e12fad",
             "subtypes": [],
             "supertypes": [],
             "text": "You may return two Islands you control to their owner's hand rather than pay this spell's mana cost.\nTap all creatures.",
@@ -2333,7 +2333,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "055b344a-4eb1-4579-ac50-973b18e12fad"
+            "uuid": "662e79e8-b5d5-5d31-8dd7-3b53c0755cdf"
         },
         {
             "artist": "Nelson DeCastro",
@@ -2373,7 +2373,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2395,6 +2394,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c549b817-8ad6-44d0-9761-5e4ff9e62c71",
             "subtypes": [],
             "supertypes": [],
             "text": "Target creature can't be blocked this turn.",
@@ -2402,7 +2402,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "c549b817-8ad6-44d0-9761-5e4ff9e62c71"
+            "uuid": "fb352ffd-db34-508b-877e-d2a02d6f753c"
         },
         {
             "artist": "Glen Angus",
@@ -2441,7 +2441,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2463,6 +2462,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8b4d1c74-8b73-445c-b226-349c57a972f6",
             "subtypes": [
                 "Merfolk"
             ],
@@ -2473,7 +2473,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8b4d1c74-8b73-445c-b226-349c57a972f6"
+            "uuid": "40304899-fbeb-56e0-8c7a-0633da51b454"
         },
         {
             "artist": "Dave Dorman",
@@ -2513,7 +2513,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2536,6 +2535,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6c05609a-f32d-4454-af24-a24452997dcb",
             "subtypes": [
                 "Crab",
                 "Beast"
@@ -2547,7 +2547,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6c05609a-f32d-4454-af24-a24452997dcb"
+            "uuid": "f502bbc0-f6bc-527d-8a4f-b089a6a1545b"
         },
         {
             "artist": "Pete Venters",
@@ -2587,7 +2587,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2612,6 +2611,7 @@
                     "text": "The ability does not change the amount of mana produced, only the color."
                 }
             ],
+            "scryfallId": "aeb282bb-d0b8-4822-8197-ff0523549309",
             "subtypes": [],
             "supertypes": [],
             "text": "Until end of turn, if a player taps a nonbasic land for mana, it produces colorless mana instead of any other type.",
@@ -2619,7 +2619,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "aeb282bb-d0b8-4822-8197-ff0523549309"
+            "uuid": "93777142-c3f5-5356-9716-c2de7772d4fc"
         },
         {
             "artist": "Carl Critchlow",
@@ -2658,7 +2658,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2679,6 +2678,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "7fe593eb-df3c-43e5-97a6-418f91e87cb3",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Tide: Exile target land.\nWhen Parallax Tide leaves the battlefield, each player returns to the battlefield all cards they own exiled with Parallax Tide.",
@@ -2686,7 +2686,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "7fe593eb-df3c-43e5-97a6-418f91e87cb3"
+            "uuid": "73567ddf-63e4-5685-a32c-62febd0d81ec"
         },
         {
             "artist": "Scott M. Fischer",
@@ -2726,7 +2726,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2747,6 +2746,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ec9c84db-cf45-43e1-b38f-8bbf53cf088b",
             "subtypes": [],
             "supertypes": [],
             "text": "Lands don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player untaps a land they control.",
@@ -2754,7 +2754,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ec9c84db-cf45-43e1-b38f-8bbf53cf088b"
+            "uuid": "aa287ea3-b236-52ff-9f3a-9afd417da228"
         },
         {
             "artist": "Mark Tedin",
@@ -2794,7 +2794,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2819,6 +2818,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8e86f36d-584d-49b2-8c66-19c262408950",
             "subtypes": [
                 "Merfolk"
             ],
@@ -2829,7 +2829,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8e86f36d-584d-49b2-8c66-19c262408950"
+            "uuid": "5c82bdbf-385c-5b99-81bf-0e0ac90f8de3"
         },
         {
             "artist": "Ron Spears",
@@ -2868,7 +2868,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2889,6 +2888,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "38addef3-1dd7-41a1-9706-3be5c86a58c9",
             "subtypes": [
                 "Merfolk",
                 "Rogue"
@@ -2900,7 +2900,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "38addef3-1dd7-41a1-9706-3be5c86a58c9"
+            "uuid": "d3c4b1f3-4329-5382-ac98-952e38674ee2"
         },
         {
             "artist": "Heather Hudson",
@@ -2940,7 +2940,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2966,6 +2965,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "c375f65a-6d88-4d3c-a7a7-8c7a5cc5807f",
             "subtypes": [
                 "Human",
                 "Mercenary"
@@ -2977,7 +2977,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c375f65a-6d88-4d3c-a7a7-8c7a5cc5807f"
+            "uuid": "bac3b1f5-f75a-57b4-936b-21b3a7e30011"
         },
         {
             "artist": "Christopher Moeller",
@@ -3017,7 +3017,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3039,6 +3038,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "487becfe-a9b1-4029-a487-2a32561570cb",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice Seal of Removal: Return target creature to its owner's hand.",
@@ -3046,7 +3046,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "487becfe-a9b1-4029-a487-2a32561570cb"
+            "uuid": "1fdcf6dc-534c-5a02-abda-6c6cb5b12f54"
         },
         {
             "artist": "Daren Bader",
@@ -3086,7 +3086,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3107,6 +3106,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "f8647649-5669-46c4-8840-9ff967fabd99",
             "subtypes": [
                 "Serpent"
             ],
@@ -3117,7 +3117,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f8647649-5669-46c4-8840-9ff967fabd99"
+            "uuid": "e1e65125-3d42-5124-a6c6-7f4d8bbc3498"
         },
         {
             "artist": "Scott M. Fischer",
@@ -3157,7 +3157,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3182,6 +3181,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e1b2dadb-4ce3-4f7e-9ca7-79757543f04d",
             "subtypes": [
                 "Homunculus",
                 "Illusion"
@@ -3193,7 +3193,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e1b2dadb-4ce3-4f7e-9ca7-79757543f04d"
+            "uuid": "3ddc61d7-f8b8-5136-9122-291c94cd823f"
         },
         {
             "artist": "Terese Nielsen",
@@ -3233,7 +3233,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3255,6 +3254,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6215a5d9-d6d2-4f9f-8a0c-a65d1afd956a",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -3266,7 +3266,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6215a5d9-d6d2-4f9f-8a0c-a65d1afd956a"
+            "uuid": "cf6b6d37-b072-589f-9172-05ca5113da86"
         },
         {
             "artist": "Terese Nielsen",
@@ -3306,7 +3306,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3327,6 +3326,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d3567b4e-6e31-40b0-83ea-4a2a58bd637c",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -3338,7 +3338,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d3567b4e-6e31-40b0-83ea-4a2a58bd637c"
+            "uuid": "1ea22fa4-54dd-5bb4-a9c2-21ba038bc0aa"
         },
         {
             "artist": "Arnie Swekel",
@@ -3378,7 +3378,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3400,6 +3399,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d672110d-b7c4-4233-9c46-73323be7204d",
             "subtypes": [
                 "Human"
             ],
@@ -3410,7 +3410,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d672110d-b7c4-4233-9c46-73323be7204d"
+            "uuid": "6b2a00a6-4332-558d-8810-050abd539014"
         },
         {
             "artist": "Mark Romanoski",
@@ -3449,7 +3449,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3470,6 +3469,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d2741fe4-37fe-427f-ae85-5107991d4eee",
             "subtypes": [],
             "supertypes": [],
             "text": "If an opponent controls a Forest and you control an Island, you may cast this spell without paying its mana cost.\nPut target creature on top of its owner's library.",
@@ -3477,7 +3477,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "d2741fe4-37fe-427f-ae85-5107991d4eee"
+            "uuid": "e19da06a-5c80-5793-b2d9-4b21f42c42e9"
         },
         {
             "artist": "Alan Rabinowitz",
@@ -3517,7 +3517,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3540,6 +3539,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b31b2e24-1a70-48bd-8946-ff29e12c6f3d",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -3551,7 +3551,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b31b2e24-1a70-48bd-8946-ff29e12c6f3d"
+            "uuid": "5bedc13e-edf7-5881-8583-679878f43320"
         },
         {
             "artist": "Sam Wood",
@@ -3591,7 +3591,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3614,6 +3613,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2869efd2-060f-4af3-b0dc-b7dc5e1143b8",
             "subtypes": [
                 "Illusion"
             ],
@@ -3624,7 +3624,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2869efd2-060f-4af3-b0dc-b7dc5e1143b8"
+            "uuid": "54813750-8ff6-5b53-af4a-714476660896"
         },
         {
             "artist": "Mark Zug",
@@ -3664,7 +3664,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3696,6 +3695,7 @@
                     "text": "If Ascendant Evincar stops being black, it gives itself -1/-1."
                 }
             ],
+            "scryfallId": "e5c87c93-8cf4-4d1a-9bb8-349600da55bc",
             "subtypes": [
                 "Vampire"
             ],
@@ -3708,7 +3708,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e5c87c93-8cf4-4d1a-9bb8-349600da55bc"
+            "uuid": "e138e89b-3b03-59c1-9968-06142a7946fc"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -3747,7 +3747,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3769,6 +3768,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f1ebf021-02a1-4a47-b581-c85a7a76cdec",
             "subtypes": [
                 "Bird"
             ],
@@ -3779,7 +3779,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f1ebf021-02a1-4a47-b581-c85a7a76cdec"
+            "uuid": "ef91cb2d-7245-5fcd-a317-298f65d79e5c"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -3819,7 +3819,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3842,6 +3841,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d95dcb2e-8945-47dd-ad40-b5bdcc3ea742",
             "subtypes": [
                 "Bird"
             ],
@@ -3852,7 +3852,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d95dcb2e-8945-47dd-ad40-b5bdcc3ea742"
+            "uuid": "f528c8e9-731a-5f8f-aa25-4e3dcea06bee"
         },
         {
             "artist": "Tony Szczudlo",
@@ -3892,7 +3892,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3916,6 +3915,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "61d6fa78-3422-4ace-88ab-e985c558cba7",
             "subtypes": [
                 "Wall"
             ],
@@ -3926,7 +3926,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "61d6fa78-3422-4ace-88ab-e985c558cba7"
+            "uuid": "70df6907-a766-5039-93da-05f6acc6eaf2"
         },
         {
             "artist": "Adam Rex",
@@ -3966,7 +3966,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3986,6 +3985,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "794657cd-b292-41d7-a4a6-3f3dd20dc07a",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a Swamp, you may sacrifice a creature rather than pay this spell's mana cost.\nCreatures you control get +2/+0 until end of turn.",
@@ -3993,7 +3993,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "794657cd-b292-41d7-a4a6-3f3dd20dc07a"
+            "uuid": "61db0bf6-2c5d-5cd0-9be3-660f556470a0"
         },
         {
             "artist": "Pete Venters",
@@ -4033,7 +4033,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4057,6 +4056,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6223e583-8ef6-4d93-8ed0-3ccf4488f166",
             "subtypes": [],
             "supertypes": [],
             "text": "When Death Pit Offering enters the battlefield, sacrifice all creatures you control.\nCreatures you control get +2/+2.",
@@ -4064,7 +4064,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6223e583-8ef6-4d93-8ed0-3ccf4488f166"
+            "uuid": "035d6cb9-487c-5540-afcf-62a1bc9450fd"
         },
         {
             "artist": "Donato Giancola",
@@ -4103,7 +4103,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4129,6 +4128,7 @@
                     "text": "You name a card during resolution of the ability."
                 }
             ],
+            "scryfallId": "be981eef-9dd2-4233-82c9-03f9f2e82c59",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -4140,7 +4140,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "be981eef-9dd2-4233-82c9-03f9f2e82c59"
+            "uuid": "3b4f9ac6-63a3-5ab9-83ce-45e519cce86f"
         },
         {
             "artist": "Pete Venters",
@@ -4179,7 +4179,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4200,6 +4199,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f05f5d93-50d1-4aa6-af05-383a6808345b",
             "subtypes": [],
             "supertypes": [],
             "text": "If an opponent controls a Plains and you control a Swamp, you may cast this spell without paying its mana cost.\nAll creatures get -2/-2 until end of turn.",
@@ -4207,7 +4207,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f05f5d93-50d1-4aa6-af05-383a6808345b"
+            "uuid": "5f58c49a-7a28-54bc-817a-250e58ab7856"
         },
         {
             "artist": "Adam Rex",
@@ -4247,7 +4247,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4270,6 +4269,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8bece38b-e09e-4666-95b6-5e5b05867cd5",
             "subtypes": [],
             "supertypes": [],
             "text": "{B}, Sacrifice a creature: Target opponent reveals their hand. You choose a card from it. That player discards that card. Activate this ability only any time you could cast a sorcery.",
@@ -4277,7 +4277,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8bece38b-e09e-4666-95b6-5e5b05867cd5"
+            "uuid": "42b0152e-8945-58e0-8f60-0a0d206f3c15"
         },
         {
             "artist": "Daren Bader",
@@ -4316,7 +4316,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4342,6 +4341,7 @@
                     "text": "The active player chooses two cards, then the other player chooses two cards, then all the chosen cards are exiled simultaneously."
                 }
             ],
+            "scryfallId": "3d6d91df-008b-48f2-a84f-550702fbcdb3",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a Swamp, you may sacrifice a creature rather than pay this spell's mana cost.\nEach player exiles two cards from their hand.",
@@ -4349,7 +4349,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3d6d91df-008b-48f2-a84f-550702fbcdb3"
+            "uuid": "814064eb-567b-5d5d-bc8c-bbd40c1b25b4"
         },
         {
             "artist": "Randy Gallegos",
@@ -4389,7 +4389,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4412,6 +4411,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "f13a3ed0-aa57-4082-b6b0-b1078c93c0b2",
             "subtypes": [],
             "supertypes": [],
             "text": "{B}{B}, Pay half your life, rounded up: Destroy target nonblack creature. It can't be regenerated.",
@@ -4419,7 +4419,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f13a3ed0-aa57-4082-b6b0-b1078c93c0b2"
+            "uuid": "27165b3b-a2d1-54d4-8cff-14aeb2a89902"
         },
         {
             "artist": "Eric Peterson",
@@ -4458,7 +4458,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4479,6 +4478,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "154789ac-bbea-467b-9655-76f378a53f40",
             "subtypes": [
                 "Aura"
             ],
@@ -4488,7 +4488,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "154789ac-bbea-467b-9655-76f378a53f40"
+            "uuid": "fd7c2982-83d3-5881-9728-dba68bd1859f"
         },
         {
             "artist": "Greg Staples",
@@ -4527,7 +4527,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4552,6 +4551,7 @@
                     "text": "The target opponent chooses which card to exile."
                 }
             ],
+            "scryfallId": "862c50c7-0840-46e0-a653-5b660fdfd4bd",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Nexus: Target opponent exiles a card from their hand. Activate this ability only any time you could cast a sorcery.\nWhen Parallax Nexus leaves the battlefield, each player returns to their hand all cards they own exiled with Parallax Nexus.",
@@ -4559,7 +4559,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "862c50c7-0840-46e0-a653-5b660fdfd4bd"
+            "uuid": "767fa165-c4d3-5af1-9cba-67c6a5b0f8eb"
         },
         {
             "artist": "Chippy",
@@ -4599,7 +4599,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4621,6 +4620,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "efeef7f3-5b87-440d-a851-95ae2bdb840d",
             "subtypes": [
                 "Zombie",
                 "Mercenary"
@@ -4632,7 +4632,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "efeef7f3-5b87-440d-a851-95ae2bdb840d"
+            "uuid": "c612217e-b80c-5dfe-a7ae-86ee5d34446d"
         },
         {
             "artist": "Mark Zug",
@@ -4671,7 +4671,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4693,6 +4692,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e26f79b5-780a-4cbb-b49d-01673a411d1f",
             "subtypes": [
                 "Zombie",
                 "Mercenary"
@@ -4704,7 +4704,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e26f79b5-780a-4cbb-b49d-01673a411d1f"
+            "uuid": "4be98e5e-2aa8-507c-add8-6f954fbb779f"
         },
         {
             "artist": "Nelson DeCastro",
@@ -4744,7 +4744,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4767,6 +4766,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ca3614c2-39b4-4f67-adab-373dcb9e4553",
             "subtypes": [
                 "Elf",
                 "Spellshaper"
@@ -4778,7 +4778,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ca3614c2-39b4-4f67-adab-373dcb9e4553"
+            "uuid": "69c398b6-213f-54c0-8bf4-e4f9a4bcf28c"
         },
         {
             "artist": "Dana Knutson",
@@ -4817,7 +4817,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4845,6 +4844,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "3e3597c3-3053-49f8-ab7e-a774e2fb082f",
             "subtypes": [
                 "Zombie",
                 "Mercenary",
@@ -4857,7 +4857,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3e3597c3-3053-49f8-ab7e-a774e2fb082f"
+            "uuid": "522fdb3c-3a35-5e6b-9295-b64be3df4e1d"
         },
         {
             "artist": "Mark Tedin",
@@ -4896,7 +4896,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4923,6 +4922,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "07ca1184-ade0-4d6d-87f9-ad17f37679b3",
             "subtypes": [
                 "Horror",
                 "Mercenary"
@@ -4934,7 +4934,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "07ca1184-ade0-4d6d-87f9-ad17f37679b3"
+            "uuid": "bdc77f79-6f07-5140-9e56-2fe5a7ac755c"
         },
         {
             "artist": "Mike Ploog",
@@ -4973,7 +4973,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5000,6 +4999,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "6fc59fa5-144f-49e6-b6bd-2ba6d3f2eff2",
             "subtypes": [
                 "Horror",
                 "Mercenary"
@@ -5011,7 +5011,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6fc59fa5-144f-49e6-b6bd-2ba6d3f2eff2"
+            "uuid": "8b852bdc-9ffa-5f14-add7-ce062c228326"
         },
         {
             "artist": "Christopher Moeller",
@@ -5051,7 +5051,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5077,6 +5076,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "396d9f58-a4ca-4197-94be-0f115427224e",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice Seal of Doom: Destroy target nonblack creature. It can't be regenerated.",
@@ -5084,7 +5084,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "396d9f58-a4ca-4197-94be-0f115427224e"
+            "uuid": "57142d59-76b6-5837-950f-5052b22f5f09"
         },
         {
             "artist": "Matthew D. Wilson",
@@ -5124,7 +5124,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5153,6 +5152,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e4a9bb47-3855-425d-924c-09dbde74735b",
             "subtypes": [
                 "Zombie",
                 "Mercenary"
@@ -5164,7 +5164,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e4a9bb47-3855-425d-924c-09dbde74735b"
+            "uuid": "b22c35b7-32d1-5ce5-9623-5d4dd814f9f9"
         },
         {
             "artist": "Chippy",
@@ -5204,7 +5204,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5232,6 +5231,7 @@
                     "text": "It can damage itself. In fact, it has to if it is the only creature you control."
                 }
             ],
+            "scryfallId": "5535d14a-7126-4a94-96a0-e17ad5c72070",
             "subtypes": [
                 "Zombie",
                 "Mercenary"
@@ -5243,7 +5243,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5535d14a-7126-4a94-96a0-e17ad5c72070"
+            "uuid": "71ca296c-a544-5c77-9241-052f550d115d"
         },
         {
             "artist": "Li Tie",
@@ -5283,7 +5283,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5307,6 +5306,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "46fa5472-5341-47cd-884e-fe2fcca12c0d",
             "subtypes": [],
             "supertypes": [],
             "text": "Each player loses 1 life for each creature they control.",
@@ -5314,7 +5314,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "46fa5472-5341-47cd-884e-fe2fcca12c0d"
+            "uuid": "c3b9800a-3bdc-5e7d-bf64-1a3ba8a9d684"
         },
         {
             "artist": "Massimilano Frezzato",
@@ -5354,7 +5354,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5380,6 +5379,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ccaff6a0-7831-45db-a50f-881c6cb7ce49",
             "subtypes": [],
             "supertypes": [],
             "text": "Vicious Hunger deals 2 damage to target creature and you gain 2 life.",
@@ -5387,7 +5387,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ccaff6a0-7831-45db-a50f-881c6cb7ce49"
+            "uuid": "7374ac7c-92f1-50be-8374-fe689e13ccfa"
         },
         {
             "artist": "Kev Walker",
@@ -5427,7 +5427,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5448,6 +5447,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56",
             "subtypes": [
                 "Shapeshifter"
             ],
@@ -5460,7 +5460,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56"
+            "uuid": "263768ed-c36e-501d-9861-f2044e22c992"
         },
         {
             "artist": "Scott M. Fischer",
@@ -5499,7 +5499,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5521,6 +5520,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5de57c84-38b9-4606-b934-0ab270496582",
             "subtypes": [
                 "Hydra"
             ],
@@ -5531,7 +5531,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5de57c84-38b9-4606-b934-0ab270496582"
+            "uuid": "3cb6e0de-e953-5da4-ba22-238ced077102"
         },
         {
             "artist": "Terese Nielsen",
@@ -5570,7 +5570,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5596,6 +5595,7 @@
                     "text": "You can’t choose zero targets. You must choose between 1 and 2 targets."
                 }
             ],
+            "scryfallId": "62982dab-4c27-45b3-9740-38fec3df7226",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -5607,7 +5607,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "62982dab-4c27-45b3-9740-38fec3df7226"
+            "uuid": "7c292c9d-1264-5a06-9511-82792911a8ff"
         },
         {
             "artist": "Adam Rex",
@@ -5647,7 +5647,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5670,6 +5669,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "dc6e1de6-e7e0-4037-896a-f80c54b8ef5c",
             "subtypes": [
                 "Human",
                 "Spellshaper",
@@ -5682,7 +5682,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "dc6e1de6-e7e0-4037-896a-f80c54b8ef5c"
+            "uuid": "d240a77c-64f2-5b88-89ab-d7ae2f4f710c"
         },
         {
             "artist": "Greg Hildebrandt & Tim Hildebrandt",
@@ -5721,7 +5721,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5743,6 +5742,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2ebfc91c-d764-4e63-a428-82704f8bf1fd",
             "subtypes": [],
             "supertypes": [],
             "text": "You may sacrifice a Mountain rather than pay this spell's mana cost.\nTarget creature gets +X/+0 until end of turn, where X is the number of Mountains you control.",
@@ -5750,7 +5750,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "2ebfc91c-d764-4e63-a428-82704f8bf1fd"
+            "uuid": "787a8512-58a5-5cad-bd40-d6ca6941cbf7"
         },
         {
             "artist": "Ben Thompson",
@@ -5790,7 +5790,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5811,6 +5810,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7717eeb9-c457-4a65-93a0-e91c7f6a1970",
             "subtypes": [],
             "supertypes": [],
             "text": "Flame Rift deals 4 damage to each player.",
@@ -5818,7 +5818,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7717eeb9-c457-4a65-93a0-e91c7f6a1970"
+            "uuid": "3d47cb39-27fb-5282-80ef-384aec14fe76"
         },
         {
             "artist": "Ben Thompson",
@@ -5858,7 +5858,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5888,6 +5887,7 @@
                     "text": "Flowstone Crusher’s ability can be activated multiple times, but Flowstone Crusher is put into the graveyard after an effect resolves that makes its toughness 0."
                 }
             ],
+            "scryfallId": "c93f0066-1ff0-4e52-9959-9eb0def60957",
             "subtypes": [
                 "Beast"
             ],
@@ -5898,7 +5898,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c93f0066-1ff0-4e52-9959-9eb0def60957"
+            "uuid": "7840242b-d2e6-5478-8b78-16559a79a4c3"
         },
         {
             "artist": "Andrew Goldhawk",
@@ -5938,7 +5938,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5959,6 +5958,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3e644ab8-3cc3-413d-a918-44fc636087ae",
             "subtypes": [
                 "Beast"
             ],
@@ -5969,7 +5969,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3e644ab8-3cc3-413d-a918-44fc636087ae"
+            "uuid": "cb61ba84-3c07-552c-b89c-4412f03f91c0"
         },
         {
             "artist": "Chippy",
@@ -6009,7 +6009,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6033,6 +6032,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ec7b02e1-0a20-4247-ae2a-056c5356f168",
             "subtypes": [],
             "supertypes": [],
             "text": "All creatures get +X/-X until end of turn.",
@@ -6040,7 +6040,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ec7b02e1-0a20-4247-ae2a-056c5356f168"
+            "uuid": "9cb9d122-3190-5716-95d3-a0c329160891"
         },
         {
             "artist": "Mike Ploog",
@@ -6080,7 +6080,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6102,6 +6101,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a1203053-0829-4f46-a361-62cb9cd17280",
             "subtypes": [],
             "supertypes": [],
             "text": "Target creature gets +1/-1 and gains haste until end of turn.",
@@ -6109,7 +6109,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "a1203053-0829-4f46-a361-62cb9cd17280"
+            "uuid": "cf86e07d-8ab3-5329-b42c-0bed1b71aca6"
         },
         {
             "artist": "Scott Hampton",
@@ -6149,7 +6149,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6170,6 +6169,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bc450922-0bbf-46c4-9955-79f4d41ee488",
             "subtypes": [],
             "supertypes": [],
             "text": "Creatures you control get +1/-1.",
@@ -6177,7 +6177,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "bc450922-0bbf-46c4-9955-79f4d41ee488"
+            "uuid": "24e5b2ee-88c4-5c74-8042-067b299ed0c4"
         },
         {
             "artist": "Jeff Miracola",
@@ -6217,7 +6217,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6239,6 +6238,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "89844c2f-f0a4-41c6-ad8c-d559fcaec85c",
             "subtypes": [
                 "Wall"
             ],
@@ -6249,7 +6249,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "89844c2f-f0a4-41c6-ad8c-d559fcaec85c"
+            "uuid": "65f47a58-8981-502b-a364-6ef00377228f"
         },
         {
             "artist": "Arnie Swekel",
@@ -6289,7 +6289,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6329,6 +6328,7 @@
                     "text": "The ability is optional. You can decide to allow it to deal combat damage as normal."
                 }
             ],
+            "scryfallId": "f27fd65a-5631-491f-b158-45012832ccf1",
             "subtypes": [
                 "Beast"
             ],
@@ -6339,7 +6339,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f27fd65a-5631-491f-b158-45012832ccf1"
+            "uuid": "ac376e54-ccb2-53bf-a13d-5c973006b0a9"
         },
         {
             "artist": "Massimilano Frezzato",
@@ -6378,7 +6378,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6429,6 +6428,7 @@
                     "text": "Moving the enchantment after the ability triggers will not affect which creatures are affected."
                 }
             ],
+            "scryfallId": "4fb92039-03fd-4aee-be74-96997be629d6",
             "subtypes": [
                 "Aura"
             ],
@@ -6438,7 +6438,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4fb92039-03fd-4aee-be74-96997be629d6"
+            "uuid": "56179c0e-f85f-5665-956d-1bed1e66fb09"
         },
         {
             "artist": "Tony Szczudlo",
@@ -6478,7 +6478,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6516,6 +6515,7 @@
                     "text": "The ability is optional. You can decide to allow it to deal combat damage as normal."
                 }
             ],
+            "scryfallId": "e36bc466-0f74-46fd-add2-c1cf3b3fe46b",
             "subtypes": [
                 "Beast"
             ],
@@ -6526,7 +6526,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e36bc466-0f74-46fd-add2-c1cf3b3fe46b"
+            "uuid": "de3daa77-7ae8-5312-8555-fe177b2bef8e"
         },
         {
             "artist": "Mark Zug",
@@ -6566,7 +6566,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6604,6 +6603,7 @@
                     "text": "The ability is optional. You can decide to allow it to deal combat damage as normal."
                 }
             ],
+            "scryfallId": "a13b103f-482b-47d5-84a2-3621ba23bd20",
             "subtypes": [
                 "Beast",
                 "Warrior"
@@ -6615,7 +6615,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a13b103f-482b-47d5-84a2-3621ba23bd20"
+            "uuid": "23d5a23e-f07c-54b5-8c81-c82890789f02"
         },
         {
             "artist": "Dave Dorman",
@@ -6655,7 +6655,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6694,6 +6693,7 @@
                     "text": "The ability is optional. You can decide to allow it to deal combat damage as normal."
                 }
             ],
+            "scryfallId": "86eb5b9e-320f-40de-8668-ee0c08f63ec1",
             "subtypes": [
                 "Beast"
             ],
@@ -6704,7 +6704,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "86eb5b9e-320f-40de-8668-ee0c08f63ec1"
+            "uuid": "fd0f7ac6-69f1-5ab4-827e-4bb488f482a9"
         },
         {
             "artist": "rk post",
@@ -6743,7 +6743,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6763,6 +6762,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "583a33b3-7833-48e5-88c3-849a5771ef6e",
             "subtypes": [],
             "supertypes": [],
             "text": "At the beginning of each player's end step, put a charge counter on Mana Cache for each untapped land that player controls.\nRemove a charge counter from Mana Cache: Add {C}. Any player may activate this ability but only during their turn before the end step.",
@@ -6770,7 +6770,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "583a33b3-7833-48e5-88c3-849a5771ef6e"
+            "uuid": "81570289-ce24-5405-bbd7-008762bf6c8f"
         },
         {
             "artist": "Dave Dorman",
@@ -6810,7 +6810,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6830,6 +6829,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f246e128-0a43-478a-a232-51020fab76d5",
             "subtypes": [],
             "supertypes": [],
             "text": "You may sacrifice two Mountains rather than pay this spell's mana cost.\nCreate two 1/1 red Goblin creature tokens.",
@@ -6837,7 +6837,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f246e128-0a43-478a-a232-51020fab76d5"
+            "uuid": "864e1102-7850-5678-88fa-c38002d43c76"
         },
         {
             "artist": "Paolo Parente",
@@ -6877,7 +6877,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6898,6 +6897,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "403aa48c-b684-4c54-8863-460958055a1f",
             "subtypes": [],
             "supertypes": [],
             "text": "If an opponent controls an Island and you control a Mountain, you may cast this spell without paying its mana cost.\nDestroy target artifact.",
@@ -6905,7 +6905,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "403aa48c-b684-4c54-8863-460958055a1f"
+            "uuid": "9c55c47b-0849-5956-97c1-1f8a1da36f05"
         },
         {
             "artist": "Mike Ploog",
@@ -6944,7 +6944,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6966,6 +6965,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ee8edaf6-d46e-4efb-8bc0-ec11e06eb499",
             "subtypes": [
                 "Goblin"
             ],
@@ -6976,7 +6976,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ee8edaf6-d46e-4efb-8bc0-ec11e06eb499"
+            "uuid": "c74090ab-4143-5cdd-b8c1-dc83bb1d1066"
         },
         {
             "artist": "Pete Venters",
@@ -7016,7 +7016,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7042,6 +7041,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "9ba582d7-1dce-4664-8bd9-6b419596788c",
             "subtypes": [
                 "Human",
                 "Mercenary"
@@ -7053,7 +7053,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9ba582d7-1dce-4664-8bd9-6b419596788c"
+            "uuid": "ef8cc82d-ebb1-5506-b771-59ee0eee1ff7"
         },
         {
             "artist": "Gao Yan",
@@ -7093,7 +7093,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7115,6 +7114,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "db53c1fb-3641-44a3-b0b4-b7b2ba993646",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice a creature. Rupture deals damage equal to that creature's power to each creature without flying and each player.",
@@ -7122,7 +7122,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "db53c1fb-3641-44a3-b0b4-b7b2ba993646"
+            "uuid": "84874b85-2ffc-50dd-a527-8cc3cb47829e"
         },
         {
             "artist": "Christopher Moeller",
@@ -7162,7 +7162,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7187,6 +7186,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "37eaf1f6-4bdc-4669-9a15-50b65e016ccf",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice Seal of Fire: It deals 2 damage to any target.",
@@ -7194,7 +7194,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "37eaf1f6-4bdc-4669-9a15-50b65e016ccf"
+            "uuid": "a2d8b9dd-ec40-5c69-8184-3a8a1c640246"
         },
         {
             "artist": "Dan Frazier",
@@ -7234,7 +7234,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7255,6 +7254,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0ce46919-d312-490c-8942-39fbb2d375bf",
             "subtypes": [
                 "Goblin"
             ],
@@ -7265,7 +7265,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0ce46919-d312-490c-8942-39fbb2d375bf"
+            "uuid": "f46c0ff1-ea7f-5b1a-96b9-3f189fb6392c"
         },
         {
             "artist": "Greg Hildebrandt & Tim Hildebrandt",
@@ -7304,7 +7304,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7333,6 +7332,7 @@
                     "text": "You don’t have to choose a creature card, but choosing a non creature does nothing except maybe bluff your opponent."
                 }
             ],
+            "scryfallId": "0d18050e-9aad-471e-a6ae-66e5fa2bbb6f",
             "subtypes": [],
             "supertypes": [],
             "text": "Each player chooses a card in their hand. Then each player reveals their chosen card. The owner of each creature card revealed this way with the lowest converted mana cost puts it onto the battlefield.",
@@ -7340,7 +7340,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0d18050e-9aad-471e-a6ae-66e5fa2bbb6f"
+            "uuid": "e3d478e9-ba32-5a4d-84ec-f75973d00e49"
         },
         {
             "artist": "Rebecca Guay",
@@ -7380,7 +7380,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7406,6 +7405,7 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "20ff4e7d-fa50-48d2-8ab6-6b86e3a05e86",
             "subtypes": [],
             "supertypes": [],
             "text": "Until end of turn, target land becomes a 3/3 creature that's still a land.",
@@ -7413,7 +7413,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "20ff4e7d-fa50-48d2-8ab6-6b86e3a05e86"
+            "uuid": "412276a7-51a8-582c-a38c-b0bd659b27eb"
         },
         {
             "artist": "Eric Peterson",
@@ -7452,7 +7452,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7482,6 +7481,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9db5d6c2-b11f-442a-b172-c0c99c9bec07",
             "subtypes": [
                 "Beast"
             ],
@@ -7492,7 +7492,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9db5d6c2-b11f-442a-b172-c0c99c9bec07"
+            "uuid": "823c31a9-3b94-53c6-9031-6fd3631e1d30"
         },
         {
             "artist": "David Martin",
@@ -7532,7 +7532,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7554,6 +7553,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "341a70be-2dbf-4365-9c7a-e52cb62a74fa",
             "subtypes": [
                 "Insect",
                 "Worm"
@@ -7565,7 +7565,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "341a70be-2dbf-4365-9c7a-e52cb62a74fa"
+            "uuid": "0031943a-5806-55be-93ec-8e58bd12c890"
         },
         {
             "artist": "Rebecca Guay",
@@ -7607,7 +7607,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7629,6 +7628,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "133f9e4f-2b1b-4a24-ad19-285a2c5845b5",
             "subtypes": [],
             "supertypes": [],
             "text": "Cast this spell only during the declare blockers step.\nAttacking creatures become blocked. (This spell works on creatures that can't be blocked.)",
@@ -7636,7 +7636,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "133f9e4f-2b1b-4a24-ad19-285a2c5845b5"
+            "uuid": "27c63db6-4c90-56ae-891b-7b9adbb32248"
         },
         {
             "artist": "Dan Frazier",
@@ -7676,7 +7676,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7698,6 +7697,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "95b29329-b9a3-4d59-b0f8-2abc67337760",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -7709,7 +7709,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "95b29329-b9a3-4d59-b0f8-2abc67337760"
+            "uuid": "b685ae91-e8aa-5427-85a2-bf3bec734b59"
         },
         {
             "artist": "Matt Cavotta",
@@ -7749,7 +7749,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7771,6 +7770,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2bbe0201-3df3-4d0c-8aa4-8f35f12c322c",
             "subtypes": [
                 "Plant",
                 "Hound"
@@ -7782,7 +7782,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2bbe0201-3df3-4d0c-8aa4-8f35f12c322c"
+            "uuid": "f869ca35-28c5-574e-84b2-ac54d404c0c1"
         },
         {
             "artist": "rk post",
@@ -7821,7 +7821,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7843,6 +7842,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5da697da-7026-4dea-b494-8314d789160f",
             "subtypes": [
                 "Wurm"
             ],
@@ -7853,7 +7853,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5da697da-7026-4dea-b494-8314d789160f"
+            "uuid": "38d146d7-3269-5417-82d8-e2cb6d462b1a"
         },
         {
             "artist": "DiTerlizzi",
@@ -7893,7 +7893,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7918,6 +7917,7 @@
                     "text": "You sacrifice your lands right before this card enters the battlefield. There is no way to tap your lands using the 2-mana ability before they are sacrificed."
                 }
             ],
+            "scryfallId": "230c7926-9a4b-4ead-b4c8-889f84210545",
             "subtypes": [],
             "supertypes": [],
             "text": "As Overlaid Terrain enters the battlefield, sacrifice all lands you control.\nLands you control have \"{T}: Add two mana of any one color.\"",
@@ -7925,7 +7925,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "230c7926-9a4b-4ead-b4c8-889f84210545"
+            "uuid": "78df5b8e-7cf0-5d7e-9040-1be1ef271ad5"
         },
         {
             "artist": "Sam Wood",
@@ -7965,7 +7965,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7985,6 +7984,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "1c46caa8-efc0-4b72-b122-61e5d86a5b86",
             "subtypes": [],
             "supertypes": [],
             "text": "Search your library for up to three cards with the same name as target creature, reveal them, and put them into your hand. Then shuffle your library.",
@@ -7992,7 +7992,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1c46caa8-efc0-4b72-b122-61e5d86a5b86"
+            "uuid": "561cb728-d366-56dc-bc8d-e120ca1a20f2"
         },
         {
             "artist": "Don Hazeltine",
@@ -8031,7 +8031,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8051,6 +8050,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c5e24850-bd9b-40ab-878f-b8a554da1956",
             "subtypes": [],
             "supertypes": [],
             "text": "If an opponent controls a Swamp and you control a Forest, you may cast this spell without paying its mana cost.\nTarget player gains 6 life.",
@@ -8058,7 +8058,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "c5e24850-bd9b-40ab-878f-b8a554da1956"
+            "uuid": "4b60099d-0c44-5590-a758-0c8c542fa4c1"
         },
         {
             "artist": "Don Hazeltine",
@@ -8097,7 +8097,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8118,6 +8117,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b82d3432-2167-4a65-8221-cb7b338e60d0",
             "subtypes": [],
             "supertypes": [],
             "text": "If you control a Forest, rather than pay this spell's mana cost, you may have each other player gain 6 life.\nDestroy all enchantments.",
@@ -8125,7 +8125,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b82d3432-2167-4a65-8221-cb7b338e60d0"
+            "uuid": "93dbb0f0-ad67-54b3-ba8c-06bf9bead8b7"
         },
         {
             "artist": "Carl Critchlow",
@@ -8164,7 +8164,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8205,6 +8204,7 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "58388a29-b2a6-4d16-b872-f198563721d9",
             "subtypes": [
                 "Rhino",
                 "Beast"
@@ -8216,7 +8216,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "58388a29-b2a6-4d16-b872-f198563721d9"
+            "uuid": "0081a296-af8b-5b4f-8615-005fb5ef7392"
         },
         {
             "artist": "Carl Critchlow",
@@ -8255,7 +8255,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8284,6 +8283,7 @@
                     "text": "Each token knows which Saproling Burst it came from."
                 }
             ],
+            "scryfallId": "de3a293d-08d8-49e4-b0fa-91afa0a5591d",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 7 (This enchantment enters the battlefield with seven fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Saproling Burst: Create a green Saproling creature token. It has \"This creature's power and toughness are each equal to the number of fade counters on Saproling Burst.\"\nWhen Saproling Burst leaves the battlefield, destroy all tokens created with Saproling Burst. They can't be regenerated.",
@@ -8291,7 +8291,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "de3a293d-08d8-49e4-b0fa-91afa0a5591d"
+            "uuid": "75773f7f-288a-5cc1-a102-4b9d1a2634a7"
         },
         {
             "artist": "Matt Cavotta",
@@ -8330,7 +8330,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8351,6 +8350,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5f50072b-aedd-4074-b1f7-f9ce477c26c2",
             "subtypes": [],
             "supertypes": [],
             "text": "{1}, Discard a card: Create a 1/1 green Saproling creature token. Any player may activate this ability.",
@@ -8358,7 +8358,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5f50072b-aedd-4074-b1f7-f9ce477c26c2"
+            "uuid": "bd0b7751-0cb8-54c4-bb71-cd17023cf2a7"
         },
         {
             "artist": "Christopher Moeller",
@@ -8398,7 +8398,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8420,6 +8419,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "57650f78-3bf0-485a-bba8-7e7e14e47508",
             "subtypes": [],
             "supertypes": [],
             "text": "Sacrifice Seal of Strength: Target creature gets +3/+3 until end of turn.",
@@ -8427,7 +8427,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "57650f78-3bf0-485a-bba8-7e7e14e47508"
+            "uuid": "463d1537-226d-59f6-9e05-ce59a0ee6769"
         },
         {
             "artist": "Eric Peterson",
@@ -8466,7 +8466,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8487,6 +8486,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "1c01d17e-45a2-4b6f-aaa5-2af9c8f26181",
             "subtypes": [
                 "Beast"
             ],
@@ -8497,7 +8497,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1c01d17e-45a2-4b6f-aaa5-2af9c8f26181"
+            "uuid": "e7c82ac6-3e48-5cea-b705-215d7fb436f5"
         },
         {
             "artist": "Mark Romanoski",
@@ -8537,7 +8537,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8559,14 +8558,15 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cf3e09ff-c917-4c0c-8ddb-e152b4b0b82c",
             "subtypes": [],
             "supertypes": [],
-            "text": "Search your library for up to two Forest cards and put them onto the battlefield. Then shuffle your library.",
+            "text": "Search your library for up to two Forest cards, put them onto the battlefield, then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cf3e09ff-c917-4c0c-8ddb-e152b4b0b82c"
+            "uuid": "a3e42473-7441-5914-b76e-5c0f60ab9472"
         },
         {
             "artist": "Tony Szczudlo",
@@ -8605,7 +8605,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8627,6 +8626,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a558c4f5-a716-4e46-9234-5f84f1bd57aa",
             "subtypes": [
                 "Beast"
             ],
@@ -8637,7 +8637,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a558c4f5-a716-4e46-9234-5f84f1bd57aa"
+            "uuid": "33fde248-982b-596a-be40-2a78b83db6d9"
         },
         {
             "artist": "Ron Spencer",
@@ -8677,7 +8677,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8703,6 +8702,7 @@
                     "text": "You do not have to find an Elf card if you do not want to."
                 }
             ],
+            "scryfallId": "0fb4e44e-656e-4294-a53b-1f7aa96fab31",
             "subtypes": [
                 "Human",
                 "Rebel"
@@ -8714,7 +8714,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0fb4e44e-656e-4294-a53b-1f7aa96fab31"
+            "uuid": "30380361-9b9f-5a41-acf6-4b872867ae9c"
         },
         {
             "artist": "Carl Critchlow",
@@ -8753,7 +8753,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8775,6 +8774,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "410896ab-d3dc-478c-bfd1-c0cad5b1180a",
             "subtypes": [
                 "Beast"
             ],
@@ -8785,7 +8785,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "410896ab-d3dc-478c-bfd1-c0cad5b1180a"
+            "uuid": "91a56e63-a0ec-5e38-97ec-2f0d2c2a5d6d"
         },
         {
             "artist": "Randy Gallegos",
@@ -8824,7 +8824,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8847,6 +8846,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a35ab55f-f677-45c8-bd32-56788a776b33",
             "subtypes": [
                 "Elf"
             ],
@@ -8857,7 +8857,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a35ab55f-f677-45c8-bd32-56788a776b33"
+            "uuid": "cb7c0ddc-fc85-5734-bfdd-c1f5a346cebd"
         },
         {
             "artist": "Ron Spears",
@@ -8897,7 +8897,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8925,6 +8924,7 @@
                     "text": "Stampede Driver’s ability affects only creatures you control at the time it resolves. Creatures you begin to control later in the turn won’t get +1/+1 or gain trample."
                 }
             ],
+            "scryfallId": "a295758a-ee46-4ed0-8539-67501a37010d",
             "subtypes": [
                 "Human",
                 "Spellshaper"
@@ -8936,7 +8936,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a295758a-ee46-4ed0-8539-67501a37010d"
+            "uuid": "ef60e911-cd36-52a5-be09-6b0ea3e1fcf5"
         },
         {
             "artist": "Heather Hudson",
@@ -8976,7 +8976,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9005,6 +9004,7 @@
                     "text": "Creatures with the Reach ability (such as Giant Spider) don’t actually have Flying, so they can’t block a creature enchanted with this."
                 }
             ],
+            "scryfallId": "d6d85032-26e9-44af-ab52-56d9c24e337d",
             "subtypes": [
                 "Aura"
             ],
@@ -9014,7 +9014,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d6d85032-26e9-44af-ab52-56d9c24e337d"
+            "uuid": "4187fcf5-1fd4-5969-b1e2-7ba4a73e225c"
         },
         {
             "artist": "Bradley Williams",
@@ -9054,7 +9054,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9076,6 +9075,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4d927fdb-11c0-42b6-95d4-7af051e45213",
             "subtypes": [
                 "Elephant"
             ],
@@ -9086,7 +9086,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4d927fdb-11c0-42b6-95d4-7af051e45213"
+            "uuid": "756cf03d-7fb8-5b81-8bd8-70c127ee0dbf"
         },
         {
             "artist": "Alan Pollack",
@@ -9125,7 +9125,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9147,6 +9146,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5126b782-d74c-40ca-a9b2-a6c78f94d138",
             "subtypes": [
                 "Beast"
             ],
@@ -9157,7 +9157,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5126b782-d74c-40ca-a9b2-a6c78f94d138"
+            "uuid": "95a7b4c2-48d2-50cf-96e3-25e21e0fcf5e"
         },
         {
             "artist": "D. Alexander Gregory",
@@ -9193,7 +9193,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9214,6 +9213,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0052158b-58d1-4416-a7ce-7c6a7595263c",
             "subtypes": [],
             "supertypes": [],
             "text": "{X}, {T}: Target creature gets -X/+X until end of turn.",
@@ -9221,7 +9221,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "0052158b-58d1-4416-a7ce-7c6a7595263c"
+            "uuid": "fb96d957-4f76-5b8a-a07d-16335e212e06"
         },
         {
             "artist": "Mark Tedin",
@@ -9257,7 +9257,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9282,6 +9281,7 @@
                     "text": "Putting the card onto the battlefield is optional. When the ability resolves, you can choose not to."
                 }
             ],
+            "scryfallId": "fb4eeea1-693e-475c-a209-8a0464df8081",
             "subtypes": [],
             "supertypes": [],
             "text": "As Belbe's Portal enters the battlefield, choose a creature type.\n{3}, {T}: You may put a creature card of the chosen type from your hand onto the battlefield.",
@@ -9289,7 +9289,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "fb4eeea1-693e-475c-a209-8a0464df8081"
+            "uuid": "c3ff21d9-e113-5622-8a34-e8aa094839a0"
         },
         {
             "artist": "Dana Knutson",
@@ -9325,7 +9325,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9346,6 +9345,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5fb3c7af-74e1-4072-953b-b3e9ccd8aa03",
             "subtypes": [
                 "Golem"
             ],
@@ -9357,7 +9357,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "5fb3c7af-74e1-4072-953b-b3e9ccd8aa03"
+            "uuid": "461853bc-026c-544b-9e32-cdf46009cd3d"
         },
         {
             "artist": "DiTerlizzi",
@@ -9392,7 +9392,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9412,6 +9411,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9c258aa1-cd9f-45e9-b478-d689b78850cd",
             "subtypes": [],
             "supertypes": [],
             "text": "{3}, {T}, Sacrifice a creature: Reveal a number of cards from the top of your library equal to the sacrificed creature's power. Put one into your hand and exile the rest.",
@@ -9419,7 +9419,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "9c258aa1-cd9f-45e9-b478-d689b78850cd"
+            "uuid": "8daba7e3-3955-5a2a-b199-412729e1640f"
         },
         {
             "artist": "Lou Harrison",
@@ -9454,7 +9454,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9476,6 +9475,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0e62aa7e-d9f9-42d4-9eed-5f51f88047c6",
             "subtypes": [
                 "Golem"
             ],
@@ -9487,7 +9487,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0e62aa7e-d9f9-42d4-9eed-5f51f88047c6"
+            "uuid": "c5675a7d-b81b-567c-ae04-21e901dc5c96"
         },
         {
             "artist": "Paolo Parente",
@@ -9522,7 +9522,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9543,6 +9542,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1160e476-8a2b-4b90-b4db-f386a80ab067",
             "subtypes": [],
             "supertypes": [],
             "text": "You may choose not to untap Flowstone Armor during your untap step.\n{3}, {T}: Target creature gets +1/-1 for as long as Flowstone Armor remains tapped.",
@@ -9550,7 +9550,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "1160e476-8a2b-4b90-b4db-f386a80ab067"
+            "uuid": "e629b2c0-a3e9-5512-bbc0-a6f6fa9efcf7"
         },
         {
             "artist": "Mike Ploog",
@@ -9586,7 +9586,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9607,6 +9606,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5bf016ec-2654-4c3e-8e2e-6c70c4604d28",
             "subtypes": [
                 "Thopter"
             ],
@@ -9618,7 +9618,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "5bf016ec-2654-4c3e-8e2e-6c70c4604d28"
+            "uuid": "faa9a42f-0e00-596e-a327-868ec874a659"
         },
         {
             "artist": "Brian Snõddy",
@@ -9654,7 +9654,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9683,6 +9682,7 @@
                     "text": "Only the artifacts that it tried to tap when the ability resolved are prevented from untapping. Artifacts that enter the battlefield after that or permanents that become artifacts after that are not affected."
                 }
             ],
+            "scryfallId": "a94cfd63-7f2b-4c0a-8dcb-f22cf83e1e27",
             "subtypes": [],
             "supertypes": [],
             "text": "{2}, {T}: Tap all other artifacts. They don't untap during their controllers' untap steps for as long as Kill Switch remains tapped.",
@@ -9690,7 +9690,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "a94cfd63-7f2b-4c0a-8dcb-f22cf83e1e27"
+            "uuid": "5bdf2dab-0e39-59f4-b69e-d429db582373"
         },
         {
             "artist": "Greg Staples",
@@ -9726,7 +9726,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9746,6 +9745,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "f758617c-f0e4-43d5-8fb4-e33eb2c5b99f",
             "subtypes": [],
             "supertypes": [],
             "text": "{1}, {T}, Sacrifice Parallax Inhibitor: Put a fade counter on each permanent with fading you control.",
@@ -9753,7 +9753,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "f758617c-f0e4-43d5-8fb4-e33eb2c5b99f"
+            "uuid": "aeb2acbc-3a37-5a02-a7e5-ccd9bfbe71a6"
         },
         {
             "artist": "Mark Tedin",
@@ -9789,7 +9789,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9813,6 +9812,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "28927927-3974-48c3-81c2-518089a10003",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
@@ -9822,7 +9822,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "28927927-3974-48c3-81c2-518089a10003"
+            "uuid": "80302ad5-0fae-5a3f-9403-93c6940d580e"
         },
         {
             "artist": "D. Alexander Gregory",
@@ -9858,7 +9858,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9879,6 +9878,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "10f82f2e-a6db-491b-b253-82c34cd6c940",
             "subtypes": [
                 "Construct"
             ],
@@ -9890,7 +9890,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "10f82f2e-a6db-491b-b253-82c34cd6c940"
+            "uuid": "ccaba04f-5805-548e-ba52-5bb11b1d35fc"
         },
         {
             "artist": "Alan Pollack",
@@ -9925,7 +9925,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9945,6 +9944,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b97f86ce-4758-4ae3-af29-b08a4d771652",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 2 (This artifact enters the battlefield with two fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\n{T}: You gain 2 life.",
@@ -9952,7 +9952,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "b97f86ce-4758-4ae3-af29-b08a4d771652"
+            "uuid": "49aaa3c8-331b-568e-9f1a-343fd1566f67"
         },
         {
             "artist": "Greg Staples",
@@ -9987,7 +9987,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10009,6 +10008,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c2605448-8e0d-492b-a635-468923c64625",
             "subtypes": [
                 "Golem"
             ],
@@ -10020,7 +10020,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c2605448-8e0d-492b-a635-468923c64625"
+            "uuid": "c5df1c12-5316-5347-9368-d84081f0d605"
         },
         {
             "artist": "Glen Angus",
@@ -10055,7 +10055,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10077,6 +10076,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ad62f313-8a8a-4ffa-ada2-b12b76288729",
             "subtypes": [],
             "supertypes": [],
             "text": "Fading 4 (This artifact enters the battlefield with four fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nAt the beginning of each player's upkeep, that player taps an untapped artifact, creature, or land they control for each fade counter on Tangle Wire.",
@@ -10084,7 +10084,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "ad62f313-8a8a-4ffa-ada2-b12b76288729"
+            "uuid": "b6c50a6d-aa1d-5b49-8f84-4ac05560e816"
         },
         {
             "artist": "Kev Walker",
@@ -10120,7 +10120,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10142,6 +10141,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a3eb86c5-d6fe-4dde-ad07-c3109b3a1611",
             "subtypes": [
                 "Construct"
             ],
@@ -10153,7 +10153,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a3eb86c5-d6fe-4dde-ad07-c3109b3a1611"
+            "uuid": "bb6e7977-74f8-58f1-83e0-c42f71e717b8"
         },
         {
             "artist": "Darrell Riche",
@@ -10190,7 +10190,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10210,6 +10209,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3d5529ca-5c20-4dfd-8595-96d6dfa6debe",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
@@ -10219,7 +10219,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3d5529ca-5c20-4dfd-8595-96d6dfa6debe"
+            "uuid": "31e77f70-6310-5df5-9338-95627ee9626e"
         },
         {
             "artist": "Ron Spencer",
@@ -10254,7 +10254,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10273,6 +10272,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "42681dce-5c63-4e56-955e-39f085ea6ae9",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
@@ -10282,7 +10282,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "42681dce-5c63-4e56-955e-39f085ea6ae9"
+            "uuid": "f01f6dc1-b806-5a13-a2dc-72f0f64ea781"
         },
         {
             "artist": "Alan Pollack",
@@ -10317,7 +10317,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10347,6 +10346,7 @@
                     "text": "Putting the card onto the battlefield is optional. When the ability resolves, you can choose not to."
                 }
             ],
+            "scryfallId": "e6fe66a2-8e70-414f-bedb-8f1f85f1d2d9",
             "subtypes": [],
             "supertypes": [],
             "text": "{T}: Add {C}.\n{2}, {T}: You may put a basic land card from your hand onto the battlefield tapped.",
@@ -10354,17 +10354,18 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e6fe66a2-8e70-414f-bedb-8f1f85f1d2d9"
+            "uuid": "81f992a8-3fec-5cb5-a68e-aed778df8932"
         }
     ],
     "code": "nem",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "ne",
     "name": "Nemesis",
     "releaseDate": "2000-02-14",
+    "tcgplayerGroupId": -1,
     "tokens": [],
     "totalSetSize": 143,
     "type": "expansion"

@@ -12,7 +12,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -44,19 +43,19 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "536c2bce-600f-43ce-9e6d-e6f4716c0309",
             "starter": true,
             "subtypes": [
                 "Sliver"
             ],
             "supertypes": [],
-            "text": "",
             "toughness": "1",
             "type": "Artifact Creature — Sliver",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "536c2bce-600f-43ce-9e6d-e6f4716c0309"
+            "uuid": "13ca14e8-aa9a-5fa5-bdea-979bf3cff20b"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -72,7 +71,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -105,6 +103,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "bacc3f0e-1333-48e6-8d3d-64e3148694ac",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -116,7 +115,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "bacc3f0e-1333-48e6-8d3d-64e3148694ac"
+            "uuid": "6084cff3-9028-56ac-8dac-218540f90f78"
         },
         {
             "artist": "Nils Hamm",
@@ -132,7 +131,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -166,6 +164,7 @@
                     "text": "Examples of creature types include Sliver, Goblin, and Soldier. Creature types appear after the dash on the type line of creatures."
                 }
             ],
+            "scryfallId": "75d4e080-f6a7-4be0-9191-306f55784bbe",
             "starter": true,
             "subtypes": [
                 "Shapeshifter"
@@ -177,7 +176,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "75d4e080-f6a7-4be0-9191-306f55784bbe"
+            "uuid": "cea6c056-4c3b-5be4-bf15-803365a1a0cc"
         },
         {
             "artist": "Anthony S. Waters",
@@ -194,7 +193,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -227,6 +225,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "f93e951a-ff0a-4629-b296-7cf3397bc583",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -238,7 +237,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f93e951a-ff0a-4629-b296-7cf3397bc583"
+            "uuid": "a7182d84-c7c2-5bbe-9ad0-b9f1ad0cb49d"
         },
         {
             "artist": "Jeff Laubenstein",
@@ -255,7 +254,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -288,6 +286,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "43b794b5-4fd4-404a-813a-11020fab0ddc",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -299,7 +298,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "43b794b5-4fd4-404a-813a-11020fab0ddc"
+            "uuid": "eec99f8d-eac3-5eb3-82b6-782ad57b6046"
         },
         {
             "artist": "Glen Angus",
@@ -316,7 +315,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -354,6 +352,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "8ae7319e-a12f-4e37-b184-0d15921ae72c",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -365,7 +364,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "8ae7319e-a12f-4e37-b184-0d15921ae72c"
+            "uuid": "e1cc0d78-55a5-58a8-9c39-3fb6e03fdec1"
         },
         {
             "artist": "Ron Spencer",
@@ -382,7 +381,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -414,6 +412,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "981af400-4293-4b90-9325-8cdc633c4ea8",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -425,7 +424,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "981af400-4293-4b90-9325-8cdc633c4ea8"
+            "uuid": "7db88bfa-bcec-56ae-953c-93066d8cf222"
         },
         {
             "artist": "John Matson",
@@ -442,7 +441,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -475,6 +473,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "3df0c5b7-c24e-4a4e-b4c4-d46e1a708c4e",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -486,7 +485,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3df0c5b7-c24e-4a4e-b4c4-d46e1a708c4e"
+            "uuid": "566f1284-ae98-5585-8241-8c2d4acf1e3b"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -503,7 +502,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -542,6 +540,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "6a2f3f6f-3c41-446f-b3b0-f5059b153092",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -553,7 +552,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6a2f3f6f-3c41-446f-b3b0-f5059b153092"
+            "uuid": "6b43bea0-5876-53af-8057-2e7c67ffe7ca"
         },
         {
             "artist": "John Avon",
@@ -570,7 +569,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -607,6 +605,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "7142f9b7-3205-4f01-9174-0b48d52d90b2",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -618,7 +617,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "7142f9b7-3205-4f01-9174-0b48d52d90b2"
+            "uuid": "82e83c55-42a8-5be5-9e83-82bd6566a123"
         },
         {
             "artist": "Allen Williams",
@@ -637,7 +636,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -675,6 +673,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "0f66aa7f-7043-4aeb-91da-ed155580e391",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -686,7 +685,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0f66aa7f-7043-4aeb-91da-ed155580e391"
+            "uuid": "0faf0a14-c3d8-511d-ab75-f2b863c35005"
         },
         {
             "artist": "Scott Kirschner",
@@ -705,7 +704,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -737,6 +735,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "747d69d4-a7d4-4d6d-8f12-2366655c15d9",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -748,7 +747,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "747d69d4-a7d4-4d6d-8f12-2366655c15d9"
+            "uuid": "527fd3fd-63e1-5ea0-99c6-a756e43df2f9"
         },
         {
             "artist": "Jeff Miracola",
@@ -767,7 +766,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -800,6 +798,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "f2e23d03-9ee4-44c1-88d3-7708ef5b79c9",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -811,7 +810,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f2e23d03-9ee4-44c1-88d3-7708ef5b79c9"
+            "uuid": "615e70d8-469b-5ea0-8612-fe015c5553a0"
         },
         {
             "artist": "Ron Spencer",
@@ -830,7 +829,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -869,6 +867,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "4a0bf9e6-c497-45bc-83e0-9f50ef424852",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -880,7 +879,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4a0bf9e6-c497-45bc-83e0-9f50ef424852"
+            "uuid": "50ecf6c6-14a7-5766-800e-57cce76f2cc7"
         },
         {
             "artist": "Terese Nielsen",
@@ -899,7 +898,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -932,6 +930,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "90b3df6c-bddd-4680-b8e2-0f9698302f5e",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -943,7 +942,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "90b3df6c-bddd-4680-b8e2-0f9698302f5e"
+            "uuid": "6d1b7700-5ae2-50e3-9eaf-3af470bc37c3"
         },
         {
             "artist": "Scott Kirschner",
@@ -960,7 +959,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -994,6 +992,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "f20c1c1a-a964-40c7-8d74-2d08ff192bc3",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1005,7 +1004,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f20c1c1a-a964-40c7-8d74-2d08ff192bc3"
+            "uuid": "2701522a-0533-5f55-9480-f48d3de77438"
         },
         {
             "artist": "Pete Venters",
@@ -1022,7 +1021,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1055,6 +1053,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "cc8da573-72fc-45fd-9024-24eca0804530",
             "starter": true,
             "subtypes": [
                 "Sliver",
@@ -1067,7 +1066,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "cc8da573-72fc-45fd-9024-24eca0804530"
+            "uuid": "dbef9b65-3ccb-50f4-a612-3aa4a1042331"
         },
         {
             "artist": "Scott Kirschner",
@@ -1084,7 +1083,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1118,6 +1116,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "05e5de3c-e615-481a-a8f2-8300864d5e07",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1129,7 +1128,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "05e5de3c-e615-481a-a8f2-8300864d5e07"
+            "uuid": "6f2de555-03ff-5b75-be48-1a4e6f6820a7"
         },
         {
             "artist": "Trevor Hairsine",
@@ -1145,7 +1144,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1195,6 +1193,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "2a50d5c6-8e9c-4950-8d8d-4aad0ce044cb",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1206,7 +1205,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2a50d5c6-8e9c-4950-8d8d-4aad0ce044cb"
+            "uuid": "8ff1c552-7a36-599e-ae10-8e02b2a3ff77"
         },
         {
             "artist": "Dave Allsop",
@@ -1225,7 +1224,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1257,6 +1255,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "812c6110-c825-48cd-ba40-ec8e9557f0e7",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1268,7 +1267,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "812c6110-c825-48cd-ba40-ec8e9557f0e7"
+            "uuid": "4f4a692e-6dee-5330-8b96-a4de5f9c340b"
         },
         {
             "artist": "Daniel Gelon",
@@ -1285,7 +1284,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1318,6 +1316,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "be17c49e-7634-4698-a2e4-7cd3068d9971",
             "starter": true,
             "subtypes": [
                 "Fungus",
@@ -1330,7 +1329,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "be17c49e-7634-4698-a2e4-7cd3068d9971"
+            "uuid": "34de65fe-8996-5fe5-ba0d-365323e8ddfc"
         },
         {
             "artist": "Ron Spears",
@@ -1347,7 +1346,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1383,6 +1381,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "fa861228-5ceb-41f8-8ec0-9b96f1360271",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1394,7 +1393,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "fa861228-5ceb-41f8-8ec0-9b96f1360271"
+            "uuid": "bb65b553-bcf8-5337-ac41-7d0bff737093"
         },
         {
             "artist": "Jeff Miracola",
@@ -1411,7 +1410,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1444,6 +1442,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "0122c2d9-7d4b-41a7-b39d-21b52e76e94e",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1455,7 +1454,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0122c2d9-7d4b-41a7-b39d-21b52e76e94e"
+            "uuid": "12c4d333-9e24-50f8-9017-81360ca102c4"
         },
         {
             "artist": "Tony Szczudlo",
@@ -1480,7 +1479,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1502,6 +1500,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "2ffd66b5-08fe-416b-a680-2d98e9286b77",
             "starter": true,
             "subtypes": [
                 "Sliver",
@@ -1516,7 +1515,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2ffd66b5-08fe-416b-a680-2d98e9286b77"
+            "uuid": "aee5734b-7162-5418-9698-d43532291cb5"
         },
         {
             "artist": "Paolo Parente",
@@ -1533,7 +1532,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1566,6 +1564,7 @@
                     "text": "If the creature type of a Sliver changes so it’s no longer a Sliver, it will no longer be affected by its own ability. Its ability will continue to affect other Sliver creatures."
                 }
             ],
+            "scryfallId": "eed1b11e-ca86-4b1b-b989-3a59e5772099",
             "starter": true,
             "subtypes": [
                 "Sliver"
@@ -1577,7 +1576,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "eed1b11e-ca86-4b1b-b989-3a59e5772099"
+            "uuid": "d9b5c012-ac10-5c7e-9230-36e6c9e79e45"
         },
         {
             "artist": "John Matson",
@@ -1590,7 +1589,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1632,6 +1630,7 @@
                     "text": "Activated abilities contain a colon. They’re generally written “[Cost]: [Effect].” Some keywords are activated abilities and will have colons in their reminder text."
                 }
             ],
+            "scryfallId": "486cfc00-9023-4286-bb76-fa45add2cc91",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1640,7 +1639,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "486cfc00-9023-4286-bb76-fa45add2cc91"
+            "uuid": "3538ad93-b51e-5c29-bcd9-d61b10e45c17"
         },
         {
             "artist": "Omar Rayyan",
@@ -1657,7 +1656,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1685,6 +1683,7 @@
                     "text": "Note that this spell counts the number of permanents you control of the chosen type, not just the number of creatures you control. It will also take your tribal permanents into account."
                 }
             ],
+            "scryfallId": "0db49f7f-1790-435a-a75a-59129fa1cf97",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1693,7 +1692,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0db49f7f-1790-435a-a75a-59129fa1cf97"
+            "uuid": "56c9edd3-21d6-523c-88aa-7a9cd82377a4"
         },
         {
             "artist": "Monte Michael Moore",
@@ -1710,7 +1709,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1739,6 +1737,7 @@
                     "text": "You need to choose the creature type before choosing the targets."
                 }
             ],
+            "scryfallId": "59e05b04-172b-4556-8984-a903cd7ac613",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1747,7 +1746,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "59e05b04-172b-4556-8984-a903cd7ac613"
+            "uuid": "e8115267-cd13-5dc3-aa31-e67487192d25"
         },
         {
             "artist": "Scott M. Fischer",
@@ -1760,7 +1759,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1804,6 +1802,7 @@
                     "text": "Sharing multiple creature types doesn’t give an additional bonus. Coat of Arms counts creatures, not creature types."
                 }
             ],
+            "scryfallId": "fb802181-b550-43d1-a510-c46a5617cd97",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1812,7 +1811,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "fb802181-b550-43d1-a510-c46a5617cd97"
+            "uuid": "b749e396-0ccc-5106-9d4c-d5112020b83a"
         },
         {
             "artist": "Mark Brill",
@@ -1828,7 +1827,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1865,6 +1863,7 @@
                     "text": "If the creature that entered the battlefield has left the battlefield by the time the ability resolves, use the power and toughness of that creature as it last appeared before leaving the battlefield."
                 }
             ],
+            "scryfallId": "61e28b75-e228-450d-adff-f83db96e7186",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1873,7 +1872,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "61e28b75-e228-450d-adff-f83db96e7186"
+            "uuid": "db0aebd1-922a-5e79-829a-17bdafb0923d"
         },
         {
             "artist": "John Avon",
@@ -1886,7 +1885,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1918,6 +1916,7 @@
                     "text": "Mana produced by Ancient Ziggurat can’t be spent on activated abilities that put a creature card directly onto the battlefield, such as unearth or ninjutsu."
                 }
             ],
+            "scryfallId": "102ff1be-cc4a-4c43-9125-0e2699fb3e73",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1926,7 +1925,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "102ff1be-cc4a-4c43-9125-0e2699fb3e73"
+            "uuid": "e2827533-a8bb-5d4a-8ae6-4056af1a8ea8"
         },
         {
             "artist": "Matt Stewart",
@@ -1941,7 +1940,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1981,6 +1979,7 @@
                     "text": "As this is entering the battlefield, it checks for lands that are already on the battlefield. It won’t see lands that are entering the battlefield at the same time (due to Warp World, for example)."
                 }
             ],
+            "scryfallId": "5dfbf5cb-ce19-4124-9dad-522809487faa",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1989,7 +1988,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "5dfbf5cb-ce19-4124-9dad-522809487faa"
+            "uuid": "be2164f3-4166-5371-bda8-0a740ad39683"
         },
         {
             "artist": "Jaime Jones",
@@ -2001,7 +2000,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2038,6 +2036,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c6dbe3ae-b48d-4186-afdd-95cd7d65a84e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2046,7 +2045,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c6dbe3ae-b48d-4186-afdd-95cd7d65a84e"
+            "uuid": "2891a209-d619-5e28-85d9-ed3d6534d547"
         },
         {
             "artist": "Dan Scott",
@@ -2058,7 +2057,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2105,6 +2103,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "85976808-b93e-44b3-96a3-103587548d22",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2113,7 +2112,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "85976808-b93e-44b3-96a3-103587548d22"
+            "uuid": "037db567-21eb-55ed-9495-14672520359d"
         },
         {
             "artist": "Fred Fields",
@@ -2127,7 +2126,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2155,6 +2153,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aed60ac3-0374-432f-ab1b-478386b26da0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2163,7 +2162,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "aed60ac3-0374-432f-ab1b-478386b26da0"
+            "uuid": "2d97f453-bac5-5a09-9759-b358df0dee95"
         },
         {
             "artist": "Howard Lyon",
@@ -2177,7 +2176,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2205,6 +2203,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0c412d30-96bf-48fa-90a6-ba3e30aae6e5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2213,7 +2212,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0c412d30-96bf-48fa-90a6-ba3e30aae6e5"
+            "uuid": "8d7350a8-7630-5034-9b2c-ea23b09de134"
         },
         {
             "artist": "Terese Nielsen",
@@ -2227,7 +2226,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2278,7 +2276,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2291,8 +2288,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2306,6 +2305,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ad27f8cb-302b-411a-bb86-26ff4cabbd49",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2318,7 +2318,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ad27f8cb-302b-411a-bb86-26ff4cabbd49"
+            "uuid": "7fb5006b-bcc0-50f0-9918-7e570d858a2f"
         },
         {
             "artist": "Randy Gallegos",
@@ -2332,7 +2332,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2384,7 +2383,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2396,8 +2394,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2411,6 +2411,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "542a8f0e-249e-4f07-86c0-7a7cfa8eab1d",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2423,7 +2424,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "542a8f0e-249e-4f07-86c0-7a7cfa8eab1d"
+            "uuid": "84c5aae8-d17f-5670-b7f5-5835c379c70c"
         },
         {
             "artist": "Brom",
@@ -2437,7 +2438,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2498,8 +2498,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2513,6 +2515,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cdab5cee-a90d-4b8b-b4d3-dd6fee87640d",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -2525,7 +2528,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "cdab5cee-a90d-4b8b-b4d3-dd6fee87640d"
+            "uuid": "ac5eca50-bae3-5c1a-8140-a0444de53478"
         },
         {
             "artist": "Mark Poole",
@@ -2539,7 +2542,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2562,7 +2564,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2602,8 +2603,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2617,6 +2620,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "710d1f9d-ed1b-4134-bf28-7f6bdac9983e",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2629,7 +2633,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "710d1f9d-ed1b-4134-bf28-7f6bdac9983e"
+            "uuid": "307a0b6d-45cf-5826-8441-d03644af5246"
         },
         {
             "artist": "Douglas Shuler",
@@ -2643,7 +2647,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2698,14 +2701,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2719,6 +2723,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "17e5f194-5148-4991-9f75-750cb3e41c62",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -2731,18 +2736,19 @@
             "types": [
                 "Land"
             ],
-            "uuid": "17e5f194-5148-4991-9f75-750cb3e41c62"
+            "uuid": "f715bf57-d6c7-561a-bc40-facf1019eb76"
         }
     ],
     "code": "h09",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "h09",
     "name": "Premium Deck Series: Slivers",
     "releaseDate": "2009-11-20",
+    "tcgplayerGroupId": -1,
     "tokens": [],
     "totalSetSize": 41,
     "type": "premium_deck"

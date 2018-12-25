@@ -83,7 +83,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -106,14 +105,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b9e0bf63-0399-40d6-9162-4562d7bcdd0e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11906,
             "text": "Choose one —\n• You gain 5 life.\n• Prevent the next 5 damage that would be dealt to target creature this turn.\nEntwine {2} (Choose both if you pay the entwine cost.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b9e0bf63-0399-40d6-9162-4562d7bcdd0e"
+            "uuid": "b72df08d-523b-5359-8c60-2993ba7a5bcb"
         },
         {
             "artist": "Doug Chaffee",
@@ -187,7 +188,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -210,14 +210,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7029fac9-ef8a-499f-aa42-c145b6b528ae",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11907,
             "text": "Armed Response deals damage to target attacking creature equal to the number of Equipment you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7029fac9-ef8a-499f-aa42-c145b6b528ae"
+            "uuid": "948628d9-6f34-53cb-8b25-4d6a31b15091"
         },
         {
             "artist": "Michael Sutfin",
@@ -291,7 +293,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -319,18 +320,20 @@
                     "text": "Gaining life when a creature enters the battlefield is optional."
                 }
             ],
+            "scryfallId": "b9e6bf0b-bb39-4d0f-9035-a276e604f609",
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11759,
             "text": "Protection from black and from red\nWhenever another creature enters the battlefield, you may gain 1 life.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "b9e6bf0b-bb39-4d0f-9035-a276e604f609"
+            "uuid": "b3650dc9-8afe-527d-938a-ffead42dddb8"
         },
         {
             "artist": "Randy Gallegos",
@@ -404,7 +407,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -433,18 +435,20 @@
                     "text": "If a card in a graveyard has X in its mana cost, X is considered to be 0."
                 }
             ],
+            "scryfallId": "09c9cd1b-9260-4f98-ac7a-25bb5ae3e06d",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11769,
             "text": "{1}{W}: Return target artifact card with converted mana cost 1 or less from your graveyard to your hand.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "09c9cd1b-9260-4f98-ac7a-25bb5ae3e06d"
+            "uuid": "28a1ef45-8dcc-55b9-b378-724c6f46c7c0"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -518,7 +522,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -541,18 +544,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4315d060-9858-405c-a442-c7a278134f00",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11908,
             "text": "Flying\n{T}: Attach target Equipment you control to target creature you control.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4315d060-9858-405c-a442-c7a278134f00"
+            "uuid": "a951aa8d-bbcd-5a21-858c-70558a92e3ea"
         },
         {
             "artist": "Rob Alexander",
@@ -626,7 +631,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -662,14 +666,16 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "601bb6d1-77f4-4ffe-94d0-bed74c33013b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11909,
             "text": "Double target player's life total. Shuffle Beacon of Immortality into its owner's library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "601bb6d1-77f4-4ffe-94d0-bed74c33013b"
+            "uuid": "c5a415b8-d67b-56c0-82a7-090f54fb7759"
         },
         {
             "artist": "Kev Walker",
@@ -739,7 +745,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -762,17 +767,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9e5a7117-b1e2-46bd-873e-baf9d9fac009",
             "subtypes": [
                 "Bringer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11910,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost.\nTrample\nAt the beginning of your upkeep, you may return target artifact card from your graveyard to the battlefield.",
             "toughness": "5",
             "type": "Creature — Bringer",
             "types": [
                 "Creature"
             ],
-            "uuid": "9e5a7117-b1e2-46bd-873e-baf9d9fac009"
+            "uuid": "fccf48e1-c8c6-5fff-b872-e9b6b6cd58c9"
         },
         {
             "artist": "Terese Nielsen",
@@ -846,7 +853,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -873,14 +879,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b09e7267-3d71-4724-b3e7-ae5a6a1f002a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11911,
             "text": "{2}: The next time an artifact source of your choice would deal damage to you this turn, prevent that damage.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b09e7267-3d71-4724-b3e7-ae5a6a1f002a"
+            "uuid": "08a7e53e-c265-58d5-b4d1-69c13782a8bc"
         },
         {
             "artist": "Pete Venters",
@@ -954,7 +962,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -978,18 +985,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5a5320ff-1fe6-492a-b27f-86a84a1768ed",
             "subtypes": [
                 "Cat",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11912,
             "text": "When Leonin Squire enters the battlefield, return target artifact card with converted mana cost 1 or less from your graveyard to your hand.",
             "toughness": "2",
             "type": "Creature — Cat Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5a5320ff-1fe6-492a-b27f-86a84a1768ed"
+            "uuid": "f0807a40-cc25-5910-9045-172091538bcd"
         },
         {
             "artist": "Jim Nelson",
@@ -1063,7 +1072,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1086,18 +1094,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a55f0113-3ced-49c7-9fa8-f1cc873bdc4c",
             "subtypes": [
                 "Elephant",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11913,
             "text": "{T}: Prevent the next 2 damage that would be dealt to any target this turn.",
             "toughness": "3",
             "type": "Creature — Elephant Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "a55f0113-3ced-49c7-9fa8-f1cc873bdc4c"
+            "uuid": "150fddb1-47dc-5834-816a-e9b557614fe1"
         },
         {
             "artist": "Paolo Parente",
@@ -1171,7 +1181,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1194,18 +1203,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0e58f4fb-5b4e-45bc-99b3-d09cd79132df",
             "subtypes": [
                 "Elephant",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11914,
             "text": "Vigilance\n{W}: Loxodon Stalwart gets +0/+1 until end of turn.",
             "toughness": "3",
             "type": "Creature — Elephant Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0e58f4fb-5b4e-45bc-99b3-d09cd79132df"
+            "uuid": "c0d53229-16e0-5375-bfa2-3465f5bc707c"
         },
         {
             "artist": "Pete Venters",
@@ -1279,7 +1290,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1309,6 +1319,7 @@
                     "text": "Raksha Golden Cub is a Cat, so it also gets +2/+2 and double strike if it’s equipped."
                 }
             ],
+            "scryfallId": "45501767-2ba8-443f-af9b-c86ead0aa30d",
             "subtypes": [
                 "Cat",
                 "Soldier"
@@ -1316,13 +1327,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 11757,
             "text": "Vigilance\nAs long as Raksha Golden Cub is equipped, Cat creatures you control get +2/+2 and have double strike.",
             "toughness": "4",
             "type": "Legendary Creature — Cat Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "45501767-2ba8-443f-af9b-c86ead0aa30d"
+            "uuid": "a98ec6c0-45cd-54fc-8e49-c767d6be1cbf"
         },
         {
             "artist": "Vance Kovacs",
@@ -1396,7 +1408,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1418,14 +1429,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "58acdda6-6754-46f2-ad68-f1580b8ab0dd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11915,
             "text": "Destroy all creatures that dealt damage to you this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "58acdda6-6754-46f2-ad68-f1580b8ab0dd"
+            "uuid": "8a2ae566-1730-5460-9154-5263e003af4d"
         },
         {
             "artist": "Justin Sweet",
@@ -1499,7 +1512,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1521,14 +1533,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d560e242-44ef-4162-8589-965897e4cdad",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11776,
             "text": "Each player returns all artifact cards from their graveyard to the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d560e242-44ef-4162-8589-965897e4cdad"
+            "uuid": "d170a37b-8c45-531d-8814-c3f519b26806"
         },
         {
             "artist": "Vance Kovacs",
@@ -1602,7 +1616,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1628,18 +1641,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7e4065bb-8deb-46d5-a57e-d61c77493274",
             "subtypes": [
                 "Cat",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11916,
             "text": "Flying, vigilance (This creature can't be blocked except by creatures with flying or reach, and attacking doesn't cause this creature to tap.)",
             "toughness": "3",
             "type": "Creature — Cat Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "7e4065bb-8deb-46d5-a57e-d61c77493274"
+            "uuid": "f4ba8a3d-0cc7-5227-97c2-2eedba16dd2b"
         },
         {
             "artist": "Greg Staples",
@@ -1713,7 +1728,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1742,18 +1756,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "975d0549-e6b6-456b-8693-227591e4db91",
             "subtypes": [
                 "Cat",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11917,
             "text": "Flying, double strike",
             "toughness": "1",
             "type": "Creature — Cat Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "975d0549-e6b6-456b-8693-227591e4db91"
+            "uuid": "77b67db7-6dc9-59f4-b9c4-6b4d4b914e1f"
         },
         {
             "artist": "Matt Cavotta",
@@ -1819,7 +1835,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1843,14 +1858,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "93d3a024-6cf3-4008-a4f6-1d96ff5de22a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11918,
             "text": "Target creature gets +1/+1 until end of turn. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "93d3a024-6cf3-4008-a4f6-1d96ff5de22a"
+            "uuid": "229b5388-f6aa-526b-8766-bdeb120c2262"
         },
         {
             "artist": "Kev Walker",
@@ -1924,7 +1941,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1952,16 +1968,18 @@
                     "text": "Activated abilities contain a colon. They’re generally written “[Cost]: [Effect].” Some keywords are activated abilities and will have colons in their reminder text."
                 }
             ],
+            "scryfallId": "5b2ca75e-ccb0-4e5b-8dda-445fe0130732",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11919,
             "text": "Enchant artifact\nEnchanted artifact can't attack or block, and its activated abilities can't be activated.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5b2ca75e-ccb0-4e5b-8dda-445fe0130732"
+            "uuid": "694000a7-1c0c-5e60-b281-23de10b5b758"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -2035,7 +2053,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2057,14 +2074,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "db75b77f-a230-4bad-b697-a40687671842",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11920,
             "text": "Search your library for an Equipment card, reveal that card, and put it into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "db75b77f-a230-4bad-b697-a40687671842"
+            "uuid": "cdb13443-13a5-5635-aa27-104af3bb2517"
         },
         {
             "artist": "Carl Critchlow",
@@ -2138,7 +2157,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2160,14 +2178,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "27bae717-56c0-4028-b1e7-a445d6a57176",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11921,
             "text": "Destroy target blocking creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "27bae717-56c0-4028-b1e7-a445d6a57176"
+            "uuid": "51801001-80af-53b4-a117-7347c82325c6"
         },
         {
             "artist": "Daren Bader",
@@ -2241,7 +2261,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2263,14 +2282,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "993957c7-5d61-4c98-826d-b657aed667e1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11888,
             "text": "Search target opponent's library for an artifact card and put that card onto the battlefield under your control. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "993957c7-5d61-4c98-826d-b657aed667e1"
+            "uuid": "ebbfc915-ab0a-5801-8a54-ab2e31993111"
         },
         {
             "artist": "Scott M. Fischer",
@@ -2344,7 +2365,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2368,17 +2388,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7384d50a-5801-47ed-ab9f-5c7e4f1f20dd",
             "subtypes": [
                 "Drone"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11889,
             "text": "Flying\n{U}: Advanced Hoverguard gains shroud until end of turn. (It can't be the target of spells or abilities.)",
             "toughness": "2",
             "type": "Creature — Drone",
             "types": [
                 "Creature"
             ],
-            "uuid": "7384d50a-5801-47ed-ab9f-5c7e4f1f20dd"
+            "uuid": "4be981cf-e94b-5357-b3a5-f478cb06d460"
         },
         {
             "artist": "Wayne England",
@@ -2444,7 +2466,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2465,14 +2486,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "abe37c88-afd7-45ac-9f84-f4bd881a1462",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11890,
             "text": "{U}, Discard an artifact card: Search your library for an artifact card with converted mana cost 1 or less, reveal that card, and put it into your hand. Then shuffle your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "abe37c88-afd7-45ac-9f84-f4bd881a1462"
+            "uuid": "7e34bada-2f10-58f3-b1ca-7ccb38f4c960"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -2546,7 +2569,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2573,14 +2595,16 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "3ab166c9-af3e-4e65-88ed-9766b046c95b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11891,
             "text": "Target player takes an extra turn after this one. Shuffle Beacon of Tomorrows into its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3ab166c9-af3e-4e65-88ed-9766b046c95b"
+            "uuid": "6d0690ad-95df-5bd1-814e-6607b76ce320"
         },
         {
             "artist": "Alan Pollack",
@@ -2654,7 +2678,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2684,14 +2707,16 @@
                     "text": "Blinkmoth Infusion untaps all artifacts on the battlefield, not just artifacts you control."
                 }
             ],
+            "scryfallId": "ccb4d9a3-e7f6-41e2-9545-4682efd71f46",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11892,
             "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nUntap all artifacts.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ccb4d9a3-e7f6-41e2-9545-4682efd71f46"
+            "uuid": "9c034c81-b315-5566-85a4-5e64c3862df4"
         },
         {
             "artist": "Greg Staples",
@@ -2761,7 +2786,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2783,17 +2807,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "45dc82a0-f054-4614-a7b9-4c5a7c9d2a77",
             "subtypes": [
                 "Bringer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11777,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost.\nTrample\nAt the beginning of your upkeep, you may draw two cards.",
             "toughness": "5",
             "type": "Creature — Bringer",
             "types": [
                 "Creature"
             ],
-            "uuid": "45dc82a0-f054-4614-a7b9-4c5a7c9d2a77"
+            "uuid": "d4682d3a-050b-5a93-83ca-09239f2bab62"
         },
         {
             "artist": "Ron Spears",
@@ -2859,7 +2885,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2894,14 +2919,16 @@
                     "text": "You scry 2 even if the spell’s controller pays {X}."
                 }
             ],
+            "scryfallId": "e8303b80-e29a-46b8-90b0-c0cfe551b435",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11893,
             "text": "Counter target spell unless its controller pays {X}. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e8303b80-e29a-46b8-90b0-c0cfe551b435"
+            "uuid": "95376c34-52c6-53a1-b8c3-adb8d4d24aa2"
         },
         {
             "artist": "Ron Spears",
@@ -2975,7 +3002,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3006,16 +3032,18 @@
                     "text": "If the enchanted artifact has X in its mana cost, X is 0."
                 }
             ],
+            "scryfallId": "864b6f7e-4e08-465d-b9c7-d1a167850cf9",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11894,
             "text": "Enchant artifact\nEnchanted artifact has \"At the beginning of your upkeep, sacrifice this artifact unless you pay its mana cost.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "864b6f7e-4e08-465d-b9c7-d1a167850cf9"
+            "uuid": "11363f13-3520-5f39-abf4-a6a8e655c54c"
         },
         {
             "artist": "Ben Thompson",
@@ -3089,7 +3117,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3112,14 +3139,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5989d4c4-bfa4-4b07-ab64-65a3aee6144e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11895,
             "text": "Tap up to three target lands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5989d4c4-bfa4-4b07-ab64-65a3aee6144e"
+            "uuid": "1df30a84-ea35-56e1-9390-415feb439ec1"
         },
         {
             "artist": "Ron Spears",
@@ -3185,7 +3214,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3212,14 +3240,16 @@
                     "text": "You do the scrying at the end of the ability’s resolution (assuming you pay {1})."
                 }
             ],
+            "scryfallId": "f7bb0716-e0fc-415d-8fc3-d3f5ee31e9c5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11896,
             "text": "Whenever you cast an instant or sorcery spell, you may pay {1}. If you do, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f7bb0716-e0fc-415d-8fc3-d3f5ee31e9c5"
+            "uuid": "966d1d42-a37a-5ab0-861c-19e73bf85c8d"
         },
         {
             "artist": "Anthony S. Waters",
@@ -3293,7 +3323,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3324,14 +3353,16 @@
                     "text": "If your Fold into Aether counters a spell you control, you get to put a creature card from your hand onto the battlefield."
                 }
             ],
+            "scryfallId": "615157d6-0160-417b-b06c-0e253b306c37",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11897,
             "text": "Counter target spell. If that spell is countered this way, its controller may put a creature card from their hand onto the battlefield.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "615157d6-0160-417b-b06c-0e253b306c37"
+            "uuid": "bdc604cc-7363-558f-a82e-39c5859c31e9"
         },
         {
             "artist": "Mark A. Nelson",
@@ -3405,7 +3436,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3429,17 +3459,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "55773fd5-86a2-4fd4-9849-a2f0d4c8298f",
             "subtypes": [
                 "Drone"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11898,
             "text": "Flying\nWhen Hoverguard Sweepers enters the battlefield, you may return up to two target creatures to their owners' hands.",
             "toughness": "6",
             "type": "Creature — Drone",
             "types": [
                 "Creature"
             ],
-            "uuid": "55773fd5-86a2-4fd4-9849-a2f0d4c8298f"
+            "uuid": "5dd109b2-8f96-5a8d-846b-bdda0df9869c"
         },
         {
             "artist": "Ittoku",
@@ -3513,7 +3545,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3536,14 +3567,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d0f31ff9-f403-4082-88f8-65807c0af812",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11899,
             "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nReturn target artifact to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d0f31ff9-f403-4082-88f8-65807c0af812"
+            "uuid": "cdbdcb5d-bb87-54e7-8d26-4e3a3040ce73"
         },
         {
             "artist": "Kev Walker",
@@ -3617,7 +3650,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3640,17 +3672,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "035a8a69-1e48-4c44-b407-cc8acc8ba94c",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11900,
             "text": "Plasma Elemental can't be blocked.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "035a8a69-1e48-4c44-b407-cc8acc8ba94c"
+            "uuid": "caa6d6b2-a355-5f02-9ebc-e817015898c4"
         },
         {
             "artist": "Carl Critchlow",
@@ -3724,7 +3758,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3750,17 +3783,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "54102e68-dded-440c-b9b1-28771c8033d4",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11901,
             "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "54102e68-dded-440c-b9b1-28771c8033d4"
+            "uuid": "91fe4f35-d7aa-527f-a11d-70ad99f248ab"
         },
         {
             "artist": "Ben Thompson",
@@ -3826,7 +3861,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3854,14 +3888,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4bc61952-88ba-447a-835a-f1e9643fcd0d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11767,
             "text": "Draw a card. Scry 2.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4bc61952-88ba-447a-835a-f1e9643fcd0d"
+            "uuid": "cd8b52e6-b36e-5ae5-8055-921cf29871f2"
         },
         {
             "artist": "John Avon",
@@ -3927,7 +3963,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3954,14 +3989,16 @@
                     "text": "Because of updated targeting rulings, it’s possible to target the same spell or permanent with both abilities when cast with Entwine."
                 }
             ],
+            "scryfallId": "b1a3f75d-9a79-4c16-8f50-43a18add4579",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11902,
             "text": "Choose one —\n• Change the text of target spell or permanent by replacing all instances of one basic land type with another. (This effect lasts indefinitely.)\n• Change the text of target spell or permanent by replacing all instances of one color word with another. (This effect lasts indefinitely.)\nEntwine {2} (Choose both if you pay the entwine cost.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b1a3f75d-9a79-4c16-8f50-43a18add4579"
+            "uuid": "3499ed5b-87ea-55bd-a38b-5a65dfbf3eaf"
         },
         {
             "artist": "Stephen Tappin",
@@ -4035,7 +4072,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4060,18 +4096,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "837b6315-d5c6-480b-902e-44107a72b581",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11903,
             "text": "{T}: Draw a card, then discard a card.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "837b6315-d5c6-480b-902e-44107a72b581"
+            "uuid": "2c2262d8-35ff-5d97-9cf8-bf793f18600a"
         },
         {
             "artist": "Mark A. Nelson",
@@ -4137,7 +4175,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4170,18 +4207,20 @@
                     "text": "If the mana cost of a card in your library includes {X}, X is considered to be 0."
                 }
             ],
+            "scryfallId": "4c5a41ab-1840-4abb-a8bb-f0b1e7d1b450",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11904,
             "text": "When Trinket Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 1 or less, reveal that card, and put it into your hand. If you do, shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c5a41ab-1840-4abb-a8bb-f0b1e7d1b450"
+            "uuid": "17069c67-49f6-5181-bed7-348e75ef0b16"
         },
         {
             "artist": "Darrell Riche",
@@ -4255,7 +4294,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4280,18 +4318,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c4d8c7ed-62ce-4865-8f9e-5fcc8b23cff5",
             "subtypes": [
                 "Vedalken",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11905,
             "text": "{U}, {T}: Return target permanent you control to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Vedalken Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "c4d8c7ed-62ce-4865-8f9e-5fcc8b23cff5"
+            "uuid": "2b4360c4-187f-5002-8cd1-f683d0ad52f2"
         },
         {
             "artist": "Alan Pollack",
@@ -4365,7 +4405,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4397,14 +4436,16 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "246a0e0c-cf75-46ec-a65b-e6d3d371f28a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11836,
             "text": "Put target artifact or creature card from a graveyard onto the battlefield under your control. Shuffle Beacon of Unrest into its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "246a0e0c-cf75-46ec-a65b-e6d3d371f28a"
+            "uuid": "630bf3e9-3b65-5791-b194-e458c0a5cd86"
         },
         {
             "artist": "Carl Critchlow",
@@ -4478,7 +4519,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4508,18 +4548,20 @@
                     "text": "This ability triggers off anyone casting a spell, including you, not just Blind Creeper’s controller or an opponent."
                 }
             ],
+            "scryfallId": "86d5440a-7460-4b4f-a167-a6c4fb2d855e",
             "subtypes": [
                 "Zombie",
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11837,
             "text": "Whenever a player casts a spell, Blind Creeper gets -1/-1 until end of turn.",
             "toughness": "3",
             "type": "Creature — Zombie Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "86d5440a-7460-4b4f-a167-a6c4fb2d855e"
+            "uuid": "975d5fb2-033b-58df-8684-4cc6c098873b"
         },
         {
             "artist": "Carl Critchlow",
@@ -4589,7 +4631,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4612,17 +4653,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "54e5e882-02d4-4d69-aabf-ae9bf31f2923",
             "subtypes": [
                 "Bringer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11761,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost.\nTrample\nAt the beginning of your upkeep, you may pay 2 life. If you do, search your library for a card, then shuffle your library and put that card on top of it.",
             "toughness": "5",
             "type": "Creature — Bringer",
             "types": [
                 "Creature"
             ],
-            "uuid": "54e5e882-02d4-4d69-aabf-ae9bf31f2923"
+            "uuid": "babdeb4a-4b4f-5429-a168-be0fcba6b615"
         },
         {
             "artist": "Matt Thompson",
@@ -4696,7 +4739,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4722,17 +4764,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "641080d8-1b2e-4990-a114-04bea9a5adce",
             "subtypes": [
                 "Imp"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11838,
             "text": "Flying\n{T}: Target player loses 1 life.",
             "toughness": "2",
             "type": "Creature — Imp",
             "types": [
                 "Creature"
             ],
-            "uuid": "641080d8-1b2e-4990-a114-04bea9a5adce"
+            "uuid": "6063c99a-d9ae-5c91-bd87-d10983e5ed99"
         },
         {
             "artist": "Pete Venters",
@@ -4806,7 +4850,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4839,17 +4882,19 @@
                     "text": "If Desecration Elemental is the only creature you control when its triggered ability resolves, you’ll have to sacrifice it."
                 }
             ],
+            "scryfallId": "73c14a7a-cce3-45a8-9092-834e71447f62",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11839,
             "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nWhenever a player casts a spell, sacrifice a creature.",
             "toughness": "8",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "73c14a7a-cce3-45a8-9092-834e71447f62"
+            "uuid": "ee8d1457-7c48-5746-821b-71a70d73182f"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -4923,7 +4968,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4945,14 +4989,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "98c80584-b7b5-4dcd-8a00-812b9dd9b1b9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11840,
             "text": "Destroy target creature. It can't be regenerated. You lose life equal to that creature's toughness.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "98c80584-b7b5-4dcd-8a00-812b9dd9b1b9"
+            "uuid": "c89099a4-0eaf-5fc2-8bf9-92cffcc48342"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -5019,7 +5065,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5043,18 +5088,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "85e61e00-c55b-4384-923b-a777f75cbe79",
             "subtypes": [
                 "Zombie",
                 "Crocodile"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 11841,
             "toughness": "1",
             "type": "Creature — Zombie Crocodile",
             "types": [
                 "Creature"
             ],
-            "uuid": "85e61e00-c55b-4384-923b-a777f75cbe79"
+            "uuid": "27d13adc-6929-5635-84d6-4050f14a0409"
         },
         {
             "artist": "Pete Venters",
@@ -5128,7 +5174,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5156,17 +5201,19 @@
                     "text": "This ability triggers off anyone casting a spell, including you, not just Ebon Drake’s controller or an opponent."
                 }
             ],
+            "scryfallId": "254ea05c-c349-4a95-8751-779b044603bb",
             "subtypes": [
                 "Drake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11842,
             "text": "Flying\nWhenever a player casts a spell, you lose 1 life.",
             "toughness": "3",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "254ea05c-c349-4a95-8751-779b044603bb"
+            "uuid": "3f6beb0a-b29a-5609-ad2d-ab139a048fcc"
         },
         {
             "artist": "Carl Critchlow",
@@ -5240,7 +5287,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5266,14 +5312,16 @@
                     "text": "The creatures have the triggered ability, so each creature’s controller chooses one of their opponents to target."
                 }
             ],
+            "scryfallId": "266323da-9528-462e-a0a8-6ef2dda5f1ee",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11773,
             "text": "Each creature has \"When this creature dies, choose target opponent. That player puts this card from its owner's graveyard onto the battlefield under their control at the beginning of the next end step.\"",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "266323da-9528-462e-a0a8-6ef2dda5f1ee"
+            "uuid": "c14fffcc-e2ba-5062-a05f-18ec1b9855f3"
         },
         {
             "artist": "Luca Zontini",
@@ -5339,7 +5387,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5362,14 +5409,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e682bbd3-9f52-452d-b886-a6a8def35f27",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11843,
             "text": "Target player discards two cards. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e682bbd3-9f52-452d-b886-a6a8def35f27"
+            "uuid": "1725e195-2aee-50cb-b88e-16f2c1a32130"
         },
         {
             "artist": "Jim Murray",
@@ -5443,7 +5492,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5467,18 +5515,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "01095217-bc33-4d71-bf10-2ead9f8ebd25",
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11844,
             "text": "Discard an artifact card: Fleshgrafter gets +2/+2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "01095217-bc33-4d71-bf10-2ead9f8ebd25"
+            "uuid": "078e9a95-d047-51e4-a060-c38d28b125bf"
         },
         {
             "artist": "Matt Cavotta",
@@ -5544,7 +5594,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5567,14 +5616,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "438d7bf6-00f4-4c7e-b1a4-f7fd690d4788",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11845,
             "text": "Target creature gets -1/-1 until end of turn. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "438d7bf6-00f4-4c7e-b1a4-f7fd690d4788"
+            "uuid": "d1853477-7bb0-544c-a7cc-fe69bab7bd7f"
         },
         {
             "artist": "Matthew D. Wilson",
@@ -5640,7 +5691,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5668,17 +5718,19 @@
                     "text": "The triggered ability Mephidross Vampire grants to each creature you control triggers on any damage dealt to any creature, not just combat damage."
                 }
             ],
+            "scryfallId": "754f202f-4f08-4c39-9219-1114d8508788",
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11846,
             "text": "Flying\nEach creature you control is a Vampire in addition to its other creature types and has \"Whenever this creature deals damage to a creature, put a +1/+1 counter on this creature.\"",
             "toughness": "4",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "754f202f-4f08-4c39-9219-1114d8508788"
+            "uuid": "7bb4feb2-147b-52d1-81de-654a2e3a764b"
         },
         {
             "artist": "Wayne England",
@@ -5752,7 +5804,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5775,19 +5826,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "47ffdeb8-52d2-4059-b9c6-0ad71b96516a",
             "subtypes": [
                 "Human",
                 "Rogue",
                 "Rigger"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11847,
             "text": "Whenever an artifact is put into a graveyard from the battlefield, you may put a +1/+1 counter on Moriok Rigger.",
             "toughness": "2",
             "type": "Creature — Human Rogue Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "47ffdeb8-52d2-4059-b9c6-0ad71b96516a"
+            "uuid": "557d61c5-48aa-5426-ba7e-86caa75612aa"
         },
         {
             "artist": "David Martin",
@@ -5861,7 +5914,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5885,14 +5937,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "61f0c6f6-b90d-4eb1-a5db-86e0a3997501",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11848,
             "text": "You draw two cards and you lose 2 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "61f0c6f6-b90d-4eb1-a5db-86e0a3997501"
+            "uuid": "c6b456ac-2064-52e7-afc0-3a81e8e47782"
         },
         {
             "artist": "Anthony S. Waters",
@@ -5966,7 +6020,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5989,17 +6042,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "11ae8bc7-8bf1-4fce-afaa-76acfb261419",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11849,
             "text": "Nim Grotesque gets +1/+0 for each artifact you control.",
             "toughness": "6",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "11ae8bc7-8bf1-4fce-afaa-76acfb261419"
+            "uuid": "c6e41b34-8092-5443-8ce8-e65c57ebb8db"
         },
         {
             "artist": "Justin Sweet",
@@ -6065,7 +6120,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6095,14 +6149,16 @@
                     "text": "Assuming the entwine cost has been paid, the effect is (1) sacrifice any number of creatures, (2) gain 3 life for each sacrificed creature, (3) choose X, (4) pay X life, and (5) look at the top X cards of your library, put one into your hand, and exile the rest."
                 }
             ],
+            "scryfallId": "d21c74b4-dd9e-43d6-ad0a-06e026a8d672",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11850,
             "text": "Choose one —\n• Sacrifice any number of creatures. You gain 3 life for each sacrificed creature.\n• Pay X life, then look at the top X cards of your library. Put one of those cards into your hand and exile the rest.\nEntwine {B} (Choose both if you pay the entwine cost.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d21c74b4-dd9e-43d6-ad0a-06e026a8d672"
+            "uuid": "527fb50d-ae93-502e-83fa-eeb724c62214"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -6168,7 +6224,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6201,17 +6256,19 @@
                     "text": "The second ability of Relentless Rats lets you ignore the “four-of” rule. It doesn’t let you ignore format legality. For example, during a Masters 25 Limited event, you can’t add Relentless Rats from your personal collection."
                 }
             ],
+            "scryfallId": "1c9caf97-75c6-4e12-8724-1abe32212bef",
             "subtypes": [
                 "Rat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11772,
             "text": "Relentless Rats gets +1/+1 for each other creature on the battlefield named Relentless Rats.\nA deck can have any number of cards named Relentless Rats.",
             "toughness": "2",
             "type": "Creature — Rat",
             "types": [
                 "Creature"
             ],
-            "uuid": "1c9caf97-75c6-4e12-8724-1abe32212bef"
+            "uuid": "051c456a-73dd-5f90-9253-71b083b069a4"
         },
         {
             "artist": "Greg Staples",
@@ -6285,7 +6342,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6307,14 +6363,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1eb957bd-99e4-431e-b163-c25e9b7850d9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11851,
             "text": "Target opponent reveals their hand. You choose an artifact card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1eb957bd-99e4-431e-b163-c25e9b7850d9"
+            "uuid": "607048ad-d953-505d-929a-31dbff6f8f9d"
         },
         {
             "artist": "Tomas Giorello",
@@ -6380,7 +6438,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6403,14 +6460,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "75ca003f-dc03-4533-a245-fde836aab5eb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11852,
             "text": "As an additional cost to cast this spell, sacrifice any number of creatures.\nTarget creature gets +2/+2 until end of turn for each creature sacrificed this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "75ca003f-dc03-4533-a245-fde836aab5eb"
+            "uuid": "3d3d4408-2e47-58b6-be06-554d1deb216d"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -6484,7 +6543,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6513,14 +6571,16 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "c0fae532-7189-450e-aa7f-e639163278fc",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11869,
             "text": "Beacon of Destruction deals 5 damage to any target. Shuffle Beacon of Destruction into its owner's library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c0fae532-7189-450e-aa7f-e639163278fc"
+            "uuid": "908bd3af-1764-5db3-a21c-8aafcca1ef15"
         },
         {
             "artist": "Christopher Moeller",
@@ -6590,7 +6650,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6613,17 +6672,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "16a58bb1-4c4d-41f2-9c69-d3c3a8a8ab09",
             "subtypes": [
                 "Bringer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11870,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost.\nTrample\nAt the beginning of your upkeep, you may untap target creature and gain control of it until end of turn. That creature gains haste until end of turn.",
             "toughness": "5",
             "type": "Creature — Bringer",
             "types": [
                 "Creature"
             ],
-            "uuid": "16a58bb1-4c4d-41f2-9c69-d3c3a8a8ab09"
+            "uuid": "48b7b632-74e3-5cb7-b00d-fb1b40e15182"
         },
         {
             "artist": "Jeff Easley",
@@ -6697,7 +6758,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6720,17 +6780,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "deaa0b9b-258e-4daf-8fec-ce64864d6bbf",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11871,
             "text": "Trample\nAt the beginning of your upkeep, sacrifice Cosmic Larva unless you sacrifice two lands.",
             "toughness": "6",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "deaa0b9b-258e-4daf-8fec-ce64864d6bbf"
+            "uuid": "aada5737-c429-5cdd-9f4e-4cac5eee0d52"
         },
         {
             "artist": "Ron Spencer",
@@ -6804,7 +6866,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6826,14 +6887,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a370375c-14bf-4381-9359-f2e600867e7c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11872,
             "text": "Feedback Bolt deals damage to target player or planeswalker equal to the number of artifacts you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a370375c-14bf-4381-9359-f2e600867e7c"
+            "uuid": "4b4c9625-13ee-5d09-a2cc-e7be5c294f67"
         },
         {
             "artist": "Matt Cavotta",
@@ -6907,7 +6970,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6942,17 +7004,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a1726eba-c471-40bd-a487-40d910b75d64",
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11873,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\n{R}: Furnace Whelp gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1726eba-c471-40bd-a487-40d910b75d64"
+            "uuid": "a7e54431-03b1-5601-9be2-72b188163ee7"
         },
         {
             "artist": "Heather Hudson",
@@ -7026,7 +7090,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7055,18 +7118,20 @@
                     "text": "You can activate an equip ability that targets Goblin Brawler, but the Equipment will fail to move onto it."
                 }
             ],
+            "scryfallId": "f6586c04-f92d-4c3f-8b03-59e5ef158ed4",
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11874,
             "text": "First strike\nGoblin Brawler can't be equipped.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6586c04-f92d-4c3f-8b03-59e5ef158ed4"
+            "uuid": "9030194c-f18d-5a76-b075-699bddf655eb"
         },
         {
             "artist": "Brian Snõddy",
@@ -7140,7 +7205,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7162,14 +7226,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e13798b8-689e-4f19-af10-b72d3fe19f3c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11875,
             "text": "Destroy each nonland artifact with converted mana cost 4 or less.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e13798b8-689e-4f19-af10-b72d3fe19f3c"
+            "uuid": "657a39af-e3c4-585a-8eb1-42ad6c6e738c"
         },
         {
             "artist": "Michael Sutfin",
@@ -7243,7 +7309,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7265,14 +7330,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2296acb6-a304-42ab-b26b-5cbe796e72b7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11876,
             "text": "{1}{R}, Remove a +1/+1 counter or a charge counter from a permanent you control: Ion Storm deals 2 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2296acb6-a304-42ab-b26b-5cbe796e72b7"
+            "uuid": "f5c61fd9-9028-54b7-9071-10d6e3f2c93e"
         },
         {
             "artist": "Doug Chaffee",
@@ -7346,7 +7413,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7370,18 +7436,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0cb36352-2f16-4572-b1aa-dc28b11f4229",
             "subtypes": [
                 "Hellion",
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11877,
             "text": "Haste\nIron-Barb Hellion can't block.",
             "toughness": "4",
             "type": "Creature — Hellion Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "0cb36352-2f16-4572-b1aa-dc28b11f4229"
+            "uuid": "5b47cc04-b7e2-56f9-8d18-dae2347a463c"
         },
         {
             "artist": "Pete Venters",
@@ -7455,7 +7523,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7478,18 +7545,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2110a5e2-31e1-4a63-96cd-56295f67d436",
             "subtypes": [
                 "Goblin",
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11878,
             "text": "{R}, Sacrifice two artifacts: Destroy target artifact.",
             "toughness": "2",
             "type": "Creature — Goblin Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "2110a5e2-31e1-4a63-96cd-56295f67d436"
+            "uuid": "506fa018-e4f3-52e5-b51c-22caee8a7d48"
         },
         {
             "artist": "Paolo Parente",
@@ -7563,7 +7632,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7587,17 +7655,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "649f561c-0b90-4f1d-a003-bab351632bd3",
             "subtypes": [
                 "Ogre"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11879,
             "text": "{R}, Sacrifice an artifact: Target creature can't block this turn.",
             "toughness": "3",
             "type": "Creature — Ogre",
             "types": [
                 "Creature"
             ],
-            "uuid": "649f561c-0b90-4f1d-a003-bab351632bd3"
+            "uuid": "d824cfb4-9a42-5cde-a0c9-9d928c63232d"
         },
         {
             "artist": "Nottsuo",
@@ -7671,7 +7741,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7697,17 +7766,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "57670afe-cc40-44f5-b97c-a8f0377c710a",
             "subtypes": [
                 "Giant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11880,
             "text": "When Magma Giant enters the battlefield, it deals 2 damage to each creature and each player.",
             "toughness": "5",
             "type": "Creature — Giant",
             "types": [
                 "Creature"
             ],
-            "uuid": "57670afe-cc40-44f5-b97c-a8f0377c710a"
+            "uuid": "907f34b1-7278-5383-9b82-1abbf386f0a6"
         },
         {
             "artist": "Justin Sweet",
@@ -7773,7 +7844,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7820,14 +7890,16 @@
                     "text": "Scry appears on some spells and abilities with one or more targets. If all of the spell or ability’s targets are illegal when it tries to resolve, it won’t resolve and none of its effects will happen. You won’t scry."
                 }
             ],
+            "scryfallId": "51ea1728-08aa-4553-90b2-919c70712ed5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11775,
             "text": "Magma Jet deals 2 damage to any target. Scry 2.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "51ea1728-08aa-4553-90b2-919c70712ed5"
+            "uuid": "d9a829a0-ea6d-5b76-bb24-5a5012bd0ca7"
         },
         {
             "artist": "Dave Dorman",
@@ -7901,7 +7973,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7928,14 +7999,16 @@
                     "text": "Magnetic Theft can cause an Equipment one player controls to be attached to a creature another player controls. The controller of the Equipment can pay the equip cost to move the Equipment to a creature they control (but only any time that player could cast a sorcery)."
                 }
             ],
+            "scryfallId": "de0c1e37-fedc-43d9-97fd-b797c6c2fbbe",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11881,
             "text": "Attach target Equipment to target creature. (Control of the Equipment doesn't change.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "de0c1e37-fedc-43d9-97fd-b797c6c2fbbe"
+            "uuid": "8110f881-9368-5e02-b343-4373a07023c4"
         },
         {
             "artist": "Martina Pilcerova",
@@ -8009,7 +8082,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8032,14 +8104,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3929662e-99d7-48e9-afac-1852af8be722",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11882,
             "text": "Add {R} for each tapped land your opponents control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3929662e-99d7-48e9-afac-1852af8be722"
+            "uuid": "654cb48d-01a4-59ae-b1b5-8fb436df5a4b"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -8113,7 +8187,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8136,14 +8209,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "13a6ecc6-83c8-408b-8600-687cdb383ca9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11883,
             "text": "Choose one —\n• Destroy target artifact.\n• Destroy target land.\nEntwine {3}{R} (Choose both if you pay the entwine cost.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "13a6ecc6-83c8-408b-8600-687cdb383ca9"
+            "uuid": "2ed5c293-16a7-5661-ab9e-45e7e9ba90f3"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -8217,7 +8292,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8276,14 +8350,16 @@
                     "text": "The creation of the copy and then the casting of the copy are both optional."
                 }
             ],
+            "scryfallId": "19cf87c0-369e-4ec2-bb9f-e8e29d63d448",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11884,
             "text": "Target opponent reveals their hand. You may copy an instant or sorcery card in it. If you do, you may cast the copy without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "19cf87c0-369e-4ec2-bb9f-e8e29d63d448"
+            "uuid": "94ea6e8a-33f1-5f31-95c2-36f4ab8dee28"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -8357,7 +8433,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8380,14 +8455,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7e8488b6-3785-4346-a81b-c28d355f9d25",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11885,
             "text": "Target creature gets +5/+0 and gains haste until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7e8488b6-3785-4346-a81b-c28d355f9d25"
+            "uuid": "7baf0c3d-8fb0-58b6-8641-5ee4223dfe1c"
         },
         {
             "artist": "John Avon",
@@ -8461,7 +8538,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8486,17 +8562,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b9c8bcb2-8247-4d91-baf6-b08de1eb9cde",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11886,
             "text": "Trample, haste (This creature can deal excess combat damage to the player or planeswalker it's attacking. This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice Spark Elemental.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "b9c8bcb2-8247-4d91-baf6-b08de1eb9cde"
+            "uuid": "bb781680-0919-58d3-b2b9-07e2779aa272"
         },
         {
             "artist": "rk post",
@@ -8570,7 +8648,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8597,18 +8674,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4a7207dd-854a-4150-b813-f60713ecfc30",
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11887,
             "text": "Haste\n{T}: Vulshok Sorcerer deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a7207dd-854a-4150-b813-f60713ecfc30"
+            "uuid": "128dc80d-7510-5b1a-b793-87f6ca969d1d"
         },
         {
             "artist": "Glen Angus",
@@ -8674,7 +8753,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8710,14 +8788,16 @@
                     "text": "You choose the color each target must be when you choose it as a target, so if the card you targeted as a blue card is red when All Suns’ Dawn resolves, the card is an illegal target, even if the spell doesn’t target another red card."
                 }
             ],
+            "scryfallId": "cefabea5-b6f0-46f4-a1a5-037c2482b979",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11853,
             "text": "For each color, return up to one target card of that color from your graveyard to your hand. Exile All Suns' Dawn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cefabea5-b6f0-46f4-a1a5-037c2482b979"
+            "uuid": "465f0c52-6ce3-5a8c-8fce-95ed22cd96f9"
         },
         {
             "artist": "Mark Tedin",
@@ -8791,7 +8871,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8817,14 +8896,16 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "5bc629de-18a3-4780-9df6-28ee54a34b81",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11854,
             "text": "Create a 1/1 green Insect creature token for each Forest you control. Shuffle Beacon of Creation into its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5bc629de-18a3-4780-9df6-28ee54a34b81"
+            "uuid": "450e57f3-6310-515d-b80a-c9d74ef433fe"
         },
         {
             "artist": "Jim Murray",
@@ -8894,7 +8975,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8917,17 +8997,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "bc208f3e-5a6a-4fae-8a7c-2bed28ad0c41",
             "subtypes": [
                 "Bringer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11855,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost.\nTrample\nAt the beginning of your upkeep, you may create a 3/3 green Beast creature token.",
             "toughness": "5",
             "type": "Creature — Bringer",
             "types": [
                 "Creature"
             ],
-            "uuid": "bc208f3e-5a6a-4fae-8a7c-2bed28ad0c41"
+            "uuid": "710b0202-0a37-5c3a-a8a2-5ddf41ab1616"
         },
         {
             "artist": "Rob Alexander",
@@ -9005,7 +9087,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9027,14 +9108,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "7bf574c8-a7e0-482e-bb41-680454988097",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11778,
             "text": "Add {W}{U}{B}{R}{G}.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7bf574c8-a7e0-482e-bb41-680454988097"
+            "uuid": "4bd67062-d626-59a4-9834-0fa468e6feaf"
         },
         {
             "artist": "John Avon",
@@ -9108,7 +9191,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9140,16 +9222,18 @@
                     "text": "The two mana can be of two different colors. The controller of the land chooses the colors."
                 }
             ],
+            "scryfallId": "131a124f-f11e-4ea1-a7b2-b94eea988d4e",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11856,
             "text": "Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional two mana in any combination of colors.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "131a124f-f11e-4ea1-a7b2-b94eea988d4e"
+            "uuid": "7378cdc4-7a35-5231-a371-7ad2694c8be1"
         },
         {
             "artist": "Terese Nielsen",
@@ -9223,7 +9307,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9257,19 +9340,26 @@
                 "WC04"
             ],
             "rarity": "uncommon",
-            "rulings": [],
+            "rulings": [
+                {
+                    "date": "2018-12-07",
+                    "text": "If an instant or sorcery spell puts Eternal Witness onto the battlefield, its ability can target that card in your graveyard."
+                }
+            ],
+            "scryfallId": "c7e10ca7-1e5d-4224-82cf-798a4d436d72",
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11774,
             "text": "When Eternal Witness enters the battlefield, you may return target card from your graveyard to your hand.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "c7e10ca7-1e5d-4224-82cf-798a4d436d72"
+            "uuid": "4c86171b-17fe-5588-9dc2-bb2dc2a44693"
         },
         {
             "artist": "Rob Alexander",
@@ -9343,7 +9433,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9367,17 +9456,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "59679bcf-4436-48f8-bc6a-d7e0ec6b04c9",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11857,
             "text": "Whenever Fangren Pathcutter attacks, attacking creatures gain trample until end of turn.",
             "toughness": "6",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "59679bcf-4436-48f8-bc6a-d7e0ec6b04c9"
+            "uuid": "c28cc1c2-9380-5e42-86c6-24adffc16808"
         },
         {
             "artist": "Anthony S. Waters",
@@ -9443,7 +9534,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9465,14 +9555,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3749181f-7b4e-4b9d-aaf3-94f707c306aa",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11858,
             "text": "Target creature gets +4/+4 until end of turn. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3749181f-7b4e-4b9d-aaf3-94f707c306aa"
+            "uuid": "a61f5659-8c1c-5f9d-b8f8-a50dd261fa12"
         },
         {
             "artist": "Christopher Rush",
@@ -9546,7 +9638,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9575,18 +9666,20 @@
                     "text": "Each land you control gets this ability."
                 }
             ],
+            "scryfallId": "7acf1a5f-1dbd-4481-b58d-b84e32d2b6b3",
             "subtypes": [
                 "Elf",
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11760,
             "text": "Lands you control have \"{T}: Add one mana of any color.\"",
             "toughness": "1",
             "type": "Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "7acf1a5f-1dbd-4481-b58d-b84e32d2b6b3"
+            "uuid": "8f59d580-615e-5345-8011-845cd52a63db"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -9660,7 +9753,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9691,18 +9783,20 @@
                     "text": "Activated abilities contain a colon. They’re generally written “[Cost]: [Effect].” Some keywords are activated abilities and will have colons in their reminder text."
                 }
             ],
+            "scryfallId": "896e08f8-7608-4137-9a58-f6eda8f84313",
             "subtypes": [
                 "Ouphe",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11859,
             "text": "{G}, Sacrifice Ouphe Vandals: Counter target activated ability from an artifact source and destroy that artifact if it's on the battlefield. (Mana abilities can't be targeted.)",
             "toughness": "2",
             "type": "Creature — Ouphe Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "896e08f8-7608-4137-9a58-f6eda8f84313"
+            "uuid": "b981ac94-6cf4-5f3e-ac3f-25567d445a24"
         },
         {
             "artist": "Kev Walker",
@@ -9776,7 +9870,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9806,14 +9899,16 @@
                     "text": "The creature doesn’t get a counter if all the damage that would be dealt to it is prevented."
                 }
             ],
+            "scryfallId": "bea92a0c-f73f-4e85-9d87-6401aa1b052e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11860,
             "text": "Whenever a creature you control is dealt damage, put a +1/+1 counter on it. (The damage is dealt before the counter is put on.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "bea92a0c-f73f-4e85-9d87-6401aa1b052e"
+            "uuid": "fd4209d6-ae81-583e-ba25-781b6b1c5026"
         },
         {
             "artist": "Ittoku",
@@ -9879,7 +9974,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9914,14 +10008,16 @@
                     "text": "Lands that enter the battlefield or otehrwise come under your control after Rude Awakening resolves won’t be affected."
                 }
             ],
+            "scryfallId": "0164e2ed-b722-4a7d-a4fb-5401af008cbf",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11861,
             "text": "Choose one —\n• Untap all lands you control.\n• Until end of turn, lands you control become 2/2 creatures that are still lands.\nEntwine {2}{G} (Choose both if you pay the entwine cost.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0164e2ed-b722-4a7d-a4fb-5401af008cbf"
+            "uuid": "3bf8547b-65e0-505e-aa86-931b9c103f32"
         },
         {
             "artist": "Wayne England",
@@ -9995,7 +10091,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10020,18 +10115,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3ed328af-bc0d-4a9d-a9ee-bc0196a2afaf",
             "subtypes": [
                 "Human",
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11862,
             "text": "{T}: Add one mana of any color that a land an opponent controls could produce.",
             "toughness": "1",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "3ed328af-bc0d-4a9d-a9ee-bc0196a2afaf"
+            "uuid": "d6e56bc0-c07b-54ee-8f44-44afaf065387"
         },
         {
             "artist": "Daren Bader",
@@ -10105,7 +10202,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10129,17 +10225,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5e13ac56-72a9-4605-b389-24d1cb712b3c",
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11863,
             "text": "Whenever Tangle Asp blocks or becomes blocked by a creature, destroy that creature at end of combat.",
             "toughness": "2",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e13ac56-72a9-4605-b389-24d1cb712b3c"
+            "uuid": "a0832571-b399-5907-98e0-11e9d10555aa"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -10205,7 +10303,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10226,14 +10323,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "99fefa37-c876-4039-8cc4-4b2138181a1d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11766,
             "text": "Destroy target artifact. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "99fefa37-c876-4039-8cc4-4b2138181a1d"
+            "uuid": "821321f1-8b84-5f8a-82b0-5e8cc2018739"
         },
         {
             "artist": "Jim Nelson",
@@ -10307,7 +10406,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10330,18 +10428,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ee58a5ef-68ec-48cf-bb7e-73bcbe86cc3c",
             "subtypes": [
                 "Troll",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11864,
             "text": "{G}, {T}, Sacrifice a Forest: Regenerate target creature.",
             "toughness": "2",
             "type": "Creature — Troll Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "ee58a5ef-68ec-48cf-bb7e-73bcbe86cc3c"
+            "uuid": "c6c1f9fa-3b88-5c0a-9f6d-b810f89a1063"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -10407,7 +10507,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10446,17 +10545,19 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "a09751cf-6aa9-4d64-a1db-4f1826774f00",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11865,
             "text": "When Tornado Elemental enters the battlefield, it deals 6 damage to each creature with flying.\nYou may have Tornado Elemental assign its combat damage as though it weren't blocked.",
             "toughness": "6",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "a09751cf-6aa9-4d64-a1db-4f1826774f00"
+            "uuid": "62bbf02d-74cf-50b5-80fc-b7f4986a53c3"
         },
         {
             "artist": "Carl Critchlow",
@@ -10530,7 +10631,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10554,18 +10654,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5cb0cc0e-f71f-456f-a6ec-6a70cf838c35",
             "subtypes": [
                 "Dinosaur",
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11866,
             "text": "{1}{G}: Tyrranax gets -1/+1 until end of turn.",
             "toughness": "4",
             "type": "Creature — Dinosaur Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "5cb0cc0e-f71f-456f-a6ec-6a70cf838c35"
+            "uuid": "65aa8f72-76be-5e4f-97a4-c483ed0ce223"
         },
         {
             "artist": "Darrell Riche",
@@ -10639,7 +10741,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10662,18 +10763,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "85673b93-39b7-44e1-b27d-b716bde42f0b",
             "subtypes": [
                 "Elf",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11867,
             "text": "{3}{G}, {T}: Target creature gets +X/+X until end of turn, where X is the number of artifacts your opponents control.",
             "toughness": "3",
             "type": "Creature — Elf Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "85673b93-39b7-44e1-b27d-b716bde42f0b"
+            "uuid": "0b96aaea-fd9d-5de5-aa5b-9dfe5e832365"
         },
         {
             "artist": "Daren Bader",
@@ -10747,7 +10850,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10772,19 +10874,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3260a427-b67f-4908-8c56-5c0fab009598",
             "subtypes": [
                 "Elf",
                 "Warrior",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11868,
             "text": "{2}{G}, Sacrifice Viridian Scout: It deals 2 damage to target creature with flying.",
             "toughness": "2",
             "type": "Creature — Elf Warrior Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "3260a427-b67f-4908-8c56-5c0fab009598"
+            "uuid": "5588c183-034c-52cf-ab5d-749083df52eb"
         },
         {
             "artist": "Jeff Easley",
@@ -10854,7 +10958,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10878,10 +10981,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c97773f5-548a-4107-b29c-56b5428d5ddb",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11779,
             "text": "When Anodet Lurker dies, you gain 3 life.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -10889,7 +10994,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c97773f5-548a-4107-b29c-56b5428d5ddb"
+            "uuid": "af8d3510-a39f-557e-9c28-cb168d6855d0"
         },
         {
             "artist": "Greg Staples",
@@ -10959,7 +11064,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10981,10 +11085,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "836d5ce6-d5c9-4fb5-8302-53d25b5531b5",
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11780,
             "text": "Reach (This creature can block creatures with flying.)",
             "toughness": "6",
             "type": "Artifact Creature — Spider",
@@ -10992,7 +11098,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "836d5ce6-d5c9-4fb5-8302-53d25b5531b5"
+            "uuid": "722360d6-d41a-5120-b4b2-65153ced3b3f"
         },
         {
             "artist": "Christopher Moeller",
@@ -11054,7 +11160,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11096,10 +11201,12 @@
                     "text": "If this creature gets enough -1/-1 counters put on it to cause its toughness to be 0 or less (or the damage marked on it to be lethal), modular will put a number of +1/+1 counters on the target artifact creature equal to the number of +1/+1 counters on this creature before it left the battlefield."
                 }
             ],
+            "scryfallId": "d4242f34-33c0-4e16-a6d9-18499dc8f2eb",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11763,
             "text": "Modular—Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
             "toughness": "0",
             "type": "Artifact Creature — Golem",
@@ -11107,7 +11214,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d4242f34-33c0-4e16-a6d9-18499dc8f2eb"
+            "uuid": "8607fc45-a6ee-559e-b089-8b417da70699"
         },
         {
             "artist": "Ben Thompson",
@@ -11177,7 +11284,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11204,14 +11310,16 @@
                     "text": "It is possible to activate this ability in response to itself and generate some odd combinations. For example, if you control this card and another permanent, you can use this card’s ability and target the permanent you control. You can then use this card’s ability again and target a permanent your opponent controls. The second usage resolves first and you get your opponent’s permanent in exchange for this one. The first usage then resolves and swaps your other permanent for the Totem so you get it back. The net effect is that you can swap any non-land permanent you have for any of theirs if you can activate this ability twice. Note that your opponent does get the chance to use the Totem in between the resolutions of your two usages if they have the mana."
                 }
             ],
+            "scryfallId": "53a5cfa8-4091-445c-8641-64402cca7d2d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11781,
             "text": "{5}: Exchange control of Avarice Totem and target nonland permanent.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "53a5cfa8-4091-445c-8641-64402cca7d2d"
+            "uuid": "7cf32468-e288-5e79-81d0-15bb3346f10c"
         },
         {
             "artist": "Heather Hudson",
@@ -11273,7 +11381,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11296,14 +11403,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d363970c-2418-42f9-8d13-0e5700161b62",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11782,
             "text": "Flash\nSunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\nRemove a charge counter from Baton of Courage: Target creature gets +1/+1 until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d363970c-2418-42f9-8d13-0e5700161b62"
+            "uuid": "c1899592-9408-5d08-b11d-735089161f42"
         },
         {
             "artist": "Carl Critchlow",
@@ -11373,7 +11482,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11397,10 +11505,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f69add35-c529-4b30-8e64-f09b8308432f",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11783,
             "text": "Battered Golem doesn't untap during your untap step.\nWhenever an artifact enters the battlefield, you may untap Battered Golem.",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -11408,7 +11518,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f69add35-c529-4b30-8e64-f09b8308432f"
+            "uuid": "e4364ac0-e53c-523e-a965-94302d21f0b9"
         },
         {
             "artist": "Stephen Tappin",
@@ -11470,7 +11580,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11492,14 +11601,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "71e2f832-6601-4232-b250-fd1c88538fbd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11784,
             "text": "{T}, Sacrifice a creature: Blasting Station deals 1 damage to any target.\nWhenever a creature enters the battlefield, you may untap Blasting Station.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "71e2f832-6601-4232-b250-fd1c88538fbd"
+            "uuid": "ad14fa50-e63c-5fe2-84db-2fb0f53f9aa6"
         },
         {
             "artist": "Michael Sutfin",
@@ -11569,7 +11680,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11600,14 +11710,16 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "9cbe14e2-89f2-4458-a84f-08ed3c6ae3d7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11785,
             "text": "{X}{1}: Chimeric Coils becomes an X/X Construct artifact creature. Sacrifice it at the beginning of the next end step.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9cbe14e2-89f2-4458-a84f-08ed3c6ae3d7"
+            "uuid": "24555246-bd7b-5dd9-bbdf-ce3d39ba805f"
         },
         {
             "artist": "Dany Orizio",
@@ -11669,7 +11781,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11691,14 +11802,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5458c041-dde0-4df7-82bb-ada36a482c53",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11786,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\nAt the beginning of your upkeep, you may gain life equal to the number of charge counters on Clearwater Goblet.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5458c041-dde0-4df7-82bb-ada36a482c53"
+            "uuid": "1e8fd1bd-96e4-5940-9fd7-d815606dfb3a"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -11768,7 +11881,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11791,14 +11903,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0ffce71b-eb60-4649-a62b-a1b4acaa9d2d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11787,
             "text": "Tap two untapped artifacts you control: Untap target artifact.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0ffce71b-eb60-4649-a62b-a1b4acaa9d2d"
+            "uuid": "2f84e9b3-5542-5c13-9f29-a05412b2788c"
         },
         {
             "artist": "Mark Tedin",
@@ -11874,7 +11988,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11898,10 +12011,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3eba4407-0405-41fa-99e5-1bfa3a787398",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11788,
             "text": "Sacrifice Composite Golem: Add {W}{U}{B}{R}{G}.",
             "toughness": "4",
             "type": "Artifact Creature — Golem",
@@ -11909,7 +12024,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "3eba4407-0405-41fa-99e5-1bfa3a787398"
+            "uuid": "65e0a5b0-fb4b-5524-bf31-5f587aa9192e"
         },
         {
             "artist": "Darrell Riche",
@@ -11979,7 +12094,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12001,14 +12115,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2d32960e-d182-455f-8e74-eb11b10050da",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11789,
             "text": "{T}, Sacrifice Conjurer's Bauble: Put up to one target card from your graveyard on the bottom of your library. Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2d32960e-d182-455f-8e74-eb11b10050da"
+            "uuid": "a9f319ca-d22b-5fce-b1e2-116d2c7c58bc"
         },
         {
             "artist": "Adam Rex",
@@ -12072,7 +12188,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12098,16 +12213,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "90ea95d0-9f95-462b-a080-22a5da7b2e97",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11790,
             "text": "Equipped creature gets +1/+0 for each artifact you control.\n{B}{B}: Attach Cranial Plating to target creature you control.\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "90ea95d0-9f95-462b-a080-22a5da7b2e97"
+            "uuid": "de8fb199-0356-554f-aa58-2ab9b481eba8"
         },
         {
             "artist": "Ron Spencer",
@@ -12177,7 +12294,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12217,14 +12333,16 @@
                     "text": "Crucible of Worlds doesn’t allow you to activate abilities (such as cycling) of land cards in your graveyard."
                 }
             ],
+            "scryfallId": "312a6058-de08-487d-95bd-b3c56807fdd6",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11791,
             "text": "You may play land cards from your graveyard.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "312a6058-de08-487d-95bd-b3c56807fdd6"
+            "uuid": "579ada54-8821-5e72-9211-bdf197eb0181"
         },
         {
             "artist": "Puddnhead",
@@ -12300,7 +12418,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12324,14 +12441,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c92ffeae-6b51-4426-a080-b1b065b1290d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11792,
             "text": "Door to Nothingness enters the battlefield tapped.\n{W}{W}{U}{U}{B}{B}{R}{R}{G}{G}, {T}, Sacrifice Door to Nothingness: Target player loses the game.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c92ffeae-6b51-4426-a080-b1b065b1290d"
+            "uuid": "f60579b1-e268-5098-8550-be50a0a68b7f"
         },
         {
             "artist": "Mark Tedin",
@@ -12401,7 +12520,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12436,14 +12554,16 @@
                     "text": "Any restrictions on the mana in your mana pool aren’t copied. For example, if you have {C}{W}{W}{B} with no restrictions on it in your mana pool and {U}{U}{U} that can be used only to cast artifact spells, you’ll end up with {C}{C}{W}{W}{W}{W}{B}{B}, {U}{U}{U} that can be used only to cast artifact spells, and {U}{U}{U} that can be used for anything."
                 }
             ],
+            "scryfallId": "220d3a38-10f8-4d4a-84b8-f17b10a2cd6c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11793,
             "text": "{3}, {T}: Double the amount of each type of unspent mana you have.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "220d3a38-10f8-4d4a-84b8-f17b10a2cd6c"
+            "uuid": "29127d84-0512-54f5-aadc-30599eaef219"
         },
         {
             "artist": "Kev Walker",
@@ -12505,7 +12625,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12527,14 +12646,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4e6a6ad6-77a5-4dec-922f-1cd6780c8671",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11794,
             "text": "At the beginning of your upkeep, choose one —\n• Put a +1/+1 counter on target artifact creature.\n• Put a charge counter on target noncreature artifact.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4e6a6ad6-77a5-4dec-922f-1cd6780c8671"
+            "uuid": "4556e7d7-b13f-588c-8428-00bfe81cbd7f"
         },
         {
             "artist": "Ron Spears",
@@ -12596,7 +12717,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12624,16 +12744,30 @@
                 {
                     "date": "2004-12-01",
                     "text": "If Engineered Explosives had no charge counters on it when you sacrificed it, it won’t destroy an animated land, because that permanent is a land in addition to being a creature."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "You can choose any value for X as you cast Engineered Explosives. The value chosen for X doesn’t directly affect the number of charge counters Engineered Explosives enters the battlefield with, but it does let you pay more mana and thus spend more colors of mana to cast it."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "Colorless mana won’t give Engineered Explosives another charge counter. Colorless is not a color."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "A token has a converted mana cost of 0 unless it is copying something else."
                 }
             ],
+            "scryfallId": "8492a272-e595-4f94-a6eb-08d29f211fd6",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11771,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\n{2}, Sacrifice Engineered Explosives: Destroy each nonland permanent with converted mana cost equal to the number of charge counters on Engineered Explosives.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8492a272-e595-4f94-a6eb-08d29f211fd6"
+            "uuid": "718c8a87-56ad-5dc0-a02b-a3f2b1f198df"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -12695,7 +12829,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12722,16 +12855,18 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "9d2a16e2-ea98-4bf2-9e5c-7612d2dd039b",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11795,
             "text": "{3}: Ensouled Scimitar becomes a 1/5 Spirit artifact creature with flying until end of turn. (Equipment that's a creature can't equip a creature.)\nEquipped creature gets +1/+5.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9d2a16e2-ea98-4bf2-9e5c-7612d2dd039b"
+            "uuid": "3c07c368-4841-5bde-b1ef-4a991390ff3a"
         },
         {
             "artist": "Daren Bader",
@@ -12801,7 +12936,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12836,14 +12970,16 @@
                     "text": "Any triggered abilities that triggered during the untap step will go onto the stack at the start of the draw step."
                 }
             ],
+            "scryfallId": "d5d6b270-b4c9-489d-9322-7c8ddc0ca0ac",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11796,
             "text": "Players skip their upkeep steps.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d5d6b270-b4c9-489d-9322-7c8ddc0ca0ac"
+            "uuid": "e365bff9-bb40-5733-946b-005be398d3ac"
         },
         {
             "artist": "Matt Cavotta",
@@ -12905,7 +13041,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12932,10 +13067,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b7fcd005-9b54-42c1-8ce1-a20665d0fd8b",
             "subtypes": [
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11764,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\n{1}, Remove four +1/+1 counters from Etched Oracle: Target player draws three cards.",
             "toughness": "0",
             "type": "Artifact Creature — Wizard",
@@ -12943,7 +13080,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b7fcd005-9b54-42c1-8ce1-a20665d0fd8b"
+            "uuid": "9ba8c80c-1215-578a-b7af-01200233bfd5"
         },
         {
             "artist": "Jeff Easley",
@@ -13005,7 +13142,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13037,10 +13173,12 @@
                     "text": "If there’s more than one type of counter on the targeted permanent, Ferropede’s controller chooses which counter to remove from it."
                 }
             ],
+            "scryfallId": "cdf8248c-ef2c-4b1e-8a0b-05def43ca2af",
             "subtypes": [
                 "Insect"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11797,
             "text": "Ferropede can't be blocked.\nWhenever Ferropede deals combat damage to a player, you may remove a counter from target permanent.",
             "toughness": "1",
             "type": "Artifact Creature — Insect",
@@ -13048,7 +13186,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "cdf8248c-ef2c-4b1e-8a0b-05def43ca2af"
+            "uuid": "c6b2fbcb-a728-534d-b7df-37e2095a9549"
         },
         {
             "artist": "Arnie Swekel",
@@ -13124,7 +13262,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13163,14 +13300,16 @@
                     "text": "If you pay {W}{U}{B}{R}{G} rather than pay the mana cost of a spell with {X} in its mana cost, the only legal choice for X is 0."
                 }
             ],
+            "scryfallId": "9997c580-596b-43d5-b4a0-9acc8fc2ef26",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11798,
             "text": "You may pay {W}{U}{B}{R}{G} rather than pay the mana cost for spells that you cast.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9997c580-596b-43d5-b4a0-9acc8fc2ef26"
+            "uuid": "ac4d3da3-3809-5a2e-ae64-b1100a1afb22"
         },
         {
             "artist": "Ittoku",
@@ -13240,7 +13379,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13261,14 +13399,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "19ef37a3-4538-47b2-8f88-3fa0a4e32329",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11799,
             "text": "{2}: Put a charge counter on Gemstone Array.\nRemove a charge counter from Gemstone Array: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "19ef37a3-4538-47b2-8f88-3fa0a4e32329"
+            "uuid": "e4e7dcd7-0506-50f8-a35c-8469d53c336c"
         },
         {
             "artist": "Doug Chaffee",
@@ -13338,7 +13478,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13365,14 +13504,16 @@
                     "text": "You can activate Goblin Cannon’s ability multiple times in response to the first activation. Goblin Cannon will be sacrificed the first time the ability resolves, but each activation still deals damage when it resolves."
                 }
             ],
+            "scryfallId": "b023c0cd-7046-418b-ad31-5c91c6930d45",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11800,
             "text": "{2}: Goblin Cannon deals 1 damage to any target. Sacrifice Goblin Cannon.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b023c0cd-7046-418b-ad31-5c91c6930d45"
+            "uuid": "0d429011-f84b-5dc2-928e-3569678f4cfe"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -13434,7 +13575,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13472,16 +13612,18 @@
                     "text": "You may activate this card’s equip ability targeting the creature that it is currently attached to, even if it’s the only creature you control. Since the equip ability costs zero, you can do this as many times as you like during your main phases, though it generally won’t do anything."
                 }
             ],
+            "scryfallId": "5269cfbd-1202-47fe-a12d-d95ff304b335",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11801,
             "text": "Equipped creature gets +3/+2.\nWhenever Grafted Wargear becomes unattached from a permanent, sacrifice that permanent.\nEquip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5269cfbd-1202-47fe-a12d-d95ff304b335"
+            "uuid": "4c3b7ebb-9c46-550c-ba43-39d4705f3594"
         },
         {
             "artist": "Greg Staples",
@@ -13543,7 +13685,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13564,14 +13705,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "df1df511-b52c-45cd-9503-ffce4271a802",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11802,
             "text": "{T}, Sacrifice an artifact: Target player puts the top three cards of their library into their graveyard.\nWhenever an artifact enters the battlefield, you may untap Grinding Station.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "df1df511-b52c-45cd-9503-ffce4271a802"
+            "uuid": "d0e94583-1be7-50b2-a56d-acfac7447286"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -13633,7 +13776,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13669,14 +13811,16 @@
                     "text": "Activating the last ability of Guardian Idol while it’s already a creature will override any effects that set its power or toughness to a specific value. Effects that modify power or toughness without setting them to a specific value will continue to apply."
                 }
             ],
+            "scryfallId": "a6a62a73-b7db-47ec-9b68-65dd7c1a06a5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11803,
             "text": "Guardian Idol enters the battlefield tapped.\n{T}: Add {C}.\n{2}: Guardian Idol becomes a 2/2 Golem artifact creature until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a6a62a73-b7db-47ec-9b68-65dd7c1a06a5"
+            "uuid": "1693a689-2fe6-5fae-98fd-f05b7c87bed5"
         },
         {
             "artist": "Carl Critchlow",
@@ -13740,7 +13884,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13763,16 +13906,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9565f076-54a6-43d6-bcf0-dcb932f6c116",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11804,
             "text": "Equipped creature gets +0/+2 and has \"{T}: Prevent the next 1 damage that would be dealt to any target this turn.\"\n{W}{W}: Attach Healer's Headdress to target creature you control.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9565f076-54a6-43d6-bcf0-dcb932f6c116"
+            "uuid": "b35f3b17-30db-5daa-8030-aeb6839fbde6"
         },
         {
             "artist": "Wayne England",
@@ -13834,7 +13979,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13857,14 +14001,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4d65fa8e-6944-4fe8-b7b4-c77dfbddf605",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11805,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\n{2}, Sacrifice Heliophial: Heliophial deals damage equal to the number of charge counters on it to any target.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4d65fa8e-6944-4fe8-b7b4-c77dfbddf605"
+            "uuid": "bbedb052-829c-54b8-b2cc-fd84978246bd"
         },
         {
             "artist": "Donato Giancola",
@@ -13926,7 +14072,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13939,11 +14084,7 @@
             "manaCost": "{3}",
             "multiverseId": 47449,
             "name": "Helm of Kaldra",
-            "names": [
-                "Helm of Kaldra",
-                "Shield of Kaldra",
-                "Sword of Kaldra"
-            ],
+            "names": [],
             "number": "131",
             "originalText": "Equipped creature has first strike, trample, and haste.\n{1}: If you control Equipment named Helm of Kaldra, Sword of Kaldra, and Shield of Kaldra, put a 4/4 colorless Avatar Legend creature token named Kaldra into play and attach those Equipment to it.\nEquip {2}",
             "originalType": "Legendary Artifact - Equipment",
@@ -13967,18 +14108,20 @@
                     "text": "The token is named Kaldra, has the supertype legendary, and has creature type Avatar."
                 }
             ],
+            "scryfallId": "f76514aa-3cc1-4d5f-ba33-d933a36920a4",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 11806,
             "text": "Equipped creature has first strike, trample, and haste.\n{1}: If you control Equipment named Helm of Kaldra, Sword of Kaldra, and Shield of Kaldra, create a legendary 4/4 colorless Avatar creature token named Kaldra and attach those Equipment to it.\nEquip {2}",
             "type": "Legendary Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f76514aa-3cc1-4d5f-ba33-d933a36920a4"
+            "uuid": "dbbe654b-70ae-55a6-9f01-80a2f9767605"
         },
         {
             "artist": "Martina Pilcerova",
@@ -14042,7 +14185,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14065,16 +14207,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "749c408a-0a19-44a3-a436-295380573f91",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11807,
             "text": "Equipped creature gets +1/+1 and has trample.\n{G}{G}: Attach Horned Helm to target creature you control.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "749c408a-0a19-44a3-a436-295380573f91"
+            "uuid": "106eefa6-0780-5111-80e8-d23a5dc361d5"
         },
         {
             "artist": "Stephen Tappin",
@@ -14136,7 +14280,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14158,14 +14301,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f5fd2639-3c95-435d-8e94-cd4e4d069e3e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11770,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\n{T}, Remove X charge counters from Infused Arrows: Target creature gets -X/-X until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f5fd2639-3c95-435d-8e94-cd4e4d069e3e"
+            "uuid": "6ba51192-b1b3-57e1-baaf-8377e720e41b"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -14235,7 +14380,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14257,14 +14401,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c60174d6-1f9d-4870-b3db-34d6fcb3f6ab",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11808,
             "text": "Sacrifice an artifact: Add {C}{C}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c60174d6-1f9d-4870-b3db-34d6fcb3f6ab"
+            "uuid": "36130cf5-2b9b-5575-8751-2c964453066c"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -14334,7 +14480,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14368,14 +14513,16 @@
                     "text": "The top card of your library isn’t in your hand, so you can’t suspend it, cycle it, discard it, or activate any of its activated abilities."
                 }
             ],
+            "scryfallId": "cb0e4c78-75fe-4692-b177-974b148f0614",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11809,
             "text": "Players play with the top card of their libraries revealed.\n{T}, Sacrifice Lantern of Insight: Target player shuffles their library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cb0e4c78-75fe-4692-b177-974b148f0614"
+            "uuid": "d2803af7-6ed1-5f59-bcdc-0abbcdff1d97"
         },
         {
             "artist": "Paolo Parente",
@@ -14437,7 +14584,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14465,10 +14611,12 @@
                     "text": "You choose whether Lunar Avenger gains flying, first strike, or haste when the activated ability resolves."
                 }
             ],
+            "scryfallId": "3f2348e5-6bf9-4a7e-91a4-ba93bb108897",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11810,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\nRemove a +1/+1 counter from Lunar Avenger: Lunar Avenger gains your choice of flying, first strike, or haste until end of turn.",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -14476,7 +14624,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "3f2348e5-6bf9-4a7e-91a4-ba93bb108897"
+            "uuid": "857987a9-b3de-5ca0-9ac5-54e303eaa11a"
         },
         {
             "artist": "Paolo Parente",
@@ -14538,7 +14686,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14573,10 +14720,12 @@
                     "text": "Two or more instances of the affinity ability are cumulative, even if they’re both affinity for the same thing."
                 }
             ],
+            "scryfallId": "c3200fa2-182f-4515-b326-ab4fdb95c8c1",
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11811,
             "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nArtifact creature spells you cast have affinity for artifacts. (They cost {1} less to cast for each artifact you control.)",
             "toughness": "5",
             "type": "Artifact Creature — Golem",
@@ -14584,7 +14733,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c3200fa2-182f-4515-b326-ab4fdb95c8c1"
+            "uuid": "cfa9a57c-2c7f-5c85-b7ce-c2c14fd7b40c"
         },
         {
             "artist": "Christopher Rush",
@@ -14654,7 +14803,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14687,10 +14835,12 @@
                     "text": "Switching a creature’s power and toughness twice (or any even number of times) effectively returns the creature to the power and toughness it had before any switches."
                 }
             ],
+            "scryfallId": "5576fe4d-cf12-460b-af15-996baeca5065",
             "subtypes": [
                 "Myr"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11812,
             "text": "{3}: Switch Myr Quadropod's power and toughness until end of turn.",
             "toughness": "4",
             "type": "Artifact Creature — Myr",
@@ -14698,7 +14848,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "5576fe4d-cf12-460b-af15-996baeca5065"
+            "uuid": "633954c4-5407-5991-a93d-e12b3351047a"
         },
         {
             "artist": "John Matson",
@@ -14768,7 +14918,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14793,14 +14942,16 @@
             "rarity": "common",
             "rulings": [
                 {
-                    "date": "2004-12-01",
-                    "text": "The Myr Servitor that’s the source of the ability must be on the battlefield when the ability resolves. If it is, all other Myr Servitor cards are returned from all graveyards to the battlefield under their owner’s control. If it’s not, no Myr Servitors are returned to the battlefield."
+                    "date": "2018-12-07",
+                    "text": "The Myr Servitor that’s the source of the triggered ability must still be on the battlefield when the ability resolves. If it is, all other Myr Servitor cards are returned from all graveyards to the battlefield under their owner’s control. If it’s not, no Myr Servitors are returned to the battlefield."
                 }
             ],
+            "scryfallId": "06127e05-d1d6-4dd5-90e1-a93e3a51b1b0",
             "subtypes": [
                 "Myr"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11813,
             "text": "At the beginning of your upkeep, if Myr Servitor is on the battlefield, each player returns all cards named Myr Servitor from their graveyard to the battlefield.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -14808,7 +14959,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "06127e05-d1d6-4dd5-90e1-a93e3a51b1b0"
+            "uuid": "9cb7fa62-6080-5302-bc60-0989a26ea1c3"
         },
         {
             "artist": "Francis Tsai",
@@ -14872,7 +15023,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14896,16 +15046,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a65ad83a-7374-435d-a5bd-2dd455fa6420",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11814,
             "text": "Equipped creature has shroud. (It can't be the target of spells or abilities.)\n{U}{U}: Attach Neurok Stealthsuit to target creature you control.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a65ad83a-7374-435d-a5bd-2dd455fa6420"
+            "uuid": "cde05383-0581-5741-9303-c6ccfb4d3c1a"
         },
         {
             "artist": "Anthony S. Waters",
@@ -14967,7 +15119,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14990,16 +15141,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3ae84edd-1294-4722-89d1-84d9f336871c",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11815,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\nEquipped creature gets +X/+X, where X is the number of charge counters on Opaline Bracers.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3ae84edd-1294-4722-89d1-84d9f336871c"
+            "uuid": "37a03282-0337-54e4-bb97-53549d408ed5"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -15061,7 +15214,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15083,16 +15235,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1252e9e2-2dd5-4bd6-aa56-f0a0ba056a77",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11816,
             "text": "Equipped creature has \"{T}: Add one mana of any color.\"\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "1252e9e2-2dd5-4bd6-aa56-f0a0ba056a77"
+            "uuid": "1f0a28a5-2f37-50bb-bb4b-bd621eb1740e"
         },
         {
             "artist": "David Martin",
@@ -15154,7 +15308,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15178,14 +15331,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "672b9b16-daef-44e6-9a3a-cfd9f3c78bc7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11765,
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\nRemove a charge counter from Pentad Prism: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "672b9b16-daef-44e6-9a3a-cfd9f3c78bc7"
+            "uuid": "1af547af-643c-5b57-92ff-437d631d5b7d"
         },
         {
             "artist": "Tony Szczudlo",
@@ -15247,7 +15402,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15268,14 +15422,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "616836e6-caf4-4398-a772-9c67f84c73c5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11817,
             "text": "If a player would draw a card, that player skips that draw instead.\nAt the beginning of each end step, each player sacrifices a permanent unless they discard a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "616836e6-caf4-4398-a772-9c67f84c73c5"
+            "uuid": "894603f6-6ae2-5f52-8dd7-72dd0d14a912"
         },
         {
             "artist": "Tony Szczudlo",
@@ -15345,7 +15501,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15369,10 +15524,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "21e79f57-2214-414a-ab34-2b737d4bb972",
             "subtypes": [
                 "Wall"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11818,
             "text": "Defender (This creature can't attack.)\nRazorgrass Screen blocks each combat if able.",
             "toughness": "1",
             "type": "Artifact Creature — Wall",
@@ -15380,7 +15537,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "21e79f57-2214-414a-ab34-2b737d4bb972"
+            "uuid": "27d5a7d8-7af1-5826-8985-e7bd313b46a9"
         },
         {
             "artist": "Jim Murray",
@@ -15442,7 +15599,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15468,10 +15624,12 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b81dbdc0-dffe-4c10-9e81-d66a77eb6c49",
             "subtypes": [
                 "Masticore"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11819,
             "text": "First strike (This creature deals combat damage before creatures without first strike.)\nAt the beginning of your upkeep, sacrifice Razormane Masticore unless you discard a card.\nAt the beginning of your draw step, you may have Razormane Masticore deal 3 damage to target creature.",
             "toughness": "5",
             "type": "Artifact Creature — Masticore",
@@ -15479,7 +15637,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b81dbdc0-dffe-4c10-9e81-d66a77eb6c49"
+            "uuid": "1aa3c1e5-094d-5b7e-9b69-62ef66422c83"
         },
         {
             "artist": "Nottsuo",
@@ -15549,7 +15707,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15578,14 +15735,16 @@
                     "text": "Can target a tapped artifact."
                 }
             ],
+            "scryfallId": "12d760d8-030e-47d0-a555-d88ee43d3d80",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11820,
             "text": "{T}: Tap target artifact.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "12d760d8-030e-47d0-a555-d88ee43d3d80"
+            "uuid": "5b974747-bfc4-591b-bb70-ad4077db292d"
         },
         {
             "artist": "Greg Staples",
@@ -15647,7 +15806,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15669,14 +15827,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "f0336e07-8eaf-4b90-af54-4764e5ba50f2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11821,
             "text": "{T}: Return target noncreature artifact card with converted mana cost 1 or less from your graveyard to the battlefield.\nWhenever a creature dies, you may untap Salvaging Station.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f0336e07-8eaf-4b90-af54-4764e5ba50f2"
+            "uuid": "9828f7e3-080a-557c-84e5-eeaf7ec8796c"
         },
         {
             "artist": "Alan Pollack",
@@ -15738,7 +15898,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15762,10 +15921,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3c36de4a-807d-471d-ba59-0462d7bb028a",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11822,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\nRemove two +1/+1 counters from Sawtooth Thresher: Sawtooth Thresher gets +4/+4 until end of turn.",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -15773,7 +15934,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "3c36de4a-807d-471d-ba59-0462d7bb028a"
+            "uuid": "af6a4294-95b9-5eb5-9b78-443aacc32a46"
         },
         {
             "artist": "Mark Zug",
@@ -15843,7 +16004,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15867,10 +16027,12 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "65229ebf-da43-476b-9e9d-8cc0102a24c3",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11823,
             "text": "No more than one creature can attack each combat.\nNo more than one creature can block each combat.",
             "toughness": "5",
             "type": "Artifact Creature — Construct",
@@ -15878,7 +16040,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "65229ebf-da43-476b-9e9d-8cc0102a24c3"
+            "uuid": "0088e6df-a599-596e-971b-c60eb9555fcb"
         },
         {
             "artist": "Ron Spencer",
@@ -15948,7 +16110,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15980,14 +16141,16 @@
                     "text": "Skullcage doesn’t check hand size when it triggers, only when it resolves."
                 }
             ],
+            "scryfallId": "68f32bf4-e58b-42f9-8829-4c985dc94963",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11824,
             "text": "At the beginning of each opponent's upkeep, Skullcage deals 2 damage to that player unless they have exactly three or exactly four cards in hand.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "68f32bf4-e58b-42f9-8829-4c985dc94963"
+            "uuid": "0d20998f-465f-52e4-a303-cf3f07202be5"
         },
         {
             "artist": "Christopher Moeller",
@@ -16057,7 +16220,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16083,10 +16245,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f6b11e69-09ec-4e26-a64d-c129c45574b1",
             "subtypes": [
                 "Fish"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11825,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\nFlying",
             "toughness": "0",
             "type": "Artifact Creature — Fish",
@@ -16094,7 +16258,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f6b11e69-09ec-4e26-a64d-c129c45574b1"
+            "uuid": "cd7ec6ee-1764-5561-8e74-1942ed86537f"
         },
         {
             "artist": "Jim Murray",
@@ -16156,7 +16320,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16184,10 +16347,12 @@
                     "text": "“Double” has its normal English meaning. If Solarion had three +1/+1 counters on it, it would end up with six +1/+1 counters on it."
                 }
             ],
+            "scryfallId": "9070dd3e-7600-493e-84b9-931ac92f44bc",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11826,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\n{T}: Double the number of +1/+1 counters on Solarion.",
             "toughness": "0",
             "type": "Artifact Creature — Construct",
@@ -16195,7 +16360,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9070dd3e-7600-493e-84b9-931ac92f44bc"
+            "uuid": "497bf2f6-0df0-58fa-b5cd-74d039622abe"
         },
         {
             "artist": "Christopher Moeller",
@@ -16259,7 +16424,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16281,16 +16445,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5fc31145-19b4-4dbe-8756-f49791aa147e",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11827,
             "text": "Equipped creature has first strike.\n{R}{R}: Attach Sparring Collar to target creature you control.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5fc31145-19b4-4dbe-8756-f49791aa147e"
+            "uuid": "dddbb79c-27cd-59e8-82d9-d64552d00c16"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -16352,7 +16518,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16388,10 +16553,12 @@
                     "text": "Any permanent is a legal target for Spinal Parasite’s ability, not just one with a counter on it. The player who controls Spinal Parasite chooses which counter to remove from the targeted permanent."
                 }
             ],
+            "scryfallId": "1aefaec4-741b-4a90-bf2c-e18215aac57c",
             "subtypes": [
                 "Insect"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11828,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\nRemove two +1/+1 counters from Spinal Parasite: Remove a counter from target permanent.",
             "toughness": "-1",
             "type": "Artifact Creature — Insect",
@@ -16399,7 +16566,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1aefaec4-741b-4a90-bf2c-e18215aac57c"
+            "uuid": "df20924d-80c0-5bcc-a2d9-cd473d608315"
         },
         {
             "artist": "Ben Thompson",
@@ -16461,7 +16628,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16483,14 +16649,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "7980fc3b-71d5-427d-bd42-087256fd2059",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11758,
             "text": "{1}: Untap Staff of Domination.\n{2}, {T}: You gain 1 life.\n{3}, {T}: Untap target creature.\n{4}, {T}: Tap target creature.\n{5}, {T}: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7980fc3b-71d5-427d-bd42-087256fd2059"
+            "uuid": "f09c4c82-7bdb-5b6d-825e-732a1638fc5d"
         },
         {
             "artist": "Jim Nelson",
@@ -16552,7 +16720,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16588,10 +16755,12 @@
                     "text": "Any “When this creature is turned face up” abilities that the exiled card may have don’t trigger because the card isn’t being turned face up while it’s on the battlefield."
                 }
             ],
+            "scryfallId": "3581ac02-5dab-423a-9cf3-275d9203f26d",
             "subtypes": [
                 "Egg"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11829,
             "text": "Imprint — When Summoner's Egg enters the battlefield, you may exile a card from your hand face down.\nWhen Summoner's Egg dies, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control.",
             "toughness": "4",
             "type": "Artifact Creature — Egg",
@@ -16599,7 +16768,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "3581ac02-5dab-423a-9cf3-275d9203f26d"
+            "uuid": "be889177-777e-50a2-aa3c-fcc9125453e3"
         },
         {
             "artist": "Stephen Tappin",
@@ -16661,7 +16830,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16683,14 +16851,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c8072944-268a-41e0-a1d8-9fe33e964bff",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11830,
             "text": "{T}: Create a 2/2 colorless Pincher creature token.\nWhenever an artifact is put into a graveyard from the battlefield, you may untap Summoning Station.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c8072944-268a-41e0-a1d8-9fe33e964bff"
+            "uuid": "60c30496-1b04-5081-ac8e-3f2ea7bb87c9"
         },
         {
             "artist": "Dave Dorman",
@@ -16752,7 +16922,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16775,10 +16944,12 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "66c22071-959e-4986-aa25-ed883a20796b",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11831,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)\n{4}, {T}, Remove a +1/+1 counter from Suncrusher: Destroy target creature.\n{2}, Remove a +1/+1 counter from Suncrusher: Return Suncrusher to its owner's hand.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -16786,7 +16957,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "66c22071-959e-4986-aa25-ed883a20796b"
+            "uuid": "6c0e27ff-2b44-59b8-afb4-9650c60973eb"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -16856,7 +17027,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16881,10 +17051,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "07d6c82f-b943-435e-a716-a58ae30b3922",
             "subtypes": [
                 "Myr"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11832,
             "text": "Sunburst (This enters the battlefield with a +1/+1 counter on it for each color of mana spent to cast it.)",
             "toughness": "0",
             "type": "Artifact Creature — Myr",
@@ -16892,7 +17064,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "07d6c82f-b943-435e-a716-a58ae30b3922"
+            "uuid": "4d84296f-bcbb-59fa-a6fe-bc1972ce2876"
         },
         {
             "artist": "Kev Walker",
@@ -16962,7 +17134,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16987,10 +17158,12 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a16ef3b5-31ad-45f8-bac1-3b0a08964888",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11833,
             "text": "When you control no other artifacts, sacrifice Synod Centurion.",
             "toughness": "4",
             "type": "Artifact Creature — Construct",
@@ -16998,7 +17171,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a16ef3b5-31ad-45f8-bac1-3b0a08964888"
+            "uuid": "57b4bd65-0042-5f85-9e6a-e1ecb43759c5"
         },
         {
             "artist": "Jim Murray",
@@ -17068,7 +17241,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17092,10 +17264,12 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "eb86854f-c933-4b6c-bd0a-67c3615e908f",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 11834,
             "text": "Sacrifice an artifact: Thermal Navigator gains flying until end of turn.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -17103,7 +17277,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "eb86854f-c933-4b6c-bd0a-67c3615e908f"
+            "uuid": "687fd319-132f-5647-b859-bc305f867bb0"
         },
         {
             "artist": "John Avon",
@@ -17173,7 +17347,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17204,14 +17377,16 @@
                     "text": "This applies only to casting spells. It does not, for example, change when you may activate abilities that can only be activated “any time you could cast a sorcery”."
                 }
             ],
+            "scryfallId": "94b546fa-af65-4afa-bb16-69b33674d3d1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11762,
             "text": "You may cast spells as though they had flash.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "94b546fa-af65-4afa-bb16-69b33674d3d1"
+            "uuid": "be6d09ec-4dab-5362-9100-24b5a8beb08d"
         },
         {
             "artist": "Mark Zug",
@@ -17273,7 +17448,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17309,14 +17483,16 @@
                     "text": "If Vedalken Shackles leaves the battlefield, it’s no longer tapped, so the control-changing effect ends."
                 }
             ],
+            "scryfallId": "cef06f56-a7a8-4c0f-8755-56b46d2aa82c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11768,
             "text": "You may choose not to untap Vedalken Shackles during your untap step.\n{2}, {T}: Gain control of target creature with power less than or equal to the number of Islands you control for as long as Vedalken Shackles remains tapped.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cef06f56-a7a8-4c0f-8755-56b46d2aa82c"
+            "uuid": "7e5b7893-e311-5f6f-acb1-74221ce1c30e"
         },
         {
             "artist": "Darrell Riche",
@@ -17386,7 +17562,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17417,24 +17592,27 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3db8fc1d-69fa-4a88-8f12-11fd614aac01",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 11835,
             "text": "{2}, {T}, Sacrifice Wayfarer's Bauble: Search your library for a basic land card and put that card onto the battlefield tapped. Then shuffle your library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3db8fc1d-69fa-4a88-8f12-11fd614aac01"
+            "uuid": "4d98e16d-30a2-5015-8b0c-86c6562ec637"
         }
     ],
     "code": "5dn",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "5dn",
     "name": "Fifth Dawn",
     "releaseDate": "2004-06-04",
+    "tcgplayerGroupId": 43,
     "tokens": [],
     "totalSetSize": 165,
     "type": "expansion"

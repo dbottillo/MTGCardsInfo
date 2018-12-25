@@ -39,7 +39,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -59,18 +58,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c94a92a9-060e-42d3-a8d1-49425defc08a",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 424,
             "text": "Vigilance",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c94a92a9-060e-42d3-a8d1-49425defc08a"
+            "uuid": "9d03266e-ae87-5bf6-9b50-2fa6ddabdfa1"
         },
         {
             "artist": "Shang Huitong",
@@ -97,7 +98,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -127,14 +127,16 @@
                     "text": "If you’re able to cast Eightfold Maze, it can target any attacking creature (including one attacking a planeswalker)."
                 }
             ],
+            "scryfallId": "cc8c377a-82c4-46ee-94c2-b970160a3205",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 452,
             "text": "Cast this spell only during the declare attackers step and only if you've been attacked this step.\nDestroy target attacking creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cc8c377a-82c4-46ee-94c2-b970160a3205"
+            "uuid": "83a11165-181b-5a11-8697-8daca40dbfa2"
         },
         {
             "artist": "Qu Xin",
@@ -162,7 +164,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -181,14 +182,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4d37c84c-80e5-453d-bd2e-4f77ff864c89",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 453,
             "text": "Target opponent skips all combat phases of their next turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4d37c84c-80e5-453d-bd2e-4f77ff864c89"
+            "uuid": "89526942-b410-5940-9599-63731f172267"
         },
         {
             "artist": "Li Wang",
@@ -216,7 +219,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -237,14 +239,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5ca71ce3-8633-428a-8d9e-9b807b77a8e2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 457,
             "text": "Return target creature card from your graveyard to the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5ca71ce3-8633-428a-8d9e-9b807b77a8e2"
+            "uuid": "80ce0e02-35c7-54fd-9b85-aa918fe968e7"
         },
         {
             "artist": "Li Wang",
@@ -272,7 +276,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -292,18 +295,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a219a031-2466-4850-b646-79a09e30cf18",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 462,
             "text": "Whenever Flanking Troops attacks, you may tap target creature.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a219a031-2466-4850-b646-79a09e30cf18"
+            "uuid": "ecdee367-8308-58e2-9145-58377b516923"
         },
         {
             "artist": "Qiao Dafu",
@@ -330,7 +335,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -343,11 +347,7 @@
             "manaCost": "{3}{W}{W}",
             "multiverseId": 10494,
             "name": "Guan Yu, Sainted Warrior",
-            "names": [
-                "Guan Yu, Sainted Warrior",
-                "Liu Bei, Lord of Shu",
-                "Zhang Fei, Fierce Warrior"
-            ],
+            "names": [],
             "number": "6",
             "originalText": "Horsemanship\nWhen Guan Yu is put into your graveyard from play, you may shuffle Guan Yu into your library.",
             "originalType": "Creature - Legend",
@@ -371,6 +371,7 @@
                     "text": "If a replacement effect has Guan Yu move to a different zone instead of being put into the graveyard, the ability won’t trigger at all."
                 }
             ],
+            "scryfallId": "1575fadf-cd5c-4b4f-8965-c006e571334b",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -379,13 +380,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 469,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhen Guan Yu, Sainted Warrior is put into your graveyard from the battlefield, you may shuffle Guan Yu into your library.",
             "toughness": "5",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "1575fadf-cd5c-4b4f-8965-c006e571334b"
+            "uuid": "23db4f3d-2af9-56a5-bd5c-eb5312805aff"
         },
         {
             "artist": "Yang Guangmai",
@@ -413,7 +415,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -435,14 +436,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8fa7526a-7a4e-4b3d-b96e-91f2bbf1c7bd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 470,
             "text": "Destroy all tapped creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8fa7526a-7a4e-4b3d-b96e-91f2bbf1c7bd"
+            "uuid": "515cd53e-c7af-5b0c-a3e5-f7d242c136e3"
         },
         {
             "artist": "Quan Xuejun",
@@ -470,7 +473,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -492,6 +494,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c079037c-f4cf-423f-ad15-ee57136d6148",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -499,13 +502,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 473,
             "text": "Huang Zhong, Shu General can't be blocked by more than one creature.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c079037c-f4cf-423f-ad15-ee57136d6148"
+            "uuid": "e97018f7-c315-54a4-9043-dc37eb9ab39f"
         },
         {
             "artist": "Gao Yan",
@@ -533,7 +537,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -560,6 +563,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "f4ae0a05-1870-4f4a-b8a2-bfb5381acacb",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -567,13 +571,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 482,
             "text": "Other creatures you control get +1/+1.",
             "toughness": "2",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "f4ae0a05-1870-4f4a-b8a2-bfb5381acacb"
+            "uuid": "faa07839-53f0-500d-946e-d34378de5606"
         },
         {
             "artist": "Jiaming",
@@ -600,7 +605,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -620,18 +624,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6729eb0b-5655-4191-af14-4f7e4a8dded7",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 483,
             "text": "{T}: Kongming's Contraptions deals 2 damage to target attacking creature. Activate this ability only during the declare attackers step and only if you've been attacked this step.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6729eb0b-5655-4191-af14-4f7e4a8dded7"
+            "uuid": "e6968b0c-b496-5ac7-8720-ec2d85cb6cf2"
         },
         {
             "artist": "Qiao Dafu",
@@ -659,7 +665,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -672,11 +677,7 @@
             "manaCost": "{3}{W}{W}",
             "multiverseId": 10499,
             "name": "Liu Bei, Lord of Shu",
-            "names": [
-                "Guan Yu, Sainted Warrior",
-                "Liu Bei, Lord of Shu",
-                "Zhang Fei, Fierce Warrior"
-            ],
+            "names": [],
             "number": "11",
             "originalText": "Horsemanship\nAs long as you have Guan Yu and/or Zhang Fei in play, Liu Bei gets +2/+2.",
             "originalType": "Creature - Legend",
@@ -692,6 +693,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "b804c879-fe23-4d7f-9e7d-1da41b5c0973",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -699,13 +701,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 486,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nLiu Bei, Lord of Shu gets +2/+2 as long as you control a permanent named Guan Yu, Sainted Warrior or a permanent named Zhang Fei, Fierce Warrior.",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "b804c879-fe23-4d7f-9e7d-1da41b5c0973"
+            "uuid": "780f0750-fe63-5e4d-b9bc-ac0dba65f089"
         },
         {
             "artist": "Solomon Au Yeung",
@@ -732,7 +735,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -763,18 +765,20 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "a2c37964-1c0d-40e6-9947-8be04fe14427",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 488,
             "text": "Sacrifice Loyal Retainers: Return target legendary creature card from your graveyard to the battlefield. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "a2c37964-1c0d-40e6-9947-8be04fe14427"
+            "uuid": "84630a92-64ec-5399-9362-b7930790b197"
         },
         {
             "artist": "Jiaming",
@@ -802,7 +806,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -834,14 +837,16 @@
                     "text": "A token’s owner is the player under whose control it entered the battlefield."
                 }
             ],
+            "scryfallId": "80abd7c1-8f7a-4279-b76f-251a02624345",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 497,
             "text": "Destroy target creature. Its owner gains 4 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "80abd7c1-8f7a-4279-b76f-251a02624345"
+            "uuid": "1645caf5-6e00-53d7-8ce5-0866b5405043"
         },
         {
             "artist": "Li Tie",
@@ -869,7 +874,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -896,6 +900,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "f484d47a-fb1d-4746-8f1d-dd9d24e67c1a",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -903,13 +908,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 504,
             "text": "{T}: Target creature gets +0/+2 until end of turn. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "2",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "f484d47a-fb1d-4746-8f1d-dd9d24e67c1a"
+            "uuid": "1490cf13-0a37-5b2a-9e3a-854daf876722"
         },
         {
             "artist": "Qiao Dafu",
@@ -937,7 +943,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -962,14 +967,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "41bfd51a-0aca-4686-a9c5-11288f409a22",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 505,
             "text": "You gain 2 life for each creature you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "41bfd51a-0aca-4686-a9c5-11288f409a22"
+            "uuid": "57e45e54-7012-5862-a528-4f90a6d8b9b0"
         },
         {
             "artist": "Shang Huitong",
@@ -996,7 +1003,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1016,14 +1022,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "04ee74d6-bd06-48e5-89de-f926e0c9413f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 511,
             "text": "Cast this spell only during the declare attackers step and only if you've been attacked this step.\nUntap all creatures you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "04ee74d6-bd06-48e5-89de-f926e0c9413f"
+            "uuid": "56d4a486-2f6e-5ee8-a106-026425eb8b97"
         },
         {
             "artist": "Fang Yue",
@@ -1051,7 +1059,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1074,14 +1081,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "11dca9ba-b27f-4af8-9962-3794e743886f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 512,
             "text": "Destroy all lands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "11dca9ba-b27f-4af8-9962-3794e743886f"
+            "uuid": "e9f59dee-0d2e-5f6c-a8b1-173b44a4e031"
         },
         {
             "artist": "Qi Baocheng",
@@ -1109,7 +1118,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1128,14 +1136,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c0504a24-4b92-471a-8da4-02ec57eb43be",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 518,
             "text": "Target creature gets +3/+3 and gains horsemanship until end of turn. (It can't be blocked except by creatures with horsemanship.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c0504a24-4b92-471a-8da4-02ec57eb43be"
+            "uuid": "406bd258-d5d7-5ca8-a8f7-8916d0271c40"
         },
         {
             "artist": "Li Xiaohua",
@@ -1163,7 +1173,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1192,18 +1201,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "0433bee7-406d-4dd3-8d1b-dfd6cb64d038",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 523,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0433bee7-406d-4dd3-8d1b-dfd6cb64d038"
+            "uuid": "33cfe64e-8f43-5347-936c-861d17f11a7e"
         },
         {
             "artist": "Sun Nan",
@@ -1231,7 +1242,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1251,18 +1261,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ee57a9ab-c385-4a51-aff7-6a654f5d7611",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 524,
             "text": "Whenever Shu Defender blocks, it gets +0/+2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "ee57a9ab-c385-4a51-aff7-6a654f5d7611"
+            "uuid": "b6be40c8-1dd8-5a76-90b3-13970cd0ed91"
         },
         {
             "artist": "Qiao Dafu",
@@ -1290,7 +1302,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1319,18 +1330,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "11ac63f6-cd61-4334-902a-777410311b2d",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 525,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "11ac63f6-cd61-4334-902a-777410311b2d"
+            "uuid": "95b2fbe9-0269-573b-9b8d-5aed0dca41e9"
         },
         {
             "artist": "Song Shikai",
@@ -1357,7 +1370,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1376,18 +1388,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "36bcd751-1142-4e72-9d87-7a25c74c038b",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 526,
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "36bcd751-1142-4e72-9d87-7a25c74c038b"
+            "uuid": "64dfb816-a212-5917-8847-79b8e0a59f5d"
         },
         {
             "artist": "Li Xiaohua",
@@ -1415,7 +1428,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1440,17 +1452,19 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "fc6d6524-d8bd-4eb9-9222-747443492b8c",
             "subtypes": [
                 "Human"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 527,
             "text": "{T}: You gain 1 life. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc6d6524-d8bd-4eb9-9222-747443492b8c"
+            "uuid": "bd952872-0739-5ed9-a65a-54a8ccd03233"
         },
         {
             "artist": "Xu Tan",
@@ -1477,7 +1491,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1496,18 +1509,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cd4268d5-f27b-44a5-91f6-6c90521825fd",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 528,
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "cd4268d5-f27b-44a5-91f6-6c90521825fd"
+            "uuid": "71e0ac44-8dfc-55cb-b2f3-7179a9480c82"
         },
         {
             "artist": "Li Xiaohua",
@@ -1534,7 +1548,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1563,18 +1576,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "c9c3be7a-82a8-411c-bfe2-16749ada1244",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 529,
             "text": "Vigilance; horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c9c3be7a-82a8-411c-bfe2-16749ada1244"
+            "uuid": "066ffa19-c6ae-53ff-940c-955b11d0a7bb"
         },
         {
             "artist": "Li Wang",
@@ -1602,7 +1617,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1622,18 +1636,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7bf26eb7-8a31-4022-87bb-67394653f06a",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 530,
             "text": "When Shu Grain Caravan enters the battlefield, you gain 2 life.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "7bf26eb7-8a31-4022-87bb-67394653f06a"
+            "uuid": "3138790e-5837-5ec7-82e7-c9dd564b28e8"
         },
         {
             "artist": "Li Xiaohua",
@@ -1661,7 +1677,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1685,18 +1700,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "edb576e9-98ba-4bd1-9d1e-e316acf2e7f5",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 531,
             "text": "When Shu Soldier-Farmers enters the battlefield, you gain 4 life.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "edb576e9-98ba-4bd1-9d1e-e316acf2e7f5"
+            "uuid": "2b62e3d4-294a-5634-bc94-dbae0c4d9b0b"
         },
         {
             "artist": "Solomon Au Yeung",
@@ -1724,7 +1741,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1752,14 +1768,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a882fbcc-b2b9-44f3-b5cc-56759879f473",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 555,
             "text": "Destroy target tapped creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a882fbcc-b2b9-44f3-b5cc-56759879f473"
+            "uuid": "b16de234-ed25-5df1-986a-f6fd9ca435d3"
         },
         {
             "artist": "Qu Xin",
@@ -1787,7 +1805,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1806,14 +1823,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "72ad4c79-a85d-4fc6-95ab-5a6d6d667579",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 556,
             "text": "Creatures you control get +1/+1 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "72ad4c79-a85d-4fc6-95ab-5a6d6d667579"
+            "uuid": "b250e930-5a4b-572d-9626-b4830fd6ea9b"
         },
         {
             "artist": "Lin Yan",
@@ -1840,7 +1859,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1860,18 +1878,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0af243f6-ef28-49d1-afeb-ac03d568ed6a",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 557,
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0af243f6-ef28-49d1-afeb-ac03d568ed6a"
+            "uuid": "bd60f5ee-6fd4-5385-a02b-903f789c3386"
         },
         {
             "artist": "Qiao Dafu",
@@ -1898,7 +1917,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1918,14 +1936,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "53bffc2e-67b6-4eb0-9742-e2a5918cc8d8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 559,
             "text": "Cast this spell only during the declare attackers step and only if you've been attacked this step.\nCreatures you control get +2/+2 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "53bffc2e-67b6-4eb0-9742-e2a5918cc8d8"
+            "uuid": "9814445d-bf3b-5560-98c7-22ba7fd0e5f2"
         },
         {
             "artist": "Qiao Dafu",
@@ -1953,7 +1973,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1965,11 +1984,7 @@
             "manaCost": "{4}{W}{W}",
             "multiverseId": 10604,
             "name": "Zhang Fei, Fierce Warrior",
-            "names": [
-                "Guan Yu, Sainted Warrior",
-                "Liu Bei, Lord of Shu",
-                "Zhang Fei, Fierce Warrior"
-            ],
+            "names": [],
             "number": "32",
             "originalText": "Horsemanship\nAttacking doesn't cause Zhang Fei to tap.",
             "originalType": "Creature - Legend",
@@ -1985,6 +2000,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "2a58ec38-f1dc-4c69-9d26-a4599bce586a",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -1993,13 +2009,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 586,
             "text": "Vigilance; horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "2a58ec38-f1dc-4c69-9d26-a4599bce586a"
+            "uuid": "ae1691d1-d79c-5129-94c4-45a60ff80d0f"
         },
         {
             "artist": "Quan Xuejun",
@@ -2027,7 +2044,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2052,6 +2068,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "2d16cf1d-a7c3-4038-a648-299c1bedae99",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -2060,13 +2077,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 589,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhenever Zhao Zilong, Tiger General blocks, it gets +1/+1 until end of turn.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "2d16cf1d-a7c3-4038-a648-299c1bedae99"
+            "uuid": "2d1cb258-8b1a-5b03-9a6e-1fd32deb35d8"
         },
         {
             "artist": "Quan Xuejun",
@@ -2093,7 +2111,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2122,14 +2139,16 @@
                     "text": "The number of cards is counted during resolution."
                 }
             ],
+            "scryfallId": "ae27edb4-424b-4a2f-a588-d3b60c8d78e5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 426,
             "text": "If target opponent has more cards in hand than you, draw cards equal to the difference.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ae27edb4-424b-4a2f-a588-d3b60c8d78e5"
+            "uuid": "0d34f345-dde0-501d-a414-3b09d9e5e0da"
         },
         {
             "artist": "Song Shikai",
@@ -2157,7 +2176,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2183,14 +2201,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "96b5362a-bbca-4dc3-a320-3664609fe169",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 430,
             "text": "Draw a card for each tapped creature target opponent controls.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "96b5362a-bbca-4dc3-a320-3664609fe169"
+            "uuid": "615ed194-3749-5874-920d-c7a1bbed21ba"
         },
         {
             "artist": "Song Shikai",
@@ -2218,7 +2238,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2242,14 +2261,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6acae374-9d71-4f8d-ba75-a983756624c7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 432,
             "text": "Draw three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6acae374-9d71-4f8d-ba75-a983756624c7"
+            "uuid": "1da4924c-74d5-5fb6-bb68-867beb67cfcc"
         },
         {
             "artist": "Jiang Zhuqing",
@@ -2277,7 +2298,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2296,14 +2316,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a0f7b8b1-f1dc-46a3-8f4a-c6181e8a049f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 433,
             "text": "Tap one or two target creatures without horsemanship.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a0f7b8b1-f1dc-46a3-8f4a-c6181e8a049f"
+            "uuid": "94109df3-f3c0-5119-a4e8-20604bbdeb52"
         },
         {
             "artist": "Jack Wei",
@@ -2331,7 +2353,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2354,14 +2375,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d2df84f2-08e8-43e4-825f-dccfe096d92b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 438,
             "text": "Take an extra turn after this one.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d2df84f2-08e8-43e4-825f-dccfe096d92b"
+            "uuid": "d7287668-01b0-599c-b886-f0272a5352f5"
         },
         {
             "artist": "Hong Yan",
@@ -2388,7 +2411,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2407,14 +2429,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "451ef657-8590-497a-9d98-a732d4de6165",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 439,
             "text": "Cast this spell only during the declare attackers step and only if you've been attacked this step.\nReturn target attacking creature to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "451ef657-8590-497a-9d98-a732d4de6165"
+            "uuid": "5a1c9be2-f6f1-5d4c-9182-b898022eccba"
         },
         {
             "artist": "Liu Shangying",
@@ -2442,7 +2466,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2462,18 +2485,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0c59f45b-46fa-4494-9b25-cf9d3e462539",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 444,
             "text": "When Council of Advisors enters the battlefield, draw a card.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "0c59f45b-46fa-4494-9b25-cf9d3e462539"
+            "uuid": "461d866e-0070-5212-8453-734c41ab9d2a"
         },
         {
             "artist": "Wang Feng",
@@ -2501,7 +2526,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2520,14 +2544,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "eafbeafb-ef84-4a8d-9ca8-ca305b1feeea",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 445,
             "text": "Return one or two target creatures to their owners' hands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "eafbeafb-ef84-4a8d-9ca8-ca305b1feeea"
+            "uuid": "b15c3671-4f90-52e5-b1f8-10968e9295d1"
         },
         {
             "artist": "Qu Xin",
@@ -2555,7 +2581,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2590,14 +2615,16 @@
                     "text": "No creatures or lands controlled by the player will untap during their next untap step. This includes those which entered the battlefield after Exhaustion resolved."
                 }
             ],
+            "scryfallId": "96ad34ed-c811-432d-b9c7-bff7c024cd4f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 455,
             "text": "Creatures and lands target opponent controls don't untap during their next untap step.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "96ad34ed-c811-432d-b9c7-bff7c024cd4f"
+            "uuid": "adacc2f5-518a-55e2-9b68-3189620ea466"
         },
         {
             "artist": "Ding Songjian",
@@ -2624,7 +2651,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2645,14 +2671,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "21140417-09f5-4d05-b94c-355fde9b4719",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 456,
             "text": "Counter target sorcery spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "21140417-09f5-4d05-b94c-355fde9b4719"
+            "uuid": "14674653-9b18-5ae1-8c6f-f45c661aae81"
         },
         {
             "artist": "Huang Qishi",
@@ -2680,7 +2708,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2703,14 +2730,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9753d211-3436-4a9b-86d9-54a541770ec2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 463,
             "text": "Put target creature on top of its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9753d211-3436-4a9b-86d9-54a541770ec2"
+            "uuid": "31688608-3fc4-53e7-9419-d384c31eb0df"
         },
         {
             "artist": "Miao Aili",
@@ -2738,7 +2767,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2765,6 +2793,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "0f45e837-7b98-46ef-b21b-e3508ce999e5",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -2772,13 +2801,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 484,
             "text": "{T}: Return Lady Sun and another target creature to their owners' hands. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "0f45e837-7b98-46ef-b21b-e3508ce999e5"
+            "uuid": "598c1efc-a6a4-5a2d-9aba-8609f470df7d"
         },
         {
             "artist": "Gao Yan",
@@ -2806,7 +2836,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2834,6 +2863,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "77a8b376-eda5-4bf9-9093-9518c09e50e8",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -2841,13 +2871,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 490,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "77a8b376-eda5-4bf9-9093-9518c09e50e8"
+            "uuid": "cb56d0e0-635d-568d-a874-a40473252126"
         },
         {
             "artist": "Zhao Tan",
@@ -2875,7 +2906,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2902,6 +2932,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "9d361823-31ce-42c4-997d-3d3b52c0599a",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -2909,13 +2940,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 491,
             "text": "{T}: Draw a card. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "2",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "9d361823-31ce-42c4-997d-3d3b52c0599a"
+            "uuid": "19415d75-626a-542c-98cb-73615eccb8ff"
         },
         {
             "artist": "Xu Xiaoming",
@@ -2942,7 +2974,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2976,6 +3007,7 @@
                     "text": "Lu Xun’s second ability triggers whenever it deals damage to an opponent for any reason. It’s not limited to combat damage."
                 }
             ],
+            "scryfallId": "0882d4c8-32f1-4d86-b5c5-75a16697004c",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -2983,13 +3015,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 492,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhenever Lu Xun, Scholar General deals damage to an opponent, you may draw a card.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0882d4c8-32f1-4d86-b5c5-75a16697004c"
+            "uuid": "b6841f6a-b617-5d8c-8694-7751b10d66cd"
         },
         {
             "artist": "Kang Yu",
@@ -3016,7 +3049,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3037,14 +3069,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1296ddc4-300d-44f6-95d8-1b392613d379",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 502,
             "text": "Counter target creature or sorcery spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1296ddc4-300d-44f6-95d8-1b392613d379"
+            "uuid": "09532ea3-ef01-52a3-ae68-8e05ac178052"
         },
         {
             "artist": "Jiaming",
@@ -3071,7 +3105,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3090,14 +3123,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c2314bf1-b22d-48c2-860f-e1081f56296b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 510,
             "text": "Counter target creature spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c2314bf1-b22d-48c2-860f-e1081f56296b"
+            "uuid": "4bf71769-21ac-5965-8fc6-7fc76a7fd3f3"
         },
         {
             "artist": "Zhang Jiazhen",
@@ -3125,7 +3160,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3149,18 +3183,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c8fe0f33-35c7-439b-bece-4a9461b92352",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 514,
             "text": "Red Cliffs Armada can't attack unless defending player controls an Island.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c8fe0f33-35c7-439b-bece-4a9461b92352"
+            "uuid": "0a482201-ee70-5673-8faf-ce945e677bff"
         },
         {
             "artist": "Ding Songjian",
@@ -3188,7 +3224,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3207,14 +3242,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "156d7c70-6c6d-4052-9d44-029ba1bb66e4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 522,
             "text": "Return target sorcery card from your graveyard to your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "156d7c70-6c6d-4052-9d44-029ba1bb66e4"
+            "uuid": "2516a932-088f-5c2b-90ef-edc46460f017"
         },
         {
             "artist": "Zhang Jiazhen",
@@ -3242,7 +3279,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3273,14 +3309,16 @@
                     "text": "If there are fewer than three cards in your library, you look at all of them, put one of them into your hand, and put the rest into your graveyard."
                 }
             ],
+            "scryfallId": "7727e7b5-39a3-46ba-935b-ee093c694c38",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 541,
             "text": "Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7727e7b5-39a3-46ba-935b-ee093c694c38"
+            "uuid": "ca98b48b-a787-55d7-aa0e-d9fcb0fafb5b"
         },
         {
             "artist": "Cai Tingting",
@@ -3307,7 +3345,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3326,18 +3363,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8ae5ba21-eb8e-4663-bfd8-3e19a0c10774",
             "subtypes": [
                 "Scarecrow",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 542,
             "toughness": "3",
             "type": "Creature — Scarecrow Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "8ae5ba21-eb8e-4663-bfd8-3e19a0c10774"
+            "uuid": "7270f563-cbe8-577a-8be1-786b6ffe41f4"
         },
         {
             "artist": "Yang Guangmai",
@@ -3364,7 +3402,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3392,6 +3429,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "16114a68-58d1-4aad-9b3a-890e9c84b253",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -3399,13 +3437,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 543,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhen Sun Ce, Young Conquerer enters the battlefield, you may return target creature to its owner's hand.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "16114a68-58d1-4aad-9b3a-890e9c84b253"
+            "uuid": "1201842c-fc3b-5f2e-a739-ebb424d748a0"
         },
         {
             "artist": "Xu Xiaoming",
@@ -3433,7 +3472,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3465,6 +3503,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "6def4492-3f67-4cdb-8a25-c3ddebd125c7",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -3472,13 +3511,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 544,
             "text": "Creatures you control have horsemanship. (They can't be blocked except by creatures with horsemanship.)",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6def4492-3f67-4cdb-8a25-c3ddebd125c7"
+            "uuid": "9382bb47-4726-5812-b4e6-80bc58a5fca0"
         },
         {
             "artist": "Zhang Jiazhen",
@@ -3506,7 +3546,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3526,18 +3565,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "499ae191-80ac-42bf-b49d-db343803bd56",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 569,
             "text": "Wu Admiral gets +1/+1 as long as an opponent controls an Island.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "499ae191-80ac-42bf-b49d-db343803bd56"
+            "uuid": "475dbd9d-b55a-5c7c-8f4f-f6852c86cb16"
         },
         {
             "artist": "Li Wang",
@@ -3565,7 +3606,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3594,18 +3634,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "7cf562e2-be8e-4514-b2c8-3268dc1ab0db",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 570,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "7cf562e2-be8e-4514-b2c8-3268dc1ab0db"
+            "uuid": "1c234f2c-3198-58ad-8e6f-2a4c0aff7780"
         },
         {
             "artist": "Xu Xiaoming",
@@ -3632,7 +3674,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3651,18 +3692,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ebe4115e-7ca3-4996-a390-133c2e6d09b7",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 571,
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "ebe4115e-7ca3-4996-a390-133c2e6d09b7"
+            "uuid": "2b26f32e-b80f-51ed-bf96-6ed38e5b2156"
         },
         {
             "artist": "Huang Qishi",
@@ -3690,7 +3732,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3715,18 +3756,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "60e55b25-fde2-4b57-b5db-65b75262ff3d",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 572,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "60e55b25-fde2-4b57-b5db-65b75262ff3d"
+            "uuid": "cc72ad30-fb3e-53c4-941a-4deee3663fba"
         },
         {
             "artist": "Xu Tan",
@@ -3753,7 +3796,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3782,19 +3824,21 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "28e68635-b0ed-4a56-8b18-679f95db12b6",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 573,
             "text": "{T}: Wu Longbowman deals 1 damage to any target. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Soldier Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "28e68635-b0ed-4a56-8b18-679f95db12b6"
+            "uuid": "c5687a6e-a6b1-50c7-a879-7cfd177b2fb2"
         },
         {
             "artist": "Jiaming",
@@ -3821,7 +3865,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3846,19 +3889,21 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "8d13330f-6e07-451f-b17a-4e1606a74c3f",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 574,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhen Wu Scout enters the battlefield, look at target opponent's hand.",
             "toughness": "1",
             "type": "Creature — Human Soldier Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d13330f-6e07-451f-b17a-4e1606a74c3f"
+            "uuid": "c8e8c73b-9c7c-55a9-88bb-1eabf089daec"
         },
         {
             "artist": "Zhao Tan",
@@ -3885,7 +3930,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3905,19 +3949,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f77b8e34-e7e9-4ac6-bc21-0ef52c6696c7",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 575,
             "text": "When Wu Spy enters the battlefield, look at the top two cards of target player's library. Put one of them into their graveyard.",
             "toughness": "1",
             "type": "Creature — Human Soldier Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "f77b8e34-e7e9-4ac6-bc21-0ef52c6696c7"
+            "uuid": "6a5cbf64-ceea-588a-83f0-3b3a823fcc17"
         },
         {
             "artist": "Jiang Zhuqing",
@@ -3945,7 +3991,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3969,18 +4014,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2e211d47-dab4-429a-a90b-5b8489441886",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 576,
             "text": "Wu Warship can't attack unless defending player controls an Island.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "2e211d47-dab4-429a-a90b-5b8489441886"
+            "uuid": "946a3c2b-705b-5955-aed5-ebda13e70fbd"
         },
         {
             "artist": "Xu Xiaoming",
@@ -4008,7 +4055,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4028,6 +4074,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6e2cf83b-417d-41ca-8e65-86aa65180c40",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -4035,13 +4082,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 590,
             "text": "Zhou Yu, Chief Commander can't attack unless defending player controls an Island.",
             "toughness": "8",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6e2cf83b-417d-41ca-8e65-86aa65180c40"
+            "uuid": "23d667cc-841b-595e-b0a0-299ae07dbab7"
         },
         {
             "artist": "Song Shikai",
@@ -4069,7 +4117,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4094,6 +4141,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "60790b07-53da-41fa-b9e0-e7ce22fdcb11",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -4101,13 +4149,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 591,
             "text": "{T}: Target creature can't be blocked this turn. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "60790b07-53da-41fa-b9e0-e7ce22fdcb11"
+            "uuid": "6d63f615-de9d-5672-8215-166452bb3f69"
         },
         {
             "artist": "Junko Taguchi",
@@ -4135,7 +4184,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4163,14 +4211,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0e0b1613-e879-4c28-b27e-f3997b9ebccd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 425,
             "text": "You draw three cards and you lose 3 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0e0b1613-e879-4c28-b27e-f3997b9ebccd"
+            "uuid": "588d584d-2619-5201-8f87-0c7e0cd1c9a0"
         },
         {
             "artist": "Gao Jianzhang",
@@ -4197,7 +4247,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4224,6 +4273,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "d7e5a530-c954-4696-85ce-6afaf7de1808",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -4231,13 +4281,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 436,
             "text": "{T}: Target opponent discards two cards. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "d7e5a530-c954-4696-85ce-6afaf7de1808"
+            "uuid": "f184b2a2-0dfd-59e8-95f3-e41c0b2eb82d"
         },
         {
             "artist": "Junko Taguchi",
@@ -4265,7 +4316,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4292,6 +4342,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "4f7e8366-82ba-4df0-b9df-7d0aa9b972eb",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -4300,13 +4351,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 437,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhen Cao Ren, Wei Commander enters the battlefield, you lose 3 life.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f7e8366-82ba-4df0-b9df-7d0aa9b972eb"
+            "uuid": "16b7796c-adf3-5dd4-81bd-331f3a66bf38"
         },
         {
             "artist": "Kang Yu",
@@ -4334,7 +4386,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4359,7 +4410,6 @@
                 "BTD",
                 "P02",
                 "PTK",
-                "S00",
                 "S99",
                 "TMP",
                 "TPR",
@@ -4367,14 +4417,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4a193b33-0db2-411d-8f91-2247cb2d924a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 440,
             "text": "Target opponent reveals their hand. You choose a card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4a193b33-0db2-411d-8f91-2247cb2d924a"
+            "uuid": "623e27d0-12b4-5d2b-bad5-0dd08d05e04c"
         },
         {
             "artist": "Li Yousong",
@@ -4401,7 +4453,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4421,18 +4472,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9d3ba2e3-e680-47cd-81c5-555deea7d00f",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 442,
             "text": "When Corrupt Court Official enters the battlefield, target opponent discards a card.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "9d3ba2e3-e680-47cd-81c5-555deea7d00f"
+            "uuid": "1aa2aba8-b752-5327-b573-afe760931b96"
         },
         {
             "artist": "Gao Jianzhang",
@@ -4459,7 +4512,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4484,18 +4536,20 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "5e31ede4-b0bb-4f63-b8df-1330152611a4",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 446,
             "text": "{T}: Target opponent discards a card. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e31ede4-b0bb-4f63-b8df-1330152611a4"
+            "uuid": "1ebd3152-557f-5157-a299-2eb953a039fb"
         },
         {
             "artist": "Wang Feng",
@@ -4523,7 +4577,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4542,14 +4595,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bdb63768-2d8a-4a74-a312-b981dd462cdc",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 447,
             "text": "Target opponent discards two cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bdb63768-2d8a-4a74-a312-b981dd462cdc"
+            "uuid": "c10edc22-bd3f-5598-8dc2-cebd6cdc1f79"
         },
         {
             "artist": "Chen Weidong",
@@ -4577,7 +4632,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4605,14 +4659,16 @@
                     "text": "Desperate Charge affects only creatures you control at the time it resolves. A creature that enters the battlefield later in the turn won’t get +2/+0."
                 }
             ],
+            "scryfallId": "a5587089-b17e-4187-97aa-1c3eec070a0b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 449,
             "text": "Creatures you control get +2/+0 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a5587089-b17e-4187-97aa-1c3eec070a0b"
+            "uuid": "d6ebacfc-7757-5912-9c77-385e05583e3d"
         },
         {
             "artist": "Sun Nan",
@@ -4640,7 +4696,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4664,14 +4719,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8d6c10ca-f6d6-4322-aa17-7e874cb10bb1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 459,
             "text": "Famine deals 3 damage to each creature and each player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8d6c10ca-f6d6-4322-aa17-7e874cb10bb1"
+            "uuid": "5867d36c-3c2f-5b16-9e4d-007662056da9"
         },
         {
             "artist": "Kang Yu",
@@ -4699,7 +4756,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4722,14 +4778,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "06f6938a-229a-4521-b5d5-7999ce5fb372",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 468,
             "text": "Destroy target nonblack creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "06f6938a-229a-4521-b5d5-7999ce5fb372"
+            "uuid": "d4e807b0-ac20-54f1-afd6-a0ef1e4fb424"
         },
         {
             "artist": "Xu Xiaoming",
@@ -4757,7 +4815,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4776,14 +4833,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c5a7f91d-b4ee-45c1-a229-bb23daf68e6b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 475,
             "text": "Target opponent chooses a creature they control. Destroy that creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c5a7f91d-b4ee-45c1-a229-bb23daf68e6b"
+            "uuid": "73b32d9b-1b77-5205-95ea-3e4d337dd02a"
         },
         {
             "artist": "Li Tie",
@@ -4811,7 +4870,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4833,14 +4891,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "822e30db-40c5-4099-868b-185ad9b7c7dc",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 477,
             "text": "Search your library for a card, then shuffle your library and put that card on top of it. You lose 2 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "822e30db-40c5-4099-868b-185ad9b7c7dc"
+            "uuid": "c2482eae-539d-5096-a5f9-6a03780d9c04"
         },
         {
             "artist": "Gao Yan",
@@ -4868,7 +4928,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4890,14 +4949,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c56c7fb4-8b7b-40fc-879c-76cfb5d417b8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 503,
             "text": "Destroy all creatures target opponent controls. Draw a card for each creature destroyed this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c56c7fb4-8b7b-40fc-879c-76cfb5d417b8"
+            "uuid": "3c0f883c-54e2-57cf-a22b-6e7e7aef399a"
         },
         {
             "artist": "Li Tie",
@@ -4925,7 +4986,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4944,14 +5004,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6b7b5f34-c250-484e-9bae-94789b2a87fb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 509,
             "text": "Destroy target nonblack creature. You gain 3 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6b7b5f34-c250-484e-9bae-94789b2a87fb"
+            "uuid": "25afa97e-77b8-5b28-9844-7ca68968637d"
         },
         {
             "artist": "Ding Songjian",
@@ -4979,7 +5041,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -4998,14 +5059,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1841e615-fdcd-4187-bd69-d07abde0e1ae",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 517,
             "text": "Return target creature card from your graveyard to your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1841e615-fdcd-4187-bd69-d07abde0e1ae"
+            "uuid": "c225024a-a425-5983-96f1-7e0cb8b3e890"
         },
         {
             "artist": "Gao Yan",
@@ -5033,7 +5096,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5055,6 +5117,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6500b690-d601-4c6d-baea-552e366ea242",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -5062,13 +5125,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 532,
             "text": "Sima Yi, Wei Field Marshal's power is equal to the number of Swamps you control.",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6500b690-d601-4c6d-baea-552e366ea242"
+            "uuid": "ea922fdd-13e6-5bed-9978-ade78607f2c9"
         },
         {
             "artist": "LHQ",
@@ -5096,7 +5160,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5123,14 +5186,16 @@
                     "text": "If the targeted opponent is an illegal target by the time Stolen Grain resolves, the ability doesn’t resolve. You won’t gain life."
                 }
             ],
+            "scryfallId": "e1f08862-5107-46a0-8c14-a961a5c4b135",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 538,
             "text": "Stolen Grain deals 5 damage to target opponent or planeswalker. You gain 5 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e1f08862-5107-46a0-8c14-a961a5c4b135"
+            "uuid": "8dc550e8-0e23-52b4-993e-8d34a2bda47a"
         },
         {
             "artist": "Shang Huitong",
@@ -5157,7 +5222,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5182,18 +5246,20 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "60303bfe-9158-4e25-a905-6522883ab671",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 539,
             "text": "{T}: Destroy target tapped nonblack creature. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "60303bfe-9158-4e25-a905-6522883ab671"
+            "uuid": "4138ee0b-3be6-54f9-a6e4-92dc21d50575"
         },
         {
             "artist": "Ku Xueming",
@@ -5221,7 +5287,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5241,18 +5306,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9b241ba4-cff5-48ce-83bd-d70fb5e20ff4",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 560,
             "text": "Whenever Wei Ambush Force attacks, it gets +2/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9b241ba4-cff5-48ce-83bd-d70fb5e20ff4"
+            "uuid": "6a95fda8-9322-502f-a39d-85ecf8157430"
         },
         {
             "artist": "Xu Tan",
@@ -5279,7 +5346,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5299,19 +5365,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9b448c08-140f-41d6-aed5-ce9b68efafa9",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Assassin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 561,
             "text": "When Wei Assassins enters the battlefield, target opponent chooses a creature they control. Destroy that creature.",
             "toughness": "2",
             "type": "Creature — Human Soldier Assassin",
             "types": [
                 "Creature"
             ],
-            "uuid": "9b448c08-140f-41d6-aed5-ce9b68efafa9"
+            "uuid": "ffa2bf21-ce1e-5d5c-8a82-89ee9713f693"
         },
         {
             "artist": "Li Youliang",
@@ -5339,7 +5407,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5368,18 +5435,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "843cbf18-60ac-4d97-b156-874735db61c6",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 562,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "843cbf18-60ac-4d97-b156-874735db61c6"
+            "uuid": "de06001b-1772-501c-b90f-4fb807945a1b"
         },
         {
             "artist": "LHQ",
@@ -5406,7 +5475,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5429,18 +5497,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "72c6465f-3144-4faf-b248-a9fb941dc002",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 563,
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "72c6465f-3144-4faf-b248-a9fb941dc002"
+            "uuid": "b85b252b-6485-5b87-ad2d-1dbd862b44ac"
         },
         {
             "artist": "Wang Feng",
@@ -5467,7 +5536,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5498,18 +5566,20 @@
                     "text": "Wei Night Raiders’s second ability triggers whenever it deals damage to an opponent for any reason. It’s not limited to combat damage."
                 }
             ],
+            "scryfallId": "f5a0292e-ecf4-42df-8abf-f4479f8ad6cb",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 564,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhenever Wei Night Raiders deals damage to an opponent, that player discards a card.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "f5a0292e-ecf4-42df-8abf-f4479f8ad6cb"
+            "uuid": "7941e4bf-6908-591f-98a5-c46494570fe8"
         },
         {
             "artist": "Jiang Zhuqing",
@@ -5537,7 +5607,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5562,19 +5631,21 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "a11d58fb-fb70-4e8f-8f64-232ad2c1f59b",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 565,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "1",
             "type": "Creature — Human Soldier Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "a11d58fb-fb70-4e8f-8f64-232ad2c1f59b"
+            "uuid": "348b0886-83f1-5c4e-920a-0eaeff264991"
         },
         {
             "artist": "Tang Xiaogu",
@@ -5602,7 +5673,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5631,18 +5701,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "6eae8ce1-b21f-4d64-91ff-e98bf6a4548a",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 566,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6eae8ce1-b21f-4d64-91ff-e98bf6a4548a"
+            "uuid": "d9ecd834-c8eb-5f69-8e3d-1d47307c64ab"
         },
         {
             "artist": "Junko Taguchi",
@@ -5669,7 +5741,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5705,6 +5776,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "91bed8a9-ede6-4fdc-966e-d1e4261c68e4",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -5712,13 +5784,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 577,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nSacrifice Xiahou Dun, the One-Eyed: Return target black card from your graveyard to your hand. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "2",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "91bed8a9-ede6-4fdc-966e-d1e4261c68e4"
+            "uuid": "6482b652-7b38-558d-b2f1-ec36226cf4f6"
         },
         {
             "artist": "Jack Wei",
@@ -5746,7 +5819,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5773,6 +5845,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "8f0a25ea-b414-423c-94a6-8a4795d60b46",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -5780,13 +5853,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 578,
             "text": "{T}: Target creature you control gets +2/+0 until end of turn. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f0a25ea-b414-423c-94a6-8a4795d60b46"
+            "uuid": "dd1ef3b1-c869-5839-9db4-ec89bda51d28"
         },
         {
             "artist": "Li Youliang",
@@ -5814,7 +5888,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5838,18 +5911,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "11431c4c-b0bb-4747-a34a-4a90238ec9c6",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 583,
             "text": "Young Wei Recruits can't block.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "11431c4c-b0bb-4747-a34a-4a90238ec9c6"
+            "uuid": "4e17a65a-f7b7-59ff-b71a-a841f6d1e598"
         },
         {
             "artist": "Jack Wei",
@@ -5876,7 +5951,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5901,6 +5975,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "736e4bf1-fee9-47cc-9bbc-093f21c77297",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -5908,13 +5983,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 587,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhenever Zhang He, Wei General attacks, each other creature you control gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "736e4bf1-fee9-47cc-9bbc-093f21c77297"
+            "uuid": "6f345478-9aaa-534d-9c42-76684819fda3"
         },
         {
             "artist": "Li Youliang",
@@ -5941,7 +6017,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -5961,6 +6036,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8f42a953-3073-4e74-9bb8-c8c5a45d1dfa",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -5968,13 +6044,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 588,
             "text": "Whenever Zhang Liao, Hero of Hefei deals damage to an opponent, that opponent discards a card.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f42a953-3073-4e74-9bb8-c8c5a45d1dfa"
+            "uuid": "6b7f82ee-32d7-5fbb-a13d-269b8428ca65"
         },
         {
             "artist": "Qi Baocheng",
@@ -6002,7 +6079,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6023,17 +6099,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "52e364b5-55ca-4df5-8755-6643218b0969",
             "subtypes": [
                 "Boar"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 598,
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
             "toughness": "3",
             "type": "Creature — Boar",
             "types": [
                 "Creature"
             ],
-            "uuid": "52e364b5-55ca-4df5-8755-6643218b0969"
+            "uuid": "b0c4fcdc-211c-5efb-bde1-4780fa28bafc"
         },
         {
             "artist": "Qi Baocheng",
@@ -6061,7 +6139,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6082,17 +6159,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fb6e5814-e1b5-48d2-9c4f-62b5727f333f",
             "subtypes": [
                 "Rat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 600,
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
             "toughness": "1",
             "type": "Creature — Rat",
             "types": [
                 "Creature"
             ],
-            "uuid": "fb6e5814-e1b5-48d2-9c4f-62b5727f333f"
+            "uuid": "a8a92b4e-b545-5972-9019-cb708050409f"
         },
         {
             "artist": "Qi Baocheng",
@@ -6120,7 +6199,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6141,17 +6219,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6d30d6f0-ca4c-4442-a47f-ecdf52088ecc",
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 602,
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
             "toughness": "2",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d30d6f0-ca4c-4442-a47f-ecdf52088ecc"
+            "uuid": "2eb739c6-6795-5ae4-98df-56edf0469fca"
         },
         {
             "artist": "Kuang Sheng",
@@ -6179,7 +6259,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6204,19 +6283,21 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "060da652-03c7-45e3-ad83-f0a9fa9d1049",
             "subtypes": [
                 "Human",
                 "Barbarian",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 427,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "2",
             "type": "Creature — Human Barbarian Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "060da652-03c7-45e3-ad83-f0a9fa9d1049"
+            "uuid": "11829a86-a888-5496-aaf2-de810cab2500"
         },
         {
             "artist": "Kuang Sheng",
@@ -6243,7 +6324,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6262,19 +6342,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d1f930c2-e828-4566-b2df-3b054f311be5",
             "subtypes": [
                 "Human",
                 "Barbarian",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 428,
             "toughness": "3",
             "type": "Creature — Human Barbarian Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "d1f930c2-e828-4566-b2df-3b054f311be5"
+            "uuid": "7a024f19-f696-5d6b-9072-3c5ae683ed88"
         },
         {
             "artist": "Qu Xin",
@@ -6302,7 +6383,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6336,14 +6416,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a8b6cfd3-4fb1-40a7-a090-de6f8b283cb3",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 429,
             "text": "Blaze deals X damage to any target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a8b6cfd3-4fb1-40a7-a090-de6f8b283cb3"
+            "uuid": "d79e3bd7-6fa0-5510-878a-2f9e958f6ab5"
         },
         {
             "artist": "Yang Hong",
@@ -6371,7 +6453,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6390,14 +6471,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "dee12f01-581e-4a3c-a8b5-41bef2516781",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 434,
             "text": "Burning Fields deals 5 damage to target opponent or planeswalker.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dee12f01-581e-4a3c-a8b5-41bef2516781"
+            "uuid": "539ccdd1-42d4-5c1d-8ebb-863c9b6cbf87"
         },
         {
             "artist": "Yang Hong",
@@ -6424,7 +6507,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6469,14 +6551,16 @@
                     "text": "As Burning of Xinye resolves, first you destroy four lands you control (all at the same time), then the targeted opponent destroys four lands they control (all at the same time). That player chooses which of their lands to destroy. Neither of you can choose to destroy a land with indestructible."
                 }
             ],
+            "scryfallId": "33a1fe45-52d2-4c50-bedc-eee156ab69c8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 435,
             "text": "You destroy four lands you control, then target opponent destroys four lands they control. Then Burning of Xinye deals 4 damage to each creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "33a1fe45-52d2-4c50-bedc-eee156ab69c8"
+            "uuid": "7c15337a-c9ee-5e55-83d2-994cf1ec83ab"
         },
         {
             "artist": "Li Yousong",
@@ -6504,7 +6588,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6523,14 +6606,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3e4f0005-4f19-4352-9cd2-3993ae6db879",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 441,
             "text": "Draw four cards, then discard three cards at random.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3e4f0005-4f19-4352-9cd2-3993ae6db879"
+            "uuid": "681b0d9a-6872-5995-88a5-1fceb7fa8704"
         },
         {
             "artist": "Li Yousong",
@@ -6557,7 +6642,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6585,18 +6669,20 @@
                     "text": "If there are no other creatures on the battlefield when Corrupt Eunuchs enters the battlefield, it will have to target itself."
                 }
             ],
+            "scryfallId": "5e084664-2faf-4f7a-9068-d58d3f4b8456",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 443,
             "text": "When Corrupt Eunuchs enters the battlefield, it deals 2 damage to target creature.",
             "toughness": "2",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e084664-2faf-4f7a-9068-d58d3f4b8456"
+            "uuid": "a0231f9c-4e4d-51a1-8d51-175cbf29c055"
         },
         {
             "artist": "Xu Tan",
@@ -6624,7 +6710,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6643,14 +6728,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "588ad2bf-405d-4c36-b485-e415c22f2703",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 448,
             "text": "Desert Sandstorm deals 1 damage to each creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "588ad2bf-405d-4c36-b485-e415c22f2703"
+            "uuid": "179a3d60-bd4c-51dd-90e2-0c61cbcf2675"
         },
         {
             "artist": "Miao Aili",
@@ -6677,7 +6764,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6706,6 +6792,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "6180c476-dadf-4c03-ab1e-639386bd4319",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -6713,13 +6800,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 450,
             "text": "{T}: Destroy target creature of your choice, then destroy target creature of an opponent's choice. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "6180c476-dadf-4c03-ab1e-639386bd4319"
+            "uuid": "e25a5840-f3bf-5722-81cc-7f08832712f0"
         },
         {
             "artist": "Inoue Junichi",
@@ -6746,7 +6834,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6768,6 +6855,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "51ccdca0-2c29-4b5c-ba5a-364cc6945801",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -6775,13 +6863,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 451,
             "text": "When Dong Zhou, the Tyrant enters the battlefield, target creature an opponent controls deals damage equal to its power to that player.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "51ccdca0-2c29-4b5c-ba5a-364cc6945801"
+            "uuid": "9b04bcfb-75a8-52f4-8c40-007c07eb841d"
         },
         {
             "artist": "Li Yousong",
@@ -6809,7 +6898,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6828,14 +6916,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5e7ca92f-770d-4147-8eaf-f1fa69340dc9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 454,
             "text": "Target opponent chooses a creature they control. Other creatures they control can't block this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5e7ca92f-770d-4147-8eaf-f1fa69340dc9"
+            "uuid": "a6d50dd0-4241-5014-8f7e-5583dd521117"
         },
         {
             "artist": "Tang Xiaogu",
@@ -6863,7 +6953,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6885,14 +6974,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4dd8bdbd-99c9-4fa7-936a-acc7f4238507",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 460,
             "text": "Fire Ambush deals 3 damage to any target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4dd8bdbd-99c9-4fa7-936a-acc7f4238507"
+            "uuid": "dd71b94e-273c-5f46-96ea-b929fd645466"
         },
         {
             "artist": "Cai Tingting",
@@ -6919,7 +7010,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -6944,19 +7034,21 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "18acc721-e9ae-4ba4-b435-754e41fb541e",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 461,
             "text": "Sacrifice Fire Bowman: It deals 1 damage to any target. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Soldier Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "18acc721-e9ae-4ba4-b435-754e41fb541e"
+            "uuid": "a09b4bf3-4a86-5a30-b784-655197dbf08d"
         },
         {
             "artist": "Mitsuaki Sagiri",
@@ -6983,7 +7075,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7016,18 +7107,20 @@
                     "text": "If a creature card has “*” in its power, the ability that defines its power works in all zones."
                 }
             ],
+            "scryfallId": "1c473253-3992-4cc1-8b46-5d1da308c537",
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 476,
             "text": "When Imperial Recruiter enters the battlefield, search your library for a creature card with power 2 or less, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "1c473253-3992-4cc1-8b46-5d1da308c537"
+            "uuid": "358b803d-021b-537f-ae78-d0c372184adb"
         },
         {
             "artist": "Kuang Sheng",
@@ -7054,7 +7147,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7073,18 +7165,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ff7a4769-7a64-4016-8db0-b56c6b98aff3",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 478,
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "ff7a4769-7a64-4016-8db0-b56c6b98aff3"
+            "uuid": "24e56fbc-365c-542c-91a7-64a567e36830"
         },
         {
             "artist": "Gao Jianzhang",
@@ -7112,7 +7205,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7142,6 +7234,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "07d60c27-8625-48eb-a3f0-1e26d6930ae7",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -7150,13 +7243,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 489,
             "text": "Haste; horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "07d60c27-8625-48eb-a3f0-1e26d6930ae7"
+            "uuid": "477d4912-d356-5ebe-8df8-0332d599ed03"
         },
         {
             "artist": "Koji",
@@ -7183,7 +7277,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7210,6 +7303,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "39b8cf7f-8c40-40e9-8118-e8626c3c6433",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -7218,13 +7312,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 493,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nWhenever Ma Chao, Western Warrior attacks alone, it can't be blocked this combat.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "39b8cf7f-8c40-40e9-8118-e8626c3c6433"
+            "uuid": "73342948-5580-572f-8beb-5845414d91a8"
         },
         {
             "artist": "Xu Xiaoming",
@@ -7252,7 +7347,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7272,19 +7366,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "34fd541d-9956-4595-9527-a83db4c5f74f",
             "subtypes": [
                 "Human",
                 "Soldier",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 501,
             "text": "Haste",
             "toughness": "1",
             "type": "Creature — Human Soldier Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "34fd541d-9956-4595-9527-a83db4c5f74f"
+            "uuid": "f180765c-db3b-58bd-9945-60c2f5600e40"
         },
         {
             "artist": "Liu Jianjian",
@@ -7312,7 +7408,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7332,18 +7427,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6278d679-fc54-4527-ab16-90735574ab9b",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 513,
             "text": "When Ravaging Horde enters the battlefield, destroy target land.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6278d679-fc54-4527-ab16-90735574ab9b"
+            "uuid": "b92b7131-af79-52aa-8d54-1b70f8f9e01f"
         },
         {
             "artist": "He Jiancheng",
@@ -7371,7 +7468,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7420,14 +7516,16 @@
                     "text": "It only creates an additional combat and main phase if it resolves during a main phase."
                 }
             ],
+            "scryfallId": "57f23cc3-da79-4e08-964f-b52815c40990",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 515,
             "text": "Untap all creatures that attacked this turn. After this main phase, there is an additional combat phase followed by an additional main phase.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "57f23cc3-da79-4e08-964f-b52815c40990"
+            "uuid": "bd811591-ddf4-531d-bf90-e908a9a7a872"
         },
         {
             "artist": "Liu Jianjian",
@@ -7455,7 +7553,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7475,18 +7572,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a75095f4-a77f-4237-ae25-2e6f2f8788c1",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 516,
             "text": "Haste",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a75095f4-a77f-4237-ae25-2e6f2f8788c1"
+            "uuid": "9c2cc627-b31b-5aa4-baa6-bec753efe636"
         },
         {
             "artist": "Inoue Junichi",
@@ -7513,7 +7612,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7536,14 +7634,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "04e5faf1-25c9-46c0-88f2-c59e7b9c08c5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 520,
             "text": "Rockslide Ambush deals damage to target creature equal to the number of Mountains you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "04e5faf1-25c9-46c0-88f2-c59e7b9c08c5"
+            "uuid": "4370f186-c5dd-544e-92c8-02b011e8de3e"
         },
         {
             "artist": "Yang Hong",
@@ -7570,7 +7670,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7592,14 +7691,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3c1bf210-ecdb-4b49-8504-51360c269e66",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 521,
             "text": "Rolling Earthquake deals X damage to each creature without horsemanship and each player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3c1bf210-ecdb-4b49-8504-51360c269e66"
+            "uuid": "0f378798-356a-572f-8c1e-eea9bd289b91"
         },
         {
             "artist": "Mitsuaki Sagiri",
@@ -7627,7 +7728,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7667,7 +7767,6 @@
                 "POR",
                 "PRM",
                 "PTK",
-                "S00",
                 "S99",
                 "SUM",
                 "TMP",
@@ -7676,14 +7775,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "67738ab8-75cf-4ea1-aa1d-b840d94b2601",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 540,
             "text": "Destroy target land.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "67738ab8-75cf-4ea1-aa1d-b840d94b2601"
+            "uuid": "943b9817-bc08-5490-aba7-1e1e5224a963"
         },
         {
             "artist": "Mitsuaki Sagiri",
@@ -7711,7 +7812,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7730,14 +7830,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d582861a-ca6e-4b74-adf0-3eb588ea5ed2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 558,
             "text": "Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d582861a-ca6e-4b74-adf0-3eb588ea5ed2"
+            "uuid": "bf09aab1-d8fa-5e6e-b44e-4fddcd2b33b4"
         },
         {
             "artist": "Chen Weidong",
@@ -7764,7 +7866,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7789,18 +7890,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "84460666-4f6b-422c-b20e-dc1651c66e15",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 580,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nYellow Scarves Cavalry can't block.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "84460666-4f6b-422c-b20e-dc1651c66e15"
+            "uuid": "028bcf58-ec9e-5ce8-ad65-c38cbbd6c136"
         },
         {
             "artist": "Chen Weidong",
@@ -7828,7 +7931,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7853,18 +7955,20 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "06e98691-6227-41f2-a3f4-3131b07a3a6f",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 581,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nYellow Scarves General can't block.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "06e98691-6227-41f2-a3f4-3131b07a3a6f"
+            "uuid": "9c728e74-62ad-538a-8bb2-5c9561ac66d7"
         },
         {
             "artist": "Chen Weidong",
@@ -7892,7 +7996,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7912,18 +8015,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3ca36a8d-ca44-485e-a219-85814f160c4d",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 582,
             "text": "Yellow Scarves Troops can't block.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "3ca36a8d-ca44-485e-a219-85814f160c4d"
+            "uuid": "4caee999-f0fd-526a-8bbf-429e2f2d934b"
         },
         {
             "artist": "Inoue Junichi",
@@ -7950,7 +8055,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -7975,6 +8079,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "5e9b3794-d0f0-4d28-85cb-22492e195ae1",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -7982,13 +8087,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 584,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)\nEach creature you control can't be blocked by more than one creature.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e9b3794-d0f0-4d28-85cb-22492e195ae1"
+            "uuid": "c0e106c1-be58-52e1-8425-4ea41ef662b6"
         },
         {
             "artist": "Lin Yan",
@@ -8015,7 +8121,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8035,18 +8140,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a2623481-cee3-4a9d-933b-235fcde9a27b",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 585,
             "text": "Whenever Yuan Shao's Infantry attacks alone, Yuan Shao's Infantry can't be blocked this combat.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a2623481-cee3-4a9d-933b-235fcde9a27b"
+            "uuid": "99093132-b7e6-5cbc-9ced-c8ec46334443"
         },
         {
             "artist": "Qi Baocheng",
@@ -8074,7 +8181,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8095,17 +8201,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cc61aa62-25ee-40a4-9b6e-d6277316b464",
             "subtypes": [
                 "Hound"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 592,
             "text": "Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)",
             "toughness": "2",
             "type": "Creature — Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc61aa62-25ee-40a4-9b6e-d6277316b464"
+            "uuid": "823f077a-93f1-5edc-9906-b8443d4c8f50"
         },
         {
             "artist": "Qi Baocheng",
@@ -8133,7 +8241,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8164,17 +8271,19 @@
                     "text": "Even though Zodiac Dragon is a Dragon, it doesn’t have flying."
                 }
             ],
+            "scryfallId": "46652ae3-6572-4296-939b-0789923180d5",
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 593,
             "text": "When Zodiac Dragon is put into your graveyard from the battlefield, you may return it to your hand.",
             "toughness": "8",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "46652ae3-6572-4296-939b-0789923180d5"
+            "uuid": "b6d44fac-6774-5a67-b35d-988fe83c84e5"
         },
         {
             "artist": "Qi Baocheng",
@@ -8202,7 +8311,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8223,17 +8331,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "52510462-2802-4e16-87d4-da376ee2e3be",
             "subtypes": [
                 "Goat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 594,
             "text": "Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)",
             "toughness": "1",
             "type": "Creature — Goat",
             "types": [
                 "Creature"
             ],
-            "uuid": "52510462-2802-4e16-87d4-da376ee2e3be"
+            "uuid": "a11c30bb-c5d3-5311-9843-0fcde25f5c3d"
         },
         {
             "artist": "Gao Yan",
@@ -8260,7 +8370,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8279,14 +8388,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "96ba9014-d750-4924-aa6f-8b9f421807f9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 431,
             "text": "Borrowing the East Wind deals X damage to each creature with horsemanship and each player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "96ba9014-d750-4924-aa6f-8b9f421807f9"
+            "uuid": "c9ae6553-4bf4-519a-b3e6-3b662259afc6"
         },
         {
             "artist": "Koji",
@@ -8314,7 +8425,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8333,14 +8443,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "61bdfefb-f2e2-409c-b5e1-66d24ab3ee5d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 458,
             "text": "Put target card from your graveyard on top of your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "61bdfefb-f2e2-409c-b5e1-66d24ab3ee5d"
+            "uuid": "f92d6da3-123e-536f-8368-5ac1a0faba41"
         },
         {
             "artist": "Wang Yuqun",
@@ -8367,7 +8479,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8386,17 +8497,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fae9abc7-ecd3-4042-a5b0-5f2b24491fa6",
             "subtypes": [
                 "Bear"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 467,
             "toughness": "2",
             "type": "Creature — Bear",
             "types": [
                 "Creature"
             ],
-            "uuid": "fae9abc7-ecd3-4042-a5b0-5f2b24491fa6"
+            "uuid": "82adc0da-eded-5b7c-a9b9-2c9e04484deb"
         },
         {
             "artist": "Liu Shangying",
@@ -8423,7 +8535,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8459,14 +8570,16 @@
                     "text": "Heavy Fog prevents all damage attacking creatures would deal to you this turn, not just combat damage. Noncombat damage from those creatures is prevented only if they’re still attacking at the time that damage would be dealt or, if the creature has left the battlefield by then, if it was an attacking creature at the time it left."
                 }
             ],
+            "scryfallId": "499fee7b-1942-4eb9-b1d0-806a1f6c0cd8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 471,
             "text": "Cast this spell only during the declare attackers step and only if you've been attacked this step.\nPrevent all damage that would be dealt to you this turn by attacking creatures.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "499fee7b-1942-4eb9-b1d0-806a1f6c0cd8"
+            "uuid": "dcd5b260-0e5e-512e-b816-314b9be47021"
         },
         {
             "artist": "Gao Jianzhang",
@@ -8493,7 +8606,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8521,19 +8633,21 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "bee9c02e-f569-43b5-929a-ec04f661f644",
             "subtypes": [
                 "Human"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 472,
             "text": "{T}: Put target creature card from your graveyard on top of your library. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "2",
             "type": "Legendary Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "bee9c02e-f569-43b5-929a-ec04f661f644"
+            "uuid": "4c4f1b70-3538-5a6d-8a38-7c91b66bf4ee"
         },
         {
             "artist": "Fang Yue",
@@ -8560,7 +8674,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8593,17 +8706,19 @@
                     "text": "Hunting Cheetah’s ability allows you to search your library for any card with the land type Forest, not just a card with the name Forest."
                 }
             ],
+            "scryfallId": "56a63628-17e6-4845-96b4-c82c3e7e8fb5",
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 474,
             "text": "Whenever Hunting Cheetah deals damage to an opponent, you may search your library for a Forest card, reveal that card, put it into your hand, then shuffle your library.",
             "toughness": "3",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "56a63628-17e6-4845-96b4-c82c3e7e8fb5"
+            "uuid": "5752c6f5-7b2f-5257-8423-d17726845afe"
         },
         {
             "artist": "Miao Aili",
@@ -8631,7 +8746,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8658,6 +8772,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "009661e7-c704-43a1-82e3-7da0b609844e",
             "subtypes": [
                 "Human",
                 "Soldier",
@@ -8666,13 +8781,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 485,
             "text": "Horsemanship (This creature can't be blocked except by creatures with horsemanship.)",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "009661e7-c704-43a1-82e3-7da0b609844e"
+            "uuid": "d78ae94e-b596-5482-9f1c-2dd8baa6db31"
         },
         {
             "artist": "Yang Jun Kwon",
@@ -8699,7 +8815,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8741,17 +8856,19 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "6d085684-aabf-4b63-a0b3-3deb4679909b",
             "subtypes": [
                 "Wolf"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 487,
             "text": "You may have Lone Wolf assign its combat damage as though it weren't blocked.",
             "toughness": "2",
             "type": "Creature — Wolf",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d085684-aabf-4b63-a0b3-3deb4679909b"
+            "uuid": "6c8ac3ed-5bf4-5232-93c9-7ec33eb9dd3b"
         },
         {
             "artist": "Liu Shangying",
@@ -8778,7 +8895,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -8797,14 +8913,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "56e4df87-7908-4274-a07f-81d42be89f18",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 494,
             "text": "Tap any number of untapped creatures you control. You gain 4 life for each creature tapped this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "56e4df87-7908-4274-a07f-81d42be89f18"
+            "uuid": "d408f7a2-777d-54d2-8b44-38292583a29a"
         },
         {
             "artist": "Yang Guangmai",
@@ -8832,7 +8950,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8854,6 +8971,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e340647c-fb6d-45a6-9f42-235390b40337",
             "subtypes": [
                 "Human",
                 "Barbarian",
@@ -8862,13 +8980,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 495,
             "text": "Other green creatures you control get +1/+1.",
             "toughness": "4",
             "type": "Legendary Creature — Human Barbarian Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e340647c-fb6d-45a6-9f42-235390b40337"
+            "uuid": "5147fa85-42b2-5afb-84d1-208771716476"
         },
         {
             "artist": "Li Tie",
@@ -8895,7 +9014,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8918,18 +9036,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e1642802-055e-44d2-a261-c2a45ad515e8",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 496,
             "toughness": "5",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e1642802-055e-44d2-a261-c2a45ad515e8"
+            "uuid": "8e48ebf9-c141-57ec-bc18-57a7e07390d4"
         },
         {
             "artist": "Hong Yan",
@@ -8957,7 +9076,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8983,14 +9101,16 @@
                     "text": "The spell’s effect has no duration. The targeted creature gets +2/+2 until the game ends or it leaves the battlefield. It has horsemanship until the game ends, it leaves the battlefield, or some other effect causes it to lose horsemanship."
                 }
             ],
+            "scryfallId": "676fea93-7f39-4fc7-89ab-bb3ea3f15951",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 519,
             "text": "Target creature gets +2/+2 and gains horsemanship. (It can't be blocked except by creatures with horsemanship. This effect lasts indefinitely.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "676fea93-7f39-4fc7-89ab-bb3ea3f15951"
+            "uuid": "e92a4ed7-10b2-52d3-8794-b41351622dd1"
         },
         {
             "artist": "Yang Jun Kwon",
@@ -9018,7 +9138,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9047,17 +9166,19 @@
                     "text": "When Slashing Tiger becomes blocked, the ability will trigger just once no matter how many creatures are blocking it."
                 }
             ],
+            "scryfallId": "4fbedd66-457a-4e1c-a9f3-fa37dec81c7a",
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 533,
             "text": "Whenever Slashing Tiger becomes blocked, it gets +2/+2 until end of turn.",
             "toughness": "3",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "4fbedd66-457a-4e1c-a9f3-fa37dec81c7a"
+            "uuid": "3aa350d3-6752-596a-acfb-923c17a8687c"
         },
         {
             "artist": "Wang Yuqun",
@@ -9084,7 +9205,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9108,17 +9228,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "87e138c7-1166-4e20-b039-e94c1319ad42",
             "subtypes": [
                 "Elephant"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 534,
             "toughness": "4",
             "type": "Creature — Elephant",
             "types": [
                 "Creature"
             ],
-            "uuid": "87e138c7-1166-4e20-b039-e94c1319ad42"
+            "uuid": "fb153487-a882-5288-9e78-6bb70e1cd220"
         },
         {
             "artist": "Sun Nan",
@@ -9145,7 +9266,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9177,14 +9297,16 @@
                     "text": "Spoils of Victory allows you to search your library for any card with the land type Plains, Island, Swamp, Mountain, or Forest, not just a card with one of those names."
                 }
             ],
+            "scryfallId": "54ed2d85-0e28-40d1-bd44-d36caa0d4e31",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 535,
             "text": "Search your library for a Plains, Island, Swamp, Mountain, or Forest card and put that card onto the battlefield. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "54ed2d85-0e28-40d1-bd44-d36caa0d4e31"
+            "uuid": "1e89e5ae-5977-5242-8bac-9d452ae694ce"
         },
         {
             "artist": "Wang Yuqun",
@@ -9212,7 +9334,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9231,14 +9352,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f6862d7a-04ee-48ac-a5b3-46a4e8694d5b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 536,
             "text": "You gain 8 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f6862d7a-04ee-48ac-a5b3-46a4e8694d5b"
+            "uuid": "a88ef956-4c5b-5bf5-8856-75c1997cdbaf"
         },
         {
             "artist": "Kang Yu",
@@ -9266,7 +9389,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9296,17 +9418,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "31d39e5c-40c7-4f1a-8576-c8b4d12a4bbc",
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 537,
             "text": "Stalking Tiger can't be blocked by more than one creature.",
             "toughness": "3",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "31d39e5c-40c7-4f1a-8576-c8b4d12a4bbc"
+            "uuid": "a2baefc2-cec0-51cc-908d-8513eb14c81e"
         },
         {
             "artist": "Wang Yuqun",
@@ -9334,7 +9458,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9354,18 +9477,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d818c231-8d66-4024-91de-fe29f8622902",
             "subtypes": [
                 "Human",
                 "Mystic"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 548,
             "text": "Hexproof (This creature can't be the target of spells or abilities your opponents control.)",
             "toughness": "2",
             "type": "Creature — Human Mystic",
             "types": [
                 "Creature"
             ],
-            "uuid": "d818c231-8d66-4024-91de-fe29f8622902"
+            "uuid": "bb10346d-5ddc-565c-ae96-71a6c7c857b9"
         },
         {
             "artist": "Qu Xin",
@@ -9393,7 +9518,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9413,18 +9537,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "023ae64a-7888-4ad2-b879-0649d8e341ac",
             "subtypes": [
                 "Human",
                 "Mystic"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 549,
             "text": "Taoist Mystic can't be blocked by creatures with horsemanship.",
             "toughness": "2",
             "type": "Creature — Human Mystic",
             "types": [
                 "Creature"
             ],
-            "uuid": "023ae64a-7888-4ad2-b879-0649d8e341ac"
+            "uuid": "92d890e6-f212-538c-8754-ac003775b2b6"
         },
         {
             "artist": "Gao Yan",
@@ -9452,7 +9578,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9471,14 +9596,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4620867c-a3a6-4c81-b923-24007367132e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 550,
             "text": "All creatures able to block target creature this turn do so.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4620867c-a3a6-4c81-b923-24007367132e"
+            "uuid": "0df6de06-f8c0-58d2-8719-998c5b7bacfc"
         },
         {
             "artist": "Qu Xin",
@@ -9506,7 +9633,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9537,14 +9663,16 @@
                     "text": "Three Visits allows you to search your library for any card with the land type Forest, not just a card with the name Forest."
                 }
             ],
+            "scryfallId": "306d22ae-657e-4b52-8cd9-6fc3df9e8376",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 551,
             "text": "Search your library for a Forest card and put that card onto the battlefield. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "306d22ae-657e-4b52-8cd9-6fc3df9e8376"
+            "uuid": "b57a3f48-0e50-509d-b3a7-f151b3352886"
         },
         {
             "artist": "Fang Yue",
@@ -9572,7 +9700,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9592,17 +9719,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ab242eab-5cab-41a0-bcf8-93a6919e4558",
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 552,
             "text": "Whenever Trained Cheetah becomes blocked, it gets +1/+1 until end of turn.",
             "toughness": "2",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab242eab-5cab-41a0-bcf8-93a6919e4558"
+            "uuid": "a2357e34-8d81-5a25-acc4-f1d49f8b84e5"
         },
         {
             "artist": "Yang Jun Kwon",
@@ -9629,7 +9758,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9648,17 +9776,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "01deb3cc-91e8-4ef3-964f-f36c6a21207c",
             "subtypes": [
                 "Jackal"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 553,
             "toughness": "2",
             "type": "Creature — Jackal",
             "types": [
                 "Creature"
             ],
-            "uuid": "01deb3cc-91e8-4ef3-964f-f36c6a21207c"
+            "uuid": "c60a5de7-0f12-5eaf-b1d7-040760606d34"
         },
         {
             "artist": "Hong Yan",
@@ -9686,7 +9815,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9709,14 +9837,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4eb1e16f-002e-4a81-ba41-cfe41f3a9071",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 554,
             "text": "Destroy target creature with horsemanship.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4eb1e16f-002e-4a81-ba41-cfe41f3a9071"
+            "uuid": "2c92b1ed-9e35-5557-a569-cdbbe0b4c206"
         },
         {
             "artist": "Quan Xuejun",
@@ -9744,7 +9874,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9763,14 +9892,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2b138167-8129-4109-a58b-af26c95577e4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 567,
             "text": "Target creature gets +4/+4 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2b138167-8129-4109-a58b-af26c95577e4"
+            "uuid": "99cc23e2-5635-59b3-9e6a-6571ee12d615"
         },
         {
             "artist": "Yang Jun Kwon",
@@ -9797,7 +9928,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9832,17 +9962,19 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "290f395d-0827-4f62-b117-4766d4ab5dca",
             "subtypes": [
                 "Wolf"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 568,
             "text": "You may have Wolf Pack assign its combat damage as though it weren't blocked.",
             "toughness": "6",
             "type": "Creature — Wolf",
             "types": [
                 "Creature"
             ],
-            "uuid": "290f395d-0827-4f62-b117-4766d4ab5dca"
+            "uuid": "45c40224-48c5-5c5a-a5fd-873ae6754ace"
         },
         {
             "artist": "Ai Desheng",
@@ -9870,7 +10002,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -9891,17 +10022,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "fb24cb19-3409-45f7-b0e0-7c652064d2dd",
             "subtypes": [
                 "Horse"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 595,
             "text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)",
             "toughness": "3",
             "type": "Creature — Horse",
             "types": [
                 "Creature"
             ],
-            "uuid": "fb24cb19-3409-45f7-b0e0-7c652064d2dd"
+            "uuid": "d395e46e-46cc-57ec-ab3a-85266b5bacd1"
         },
         {
             "artist": "Ai Desheng",
@@ -9929,7 +10062,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9955,17 +10087,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5e98eb0b-c3b5-4561-b8a2-f22bd0fe1115",
             "subtypes": [
                 "Monkey"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 596,
             "text": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)",
             "toughness": "1",
             "type": "Creature — Monkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e98eb0b-c3b5-4561-b8a2-f22bd0fe1115"
+            "uuid": "3da35725-fdc0-5eca-ab50-1cb210acfd23"
         },
         {
             "artist": "Ai Desheng",
@@ -9993,7 +10127,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -10014,17 +10147,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1a731b3a-0065-448d-841c-28700d78a4fd",
             "subtypes": [
                 "Ox"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 597,
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
             "toughness": "3",
             "type": "Creature — Ox",
             "types": [
                 "Creature"
             ],
-            "uuid": "1a731b3a-0065-448d-841c-28700d78a4fd"
+            "uuid": "47cc19df-6890-5055-aafb-da1858f2c2ff"
         },
         {
             "artist": "Ai Desheng",
@@ -10052,7 +10187,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -10073,17 +10207,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ab4211d0-deef-4113-84e0-47ce0df7a5c6",
             "subtypes": [
                 "Rabbit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 599,
             "text": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)",
             "toughness": "1",
             "type": "Creature — Rabbit",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab4211d0-deef-4113-84e0-47ce0df7a5c6"
+            "uuid": "1fffff33-4aa6-5e7a-9e11-9833ba3658a5"
         },
         {
             "artist": "Ai Desheng",
@@ -10111,7 +10247,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -10132,17 +10267,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "81dd362e-42f6-4eeb-9fe7-0d9cbeb4f21e",
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 601,
             "text": "Plainswalk (This creature can't be blocked as long as defending player controls a Plains.)",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "81dd362e-42f6-4eeb-9fe7-0d9cbeb4f21e"
+            "uuid": "209015fd-09ed-5b9c-a434-93d21321c432"
         },
         {
             "artist": "Ai Desheng",
@@ -10170,7 +10307,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -10191,17 +10327,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aafd78d5-df9f-46a3-a634-ebf7634a6358",
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 603,
             "text": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)",
             "toughness": "4",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "aafd78d5-df9f-46a3-a634-ebf7634a6358"
+            "uuid": "122681d7-5057-5f45-8a47-79043b376e2d"
         },
         {
             "artist": "Wang Yuqun",
@@ -10228,7 +10366,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10250,6 +10387,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e3425241-efdc-4261-a2bb-58fbf4a9fe8c",
             "subtypes": [
                 "Human",
                 "Advisor"
@@ -10257,13 +10395,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 604,
             "text": "Hexproof (This creature can't be the target of spells or abilities your opponents control.)\nZuo Ci, the Mocking Sage can't be blocked by creatures with horsemanship.",
             "toughness": "2",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3425241-efdc-4261-a2bb-58fbf4a9fe8c"
+            "uuid": "814f6c76-ee7b-5405-9306-a508eb7c3f4d"
         },
         {
             "artist": "He Jiancheng",
@@ -10277,7 +10416,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10328,7 +10466,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -10341,8 +10478,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10356,6 +10495,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ed82f466-ee1c-4942-9b4d-a8bffd548b30",
             "subtypes": [
                 "Plains"
             ],
@@ -10367,7 +10507,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ed82f466-ee1c-4942-9b4d-a8bffd548b30"
+            "uuid": "202dc268-3ada-5ea5-8f1f-8300061e79c4",
+            "variations": [
+                "9325aa47-ed61-553e-9d9a-e619e009a25c",
+                "02d79f68-8c3c-5211-97a4-1e85c6d0b34f"
+            ]
         },
         {
             "artist": "He Jiancheng",
@@ -10381,7 +10525,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10432,7 +10575,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -10445,8 +10587,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10460,6 +10604,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2fe3d8c0-1640-42bb-bb15-0b82c553976f",
             "subtypes": [
                 "Plains"
             ],
@@ -10471,7 +10616,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2fe3d8c0-1640-42bb-bb15-0b82c553976f"
+            "uuid": "9325aa47-ed61-553e-9d9a-e619e009a25c",
+            "variations": [
+                "202dc268-3ada-5ea5-8f1f-8300061e79c4",
+                "02d79f68-8c3c-5211-97a4-1e85c6d0b34f"
+            ]
         },
         {
             "artist": "He Jiancheng",
@@ -10485,7 +10634,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10536,7 +10684,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -10549,8 +10696,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10564,6 +10713,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4801e24d-7c45-4d23-9461-0c7771eddd91",
             "subtypes": [
                 "Plains"
             ],
@@ -10575,7 +10725,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4801e24d-7c45-4d23-9461-0c7771eddd91"
+            "uuid": "02d79f68-8c3c-5211-97a4-1e85c6d0b34f",
+            "variations": [
+                "202dc268-3ada-5ea5-8f1f-8300061e79c4",
+                "9325aa47-ed61-553e-9d9a-e619e009a25c"
+            ]
         },
         {
             "artist": "Ku Xueming",
@@ -10589,7 +10743,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10641,7 +10794,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -10653,8 +10805,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10668,6 +10822,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "76033c90-1e06-473b-ba44-a94e16ac5348",
             "subtypes": [
                 "Island"
             ],
@@ -10679,7 +10834,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "76033c90-1e06-473b-ba44-a94e16ac5348"
+            "uuid": "a6b6f443-f5e7-57ca-9b72-d77ccec97dc5",
+            "variations": [
+                "2d9ec804-4cfd-5f24-8959-da16db921b83",
+                "d3095027-fb89-5d4f-974b-573280a15343"
+            ]
         },
         {
             "artist": "Ku Xueming",
@@ -10693,7 +10852,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10745,7 +10903,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -10757,8 +10914,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10772,6 +10931,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "899cfba6-9131-43ef-9e8d-803a0e64d0b0",
             "subtypes": [
                 "Island"
             ],
@@ -10783,7 +10943,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "899cfba6-9131-43ef-9e8d-803a0e64d0b0"
+            "uuid": "2d9ec804-4cfd-5f24-8959-da16db921b83",
+            "variations": [
+                "a6b6f443-f5e7-57ca-9b72-d77ccec97dc5",
+                "d3095027-fb89-5d4f-974b-573280a15343"
+            ]
         },
         {
             "artist": "Ku Xueming",
@@ -10797,7 +10961,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10849,7 +11012,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -10861,8 +11023,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10876,6 +11040,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e74b6430-0ddb-4433-b3bc-6f0ab42560e6",
             "subtypes": [
                 "Island"
             ],
@@ -10887,7 +11052,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e74b6430-0ddb-4433-b3bc-6f0ab42560e6"
+            "uuid": "d3095027-fb89-5d4f-974b-573280a15343",
+            "variations": [
+                "a6b6f443-f5e7-57ca-9b72-d77ccec97dc5",
+                "2d9ec804-4cfd-5f24-8959-da16db921b83"
+            ]
         },
         {
             "artist": "Wang Chuxiong",
@@ -10901,7 +11070,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10962,8 +11130,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -10977,6 +11147,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "17b4a8a4-caa8-472d-bf90-ee70250bc0ab",
             "subtypes": [
                 "Swamp"
             ],
@@ -10988,7 +11159,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "17b4a8a4-caa8-472d-bf90-ee70250bc0ab"
+            "uuid": "7e79772a-75ea-591c-bc17-9baee3fb495c",
+            "variations": [
+                "c43f08dc-fd22-50dd-a20f-4b9c3a08dfe7",
+                "1d2fc1e3-dbf9-582c-bdca-325f9209eaec"
+            ]
         },
         {
             "artist": "Wang Chuxiong",
@@ -11002,7 +11177,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11063,8 +11237,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11078,6 +11254,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9fc74272-8dc7-4a07-85e3-e7a13573345e",
             "subtypes": [
                 "Swamp"
             ],
@@ -11089,7 +11266,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "9fc74272-8dc7-4a07-85e3-e7a13573345e"
+            "uuid": "c43f08dc-fd22-50dd-a20f-4b9c3a08dfe7",
+            "variations": [
+                "7e79772a-75ea-591c-bc17-9baee3fb495c",
+                "1d2fc1e3-dbf9-582c-bdca-325f9209eaec"
+            ]
         },
         {
             "artist": "Wang Chuxiong",
@@ -11103,7 +11284,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11164,8 +11344,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11179,6 +11361,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7a6447bb-fffc-41c8-91cb-e526ed727b3e",
             "subtypes": [
                 "Swamp"
             ],
@@ -11190,7 +11373,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7a6447bb-fffc-41c8-91cb-e526ed727b3e"
+            "uuid": "1d2fc1e3-dbf9-582c-bdca-325f9209eaec",
+            "variations": [
+                "7e79772a-75ea-591c-bc17-9baee3fb495c",
+                "c43f08dc-fd22-50dd-a20f-4b9c3a08dfe7"
+            ]
         },
         {
             "artist": "Qin Jun",
@@ -11204,7 +11391,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11227,7 +11413,6 @@
             "originalType": "Land",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -11267,8 +11452,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11282,6 +11469,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "95046649-bc6d-46f5-8dbc-85d3fa5097c4",
             "subtypes": [
                 "Mountain"
             ],
@@ -11293,7 +11481,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "95046649-bc6d-46f5-8dbc-85d3fa5097c4"
+            "uuid": "cf5c565b-99f8-5f17-9745-e59f94bb0c28",
+            "variations": [
+                "f7ac9362-8ae7-552e-afd2-d4726cdf22cc",
+                "4beee85b-2435-5b5e-8972-db5d5737b639"
+            ]
         },
         {
             "artist": "Qin Jun",
@@ -11307,7 +11499,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11330,7 +11521,6 @@
             "originalType": "Land",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -11370,8 +11560,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11385,6 +11577,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "80a6f28b-6910-416e-86e1-bd428360bb27",
             "subtypes": [
                 "Mountain"
             ],
@@ -11396,7 +11589,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "80a6f28b-6910-416e-86e1-bd428360bb27"
+            "uuid": "f7ac9362-8ae7-552e-afd2-d4726cdf22cc",
+            "variations": [
+                "cf5c565b-99f8-5f17-9745-e59f94bb0c28",
+                "4beee85b-2435-5b5e-8972-db5d5737b639"
+            ]
         },
         {
             "artist": "Qin Jun",
@@ -11410,7 +11607,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11433,7 +11629,6 @@
             "originalType": "Land",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -11473,8 +11668,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11488,6 +11685,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "00f0ab3f-86c5-49f6-948b-ace35bc03889",
             "subtypes": [
                 "Mountain"
             ],
@@ -11499,7 +11697,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "00f0ab3f-86c5-49f6-948b-ace35bc03889"
+            "uuid": "4beee85b-2435-5b5e-8972-db5d5737b639",
+            "variations": [
+                "cf5c565b-99f8-5f17-9745-e59f94bb0c28",
+                "f7ac9362-8ae7-552e-afd2-d4726cdf22cc"
+            ]
         },
         {
             "artist": "Ji Yong",
@@ -11513,7 +11715,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11568,14 +11769,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11589,6 +11791,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6677baa6-a38f-48f2-9ff2-2e3321b22959",
             "subtypes": [
                 "Forest"
             ],
@@ -11600,7 +11803,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "6677baa6-a38f-48f2-9ff2-2e3321b22959"
+            "uuid": "646e9bf9-a74a-5919-a78c-784e1f5307ba",
+            "variations": [
+                "cabd46d0-efb6-519e-beca-bb546c3bffc3",
+                "68d90391-b960-5e05-8445-0cb07dc32cfb"
+            ]
         },
         {
             "artist": "Ji Yong",
@@ -11614,7 +11821,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11669,14 +11875,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11690,6 +11897,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c5c94d6c-ed6d-4544-8565-35f1ea8bfc26",
             "subtypes": [
                 "Forest"
             ],
@@ -11701,7 +11909,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c5c94d6c-ed6d-4544-8565-35f1ea8bfc26"
+            "uuid": "cabd46d0-efb6-519e-beca-bb546c3bffc3",
+            "variations": [
+                "646e9bf9-a74a-5919-a78c-784e1f5307ba",
+                "68d90391-b960-5e05-8445-0cb07dc32cfb"
+            ]
         },
         {
             "artist": "Ji Yong",
@@ -11715,7 +11927,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11770,14 +11981,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -11791,6 +12003,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "84722185-dffb-498e-8ce7-f50236b716f5",
             "subtypes": [
                 "Forest"
             ],
@@ -11802,17 +12015,22 @@
             "types": [
                 "Land"
             ],
-            "uuid": "84722185-dffb-498e-8ce7-f50236b716f5"
+            "uuid": "68d90391-b960-5e05-8445-0cb07dc32cfb",
+            "variations": [
+                "646e9bf9-a74a-5919-a78c-784e1f5307ba",
+                "cabd46d0-efb6-519e-beca-bb546c3bffc3"
+            ]
         }
     ],
     "code": "ptk",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Portal Three Kingdoms",
     "releaseDate": "1999-05-01",
+    "tcgplayerGroupId": 88,
     "tokens": [],
     "totalSetSize": 180,
     "type": "starter"

@@ -25,7 +25,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -84,6 +83,7 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "23612d91-c394-4eee-987b-b124b615de86",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -92,13 +92,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129365,
             "text": "{2}, Exile a nonland card from your hand: Put four time counters on the exiled card. If it doesn't have suspend, it gains suspend. (At the beginning of your upkeep, remove a time counter from that card. When the last is removed, cast it without paying its mana cost. If it's a creature, it has haste.)",
             "toughness": "2",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "23612d91-c394-4eee-987b-b124b615de86"
+            "uuid": "1b675c59-301b-54f3-94b4-68cefdf29992"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -124,7 +125,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -151,15 +151,17 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "1bf05e3d-601a-481b-8880-24058a3442e9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129464,
             "text": "Target player takes an extra turn after this one. Shuffle Beacon of Tomorrows into its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1bf05e3d-601a-481b-8880-24058a3442e9"
+            "uuid": "bccb1b69-d65f-5f85-8b2a-3cc272c723fa"
         },
         {
             "artist": "Christopher Moeller",
@@ -183,7 +185,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -249,18 +250,20 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "df5a543e-8416-4f01-91f5-e1ed87f1a510",
             "starter": true,
             "subtypes": [
                 "Kraken"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129469,
             "text": "Deep-Sea Kraken can't be blocked.\nSuspend 9—{2}{U} (Rather than cast this card from your hand, you may pay {2}{U} and exile it with nine time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost. It has haste.)\nWhenever an opponent casts a spell, if Deep-Sea Kraken is suspended, remove a time counter from it.",
             "toughness": "6",
             "type": "Creature — Kraken",
             "types": [
                 "Creature"
             ],
-            "uuid": "df5a543e-8416-4f01-91f5-e1ed87f1a510"
+            "uuid": "d8eb8872-9eb9-5de4-b7ad-bb7d5d1bf1d6"
         },
         {
             "artist": "Anthony Francisco",
@@ -284,7 +287,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -334,15 +336,17 @@
                     "text": "The triggered ability that creates the copies can itself be countered by anything that can counter a triggered ability. If it is countered, no copies will be put onto the stack."
                 }
             ],
+            "scryfallId": "1290e00b-c41b-4e30-8b65-a7fd4356d462",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129368,
             "text": "Shuffle your library. Then exile the top card of your library. Until end of turn, you may play that card without paying its mana cost. (If it has X in its mana cost, X is 0.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1290e00b-c41b-4e30-8b65-a7fd4356d462"
+            "uuid": "8e7aa407-9ef3-546f-a322-8d0ad7558e66"
         },
         {
             "artist": "Anthony S. Waters",
@@ -366,7 +370,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -380,12 +383,7 @@
             "manaCost": "{1}{U}",
             "multiverseId": 426577,
             "name": "Peer Through Depths",
-            "names": [
-                "Peer Through Depths",
-                "Reach Through Mists",
-                "Sift Through Sands",
-                "The Unspeakable"
-            ],
+            "names": [],
             "number": "5",
             "originalText": "Look at the top five cards of your library. You may reveal an instant or sorcery card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
             "originalType": "Instant — Arcane",
@@ -401,17 +399,19 @@
                     "text": "If you don’t reveal an instant or sorcery card, put all the revealed cards on the bottom of your library in any order."
                 }
             ],
+            "scryfallId": "df0994df-730c-4947-8248-0aaf97998fa1",
             "starter": true,
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129491,
             "text": "Look at the top five cards of your library. You may reveal an instant or sorcery card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "df0994df-730c-4947-8248-0aaf97998fa1"
+            "uuid": "2f5475bd-463a-5bfc-a9dc-31df379ed24c"
         },
         {
             "artist": "Aleksi Briclot",
@@ -437,7 +437,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -477,15 +476,17 @@
                     "text": "Casting a copy of a sorcery card won’t “use up” Quicken’s effect because the copy isn’t a card."
                 }
             ],
+            "scryfallId": "e6209bbf-5861-4755-abb6-0f04def9527e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129492,
             "text": "The next sorcery card you cast this turn can be cast as though it had flash. (It can be cast any time you could cast an instant.)\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e6209bbf-5861-4755-abb6-0f04def9527e"
+            "uuid": "009d9e6a-37a5-51da-b7aa-bb3e081040e0"
         },
         {
             "artist": "Anthony S. Waters",
@@ -511,7 +512,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -526,12 +526,7 @@
             "manaCost": "{U}",
             "multiverseId": 426579,
             "name": "Reach Through Mists",
-            "names": [
-                "Peer Through Depths",
-                "Reach Through Mists",
-                "Sift Through Sands",
-                "The Unspeakable"
-            ],
+            "names": [],
             "number": "7",
             "originalText": "Draw a card.",
             "originalType": "Instant — Arcane",
@@ -542,17 +537,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0b6d5d29-4f38-4229-ac50-c4fa97fcc536",
             "starter": true,
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129494,
             "text": "Draw a card.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "0b6d5d29-4f38-4229-ac50-c4fa97fcc536"
+            "uuid": "3c09ce38-bc86-5b19-9342-39b247e04ce8"
         },
         {
             "artist": "Dan Scott",
@@ -576,7 +573,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -620,19 +616,21 @@
                     "text": "Once it triggers, prowess isn’t connected to the spell that caused it to trigger. If that spell is countered, prowess will still resolve."
                 }
             ],
+            "scryfallId": "026e33ed-2f2d-4345-8a89-58c9f2f6c727",
             "starter": true,
             "subtypes": [
                 "Djinn",
                 "Monk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129500,
             "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever Sage-Eye Avengers attacks, you may return target creature to its owner's hand if its power is less than Sage-Eye Avengers's power.",
             "toughness": "5",
             "type": "Creature — Djinn Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "026e33ed-2f2d-4345-8a89-58c9f2f6c727"
+            "uuid": "cece2387-f0ae-568f-aa42-209d8bad936a"
         },
         {
             "artist": "Anthony S. Waters",
@@ -656,7 +654,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -671,12 +668,7 @@
             "manaCost": "{1}{U}{U}",
             "multiverseId": 426581,
             "name": "Sift Through Sands",
-            "names": [
-                "Peer Through Depths",
-                "Reach Through Mists",
-                "Sift Through Sands",
-                "The Unspeakable"
-            ],
+            "names": [],
             "number": "9",
             "originalText": "Draw two cards, then discard a card.\nIf you've cast a spell named Peer Through Depths and a spell named Reach Through Mists this turn, you may search your library for a card named The Unspeakable, put it onto the battlefield, then shuffle your library.",
             "originalType": "Instant — Arcane",
@@ -686,17 +678,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c1fd8a97-1c97-45fe-8c06-013a1f528919",
             "starter": true,
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129502,
             "text": "Draw two cards, then discard a card.\nIf you've cast a spell named Peer Through Depths and a spell named Reach Through Mists this turn, you may search your library for a card named The Unspeakable, put it onto the battlefield, then shuffle your library.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "c1fd8a97-1c97-45fe-8c06-013a1f528919"
+            "uuid": "04dd700b-80bd-5fb4-8e45-20d6ce3dda33"
         },
         {
             "artist": "Véronique Meignaud",
@@ -722,7 +716,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -754,15 +747,17 @@
                     "text": "You choose which lands to untap as the spell resolves. They aren’t targeted, and they don’t have to be lands that you control."
                 }
             ],
+            "scryfallId": "1959f078-4b7b-4df2-a256-d43b2d97e853",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129504,
             "text": "Return target creature to its owner's hand. Untap up to two lands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1959f078-4b7b-4df2-a256-d43b2d97e853"
+            "uuid": "69c2b49d-10ca-5363-b918-a5c0338c6acc"
         },
         {
             "artist": "Svetlin Velinov",
@@ -788,7 +783,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -801,6 +795,7 @@
             "manaCost": "{2}{U}{U}",
             "multiverseId": 426583,
             "name": "Talrand, Sky Summoner",
+            "names": [],
             "number": "11",
             "originalText": "Whenever you cast an instant or sorcery spell, create a 2/2 blue Drake creature token with flying.",
             "originalType": "Legendary Creature — Merfolk Wizard",
@@ -814,14 +809,11 @@
             "rarity": "rare",
             "rulings": [
                 {
-                    "date": "2012-07-01",
-                    "text": "You’ll put the Drake token onto the battlefield before the spell that caused the ability to trigger resolves. However, that Drake token isn’t on the battlefield when you choose targets for that spell."
-                },
-                {
-                    "date": "2012-07-01",
-                    "text": "The ability will still resolve if the instant or sorcery spell gets countered."
+                    "date": "2018-12-07",
+                    "text": "Talrand’s triggered ability resolves before the spell that caused it to trigger, but after targets have been chosen for that spell. It resolves even if that spell is countered."
                 }
             ],
+            "scryfallId": "fea27d0c-92b1-4530-8035-519463722f17",
             "starter": true,
             "subtypes": [
                 "Merfolk",
@@ -830,13 +822,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129509,
             "text": "Whenever you cast an instant or sorcery spell, create a 2/2 blue Drake creature token with flying.",
             "toughness": "2",
             "type": "Legendary Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "fea27d0c-92b1-4530-8035-519463722f17"
+            "uuid": "10f5909d-31c7-5d2b-becd-1d7570770b00"
         },
         {
             "artist": "Seb McKinnon",
@@ -860,7 +853,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -905,15 +897,17 @@
                     "text": "You may choose new targets for any of the copies. You can choose differently for each copy."
                 }
             ],
+            "scryfallId": "c9f9ece7-ee6e-4379-9d53-209f8805a72d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129510,
             "text": "Return target permanent to its owner's hand.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c9f9ece7-ee6e-4379-9d53-209f8805a72d"
+            "uuid": "c578c209-71cf-58b2-824a-ea083c3f9c9e"
         },
         {
             "artist": "Daarken",
@@ -939,7 +933,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -953,12 +946,7 @@
             "manaCost": "{6}{U}{U}{U}",
             "multiverseId": 426585,
             "name": "The Unspeakable",
-            "names": [
-                "Peer Through Depths",
-                "Reach Through Mists",
-                "Sift Through Sands",
-                "The Unspeakable"
-            ],
+            "names": [],
             "number": "13",
             "originalText": "Flying, trample\nWhenever The Unspeakable deals combat damage to a player, you may return target Arcane card from your graveyard to your hand.",
             "originalType": "Legendary Creature — Spirit",
@@ -970,6 +958,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e956c695-bf0a-430c-a14e-196ae6ab7c9f",
             "starter": true,
             "subtypes": [
                 "Spirit"
@@ -977,13 +966,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129371,
             "text": "Flying, trample\nWhenever The Unspeakable deals combat damage to a player, you may return target Arcane card from your graveyard to your hand.",
             "toughness": "7",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e956c695-bf0a-430c-a14e-196ae6ab7c9f"
+            "uuid": "d2fd55a2-057a-5817-b4a6-4d3db9ff9d01"
         },
         {
             "artist": "Wayne Reynolds",
@@ -1007,7 +997,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1054,17 +1043,19 @@
                     "text": "Desperate Ritual isn’t a mana ability. When cast, it (or the spell it’s spliced onto) goes on the stack like any spell and can be responded to."
                 }
             ],
+            "scryfallId": "1f86cd5e-1b6f-4528-9d5b-f406261c8d41",
             "starter": true,
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129361,
             "text": "Add {R}{R}{R}.\nSplice onto Arcane {1}{R} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "1f86cd5e-1b6f-4528-9d5b-f406261c8d41"
+            "uuid": "50354608-388a-5568-8d51-1bc3143590ca"
         },
         {
             "artist": "Jasper Sandner",
@@ -1090,7 +1081,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1104,6 +1094,7 @@
             "manaCost": "{3}{R}",
             "multiverseId": 426587,
             "name": "Empty the Warrens",
+            "names": [],
             "number": "15",
             "originalText": "Create two 1/1 red Goblin creature tokens.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "originalType": "Sorcery",
@@ -1131,15 +1122,17 @@
                     "text": "The triggered ability that creates the copies can itself be countered by anything that can counter a triggered ability. If it is countered, no copies will be put onto the stack."
                 }
             ],
+            "scryfallId": "42418f91-c7a9-461a-b00c-bba184e2a917",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129470,
             "text": "Create two 1/1 red Goblin creature tokens.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "42418f91-c7a9-461a-b00c-bba184e2a917"
+            "uuid": "409240ee-0a02-5e83-a6ab-5d17203da56d"
         },
         {
             "artist": "Clint Cearley",
@@ -1165,7 +1158,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1210,15 +1202,17 @@
                     "text": "You may choose new targets for any of the copies. You can choose differently for each copy."
                 }
             ],
+            "scryfallId": "8dfe022f-cbdf-4710-af7b-9f0e213fc89c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129476,
             "text": "Grapeshot deals 1 damage to any target.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8dfe022f-cbdf-4710-af7b-9f0e213fc89c"
+            "uuid": "56edb1e8-aff4-5dc8-8817-adb00ef929be"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -1242,7 +1236,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1311,15 +1304,17 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "fefbed51-ae2a-4668-a725-71904f18acc6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129496,
             "text": "Rift Bolt deals 3 damage to any target.\nSuspend 1—{R} (Rather than cast this card from your hand, you may pay {R} and exile it with a time counter on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "fefbed51-ae2a-4668-a725-71904f18acc6"
+            "uuid": "62910383-69f7-5c61-acd8-2cd0db422194"
         },
         {
             "artist": "Chippy",
@@ -1343,7 +1338,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1407,15 +1401,17 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "7f2d2a20-3196-4bb2-9574-0c643e0b6f3d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129501,
             "text": "Shivan Meteor deals 13 damage to target creature.\nSuspend 2—{1}{R}{R} (Rather than cast this card from your hand, you may pay {1}{R}{R} and exile it with two time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7f2d2a20-3196-4bb2-9574-0c643e0b6f3d"
+            "uuid": "fdc1ba35-6b65-577a-bbc9-dc8507de7c32"
         },
         {
             "artist": "Noah Bradley",
@@ -1439,7 +1435,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1473,15 +1468,17 @@
                     "text": "If the target has {X} in its mana cost, X is 0."
                 }
             ],
+            "scryfallId": "37aacf2b-b08f-4804-88ff-7b61620801e9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129372,
             "text": "Return target instant or sorcery card from your graveyard to your hand. Volcanic Vision deals damage equal to that card's converted mana cost to each creature your opponents control. Exile Volcanic Vision.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "37aacf2b-b08f-4804-88ff-7b61620801e9"
+            "uuid": "8ff3abd4-9c5b-50e2-b417-e1fc153ddcb7"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -1507,7 +1504,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1520,6 +1516,7 @@
             "manaCost": "{1}{R}",
             "multiverseId": 426592,
             "name": "Young Pyromancer",
+            "names": [],
             "number": "20",
             "originalText": "Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.",
             "originalType": "Creature — Human Shaman",
@@ -1533,23 +1530,25 @@
             "rarity": "uncommon",
             "rulings": [
                 {
-                    "date": "2016-06-08",
-                    "text": "Young Pyromancer’s triggered ability will resolve before the spell that caused it to trigger, but after targets have been chosen for that spell."
+                    "date": "2018-12-07",
+                    "text": "Young Pyromancer’s triggered ability will resolve before the spell that caused it to trigger, but after targets have been chosen for that spell. It resolves even if that spell is countered."
                 }
             ],
+            "scryfallId": "74e1698b-cd80-4cf2-92d6-62c0197eca0b",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129511,
             "text": "Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "74e1698b-cd80-4cf2-92d6-62c0197eca0b"
+            "uuid": "255ce33f-9efa-5b57-9d87-aea76ad14c90"
         },
         {
             "artist": "Dan Scott",
@@ -1575,7 +1574,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1608,15 +1606,17 @@
                     "text": "If a card in your library has {X} in its mana cost, X is 0. For example, a card with mana cost {X}{R} has a converted mana cost of 1, and so on."
                 }
             ],
+            "scryfallId": "555778df-8ed9-4eb3-859b-4246d9e05ee5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129472,
             "text": "Search your library for an instant card with converted mana cost 3, reveal it, and put it into your hand. Then repeat this process for instant cards with converted mana costs 2 and 1. Then shuffle your library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "555778df-8ed9-4eb3-859b-4246d9e05ee5"
+            "uuid": "e523a1c2-ead1-5bf2-af81-c6511b46d49b"
         },
         {
             "artist": "Svetlin Velinov",
@@ -1644,7 +1644,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1689,19 +1688,21 @@
                     "text": "Goblin Electromancer’s effect reduces only generic mana in the spell’s total cost."
                 }
             ],
+            "scryfallId": "b3d8dd05-5d0b-406f-a59a-9066079fed26",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129362,
             "text": "Instant and sorcery spells you cast cost {1} less to cast.",
             "toughness": "2",
             "type": "Creature — Goblin Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b3d8dd05-5d0b-406f-a59a-9066079fed26"
+            "uuid": "b9a851ab-cf74-5a93-b26d-ae68b0e77796"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1729,7 +1730,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1765,6 +1765,7 @@
                     "text": "Jori En must be on the battlefield in order for the ability to function. Notably, the ability won’t trigger if Jori En is the second spell you cast in a turn."
                 }
             ],
+            "scryfallId": "40c020f2-5809-4aa6-a6f5-6030568058aa",
             "starter": true,
             "subtypes": [
                 "Merfolk",
@@ -1773,13 +1774,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129482,
             "text": "Whenever you cast your second spell each turn, draw a card.",
             "toughness": "3",
             "type": "Legendary Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "40c020f2-5809-4aa6-a6f5-6030568058aa"
+            "uuid": "dcc79a78-d571-5ddc-9dc9-b621730c18eb"
         },
         {
             "artist": "Wayne Reynolds",
@@ -1805,7 +1807,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1834,18 +1835,20 @@
                     "text": "Nivix Cyclops still has defender after its triggered ability resolves, although it will be able to attack."
                 }
             ],
+            "scryfallId": "f6abe6ca-9345-41bc-9acd-b17ac887cb9d",
             "starter": true,
             "subtypes": [
                 "Cyclops"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129369,
             "text": "Defender\nWhenever you cast an instant or sorcery spell, Nivix Cyclops gets +3/+0 until end of turn and can attack this turn as though it didn't have defender.",
             "toughness": "4",
             "type": "Creature — Cyclops",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6abe6ca-9345-41bc-9acd-b17ac887cb9d"
+            "uuid": "66678c52-d14a-5f5f-bfdd-0edfd8a51feb"
         },
         {
             "artist": "Svetlin Velinov",
@@ -1873,7 +1876,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1903,18 +1905,20 @@
                     "text": "The ability that defines Spellheart Chimera’s power functions in all zones, not just the battlefield."
                 }
             ],
+            "scryfallId": "8782a7b7-79ca-4e5c-845b-d662222574c0",
             "starter": true,
             "subtypes": [
                 "Chimera"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129505,
             "text": "Flying, trample\nSpellheart Chimera's power is equal to the number of instant and sorcery cards in your graveyard.",
             "toughness": "3",
             "type": "Creature — Chimera",
             "types": [
                 "Creature"
             ],
-            "uuid": "8782a7b7-79ca-4e5c-845b-d662222574c0"
+            "uuid": "3464e569-ed41-5e1a-baed-bb15e4deac6c"
         },
         {
             "artist": "Trevor Hairsine",
@@ -1942,7 +1946,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1967,18 +1970,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "fd706176-477a-49a9-bf47-0d10c0501227",
             "starter": true,
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129490,
             "text": "When Nucklavee enters the battlefield, you may return target red sorcery card from your graveyard to your hand.\nWhen Nucklavee enters the battlefield, you may return target blue instant card from your graveyard to your hand.",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "fd706176-477a-49a9-bf47-0d10c0501227"
+            "uuid": "1060f8b7-ad08-5c1a-a859-1df55bf5496c"
         },
         {
             "artist": "Eytan Zana",
@@ -2001,7 +2006,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2031,15 +2035,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ebbca459-195a-4cfc-838f-e71ac2b9c35f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129506,
             "text": "Swiftwater Cliffs enters the battlefield tapped.\nWhen Swiftwater Cliffs enters the battlefield, you gain 1 life.\n{T}: Add {U} or {R}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ebbca459-195a-4cfc-838f-e71ac2b9c35f"
+            "uuid": "01f42aa9-afd6-5bc9-b0ca-337dc5f63dfc"
         },
         {
             "artist": "Rob Alexander",
@@ -2053,7 +2059,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2105,7 +2110,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2117,8 +2121,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2132,6 +2138,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "27e01339-0c2e-4e2f-b1c5-e46030016d5b",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2144,7 +2151,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "27e01339-0c2e-4e2f-b1c5-e46030016d5b"
+            "uuid": "852a55b2-d67f-55fc-88b4-e2b3373e6359",
+            "variations": [
+                "3f5d5c55-05ff-5ccb-8205-7c27e4f0ba5a",
+                "af95a3f9-c052-5836-a226-c068bde665ed"
+            ]
         },
         {
             "artist": "John Avon",
@@ -2158,7 +2169,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2210,7 +2220,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2222,8 +2231,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2237,6 +2248,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "547890ff-69b6-48e0-98f6-1fbca5d353e8",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2249,7 +2261,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "547890ff-69b6-48e0-98f6-1fbca5d353e8"
+            "uuid": "3f5d5c55-05ff-5ccb-8205-7c27e4f0ba5a",
+            "variations": [
+                "852a55b2-d67f-55fc-88b4-e2b3373e6359",
+                "af95a3f9-c052-5836-a226-c068bde665ed"
+            ]
         },
         {
             "artist": "Cliff Childs",
@@ -2263,7 +2279,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2315,7 +2330,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2327,8 +2341,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2342,6 +2358,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e1e33a2f-0018-4278-83c4-50ed83f009c3",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2354,7 +2371,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e1e33a2f-0018-4278-83c4-50ed83f009c3"
+            "uuid": "af95a3f9-c052-5836-a226-c068bde665ed",
+            "variations": [
+                "852a55b2-d67f-55fc-88b4-e2b3373e6359",
+                "3f5d5c55-05ff-5ccb-8205-7c27e4f0ba5a"
+            ]
         },
         {
             "artist": "John Avon",
@@ -2368,7 +2389,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2391,7 +2411,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2431,8 +2450,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2446,6 +2467,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d66b6951-50a0-4b30-aa73-d4ce1380ff49",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2458,7 +2480,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "d66b6951-50a0-4b30-aa73-d4ce1380ff49"
+            "uuid": "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+            "variations": [
+                "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+                "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+                "46148111-b8e8-500d-a782-205d4e08ec76",
+                "c11cef76-3be3-5452-a3e0-26f2032ef7b2",
+                "d96f95fc-b591-5dae-b918-3f791cd91cb0"
+            ]
         },
         {
             "artist": "Cliff Childs",
@@ -2472,7 +2501,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2495,7 +2523,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2535,8 +2562,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2550,6 +2579,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "545b397b-ff3a-49f6-bb10-e403b8fee85f",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2562,7 +2592,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "545b397b-ff3a-49f6-bb10-e403b8fee85f"
+            "uuid": "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+            "variations": [
+                "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+                "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+                "46148111-b8e8-500d-a782-205d4e08ec76",
+                "c11cef76-3be3-5452-a3e0-26f2032ef7b2",
+                "d96f95fc-b591-5dae-b918-3f791cd91cb0"
+            ]
         },
         {
             "artist": "Craig Mullins",
@@ -2576,7 +2613,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2599,7 +2635,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2639,8 +2674,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2654,6 +2691,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "cc9c1b6a-8fc9-4292-81a0-5cf423638c71",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2666,7 +2704,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "cc9c1b6a-8fc9-4292-81a0-5cf423638c71"
+            "uuid": "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+            "variations": [
+                "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+                "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+                "46148111-b8e8-500d-a782-205d4e08ec76",
+                "c11cef76-3be3-5452-a3e0-26f2032ef7b2",
+                "d96f95fc-b591-5dae-b918-3f791cd91cb0"
+            ]
         },
         {
             "artist": "Anna Steinbauer",
@@ -2692,7 +2737,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2722,6 +2766,7 @@
                     "text": "Each creature with at least one of those subtypes gets +2/+2 from Lovisa Coldeyes’ ability, regardless of how many of those subtypes it has. For example, a 3/3 Mistform Ultimus would become 5/5, not 9/9."
                 }
             ],
+            "scryfallId": "ad4d4662-2c9b-42fc-9c08-162c822f436c",
             "starter": true,
             "subtypes": [
                 "Human"
@@ -2729,13 +2774,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129367,
             "text": "Each creature that's a Barbarian, a Warrior, or a Berserker gets +2/+2 and has haste.",
             "toughness": "3",
             "type": "Legendary Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad4d4662-2c9b-42fc-9c08-162c822f436c"
+            "uuid": "9dcf28a3-4fed-5229-8fdd-e02cedff3f39"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -2761,7 +2807,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2790,15 +2835,17 @@
                     "text": "If a Beacon is countered or doesn’t resolve, it’s put into its owner’s graveyard, not shuffled into the library."
                 }
             ],
+            "scryfallId": "1ece7e7d-615b-42da-8bab-80f24ad7c4d8",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129463,
             "text": "Beacon of Destruction deals 5 damage to any target. Shuffle Beacon of Destruction into its owner's library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1ece7e7d-615b-42da-8bab-80f24ad7c4d8"
+            "uuid": "f3845fdc-3fb4-5183-bafc-2669979bd021"
         },
         {
             "artist": "Esad Ribic",
@@ -2824,7 +2871,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2864,19 +2910,21 @@
                     "text": "Note that the exact wording of this card has changed since it was printed in the _Future Sight_(TM) set, but its functionality is the same."
                 }
             ],
+            "scryfallId": "058faf52-1d6c-47c8-8911-365353d1ea3f",
             "starter": true,
             "subtypes": [
                 "Giant",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129359,
             "text": "Cowards can't block Warriors.\n{R}: Target creature becomes a Coward until end of turn.\n{2}{R}: Target creature becomes a Warrior until end of turn.",
             "toughness": "5",
             "type": "Creature — Giant Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "058faf52-1d6c-47c8-8911-365353d1ea3f"
+            "uuid": "4d6db44d-30d7-5105-b524-e979321cd7a1"
         },
         {
             "artist": "Chris Rallis",
@@ -2902,7 +2950,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2929,15 +2976,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5da1493c-78b4-4c4d-ab70-199fe506b61a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129471,
             "text": "Firebolt deals 2 damage to any target.\nFlashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5da1493c-78b4-4c4d-ab70-199fe506b61a"
+            "uuid": "e095b550-410e-5f0d-a09b-238d91171c28"
         },
         {
             "artist": "Wayne Reynolds",
@@ -2963,7 +3012,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2991,19 +3039,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "63fd5801-5073-4e8e-8435-c7ebe9d999b3",
             "starter": true,
             "subtypes": [
                 "Minotaur",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129363,
             "text": "Bloodthirst 2 (If an opponent was dealt damage this turn, this creature enters the battlefield with two +1/+1 counters on it.)",
             "toughness": "3",
             "type": "Creature — Minotaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "63fd5801-5073-4e8e-8435-c7ebe9d999b3"
+            "uuid": "41c79e59-19cc-5c96-bb5d-2cb066b1f0b7"
         },
         {
             "artist": "Kev Walker",
@@ -3029,7 +3079,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3064,6 +3113,7 @@
                     "text": "The Legend rule only applies to two legendary permanents with identical names. If the names are different, even if they depict the same character, the rule does not apply."
                 }
             ],
+            "scryfallId": "7a65dd4d-f838-4964-bd5a-a517960cc644",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -3072,13 +3122,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129366,
             "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}: Kamahl, Pit Fighter deals 3 damage to any target.",
             "toughness": "1",
             "type": "Legendary Creature — Human Barbarian",
             "types": [
                 "Creature"
             ],
-            "uuid": "7a65dd4d-f838-4964-bd5a-a517960cc644"
+            "uuid": "72074cef-cab8-5064-8cc3-3dd4b525c9c9"
         },
         {
             "artist": "Christopher Moeller",
@@ -3104,7 +3155,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3129,19 +3179,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fc2bf4cf-8918-40a4-afe5-79860390f04c",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129483,
             "text": "Whenever another creature enters the battlefield under your control, Kruin Striker gets +1/+0 and gains trample until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc2bf4cf-8918-40a4-afe5-79860390f04c"
+            "uuid": "6413bcdd-3e1d-5b12-a6bf-e12aa4d7f429"
         },
         {
             "artist": "Wayne Reynolds",
@@ -3167,7 +3219,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3191,6 +3242,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e7c927d6-911d-4a37-89a2-6c500edf4dd7",
             "starter": true,
             "subtypes": [
                 "Goblin",
@@ -3199,13 +3251,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129373,
             "text": "Whenever a land enters the battlefield, Zo-Zu the Punisher deals 2 damage to that land's controller.",
             "toughness": "2",
             "type": "Legendary Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "e7c927d6-911d-4a37-89a2-6c500edf4dd7"
+            "uuid": "f37a491e-5c76-5237-98a7-d6c40e7516a5"
         },
         {
             "artist": "Steve Prescott",
@@ -3231,7 +3284,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3246,6 +3298,7 @@
             "manaCost": "{3}{G}",
             "multiverseId": 426614,
             "name": "Ambassador Oak",
+            "names": [],
             "number": "42",
             "originalText": "When Ambassador Oak enters the battlefield, create a 1/1 green Elf Warrior creature token.",
             "originalType": "Creature — Treefolk Warrior",
@@ -3257,19 +3310,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a064f5e2-20b2-47a1-b3f3-78f077d71ec7",
             "starter": true,
             "subtypes": [
                 "Treefolk",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129462,
             "text": "When Ambassador Oak enters the battlefield, create a 1/1 green Elf Warrior creature token.",
             "toughness": "3",
             "type": "Creature — Treefolk Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "a064f5e2-20b2-47a1-b3f3-78f077d71ec7"
+            "uuid": "f27a0b10-bec3-5070-a263-227f5965c412"
         },
         {
             "artist": "Ciruelo",
@@ -3293,7 +3348,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3306,6 +3360,7 @@
             "manaCost": "{2}{G}{G}{G}",
             "multiverseId": 426615,
             "name": "Beast Attack",
+            "names": [],
             "number": "43",
             "originalText": "Create a 4/4 green Beast creature token.\nFlashback {2}{G}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "originalType": "Instant",
@@ -3317,15 +3372,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "011f805f-3ebb-4748-a5de-8a10b5f47dcd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129465,
             "text": "Create a 4/4 green Beast creature token.\nFlashback {2}{G}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "011f805f-3ebb-4748-a5de-8a10b5f47dcd"
+            "uuid": "89973412-1681-5cc1-93f7-ff549fd68171"
         },
         {
             "artist": "Carl Critchlow",
@@ -3349,7 +3406,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3363,6 +3419,7 @@
             "manaCost": "{2}{G}",
             "multiverseId": 426616,
             "name": "Call of the Herd",
+            "names": [],
             "number": "44",
             "originalText": "Create a 3/3 green Elephant creature token.\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "originalType": "Sorcery",
@@ -3377,15 +3434,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "7ff0c182-f9ec-41d1-beb6-97d0eb1be592",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129360,
             "text": "Create a 3/3 green Elephant creature token.\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7ff0c182-f9ec-41d1-beb6-97d0eb1be592"
+            "uuid": "5c28dcbe-6e96-52b0-ad26-ff12d8a483eb"
         },
         {
             "artist": "Rebecca Guay",
@@ -3411,7 +3470,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3437,19 +3495,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "833211c0-3bec-4548-97a0-c9381660cd88",
             "starter": true,
             "subtypes": [
                 "Treefolk",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129467,
             "text": "Reach (This creature can block creatures with flying.)",
             "toughness": "4",
             "type": "Creature — Treefolk Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "833211c0-3bec-4548-97a0-c9381660cd88"
+            "uuid": "839e7edd-f1a6-554c-a778-f667dac571f6"
         },
         {
             "artist": "Paul Lee",
@@ -3475,7 +3535,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3516,15 +3575,17 @@
                     "text": "This is the timeshifted version of Concentrate."
                 }
             ],
+            "scryfallId": "c655b8cb-a237-404e-b1ac-e101c1fda533",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129477,
             "text": "Draw three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c655b8cb-a237-404e-b1ac-e101c1fda533"
+            "uuid": "f35d56b1-3c2d-56d6-a140-16caf75fc937"
         },
         {
             "artist": "Steve Prescott",
@@ -3548,7 +3609,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3571,15 +3631,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c59b2ab3-c5e3-4599-9af0-3fa7a9544b97",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129478,
             "text": "Put five +1/+1 counters on target creature. If this spell was cast from a graveyard, put ten +1/+1 counters on that creature instead.\nFlashback {5}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c59b2ab3-c5e3-4599-9af0-3fa7a9544b97"
+            "uuid": "b17352d1-0f74-5c55-a8b4-ad7aa3e4efc8"
         },
         {
             "artist": "Steven Belledin",
@@ -3605,7 +3667,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3659,15 +3720,17 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "1c0a6253-aa08-4393-b370-bb3e2496d88c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129493,
             "text": "Search your library for a basic land card and put that card onto the battlefield tapped. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1c0a6253-aa08-4393-b370-bb3e2496d88c"
+            "uuid": "bdd695d2-187c-59f3-86de-12b32724e22f"
         },
         {
             "artist": "Kev Walker",
@@ -3691,7 +3754,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3704,6 +3766,7 @@
             "manaCost": "{6}{G}",
             "multiverseId": 426621,
             "name": "Roar of the Wurm",
+            "names": [],
             "number": "49",
             "originalText": "Create a 6/6 green Wurm creature token.\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "originalType": "Sorcery",
@@ -3719,15 +3782,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "51a0c80e-4ace-4a2a-8b96-4472d1be6872",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129497,
             "text": "Create a 6/6 green Wurm creature token.\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "51a0c80e-4ace-4a2a-8b96-4472d1be6872"
+            "uuid": "c6441b8d-c0b3-5d1f-902a-5c0deb1195c8"
         },
         {
             "artist": "Liam Sharp",
@@ -3751,7 +3816,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3780,19 +3844,21 @@
                     "text": "Skarrgan Pit-Skulk compares each blocker’s power against its own as blockers are being declared."
                 }
             ],
+            "scryfallId": "30991c55-f39d-41f3-b584-f535f5f70f5a",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129503,
             "text": "Bloodthirst 1 (If an opponent was dealt damage this turn, this creature enters the battlefield with a +1/+1 counter on it.)\nCreatures with power less than Skarrgan Pit-Skulk's power can't block it.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "30991c55-f39d-41f3-b584-f535f5f70f5a"
+            "uuid": "277858aa-7756-56eb-9349-8be13efbea58"
         },
         {
             "artist": "Arnie Swekel",
@@ -3816,7 +3882,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3840,15 +3905,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b421e954-0fb4-4e64-b83c-0e81d7397fb4",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129507,
             "text": "Target creature gets +2/+2 and gains trample until end of turn.\nFlashback {2}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b421e954-0fb4-4e64-b83c-0e81d7397fb4"
+            "uuid": "b426305d-7f44-59a8-a69d-083e683e24f4"
         },
         {
             "artist": "Todd Lockwood",
@@ -3874,7 +3941,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3900,19 +3966,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "85df22de-cb56-4cef-9a55-40b6b61186d7",
             "starter": true,
             "subtypes": [
                 "Elf",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129508,
             "text": "Cast this spell only if you've cast another green spell this turn.\nTrample",
             "toughness": "3",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "85df22de-cb56-4cef-9a55-40b6b61186d7"
+            "uuid": "b2051065-767a-518c-a790-958319a5ed25"
         },
         {
             "artist": "Jim Murray",
@@ -3940,7 +4008,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3969,6 +4036,7 @@
                     "text": "Radha’s triggered ability is not a mana ability (because it doesn’t trigger from another mana ability). It goes on the stack and it can be countered."
                 }
             ],
+            "scryfallId": "5e1f14a7-ef44-4489-a111-30e199e5f08d",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -3977,13 +4045,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129370,
             "text": "Whenever Radha, Heir to Keld attacks, you may add {R}{R}.\n{T}: Add {G}.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e1f14a7-ef44-4489-a111-30e199e5f08d"
+            "uuid": "1f0e16b3-30a2-5c2c-9a0f-211801d4d655"
         },
         {
             "artist": "Matt Stewart",
@@ -4011,7 +4080,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4037,19 +4105,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "018a545c-c8fc-4030-be53-a9cee186423a",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129495,
             "text": "{1}{R}{G}: Relentless Hunter gets +1/+1 and gains trample until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "018a545c-c8fc-4030-be53-a9cee186423a"
+            "uuid": "4ffa2f36-d116-5f8f-a8e8-611a27b52a91"
         },
         {
             "artist": "Izzy",
@@ -4077,7 +4147,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4107,19 +4176,21 @@
                     "text": "Burning-Tree Emissary’s ability isn’t a mana ability. It uses the stack and can be responded to."
                 }
             ],
+            "scryfallId": "22e3e874-a0ec-4459-b78d-abef6b9232b9",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129466,
             "text": "When Burning-Tree Emissary enters the battlefield, add {R}{G}.",
             "toughness": "2",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "22e3e874-a0ec-4459-b78d-abef6b9232b9"
+            "uuid": "4353c02f-1320-5d38-b1be-d4128eb3c1e8"
         },
         {
             "artist": "Ben Wootten",
@@ -4147,7 +4218,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4170,15 +4240,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9121e55e-5070-48cc-b706-92c67ad89254",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129364,
             "text": "Counter target blue instant spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9121e55e-5070-48cc-b706-92c67ad89254"
+            "uuid": "6d2c4b5a-1f97-53c5-aeaa-16aca85aec54"
         },
         {
             "artist": "Chippy",
@@ -4206,7 +4278,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4235,19 +4306,21 @@
                     "text": "Count the number of attacking creatures you control when Rubblebelt Raiders’s ability resolves, including Rubblebelt Raiders itself, to determine how many +1/+1 counters to put on it."
                 }
             ],
+            "scryfallId": "f5f0d394-f929-40e7-adb5-ca813b312dde",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129498,
             "text": "Whenever Rubblebelt Raiders attacks, put a +1/+1 counter on it for each attacking creature you control.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "f5f0d394-f929-40e7-adb5-ca813b312dde"
+            "uuid": "b2e5a0fd-3e5f-55a1-bf8b-951d3ad5a739"
         },
         {
             "artist": "Scott M. Fischer",
@@ -4269,7 +4342,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4313,15 +4385,17 @@
                     "text": "Sharing multiple creature types doesn’t give an additional bonus. Coat of Arms counts creatures, not creature types."
                 }
             ],
+            "scryfallId": "513d4c36-6ad4-4ee9-b161-3136eb59504f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129468,
             "text": "Each creature gets +1/+1 for each other creature on the battlefield that shares at least one creature type with it. (For example, if two Goblin Warriors and a Goblin Shaman are on the battlefield, each gets +2/+2.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "513d4c36-6ad4-4ee9-b161-3136eb59504f"
+            "uuid": "953ed088-bfff-56fe-a1d3-4bfd23bf548e"
         },
         {
             "artist": "Eytan Zana",
@@ -4344,7 +4418,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4371,15 +4444,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8040efe1-8ece-45bd-8426-443090baa55b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129499,
             "text": "Rugged Highlands enters the battlefield tapped.\nWhen Rugged Highlands enters the battlefield, you gain 1 life.\n{T}: Add {R} or {G}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "8040efe1-8ece-45bd-8426-443090baa55b"
+            "uuid": "58475ed5-2c9a-5366-872b-21e0aecf0db2"
         },
         {
             "artist": "Jonas De Ro",
@@ -4393,7 +4468,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4416,7 +4490,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4456,8 +4529,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4471,6 +4546,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "76dc6f1a-9eca-45bd-8788-cc34b9e1a980",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4483,7 +4559,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "76dc6f1a-9eca-45bd-8788-cc34b9e1a980"
+            "uuid": "46148111-b8e8-500d-a782-205d4e08ec76",
+            "variations": [
+                "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+                "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+                "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+                "c11cef76-3be3-5452-a3e0-26f2032ef7b2",
+                "d96f95fc-b591-5dae-b918-3f791cd91cb0"
+            ]
         },
         {
             "artist": "Nils Hamm",
@@ -4497,7 +4580,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4520,7 +4602,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4560,8 +4641,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4575,6 +4658,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "26b1ce7e-26d5-44b3-b0f3-c6ec5839c6d8",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4587,7 +4671,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "26b1ce7e-26d5-44b3-b0f3-c6ec5839c6d8"
+            "uuid": "c11cef76-3be3-5452-a3e0-26f2032ef7b2",
+            "variations": [
+                "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+                "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+                "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+                "46148111-b8e8-500d-a782-205d4e08ec76",
+                "d96f95fc-b591-5dae-b918-3f791cd91cb0"
+            ]
         },
         {
             "artist": "Karl Kopinski",
@@ -4601,7 +4692,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4624,7 +4714,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4664,8 +4753,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4679,6 +4770,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "865ace8b-9e12-4f20-ac3c-d07a323b40dd",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4691,7 +4783,14 @@
             "types": [
                 "Land"
             ],
-            "uuid": "865ace8b-9e12-4f20-ac3c-d07a323b40dd"
+            "uuid": "d96f95fc-b591-5dae-b918-3f791cd91cb0",
+            "variations": [
+                "8fc98d97-b8d3-5045-816e-1f8a7d06d18e",
+                "c8bf52b1-d322-5356-b84e-f4d88223d0b8",
+                "2271e7c3-813f-5946-b210-9f61bbeea8e0",
+                "46148111-b8e8-500d-a782-205d4e08ec76",
+                "c11cef76-3be3-5452-a3e0-26f2032ef7b2"
+            ]
         },
         {
             "artist": "John Avon",
@@ -4705,7 +4804,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4760,14 +4858,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4781,6 +4880,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4ae04d52-92c0-493a-b677-2aa9e79bd30a",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4793,7 +4893,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4ae04d52-92c0-493a-b677-2aa9e79bd30a"
+            "uuid": "10d4e37d-c66e-5ec7-ad4c-deb8bb7fea2b",
+            "variations": [
+                "12ef2c10-89b2-5069-9cba-2c9faca659d8",
+                "c0d3c6ae-e357-50bc-991d-7386e0a9b195"
+            ]
         },
         {
             "artist": "Jim Nelson",
@@ -4807,7 +4911,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4862,14 +4965,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4883,6 +4987,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "04c4a529-2345-412d-a2c6-7cd9499f031c",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4895,7 +5000,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "04c4a529-2345-412d-a2c6-7cd9499f031c"
+            "uuid": "12ef2c10-89b2-5069-9cba-2c9faca659d8",
+            "variations": [
+                "10d4e37d-c66e-5ec7-ad4c-deb8bb7fea2b",
+                "c0d3c6ae-e357-50bc-991d-7386e0a9b195"
+            ]
         },
         {
             "artist": "Stephen Tappin",
@@ -4909,7 +5018,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4964,14 +5072,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4985,6 +5094,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "03be40e3-b7d7-43ee-a526-5d56fa429ffa",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4997,17 +5107,22 @@
             "types": [
                 "Land"
             ],
-            "uuid": "03be40e3-b7d7-43ee-a526-5d56fa429ffa"
+            "uuid": "c0d3c6ae-e357-50bc-991d-7386e0a9b195",
+            "variations": [
+                "10d4e37d-c66e-5ec7-ad4c-deb8bb7fea2b",
+                "12ef2c10-89b2-5069-9cba-2c9faca659d8"
+            ]
         }
     ],
     "code": "dds",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Duel Decks: Mind vs. Might",
     "releaseDate": "2017-03-31",
+    "tcgplayerGroupId": 1905,
     "tokens": [
         {
             "artist": "Svetlin Velinov",
@@ -5024,10 +5139,11 @@
             "reverseRelated": [
                 "Talrand, Sky Summoner"
             ],
+            "scryfallId": "b02c1fc4-0a90-4861-88ca-1f18c4517f8e",
             "text": "Flying",
             "toughness": "2",
             "type": "Token Creature — Drake",
-            "uuid": "b02c1fc4-0a90-4861-88ca-1f18c4517f8e"
+            "uuid": "00f6035e-7b3a-508d-a37b-110b05c3177f"
         },
         {
             "artist": "Winona Nelson",
@@ -5044,10 +5160,10 @@
             "reverseRelated": [
                 "Young Pyromancer"
             ],
-            "text": "",
+            "scryfallId": "cf9a289f-cd3f-42a0-9296-8c7cc7d01a91",
             "toughness": "1",
             "type": "Token Creature — Elemental",
-            "uuid": "cf9a289f-cd3f-42a0-9296-8c7cc7d01a91"
+            "uuid": "82c57dd7-d38c-5ecc-af7a-388cda829d79"
         },
         {
             "artist": "Dave Kendall",
@@ -5064,10 +5180,10 @@
             "reverseRelated": [
                 "Empty the Warrens"
             ],
-            "text": "",
+            "scryfallId": "66d0f626-eff9-4e2f-ac62-5bf190ea0aeb",
             "toughness": "1",
             "type": "Token Creature — Goblin",
-            "uuid": "66d0f626-eff9-4e2f-ac62-5bf190ea0aeb"
+            "uuid": "1e076318-9186-56b7-8c28-31aa11b51a15"
         },
         {
             "artist": "Steve Prescott",
@@ -5084,10 +5200,10 @@
             "reverseRelated": [
                 "Beast Attack"
             ],
-            "text": "",
+            "scryfallId": "fd69689a-dfeb-4390-ae82-78193697fb18",
             "toughness": "4",
             "type": "Token Creature — Beast",
-            "uuid": "fd69689a-dfeb-4390-ae82-78193697fb18"
+            "uuid": "05301983-58fc-5139-b4f3-c974a55e3591"
         },
         {
             "artist": "Lars Grant-West",
@@ -5104,10 +5220,10 @@
             "reverseRelated": [
                 "Call of the Herd"
             ],
-            "text": "",
+            "scryfallId": "c22421d2-fb62-436b-bc2c-9d99e5fb684b",
             "toughness": "3",
             "type": "Token Creature — Elephant",
-            "uuid": "c22421d2-fb62-436b-bc2c-9d99e5fb684b"
+            "uuid": "95fb206c-8dde-5464-8fdf-d70087173f15"
         },
         {
             "artist": "William O'Connor",
@@ -5124,10 +5240,10 @@
             "reverseRelated": [
                 "Ambassador Oak"
             ],
-            "text": "",
+            "scryfallId": "f11416ec-ab70-45ef-98e0-9b51506606c5",
             "toughness": "1",
             "type": "Token Creature — Elf Warrior",
-            "uuid": "f11416ec-ab70-45ef-98e0-9b51506606c5"
+            "uuid": "f725174b-1530-59b2-a9f2-8b067619b0c3"
         },
         {
             "artist": "Anthony Francisco",
@@ -5144,10 +5260,10 @@
             "reverseRelated": [
                 "Roar of the Wurm"
             ],
-            "text": "",
+            "scryfallId": "844b811d-dfe1-4f93-89ad-800df97ac1b5",
             "toughness": "6",
             "type": "Token Creature — Wurm",
-            "uuid": "844b811d-dfe1-4f93-89ad-800df97ac1b5"
+            "uuid": "ef6c0d6a-9816-5d90-a781-02c02fb085a9"
         }
     ],
     "totalSetSize": 65,

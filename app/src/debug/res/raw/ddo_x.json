@@ -23,7 +23,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -37,10 +36,7 @@
             "manaCost": "{4}{W}{W}",
             "multiverseId": 394361,
             "name": "Elspeth, Sun's Champion",
-            "names": [
-                "Elspeth, Sun's Champion",
-                "Soldier"
-            ],
+            "names": [],
             "number": "1",
             "originalText": "+1: Put three 1/1 white Soldier creature tokens onto the battlefield.\n−3: Destroy all creatures with power 4 or greater.\n−7: You get an emblem with \"Creatures you control get +2/+2 and have flying.\"",
             "originalType": "Planeswalker — Elspeth",
@@ -51,6 +47,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "96f1d11a-084d-4de7-9ed4-33158113520c",
             "starter": true,
             "subtypes": [
                 "Elspeth"
@@ -58,12 +55,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 96065,
             "text": "+1: Create three 1/1 white Soldier creature tokens.\n−3: Destroy all creatures with power 4 or greater.\n−7: You get an emblem with \"Creatures you control get +2/+2 and have flying.\"",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "96f1d11a-084d-4de7-9ed4-33158113520c"
+            "uuid": "94c17d2e-25b5-56d8-9842-e1c5f1149df8"
         },
         {
             "artist": "Willian Murai",
@@ -89,7 +87,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -140,19 +137,21 @@
                     "text": "In a multiplayer game, if Banisher Priest’s owner leaves the game, the exiled card will return to the battlefield. Because the one-shot effect that returns the card isn’t an ability that goes on the stack, it won’t cease to exist along with the leaving player’s spells and abilities on the stack."
                 }
             ],
+            "scryfallId": "1e764652-b7c7-4a40-a61d-388e9dd2ce0b",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96190,
             "text": "When Banisher Priest enters the battlefield, exile target creature an opponent controls until Banisher Priest leaves the battlefield. (That creature returns under its owner's control.)",
             "toughness": "2",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "1e764652-b7c7-4a40-a61d-388e9dd2ce0b"
+            "uuid": "22119915-2d2d-5ac6-aa6a-81ed92a2a72b"
         },
         {
             "artist": "Greg Staples",
@@ -176,7 +175,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -190,10 +188,7 @@
             "manaCost": "{4}{W}{W}",
             "multiverseId": 394354,
             "name": "Captain of the Watch",
-            "names": [
-                "Captain of the Watch",
-                "Soldier"
-            ],
+            "names": [],
             "number": "3",
             "originalText": "Vigilance\nOther Soldier creatures you control get +1/+1 and have vigilance.\nWhen Captain of the Watch enters the battlefield, put three 1/1 white Soldier creature tokens onto the battlefield.",
             "originalType": "Creature — Human Soldier",
@@ -210,19 +205,21 @@
                     "text": "Captain of the Watch grants +1/+1 and vigilance to all other Soldier creatures you control, not just the ones its ability puts onto the battlefield."
                 }
             ],
+            "scryfallId": "6e201980-e220-44dc-beab-ad13c20332bd",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96187,
             "text": "Vigilance (Attacking doesn't cause this creature to tap.)\nOther Soldier creatures you control get +1/+1 and have vigilance.\nWhen Captain of the Watch enters the battlefield, create three 1/1 white Soldier creature tokens.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6e201980-e220-44dc-beab-ad13c20332bd"
+            "uuid": "ae60c3fb-e165-50b8-808c-efc6d26af259"
         },
         {
             "artist": "Clint Cearley",
@@ -248,7 +245,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -287,15 +283,17 @@
                     "text": "Creatures continue to be attacking or blocking creatures through the end of combat step. It is possible to cast Celestial Flare within combat but after combat damage is dealt (specifically, during the combat damage step or the end of combat step). Only attacking and blocking creatures that survived combat damage can be sacrificed at this time."
                 }
             ],
+            "scryfallId": "ea0bf615-b655-4988-bb35-e981d4f30659",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96202,
             "text": "Target player sacrifices an attacking or blocking creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ea0bf615-b655-4988-bb35-e981d4f30659"
+            "uuid": "c2bfeebe-2a59-5bdf-a5d5-1f899c73b298"
         },
         {
             "artist": "Volkan Baga",
@@ -321,7 +319,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -346,19 +343,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bae48cc1-d903-48bf-86fa-8a40321026e6",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96191,
             "text": "Whenever another white creature enters the battlefield under your control, tap target creature an opponent controls.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "bae48cc1-d903-48bf-86fa-8a40321026e6"
+            "uuid": "df36b9c1-4d32-5a4b-b670-f3023fa8c4c2"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -384,7 +383,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -408,15 +406,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0da57140-ccd3-4729-a892-fe2bb719d410",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96200,
             "text": "Up to two target creatures each get +2/+2 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0da57140-ccd3-4729-a892-fe2bb719d410"
+            "uuid": "bd6782eb-c178-5863-9967-4402089444b6"
         },
         {
             "artist": "Lius Lasahido",
@@ -440,7 +440,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -452,10 +451,7 @@
             "manaCost": "{X}{X}{2}{W}{W}",
             "multiverseId": 394359,
             "name": "Decree of Justice",
-            "names": [
-                "Decree of Justice",
-                "Soldier"
-            ],
+            "names": [],
             "number": "7",
             "originalText": "Put X 4/4 white Angel creature tokens with flying onto the battlefield.\nCycling {2}{W} ({2}{W}, Discard this card: Draw a card.)\nWhen you cycle Decree of Justice, you may pay {X}. If you do, put X 1/1 white Soldier creature tokens onto the battlefield.",
             "originalType": "Sorcery",
@@ -490,15 +486,17 @@
                     "text": "A mana cost of {X}{X} means that you pay twice X. If you want X to be 3, you pay {8}{W}{W} to cast Decree of Justice."
                 }
             ],
+            "scryfallId": "55d084fb-231f-4296-9db3-e4edf7ecfe1f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96197,
             "text": "Create X 4/4 white Angel creature tokens with flying.\nCycling {2}{W} ({2}{W}, Discard this card: Draw a card.)\nWhen you cycle Decree of Justice, you may pay {X}. If you do, create X 1/1 white Soldier creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "55d084fb-231f-4296-9db3-e4edf7ecfe1f"
+            "uuid": "6da09ace-98c0-52c7-804b-475218caa66e"
         },
         {
             "artist": "Terese Nielsen",
@@ -524,7 +522,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -547,15 +544,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "aa103dfb-20a0-4a7b-a34b-99339f0364a7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96205,
             "text": "Flash\nCreatures you control get +2/+2.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "aa103dfb-20a0-4a7b-a34b-99339f0364a7"
+            "uuid": "da5cc4a7-9edd-53c0-9da2-995e186cdff9"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -579,7 +578,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -615,19 +613,21 @@
                     "text": "The cycling ability and the triggered ability are separate. If the triggered ability doesn’t resolve (due to being countered with Stifle, for example, or if all its targets have become illegal), the cycling ability will still resolve and you’ll draw a card."
                 }
             ],
+            "scryfallId": "3267bf08-7585-4e2e-b472-97a357d264dc",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96195,
             "text": "Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.)\nWhen you cycle Gempalm Avenger, Soldier creatures get +1/+1 and gain first strike until end of turn.",
             "toughness": "5",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "3267bf08-7585-4e2e-b472-97a357d264dc"
+            "uuid": "430ae4f0-24aa-5803-b1a3-fb17d305d040"
         },
         {
             "artist": "Dan Frazier",
@@ -653,7 +653,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -678,19 +677,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "46f9c5ab-f793-4cf2-b88a-5af38a7b4616",
             "starter": true,
             "subtypes": [
                 "Bird",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96184,
             "text": "Flying\nWhenever Gustcloak Harrier becomes blocked, you may untap it and remove it from combat.",
             "toughness": "2",
             "type": "Creature — Bird Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "46f9c5ab-f793-4cf2-b88a-5af38a7b4616"
+            "uuid": "aaefdc7b-2d32-5eca-840b-277ab4814336"
         },
         {
             "artist": "Jim Nelson",
@@ -716,7 +717,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -739,19 +739,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5303ce82-e82a-498e-af4f-16a56d8188ff",
             "starter": true,
             "subtypes": [
                 "Bird",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96181,
             "text": "Flying\nWhenever a creature you control becomes blocked, you may untap that creature and remove it from combat.",
             "toughness": "4",
             "type": "Creature — Bird Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5303ce82-e82a-498e-af4f-16a56d8188ff"
+            "uuid": "0d2dc270-ca08-5a14-bb5c-97b00a157e40"
         },
         {
             "artist": "Mark Zug",
@@ -777,7 +779,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -801,19 +802,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f6aba9c7-7f91-4f06-915b-70ed7db8f95f",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96182,
             "text": "Whenever Gustcloak Sentinel becomes blocked, you may untap it and remove it from combat.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6aba9c7-7f91-4f06-915b-70ed7db8f95f"
+            "uuid": "26671130-870f-5aa3-8d86-4f6bd196f2e6"
         },
         {
             "artist": "Dan Frazier",
@@ -839,7 +842,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -861,19 +863,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c2ef15f8-4d37-4ea1-a8a2-6383f6be088f",
             "starter": true,
             "subtypes": [
                 "Bird",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96183,
             "text": "Flying\nWhenever Gustcloak Skirmisher becomes blocked, you may untap it and remove it from combat.",
             "toughness": "3",
             "type": "Creature — Bird Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c2ef15f8-4d37-4ea1-a8a2-6383f6be088f"
+            "uuid": "6d081456-6449-527b-918c-56268e321c8c"
         },
         {
             "artist": "Michael Phillippi",
@@ -897,7 +901,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -926,19 +929,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1ae589f5-a513-4d3c-b3fa-66eead66faf3",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96179,
             "text": "Icatian Javelineers enters the battlefield with a javelin counter on it.\n{T}, Remove a javelin counter from Icatian Javelineers: Icatian Javelineers deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "1ae589f5-a513-4d3c-b3fa-66eead66faf3"
+            "uuid": "aa7abd06-3382-5fbc-b947-0b54c4020ce1"
         },
         {
             "artist": "Thomas Denmark",
@@ -964,7 +969,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -991,19 +995,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "257c396c-d8cc-487c-a6cb-2892c7e568a1",
             "starter": true,
             "subtypes": [
                 "Kithkin",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96196,
             "text": "When Kinsbaile Skirmisher enters the battlefield, target creature gets +1/+1 until end of turn.",
             "toughness": "2",
             "type": "Creature — Kithkin Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "257c396c-d8cc-487c-a6cb-2892c7e568a1"
+            "uuid": "707424a6-8462-5adc-8ca5-8a253687445b"
         },
         {
             "artist": "Dan Scott",
@@ -1029,7 +1035,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1066,19 +1071,21 @@
                     "text": "If Kor Skyfisher is still on the battlefield as its triggered ability resolves, you may return Kor Skyfisher itself."
                 }
             ],
+            "scryfallId": "a958971e-5678-4858-b08c-81b5b419fa89",
             "starter": true,
             "subtypes": [
                 "Kor",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96194,
             "text": "Flying\nWhen Kor Skyfisher enters the battlefield, return a permanent you control to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Kor Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a958971e-5678-4858-b08c-81b5b419fa89"
+            "uuid": "9ee49fae-d4c4-5b44-a8a6-b190c15574ae"
         },
         {
             "artist": "Matt Stewart",
@@ -1104,7 +1111,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1128,19 +1134,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9fc32454-fc44-454e-ba25-7bd0687cf99d",
             "starter": true,
             "subtypes": [
                 "Elephant",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96188,
             "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)",
             "toughness": "4",
             "type": "Creature — Elephant Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9fc32454-fc44-454e-ba25-7bd0687cf99d"
+            "uuid": "7f5de490-8465-5698-9ba4-2bb0b9ceb9f2"
         },
         {
             "artist": "rk post",
@@ -1166,7 +1174,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1207,15 +1214,17 @@
                     "text": "Giving a creature flying after it’s already been blocked won’t change or undo that block. If you want to affect what can block the creature, you must cast Mighty Leap during the declare attackers step at the latest."
                 }
             ],
+            "scryfallId": "9d260f22-e2a1-4cdb-a519-c24612d4a9c0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96203,
             "text": "Target creature gets +2/+2 and gains flying until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9d260f22-e2a1-4cdb-a519-c24612d4a9c0"
+            "uuid": "d894750f-f7ae-5553-ab21-3e98db2839b3"
         },
         {
             "artist": "Kev Walker",
@@ -1241,7 +1250,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1265,15 +1273,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "75743f66-fd2d-47e7-b56f-1c95311d09c2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96201,
             "text": "Target creature gets +1/+1 and gains lifelink until end of turn. (Damage dealt by the creature also causes its controller to gain that much life.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "75743f66-fd2d-47e7-b56f-1c95311d09c2"
+            "uuid": "6a29cecd-8b1c-5cdb-a58b-1d8afeec1643"
         },
         {
             "artist": "Terese Nielsen",
@@ -1299,7 +1309,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1326,19 +1335,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "cb39d0c3-ba52-4662-b190-929b9ab9911f",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96180,
             "text": "{T}: Target creature you control gains protection from the color of your choice until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "cb39d0c3-ba52-4662-b190-929b9ab9911f"
+            "uuid": "450ab500-38b9-537b-88ba-dd012f6ef950"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -1362,7 +1373,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1390,6 +1400,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9afe8b9e-bb14-44d5-b5da-627835ee457f",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -1397,13 +1408,14 @@
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96189,
             "text": "Vigilance\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle your library.)",
             "toughness": "6",
             "type": "Creature — Human Cleric Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9afe8b9e-bb14-44d5-b5da-627835ee457f"
+            "uuid": "69a94d47-c201-58ab-b258-f74c71cc407d"
         },
         {
             "artist": "Steve Prescott",
@@ -1429,7 +1441,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1443,10 +1454,7 @@
             "manaCost": "{W}{W}",
             "multiverseId": 394401,
             "name": "Precinct Captain",
-            "names": [
-                "Precinct Captain",
-                "Soldier"
-            ],
+            "names": [],
             "number": "22",
             "originalText": "First strike\nWhenever Precinct Captain deals combat damage to a player, put a 1/1 white Soldier creature token onto the battlefield.",
             "originalType": "Creature — Human Soldier",
@@ -1458,19 +1466,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "deb53c15-2662-4831-a9d8-b7aa213d2908",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96193,
             "text": "First strike\nWhenever Precinct Captain deals combat damage to a player, create a 1/1 white Soldier creature token.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "deb53c15-2662-4831-a9d8-b7aa213d2908"
+            "uuid": "37c7c706-c489-5011-a466-0bb641f55425"
         },
         {
             "artist": "Zoltan Boros",
@@ -1496,7 +1506,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1511,10 +1520,7 @@
             "manaCost": "{1}{W}",
             "multiverseId": 394402,
             "name": "Raise the Alarm",
-            "names": [
-                "Raise the Alarm",
-                "Soldier"
-            ],
+            "names": [],
             "number": "23",
             "originalText": "Put two 1/1 white Soldier creature tokens onto the battlefield.",
             "originalType": "Instant",
@@ -1530,15 +1536,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "88de2062-a7f9-49b1-8bc0-0794922ca475",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96204,
             "text": "Create two 1/1 white Soldier creature tokens.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "88de2062-a7f9-49b1-8bc0-0794922ca475"
+            "uuid": "375870c6-ae6a-5608-a3c1-7923ec34f7da"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1564,7 +1572,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1593,15 +1600,17 @@
                     "text": "Soul Parry prevents all damage the targeted creatures would deal this turn, not just combat damage."
                 }
             ],
+            "scryfallId": "0cc10941-25b4-43cb-8689-c96659bd471d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96199,
             "text": "Prevent all damage one or two target creatures would deal this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0cc10941-25b4-43cb-8689-c96659bd471d"
+            "uuid": "a0e9c575-89ff-5c27-9fd7-9cb048f44534"
         },
         {
             "artist": "Zoltan Boros",
@@ -1627,7 +1636,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1658,19 +1666,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "608851ef-ea3a-4e9d-8923-f34d070a76f5",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96192,
             "text": "Vigilance",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "608851ef-ea3a-4e9d-8923-f34d070a76f5"
+            "uuid": "d89af042-edcd-585e-b3ad-62780df99364"
         },
         {
             "artist": "Volkan Baga",
@@ -1696,7 +1706,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1727,15 +1736,17 @@
                     "text": "This is the timeshifted version of Strafe."
                 }
             ],
+            "scryfallId": "6dfa9acd-d526-4378-b055-6feffb53f3b3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96198,
             "text": "Sunlance deals 3 damage to target nonwhite creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6dfa9acd-d526-4378-b055-6feffb53f3b3"
+            "uuid": "55042ec3-8773-5e4a-b7c1-1119679299af"
         },
         {
             "artist": "Michael Komarck",
@@ -1761,7 +1772,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1785,19 +1795,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "565c750e-47f9-4878-abff-ec973ec6d8a4",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96186,
             "text": "Other Soldier creatures you control get +0/+1.",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "565c750e-47f9-4878-abff-ec973ec6d8a4"
+            "uuid": "b5c7231b-bcaf-55f1-871d-7754fd868199"
         },
         {
             "artist": "Michael Komarck",
@@ -1823,7 +1835,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1847,19 +1858,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e6ac8dd2-f7af-44b6-841a-f0b6a4961e26",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96185,
             "text": "Other Soldier creatures you control get +1/+0.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e6ac8dd2-f7af-44b6-841a-f0b6a4961e26"
+            "uuid": "705b76c2-1143-5195-b122-98bb72dc1172"
         },
         {
             "artist": "Heather Hudson",
@@ -1881,7 +1894,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1921,15 +1933,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "dd65f598-c8f5-4e53-a011-9742c66a1698",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96207,
             "text": "Secluded Steppe enters the battlefield tapped.\n{T}: Add {W}.\nCycling {W} ({W}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "dd65f598-c8f5-4e53-a011-9742c66a1698"
+            "uuid": "b6e15126-eed7-5214-9255-515a831e9587"
         },
         {
             "artist": "Rob Alexander",
@@ -1943,7 +1957,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1994,7 +2007,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2007,8 +2019,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2022,6 +2036,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "27462523-a5b9-440a-8220-68ae46db5f18",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2034,7 +2049,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "27462523-a5b9-440a-8220-68ae46db5f18"
+            "uuid": "3c0665da-bded-5850-a3f8-5d76835f1ecf",
+            "variations": [
+                "920ec463-d9f1-573a-992c-3189534c49b1",
+                "d7436b90-cf45-532c-9ebe-8c435310833f",
+                "cd614afe-1f50-526f-8248-7be335945e1d"
+            ]
         },
         {
             "artist": "Steven Belledin",
@@ -2048,7 +2068,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2099,7 +2118,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2112,8 +2130,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2127,6 +2147,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "36392057-e3a8-433f-949a-f62af913598d",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2139,7 +2160,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "36392057-e3a8-433f-949a-f62af913598d"
+            "uuid": "920ec463-d9f1-573a-992c-3189534c49b1",
+            "variations": [
+                "3c0665da-bded-5850-a3f8-5d76835f1ecf",
+                "d7436b90-cf45-532c-9ebe-8c435310833f",
+                "cd614afe-1f50-526f-8248-7be335945e1d"
+            ]
         },
         {
             "artist": "Adam Paquette",
@@ -2153,7 +2179,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2204,7 +2229,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2217,8 +2241,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2232,6 +2258,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "29d7f240-803a-4c11-8f4c-6a784566ee13",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2244,7 +2271,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "29d7f240-803a-4c11-8f4c-6a784566ee13"
+            "uuid": "d7436b90-cf45-532c-9ebe-8c435310833f",
+            "variations": [
+                "3c0665da-bded-5850-a3f8-5d76835f1ecf",
+                "920ec463-d9f1-573a-992c-3189534c49b1",
+                "cd614afe-1f50-526f-8248-7be335945e1d"
+            ]
         },
         {
             "artist": "Raoul Vitale",
@@ -2258,7 +2290,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2309,7 +2340,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2322,8 +2352,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2337,6 +2369,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4d879a13-6ec3-44da-b3fd-d9c1545f3822",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2349,7 +2382,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4d879a13-6ec3-44da-b3fd-d9c1545f3822"
+            "uuid": "cd614afe-1f50-526f-8248-7be335945e1d",
+            "variations": [
+                "3c0665da-bded-5850-a3f8-5d76835f1ecf",
+                "920ec463-d9f1-573a-992c-3189534c49b1",
+                "d7436b90-cf45-532c-9ebe-8c435310833f"
+            ]
         },
         {
             "artist": "Tyler Jacobson",
@@ -2375,7 +2413,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2389,10 +2426,7 @@
             "manaCost": "{2}{G}{U}",
             "multiverseId": 394380,
             "name": "Kiora, the Crashing Wave",
-            "names": [
-                "Kiora, the Crashing Wave",
-                "Kraken"
-            ],
+            "names": [],
             "number": "34",
             "originalText": "+1: Until your next turn, prevent all damage that would be dealt to and dealt by target permanent an opponent controls.\n−1: Draw a card. You may play an additional land this turn.\n−5: You get an emblem with \"At the beginning of your end step, put a 9/9 blue Kraken creature token onto the battlefield.\"",
             "originalType": "Planeswalker — Kiora",
@@ -2424,6 +2458,7 @@
                     "text": "If Kiora leaves the battlefield after her second ability is activated but before it resolves, you’ll still be able to play an additional land after the ability resolves."
                 }
             ],
+            "scryfallId": "0c5c6b15-b72d-4341-92c2-7469210452da",
             "starter": true,
             "subtypes": [
                 "Kiora"
@@ -2431,12 +2466,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 96066,
             "text": "+1: Until your next turn, prevent all damage that would be dealt to and dealt by target permanent an opponent controls.\n−1: Draw a card. You may play an additional land this turn.\n−5: You get an emblem with \"At the beginning of your end step, create a 9/9 blue Kraken creature token.\"",
             "type": "Legendary Planeswalker — Kiora",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "0c5c6b15-b72d-4341-92c2-7469210452da"
+            "uuid": "e6fdf9ba-9b32-5a5c-a342-7a8c17c0836c"
         },
         {
             "artist": "David Palumbo",
@@ -2462,7 +2498,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2493,15 +2528,17 @@
                     "text": "Because Accumulated Knowledge is still on the stack as you perform its instructions, it isn’t in your graveyard and won’t add to the number of cards drawn."
                 }
             ],
+            "scryfallId": "6a3bbcf1-d475-4b64-b9e8-14c22643b3e2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96171,
             "text": "Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6a3bbcf1-d475-4b64-b9e8-14c22643b3e2"
+            "uuid": "6ba5e7c1-d093-5966-bb96-91648773efe0"
         },
         {
             "artist": "Ryan Barger",
@@ -2527,7 +2564,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2556,15 +2592,17 @@
                     "text": "An “attacking creature” is one that has been declared as an attacker this combat, or one that was put onto the battlefield attacking this combat. Unless that creature leaves combat, it continues to be an attacking creature through the end of combat step, even if the player it was attacking has left the game, or the planeswalker it was attacking has left combat. There’s no such thing as an attacking creature outside of the combat phase."
                 }
             ],
+            "scryfallId": "7b7283bc-6407-4715-9d0a-19c3cca1dbd0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96174,
             "text": "Return all attacking creatures to their owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7b7283bc-6407-4715-9d0a-19c3cca1dbd0"
+            "uuid": "7eaf2b37-5578-55a1-8c2f-9722511a9410"
         },
         {
             "artist": "Anthony Francisco",
@@ -2590,7 +2628,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2616,11 +2653,13 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9e6b085f-92e8-4916-9f2c-0035b2acd5b9",
             "starter": true,
             "subtypes": [
                 "Leviathan"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96133,
             "text": "Trample\nIslandwalk (This creature can't be blocked as long as defending player controls an Island.)\nShroud (This creature can't be the target of spells or abilities.)",
             "toughness": "11",
             "type": "Artifact Creature — Leviathan",
@@ -2628,7 +2667,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9e6b085f-92e8-4916-9f2c-0035b2acd5b9"
+            "uuid": "d134a4b7-1bfc-5e4e-b1b6-9ff349764a76"
         },
         {
             "artist": "Jon J Muth",
@@ -2654,7 +2693,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2696,18 +2734,20 @@
                     "text": "If there are no other creatures on the battlefield when Man-o’-War enters the battlefield, its ability must target itself."
                 }
             ],
+            "scryfallId": "2ae00721-4918-4999-bc3e-ff2531b42df3",
             "starter": true,
             "subtypes": [
                 "Jellyfish"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96163,
             "text": "When Man-o'-War enters the battlefield, return target creature to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Jellyfish",
             "types": [
                 "Creature"
             ],
-            "uuid": "2ae00721-4918-4999-bc3e-ff2531b42df3"
+            "uuid": "03429e3b-4fa2-5bac-8076-58aff1d39043"
         },
         {
             "artist": "Dallas Williams",
@@ -2733,7 +2773,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2782,19 +2821,21 @@
                     "text": "Scry appears on some spells and abilities with one or more targets. If all of the spell or ability’s targets are illegal when it tries to resolve, it won’t resolve and none of its effects will happen. You won’t scry."
                 }
             ],
+            "scryfallId": "a2f7a05c-0cc2-4126-a1fe-295421f58f17",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96164,
             "text": "When Omenspeaker enters the battlefield, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "a2f7a05c-0cc2-4126-a1fe-295421f58f17"
+            "uuid": "9deaa936-930c-5309-af6f-a56cf5c5f137"
         },
         {
             "artist": "Jason Felix",
@@ -2820,7 +2861,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2847,15 +2887,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fb56f097-0878-40bc-83ea-d28bcd91125b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96173,
             "text": "Return target creature you control and target creature you don't control to their owners' hands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fb56f097-0878-40bc-83ea-d28bcd91125b"
+            "uuid": "7f07e5d5-4e2c-51db-b1ec-a9a7b76a6bfa"
         },
         {
             "artist": "Steven Belledin",
@@ -2879,7 +2921,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2909,18 +2950,20 @@
                     "text": "The value of X is determined as the ability resolves."
                 }
             ],
+            "scryfallId": "48bf5880-b118-4f09-858b-ac4c369945e8",
             "starter": true,
             "subtypes": [
                 "Kraken"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96154,
             "text": "When Scourge of Fleets enters the battlefield, return each creature your opponents control with toughness X or less to its owner's hand, where X is the number of Islands you control.",
             "toughness": "6",
             "type": "Creature — Kraken",
             "types": [
                 "Creature"
             ],
-            "uuid": "48bf5880-b118-4f09-858b-ac4c369945e8"
+            "uuid": "4fa89eb1-ee43-53b7-9790-2124b826dca7"
         },
         {
             "artist": "Adam Paquette",
@@ -2944,7 +2987,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2985,18 +3027,20 @@
                     "text": "An ability that triggers when a creature becomes monstrous won’t trigger if that creature isn’t on the battlefield when its monstrosity ability resolves."
                 }
             ],
+            "scryfallId": "cdd98556-42d5-497e-90c7-f3255c0a8863",
             "starter": true,
             "subtypes": [
                 "Octopus"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96155,
             "text": "Sealock Monster can't attack unless defending player controls an Island.\n{5}{U}{U}: Monstrosity 3. (If this creature isn't monstrous, put three +1/+1 counters on it and it becomes monstrous.)\nWhen Sealock Monster becomes monstrous, target land becomes an Island in addition to its other types.",
             "toughness": "5",
             "type": "Creature — Octopus",
             "types": [
                 "Creature"
             ],
-            "uuid": "cdd98556-42d5-497e-90c7-f3255c0a8863"
+            "uuid": "cfacaae2-72af-521a-bff7-992f1169da79"
         },
         {
             "artist": "Matt Cavotta",
@@ -3022,7 +3066,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3047,18 +3090,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bd577743-43af-4215-8585-52f714694c6e",
             "starter": true,
             "subtypes": [
                 "Surrakar"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96159,
             "text": "When Surrakar Banisher enters the battlefield, you may return target tapped creature to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Surrakar",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd577743-43af-4215-8585-52f714694c6e"
+            "uuid": "ec127626-97d6-5e48-8cb3-0d61b7665f66"
         },
         {
             "artist": "Slawomir Maniak",
@@ -3084,7 +3129,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3107,15 +3151,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a0221f1b-90ed-4dd1-9fdd-84791d30659d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96170,
             "text": "Return all creatures to their owners' hands except for Krakens, Leviathans, Octopuses, and Serpents.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a0221f1b-90ed-4dd1-9fdd-84791d30659d"
+            "uuid": "b4059bae-7005-581d-bbb4-565adc5a5693"
         },
         {
             "artist": "Johann Bodin",
@@ -3141,7 +3187,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3181,15 +3226,17 @@
                     "text": "If you somehow manage to cast Explore when it’s not your turn, you’ll draw a card when it resolves, but you won’t be able to play a land that turn."
                 }
             ],
+            "scryfallId": "bd15599d-62a0-42e2-acf7-63d7220a4418",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96166,
             "text": "You may play an additional land this turn.\nDraw a card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bd15599d-62a0-42e2-acf7-63d7220a4418"
+            "uuid": "f2994982-73f3-5a28-a2a0-5aa5508ff8d3"
         },
         {
             "artist": "John Avon",
@@ -3215,7 +3262,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3244,15 +3290,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "88355a15-09fc-490c-8df3-e957bcf1702e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96168,
             "text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "88355a15-09fc-490c-8df3-e957bcf1702e"
+            "uuid": "41c13c09-e34b-5a53-9583-4835b9029b56"
         },
         {
             "artist": "Ryan Pancoast",
@@ -3278,7 +3326,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3315,18 +3362,20 @@
                     "text": "When a land enters the battlefield under your control, each landfall ability of the permanents you control will trigger. You can put them on the stack in any order. The last ability you put on the stack will be the first one that resolves."
                 }
             ],
+            "scryfallId": "b28e631b-c0df-4274-af66-f525342d268e",
             "starter": true,
             "subtypes": [
                 "Antelope"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96158,
             "text": "Landfall — Whenever a land enters the battlefield under your control, you may gain 2 life.",
             "toughness": "2",
             "type": "Creature — Antelope",
             "types": [
                 "Creature"
             ],
-            "uuid": "b28e631b-c0df-4274-af66-f525342d268e"
+            "uuid": "7a5bcd36-9e48-5299-b221-10d122f9dbf4"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -3352,7 +3401,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3391,18 +3439,20 @@
                     "text": "An ability that triggers when a creature becomes monstrous won’t trigger if that creature isn’t on the battlefield when its monstrosity ability resolves."
                 }
             ],
+            "scryfallId": "788c502d-360e-4610-b5a3-c9ed0af01b1d",
             "starter": true,
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96157,
             "text": "Reach\n{6}{G}: Monstrosity 4. (If this creature isn't monstrous, put four +1/+1 counters on it and it becomes monstrous.)",
             "toughness": "5",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "788c502d-360e-4610-b5a3-c9ed0af01b1d"
+            "uuid": "6c563461-9356-5349-9c50-45d1081be4ec"
         },
         {
             "artist": "Yohann Schepacz",
@@ -3428,7 +3478,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3457,18 +3506,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "eeb44caf-09b6-430d-99e1-3597f703d5e0",
             "starter": true,
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96165,
             "text": "Reach (This creature can block creatures with flying.)\nWhenever Netcaster Spider blocks a creature with flying, Netcaster Spider gets +2/+0 until end of turn.",
             "toughness": "3",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "eeb44caf-09b6-430d-99e1-3597f703d5e0"
+            "uuid": "9599173c-ca05-5de8-a6d3-6e4d36a35c28"
         },
         {
             "artist": "Wayne Reynolds",
@@ -3492,7 +3543,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3529,15 +3579,17 @@
                     "text": "If the first target creature dies that turn, you’ll gain 3 life no matter what caused the creature to die or who controls the creature at that time."
                 }
             ],
+            "scryfallId": "32561f72-bb4d-44b2-9c90-9d1041cf3699",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96167,
             "text": "Choose target creature an opponent controls. When that creature dies this turn, you gain 3 life. Target creature you control fights that creature. (Each deals damage equal to its power to the other.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "32561f72-bb4d-44b2-9c90-9d1041cf3699"
+            "uuid": "d7dd33f8-27b9-5d73-b16d-841a56870c53"
         },
         {
             "artist": "Mark Zug",
@@ -3565,7 +3617,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3596,6 +3647,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "41eed468-cd79-4c88-97d5-72b7818c78cb",
             "starter": true,
             "subtypes": [
                 "Snake",
@@ -3603,13 +3655,14 @@
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96162,
             "text": "When Coiling Oracle enters the battlefield, reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
             "toughness": "1",
             "type": "Creature — Snake Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "41eed468-cd79-4c88-97d5-72b7818c78cb"
+            "uuid": "9c2fa63d-b128-5f42-a92f-022f1af3ed7e"
         },
         {
             "artist": "Eric Deschamps",
@@ -3637,7 +3690,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3663,18 +3715,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d9704f4f-eb5b-4862-8efd-ff1d8fd4177a",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96156,
             "text": "{T}: Untap another target permanent.",
             "toughness": "2",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "d9704f4f-eb5b-4862-8efd-ff1d8fd4177a"
+            "uuid": "e66c4d31-eab2-5005-9737-cb52a06caf07"
         },
         {
             "artist": "Greg Staples",
@@ -3702,7 +3756,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3738,18 +3791,20 @@
                     "text": "If a spell or ability causes you to put cards in your hand without specifically using the word “draw,” Lorescale Coatl’s ability won’t trigger."
                 }
             ],
+            "scryfallId": "4c188862-8b41-4e68-87dc-6304c8e17032",
             "starter": true,
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96160,
             "text": "Whenever you draw a card, you may put a +1/+1 counter on Lorescale Coatl.",
             "toughness": "2",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c188862-8b41-4e68-87dc-6304c8e17032"
+            "uuid": "c9659da7-875a-5c78-9521-c2d9ab526335"
         },
         {
             "artist": "Howard Lyon",
@@ -3777,7 +3832,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3801,18 +3855,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1efbf7be-bc11-4285-a37d-83790b292b3a",
             "starter": true,
             "subtypes": [
                 "Leviathan"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96161,
             "text": "Flying\nNimbus Swimmer enters the battlefield with X +1/+1 counters on it.",
             "toughness": "0",
             "type": "Creature — Leviathan",
             "types": [
                 "Creature"
             ],
-            "uuid": "1efbf7be-bc11-4285-a37d-83790b292b3a"
+            "uuid": "14441673-6594-55e6-b609-8d8ae52eb833"
         },
         {
             "artist": "Chase Stone",
@@ -3840,7 +3896,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3872,15 +3927,17 @@
                     "text": "Your precombat main phase is the main phase that happens immediately after your draw step, not any other main phase."
                 }
             ],
+            "scryfallId": "37fa090d-b756-4de3-8dcb-c20c5fcd4c6a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96172,
             "text": "Counter target spell. At the beginning of your next precombat main phase, add X mana in any combination of colors, where X is that spell's converted mana cost.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "37fa090d-b756-4de3-8dcb-c20c5fcd4c6a"
+            "uuid": "439ae0b2-528b-55f3-9306-4e8568b8a9df"
         },
         {
             "artist": "rk post",
@@ -3908,7 +3965,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3935,18 +3991,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b49187e9-f3c0-4e8a-8d7e-4258a67fa9d4",
             "starter": true,
             "subtypes": [
                 "Leviathan"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 96153,
             "text": "Flying, trample\nShroud (This creature can't be the target of spells or abilities.)",
             "toughness": "6",
             "type": "Creature — Leviathan",
             "types": [
                 "Creature"
             ],
-            "uuid": "b49187e9-f3c0-4e8a-8d7e-4258a67fa9d4"
+            "uuid": "6fc10c1c-1a71-5f17-aaae-8a11a60ba915"
         },
         {
             "artist": "Eytan Zana",
@@ -3974,7 +4032,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4000,27 +4057,29 @@
             "rarity": "uncommon",
             "rulings": [
                 {
-                    "date": "2017-03-14",
-                    "text": "Urban Evolution’s effect allows you to play an additional land during your main phase. Doing so follows the normal timing rules for playing lands. In particular, you don’t get to play a land as Urban Evolution resolves; Urban Evolution fully resolves first and draws three cards, perhaps including a land you’ll play later."
+                    "date": "2018-12-07",
+                    "text": "Urban Evolution’s effect allows you to play an additional land during your main phase. Doing so follows the normal timing rules for playing lands. In particular, you don’t get to play a land as Urban Evolution resolves; Urban Evolution fully resolves first and you draw three cards, perhaps including a land you’ll play later."
                 },
                 {
-                    "date": "2017-03-14",
+                    "date": "2018-12-07",
                     "text": "The effects of multiple Urban Evolutions in the same turn are cumulative. They’re also cumulative with other effects that let you play additional lands, such as the one from Explore."
                 },
                 {
-                    "date": "2017-03-14",
+                    "date": "2018-12-07",
                     "text": "If you somehow manage to cast Urban Evolution when it’s not your turn, you’ll draw three cards when it resolves, but you won’t be able to play a land that turn."
                 }
             ],
+            "scryfallId": "6167aa4f-666d-4908-b2e5-a30a131d2727",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96169,
             "text": "Draw three cards. You may play an additional land this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6167aa4f-666d-4908-b2e5-a30a131d2727"
+            "uuid": "873f0725-cc3a-5efd-8fb3-7788936fc61c"
         },
         {
             "artist": "Steven Belledin",
@@ -4042,7 +4101,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4097,15 +4155,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "107cd283-de27-494f-90b8-0dec55745255",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96176,
             "text": "{T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "107cd283-de27-494f-90b8-0dec55745255"
+            "uuid": "2557460f-efec-5fd9-86f0-c5439615dbcf"
         },
         {
             "artist": "James Zapata",
@@ -4127,7 +4187,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4159,15 +4218,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "973c2d21-f81a-432e-a4a4-53a764e1a6ff",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 96175,
             "text": "{T}: Add {C}{C}. Activate this ability only if you control five or more lands.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "973c2d21-f81a-432e-a4a4-53a764e1a6ff"
+            "uuid": "5996ccff-1e4e-590f-9dcb-5fe2e1b214b5"
         },
         {
             "artist": "Steven Belledin",
@@ -4181,7 +4242,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4233,7 +4293,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -4245,8 +4304,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4260,6 +4321,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f8123a70-0c28-4e8b-9e13-d6b5c7eb54f4",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -4272,7 +4334,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f8123a70-0c28-4e8b-9e13-d6b5c7eb54f4"
+            "uuid": "118b1f11-6fef-5014-b117-894162d710f5",
+            "variations": [
+                "901b16e1-36d9-5f22-aace-7d2d00e8d040",
+                "ba11d715-8b33-54f8-9590-1e64577b3006"
+            ]
         },
         {
             "artist": "Adam Paquette",
@@ -4286,7 +4352,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4338,7 +4403,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -4350,8 +4414,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4365,6 +4431,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8c1482b0-9792-4c58-a075-26e8f485f78b",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -4377,7 +4444,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "8c1482b0-9792-4c58-a075-26e8f485f78b"
+            "uuid": "901b16e1-36d9-5f22-aace-7d2d00e8d040",
+            "variations": [
+                "118b1f11-6fef-5014-b117-894162d710f5",
+                "ba11d715-8b33-54f8-9590-1e64577b3006"
+            ]
         },
         {
             "artist": "Raoul Vitale",
@@ -4391,7 +4462,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4443,7 +4513,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -4455,8 +4524,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4470,6 +4541,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e91f9c5d-bad6-4c29-b755-d81aa704cf53",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -4482,7 +4554,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e91f9c5d-bad6-4c29-b755-d81aa704cf53"
+            "uuid": "ba11d715-8b33-54f8-9590-1e64577b3006",
+            "variations": [
+                "118b1f11-6fef-5014-b117-894162d710f5",
+                "901b16e1-36d9-5f22-aace-7d2d00e8d040"
+            ]
         },
         {
             "artist": "Steven Belledin",
@@ -4496,7 +4572,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4551,14 +4626,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4572,6 +4648,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3dc61690-30c6-4374-8777-e1802e9e164c",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4584,7 +4661,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3dc61690-30c6-4374-8777-e1802e9e164c"
+            "uuid": "abec1d53-0f7f-5b7e-bd6a-d5a313b78d03",
+            "variations": [
+                "36a51568-9fdf-542e-997f-8cffa00b0370",
+                "88af6d0a-2961-5069-a901-e5f08cbdeb93"
+            ]
         },
         {
             "artist": "Adam Paquette",
@@ -4598,7 +4679,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4653,14 +4733,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4674,6 +4755,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6a0715a0-dce2-427d-964c-0e179309499d",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4686,7 +4768,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "6a0715a0-dce2-427d-964c-0e179309499d"
+            "uuid": "36a51568-9fdf-542e-997f-8cffa00b0370",
+            "variations": [
+                "abec1d53-0f7f-5b7e-bd6a-d5a313b78d03",
+                "88af6d0a-2961-5069-a901-e5f08cbdeb93"
+            ]
         },
         {
             "artist": "Raoul Vitale",
@@ -4700,7 +4786,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4755,14 +4840,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4776,6 +4862,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7272906c-14f2-4e06-bbea-b461369e151a",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -4788,8 +4875,23 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7272906c-14f2-4e06-bbea-b461369e151a"
-        },
+            "uuid": "88af6d0a-2961-5069-a901-e5f08cbdeb93",
+            "variations": [
+                "abec1d53-0f7f-5b7e-bd6a-d5a313b78d03",
+                "36a51568-9fdf-542e-997f-8cffa00b0370"
+            ]
+        }
+    ],
+    "code": "ddo",
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": null,
+    "name": "Duel Decks: Elspeth vs. Kiora",
+    "releaseDate": "2015-02-27",
+    "tcgplayerGroupId": 1511,
+    "tokens": [
         {
             "artist": "Svetlin Velinov",
             "borderColor": "black",
@@ -4799,72 +4901,20 @@
             "colors": [
                 "W"
             ],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 394407,
             "name": "Soldier",
-            "names": [
+            "number": "66",
+            "power": "1",
+            "reverseRelated": [
                 "Elspeth, Sun's Champion",
                 "Captain of the Watch",
                 "Decree of Justice",
                 "Precinct Captain",
-                "Raise the Alarm",
-                "Soldier"
+                "Raise the Alarm"
             ],
-            "number": "66",
-            "power": "1",
-            "printings": [
-                "DDO",
-                "L13",
-                "PR2",
-                "T10E",
-                "TA25",
-                "TALA",
-                "TC14",
-                "TC16",
-                "TC18",
-                "TCN2",
-                "TDDF",
-                "TDOM",
-                "TE01",
-                "TEMA",
-                "TM10",
-                "TM12",
-                "TM13",
-                "TM15",
-                "TM19",
-                "TMD1",
-                "TMED",
-                "TMM2",
-                "TMM3",
-                "TMMA",
-                "TORI",
-                "TRTR",
-                "TSOM",
-                "TTHS",
-                "TUGL"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Soldier"
-            ],
-            "supertypes": [],
-            "text": "",
+            "scryfallId": "44b4dbfa-2d32-4232-9518-b85df3df708b",
             "toughness": "1",
             "type": "Token Creature — Soldier",
-            "types": [
-                "Token",
-                "Creature"
-            ],
-            "uuid": "44b4dbfa-2d32-4232-9518-b85df3df708b"
+            "uuid": "34494c74-b96f-5d25-90f9-8f0dd4e8a7f7"
         },
         {
             "artist": "Dan Scott",
@@ -4875,54 +4925,18 @@
             "colors": [
                 "U"
             ],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "2015",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "token",
-            "legalities": {},
-            "multiverseId": 394383,
             "name": "Kraken",
-            "names": [
-                "Kiora, the Crashing Wave",
-                "Kraken"
-            ],
             "number": "67",
             "power": "9",
-            "printings": [
-                "DDO",
-                "TA25",
-                "TBNG",
-                "TC14"
+            "reverseRelated": [
+                "Kiora, the Crashing Wave"
             ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Kraken"
-            ],
-            "supertypes": [],
-            "text": "",
+            "scryfallId": "d0cd85cc-ad22-446b-8378-5eb69fee1959",
             "toughness": "9",
             "type": "Token Creature — Kraken",
-            "types": [
-                "Token",
-                "Creature"
-            ],
-            "uuid": "d0cd85cc-ad22-446b-8378-5eb69fee1959"
+            "uuid": "a474459b-b35c-553e-9b37-7b38d30df66c"
         }
     ],
-    "code": "ddo",
-    "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
-    },
-    "mtgoCode": null,
-    "name": "Duel Decks: Elspeth vs. Kiora",
-    "releaseDate": "2015-02-27",
-    "tokens": [],
     "totalSetSize": 67,
     "type": "duel_deck"
 }

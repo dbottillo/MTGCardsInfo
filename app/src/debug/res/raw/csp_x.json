@@ -99,7 +99,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -130,19 +129,21 @@
                     "text": "Adarkar Valkyrie’s ability can target a token creature, but since token creatures cease to exist when they leave the battlefield, it won’t be returned to the battlefield."
                 }
             ],
+            "scryfallId": "ee4336a9-c904-44a3-8cbd-a1fd5fdbcd74",
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 13995,
             "text": "Flying, vigilance\n{T}: When target creature other than Adarkar Valkyrie dies this turn, return that card to the battlefield under your control.",
             "toughness": "5",
             "type": "Snow Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "ee4336a9-c904-44a3-8cbd-a1fd5fdbcd74"
+            "uuid": "0806be51-6405-5b80-8442-db4accf7fa10"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -224,7 +225,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -248,19 +248,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "36638e20-0a1d-4ea3-936c-2ea74add868a",
             "subtypes": [
                 "Griffin"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14009,
             "text": "Flying\n{S}: Boreal Griffin gains first strike until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "2",
             "type": "Snow Creature — Griffin",
             "types": [
                 "Creature"
             ],
-            "uuid": "36638e20-0a1d-4ea3-936c-2ea74add868a"
+            "uuid": "53b07bdd-0ed3-5fa2-932e-9a6b1c92a1d5"
         },
         {
             "artist": "Wayne Reynolds",
@@ -333,7 +335,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -372,16 +373,18 @@
                     "text": "If a creature’s combat damage is assigned to multiple recipients (for example, if it has trample and is blocked by two creatures, and damage is assigned to each of those creatures and to you), you decide how to divide the prevention effect. You may prevent damage that would be dealt to the first creature, the second creature, and/or you, as long as the total amount of that creature’s damage that would be prevented is X."
                 }
             ],
+            "scryfallId": "91d9bb89-d8f8-4dff-8b94-3f7b8aa8f299",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14020,
             "text": "Cumulative upkeep {S} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it. {S} can be paid with one mana from a snow permanent.)\nIf a creature would deal combat damage to you and/or one or more creatures you control, prevent X of that damage, where X is the number of age counters on Cover of Winter.\n{S}: Put an age counter on Cover of Winter.",
             "type": "Snow Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "91d9bb89-d8f8-4dff-8b94-3f7b8aa8f299"
+            "uuid": "3e5f3972-7dd1-53af-94a3-54f8948b5a1b"
         },
         {
             "artist": "Michael Phillippi",
@@ -463,7 +466,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -491,6 +493,7 @@
                     "text": "If you’re dealt damage that causes your life total to become 0 or less, you lose the game before the tokens can be created."
                 }
             ],
+            "scryfallId": "5ea571ae-b9bd-4bd2-9357-52915f0d2f15",
             "subtypes": [
                 "Human",
                 "Soldier"
@@ -498,13 +501,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14022,
             "text": "Whenever you're dealt damage, you may create that many 1/1 white Soldier creature tokens.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5ea571ae-b9bd-4bd2-9357-52915f0d2f15"
+            "uuid": "15f37a6f-527a-58a6-9fd2-fa5c67538a11"
         },
         {
             "artist": "Stephen Tappin",
@@ -586,7 +590,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -609,18 +612,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "421648a0-51c8-45c4-9771-0fd3ccdc69c9",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14031,
             "text": "Other Soldier creatures get +1/+1 and have first strike. (They deal combat damage before creatures without first strike.)",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "421648a0-51c8-45c4-9771-0fd3ccdc69c9"
+            "uuid": "e044e5a2-6c53-5512-aae5-3fe656fcd28c"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -693,7 +698,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -725,18 +729,20 @@
                     "text": "Activated abilities contain a colon. They’re generally written “[Cost]: [Effect].” Some keywords are activated abilities and will have colons in their reminder text."
                 }
             ],
+            "scryfallId": "d372bb70-2d2a-4c44-8f69-4abff8ba7c2a",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14041,
             "text": "Enchant creature\nEnchanted creature can't block, and its activated abilities can't be activated.\n{S}: Enchanted creature gains defender until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "type": "Snow Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d372bb70-2d2a-4c44-8f69-4abff8ba7c2a"
+            "uuid": "47b6505b-1130-58d5-ab2b-1263b715749a"
         },
         {
             "artist": "Brian Despain",
@@ -809,7 +815,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -831,18 +836,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "55742f0f-a894-48c3-82b1-dfc3d8390dc3",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14042,
             "text": "Enchant creature\nCumulative upkeep {S} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it. {S} can be paid with one mana from a snow permanent.)\nEnchanted creature gets +3/+3 for each age counter on Glacial Plating.",
             "type": "Snow Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "55742f0f-a894-48c3-82b1-dfc3d8390dc3"
+            "uuid": "ce3a2c98-f6f5-54f3-b952-08f90254cd75"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -915,7 +922,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -945,6 +951,7 @@
                     "text": "When paying Jötun Grunt’s cumulative upkeep, you may choose a different graveyard for each age counter. For example, if it has three age counters on it, you may put four cards from your graveyard on the bottom of your library and two cards from your opponent’s graveyard on the bottom of their library. However, you can’t put five cards from your graveyard on the bottom of your library and one card from your opponent’s graveyard on the bottom of their library."
                 }
             ],
+            "scryfallId": "5526c510-bd33-4fac-8941-f19bd0997557",
             "subtypes": [
                 "Giant",
                 "Soldier"
@@ -956,7 +963,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5526c510-bd33-4fac-8941-f19bd0997557"
+            "uuid": "1b371106-23df-545b-b153-b9c7291647d2"
         },
         {
             "artist": "Dave Dorman",
@@ -1030,7 +1037,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1053,6 +1059,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1566c8a2-aaca-4ce0-a36b-620ea6f135cb",
             "subtypes": [
                 "Giant"
             ],
@@ -1063,7 +1070,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1566c8a2-aaca-4ce0-a36b-620ea6f135cb"
+            "uuid": "bf9b87e1-cc29-5b8d-9f9c-d9f84713c3a5"
         },
         {
             "artist": "Marcelo Vignali",
@@ -1145,7 +1152,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1168,17 +1174,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "484a4892-fba0-459d-9e72-e82f7e079d78",
             "subtypes": [
                 "Gargoyle"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14064,
             "text": "Flying, first strike\nWhenever Kjeldoran Gargoyle deals damage, you gain that much life.",
             "toughness": "3",
             "type": "Creature — Gargoyle",
             "types": [
                 "Creature"
             ],
-            "uuid": "484a4892-fba0-459d-9e72-e82f7e079d78"
+            "uuid": "1494a0ad-929c-55c3-9f04-c4c4e10822b0"
         },
         {
             "artist": "Dave Dorman",
@@ -1251,7 +1259,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1280,18 +1287,20 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "48b0776b-d1ed-4b0d-9684-99978e3e3b46",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14065,
             "text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\n{T}: Kjeldoran Javelineer deals damage equal to the number of age counters on it to target attacking or blocking creature.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "48b0776b-d1ed-4b0d-9684-99978e3e3b46"
+            "uuid": "63e8ae22-3c4b-5dc1-a531-40d81e6f8e9d"
         },
         {
             "artist": "Carl Critchlow",
@@ -1373,7 +1382,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1397,18 +1405,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bd641b1d-dab8-415b-9655-09e033df761d",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14066,
             "text": "{W}: Kjeldoran Outrider gets +0/+1 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd641b1d-dab8-415b-9655-09e033df761d"
+            "uuid": "40de578d-ff56-5df9-95b9-6c48d304043d"
         },
         {
             "artist": "Michael Phillippi",
@@ -1490,7 +1500,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1513,14 +1522,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "320b2b02-a3ff-4f68-93e6-8539d7caa005",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14067,
             "text": "Creatures you control get +X/+X until end of turn, where X is 1 plus the number of cards named Kjeldoran War Cry in all graveyards.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "320b2b02-a3ff-4f68-93e6-8539d7caa005"
+            "uuid": "7132a440-1c0f-5f12-975e-db8d89ace0b0"
         },
         {
             "artist": "Daren Bader",
@@ -1602,7 +1613,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1625,14 +1635,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "38e8fe10-a4b7-4504-849f-a5c8379e587d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14075,
             "text": "Prevent all damage that black sources and red sources would deal this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "38e8fe10-a4b7-4504-849f-a5c8379e587d"
+            "uuid": "c710dcb6-13f3-5df9-b2be-b243a8ffeb51"
         },
         {
             "artist": "Randy Gallegos",
@@ -1714,7 +1726,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1751,18 +1762,20 @@
                     "text": "If one of the cards that’s revealed to pay the cost leaves its owner’s hand before the ability resolves, it stops being revealed, but the value of X is not affected."
                 }
             ],
+            "scryfallId": "59c55105-bffc-43dc-b5f3-2e6bb9323230",
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14080,
             "text": "{1}, Reveal X white cards from your hand, Sacrifice Martyr of Sands: You gain three times X life.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "59c55105-bffc-43dc-b5f3-2e6bb9323230"
+            "uuid": "d16fe1ff-7ba4-5665-b0be-eef4736ab62d"
         },
         {
             "artist": "Carl Critchlow",
@@ -1844,7 +1857,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1869,17 +1881,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ae4764e1-e47c-4934-86a5-9b432c29a158",
             "subtypes": [
                 "Unicorn"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14106,
             "text": "Sacrifice Ronom Unicorn: Destroy target enchantment.",
             "toughness": "2",
             "type": "Creature — Unicorn",
             "types": [
                 "Creature"
             ],
-            "uuid": "ae4764e1-e47c-4934-86a5-9b432c29a158"
+            "uuid": "0ea6657d-c4f5-5b04-bdde-ea070607759e"
         },
         {
             "artist": "Joel Thomas",
@@ -1961,7 +1975,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1984,19 +1997,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b3ecb728-4b54-47d0-bbef-d39e5f7d172f",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14121,
             "text": "Flying\n{W}, {T}: Tap target creature.",
             "toughness": "1",
             "type": "Snow Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "b3ecb728-4b54-47d0-bbef-d39e5f7d172f"
+            "uuid": "aa95d314-5e8e-5720-9cb0-cdfee2667e24"
         },
         {
             "artist": "Michael Sutfin",
@@ -2078,7 +2093,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2101,14 +2115,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bde59b0e-c75e-455b-b375-e0dac430a6d1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14125,
             "text": "You gain 4 life.\nRecover {1}{W} (When a creature is put into your graveyard from the battlefield, you may pay {1}{W}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bde59b0e-c75e-455b-b375-e0dac430a6d1"
+            "uuid": "5b53078b-80d9-5290-bf12-89844c2b45bc"
         },
         {
             "artist": "Jim Murray",
@@ -2181,7 +2197,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2219,14 +2234,16 @@
                     "text": "You can’t exile a card from your hand to pay for itself. At the time you would pay costs, that card is on the stack, not in your hand."
                 }
             ],
+            "scryfallId": "44c726db-a30a-4e76-9fbf-ec6d5cd7a1ba",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14126,
             "text": "You may exile two white cards from your hand rather than pay this spell's mana cost.\nDestroy all creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "44c726db-a30a-4e76-9fbf-ec6d5cd7a1ba"
+            "uuid": "8cb97c90-1ae1-538a-be35-f7e444113a27"
         },
         {
             "artist": "Christopher Moeller",
@@ -2299,7 +2316,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2323,18 +2339,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "264d120a-d7e2-4b9e-ac85-c66e976c577b",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14131,
             "text": "First strike\nRipple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "264d120a-d7e2-4b9e-ac85-c66e976c577b"
+            "uuid": "8070f087-ed26-5d7a-90c2-a0f1b039313e"
         },
         {
             "artist": "Michael Sutfin",
@@ -2416,7 +2434,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2439,14 +2456,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1f97ef40-9d07-47fa-ad4b-45f26f7351c9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14133,
             "text": "Prevent the next 2 damage that would be dealt to any target this turn.\nDraw a card at the beginning of the next turn's upkeep.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1f97ef40-9d07-47fa-ad4b-45f26f7351c9"
+            "uuid": "6e2d5689-9e84-5680-9a6d-11988cd65e12"
         },
         {
             "artist": "Yokota Katsumi",
@@ -2519,7 +2538,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2541,18 +2559,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1ad7c141-2e20-4891-93a8-1cf309d3b979",
             "subtypes": [
                 "Spirit",
                 "Bear"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14140,
             "text": "Ursine Fylgja enters the battlefield with four healing counters on it.\nRemove a healing counter from Ursine Fylgja: Prevent the next 1 damage that would be dealt to Ursine Fylgja this turn.\n{2}{W}: Put a healing counter on Ursine Fylgja.",
             "toughness": "3",
             "type": "Creature — Spirit Bear",
             "types": [
                 "Creature"
             ],
-            "uuid": "1ad7c141-2e20-4891-93a8-1cf309d3b979"
+            "uuid": "04e1cc85-f43f-5ae5-ab04-7c4ff7e8375c"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -2625,7 +2645,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2656,19 +2675,21 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "884ee8d8-4c0d-4e44-8321-bccd18195693",
             "subtypes": [
                 "Wall"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14144,
             "text": "Defender, flying\nCumulative upkeep—An opponent gains 1 life. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "toughness": "8",
             "type": "Snow Creature — Wall",
             "types": [
                 "Creature"
             ],
-            "uuid": "884ee8d8-4c0d-4e44-8321-bccd18195693"
+            "uuid": "c3d7bf03-eb45-5cab-9ba3-b86abe634fe7"
         },
         {
             "artist": "Jeff Easley",
@@ -2750,7 +2771,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2772,18 +2792,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "368322d7-d399-45e1-8d7f-8001d048071e",
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14145,
             "text": "Protection from black\n{W}: White Shield Crusader gains flying until end of turn.\n{W}{W}: White Shield Crusader gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "368322d7-d399-45e1-8d7f-8001d048071e"
+            "uuid": "64655212-6959-596d-869c-7e19a542a076"
         },
         {
             "artist": "Richard Sardinha",
@@ -2856,7 +2878,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2888,18 +2909,20 @@
                     "text": "The third time Woolly Razorback blocks, its last ice counter will be removed, meaning the combat damage it deals that combat won’t be prevented."
                 }
             ],
+            "scryfallId": "95ed6354-161e-496e-9ac7-74432f9b0818",
             "subtypes": [
                 "Boar",
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14147,
             "text": "Woolly Razorback enters the battlefield with three ice counters on it.\nAs long as Woolly Razorback has an ice counter on it, prevent all combat damage it would deal and it has defender.\nWhenever Woolly Razorback blocks, remove an ice counter from it.",
             "toughness": "7",
             "type": "Creature — Boar Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "95ed6354-161e-496e-9ac7-74432f9b0818"
+            "uuid": "4da15159-86b2-5abd-9ebe-8165f0a3dee1"
         },
         {
             "artist": "Randy Gallegos",
@@ -2981,7 +3004,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3004,19 +3026,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c18bce4a-9afb-4b91-bc9a-d62634b0f8dd",
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 13996,
             "text": "Flying\n{1}{S}: Target creature loses flying until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "c18bce4a-9afb-4b91-bc9a-d62634b0f8dd"
+            "uuid": "2762cd18-1fa1-52e4-bd56-b84dbb6fde2e"
         },
         {
             "artist": "Pete Venters",
@@ -3098,7 +3122,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3129,6 +3152,7 @@
                     "text": "Arcum Dagsson’s ability can target any permanent that’s both an artifact and a creature, such as a Grizzly Bears while Mycosynth Lattice is on the battlefield."
                 }
             ],
+            "scryfallId": "dd9d3ce7-53db-4808-88bc-03c120211f81",
             "subtypes": [
                 "Human",
                 "Artificer"
@@ -3136,13 +3160,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14000,
             "text": "{T}: Target artifact creature's controller sacrifices it. That player may search their library for a noncreature artifact card, put it onto the battlefield, then shuffle their library.",
             "toughness": "2",
             "type": "Legendary Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "dd9d3ce7-53db-4808-88bc-03c120211f81"
+            "uuid": "491302d4-fe3b-5069-acef-68a6181813de"
         },
         {
             "artist": "Stephen Tappin",
@@ -3224,7 +3249,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3259,18 +3283,20 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "18096cdb-0ba9-41e0-b597-c5ed819e7497",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14003,
             "text": "{U}, {T}: Target snow land becomes a 2/2 blue Elemental creature with flying. It's still a land.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "18096cdb-0ba9-41e0-b597-c5ed819e7497"
+            "uuid": "975d32d2-f46e-5265-9d6c-4684ad214f4a"
         },
         {
             "artist": "John Matson",
@@ -3343,7 +3369,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3397,14 +3422,16 @@
                     "text": "If you Commandeer a spell for which Buyback has been paid, the card returns to its owner’s hand."
                 }
             ],
+            "scryfallId": "7e6e6204-c622-4efe-ac4f-8195528cec9c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14017,
             "text": "You may exile two blue cards from your hand rather than pay this spell's mana cost.\nGain control of target noncreature spell. You may choose new targets for it. (If that spell is an artifact, enchantment, or planeswalker, the permanent enters the battlefield under your control.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7e6e6204-c622-4efe-ac4f-8195528cec9c"
+            "uuid": "29299650-246d-5aae-87f4-80820683f496"
         },
         {
             "artist": "Joel Thomas",
@@ -3477,7 +3504,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3499,14 +3525,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0e670f6b-d16e-47fc-a5b7-7ca0d8763644",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14018,
             "text": "Counter target spell.\nRecover {2}{U}{U} (When a creature is put into your graveyard from the battlefield, you may pay {2}{U}{U}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0e670f6b-d16e-47fc-a5b7-7ca0d8763644"
+            "uuid": "34534265-1955-5e33-af35-344f6d8cf8d1"
         },
         {
             "artist": "John Zeleznik",
@@ -3579,7 +3607,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3610,14 +3637,16 @@
                     "text": "If an opponent casts half of a split card (for example, Hit), it won’t be countered if you reveal that same split card. The converted mana cost of a split card is determined by the combined mana cost of its two halves, but the converted mana cost of Hit is determined using only that half’s mana cost."
                 }
             ],
+            "scryfallId": "c329ff2b-0331-4934-a8df-870dd7bf402b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14019,
             "text": "Whenever an opponent casts a spell, you may reveal the top card of your library. If you do, counter that spell if it has the same converted mana cost as the revealed card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c329ff2b-0331-4934-a8df-870dd7bf402b"
+            "uuid": "c503d9fa-1a9a-5f21-9628-816b7f214064"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -3699,7 +3728,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3723,18 +3751,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "954a1e9c-ed2f-4774-b2b7-166052a5c59a",
             "subtypes": [
                 "Yeti",
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14028,
             "text": "Whenever Drelnoch becomes blocked, you may draw two cards.",
             "toughness": "3",
             "type": "Creature — Yeti Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "954a1e9c-ed2f-4774-b2b7-166052a5c59a"
+            "uuid": "29205b5d-cfbb-5033-93ee-e493b1133d31"
         },
         {
             "artist": "Brian Despain",
@@ -3816,7 +3846,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3843,14 +3872,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "cefd9955-a195-4855-a00e-3809b96ca92b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14032,
             "text": "Counter target red or green spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cefd9955-a195-4855-a00e-3809b96ca92b"
+            "uuid": "a7e55f6e-9078-5bd0-8b74-6bcbc642d1bf"
         },
         {
             "artist": "Lars Grant-West",
@@ -3932,7 +3963,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3956,19 +3986,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4ab2f81a-fcbe-44d1-8281-04dd78bb9ea3",
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14035,
             "text": "Flying\n{S}{S}: Frost Raptor gains shroud until end of turn. ({S} can be paid with one mana from a snow permanent. A creature with shroud can't be the target of spells or abilities.)",
             "toughness": "2",
             "type": "Snow Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "4ab2f81a-fcbe-44d1-8281-04dd78bb9ea3"
+            "uuid": "dce3f6ca-cd20-5fa7-95aa-82d9e41a9b1f"
         },
         {
             "artist": "Ralph Horsley",
@@ -4050,7 +4082,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4074,16 +4105,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "72c00743-d208-4aed-939a-d70de2d759b9",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14037,
             "text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature is dealt damage, destroy it.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "72c00743-d208-4aed-939a-d70de2d759b9"
+            "uuid": "949dd1d0-6122-5568-9c4e-554fba292a70"
         },
         {
             "artist": "Ron Spears",
@@ -4165,7 +4198,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4188,6 +4220,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "39916d65-60a6-4da6-8675-8a8ef9505772",
             "subtypes": [
                 "Human",
                 "Wizard"
@@ -4195,13 +4228,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14050,
             "text": "{2}, {T}: Return target permanent to its owner's hand. Activate this ability only if you control four or more snow permanents.",
             "toughness": "3",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "39916d65-60a6-4da6-8675-8a8ef9505772"
+            "uuid": "28683dbb-7638-504c-b389-edd5eb4faa56"
         },
         {
             "artist": "Mark Zug",
@@ -4274,7 +4308,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4297,17 +4330,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a8bd1c2f-dab8-4f22-9400-a0e45618757a",
             "subtypes": [
                 "Leviathan"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14057,
             "text": "Trample\nJokulmorder enters the battlefield tapped.\nWhen Jokulmorder enters the battlefield, sacrifice it unless you sacrifice five lands.\nJokulmorder doesn't untap during your untap step.\nWhenever you play an Island, you may untap Jokulmorder.",
             "toughness": "12",
             "type": "Creature — Leviathan",
             "types": [
                 "Creature"
             ],
-            "uuid": "a8bd1c2f-dab8-4f22-9400-a0e45618757a"
+            "uuid": "17e86d64-f074-548d-bcf5-67c61b40c7c0"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -4389,7 +4424,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4414,17 +4448,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "43e09469-205d-4a60-821c-ceb7ae2e01be",
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14068,
             "text": "Flying\nKrovikan Mist's power and toughness are each equal to the number of Illusions on the battlefield.",
             "toughness": "*",
             "type": "Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "43e09469-205d-4a60-821c-ceb7ae2e01be"
+            "uuid": "af46ad31-60a8-536f-a1b2-3e8559c54ebf"
         },
         {
             "artist": "Nick Percival",
@@ -4498,7 +4534,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4520,16 +4555,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e9ac2469-db92-44e4-8930-96f2c40c60f1",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14071,
             "text": "Enchant creature\nCumulative upkeep {U} or {B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nYou control enchanted creature.\nWhen Krovikan Whispers is put into a graveyard from the battlefield, you lose 2 life for each age counter on it.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e9ac2469-db92-44e4-8930-96f2c40c60f1"
+            "uuid": "893a955e-55b9-5f18-8141-ef6e7d296e9b"
         },
         {
             "artist": "Wayne England",
@@ -4611,7 +4648,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4651,18 +4687,20 @@
                     "text": "If one of the cards that’s revealed to pay the cost leaves its owner’s hand before the ability resolves, it stops being revealed, but the value of X is not affected."
                 }
             ],
+            "scryfallId": "b249136c-94d4-4f65-95a4-d45b4f20429b",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14079,
             "text": "{2}, Reveal X blue cards from your hand, Sacrifice Martyr of Frost: Counter target spell unless its controller pays {X}.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b249136c-94d4-4f65-95a4-d45b4f20429b"
+            "uuid": "ca433b6d-9658-5567-8d34-61e8858781ee"
         },
         {
             "artist": "Dany Orizio",
@@ -4744,7 +4782,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4768,14 +4805,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0669285c-5560-4f49-8d0a-44b8c33e23d0",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14089,
             "text": "Draw two cards, then sacrifice a permanent.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0669285c-5560-4f49-8d0a-44b8c33e23d0"
+            "uuid": "1890090e-b4b6-55b5-bd69-3cd8910251a9"
         },
         {
             "artist": "Kensuke Okabayashi",
@@ -4848,7 +4887,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4876,19 +4914,21 @@
                     "text": "Rimefeather Owl’s last ability affects all permanents with ice counters on them, whether or not it put the ice counters on them."
                 }
             ],
+            "scryfallId": "7e8e3552-a251-4a80-b0bb-a96a9f8a4c56",
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14098,
             "text": "Flying\nRimefeather Owl's power and toughness are each equal to the number of snow permanents on the battlefield.\n{1}{S}: Put an ice counter on target permanent.\nPermanents with ice counters on them are snow.",
             "toughness": "*",
             "type": "Snow Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "7e8e3552-a251-4a80-b0bb-a96a9f8a4c56"
+            "uuid": "7bbdff5d-0c1a-5905-bce3-9300fa31ca94"
         },
         {
             "artist": "Dan Scott",
@@ -4970,7 +5010,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4998,18 +5037,20 @@
                     "text": "Activated abilities contain a colon. They’re generally written “[Cost]: [Effect].” Some keywords are activated abilities and will have colons in their reminder text."
                 }
             ],
+            "scryfallId": "4433653d-5ba9-4cdb-8a0b-69026301bc6f",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14101,
             "text": "{1}, {T}: Counter target activated ability. Activate this ability only if you control four or more snow permanents. (Mana abilities can't be targeted.)",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4433653d-5ba9-4cdb-8a0b-69026301bc6f"
+            "uuid": "b216f8fc-92cb-56e3-8171-81e1715b7c3f"
         },
         {
             "artist": "Ron Spears",
@@ -5091,7 +5132,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5115,18 +5155,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e9cdc06e-1458-4b19-a272-28a3d0453643",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14102,
             "text": "{1}, {T}: You may tap or untap target permanent. Activate this ability only if you control four or more snow permanents.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "e9cdc06e-1458-4b19-a272-28a3d0453643"
+            "uuid": "3eb2bdfa-3eeb-54fe-8479-6c72a3ca7259"
         },
         {
             "artist": "Ron Spencer",
@@ -5208,7 +5250,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5232,19 +5273,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3bf81a39-0a6e-4253-81eb-a24f48253343",
             "subtypes": [
                 "Serpent"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14105,
             "text": "Ronom Serpent can't attack unless defending player controls a snow land.\nWhen you control no snow lands, sacrifice Ronom Serpent.",
             "toughness": "6",
             "type": "Snow Creature — Serpent",
             "types": [
                 "Creature"
             ],
-            "uuid": "3bf81a39-0a6e-4253-81eb-a24f48253343"
+            "uuid": "61439895-38b6-5808-89e4-d7148caba0ff"
         },
         {
             "artist": "Dave Dorman",
@@ -5326,7 +5369,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5349,14 +5391,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "45b6cadf-1974-47c8-98d8-ba413486c3b5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14107,
             "text": "Counter target spell unless its controller pays {2} plus an additional {2} for each card named Rune Snag in each graveyard.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "45b6cadf-1974-47c8-98d8-ba413486c3b5"
+            "uuid": "987fead1-64f8-5fe7-b945-635df6c51768"
         },
         {
             "artist": "Anthony S. Waters",
@@ -5429,7 +5473,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5451,14 +5494,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bfba9fc2-8746-4693-bb75-01b5d78f7fee",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14127,
             "text": "Ripple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)\nReturn target permanent to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bfba9fc2-8746-4693-bb75-01b5d78f7fee"
+            "uuid": "3a1d0c86-b8e1-59ac-8341-7c6bb1ca4888"
         },
         {
             "artist": "Alan Pollack",
@@ -5531,7 +5576,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5564,18 +5608,20 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "8a28c9cb-ae41-4f9c-b3f6-151ef95c81b3",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14132,
             "text": "Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\n{T}: Draw two cards, then put a card from your hand on top of your library.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8a28c9cb-ae41-4f9c-b3f6-151ef95c81b3"
+            "uuid": "3e5621cf-b8c3-54ca-9069-ba3d2e71d18f"
         },
         {
             "artist": "Jeff Miracola",
@@ -5648,7 +5694,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5676,14 +5721,16 @@
                     "text": "Thermal Flux adds or removes the supertype snow from a permanent. Adding or removing a supertype doesn’t affect any other types, supertypes, or subtypes that permanent has."
                 }
             ],
+            "scryfallId": "523ab8a0-906a-43b3-a554-db0d3dcd62d3",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14135,
             "text": "Choose one —\n• Target nonsnow permanent becomes snow until end of turn.\n• Target snow permanent isn't snow until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "523ab8a0-906a-43b3-a554-db0d3dcd62d3"
+            "uuid": "eccab4df-4166-5c44-b495-72d037c88518"
         },
         {
             "artist": "Lars Grant-West",
@@ -5756,7 +5803,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5787,17 +5833,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "81cc1248-85c8-428f-ba08-96d188167eaa",
             "subtypes": [
                 "Sphinx"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14142,
             "text": "Flying\nCumulative upkeep—Discard a card. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhen Vexing Sphinx dies, draw a card for each age counter on it.",
             "toughness": "4",
             "type": "Creature — Sphinx",
             "types": [
                 "Creature"
             ],
-            "uuid": "81cc1248-85c8-428f-ba08-96d188167eaa"
+            "uuid": "79cf4adf-22d5-5fb7-a9f0-73ebd6853ce9"
         },
         {
             "artist": "Dave Kendall",
@@ -5871,7 +5919,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5899,17 +5946,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "6a52b952-6e3b-403b-b355-2af47a282ab6",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14002,
             "text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhenever Balduvian Fallen's cumulative upkeep is paid, it gets +1/+0 until end of turn for each {B} or {R} spent this way.",
             "toughness": "5",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "6a52b952-6e3b-403b-b355-2af47a282ab6"
+            "uuid": "f451c648-8371-5e65-aad8-cc52a42791ad"
         },
         {
             "artist": "Jim Murray",
@@ -5991,7 +6040,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6014,14 +6062,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "312505d7-362e-43cf-bd23-28c248a8b7e1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14014,
             "text": "Destroy target nonsnow creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "312505d7-362e-43cf-bd23-28c248a8b7e1"
+            "uuid": "dd29d89b-4279-59ae-9a74-cf6dc94c2d69"
         },
         {
             "artist": "Jeff Nentrup",
@@ -6103,7 +6153,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6127,19 +6176,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d050c8b9-2b5a-4025-9886-73c418f4e22f",
             "subtypes": [
                 "Shade"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14015,
             "text": "Flying\n{S}: Chilling Shade gets +1/+1 until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "1",
             "type": "Snow Creature — Shade",
             "types": [
                 "Creature"
             ],
-            "uuid": "d050c8b9-2b5a-4025-9886-73c418f4e22f"
+            "uuid": "b6c78804-fd39-5f16-a4c3-b7eb9a7e3d7f"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -6221,7 +6272,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6248,14 +6298,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e72e8728-d0a0-4ee5-87c3-092ca94225e0",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14024,
             "text": "Destroy target green or white creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e72e8728-d0a0-4ee5-87c3-092ca94225e0"
+            "uuid": "84cadd8e-0ad0-578d-963d-f2c619e286f2"
         },
         {
             "artist": "Pete Venters",
@@ -6337,7 +6389,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6361,18 +6412,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8f99ec07-8af7-4e80-9f0e-fa304a94d4b4",
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14027,
             "text": "{T}: Target creature gets -1/-1 until end of turn.\n{4}{B}{B}, {T}, Sacrifice Disciple of Tevesh Szat: Target creature gets -6/-6 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f99ec07-8af7-4e80-9f0e-fa304a94d4b4"
+            "uuid": "8bdc800c-a3e1-53ef-831c-7a7ce699e995"
         },
         {
             "artist": "Volkan Baga",
@@ -6454,7 +6507,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6477,14 +6529,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2d344791-5d5c-40c5-99c7-931954ea39d1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14030,
             "text": "Feast of Flesh deals X damage to target creature and you gain X life, where X is 1 plus the number of cards named Feast of Flesh in all graveyards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2d344791-5d5c-40c5-99c7-931954ea39d1"
+            "uuid": "fac83a22-7874-59e3-8c57-6a6958e374ac"
         },
         {
             "artist": "Paolo Parente",
@@ -6557,7 +6611,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6580,18 +6633,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3407ccbd-788d-4fe3-a039-0497724a94b5",
             "subtypes": [
                 "Human",
                 "Assassin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14040,
             "text": "Sacrifice Garza's Assassin: Destroy target nonblack creature.\nRecover—Pay half your life, rounded up. (When another creature is put into your graveyard from the battlefield, you may pay half your life, rounded up. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "toughness": "2",
             "type": "Creature — Human Assassin",
             "types": [
                 "Creature"
             ],
-            "uuid": "3407ccbd-788d-4fe3-a039-0497724a94b5"
+            "uuid": "0a083a72-8fdc-5967-ad38-da0c8f8e6e4a"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -6664,7 +6719,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6687,14 +6741,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bdb1972f-2ef7-4fe2-8c8e-ab07f48a3176",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14046,
             "text": "Return target creature card from your graveyard to your hand.\nRecover {2}{B} (When a creature is put into your graveyard from the battlefield, you may pay {2}{B}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bdb1972f-2ef7-4fe2-8c8e-ab07f48a3176"
+            "uuid": "7a739f6b-ea42-5d3e-93ee-4603567967ab"
         },
         {
             "artist": "Dave Allsop",
@@ -6776,7 +6832,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6798,17 +6853,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ff8b607d-56c5-4a18-88b5-d5d0f50ef403",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14047,
             "text": "Whenever a creature dies, Gristle Grinner gets +2/+2 until end of turn.",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "ff8b607d-56c5-4a18-88b5-d5d0f50ef403"
+            "uuid": "c4fd708c-7e41-5ffc-9b70-e5ef4c333d7d"
         },
         {
             "artist": "Kensuke Okabayashi",
@@ -6890,7 +6947,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6914,19 +6970,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b8bb97ce-d9cf-47db-93cb-02745ebeb05e",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14048,
             "text": "{1}, Sacrifice a creature: You gain 2 life.",
             "toughness": "2",
             "type": "Snow Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "b8bb97ce-d9cf-47db-93cb-02745ebeb05e"
+            "uuid": "81708045-f595-56ab-8c26-cca448ffbf58"
         },
         {
             "artist": "Mark Zug",
@@ -6999,7 +7057,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7030,6 +7087,7 @@
                     "text": "While Haakon is in your graveyard, you may cast it. This follows the normal rules and timing for casting a creature spell; the only difference is what zone Haakon is being cast from. The spell goes on the stack. You have to pay Haakon’s mana cost and any applicable additional costs. The same applies for Knight cards you cast from your graveyard while Haakon is on the battlefield."
                 }
             ],
+            "scryfallId": "10a7101e-e6c7-40d6-82cb-daa84701d1f8",
             "subtypes": [
                 "Zombie",
                 "Knight"
@@ -7037,13 +7095,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14049,
             "text": "You may cast Haakon, Stromgald Scourge from your graveyard, but not from anywhere else.\nAs long as Haakon is on the battlefield, you may play Knight cards from your graveyard.\nWhen Haakon dies, you lose 2 life.",
             "toughness": "3",
             "type": "Legendary Creature — Zombie Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "10a7101e-e6c7-40d6-82cb-daa84701d1f8"
+            "uuid": "df54cd49-de99-515a-a4e3-0f001229441a"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -7116,7 +7175,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7155,17 +7213,19 @@
                     "text": "The cumulative upkeep trigger doesn’t target what you gain control of, and you don’t choose lands until the ability resolves. Your opponents can not tap lands in response to the choice, but they could respond to the ability by tapping any number of lands before you’ve made any choices."
                 }
             ],
+            "scryfallId": "ad6080b1-b032-4172-8594-4d894a60a80d",
             "subtypes": [
                 "Avatar"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14051,
             "text": "Flying\nCumulative upkeep—Gain control of a land you don't control. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nHerald of Leshrac gets +1/+1 for each land you control but don't own.\nWhen Herald of Leshrac leaves the battlefield, each player gains control of each land they own that you control.",
             "toughness": "4",
             "type": "Creature — Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad6080b1-b032-4172-8594-4d894a60a80d"
+            "uuid": "4676fb92-02c0-5b07-bc38-1115701fb9bf"
         },
         {
             "artist": "Michael Sutfin",
@@ -7238,7 +7298,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7260,14 +7319,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "17597c66-0d9f-41af-9160-0d92be88f450",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14069,
             "text": "Destroy target creature with power 2 or less.\nRecover {1}{B}{B} (When a creature is put into your graveyard from the battlefield, you may pay {1}{B}{B}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "17597c66-0d9f-41af-9160-0d92be88f450"
+            "uuid": "da444b47-e2d5-5d1f-bc2d-cc9e94b83554"
         },
         {
             "artist": "Ralph Horsley",
@@ -7341,7 +7402,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7364,18 +7424,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bd9f046c-b416-4d80-8998-047b98361352",
             "subtypes": [
                 "Human",
                 "Rogue"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 14070,
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd9f046c-b416-4d80-8998-047b98361352"
+            "uuid": "9955417a-8719-5a20-8e93-d312d33dae07"
         },
         {
             "artist": "E. M. Gist",
@@ -7457,7 +7518,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7494,18 +7554,20 @@
                     "text": "If one of the cards that’s revealed to pay the cost leaves its owner’s hand before the ability resolves, it stops being revealed, but the value of X is not affected."
                 }
             ],
+            "scryfallId": "8bba602e-5a81-4da2-99c0-6082f8a981e1",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14078,
             "text": "{1}, Reveal X black cards from your hand, Sacrifice Martyr of Bones: Exile up to X target cards from a single graveyard.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8bba602e-5a81-4da2-99c0-6082f8a981e1"
+            "uuid": "62eb7782-10f1-5e8d-9d43-d4ab7c2e32c0"
         },
         {
             "artist": "Steven Belledin",
@@ -7578,7 +7640,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7605,17 +7666,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "a14802be-f9d4-4984-86e0-537467f37fd7",
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14090,
             "text": "Flying; fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nCumulative upkeep {B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "toughness": "3",
             "type": "Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "a14802be-f9d4-4984-86e0-537467f37fd7"
+            "uuid": "1a8ea704-9b31-57c4-b0d4-b7f162552ced"
         },
         {
             "artist": "Ron Spears",
@@ -7688,7 +7751,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7710,14 +7772,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "978dbf63-0842-4abd-9950-a33aa080971c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14091,
             "text": "Cumulative upkeep {B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nAt the beginning of your end step, draw a card for each age counter on Phyrexian Etchings.\nWhen Phyrexian Etchings is put into a graveyard from the battlefield, you lose 2 life for each age counter on it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "978dbf63-0842-4abd-9950-a33aa080971c"
+            "uuid": "069b5e42-858d-5fce-a8b2-8727a39f8738"
         },
         {
             "artist": "Jeff Nentrup",
@@ -7799,7 +7863,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7821,18 +7884,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e18318fe-b429-459f-9b70-d444b48b8dc7",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14096,
             "text": "Enchant creature\nEnchanted creature gets +2/+1 and has \"{S}: This creature can't be blocked this turn except by snow creatures.\" ({S} can be paid with one mana from a snow permanent.)",
             "type": "Snow Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e18318fe-b429-459f-9b70-d444b48b8dc7"
+            "uuid": "c2b40192-9c96-5f23-8775-8bfe17e5bce7"
         },
         {
             "artist": "Dave Kendall",
@@ -7914,7 +7979,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7938,19 +8002,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6877469b-f14e-4121-aa5d-6cea92ab7278",
             "subtypes": [
                 "Skeleton"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14097,
             "text": "{S}: Regenerate Rimebound Dead. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "1",
             "type": "Snow Creature — Skeleton",
             "types": [
                 "Creature"
             ],
-            "uuid": "6877469b-f14e-4121-aa5d-6cea92ab7278"
+            "uuid": "96e98f35-3094-5846-a026-8ac89f43cf7a"
         },
         {
             "artist": "Wayne England",
@@ -8023,7 +8089,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8057,14 +8122,16 @@
                     "text": "You can’t exile a card from your hand to pay for itself. At the time you would pay costs, that card is on the stack, not in your hand."
                 }
             ],
+            "scryfallId": "4b14b97d-122b-453a-9e5f-129404f96440",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14119,
             "text": "You may exile two black cards from your hand rather than pay this spell's mana cost.\nSoul Spike deals 4 damage to any target and you gain 4 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4b14b97d-122b-453a-9e5f-129404f96440"
+            "uuid": "16f5ad8f-4fab-55f8-a71b-c45a0f90174b"
         },
         {
             "artist": "Volkan Baga",
@@ -8146,7 +8213,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8168,18 +8234,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a5baeff5-40e9-47b6-85a8-3a6548565b5f",
             "subtypes": [
                 "Zombie",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14124,
             "text": "Protection from white\n{B}: Stromgald Crusader gains flying until end of turn.\n{B}{B}: Stromgald Crusader gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Zombie Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "a5baeff5-40e9-47b6-85a8-3a6548565b5f"
+            "uuid": "d0260a13-8485-5221-9bee-3bc0abfed3d4"
         },
         {
             "artist": "Hideaki Takamura",
@@ -8252,7 +8320,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8274,14 +8341,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1eb7cb72-24f7-433b-9858-26009189daaa",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14128,
             "text": "Ripple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)\nTarget player discards a card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1eb7cb72-24f7-433b-9858-26009189daaa"
+            "uuid": "c8c5ba9e-bc96-5c72-b814-05627e9f9cce"
         },
         {
             "artist": "Dan Dos Santos",
@@ -8363,7 +8432,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8395,18 +8463,20 @@
                     "text": "All damage (not just combat damage and not just first-strike combat damage) that would be dealt to Tresserhorn Skyknight by creatures with first strike is prevented."
                 }
             ],
+            "scryfallId": "b852d9f9-069d-419a-b8d1-db30c72aaac6",
             "subtypes": [
                 "Zombie",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14139,
             "text": "Flying\nPrevent all damage that would be dealt to Tresserhorn Skyknight by creatures with first strike.",
             "toughness": "3",
             "type": "Creature — Zombie Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "b852d9f9-069d-419a-b8d1-db30c72aaac6"
+            "uuid": "17ccd371-c27e-526e-aaae-95acaa550fb5"
         },
         {
             "artist": "E. M. Gist",
@@ -8479,7 +8549,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8511,17 +8580,19 @@
                     "text": "Cards exiled with Void Maw that would go to the graveyard but have that replaced by an effect such as Leyline of the Void are considered new objects. They can not be used to activate Void Maw’s ability again."
                 }
             ],
+            "scryfallId": "ba464b81-2633-4422-a4b5-3593dfb7e7aa",
             "subtypes": [
                 "Horror"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14143,
             "text": "Trample\nIf another creature would die, exile it instead.\nPut a card exiled with Void Maw into its owner's graveyard: Void Maw gets +2/+2 until end of turn.",
             "toughness": "5",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "ba464b81-2633-4422-a4b5-3593dfb7e7aa"
+            "uuid": "c2769d69-8ad4-5a20-979d-6d84e7dd1b96"
         },
         {
             "artist": "Kev Walker",
@@ -8603,7 +8674,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8632,19 +8702,21 @@
                     "text": "Zombie Musher can’t be blocked as long as defending player controls a snow land."
                 }
             ],
+            "scryfallId": "51cf9ade-1c3d-4104-98fa-3c6a8cccc088",
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14148,
             "text": "Snow landwalk (This creature can't be blocked as long as defending player controls a snow land.)\n{S}: Regenerate Zombie Musher. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "51cf9ade-1c3d-4104-98fa-3c6a8cccc088"
+            "uuid": "a441f731-1a95-57f1-970f-17f8e5168915"
         },
         {
             "artist": "John Matson",
@@ -8726,7 +8798,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8748,14 +8819,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6716c980-bd89-4297-a843-9c3e18178b47",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14004,
             "text": "Target attacking creature gets +X/+0 until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6716c980-bd89-4297-a843-9c3e18178b47"
+            "uuid": "e1fbb010-7470-5dfd-8e3e-8cf5c32d2a8a"
         },
         {
             "artist": "Paolo Parente",
@@ -8828,7 +8901,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8880,18 +8952,20 @@
                     "text": "The attacking creature will become unblocked only if the targeted creature was the only one that blocked it this combat, even if all the other creatures that were blocking it are no longer on the battlefield or are no longer blocking it (even those removed with other Balduvian Warlords’ abilities)."
                 }
             ],
+            "scryfallId": "a3286dbd-c8b8-45cb-98e4-d572289f2c14",
             "subtypes": [
                 "Human",
                 "Barbarian"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14005,
             "text": "{T}: Remove target blocking creature from combat. Creatures it was blocking that hadn't become blocked by another creature this combat become unblocked, then it blocks an attacking creature of your choice. Activate this ability only during the declare blockers step.",
             "toughness": "2",
             "type": "Creature — Human Barbarian",
             "types": [
                 "Creature"
             ],
-            "uuid": "a3286dbd-c8b8-45cb-98e4-d572289f2c14"
+            "uuid": "759ef514-3bb5-5d36-b9a2-c97bbfa9521f"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -8973,7 +9047,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9003,14 +9076,16 @@
                     "text": "Any of this mana that isn’t spent during your upkeep step will be removed before your draw step begins. You cannot save it to be spent on the card you will draw this turn."
                 }
             ],
+            "scryfallId": "41bab8de-6e0f-4ccd-a303-01e9c8c82d3f",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14011,
             "text": "Cumulative upkeep—Add {R}. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "41bab8de-6e0f-4ccd-a303-01e9c8c82d3f"
+            "uuid": "9e40d2a3-8041-595a-afb3-a79401293f0a"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -9092,7 +9167,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9114,14 +9188,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6a892711-a1a4-4402-957f-92077d00320d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14021,
             "text": "Destroy target Plains or Island. Cryoclasm deals 3 damage to that land's controller.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6a892711-a1a4-4402-957f-92077d00320d"
+            "uuid": "84b6e21e-161c-5eb1-9ad6-3c46736aa7fc"
         },
         {
             "artist": "Nick Percival",
@@ -9195,7 +9271,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9223,17 +9298,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "b347f1bf-6167-4c59-bfa6-3e921874ab9a",
             "subtypes": [
                 "Ooze"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14029,
             "text": "Trample\nCumulative upkeep {R} or {G} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nEarthen Goo gets +1/+1 for each age counter on it.",
             "toughness": "2",
             "type": "Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "b347f1bf-6167-4c59-bfa6-3e921874ab9a"
+            "uuid": "ebaad77a-563a-5601-9d4e-3cba3d3f9000"
         },
         {
             "artist": "Stephen Tappin",
@@ -9306,7 +9383,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9349,14 +9425,16 @@
                     "text": "You can’t exile a card from your hand to pay for itself. At the time you would pay costs, that card is on the stack, not in your hand."
                 }
             ],
+            "scryfallId": "f3223ef9-787a-40ac-8ab2-79ac75664aa2",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14038,
             "text": "You may exile two red cards from your hand rather than pay this spell's mana cost.\nUntap all creatures that attacked this turn. After this main phase, there is an additional combat phase followed by an additional main phase.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f3223ef9-787a-40ac-8ab2-79ac75664aa2"
+            "uuid": "59b45f75-239a-5c11-a5d6-e5550096bd63"
         },
         {
             "artist": "Warren Mahy",
@@ -9438,7 +9516,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9467,18 +9544,20 @@
                     "text": "If a spell or ability is cast or activated that would have Goblin Furrier deal damage to a snow creature, and Goblin Furrier leaves the battlefield before it resolves, the damage won’t be prevented."
                 }
             ],
+            "scryfallId": "4f8ec9c1-da73-44fb-9e30-5279a7ed4e7e",
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14043,
             "text": "Prevent all damage that Goblin Furrier would deal to snow creatures.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f8ec9c1-da73-44fb-9e30-5279a7ed4e7e"
+            "uuid": "03736936-bf59-56dd-9082-76d51971dbf1"
         },
         {
             "artist": "Christopher Rush",
@@ -9560,7 +9639,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9584,6 +9662,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0254a437-5240-40ca-bf7b-d30b95942bf5",
             "subtypes": [
                 "Goblin",
                 "Warrior"
@@ -9591,13 +9670,14 @@
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14044,
             "text": "{T}: Target creature can't block this turn.\n{S}: Goblin Rimerunner gains haste until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "2",
             "type": "Snow Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "0254a437-5240-40ca-bf7b-d30b95942bf5"
+            "uuid": "dd85aaf8-88a0-540c-a944-76f58e8a4501"
         },
         {
             "artist": "Yokota Katsumi",
@@ -9679,7 +9759,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9711,18 +9790,20 @@
                     "text": "Creatures with the Reach ability (such as Giant Spider) can block this because they don’t actually have Flying."
                 }
             ],
+            "scryfallId": "77697b16-7faa-400d-a865-732c8b0d3d41",
             "subtypes": [
                 "Elemental",
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14045,
             "text": "Greater Stone Spirit can't be blocked by creatures with flying.\n{2}{R}: Until end of turn, target creature gets +0/+2 and gains \"{R}: This creature gets +1/+0 until end of turn.\"",
             "toughness": "4",
             "type": "Creature — Elemental Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "77697b16-7faa-400d-a865-732c8b0d3d41"
+            "uuid": "b4ca5cf3-f351-5657-a5e3-375f6c43b948"
         },
         {
             "artist": "Warren Mahy",
@@ -9804,7 +9885,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9827,14 +9907,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6cf90fc3-b08b-4261-a194-d6b06fdd59d8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14054,
             "text": "Destroy target artifact or land.\nRecover {R}{R} (When a creature is put into your graveyard from the battlefield, you may pay {R}{R}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6cf90fc3-b08b-4261-a194-d6b06fdd59d8"
+            "uuid": "2b3cc784-91f2-5e5f-91da-96faac2b7d90"
         },
         {
             "artist": "Wayne England",
@@ -9907,7 +9989,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9946,18 +10027,20 @@
                     "text": "The Minotaur’s last two abilities will trigger whenever you win or lose any coin flip. For example, if you cast Stitch in Time, one of the Minotaur’s abilities will trigger."
                 }
             ],
+            "scryfallId": "963f45d7-ce84-47af-ae1c-727172a31f0f",
             "subtypes": [
                 "Minotaur",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14061,
             "text": "Cumulative upkeep—Flip a coin. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhenever you win a coin flip, Karplusan Minotaur deals 1 damage to any target.\nWhenever you lose a coin flip, Karplusan Minotaur deals 1 damage to any target of an opponent's choice.",
             "toughness": "3",
             "type": "Creature — Minotaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "963f45d7-ce84-47af-ae1c-727172a31f0f"
+            "uuid": "1c0e139e-6cb1-5cc6-b751-425729a43290"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -10039,7 +10122,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10064,6 +10146,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "602610ce-8f42-4a1d-8f6e-92424d9d637c",
             "subtypes": [
                 "Wolverine",
                 "Beast"
@@ -10071,13 +10154,14 @@
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14063,
             "text": "Whenever Karplusan Wolverine becomes blocked, you may have it deal 1 damage to any target.",
             "toughness": "1",
             "type": "Snow Creature — Wolverine Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "602610ce-8f42-4a1d-8f6e-92424d9d637c"
+            "uuid": "a9a49a6b-cf4f-5c12-8031-c4184a4693e2"
         },
         {
             "artist": "John Avon",
@@ -10159,7 +10243,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10186,18 +10269,20 @@
                     "text": "If Lightning Serpent enters the battlefield without X being paid because an effect puts it onto the battlefield or an effect lets you cast it without paying its mana cost, then X is 0."
                 }
             ],
+            "scryfallId": "f6b4f4b6-51cd-4ae0-9585-82ad964853ba",
             "subtypes": [
                 "Elemental",
                 "Serpent"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14072,
             "text": "Trample, haste\nLightning Serpent enters the battlefield with X +1/+0 counters on it.\nAt the beginning of the end step, sacrifice Lightning Serpent.",
             "toughness": "1",
             "type": "Creature — Elemental Serpent",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6b4f4b6-51cd-4ae0-9585-82ad964853ba"
+            "uuid": "281b5e5d-1fa9-5a6f-9307-592f26e5b5c3"
         },
         {
             "artist": "Luca Zontini",
@@ -10270,7 +10355,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10312,14 +10396,16 @@
                     "text": "When Lightning Storm leaves the stack, its charge counters go away."
                 }
             ],
+            "scryfallId": "c9c0388e-a04c-4757-a06d-8e8046f5a783",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14073,
             "text": "Lightning Storm deals X damage to any target, where X is 3 plus the number of charge counters on Lightning Storm.\nDiscard a land card: Put two charge counters on Lightning Storm. You may choose a new target for it. Any player may activate this ability but only if Lightning Storm is on the stack.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c9c0388e-a04c-4757-a06d-8e8046f5a783"
+            "uuid": "b92c5203-2987-5c52-a77b-610048f57fe2"
         },
         {
             "artist": "Brian Snõddy",
@@ -10401,7 +10487,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10431,19 +10516,21 @@
                     "text": "Each creature with at least one of those subtypes gets +2/+2 from Lovisa Coldeyes’ ability, regardless of how many of those subtypes it has. For example, a 3/3 Mistform Ultimus would become 5/5, not 9/9."
                 }
             ],
+            "scryfallId": "b11bdd7d-0b85-4b63-89c9-9e865c680bd4",
             "subtypes": [
                 "Human"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14074,
             "text": "Each creature that's a Barbarian, a Warrior, or a Berserker gets +2/+2 and has haste.",
             "toughness": "3",
             "type": "Legendary Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "b11bdd7d-0b85-4b63-89c9-9e865c680bd4"
+            "uuid": "e570c8f4-0a97-59cd-9d2e-52dc01899d75"
         },
         {
             "artist": "Matt Cavotta",
@@ -10516,7 +10603,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10555,14 +10641,16 @@
                     "text": "Magmatic Core’s effect is mandatory. At the end of your turn, if the only creatures on the battlefield are yours, you must have Magmatic Core deal damage to at least one of them."
                 }
             ],
+            "scryfallId": "98db70f9-1feb-4932-97be-02db824eda70",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14076,
             "text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nAt the beginning of your end step, Magmatic Core deals X damage divided as you choose among any number of target creatures, where X is the number of age counters on it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "98db70f9-1feb-4932-97be-02db824eda70"
+            "uuid": "f468d57c-e399-57f0-82f2-18cef0308ed9"
         },
         {
             "artist": "Ralph Horsley",
@@ -10644,7 +10732,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10680,18 +10767,20 @@
                     "text": "If one of the cards that’s revealed to pay the cost leaves its owner’s hand before the ability resolves, it stops being revealed, but the value of X is not affected."
                 }
             ],
+            "scryfallId": "600a2cd2-166a-4fd8-838d-e513534b7cb0",
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14077,
             "text": "{2}, Reveal X red cards from your hand, Sacrifice Martyr of Ashes: Martyr of Ashes deals X damage to each creature without flying.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "600a2cd2-166a-4fd8-838d-e513534b7cb0"
+            "uuid": "d6106c84-4aa0-5877-9e37-3b4a811d1d31"
         },
         {
             "artist": "Wayne Reynolds",
@@ -10773,7 +10862,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10797,19 +10885,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8d6cfa21-75b1-4380-b0fc-a7450699660f",
             "subtypes": [
                 "Yeti"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14086,
             "text": "{2}{S}: Target snow creature gains first strike until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Yeti",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d6cfa21-75b1-4380-b0fc-a7450699660f"
+            "uuid": "5384cbc4-7379-58e5-9683-937455fe6a2c"
         },
         {
             "artist": "Alan Pollack",
@@ -10891,7 +10981,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10915,18 +11004,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "746eaf30-3ded-4a9f-a4ec-1925edcc8e94",
             "subtypes": [
                 "Orc",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14087,
             "text": "{T}, Sacrifice a creature: Orcish Bloodpainter deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Orc Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "746eaf30-3ded-4a9f-a4ec-1925edcc8e94"
+            "uuid": "0eaeb2cf-10c2-5a01-82e3-c3dc0b54f3a2"
         },
         {
             "artist": "Jeff Easley",
@@ -10999,7 +11090,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11027,19 +11117,21 @@
                     "text": "Rimescale Dragon’s last ability affects all permanents with ice counters on them, whether or not it put the ice counters on them."
                 }
             ],
+            "scryfallId": "113d0342-0ba2-46b0-bda5-6a9fe4dcad3e",
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14100,
             "text": "Flying\n{2}{S}: Tap target creature and put an ice counter on it. ({S} can be paid with one mana from a snow permanent.)\nCreatures with ice counters on them don't untap during their controllers' untap steps.",
             "toughness": "5",
             "type": "Snow Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "113d0342-0ba2-46b0-bda5-6a9fe4dcad3e"
+            "uuid": "918b7e77-07b1-59d7-ad73-8ff11042707d"
         },
         {
             "artist": "Dany Orizio",
@@ -11121,7 +11213,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11143,14 +11234,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c062caf7-f0eb-44db-9f74-e6711a13fada",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14103,
             "text": "Add {R}{R}, then add {R} for each card named Rite of Flame in each graveyard.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c062caf7-f0eb-44db-9f74-e6711a13fada"
+            "uuid": "3f670648-4c6a-5136-8fb6-ea48fcdca7f6"
         },
         {
             "artist": "Christopher Moeller",
@@ -11232,7 +11325,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11254,14 +11346,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b3d6d42a-7607-4361-acc4-7f3cb956bfc9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14113,
             "text": "Skred deals damage to target creature equal to the number of snow permanents you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b3d6d42a-7607-4361-acc4-7f3cb956bfc9"
+            "uuid": "301020ad-6704-5ae2-999a-7bdd16e049b4"
         },
         {
             "artist": "Brian Snõddy",
@@ -11334,7 +11428,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11362,19 +11455,21 @@
                     "text": "If either Stalking Yeti or the targeted creature is no longer on the battlefield when the enters-the-battlefield triggered ability resolves, the ability does nothing."
                 }
             ],
+            "scryfallId": "4af53d0b-ac60-4519-a6f4-c67899bcfdd6",
             "subtypes": [
                 "Yeti"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14122,
             "text": "When Stalking Yeti enters the battlefield, if it's on the battlefield, it deals damage equal to its power to target creature an opponent controls and that creature deals damage equal to its power to Stalking Yeti.\n{2}{S}: Return Stalking Yeti to its owner's hand. Activate this ability only any time you could cast a sorcery. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Yeti",
             "types": [
                 "Creature"
             ],
-            "uuid": "4af53d0b-ac60-4519-a6f4-c67899bcfdd6"
+            "uuid": "799138f5-ef03-5570-be78-55580c5d4a5c"
         },
         {
             "artist": "Ron Spencer",
@@ -11447,7 +11542,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11472,14 +11566,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9974a543-7429-458b-a24f-c84cbffbb54d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14129,
             "text": "Ripple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)\nSurging Flame deals 2 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9974a543-7429-458b-a24f-c84cbffbb54d"
+            "uuid": "ddd3bc06-1181-5d52-8d84-cdab1a5bd9d4"
         },
         {
             "artist": "Dan Dos Santos",
@@ -11561,7 +11657,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11585,19 +11680,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c09475e9-d6c1-4d4b-905e-40bc30405725",
             "subtypes": [
                 "Slug"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14136,
             "text": "{S}: Thermopod gains haste until end of turn. ({S} can be paid with one mana from a snow permanent.)\nSacrifice a creature: Add {R}.",
             "toughness": "3",
             "type": "Snow Creature — Slug",
             "types": [
                 "Creature"
             ],
-            "uuid": "c09475e9-d6c1-4d4b-905e-40bc30405725"
+            "uuid": "7647a354-2e32-5a0e-a709-7f4cfbb5424c"
         },
         {
             "artist": "Daren Bader",
@@ -11670,7 +11767,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11713,18 +11809,20 @@
                     "text": "You can’t exile a card from your hand to pay for itself. At the time you would pay costs, that card is on the stack, not in your hand."
                 }
             ],
+            "scryfallId": "e0f3ba39-5b4d-4a7c-9215-7e349aecbeb3",
             "subtypes": [
                 "Elf",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 13997,
             "text": "You may exile two green cards from your hand rather than pay this spell's mana cost.\nAllosaurus Rider's power and toughness are each equal to 1 plus the number of lands you control.",
             "toughness": "1+*",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "e0f3ba39-5b4d-4a7c-9215-7e349aecbeb3"
+            "uuid": "398f3952-cdb5-5a7c-9d8a-44611f2b54b1"
         },
         {
             "artist": "Dave Kendall",
@@ -11798,7 +11896,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11827,18 +11924,20 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "8da62ada-b7cd-4110-a213-281f00fca3e7",
             "subtypes": [
                 "Cat",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 13999,
             "text": "Trample\nCumulative upkeep {G} or {W} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhen Arctic Nishoba dies, you gain 2 life for each age counter on it.",
             "toughness": "6",
             "type": "Creature — Cat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8da62ada-b7cd-4110-a213-281f00fca3e7"
+            "uuid": "8f8f8e70-1fa8-57e7-8c14-9ae4e2110aea"
         },
         {
             "artist": "Darrell Riche",
@@ -11911,7 +12010,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11935,17 +12033,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d757b3ad-b808-4506-934e-727e065f66c1",
             "subtypes": [
                 "Aurochs"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14001,
             "text": "Trample\nWhen Aurochs Herd enters the battlefield, you may search your library for an Aurochs card, reveal it, and put it into your hand. If you do, shuffle your library.\nWhenever Aurochs Herd attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.",
             "toughness": "4",
             "type": "Creature — Aurochs",
             "types": [
                 "Creature"
             ],
-            "uuid": "d757b3ad-b808-4506-934e-727e065f66c1"
+            "uuid": "e9f8685d-be2b-5b3d-ae6f-18290791ca14"
         },
         {
             "artist": "Marcelo Vignali",
@@ -12027,7 +12127,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12051,6 +12150,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "05231fa1-47b8-49aa-9393-ec4d8384c41b",
             "subtypes": [
                 "Centaur",
                 "Warrior"
@@ -12058,13 +12158,14 @@
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14007,
             "text": "{S}: Boreal Centaur gets +1/+1 until end of turn. Activate this ability only once each turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "2",
             "type": "Snow Creature — Centaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "05231fa1-47b8-49aa-9393-ec4d8384c41b"
+            "uuid": "d284f630-1375-5525-aac8-3f3ccb2d8e42"
         },
         {
             "artist": "Dan Dos Santos",
@@ -12146,7 +12247,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12169,6 +12269,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "473d3633-6dc7-4026-a50e-3ea76b9e8c20",
             "subtypes": [
                 "Elf",
                 "Druid"
@@ -12176,13 +12277,14 @@
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14008,
             "text": "{T}: Add {C}.",
             "toughness": "1",
             "type": "Snow Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "473d3633-6dc7-4026-a50e-3ea76b9e8c20"
+            "uuid": "7114b6af-b083-5a21-b624-0c27316808e2"
         },
         {
             "artist": "rk post",
@@ -12264,7 +12366,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12292,17 +12393,19 @@
                     "text": "If a permanent is enchanted with an Aura such as Confiscate when Brooding Saurian’s ability resolves, the enchanted permanent’s owner will regain control of it. The Aura will not be removed. The Aura will still be controlled by its owner, but its effect will be overridden."
                 }
             ],
+            "scryfallId": "252ef807-f861-4dcf-8e52-9260301c729a",
             "subtypes": [
                 "Lizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14012,
             "text": "At the beginning of each end step, each player gains control of all nontoken permanents they own.",
             "toughness": "4",
             "type": "Creature — Lizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "252ef807-f861-4dcf-8e52-9260301c729a"
+            "uuid": "03620ee2-2085-549f-a02d-ab11a917b3fb"
         },
         {
             "artist": "Kev Walker",
@@ -12384,7 +12487,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12413,17 +12515,19 @@
                     "text": "Abilities of Aurochs care about other creatures that have creature type Aurochs, which includes (but is not limited to) the Ice Age card namedAurochs."
                 }
             ],
+            "scryfallId": "2d59bd4a-006b-4dd8-ab33-d931196f3a8a",
             "subtypes": [
                 "Aurochs"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14013,
             "text": "Trample\nWhenever Bull Aurochs attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.",
             "toughness": "1",
             "type": "Creature — Aurochs",
             "types": [
                 "Creature"
             ],
-            "uuid": "2d59bd4a-006b-4dd8-ab33-d931196f3a8a"
+            "uuid": "eaf62309-d891-59bb-9a6f-da3d3b0b8a6c"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -12496,7 +12600,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12517,14 +12620,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4bafb0b4-9f01-4c67-add4-a0ffe0a3a691",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14033,
             "text": "Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nSnow permanents don't untap during their controllers' untap steps.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4bafb0b4-9f01-4c67-add4-a0ffe0a3a691"
+            "uuid": "9ac30fd1-ff25-5a93-aced-290d8f08800f"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -12606,7 +12711,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12639,19 +12743,21 @@
                     "text": "If Frostweb Spider somehow blocks more than one creature with flying during the same combat, its ability will trigger multiple times."
                 }
             ],
+            "scryfallId": "48574974-bdbb-40e8-916a-44c54b08b501",
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14036,
             "text": "Reach (This creature can block creatures with flying.)\nWhenever Frostweb Spider blocks a creature with flying, put a +1/+1 counter on Frostweb Spider at end of combat.",
             "toughness": "3",
             "type": "Snow Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "48574974-bdbb-40e8-916a-44c54b08b501"
+            "uuid": "d1b1c596-805b-5135-9baa-7f9a0dd1be2e"
         },
         {
             "artist": "Steven Belledin",
@@ -12724,7 +12830,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12751,14 +12856,16 @@
                     "text": "The converted mana cost of the creature you find must be exactly equal to the number of age counters on Hibernation’s End."
                 }
             ],
+            "scryfallId": "093ab03a-99e3-4596-a19a-033845f77a93",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14052,
             "text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhenever you pay Hibernation's End's cumulative upkeep, you may search your library for a creature card with converted mana cost equal to the number of age counters on Hibernation's End and put it onto the battlefield. If you do, shuffle your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "093ab03a-99e3-4596-a19a-033845f77a93"
+            "uuid": "196660a2-6259-5c61-b35d-ba1b61fdac0a"
         },
         {
             "artist": "Richard Sardinha",
@@ -12840,7 +12947,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12863,14 +12969,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "79cea55d-8ef3-44a5-894e-967f1e97fc02",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14055,
             "text": "Search your library for a snow land card and put it onto the battlefield tapped. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "79cea55d-8ef3-44a5-894e-967f1e97fc02"
+            "uuid": "2333e937-0f82-5ee9-874f-51140fb9459e"
         },
         {
             "artist": "Dan Scott",
@@ -12952,7 +13060,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12977,17 +13084,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "44d27fdf-690b-4e93-8412-4f6fb0ed43db",
             "subtypes": [
                 "Yeti"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14062,
             "text": "Karplusan Strider can't be the target of blue or black spells.",
             "toughness": "4",
             "type": "Creature — Yeti",
             "types": [
                 "Creature"
             ],
-            "uuid": "44d27fdf-690b-4e93-8412-4f6fb0ed43db"
+            "uuid": "5436e13f-4a55-5691-9bd6-4af54df2ae93"
         },
         {
             "artist": "Dan Scott",
@@ -13069,7 +13178,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13105,18 +13213,20 @@
                     "text": "Each card that’s revealed to pay the cost remains revealed until the ability leaves the stack."
                 }
             ],
+            "scryfallId": "375fc47b-9a1b-4540-9c07-09e4e92ab974",
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14081,
             "text": "{1}, Reveal X green cards from your hand, Sacrifice Martyr of Spores: Target creature gets +X/+X until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "375fc47b-9a1b-4540-9c07-09e4e92ab974"
+            "uuid": "a7f130f6-03ed-55ee-8de7-4c863b798ba0"
         },
         {
             "artist": "Chippy",
@@ -13198,7 +13308,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13220,14 +13329,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bf4ff91d-acc1-4be7-a327-58fcb036b452",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14084,
             "text": "Destroy target artifact or enchantment.\nDraw a card at the beginning of the next turn's upkeep.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bf4ff91d-acc1-4be7-a327-58fcb036b452"
+            "uuid": "aab79d76-d9ab-57e6-b327-3b83c2a0f29f"
         },
         {
             "artist": "Kev Walker",
@@ -13309,7 +13420,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13333,19 +13443,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "bd5fd0ee-2350-4eb0-8417-700459879f74",
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14085,
             "text": "Whenever Ohran Viper deals combat damage to a creature, destroy that creature at end of combat.\nWhenever Ohran Viper deals combat damage to a player, you may draw a card.",
             "toughness": "3",
             "type": "Snow Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd5fd0ee-2350-4eb0-8417-700459879f74"
+            "uuid": "e1c3da6e-e2e3-57d8-820b-0fd0934c0dd6"
         },
         {
             "artist": "Jim Pavelec",
@@ -13427,7 +13539,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13478,17 +13589,19 @@
                     "text": "While searching your library, you must keep your library in the same order until you shuffle it. This order could matter if you tap Millikin for mana, for example, to pay for a Panglacial Wurm you cast from your library."
                 }
             ],
+            "scryfallId": "063bb28b-5e32-4f31-a208-16b653edf413",
             "subtypes": [
                 "Wurm"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14088,
             "text": "Trample\nWhile you're searching your library, you may cast Panglacial Wurm from your library.",
             "toughness": "5",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "063bb28b-5e32-4f31-a208-16b653edf413"
+            "uuid": "9b9c29f7-d8d6-508a-9174-35ead2d976f8"
         },
         {
             "artist": "Daren Bader",
@@ -13561,7 +13674,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13583,14 +13695,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c5dded16-e516-430e-a528-c49a483f03b4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14095,
             "text": "Target creature gets +3/+3 until end of turn.\nRecover {1}{G} (When a creature is put into your graveyard from the battlefield, you may pay {1}{G}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c5dded16-e516-430e-a528-c49a483f03b4"
+            "uuid": "2316a3b2-fc95-5dd6-92a8-f50937af4629"
         },
         {
             "artist": "Brian Despain",
@@ -13663,7 +13777,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13695,19 +13808,21 @@
                     "text": "Abilities of Aurochs care about other creatures that have creature type Aurochs, which includes (but is not limited to) the Ice Age card namedAurochs."
                 }
             ],
+            "scryfallId": "3844b3f8-2d42-4265-b2dd-fa888492efff",
             "subtypes": [
                 "Aurochs"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14099,
             "text": "Trample\nWhenever Rimehorn Aurochs attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.\n{2}{S}: Target creature blocks target creature this turn if able. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Aurochs",
             "types": [
                 "Creature"
             ],
-            "uuid": "3844b3f8-2d42-4265-b2dd-fa888492efff"
+            "uuid": "33ece697-5bc6-557c-b549-2f847728b5f3"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -13780,7 +13895,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13813,17 +13927,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "e5b4b14c-e6fa-4cd2-9be7-fa2a2df05de1",
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14104,
             "text": "Protection from snow\nCumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "toughness": "6",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "e5b4b14c-e6fa-4cd2-9be7-fa2a2df05de1"
+            "uuid": "a578d65c-c91e-59d8-b70b-a0f0add13adf"
         },
         {
             "artist": "Ron Spencer",
@@ -13896,7 +14012,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13923,16 +14038,18 @@
                     "text": "If Shape of the Wiitigo leaves the battlefield but the creature doesn’t, the +1/+1 counters stay on the creature."
                 }
             ],
+            "scryfallId": "5436d55d-d2d0-4f22-b399-93f1d48e080f",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14110,
             "text": "Enchant creature\nWhen Shape of the Wiitigo enters the battlefield, put six +1/+1 counters on enchanted creature.\nAt the beginning of your upkeep, put a +1/+1 counter on enchanted creature if it attacked or blocked since your last upkeep. Otherwise, remove a +1/+1 counter from it.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5436d55d-d2d0-4f22-b399-93f1d48e080f"
+            "uuid": "5694c566-e4c2-5d73-91fb-15a4228ca1ed"
         },
         {
             "artist": "Pete Venters",
@@ -14005,7 +14122,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14044,17 +14160,19 @@
                     "text": "Paying cumulative upkeep is always optional. If it’s not paid, the permanent with cumulative upkeep is sacrificed. Partial payments of the total cumulative upkeep cost can’t be made. For example, if a permanent with “cumulative upkeep {1}” has three age counters on it when its cumulative upkeep ability triggers, it gets another age counter and then its controller chooses to either pay {4} or sacrifice the permanent."
                 }
             ],
+            "scryfallId": "d16535ae-6e03-4992-9459-d31626a3222e",
             "subtypes": [
                 "Treefolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14111,
             "text": "Trample\nCumulative upkeep—Put a +1/+1 counter on a creature an opponent controls. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "toughness": "5",
             "type": "Creature — Treefolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "d16535ae-6e03-4992-9459-d31626a3222e"
+            "uuid": "b40ea289-2f1d-5bcb-8bb5-7d4fab6e27aa"
         },
         {
             "artist": "Warren Mahy",
@@ -14136,7 +14254,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14160,18 +14277,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "df2ed9f3-50b1-493b-9c14-0f8ddb4d8c57",
             "subtypes": [
                 "Ape",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14112,
             "text": "Discard a land card: Simian Brawler gets +1/+1 until end of turn.",
             "toughness": "3",
             "type": "Creature — Ape Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "df2ed9f3-50b1-493b-9c14-0f8ddb4d8c57"
+            "uuid": "c2bdf0de-24a9-515f-9a7d-1375a5417261"
         },
         {
             "artist": "Jim Nelson",
@@ -14253,7 +14372,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14281,14 +14399,16 @@
                     "text": "If Sound the Call resolves while all graveyards are empty, first a 1/1 token is created, then the Sound the Call card is put into your graveyard, which makes the token 2/2. Although the token is momentarily 1/1, state-based actions aren’t checked until after the Sound the Call card used to create the token is in a graveyard. For example, if Night of Souls’ Betrayal is on the battlefield, the Wolf will momentarily be 0/0. By the time state-based actions are checked, it will be 1/1, so it will remain on the battlefield."
                 }
             ],
+            "scryfallId": "ae586221-c13c-4f4e-83ae-9b1ab0aeae61",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14120,
             "text": "Create a 1/1 green Wolf creature token. It has \"This creature gets +1/+1 for each card named Sound the Call in each graveyard.\"",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ae586221-c13c-4f4e-83ae-9b1ab0aeae61"
+            "uuid": "241d0f48-2e52-5d41-8ea4-213e199f264a"
         },
         {
             "artist": "Christopher Rush",
@@ -14371,7 +14491,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14394,17 +14513,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8aa585b7-cf7e-4f04-9490-1e6c53631647",
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14123,
             "text": "Reach (This creature can block creatures with flying.)\n{R}: Steam Spitter gets +1/+0 until end of turn.",
             "toughness": "5",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "8aa585b7-cf7e-4f04-9490-1e6c53631647"
+            "uuid": "8ef3f831-a444-53e3-80ef-f0d9ab142f0d"
         },
         {
             "artist": "Luca Zontini",
@@ -14477,7 +14598,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14500,16 +14620,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "aa51adee-b343-4a03-8fa0-0d86244db5b7",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14130,
             "text": "Enchant creature\nEnchanted creature gets +2/+2.\nRipple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "aa51adee-b343-4a03-8fa0-0d86244db5b7"
+            "uuid": "ef0195d3-bd09-5b1f-ad87-0932a09f9ebd"
         },
         {
             "artist": "Hideaki Takamura",
@@ -14584,7 +14706,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14617,19 +14738,21 @@
                     "text": "If Blizzard Specter’s first mode is chosen, the player who was dealt damage chooses the permanent to return to hand when the ability resolves. A permanent with hexproof or protection from black may be chosen this way."
                 }
             ],
+            "scryfallId": "d925746c-4bba-4d50-aeee-3a3bfd165a2e",
             "subtypes": [
                 "Specter"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14006,
             "text": "Flying\nWhenever Blizzard Specter deals combat damage to a player, choose one —\n• That player returns a permanent they control to its owner's hand.\n• That player discards a card.",
             "toughness": "3",
             "type": "Snow Creature — Specter",
             "types": [
                 "Creature"
             ],
-            "uuid": "d925746c-4bba-4d50-aeee-3a3bfd165a2e"
+            "uuid": "2bc78570-1e46-5480-b3cf-24f7efa9175a"
         },
         {
             "artist": "Joel Thomas",
@@ -14713,7 +14836,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14742,17 +14864,19 @@
                     "text": "For example, for Deepfire Elemental to destroy a creature with converted mana cost 4 would cost {4}+{4}+{1} = {9}."
                 }
             ],
+            "scryfallId": "a26cf431-b79b-4619-9d19-bc4557f2f9bf",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14025,
             "text": "{X}{X}{1}: Destroy target artifact or creature with converted mana cost X.",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "a26cf431-b79b-4619-9d19-bc4557f2f9bf"
+            "uuid": "5f4f2e01-6397-57ec-ab11-bf02612bafd4"
         },
         {
             "artist": "Heather Hudson",
@@ -14838,7 +14962,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14861,19 +14984,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0072cf13-284b-4fb8-ab2c-b2e15388a30a",
             "subtypes": [
                 "Faerie"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14026,
             "text": "Flying\n{1}{S}: Snow creatures you control get +1/+1 until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "3",
             "type": "Snow Creature — Faerie",
             "types": [
                 "Creature"
             ],
-            "uuid": "0072cf13-284b-4fb8-ab2c-b2e15388a30a"
+            "uuid": "38c6fb5e-9add-5a99-b2ca-dd2d923f4169"
         },
         {
             "artist": "Darrell Riche",
@@ -14950,7 +15075,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14974,19 +15098,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3570143b-183b-4ae2-8806-3d0c4cd7406e",
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14039,
             "text": "Flying, haste\nWhenever a creature dealt damage by Garza Zol, Plague Queen this turn dies, put a +1/+1 counter on Garza Zol.\nWhenever Garza Zol deals combat damage to a player, you may draw a card.",
             "toughness": "5",
             "type": "Legendary Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "3570143b-183b-4ae2-8806-3d0c4cd7406e"
+            "uuid": "996f7cc8-094c-55db-be33-7c2d970be2ab"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -15070,7 +15196,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15102,18 +15227,20 @@
                     "text": "The creature doesn’t enter the battlefield with a +1/+1 counter on it. It enters the battlefield, then the ability triggers. If either that creature or Juniper Order Ranger leaves the battlefield before the ability resolves, the remaining creature will still get a +1/+1 counter."
                 }
             ],
+            "scryfallId": "ce582ff6-6a21-418d-b72c-4402a43be7dc",
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14060,
             "text": "Whenever another creature enters the battlefield under your control, put a +1/+1 counter on that creature and a +1/+1 counter on Juniper Order Ranger.",
             "toughness": "4",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "ce582ff6-6a21-418d-b72c-4402a43be7dc"
+            "uuid": "66bc5882-b89d-54b9-8f65-82e55aa08982"
         },
         {
             "artist": "Jeff Miracola",
@@ -15199,7 +15326,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15224,6 +15350,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9257bb20-de32-460c-96cf-375acb6a0b1d",
             "subtypes": [
                 "Orc",
                 "Shaman"
@@ -15231,13 +15358,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14109,
             "text": "Whenever another nontoken creature you control dies, create a 3/1 black and red Graveborn creature token with haste.",
             "toughness": "3",
             "type": "Legendary Creature — Orc Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "9257bb20-de32-460c-96cf-375acb6a0b1d"
+            "uuid": "f5df6935-d0ff-538f-bbdf-c6a8a20b04c6"
         },
         {
             "artist": "rk post",
@@ -15323,7 +15451,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15355,17 +15482,19 @@
                     "text": "Tamanoa’s ability triggers no matter who the recipient of the damage is: another player, a creature, or even you. If a noncreature source you control deals damage to you that drops your life total to 0 or less, you’ll lose the game before Tamanoa’s ability can resolve."
                 }
             ],
+            "scryfallId": "6d32955b-cbf6-429b-9513-17ca75d4ec2c",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14134,
             "text": "Whenever a noncreature source you control deals damage, you gain that much life.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d32955b-cbf6-429b-9513-17ca75d4ec2c"
+            "uuid": "0384091d-1ef7-5211-93a6-270d7e39bd32"
         },
         {
             "artist": "Rebekah Lynn",
@@ -15449,7 +15578,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15486,14 +15614,16 @@
                     "text": "If the creature exiled with Vanish into Memory isn’t a creature card (for example, a crewed Vehicle), that card will still be returned to the battlefield, but not as a creature. Since the card returned to the battlefield has no toughness, you discard no cards."
                 }
             ],
+            "scryfallId": "6da89cfe-274f-452d-a5ca-b034534898c7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14141,
             "text": "Exile target creature. You draw cards equal to that creature's power. At the beginning of your next upkeep, return that card to the battlefield under its owner's control. If you do, discard cards equal to that creature's toughness.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6da89cfe-274f-452d-a5ca-b034534898c7"
+            "uuid": "0d219704-d61b-5c8c-bd5a-bfff5f6983b5"
         },
         {
             "artist": "Anthony S. Waters",
@@ -15577,7 +15707,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15601,17 +15730,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b63632a0-1493-4a72-917c-aae1600c6230",
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 14146,
             "text": "Trample\nWilderness Elemental's power is equal to the number of nonbasic lands your opponents control.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "b63632a0-1493-4a72-917c-aae1600c6230"
+            "uuid": "04c3db60-a74a-5bd2-913e-f17274240771"
         },
         {
             "artist": "Pete Venters",
@@ -15697,7 +15828,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -15731,6 +15861,7 @@
                     "text": "An Aura put onto the battlefield without being cast doesn’t target anything, so it could be attached to a permanent with shroud or hexproof. However, the Aura’s enchant ability restricts what it can be attached to."
                 }
             ],
+            "scryfallId": "4b1255e9-c0b8-4757-a857-b27a99dd4930",
             "subtypes": [
                 "Human",
                 "Wizard"
@@ -15738,13 +15869,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14149,
             "text": "Flying\nWhenever Zur the Enchanter attacks, you may search your library for an enchantment card with converted mana cost 3 or less and put it onto the battlefield. If you do, shuffle your library.",
             "toughness": "4",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4b1255e9-c0b8-4757-a857-b27a99dd4930"
+            "uuid": "95e0c080-4f88-5852-8d60-fd18de5f3922"
         },
         {
             "artist": "Mark Romanoski",
@@ -15822,7 +15954,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15845,16 +15976,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "cdd5015e-fe31-42e3-923d-44b9cdece273",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14016,
             "text": "Coldsteel Heart enters the battlefield tapped.\nAs Coldsteel Heart enters the battlefield, choose a color.\n{T}: Add one mana of the chosen color.",
             "type": "Snow Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cdd5015e-fe31-42e3-923d-44b9cdece273"
+            "uuid": "7730e2c0-4498-5cf1-b649-9fa3cb7299a4"
         },
         {
             "artist": "Matt Cavotta",
@@ -15923,7 +16056,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15962,14 +16094,16 @@
                     "text": "If half of a split card is cast (for example, Hit), and you put one of those split cards into its owner’s graveyard with Jester’s Scepter (for example, Hit/Run), the spell is countered."
                 }
             ],
+            "scryfallId": "7118c2e0-04d6-4a71-8ffd-b9365b154050",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14056,
             "text": "When Jester's Scepter enters the battlefield, exile the top five cards of target player's library face down. You may look at those cards for as long as they remain exiled.\n{2}, {T}, Put a card exiled with Jester's Scepter into its owner's graveyard: Counter target spell if it has the same name as that card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7118c2e0-04d6-4a71-8ffd-b9365b154050"
+            "uuid": "c102a560-a4dc-5e63-87c4-73a48ff44058"
         },
         {
             "artist": "Chippy",
@@ -16047,7 +16181,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16069,14 +16202,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8a720448-017f-4f4a-9501-678245eaed17",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 14082,
             "text": "{T}, Sacrifice Mishra's Bauble: Look at the top card of target player's library. Draw a card at the beginning of the next turn's upkeep.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8a720448-017f-4f4a-9501-678245eaed17"
+            "uuid": "8211efe0-a197-5711-b6f4-390d8bf83cfb"
         },
         {
             "artist": "Stephan Martiniere",
@@ -16154,7 +16289,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16176,12 +16310,14 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "49ff9859-92a4-4732-94bf-6c02b0a57338",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14092,
             "text": "Phyrexian Ironfoot doesn't untap during your untap step.\n{1}{S}: Untap Phyrexian Ironfoot. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "4",
             "type": "Snow Artifact Creature — Construct",
@@ -16189,7 +16325,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "49ff9859-92a4-4732-94bf-6c02b0a57338"
+            "uuid": "0fb8cb9c-f8d1-5454-8dab-95ca6517cf59"
         },
         {
             "artist": "Dave Allsop",
@@ -16267,7 +16403,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16289,12 +16424,14 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9f3cf3d3-101e-4649-9495-8a95507d0283",
             "subtypes": [
                 "Juggernaut"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14093,
             "text": "Phyrexian Snowcrusher attacks each combat if able.\n{1}{S}: Phyrexian Snowcrusher gets +1/+0 until end of turn. ({S} can be paid with one mana from a snow permanent.)",
             "toughness": "5",
             "type": "Snow Artifact Creature — Juggernaut",
@@ -16302,7 +16439,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9f3cf3d3-101e-4649-9495-8a95507d0283"
+            "uuid": "b90ff40f-ee84-59f6-8352-a4a035a172b7"
         },
         {
             "artist": "Brian Snõddy",
@@ -16380,7 +16517,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16407,12 +16543,14 @@
                     "text": "When Phyrexian Soulgorger’s cumulative upkeep ability resolves, you must either sacrifice a different creature for each age counter on Phyrexian Soulgorger or sacrifice it. You may also sacrifice it as part of its own upkeep payment."
                 }
             ],
+            "scryfallId": "9d4325ea-2e84-4871-a8d6-a42b1d3d6765",
             "subtypes": [
                 "Construct"
             ],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14094,
             "text": "Cumulative upkeep—Sacrifice a creature. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
             "toughness": "8",
             "type": "Snow Artifact Creature — Construct",
@@ -16420,7 +16558,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9d4325ea-2e84-4871-a8d6-a42b1d3d6765"
+            "uuid": "9538dbae-61f5-5ff9-a9d5-d99060cb4307"
         },
         {
             "artist": "Rob Alexander",
@@ -16489,7 +16627,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16519,16 +16656,18 @@
                     "text": "If you cast half of a split card (for example, Hit) and reveal another one of those split cards when the ripple ability resolves (for example, Hit // Run), you may cast either half of that split card (Hit or Run) without paying its mana cost."
                 }
             ],
+            "scryfallId": "31412335-110c-449a-9c2f-bff8763a6504",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 14137,
             "text": "Spells you cast have ripple 4. (Whenever you cast a spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as the spell without paying their mana costs. Put the rest on the bottom of your library.)",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "31412335-110c-449a-9c2f-bff8763a6504"
+            "uuid": "0e7c8e58-cb5b-5d3f-be32-b33140242415"
         },
         {
             "artist": "John Avon",
@@ -16609,7 +16748,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16629,16 +16767,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "609b15f6-e65b-46d6-95e8-dc39f25d7efa",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 13998,
             "text": "Arctic Flats enters the battlefield tapped.\n{T}: Add {G} or {W}.",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "609b15f6-e65b-46d6-95e8-dc39f25d7efa"
+            "uuid": "bc20b54b-8c38-54f0-9ecb-2435285ce520"
         },
         {
             "artist": "Heather Hudson",
@@ -16719,7 +16859,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16740,16 +16879,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3f2f8396-72ab-4387-9276-987836427107",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14010,
             "text": "Boreal Shelf enters the battlefield tapped.\n{T}: Add {W} or {U}.",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "3f2f8396-72ab-4387-9276-987836427107"
+            "uuid": "bcb40798-92ef-5cdc-a3f2-f01f01d1c846"
         },
         {
             "artist": "Stephan Martiniere",
@@ -16818,7 +16959,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16830,6 +16970,7 @@
             },
             "multiverseId": 121155,
             "name": "Dark Depths",
+            "names": [],
             "number": "145",
             "originalText": "Dark Depths comes into play with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, put an indestructible legendary 20/20 black Avatar creature token with flying named Marit Lage into play.",
             "originalType": "Legendary Snow Land",
@@ -16842,25 +16983,31 @@
             "rarity": "rare",
             "rulings": [
                 {
-                    "date": "2006-07-15",
-                    "text": "Dark Depths is a land with no mana ability."
+                    "date": "2018-12-07",
+                    "text": "Dark Depths really is a land with no mana ability. It doesn’t tap for colorless mana."
                 },
                 {
-                    "date": "2006-07-15",
-                    "text": "Dark Depths’s last ability is a state trigger. It will not trigger again while the ability is on the stack, but if the ability is countered and Dark Depths is still on the battlefield with no ice counters on it, it will trigger again immediately."
+                    "date": "2018-12-07",
+                    "text": "The last ability of Dark Depths is a state trigger. It won’t trigger again while the ability is on the stack, but if the ability is countered and Dark Depths is still on the battlefield with no ice counters on it, it will trigger again immediately."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If Dark Depths leaves the battlefield before its triggered ability resolves, you won’t be able to sacrifice it, so you won’t create Marit Lage."
                 }
             ],
+            "scryfallId": "92409c3a-fb1a-4205-9fe1-0f5affc7b21d",
             "subtypes": [],
             "supertypes": [
                 "Legendary",
                 "Snow"
             ],
-            "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create a legendary 20/20 black Avatar creature token with flying and indestructible named Marit Lage.",
+            "tcgplayerProductId": 14023,
+            "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
             "type": "Legendary Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "92409c3a-fb1a-4205-9fe1-0f5affc7b21d"
+            "uuid": "aa5a07e2-1976-500c-92ad-d67596b60426"
         },
         {
             "artist": "Jim Pavelec",
@@ -16941,7 +17088,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16961,16 +17107,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e9320033-d8d7-4a01-80db-60de222040e6",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14034,
             "text": "Frost Marsh enters the battlefield tapped.\n{T}: Add {U} or {B}.",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e9320033-d8d7-4a01-80db-60de222040e6"
+            "uuid": "bb309fdc-32dd-5d40-bee8-f165b13f0f3f"
         },
         {
             "artist": "John Avon",
@@ -17051,7 +17199,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17072,16 +17219,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "38bcd111-0830-4fc0-a113-37eb306fb1a0",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14053,
             "text": "Highland Weald enters the battlefield tapped.\n{T}: Add {R} or {G}.",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "38bcd111-0830-4fc0-a113-37eb306fb1a0"
+            "uuid": "7150de76-76e3-5762-a5cd-9dc8288f5d8b"
         },
         {
             "artist": "Daren Bader",
@@ -17150,7 +17299,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17170,16 +17318,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2d8f7396-23d3-48e2-8686-2b59ccbfc7e5",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14083,
             "text": "{T}: Add {C}.\n{4}{S}, {T}, Sacrifice Mouth of Ronom: It deals 4 damage to target creature. ({S} can be paid with one mana from a snow permanent.)",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "2d8f7396-23d3-48e2-8686-2b59ccbfc7e5"
+            "uuid": "7000810c-75ce-54a7-b7f5-6d9b8aea027f"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -17248,7 +17398,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17273,16 +17422,18 @@
                     "text": "If the card isn’t snow, you can’t reveal it. If the card is snow, you don’t have to reveal it. An unrevealed card stays on top of your library."
                 }
             ],
+            "scryfallId": "19e95422-c6fe-4750-916b-43bf22ae193a",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14108,
             "text": "{T}: Add {C}.\n{1}{S}, {T}: Look at the top card of your library. If that card is snow, you may reveal it and put it into your hand. ({S} can be paid with one mana from a snow permanent.)",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "19e95422-c6fe-4750-916b-43bf22ae193a"
+            "uuid": "729f3db1-4063-5ea5-8897-1afbcdb3800d"
         },
         {
             "artist": "Darrell Riche",
@@ -17363,7 +17514,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17383,16 +17533,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4bd8fe2c-2297-4e19-8a87-01eb99b8c6dc",
             "subtypes": [],
             "supertypes": [
                 "Snow"
             ],
+            "tcgplayerProductId": 14138,
             "text": "Tresserhorn Sinks enters the battlefield tapped.\n{T}: Add {B} or {R}.",
             "type": "Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "4bd8fe2c-2297-4e19-8a87-01eb99b8c6dc"
+            "uuid": "8125d39f-418c-5482-9651-13a4a90fe472"
         },
         {
             "artist": "Mark Romanoski",
@@ -17455,7 +17607,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17495,6 +17646,7 @@
                     "text": "Effects that target nonbasic lands can’t target basic snow lands."
                 }
             ],
+            "scryfallId": "b1e3a010-dae3-41b6-8dd8-e31d14c3ac4a",
             "subtypes": [
                 "Plains"
             ],
@@ -17502,12 +17654,13 @@
                 "Basic",
                 "Snow"
             ],
+            "tcgplayerProductId": 14117,
             "text": "({T}: Add {W}.)",
             "type": "Basic Snow Land — Plains",
             "types": [
                 "Land"
             ],
-            "uuid": "b1e3a010-dae3-41b6-8dd8-e31d14c3ac4a"
+            "uuid": "29fb467f-1cf5-5dc8-889e-cb8ac518341a"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -17571,7 +17724,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17611,6 +17763,7 @@
                     "text": "Effects that target nonbasic lands can’t target basic snow lands."
                 }
             ],
+            "scryfallId": "6abf0692-07d1-4b72-af06-93d0e338589d",
             "subtypes": [
                 "Island"
             ],
@@ -17618,12 +17771,13 @@
                 "Basic",
                 "Snow"
             ],
+            "tcgplayerProductId": 14115,
             "text": "({T}: Add {U}.)",
             "type": "Basic Snow Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "6abf0692-07d1-4b72-af06-93d0e338589d"
+            "uuid": "3ca9cbb5-337f-5cea-b869-10c5ea08ee46"
         },
         {
             "artist": "Rob Alexander",
@@ -17686,7 +17840,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17726,6 +17879,7 @@
                     "text": "Effects that target nonbasic lands can’t target basic snow lands."
                 }
             ],
+            "scryfallId": "c4dacaf1-09b8-42bb-8064-990190fdaf81",
             "subtypes": [
                 "Swamp"
             ],
@@ -17733,12 +17887,13 @@
                 "Basic",
                 "Snow"
             ],
+            "tcgplayerProductId": 14118,
             "text": "({T}: Add {B}.)",
             "type": "Basic Snow Land — Swamp",
             "types": [
                 "Land"
             ],
-            "uuid": "c4dacaf1-09b8-42bb-8064-990190fdaf81"
+            "uuid": "5c133ded-8d29-59cf-b63f-e6358c172fa1"
         },
         {
             "artist": "John Zeleznik",
@@ -17801,7 +17956,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17841,6 +17995,7 @@
                     "text": "Effects that target nonbasic lands can’t target basic snow lands."
                 }
             ],
+            "scryfallId": "0dc9a6d1-a1ca-4b8f-894d-71c2a9933f79",
             "subtypes": [
                 "Mountain"
             ],
@@ -17848,12 +18003,13 @@
                 "Basic",
                 "Snow"
             ],
+            "tcgplayerProductId": 14116,
             "text": "({T}: Add {R}.)",
             "type": "Basic Snow Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "0dc9a6d1-a1ca-4b8f-894d-71c2a9933f79"
+            "uuid": "601c0e7d-7519-5f15-a8ee-b392b6333b04"
         },
         {
             "artist": "Jim Nelson",
@@ -17916,7 +18072,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17956,6 +18111,7 @@
                     "text": "Effects that target nonbasic lands can’t target basic snow lands."
                 }
             ],
+            "scryfallId": "838c915d-8153-43c2-b513-dfbe4e9388a5",
             "subtypes": [
                 "Forest"
             ],
@@ -17963,22 +18119,24 @@
                 "Basic",
                 "Snow"
             ],
+            "tcgplayerProductId": 14114,
             "text": "({T}: Add {G}.)",
             "type": "Basic Snow Land — Forest",
             "types": [
                 "Land"
             ],
-            "uuid": "838c915d-8153-43c2-b513-dfbe4e9388a5"
+            "uuid": "dd82f2c3-c6ab-5408-b769-4607197f5198"
         }
     ],
     "code": "csp",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "csp",
     "name": "Coldsnap",
     "releaseDate": "2006-07-21",
+    "tcgplayerGroupId": 24,
     "tokens": [
         {
             "artist": "Stephan Martiniere",
@@ -17995,10 +18153,11 @@
             "reverseRelated": [
                 "Dark Depths"
             ],
+            "scryfallId": "8f5c3863-c876-48a8-9bc8-be20cd61074c",
             "text": "Flying\nIndestructible",
             "toughness": "20",
             "type": "Token Legendary Creature — Avatar",
-            "uuid": "8f5c3863-c876-48a8-9bc8-be20cd61074c"
+            "uuid": "51c224d2-1769-57a9-8a3d-9da5b6a4089c"
         }
     ],
     "totalSetSize": 155,

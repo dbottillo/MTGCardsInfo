@@ -16,7 +16,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -48,19 +47,21 @@
                     "text": "The two cards are exiled as the cost of Grim Lavamancer’s ability is paid. Players can’t respond to the paying of costs by trying to move those cards to another zone."
                 }
             ],
+            "scryfallId": "15db4353-9c46-4fe4-b22e-0cf024aa9dfc",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38674,
             "text": "{R}, {T}, Exile two cards from your graveyard: Grim Lavamancer deals 2 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "15db4353-9c46-4fe4-b22e-0cf024aa9dfc"
+            "uuid": "28ed2197-ce7a-5b7a-8a9f-a4dcc8368661"
         },
         {
             "artist": "Kev Walker",
@@ -77,7 +78,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -106,18 +106,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "64ddf9c7-3d36-4222-a6a1-7739ab6da772",
             "starter": true,
             "subtypes": [
                 "Jackal"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38677,
             "text": "Whenever Jackal Pup is dealt damage, it deals that much damage to you.",
             "toughness": "1",
             "type": "Creature — Jackal",
             "types": [
                 "Creature"
             ],
-            "uuid": "64ddf9c7-3d36-4222-a6a1-7739ab6da772"
+            "uuid": "b8128dec-4f5b-54b9-818a-33c01a5e93d1"
         },
         {
             "artist": "Brom",
@@ -134,7 +136,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -174,18 +175,20 @@
                     "text": "Once Mogg Fanatic has dealt and been dealt combat damage, it’s too late to activate its ability before it’s destroyed."
                 }
             ],
+            "scryfallId": "84e7663d-781a-4b3b-897f-ce442b258c66",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38682,
             "text": "Sacrifice Mogg Fanatic: It deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "84e7663d-781a-4b3b-897f-ce442b258c66"
+            "uuid": "6449c01d-8d57-51ee-9d13-bb74d3eb4427"
         },
         {
             "artist": "John Avon",
@@ -202,7 +205,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -227,18 +229,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f9a8ddf2-03f8-4e6f-8dbb-0e09e1717221",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38688,
             "text": "Trample, haste (This creature can deal excess combat damage to the player or planeswalker it's attacking. This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice Spark Elemental.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "f9a8ddf2-03f8-4e6f-8dbb-0e09e1717221"
+            "uuid": "d96dcb39-58f5-5acb-b263-beb9b3dc1748"
         },
         {
             "artist": "Scott M. Fischer",
@@ -256,7 +260,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -304,18 +307,20 @@
                     "text": "The effect from the ability overwrites other effects that set power and/or toughness if and only if those effects existed before the ability resolved. It will not overwrite effects that modify power or toughness (whether from a static ability, counters, or a resolved spell or ability), nor will it overwrite effects that set power and toughness which come into existence after the ability resolves. Effects that switch the creature’s power and toughness are always applied after any other power or toughness changing effects, including this one, regardless of the order in which they are created."
                 }
             ],
+            "scryfallId": "9a7dd9d7-7b7c-46b9-b78d-7c39d656cfb0",
             "starter": true,
             "subtypes": [
                 "Kithkin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38668,
             "text": "{R/W}: Figure of Destiny becomes a Kithkin Spirit with base power and toughness 2/2.\n{R/W}{R/W}{R/W}: If Figure of Destiny is a Spirit, it becomes a Kithkin Spirit Warrior with base power and toughness 4/4.\n{R/W}{R/W}{R/W}{R/W}{R/W}{R/W}: If Figure of Destiny is a Warrior, it becomes a Kithkin Spirit Warrior Avatar with base power and toughness 8/8, flying, and first strike.",
             "toughness": "1",
             "type": "Creature — Kithkin",
             "types": [
                 "Creature"
             ],
-            "uuid": "9a7dd9d7-7b7c-46b9-b78d-7c39d656cfb0"
+            "uuid": "f4f8e1e2-d49c-508f-ba15-c68eba23081c"
         },
         {
             "artist": "Justin Sweet",
@@ -331,7 +336,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -359,18 +363,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "93ec150e-0460-463b-a8cd-80af54441df0",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38676,
             "text": "Trample, haste\nAt the beginning of the end step, sacrifice Hellspark Elemental.\nUnearth {1}{R} ({1}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "93ec150e-0460-463b-a8cd-80af54441df0"
+            "uuid": "9a8c200c-c90c-5765-8a21-c2decf10a138"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -386,7 +392,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -412,19 +417,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "efb6990b-056c-4bb8-b46e-8fceb4911258",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38680,
             "text": "Vanishing 2 (This creature enters the battlefield with two time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.)\nWhen Keldon Marauders enters the battlefield or leaves the battlefield, it deals 1 damage to target player or planeswalker.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "efb6990b-056c-4bb8-b46e-8fceb4911258"
+            "uuid": "1a423189-1c30-559f-b6e0-b48e10e27f91"
         },
         {
             "artist": "Brom",
@@ -441,7 +448,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -493,18 +499,20 @@
                     "text": "In a Two-Headed Giant game, Mogg Flunkies can attack or block with a creature controlled by your teammate, even if no other creatures you control are attacking or blocking."
                 }
             ],
+            "scryfallId": "f7a3c698-961f-498c-b15b-516976b0e006",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38683,
             "text": "Mogg Flunkies can't attack or block alone.",
             "toughness": "3",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "f7a3c698-961f-498c-b15b-516976b0e006"
+            "uuid": "80af4bba-afa3-502e-be49-9528ec525b59"
         },
         {
             "artist": "Greg Staples",
@@ -521,7 +529,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -548,19 +555,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d42fe083-c2ab-4d67-8b10-8869c5da0b2a",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38667,
             "text": "{T}: Cinder Pyromancer deals 1 damage to target player or planeswalker.\nWhenever you cast a red spell, you may untap Cinder Pyromancer.",
             "toughness": "1",
             "type": "Creature — Elemental Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "d42fe083-c2ab-4d67-8b10-8869c5da0b2a"
+            "uuid": "b6759d6c-e293-51ad-baf7-260fd16f8a77"
         },
         {
             "artist": "Matt Cavotta",
@@ -576,7 +585,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -602,6 +610,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "17e96837-31bd-4598-9c3d-37af1f52b5c3",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -610,13 +619,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 38678,
             "text": "{R}, {T}, Discard a card: Destroy target blue permanent.\n{1}{R}, {T}, Discard a card: Jaya Ballard, Task Mage deals 3 damage to any target. A creature dealt damage this way can't be regenerated this turn.\n{5}{R}{R}, {T}, Discard a card: Jaya Ballard deals 6 damage to each creature and each player.",
             "toughness": "2",
             "type": "Legendary Creature — Human Spellshaper",
             "types": [
                 "Creature"
             ],
-            "uuid": "17e96837-31bd-4598-9c3d-37af1f52b5c3"
+            "uuid": "88ef06dd-3cab-596c-adb9-77bc619bd39f"
         },
         {
             "artist": "rk post",
@@ -633,7 +643,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -660,19 +669,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f4ddb2f9-e31c-4d17-b522-d16f63dba24c",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38692,
             "text": "Haste\n{T}: Vulshok Sorcerer deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "f4ddb2f9-e31c-4d17-b522-d16f63dba24c"
+            "uuid": "e225c8bc-b61b-524d-a578-7cb5fadb120b"
         },
         {
             "artist": "Trevor Claxton",
@@ -688,7 +699,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -726,18 +736,20 @@
                     "text": "The creature is sacrificed at the end of every turn in which it is on the battlefield. There is no choice about what turn to sacrifice it."
                 }
             ],
+            "scryfallId": "240fae0f-a3a2-48a9-a411-79b90230db34",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38662,
             "text": "Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nHaste (This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice Ball Lightning.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "240fae0f-a3a2-48a9-a411-79b90230db34"
+            "uuid": "7f3b1bb6-234c-5f17-8e6c-68900060e5f3"
         },
         {
             "artist": "Dave Allsop",
@@ -756,7 +768,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -781,19 +792,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b2bf6d5b-2bcc-42a0-98db-33faf090df23",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38664,
             "text": "Haste\nWither (This deals damage to creatures in the form of -1/-1 counters.)",
             "toughness": "3",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "b2bf6d5b-2bcc-42a0-98db-33faf090df23"
+            "uuid": "f11ddacb-2840-50cd-96ab-2c8be7984206"
         },
         {
             "artist": "Mark Tedin",
@@ -809,7 +822,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -834,19 +846,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aec38450-81f7-4071-8735-4a21dc6b1c1f",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Barbarian"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38679,
             "text": "Haste\nEcho {2}{R}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen Keldon Champion enters the battlefield, it deals 3 damage to target player or planeswalker.",
             "toughness": "2",
             "type": "Creature — Human Barbarian",
             "types": [
                 "Creature"
             ],
-            "uuid": "aec38450-81f7-4071-8735-4a21dc6b1c1f"
+            "uuid": "d4cbe712-547e-53af-b506-056ee07029b4"
         },
         {
             "artist": "Ryan Yee",
@@ -863,7 +877,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -908,18 +921,20 @@
                     "text": "If you control more than one Fire Servant, the effects are cumulative. Two such effects will cause damage from red instant or sorcery spells you control to be multiplied by four; three such effects will cause damage from red instant or sorcery spells you control to be multiplied by eight."
                 }
             ],
+            "scryfallId": "0a5c7bb2-37ef-4f99-a447-0c6e4d18fd5c",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 38669,
             "text": "If a red instant or sorcery spell you control would deal damage, it deals double that damage instead.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "0a5c7bb2-37ef-4f99-a447-0c6e4d18fd5c"
+            "uuid": "76f2e6b3-839c-5867-8ed7-0a9c60342d97"
         },
         {
             "artist": "Christopher Moeller",
@@ -935,7 +950,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -992,15 +1006,17 @@
                     "text": "If the targeted permanent or player is an illegal target when Chain Lightning tries to resolve, the spell doesn’t resolve. It can’t be copied."
                 }
             ],
+            "scryfallId": "9ca05db2-ad92-4f4a-992d-b7f08f4f9c26",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38666,
             "text": "Chain Lightning deals 3 damage to any target. Then that player or that permanent's controller may pay {R}{R}. If the player does, they may copy this spell and may choose a new target for that copy.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9ca05db2-ad92-4f4a-992d-b7f08f4f9c26"
+            "uuid": "351f064b-2ac9-56ce-b64a-2b650f5adae4"
         },
         {
             "artist": "Christopher Moeller",
@@ -1016,7 +1032,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1053,6 +1068,7 @@
                 "MM2",
                 "P10",
                 "PD2",
+                "PF19",
                 "PRM",
                 "PTC",
                 "SUM",
@@ -1060,15 +1076,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6773a3cf-707f-4bc0-b64d-2a96b70f7975",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38681,
             "text": "Lightning Bolt deals 3 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6773a3cf-707f-4bc0-b64d-2a96b70f7975"
+            "uuid": "06d66444-1f38-53cc-87bb-ae70a5bbb336"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -1085,7 +1103,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1108,15 +1125,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "75ebf5ba-0171-4a9f-8475-4e8715f7e270",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38686,
             "text": "Price of Progress deals damage to each player equal to twice the number of nonbasic lands that player controls.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "75ebf5ba-0171-4a9f-8475-4e8715f7e270"
+            "uuid": "c1557fbc-1f96-5bf7-aa59-2c40aa9602a2"
         },
         {
             "artist": "Dylan Martens",
@@ -1133,7 +1152,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1159,15 +1177,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f7051a0d-dfa0-4290-8e2c-b2a2548da815",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38691,
             "text": "Choose one —\n• Thunderbolt deals 3 damage to target player or planeswalker.\n• Thunderbolt deals 4 damage to target creature with flying.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f7051a0d-dfa0-4290-8e2c-b2a2548da815"
+            "uuid": "23df07d5-a23b-528b-b822-4fb7b03d2e79"
         },
         {
             "artist": "jD",
@@ -1184,7 +1204,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1238,15 +1257,17 @@
                     "text": "If the copy says that it affects “you,” it affects the controller of the copy, not the controller of the original spell. Similarly, if the copy says that it affects an “opponent,” it affects an opponent of the copy’s controller, not an opponent of the original spell’s controller."
                 }
             ],
+            "scryfallId": "02bc4956-32b4-48cd-af04-4f0ad0f893d3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38687,
             "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "02bc4956-32b4-48cd-af04-4f0ad0f893d3"
+            "uuid": "9a6213e4-9931-52f0-83fd-aa9e8811e7fc"
         },
         {
             "artist": "Mark Tedin",
@@ -1263,7 +1284,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1292,15 +1312,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aa49eca7-4c7b-4e3c-9a08-0668d1cbf1ab",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38665,
             "text": "Any player may have Browbeat deal 5 damage to them. If no one does, target player draws three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "aa49eca7-4c7b-4e3c-9a08-0668d1cbf1ab"
+            "uuid": "35a2dadc-99b3-5225-8e46-b736b5166ad8"
         },
         {
             "artist": "Aleksi Briclot",
@@ -1317,7 +1339,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1349,15 +1370,17 @@
                     "text": "The replacement effect applies only to the target player, not to a permanent or player the damage might be redirected to."
                 }
             ],
+            "scryfallId": "d60ce86f-1697-4613-ab7d-cc2fcf3f1810",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38672,
             "text": "Flames of the Blood Hand deals 4 damage to target player or planeswalker. The damage can't be prevented. If that player would gain life this turn, that player gains no life instead.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d60ce86f-1697-4613-ab7d-cc2fcf3f1810"
+            "uuid": "d6ca12ba-de24-5e2e-adf0-eaaf16f77b0c"
         },
         {
             "artist": "Ron Spencer",
@@ -1373,7 +1396,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1403,15 +1425,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6ba0a838-eb60-468d-aa7f-bca4f7764267",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38675,
             "text": "Hammer of Bogardan deals 3 damage to any target.\n{2}{R}{R}{R}: Return Hammer of Bogardan from your graveyard to your hand. Activate this ability only during your upkeep.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6ba0a838-eb60-468d-aa7f-bca4f7764267"
+            "uuid": "7d3391e7-b1cb-5e85-abb0-7ea2be5b7281"
         },
         {
             "artist": "Bradley Williams",
@@ -1427,7 +1451,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1458,15 +1481,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5c05b1f9-5b68-46f1-984d-c5aeea17a6fb",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38685,
             "text": "Destroy target artifact or land. It can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5c05b1f9-5b68-46f1-984d-c5aeea17a6fb"
+            "uuid": "946ecfae-1ff5-5674-80d2-75e1ca331e5b"
         },
         {
             "artist": "Wayne Reynolds",
@@ -1483,7 +1508,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1510,15 +1534,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bd940e36-d97e-4920-826a-ad405f338ff4",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38689,
             "text": "Sudden Impact deals damage to target player equal to the number of cards in that player's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bd940e36-d97e-4920-826a-ad405f338ff4"
+            "uuid": "92815154-a4cd-58e6-8566-e08f1a893200"
         },
         {
             "artist": "Michael Danza",
@@ -1535,7 +1561,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1564,15 +1589,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "14d6bfda-c066-4cc0-b317-3d8c7c168546",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38671,
             "text": "You may sacrifice two Mountains rather than pay this spell's mana cost.\nFireblast deals 4 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "14d6bfda-c066-4cc0-b317-3d8c7c168546"
+            "uuid": "3d6e6e22-bb0f-5a0f-a996-fd0c933f6d1d"
         },
         {
             "artist": "Dave Dorman",
@@ -1588,7 +1615,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1657,15 +1683,17 @@
                     "text": "You can target more than X creatures. However, if the number of legal targets at the time Fireball resolves is greater than X, none of them will be dealt any damage."
                 }
             ],
+            "scryfallId": "e634d8f0-c150-402e-ab69-c2cb54eebb44",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38670,
             "text": "This spell costs {1} more to cast for each target beyond the first.\nFireball deals X damage divided evenly, rounded down, among any number of targets.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e634d8f0-c150-402e-ab69-c2cb54eebb44"
+            "uuid": "a97eee76-1731-5f42-b622-c8b0b68f775c"
         },
         {
             "artist": "John Avon",
@@ -1679,7 +1707,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1699,15 +1726,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b444fbee-82f6-4e73-8068-fce5ec16cc45",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38663,
             "text": "{T}: Add {R}. Barbarian Ring deals 1 damage to you.\nThreshold — {R}, {T}, Sacrifice Barbarian Ring: It deals 2 damage to any target. Activate this ability only if seven or more cards are in your graveyard.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "b444fbee-82f6-4e73-8068-fce5ec16cc45"
+            "uuid": "f4c9f624-e53d-5c88-bcca-55124e875176"
         },
         {
             "artist": "John Avon",
@@ -1721,7 +1750,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1754,15 +1782,17 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "d7cde268-4f49-4c9c-8ba4-59fc9410190f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38673,
             "text": "Ghitu Encampment enters the battlefield tapped.\n{T}: Add {R}.\n{1}{R}: Ghitu Encampment becomes a 2/1 red Warrior creature with first strike until end of turn. It's still a land. (It deals combat damage before creatures without first strike.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "d7cde268-4f49-4c9c-8ba4-59fc9410190f"
+            "uuid": "2037205c-5672-5568-944a-8120ec13d20d"
         },
         {
             "artist": "Fred Fields",
@@ -1776,7 +1806,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1801,15 +1830,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ea882e40-08c9-4185-acf8-decd45b43924",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 38690,
             "text": "Teetering Peaks enters the battlefield tapped.\nWhen Teetering Peaks enters the battlefield, target creature gets +2/+0 until end of turn.\n{T}: Add {R}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ea882e40-08c9-4185-acf8-decd45b43924"
+            "uuid": "3e5ce1ea-c605-5abc-9755-1d9e67cf0a25"
         },
         {
             "artist": "John Avon",
@@ -1823,7 +1854,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1846,7 +1876,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -1886,8 +1915,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -1901,6 +1932,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "59ff1114-04b0-49c6-b0fe-7bdd26afa63e",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -1913,7 +1945,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "59ff1114-04b0-49c6-b0fe-7bdd26afa63e"
+            "uuid": "886dff41-5e04-5a14-8ee2-ee0a7c9a3909",
+            "variations": [
+                "d20bc598-5f5f-5027-ab6d-ed098f9076d2",
+                "6718bc68-00ab-5f3c-af8e-b85804a5827d",
+                "30ad7263-57c7-5630-ac6e-32a02bb13711"
+            ]
         },
         {
             "artist": "Aleksi Briclot",
@@ -1927,7 +1964,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1950,7 +1986,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -1990,8 +2025,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2005,6 +2042,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "096df7a1-823d-46d9-8271-aa26449abe75",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2017,7 +2055,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "096df7a1-823d-46d9-8271-aa26449abe75"
+            "uuid": "d20bc598-5f5f-5027-ab6d-ed098f9076d2",
+            "variations": [
+                "886dff41-5e04-5a14-8ee2-ee0a7c9a3909",
+                "6718bc68-00ab-5f3c-af8e-b85804a5827d",
+                "30ad7263-57c7-5630-ac6e-32a02bb13711"
+            ]
         },
         {
             "artist": "Aleksi Briclot",
@@ -2031,7 +2074,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2054,7 +2096,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2094,8 +2135,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2109,6 +2152,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0b5dc20a-749f-4ee8-9d7b-ea62e6b4dfcc",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2121,7 +2165,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0b5dc20a-749f-4ee8-9d7b-ea62e6b4dfcc"
+            "uuid": "6718bc68-00ab-5f3c-af8e-b85804a5827d",
+            "variations": [
+                "886dff41-5e04-5a14-8ee2-ee0a7c9a3909",
+                "d20bc598-5f5f-5027-ab6d-ed098f9076d2",
+                "30ad7263-57c7-5630-ac6e-32a02bb13711"
+            ]
         },
         {
             "artist": "Richard Wright",
@@ -2135,7 +2184,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2158,7 +2206,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -2198,8 +2245,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2213,6 +2262,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "35248287-ffbc-490d-b7f0-e2d3691e56be",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -2225,18 +2275,24 @@
             "types": [
                 "Land"
             ],
-            "uuid": "35248287-ffbc-490d-b7f0-e2d3691e56be"
+            "uuid": "30ad7263-57c7-5630-ac6e-32a02bb13711",
+            "variations": [
+                "886dff41-5e04-5a14-8ee2-ee0a7c9a3909",
+                "d20bc598-5f5f-5027-ab6d-ed098f9076d2",
+                "6718bc68-00ab-5f3c-af8e-b85804a5827d"
+            ]
         }
     ],
     "code": "pd2",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "pd2",
     "name": "Premium Deck Series: Fire and Lightning",
     "releaseDate": "2010-11-19",
+    "tcgplayerGroupId": 89,
     "tokens": [],
     "totalSetSize": 34,
     "type": "premium_deck"

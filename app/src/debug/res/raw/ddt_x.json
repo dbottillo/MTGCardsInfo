@@ -23,7 +23,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -36,6 +35,7 @@
             "manaCost": "{3}{U}",
             "multiverseId": 438441,
             "name": "Master of Waves",
+            "names": [],
             "number": "1",
             "originalText": "Protection from red\nElemental creatures you control get +1/+1.\nWhen Master of Waves enters the battlefield, create a number of 1/0 blue Elemental creature tokens equal to your devotion to blue. (Each {U} in the mana costs of permanents you control counts toward your devotion to blue.)",
             "originalType": "Creature — Merfolk Wizard",
@@ -76,19 +76,21 @@
                     "text": "If an activated ability or triggered ability has an effect that depends on your devotion to a color, you count the number of mana symbols of that color among the mana costs of permanents you control as the ability resolves. The permanent with that ability will be counted if it’s still on the battlefield at that time."
                 }
             ],
+            "scryfallId": "14cd5387-c6aa-4430-8edb-05da6b4e2ff5",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149164,
             "text": "Protection from red\nElemental creatures you control get +1/+1.\nWhen Master of Waves enters the battlefield, create a number of 1/0 blue Elemental creature tokens equal to your devotion to blue. (Each {U} in the mana costs of permanents you control counts toward your devotion to blue.)",
             "toughness": "1",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "14cd5387-c6aa-4430-8edb-05da6b4e2ff5"
+            "uuid": "db2f3f2c-9023-5929-b5d3-08ee5eef0a54"
         },
         {
             "artist": "Dimitar Marinski",
@@ -114,7 +116,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -139,18 +140,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3c4273f6-bcce-4761-80ef-14cd4fc4bb19",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149167,
             "text": "Put a flood counter on target land. That land is an Island in addition to its other types for as long as it has a flood counter on it. If you control a Merfolk, draw a card.",
             "type": "Tribal Sorcery — Merfolk",
             "types": [
                 "Tribal",
                 "Sorcery"
             ],
-            "uuid": "3c4273f6-bcce-4761-80ef-14cd4fc4bb19"
+            "uuid": "555aec09-9090-5d42-8d26-027696b2bf71"
         },
         {
             "artist": "Ryan Pancoast",
@@ -176,7 +179,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -216,17 +218,19 @@
                     "text": "The enchanted creature can still be untapped in other ways. Claustrophobia will remain attached, and the creature will continue to not untap during its controller’s untap step."
                 }
             ],
+            "scryfallId": "b790af5f-b1bf-4985-8f85-e94d6ab86092",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149298,
             "text": "Enchant creature\nWhen Claustrophobia enters the battlefield, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b790af5f-b1bf-4985-8f85-e94d6ab86092"
+            "uuid": "98813313-9e4b-58e5-83a8-fe9be2a74a4c"
         },
         {
             "artist": "rk post",
@@ -252,7 +256,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -280,15 +283,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5aca3338-30a6-4ce4-b74c-a18144b6efc9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149168,
             "text": "Draw three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5aca3338-30a6-4ce4-b74c-a18144b6efc9"
+            "uuid": "87f05ca4-94fd-5de7-8141-3f4db9b1b95b"
         },
         {
             "artist": "Cliff Childs",
@@ -314,7 +319,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -339,15 +343,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "57dfeab4-d468-45f2-8993-5c3a8f8ab1fe",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149173,
             "text": "Return to their owners' hands all creatures with toughness less than or equal to the number of Islands you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "57dfeab4-d468-45f2-8993-5c3a8f8ab1fe"
+            "uuid": "c99a83fe-3102-5707-b75c-d62357fcd7dc"
         },
         {
             "artist": "Jon Foster",
@@ -373,7 +379,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -411,15 +416,17 @@
                     "text": "A “creature spell” is any spell with the type creature, even if it has other types such as artifact or enchantment. Older cards of type summon are also creature spells."
                 }
             ],
+            "scryfallId": "02ac1e19-3535-49ef-b93d-c52c9e56d046",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149171,
             "text": "Counter target creature spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "02ac1e19-3535-49ef-b93d-c52c9e56d046"
+            "uuid": "2606ee06-8ee1-5b67-851c-1dc8252f2c8e"
         },
         {
             "artist": "Svetlin Velinov",
@@ -443,7 +450,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -469,19 +475,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "90f648d2-27be-4414-9e0a-5a3e4d5067ce",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149153,
             "text": "You may cast Harbinger of the Tides as though it had flash if you pay {2} more to cast it. (You may cast it any time you could cast an instant.)\nWhen Harbinger of the Tides enters the battlefield, you may return target tapped creature an opponent controls to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "90f648d2-27be-4414-9e0a-5a3e4d5067ce"
+            "uuid": "6d193329-ecfb-5793-a14d-0decda42b5e1"
         },
         {
             "artist": "Steven Belledin",
@@ -505,7 +513,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -530,19 +537,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "758a8ca6-1fc1-454a-a2be-9745ac964eb7",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149166,
             "text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\nWhen Inkfathom Divers enters the battlefield, look at the top four cards of your library, then put them back in any order.",
             "toughness": "3",
             "type": "Creature — Merfolk Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "758a8ca6-1fc1-454a-a2be-9745ac964eb7"
+            "uuid": "66cd9f10-73ce-5d8f-b8cb-5da3e996cdbc"
         },
         {
             "artist": "Ryan Pancoast",
@@ -568,7 +577,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -591,18 +599,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b7f3069f-7754-4c4d-9b62-40e3d49eba05",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149154,
             "text": "Other Merfolk creatures you control get +1/+1 and have islandwalk. (They can't be blocked as long as defending player controls an Island.)",
             "toughness": "2",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "b7f3069f-7754-4c4d-9b62-40e3d49eba05"
+            "uuid": "92bfec1b-c0ef-5594-a533-4266b2447f8c"
         },
         {
             "artist": "Austin Hsu",
@@ -628,7 +638,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -669,19 +678,21 @@
                     "text": "You can’t do anything in between drawing a card and discarding a card, including casting or cycling the card you drew."
                 }
             ],
+            "scryfallId": "4768f8d4-b7b5-4372-8b8b-b68073871e33",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149152,
             "text": "{T}: Draw a card, then discard a card.",
             "toughness": "1",
             "type": "Creature — Merfolk Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "4768f8d4-b7b5-4372-8b8b-b68073871e33"
+            "uuid": "4304fdb3-aaa9-5e05-918c-547f1654e5d3"
         },
         {
             "artist": "Jesper Ejsing",
@@ -707,7 +718,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -738,18 +748,20 @@
                     "text": "To have any effect, Merfolk Sovereign’s activated ability must be activated before the declare blockers step begins. Once a Merfolk has become blocked, activating Merfolk Sovereign’s ability won’t change that."
                 }
             ],
+            "scryfallId": "d7810c40-7bb4-499f-8ad0-1d3118b451e7",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149161,
             "text": "Other Merfolk creatures you control get +1/+1.\n{T}: Target Merfolk creature can't be blocked this turn.",
             "toughness": "2",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "d7810c40-7bb4-499f-8ad0-1d3118b451e7"
+            "uuid": "646ffcda-127a-5d0f-af4a-28d4bb9e2485"
         },
         {
             "artist": "Christopher Moeller",
@@ -773,7 +785,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -803,19 +814,21 @@
                     "text": "If there are three or fewer cards in your library, you’ll reveal all of them."
                 }
             ],
+            "scryfallId": "acfd5dc9-affe-473c-92f6-7d0764332e7a",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149156,
             "text": "Flying\nWhen Merfolk Wayfinder enters the battlefield, reveal the top three cards of your library. Put all Island cards revealed this way into your hand and the rest on the bottom of your library in any order.",
             "toughness": "2",
             "type": "Creature — Merfolk Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "acfd5dc9-affe-473c-92f6-7d0764332e7a"
+            "uuid": "627cf3af-0422-5980-a70f-7d7c0140f9ad"
         },
         {
             "artist": "Greg Staples",
@@ -841,7 +854,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -866,19 +878,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "fc3ad105-40eb-440b-b4ef-57f8de707f7b",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149157,
             "text": "Other Merfolk creatures you control get +1/+1.\nWhenever you cast a Merfolk spell, you may tap or untap target permanent.",
             "toughness": "2",
             "type": "Creature — Merfolk Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc3ad105-40eb-440b-b4ef-57f8de707f7b"
+            "uuid": "6d71829b-1572-5f70-b489-06c7d00fb1d5"
         },
         {
             "artist": "Mark Zug",
@@ -904,7 +918,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -930,15 +943,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "3efa29a6-64bc-4d0d-8522-b548bd18bc76",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149169,
             "text": "Draw X cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3efa29a6-64bc-4d0d-8522-b548bd18bc76"
+            "uuid": "f17e41e3-5c27-5b3c-bc38-e994537c9b63"
         },
         {
             "artist": "Mathias Kollros",
@@ -962,7 +977,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1019,15 +1033,17 @@
                     "text": "You choose the spell to target on announcement, but you pick the new target for that spell on resolution."
                 }
             ],
+            "scryfallId": "c96763d6-0cea-40ed-afb2-886bfebe50a0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149174,
             "text": "You may exile a blue card from your hand rather than pay this spell's mana cost.\nChange the target of target spell with a single target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c96763d6-0cea-40ed-afb2-886bfebe50a0"
+            "uuid": "84f4979d-cd05-538b-ba9f-ea893467d60e"
         },
         {
             "artist": "Brom",
@@ -1053,7 +1069,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1078,18 +1093,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e5858c71-0877-480c-9c46-a3fe006bf9db",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149158,
             "text": "{T}: Rootwater Hunter deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "e5858c71-0877-480c-9c46-a3fe006bf9db"
+            "uuid": "4589ab8c-70d1-5f13-ba62-1025c338c411"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -1115,7 +1132,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1152,19 +1168,21 @@
                     "text": "The ability is mandatory. You must draw a card when it resolves."
                 }
             ],
+            "scryfallId": "a7caae7e-9b88-4428-b9e3-86cb8c84bd65",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149159,
             "text": "Whenever Scroll Thief deals combat damage to a player, draw a card.",
             "toughness": "3",
             "type": "Creature — Merfolk Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "a7caae7e-9b88-4428-b9e3-86cb8c84bd65"
+            "uuid": "0c2f8405-c675-5466-83d8-30eac43c218f"
         },
         {
             "artist": "William O'Connor",
@@ -1188,7 +1206,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1213,19 +1230,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fdb6b1ae-db92-447f-943a-8d33de940d44",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149162,
             "text": "{T}: Target Merfolk creature gets +1/+1 and gains islandwalk until end of turn. (It can't be blocked as long as defending player controls an Island.)\n{T}: Target land becomes an Island until end of turn.",
             "toughness": "3",
             "type": "Creature — Merfolk Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "fdb6b1ae-db92-447f-943a-8d33de940d44"
+            "uuid": "3a492df4-789f-5a34-bf6c-69a4845f8675"
         },
         {
             "artist": "Slawomir Maniak",
@@ -1249,7 +1268,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1273,18 +1291,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "39692846-0819-42a3-af25-d9e3a4233b52",
             "starter": true,
             "subtypes": [
                 "Merfolk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149165,
             "text": "When Tidal Courier enters the battlefield, reveal the top four cards of your library. Put all Merfolk cards revealed this way into your hand and the rest on the bottom of your library in any order.\n{3}{U}: Tidal Courier gains flying until end of turn.",
             "toughness": "2",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "39692846-0819-42a3-af25-d9e3a4233b52"
+            "uuid": "4b6837bb-1ca0-5d62-9c57-2a9f503ef1b4"
         },
         {
             "artist": "Daren Bader",
@@ -1310,7 +1330,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1334,19 +1353,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "24a16bf4-de91-49b0-bc6e-ab1d38a484e9",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149151,
             "text": "{T}: Target land becomes an Island until end of turn.",
             "toughness": "1",
             "type": "Creature — Merfolk Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "24a16bf4-de91-49b0-bc6e-ab1d38a484e9"
+            "uuid": "44ccdf1f-23bc-5b43-8d86-9ec1654bfc11"
         },
         {
             "artist": "Brian Snõddy",
@@ -1372,7 +1393,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1386,6 +1406,7 @@
             "manaCost": "{2}{U}",
             "multiverseId": 438461,
             "name": "Tidal Wave",
+            "names": [],
             "number": "21",
             "originalText": "Create a 5/5 blue Wall creature token with defender. Sacrifice it at the beginning of the next end step.",
             "originalType": "Instant",
@@ -1396,15 +1417,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9898c19f-7341-4be9-b592-bac884e55c84",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149172,
             "text": "Create a 5/5 blue Wall creature token with defender. Sacrifice it at the beginning of the next end step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9898c19f-7341-4be9-b592-bac884e55c84"
+            "uuid": "0b79562f-85a7-5d2e-8516-60ab7a57d18e"
         },
         {
             "artist": "John Severin Brassell",
@@ -1428,7 +1451,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1468,19 +1490,21 @@
                     "text": "The ability can target a tapped creature. If the targeted creature is already tapped when it resolves, that creature just remains tapped and doesn’t untap during its controller’s next untap step."
                 }
             ],
+            "scryfallId": "f6ed9fb1-de68-46ae-88d0-b3b4cd0e381e",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149155,
             "text": "When Tidebinder Mage enters the battlefield, tap target red or green creature an opponent controls. That creature doesn't untap during its controller's untap step for as long as you control Tidebinder Mage.",
             "toughness": "2",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "f6ed9fb1-de68-46ae-88d0-b3b4cd0e381e"
+            "uuid": "bd931ca6-ed97-5300-bdf0-f0b94e3e1d03"
         },
         {
             "artist": "Jack Wang",
@@ -1504,7 +1528,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1527,15 +1550,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "da8134a6-7fd7-4f41-8127-dc32400fb04b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149170,
             "text": "Up to two target creatures each get +0/+3 until end of turn. Untap those creatures. At this turn's next end of combat, tap each creature that was blocked by one of those creatures this turn and it doesn't untap during its controller's next untap step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "da8134a6-7fd7-4f41-8127-dc32400fb04b"
+            "uuid": "cc2ce50f-265c-58c3-88f7-04f7dfc62d4b"
         },
         {
             "artist": "Jesper Ejsing",
@@ -1561,7 +1586,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1589,19 +1613,21 @@
                     "text": "If permanents you control become untapped during your untap step, Wake Thresher’s ability will trigger that many times. However, since no player gets priority during the untap step, those abilities wait to be put on the stack until your upkeep starts. At that time, all your “beginning of upkeep” triggers will also trigger. You can put them and Wake Thresher’s abilities on the stack in any order."
                 }
             ],
+            "scryfallId": "7340b21f-726d-47e8-a2bf-1cde21be70f4",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149160,
             "text": "Whenever a permanent you control becomes untapped, Wake Thrasher gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Merfolk Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "7340b21f-726d-47e8-a2bf-1cde21be70f4"
+            "uuid": "c205ef4f-ccaa-583d-aa3f-efc62efb38be"
         },
         {
             "artist": "Jaime Jones",
@@ -1629,7 +1655,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1655,19 +1680,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0c70d33b-b898-4f0e-a133-5f003ecca6d6",
             "starter": true,
             "subtypes": [
                 "Merfolk",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149163,
             "text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\nWhenever Cold-Eyed Selkie deals combat damage to a player, you may draw that many cards.",
             "toughness": "1",
             "type": "Creature — Merfolk Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "0c70d33b-b898-4f0e-a133-5f003ecca6d6"
+            "uuid": "1137c207-fde4-5298-9faf-9d6d51f2ff03"
         },
         {
             "artist": "Vincent Proce",
@@ -1691,7 +1718,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1714,15 +1740,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "433cfdee-7e3c-4349-aa89-7e57723d2bf8",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149175,
             "text": "{T}: Add {C}.\n{5}{U}, {T}, Sacrifice Blighted Cataract: Draw two cards.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "433cfdee-7e3c-4349-aa89-7e57723d2bf8"
+            "uuid": "1f615b6e-dd66-5fbb-ad78-067aa9882e19"
         },
         {
             "artist": "Noah Bradley",
@@ -1744,7 +1772,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1779,15 +1806,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "b1c65080-fda9-4ccf-b11e-8936ea31e412",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149176,
             "text": "Lonely Sandbar enters the battlefield tapped.\n{T}: Add {U}.\nCycling {U} ({U}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "b1c65080-fda9-4ccf-b11e-8936ea31e412"
+            "uuid": "d0822167-2a4e-5665-a2e6-e256864e2c31"
         },
         {
             "artist": "Rob Alexander",
@@ -1815,18 +1844,11 @@
                     "multiverseId": 438532,
                     "name": "島",
                     "type": "基本土地 — 島"
-                },
-                {
-                    "language": "Japanese",
-                    "multiverseId": 438531,
-                    "name": "島",
-                    "type": "基本土地 — 島"
                 }
             ],
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1878,7 +1900,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -1890,8 +1911,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -1905,6 +1928,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "638b123a-b3d6-40da-ba0f-e1558e0345bf",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -1912,12 +1936,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149177,
             "text": "({T}: Add {U}.)",
             "type": "Basic Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "638b123a-b3d6-40da-ba0f-e1558e0345bf"
+            "uuid": "ca2b29d3-a6a8-5398-a467-008c7f02fa10",
+            "variations": [
+                "cc618f1a-102f-58ff-a457-02981dfb1135",
+                "49d3ac04-741a-5021-b8d2-8b7537903ec2",
+                "e8053365-47ea-593c-af3b-c9db4d85ffe1"
+            ]
         },
         {
             "artist": "Steven Belledin",
@@ -1945,18 +1975,11 @@
                     "multiverseId": 438532,
                     "name": "島",
                     "type": "基本土地 — 島"
-                },
-                {
-                    "language": "Japanese",
-                    "multiverseId": 438531,
-                    "name": "島",
-                    "type": "基本土地 — 島"
                 }
             ],
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2008,7 +2031,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2020,8 +2042,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2035,6 +2059,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "24f308d7-afc6-43a0-8433-d9d5404eab49",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2042,12 +2067,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149177,
             "text": "({T}: Add {U}.)",
             "type": "Basic Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "24f308d7-afc6-43a0-8433-d9d5404eab49"
+            "uuid": "cc618f1a-102f-58ff-a457-02981dfb1135",
+            "variations": [
+                "ca2b29d3-a6a8-5398-a467-008c7f02fa10",
+                "49d3ac04-741a-5021-b8d2-8b7537903ec2",
+                "e8053365-47ea-593c-af3b-c9db4d85ffe1"
+            ]
         },
         {
             "artist": "Martina Pilcerova",
@@ -2075,18 +2106,11 @@
                     "multiverseId": 438532,
                     "name": "島",
                     "type": "基本土地 — 島"
-                },
-                {
-                    "language": "Japanese",
-                    "multiverseId": 438531,
-                    "name": "島",
-                    "type": "基本土地 — 島"
                 }
             ],
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2138,7 +2162,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2150,8 +2173,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2165,6 +2190,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "920abf92-da69-4ff0-9b4a-571e1567f254",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2172,12 +2198,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149177,
             "text": "({T}: Add {U}.)",
             "type": "Basic Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "920abf92-da69-4ff0-9b4a-571e1567f254"
+            "uuid": "49d3ac04-741a-5021-b8d2-8b7537903ec2",
+            "variations": [
+                "ca2b29d3-a6a8-5398-a467-008c7f02fa10",
+                "cc618f1a-102f-58ff-a457-02981dfb1135",
+                "e8053365-47ea-593c-af3b-c9db4d85ffe1"
+            ]
         },
         {
             "artist": "Raoul Vitale",
@@ -2205,18 +2237,11 @@
                     "multiverseId": 438532,
                     "name": "島",
                     "type": "基本土地 — 島"
-                },
-                {
-                    "language": "Japanese",
-                    "multiverseId": 438531,
-                    "name": "島",
-                    "type": "基本土地 — 島"
                 }
             ],
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2268,7 +2293,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2280,8 +2304,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2295,6 +2321,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2bd41018-2eb1-4aac-a5dc-1f95ae6a46de",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2302,12 +2329,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149177,
             "text": "({T}: Add {U}.)",
             "type": "Basic Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "2bd41018-2eb1-4aac-a5dc-1f95ae6a46de"
+            "uuid": "e8053365-47ea-593c-af3b-c9db4d85ffe1",
+            "variations": [
+                "ca2b29d3-a6a8-5398-a467-008c7f02fa10",
+                "cc618f1a-102f-58ff-a457-02981dfb1135",
+                "49d3ac04-741a-5021-b8d2-8b7537903ec2"
+            ]
         },
         {
             "artist": "Svetlin Velinov",
@@ -2333,7 +2366,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2366,19 +2398,21 @@
                     "text": "If Warren Instigator attacks an opponent and isn’t blocked, its double strike ability will cause it to deal combat damage to that opponent twice, once during each combat damage step. Its triggered ability will thus trigger twice: Warren Instigator deals first-strike combat damage, its ability triggers and resolves, it deals regular combat damage, and its ability triggers and resolves again."
                 }
             ],
+            "scryfallId": "a47fe35f-859c-4663-a4dd-f7ca38e1099a",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Berserker"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149245,
             "text": "Double strike\nWhenever Warren Instigator deals damage to an opponent, you may put a Goblin creature card from your hand onto the battlefield.",
             "toughness": "1",
             "type": "Creature — Goblin Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "a47fe35f-859c-4663-a4dd-f7ca38e1099a"
+            "uuid": "84c4ca8a-e7a0-5a0b-bb8f-8c5147fa34ee"
         },
         {
             "artist": "Mark Tedin",
@@ -2404,7 +2438,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2433,18 +2466,20 @@
                     "text": "Battle Squadron’s last ability applies in all zones. While it’s on the battlefield, it counts itself, so it’ll be at least 1/1."
                 }
             ],
+            "scryfallId": "01c3c73d-03e8-4afc-bbfd-08fc87808012",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149256,
             "text": "Flying\nBattle Squadron's power and toughness are each equal to the number of creatures you control.",
             "toughness": "*",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "01c3c73d-03e8-4afc-bbfd-08fc87808012"
+            "uuid": "29c2540b-9ee5-58db-b812-ec5c6a7402aa"
         },
         {
             "artist": "Igor Kieryluk",
@@ -2470,7 +2505,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2505,19 +2539,21 @@
                     "text": "Once an attacking creature with menace is legally blocked by two or more creatures, removing one or more of those blockers from combat won’t change or undo that block."
                 }
             ],
+            "scryfallId": "cdead626-a901-40c8-b887-8597d10ba221",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149246,
             "text": "Menace (This creature can't be blocked except by two or more creatures.)",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "cdead626-a901-40c8-b887-8597d10ba221"
+            "uuid": "95c5a00c-db30-5f53-8eaa-34d0fd82d292"
         },
         {
             "artist": "Wayne Reynolds",
@@ -2543,7 +2579,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2569,15 +2604,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7776b3cb-0410-4d9c-958f-3ea042f9eaea",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149280,
             "text": "Target creature gets +3/+1 and gains trample until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7776b3cb-0410-4d9c-958f-3ea042f9eaea"
+            "uuid": "e45bbbd0-2ef8-5d9e-af5d-657d39b6a153"
         },
         {
             "artist": "Dave Kendall",
@@ -2603,7 +2640,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2630,15 +2666,17 @@
                     "text": "Cleaver Riot affects only creatures you control at the time it resolves. It won’t affect creatures that come under your control later in the turn."
                 }
             ],
+            "scryfallId": "93930452-af89-42b3-b668-5d4f0a607d4f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149277,
             "text": "Creatures you control gain double strike until end of turn. (They deal both first-strike and regular combat damage.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "93930452-af89-42b3-b668-5d4f0a607d4f"
+            "uuid": "f0fb3809-acf6-5af4-925b-339068946bba"
         },
         {
             "artist": "Steve Prescott",
@@ -2664,7 +2702,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2688,18 +2725,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "babc879f-65f4-4de9-a3fc-57debcdb8298",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149236,
             "text": "{1}, Sacrifice Ember Hauler: Ember Hauler deals 2 damage to any target.",
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "babc879f-65f4-4de9-a3fc-57debcdb8298"
+            "uuid": "983fa99b-5483-5d88-9473-6b553a77674e"
         },
         {
             "artist": "Raoul Vitale",
@@ -2725,7 +2764,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2751,19 +2789,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a328c8d8-a404-43b5-8c79-2e79d639fb40",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149216,
             "text": "Whenever another red creature enters the battlefield under your control, Foundry Street Denizen gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "a328c8d8-a404-43b5-8c79-2e79d639fb40"
+            "uuid": "9be5846f-47a1-55c1-b997-c2f7848a4ccb"
         },
         {
             "artist": "Mark Behm",
@@ -2787,7 +2827,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2834,18 +2873,20 @@
                     "text": "You can cycle this card even if there are no targets for the triggered ability. That’s because the cycling ability itself has no targets."
                 }
             ],
+            "scryfallId": "909ac95c-ee41-482c-8b4d-196fe0d5b3c1",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149247,
             "text": "Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)\nWhen you cycle Gempalm Incinerator, you may have it deal X damage to target creature, where X is the number of Goblins on the battlefield.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "909ac95c-ee41-482c-8b4d-196fe0d5b3c1"
+            "uuid": "8cd7ceca-bd98-548b-b564-6d487d4f9158"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -2869,7 +2910,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2899,15 +2939,17 @@
                     "text": "Ghostfire is colorless in all zones. Its damage comes from a colorless source."
                 }
             ],
+            "scryfallId": "29739dd4-5775-4491-8245-ca2dc38a686e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149281,
             "text": "Ghostfire is colorless.\nGhostfire deals 3 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "29739dd4-5775-4491-8245-ca2dc38a686e"
+            "uuid": "8ce723aa-04ce-566f-9941-519a900f1cab"
         },
         {
             "artist": "Sam Wood",
@@ -2933,7 +2975,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2959,18 +3000,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2947ed5b-a57d-452e-a711-a4a9d1f89af7",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149249,
             "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\nOther Goblin creatures you control get +1/+1 and have haste.",
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "2947ed5b-a57d-452e-a711-a4a9d1f89af7"
+            "uuid": "56612999-c647-5ded-b079-75981bbd5516"
         },
         {
             "artist": "Izzy",
@@ -2996,7 +3039,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3035,18 +3077,20 @@
                     "text": "If, during a player’s declare attackers step, a creature is tapped, is affected by a spell or ability that says it can’t attack, or hasn’t been under that player’s control continuously since the turn began (and doesn’t have haste), then it doesn’t attack. If there’s a cost associated with having a creature attack, the player isn’t forced to pay that cost, so it doesn’t have to attack in that case either."
                 }
             ],
+            "scryfallId": "4ad346cb-c3e5-4aea-8de6-bb62827e25a9",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149234,
             "text": "{T}: Each creature attacks this turn if able.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "4ad346cb-c3e5-4aea-8de6-bb62827e25a9"
+            "uuid": "711af67f-42e4-53c1-9d36-9b0757e527a8"
         },
         {
             "artist": "Greg Staples",
@@ -3070,7 +3114,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3112,19 +3155,21 @@
                     "text": "Once an attacking creature with menace is legally blocked by two or more creatures, removing one or more of those blockers from combat won’t change or undo that block."
                 }
             ],
+            "scryfallId": "07679f88-4bbe-46e1-9b24-3b9f5670860f",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149217,
             "text": "Renown 1 (When this creature deals combat damage to a player, if it isn't renowned, put a +1/+1 counter on it and it becomes renowned.)\nAs long as Goblin Glory Chaser is renowned, it has menace. (It can't be blocked except by two or more creatures.)",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "07679f88-4bbe-46e1-9b24-3b9f5670860f"
+            "uuid": "7236ee02-ed84-5b31-a7cc-3fded33a4d44"
         },
         {
             "artist": "Steve Prescott",
@@ -3148,7 +3193,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3173,19 +3217,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a0d4d9f3-e082-4e17-9056-346aa0d12b05",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149251,
             "text": "Goblin Goon can't attack unless you control more creatures than defending player.\nGoblin Goon can't block unless you control more creatures than attacking player.",
             "toughness": "6",
             "type": "Creature — Goblin Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "a0d4d9f3-e082-4e17-9056-346aa0d12b05"
+            "uuid": "853121c4-6aff-5e2c-89c7-b57fa7062e54"
         },
         {
             "artist": "Kev Walker",
@@ -3211,7 +3257,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3250,15 +3295,17 @@
                     "text": "The Goblin you sacrifice to cast Goblin Grenade doesn’t have to be a creature. For example, you could sacrifice Boggart Shenanigans (a tribal enchantment with the subtype Goblin)."
                 }
             ],
+            "scryfallId": "b0e0ef27-3db2-4976-b9db-13e3d7cd795d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149258,
             "text": "As an additional cost to cast this spell, sacrifice a Goblin.\nGoblin Grenade deals 5 damage to any target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b0e0ef27-3db2-4976-b9db-13e3d7cd795d"
+            "uuid": "5ae3a072-7a8d-58de-a8b4-6c3d6a84d90a"
         },
         {
             "artist": "Svetlin Velinov",
@@ -3282,7 +3329,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3296,6 +3342,7 @@
             "manaCost": "{2}{R}",
             "multiverseId": 438486,
             "name": "Goblin Rabblemaster",
+            "names": [],
             "number": "46",
             "originalText": "Other Goblin creatures you control attack each turn if able.\nAt the beginning of combat on your turn, create a 1/1 red Goblin creature token with haste.\nWhenever Goblin Rabblemaster attacks, it gets +1/+0 until end of turn for each other attacking Goblin.",
             "originalType": "Creature — Goblin Warrior",
@@ -3321,19 +3368,21 @@
                     "text": "The number of attacking Goblins is counted as the last ability resolves, and the bonus is locked in at that time."
                 }
             ],
+            "scryfallId": "bce84a87-093a-42de-9696-8c3250e0f33b",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149248,
             "text": "Other Goblin creatures you control attack each combat if able.\nAt the beginning of combat on your turn, create a 1/1 red Goblin creature token with haste.\nWhenever Goblin Rabblemaster attacks, it gets +1/+0 until end of turn for each other attacking Goblin.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "bce84a87-093a-42de-9696-8c3250e0f33b"
+            "uuid": "9ef4569d-d89d-510a-9751-25810a12aa47"
         },
         {
             "artist": "Raymond Swanland",
@@ -3359,7 +3408,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3393,19 +3441,21 @@
                     "text": "If Goblin Razerunners leaves the battlefield after its ability triggers but before it resolves, the amount of damage it deals is equal to the number of +1/+1 counters that were on it as it last existed on the battlefield."
                 }
             ],
+            "scryfallId": "8e1e4b26-0a2b-4078-adb3-1f66315afcf5",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149254,
             "text": "{1}{R}, Sacrifice a land: Put a +1/+1 counter on Goblin Razerunners.\nAt the beginning of your end step, you may have Goblin Razerunners deal damage equal to the number of +1/+1 counters on it to target player or planeswalker.",
             "toughness": "4",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8e1e4b26-0a2b-4078-adb3-1f66315afcf5"
+            "uuid": "14e365f2-15ef-5ca3-905d-fec19288ff91"
         },
         {
             "artist": "Gabor Szikszai",
@@ -3429,7 +3479,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3457,18 +3506,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3c90e9d7-6549-4291-a17a-4266c6d2e240",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149253,
             "text": "Haste\nWhen Goblin Ringleader enters the battlefield, reveal the top four cards of your library. Put all Goblin cards revealed this way into your hand and the rest on the bottom of your library in any order.",
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "3c90e9d7-6549-4291-a17a-4266c6d2e240"
+            "uuid": "bbb0856b-039b-5f16-b58e-a5b3f4caff5f"
         },
         {
             "artist": "Jesper Ejsing",
@@ -3494,7 +3545,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3531,19 +3581,21 @@
                     "text": "The ability doesn’t grant an ability to the targeted creature. Rather, it affects the game rules and states something that’s now true about that creature. After the ability resolves, the creature can’t be blocked that turn even if it loses all abilities."
                 }
             ],
+            "scryfallId": "7d1ebba6-25ed-448f-b230-7c4a0ca675fa",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149235,
             "text": "{T}: Target creature with power 2 or less can't be blocked this turn.",
             "toughness": "1",
             "type": "Creature — Goblin Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "7d1ebba6-25ed-448f-b230-7c4a0ca675fa"
+            "uuid": "ac4a3ff4-e60f-5697-9abc-70661aa14b44"
         },
         {
             "artist": "Chippy",
@@ -3569,7 +3621,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3592,19 +3643,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6fb10750-4037-4630-82d3-bb068c335e48",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149242,
             "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "6fb10750-4037-4630-82d3-bb068c335e48"
+            "uuid": "1fb87dae-6dff-5954-a506-6da48eb1d545"
         },
         {
             "artist": "Zoltan Boros",
@@ -3630,7 +3683,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3646,6 +3698,7 @@
             "manaCost": "{1}{R}{R}",
             "multiverseId": 438491,
             "name": "Hordeling Outburst",
+            "names": [],
             "number": "51",
             "originalText": "Create three 1/1 red Goblin creature tokens.",
             "originalType": "Sorcery",
@@ -3658,15 +3711,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1cc85221-b849-414c-99e3-9b7666cc2f56",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149262,
             "text": "Create three 1/1 red Goblin creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1cc85221-b849-414c-99e3-9b7666cc2f56"
+            "uuid": "ca505316-498f-54e0-bb29-37a8f2b7754f"
         },
         {
             "artist": "Karl Kopinski",
@@ -3692,7 +3747,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3705,6 +3759,7 @@
             "manaCost": "{2}{R}{R}",
             "multiverseId": 438492,
             "name": "Krenko, Mob Boss",
+            "names": [],
             "number": "52",
             "originalText": "{T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.",
             "originalType": "Legendary Creature — Goblin Warrior",
@@ -3721,6 +3776,7 @@
                     "text": "The ability counts each Goblin you control, including Krenko itself, not just the tokens it creates."
                 }
             ],
+            "scryfallId": "9af7e5e7-de08-419d-8f8b-c904b397acbf",
             "starter": true,
             "subtypes": [
                 "Goblin",
@@ -3729,13 +3785,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 149255,
             "text": "{T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.",
             "toughness": "3",
             "type": "Legendary Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "9af7e5e7-de08-419d-8f8b-c904b397acbf"
+            "uuid": "1d27643c-eb81-54be-8d00-e0cb3cecf11d"
         },
         {
             "artist": "Karl Kopinski",
@@ -3761,7 +3818,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3775,6 +3831,7 @@
             "manaCost": "{1}{R}",
             "multiverseId": 438493,
             "name": "Krenko's Command",
+            "names": [],
             "number": "53",
             "originalText": "Create two 1/1 red Goblin creature tokens.",
             "originalType": "Sorcery",
@@ -3785,15 +3842,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a1a6efce-e970-4ec3-80b4-c639d0e98186",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149260,
             "text": "Create two 1/1 red Goblin creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a1a6efce-e970-4ec3-80b4-c639d0e98186"
+            "uuid": "f704e282-663c-58ac-9b9e-7dd56e625105"
         },
         {
             "artist": "Christopher Moeller",
@@ -3817,7 +3876,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3866,15 +3924,17 @@
                     "text": "It only creates an additional combat and main phase if it resolves during a main phase."
                 }
             ],
+            "scryfallId": "cd7abb39-899b-43c1-907d-08b1bf2cf181",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149274,
             "text": "Untap all creatures that attacked this turn. After this main phase, there is an additional combat phase followed by an additional main phase.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cd7abb39-899b-43c1-907d-08b1bf2cf181"
+            "uuid": "6021f55f-f6b1-51ec-8bd7-58db4ee84c37"
         },
         {
             "artist": "Omar Rayyan",
@@ -3900,7 +3960,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3925,18 +3984,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5841e5dd-2a4a-42b9-a04f-d7c5c4840d74",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 149284,
             "text": "Tarfire deals 2 damage to any target.",
             "type": "Tribal Instant — Goblin",
             "types": [
                 "Tribal",
                 "Instant"
             ],
-            "uuid": "5841e5dd-2a4a-42b9-a04f-d7c5c4840d74"
+            "uuid": "d85436e7-ba57-592e-bab0-f6cdf5346ab3"
         },
         {
             "artist": "John Avon",
@@ -3958,7 +4019,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3986,15 +4046,17 @@
                     "text": "Brittle Effigy is exiled as a cost to activate its ability, not as part of its effect. If the targeted creature is an illegal target by the time the ability would resolve, the ability doesn’t resolve, but Brittle Effigy remains exiled."
                 }
             ],
+            "scryfallId": "d492418e-fce9-4333-85e7-004a06546b3c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149282,
             "text": "{4}, {T}, Exile Brittle Effigy: Exile target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d492418e-fce9-4333-85e7-004a06546b3c"
+            "uuid": "ddb56ad4-910b-5c65-b9df-496c5a62e6d7"
         },
         {
             "artist": "Jesper Ejsing",
@@ -4014,7 +4076,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4047,15 +4108,17 @@
                     "text": "If you reveal no land cards, Goblin Charbelcher deals damage equal to the number of cards revealed, and then you may order your library as you like."
                 }
             ],
+            "scryfallId": "240344ff-404d-4894-a6e9-4401cd68cf50",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149283,
             "text": "{3}, {T}: Reveal cards from the top of your library until you reveal a land card. Goblin Charbelcher deals damage equal to the number of nonland cards revealed this way to any target. If the revealed land card was a Mountain, Goblin Charbelcher deals double that damage instead. Put the revealed cards on the bottom of your library in any order.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "240344ff-404d-4894-a6e9-4401cd68cf50"
+            "uuid": "260aee3d-f138-52ed-b21f-6d0166d45556"
         },
         {
             "artist": "Jung Park",
@@ -4079,7 +4142,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4102,15 +4164,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f133ba0a-e141-4f57-9819-bc17bbacd7b3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149285,
             "text": "{T}: Add {C}.\n{4}{R}, {T}, Sacrifice Blighted Gorge: It deals 2 damage to any target.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "f133ba0a-e141-4f57-9819-bc17bbacd7b3"
+            "uuid": "9a21816c-4319-5e25-a97e-88f8a71011cc"
         },
         {
             "artist": "Noah Bradley",
@@ -4132,7 +4196,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4170,15 +4233,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "5da0fa81-50a8-4a98-bae4-1ffa4da2f710",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 149286,
             "text": "Forgotten Cave enters the battlefield tapped.\n{T}: Add {R}.\nCycling {R} ({R}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "5da0fa81-50a8-4a98-bae4-1ffa4da2f710"
+            "uuid": "903777a6-60f0-5cee-94bf-0ffdba0b4a31"
         },
         {
             "artist": "John Avon",
@@ -4217,7 +4282,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4240,7 +4304,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4280,8 +4343,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4295,6 +4360,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "58b54fa5-99c0-4a2d-b36a-1c7963eeb210",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4302,12 +4368,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149287,
             "text": "({T}: Add {R}.)",
             "type": "Basic Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "58b54fa5-99c0-4a2d-b36a-1c7963eeb210"
+            "uuid": "49cd9277-f194-5d5d-967a-8762a677dc5f",
+            "variations": [
+                "b85c0abd-05b6-5d76-a1b7-b44756f06595",
+                "c5c10104-e3c9-5d19-ae77-b7cdd46354f8",
+                "9d84c231-e462-559e-9912-e768379bcd31"
+            ]
         },
         {
             "artist": "Steven Belledin",
@@ -4346,7 +4418,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4369,7 +4440,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4409,8 +4479,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4424,6 +4496,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "43fe9a90-11a0-4cc9-b337-a4da45b28ded",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4431,12 +4504,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149287,
             "text": "({T}: Add {R}.)",
             "type": "Basic Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "43fe9a90-11a0-4cc9-b337-a4da45b28ded"
+            "uuid": "b85c0abd-05b6-5d76-a1b7-b44756f06595",
+            "variations": [
+                "49cd9277-f194-5d5d-967a-8762a677dc5f",
+                "c5c10104-e3c9-5d19-ae77-b7cdd46354f8",
+                "9d84c231-e462-559e-9912-e768379bcd31"
+            ]
         },
         {
             "artist": "Martina Pilcerova",
@@ -4475,7 +4554,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4498,7 +4576,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4538,8 +4615,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4553,6 +4632,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "517ffb8e-4194-4958-85ec-b853b917764b",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4560,12 +4640,18 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149287,
             "text": "({T}: Add {R}.)",
             "type": "Basic Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "517ffb8e-4194-4958-85ec-b853b917764b"
+            "uuid": "c5c10104-e3c9-5d19-ae77-b7cdd46354f8",
+            "variations": [
+                "49cd9277-f194-5d5d-967a-8762a677dc5f",
+                "b85c0abd-05b6-5d76-a1b7-b44756f06595",
+                "9d84c231-e462-559e-9912-e768379bcd31"
+            ]
         },
         {
             "artist": "Raoul Vitale",
@@ -4604,7 +4690,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4627,7 +4712,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4667,8 +4751,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4682,6 +4768,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "adde69b5-947f-4fe1-84fe-89cf44a35e8c",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4689,22 +4776,29 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 149287,
             "text": "({T}: Add {R}.)",
             "type": "Basic Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "adde69b5-947f-4fe1-84fe-89cf44a35e8c"
+            "uuid": "9d84c231-e462-559e-9912-e768379bcd31",
+            "variations": [
+                "49cd9277-f194-5d5d-967a-8762a677dc5f",
+                "b85c0abd-05b6-5d76-a1b7-b44756f06595",
+                "c5c10104-e3c9-5d19-ae77-b7cdd46354f8"
+            ]
         }
     ],
     "code": "ddt",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Duel Decks: Merfolk vs. Goblins",
     "releaseDate": "2017-10-24",
+    "tcgplayerGroupId": 2076,
     "tokens": [
         {
             "artist": "Svetlin Velinov",
@@ -4721,10 +4815,10 @@
             "reverseRelated": [
                 "Master of Waves"
             ],
-            "text": "",
+            "scryfallId": "ae196fbc-c9ee-4dba-9eb3-52209908b898",
             "toughness": "0",
             "type": "Token Creature — Elemental",
-            "uuid": "ae196fbc-c9ee-4dba-9eb3-52209908b898"
+            "uuid": "0b473ee9-a22c-5d58-b2b8-cf3b6ca69527"
         },
         {
             "artist": "Brian Snõddy",
@@ -4741,10 +4835,11 @@
             "reverseRelated": [
                 "Tidal Wave"
             ],
+            "scryfallId": "353aaec9-79fb-4b83-b4f4-8c7dc2a6b1c1",
             "text": "Defender",
             "toughness": "5",
             "type": "Token Creature — Wall",
-            "uuid": "353aaec9-79fb-4b83-b4f4-8c7dc2a6b1c1"
+            "uuid": "40bb60af-a45d-555c-819b-ae71ca822805"
         },
         {
             "artist": "Karl Kopinski",
@@ -4764,10 +4859,10 @@
                 "Krenko, Mob Boss",
                 "Krenko's Command"
             ],
-            "text": "",
+            "scryfallId": "159c6eb5-c6a8-4d11-8e09-0a5a3f04cd0e",
             "toughness": "1",
             "type": "Token Creature — Goblin",
-            "uuid": "159c6eb5-c6a8-4d11-8e09-0a5a3f04cd0e"
+            "uuid": "b6c11e84-d483-508b-a63d-3abef69bed78"
         }
     ],
     "totalSetSize": 63,

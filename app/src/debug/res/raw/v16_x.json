@@ -16,7 +16,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -56,6 +55,7 @@
                     "text": "If a cost includes more than one monocolored hybrid mana symbol, you can choose a different way to pay for each symbol. For example, you can pay for Beseech the Queen by spending {B}{B}{B}, {2}{B}{B}, {4}{B}, or {6}."
                 }
             ],
+            "scryfallId": "8b5ffbfe-4b7c-4927-b2bd-f6c598a0bfeb",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -65,7 +65,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8b5ffbfe-4b7c-4927-b2bd-f6c598a0bfeb"
+            "uuid": "74431c18-c365-5702-aa94-e2071db7faa1"
         },
         {
             "artist": "Kieran Yanner",
@@ -82,7 +82,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -105,6 +104,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "70d8fd1a-8756-4e11-9235-ca119bd11dab",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -114,7 +114,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "70d8fd1a-8756-4e11-9235-ca119bd11dab"
+            "uuid": "d97e557a-b4b9-513e-a6d3-e0e29f15af4c"
         },
         {
             "artist": "Karl Kopinski",
@@ -139,7 +139,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -171,6 +170,7 @@
                     "text": "You may find multicolored cards with Conflux. The white card you find, for example, can be any number of colors, as long as white is one of them. What colors it is won’t impact what other cards you can find. For example, you may find a white-blue card as the white card and another white-blue card as the blue card."
                 }
             ],
+            "scryfallId": "e25e43a7-509b-4cc1-a336-a0229229c2ff",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -180,7 +180,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e25e43a7-509b-4cc1-a336-a0229229c2ff"
+            "uuid": "79e358f4-8708-5201-833a-2407c60e0930"
         },
         {
             "artist": "Stephan Martiniere",
@@ -192,7 +192,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -204,10 +203,7 @@
             },
             "multiverseId": 416746,
             "name": "Dark Depths",
-            "names": [
-                "Dark Depths",
-                "Marit Lage"
-            ],
+            "names": [],
             "number": "4",
             "originalText": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, put a legendary 20/20 black Avatar creature token with flying and indestructible named Marit Lage onto the battlefield.",
             "originalType": "Legendary Snow Land",
@@ -220,14 +216,19 @@
             "rarity": "mythic",
             "rulings": [
                 {
-                    "date": "2006-07-15",
-                    "text": "Dark Depths is a land with no mana ability."
+                    "date": "2018-12-07",
+                    "text": "Dark Depths really is a land with no mana ability. It doesn’t tap for colorless mana."
                 },
                 {
-                    "date": "2006-07-15",
-                    "text": "Dark Depths’s last ability is a state trigger. It will not trigger again while the ability is on the stack, but if the ability is countered and Dark Depths is still on the battlefield with no ice counters on it, it will trigger again immediately."
+                    "date": "2018-12-07",
+                    "text": "The last ability of Dark Depths is a state trigger. It won’t trigger again while the ability is on the stack, but if the ability is countered and Dark Depths is still on the battlefield with no ice counters on it, it will trigger again immediately."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If Dark Depths leaves the battlefield before its triggered ability resolves, you won’t be able to sacrifice it, so you won’t create Marit Lage."
                 }
             ],
+            "scryfallId": "bbde4755-7fd0-42b3-a0fd-80a7d6edd950",
             "starter": true,
             "subtypes": [],
             "supertypes": [
@@ -235,12 +236,12 @@
                 "Snow"
             ],
             "tcgplayerProductId": 121170,
-            "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create a legendary 20/20 black Avatar creature token with flying and indestructible named Marit Lage.",
+            "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
             "type": "Legendary Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "bbde4755-7fd0-42b3-a0fd-80a7d6edd950"
+            "uuid": "07b19b0f-ee8e-5ec9-aadd-3fdb5aa1f38a"
         },
         {
             "artist": "Chris Rahn",
@@ -259,7 +260,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -290,6 +290,7 @@
                     "text": "If an artifact you own and a creature an opponent controls go to the graveyard at the same time, you may choose that artifact card as the target of Glissa, the Traitor’s ability (even if they’re the same card: an artifact creature you own that an opponent controlled)."
                 }
             ],
+            "scryfallId": "ece3bc22-ecf3-49b8-b707-560d02250944",
             "starter": true,
             "subtypes": [
                 "Zombie",
@@ -305,7 +306,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ece3bc22-ecf3-49b8-b707-560d02250944"
+            "uuid": "48774049-d4d8-5d8d-82a0-a2aa960caf9e"
         },
         {
             "artist": "Jaime Jones",
@@ -317,7 +318,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -344,6 +344,7 @@
                     "text": "Helvault’s first and third abilities are linked. Similarly, Helvault’s second and third abilities are linked. Only cards exiled as a result of Helvault’s first or second abilities will be returned to the battlefield by its third ability."
                 }
             ],
+            "scryfallId": "5f8e84a0-6303-4af1-9a38-224b2f931570",
             "starter": true,
             "subtypes": [],
             "supertypes": [
@@ -355,7 +356,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "5f8e84a0-6303-4af1-9a38-224b2f931570"
+            "uuid": "1abd6f78-7e33-53b6-901c-2c224aa082e6"
         },
         {
             "artist": "Carl Critchlow",
@@ -370,7 +371,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -403,6 +403,7 @@
                     "text": "You can use the first ability on a nonartifact permanent, wait for the ability to resolve, and then use the second ability on that permanent."
                 }
             ],
+            "scryfallId": "9f48defb-888b-4040-9dd2-16a0643c5c30",
             "starter": true,
             "subtypes": [
                 "Wizard"
@@ -418,7 +419,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9f48defb-888b-4040-9dd2-16a0643c5c30"
+            "uuid": "8696b14f-1ab0-55fa-b63b-afd5e2947abe"
         },
         {
             "artist": "Adam Paquette",
@@ -434,7 +435,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -484,6 +484,7 @@
                     "text": "The triggered ability that creates the copies can itself be countered by anything that can counter a triggered ability. If it is countered, no copies will be put onto the stack."
                 }
             ],
+            "scryfallId": "6ae27b75-2719-467b-8410-923e9cec5ac9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -493,7 +494,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6ae27b75-2719-467b-8410-923e9cec5ac9"
+            "uuid": "cf407851-eb5e-5dc8-9a4e-5beda28cc9ec"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -511,7 +512,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -539,6 +539,7 @@
                     "text": "If you cast a green and blue creature spell, both abilities will trigger. The abilities may be stacked so that when they resolve, you search your library for a creature card, put it on top of your library, and then put that card into your hand. The abilities may also be stacked in the other order, of course."
                 }
             ],
+            "scryfallId": "f9c7ed7d-3783-4be1-bd69-1019baf5e264",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -554,7 +555,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f9c7ed7d-3783-4be1-bd69-1019baf5e264"
+            "uuid": "e392614e-3f8d-589e-9aa8-41617ddd64c8"
         },
         {
             "artist": "Dan Scott",
@@ -571,7 +572,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -603,6 +603,7 @@
                     "text": "In a Two-Headed Giant game, anything that cares about your life total checks your team’s life total. You’ll win the game if your team has exactly 1 life."
                 }
             ],
+            "scryfallId": "a3e7f5d8-b266-4c7c-8913-94380217dbd7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -612,7 +613,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a3e7f5d8-b266-4c7c-8913-94380217dbd7"
+            "uuid": "0816692c-b2db-58e4-b587-66e040d34083"
         },
         {
             "artist": "Kev Walker",
@@ -629,7 +630,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -658,6 +658,7 @@
                     "text": "Counterspells can be cast that target it, but when they resolve they simply don’t counter it since it can’t be countered."
                 }
             ],
+            "scryfallId": "6d79f044-0434-4dc2-9d92-8975324f6c32",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -667,7 +668,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6d79f044-0434-4dc2-9d92-8975324f6c32"
+            "uuid": "d5250237-bd3f-5fbc-ae35-51eb24208337"
         },
         {
             "artist": "Dave Kendall",
@@ -679,7 +680,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -708,6 +708,7 @@
                     "text": "You can pay 0 life if you want, but it’s not useful most of the time."
                 }
             ],
+            "scryfallId": "56df1833-4c93-499b-9f40-f8c2d0f29342",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -717,7 +718,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "56df1833-4c93-499b-9f40-f8c2d0f29342"
+            "uuid": "5e3d9ea2-e214-52fd-84e5-23b95805cb41"
         },
         {
             "artist": "Khang Le",
@@ -731,7 +732,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -757,6 +757,7 @@
                     "text": "Cards with mana cost {0} (like Pact of Negation) and cards with no mana cost (like Living End and every land) have converted mana cost 0."
                 }
             ],
+            "scryfallId": "7adede7f-ee9b-48b7-98cb-9672d36e8a0c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -766,7 +767,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7adede7f-ee9b-48b7-98cb-9672d36e8a0c"
+            "uuid": "8eb9c937-4e1d-53ba-9f0e-73d4098a6dbb"
         },
         {
             "artist": "Christopher Moeller",
@@ -778,7 +779,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -824,6 +824,7 @@
                     "text": "If the Jitte leaves the battlefield after the “+2/+2” mode is announced but before it resolves, the bonus is given to the creature that was most recently equipped once the ability resolves."
                 }
             ],
+            "scryfallId": "492814c7-dd17-43de-b2e8-cf9de5475604",
             "starter": true,
             "subtypes": [
                 "Equipment"
@@ -837,7 +838,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "492814c7-dd17-43de-b2e8-cf9de5475604"
+            "uuid": "cb308459-1b71-59cb-bec7-d331eb1f8665"
         },
         {
             "artist": "rk post",
@@ -853,7 +854,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -879,6 +879,7 @@
                     "text": "If you target yourself with this spell, you must reveal your entire hand to the other players just as any other player would."
                 }
             ],
+            "scryfallId": "555c6135-5723-44c6-8c29-d5b57a2b3220",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -888,14 +889,14 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "555c6135-5723-44c6-8c29-d5b57a2b3220"
+            "uuid": "3cfd326f-d984-5dad-a67f-b6d1f363e1a3"
         }
     ],
     "code": "v16",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-07",
-        "version": "4.1.3"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v16",
     "name": "From the Vault: Lore",
@@ -917,10 +918,11 @@
             "reverseRelated": [
                 "Dark Depths"
             ],
+            "scryfallId": "53085c6f-b6ef-4846-8d67-40bef9609418",
             "text": "Flying\nIndestructible",
             "toughness": "20",
             "type": "Token Legendary Creature — Avatar",
-            "uuid": "53085c6f-b6ef-4846-8d67-40bef9609418"
+            "uuid": "21b402ca-7323-5384-8f07-0ce0755553b0"
         }
     ],
     "totalSetSize": 16,
