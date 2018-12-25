@@ -86,7 +86,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -127,18 +126,20 @@
                     "text": "If another player gains control of Aegis Angel, the permanent will no longer have indestructible, even if you regain control of Aegis Angel."
                 }
             ],
+            "scryfallId": "44a93838-caea-41da-bf00-163b40cfb758",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116780,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhen Aegis Angel enters the battlefield, another target permanent gains indestructible for as long as you control Aegis Angel. (Effects that say \"destroy\" don't destroy it. A creature with indestructible can't be destroyed by damage.)",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "44a93838-caea-41da-bf00-163b40cfb758"
+            "uuid": "343b2ea9-38a8-5b1b-ab31-dc7fd772b7de"
         },
         {
             "artist": "David Palumbo",
@@ -236,7 +237,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -261,17 +261,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e944e39b-5268-47c0-8b09-2e666315e209",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116786,
             "text": "Enchant creature\nEnchanted creature gets +2/+2 and has vigilance. (Attacking doesn't cause it to tap.)",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e944e39b-5268-47c0-8b09-2e666315e209"
+            "uuid": "9745e10e-227f-5bdd-ba2b-16ee15ea64fd"
         },
         {
             "artist": "Greg Staples",
@@ -369,7 +371,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -434,18 +435,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8752c1db-b924-4dda-8b71-4c254d0ef2de",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116791,
             "text": "Flying, vigilance",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "8752c1db-b924-4dda-8b71-4c254d0ef2de"
+            "uuid": "6f639ad2-a240-56dc-a31e-2aac58f53e15"
         },
         {
             "artist": "Lars Grant-West",
@@ -543,7 +546,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -571,18 +573,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "01007d7f-e29b-49d5-bc60-44b2fb77ed3d",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116781,
             "text": "Flying\n{2}{U}: Tap target creature with flying.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "01007d7f-e29b-49d5-bc60-44b2fb77ed3d"
+            "uuid": "a47cace2-31b0-5dc5-804f-244f35b770b9"
         },
         {
             "artist": "Ryan Yee",
@@ -680,7 +684,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -712,15 +715,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c8017c06-82ea-4661-b422-e5b9089842e2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 116784,
             "text": "Return target nonland permanent to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c8017c06-82ea-4661-b422-e5b9089842e2"
+            "uuid": "351c8ed1-2176-5cfc-acd3-39593bab8631"
         },
         {
             "artist": "James Ryman",
@@ -818,7 +823,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -846,18 +850,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "da35e1ce-cbfa-499d-b4e0-5857b1587506",
             "starter": true,
             "subtypes": [
                 "Sphinx"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116794,
             "text": "Flying\n{2}{U}: Draw a card, then put a +1/+1 counter on Sphinx of Magosi.",
             "toughness": "6",
             "type": "Creature — Sphinx",
             "types": [
                 "Creature"
             ],
-            "uuid": "da35e1ce-cbfa-499d-b4e0-5857b1587506"
+            "uuid": "00261473-a8d6-51dc-83ff-6482ae3c133b"
         },
         {
             "artist": "Steve Luke",
@@ -955,7 +961,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1002,15 +1007,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8363865b-23f9-4cca-beb4-a5d467caff4c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 116787,
             "text": "Target player discards two cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8363865b-23f9-4cca-beb4-a5d467caff4c"
+            "uuid": "2b0e7128-5051-593d-bd4d-308dc6173a81"
         },
         {
             "artist": "Vance Kovacs",
@@ -1108,7 +1115,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1169,19 +1175,21 @@
                     "text": "Nightmare’s ability counts all lands you control with the subtype Swamp, not just ones named Swamp."
                 }
             ],
+            "scryfallId": "afc8ec11-78cc-438f-9e49-50089fd247e6",
             "starter": true,
             "subtypes": [
                 "Nightmare",
                 "Horse"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116788,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nNightmare's power and toughness are each equal to the number of Swamps you control.",
             "toughness": "*",
             "type": "Creature — Nightmare Horse",
             "types": [
                 "Creature"
             ],
-            "uuid": "afc8ec11-78cc-438f-9e49-50089fd247e6"
+            "uuid": "43b0a035-e91f-5148-ba84-ebaf90d0431b"
         },
         {
             "artist": "Kev Walker",
@@ -1279,7 +1287,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1340,18 +1347,20 @@
                     "text": "If Sengir Vampire and a creature it dealt damage to are both put into a graveyard at the same time, Sengir Vampire’s ability will trigger, but it will do nothing when it resolves."
                 }
             ],
+            "scryfallId": "3e28d7bb-4520-4cf4-85c9-c56f5da40d82",
             "starter": true,
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116790,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhenever a creature dealt damage by Sengir Vampire this turn dies, put a +1/+1 counter on Sengir Vampire.",
             "toughness": "4",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "3e28d7bb-4520-4cf4-85c9-c56f5da40d82"
+            "uuid": "24f2d3d1-1408-5901-96c9-27afa304d9d1"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1439,7 +1448,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1470,18 +1478,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "98485e9e-dbac-44dd-a446-ef3ef81830c1",
             "starter": true,
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 116795,
             "toughness": "2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "98485e9e-dbac-44dd-a446-ef3ef81830c1"
+            "uuid": "3dd3068a-3f87-5de1-b528-80c792d021b2"
         },
         {
             "artist": "Scott M. Fischer",
@@ -1579,7 +1588,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1608,19 +1616,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "41eaedf2-38be-4825-a711-3cc0f7659ae3",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116782,
             "text": "Whenever Borderland Marauder attacks, it gets +2/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "41eaedf2-38be-4825-a711-3cc0f7659ae3"
+            "uuid": "06e8ed4b-638d-5f64-b5f4-a0c117f1ca66"
         },
         {
             "artist": "Chippy",
@@ -1707,7 +1717,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1746,15 +1755,17 @@
                     "text": "If one or two of Cone of Flame’s targets are illegal when it resolves, you can’t change how much damage will be dealt to the remaining legal targets."
                 }
             ],
+            "scryfallId": "9b434a60-0875-47f4-a626-2c9bfa3c9b3b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 116783,
             "text": "Cone of Flame deals 1 damage to any target, 2 damage to another target, and 3 damage to a third target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9b434a60-0875-47f4-a626-2c9bfa3c9b3b"
+            "uuid": "5eb282ac-9e80-5ded-a0a4-b20276650398"
         },
         {
             "artist": "Donato Giancola",
@@ -1852,7 +1863,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1907,18 +1917,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ca25d8fe-93b3-4d2c-96df-ca6e4f528543",
             "starter": true,
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116792,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\n{R}: Shivan Dragon gets +1/+0 until end of turn.",
             "toughness": "5",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "ca25d8fe-93b3-4d2c-96df-ca6e4f528543"
+            "uuid": "97d3f9fe-104d-5737-8842-eac618a5263a"
         },
         {
             "artist": "Chuck Lukacs",
@@ -2016,7 +2028,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2051,15 +2062,17 @@
                     "text": "If some of the creatures are illegal targets as Incremental Growth tries to resolve, the remaining legal targets still get the appropriate number of +1/+1 counters. If all targets are illegal, Incremental Growth doesn’t resolve."
                 }
             ],
+            "scryfallId": "e90aaa61-3281-4e8f-9eb3-548896d0c14d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 116785,
             "text": "Put a +1/+1 counter on target creature, two +1/+1 counters on another target creature, and three +1/+1 counters on a third target creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e90aaa61-3281-4e8f-9eb3-548896d0c14d"
+            "uuid": "5aa24229-ef45-52ee-ba27-7198ed6ffffe"
         },
         {
             "artist": "Wayne Reynolds",
@@ -2157,7 +2170,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2187,17 +2199,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2ff4b431-3ca6-436f-aa44-911174538e04",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116789,
             "text": "Enchant creature\nEnchanted creature gets +3/+3.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2ff4b431-3ca6-436f-aa44-911174538e04"
+            "uuid": "e0f2c410-7167-555d-aaa2-ae6e851c9f50"
         },
         {
             "artist": "Eytan Zana",
@@ -2284,7 +2298,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2316,28 +2329,31 @@
                     "text": "A creature card that enters the battlefield as a copy of a token creature is still a nontoken creature. You’ll be able to draw a card."
                 }
             ],
+            "scryfallId": "d6794f92-1895-41fe-931f-42b0744e9f2e",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 116793,
             "text": "Trample\nWhenever another nontoken creature enters the battlefield under your control, you may draw a card.",
             "toughness": "6",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "d6794f92-1895-41fe-931f-42b0744e9f2e"
+            "uuid": "a97dcd11-5b40-5308-b51f-ae9a652ebdde"
         }
     ],
     "code": "w16",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "w16",
     "name": "Welcome Deck 2016",
     "releaseDate": "2016-04-08",
+    "tcgplayerGroupId": 1765,
     "tokens": [],
     "totalSetSize": 16,
     "type": "starter"

@@ -75,6 +75,12 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.UUID.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_UUID)
         }
+        if (!columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SCRYFALLID)
+        }
+        if (!columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_ID)
+        }
     }
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
@@ -107,4 +113,4 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 }
 
-private const val DATABASE_VERSION = 9
+private const val DATABASE_VERSION = 10

@@ -15,7 +15,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -63,15 +62,17 @@
                     "text": "Each type of object is counted during the corresponding part of the process. Cards in hand are counted after lands have been sacrificed, and creatures on the battlefield are counted after cards have been discarded. Thus, a land creature sacrificed to the first part of the spell would not be counted when determining how many creatures are on the battlefield for the last part."
                 }
             ],
+            "scryfallId": "962f794a-dd25-4d80-94d5-3f2c5deae4c6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32774,
             "text": "Each player chooses a number of lands they control equal to the number of lands controlled by the player who controls the fewest, then sacrifices the rest. Players discard cards and sacrifice creatures the same way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "962f794a-dd25-4d80-94d5-3f2c5deae4c6"
+            "uuid": "7cd88ed5-bd6d-52ba-9076-51151973d164"
         },
         {
             "artist": "Steve Prescott",
@@ -87,7 +88,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -120,15 +120,17 @@
                     "text": "If the permanent stops being a creature before the end of the turn, it is still destroyed."
                 }
             ],
+            "scryfallId": "2fcc1f3a-85da-4012-8b01-adf9b8e56c63",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32775,
             "text": "Cast this spell only before the combat damage step.\nTarget creature gains trample and gets +X/+0 until end of turn, where X is its power. At the beginning of the next end step, destroy that creature if it attacked this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2fcc1f3a-85da-4012-8b01-adf9b8e56c63"
+            "uuid": "e87c078b-e3b5-54d1-be86-90ffe8629505"
         },
         {
             "artist": "Rebecca Guay",
@@ -145,7 +147,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -182,15 +183,17 @@
                     "text": "Once your life total is 0, you can’t pay any more life, even if you’ve somehow not lost the game yet."
                 }
             ],
+            "scryfallId": "d96ee79e-aa92-4981-bc59-ec43ba63f2f2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32776,
             "text": "Until end of turn, any time you could activate a mana ability, you may pay 1 life. If you do, add {C}.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d96ee79e-aa92-4981-bc59-ec43ba63f2f2"
+            "uuid": "3aa3835a-24ca-5ff7-a6a7-1e1038d65c7d"
         },
         {
             "artist": "D. Alexander Gregory",
@@ -206,7 +209,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -236,15 +238,17 @@
                     "text": "You can choose to find fewer than four cards if you want. If you find one or two cards, your opponent must choose for them to be put into your graveyard, even if they don’t want to."
                 }
             ],
+            "scryfallId": "460b924d-04a3-4a8f-8055-54bded06193d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32777,
             "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Put the chosen cards into your graveyard and the rest into your hand. Then shuffle your library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "460b924d-04a3-4a8f-8055-54bded06193d"
+            "uuid": "cf92ede5-9b58-5278-84ff-33f6b2aa6b4b"
         },
         {
             "artist": "Christopher Moeller",
@@ -261,7 +265,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -289,18 +292,20 @@
                     "text": "A Goblin permanent card is an artifact, creature, land, and/or enchantment card with the creature type “Goblin”. Usually such cards will be creatures in addition to any other types, but they may be tribal instead. For example, you could put Boggart Shenanigans onto the battlefield with this effect."
                 }
             ],
+            "scryfallId": "b7a62e45-c159-46c8-ba74-8a5c9d177556",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 32778,
             "text": "Whenever Goblin Lackey deals damage to a player, you may put a Goblin permanent card from your hand onto the battlefield.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "b7a62e45-c159-46c8-ba74-8a5c9d177556"
+            "uuid": "88726289-e37c-5919-aa1f-b8a5fc93e440"
         },
         {
             "artist": "Terese Nielsen",
@@ -317,7 +322,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -350,18 +354,20 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "4a70cd23-a87b-49ad-a226-5c715509746c",
             "starter": true,
             "subtypes": [
                 "Ape"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 32779,
             "text": "Kird Ape gets +1/+2 as long as you control a Forest.",
             "toughness": "1",
             "type": "Creature — Ape",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a70cd23-a87b-49ad-a226-5c715509746c"
+            "uuid": "3c1e6f8d-7460-54c1-80e3-fcba010b51db"
         },
         {
             "artist": "April Lee",
@@ -374,7 +380,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -398,15 +403,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "9814d8e8-c462-41ca-9909-1c659f488543",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32780,
             "text": "{T}, Sacrifice Lotus Petal: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9814d8e8-c462-41ca-9909-1c659f488543"
+            "uuid": "c4b0bcff-ddfa-5f8a-87ee-3db48b96b9cf"
         },
         {
             "artist": "David O'Connor",
@@ -423,7 +430,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -453,15 +459,17 @@
                     "text": "The “shuffle and put the card on top” is a single action. If an effect causes the top card of the library to be face up, the second card down is not revealed."
                 }
             ],
+            "scryfallId": "ef095e72-5908-432c-bb36-e0aaee629e86",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32781,
             "text": "Search your library for an instant or sorcery card and reveal that card. Shuffle your library, then put the card on top of it.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ef095e72-5908-432c-bb36-e0aaee629e86"
+            "uuid": "e382bb7f-0380-5da4-ac66-46d5621325cb"
         },
         {
             "artist": "Dave Kendall",
@@ -477,7 +485,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -518,15 +525,17 @@
                     "text": "Necropotence’s last ability creates a delayed triggered ability that will put the exiled card into your hand. That ability still triggers even if Necropotence is removed from the battlefield before your end step."
                 }
             ],
+            "scryfallId": "8b786ea7-ac2a-406c-b61a-e61669fd1c53",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32782,
             "text": "Skip your draw step.\nWhenever you discard a card, exile that card from your graveyard.\nPay 1 life: Exile the top card of your library face down. Put that card into your hand at the beginning of your next end step.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8b786ea7-ac2a-406c-b61a-e61669fd1c53"
+            "uuid": "5eddd236-4789-5bba-851a-4f2e213e51cf"
         },
         {
             "artist": "Michael Sutfin",
@@ -538,7 +547,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -570,15 +578,17 @@
                     "text": "If Sensei’s Divining Top leaves the battlefield while its second ability is on the stack, you’ll draw a card and leave Sensei’s Divining Top in the zone it’s moved to."
                 }
             ],
+            "scryfallId": "e16c9285-8963-4b09-93e6-e0209e22e52f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32783,
             "text": "{1}: Look at the top three cards of your library, then put them back in any order.\n{T}: Draw a card, then put Sensei's Divining Top on top of its owner's library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e16c9285-8963-4b09-93e6-e0209e22e52f"
+            "uuid": "a163a069-1612-598e-8465-82119c5c640f"
         },
         {
             "artist": "Matt Stewart",
@@ -595,7 +605,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -625,18 +634,20 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "3f591d3d-31dc-442c-bc01-247ea5ea83e1",
             "starter": true,
             "subtypes": [
                 "Efreet"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 32784,
             "text": "Flying\nAt the beginning of your upkeep, Serendib Efreet deals 1 damage to you.",
             "toughness": "4",
             "type": "Creature — Efreet",
             "types": [
                 "Creature"
             ],
-            "uuid": "3f591d3d-31dc-442c-bc01-247ea5ea83e1"
+            "uuid": "cabecd4f-c8d9-5d1c-90ba-cc3441f79eca"
         },
         {
             "artist": "Luca Zontini",
@@ -649,7 +660,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -679,17 +689,19 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "1ea6289e-61c6-4221-8e44-07212f9ba3e4",
             "starter": true,
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 32785,
             "text": "Equipped creature gets +1/-1.\nWhenever equipped creature dies, draw two cards.\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "1ea6289e-61c6-4221-8e44-07212f9ba3e4"
+            "uuid": "db89e14b-af6e-5b29-b9a8-dbb55fc85ec6"
         },
         {
             "artist": "John Avon",
@@ -702,7 +714,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -730,15 +741,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "2b5315a4-6a78-456f-8d5a-fea9d62f3f0e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32786,
             "text": "{T}: Add {C}.\n{T}, Sacrifice Strip Mine: Destroy target land.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "2b5315a4-6a78-456f-8d5a-fea9d62f3f0e"
+            "uuid": "73f78ddd-8e0b-56e6-8f97-7fdf4b183545"
         },
         {
             "artist": "Chris Rahn",
@@ -755,7 +768,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -782,15 +794,17 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "1e2fee55-227b-4373-a3f7-b463f220033f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32787,
             "text": "As an additional cost to cast this spell, sacrifice an artifact.\nSearch your library for an artifact card and put that card onto the battlefield. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1e2fee55-227b-4373-a3f7-b463f220033f"
+            "uuid": "2b5e30b5-d82d-5799-9854-d815c3af370d"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -803,7 +817,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -847,26 +860,29 @@
                     "text": "Casting a creature with morph face down already costs three mana, even though the converted mana cost of the face-down spell is zero, so Trinisphere normally doesn’t modify the total cost of a face-down creature spell. However, if Dream Chisel is reducing that cost while Trinisphere is on the battlefield, you’ll still have to pay three mana for the spell."
                 }
             ],
+            "scryfallId": "7f197152-fadc-4c4b-b192-02d470376fe6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 32788,
             "text": "As long as Trinisphere is untapped, each spell that would cost less than three mana to cast costs three mana to cast. (Additional mana in the cost may be paid with any color of mana or colorless mana. For example, a spell that would cost {1}{B} to cast costs {2}{B} to cast instead.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7f197152-fadc-4c4b-b192-02d470376fe6"
+            "uuid": "40de3dad-6f71-57e6-b0c5-65f17f781c00"
         }
     ],
     "code": "v09",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v09",
     "name": "From the Vault: Exiled",
     "releaseDate": "2009-08-28",
+    "tcgplayerGroupId": 48,
     "tokens": [],
     "totalSetSize": 15,
     "type": "from_the_vault"

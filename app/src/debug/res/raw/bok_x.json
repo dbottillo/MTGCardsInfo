@@ -91,7 +91,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -112,16 +111,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "99f49ff1-54f6-4825-987b-c50a152f7275",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12248,
             "text": "Legendary creatures you control get +2/+2.",
             "type": "Legendary Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "99f49ff1-54f6-4825-987b-c50a152f7275"
+            "uuid": "ac1f5a83-3973-5152-9620-ac3a0e0ef4ee"
         },
         {
             "artist": "Ron Spears",
@@ -195,7 +196,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -218,18 +218,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "86c2e405-afe2-4de2-9e45-c5f357d788ac",
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12250,
             "text": "Empty-Shrine Kannushi has protection from the colors of permanents you control.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "86c2e405-afe2-4de2-9e45-c5f357d788ac"
+            "uuid": "150d4792-0896-5345-b78f-337db093bf95"
         },
         {
             "artist": "Mark Zug",
@@ -241,11 +243,11 @@
                 "W"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -271,6 +273,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "758abd53-6ad2-406e-8615-8e48678405b4",
             "side": "b",
             "subtypes": [
                 "Spirit"
@@ -284,7 +287,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "758abd53-6ad2-406e-8615-8e48678405b1"
+            "uuid": "d522fe30-c543-5d68-b933-aafab6cf7885"
         },
         {
             "artist": "Mark Zug",
@@ -296,11 +299,11 @@
                 "W"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -327,19 +330,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "758abd53-6ad2-406e-8615-8e48678405b4",
             "side": "a",
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12253,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Faithful Squire.\nAt the beginning of the end step, if there are two or more ki counters on Faithful Squire, you may flip it.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "758abd53-6ad2-406e-8615-8e48678405b0"
+            "uuid": "927ba713-5a1b-56ab-aefe-85d8ac1bcfbd"
         },
         {
             "artist": "Kev Walker",
@@ -413,7 +418,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -435,14 +439,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2503e136-031f-498a-b042-4077baebe8f8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12254,
             "text": "Exile all creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2503e136-031f-498a-b042-4077baebe8f8"
+            "uuid": "11f08038-831a-5231-92c9-60f1743d790e"
         },
         {
             "artist": "Greg Staples",
@@ -508,7 +514,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -544,16 +549,18 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "e0cf9142-be8e-48d8-a1b4-9a7fb71718d0",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12265,
             "text": "Enchant Plains\n{2}: Until end of turn, enchanted Plains becomes a 2/5 white Spirit creature with \"Whenever this creature deals damage, its controller gains that much life.\" It's still a land.\nWhen enchanted Plains is put into a graveyard, you may return Genju of the Fields from your graveyard to your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e0cf9142-be8e-48d8-a1b4-9a7fb71718d0"
+            "uuid": "23273f34-1bca-5c80-8b8f-85aaac67eeb3"
         },
         {
             "artist": "Luca Zontini",
@@ -627,7 +634,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -651,16 +657,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d8566f5e-0ec5-4c9b-8b5b-4e580b20522a",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12273,
             "text": "Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.)\nPrevent all damage that would be dealt to and dealt by enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d8566f5e-0ec5-4c9b-8b5b-4e580b20522a"
+            "uuid": "4933e9e6-8092-51a6-b022-8cdbb6719927"
         },
         {
             "artist": "Darrell Riche",
@@ -726,7 +734,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -753,19 +760,21 @@
                     "text": "If there are two Hokori on the battlefield (for example, if Mirror Gallery is on the battlefield), each player untaps two lands they control at the beginning of their upkeep."
                 }
             ],
+            "scryfallId": "5a03f5d5-d5c3-4a7d-8d44-e60b498b4ed5",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12279,
             "text": "Lands don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player untaps a land they control.",
             "toughness": "2",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "5a03f5d5-d5c3-4a7d-8d44-e60b498b4ed5"
+            "uuid": "f4590b67-dd54-5f82-8b15-8e461444aaec"
         },
         {
             "artist": "Matt Cavotta",
@@ -831,7 +840,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -871,16 +879,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "3ed548e0-9196-4bfc-9cfd-149abb945574",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12281,
             "text": "Target creature gets +1/+0 and gains first strike until end of turn.\nSplice onto Arcane—Tap an untapped white creature you control. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "3ed548e0-9196-4bfc-9cfd-149abb945574"
+            "uuid": "39c399cb-ac96-5ca8-98c8-783957272b29"
         },
         {
             "artist": "Carl Critchlow",
@@ -954,7 +964,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -977,18 +986,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bb03bc2b-6d39-4315-964c-ca7db2db054a",
             "subtypes": [
                 "Human",
                 "Samurai"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12283,
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nWhenever a Samurai you control dies, you may put a +1/+1 counter on Indebted Samurai.",
             "toughness": "3",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "bb03bc2b-6d39-4315-964c-ca7db2db054a"
+            "uuid": "06ffdfc8-9b0f-5124-b5b9-256a5fc5d02d"
         },
         {
             "artist": "Daren Bader",
@@ -1062,7 +1073,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1085,17 +1095,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "44e4f5e6-935e-429f-89b4-4571376f442e",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12291,
             "text": "Sacrifice Kami of False Hope: Prevent all combat damage that would be dealt this turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "44e4f5e6-935e-429f-89b4-4571376f442e"
+            "uuid": "a872e82d-df72-5fbe-8cbb-142993c0292a"
         },
         {
             "artist": "Shishizaru",
@@ -1169,7 +1181,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1193,17 +1204,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "dc6deb57-4ee3-4716-8644-28283704f994",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12292,
             "text": "Whenever you cast a Spirit or Arcane spell, Kami of Tattered Shoji gains flying until end of turn.",
             "toughness": "5",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc6deb57-4ee3-4716-8644-28283704f994"
+            "uuid": "7a759b85-11b8-5540-819a-f5522f7d7e0c"
         },
         {
             "artist": "Mark Zug",
@@ -1269,7 +1282,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1292,17 +1304,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "46e53299-f480-4769-bfc6-86fb19964280",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12293,
             "text": "Flying\nWhenever Kami of the Honored Dead is dealt damage, you gain that much life.\nSoulshift 6 (When this creature dies, you may return target Spirit card with converted mana cost 6 or less from your graveyard to your hand.)",
             "toughness": "5",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "46e53299-f480-4769-bfc6-86fb19964280"
+            "uuid": "3669cc30-360e-5703-a3b4-0e3e10618f42"
         },
         {
             "artist": "Donato Giancola",
@@ -1376,7 +1390,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1408,6 +1421,7 @@
                     "text": "Kentaro’s ability only applies while Kentaro is on the battlefield. You have to pay for Kentaro normally. It still costs {1}{W}."
                 }
             ],
+            "scryfallId": "ddcea3b3-5852-4ae1-a952-7b392564cb9d",
             "subtypes": [
                 "Human",
                 "Samurai"
@@ -1415,13 +1429,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12294,
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nYou may pay {X} rather than pay the mana cost for Samurai spells you cast, where X is that spell's converted mana cost.",
             "toughness": "1",
             "type": "Legendary Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "ddcea3b3-5852-4ae1-a952-7b392564cb9d"
+            "uuid": "1776efe6-aab7-5f5d-8c1d-ed32147cc330"
         },
         {
             "artist": "Dave Dorman",
@@ -1495,7 +1510,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1522,18 +1536,20 @@
                     "text": "Kitsune Palliator’s ability creates prevention shields for every creature and player when it resolves. It doesn’t affect creatures that enter the battlefield (or become creatures) later."
                 }
             ],
+            "scryfallId": "eb981f8b-4f03-4fd2-a255-b10635958bfd",
             "subtypes": [
                 "Fox",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12296,
             "text": "{T}: Prevent the next 1 damage that would be dealt to each creature and each player this turn.",
             "toughness": "2",
             "type": "Creature — Fox Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "eb981f8b-4f03-4fd2-a255-b10635958bfd"
+            "uuid": "bdd23db1-732f-5367-bca3-e9e699ca0fba"
         },
         {
             "artist": "Douglas Shuler",
@@ -1607,7 +1623,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1631,14 +1646,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5b6ba253-fb50-4240-8129-6b86895d1ff9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12307,
             "text": "Prevent the next 4 damage that would be dealt to any target this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5b6ba253-fb50-4240-8129-6b86895d1ff9"
+            "uuid": "af3e01d0-2656-5d17-aee5-e3a4e9bccaf8"
         },
         {
             "artist": "John Avon",
@@ -1704,7 +1721,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1729,17 +1745,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d9d39ff1-402c-4218-ad42-276a22c087a7",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12312,
             "text": "Sacrifice Moonlit Strider: Target creature you control gains protection from the color of your choice until end of turn.\nSoulshift 3 (When this creature dies, you may return target Spirit card with converted mana cost 3 or less from your graveyard to your hand.)",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d9d39ff1-402c-4218-ad42-276a22c087a7"
+            "uuid": "ba8116be-06dc-5d0a-b836-fd220e981e54"
         },
         {
             "artist": "Greg Staples",
@@ -1805,7 +1823,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1828,6 +1845,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "e08d5618-4fe0-4ae5-af16-696467aae02d",
             "subtypes": [
                 "Fox",
                 "Samurai"
@@ -1835,13 +1853,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12320,
             "text": "Defender (This creature can't attack.)\nBushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\n{T}: The next time a source of your choice would deal damage this turn, that damage is dealt to Opal-Eye, Konda's Yojimbo instead.\n{1}{W}: Prevent the next 1 damage that would be dealt to Opal-Eye this turn.",
             "toughness": "4",
             "type": "Legendary Creature — Fox Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "e08d5618-4fe0-4ae5-af16-696467aae02d"
+            "uuid": "6c8a208f-fd99-5c17-9f55-f769329e63a9"
         },
         {
             "artist": "Christopher Moeller",
@@ -1915,7 +1934,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1939,19 +1957,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "313bd276-2f69-447e-a2b1-240cf839614a",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12324,
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, create a 3/3 white Spirit creature token with flying.",
             "toughness": "6",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "313bd276-2f69-447e-a2b1-240cf839614a"
+            "uuid": "467e359a-53f5-59b1-89ae-1479e60a6fc0"
         },
         {
             "artist": "Ben Thompson",
@@ -2017,7 +2037,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2049,19 +2068,21 @@
                     "text": "You may gain life when any creatures are declared as attackers, not just for attacking creatures you control."
                 }
             ],
+            "scryfallId": "102ee72e-5fb8-4059-9dfa-98004e222c27",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12326,
             "text": "Fox offering (You may cast this card any time you could cast an instant by sacrificing a Fox and paying the difference in mana costs between this and the sacrificed Fox. Mana cost includes color.)\nWhenever a creature attacks, you may gain 1 life.",
             "toughness": "6",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "102ee72e-5fb8-4059-9dfa-98004e222c27"
+            "uuid": "bec03548-55db-58c9-84e4-dd346cfe8f3a"
         },
         {
             "artist": "Ittoku",
@@ -2127,7 +2148,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2163,14 +2183,16 @@
                     "text": "The copies must be found if they are in publicly viewable zones. Finding copies while searching private zones is optional."
                 }
             ],
+            "scryfallId": "a9cac762-7482-471f-b4de-e0cb6da5451c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12344,
             "text": "Exile target enchantment. Search its controller's graveyard, hand, and library for all cards with the same name as that enchantment and exile them. Then that player shuffles their library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a9cac762-7482-471f-b4de-e0cb6da5451c"
+            "uuid": "4f009874-91be-5739-a55a-e54adf51ee84"
         },
         {
             "artist": "Ben Thompson",
@@ -2236,7 +2258,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2266,16 +2287,18 @@
                     "text": "The redirection protects both you and your creatures from the source. If the source would deal more than X damage to multiple objects, you decide which damage is redirected until X is used up. For example, your opponent casts a spell that deals 1 damage to you and 1 damage to two of your creatures. If you cast Shining Shoal with X = 2, you can have damage to you and one creature redirected to the target, or you could have damage to both creatures redirected."
                 }
             ],
+            "scryfallId": "78ca16f8-336a-444b-9f78-e97a3f20a3bc",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12347,
             "text": "You may exile a white card with converted mana cost X from your hand rather than pay this spell's mana cost.\nThe next X damage that a source of your choice would deal to you and/or creatures you control this turn is dealt to any target instead.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "78ca16f8-336a-444b-9f78-e97a3f20a3bc"
+            "uuid": "92690df1-118e-567b-8cc1-395b79c1b15a"
         },
         {
             "artist": "Michael Sutfin",
@@ -2341,7 +2364,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2365,18 +2387,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "10d2a6d9-5848-4481-a0f9-42320ff2c230",
             "subtypes": [
                 "Fox",
                 "Samurai"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12354,
             "text": "Flash\nBushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)",
             "toughness": "3",
             "type": "Creature — Fox Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "10d2a6d9-5848-4481-a0f9-42320ff2c230"
+            "uuid": "294e812d-dcd1-559d-ab8e-2397ec390bee"
         },
         {
             "artist": "Kev Walker",
@@ -2450,7 +2474,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2473,18 +2496,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0528fe29-f3c1-4d10-9030-053c3de57b7b",
             "subtypes": [
                 "Fox",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12362,
             "text": "{W}, {T}: Prevent the next 2 damage that would be dealt to any target this turn.",
             "toughness": "1",
             "type": "Creature — Fox Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "0528fe29-f3c1-4d10-9030-053c3de57b7b"
+            "uuid": "2369be0f-7f39-5c39-8475-4ee0203ef908"
         },
         {
             "artist": "Darrell Riche",
@@ -2558,7 +2583,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2582,19 +2606,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0cf9cd2e-5cf6-4959-abf2-56b686b636a3",
             "subtypes": [
                 "Human",
                 "Samurai",
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12366,
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\n{T}: Takeno's Cavalry deals 1 damage to target attacking or blocking Spirit.",
             "toughness": "1",
             "type": "Creature — Human Samurai Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "0cf9cd2e-5cf6-4959-abf2-56b686b636a3"
+            "uuid": "9263cc14-04df-502e-a853-a92e7d0b9191"
         },
         {
             "artist": "Ron Spears",
@@ -2668,7 +2694,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2690,17 +2715,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a018aa51-d75e-4d94-b4b3-0cd14fc87d44",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12368,
             "text": "Whenever you cast a Spirit or Arcane spell, you may search your library for an Aura card with enchant creature, reveal it, and put it into your hand. If you do, shuffle your library.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "a018aa51-d75e-4d94-b4b3-0cd14fc87d44"
+            "uuid": "77a46f37-4976-54b7-8c49-d235b0c2ff03"
         },
         {
             "artist": "Mark Tedin",
@@ -2774,7 +2801,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2799,16 +2825,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a63cfebd-8cab-48b4-814a-4d8751dd1b57",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12371,
             "text": "Destroy target artifact or enchantment. You gain life equal to its converted mana cost.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a63cfebd-8cab-48b4-814a-4d8751dd1b57"
+            "uuid": "764fc60f-880b-5c7d-9d27-056e2ebb60eb"
         },
         {
             "artist": "Ron Spears",
@@ -2882,7 +2910,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2904,16 +2931,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bc5fa34b-95c6-4e02-9e15-3f595f744741",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12372,
             "text": "Destroy target attacking creature with power 3 or less.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "bc5fa34b-95c6-4e02-9e15-3f595f744741"
+            "uuid": "fef749e0-9081-52c6-81c1-0631b42a0c3c"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -2987,7 +3016,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3014,16 +3042,18 @@
                     "text": "Redirected damage retains its information. For example, your opponent attacks you with Slith Firewalker (which reads, in part, “Whenever Slith Firewalker deals combat damage to a player, put a +1/+1 counter on it.”) and you block with a creature enchanted with Ward of Piety. If you activate Ward of Piety, targeting your opponent, the Slith’s ability triggers during the combat damage step and it gets a +1/+1 counter. It’s still combat damage."
                 }
             ],
+            "scryfallId": "73acef0c-34b1-4e04-8569-4f8d754585df",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12389,
             "text": "Enchant creature\n{1}{W}: The next 1 damage that would be dealt to enchanted creature this turn is dealt to any target instead.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "73acef0c-34b1-4e04-8569-4f8d754585df"
+            "uuid": "22712b9f-2366-5ff8-9b74-f4f158aefc1e"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -3089,7 +3119,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3115,17 +3144,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e86e084a-f5cb-49f5-8de2-5729d00e1aba",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12390,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Waxmane Baku.\n{1}, Remove X ki counters from Waxmane Baku: Tap X target creatures.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e86e084a-f5cb-49f5-8de2-5729d00e1aba"
+            "uuid": "6cba2891-93ea-58f3-a373-efd1aea2cfd0"
         },
         {
             "artist": "Hideaki Takamura",
@@ -3199,7 +3230,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3231,19 +3261,21 @@
                     "text": "Yomiji’s ability triggers even if Yomiji is going to the graveyard at the same time as the other legendary permanent."
                 }
             ],
+            "scryfallId": "f611af49-3c59-4365-a398-93f7e05ff0d0",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12391,
             "text": "Whenever a legendary permanent other than Yomiji, Who Bars the Way is put into a graveyard from the battlefield, return that card to its owner's hand.",
             "toughness": "4",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "f611af49-3c59-4365-a398-93f7e05ff0d0"
+            "uuid": "c2e395fa-327c-59da-9d18-47117bbf1d47"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -3255,11 +3287,11 @@
                 "U"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -3285,6 +3317,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ca03131a-9bd4-4fba-b95c-90f1831e86e7",
             "side": "b",
             "subtypes": [
                 "Spirit"
@@ -3298,7 +3331,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ca03131a-9bd4-4fba-b95c-90f1831e86e1"
+            "uuid": "7adafa3d-1988-5e9c-8abc-186a5e9f5956"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -3310,11 +3343,11 @@
                 "U"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -3341,19 +3374,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ca03131a-9bd4-4fba-b95c-90f1831e86e7",
             "side": "a",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12241,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Callow Jushi.\nAt the beginning of the end step, if there are two or more ki counters on Callow Jushi, you may flip it.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "ca03131a-9bd4-4fba-b95c-90f1831e86e0"
+            "uuid": "b8181852-de50-55c9-a168-d84ec700002b"
         },
         {
             "artist": "Matt Cavotta",
@@ -3419,7 +3454,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3442,19 +3476,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "6c359b1a-d441-4763-96c7-e5c010eae53f",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12243,
             "text": "Flying\nAt the beginning of your upkeep, sacrifice Chisei, Heart of Oceans unless you remove a counter from a permanent you control.",
             "toughness": "4",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "6c359b1a-d441-4763-96c7-e5c010eae53f"
+            "uuid": "297e5bef-708b-5909-a670-f32ed41c6f0a"
         },
         {
             "artist": "Scott M. Fischer",
@@ -3520,7 +3556,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3545,18 +3580,28 @@
                 {
                     "date": "2005-02-01",
                     "text": "Disrupting Shoal can target any spell, but does nothing unless that spell’s converted mana cost is X."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If a card in your hand has {X} in its mana cost, X is considered to be 0."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If a spell has {X} in its mana cost, include the value chosen for that X when determining the converted mana cost of that spell, even if it was cast for an alternative cost and no mana was spent on X."
                 }
             ],
+            "scryfallId": "15589745-4c0a-4edf-ad45-3b7fa45e70c5",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12249,
             "text": "You may exile a blue card with converted mana cost X from your hand rather than pay this spell's mana cost.\nCounter target spell if its converted mana cost is X.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "15589745-4c0a-4edf-ad45-3b7fa45e70c5"
+            "uuid": "c96b4f4f-ded1-588a-857e-6b86724ad546"
         },
         {
             "artist": "Ittoku",
@@ -3630,7 +3675,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3659,18 +3703,20 @@
                     "text": "The land Floodbringer returns to its owner’s hand can be the targeted land."
                 }
             ],
+            "scryfallId": "0058be07-a8a1-448e-8c3d-61718cb384ec",
             "subtypes": [
                 "Moonfolk",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12257,
             "text": "Flying\n{2}, Return a land you control to its owner's hand: Tap target land.",
             "toughness": "2",
             "type": "Creature — Moonfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "0058be07-a8a1-448e-8c3d-61718cb384ec"
+            "uuid": "c83ac704-69ab-5b86-8633-40de03c9fc65"
         },
         {
             "artist": "Glen Angus",
@@ -3736,7 +3782,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3769,16 +3814,18 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "f776f97c-bd9c-4c7b-be1c-93802ce6ff6a",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12263,
             "text": "Enchant Island\n{2}: Enchanted Island becomes a 3/2 blue Spirit creature with flying until end of turn. It's still a land.\nWhen enchanted Island is put into a graveyard, you may return Genju of the Falls from your graveyard to your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f776f97c-bd9c-4c7b-be1c-93802ce6ff6a"
+            "uuid": "c563a091-1652-5bc7-b960-c7df9c08c5a6"
         },
         {
             "artist": "Christopher Rush",
@@ -3852,7 +3899,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3874,16 +3920,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "eb953ffc-0e73-42a2-a026-e6d3041fd8ec",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12275,
             "text": "Put the top card of your library into your graveyard, then draw cards equal to that card's converted mana cost.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "eb953ffc-0e73-42a2-a026-e6d3041fd8ec"
+            "uuid": "4b7bce10-fdbe-5c25-9bf4-b6160a661e44"
         },
         {
             "artist": "Christopher Moeller",
@@ -3949,7 +3997,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3984,6 +4031,7 @@
                     "text": "If Higure deals first strike damage (or the first part of double strike damage), the triggered ability would resolve before regular combat damage, and the searched-for Ninja would be able to get swapped with an unblocked creature and still deal its regular damage."
                 }
             ],
+            "scryfallId": "743f3cf5-f8aa-49d4-947d-76b91799547a",
             "subtypes": [
                 "Human",
                 "Ninja"
@@ -3991,13 +4039,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12277,
             "text": "Ninjutsu {2}{U}{U} ({2}{U}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Higure, the Still Wind deals combat damage to a player, you may search your library for a Ninja card, reveal it, and put it into your hand. If you do, shuffle your library.\n{2}: Target Ninja creature can't be blocked this turn.",
             "toughness": "4",
             "type": "Legendary Creature — Human Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "743f3cf5-f8aa-49d4-947d-76b91799547a"
+            "uuid": "b4f55fce-190e-500d-93fe-d26d1adb107d"
         },
         {
             "artist": "Shishizaru",
@@ -4071,7 +4120,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4096,17 +4144,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e3015369-df39-44cb-ba16-533f7ad5824d",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12289,
             "text": "Flying\nWhenever Jetting Glasskite becomes the target of a spell or ability for the first time each turn, counter that spell or ability.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3015369-df39-44cb-ba16-533f7ad5824d"
+            "uuid": "2301a8a8-f92d-5868-9aba-6b3c3b88107c"
         },
         {
             "artist": "Randy Gallegos",
@@ -4180,7 +4230,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4203,17 +4252,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "39e177ce-98bf-4fbc-83d1-1f64ca5d86c6",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12290,
             "text": "Defender (This creature can't attack.)\nWhenever Kaijin of the Vanishing Touch blocks a creature, return that creature to its owner's hand at end of combat. (Return it only if it's on the battlefield.)",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "39e177ce-98bf-4fbc-83d1-1f64ca5d86c6"
+            "uuid": "afa4bbaf-cd3d-5bd8-b525-f5fb62e28252"
         },
         {
             "artist": "Kev Walker",
@@ -4287,7 +4338,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4310,19 +4360,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "fc73a66f-4745-40c2-9c90-96396f6e7bce",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12295,
             "text": "Flying\nCreatures you control have \"Whenever this creature becomes the target of a spell or ability for the first time each turn, counter that spell or ability.\"",
             "toughness": "2",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc73a66f-4745-40c2-9c90-96396f6e7bce"
+            "uuid": "86a6150c-4415-51e6-a1b8-30d16db460cf"
         },
         {
             "artist": "Luca Zontini",
@@ -4396,7 +4448,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4419,18 +4470,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "93382c5e-082e-4a51-a3ec-b659cb503747",
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12308,
             "text": "{X}, {T}: Target creature with power X or less can't be blocked this turn.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "93382c5e-082e-4a51-a3ec-b659cb503747"
+            "uuid": "8a7cbaf6-a505-53b5-a4dc-e0cc072a9d6a"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -4504,7 +4557,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4527,14 +4579,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "502c4aca-98f8-4c7d-89fd-ee42c938fac7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12309,
             "text": "Counter target spell. That spell's controller reveals their hand, then discards each card with the same name as a card spliced onto that spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "502c4aca-98f8-4c7d-89fd-ee42c938fac7"
+            "uuid": "0e99e7a8-8699-5231-9db4-c7a0235f5e53"
         },
         {
             "artist": "Kev Walker",
@@ -4600,7 +4654,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4626,18 +4679,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5c06f58f-0419-4637-8060-4a93670a4c68",
             "subtypes": [
                 "Human",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12311,
             "text": "Ninjutsu {U} ({U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Mistblade Shinobi deals combat damage to a player, you may return target creature that player controls to its owner's hand.",
             "toughness": "1",
             "type": "Creature — Human Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "5c06f58f-0419-4637-8060-4a93670a4c68"
+            "uuid": "851699a8-1c48-509b-90aa-454a43716ca6"
         },
         {
             "artist": "Dan Scott",
@@ -4703,7 +4758,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4731,18 +4785,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "367a67c7-54db-4336-b55a-3fa27625172a",
             "subtypes": [
                 "Human",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12315,
             "text": "Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Ninja of the Deep Hours deals combat damage to a player, you may draw a card.",
             "toughness": "2",
             "type": "Creature — Human Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "367a67c7-54db-4336-b55a-3fa27625172a"
+            "uuid": "211326fe-0e96-5799-a29c-45f1cd8f7d61"
         },
         {
             "artist": "Scott M. Fischer",
@@ -4808,7 +4864,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4836,19 +4891,21 @@
                     "text": "You may put zero, one, or two lands onto the battlefield with Patron of the Moon’s ability. The number is determined as the ability resolves. You don’t need lands in hand to activate the ability."
                 }
             ],
+            "scryfallId": "5e5fcd6f-1653-44bf-a796-4c9ff9adf390",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12327,
             "text": "Moonfolk offering (You may cast this card any time you could cast an instant by sacrificing a Moonfolk and paying the difference in mana costs between this and the sacrificed Moonfolk. Mana cost includes color.)\nFlying\n{1}: Put up to two land cards from your hand onto the battlefield tapped.",
             "toughness": "4",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e5fcd6f-1653-44bf-a796-4c9ff9adf390"
+            "uuid": "f74b47b0-8176-56d8-9207-b44cc22c6312"
         },
         {
             "artist": "Greg Staples",
@@ -4922,7 +4979,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4946,16 +5002,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a96e5a18-5958-426e-892f-5c68f44c1b41",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12331,
             "text": "Enchant creature\nEnchanted creature has flying.\nSacrifice Phantom Wings: Return enchanted creature to its owner's hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a96e5a18-5958-426e-892f-5c68f44c1b41"
+            "uuid": "45d0a8d3-5bca-51e3-845a-f19c00b28521"
         },
         {
             "artist": "Shishizaru",
@@ -5021,7 +5079,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5065,14 +5122,16 @@
                     "text": "The copies must be found if they are in publicly viewable zones. Finding copies while searching private zones is optional."
                 }
             ],
+            "scryfallId": "48ca8c31-a9ea-4388-b257-951c1c68b86d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12334,
             "text": "Counter target instant or sorcery spell. Search its controller's graveyard, hand, and library for all cards with the same name as that spell and exile them. Then that player shuffles their library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "48ca8c31-a9ea-4388-b257-951c1c68b86d"
+            "uuid": "78396ec7-456d-5110-982a-b2294980bcf4"
         },
         {
             "artist": "David Martin",
@@ -5138,7 +5197,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5162,17 +5220,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fe9140fc-9d50-4e63-aae6-1ba2974a25a3",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12335,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Quillmane Baku.\n{1}, {T}, Remove X ki counters from Quillmane Baku: Return target creature with converted mana cost X or less to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "fe9140fc-9d50-4e63-aae6-1ba2974a25a3"
+            "uuid": "5e457c8b-e1fa-5a01-b75f-b225f021779d"
         },
         {
             "artist": "Daren Bader",
@@ -5246,7 +5306,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5268,14 +5327,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "10962b1b-4039-4d8a-88e0-fc67537920a9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12336,
             "text": "Return all artifacts and enchantments to their owners' hands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "10962b1b-4039-4d8a-88e0-fc67537920a9"
+            "uuid": "3c9ebbcb-bdfe-5d5b-91b3-12a339f3a2dd"
         },
         {
             "artist": "Martina Pilcerova",
@@ -5349,7 +5410,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5372,16 +5432,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e7a3b0da-026e-4ea9-8035-38c909e5f9a4",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12337,
             "text": "Draw a card for each Spirit you control.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e7a3b0da-026e-4ea9-8035-38c909e5f9a4"
+            "uuid": "f2c523d9-0852-5b16-888a-c9db66e4d66a"
         },
         {
             "artist": "John Avon",
@@ -5455,7 +5517,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5479,17 +5540,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "94bfedca-5a85-41e9-94be-67ed16bd634e",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12346,
             "text": "Flying\nWhenever Shimmering Glasskite becomes the target of a spell or ability for the first time each turn, counter that spell or ability.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "94bfedca-5a85-41e9-94be-67ed16bd634e"
+            "uuid": "7daf66c6-4fdd-538d-8bc8-8b62c8dabc93"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -5555,7 +5618,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5579,18 +5641,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4c71d1c3-7a8f-404f-a448-cd5cf97ec7de",
             "subtypes": [
                 "Moonfolk",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12358,
             "text": "Flying\n{2}, Return a land you control to its owner's hand: Target player puts the top two cards of their library into their graveyard.",
             "toughness": "4",
             "type": "Creature — Moonfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c71d1c3-7a8f-404f-a448-cd5cf97ec7de"
+            "uuid": "9652c6c5-644b-579c-bc08-4deb4f65324e"
         },
         {
             "artist": "John Avon",
@@ -5664,7 +5728,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5688,24 +5751,34 @@
             "rarity": "uncommon",
             "rulings": [
                 {
-                    "date": "2005-02-01",
-                    "text": "Stream of Consciousness can target from zero to four cards."
+                    "date": "2018-12-07",
+                    "text": "Stream of Consciousness can’t be one of the target cards you shuffle into your library."
                 },
                 {
-                    "date": "2005-02-01",
-                    "text": "Stream of Consciousness targets the player as well as the cards. The shuffle occurs even if zero cards are targeted."
+                    "date": "2018-12-07",
+                    "text": "You choose the target cards; the target player doesn’t. They may offer suggestions."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "You may target zero cards in any graveyard and have a target player simply shuffle their library."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If you target any cards in a graveyard and those cards all become illegal targets, the target player simply shuffles their library."
                 }
             ],
+            "scryfallId": "499be0ce-928b-496f-9d81-4ef39752377c",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12364,
             "text": "Target player shuffles up to four target cards from their graveyard into their library.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "499be0ce-928b-496f-9d81-4ef39752377c"
+            "uuid": "f6c5775e-7e05-5dd9-b2a7-73405fa514e0"
         },
         {
             "artist": "Randy Gallegos",
@@ -5771,7 +5844,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5805,14 +5877,16 @@
                     "text": "This card won’t be put into your graveyard until after it’s finished resolving, which means it won’t be shuffled into your library as part of its own effect."
                 }
             ],
+            "scryfallId": "5eb58d9e-d181-4167-8b80-64b238183bdb",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12365,
             "text": "Each player shuffles their hand, graveyard, and all permanents they own into their library, then draws seven cards. Each player's life total becomes 7.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5eb58d9e-d181-4167-8b80-64b238183bdb"
+            "uuid": "9684798d-6f56-574b-a6f9-479b52fca175"
         },
         {
             "artist": "Michael Sutfin",
@@ -5886,7 +5960,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5910,17 +5983,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b015ae03-c083-4e4a-b4a2-88e55aef9001",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12369,
             "text": "Sacrifice Teardrop Kami: You may tap or untap target creature.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "b015ae03-c083-4e4a-b4a2-88e55aef9001"
+            "uuid": "e605526f-c22e-5ad6-9f84-76fe99582db2"
         },
         {
             "artist": "Anthony S. Waters",
@@ -5994,7 +6069,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6031,16 +6105,18 @@
                     "text": "Tokens usually have a converted mana cost of 0."
                 }
             ],
+            "scryfallId": "999440a5-9659-4218-8594-1950f1155975",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12374,
             "text": "Enchant creature with converted mana cost 2 or less\nYou control enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "999440a5-9659-4218-8594-1950f1155975"
+            "uuid": "e093b99c-a5fa-5ada-8970-1a7ded12084e"
         },
         {
             "artist": "Matt Cavotta",
@@ -6114,7 +6190,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6142,16 +6217,18 @@
                     "text": "You must choose two different targets when you cast Toils of Night and Day. The targets are chosen on announcement. The tap or untap choice is made on resolution."
                 }
             ],
+            "scryfallId": "0881f8bf-5c28-4f54-9080-9612790ffa83",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12377,
             "text": "You may tap or untap target permanent, then you may tap or untap another target permanent.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "0881f8bf-5c28-4f54-9080-9612790ffa83"
+            "uuid": "287160dc-bc37-5d49-b7fc-7fe43330ccac"
         },
         {
             "artist": "Christopher Rush",
@@ -6217,7 +6294,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6261,19 +6337,21 @@
                     "text": "Since Tomorrow replaces all your card drawing with looking at cards, you can’t lose the game by being required to draw more cards than are in your library with Tomorrow on the battlefield."
                 }
             ],
+            "scryfallId": "095813f9-d559-40bd-a50f-7c1f6e494e60",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12378,
             "text": "If you would draw a card, look at the top three cards of your library instead. Put one of those cards into your hand and the rest on the bottom of your library in any order.",
             "toughness": "5",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "095813f9-d559-40bd-a50f-7c1f6e494e60"
+            "uuid": "30530996-d3cd-58fb-b052-589237a7ce58"
         },
         {
             "artist": "Arnie Swekel",
@@ -6339,7 +6417,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6379,16 +6456,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "329ae5c2-4f97-4315-b03f-c061eed3ed79",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12386,
             "text": "Target creature gains shroud until end of turn and can't be blocked this turn. (A creature with shroud can't be the target of spells or abilities.)\nSplice onto Arcane—Return a blue creature you control to its owner's hand. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "329ae5c2-4f97-4315-b03f-c061eed3ed79"
+            "uuid": "c2097ef6-9739-548c-85d0-551fe3261864"
         },
         {
             "artist": "Scott M. Fischer",
@@ -6454,7 +6533,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6480,18 +6558,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "34469923-9a48-4fa5-aff8-4e09926f039f",
             "subtypes": [
                 "Human",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12388,
             "text": "Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Walker of Secret Ways deals combat damage to a player, look at that player's hand.\n{1}{U}: Return target Ninja you control to its owner's hand. Activate this ability only during your turn.",
             "toughness": "2",
             "type": "Creature — Human Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "34469923-9a48-4fa5-aff8-4e09926f039f"
+            "uuid": "656bd9d4-2f86-5da0-ba4c-9c679b8d766a"
         },
         {
             "artist": "Dany Orizio",
@@ -6565,7 +6645,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6589,17 +6668,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "801c2b46-c7a7-44d6-ae38-5d34bf00c404",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12233,
             "text": "Sacrifice Bile Urchin: Target player loses 1 life.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "801c2b46-c7a7-44d6-ae38-5d34bf00c404"
+            "uuid": "2ad213e7-1d28-51db-bd1b-73739d428aa2"
         },
         {
             "artist": "Rebecca Guay",
@@ -6665,7 +6746,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6688,16 +6768,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "de0ba1cf-d913-4285-9d8b-38acf78cc45e",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12236,
             "text": "Flash\nEnchant creature\nAt the beginning of your upkeep, you lose 1 life.\n{0}: Regenerate enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "de0ba1cf-d913-4285-9d8b-38acf78cc45e"
+            "uuid": "c9fd5497-f7a4-5b9e-ab99-2afade539934"
         },
         {
             "artist": "Carl Critchlow",
@@ -6763,7 +6845,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6804,16 +6885,18 @@
                     "text": "Players can only respond once this spell has been cast and all its costs have been paid. No one can try to destroy the creature you sacrificed to prevent you from casting this spell."
                 }
             ],
+            "scryfallId": "be04ed26-8036-4505-83d3-b782e7e1fb45",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12240,
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nTarget creature gets -X/-X until end of turn, where X is the sacrificed creature's power.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "be04ed26-8036-4505-83d3-b782e7e1fb45"
+            "uuid": "848698a6-0ad4-5c67-80d0-6f5e79c2aa3b"
         },
         {
             "artist": "Martina Pilcerova",
@@ -6879,7 +6962,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6903,17 +6985,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9c735bda-5454-4177-a23a-f9f00b7480d2",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12246,
             "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nSoulshift 5 (When this creature dies, you may return target Spirit card with converted mana cost 5 or less from your graveyard to your hand.)",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "9c735bda-5454-4177-a23a-f9f00b7480d2"
+            "uuid": "c7a6d3e1-4784-564d-a8de-0323edcb6e6b"
         },
         {
             "artist": "Glen Angus",
@@ -6979,7 +7063,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7027,14 +7110,16 @@
                     "text": "A face-down creature has no name, so no card can possibly share a name with it (not even other cards with no name). If you Eradicate a face-down creature you will still search its controller’s library, but you won’t be able to exile any cards from that library."
                 }
             ],
+            "scryfallId": "02d6e0e5-798c-4791-85fe-24d0838df8f4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12252,
             "text": "Exile target nonblack creature. Search its controller's graveyard, hand, and library for all cards with the same name as that creature and exile them. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "02d6e0e5-798c-4791-85fe-24d0838df8f4"
+            "uuid": "079580cc-dcb4-5cfd-bdcd-ba8fdb824695"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -7100,7 +7185,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7133,16 +7217,18 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "924fa2d7-ec9b-4b82-8384-0f904cb624f7",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12264,
             "text": "Enchant Swamp\n{2}: Until end of turn, enchanted Swamp becomes a 2/2 black Spirit creature with \"{B}: This creature gets +1/+1 until end of turn.\" It's still a land.\nWhen enchanted Swamp is put into a graveyard, you may return Genju of the Fens from your graveyard to your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "924fa2d7-ec9b-4b82-8384-0f904cb624f7"
+            "uuid": "e75543bf-9c41-551b-a4d8-d999d376eb83"
         },
         {
             "artist": "Ittoku",
@@ -7208,7 +7294,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7246,18 +7331,24 @@
                 {
                     "date": "2013-06-07",
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If the returned creature leaves the battlefield before the end step, it will remain in its current zone. It won’t be exiled."
                 }
             ],
+            "scryfallId": "3027e6c5-eed3-44e7-bb12-67569721af99",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12271,
             "text": "Return target legendary creature card from your graveyard to the battlefield. That creature gains haste. Exile it at the beginning of the next end step.\nSplice onto Arcane {2}{B} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "3027e6c5-eed3-44e7-bb12-67569721af99"
+            "uuid": "e148e4c7-774f-50b5-9b66-b4822e1fd6bf"
         },
         {
             "artist": "Jim Nelson",
@@ -7331,7 +7422,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7353,14 +7443,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d22dd514-814f-4a62-926d-fef311896c02",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12276,
             "text": "Destroy target legendary creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d22dd514-814f-4a62-926d-fef311896c02"
+            "uuid": "23ac7661-a19c-535f-ab1b-df40a4ffb919"
         },
         {
             "artist": "Arnie Swekel",
@@ -7372,11 +7464,11 @@
                 "B"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -7402,6 +7494,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "28f72260-c8f9-4c44-92b5-23cef6690fdd",
             "side": "b",
             "subtypes": [
                 "Spirit"
@@ -7415,7 +7508,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "28f72260-c8f9-4c44-92b5-23cef6690fd1"
+            "uuid": "45b5d007-1a00-5ff6-a9e1-4a9c794091d3"
         },
         {
             "artist": "Arnie Swekel",
@@ -7427,11 +7520,11 @@
                 "B"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -7458,19 +7551,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "28f72260-c8f9-4c44-92b5-23cef6690fdd",
             "side": "a",
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12278,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Hired Muscle.\nAt the beginning of the end step, if there are two or more ki counters on Hired Muscle, you may flip it.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "28f72260-c8f9-4c44-92b5-23cef6690fd0"
+            "uuid": "a74bcfc6-b0e0-5b9c-9f8d-2d2a594a6ab6"
         },
         {
             "artist": "Aleksi Briclot",
@@ -7536,7 +7631,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7581,16 +7675,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "1aad5179-4b73-498e-85c5-1fc363d26223",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12280,
             "text": "If you control a Swamp, destroy target nonblack creature.\nSplice onto Arcane—Exile four cards from your graveyard. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "1aad5179-4b73-498e-85c5-1fc363d26223"
+            "uuid": "1c403e50-51ee-5f98-b08b-21d60ad3cf2b"
         },
         {
             "artist": "Wayne Reynolds",
@@ -7656,7 +7752,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7688,6 +7783,7 @@
                     "text": "If, during the combat damage step, a creature is destroyed during combat and Ink-Eyes also deals combat damage to a player, the destroyed creature can be a legal target for Ink-Eyes’s ability."
                 }
             ],
+            "scryfallId": "386d391d-a3f8-49a4-802a-409944b2acf3",
             "subtypes": [
                 "Rat",
                 "Ninja"
@@ -7695,13 +7791,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12284,
             "text": "Ninjutsu {3}{B}{B} ({3}{B}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Ink-Eyes, Servant of Oni deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.\n{1}{B}: Regenerate Ink-Eyes.",
             "toughness": "4",
             "type": "Legendary Creature — Rat Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "386d391d-a3f8-49a4-802a-409944b2acf3"
+            "uuid": "ff1d0773-15d7-52d3-a866-6a38336b5ef4"
         },
         {
             "artist": "Paolo Parente",
@@ -7775,7 +7872,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7807,6 +7903,7 @@
                     "text": "Cards exiled by Kyoki’s ability stay exiled even if Kyoki leaves the battlefield."
                 }
             ],
+            "scryfallId": "dc0969e6-f667-4e29-a038-8569022cce32",
             "subtypes": [
                 "Demon",
                 "Spirit"
@@ -7814,13 +7911,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12299,
             "text": "Whenever you cast a Spirit or Arcane spell, target opponent exiles a card from their hand.",
             "toughness": "4",
             "type": "Legendary Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc0969e6-f667-4e29-a038-8569022cce32"
+            "uuid": "3dba2607-5705-5df7-a33a-1e87601ed1a6"
         },
         {
             "artist": "Heather Hudson",
@@ -7894,7 +7992,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7916,16 +8013,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "632679e5-7368-4660-a765-07be196c3c35",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12305,
             "text": "Enchant creature\nYou control enchanted creature.\nAt the beginning of the end step, if you control no Demons, sacrifice Mark of the Oni.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "632679e5-7368-4660-a765-07be196c3c35"
+            "uuid": "6b7c6af5-6e36-59a0-bcff-dedc9eae4d76"
         },
         {
             "artist": "Pete Venters",
@@ -7999,7 +8098,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8022,18 +8120,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "04bdcdce-68fb-460b-874d-40df7afd99ca",
             "subtypes": [
                 "Rat",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12314,
             "text": "Sacrifice Nezumi Shadow-Watcher: Destroy target Ninja.",
             "toughness": "1",
             "type": "Creature — Rat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "04bdcdce-68fb-460b-874d-40df7afd99ca"
+            "uuid": "6aca72bc-6fd8-5e1b-90f1-9b5a96c423fa"
         },
         {
             "artist": "Adam Rex",
@@ -8107,7 +8207,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8139,18 +8238,20 @@
                     "text": "Attacking with Ogre Marauder a second time would cause a second trigger. If no creature was previously sacrificed, the Marauder already can’t be blocked. Sacrificing a creature for the second trigger will not nullify the first."
                 }
             ],
+            "scryfallId": "f083bd50-d171-4e49-b8e6-972802879c24",
             "subtypes": [
                 "Ogre",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12317,
             "text": "Whenever Ogre Marauder attacks, it gains \"Ogre Marauder can't be blocked\" until end of turn unless defending player sacrifices a creature.",
             "toughness": "1",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "f083bd50-d171-4e49-b8e6-972802879c24"
+            "uuid": "528f72d7-bf99-5e88-94fd-9f14bab56159"
         },
         {
             "artist": "Mark Zug",
@@ -8216,7 +8317,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8247,18 +8347,20 @@
                     "text": "If the defending player has two or fewer cards in hand when Okiba-Gang Shinobi deals combat damage to that player, they are all discarded."
                 }
             ],
+            "scryfallId": "5cd9297e-301e-4e70-af9b-3218eacacf8d",
             "subtypes": [
                 "Rat",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12319,
             "text": "Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Okiba-Gang Shinobi deals combat damage to a player, that player discards two cards.",
             "toughness": "2",
             "type": "Creature — Rat Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "5cd9297e-301e-4e70-af9b-3218eacacf8d"
+            "uuid": "fd076589-3e23-5201-aa03-ccd040af8423"
         },
         {
             "artist": "Kev Walker",
@@ -8324,7 +8426,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8356,19 +8457,21 @@
                     "text": "Patron of the Nezumi’s ability triggers even if an event puts this and multiple other permanents into the graveyard at the same time (Wrath of God, gang blocks, etc.)"
                 }
             ],
+            "scryfallId": "622e5d64-11ec-4eb5-8160-b2fb8a333812",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12328,
             "text": "Rat offering (You may cast this card any time you could cast an instant by sacrificing a Rat and paying the difference in mana costs between this and the sacrificed Rat. Mana cost includes color.)\nWhenever a permanent is put into an opponent's graveyard, that player loses 1 life.",
             "toughness": "6",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "622e5d64-11ec-4eb5-8160-b2fb8a333812"
+            "uuid": "4f9f64ee-ce95-58a3-9e42-c25425b0c28d"
         },
         {
             "artist": "Ron Spears",
@@ -8442,7 +8545,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8470,14 +8572,16 @@
                     "text": "If you target yourself with this spell, you must reveal your entire hand to the other players just as any other player would."
                 }
             ],
+            "scryfallId": "1c2f024b-e77e-426b-930e-85b87e046f9b",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12332,
             "text": "Target player reveals their hand. You choose a Spirit or Arcane card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1c2f024b-e77e-426b-930e-85b87e046f9b"
+            "uuid": "4d5ceb2f-1326-575b-9502-e06410bf1341"
         },
         {
             "artist": "Dave Allsop",
@@ -8543,7 +8647,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8566,17 +8669,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4f142dea-4751-453f-93a5-c8fdaba8a1b3",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12333,
             "text": "{B}, Sacrifice Pus Kami: Destroy target nonblack creature.\nSoulshift 6 (When this creature dies, you may return target Spirit card with converted mana cost 6 or less from your graveyard to your hand.)",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f142dea-4751-453f-93a5-c8fdaba8a1b3"
+            "uuid": "00eb5db1-7d10-5e30-a017-6bddd9aa155b"
         },
         {
             "artist": "Arnie Swekel",
@@ -8650,7 +8755,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8673,18 +8777,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b7692ef1-bfae-411d-a589-f493128ef44b",
             "subtypes": [
                 "Demon",
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12345,
             "text": "At the beginning of your upkeep, you lose 2 life if you don't control an Ogre.",
             "toughness": "4",
             "type": "Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "b7692ef1-bfae-411d-a589-f493128ef44b"
+            "uuid": "644e0e22-6ceb-563a-bacc-ad78eea037ac"
         },
         {
             "artist": "Wayne Reynolds",
@@ -8750,7 +8856,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8775,31 +8880,37 @@
             "rarity": "rare",
             "rulings": [
                 {
-                    "date": "2005-02-01",
-                    "text": "Shirei’s ability only triggers if the creature’s power immediately before leaving the battlefield is 1 or less."
+                    "date": "2018-12-07",
+                    "text": "Shirei’s ability only triggers if the creature’s power immediately before leaving the battlefield is 1 or less, regardless of its power in your graveyard."
                 },
                 {
-                    "date": "2005-02-01",
-                    "text": "If Shirei leaves the battlefield and returns to the battlefield after a creature with power 1 or less is put into your graveyard, it won’t return that creature to the battlefield under your control."
+                    "date": "2018-12-07",
+                    "text": "Shirei’s ability triggers if a creature you own with power 1 or less dies under another player’s control."
                 },
                 {
-                    "date": "2005-02-01",
-                    "text": "Shirei’s ability doesn’t affect creatures put into your graveyard before Shirei enters the battlefield. The “if” clause modifies the conditions on which creatures are returned."
+                    "date": "2018-12-07",
+                    "text": "If Shirei leaves the battlefield and returns to the battlefield after a creature with power 1 or less is put into your graveyard, Shirei is considered a new object. The delayed triggered ability won’t return the creature to the battlefield."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "Shirei’s ability can’t return any creatures that died before Shirei entered the battlefield."
                 }
             ],
+            "scryfallId": "7db7ced3-08b8-4599-9f44-3c6c8f905c9b",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12349,
             "text": "Whenever a creature with power 1 or less is put into your graveyard from the battlefield, you may return that card to the battlefield at the beginning of the next end step if Shirei, Shizo's Caretaker is still on the battlefield.",
             "toughness": "2",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "7db7ced3-08b8-4599-9f44-3c6c8f905c9b"
+            "uuid": "0077783b-1081-55bc-8d22-7bbc9adcfde6"
         },
         {
             "artist": "Dan Scott",
@@ -8865,7 +8976,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8886,16 +8996,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d92f4129-19fc-4ee9-9e3d-77fcf1563e4b",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12353,
             "text": "You may exile a black card with converted mana cost X from your hand rather than pay this spell's mana cost.\nTarget creature gets -X/-X until end of turn.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "d92f4129-19fc-4ee9-9e3d-77fcf1563e4b"
+            "uuid": "a7a48ca3-77f9-5f48-9c32-1fad09bc7b08"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -8961,7 +9073,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -8985,17 +9096,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "005edd3a-238d-471a-8d5b-2df735c49f67",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12355,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Skullmane Baku.\n{1}, {T}, Remove X ki counters from Skullmane Baku: Target creature gets -X/-X until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "005edd3a-238d-471a-8d5b-2df735c49f67"
+            "uuid": "d0917566-d4c7-597b-a45a-441ccc3da728"
         },
         {
             "artist": "Matt Cavotta",
@@ -9061,7 +9174,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9094,18 +9206,20 @@
                     "text": "Skullsnatcher’s ability can target zero, one, or two cards in that player’s graveyard."
                 }
             ],
+            "scryfallId": "6cb76fa1-a930-468d-bfd4-dd06c2a9fe9e",
             "subtypes": [
                 "Rat",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12356,
             "text": "Ninjutsu {B} ({B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Skullsnatcher deals combat damage to a player, exile up to two target cards from that player's graveyard.",
             "toughness": "1",
             "type": "Creature — Rat Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "6cb76fa1-a930-468d-bfd4-dd06c2a9fe9e"
+            "uuid": "a2b6c98c-3a42-519e-a136-0178ae94e736"
         },
         {
             "artist": "Jim Nelson",
@@ -9179,7 +9293,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9202,14 +9315,16 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7287f68f-f2e2-4e6f-a772-29a629bb9ccd",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12363,
             "text": "Return target creature card with converted mana cost X or less from your graveyard to the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7287f68f-f2e2-4e6f-a772-29a629bb9ccd"
+            "uuid": "c700a635-6e3c-5a20-b43a-bc1e7bbd67b8"
         },
         {
             "artist": "Kev Walker",
@@ -9283,7 +9398,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9307,18 +9421,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bfa3d318-83ff-41db-b33a-e4f5b7cd7a77",
             "subtypes": [
                 "Ogre",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12367,
             "text": "Whenever Takenuma Bleeder attacks or blocks, you lose 1 life if you don't control a Demon.",
             "toughness": "3",
             "type": "Creature — Ogre Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "bfa3d318-83ff-41db-b33a-e4f5b7cd7a77"
+            "uuid": "d713904b-de9d-54c1-8d72-20af64c59e89"
         },
         {
             "artist": "Darrell Riche",
@@ -9392,7 +9508,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9413,16 +9528,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "42acaa44-15d5-4760-9aa8-b44eda9ed98a",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12375,
             "text": "Target player discards three cards.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "42acaa44-15d5-4760-9aa8-b44eda9ed98a"
+            "uuid": "bd7ee6fc-d543-54c1-8252-81e85009971f"
         },
         {
             "artist": "Paolo Parente",
@@ -9488,7 +9605,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9514,18 +9630,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c4dcfdb4-c2ff-4fc5-aa2a-0c6e311d2910",
             "subtypes": [
                 "Rat",
                 "Ninja"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12376,
             "text": "Ninjutsu {2}{B} ({2}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Throat Slitter deals combat damage to a player, destroy target nonblack creature that player controls.",
             "toughness": "2",
             "type": "Creature — Rat Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "c4dcfdb4-c2ff-4fc5-aa2a-0c6e311d2910"
+            "uuid": "92e3442c-39b5-570d-9165-75740911ef1c"
         },
         {
             "artist": "Christopher Moeller",
@@ -9591,7 +9709,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9623,6 +9740,7 @@
                     "text": "Creatures destroyed by an instant that you cast normally can cause a trigger that allows the instant to be cast again. For example, cast Terror on an opponent’s creature. The creature is destroyed, triggering Toshiro’s ability, and then the Terror is put into your graveyard. You can put Toshiro’s ability on the stack targeting the Terror and then recast it when the ability resolves."
                 }
             ],
+            "scryfallId": "0e767e07-febd-4025-bf03-d4d816bc1d3d",
             "subtypes": [
                 "Human",
                 "Samurai"
@@ -9630,13 +9748,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12380,
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nWhenever a creature an opponent controls dies, you may cast target instant card from your graveyard. If that card would be put into a graveyard this turn, exile it instead.",
             "toughness": "2",
             "type": "Legendary Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "0e767e07-febd-4025-bf03-d4d816bc1d3d"
+            "uuid": "fb72dc95-950c-5309-a36a-28c0807a47a7"
         },
         {
             "artist": "Tony Szczudlo",
@@ -9710,7 +9829,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9733,6 +9851,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "54aeca31-1175-4d2d-adc3-e3682d7e9e07",
             "subtypes": [
                 "Demon",
                 "Spirit"
@@ -9740,13 +9859,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12392,
             "text": "When Yukora, the Prisoner leaves the battlefield, sacrifice all non-Ogre creatures you control.",
             "toughness": "5",
             "type": "Legendary Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "54aeca31-1175-4d2d-adc3-e3682d7e9e07"
+            "uuid": "88143cc1-a9e4-5793-9824-f63ae2d04e28"
         },
         {
             "artist": "Pete Venters",
@@ -9820,7 +9940,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9843,18 +9962,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7ce1ee90-67d1-4e83-ae1e-3bd71069aae4",
             "subtypes": [
                 "Goblin",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12228,
             "text": "When Akki Blizzard-Herder dies, each player sacrifices a land.",
             "toughness": "1",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "7ce1ee90-67d1-4e83-ae1e-3bd71069aae4"
+            "uuid": "fa547526-e68f-5986-b8cc-842695d17830"
         },
         {
             "artist": "Martina Pilcerova",
@@ -9928,7 +10049,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -9951,18 +10071,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c8fb34ae-157c-4f4b-bb47-2a9dc394a20c",
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12229,
             "text": "Whenever a land is put into a graveyard from the battlefield, Akki Raider gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "c8fb34ae-157c-4f4b-bb47-2a9dc394a20c"
+            "uuid": "e121b850-1d9a-5f0a-841f-9af0617aa927"
         },
         {
             "artist": "Chris Appelhans",
@@ -10036,7 +10158,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10059,17 +10180,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "de3218e3-4640-4f73-a52b-f11ea5ea23a9",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12230,
             "text": "Haste\nAshen Monstrosity attacks each combat if able.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "de3218e3-4640-4f73-a52b-f11ea5ea23a9"
+            "uuid": "ff3dd1ff-c16d-554a-a27b-c683f2b74abe"
         },
         {
             "artist": "Aleksi Briclot",
@@ -10135,7 +10258,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10162,16 +10284,18 @@
                     "text": "The damage is dealt by the enchantments, not by Aura Barbs."
                 }
             ],
+            "scryfallId": "132af2c2-2bae-4c05-9d61-a5777818a057",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12231,
             "text": "Each enchantment deals 2 damage to its controller, then each Aura attached to a creature deals 2 damage to the creature it's attached to.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "132af2c2-2bae-4c05-9d61-a5777818a057"
+            "uuid": "5059f52e-4684-5a90-8783-444e123987ae"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -10237,7 +10361,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10261,17 +10384,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "78bfd388-3648-4bc3-8c10-d6b3b79a9479",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12234,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Blademane Baku.\n{1}, Remove X ki counters from Blademane Baku: For each counter removed, Blademane Baku gets +2/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "78bfd388-3648-4bc3-8c10-d6b3b79a9479"
+            "uuid": "57d65469-6ac1-5ab9-9b2e-59dc135a1455"
         },
         {
             "artist": "Glen Angus",
@@ -10337,7 +10462,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10358,16 +10482,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8b915daa-d239-4460-bd6b-e1327fdf7f51",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12235,
             "text": "You may exile a red card with converted mana cost X from your hand rather than pay this spell's mana cost.\nTarget creature gets +X/+0 until end of turn.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "8b915daa-d239-4460-bd6b-e1327fdf7f51"
+            "uuid": "45eb8f77-aaed-5ed5-9191-687fc83edcc0"
         },
         {
             "artist": "Jim Nelson",
@@ -10433,7 +10559,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10464,14 +10589,16 @@
                     "text": "Creatures with no creature type are non-Spirit creatures."
                 }
             ],
+            "scryfallId": "064dcfb2-6088-49c9-89b2-88d63c9add53",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12244,
             "text": "All Spirits have \"When this permanent enters the battlefield, you may have it deal 3 damage to target non-Spirit creature.\"\nNon-Spirit creatures have \"When this creature enters the battlefield, you may have it deal 3 damage to target Spirit creature.\"",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "064dcfb2-6088-49c9-89b2-88d63c9add53"
+            "uuid": "e2c93a95-6cfe-50ef-bbc5-3dbd5d8fdc0b"
         },
         {
             "artist": "Wayne Reynolds",
@@ -10545,7 +10672,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10567,16 +10693,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8ab16152-4617-4deb-b995-195e21f8f485",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12245,
             "text": "Each player sacrifices a permanent.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8ab16152-4617-4deb-b995-195e21f8f485"
+            "uuid": "d80af978-c67d-5e95-aea7-3af1d8b7303e"
         },
         {
             "artist": "Paolo Parente",
@@ -10588,11 +10716,11 @@
                 "R"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -10617,6 +10745,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1fe2b76f-ddb7-49d5-933b-ccb06be5d46f",
             "side": "b",
             "subtypes": [
                 "Spirit"
@@ -10630,7 +10759,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1fe2b76f-ddb7-49d5-933b-ccb06be5d461"
+            "uuid": "4de37f84-9e98-56ab-aba8-c1c71257da49"
         },
         {
             "artist": "Paolo Parente",
@@ -10642,11 +10771,11 @@
                 "R"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -10672,19 +10801,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "1fe2b76f-ddb7-49d5-933b-ccb06be5d46f",
             "side": "a",
             "subtypes": [
                 "Human",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12247,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Cunning Bandit.\nAt the beginning of the end step, if there are two or more ki counters on Cunning Bandit, you may flip it.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "1fe2b76f-ddb7-49d5-933b-ccb06be5d460"
+            "uuid": "c54abb7e-9a59-5b08-9f11-b17fe63a69dd"
         },
         {
             "artist": "Glen Angus",
@@ -10758,7 +10889,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10780,16 +10910,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d6e5e360-ed47-40c1-8ad7-57645c2854ca",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12255,
             "text": "First Volley deals 1 damage to target creature and 1 damage to that creature's controller.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "d6e5e360-ed47-40c1-8ad7-57645c2854ca"
+            "uuid": "c5a2da48-a310-59a3-b807-df67a83f3f80"
         },
         {
             "artist": "Aleksi Briclot",
@@ -10863,7 +10995,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10895,14 +11026,16 @@
                     "text": "The replacement effect applies only to the target player, not to a permanent or player the damage might be redirected to."
                 }
             ],
+            "scryfallId": "a79701b4-d220-4c3e-b96c-7a77a22ba899",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12256,
             "text": "Flames of the Blood Hand deals 4 damage to target player or planeswalker. The damage can't be prevented. If that player would gain life this turn, that player gains no life instead.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a79701b4-d220-4c3e-b96c-7a77a22ba899"
+            "uuid": "eee6267b-f9be-5e1d-a3d2-d93e91451082"
         },
         {
             "artist": "Dan Scott",
@@ -10969,7 +11102,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -10992,18 +11124,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1a91e5f1-9179-4763-b7c9-b7ad5451f6d0",
             "subtypes": [
                 "Ogre",
                 "Warrior"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 12259,
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "1a91e5f1-9179-4763-b7c9-b7ad5451f6d0"
+            "uuid": "d6eff2c4-a0d0-5c70-ba74-590702c86260"
         },
         {
             "artist": "Carl Critchlow",
@@ -11077,7 +11210,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11102,17 +11234,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "53bb08f9-355d-443e-8f08-a20ef7322e78",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12260,
             "text": "Sacrifice Frostling: It deals 1 damage to target creature.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "53bb08f9-355d-443e-8f08-a20ef7322e78"
+            "uuid": "9f67029c-ffcc-5bfe-ae6e-fad714a9cdc0"
         },
         {
             "artist": "Michael Sutfin",
@@ -11178,7 +11312,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11215,6 +11348,7 @@
                     "text": "Fumiko’s ability doesn’t force tapped creatures or creatures with summoning sickness to attack."
                 }
             ],
+            "scryfallId": "482678b8-bce6-4847-9f43-1761d61645d8",
             "subtypes": [
                 "Human",
                 "Samurai"
@@ -11222,13 +11356,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12261,
             "text": "Fumiko the Lowblood has bushido X, where X is the number of attacking creatures. (Whenever this creature blocks or becomes blocked, it gets +X/+X until end of turn.)\nCreatures your opponents control attack each combat if able.",
             "toughness": "2",
             "type": "Legendary Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "482678b8-bce6-4847-9f43-1761d61645d8"
+            "uuid": "b8f5726a-8159-58f0-9c20-2469416ab8bc"
         },
         {
             "artist": "Joel Thomas",
@@ -11294,7 +11429,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11324,16 +11458,18 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "c4302b20-d445-4ef4-a6b7-6db311aa24a2",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12267,
             "text": "Enchant Mountain\n{2}: Enchanted Mountain becomes a 6/1 red Spirit creature until end of turn. It's still a land.\nWhen enchanted Mountain is put into a graveyard, you may return Genju of the Spires from your graveyard to your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c4302b20-d445-4ef4-a6b7-6db311aa24a2"
+            "uuid": "6a517e8b-6a8a-5e72-94b4-917abe7a6c52"
         },
         {
             "artist": "Darrell Riche",
@@ -11407,7 +11543,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11432,18 +11567,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8964afec-50a9-45c4-bd2b-d06f8e75f4ae",
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12269,
             "text": "Goblin Cohort can't attack unless you've cast a creature spell this turn.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8964afec-50a9-45c4-bd2b-d06f8e75f4ae"
+            "uuid": "53649db8-3795-5c9c-9308-cfa1c50c0f37"
         },
         {
             "artist": "Carl Critchlow",
@@ -11517,7 +11654,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11540,6 +11676,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4a3ab177-d9ab-46bf-bd92-20a9ecf2d0ad",
             "subtypes": [
                 "Ogre",
                 "Shaman"
@@ -11547,13 +11684,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12274,
             "text": "{T}: Heartless Hidetsugu deals damage to each player equal to half that player's life total, rounded down.",
             "toughness": "3",
             "type": "Legendary Creature — Ogre Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a3ab177-d9ab-46bf-bd92-20a9ecf2d0ad"
+            "uuid": "05ec2df0-f05a-5644-967a-5c4825e93ce0"
         },
         {
             "artist": "Ron Spencer",
@@ -11627,7 +11765,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11653,14 +11790,16 @@
                     "text": "In the Web of War doesn’t affect creatures you take control of which are already on the battlefield."
                 }
             ],
+            "scryfallId": "f12b7124-d9d0-480c-b622-777a74d4f679",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12282,
             "text": "Whenever a creature enters the battlefield under your control, it gets +2/+0 and gains haste until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f12b7124-d9d0-480c-b622-777a74d4f679"
+            "uuid": "bcb05b8f-6703-5686-b885-0152bb8f9150"
         },
         {
             "artist": "Kev Walker",
@@ -11734,7 +11873,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11757,16 +11895,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0b927e30-3508-4daf-91ce-8978b04062cb",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12285,
             "text": "Ire of Kaminari deals damage to any target equal to the number of Arcane cards in your graveyard.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "0b927e30-3508-4daf-91ce-8978b04062cb"
+            "uuid": "1676e5bb-f372-585d-9b60-e67b688c5be9"
         },
         {
             "artist": "Christopher Rush",
@@ -11840,7 +11980,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11863,6 +12002,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "8e94fec2-dc56-4961-ba80-b9c904a345ab",
             "subtypes": [
                 "Goblin",
                 "Warrior"
@@ -11870,13 +12010,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12287,
             "text": "Whenever an opponent casts a Spirit or Arcane spell, Ishi-Ishi, Akki Crackshot deals 2 damage to that player.",
             "toughness": "1",
             "type": "Legendary Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8e94fec2-dc56-4961-ba80-b9c904a345ab"
+            "uuid": "26418b8a-8957-5e35-b8c6-bcdcc4173dc3"
         },
         {
             "artist": "Keith Garletts",
@@ -11942,7 +12083,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -11965,16 +12105,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "56f0d9aa-4270-41cd-8993-765354c03d03",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12298,
             "text": "Flash\nEnchant creature\nIf a creature dealt damage by enchanted creature this turn would die, exile it instead.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "56f0d9aa-4270-41cd-8993-765354c03d03"
+            "uuid": "5377d9f0-20e3-550e-a9dc-f975cd92d1db"
         },
         {
             "artist": "Martina Pilcerova",
@@ -12048,7 +12190,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12080,19 +12221,21 @@
                     "text": "Switching a creature’s power and toughness twice (or any even number of times) effectively returns the creature to the power and toughness it had before any switches."
                 }
             ],
+            "scryfallId": "b403bdbb-13ab-43dd-a994-d45b994f6e0e",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12303,
             "text": "{1}{R}: Switch each creature's power and toughness until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "b403bdbb-13ab-43dd-a994-d45b994f6e0e"
+            "uuid": "9e9da2d8-3075-54f5-82db-c1e1d733dad6"
         },
         {
             "artist": "Jim Murray",
@@ -12166,7 +12309,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12189,18 +12331,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "aa425203-71fc-4d19-8014-871d16b11bfd",
             "subtypes": [
                 "Ogre",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12318,
             "text": "Whenever a player casts a spell, tap Ogre Recluse.",
             "toughness": "4",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "aa425203-71fc-4d19-8014-871d16b11bfd"
+            "uuid": "c319afa6-ca2a-54f2-b95f-a279b054e18e"
         },
         {
             "artist": "Ron Spencer",
@@ -12266,7 +12410,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12305,16 +12448,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "97040b82-ad9e-4c06-a9ac-74d0688279f9",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12323,
             "text": "Each time target permanent would deal damage to a permanent or player this turn, it deals double that damage to that permanent or player instead.\nSplice onto Arcane {2}{R}{R} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "97040b82-ad9e-4c06-a9ac-74d0688279f9"
+            "uuid": "dddb8d37-9663-5321-9bb5-a0271c0ca683"
         },
         {
             "artist": "Jim Nelson",
@@ -12380,7 +12525,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12403,19 +12547,21 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "18325283-ace8-414b-bf48-2ed36b5a9c24",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12325,
             "text": "Goblin offering (You may cast this card any time you could cast an instant by sacrificing a Goblin and paying the difference in mana costs between this and the sacrificed Goblin. Mana cost includes color.)\nWhenever Patron of the Akki attacks, creatures you control get +2/+0 until end of turn.",
             "toughness": "5",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "18325283-ace8-414b-bf48-2ed36b5a9c24"
+            "uuid": "f220577e-53f6-5b7f-9150-0c61ce3716ab"
         },
         {
             "artist": "Dan Scott",
@@ -12481,7 +12627,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12504,18 +12649,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f9f12b75-af29-49ea-a23d-915052db9fef",
             "subtypes": [
                 "Human",
                 "Samurai"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12339,
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nWhenever Ronin Cliffrider attacks, you may have it deal 1 damage to each creature defending player controls.",
             "toughness": "2",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "f9f12b75-af29-49ea-a23d-915052db9fef"
+            "uuid": "8b3f6cd1-30ad-584c-98b6-a8ee6e6b561c"
         },
         {
             "artist": "Pete Venters",
@@ -12589,7 +12736,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12613,18 +12759,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8fdaf49b-9524-4824-807e-c40fcb381742",
             "subtypes": [
                 "Ogre",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12348,
             "text": "Whenever Shinka Gatekeeper is dealt damage, it deals that much damage to you.",
             "toughness": "2",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8fdaf49b-9524-4824-807e-c40fcb381742"
+            "uuid": "d11ecdae-30b9-5487-b4ae-afba5bbe4c63"
         },
         {
             "artist": "Hideaki Takamura",
@@ -12690,7 +12838,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12722,14 +12869,16 @@
                     "text": "The copies must be found if they are in publicly viewable zones. Finding copies while searching private zones is optional."
                 }
             ],
+            "scryfallId": "bd243ce5-152b-4d9c-991e-be56b6731d99",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12360,
             "text": "Exile target nonbasic land. Search its controller's graveyard, hand, and library for all cards with the same name as that land and exile them. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bd243ce5-152b-4d9c-991e-be56b6731d99"
+            "uuid": "51f30b91-67eb-57a5-ba13-8b200b2bd4e2"
         },
         {
             "artist": "Greg Staples",
@@ -12795,7 +12944,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12840,16 +12988,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "716ae2ca-800a-4cc0-8cb1-fe8d6495306f",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12379,
             "text": "Torrent of Stone deals 4 damage to target creature.\nSplice onto Arcane—Sacrifice two Mountains. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "716ae2ca-800a-4cc0-8cb1-fe8d6495306f"
+            "uuid": "d203ebb2-1f1c-54dc-9fca-ca93318b86ed"
         },
         {
             "artist": "Wayne Reynolds",
@@ -12915,7 +13065,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -12937,14 +13086,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "24b6607c-0c34-4ffc-b1b7-154417492766",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12382,
             "text": "You and target opponent each gain control of all creatures the other controls until end of turn. Untap those creatures. Those creatures gain haste until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "24b6607c-0c34-4ffc-b1b7-154417492766"
+            "uuid": "63a14451-4e8c-5c8b-b977-002f168eeaeb"
         },
         {
             "artist": "Luca Zontini",
@@ -13010,7 +13161,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13033,17 +13183,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f43fe8e0-23ab-4fe7-8a48-1902be142c6a",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12238,
             "text": "Trample\nSoulshift 8 (When this creature dies, you may return target Spirit card with converted mana cost 8 or less from your graveyard to your hand.)",
             "toughness": "5",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "f43fe8e0-23ab-4fe7-8a48-1902be142c6a"
+            "uuid": "1bd384da-ce46-5027-866a-27520a78aa63"
         },
         {
             "artist": "Shishizaru",
@@ -13055,11 +13207,11 @@
                 "G"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -13086,6 +13238,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "73636ca0-2309-4bb3-9300-8bd0c0bb5b31",
             "side": "b",
             "subtypes": [
                 "Spirit"
@@ -13099,7 +13252,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "73636ca0-2309-4bb3-9300-8bd0c0bb5b31"
+            "uuid": "2c98235c-5078-5ea9-9a5b-f9080d3e2efc"
         },
         {
             "artist": "Shishizaru",
@@ -13111,11 +13264,11 @@
                 "G"
             ],
             "convertedManaCost": 3.0,
+            "faceConvertedManaCost": 3.0,
             "foreignData": [],
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "flip",
             "legalities": {
                 "1v1": "Legal",
@@ -13143,19 +13296,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "73636ca0-2309-4bb3-9300-8bd0c0bb5b31",
             "side": "a",
             "subtypes": [
                 "Human",
                 "Monk"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12239,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Budoka Pupil.\nAt the beginning of the end step, if there are two or more ki counters on Budoka Pupil, you may flip it.",
             "toughness": "2",
             "type": "Creature — Human Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "73636ca0-2309-4bb3-9300-8bd0c0bb5b30"
+            "uuid": "b5a0a748-54c4-5a1c-b594-aec92f5777ca"
         },
         {
             "artist": "Jeff Easley",
@@ -13229,7 +13384,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13252,17 +13406,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b32c342f-ee1a-461c-9082-d2f6d9412f54",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12242,
             "text": "Sacrifice Child of Thorns: Target creature gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "b32c342f-ee1a-461c-9082-d2f6d9412f54"
+            "uuid": "ad9221a7-7973-53e7-977a-085882584eff"
         },
         {
             "artist": "Jeff Easley",
@@ -13336,7 +13492,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13358,14 +13513,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "aeefab6e-582a-42bb-bb27-d6aadd1d35c5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12251,
             "text": "Reveal the top X cards of your library. Put all creature cards revealed this way into your hand and the rest on the bottom of your library in any order.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "aeefab6e-582a-42bb-bb27-d6aadd1d35c5"
+            "uuid": "a4ac02c0-65b7-54c1-aaed-0f7d38ea5557"
         },
         {
             "artist": "Dany Orizio",
@@ -13431,7 +13588,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13463,17 +13619,19 @@
                     "text": "Each soulshift ability can return one Spirit, or both abilities can attempt to return just one Spirit (causing the second ability to be countered)."
                 }
             ],
+            "scryfallId": "0ff39ae5-a241-4607-903e-201f56c675f9",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12258,
             "text": "Soulshift 4, soulshift 4 (When this creature dies, you may return up to two target Spirit cards with converted mana cost 4 or less from your graveyard to your hand.)",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "0ff39ae5-a241-4607-903e-201f56c675f9"
+            "uuid": "ead0ae93-db4d-5e9c-baf1-50a78c88cad3"
         },
         {
             "artist": "Arnie Swekel",
@@ -13539,7 +13697,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13572,16 +13729,18 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "9d621b82-c863-437b-b42c-31a0872be6d4",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12262,
             "text": "Enchant Forest\n{2}: Enchanted Forest becomes a 4/4 green Spirit creature until end of turn. It's still a land.\nWhen enchanted Forest is put into a graveyard, you may return Genju of the Cedars from your graveyard to your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9d621b82-c863-437b-b42c-31a0872be6d4"
+            "uuid": "7b67a750-94bd-571f-9351-872853310dd7"
         },
         {
             "artist": "Tony Szczudlo",
@@ -13648,7 +13807,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13670,17 +13828,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5c28728d-4839-4cdf-91d4-b9fb4b5d0449",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 12268,
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "5c28728d-4839-4cdf-91d4-b9fb4b5d0449"
+            "uuid": "9498d9d8-94e5-5d18-bc7c-bf9a62cd860a"
         },
         {
             "artist": "Cara Mitten",
@@ -13746,7 +13905,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13769,17 +13927,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "19fd23b5-5e57-44dc-8248-c4b9eb71c4f3",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12272,
             "text": "Protection from non-Spirit creatures\nSoulshift 4 (When this creature dies, you may return target Spirit card with converted mana cost 4 or less from your graveyard to your hand.)",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "19fd23b5-5e57-44dc-8248-c4b9eb71c4f3"
+            "uuid": "45427f93-0b4d-5638-8862-982227124985"
         },
         {
             "artist": "Christopher Moeller",
@@ -13853,7 +14013,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13876,6 +14035,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "90334b59-73d8-4459-af59-d7a0539e2cc5",
             "subtypes": [
                 "Human",
                 "Samurai"
@@ -13883,13 +14043,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12286,
             "text": "This spell can't be countered.\nBushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.)\n{2}: Regenerate target Samurai.",
             "toughness": "1",
             "type": "Legendary Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "90334b59-73d8-4459-af59-d7a0539e2cc5"
+            "uuid": "3eb73934-9d9a-5670-80b2-8ba056eb27ed"
         },
         {
             "artist": "Paolo Parente",
@@ -13955,7 +14116,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -13984,6 +14144,7 @@
                     "text": "When Iwamori’s triggered ability resolves, first the player whose turn it is (if that player is an opponent) may choose a legendary creature card in hand without revealing it, then each other opponent in turn order may do the same, then all chosen cards are put onto the battlefield at the same time."
                 }
             ],
+            "scryfallId": "08c51fcf-ab5c-46fa-aa4b-14cd01c7a577",
             "subtypes": [
                 "Human",
                 "Monk"
@@ -13991,13 +14152,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12288,
             "text": "Trample\nWhen Iwamori of the Open Fist enters the battlefield, each opponent may put a legendary creature card from their hand onto the battlefield.",
             "toughness": "5",
             "type": "Legendary Creature — Human Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "08c51fcf-ab5c-46fa-aa4b-14cd01c7a577"
+            "uuid": "7d7536f5-f0a6-5e69-8464-187fe45f28cf"
         },
         {
             "artist": "Jim Murray",
@@ -14063,7 +14225,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14095,19 +14256,21 @@
                     "text": "Kodama of the Center Tree can return itself to its owner’s hand if you control five or more Spirits when it is put into a graveyard from the battlefield."
                 }
             ],
+            "scryfallId": "6b9264c5-1ecd-48cc-a12d-d4bd8050cfae",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12297,
             "text": "Kodama of the Center Tree's power and toughness are each equal to the number of Spirits you control.\nKodama of the Center Tree has soulshift X, where X is the number of Spirits you control. (When this creature dies, you may return target Spirit card with converted mana cost X or less from your graveyard to your hand.)",
             "toughness": "*",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "6b9264c5-1ecd-48cc-a12d-d4bd8050cfae"
+            "uuid": "98645c5f-f80d-5674-b65d-d3179700e6dc"
         },
         {
             "artist": "John Matson",
@@ -14181,7 +14344,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14203,14 +14365,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "27eaba1c-3137-4419-bf90-eb287a7c736e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12300,
             "text": "Whenever a land enters the battlefield, you may gain 1 life.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "27eaba1c-3137-4419-bf90-eb287a7c736e"
+            "uuid": "b314facd-57cb-5428-8bdd-d9180f45153f"
         },
         {
             "artist": "Cara Mitten",
@@ -14284,7 +14448,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14307,17 +14470,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c6a83083-f7c6-4ddf-aee9-538a1778697d",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12301,
             "text": "{T}, Sacrifice three Spirits: Search your library for a legendary Spirit permanent card and put it onto the battlefield. Then shuffle your library.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "c6a83083-f7c6-4ddf-aee9-538a1778697d"
+            "uuid": "e8ca6e63-d9c7-5ce3-83ac-117a9941e9e9"
         },
         {
             "artist": "Paolo Parente",
@@ -14391,7 +14556,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14414,17 +14578,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "4f635b35-48c8-43e8-9d74-c01d3c0c74e1",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12302,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a land card from your hand onto the battlefield tapped.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f635b35-48c8-43e8-9d74-c01d3c0c74e1"
+            "uuid": "3fcb6128-032c-5b21-a809-f057627ab70d"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -14490,7 +14656,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14512,16 +14677,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "7611a97d-6500-4311-baa1-be3ee0791f3a",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12304,
             "text": "Enchant creature\nEnchanted creature has \"Whenever this creature deals combat damage to a player, add that much {G}. Until end of turn, you don't lose this mana as steps and phases end.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "7611a97d-6500-4311-baa1-be3ee0791f3a"
+            "uuid": "78ba08d9-732e-5ece-b1a1-46ef5dc17b4a"
         },
         {
             "artist": "Carl Critchlow",
@@ -14587,7 +14754,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14611,19 +14777,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "143af295-040d-400e-ae23-59abd2f88e11",
             "subtypes": [
                 "Snake",
                 "Warrior",
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12306,
             "text": "{T}: Matsu-Tribe Sniper deals 1 damage to target creature with flying.\nWhenever Matsu-Tribe Sniper deals damage to a creature, tap that creature and it doesn't untap during its controller's next untap step.",
             "toughness": "1",
             "type": "Creature — Snake Warrior Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "143af295-040d-400e-ae23-59abd2f88e11"
+            "uuid": "668572d1-c2dd-57b7-937b-f5735dd8faf2"
         },
         {
             "artist": "Greg Staples",
@@ -14689,7 +14857,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14710,17 +14877,28 @@
                 "UMA"
             ],
             "rarity": "rare",
-            "rulings": [],
+            "rulings": [
+                {
+                    "date": "2018-12-07",
+                    "text": "If a card in a player’s hand has {X} in its mana cost, X is considered to be 0."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "If a spell has {X} in its mana cost, include the value chosen for that X when determining the converted mana cost of that spell, even if it was cast for an alternative cost and no mana was spent on X."
+                }
+            ],
+            "scryfallId": "4a6af212-2a94-4ddf-acdc-d70fafa1c5ee",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12316,
             "text": "You may exile a green card with converted mana cost X from your hand rather than pay this spell's mana cost.\nYou gain X life.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "4a6af212-2a94-4ddf-acdc-d70fafa1c5ee"
+            "uuid": "2fbf9d3c-4e7a-5f36-8f81-1e85c1bfee5c"
         },
         {
             "artist": "Christopher Moeller",
@@ -14786,7 +14964,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14818,19 +14995,21 @@
                     "text": "The Patron’s ability can be activated only once per turn, even if control of Patron of the Orochi changes."
                 }
             ],
+            "scryfallId": "6d6787c4-170a-45b6-8792-af3ea32ef538",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12329,
             "text": "Snake offering (You may cast this card any time you could cast an instant by sacrificing a Snake and paying the difference in mana costs between this and the sacrificed Snake. Mana cost includes color.)\n{T}: Untap all Forests and all green creatures. Activate this ability only once each turn.",
             "toughness": "7",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d6787c4-170a-45b6-8792-af3ea32ef538"
+            "uuid": "418d415f-41a8-5f69-bd26-1384f4686306"
         },
         {
             "artist": "Rebecca Guay",
@@ -14896,7 +15075,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -14919,17 +15097,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7c7ba032-66d6-41bd-af4f-9853b031a474",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12330,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Petalmane Baku.\n{1}, Remove X ki counters from Petalmane Baku: Add X mana of any one color.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c7ba032-66d6-41bd-af4f-9853b031a474"
+            "uuid": "81e44d86-db55-5e3d-8b9c-3d7395ebc980"
         },
         {
             "artist": "Ron Spencer",
@@ -14995,7 +15175,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15039,16 +15218,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "66b70649-12f8-47b9-9959-40323684a777",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12338,
             "text": "If you control a Forest, each blocked creature gets +2/+2 until end of turn.\nSplice onto Arcane—An opponent gains 5 life. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "66b70649-12f8-47b9-9959-40323684a777"
+            "uuid": "ddde27f1-5cb3-542e-8a32-8d49f3236424"
         },
         {
             "artist": "Michael Sutfin",
@@ -15114,7 +15295,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15137,6 +15317,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "774ec405-5127-4475-8c74-b8858bd84379",
             "subtypes": [
                 "Snake",
                 "Shaman"
@@ -15144,13 +15325,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12341,
             "text": "Whenever a creature you control deals combat damage to a player, add that much {G}. Until end of turn, you don't lose this mana as steps and phases end.",
             "toughness": "3",
             "type": "Legendary Creature — Snake Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "774ec405-5127-4475-8c74-b8858bd84379"
+            "uuid": "ae8681f1-5ab4-5bd1-902d-d02c69034e1b"
         },
         {
             "artist": "Pete Venters",
@@ -15216,7 +15398,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15240,18 +15421,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b2ca7687-ba90-4479-8c6e-ece3f29fff12",
             "subtypes": [
                 "Snake",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12342,
             "text": "At the beginning of your upkeep, add {G}. Until end of turn, you don't lose this mana as steps and phases end.",
             "toughness": "4",
             "type": "Creature — Snake Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "b2ca7687-ba90-4479-8c6e-ece3f29fff12"
+            "uuid": "67a107c3-2d42-5e1d-a69a-fb078d3c897a"
         },
         {
             "artist": "Arnie Swekel",
@@ -15325,7 +15508,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15349,17 +15531,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3b27457e-2c40-4983-9680-b7292db4c668",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12343,
             "text": "Whenever you cast a Spirit or Arcane spell, Scaled Hulk gets +2/+2 until end of turn.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "3b27457e-2c40-4983-9680-b7292db4c668"
+            "uuid": "45dade9d-4b76-523f-932d-e229ee2356b9"
         },
         {
             "artist": "Michael Sutfin",
@@ -15425,7 +15609,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15448,6 +15631,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "dab9407d-9389-4ec9-963c-80de095a6812",
             "subtypes": [
                 "Snake",
                 "Shaman"
@@ -15455,13 +15639,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12350,
             "text": "At the beginning of each player's upkeep, that player adds {G}{G}{G}. Until end of turn, they don't lose this mana as steps and phases end.",
             "toughness": "3",
             "type": "Legendary Creature — Snake Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "dab9407d-9389-4ec9-963c-80de095a6812"
+            "uuid": "f76edffe-49d8-5568-8c37-bdebb490d522"
         },
         {
             "artist": "Kev Walker",
@@ -15527,7 +15712,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15549,14 +15733,16 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "42359e94-9f57-45ae-ae39-d4b939813015",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12359,
             "text": "Create two 1/1 green Snake creature tokens.\nWhenever a nontoken Snake enters the battlefield under your control, you may return Sosuke's Summons from your graveyard to your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "42359e94-9f57-45ae-ae39-d4b939813015"
+            "uuid": "b37e8991-bcd5-5bf7-a726-f4c87c57131a"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -15622,7 +15808,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15659,14 +15844,16 @@
                     "text": "The copies must be found if they are in publicly viewable zones. Finding copies while searching private zones is optional."
                 }
             ],
+            "scryfallId": "5bcc210b-e37e-463c-8fd4-83e5113429a9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12361,
             "text": "Exile target artifact. Search its controller's graveyard, hand, and library for all cards with the same name as that artifact and exile them. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5bcc210b-e37e-463c-8fd4-83e5113429a9"
+            "uuid": "01083898-542e-579a-b9b3-a4ca93a438bf"
         },
         {
             "artist": "Carl Critchlow",
@@ -15732,7 +15919,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15756,17 +15942,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ce65aabe-5fd8-4b62-b13c-12e4bb91aacb",
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12381,
             "text": "Defender; reach (This creature can block creatures with flying.)\nTraproot Kami's toughness is equal to the number of Forests on the battlefield.",
             "toughness": "*",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "ce65aabe-5fd8-4b62-b13c-12e4bb91aacb"
+            "uuid": "bf393aae-14d8-5e4f-9c2e-87247f57a0b1"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -15840,7 +16028,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15862,16 +16049,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d7791182-fe63-47bc-9fdf-ef346d6ad4b5",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12384,
             "text": "Target creature gets +4/+4 until end of turn. If it's a Spirit, it gains trample until end of turn.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "d7791182-fe63-47bc-9fdf-ef346d6ad4b5"
+            "uuid": "b1eb90ee-a3d2-51d9-8801-e326df008b35"
         },
         {
             "artist": "Heather Hudson",
@@ -15945,7 +16134,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -15968,16 +16156,18 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "88357572-0edd-4115-93c3-49f6f5a191b4",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12385,
             "text": "Put target land on top of its owner's library.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "88357572-0edd-4115-93c3-49f6f5a191b4"
+            "uuid": "c7d9df85-7e9e-5c8d-8483-a2f552e206cc"
         },
         {
             "artist": "Douglas Shuler",
@@ -16043,7 +16233,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16083,16 +16272,18 @@
                     "text": "If all of the spell’s targets are illegal when the spell tries to resolve, it won’t resolve and none of its effects will happen."
                 }
             ],
+            "scryfallId": "ba28f326-67d1-4afb-90fe-e9f036210942",
             "subtypes": [
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12387,
             "text": "You gain 3 life.\nSplice onto Arcane {1}{G} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "ba28f326-67d1-4afb-90fe-e9f036210942"
+            "uuid": "d569dbb6-3768-5075-9a40-5c744cd35c77"
         },
         {
             "artist": "Scott M. Fischer",
@@ -16166,7 +16357,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16197,18 +16387,20 @@
                     "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
                 }
             ],
+            "scryfallId": "e9eb7b9b-5189-4d20-8dec-e9d3df63e26e",
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12266,
             "text": "Enchant land\n{2}: Enchanted land becomes a legendary 8/12 Spirit creature with trample until end of turn. It's still a land.\nWhen enchanted land is put into a graveyard, you may return Genju of the Realm from your graveyard to your hand.",
             "type": "Legendary Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e9eb7b9b-5189-4d20-8dec-e9d3df63e26e"
+            "uuid": "310cc3df-3e9b-5020-8c05-8244748d1917"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -16270,7 +16462,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16292,14 +16483,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "81e1dbb8-3df8-4e7e-b74b-baab7d6f97c1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12232,
             "text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on Baku Altar.\n{2}, {T}, Remove a ki counter from Baku Altar: Create a 1/1 colorless Spirit creature token.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "81e1dbb8-3df8-4e7e-b74b-baab7d6f97c1"
+            "uuid": "45d431e8-8fbd-5f0e-81b8-54b2848966cc"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -16361,7 +16554,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16383,16 +16575,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "f097fbb8-0db5-4ceb-8972-dcd21b3fb4d5",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12237,
             "text": "Equipped creature has \"Unattach Blinding Powder: Prevent all combat damage that would be dealt to this creature this turn.\"\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f097fbb8-0db5-4ceb-8972-dcd21b3fb4d5"
+            "uuid": "0e26f29c-7769-5c08-8ac0-d49e0b89735a"
         },
         {
             "artist": "Scott M. Fischer",
@@ -16462,7 +16656,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16488,14 +16681,16 @@
                     "text": "Mirror Gallery removes the “Legend rule” while it’s on the battlefield. If all Mirror Galleries leave the battlefield, the “Legend rule” will apply the next time state-based actions are performed."
                 }
             ],
+            "scryfallId": "00beba34-54cc-4a30-8424-71a1215647a6",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12310,
             "text": "The \"legend rule\" doesn't apply.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "00beba34-54cc-4a30-8424-71a1215647a6"
+            "uuid": "0996677d-c5cc-5f5a-b4a5-690ced34a12f"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -16557,7 +16752,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16579,16 +16773,18 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "13884a26-1e30-40d7-ae38-494154a5cf85",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12313,
             "text": "Whenever equipped creature deals damage to a creature, tap that creature. That creature doesn't untap during its controller's untap step for as long as Neko-Te remains on the battlefield.\nWhenever equipped creature deals damage to a player, that player loses 1 life.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "13884a26-1e30-40d7-ae38-494154a5cf85"
+            "uuid": "c35d6aa5-d4ab-5460-8d59-c1d04132a558"
         },
         {
             "artist": "Dany Orizio",
@@ -16658,7 +16854,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16680,14 +16875,16 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "5fbe52a3-f85e-4b3a-a345-413b64d69c49",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12321,
             "text": "Permanents enter the battlefield tapped.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5fbe52a3-f85e-4b3a-a345-413b64d69c49"
+            "uuid": "9e54ecf6-e748-5ab1-99cb-00901c23b378"
         },
         {
             "artist": "Heather Hudson",
@@ -16757,7 +16954,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16800,14 +16996,16 @@
                     "text": "Cards exiled by Ornate Kanzashi’s ability stay exiled even if the Kanzashi leaves the battlefield."
                 }
             ],
+            "scryfallId": "baeb4c10-59cb-4bc1-b824-6ec8edd6f45e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12322,
             "text": "{2}, {T}: Target opponent exiles the top card of their library. You may play that card this turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "baeb4c10-59cb-4bc1-b824-6ec8edd6f45e"
+            "uuid": "f7474fe1-6ba5-5b05-ad44-1650ac01b418"
         },
         {
             "artist": "Pete Venters",
@@ -16869,7 +17067,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -16899,16 +17096,18 @@
                     "text": "The triggered ability won’t attach Ronin Warclub to a creature that can’t be equipped (such as Goblin Brawler)."
                 }
             ],
+            "scryfallId": "46ad31cd-38dc-4fd3-b9e4-8988f4898719",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12340,
             "text": "Equipped creature gets +2/+1.\nWhenever a creature enters the battlefield under your control, attach Ronin Warclub to that creature.\nEquip {5} ({5}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "46ad31cd-38dc-4fd3-b9e4-8988f4898719"
+            "uuid": "32bbe279-56d4-5953-8d0d-ace4065a8240"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -16978,7 +17177,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17005,16 +17203,18 @@
                     "text": "You may activate this card’s equip ability targeting the creature that it is currently attached to, even if it’s the only creature you control. Since the equip ability costs zero, you can do this as many times as you like during your main phases, though it generally won’t do anything."
                 }
             ],
+            "scryfallId": "a47456b8-cef8-4085-90b1-92788e16fd27",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12351,
             "text": "Equipped creature gets +1/+0.\nEquip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a47456b8-cef8-4085-90b1-92788e16fd27"
+            "uuid": "9fcc7fda-c128-55b7-99ca-6b8dfb54158e"
         },
         {
             "artist": "Matt Cavotta",
@@ -17076,7 +17276,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17098,16 +17297,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ef1e7f3b-55a4-41bf-b7ec-81114f2c63c4",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 12352,
             "text": "Equipped creature has \"{T}, Unattach Shuriken: Shuriken deals 2 damage to target creature. That creature's controller gains control of Shuriken unless it was unattached from a Ninja.\"\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ef1e7f3b-55a4-41bf-b7ec-81114f2c63c4"
+            "uuid": "591bec6e-d5d8-5cb8-8341-6584cfe5f17c"
         },
         {
             "artist": "Doug Chaffee",
@@ -17169,7 +17370,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17196,14 +17396,16 @@
                     "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
                 }
             ],
+            "scryfallId": "e32ac983-a909-4342-882e-f3b7e2e064d8",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12357,
             "text": "{2}, Discard a Spirit or Arcane card: Slumbering Tora becomes an X/X Cat artifact creature until end of turn, where X is the discarded card's converted mana cost.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e32ac983-a909-4342-882e-f3b7e2e064d8"
+            "uuid": "1ff2a073-8a33-59d3-a446-caea1f332121"
         },
         {
             "artist": "Adam Rex",
@@ -17273,7 +17475,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17308,16 +17509,18 @@
                     "text": "One That Which Was Taken can put divinity counters on another That Which Was Taken."
                 }
             ],
+            "scryfallId": "d80c84ad-171f-42c3-94b4-a9fe25b877e7",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12373,
             "text": "{4}, {T}: Put a divinity counter on target permanent other than That Which Was Taken.\nEach permanent with a divinity counter on it has indestructible.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d80c84ad-171f-42c3-94b4-a9fe25b877e7"
+            "uuid": "2bc3ae92-785d-5e4a-b855-7ab25df91342"
         },
         {
             "artist": "Christopher Moeller",
@@ -17379,7 +17582,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17425,18 +17627,20 @@
                     "text": "If the Jitte leaves the battlefield after the “+2/+2” mode is announced but before it resolves, the bonus is given to the creature that was most recently equipped once the ability resolves."
                 }
             ],
+            "scryfallId": "3b6e5956-f795-451b-bb24-56462d1ced27",
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12383,
             "text": "Whenever equipped creature deals combat damage, put two charge counters on Umezawa's Jitte.\nRemove a charge counter from Umezawa's Jitte: Choose one —\n• Equipped creature gets +2/+2 until end of turn.\n• Target creature gets -1/-1 until end of turn.\n• You gain 2 life.\nEquip {2}",
             "type": "Legendary Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3b6e5956-f795-451b-bb24-56462d1ced27"
+            "uuid": "bd98aa7b-f928-5017-afee-73af6084e54e"
         },
         {
             "artist": "John Avon",
@@ -17506,7 +17710,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17527,16 +17730,18 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bdc33a21-d196-4c17-a296-87ff08e7ef69",
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 12270,
             "text": "{T}: Add {C}.\nWhen Gods' Eye, Gate to the Reikai is put into a graveyard from the battlefield, create a 1/1 colorless Spirit creature token.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "bdc33a21-d196-4c17-a296-87ff08e7ef69"
+            "uuid": "7f689d7d-f0b3-5e31-85cf-36a3af41668a"
         },
         {
             "artist": "Rob Alexander",
@@ -17598,7 +17803,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -17618,24 +17822,27 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "d246f521-b9a0-4b4f-b38c-0e4eb4066212",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 12370,
             "text": "Tendo Ice Bridge enters the battlefield with a charge counter on it.\n{T}: Add {C}.\n{T}, Remove a charge counter from Tendo Ice Bridge: Add one mana of any color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "d246f521-b9a0-4b4f-b38c-0e4eb4066212"
+            "uuid": "54cc5383-52d3-5781-abe3-d9619c3f8cca"
         }
     ],
     "code": "bok",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "bok",
     "name": "Betrayers of Kamigawa",
     "releaseDate": "2005-02-04",
+    "tcgplayerGroupId": 18,
     "tokens": [],
     "totalSetSize": 165,
     "type": "expansion"

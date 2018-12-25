@@ -15,7 +15,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -64,15 +63,17 @@
                     "text": "If the revealed card is not a permanent card, it remains on top of that library."
                 }
             ],
+            "scryfallId": "f690eaac-11ce-4588-859e-5152b4b06b5b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67184,
             "text": "The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f690eaac-11ce-4588-859e-5152b4b06b5b"
+            "uuid": "6bf780d0-6e74-522e-b01c-3a994100df2b"
         },
         {
             "artist": "Adam Paquette",
@@ -85,7 +86,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -129,15 +129,17 @@
                     "text": "In formats other than Commander, Command Tower’s ability produces no mana."
                 }
             ],
+            "scryfallId": "bf5dafb0-4fb1-470d-85ce-88f3ae32340b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67191,
             "text": "{T}: Add one mana of any color in your commander's color identity.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "bf5dafb0-4fb1-470d-85ce-88f3ae32340b"
+            "uuid": "95326231-778c-5ac0-8c6d-035d048d2c8e"
         },
         {
             "artist": "Mathias Kollros",
@@ -153,7 +155,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -191,15 +192,17 @@
                     "text": "The cycling ability and the triggered ability are separate. If the triggered ability doesn’t resolve (due to being countered with Stifle, for example, or if all its targets have become illegal), the cycling ability will still resolve and you’ll draw a card."
                 }
             ],
+            "scryfallId": "03c37c68-cccf-4309-80c5-828108b942a4",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67183,
             "text": "Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way.\nCycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.)\nWhen you cycle Decree of Pain, all creatures get -2/-2 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "03c37c68-cccf-4309-80c5-828108b942a4"
+            "uuid": "4ba5e659-20db-550e-b101-f471eaf323ec"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -216,7 +219,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -254,15 +256,17 @@
                     "text": "If the spell is not countered (because the spell it targets can’t be countered), then this card’s ability does not put the card onto the battlefield. The spell continues to resolve as normal."
                 }
             ],
+            "scryfallId": "41527ad3-cf03-42f3-8786-ff39c841a8c7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67185,
             "text": "Counter target spell. If an artifact or creature spell is countered this way, put that card onto the battlefield under your control instead of into its owner's graveyard.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "41527ad3-cf03-42f3-8786-ff39c841a8c7"
+            "uuid": "6a99d97f-060c-5733-8de6-e0bf122afef1"
         },
         {
             "artist": "Miao Aili",
@@ -278,7 +282,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -307,6 +310,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "0d5da41e-61a2-41fd-9d8e-83d51234cc71",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -315,13 +319,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67179,
             "text": "{T}: Destroy target creature of your choice, then destroy target creature of an opponent's choice. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "0d5da41e-61a2-41fd-9d8e-83d51234cc71"
+            "uuid": "42f702e0-a49e-5423-bb47-45c19cffafb8"
         },
         {
             "artist": "Carl Critchlow",
@@ -340,7 +345,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -374,18 +378,20 @@
                     "text": "The triggered ability won’t be affected if the spell that caused it to trigger is countered."
                 }
             ],
+            "scryfallId": "7c2d4e3e-2c4c-41ec-9e0b-4c70a6bdbdfd",
             "starter": true,
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 67182,
             "text": "Reach\nWhenever an opponent casts a spell, create a 1/1 green Insect creature token.",
             "toughness": "6",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c2d4e3e-2c4c-41ec-9e0b-4c70a6bdbdfd"
+            "uuid": "0acc5537-b7f9-55e1-b632-47bd4618b40c"
         },
         {
             "artist": "Marco Nelor",
@@ -397,7 +403,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -448,11 +453,13 @@
                     "text": "If a melded permanent is exiled by Duplicant’s triggered ability, that ability’s controller chooses the relative timestamp of the two meld cards. Duplicant looks at the information of the one with the later timestamp."
                 }
             ],
+            "scryfallId": "72ddec79-76aa-4c9d-8961-ce9004e0dfa2",
             "starter": true,
             "subtypes": [
                 "Shapeshifter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 67181,
             "text": "Imprint — When Duplicant enters the battlefield, you may exile target nontoken creature.\nAs long as a card exiled with Duplicant is a creature card, Duplicant has the power, toughness, and creature types of the last creature card exiled with Duplicant. It's still a Shapeshifter.",
             "toughness": "4",
             "type": "Artifact Creature — Shapeshifter",
@@ -460,7 +467,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "72ddec79-76aa-4c9d-8961-ce9004e0dfa2"
+            "uuid": "1209a47d-83fd-5537-aaaf-8f2baffb96c1"
         },
         {
             "artist": "Volkan Baga",
@@ -479,7 +486,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -519,6 +525,7 @@
                     "text": "Edric, Spymaster of Trest is banned as a commander in Duel Commander format, but it may be part of your deck."
                 }
             ],
+            "scryfallId": "d5f1e96a-9fa0-4a76-962d-9dcde253172f",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -527,13 +534,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67176,
             "text": "Whenever a creature deals combat damage to one of your opponents, its controller may draw a card.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "d5f1e96a-9fa0-4a76-962d-9dcde253172f"
+            "uuid": "8fabda15-ed81-50f6-8864-be1bba7c8400"
         },
         {
             "artist": "Michael Komarck",
@@ -554,7 +562,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -592,6 +599,7 @@
                     "text": "If the opponent Kaalia attacked is no longer in the game when its ability resolves, you may put an Angel, Demon, or Dragon creature card onto the battlefield tapped, but it won’t be attacking anyone and it won’t be an attacking creature."
                 }
             ],
+            "scryfallId": "23ac8d69-dd92-43b2-b42b-a0ca97105f0e",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -600,13 +608,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67174,
             "text": "Flying\nWhenever Kaalia of the Vast attacks an opponent, you may put an Angel, Demon, or Dragon creature card from your hand onto the battlefield tapped and attacking that opponent.",
             "toughness": "2",
             "type": "Legendary Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "23ac8d69-dd92-43b2-b42b-a0ca97105f0e"
+            "uuid": "7e31f3d6-86b5-5072-9c45-dfb77f60d390"
         },
         {
             "artist": "Solomon Au Yeung",
@@ -622,7 +631,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -653,19 +661,21 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "5b573ef7-4fce-44d6-91ec-48a62be8d21c",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 67180,
             "text": "Sacrifice Loyal Retainers: Return target legendary creature card from your graveyard to the battlefield. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "5b573ef7-4fce-44d6-91ec-48a62be8d21c"
+            "uuid": "c2a51eba-12c6-5173-a65b-96f441db5e0c"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -685,7 +695,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -723,6 +732,7 @@
                     "text": "No matter what spell you cast with the first cascade trigger (or with any cascade triggers that result from casting that spell), the second cascade trigger will look for a spell with converted mana cost less than Maelstrom Wanderer’s converted mana cost of 8."
                 }
             ],
+            "scryfallId": "754994fa-cb29-487e-8772-1aa697716b35",
             "starter": true,
             "subtypes": [
                 "Elemental"
@@ -730,13 +740,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67177,
             "text": "Creatures you control have haste.\nCascade, cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom of your library in a random order. Then do it again.)",
             "toughness": "5",
             "type": "Legendary Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "754994fa-cb29-487e-8772-1aa697716b35"
+            "uuid": "084ffda3-69aa-5210-8a87-dd052ab29201"
         },
         {
             "artist": "Svetlin Velinov",
@@ -756,7 +767,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -802,6 +812,7 @@
                     "text": "Specifically, if The Mimeoplasm enters the battlefield as a copy of a creature card that enters the battlefield with a number of +1/+1 counters, The Mimeoplasm will enter the battlefield with those +1/+1 counters and +1/+1 counters equal to the power of the other exiled card."
                 }
             ],
+            "scryfallId": "96bddc7e-6dab-4ea8-a474-ed9b28ff1457",
             "starter": true,
             "subtypes": [
                 "Ooze"
@@ -809,13 +820,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67175,
             "text": "As The Mimeoplasm enters the battlefield, you may exile two creature cards from graveyards. If you do, it enters the battlefield as a copy of one of those cards with a number of additional +1/+1 counters on it equal to the power of the other card.",
             "toughness": "0",
             "type": "Legendary Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "96bddc7e-6dab-4ea8-a474-ed9b28ff1457"
+            "uuid": "4a3811c4-ce8e-5597-ad92-f5a17647b42f"
         },
         {
             "artist": "Karl Kopinski",
@@ -828,7 +840,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -854,15 +865,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "fdac5c59-f148-4037-8cf3-30a09ba8339c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67190,
             "text": "Whenever an opponent draws a card, you may pay {1}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fdac5c59-f148-4037-8cf3-30a09ba8339c"
+            "uuid": "c4574a09-7d16-5681-8633-29c8a161702b"
         },
         {
             "artist": "Volkan Baga",
@@ -881,7 +894,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -909,15 +921,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "0e18504b-33f7-4cdc-916e-858cf804d8b2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67186,
             "text": "Creatures you control get +1/+1.\nWhenever you tap a land for mana, add one mana of any type that land produced.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0e18504b-33f7-4cdc-916e-858cf804d8b2"
+            "uuid": "c2d1d9af-854f-5bdc-8b11-19e02c1172c5"
         },
         {
             "artist": "Terese Nielsen",
@@ -934,7 +948,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -968,15 +981,17 @@
                     "text": "You don’t have to decide whether or not you are drawing until after the player decides whether or not to pay."
                 }
             ],
+            "scryfallId": "03ac9b21-8c79-49ec-a0df-0fd22e4a0ed7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67188,
             "text": "Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "03ac9b21-8c79-49ec-a0df-0fd22e4a0ed7"
+            "uuid": "d23f26c6-36cb-59e7-8abb-45bd8b96c555"
         },
         {
             "artist": "Heather Hudson",
@@ -988,7 +1003,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1018,15 +1032,17 @@
                     "text": "If there are not enough cards in the library, you do not lose. This is not a draw effect. You just get as many cards as are there, even if there are zero cards in the library."
                 }
             ],
+            "scryfallId": "47a832ae-0a8d-4710-8341-a1b3e3dbf763",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67189,
             "text": "{1}, {T}: Exile any number of cards from your hand face down. Put that many cards from the top of your library into your hand. Then look at the exiled cards and put them on top of your library in any order.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "47a832ae-0a8d-4710-8341-a1b3e3dbf763"
+            "uuid": "84ffa9ee-d9e4-5e59-9693-41eb000beb13"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -1042,7 +1058,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -1101,15 +1116,17 @@
                     "text": "It’s not possible to take any actions between drawing the cards and choosing two cards. You can’t cast the cards you drew to avoid having two cards to choose."
                 }
             ],
+            "scryfallId": "3003d481-1b52-4aa9-bbdc-e948fbc8d49d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 67187,
             "text": "At the beginning of your draw step, you may draw two additional cards. If you do, choose two cards in your hand drawn this turn. For each of those cards, pay 4 life or put the card on top of your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3003d481-1b52-4aa9-bbdc-e948fbc8d49d"
+            "uuid": "7d6c1cdb-9db0-5743-9a2c-68b1c0eef022"
         },
         {
             "artist": "Allen Williams",
@@ -1128,7 +1145,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1158,6 +1174,7 @@
                     "text": "If Vela leaves the battlefield at the same time as other creatures you control, its ability will trigger for each of those creatures."
                 }
             ],
+            "scryfallId": "ad3b9760-4bc7-4e69-8795-ff9abba11162",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -1166,24 +1183,26 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 67178,
             "text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nOther creatures you control have intimidate.\nWhenever Vela the Night-Clad or another creature you control leaves the battlefield, each opponent loses 1 life.",
             "toughness": "4",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad3b9760-4bc7-4e69-8795-ff9abba11162"
+            "uuid": "aca13879-a89e-5127-9de0-3fe6f8a60818"
         }
     ],
     "code": "cm1",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Commander's Arsenal",
     "releaseDate": "2012-11-02",
+    "tcgplayerGroupId": 568,
     "tokens": [],
     "totalSetSize": 18,
     "type": "commander"

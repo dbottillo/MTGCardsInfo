@@ -16,7 +16,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -61,15 +60,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "63e00d79-cc6c-41ad-ab2c-0a6596e0e5b7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 91637,
             "text": "Destroy all lands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "63e00d79-cc6c-41ad-ab2c-0a6596e0e5b7"
+            "uuid": "e1272b24-c075-52a7-9f7f-53916fbd644a"
         },
         {
             "artist": "Yang Hong",
@@ -85,7 +86,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -130,15 +130,17 @@
                     "text": "As Burning of Xinye resolves, first you destroy four lands you control (all at the same time), then the targeted opponent destroys four lands they control (all at the same time). That player chooses which of their lands to destroy. Neither of you can choose to destroy a land with indestructible."
                 }
             ],
+            "scryfallId": "edb86d0d-e6cf-4988-a03e-26d52d78d929",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92296,
             "text": "You destroy four lands you control, then target opponent destroys four lands they control. Then Burning of Xinye deals 4 damage to each creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "edb86d0d-e6cf-4988-a03e-26d52d78d929"
+            "uuid": "3a8d8358-700e-572d-9421-d36929d7b15c"
         },
         {
             "artist": "Eric Deschamps",
@@ -155,7 +157,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -199,15 +200,17 @@
                     "text": "Each permanent not chosen by a player will be sacrificed. If a permanent has none of the listed types (for example, a Planeswalker with no other types), it can’t be chosen."
                 }
             ],
+            "scryfallId": "3ed0d87b-1ce8-452b-9558-fa1923407f16",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 91638,
             "text": "Each player chooses from among the permanents they control an artifact, a creature, an enchantment, and a land, then sacrifices the rest.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3ed0d87b-1ce8-452b-9558-fa1923407f16"
+            "uuid": "327a1013-6074-5f59-929c-e7de57876f6d"
         },
         {
             "artist": "Steve Argyle",
@@ -232,7 +235,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -255,6 +257,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "8d2542e7-70b0-4feb-831d-fa610d8f33c7",
             "starter": true,
             "subtypes": [
                 "Avatar"
@@ -262,13 +265,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 92297,
             "text": "Trample\nWhen Child of Alara dies, destroy all nonland permanents. They can't be regenerated.",
             "toughness": "6",
             "type": "Legendary Creature — Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d2542e7-70b0-4feb-831d-fa610d8f33c7"
+            "uuid": "006453e5-9561-5c2a-8ab8-197f510797ea"
         },
         {
             "artist": "John Avon",
@@ -284,7 +288,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -318,15 +321,17 @@
                     "text": "The cycling ability and the triggered ability are separate. If the triggered ability doesn’t resolve (due to being countered with Stifle, for example, or if all its targets have become illegal), the cycling ability will still resolve and you’ll draw a card."
                 }
             ],
+            "scryfallId": "1fe36d82-e59e-41f1-ab71-90c7336a28ff",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92298,
             "text": "Exile all artifacts, creatures, and lands from the battlefield, all cards from all graveyards, and all cards from all hands.\nCycling {5}{R}{R} ({5}{R}{R}, Discard this card: Draw a card.)\nWhen you cycle Decree of Annihilation, destroy all lands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1fe36d82-e59e-41f1-ab71-90c7336a28ff"
+            "uuid": "69b8426f-3a2d-55e0-871f-a303d07294f7"
         },
         {
             "artist": "Raymond Swanland",
@@ -344,7 +349,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -381,15 +385,17 @@
                     "text": "If this spell is copied, the copy will not have had any colors of mana paid for it, no matter what colors were spent on the original spell."
                 }
             ],
+            "scryfallId": "8fecd098-bbf2-44f1-b9f1-7b93ea660880",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92300,
             "text": "Firespout deals 3 damage to each creature without flying if {R} was spent to cast Firespout and 3 damage to each creature with flying if {G} was spent to cast it. (Do both if {R}{G} was spent.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8fecd098-bbf2-44f1-b9f1-7b93ea660880"
+            "uuid": "bb07ea71-0e09-5bd6-ab07-f331751ceb3d"
         },
         {
             "artist": "Michael Sutfin",
@@ -408,7 +414,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -435,15 +440,17 @@
                     "text": "If an artifact or enchantment remains on the battlefield because it was regenerated or has indestructible, you won’t gain life for it."
                 }
             ],
+            "scryfallId": "cf9d6522-567d-4357-a5de-25eaf8e9cac3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92301,
             "text": "Destroy all artifacts and enchantments. You gain 2 life for each permanent destroyed this way.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cf9d6522-567d-4357-a5de-25eaf8e9cac3"
+            "uuid": "6641c75d-0fc5-53bb-ad91-428c948bae3a"
         },
         {
             "artist": "Mark Winters",
@@ -459,7 +466,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -498,15 +504,17 @@
                     "text": "Only cards exiled by Living Death’s first instruction are put onto the battlefield. If a replacement effect (such as that of Leyline of the Void) causes any of the sacrificed creatures to be exiled instead of put into a graveyard, those cards aren’t returned to the battlefield."
                 }
             ],
+            "scryfallId": "c91aca0c-677f-4ad3-9c32-049cd5d49a54",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 91639,
             "text": "Each player exiles all creature cards from their graveyard, then sacrifices all creatures they control, then puts all cards they exiled this way onto the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c91aca0c-677f-4ad3-9c32-049cd5d49a54"
+            "uuid": "30909036-7448-5586-9e5b-80fc4bfc47d9"
         },
         {
             "artist": "Greg Staples",
@@ -523,7 +531,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -560,15 +567,17 @@
                     "text": "No one can cast spells or activate abilities between the time the Soldier tokens are put onto the battlefield and the time all other creatures are destroyed. For example, you can’t sacrifice one of those Soldier tokens to regenerate a Skeletal Kathari."
                 }
             ],
+            "scryfallId": "50845867-20a7-433c-b97e-081276bc739f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92299,
             "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all other creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "50845867-20a7-433c-b97e-081276bc739f"
+            "uuid": "9b96b8ff-0903-5414-b62d-98f1ec433123"
         },
         {
             "artist": "Yang Hong",
@@ -584,7 +593,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -606,15 +614,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "d1392e68-fe1e-400f-9412-9ae11079b08c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 91640,
             "text": "Rolling Earthquake deals X damage to each creature without horsemanship and each player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d1392e68-fe1e-400f-9412-9ae11079b08c"
+            "uuid": "810fa2ff-f2be-5eda-ba1f-b197f53e3061"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -626,7 +636,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -658,15 +667,17 @@
                     "text": "Adding a counter is optional. If you forget to add one during your upkeep, you cannot back up and add one later."
                 }
             ],
+            "scryfallId": "ec94adb9-277a-4237-b8ca-ad2f52a1d832",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92302,
             "text": "At the beginning of your upkeep, you may put a soot counter on Smokestack.\nAt the beginning of each player's upkeep, that player sacrifices a permanent for each soot counter on Smokestack.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ec94adb9-277a-4237-b8ca-ad2f52a1d832"
+            "uuid": "5cafa429-3bad-5c8b-9513-2a4b8372fd60"
         },
         {
             "artist": "James Paick",
@@ -679,10 +690,10 @@
             ],
             "convertedManaCost": 6.0,
             "foreignData": [],
+            "frameEffect": "miracle",
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -755,15 +766,17 @@
                     "text": "If the card with miracle leaves your hand before the triggered ability resolves, you won’t be able to cast it using its miracle ability."
                 }
             ],
+            "scryfallId": "dda84c94-bc11-4af6-9fa0-a5af5c8c1d30",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92303,
             "text": "Put all creatures on the bottom of their owners' libraries.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dda84c94-bc11-4af6-9fa0-a5af5c8c1d30"
+            "uuid": "6902709c-8e02-5626-989e-8e494d2e902e"
         },
         {
             "artist": "Kev Walker",
@@ -780,7 +793,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -803,15 +815,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "7c353e83-4b63-4bc6-b029-273d2eca1f75",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92304,
             "text": "Return all permanents to their owners' hands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7c353e83-4b63-4bc6-b029-273d2eca1f75"
+            "uuid": "4d4cb3e0-bc34-5c4a-8309-cce44e436549"
         },
         {
             "artist": "Mike Dringenberg",
@@ -828,7 +842,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -848,15 +861,17 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "6fecf6d4-faa8-4d55-97a8-e05eca1d384f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 92305,
             "text": "Destroy all white creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6fecf6d4-faa8-4d55-97a8-e05eca1d384f"
+            "uuid": "d3eacb98-6e48-505f-b7b2-c7ef255aa312"
         },
         {
             "artist": "Willian Murai",
@@ -873,7 +888,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -921,26 +935,29 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "98890cd7-ebd5-4fea-814e-4f612abfe3a5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 91641,
             "text": "Destroy all creatures. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "98890cd7-ebd5-4fea-814e-4f612abfe3a5"
+            "uuid": "2c82bb26-80c8-5d49-bacb-319c6d5febbf"
         }
     ],
     "code": "v14",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v14",
     "name": "From the Vault: Annihilation",
     "releaseDate": "2014-08-22",
+    "tcgplayerGroupId": 1475,
     "tokens": [],
     "totalSetSize": 15,
     "type": "from_the_vault"

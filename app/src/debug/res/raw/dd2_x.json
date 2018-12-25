@@ -23,7 +23,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -58,6 +57,7 @@
                     "text": "If there are fewer than twenty cards in the targeted player’s library, that player puts all the cards from their library into their graveyard."
                 }
             ],
+            "scryfallId": "bc836203-4bb9-4bfa-89ab-0ad49f916c92",
             "starter": true,
             "subtypes": [
                 "Jace"
@@ -65,12 +65,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 37021,
             "text": "+2: Each player draws a card.\n−1: Target player draws a card.\n−10: Target player puts the top twenty cards of their library into their graveyard.",
             "type": "Legendary Planeswalker — Jace",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "bc836203-4bb9-4bfa-89ab-0ad49f916c92"
+            "uuid": "edaf65da-b738-5c4f-b534-a6a1dade59f4"
         },
         {
             "artist": "Wayne England",
@@ -96,7 +97,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -136,19 +136,21 @@
                     "text": "If one of the cards that’s revealed to pay the cost leaves its owner’s hand before the ability resolves, it stops being revealed, but the value of X is not affected."
                 }
             ],
+            "scryfallId": "80ec3fa9-e871-471b-aa44-afbbac7b928b",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37025,
             "text": "{2}, Reveal X blue cards from your hand, Sacrifice Martyr of Frost: Counter target spell unless its controller pays {X}.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "80ec3fa9-e871-471b-aa44-afbbac7b928b"
+            "uuid": "9b4c0e73-e001-5995-8a55-903a1aeb96ba"
         },
         {
             "artist": "Ralph Horsley",
@@ -172,7 +174,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -201,18 +202,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a2090c89-49a9-444d-84ed-1f767f1fc9f1",
             "starter": true,
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37003,
             "text": "Morph—Return two Islands you control to their owner's hand. (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen Fathom Seer is turned face up, draw two cards.",
             "toughness": "3",
             "type": "Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "a2090c89-49a9-444d-84ed-1f767f1fc9f1"
+            "uuid": "a36df4b5-9336-5e53-a79e-a5dd72360795"
         },
         {
             "artist": "Jim Nelson",
@@ -236,7 +239,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -269,19 +271,21 @@
                     "text": "If a spell with split second is on the stack, you can still respond by turning this creature face up and targeting that spell with the trigger. This is because split second only stops players from casting spells or activating abilities, while turning a creature face up is a special action."
                 }
             ],
+            "scryfallId": "bfbb719f-e6a7-4aab-870f-d375d901b85a",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37041,
             "text": "Morph {2}{U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen Voidmage Apprentice is turned face up, counter target spell.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "bfbb719f-e6a7-4aab-870f-d375d901b85a"
+            "uuid": "e3e2fcda-4bc3-57ec-bf52-41edfd3dc1aa"
         },
         {
             "artist": "John Avon",
@@ -305,7 +309,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -328,18 +331,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ce478fc4-234e-43d5-8b6c-cfe272134f5c",
             "starter": true,
             "subtypes": [
                 "Wall"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37042,
             "text": "Defender (This creature can't attack.)\n{3}: Turn Wall of Deceit face down.\nMorph {U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
             "toughness": "5",
             "type": "Creature — Wall",
             "types": [
                 "Creature"
             ],
-            "uuid": "ce478fc4-234e-43d5-8b6c-cfe272134f5c"
+            "uuid": "fde56e6e-440b-5d7b-bb52-702d1a4406bc"
         },
         {
             "artist": "Eric Peterson",
@@ -363,7 +368,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -416,19 +420,21 @@
                     "text": "If a spell or ability targets the same player or object multiple times, you can’t target it with Willbender’s ability."
                 }
             ],
+            "scryfallId": "7c35a94e-4449-4093-9652-5db0ec8b8bdd",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37044,
             "text": "Morph {1}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen Willbender is turned face up, change the target of target spell or ability with a single target.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c35a94e-4449-4093-9652-5db0ec8b8bdd"
+            "uuid": "d7de97cd-7669-5e3c-b53a-dfd8b3b7f7cc"
         },
         {
             "artist": "Ben Thompson",
@@ -450,7 +456,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -487,11 +492,13 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "23f461b3-cdf2-475c-83bb-593657332f27",
             "starter": true,
             "subtypes": [
                 "Gnome"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36991,
             "text": "Sacrifice Bottle Gnomes: You gain 3 life.",
             "toughness": "3",
             "type": "Artifact Creature — Gnome",
@@ -499,7 +506,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "23f461b3-cdf2-475c-83bb-593657332f27"
+            "uuid": "0b5f6422-fc3e-572a-860a-2ffd83491943"
         },
         {
             "artist": "Jon J Muth",
@@ -525,7 +532,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -567,18 +573,20 @@
                     "text": "If there are no other creatures on the battlefield when Man-o’-War enters the battlefield, its ability must target itself."
                 }
             ],
+            "scryfallId": "61f82f30-330b-4903-9d92-5d82c79ab546",
             "starter": true,
             "subtypes": [
                 "Jellyfish"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37024,
             "text": "When Man-o'-War enters the battlefield, return target creature to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Jellyfish",
             "types": [
                 "Creature"
             ],
-            "uuid": "61f82f30-330b-4903-9d92-5d82c79ab546"
+            "uuid": "8fdfa811-f4b9-5bce-992b-cbf128ca84e3"
         },
         {
             "artist": "Cliff Nielsen",
@@ -602,7 +610,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -636,18 +643,20 @@
                     "text": "An ability that triggers when something “attacks and isn’t blocked” triggers in the declare blockers step after blockers are declared if (1) that creature is attacking and (2) no creatures are declared to block it. It will trigger even if that creature was put onto the battlefield attacking rather than having been declared as an attacker in the declare attackers step."
                 }
             ],
+            "scryfallId": "4e244697-76ef-4228-9057-fd73ecf667a6",
             "starter": true,
             "subtypes": [
                 "Snake"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37029,
             "text": "Whenever Ophidian attacks and isn't blocked, you may draw a card. If you do, Ophidian assigns no combat damage this turn.",
             "toughness": "3",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "4e244697-76ef-4228-9057-fd73ecf667a6"
+            "uuid": "c9bbf3dd-41ec-552c-8ef8-c7f92753365b"
         },
         {
             "artist": "Kev Walker",
@@ -671,7 +680,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -696,18 +704,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "6b0917cb-3048-484f-9367-daec3892c3a9",
             "starter": true,
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37012,
             "text": "Flying\n{T}: Fledgling Mawcor deals 1 damage to any target.\nMorph {U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
             "toughness": "2",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "6b0917cb-3048-484f-9367-daec3892c3a9"
+            "uuid": "d13bdd80-5a8e-5152-9d0a-7658891deb58"
         },
         {
             "artist": "Thomas Gianni",
@@ -733,7 +743,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -762,18 +771,20 @@
                     "text": "You choose a land to return and return it during resolution of the upkeep triggered ability. This means if you have two Waterspout Djinns, they must each return different Islands."
                 }
             ],
+            "scryfallId": "d97cb3ca-7d21-4b3e-8d40-b243762531fd",
             "starter": true,
             "subtypes": [
                 "Djinn"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37043,
             "text": "Flying\nAt the beginning of your upkeep, sacrifice Waterspout Djinn unless you return an untapped Island you control to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "d97cb3ca-7d21-4b3e-8d40-b243762531fd"
+            "uuid": "3ce413df-cd5b-5e19-93ee-3a7e639281a8"
         },
         {
             "artist": "Eric Fortune",
@@ -797,7 +808,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -849,18 +859,20 @@
                     "text": "The ability that causes you to sacrifice an evoked creature is a triggered ability. Players may respond to this triggered ability while the creature is still on the battlefield."
                 }
             ],
+            "scryfallId": "6f5a5da9-f328-423c-8724-f3fcdddb9f16",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37028,
             "text": "Flying\nWhen Mulldrifter enters the battlefield, draw two cards.\nEvoke {2}{U} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "2",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f5a5da9-f328-423c-8724-f3fcdddb9f16"
+            "uuid": "bcb60ec5-319d-5798-b936-48e89c541bc1"
         },
         {
             "artist": "Kev Walker",
@@ -886,7 +898,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -941,18 +952,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "53ea9019-a80c-4973-9d6a-6d414062f8e0",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36989,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "53ea9019-a80c-4973-9d6a-6d414062f8e0"
+            "uuid": "9d682669-8698-556d-9ee6-6112f531ad91"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -976,7 +989,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1035,19 +1047,21 @@
                     "text": "If the Incarnation is removed from the graveyard after the ability triggers but before it resolves, it will remain in its new zone when its owner shuffles their library. Similarly, if a replacement effect has the Incarnation move to a different zone instead of being put into the graveyard, the ability won’t trigger at all."
                 }
             ],
+            "scryfallId": "5d820bbf-6a18-45cf-bc59-3c79726adbc7",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Incarnation"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37014,
             "text": "Guile can't be blocked except by three or more creatures.\nIf a spell or ability you control would counter a spell, instead exile that spell and you may play that card without paying its mana cost.\nWhen Guile is put into a graveyard from anywhere, shuffle it into its owner's library.",
             "toughness": "6",
             "type": "Creature — Elemental Incarnation",
             "types": [
                 "Creature"
             ],
-            "uuid": "5d820bbf-6a18-45cf-bc59-3c79726adbc7"
+            "uuid": "7cd944e9-0632-5c02-9f44-3d4262d9c573"
         },
         {
             "artist": "Carl Critchlow",
@@ -1071,7 +1085,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1139,18 +1152,20 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "97ebe333-244f-46fe-84dd-eaee56583239",
             "starter": true,
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37035,
             "text": "Flying\nWhen Riftwing Cloudskate enters the battlefield, return target permanent to its owner's hand.\nSuspend 3—{1}{U} (Rather than cast this card from your hand, you may pay {1}{U} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost. It has haste.)",
             "toughness": "2",
             "type": "Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "97ebe333-244f-46fe-84dd-eaee56583239"
+            "uuid": "ee927841-b64e-5035-a5a8-4b5b8a58139e"
         },
         {
             "artist": "Daren Bader",
@@ -1172,7 +1187,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1197,11 +1211,13 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "767a864d-5b52-4725-a5b0-18fde3e2da94",
             "starter": true,
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37039,
             "text": "Affinity for Islands (This spell costs {1} less to cast for each Island you control.)\nFlying",
             "toughness": "4",
             "type": "Artifact Creature — Golem",
@@ -1209,7 +1225,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "767a864d-5b52-4725-a5b0-18fde3e2da94"
+            "uuid": "da42df82-35e9-581c-a421-af1c3002765f"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -1233,7 +1249,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1266,20 +1281,26 @@
                 {
                     "date": "2013-04-15",
                     "text": "If you cast this card for its evoke cost, you may put the sacrifice trigger and the regular enters-the-battlefield trigger on the stack in either order. The one put on the stack last will resolve first."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "Aethersnipe can be the target of its own ability. If it’s the only nonland permanent on the battlefield, it must be the target of its ability."
                 }
             ],
+            "scryfallId": "77bf2307-714d-429b-b9db-b1ab4395f930",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36988,
             "text": "When Aethersnipe enters the battlefield, return target nonland permanent to its owner's hand.\nEvoke {1}{U}{U} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "77bf2307-714d-429b-b9db-b1ab4395f930"
+            "uuid": "37d54a44-edbe-5f18-be54-550285811a54"
         },
         {
             "artist": "Stephen Tappin",
@@ -1305,7 +1326,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1337,18 +1357,20 @@
                     "text": "Skipping your “next” untap step is cumulative. If a player turns two Brine Elementals face up on the same turn, that player’s opponents will each skip their next two untap steps."
                 }
             ],
+            "scryfallId": "2e487de9-8cde-4cc5-8030-5619068978bf",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36992,
             "text": "Morph {5}{U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen Brine Elemental is turned face up, each opponent skips their next untap step.",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "2e487de9-8cde-4cc5-8030-5619068978bf"
+            "uuid": "df5caa4a-3559-579e-9643-785077ee1178"
         },
         {
             "artist": "Ron Spencer",
@@ -1372,7 +1394,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1396,18 +1417,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "11232886-35f0-4e43-a61b-18a850070a86",
             "starter": true,
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37032,
             "text": "Flying\n{U}: If target spell has only one target and that target is Quicksilver Dragon, change that spell's target to another creature.\nMorph {4}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
             "toughness": "5",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "11232886-35f0-4e43-a61b-18a850070a86"
+            "uuid": "59a3b02a-78c7-59de-8e61-a7891991aa5e"
         },
         {
             "artist": "Luca Zontini",
@@ -1431,7 +1454,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1500,18 +1522,20 @@
                     "text": "A creature cast using suspend will enter the battlefield with haste. It will have haste until another player gains control of it (or, in some rare cases, gains control of the creature spell itself)."
                 }
             ],
+            "scryfallId": "4c2e5c34-dfc8-485c-b3ab-034e6624c168",
             "starter": true,
             "subtypes": [
                 "Illusion"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37001,
             "text": "Flying\nSuspend 4—{1}{U} (Rather than cast this card from your hand, you may pay {1}{U} and exile it with four time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost. It has haste.)",
             "toughness": "4",
             "type": "Creature — Illusion",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c2e5c34-dfc8-485c-b3ab-034e6624c168"
+            "uuid": "0b4af7ac-f008-5653-bf73-154480899afd"
         },
         {
             "artist": "Mark Poole",
@@ -1538,7 +1562,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1610,15 +1633,17 @@
                     "text": "This has no mana cost, which means its mana cost can’t be paid for effects such as replicate from Djinn Illuminatus or flashback from Snapcaster Mage."
                 }
             ],
+            "scryfallId": "dd18851b-5e8d-4d56-b58c-f62b8e43ba0d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36990,
             "text": "Suspend 4—{U} (Rather than cast this card from your hand, pay {U} and exile it with four time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)\nTarget player draws three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dd18851b-5e8d-4d56-b58c-f62b8e43ba0d"
+            "uuid": "2a89fa07-4ae7-5779-b448-b953a99f6daa"
         },
         {
             "artist": "Adam Rex",
@@ -1640,7 +1665,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1674,15 +1698,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "fa6dac02-c557-4a3b-864a-1189325baf5c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37026,
             "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice Mind Stone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fa6dac02-c557-4a3b-864a-1189325baf5c"
+            "uuid": "ccdfdc60-e1c6-56fe-9225-ac52594181c8"
         },
         {
             "artist": "Matthew D. Wilson",
@@ -1706,7 +1732,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1737,15 +1762,17 @@
                     "text": "If another effect causes Daze to cost more, you must pay that additional cost even if you pay its alternative cost."
                 }
             ],
+            "scryfallId": "bbac85b3-1b40-49c7-8f79-bde83d4a0791",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36998,
             "text": "You may return an Island you control to its owner's hand rather than pay this spell's mana cost.\nCounter target spell unless its controller pays {1}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bbac85b3-1b40-49c7-8f79-bde83d4a0791"
+            "uuid": "dc276e0a-227e-563d-8a63-c4a03846393d"
         },
         {
             "artist": "Jason Chan",
@@ -1771,7 +1798,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1815,7 +1841,6 @@
                 "PLGM",
                 "PRM",
                 "PTC",
-                "S00",
                 "S99",
                 "SS1",
                 "SUM",
@@ -1830,15 +1855,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "71cfcba5-1571-48b8-a3db-55dca135506e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36997,
             "text": "Counter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "71cfcba5-1571-48b8-a3db-55dca135506e"
+            "uuid": "6f2dbcf7-7be9-57fa-bbda-22d2cc762de5"
         },
         {
             "artist": "Aaron Boyd",
@@ -1864,7 +1891,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1890,15 +1916,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "58cce2cc-3466-48f7-8cc8-9ac93d028917",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37034,
             "text": "Return target creature to its owner's hand.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "58cce2cc-3466-48f7-8cc8-9ac93d028917"
+            "uuid": "d674551e-d6e7-56fd-ab68-db58554c0af6"
         },
         {
             "artist": "Matt Cavotta",
@@ -1924,7 +1952,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1968,15 +1995,17 @@
                     "text": "Each pile may contain from zero to five cards; they don’t have to be split “evenly.”"
                 }
             ],
+            "scryfallId": "a4038abf-6f47-4228-baba-5707a25b4108",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37002,
             "text": "Reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a4038abf-6f47-4228-baba-5707a25b4108"
+            "uuid": "b6bf7169-5c9b-59c9-a814-174e64f7316a"
         },
         {
             "artist": "Kev Walker",
@@ -2002,7 +2031,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2028,15 +2056,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f205a94c-9a28-4a43-ba86-fa73112e360f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37015,
             "text": "You may return two Islands you control to their owner's hand rather than pay this spell's mana cost.\nDraw two cards.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f205a94c-9a28-4a43-ba86-fa73112e360f"
+            "uuid": "868d6f36-65aa-5047-b203-7a42fa6d1214"
         },
         {
             "artist": "Ron Spears",
@@ -2060,7 +2090,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2095,15 +2124,17 @@
                     "text": "You scry 2 even if the spell’s controller pays {X}."
                 }
             ],
+            "scryfallId": "50f4255c-8543-4a9d-a198-d48f386b9afa",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36995,
             "text": "Counter target spell unless its controller pays {X}. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "50f4255c-8543-4a9d-a198-d48f386b9afa"
+            "uuid": "e5594438-228e-5e22-b509-d40e3db4ec65"
         },
         {
             "artist": "Alan Pollack",
@@ -2123,7 +2154,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2153,15 +2183,17 @@
                     "text": "Putting the card onto the battlefield is optional. When the ability resolves, you can choose not to."
                 }
             ],
+            "scryfallId": "8cd33ce6-1f5d-4c34-89d1-8e529b60b3e1",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37040,
             "text": "{T}: Add {C}.\n{2}, {T}: You may put a basic land card from your hand onto the battlefield tapped.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "8cd33ce6-1f5d-4c34-89d1-8e529b60b3e1"
+            "uuid": "543c0f2e-6daf-54d3-8b18-42e219d7438d"
         },
         {
             "artist": "John Avon",
@@ -2175,7 +2207,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2227,7 +2258,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2239,8 +2269,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2254,6 +2286,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "bed99c19-6452-4258-8369-41d17387062a",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2266,7 +2299,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "bed99c19-6452-4258-8369-41d17387062a"
+            "uuid": "bf18d7f6-b34d-5e82-a165-c76e89c9bc68",
+            "variations": [
+                "19e467bc-cab9-533a-9bad-668fb4976bb3",
+                "45ab801d-c6b3-557c-89b6-5267b89b9d47",
+                "0f0087ed-cb52-5ed0-ba1e-79253e38a5a1"
+            ]
         },
         {
             "artist": "Scott Bailey",
@@ -2280,7 +2318,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2332,7 +2369,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2344,8 +2380,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2359,6 +2397,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "7e0c8a05-aa2b-49b9-9a87-b13d7810a320",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2371,7 +2410,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7e0c8a05-aa2b-49b9-9a87-b13d7810a320"
+            "uuid": "19e467bc-cab9-533a-9bad-668fb4976bb3",
+            "variations": [
+                "bf18d7f6-b34d-5e82-a165-c76e89c9bc68",
+                "45ab801d-c6b3-557c-89b6-5267b89b9d47",
+                "0f0087ed-cb52-5ed0-ba1e-79253e38a5a1"
+            ]
         },
         {
             "artist": "Donato Giancola",
@@ -2385,7 +2429,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2437,7 +2480,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2449,8 +2491,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2464,6 +2508,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4c4845cc-77d8-4f87-8424-e2371bbb72da",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2476,7 +2521,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4c4845cc-77d8-4f87-8424-e2371bbb72da"
+            "uuid": "45ab801d-c6b3-557c-89b6-5267b89b9d47",
+            "variations": [
+                "bf18d7f6-b34d-5e82-a165-c76e89c9bc68",
+                "19e467bc-cab9-533a-9bad-668fb4976bb3",
+                "0f0087ed-cb52-5ed0-ba1e-79253e38a5a1"
+            ]
         },
         {
             "artist": "Christopher Moeller",
@@ -2490,7 +2540,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2542,7 +2591,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -2554,8 +2602,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2569,6 +2619,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8b20beee-87c8-45f7-8d3f-088937724fb8",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -2581,7 +2632,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "8b20beee-87c8-45f7-8d3f-088937724fb8"
+            "uuid": "0f0087ed-cb52-5ed0-ba1e-79253e38a5a1",
+            "variations": [
+                "bf18d7f6-b34d-5e82-a165-c76e89c9bc68",
+                "19e467bc-cab9-533a-9bad-668fb4976bb3",
+                "45ab801d-c6b3-557c-89b6-5267b89b9d47"
+            ]
         },
         {
             "artist": "Kev Walker",
@@ -2605,7 +2661,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2637,6 +2692,7 @@
                     "text": "To activate the second ability, you choose a value of X equal to or less than the number of loyalty counters on Chandra Nalaar. You may choose 0. You can’t choose a negative number."
                 }
             ],
+            "scryfallId": "1acd7aa1-f523-4f58-8626-36c975ef46a9",
             "starter": true,
             "subtypes": [
                 "Chandra"
@@ -2644,12 +2700,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 36993,
             "text": "+1: Chandra Nalaar deals 1 damage to target player or planeswalker.\n−X: Chandra Nalaar deals X damage to target creature.\n−8: Chandra Nalaar deals 10 damage to target player or planeswalker and each creature that player or that planeswalker's controller controls.",
             "type": "Legendary Planeswalker — Chandra",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "1acd7aa1-f523-4f58-8626-36c975ef46a9"
+            "uuid": "5ef06ef5-181e-5834-ba88-1ac0f8d3e838"
         },
         {
             "artist": "Daren Bader",
@@ -2675,7 +2732,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2702,19 +2758,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "72121780-03c7-49d6-b2c4-6b87fa945766",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37009,
             "text": "{R}: Flamekin Brawler gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Elemental Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "72121780-03c7-49d6-b2c4-6b87fa945766"
+            "uuid": "6c50df0a-bb5f-5016-9efb-089b9c6652c3"
         },
         {
             "artist": "Jeff Reitz",
@@ -2740,7 +2798,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2768,19 +2825,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3ace8dec-5dad-4846-aaeb-297767cf3e35",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37007,
             "text": "{T}: Fireslinger deals 1 damage to any target and 1 damage to you.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "3ace8dec-5dad-4846-aaeb-297767cf3e35"
+            "uuid": "fdb2b32b-db1c-5522-8e01-403477d6a938"
         },
         {
             "artist": "Kev Walker",
@@ -2806,7 +2865,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2847,19 +2905,21 @@
                     "text": "Soulbright Flamekin’s ability uses the stack and can be responded to. Because it has a target, it’s not a mana ability, even if you know that it will produce mana."
                 }
             ],
+            "scryfallId": "7c540d07-299d-4be3-9b97-42c05eea6237",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37038,
             "text": "{2}: Target creature gains trample until end of turn. If this is the third time this ability has resolved this turn, you may add {R}{R}{R}{R}{R}{R}{R}{R}.",
             "toughness": "1",
             "type": "Creature — Elemental Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c540d07-299d-4be3-9b97-42c05eea6237"
+            "uuid": "a993e1ec-3265-5f23-9746-f9505b9f27aa"
         },
         {
             "artist": "Mark Zug",
@@ -2885,7 +2945,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2910,19 +2969,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "273c99c1-7326-4ceb-9be0-37efcb69be1e",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37031,
             "text": "Haste\n{R}: Pyre Charger gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Elemental Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "273c99c1-7326-4ceb-9be0-37efcb69be1e"
+            "uuid": "da524f24-74c1-5eeb-a8b7-c16b45ed355b"
         },
         {
             "artist": "Justin Sweet",
@@ -2948,7 +3009,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2977,18 +3037,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3c7b8135-42a4-4d4b-b585-506c0b83755e",
             "starter": true,
             "subtypes": [
                 "Slith"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37037,
             "text": "Haste\nWhenever Slith Firewalker deals combat damage to a player, put a +1/+1 counter on it.",
             "toughness": "1",
             "type": "Creature — Slith",
             "types": [
                 "Creature"
             ],
-            "uuid": "3c7b8135-42a4-4d4b-b585-506c0b83755e"
+            "uuid": "618fd891-05f8-54e0-944c-95d1e15636ab"
         },
         {
             "artist": "Dave Dorman",
@@ -3014,7 +3076,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3044,19 +3105,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e6699bcb-40e3-47b9-a96d-1478d4a1c0a0",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37011,
             "text": "{7}{R}: Flamewave Invoker deals 5 damage to target player or planeswalker.",
             "toughness": "2",
             "type": "Creature — Goblin Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "e6699bcb-40e3-47b9-a96d-1478d4a1c0a0"
+            "uuid": "877b82f0-9c11-53dd-9443-725625f58205"
         },
         {
             "artist": "Ron Spears",
@@ -3080,7 +3143,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3111,19 +3173,21 @@
                     "text": "If you cast this card for its evoke cost, you may put the sacrifice trigger and the regular enters-the-battlefield trigger on the stack in either order. The one put on the stack last will resolve first."
                 }
             ],
+            "scryfallId": "9ea3564c-a4cb-4e0d-afcb-44c98e5d7659",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37019,
             "text": "When Inner-Flame Acolyte enters the battlefield, target creature gets +2/+0 and gains haste until end of turn.\nEvoke {R} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "2",
             "type": "Creature — Elemental Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "9ea3564c-a4cb-4e0d-afcb-44c98e5d7659"
+            "uuid": "deaa0ae8-4c85-51cc-88e0-00e91d732e26"
         },
         {
             "artist": "Pete Venters",
@@ -3149,7 +3213,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3189,18 +3252,20 @@
                     "text": "If it enters the battlefield as the only targetable creature, it must target itself."
                 }
             ],
+            "scryfallId": "b7cc7076-362f-4b8b-8d2f-66099c1b6dde",
             "starter": true,
             "subtypes": [
                 "Kavu"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37010,
             "text": "When Flametongue Kavu enters the battlefield, it deals 4 damage to target creature.",
             "toughness": "2",
             "type": "Creature — Kavu",
             "types": [
                 "Creature"
             ],
-            "uuid": "b7cc7076-362f-4b8b-8d2f-66099c1b6dde"
+            "uuid": "e7701b8e-3c78-579a-9d02-6195e624a3b9"
         },
         {
             "artist": "Matt Cavotta",
@@ -3226,7 +3291,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3261,18 +3325,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "38f13881-67ba-4671-a32c-b2ecc4370df7",
             "starter": true,
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37013,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\n{R}: Furnace Whelp gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "38f13881-67ba-4671-a32c-b2ecc4370df7"
+            "uuid": "01a6bad6-b1fd-5c2c-ba43-a18d13ac25f3"
         },
         {
             "artist": "Kev Walker",
@@ -3296,7 +3362,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3326,18 +3391,20 @@
                     "text": "If Rakdos Pit Dragon loses double strike after first strike combat damage has been dealt, it won’t deal damage during the normal combat damage step."
                 }
             ],
+            "scryfallId": "57a5af51-6cd1-47bd-94d8-7ef8d953d8ca",
             "starter": true,
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37033,
             "text": "{R}{R}: Rakdos Pit Dragon gains flying until end of turn.\n{R}: Rakdos Pit Dragon gets +1/+0 until end of turn.\nHellbent — Rakdos Pit Dragon has double strike as long as you have no cards in hand.",
             "toughness": "3",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "57a5af51-6cd1-47bd-94d8-7ef8d953d8ca"
+            "uuid": "38b81b1e-bb75-5022-9b12-61ab8782e78c"
         },
         {
             "artist": "Kev Walker",
@@ -3363,7 +3430,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3396,18 +3462,20 @@
                     "text": "If you cast this card for its evoke cost, you may put the sacrifice trigger and the regular enters-the-battlefield trigger on the stack in either order. The one put on the stack last will resolve first."
                 }
             ],
+            "scryfallId": "9f56009a-0a9f-4894-afff-9aae6adb2826",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37018,
             "text": "When Ingot Chewer enters the battlefield, destroy target artifact.\nEvoke {R} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "9f56009a-0a9f-4894-afff-9aae6adb2826"
+            "uuid": "176c5835-8355-5894-bbf0-eab1fceef0ad"
         },
         {
             "artist": "Greg Staples",
@@ -3429,7 +3497,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3454,11 +3521,13 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "54f0cac4-ca65-4fd5-88b1-8148d1e83c67",
             "starter": true,
             "subtypes": [
                 "Golem"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37030,
             "text": "Affinity for Mountains (This spell costs {1} less to cast for each Mountain you control.)\nHaste",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -3466,7 +3535,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "54f0cac4-ca65-4fd5-88b1-8148d1e83c67"
+            "uuid": "0c64d365-ea21-598c-8751-534165030bf6"
         },
         {
             "artist": "Tony Szczudlo",
@@ -3490,7 +3559,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3538,19 +3606,21 @@
                     "text": "You can choose to find any card with the Mountain land type, including nonbasic lands. You can also choose not to find a card, even if there is a Mountain card in your library."
                 }
             ],
+            "scryfallId": "7c3ba5f8-13e8-446d-a0c4-55e6d2f300c7",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Beast"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 36994,
             "text": "{R}: Chartooth Cougar gets +1/+0 until end of turn.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle your library.)",
             "toughness": "4",
             "type": "Creature — Cat Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c3ba5f8-13e8-446d-a0c4-55e6d2f300c7"
+            "uuid": "c8e32e2a-44f1-5893-8427-0df54163e505"
         },
         {
             "artist": "Omar Rayyan",
@@ -3574,7 +3644,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3588,6 +3657,7 @@
             "manaCost": "{3}{R}{R}{R}",
             "multiverseId": 189214,
             "name": "Hostility",
+            "names": [],
             "number": "48",
             "originalText": "Haste\nIf a spell you control would deal damage to an opponent, prevent that damage. Put a 3/1 red Elemental Shaman creature token with haste into play for each 1 damage prevented this way.\nWhen Hostility is put into a graveyard from anywhere, shuffle it into its owner's library.",
             "originalType": "Creature - Elemental Incarnation",
@@ -3618,19 +3688,21 @@
                     "text": "If the Incarnation is removed from the graveyard after the ability triggers but before it resolves, it will remain in its new zone when its owner shuffles their library. Similarly, if a replacement effect has the Incarnation move to a different zone instead of being put into the graveyard, the ability won’t trigger at all."
                 }
             ],
+            "scryfallId": "a6fc64af-f766-4022-9b36-82aa57b5a09d",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Incarnation"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 37016,
             "text": "Haste\nIf a spell you control would deal damage to an opponent, prevent that damage. Create a 3/1 red Elemental Shaman creature token with haste for each 1 damage prevented this way.\nWhen Hostility is put into a graveyard from anywhere, shuffle it into its owner's library.",
             "toughness": "6",
             "type": "Creature — Elemental Incarnation",
             "types": [
                 "Creature"
             ],
-            "uuid": "a6fc64af-f766-4022-9b36-82aa57b5a09d"
+            "uuid": "e3e9bfb0-c6b4-5af9-9c09-5d2fa8ebf88d"
         },
         {
             "artist": "Ron Spencer",
@@ -3656,7 +3728,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3683,15 +3754,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3bd1ec98-8188-4649-899e-b0972509fc7e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37006,
             "text": "Firebolt deals 2 damage to any target.\nFlashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3bd1ec98-8188-4649-899e-b0972509fc7e"
+            "uuid": "ecd97af6-15b2-5f87-a787-23b4fabbaefd"
         },
         {
             "artist": "Christopher Moeller",
@@ -3717,7 +3790,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3742,15 +3814,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b7cb599d-dfe6-4453-b700-705d44b65f6e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37036,
             "text": "Sacrifice Seal of Fire: It deals 2 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b7cb599d-dfe6-4453-b700-705d44b65f6e"
+            "uuid": "6cb8cab7-25d4-5a06-87d5-4b9d409f3db0"
         },
         {
             "artist": "Steve Prescott",
@@ -3776,7 +3850,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3820,15 +3893,17 @@
                     "text": "Regeneration abilities that would affect that creature can still be activated; they just won’t do anything. The creature can’t be regenerated for any reason, even if an effect other than Incinerate would deal lethal damage to it or otherwise destroy it."
                 }
             ],
+            "scryfallId": "8503210d-be78-4271-a050-53caa94f735d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37017,
             "text": "Incinerate deals 3 damage to any target. A creature dealt damage this way can't be regenerated this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "8503210d-be78-4271-a050-53caa94f735d"
+            "uuid": "adbce556-341d-52b8-b953-55b9b854b1fd"
         },
         {
             "artist": "Justin Sweet",
@@ -3852,7 +3927,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3899,15 +3973,17 @@
                     "text": "Scry appears on some spells and abilities with one or more targets. If all of the spell or ability’s targets are illegal when it tries to resolve, it won’t resolve and none of its effects will happen. You won’t scry."
                 }
             ],
+            "scryfallId": "a4561625-c6a1-4ad1-8b0b-fe1904049e8e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37023,
             "text": "Magma Jet deals 2 damage to any target. Scry 2.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a4561625-c6a1-4ad1-8b0b-fe1904049e8e"
+            "uuid": "b05a61f5-850b-5600-913a-788352aed498"
         },
         {
             "artist": "Trevor Hairsine",
@@ -3933,7 +4009,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3976,15 +4051,17 @@
                     "text": "If a cost includes more than one monocolored hybrid mana symbol, you can choose a different way to pay for each symbol. For example, you can pay for Flame Javelin by spending {R}{R}{R}, {2}{R}{R}, {4}{R}, or {6}."
                 }
             ],
+            "scryfallId": "5de80c65-48dc-4cd0-a6f1-1e9f91206ab2",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37008,
             "text": "({2/R} can be paid with any two mana or with {R}. This card's converted mana cost is 6.)\nFlame Javelin deals 4 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5de80c65-48dc-4cd0-a6f1-1e9f91206ab2"
+            "uuid": "cc930309-2bd3-577c-bdf6-8be2c71d474a"
         },
         {
             "artist": "Chippy",
@@ -4008,7 +4085,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4047,15 +4123,17 @@
                     "text": "If one or two of Cone of Flame’s targets are illegal when it resolves, you can’t change how much damage will be dealt to the remaining legal targets."
                 }
             ],
+            "scryfallId": "37ec5107-d44f-48dc-81e9-7bd83afe5d97",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36996,
             "text": "Cone of Flame deals 1 damage to any target, 2 damage to another target, and 3 damage to a third target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "37ec5107-d44f-48dc-81e9-7bd83afe5d97"
+            "uuid": "94be45d8-ca9d-5479-872d-7be923bdfff0"
         },
         {
             "artist": "Michael Danza",
@@ -4081,7 +4159,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4110,15 +4187,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ab427d46-936d-4e1b-9968-0ee1a261cedc",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37005,
             "text": "You may sacrifice two Mountains rather than pay this spell's mana cost.\nFireblast deals 4 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ab427d46-936d-4e1b-9968-0ee1a261cedc"
+            "uuid": "0498d6a1-1e61-5d94-8426-2d34558b966e"
         },
         {
             "artist": "Dave Dorman",
@@ -4144,7 +4223,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4213,15 +4291,17 @@
                     "text": "You can target more than X creatures. However, if the number of legal targets at the time Fireball resolves is greater than X, none of them will be dealt any damage."
                 }
             ],
+            "scryfallId": "47883c95-5822-4893-b0ae-fc540a28a0c1",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37004,
             "text": "This spell costs {1} more to cast for each target beyond the first.\nFireball deals X damage divided evenly, rounded down, among any number of targets.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "47883c95-5822-4893-b0ae-fc540a28a0c1"
+            "uuid": "b50488b0-0fed-5e5b-b4e9-d7aad90274f1"
         },
         {
             "artist": "Greg Staples",
@@ -4245,7 +4325,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4269,15 +4348,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ffbc80e7-9788-4b6b-a254-24c7670a88ce",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 36999,
             "text": "Demonfire deals X damage to any target. If a creature dealt damage this way would die this turn, exile it instead.\nHellbent — If you have no cards in hand, this spell can't be countered and the damage can't be prevented.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ffbc80e7-9788-4b6b-a254-24c7670a88ce"
+            "uuid": "ca96d5ff-af80-5106-b229-fa4b0f64de39"
         },
         {
             "artist": "Philip Straub",
@@ -4299,7 +4380,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4326,15 +4406,17 @@
                     "text": "It doesn’t matter how many cards you have in your hand when the ability resolves."
                 }
             ],
+            "scryfallId": "6e714757-3bf8-45e0-9a90-6437b6d72c14",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 37022,
             "text": "Keldon Megaliths enters the battlefield tapped.\n{T}: Add {R}.\nHellbent — {1}{R}, {T}: Keldon Megaliths deals 1 damage to any target. Activate this ability only if you have no cards in hand.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "6e714757-3bf8-45e0-9a90-6437b6d72c14"
+            "uuid": "c9871c6b-2c69-5fe1-9850-22a1a1a03d8c"
         },
         {
             "artist": "Rob Alexander",
@@ -4348,7 +4430,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4371,7 +4452,6 @@
             "originalType": "Basic Land - Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4411,8 +4491,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4426,6 +4508,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e91e1aae-438b-41df-ad8e-25ba7c9a8f74",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4438,7 +4521,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e91e1aae-438b-41df-ad8e-25ba7c9a8f74"
+            "uuid": "e9b1be43-3d77-5676-950b-ae8bccc74396",
+            "variations": [
+                "c75351dd-5991-58e9-8df4-b2890473f3d5",
+                "910af881-0975-569d-9d76-4009fbc4241b",
+                "648c2a18-7f7e-5f19-90d0-9f4555309d06"
+            ]
         },
         {
             "artist": "Christopher Moeller",
@@ -4452,7 +4540,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4474,7 +4561,6 @@
             "originalType": "Basic Land - Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4514,8 +4600,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4529,6 +4617,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d2c5b445-3679-4acc-9e88-1e8c7c656589",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4541,7 +4630,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "d2c5b445-3679-4acc-9e88-1e8c7c656589"
+            "uuid": "c75351dd-5991-58e9-8df4-b2890473f3d5",
+            "variations": [
+                "e9b1be43-3d77-5676-950b-ae8bccc74396",
+                "910af881-0975-569d-9d76-4009fbc4241b",
+                "648c2a18-7f7e-5f19-90d0-9f4555309d06"
+            ]
         },
         {
             "artist": "Greg Staples",
@@ -4555,7 +4649,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4578,7 +4671,6 @@
             "originalType": "Basic Land - Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4618,8 +4710,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4633,6 +4727,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "91e5ce25-a0cb-4d9e-8274-af5672a85b0a",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4645,7 +4740,12 @@
             "types": [
                 "Land"
             ],
-            "uuid": "91e5ce25-a0cb-4d9e-8274-af5672a85b0a"
+            "uuid": "910af881-0975-569d-9d76-4009fbc4241b",
+            "variations": [
+                "e9b1be43-3d77-5676-950b-ae8bccc74396",
+                "c75351dd-5991-58e9-8df4-b2890473f3d5",
+                "648c2a18-7f7e-5f19-90d0-9f4555309d06"
+            ]
         },
         {
             "artist": "Mark Tedin",
@@ -4659,7 +4759,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4682,7 +4781,6 @@
             "originalType": "Basic Land - Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -4722,8 +4820,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4737,6 +4837,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4ecd2a9c-45b7-45c2-8936-d9e631367507",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -4749,17 +4850,23 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4ecd2a9c-45b7-45c2-8936-d9e631367507"
+            "uuid": "648c2a18-7f7e-5f19-90d0-9f4555309d06",
+            "variations": [
+                "e9b1be43-3d77-5676-950b-ae8bccc74396",
+                "c75351dd-5991-58e9-8df4-b2890473f3d5",
+                "910af881-0975-569d-9d76-4009fbc4241b"
+            ]
         }
     ],
     "code": "dd2",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "dd2",
     "name": "Duel Decks: Jace vs. Chandra",
     "releaseDate": "2008-11-07",
+    "tcgplayerGroupId": 35,
     "tokens": [
         {
             "artist": "Jim Pavelec",
@@ -4776,10 +4883,10 @@
             "reverseRelated": [
                 "Hostility"
             ],
-            "text": "",
+            "scryfallId": "da6283ba-1297-4c7d-8744-f530c04194cd",
             "toughness": "1",
             "type": "Token Creature — Elemental Shaman",
-            "uuid": "da6283ba-1297-4c7d-8744-f530c04194cd"
+            "uuid": "36ed5b87-6a1e-59f9-a003-f2e4824cb1a0"
         }
     ],
     "totalSetSize": 62,

@@ -16,7 +16,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -65,19 +64,21 @@
                     "text": "The life gain is mandatory."
                 }
             ],
+            "scryfallId": "d563249e-7203-4d54-af5a-82d2f1a584cb",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 82739,
             "text": "Whenever another creature enters the battlefield, you gain 1 life.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "d563249e-7203-4d54-af5a-82d2f1a584cb"
+            "uuid": "cfe1de90-048e-5592-8f1a-7ef817ebe6b4"
         },
         {
             "artist": "rk post",
@@ -95,7 +96,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -126,11 +126,13 @@
                     "text": "If Tidehollow Sculler leaves the battlefield before its first ability has resolved, its second ability will trigger. This ability will do nothing when it resolves. Then its first ability will resolve and exile the chosen card forever."
                 }
             ],
+            "scryfallId": "ba9c7a2e-99c6-4498-a8ed-9171cd9373e0",
             "starter": true,
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 82740,
             "text": "When Tidehollow Sculler enters the battlefield, target opponent reveals their hand and you choose a nonland card from it. Exile that card.\nWhen Tidehollow Sculler leaves the battlefield, return the exiled card to its owner's hand.",
             "toughness": "2",
             "type": "Artifact Creature — Zombie",
@@ -138,7 +140,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "ba9c7a2e-99c6-4498-a8ed-9171cd9373e0"
+            "uuid": "1b80867b-6ccc-54dc-bc99-5836d6403e47"
         },
         {
             "artist": "Todd Lockwood",
@@ -154,7 +156,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -195,15 +196,17 @@
                     "text": "The controller of the exiled creature isn’t required to search their library for a basic land. If that player doesn’t, the player won’t shuffle their library."
                 }
             ],
+            "scryfallId": "045ce37b-86d2-4e56-84af-b6625b53d13c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82745,
             "text": "Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle their library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "045ce37b-86d2-4e56-84af-b6625b53d13c"
+            "uuid": "d3ced025-fa97-5506-973d-0e7cb59484ee"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -220,7 +223,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -249,15 +251,17 @@
                     "text": "If you target yourself with this spell, you must reveal your entire hand to the other players just as any other player would."
                 }
             ],
+            "scryfallId": "5c1d4835-c662-4deb-b8f9-cd7b04948edf",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82742,
             "text": "Target player reveals their hand. You choose a nonland card from it with converted mana cost 3 or less. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5c1d4835-c662-4deb-b8f9-cd7b04948edf"
+            "uuid": "57157c43-2a62-5ced-a5db-59a2705cc70f"
         },
         {
             "artist": "Igor Kieryluk",
@@ -269,7 +273,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -283,6 +286,7 @@
             "manaCost": "{2}",
             "multiverseId": 382196,
             "name": "Shrine of Loyal Legions",
+            "names": [],
             "number": "5",
             "originalText": "At the beginning of your upkeep or whenever you cast a white spell, put a charge counter on Shrine of Loyal Legions.\n{3}, {T}, Sacrifice Shrine of Loyal Legions: Put a 1/1 colorless Myr artifact creature token onto the battlefield for each charge counter on Shrine of Loyal Legions.",
             "originalType": "Artifact",
@@ -292,15 +296,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "ced53428-391d-4b61-83e8-cce297e28de9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82747,
             "text": "At the beginning of your upkeep or whenever you cast a white spell, put a charge counter on Shrine of Loyal Legions.\n{3}, {T}, Sacrifice Shrine of Loyal Legions: Create a 1/1 colorless Myr artifact creature token for each charge counter on Shrine of Loyal Legions.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ced53428-391d-4b61-83e8-cce297e28de9"
+            "uuid": "388d0dfa-b4c7-534a-b881-e51d931bfc4c"
         },
         {
             "artist": "Greg Staples",
@@ -317,7 +323,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -344,15 +349,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "cf643b03-d388-451b-933a-28f3c4087877",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82741,
             "text": "White creatures you control get +1/+1.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "cf643b03-d388-451b-933a-28f3c4087877"
+            "uuid": "1a4de88d-2d19-5a7c-a3a0-c3f9af557592"
         },
         {
             "artist": "Clint Cearley",
@@ -369,7 +376,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -394,15 +400,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "47ccaac5-ca40-44de-9db2-13649c8e5722",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82743,
             "text": "Creature tokens you control get +1/+1 and have vigilance.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "47ccaac5-ca40-44de-9db2-13649c8e5722"
+            "uuid": "d0f6f157-4abd-53a8-8298-d8d555a15c8c"
         },
         {
             "artist": "John Matson",
@@ -419,7 +427,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -434,6 +441,7 @@
             "manaCost": "{1}{W}",
             "multiverseId": 382194,
             "name": "Raise the Alarm",
+            "names": [],
             "number": "8",
             "originalText": "Put two 1/1 white Soldier creature tokens onto the battlefield.",
             "originalType": "Instant",
@@ -449,15 +457,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "23a3e9e3-5ec1-4f4c-9bbd-84908fa09ed3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82746,
             "text": "Create two 1/1 white Soldier creature tokens.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "23a3e9e3-5ec1-4f4c-9bbd-84908fa09ed3"
+            "uuid": "862fd103-0b53-52e5-a51d-e7ef2f75d511"
         },
         {
             "artist": "Christopher Moeller",
@@ -476,7 +486,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -501,15 +510,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d5725eaf-e77c-4582-a785-1668ae1f4007",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82750,
             "text": "Until end of turn, creatures you control get +1/+1 and creatures your opponents control get -1/-1.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d5725eaf-e77c-4582-a785-1668ae1f4007"
+            "uuid": "17db8c79-3b17-5d5b-b71b-ad6328f578c9"
         },
         {
             "artist": "Chris Rahn",
@@ -521,7 +532,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -552,17 +562,19 @@
                     "text": "You’ll untap all lands you control even if the player doesn’t discard a card."
                 }
             ],
+            "scryfallId": "9b370b3f-ae0d-4744-8b3d-3c48c81c1326",
             "starter": true,
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 82749,
             "text": "Equipped creature gets +2/+2 and has protection from black and from green.\nWhenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9b370b3f-ae0d-4744-8b3d-3c48c81c1326"
+            "uuid": "4d6e9642-d72c-575b-85ec-334501f03420"
         },
         {
             "artist": "Bud Cook",
@@ -580,7 +592,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -593,6 +604,7 @@
             "manaCost": "{2}{W}",
             "multiverseId": 382191,
             "name": "Lingering Souls",
+            "names": [],
             "number": "11",
             "originalText": "Put two 1/1 white Spirit creature tokens with flying onto the battlefield.\nFlashback {1}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "originalType": "Sorcery",
@@ -606,15 +618,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "70e33f45-7d47-423b-a123-8541f1d1afb4",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82744,
             "text": "Create two 1/1 white Spirit creature tokens with flying.\nFlashback {1}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "70e33f45-7d47-423b-a123-8541f1d1afb4"
+            "uuid": "150a5afb-7c02-5139-91de-0a37235dc0df"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -631,7 +645,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -644,6 +657,7 @@
             "manaCost": "{2/W}{2/W}{2/W}",
             "multiverseId": 382198,
             "name": "Spectral Procession",
+            "names": [],
             "number": "12",
             "originalText": "Put three 1/1 white Spirit creature tokens with flying onto the battlefield.",
             "originalType": "Sorcery",
@@ -673,15 +687,17 @@
                     "text": "If a cost includes more than one monocolored hybrid mana symbol, you can choose a different way to pay for each symbol. For example, you can pay for Spectral Procession by spending {W}{W}{W}, {2}{W}{W}, {4}{W}, or {6}."
                 }
             ],
+            "scryfallId": "9ac8b456-4a5e-4255-ab5b-694e83a2bbaa",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82748,
             "text": "Create three 1/1 white Spirit creature tokens with flying.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9ac8b456-4a5e-4255-ab5b-694e83a2bbaa"
+            "uuid": "382fee05-9f46-54c0-91b7-08cd86cea535"
         },
         {
             "artist": "Volkan Baga",
@@ -697,7 +713,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -711,6 +726,7 @@
             "manaCost": "{2}{W}{W}",
             "multiverseId": 382184,
             "name": "Elspeth, Knight-Errant",
+            "names": [],
             "number": "13",
             "originalText": "+1: Put a 1/1 white Soldier creature token onto the battlefield.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n-8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
             "originalType": "Planeswalker — Elspeth",
@@ -732,6 +748,7 @@
                     "text": "Lethal damage and effects that say “destroy” won’t cause a permanent with indestructible to be put into the graveyard. However, a permanent with indestructible can be put into the graveyard for a number of reasons. The most likely reasons are if it’s sacrificed, if it’s a creature whose toughness is 0 or less, or if it’s an Aura that’s either unattached or attached to something illegal."
                 }
             ],
+            "scryfallId": "200e0e28-88cc-43e5-8774-28ba791cfa63",
             "starter": true,
             "subtypes": [
                 "Elspeth"
@@ -739,12 +756,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 82751,
             "text": "+1: Create a 1/1 white Soldier creature token.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n−8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "200e0e28-88cc-43e5-8774-28ba791cfa63"
+            "uuid": "ae4339bc-551c-5b27-b501-d585746c004e"
         },
         {
             "artist": "Jim Nelson",
@@ -759,7 +777,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -795,15 +812,17 @@
                     "text": "Like most lands, each land in this cycle is colorless. The damage dealt to you is dealt by a colorless source."
                 }
             ],
+            "scryfallId": "68ed4c64-8998-4686-b5d4-e9735e0c1a76",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82732,
             "text": "{T}: Add {C}.\n{T}: Add {W} or {B}. Caves of Koilos deals 1 damage to you.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "68ed4c64-8998-4686-b5d4-e9735e0c1a76"
+            "uuid": "aea4f622-718c-5785-9da5-5818f7668047"
         },
         {
             "artist": "Jung Park",
@@ -816,7 +835,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -867,15 +885,17 @@
                     "text": "On the other hand, you can tap City of Brass, put its triggered ability on the stack, and then respond to that ability by casting an instant or activating an ability using that mana. In that case, the instant spell or activated ability will resolve first."
                 }
             ],
+            "scryfallId": "2d120ddb-73e7-4dbc-b48c-4a6c74f331c3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82733,
             "text": "Whenever City of Brass becomes tapped, it deals 1 damage to you.\n{T}: Add one mana of any color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "2d120ddb-73e7-4dbc-b48c-4a6c74f331c3"
+            "uuid": "03ee2b0a-e49e-5652-8105-bffe47ba7254"
         },
         {
             "artist": "Cliff Childs",
@@ -891,7 +911,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -918,15 +937,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4e1ad9b1-f59c-4990-a43f-1a705f09bae7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82734,
             "text": "Isolated Chapel enters the battlefield tapped unless you control a Plains or a Swamp.\n{T}: Add {W} or {B}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "4e1ad9b1-f59c-4990-a43f-1a705f09bae7"
+            "uuid": "7a2f4e7b-630a-57f3-bda0-8132cc9d9aa9"
         },
         {
             "artist": "John Avon",
@@ -942,7 +963,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -972,15 +992,17 @@
                     "text": "Multiple instances of deathtouch or lifelink on the same creature are redundant."
                 }
             ],
+            "scryfallId": "6efbe3db-5d38-4807-9348-0204fa5a7681",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82737,
             "text": "{T}: Add {C}.\n{2}{W}{B}, {T}: Creatures you control gain deathtouch and lifelink until end of turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "6efbe3db-5d38-4807-9348-0204fa5a7681"
+            "uuid": "0592fe2e-4243-56e8-b7b0-43fb32199e0a"
         },
         {
             "artist": "Omar Rayyan",
@@ -994,7 +1016,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1022,15 +1043,17 @@
                     "text": "At the time the ability resolves, you’ll get to play the card if you declared three different creatures as attackers at any point in the turn. A creature declared as an attacker in two different attack phases counts only once. A creature that entered the battlefield attacking (such as a token created by Militia’s Pride) doesn’t count because you never attacked with it."
                 }
             ],
+            "scryfallId": "10822e32-adf3-4ad7-b889-e81d68983b5b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82738,
             "text": "Hideaway (This land enters the battlefield tapped. When it does, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library.)\n{T}: Add {W}.\n{W}, {T}: You may play the exiled card without paying its mana cost if you attacked with three or more creatures this turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "10822e32-adf3-4ad7-b889-e81d68983b5b"
+            "uuid": "9db0f4f9-3c9e-5b29-bc84-a46a64bbbdde"
         },
         {
             "artist": "Adam Paquette",
@@ -1044,7 +1067,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1095,7 +1117,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -1108,8 +1129,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -1123,6 +1146,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "19d1d724-731a-4125-99d1-25a81e8ff08c",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -1130,12 +1154,13 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 82735,
             "text": "({T}: Add {W}.)",
             "type": "Basic Land — Plains",
             "types": [
                 "Land"
             ],
-            "uuid": "19d1d724-731a-4125-99d1-25a81e8ff08c"
+            "uuid": "b0fbdb91-37d9-50a9-a1b9-b38e4c0fbab9"
         },
         {
             "artist": "Adam Paquette",
@@ -1149,7 +1174,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1210,8 +1234,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -1225,6 +1251,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e2029951-b0cb-4c09-8dc1-ec177e278877",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -1232,12 +1259,13 @@
             "supertypes": [
                 "Basic"
             ],
+            "tcgplayerProductId": 82736,
             "text": "({T}: Add {B}.)",
             "type": "Basic Land — Swamp",
             "types": [
                 "Land"
             ],
-            "uuid": "e2029951-b0cb-4c09-8dc1-ec177e278877"
+            "uuid": "4eed53a2-05a3-5ffe-a6f6-ba886f8251b1"
         },
         {
             "artist": "Jean-Sébastien Rossbach",
@@ -1250,7 +1278,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1286,15 +1313,17 @@
                     "text": "You can activate Relic of Progenitus’s second ability even if no players have any cards in their graveyards. You’ll still draw a card."
                 }
             ],
+            "scryfallId": "f77a1544-ba6b-41cc-af10-34cf162eac9b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82757,
             "text": "{T}: Target player exiles a card from their graveyard.\n{1}, Exile Relic of Progenitus: Exile all cards from all graveyards. Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f77a1544-ba6b-41cc-af10-34cf162eac9b"
+            "uuid": "b0eadf6d-7497-5131-ba29-a0e0f52dde82"
         },
         {
             "artist": "Chuck Lukacs",
@@ -1311,7 +1340,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1348,19 +1376,21 @@
                     "text": "If a permanent spell is chosen as the source of damage, Burrenton Forge-Tender’s prevention effect continues to apply for the rest of the turn to the permanent that spell becomes once it has entered the battlefield."
                 }
             ],
+            "scryfallId": "b50df9f4-2e10-452f-839e-3c479b58c53a",
             "starter": true,
             "subtypes": [
                 "Kithkin",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 82752,
             "text": "Protection from red\nSacrifice Burrenton Forge-Tender: Prevent all damage a red source of your choice would deal this turn.",
             "toughness": "1",
             "type": "Creature — Kithkin Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b50df9f4-2e10-452f-839e-3c479b58c53a"
+            "uuid": "892e9ae5-77ac-57f5-9c3a-fe87aa2dcfd7"
         },
         {
             "artist": "Steven Belledin",
@@ -1377,7 +1407,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1424,15 +1453,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2854b2aa-5fa7-41c1-81c9-c2df8f6a7bfa",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82754,
             "text": "Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2854b2aa-5fa7-41c1-81c9-c2df8f6a7bfa"
+            "uuid": "e220434a-f91f-5eb0-bd93-c44a96a6ca1c"
         },
         {
             "artist": "Matt Thompson",
@@ -1449,7 +1480,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1473,6 +1503,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "9057835d-3d5c-4daf-af96-3b6ea749b12e",
             "starter": true,
             "subtypes": [
                 "Spirit"
@@ -1480,13 +1511,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 82756,
             "text": "All artifacts have \"At the beginning of your upkeep, sacrifice this artifact unless you pay {1}.\"",
             "toughness": "1",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "9057835d-3d5c-4daf-af96-3b6ea749b12e"
+            "uuid": "148f694f-3106-5d81-a515-78107a576603"
         },
         {
             "artist": "Terese Nielsen",
@@ -1503,7 +1535,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1549,15 +1580,17 @@
                     "text": "Phyrexian mana is not a new color. Players can’t add Phyrexian mana to their mana pools."
                 }
             ],
+            "scryfallId": "e48e2da3-8597-48c2-8287-f0264a7788c7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82753,
             "text": "({B/P} can be paid with either {B} or 2 life.)\nTarget creature gets -5/-5 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e48e2da3-8597-48c2-8287-f0264a7788c7"
+            "uuid": "b3ce6c4c-7417-5f3d-8fbb-68d5aec6c723"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -1570,7 +1603,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1610,25 +1642,28 @@
                     "text": "The target land’s controller gets to search for a basic land card even if that land wasn’t destroyed by Ghost Quarter’s ability. This may happen because the land has indestructible or because it was regenerated."
                 }
             ],
+            "scryfallId": "ad9fd015-02b6-482b-a93d-c9489e18df10",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 82755,
             "text": "{T}: Add {C}.\n{T}, Sacrifice Ghost Quarter: Destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle their library.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ad9fd015-02b6-482b-a93d-c9489e18df10"
+            "uuid": "133bc7a6-1779-55c6-a26a-84f689c6d5f4"
         }
     ],
     "code": "md1",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Modern Event Deck 2014",
     "releaseDate": "2014-05-30",
+    "tcgplayerGroupId": 1346,
     "tokens": [
         {
             "artist": "Goran Josic",
@@ -1646,10 +1681,10 @@
                 "Raise the Alarm",
                 "Elspeth, Knight-Errant"
             ],
-            "text": "",
+            "scryfallId": "05e8f775-02bd-46dc-a618-07a9a127fa69",
             "toughness": "1",
             "type": "Token Creature — Soldier",
-            "uuid": "05e8f775-02bd-46dc-a618-07a9a127fa69"
+            "uuid": "0eed1fe5-afe6-5e6f-9b8a-3fc6c92f74d7"
         },
         {
             "artist": "Kev Walker",
@@ -1667,10 +1702,11 @@
                 "Lingering Souls",
                 "Spectral Procession"
             ],
+            "scryfallId": "2e16c19f-ef44-4ebc-aa1d-f95646ae312b",
             "text": "Flying",
             "toughness": "1",
             "type": "Token Creature — Spirit",
-            "uuid": "2e16c19f-ef44-4ebc-aa1d-f95646ae312b"
+            "uuid": "14921c59-d4a2-506e-be33-097ac3b9c264"
         },
         {
             "artist": "Matt Stewart",
@@ -1683,10 +1719,10 @@
             "reverseRelated": [
                 "Shrine of Loyal Legions"
             ],
-            "text": "",
+            "scryfallId": "dfe197cf-6f36-424e-a544-cbe7a56f8a32",
             "toughness": "1",
             "type": "Token Artifact Creature — Myr",
-            "uuid": "dfe197cf-6f36-424e-a544-cbe7a56f8a32"
+            "uuid": "dac772c9-557e-5139-b773-ba7c73c54be7"
         },
         {
             "artist": "Volkan Baga",
@@ -1698,9 +1734,10 @@
             "reverseRelated": [
                 "Elspeth, Knight-Errant"
             ],
+            "scryfallId": "8360fc12-57c0-4701-8e19-0878ed5abb4f",
             "text": "Artifacts, creatures, enchantments, and lands you control have indestructible.",
             "type": "Emblem — Elspeth",
-            "uuid": "8360fc12-57c0-4701-8e19-0878ed5abb4f"
+            "uuid": "a474450c-d91e-5bf7-8dbf-325a07293476"
         }
     ],
     "totalSetSize": 26,

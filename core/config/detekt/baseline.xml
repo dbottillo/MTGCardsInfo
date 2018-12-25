@@ -1,14 +1,13 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1545156794726">
-    <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT &amp;&amp; version &lt;= 6</ID>
+  <Whitelist timestamp="1545752616249">
+    <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
-    <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$@VisibleForTesting fun generateCreateTable(version: Int): String</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$private fun shouldAddColumn(column: COLUMNS, version: Int): Boolean</ID>
     <ID>ComplexMethod:CardsInfoDbHelper.kt$CardsInfoDbHelper$override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int)</ID>
-    <ID>ComplexMethod:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
     <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
     <ID>LargeClass:CardDataSource.kt$CardDataSource</ID>
     <ID>LargeClass:DeckDataSource.kt$DeckDataSource</ID>
@@ -21,11 +20,7 @@
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
-    <ID>MagicNumber:MTGCard.kt$3</ID>
-    <ID>MagicNumber:MTGCard.kt$4</ID>
-    <ID>MagicNumber:MTGCard.kt$MTGCard$3</ID>
     <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
-    <ID>MagicNumber:MTGCard.kt$MTGCard$4</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$4</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$9</ID>
@@ -89,7 +84,6 @@
     <ID>ReturnCount:FileUtil.kt$fun Context.copyDbToSdCard(name: String): File?</ID>
     <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
     <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String?</ID>
-    <ID>ReturnCount:MTGCard.kt$MTGCard$override fun compareTo(other: MTGCard): Int</ID>
     <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
     <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
     <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.MANA_COST.noun, "LIKE", colorsOperator, *Arrays.copyOf&lt;String, Any&gt;(colors.toTypedArray(), colors.size, Array&lt;String&gt;::class.java))</ID>
@@ -103,11 +97,6 @@
     <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
     <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
-    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection</ID>
-    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource</ID>
-    <ID>TooManyFunctions:MTGCard.kt$MTGCard : Comparable</ID>
-    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer</ID>
-    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager</ID>
     <ID>VariableNaming:FileUtil.kt$FileUtil$val `is` = fileManager.loadUri(uri)</ID>
     <ID>VariableNaming:QueryComposer.kt$QueryComposer$private val LIKE_OPERATOR = "LIKE"</ID>
   </Whitelist>

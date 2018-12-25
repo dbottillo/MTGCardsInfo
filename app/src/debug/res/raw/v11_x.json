@@ -15,7 +15,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -42,6 +41,7 @@
                     "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
                 }
             ],
+            "scryfallId": "e29fefaf-0e3b-47a5-8fa3-c3053506f662",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -50,13 +50,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48158,
             "text": "{T}: Target opponent discards two cards. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "3",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e29fefaf-0e3b-47a5-8fa3-c3053506f662"
+            "uuid": "b485f3c3-8717-593e-bc1b-b4014e23e313"
         },
         {
             "artist": "Ray Lago",
@@ -75,7 +76,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -102,6 +102,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "59e31568-e630-45c1-8c65-f757acd307e2",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -110,13 +111,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48153,
             "text": "{T}: Search your library for a legendary card, reveal that card, and put it into your hand. Then shuffle your library.",
             "toughness": "2",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "59e31568-e630-45c1-8c65-f757acd307e2"
+            "uuid": "7b242d11-28ef-513a-baf3-6562c16ef5d3"
         },
         {
             "artist": "Mark Zug",
@@ -137,7 +139,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -176,6 +177,7 @@
                     "text": "This effect is mandatory and affects all creatures."
                 }
             ],
+            "scryfallId": "b484e4be-3b13-42d7-8dd3-bc40835410ab",
             "starter": true,
             "subtypes": [
                 "Treefolk",
@@ -184,13 +186,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48150,
             "text": "Each creature assigns combat damage equal to its toughness rather than its power.",
             "toughness": "5",
             "type": "Legendary Creature — Treefolk Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "b484e4be-3b13-42d7-8dd3-bc40835410ab"
+            "uuid": "a847920a-226a-521a-b438-c061f4e926e3"
         },
         {
             "artist": "Steven Belledin",
@@ -206,7 +209,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -253,6 +255,7 @@
                     "text": "Any enters-the-battlefield abilities of the copied creature will trigger when the tokens enter the battlefield. Any “As [this creature] enters the battlefield” or “[This creature] enters the battlefield with” abilities of the copied creature will also work."
                 }
             ],
+            "scryfallId": "d771a73c-f9e8-4fe0-993f-124c3c66ac6b",
             "starter": true,
             "subtypes": [
                 "Goblin",
@@ -261,13 +264,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48151,
             "text": "Haste\n{T}: Create a token that's a copy of target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step.",
             "toughness": "2",
             "type": "Legendary Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "d771a73c-f9e8-4fe0-993f-124c3c66ac6b"
+            "uuid": "ad64daa6-1cb7-5779-97b3-f942edc3c921"
         },
         {
             "artist": "Steve Argyle",
@@ -288,7 +292,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -316,6 +319,7 @@
                     "text": "X is equal to the power of the creature as it last existed on the battlefield."
                 }
             ],
+            "scryfallId": "bd35667d-ac93-4d04-a45f-59a74b6d0925",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -324,13 +328,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48148,
             "text": "Whenever another creature dies, you may put X +1/+1 counters on Kresh the Bloodbraided, where X is that creature's power.",
             "toughness": "3",
             "type": "Legendary Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd35667d-ac93-4d04-a45f-59a74b6d0925"
+            "uuid": "dc6d8bd8-9a39-5495-baa2-169f029da3e0"
         },
         {
             "artist": "Steven Belledin",
@@ -346,7 +351,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -369,6 +373,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "77976ca8-7c7a-469c-a99a-808de1b8bf71",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -377,13 +382,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48161,
             "text": "Mikaeus, the Lunarch enters the battlefield with X +1/+1 counters on it.\n{T}: Put a +1/+1 counter on Mikaeus.\n{T}, Remove a +1/+1 counter from Mikaeus: Put a +1/+1 counter on each other creature you control.",
             "toughness": "0",
             "type": "Legendary Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "77976ca8-7c7a-469c-a99a-808de1b8bf71"
+            "uuid": "09b0a267-3b37-53e9-a78b-e4159b65e0a2"
         },
         {
             "artist": "Mike Bierek",
@@ -400,7 +406,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -436,6 +441,7 @@
                     "text": "Once Omnath leaves the battlefield, you have until the end of the current step or phase to spend whatever green mana is in your mana pool before it too empties as normal. There is no penalty associated with this other than the loss of the mana."
                 }
             ],
+            "scryfallId": "54544da6-a24f-4351-aebc-a026c6414f64",
             "starter": true,
             "subtypes": [
                 "Elemental"
@@ -443,13 +449,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48154,
             "text": "You don't lose unspent green mana as steps and phases end.\nOmnath, Locus of Mana gets +1/+1 for each unspent green mana you have.",
             "toughness": "1",
             "type": "Legendary Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "54544da6-a24f-4351-aebc-a026c6414f64"
+            "uuid": "fe349250-c394-5a9f-bd2e-9f7f29135647"
         },
         {
             "artist": "Adam Rex",
@@ -467,7 +474,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -501,6 +507,7 @@
                     "text": "The tokens enter the battlefield under your control."
                 }
             ],
+            "scryfallId": "d0cbcbfa-927a-413e-96c5-ae785a68507e",
             "starter": true,
             "subtypes": [
                 "Faerie",
@@ -509,13 +516,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48155,
             "text": "Flying\n{X}{U/B}: Choose a color. Target opponent exiles the top X cards of their library. For each card of the chosen color exiled this way, create a 1/1 blue and black Faerie Rogue creature token with flying.",
             "toughness": "5",
             "type": "Legendary Creature — Faerie Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "d0cbcbfa-927a-413e-96c5-ae785a68507e"
+            "uuid": "cb49096c-8a77-50e3-9af3-079da358b1c8"
         },
         {
             "artist": "Mike Bierek",
@@ -540,7 +548,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -574,6 +581,7 @@
                     "text": "Progenitus can still be affected by effects that don’t target it or deal damage to it (such as Day of Judgment)."
                 }
             ],
+            "scryfallId": "8bbd3493-1466-4d58-b004-00627ceb4a04",
             "starter": true,
             "subtypes": [
                 "Hydra",
@@ -582,13 +590,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48149,
             "text": "Protection from everything\nIf Progenitus would be put into a graveyard from anywhere, reveal Progenitus and shuffle it into its owner's library instead.",
             "toughness": "10",
             "type": "Legendary Creature — Hydra Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "8bbd3493-1466-4d58-b004-00627ceb4a04"
+            "uuid": "7694c890-5b4a-5595-83ce-994f3818fb59"
         },
         {
             "artist": "Wayne Reynolds",
@@ -609,7 +618,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -657,6 +665,7 @@
                     "text": "In a Two-Headed Giant game, a creature “attacks alone” if it’s the only creature declared as an attacker by your entire team. If you control that attacking creature, your exalted abilities will trigger but your teammate’s exalted abilities won’t."
                 }
             ],
+            "scryfallId": "bd1206d4-ce7d-4504-addc-8182a586087e",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -665,13 +674,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48156,
             "text": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\nWhenever a creature you control attacks alone, it gains double strike until end of turn.",
             "toughness": "3",
             "type": "Legendary Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd1206d4-ce7d-4504-addc-8182a586087e"
+            "uuid": "5674cce7-bf37-516a-aedb-0225fd9ac78e"
         },
         {
             "artist": "Todd Lockwood",
@@ -692,7 +702,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -718,6 +727,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "fc058637-a1bc-43a8-bf57-684a8ac49739",
             "starter": true,
             "subtypes": [
                 "Sphinx"
@@ -725,6 +735,7 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48157,
             "text": "Flying\nWhen Sharuum the Hegemon enters the battlefield, you may return target artifact card from your graveyard to the battlefield.",
             "toughness": "5",
             "type": "Legendary Artifact Creature — Sphinx",
@@ -732,7 +743,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "fc058637-a1bc-43a8-bf57-684a8ac49739"
+            "uuid": "c2527bfa-b157-5e93-a96f-7bd4897ce4ac"
         },
         {
             "artist": "Xu Xiaoming",
@@ -749,7 +760,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -781,6 +791,7 @@
                     "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
                 }
             ],
+            "scryfallId": "b4e9ec34-4bf6-46da-b2c4-acedb1b19210",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -789,13 +800,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48152,
             "text": "Creatures you control have horsemanship. (They can't be blocked except by creatures with horsemanship.)",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "b4e9ec34-4bf6-46da-b2c4-acedb1b19210"
+            "uuid": "adcc7869-1694-529d-ad78-14fa58279fc5"
         },
         {
             "artist": "Volkan Baga",
@@ -812,7 +824,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -853,6 +864,7 @@
                     "text": "If a spell or ability lets an opponent cast a card as part of its effect (such as suspend and rebound do), that opponent can’t cast that card since the currently resolving ability is still on the stack. This is true even if that card is an instant."
                 }
             ],
+            "scryfallId": "f0acc553-e289-478a-95ad-d238604508b9",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -861,13 +873,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48147,
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nCreature cards you own that aren't on the battlefield have flash.\nEach opponent can cast spells only any time they could cast a sorcery.",
             "toughness": "4",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "f0acc553-e289-478a-95ad-d238604508b9"
+            "uuid": "ecca42fb-a9a6-506b-bfe0-30e8905baa8a"
         },
         {
             "artist": "Aleksi Briclot",
@@ -879,7 +892,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -916,8 +928,13 @@
                 {
                     "date": "2013-07-01",
                     "text": "Lethal damage and effects that say “destroy” won’t cause a creature with indestructible to be put into the graveyard. However, a creature with indestructible can be put into the graveyard for a number of reasons. The most likely reasons are if it’s sacrificed, if it’s legendary and another legendary creature with the same name is controlled by the same player, or if its toughness is 0 or less."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "Ulamog’s ability triggers as you cast it, and that ability resolves before the spell itself. It resolves even if that spell is countered."
                 }
             ],
+            "scryfallId": "0645f487-efe5-4764-b361-85e07bb5ccca",
             "starter": true,
             "subtypes": [
                 "Eldrazi"
@@ -925,13 +942,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48159,
             "text": "When you cast this spell, destroy target permanent.\nIndestructible\nAnnihilator 4 (Whenever this creature attacks, defending player sacrifices four permanents.)\nWhen Ulamog, the Infinite Gyre is put into a graveyard from anywhere, its owner shuffles their graveyard into their library.",
             "toughness": "10",
             "type": "Legendary Creature — Eldrazi",
             "types": [
                 "Creature"
             ],
-            "uuid": "0645f487-efe5-4764-b361-85e07bb5ccca"
+            "uuid": "dcf98ca8-98c4-5dbb-b77c-a021270bd7b4"
         },
         {
             "artist": "Brad Rigney",
@@ -948,7 +966,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -974,6 +991,7 @@
             ],
             "rarity": "mythic",
             "rulings": [],
+            "scryfallId": "48833be5-67a6-40dd-a894-f3665cbbb62a",
             "starter": true,
             "subtypes": [
                 "Gorgon"
@@ -981,24 +999,26 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 48160,
             "text": "Flying\n{T}: Destroy target creature. It can't be regenerated.",
             "toughness": "5",
             "type": "Legendary Creature — Gorgon",
             "types": [
                 "Creature"
             ],
-            "uuid": "48833be5-67a6-40dd-a894-f3665cbbb62a"
+            "uuid": "9c54a032-6792-598e-b8d8-f011f5f795fe"
         }
     ],
     "code": "v11",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "v11",
     "name": "From the Vault: Legends",
     "releaseDate": "2011-08-26",
+    "tcgplayerGroupId": 49,
     "tokens": [],
     "totalSetSize": 15,
     "type": "from_the_vault"

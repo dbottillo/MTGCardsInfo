@@ -68,11 +68,10 @@ class MTGCardDataSourceTest {
         val setsJ = readSetListJSON()
         // val set = setsJ[0]
         for (set in setsJ) {
-            // LOG.e("checking set: " + set.getId() + " - " + set.getName());
             try {
                 val cardsJ = readSingleSetFile(set)
                 val cards = underTest.getSet(set)
-                /*LOG.e("checking set: " + cardsJ.size + " - " + cards.size)
+                /*
                 cardsJ.forEach {cardJ ->
                     var found = false
                     cards.forEach { card ->

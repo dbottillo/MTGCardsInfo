@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1545156799331">
-    <ID>ComplexCondition:CardsHelper.kt$CardsHelper$(it.isCommon &amp;&amp; !filter.common) || (it.isUncommon &amp;&amp; !filter.uncommon) || (it.isRare &amp;&amp; !filter.rare) || (it.isMythicRare &amp;&amp; !filter.mythic)</ID>
+  <Whitelist timestamp="1545752619712">
     <ID>ComplexCondition:NetworkIntentService.kt$NetworkIntentService$res != null &amp;&amp; (res.lowprice == null || res.lowprice!!.equals("0", ignoreCase = true)) &amp;&amp; setName != null &amp;&amp; setName.isNotEmpty()</ID>
     <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
@@ -170,27 +169,5 @@
     <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
     <ID>TooGenericExceptionThrown:BaseHomeFragment.kt$BaseHomeFragment$throw RuntimeException("This is a crash")</ID>
     <ID>TooGenericExceptionThrown:MTGGAppGlideModule.kt$MTGGAppGlideModule$throw RuntimeException(e)</ID>
-    <ID>TooManyFunctions:AddToDeckFragment.kt$AddToDeckFragment : BasicFragmentAddToDeckView</ID>
-    <ID>TooManyFunctions:CardLuckyActivity.kt$CardLuckyActivity : CommonCardsActivityCardsLuckyView</ID>
-    <ID>TooManyFunctions:CardsActivity.kt$CardsActivity : CommonCardsActivityOnPageChangeListenerCardsActivityView</ID>
-    <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor</ID>
-    <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl : CardsInteractor</ID>
-    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences</ID>
-    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl : CardsPreferences</ID>
-    <ID>TooManyFunctions:DataModule.kt$DataModule</ID>
-    <ID>TooManyFunctions:DeckActivity.kt$DeckActivity : BasicActivityDeckActivityView</ID>
-    <ID>TooManyFunctions:DecksFragment.kt$DecksFragment : BaseHomeFragmentDecksFragmentViewPermissionListener</ID>
-    <ID>TooManyFunctions:DecksInteractor.kt$DecksInteractor</ID>
-    <ID>TooManyFunctions:DecksInteractorImpl.kt$DecksInteractorImpl : DecksInteractor</ID>
-    <ID>TooManyFunctions:DecksStorage.kt$DecksStorage</ID>
-    <ID>TooManyFunctions:DecksStorageImpl.kt$DecksStorageImpl : DecksStorage</ID>
-    <ID>TooManyFunctions:HomeActivity.kt$HomeActivity : BasicActivity</ID>
-    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment : BaseHomeFragmentLifeCounterViewOnLifeCounterListener</ID>
-    <ID>TooManyFunctions:MTGCardView.kt$MTGCardView : RelativeLayoutCardView</ID>
-    <ID>TooManyFunctions:SavedFragment.kt$SavedFragment : BaseHomeFragmentSavedCardsViewOnCardListener</ID>
-    <ID>TooManyFunctions:SearchActivity.kt$SearchActivity : BasicActivityOnClickListenerSearchActivityViewOnCardListener</ID>
-    <ID>TooManyFunctions:SetsFragment.kt$SetsFragment : BaseHomeFragmentSetsFragmentViewOnCardListener</ID>
-    <ID>TooManyFunctions:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper : OnScrollChangedListener</ID>
-    <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
   </Whitelist>
 </SmellBaseline>

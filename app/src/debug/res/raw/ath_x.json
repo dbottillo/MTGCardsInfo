@@ -15,7 +15,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -57,15 +56,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b6cf67e3-26e6-432a-821f-5865189ba42d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79573,
             "text": "Destroy all lands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b6cf67e3-26e6-432a-821f-5865189ba42d"
+            "uuid": "1ed300f4-cc97-5d7c-959d-b26dd9a614de"
         },
         {
             "artist": "Andrew Robinson",
@@ -82,7 +83,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -103,24 +103,25 @@
                 "BRB",
                 "POR",
                 "PPOD",
-                "S00",
                 "TMP",
                 "TPR"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e970acac-1633-4de3-89eb-5b7336bec393",
             "starter": true,
             "subtypes": [
                 "Pegasus"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79599,
             "text": "Flying",
             "toughness": "2",
             "type": "Creature — Pegasus",
             "types": [
                 "Creature"
             ],
-            "uuid": "e970acac-1633-4de3-89eb-5b7336bec393"
+            "uuid": "334ad32e-c92e-5bf0-90cf-83af1776120a"
         },
         {
             "artist": "Zina Saunders",
@@ -137,7 +138,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -160,19 +160,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9e2cc5e9-68ef-4054-be32-d0a5582890e5",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79600,
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nFirst strike (This creature deals combat damage before creatures without first strike.)",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "9e2cc5e9-68ef-4054-be32-d0a5582890e5"
+            "uuid": "621de1a2-69e7-56bd-86f3-fa594113df37"
         },
         {
             "artist": "Liz Danforth",
@@ -189,7 +191,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -211,6 +212,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5543199c-92ab-4d57-b3f6-2429b5bb2001",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -218,13 +220,14 @@
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79601,
             "text": "{1}{W}: Prevent the next 1 damage that would be dealt to any target this turn.",
             "toughness": "2",
             "type": "Creature — Human Cleric Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5543199c-92ab-4d57-b3f6-2429b5bb2001"
+            "uuid": "6c1f4c3a-8c06-5fca-90d8-f1ffb11426d3"
         },
         {
             "artist": "Amy Weber",
@@ -240,7 +243,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -282,7 +284,6 @@
                 "PARL",
                 "PRM",
                 "PTC",
-                "S00",
                 "SUM",
                 "TMP",
                 "TPR",
@@ -298,15 +299,17 @@
                     "text": "This is not modal. If the target changes from an artifact to an enchantment or vice versa, this still destroys it."
                 }
             ],
+            "scryfallId": "30262135-78b1-4309-a6ab-b3ae95ac6fcd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79602,
             "text": "Destroy target artifact or enchantment.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "30262135-78b1-4309-a6ab-b3ae95ac6fcd"
+            "uuid": "557b4563-42ae-57ac-9943-4e1357c4647d"
         },
         {
             "artist": "Una Fricker",
@@ -323,7 +326,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -343,18 +345,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "e61be25a-af46-4189-84e1-6a6c73b3614f",
             "starter": true,
             "subtypes": [
                 "Bird"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79603,
             "text": "Flying, protection from red",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "e61be25a-af46-4189-84e1-6a6c73b3614f"
+            "uuid": "54b6d965-9a55-5d15-8e49-a57d038a9dbe"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -370,7 +374,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -396,19 +399,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2b349967-79ae-4df3-95b1-73b4406c14b0",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79604,
             "text": "Icatian Javelineers enters the battlefield with a javelin counter on it.\n{T}, Remove a javelin counter from Icatian Javelineers: Icatian Javelineers deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "2b349967-79ae-4df3-95b1-73b4406c14b0"
+            "uuid": "55d57723-0d8b-5226-a96d-ab70788f774e"
         },
         {
             "artist": "Christopher Rush",
@@ -425,7 +430,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -459,19 +463,21 @@
                     "text": "An “attacking creature” is one that has been declared as an attacker this combat, or one that was put onto the battlefield attacking this combat. Unless that creature leaves combat, it continues to be an attacking creature through the end of combat step, even if the player it was attacking has left the game, or the planeswalker it was attacking has left combat."
                 }
             ],
+            "scryfallId": "e6ce167f-dd30-44c6-ad0a-586e9669cfaa",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79605,
             "text": "{T}: Target attacking creature gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e6ce167f-dd30-44c6-ad0a-586e9669cfaa"
+            "uuid": "5f0cb5fe-182d-5b99-8089-4de49055a164"
         },
         {
             "artist": "Ruth Thompson",
@@ -488,7 +494,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -510,19 +515,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a29d0beb-0640-42d3-82a6-c4fe9dd384a8",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79582,
             "text": "Protection from black\n{W}: Order of the White Shield gains first strike until end of turn.\n{W}{W}: Order of the White Shield gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "a29d0beb-0640-42d3-82a6-c4fe9dd384a8"
+            "uuid": "7c80f1f8-388f-5ee9-a8a4-aa569ab9a3ec"
         },
         {
             "artist": "Robert Bliss",
@@ -539,7 +546,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -585,17 +591,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3ed90f68-340d-4779-af33-7402eb2c0694",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79606,
             "text": "Enchant creature\nEnchanted creature can't attack or block.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3ed90f68-340d-4779-af33-7402eb2c0694"
+            "uuid": "14764f76-f448-5737-a109-b4adc8e6ed4f"
         },
         {
             "artist": "Val Mayerik",
@@ -612,7 +620,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -635,18 +642,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d15b1eb8-99dd-4ba6-88e8-4bd2daf3451d",
             "starter": true,
             "subtypes": [
                 "Pegasus"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79583,
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nFirst strike (This creature deals combat damage before creatures without first strike.)",
             "toughness": "1",
             "type": "Creature — Pegasus",
             "types": [
                 "Creature"
             ],
-            "uuid": "d15b1eb8-99dd-4ba6-88e8-4bd2daf3451d"
+            "uuid": "c97d2b96-9670-57f3-87e9-2f792bb0b6c6"
         },
         {
             "artist": "Mark Zug",
@@ -662,7 +671,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -682,15 +690,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "41732aa9-490e-43bc-9370-74ed4af9d0fb",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79587,
             "text": "Buyback—Sacrifice a land. (You may sacrifice a land in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.)\nCreate a 1/1 white Pegasus creature token with flying.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "41732aa9-490e-43bc-9370-74ed4af9d0fb"
+            "uuid": "112bcf96-d9d3-5f92-8b27-29a4b16221db"
         },
         {
             "artist": "Margaret Organ-Kean",
@@ -707,7 +717,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -733,15 +742,17 @@
                     "text": "It can be used during upkeep to create a Pegasus token in time for it to be sacrificed."
                 }
             ],
+            "scryfallId": "77f8748e-3e1b-4d3e-8712-afe2cd6bcdd9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79574,
             "text": "At the beginning of your upkeep, sacrifice Sacred Mesa unless you sacrifice a Pegasus.\n{1}{W}: Create a 1/1 white Pegasus creature token with flying.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "77f8748e-3e1b-4d3e-8712-afe2cd6bcdd9"
+            "uuid": "f32d863f-fb92-5747-8f90-e2d424d3e616"
         },
         {
             "artist": "Tom Wänerstrand",
@@ -758,7 +769,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -790,24 +800,25 @@
                 "FBB",
                 "LEA",
                 "LEB",
-                "S00",
                 "SUM"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "97235dcc-30cd-4bb6-af10-8705b02eee48",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79607,
             "text": "{T}: Prevent the next 1 damage that would be dealt to any target this turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "97235dcc-30cd-4bb6-af10-8705b02eee48"
+            "uuid": "5f36b205-4745-533e-962a-08c8a1bc276f"
         },
         {
             "artist": "Douglas Shuler",
@@ -824,7 +835,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -886,18 +896,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "984f77c1-ff08-4ba1-930f-266f2c30a6b3",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79584,
             "text": "Flying, vigilance",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "984f77c1-ff08-4ba1-930f-266f2c30a6b3"
+            "uuid": "7953d88d-0ab7-551d-bb2b-773956157e3d"
         },
         {
             "artist": "Jeff A. Menges",
@@ -913,7 +925,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -969,15 +980,17 @@
                     "text": "If the creature’s power is negative, its controller doesn’t lose or gain life."
                 }
             ],
+            "scryfallId": "b62e9c2c-62ed-46bf-9c1c-e4dc14e275c6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79585,
             "text": "Exile target creature. Its controller gains life equal to its power.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b62e9c2c-62ed-46bf-9c1c-e4dc14e275c6"
+            "uuid": "bd3c2e6a-f615-5a78-8233-5c6e5220d537"
         },
         {
             "artist": "D. Alexander Gregory",
@@ -994,7 +1007,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1022,15 +1034,17 @@
                     "text": "Warrior’s Honor affects creatures you control that are on the battlefield at the time it resolves. If you put a creature onto the battlefield later in the turn, that creature won’t get the bonus."
                 }
             ],
+            "scryfallId": "80838fc9-d5b9-4465-9c00-5a7161e4a805",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79608,
             "text": "Creatures you control get +1/+1 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "80838fc9-d5b9-4465-9c00-5a7161e4a805"
+            "uuid": "29ac2ee6-6676-595d-8ed2-a8b95caf996c"
         },
         {
             "artist": "Daniel Gelon",
@@ -1047,7 +1061,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1085,19 +1098,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8ce075ff-18b2-48e0-85fe-c085fb5adfb8",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79586,
             "text": "First strike (This creature deals combat damage before creatures without first strike.)\nProtection from black (This creature can't be blocked, targeted, dealt damage, or enchanted by anything black.)",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "8ce075ff-18b2-48e0-85fe-c085fb5adfb8"
+            "uuid": "9ea585cf-883a-5898-a8f3-05137c1e782c"
         },
         {
             "artist": "Rebecca Guay",
@@ -1114,7 +1129,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1141,19 +1155,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b995d4c0-ebb4-44f4-9f1c-0cbea6a1cd1a",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79609,
             "text": "First strike",
             "toughness": "1",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "b995d4c0-ebb4-44f4-9f1c-0cbea6a1cd1a"
+            "uuid": "b352b5ec-16d1-544f-b229-2a90ce6db31b"
         },
         {
             "artist": "Adrian Smith",
@@ -1170,7 +1186,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1207,19 +1222,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8f9f87fc-2007-4f77-84a1-f758df323ca1",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79535,
             "text": "First strike (This creature deals combat damage before creatures without first strike.)\nProtection from white (This creature can't be blocked, targeted, dealt damage, or enchanted by anything white.)",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f9f87fc-2007-4f77-84a1-f758df323ca1"
+            "uuid": "19de8614-6a93-5da9-8f14-b44c8245bb52"
         },
         {
             "artist": "Kaja Foglio",
@@ -1235,7 +1252,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1276,19 +1292,21 @@
                     "text": "The two targets can be the same."
                 }
             ],
+            "scryfallId": "728a9e34-7927-4e33-aa17-90ec729c5dee",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79549,
             "text": "{T}: Cuombajj Witches deals 1 damage to any target and 1 damage to any target of an opponent's choice.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "728a9e34-7927-4e33-aa17-90ec729c5dee"
+            "uuid": "1324ccbb-9177-5ebf-8dbf-fd7f079b4a9e"
         },
         {
             "artist": "Dennis Detwiller",
@@ -1305,7 +1323,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1323,17 +1340,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "32d11a86-ac8e-4642-9b09-c283d057f2fa",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79550,
             "text": "Enchant creature\nEnchanted creature gets +4/+0.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "32d11a86-ac8e-4642-9b09-c283d057f2fa"
+            "uuid": "89c877d9-5a88-504f-9a43-31a960705781"
         },
         {
             "artist": "Liz Danforth",
@@ -1349,7 +1368,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1373,15 +1391,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "57315f88-6cc5-4b1c-b56e-c8cdbc04f1a1",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79551,
             "text": "Target player discards two cards at random.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "57315f88-6cc5-4b1c-b56e-c8cdbc04f1a1"
+            "uuid": "eb7336bd-d709-5bd5-a1eb-49c91a223ce3"
         },
         {
             "artist": "Douglas Shuler",
@@ -1397,7 +1417,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1437,18 +1456,20 @@
                     "text": "The ability triggers even if the Specter’s damage is being redirected to an opponent. It does not trigger if damage that would have been dealt to the opponent is redirected to a nonopponent player or a creature, or if the damage is prevented."
                 }
             ],
+            "scryfallId": "3506e1f2-cb41-4908-9272-3151cddd5571",
             "starter": true,
             "subtypes": [
                 "Specter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79536,
             "text": "Flying\nWhenever Hypnotic Specter deals damage to an opponent, that player discards a card at random.",
             "toughness": "2",
             "type": "Creature — Specter",
             "types": [
                 "Creature"
             ],
-            "uuid": "3506e1f2-cb41-4908-9272-3151cddd5571"
+            "uuid": "1035eb75-1ecd-5563-9925-7e004e593c81"
         },
         {
             "artist": "Christopher Rush",
@@ -1465,7 +1486,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1488,6 +1508,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "838b7eb0-1435-476f-8327-7bd516a150c7",
             "starter": true,
             "subtypes": [
                 "Shade",
@@ -1496,13 +1517,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 79538,
             "text": "Protection from white",
             "toughness": "5",
             "type": "Legendary Creature — Shade Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "838b7eb0-1435-476f-8327-7bd516a150c7"
+            "uuid": "ae41c995-a756-5ed8-a890-1487e25959fb"
         },
         {
             "artist": "Mark Poole",
@@ -1518,7 +1540,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1542,19 +1563,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "748fff82-6bb4-4e59-8726-6bf31abb7018",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Knight"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79537,
             "text": "Protection from white\n{B}: Knight of Stromgald gains first strike until end of turn.\n{B}{B}: Knight of Stromgald gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "748fff82-6bb4-4e59-8726-6bf31abb7018"
+            "uuid": "3f83bc5b-02e1-582d-9a6f-f3e02a30a799"
         },
         {
             "artist": "Ron Spencer",
@@ -1570,7 +1593,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1609,21 +1631,22 @@
                 "PRM",
                 "PS11",
                 "RQS",
-                "S00",
                 "SUM",
                 "TD0"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d02d34d4-d9ae-4d78-842f-edcb3021d958",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79552,
             "text": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d02d34d4-d9ae-4d78-842f-edcb3021d958"
+            "uuid": "886870d1-1bd0-509a-864a-dddc2f88f68c"
         },
         {
             "artist": "Douglas Shuler",
@@ -1639,7 +1662,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1679,17 +1701,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ef84263b-97ea-4e32-a0e4-ee3d66967bf9",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79553,
             "text": "Enchant creature\nEnchanted creature gets +2/+1.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ef84263b-97ea-4e32-a0e4-ee3d66967bf9"
+            "uuid": "f17d7416-d21d-5f45-a067-10bf84adae36"
         },
         {
             "artist": "Mark Tedin",
@@ -1705,7 +1729,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1771,15 +1794,17 @@
                     "text": "You can target more than X creatures. However, if the number of legal targets at the time Fireball resolves is greater than X, none of them will be dealt any damage."
                 }
             ],
+            "scryfallId": "5c9bd96c-e462-4716-a352-212db64a6de5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79554,
             "text": "This spell costs {1} more to cast for each target beyond the first.\nFireball deals X damage divided evenly, rounded down, among any number of targets.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5c9bd96c-e462-4716-a352-212db64a6de5"
+            "uuid": "95f1ae6c-4292-5d5a-91f4-82126d7c4e2e"
         },
         {
             "artist": "Andi Rusu",
@@ -1796,7 +1821,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1838,19 +1862,21 @@
                     "text": "For flying to work as an evasion ability, an attacking Goblin Balloon Brigade’s ability must be activated before the declare blockers step begins. Once Goblin Balloon Brigade has become blocked, giving it flying won’t change that."
                 }
             ],
+            "scryfallId": "6dfe3705-a585-4474-ae5a-d96c1bd32505",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79539,
             "text": "{R}: Goblin Balloon Brigade gains flying until end of turn.",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "6dfe3705-a585-4474-ae5a-d96c1bd32505"
+            "uuid": "dbc38442-d1c3-526c-8da8-8bb4db8413b4"
         },
         {
             "artist": "Phil Foglio",
@@ -1867,7 +1893,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1892,18 +1917,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1e0b7474-637d-4b08-827e-701c6de4157f",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79555,
             "text": "{T}, Sacrifice Goblin Digging Team: Destroy target Wall.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "1e0b7474-637d-4b08-827e-701c6de4157f"
+            "uuid": "212c3816-ae40-5dc9-8522-5eac6b719d1e"
         },
         {
             "artist": "Ron Spencer",
@@ -1920,7 +1947,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1956,15 +1982,17 @@
                     "text": "The Goblin you sacrifice to cast Goblin Grenade doesn’t have to be a creature. For example, you could sacrifice Boggart Shenanigans (a tribal enchantment with the subtype Goblin)."
                 }
             ],
+            "scryfallId": "83e94cc0-dc8e-4e5f-ac6d-c047379420bf",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79556,
             "text": "As an additional cost to cast this spell, sacrifice a Goblin.\nGoblin Grenade deals 5 damage to any target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "83e94cc0-dc8e-4e5f-ac6d-c047379420bf"
+            "uuid": "58690234-f0bd-5766-ae0e-faf11a3ccb15"
         },
         {
             "artist": "Pete Venters",
@@ -1981,7 +2009,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1998,23 +2025,23 @@
                 "6ED",
                 "ATH",
                 "DRK",
-                "S00",
                 "S99"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a8814f14-44d6-40c2-9baa-31c986416f43",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 79557,
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "a8814f14-44d6-40c2-9baa-31c986416f43"
+            "uuid": "98385783-5dd6-5fc9-afc5-5f4691581e43"
         },
         {
             "artist": "Jesper Myrfors",
@@ -2031,7 +2058,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2070,18 +2096,20 @@
                     "text": "Goblin King now has the Goblin creature type and its ability has been reworded to affect *other* Goblins. This means that if two Goblin Kings are on the battlefield, each gives the other a bonus."
                 }
             ],
+            "scryfallId": "049d96ef-f46c-44d7-8ec4-cdbcc3cd0397",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79530,
             "text": "Other Goblin creatures get +1/+1 and have mountainwalk. (They can't be blocked as long as defending player controls a Mountain.)",
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "049d96ef-f46c-44d7-8ec4-cdbcc3cd0397"
+            "uuid": "377a629f-f25a-54db-84a0-bc5c84cc9e2a"
         },
         {
             "artist": "Daniel Gelon",
@@ -2097,7 +2125,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2131,18 +2158,20 @@
                     "text": "You can search for any card with the creature type Goblin, including Creature or Tribal cards. Older cards of type “Summon Goblin” and “Summon Goblins” also count. You can’t search for cards that have Goblin in the name but don’t have the creature type Goblin."
                 }
             ],
+            "scryfallId": "7b314954-c28f-40a9-a736-8eade0497e45",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79558,
             "text": "When Goblin Matron enters the battlefield, you may search your library for a Goblin card, reveal that card, and put it into your hand. If you do, shuffle your library.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "7b314954-c28f-40a9-a736-8eade0497e45"
+            "uuid": "f3f9ff84-7f9a-5292-af11-50e887a8b471"
         },
         {
             "artist": "Daniel Gelon",
@@ -2158,7 +2187,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2179,19 +2207,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "07a22271-e96e-4614-9b61-1e2398f976c3",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79540,
             "text": "Trample\nGoblin Mutant can't attack if defending player controls an untapped creature with power 3 or greater.\nGoblin Mutant can't block creatures with power 3 or greater.",
             "toughness": "3",
             "type": "Creature — Goblin Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "07a22271-e96e-4614-9b61-1e2398f976c3"
+            "uuid": "11c2691a-3404-5066-849f-5754218d638d"
         },
         {
             "artist": "Carl Critchlow",
@@ -2208,7 +2238,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2232,15 +2261,17 @@
                     "text": "The tokens are named “Goblin” and are of creature type “Goblin”."
                 }
             ],
+            "scryfallId": "012a37ff-55f3-4943-b401-dc7a7cc22dae",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79541,
             "text": "Create X 1/1 red Goblin creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "012a37ff-55f3-4943-b401-dc7a7cc22dae"
+            "uuid": "4bfc1794-75f1-5fb5-b209-ed99429c2b28"
         },
         {
             "artist": "Scott Kirschner",
@@ -2257,7 +2288,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2282,18 +2312,20 @@
                     "text": "You can search for any card with the creature type Goblin, including Creature or Tribal cards. Older cards of type “Summon Goblin” and “Summon Goblins” also count. You can’t search for cards that have Goblin in the name but don’t have the creature type Goblin."
                 }
             ],
+            "scryfallId": "64613318-54b1-4462-92ea-79921661e1b3",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79542,
             "text": "When Goblin Recruiter enters the battlefield, search your library for any number of Goblin cards and reveal those cards. Shuffle your library, then put them on top of it in any order.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "64613318-54b1-4462-92ea-79921661e1b3"
+            "uuid": "f940520a-bfce-5ed6-b52c-17dd9f0f7f05"
         },
         {
             "artist": "Daniel Gelon",
@@ -2310,7 +2342,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2332,18 +2363,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a6689aa8-88ca-4ac9-bf50-f0c78cce4919",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79543,
             "text": "Whenever Goblin Snowman blocks, prevent all combat damage that would be dealt to and dealt by it this turn.\n{T}: Goblin Snowman deals 1 damage to target creature it's blocking.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "a6689aa8-88ca-4ac9-bf50-f0c78cce4919"
+            "uuid": "37264aef-d09d-5c44-b3dd-5d02913cb847"
         },
         {
             "artist": "Hannibal King",
@@ -2360,7 +2393,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2380,19 +2412,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "54eef0db-dd7b-4ba9-bcb9-4cabdf6a1431",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Artificer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79559,
             "text": "{R}, {T}: Destroy target artifact. That artifact deals damage equal to its converted mana cost to Goblin Tinkerer.",
             "toughness": "2",
             "type": "Creature — Goblin Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "54eef0db-dd7b-4ba9-bcb9-4cabdf6a1431"
+            "uuid": "f9887fcc-774a-5b02-96a3-ccea543e058f"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -2408,7 +2442,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2439,19 +2472,21 @@
                     "text": "An ability that triggers when something “attacks and isn’t blocked” triggers in the declare blockers step after blockers are declared if (1) that creature is attacking and (2) no creatures are declared to block it. It will trigger even if that creature was put onto the battlefield attacking rather than having been declared as an attacker in the declare attackers step."
                 }
             ],
+            "scryfallId": "afed9d46-d2d9-4972-bcbf-03b1313d68aa",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79560,
             "text": "Whenever Goblin Vandal attacks and isn't blocked, you may pay {R}. If you do, destroy target artifact defending player controls and Goblin Vandal assigns no combat damage this turn.",
             "toughness": "1",
             "type": "Creature — Goblin Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "afed9d46-d2d9-4972-bcbf-03b1313d68aa"
+            "uuid": "4b23fefa-ed1f-53b5-bc0a-a98758c217a9"
         },
         {
             "artist": "Dan Frazier",
@@ -2468,7 +2503,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2494,15 +2528,17 @@
                     "text": "The token Goblins can be sacrificed to the Warrens to generate new Goblins."
                 }
             ],
+            "scryfallId": "4712905d-a48a-4d0c-ad57-675feaf41585",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79531,
             "text": "{2}{R}, Sacrifice two Goblins: Create three 1/1 red Goblin creature tokens.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4712905d-a48a-4d0c-ad57-675feaf41585"
+            "uuid": "bf53742a-16b2-5464-add5-b21ae5f1673f"
         },
         {
             "artist": "Christopher Rush",
@@ -2518,7 +2554,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2552,6 +2587,7 @@
                 "MM2",
                 "P10",
                 "PD2",
+                "PF19",
                 "PRM",
                 "PTC",
                 "SUM",
@@ -2559,15 +2595,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "52f85017-c88b-4302-96f2-e27b23fd702f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79561,
             "text": "Lightning Bolt deals 3 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "52f85017-c88b-4302-96f2-e27b23fd702f"
+            "uuid": "3775e3fc-590e-5c67-9f7b-57b0e67512e3"
         },
         {
             "artist": "Brom",
@@ -2584,7 +2622,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2621,18 +2658,20 @@
                     "text": "Once Mogg Fanatic has dealt and been dealt combat damage, it’s too late to activate its ability before it’s destroyed."
                 }
             ],
+            "scryfallId": "86804429-ae19-497c-a256-7906b0a06cc2",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79562,
             "text": "Sacrifice Mogg Fanatic: It deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "86804429-ae19-497c-a256-7906b0a06cc2"
+            "uuid": "d57a98aa-693d-5cd4-bdf9-75692f4cdb3e"
         },
         {
             "artist": "Brom",
@@ -2649,7 +2688,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2698,18 +2736,20 @@
                     "text": "In a Two-Headed Giant game, Mogg Flunkies can attack or block with a creature controlled by your teammate, even if no other creatures you control are attacking or blocking."
                 }
             ],
+            "scryfallId": "1525f5f8-cf1b-4d1d-8892-6470b1f03388",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79563,
             "text": "Mogg Flunkies can't attack or block alone.",
             "toughness": "3",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "1525f5f8-cf1b-4d1d-8892-6470b1f03388"
+            "uuid": "bb1a8097-5991-5ead-9f35-0a5061f1d90c"
         },
         {
             "artist": "Brian Snõddy",
@@ -2726,7 +2766,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2746,18 +2785,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6ab0b7fe-cb6c-49e1-b8f4-e81c31a16ae2",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79564,
             "text": "Sacrifice a Goblin: Target creature gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "6ab0b7fe-cb6c-49e1-b8f4-e81c31a16ae2"
+            "uuid": "e0efd6f0-a3df-5f66-a6d4-5d1597a02c44"
         },
         {
             "artist": "Ron Spencer",
@@ -2773,7 +2814,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2809,15 +2849,17 @@
                     "text": "If another effect causes Pyrokinesis to cost more, you must pay that additional cost even if you pay its alternative cost."
                 }
             ],
+            "scryfallId": "69541e79-2e5c-4b47-96a3-e0db92d03959",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79544,
             "text": "You may exile a red card from your hand rather than pay this spell's mana cost.\nPyrokinesis deals 4 damage divided as you choose among any number of target creatures.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "69541e79-2e5c-4b47-96a3-e0db92d03959"
+            "uuid": "6d818dce-1fcd-569b-a880-9586ef6b43bf"
         },
         {
             "artist": "Anson Maddocks",
@@ -2834,7 +2876,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2878,15 +2919,17 @@
                     "text": "If an effect creates a copy of Pyrotechnics, the number of targets and division of damage can’t be changed. The effect that creates the copy may allow you to change the targets, however."
                 }
             ],
+            "scryfallId": "9637ab3c-7cfa-4cac-994e-ab659f258895",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79565,
             "text": "Pyrotechnics deals 4 damage divided as you choose among any number of targets.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9637ab3c-7cfa-4cac-994e-ab659f258895"
+            "uuid": "af81ce53-4907-50d2-a2b7-cebabf85b60e"
         },
         {
             "artist": "Brian Snõddy",
@@ -2903,7 +2946,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2940,19 +2982,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2f321f5c-32b6-4611-b193-3814fde528c0",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Berserker"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79566,
             "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)",
             "toughness": "1",
             "type": "Creature — Goblin Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "2f321f5c-32b6-4611-b193-3814fde528c0"
+            "uuid": "b5418bfe-ebfb-560d-8932-e3a2a6edba2d"
         },
         {
             "artist": "Douglas Shuler",
@@ -2969,7 +3013,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3000,18 +3043,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "163820e0-791a-4fa6-979d-12371aa81ab3",
             "starter": true,
             "subtypes": [
                 "Troll"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79545,
             "text": "{R}: Regenerate Uthden Troll.",
             "toughness": "2",
             "type": "Creature — Troll",
             "types": [
                 "Creature"
             ],
-            "uuid": "163820e0-791a-4fa6-979d-12371aa81ab3"
+            "uuid": "2dd9883b-2ee9-510f-850f-ab0e56108666"
         },
         {
             "artist": "Janine Johnston",
@@ -3028,7 +3073,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3059,18 +3103,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "25b2c657-a9cd-4c42-8fb4-183f4630dbc7",
             "starter": true,
             "subtypes": [
                 "Dragon"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79532,
             "text": "Flying\nHaste (This creature can attack and {T} as soon as it comes under your control.)",
             "toughness": "4",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "25b2c657-a9cd-4c42-8fb4-183f4630dbc7"
+            "uuid": "54df247a-f3ec-54ba-8991-f6fd50be7979"
         },
         {
             "artist": "Christopher Rush",
@@ -3087,7 +3133,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3119,18 +3164,20 @@
                     "text": "This card now uses the Reach keyword ability to enable the blocking of flying creatures. This works because a creature with flying can only be blocked by creatures with flying or reach."
                 }
             ],
+            "scryfallId": "b2fade78-c32c-4074-9907-3f00f0a9a949",
             "starter": true,
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79591,
             "text": "Reach (This creature can block creatures with flying.)",
             "toughness": "3",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "b2fade78-c32c-4074-9907-3f00f0a9a949"
+            "uuid": "66307650-00c1-5abc-8f3b-6811326eff4b"
         },
         {
             "artist": "Quinton Hoover",
@@ -3147,7 +3194,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3170,19 +3216,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2bdd9448-d025-48dc-8881-6a4e4935c37e",
             "starter": true,
             "subtypes": [
                 "Plant",
                 "Wall"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79592,
             "text": "Defender",
             "toughness": "5",
             "type": "Creature — Plant Wall",
             "types": [
                 "Creature"
             ],
-            "uuid": "2bdd9448-d025-48dc-8881-6a4e4935c37e"
+            "uuid": "0b10fa5d-887c-54fd-bc71-e558e8bfeda8"
         },
         {
             "artist": "Ken Meyer, Jr.",
@@ -3198,7 +3246,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3237,18 +3284,20 @@
                     "text": "If there are no creatures your opponent controls to target at the beginning of your upkeep, ignore this ability."
                 }
             ],
+            "scryfallId": "2ff3999f-bf00-45f6-a169-eb25145368dd",
             "starter": true,
             "subtypes": [
                 "Djinn"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79578,
             "text": "At the beginning of your upkeep, target non-Wall creature an opponent controls gains forestwalk until your next upkeep. (It can't be blocked as long as defending player controls a Forest.)",
             "toughness": "5",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "2ff3999f-bf00-45f6-a169-eb25145368dd"
+            "uuid": "ceb64fab-2dff-55f3-ad90-4e0383af0266"
         },
         {
             "artist": "Sandra Everingham",
@@ -3264,7 +3313,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3320,22 +3368,23 @@
                 "PS11",
                 "PSUS",
                 "RTR",
-                "S00",
                 "SUM",
                 "WC97",
                 "WC99"
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2fc59bbe-436a-4e04-a988-7ff93930ea0b",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79593,
             "text": "Target creature gets +3/+3 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2fc59bbe-436a-4e04-a988-7ff93930ea0b"
+            "uuid": "bc65910d-a0f6-558c-8962-6b5aff0eaea1"
         },
         {
             "artist": "Sandra Everingham",
@@ -3352,7 +3401,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3407,18 +3455,20 @@
                     "text": "This card now uses the Reach keyword ability to enable the blocking of flying creatures. This works because a creature with flying can only be blocked by creatures with flying or reach."
                 }
             ],
+            "scryfallId": "f466ca3e-c858-4865-8476-34370b965962",
             "starter": true,
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79594,
             "text": "Reach (This creature can block creatures with flying.)",
             "toughness": "4",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "f466ca3e-c858-4865-8476-34370b965962"
+            "uuid": "94e2c757-ee43-53c6-bea4-40418e25f04f"
         },
         {
             "artist": "Quinton Hoover",
@@ -3435,7 +3485,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3458,18 +3507,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ce090991-4ffc-4230-929a-dfd7b67ce1c6",
             "starter": true,
             "subtypes": [
                 "Ape"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79595,
             "text": "{1}{G}: Regenerate Gorilla Chieftain.",
             "toughness": "3",
             "type": "Creature — Ape",
             "types": [
                 "Creature"
             ],
-            "uuid": "ce090991-4ffc-4230-929a-dfd7b67ce1c6"
+            "uuid": "9da24701-f7f2-52e2-b15c-e4d45360cb3a"
         },
         {
             "artist": "Cornelius Brudi",
@@ -3486,7 +3537,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3530,15 +3580,17 @@
                     "text": "Whether or not a creature has flying is only checked on resolution."
                 }
             ],
+            "scryfallId": "0dd7e1ab-9279-47b3-b5a8-401f35cd69f1",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79579,
             "text": "Hurricane deals X damage to each creature with flying and each player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0dd7e1ab-9279-47b3-b5a8-401f35cd69f1"
+            "uuid": "3ab18fb9-5cd1-5518-8587-fc1dc34b4b0a"
         },
         {
             "artist": "Anson Maddocks",
@@ -3555,7 +3607,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3607,7 +3658,6 @@
                 "PG07",
                 "PRM",
                 "PTC",
-                "S00",
                 "SUM",
                 "WC00",
                 "WC01",
@@ -3616,19 +3666,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3055e3a9-240e-42f6-8596-7b5b8c6d21c2",
             "starter": true,
             "subtypes": [
                 "Elf",
                 "Druid"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79596,
             "text": "{T}: Add {G}.",
             "toughness": "1",
             "type": "Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "3055e3a9-240e-42f6-8596-7b5b8c6d21c2"
+            "uuid": "8e3e650c-21e4-5ec1-b752-e0811dce4f0e"
         },
         {
             "artist": "Daren Bader",
@@ -3644,7 +3696,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3669,6 +3720,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "25f67f5f-083c-40c9-a962-f9b522d484f9",
             "starter": true,
             "subtypes": [
                 "Cat",
@@ -3677,13 +3729,14 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 79572,
             "text": "First strike, forestwalk, vigilance (This creature deals combat damage before creatures without first strike, it can't be blocked as long as defending player controls a Forest, and attacking doesn't cause this creature to tap.)",
             "toughness": "3",
             "type": "Legendary Creature — Cat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "25f67f5f-083c-40c9-a962-f9b522d484f9"
+            "uuid": "fca5e210-6f0a-55aa-a319-b1dc58dc6ac6"
         },
         {
             "artist": "Jeff Miracola",
@@ -3700,7 +3753,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3741,15 +3793,17 @@
                     "text": "Overrun affects only creatures you control at the time it resolves. It won’t affect creatures that come under your control later in the turn."
                 }
             ],
+            "scryfallId": "44ad2e01-730c-4806-bca5-f6a083b02c46",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79581,
             "text": "Creatures you control get +3/+3 and gain trample until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "44ad2e01-730c-4806-bca5-f6a083b02c46"
+            "uuid": "b8670e84-748a-5044-89a5-94d429eb69f8"
         },
         {
             "artist": "Dennis Detwiller",
@@ -3766,7 +3820,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3791,18 +3844,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "582c79f6-de28-4bd1-bacd-55622a62bc4a",
             "starter": true,
             "subtypes": [
                 "Human"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79597,
             "text": "{G}, {T}, Sacrifice Scavenger Folk: Destroy target artifact.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "582c79f6-de28-4bd1-bacd-55622a62bc4a"
+            "uuid": "d8ade48f-7fbe-59dc-8996-c91bbee21469"
         },
         {
             "artist": "Pat Morrissey",
@@ -3819,7 +3874,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3847,19 +3901,21 @@
                     "text": "The checks for black cards is made both at the time you declare attackers and as the ability resolves. If there are any at the time attackers are declared, it won’t trigger at all. If there are any at the time it resolves, the ability will do nothing."
                 }
             ],
+            "scryfallId": "d4c234ed-0e5d-4074-ad95-bba1744aca9a",
             "starter": true,
             "subtypes": [
                 "Bear",
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79580,
             "text": "Whenever Spectral Bears attacks, if defending player controls no black nontoken permanents, it doesn't untap during your next untap step.",
             "toughness": "3",
             "type": "Creature — Bear Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d4c234ed-0e5d-4074-ad95-bba1744aca9a"
+            "uuid": "6e0bce1e-c13c-5960-ba9c-92cc0e9a37cd"
         },
         {
             "artist": "Daniel Gelon",
@@ -3876,7 +3932,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3899,18 +3954,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d6b28d29-6ce4-4f42-86f6-66c2470db833",
             "starter": true,
             "subtypes": [
                 "Spider"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79598,
             "text": "Reach (This creature can block creatures with flying.)\nWhenever Woolly Spider blocks a creature with flying, Woolly Spider gets +0/+2 until end of turn.",
             "toughness": "3",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "d6b28d29-6ce4-4f42-86f6-66c2470db833"
+            "uuid": "a18241aa-a9f8-54b9-8cb7-e0fb76e643a3"
         },
         {
             "artist": "Sandra Everingham",
@@ -3929,7 +3986,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3951,6 +4007,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "89a8379e-cf55-4b02-a444-e66cd07b418d",
             "starter": true,
             "subtypes": [
                 "Demon"
@@ -3958,13 +4015,13 @@
             "supertypes": [
                 "Legendary"
             ],
-            "text": "",
+            "tcgplayerProductId": 79534,
             "toughness": "4",
             "type": "Legendary Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "89a8379e-cf55-4b02-a444-e66cd07b418d"
+            "uuid": "81d55c9f-9155-5c50-93d3-6a126b0fad4e"
         },
         {
             "artist": "Randy Elliott",
@@ -3983,7 +4040,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4002,6 +4058,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e7647264-6d70-4cb4-9f98-c42ad9c0814a",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -4009,13 +4066,14 @@
                 "Archer"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79577,
             "text": "First strike\n{G}: Regenerate Ranger en-Vec.",
             "toughness": "2",
             "type": "Creature — Human Soldier Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "e7647264-6d70-4cb4-9f98-c42ad9c0814a"
+            "uuid": "241e0537-08d6-581d-a408-41f316172209"
         },
         {
             "artist": "Ruth Thompson",
@@ -4028,7 +4086,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4056,12 +4113,14 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "70e93d36-0d07-452f-88c8-018afad2b91d",
             "starter": true,
             "subtypes": [
                 "Bird",
                 "Construct"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 79546,
             "text": "Flying\nAesthir Glider can't block.",
             "toughness": "1",
             "type": "Artifact Creature — Bird Construct",
@@ -4069,7 +4128,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "70e93d36-0d07-452f-88c8-018afad2b91d"
+            "uuid": "3d10acfe-4372-5cfa-b1d8-ab786f13de8a"
         },
         {
             "artist": "Tom Wänerstrand",
@@ -4082,7 +4141,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4109,15 +4167,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8a70070e-36f0-496b-b240-3a6bc3416397",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79576,
             "text": "{2}, {T}: Draw a card, then discard a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8a70070e-36f0-496b-b240-3a6bc3416397"
+            "uuid": "b052fb17-90fd-5c9c-b7c2-5c43d6cf8046"
         },
         {
             "artist": "Mark Tedin",
@@ -4129,7 +4189,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4172,15 +4231,17 @@
                     "text": "You don’t sacrifice Nevinyrral’s Disk to activate its ability. It’s destroyed as part of the ability’s resolution if it’s still on the battlefield. If an effect gives Nevinyrral’s Disk indestructible or regenerates it, it stays on the battlefield."
                 }
             ],
+            "scryfallId": "c7882094-1a07-4b1e-a564-03703a667c4c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79529,
             "text": "Nevinyrral's Disk enters the battlefield tapped.\n{1}, {T}: Destroy all artifacts, creatures, and enchantments.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c7882094-1a07-4b1e-a564-03703a667c4c"
+            "uuid": "540ff100-fa6d-545a-bf34-ee8b48ba6864"
         },
         {
             "artist": "David A. Cherry",
@@ -4192,7 +4253,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4224,15 +4284,17 @@
                     "text": "The upkeep trigger checks the number of counters at the start of upkeep, and only goes on the stack if there are no arrowhead counters at that time. It will check again on resolution, and will do nothing if you’ve somehow manage to get a new arrowhead counter on the Arrows."
                 }
             ],
+            "scryfallId": "33c6b946-205f-427f-9f27-d632d2df9ce5",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79590,
             "text": "Serrated Arrows enters the battlefield with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on Serrated Arrows, sacrifice it.\n{T}, Remove an arrowhead counter from Serrated Arrows: Put a -1/-1 counter on target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "33c6b946-205f-427f-9f27-d632d2df9ce5"
+            "uuid": "de0fab78-8da1-5a60-b306-ff19206c5d91"
         },
         {
             "artist": "Bryon Wackwitz",
@@ -4247,7 +4309,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4273,15 +4334,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b17f43d6-d9ca-4e87-bf0f-1f5bc1ceabad",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79571,
             "text": "{T}: Add {C}.\n{T}: Add {G} or {W}. Brushland deals 1 damage to you.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "b17f43d6-d9ca-4e87-bf0f-1f5bc1ceabad"
+            "uuid": "e8091296-f400-5f2b-ba84-43a1cb47aeba"
         },
         {
             "artist": "Bob Eggleton",
@@ -4295,7 +4358,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4323,15 +4385,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "bd6aef10-22c9-48de-b67f-32aff932cfea",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79588,
             "text": "Drifting Meadow enters the battlefield tapped.\n{T}: Add {W}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "bd6aef10-22c9-48de-b67f-32aff932cfea"
+            "uuid": "5a2f41bb-dc96-529c-b41c-c6e0a85325ba"
         },
         {
             "artist": "Bryon Wackwitz",
@@ -4346,7 +4410,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4374,17 +4437,19 @@
                     "text": "The current power/toughness being 1/1 is a targeting requirement so it is checked when announcing and again right before resolving."
                 }
             ],
+            "scryfallId": "7ad62749-b2dc-4b2b-91cb-50175d983039",
             "starter": true,
             "subtypes": [],
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 79575,
             "text": "{T}: Add {G}.\n{T}: Target 1/1 creature gets +1/+2 until end of turn.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "7ad62749-b2dc-4b2b-91cb-50175d983039"
+            "uuid": "b2f662c8-c163-50f8-96f2-f3a8a73c131b"
         },
         {
             "artist": "Stephen Daniele",
@@ -4398,7 +4463,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4429,15 +4493,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "631a97f4-c73a-4d0f-be90-836b90fc227e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79547,
             "text": "Polluted Mire enters the battlefield tapped.\n{T}: Add {B}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "631a97f4-c73a-4d0f-be90-836b90fc227e"
+            "uuid": "70aedf4b-591f-56e0-94e7-38bb1d269ef2"
         },
         {
             "artist": "Stephen Daniele",
@@ -4451,7 +4517,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4482,15 +4547,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "31b8c916-372d-4951-9327-4b84497c637a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79589,
             "text": "Slippery Karst enters the battlefield tapped.\n{T}: Add {G}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "31b8c916-372d-4951-9327-4b84497c637a"
+            "uuid": "7a4470b8-1134-5d9d-a6b1-bd3707398dad"
         },
         {
             "artist": "Mark Tedin",
@@ -4504,7 +4571,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4532,15 +4598,17 @@
                     "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
                 }
             ],
+            "scryfallId": "4f5da73c-108d-4f59-84e1-b40fc88967ab",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79548,
             "text": "Smoldering Crater enters the battlefield tapped.\n{T}: Add {R}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "4f5da73c-108d-4f59-84e1-b40fc88967ab"
+            "uuid": "cc3e0ccf-e5ea-5e70-8705-5fa382c000de"
         },
         {
             "artist": "Daniel Gelon",
@@ -4553,7 +4621,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Banned",
@@ -4578,15 +4645,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "2bbff39f-f16b-4ae5-aa99-da5bdf482c33",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 79533,
             "text": "{T}: Add {C}.\n{T}, Sacrifice Strip Mine: Destroy target land.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "2bbff39f-f16b-4ae5-aa99-da5bdf482c33"
+            "uuid": "227f1768-1325-5979-a84f-7185bb1e474c"
         },
         {
             "artist": "Tom Wänerstrand",
@@ -4600,7 +4669,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4648,7 +4716,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -4661,8 +4728,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4676,6 +4745,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c333ca3a-b1d4-4ec4-a958-c3870a8434e7",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -4688,7 +4758,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c333ca3a-b1d4-4ec4-a958-c3870a8434e7"
+            "uuid": "34067b3e-ac27-582a-acdb-3de67c06db00",
+            "variations": [
+                "dd3ec300-de20-5694-9949-bb4519e6d4a3"
+            ]
         },
         {
             "artist": "Douglas Shuler",
@@ -4702,7 +4775,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4750,7 +4822,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -4763,8 +4834,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4778,6 +4851,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1dab3762-2412-4234-93ec-1931e8264aaa",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -4790,7 +4864,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "1dab3762-2412-4234-93ec-1931e8264aaa"
+            "uuid": "dd3ec300-de20-5694-9949-bb4519e6d4a3",
+            "variations": [
+                "34067b3e-ac27-582a-acdb-3de67c06db00"
+            ]
         },
         {
             "artist": "Douglas Shuler",
@@ -4804,7 +4881,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4862,8 +4938,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4877,6 +4955,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2dd3fac4-488f-4899-ab19-6208188254fc",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -4889,7 +4968,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2dd3fac4-488f-4899-ab19-6208188254fc"
+            "uuid": "cf1849a7-78cd-5cb3-9b83-b2ac5208c7ae",
+            "variations": [
+                "668d2c3a-b964-5ec2-8201-7181bdea4d00"
+            ]
         },
         {
             "artist": "Brom",
@@ -4903,7 +4985,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4961,8 +5042,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -4976,6 +5059,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "5203e53a-0310-468d-b8ef-7027d67c7d22",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -4988,7 +5072,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "5203e53a-0310-468d-b8ef-7027d67c7d22"
+            "uuid": "668d2c3a-b964-5ec2-8201-7181bdea4d00",
+            "variations": [
+                "cf1849a7-78cd-5cb3-9b83-b2ac5208c7ae"
+            ]
         },
         {
             "artist": "Douglas Shuler",
@@ -5002,7 +5089,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5022,7 +5108,6 @@
             "number": "82",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -5062,8 +5147,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5077,6 +5164,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4714b305-c017-4e1f-b788-79331de3dae1",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -5089,7 +5177,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4714b305-c017-4e1f-b788-79331de3dae1"
+            "uuid": "945adb15-6015-575a-8c58-77c297a63aa2",
+            "variations": [
+                "0c9178c1-158c-5c54-8fad-f3c03e0ce86f"
+            ]
         },
         {
             "artist": "John Avon",
@@ -5103,7 +5194,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5123,7 +5213,6 @@
             "number": "83",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -5163,8 +5252,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5178,6 +5269,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4e281d33-cae2-41e4-9b25-69c9051634ce",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -5190,7 +5282,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4e281d33-cae2-41e4-9b25-69c9051634ce"
+            "uuid": "0c9178c1-158c-5c54-8fad-f3c03e0ce86f",
+            "variations": [
+                "945adb15-6015-575a-8c58-77c297a63aa2"
+            ]
         },
         {
             "artist": "Tony Roberts",
@@ -5204,7 +5299,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5256,14 +5350,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5277,6 +5372,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3f34c451-fdb4-4f73-9e27-203b72ba1843",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -5289,7 +5385,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3f34c451-fdb4-4f73-9e27-203b72ba1843"
+            "uuid": "1bd5e14d-1b89-587f-96fa-4e0b4f222626",
+            "variations": [
+                "a37c902f-c4f5-53f5-96ef-ad1e38d6a513"
+            ]
         },
         {
             "artist": "Quinton Hoover",
@@ -5303,7 +5402,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5355,14 +5453,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5376,6 +5475,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "daf728de-4cd8-4354-98d1-7922c46702dc",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -5388,17 +5488,21 @@
             "types": [
                 "Land"
             ],
-            "uuid": "daf728de-4cd8-4354-98d1-7922c46702dc"
+            "uuid": "a37c902f-c4f5-53f5-96ef-ad1e38d6a513",
+            "variations": [
+                "1bd5e14d-1b89-587f-96fa-4e0b4f222626"
+            ]
         }
     ],
     "code": "ath",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Anthologies",
     "releaseDate": "1998-11-01",
+    "tcgplayerGroupId": 1275,
     "tokens": [],
     "totalSetSize": 85,
     "type": "box"

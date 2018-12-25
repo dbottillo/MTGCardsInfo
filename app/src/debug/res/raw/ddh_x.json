@@ -46,7 +46,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -80,6 +79,7 @@
                     "text": "The first ability tracks the permanent, but not its controller. If the permanent changes controllers before its first controller’s next untap step has come around, then it won’t untap during its new controller’s next untap step."
                 }
             ],
+            "scryfallId": "f3bf1867-aab4-4935-b891-45489ebeb231",
             "starter": true,
             "subtypes": [
                 "Ajani"
@@ -87,12 +87,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 52109,
             "text": "+1: Target permanent doesn't untap during its controller's next untap step.\n−2: Ajani Vengeant deals 3 damage to any target and you gain 3 life.\n−7: Destroy all lands target player controls.",
             "type": "Legendary Planeswalker — Ajani",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "f3bf1867-aab4-4935-b891-45489ebeb231"
+            "uuid": "34dcf3e1-4003-5c21-bf9f-e9a6bff8dd79"
         },
         {
             "artist": "Terese Nielsen",
@@ -142,7 +143,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -175,18 +175,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "7c5e991d-53a7-462e-b3b4-172d6e70ea3f",
             "starter": true,
             "subtypes": [
                 "Ape"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52088,
             "text": "Kird Ape gets +1/+2 as long as you control a Forest.",
             "toughness": "1",
             "type": "Creature — Ape",
             "types": [
                 "Creature"
             ],
-            "uuid": "7c5e991d-53a7-462e-b3b4-172d6e70ea3f"
+            "uuid": "f6c6dadd-f36e-5ddb-aaaa-fb3c88408b1a"
         },
         {
             "artist": "Terese Nielsen",
@@ -236,7 +238,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -275,19 +276,21 @@
                     "text": "This is the timeshifted version of Soul Warden."
                 }
             ],
+            "scryfallId": "ab9b05fc-2884-4c0f-95ce-37cfffa902c5",
             "starter": true,
             "subtypes": [
                 "Elf",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52083,
             "text": "Whenever another creature enters the battlefield, you gain 1 life.",
             "toughness": "1",
             "type": "Creature — Elf Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab9b05fc-2884-4c0f-95ce-37cfffa902c5"
+            "uuid": "2beadf88-bff1-59af-9830-4091287c5d87"
         },
         {
             "artist": "Wayne Reynolds",
@@ -337,7 +340,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -368,19 +370,21 @@
                     "text": "Wild Nacatl’s abilities check for lands with the subtypes Mountain and Plains. Those lands don’t need to be named Mountain and Plains. Wild Nacatl will get both bonuses if those two subtypes are contained among the lands you control, even if they’re from the same land (such as Plateau or Sacred Foundry)."
                 }
             ],
+            "scryfallId": "5a3bb291-11d1-45e0-a60a-e75c7dc94b94",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52097,
             "text": "Wild Nacatl gets +1/+1 as long as you control a Mountain.\nWild Nacatl gets +1/+1 as long as you control a Plains.",
             "toughness": "1",
             "type": "Creature — Cat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "5a3bb291-11d1-45e0-a60a-e75c7dc94b94"
+            "uuid": "31fb515f-4250-5653-b263-2dd69ba516b9"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -430,7 +434,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -459,18 +462,20 @@
                     "text": "Loam Lion either gets +1/+2 or it doesn’t. It doesn’t get the bonus for each Forest you control."
                 }
             ],
+            "scryfallId": "d810da8b-298e-41a4-a962-33b1da5a1866",
             "starter": true,
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52089,
             "text": "Loam Lion gets +1/+2 as long as you control a Forest.",
             "toughness": "1",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "d810da8b-298e-41a4-a962-33b1da5a1866"
+            "uuid": "9f0067e7-2e5b-5cd4-b056-e433d34b9e63"
         },
         {
             "artist": "Gary Leach",
@@ -520,7 +525,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -547,18 +551,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ef69547a-c060-45ac-9478-10fbe324cd42",
             "starter": true,
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52082,
             "text": "Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)",
             "toughness": "1",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "ef69547a-c060-45ac-9478-10fbe324cd42"
+            "uuid": "d66b0bd6-efbe-516c-b9a3-231c571afa8e"
         },
         {
             "artist": "Izzy",
@@ -608,7 +614,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -622,6 +627,7 @@
             "manaCost": "{1}{G}",
             "multiverseId": 249397,
             "name": "Jade Mage",
+            "names": [],
             "number": "7",
             "originalText": "{2}{G}: Put a 1/1 green Saproling creature token onto the battlefield.",
             "originalType": "Creature — Human Shaman",
@@ -633,19 +639,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d8dd9144-85c3-4c6f-aad4-836e5946bb71",
             "starter": true,
             "subtypes": [
                 "Human",
                 "Shaman"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52087,
             "text": "{2}{G}: Create a 1/1 green Saproling creature token.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "d8dd9144-85c3-4c6f-aad4-836e5946bb71"
+            "uuid": "a2ed401b-0006-590a-ba28-5a259b9a24b5"
         },
         {
             "artist": "Christopher Moeller",
@@ -695,7 +703,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -725,19 +732,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4c2452c7-4acc-4785-8a62-d06c472486e5",
             "starter": true,
             "subtypes": [
                 "Elf",
                 "Scout"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52096,
             "text": "When Sylvan Ranger enters the battlefield, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "4c2452c7-4acc-4785-8a62-d06c472486e5"
+            "uuid": "9a937a18-7fce-5d9c-a168-84a94fcad5d6"
         },
         {
             "artist": "Svetlin Velinov",
@@ -787,7 +796,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -839,19 +847,21 @@
                     "text": "In a Two-Headed Giant game, life gained by your teammate won’t cause the ability to trigger, even though it caused your team’s life total to increase."
                 }
             ],
+            "scryfallId": "d34e7982-f4f2-444d-8039-538b2ed4dc6e",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Soldier"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52080,
             "text": "Whenever you gain life, you may put a +1/+1 counter on Ajani's Pridemate.",
             "toughness": "2",
             "type": "Creature — Cat Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "d34e7982-f4f2-444d-8039-538b2ed4dc6e"
+            "uuid": "aca6ef6a-55a0-57c6-bb26-ec029b05c502"
         },
         {
             "artist": "Chris Rahn",
@@ -903,7 +913,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -930,19 +939,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "4f84b838-b8f1-4b9a-a19f-479594f9d427",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52094,
             "text": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\n{1}, Sacrifice Qasali Pridemage: Destroy target artifact or enchantment.",
             "toughness": "2",
             "type": "Creature — Cat Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f84b838-b8f1-4b9a-a19f-479594f9d427"
+            "uuid": "f1228e5a-72ff-5710-bd49-0eb2708317f7"
         },
         {
             "artist": "Ryan Pancoast",
@@ -992,7 +1003,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1029,18 +1039,20 @@
                     "text": "When a land enters the battlefield under your control, each landfall ability of the permanents you control will trigger. You can put them on the stack in any order. The last ability you put on the stack will be the first one that resolves."
                 }
             ],
+            "scryfallId": "f2784bf1-c02e-4423-9f71-444894b2a437",
             "starter": true,
             "subtypes": [
                 "Antelope"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52086,
             "text": "Landfall — Whenever a land enters the battlefield under your control, you may gain 2 life.",
             "toughness": "2",
             "type": "Creature — Antelope",
             "types": [
                 "Creature"
             ],
-            "uuid": "f2784bf1-c02e-4423-9f71-444894b2a437"
+            "uuid": "c8d36ddd-dfc2-56dd-9b30-57b3667dbbd6"
         },
         {
             "artist": "Mark Brill",
@@ -1087,7 +1099,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1114,18 +1125,20 @@
                     "text": "You choose the creature to return on resolution of the triggered ability. This is not targeted."
                 }
             ],
+            "scryfallId": "02db0f8e-5f87-427f-a3ff-0f261da679cd",
             "starter": true,
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52085,
             "text": "Flash\nWhen Fleetfoot Panther enters the battlefield, return a green or white creature you control to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "02db0f8e-5f87-427f-a3ff-0f261da679cd"
+            "uuid": "cff4e3f7-5c09-5bd0-940b-34c0b460b7e4"
         },
         {
             "artist": "Wayne Reynolds",
@@ -1175,7 +1188,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1202,18 +1214,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8a66495c-7c09-4615-b8fb-9c626513b858",
             "starter": true,
             "subtypes": [
                 "Beast"
             ],
             "supertypes": [],
-            "text": "",
+            "tcgplayerProductId": 52098,
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "8a66495c-7c09-4615-b8fb-9c626513b858"
+            "uuid": "aab91ec0-8121-5905-bb54-6e702eea3f1b"
         },
         {
             "artist": "Nils Hamm",
@@ -1258,7 +1271,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1289,18 +1301,20 @@
                     "text": "If you cast this card for its evoke cost, you may put the sacrifice trigger and the regular enters-the-battlefield trigger on the stack in either order. The one put on the stack last will resolve first."
                 }
             ],
+            "scryfallId": "6e476876-d3e7-4677-8f16-11a3508caa8b",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52081,
             "text": "Flash\nWhen Briarhorn enters the battlefield, target creature gets +3/+3 until end of turn.\nEvoke {1}{G} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "6e476876-d3e7-4677-8f16-11a3508caa8b"
+            "uuid": "8aa8a951-abb1-533f-a2d4-3f59931a45c9"
         },
         {
             "artist": "Kev Walker",
@@ -1352,7 +1366,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1382,19 +1395,21 @@
                     "text": "The second ability sets up individual regeneration shields for each creature you control. They are each used up as necessary during the turn and wear off when the turn ends."
                 }
             ],
+            "scryfallId": "826f4791-d6ca-4620-bc30-6d11d8d22e81",
             "starter": true,
             "subtypes": [
                 "Elephant",
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52090,
             "text": "When Loxodon Hierarch enters the battlefield, you gain 4 life.\n{G}{W}, Sacrifice Loxodon Hierarch: Regenerate each creature you control.",
             "toughness": "4",
             "type": "Creature — Elephant Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "826f4791-d6ca-4620-bc30-6d11d8d22e81"
+            "uuid": "854e0282-caac-5ab0-b64c-2a30bd8dc023"
         },
         {
             "artist": "Matt Cavotta",
@@ -1446,7 +1461,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1474,18 +1488,20 @@
                     "text": "Even if the amount of damage dealt to Spitemare is enough to destroy it, Spitemare’s ability will trigger and it will deal the full amount of damage to the target."
                 }
             ],
+            "scryfallId": "8c9b3151-bc77-499c-85a1-4ce021a4351a",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52095,
             "text": "Whenever Spitemare is dealt damage, it deals that much damage to any target.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c9b3151-bc77-499c-85a1-4ce021a4351a"
+            "uuid": "76b2e24c-fe7a-5180-a687-b55e4b9aab85"
         },
         {
             "artist": "Izzy",
@@ -1539,7 +1555,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1565,19 +1580,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d406058e-4d51-42bd-b7c0-664216745ff8",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52091,
             "text": "Double strike",
             "toughness": "4",
             "type": "Creature — Cat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "d406058e-4d51-42bd-b7c0-664216745ff8"
+            "uuid": "b1913903-f04c-54a2-a905-d53d62fbf659"
         },
         {
             "artist": "Jeff Miracola",
@@ -1627,7 +1644,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1651,18 +1667,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a4f9d79a-dff5-46e1-b767-30a451b54942",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52079,
             "text": "Whenever you gain life, put that many +1/+1 counters on Ageless Entity.",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "a4f9d79a-dff5-46e1-b767-30a451b54942"
+            "uuid": "e125d16f-35e4-5652-9827-ce61da6f5bb1"
         },
         {
             "artist": "Carl Critchlow",
@@ -1712,7 +1730,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1749,18 +1766,20 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "b521602b-d44b-4c7a-8b28-de0a7cda434b",
             "starter": true,
             "subtypes": [
                 "Cat"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52093,
             "text": "You may have Pride of Lions assign its combat damage as though it weren't blocked.",
             "toughness": "4",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "b521602b-d44b-4c7a-8b28-de0a7cda434b"
+            "uuid": "72c4e64a-4c15-5f74-9d94-dfae6136aee8"
         },
         {
             "artist": "Steve Prescott",
@@ -1812,7 +1831,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1844,19 +1862,21 @@
                     "text": "If you attack with Nacatl Hunt-Pride, you get the chance to activate one of its abilities before blockers are declared."
                 }
             ],
+            "scryfallId": "a1214688-084e-4a6a-928e-9434d594725a",
             "starter": true,
             "subtypes": [
                 "Cat",
                 "Warrior"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52092,
             "text": "Vigilance\n{R}, {T}: Target creature can't block this turn.\n{G}, {T}: Target creature blocks this turn if able.",
             "toughness": "4",
             "type": "Creature — Cat Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1214688-084e-4a6a-928e-9434d594725a"
+            "uuid": "61960f57-a228-5f3a-8ddb-1763f20a4413"
         },
         {
             "artist": "Matt Cavotta",
@@ -1903,7 +1923,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1934,18 +1953,20 @@
                     "text": "If Firemane Angel is put into your graveyard from the battlefield or returned from your graveyard to the battlefield during your upkeep before its triggered ability resolves, you won’t gain 1 life."
                 }
             ],
+            "scryfallId": "e2538e39-1719-4e66-ba67-8d64c0b843a9",
             "starter": true,
             "subtypes": [
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52084,
             "text": "Flying, first strike\nAt the beginning of your upkeep, if Firemane Angel is in your graveyard or on the battlefield, you may gain 1 life.\n{6}{R}{R}{W}{W}: Return Firemane Angel from your graveyard to the battlefield. Activate this ability only during your upkeep.",
             "toughness": "3",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "e2538e39-1719-4e66-ba67-8d64c0b843a9"
+            "uuid": "2c11b9bb-cfbd-5093-bb90-3df4e97f79de"
         },
         {
             "artist": "James Paick",
@@ -1995,7 +2016,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2019,15 +2039,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "de4da30d-5c72-4323-b305-7277038b4a05",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52099,
             "text": "At the beginning of your upkeep, you may gain 1 life.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "de4da30d-5c72-4323-b305-7277038b4a05"
+            "uuid": "9ccc6008-591e-599c-a89f-f672fe7bebc2"
         },
         {
             "artist": "Raymond Swanland",
@@ -2079,7 +2101,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2114,15 +2135,17 @@
                     "text": "If the chosen target is illegal when Lightning Helix tries to resolve, it won’t resolve and none of its effects will happen. You won’t gain 3 life."
                 }
             ],
+            "scryfallId": "613789fe-fac1-4200-b0a1-c84d1fa27cff",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52103,
             "text": "Lightning Helix deals 3 damage to any target and you gain 3 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "613789fe-fac1-4200-b0a1-c84d1fa27cff"
+            "uuid": "3d6f11e1-8eec-51e6-b5ce-1ea1bae53e78"
         },
         {
             "artist": "Efrem Palacios",
@@ -2167,7 +2190,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2193,15 +2215,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "99e9bf2f-c3d6-41d9-b6d9-82ed86224dba",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52102,
             "text": "Look at the top five cards of your library. You may reveal any number of creature cards from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "99e9bf2f-c3d6-41d9-b6d9-82ed86224dba"
+            "uuid": "6f3ecac5-a59e-5c78-9dd0-84575bfb3392"
         },
         {
             "artist": "Jim Nelson",
@@ -2246,7 +2270,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2260,6 +2283,7 @@
             "manaCost": "{2}{W}",
             "multiverseId": 249372,
             "name": "Griffin Guide",
+            "names": [],
             "number": "25",
             "originalText": "Enchant creature\nEnchanted creature gets +2/+2 and has flying.\nWhen enchanted creature dies, put a 2/2 white Griffin creature token with flying onto the battlefield.",
             "originalType": "Enchantment — Aura",
@@ -2276,17 +2300,19 @@
                     "text": "If Griffin Guide and the enchanted creature go to the graveyard at the same time, Griffin Guide’s ability will trigger."
                 }
             ],
+            "scryfallId": "a20209f5-a616-4d08-a113-331ca70807a3",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52101,
             "text": "Enchant creature\nEnchanted creature gets +2/+2 and has flying.\nWhen enchanted creature dies, create a 2/2 white Griffin creature token with flying.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a20209f5-a616-4d08-a113-331ca70807a3"
+            "uuid": "b187c772-acf5-554f-870b-afe095370df4"
         },
         {
             "artist": "Todd Lockwood",
@@ -2336,7 +2362,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2364,17 +2389,19 @@
                     "text": "The triggered ability is on the Aura, not the creature. It triggers at the beginning of the upkeep of Recumbent Bliss’s controller, not the enchanted creature’s controller, and Recumbent Bliss’s controller will gain the life."
                 }
             ],
+            "scryfallId": "303d9361-8f03-4f8d-bf5f-70a0e01f24e5",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52105,
             "text": "Enchant creature\nEnchanted creature can't attack or block.\nAt the beginning of your upkeep, you may gain 1 life.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "303d9361-8f03-4f8d-bf5f-70a0e01f24e5"
+            "uuid": "4cfcfa5a-4e8b-50ce-b9e4-b1dba48c5f60"
         },
         {
             "artist": "Dave Dorman",
@@ -2426,7 +2453,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2454,15 +2480,17 @@
                     "text": "Searing Meditation doesn’t care how much life you gain. It triggers just once for each life-gaining event, whether it’s 1 life from Firemane Angel or 15 life from Brightflame."
                 }
             ],
+            "scryfallId": "6f5e0200-21c9-4926-b238-3f9b1f5fc6ed",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52106,
             "text": "Whenever you gain life, you may pay {2}. If you do, Searing Meditation deals 2 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6f5e0200-21c9-4926-b238-3f9b1f5fc6ed"
+            "uuid": "1f23cf58-d86b-5d60-8acf-bb71679d4e7d"
         },
         {
             "artist": "Dave Allsop",
@@ -2514,7 +2542,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2545,17 +2572,19 @@
                     "text": "multiple instances of lifelink on the same creature are redundant. If a creature with multiple instances of lifelink deals damage, its controller still only gains life equal to the damage dealt."
                 }
             ],
+            "scryfallId": "d26647db-fe28-4c30-a77f-c44968a7b17e",
             "starter": true,
             "subtypes": [
                 "Equipment"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52100,
             "text": "Equipped creature gets +2/+2 and has trample and lifelink.\nEquip {3}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d26647db-fe28-4c30-a77f-c44968a7b17e"
+            "uuid": "1d946bc2-6c9a-592f-b4e9-6040ff70dc7a"
         },
         {
             "artist": "Jesper Ejsing",
@@ -2609,7 +2638,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2647,15 +2675,17 @@
                     "text": "If this spell is copied, the copy will have the same mode as the original."
                 }
             ],
+            "scryfallId": "ba95f1f2-4376-493f-8ecc-b37f2f37dd26",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52104,
             "text": "Choose one —\n• Naya Charm deals 3 damage to target creature.\n• Return target card from a graveyard to its owner's hand.\n• Tap all creatures target player controls.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ba95f1f2-4376-493f-8ecc-b37f2f37dd26"
+            "uuid": "48def82c-fc46-52f5-965d-9d2cce126fe5"
         },
         {
             "artist": "Chris Rahn",
@@ -2705,7 +2735,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2750,15 +2779,17 @@
                     "text": "You can choose not to find a basic land card, even if there is one in your library."
                 }
             ],
+            "scryfallId": "7db96156-9fdc-4470-ab1f-09eb1d719358",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52107,
             "text": "Target player gains 8 life.\nBasic landcycling {1}{G} ({1}{G}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle your library.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7db96156-9fdc-4470-ab1f-09eb1d719358"
+            "uuid": "19f053bb-800e-58ea-b0fe-3c88936d8c43"
         },
         {
             "artist": "Steve Prescott",
@@ -2812,7 +2843,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2848,15 +2878,17 @@
                     "text": "If a creature you control already has lifelink, Titanic Ultimatum will give it a second instance of lifelink; however, multiple instances of lifelink on the same creature are redundant. You still only gain life equal to the amount of damage dealt, regardless of how many instances of lifelink the creature has."
                 }
             ],
+            "scryfallId": "a9b86d97-3cfa-4510-a3da-1a85cd8d2ba9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52108,
             "text": "Until end of turn, creatures you control get +5/+5 and gain first strike, trample, and lifelink.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a9b86d97-3cfa-4510-a3da-1a85cd8d2ba9"
+            "uuid": "436e93da-3b1e-5096-8582-0eb136b051b0"
         },
         {
             "artist": "Steven Belledin",
@@ -2902,7 +2934,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2957,15 +2988,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "15dcc5e9-ba7b-4908-a568-3e988a94274f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52070,
             "text": "{T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "15dcc5e9-ba7b-4908-a568-3e988a94274f"
+            "uuid": "a750c134-75eb-594d-8140-a4c33124bf77"
         },
         {
             "artist": "Philip Straub",
@@ -3009,7 +3042,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3035,15 +3067,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b29e9b2a-d9ca-48ff-9655-078ae5414e9a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52072,
             "text": "Graypelt Refuge enters the battlefield tapped.\nWhen Graypelt Refuge enters the battlefield, you gain 1 life.\n{T}: Add {G} or {W}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "b29e9b2a-d9ca-48ff-9655-078ae5414e9a"
+            "uuid": "9c4ec66e-d300-5e2a-b4d3-689610bb74cd"
         },
         {
             "artist": "Wayne Reynolds",
@@ -3093,7 +3127,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3120,15 +3153,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5ef1aaec-b506-4126-b230-23c199372f81",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52073,
             "text": "Jungle Shrine enters the battlefield tapped.\n{T}: Add {R}, {G}, or {W}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "5ef1aaec-b506-4126-b230-23c199372f81"
+            "uuid": "0095fc8e-400b-5938-8565-5002673f3626"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -3172,7 +3207,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3200,15 +3234,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "8a972ee8-a9cb-4e7e-9733-1c93472079c1",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52074,
             "text": "Kazandu Refuge enters the battlefield tapped.\nWhen Kazandu Refuge enters the battlefield, you gain 1 life.\n{T}: Add {R} or {G}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "8a972ee8-a9cb-4e7e-9733-1c93472079c1"
+            "uuid": "9e723624-0c7e-5a80-8baf-021082c5baed"
         },
         {
             "artist": "Aleksi Briclot",
@@ -3251,7 +3287,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3273,17 +3308,19 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "bd3fd5e5-e171-41d0-bbd6-4c1e0983272a",
             "starter": true,
             "subtypes": [
                 "Forest"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52077,
             "text": "({T}: Add {G}.)\nSapseep Forest enters the battlefield tapped.\n{G}, {T}: You gain 1 life. Activate this ability only if you control two or more green permanents.",
             "type": "Land — Forest",
             "types": [
                 "Land"
             ],
-            "uuid": "bd3fd5e5-e171-41d0-bbd6-4c1e0983272a"
+            "uuid": "062f2400-8ccd-5d40-8593-d28237bdee86"
         },
         {
             "artist": "Martina Pilcerova",
@@ -3332,7 +3369,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3345,6 +3381,7 @@
             },
             "multiverseId": 249393,
             "name": "Vitu-Ghazi, the City-Tree",
+            "names": [],
             "number": "37",
             "originalText": "{T}: Add {1} to your mana pool.\n{2}{G}{W}, {T}: Put a 1/1 green Saproling creature token onto the battlefield.",
             "originalType": "Land",
@@ -3358,15 +3395,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "3f6afbc5-c571-489c-8773-63b733ae5748",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52078,
             "text": "{T}: Add {C}.\n{2}{G}{W}, {T}: Create a 1/1 green Saproling creature token.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "3f6afbc5-c571-489c-8773-63b733ae5748"
+            "uuid": "ec0ad97e-6e57-5d94-8b48-cdd43b0d9d3c"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -3380,7 +3419,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3435,14 +3473,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -3456,6 +3495,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c9421f47-6b69-4ac1-97e3-ca0f55cd4076",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -3468,7 +3508,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c9421f47-6b69-4ac1-97e3-ca0f55cd4076"
+            "uuid": "260e4d4b-b648-5fcb-ace7-cc257a49086c",
+            "variations": [
+                "cd2caa25-f3a7-528f-9fa7-6a452f116c5a"
+            ]
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -3482,7 +3525,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3537,14 +3579,15 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
                 "ORI",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -3558,6 +3601,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2dbc8240-d0a1-439c-a909-95b937d70494",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -3570,7 +3614,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2dbc8240-d0a1-439c-a909-95b937d70494"
+            "uuid": "cd2caa25-f3a7-528f-9fa7-6a452f116c5a",
+            "variations": [
+                "260e4d4b-b648-5fcb-ace7-cc257a49086c"
+            ]
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -3584,7 +3631,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3635,7 +3681,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -3648,8 +3693,10 @@
                 "PC2",
                 "PCA",
                 "PDGM",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -3663,6 +3710,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "864501ff-41b6-4732-b975-e4bc7ae36115",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -3675,7 +3723,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "864501ff-41b6-4732-b975-e4bc7ae36115"
+            "uuid": "8d984ca9-fad5-50a5-8ba0-4f10b758c701"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -3689,7 +3737,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3712,7 +3759,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -3752,8 +3798,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -3767,6 +3815,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "10918bf0-af19-4882-b96f-eb57d67b543a",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -3779,7 +3828,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "10918bf0-af19-4882-b96f-eb57d67b543a"
+            "uuid": "5a68ff15-b98d-5c7b-bea8-723256f5b653",
+            "variations": [
+                "f24f1888-073a-5a52-883a-848b5aa6f72b"
+            ]
         },
         {
             "artist": "Izzy",
@@ -3828,7 +3880,6 @@
             "frameVersion": "2003",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3868,6 +3919,7 @@
                     "text": "For the third ability, if the player is an illegal target when the ability tries to resolve, the ability doesn’t resolve and none of its effects will happen. No damage will be dealt, no cards will be discarded, and no permanents will be sacrificed."
                 }
             ],
+            "scryfallId": "4d156ed8-ca04-43ca-887e-6c411bf6332e",
             "starter": true,
             "subtypes": [
                 "Bolas"
@@ -3875,12 +3927,13 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 52146,
             "text": "+3: Destroy target noncreature permanent.\n−2: Gain control of target creature.\n−9: Nicol Bolas, Planeswalker deals 7 damage to target player or planeswalker. That player or that planeswalker's controller discards seven cards, then sacrifices seven permanents.",
             "type": "Legendary Planeswalker — Bolas",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "4d156ed8-ca04-43ca-887e-6c411bf6332e"
+            "uuid": "fe5d44c9-dfbe-551b-b43c-be0e8534bc2f"
         },
         {
             "artist": "Terese Nielsen",
@@ -3930,7 +3983,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3955,19 +4007,21 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "97265692-3b45-47f4-9e9f-e78751240007",
             "starter": true,
             "subtypes": [
                 "Faerie",
                 "Rogue"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52129,
             "text": "Flying\nWhen Surveilling Sprite dies, you may draw a card.",
             "toughness": "1",
             "type": "Creature — Faerie Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "97265692-3b45-47f4-9e9f-e78751240007"
+            "uuid": "3478db1b-589b-5265-877d-144c10608307"
         },
         {
             "artist": "Jeff Easley",
@@ -4017,7 +4071,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4074,18 +4127,20 @@
                     "text": "If this card is sacrificed to pay part of a spell’s cost, the cost reduction still applies."
                 }
             ],
+            "scryfallId": "cf0ac499-c72a-4b9b-b028-ec498d4984fd",
             "starter": true,
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52124,
             "text": "Blue spells and red spells you cast cost {1} less to cast.\n{1}{B}: Regenerate Nightscape Familiar.",
             "toughness": "1",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "cf0ac499-c72a-4b9b-b028-ec498d4984fd"
+            "uuid": "46d2b70c-c2bc-54b9-80bf-00c6b8425a58"
         },
         {
             "artist": "Dave Kendall",
@@ -4135,7 +4190,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4159,19 +4213,21 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "a8ead2b6-3bf7-4881-a154-06ab2558052b",
             "starter": true,
             "subtypes": [
                 "Goblin",
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52127,
             "text": "Whenever Slavering Nulls deals combat damage to a player, if you control a Swamp, you may have that player discard a card.",
             "toughness": "1",
             "type": "Creature — Goblin Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "a8ead2b6-3bf7-4881-a154-06ab2558052b"
+            "uuid": "0966df12-da44-51a1-8491-77114db37e13"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -4216,7 +4272,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4240,18 +4295,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a96f2106-3524-4fc0-85df-8cf9d0901ea8",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52116,
             "text": "When Brackwater Elemental attacks or blocks, sacrifice it at the beginning of the next end step.\nUnearth {2}{U} ({2}{U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "a96f2106-3524-4fc0-85df-8cf9d0901ea8"
+            "uuid": "df18c34f-1b24-575c-abd4-8b7940383d40"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -4303,7 +4360,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4326,18 +4382,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a58ee3b2-45db-48b5-b8fd-f8b9468b17b6",
             "starter": true,
             "subtypes": [
                 "Frog"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52122,
             "text": "Sacrifice Morgue Toad: Add {U}{R}.",
             "toughness": "2",
             "type": "Creature — Frog",
             "types": [
                 "Creature"
             ],
-            "uuid": "a58ee3b2-45db-48b5-b8fd-f8b9468b17b6"
+            "uuid": "60b7a535-06fa-567f-b41d-a038fc43cac8"
         },
         {
             "artist": "Dan Scott",
@@ -4387,7 +4445,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4420,19 +4477,21 @@
                     "text": "In a Two-Headed Giant game, this ability will potentially trigger twice at the beginning of the opposing team’s upkeep — once for each player on that team."
                 }
             ],
+            "scryfallId": "27194865-1305-4fbd-8d84-c5201ad0210e",
             "starter": true,
             "subtypes": [
                 "Elemental",
                 "Hound"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52119,
             "text": "At the beginning of each opponent's upkeep, if that player has two or fewer cards in hand, Hellfire Mongrel deals 2 damage to that player.",
             "toughness": "2",
             "type": "Creature — Elemental Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "27194865-1305-4fbd-8d84-c5201ad0210e"
+            "uuid": "e0f5d8d4-e85e-5fee-979c-af30640e8542"
         },
         {
             "artist": "Kev Walker",
@@ -4484,7 +4543,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4508,18 +4566,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "b50f7d5f-8b4d-46d4-86ce-92fbc475c039",
             "starter": true,
             "subtypes": [
                 "Spirit"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52117,
             "text": "Whenever Dimir Cutpurse deals combat damage to a player, that player discards a card and you draw a card.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "b50f7d5f-8b4d-46d4-86ce-92fbc475c039"
+            "uuid": "be5ae1a4-681a-5a1e-9a36-d41ef467d61f"
         },
         {
             "artist": "Justin Norman",
@@ -4570,7 +4630,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4596,18 +4655,20 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8aee6138-5cc0-4479-add6-28fc0a062254",
             "starter": true,
             "subtypes": [
                 "Weird"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52128,
             "text": "When Steamcore Weird enters the battlefield, if {R} was spent to cast Steamcore Weird, it deals 2 damage to any target.",
             "toughness": "3",
             "type": "Creature — Weird",
             "types": [
                 "Creature"
             ],
-            "uuid": "8aee6138-5cc0-4479-add6-28fc0a062254"
+            "uuid": "86e22508-1314-56ce-83b4-df21dfe5075a"
         },
         {
             "artist": "Dan Scott",
@@ -4659,7 +4720,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4685,18 +4745,20 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9f8fb89d-5a6a-487f-bd6a-8d3a6b7a409c",
             "starter": true,
             "subtypes": [
                 "Vampire"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52123,
             "text": "Flying\nAt the beginning of your upkeep, you lose 1 life.",
             "toughness": "4",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "9f8fb89d-5a6a-487f-bd6a-8d3a6b7a409c"
+            "uuid": "3d8ef1e0-86f5-512e-8d75-6510787dff2c"
         },
         {
             "artist": "Marc Fishman",
@@ -4743,7 +4805,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4768,18 +4829,20 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "ad22937d-f56a-4a2b-b98e-0214f19d4350",
             "starter": true,
             "subtypes": [
                 "Specter"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52115,
             "text": "Flying, haste\nWhenever Blazing Specter deals combat damage to a player, that player discards a card.",
             "toughness": "2",
             "type": "Creature — Specter",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad22937d-f56a-4a2b-b98e-0214f19d4350"
+            "uuid": "46f8e98d-4e78-5f07-8f1d-327433d32d9b"
         },
         {
             "artist": "Mitch Cotie",
@@ -4828,7 +4891,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4873,19 +4935,21 @@
                     "text": "If a creature returned to the battlefield with unearth would leave the battlefield for any reason, it’s exiled instead — unless the spell or ability that’s causing the creature to leave the battlefield is actually trying to exile it! In that case, it succeeds at exiling it. If it later returns the creature card to the battlefield (as Oblivion Ring or Flickerwisp might, for example), the creature card will return to the battlefield as a new object with no relation to its previous existence. The unearth effect will no longer apply to it."
                 }
             ],
+            "scryfallId": "0d023dd3-e92f-4b8a-a178-b60db018bf2a",
             "starter": true,
             "subtypes": [
                 "Ogre",
                 "Mutant"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52118,
             "text": "First strike\nUnearth {U}{B}{R} ({U}{B}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
             "toughness": "2",
             "type": "Creature — Ogre Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "0d023dd3-e92f-4b8a-a178-b60db018bf2a"
+            "uuid": "df176309-1703-53ad-a8d4-41f772058ac8"
         },
         {
             "artist": "Steve Prescott",
@@ -4930,7 +4994,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4967,18 +5030,20 @@
                     "text": "If you cast this card for its evoke cost, you may put the sacrifice trigger and the regular enters-the-battlefield trigger on the stack in either order. The one put on the stack last will resolve first."
                 }
             ],
+            "scryfallId": "5aa05888-8766-4443-b4bb-b42150ccc0ec",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52126,
             "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nWhen Shriekmaw enters the battlefield, destroy target nonartifact, nonblack creature.\nEvoke {1}{B} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
             "toughness": "2",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "5aa05888-8766-4443-b4bb-b42150ccc0ec"
+            "uuid": "78492af7-4897-5aaa-8d48-c4902d4c88f8"
         },
         {
             "artist": "Paolo Parente",
@@ -5029,7 +5094,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5064,19 +5128,21 @@
                     "text": "The ability is not optional."
                 }
             ],
+            "scryfallId": "f0f2502d-473d-4481-9d3a-a3a502059019",
             "starter": true,
             "subtypes": [
                 "Ogre",
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52125,
             "text": "When Ogre Savant enters the battlefield, if {U} was spent to cast Ogre Savant, return target creature to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Ogre Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "f0f2502d-473d-4481-9d3a-a3a502059019"
+            "uuid": "bcb925a4-3bdc-5a6a-8799-e3a4f8e0fd7a"
         },
         {
             "artist": "Ash Wood",
@@ -5123,7 +5189,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5169,18 +5234,20 @@
                     "text": "You may only activate one landcycling ability at a time. You must specify which landcycling ability you are activating as you cycle this card, not as the ability resolves."
                 }
             ],
+            "scryfallId": "82afe98a-1b57-4fe4-8c8c-c8995c313410",
             "starter": true,
             "subtypes": [
                 "Zombie"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52121,
             "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nIslandcycling {2}, swampcycling {2} ({2}, Discard this card: Search your library for an Island or Swamp card, reveal it, put it into your hand, then shuffle your library.)",
             "toughness": "4",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "82afe98a-1b57-4fe4-8c8c-c8995c313410"
+            "uuid": "f07cd0a9-8ff3-5ef2-8230-5d5705235016"
         },
         {
             "artist": "Chippy",
@@ -5227,7 +5294,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5273,18 +5339,20 @@
                     "text": "You may only activate one landcycling ability at a time. You must specify which landcycling ability you are activating as you cycle this card, not as the ability resolves."
                 }
             ],
+            "scryfallId": "b5a0be3b-ca79-45b9-8e9b-308d93d7ea54",
             "starter": true,
             "subtypes": [
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52120,
             "text": "Haste\nSwampcycling {2}, mountaincycling {2} ({2}, Discard this card: Search your library for a Swamp or Mountain card, reveal it, put it into your hand, then shuffle your library.)",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "b5a0be3b-ca79-45b9-8e9b-308d93d7ea54"
+            "uuid": "6fadf004-b7ac-523e-a18c-6d1dccec31a1"
         },
         {
             "artist": "Raymond Swanland",
@@ -5334,7 +5402,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5358,15 +5425,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "84efd990-4cab-45c5-a84d-82a2e18f7555",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52145,
             "text": "Return target creature to its owner's hand. Its controller loses 1 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "84efd990-4cab-45c5-a84d-82a2e18f7555"
+            "uuid": "5929cf74-39b0-55d8-a76e-3ee1e1a78877"
         },
         {
             "artist": "Anthony Francisco",
@@ -5418,7 +5487,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5440,16 +5508,23 @@
                 "UMA"
             ],
             "rarity": "uncommon",
-            "rulings": [],
+            "rulings": [
+                {
+                    "date": "2018-12-07",
+                    "text": "A spell that can’t be countered is a legal target for Countersquall. The spell won’t be countered when Countersquall resolves, but its controller still loses 2 life."
+                }
+            ],
+            "scryfallId": "2b645d74-420e-45e5-aa82-ba3a8dfdd9a0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52131,
             "text": "Counter target noncreature spell. Its controller loses 2 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2b645d74-420e-45e5-aa82-ba3a8dfdd9a0"
+            "uuid": "ccbce6a5-74e2-56c8-852a-3a10efeb734b"
         },
         {
             "artist": "Nils Hamm",
@@ -5499,7 +5574,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5526,15 +5600,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c2b9d52d-6dd5-401e-99dd-a4a6e8ad552f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52137,
             "text": "{T}: Add {U}, {B}, or {R}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c2b9d52d-6dd5-401e-99dd-a4a6e8ad552f"
+            "uuid": "7a039a83-35f8-59e3-a153-092410ccc524"
         },
         {
             "artist": "Alan Pollack",
@@ -5586,7 +5662,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5609,15 +5684,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "225f700c-fdf6-41ea-a091-36b0f75f0211",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52140,
             "text": "Return target permanent to its owner's hand. Then that player discards a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "225f700c-fdf6-41ea-a091-36b0f75f0211"
+            "uuid": "f26ad908-cf5c-5225-9de6-5455516f3fac"
         },
         {
             "artist": "Massimilano Frezzato",
@@ -5669,7 +5746,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5691,15 +5767,17 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "a23735a3-8ec8-48ae-8bd0-3b6b782690c8",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52144,
             "text": "Counter target spell. Its controller loses 3 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a23735a3-8ec8-48ae-8bd0-3b6b782690c8"
+            "uuid": "4dc1873f-3b91-568e-87c4-65640e79e13a"
         },
         {
             "artist": "Lars Grant-West",
@@ -5753,7 +5831,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5790,15 +5867,17 @@
                     "text": "If this spell is copied, the copy will have the same mode as the original."
                 }
             ],
+            "scryfallId": "fa22f972-39c2-4e18-878d-bd091dfb9877",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52135,
             "text": "Choose one —\n• Return target permanent to its owner's hand.\n• Target creature gets -4/-4 until end of turn.\n• Creatures you control get +2/+0 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fa22f972-39c2-4e18-878d-bd091dfb9877"
+            "uuid": "9d7c690d-b0db-54d7-935b-935b1cab6e36"
         },
         {
             "artist": "Matt Cavotta",
@@ -5844,7 +5923,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5890,15 +5968,17 @@
                     "text": "Once a player announces that they’re casting a spell or activating an ability, no player may take other actions until the spell or ability has been paid for. Notably, other players can’t try to tap that player’s permanents to stop them from paying {T} or to stop them from producing enough mana."
                 }
             ],
+            "scryfallId": "323df804-679f-4539-a1cf-5eeb56bcd95a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52136,
             "text": "{1}, {T}: Tap target artifact, creature, or land.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "323df804-679f-4539-a1cf-5eeb56bcd95a"
+            "uuid": "1feef1a7-0c4e-5cee-9f71-0e63d7b6377e"
         },
         {
             "artist": "Jesper Ejsing",
@@ -5948,7 +6028,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5978,15 +6057,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "98d709ea-ca38-4056-816b-2a7d0a960296",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52133,
             "text": "Target player draws two cards.\nFlashback—{1}{U}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "98d709ea-ca38-4056-816b-2a7d0a960296"
+            "uuid": "12efc1be-b54d-5283-92c3-15d7ce89fc59"
         },
         {
             "artist": "Mark Brill",
@@ -6032,7 +6113,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6055,15 +6135,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b7621aab-4839-45ef-bfa2-9aa2417bbec0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52130,
             "text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)\nDestroy target nonblack creature. It can't be regenerated. If this spell was kicked, Agonizing Demise deals damage equal to that creature's power to the creature's controller.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b7621aab-4839-45ef-bfa2-9aa2417bbec0"
+            "uuid": "992dd5fb-b79e-5792-b217-12ed9b6301b6"
         },
         {
             "artist": "Steve Argyle",
@@ -6117,7 +6199,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6152,15 +6233,17 @@
                     "text": "If you don’t control the targeted creature when the “at end of turn” ability resolves, it won’t be sacrificed. If it’s still on the battlefield but under another player’s control, the ability won’t try to have you sacrifice it again at the end of the turn after that."
                 }
             ],
+            "scryfallId": "7fb1709e-1805-48de-a6c7-943c15562928",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52142,
             "text": "Gain control of target creature. Untap that creature. It gains haste until end of turn. Sacrifice it at the beginning of the next end step.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7fb1709e-1805-48de-a6c7-943c15562928"
+            "uuid": "00908ce2-e99d-5cc9-b285-b6073447ab9f"
         },
         {
             "artist": "Dave Allsop",
@@ -6214,7 +6297,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6242,17 +6324,19 @@
                     "text": "The last ability triggers from any damage dealt by the enchanted creature, not just combat damage."
                 }
             ],
+            "scryfallId": "58cc3ec9-b4ad-4106-b5e9-66ee58e90150",
             "starter": true,
             "subtypes": [
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 52134,
             "text": "Enchant creature\nEnchanted creature gets +3/+3 and has flying.\nWhenever enchanted creature deals damage to a player, that player discards two cards.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "58cc3ec9-b4ad-4106-b5e9-66ee58e90150"
+            "uuid": "84f34ef8-f953-5ef7-b803-e7246477cb99"
         },
         {
             "artist": "Ralph Horsley",
@@ -6306,7 +6390,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6345,15 +6428,17 @@
                     "text": "If, as Cruel Ultimatum begins to resolve, your opponent’s life total is 5 or less and you have two or fewer cards in your library, the game will result in a draw. Your opponent’s life total will drop to 0 or less, but Cruel Ultimatum must finish resolving completely before state-based actions are performed. You’ll then be forced to draw three cards and fail to draw one. When state-based actions are finally performed, you and your opponent will both lose the game at the same time, which means the game is a draw."
                 }
             ],
+            "scryfallId": "8eace656-3020-49c3-bbb9-8cc312404fba",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52132,
             "text": "Target opponent sacrifices a creature, discards three cards, then loses 5 life. You return a creature card from your graveyard to your hand, draw three cards, then gain 5 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8eace656-3020-49c3-bbb9-8cc312404fba"
+            "uuid": "b7ce0bae-e30c-5837-bb28-14e1f0528635"
         },
         {
             "artist": "Wayne England",
@@ -6398,7 +6483,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -6428,15 +6512,17 @@
                     "text": "The value chosen for X applies to each X in the spell’s effect. You pay {X} only once."
                 }
             ],
+            "scryfallId": "121774cf-3a64-4b5e-8b77-ff683722731c",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52139,
             "text": "Choose two —\n• Target player loses X life.\n• Return target creature card with converted mana cost X or less from your graveyard to the battlefield.\n• Target creature gets -X/-X until end of turn.\n• Up to X target creatures gain fear until end of turn. (They can't be blocked except by artifact creatures and/or black creatures.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "121774cf-3a64-4b5e-8b77-ff683722731c"
+            "uuid": "17d32c8e-abba-5f8a-aab6-1f05dbc43287"
         },
         {
             "artist": "David Martin",
@@ -6448,7 +6534,8 @@
             "colors": [
                 "B"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 8.0,
+            "faceConvertedManaCost": 4.0,
             "foreignData": [
                 {
                     "language": "German",
@@ -6482,7 +6569,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6509,7 +6595,9 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5e50dd95-0f65-4150-9f22-0cabcabe2c30",
             "side": "b",
+            "starter": true,
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target nonblack creature. It can't be regenerated.",
@@ -6517,7 +6605,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "5e50dd95-0f65-4150-9f22-0cabcabe2c31"
+            "uuid": "607b55a4-ebbd-5123-96f0-57b9312e0e48"
         },
         {
             "artist": "David Martin",
@@ -6529,7 +6617,8 @@
             "colors": [
                 "U"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 8.0,
+            "faceConvertedManaCost": 4.0,
             "foreignData": [
                 {
                     "language": "German",
@@ -6563,7 +6652,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6590,8 +6678,8 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "5e50dd95-0f65-4150-9f22-0cabcabe2c30",
             "side": "a",
-            "starter": true,
             "subtypes": [],
             "supertypes": [],
             "text": "Counter target noncreature spell.",
@@ -6599,7 +6687,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "5e50dd95-0f65-4150-9f22-0cabcabe2c30"
+            "uuid": "d98e648e-8680-5576-b8f5-2b41b8727c3b"
         },
         {
             "artist": "David Martin",
@@ -6611,7 +6699,8 @@
             "colors": [
                 "R"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 5.0,
+            "faceConvertedManaCost": 4.0,
             "foreignData": [
                 {
                     "language": "German",
@@ -6645,7 +6734,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6670,7 +6758,9 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d61af2e9-754d-48a6-8708-e5b54037f1bf",
             "side": "b",
+            "starter": true,
             "subtypes": [],
             "supertypes": [],
             "text": "Destroy target land.",
@@ -6678,7 +6768,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d61af2e9-754d-48a6-8708-e5b54037f1b1"
+            "uuid": "8b48e057-dbfe-530e-813f-6c1e9df1e5e7"
         },
         {
             "artist": "David Martin",
@@ -6690,7 +6780,8 @@
             "colors": [
                 "B"
             ],
-            "convertedManaCost": 1,
+            "convertedManaCost": 5.0,
+            "faceConvertedManaCost": 1,
             "foreignData": [
                 {
                     "language": "German",
@@ -6724,7 +6815,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6749,6 +6839,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d61af2e9-754d-48a6-8708-e5b54037f1bf",
             "side": "a",
             "subtypes": [],
             "supertypes": [],
@@ -6757,7 +6848,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d61af2e9-754d-48a6-8708-e5b54037f1b0"
+            "uuid": "adac1235-17c6-5242-a67e-8dae5100240d"
         },
         {
             "artist": "Pete Venters",
@@ -6771,7 +6862,8 @@
                 "B",
                 "R"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 4.0,
+            "faceConvertedManaCost": 2,
             "foreignData": [
                 {
                     "language": "German",
@@ -6805,7 +6897,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6831,6 +6922,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "37257329-5946-44df-9f5a-50bd38b6a151",
             "side": "b",
             "starter": true,
             "subtypes": [],
@@ -6840,7 +6932,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "37257329-5946-44df-9f5a-50bd38b6a151"
+            "uuid": "c817a3d3-12d4-55da-9240-5b8e16a42939"
         },
         {
             "artist": "Pete Venters",
@@ -6854,7 +6946,8 @@
                 "U",
                 "B"
             ],
-            "convertedManaCost": 2,
+            "convertedManaCost": 4.0,
+            "faceConvertedManaCost": 2,
             "foreignData": [
                 {
                     "language": "German",
@@ -6888,7 +6981,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "split",
             "legalities": {
                 "1v1": "Legal",
@@ -6914,6 +7006,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "37257329-5946-44df-9f5a-50bd38b6a151",
             "side": "a",
             "subtypes": [],
             "supertypes": [],
@@ -6922,7 +7015,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "37257329-5946-44df-9f5a-50bd38b6a150"
+            "uuid": "457f8ae3-b930-59fc-b2a8-a0c0baf49723"
         },
         {
             "artist": "Dave Kendall",
@@ -6972,7 +7065,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7001,15 +7093,17 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9255fd77-f2bc-4eb5-9ae3-a344c1dd75c7",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52110,
             "text": "Crumbling Necropolis enters the battlefield tapped.\n{T}: Add {U}, {B}, or {R}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "9255fd77-f2bc-4eb5-9ae3-a344c1dd75c7"
+            "uuid": "abd804a1-568f-5ef9-9dae-5419ea3c2a49"
         },
         {
             "artist": "Jaime Jones",
@@ -7050,7 +7144,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7087,15 +7180,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "dc66a92a-bea4-4e5f-9ac7-b57e0cd87eeb",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52112,
             "text": "Rupture Spire enters the battlefield tapped.\nWhen Rupture Spire enters the battlefield, sacrifice it unless you pay {1}.\n{T}: Add one mana of any color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "dc66a92a-bea4-4e5f-9ac7-b57e0cd87eeb"
+            "uuid": "e805eb01-87f6-51aa-a0a3-56eee84f258d"
         },
         {
             "artist": "Dan Scott",
@@ -7141,7 +7236,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7188,15 +7282,17 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "80e9c309-5903-49ac-869f-9f3c7aa827fd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 52114,
             "text": "{T}, Sacrifice Terramorphic Expanse: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "80e9c309-5903-49ac-869f-9f3c7aa827fd"
+            "uuid": "b4043944-bf96-5eb3-b037-f56465555679"
         },
         {
             "artist": "Mark Tedin",
@@ -7210,7 +7306,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7271,8 +7366,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7286,6 +7383,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "46c86589-5e1f-42a8-8436-553265e4805b",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -7298,7 +7396,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "46c86589-5e1f-42a8-8436-553265e4805b"
+            "uuid": "4abaa3eb-3e1f-5ee2-8edd-f545d74cdd95",
+            "variations": [
+                "2140e88b-3e5a-5cf2-ad37-d33f234043fe"
+            ]
         },
         {
             "artist": "Mark Tedin",
@@ -7312,7 +7413,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7373,8 +7473,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7388,6 +7490,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c14c3697-6a20-4387-a02d-377eb4a65281",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -7400,7 +7503,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c14c3697-6a20-4387-a02d-377eb4a65281"
+            "uuid": "2140e88b-3e5a-5cf2-ad37-d33f234043fe",
+            "variations": [
+                "4abaa3eb-3e1f-5ee2-8edd-f545d74cdd95"
+            ]
         },
         {
             "artist": "Mark Tedin",
@@ -7414,7 +7520,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7466,7 +7571,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "JVC",
                 "KLD",
@@ -7478,8 +7582,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7493,6 +7599,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "70ccecd0-2c10-4146-a560-254809593155",
             "starter": true,
             "subtypes": [
                 "Island"
@@ -7505,7 +7612,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "70ccecd0-2c10-4146-a560-254809593155"
+            "uuid": "4e77a92d-fff3-51e8-bb3a-76076fcd4318"
         },
         {
             "artist": "Mark Tedin",
@@ -7519,7 +7626,6 @@
             "frameVersion": "2003",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -7542,7 +7648,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -7582,8 +7687,10 @@
                 "ORI",
                 "PC2",
                 "PCA",
+                "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -7597,6 +7704,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f5110f2d-ff79-4a4b-9842-32a9fe82011f",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -7609,17 +7717,21 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f5110f2d-ff79-4a4b-9842-32a9fe82011f"
+            "uuid": "f24f1888-073a-5a52-883a-848b5aa6f72b",
+            "variations": [
+                "5a68ff15-b98d-5c7b-bea8-723256f5b653"
+            ]
         }
     ],
     "code": "ddh",
     "meta": {
-        "date": "2018-11-11",
-        "version": "4.1.0"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": "ddh",
     "name": "Duel Decks: Ajani vs. Nicol Bolas",
     "releaseDate": "2011-09-02",
+    "tcgplayerGroupId": 30,
     "tokens": [
         {
             "artist": "Jim Nelson",
@@ -7636,10 +7748,11 @@
             "reverseRelated": [
                 "Griffin Guide"
             ],
+            "scryfallId": "96c36884-df5e-435d-9473-65da550535fb",
             "text": "Flying",
             "toughness": "2",
             "type": "Token Creature — Griffin",
-            "uuid": "96c36884-df5e-435d-9473-65da550535fb"
+            "uuid": "f8f39a83-5add-5228-be69-a9bff0392c3f"
         },
         {
             "artist": "Cyril Van Der Haegen",
@@ -7657,10 +7770,10 @@
                 "Jade Mage",
                 "Vitu-Ghazi, the City-Tree"
             ],
-            "text": "",
+            "scryfallId": "4fb8f4f1-6372-41ea-802c-4b952a78a08b",
             "toughness": "1",
             "type": "Token Creature — Saproling",
-            "uuid": "4fb8f4f1-6372-41ea-802c-4b952a78a08b"
+            "uuid": "7084d38a-df58-58ef-ba0f-51ad46713b3a"
         }
     ],
     "totalSetSize": 80,

@@ -39,7 +39,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -70,6 +69,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "71319f0f-da30-4ffc-8892-3d0d98c0d515",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -79,66 +79,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "71319f0f-da30-4ffc-8892-3d0d98c0d515"
-        },
-        {
-            "artist": "Andrew Robinson",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "Asked how it survived a run-in with a bog imp, the pegasus just shook its mane and burped.",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{W}",
-            "multiverseId": 25498,
-            "name": "Armored Pegasus",
-            "number": "2",
-            "originalText": "Flying",
-            "originalType": "Creature - Pegasus",
-            "power": "1",
-            "printings": [
-                "6ED",
-                "ATH",
-                "BRB",
-                "POR",
-                "PPOD",
-                "S00",
-                "TMP",
-                "TPR"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Pegasus"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37764,
-            "text": "Flying",
-            "toughness": "2",
-            "type": "Creature — Pegasus",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "e448dcae-67e2-49c2-b293-ae8cbbda5d6f"
+            "uuid": "8e3eafed-f50d-5b10-86c5-560294c13638"
         },
         {
             "artist": "DiTerlizzi",
@@ -177,7 +118,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -203,6 +143,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "d67530a4-2aa7-4907-9e89-a6a3d92134e6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -212,93 +153,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d67530a4-2aa7-4907-9e89-a6a3d92134e6"
-        },
-        {
-            "artist": "Brian Snõddy",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{W}",
-            "multiverseId": 25500,
-            "name": "Disenchant",
-            "number": "4",
-            "originalText": "Destroy target artifact or enchantment.",
-            "originalType": "Instant",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "A25",
-                "ATH",
-                "BRB",
-                "CED",
-                "CEI",
-                "CN2",
-                "CST",
-                "F03",
-                "FBB",
-                "ICE",
-                "IMA",
-                "LEA",
-                "LEB",
-                "ME2",
-                "ME3",
-                "MIR",
-                "MMQ",
-                "P07",
-                "PARL",
-                "PRM",
-                "PTC",
-                "S00",
-                "SUM",
-                "TMP",
-                "TPR",
-                "TSB",
-                "USG",
-                "WC97",
-                "WC98"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2004-10-04",
-                    "text": "This is not modal. If the target changes from an artifact to an enchantment or vice versa, this still destroys it."
-                }
-            ],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37770,
-            "text": "Destroy target artifact or enchantment.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "6e475f51-0e55-4645-983e-e328ac802231"
+            "uuid": "4226476c-e4a0-54c7-ad3a-3bd44a15659d"
         },
         {
             "artist": "Scott M. Fischer",
@@ -337,7 +192,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -364,6 +218,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3261b8bd-b802-408e-bac6-c860db18cf8b",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -371,65 +226,12 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37773,
-            "text": "",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "3261b8bd-b802-408e-bac6-c860db18cf8b"
-        },
-        {
-            "artist": "Pete Venters",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "\"Destiny, chance, fate, fortune—they're all just ways of claiming your successes without claiming your failures.\" —Gerrard of the Weatherlight",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{W}",
-            "multiverseId": 25536,
-            "name": "Hero's Resolve",
-            "number": "6",
-            "originalText": "Enchanted creature gets +1/+5.",
-            "originalType": "Enchant Creature",
-            "printings": [
-                "6ED",
-                "S00",
-                "TMP"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Aura"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37781,
-            "text": "Enchant creature\nEnchanted creature gets +1/+5.",
-            "type": "Enchantment — Aura",
-            "types": [
-                "Enchantment"
-            ],
-            "uuid": "cf7aae93-d44a-44e4-9c7d-9ffe281cf8c5"
+            "uuid": "d054bd15-ca86-5a8a-96a9-578c0a732cf8"
         },
         {
             "artist": "Dan Frazier",
@@ -468,7 +270,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -493,6 +294,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8f856279-48a2-45b5-97ac-89c3f481a3df",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -500,13 +302,12 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37784,
-            "text": "",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f856279-48a2-45b5-97ac-89c3f481a3df"
+            "uuid": "b3eb6e5b-820f-5fe3-a673-19356aa16cb1"
         },
         {
             "artist": "Carl Critchlow",
@@ -542,7 +343,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -563,6 +363,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "10dfc217-ae94-4ff0-bf30-7131f97aa3c9",
             "starter": true,
             "subtypes": [
                 "Bird"
@@ -575,143 +376,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "10dfc217-ae94-4ff0-bf30-7131f97aa3c9"
-        },
-        {
-            "artist": "Tom Wänerstrand",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "Healers ultimately acquire the divine gifts of spiritual and physical wholeness. The most devout are also granted the ability to pass physical wholeness on to others.",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{W}",
-            "multiverseId": 25533,
-            "name": "Samite Healer",
-            "number": "9",
-            "originalText": "ocT: Prevent the next 1 damage that would be dealt to target creature or player this turn.",
-            "originalType": "Creature - Cleric",
-            "power": "1",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "ATH",
-                "CED",
-                "CEI",
-                "FBB",
-                "LEA",
-                "LEB",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Human",
-                "Cleric"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37800,
-            "text": "{T}: Prevent the next 1 damage that would be dealt to any target this turn.",
-            "toughness": "1",
-            "type": "Creature — Human Cleric",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "c5bc7be1-765f-4782-9c7a-b36a3084e777"
-        },
-        {
-            "artist": "D. Alexander Gregory",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "His presence brings not only a strong arm but also renewed hope.",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{W}",
-            "multiverseId": 25515,
-            "name": "Venerable Monk",
-            "number": "10",
-            "originalText": "When Venerable Monk comes into play, you gain 2 life.",
-            "originalType": "Creature - Cleric",
-            "power": "2",
-            "printings": [
-                "10E",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "DDC",
-                "DVD",
-                "POR",
-                "PS11",
-                "S00",
-                "S99",
-                "STH"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Human",
-                "Monk",
-                "Cleric"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37811,
-            "text": "When Venerable Monk enters the battlefield, you gain 2 life.",
-            "toughness": "2",
-            "type": "Creature — Human Monk Cleric",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "f29dacad-db1f-431f-984f-b6bcf841961e"
+            "uuid": "d2a5cb89-ad0c-5166-9ec0-b5ebe37ad803"
         },
         {
             "artist": "Jeff Miracola",
@@ -749,7 +414,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -779,6 +443,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "59e36202-2c96-4318-9d33-c04122e49bbc",
             "starter": true,
             "subtypes": [
                 "Griffin"
@@ -791,156 +456,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "59e36202-2c96-4318-9d33-c04122e49bbc"
-        },
-        {
-            "artist": "Hannibal King",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{U}{U}",
-            "multiverseId": 25503,
-            "name": "Counterspell",
-            "number": "12",
-            "originalText": "Counter target spell.",
-            "originalType": "Instant",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "A25",
-                "BRB",
-                "BTD",
-                "CED",
-                "CEI",
-                "DD2",
-                "EMA",
-                "F05",
-                "FBB",
-                "G00",
-                "ICE",
-                "JVC",
-                "LEA",
-                "LEB",
-                "ME2",
-                "ME4",
-                "MMQ",
-                "MP2",
-                "PLGM",
-                "PRM",
-                "PTC",
-                "S00",
-                "S99",
-                "SS1",
-                "SUM",
-                "TMP",
-                "TPR",
-                "VMA",
-                "WC00",
-                "WC01",
-                "WC02",
-                "WC97",
-                "WC98"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37769,
-            "text": "Counter target spell.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "ce8cda59-0dc7-4657-8e2e-c448e8ec0093"
-        },
-        {
-            "artist": "Jerry Tiritilli",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 1.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{U}",
-            "multiverseId": 25510,
-            "name": "Flight",
-            "number": "13",
-            "originalText": "Enchanted creature gains flying.",
-            "originalType": "Enchant Creature",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "LEA",
-                "LEB",
-                "M12",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Aura"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37775,
-            "text": "Enchant creature\nEnchanted creature has flying.",
-            "type": "Enchantment — Aura",
-            "types": [
-                "Enchantment"
-            ],
-            "uuid": "1e233edd-ae61-44bd-b72e-f82af07f7c05"
+            "uuid": "02f6f433-ad25-5d5b-85e9-a35d169320d4"
         },
         {
             "artist": "John Matson",
@@ -979,7 +495,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1007,219 +522,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "853b7e48-7903-4250-91b9-db4440b3a8e6",
             "starter": true,
             "subtypes": [
                 "Octopus"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37778,
-            "text": "",
             "toughness": "3",
             "type": "Creature — Octopus",
             "types": [
                 "Creature"
             ],
-            "uuid": "853b7e48-7903-4250-91b9-db4440b3a8e6"
-        },
-        {
-            "artist": "Zina Saunders",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 4.0,
-            "flavorText": "\"Madness and genius are separated only by degrees of success.\" —Sidar Jabari",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{3}{U}",
-            "multiverseId": 25526,
-            "name": "Inspiration",
-            "number": "15",
-            "originalText": "Target player draws two cards.",
-            "originalType": "Instant",
-            "printings": [
-                "6ED",
-                "7ED",
-                "8ED",
-                "RTR",
-                "S00",
-                "VIS",
-                "W17"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37782,
-            "text": "Target player draws two cards.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "9082597e-2d78-4ab2-b552-d9a7dd6c283b"
-        },
-        {
-            "artist": "DiTerlizzi",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 1.0,
-            "flavorText": "Are merfolk humans with fins, or are humans merfolk with feet?",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{U}",
-            "multiverseId": 25458,
-            "name": "Merfolk of the Pearl Trident",
-            "number": "16",
-            "originalType": "Creature - Merfolk",
-            "power": "1",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "ITP",
-                "LEA",
-                "LEB",
-                "M13",
-                "POR",
-                "PSAL",
-                "RQS",
-                "S00",
-                "S99",
-                "SUM",
-                "WC01"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Merfolk"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37787,
-            "text": "",
-            "toughness": "1",
-            "type": "Creature — Merfolk",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "b41d9584-8525-411b-9387-85d68b24b0fe"
-        },
-        {
-            "artist": "Douglas Shuler",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "Occasionally members of the Institute of Arcane Study acquire a taste for worldly pleasures. Seldom do they have trouble finding employment.",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{U}",
-            "multiverseId": 25506,
-            "name": "Prodigal Sorcerer",
-            "number": "17",
-            "originalText": "ocT: Prodigal Sorcerer deals 1 damage to target creature or player.",
-            "originalType": "Creature - Wizard",
-            "power": "1",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "BRB",
-                "CED",
-                "CEI",
-                "EMA",
-                "FBB",
-                "FNM",
-                "LEA",
-                "LEB",
-                "ME4",
-                "PRM",
-                "S00",
-                "SUM",
-                "TSB",
-                "WC01"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Human",
-                "Wizard"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37796,
-            "text": "{T}: Prodigal Sorcerer deals 1 damage to any target.",
-            "toughness": "1",
-            "type": "Creature — Human Wizard",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "5341a997-f93f-4548-8d67-aa739ce855da"
+            "uuid": "693813f1-c467-53d0-b115-92a9cf5cf4f8"
         },
         {
             "artist": "Anthony S. Waters",
@@ -1255,7 +570,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1281,6 +595,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "9ca4a4e5-ca4f-4a4f-849c-019440d654b4",
             "starter": true,
             "subtypes": [
                 "Bird"
@@ -1293,7 +608,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9ca4a4e5-ca4f-4a4f-849c-019440d654b4"
+            "uuid": "cff655e5-716a-5e21-a390-db5e36812230"
         },
         {
             "artist": "Alan Rabinowitz",
@@ -1333,7 +648,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1363,6 +677,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "8904494d-ef95-40d7-a0e0-a49215a72652",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1372,7 +687,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8904494d-ef95-40d7-a0e0-a49215a72652"
+            "uuid": "a8174d85-dd48-5637-8a88-f3017177f32f"
         },
         {
             "artist": "Eric Peterson",
@@ -1411,7 +726,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1437,6 +751,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "4dfb5269-a5de-4b42-aa1c-a946bfd027a0",
             "starter": true,
             "subtypes": [
                 "Rabbit",
@@ -1444,277 +759,12 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37812,
-            "text": "",
             "toughness": "6",
             "type": "Creature — Rabbit Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "4dfb5269-a5de-4b42-aa1c-a946bfd027a0"
-        },
-        {
-            "artist": "Zina Saunders",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"No bird soars too high, if he soars with his own wings.\" —William Blake, The Marriage of Heaven and Hell",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{U}",
-            "multiverseId": 25448,
-            "name": "Wind Drake",
-            "number": "21",
-            "originalText": "Flying",
-            "originalType": "Creature - Drake",
-            "power": "2",
-            "printings": [
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "BRB",
-                "DGM",
-                "KLD",
-                "M10",
-                "M13",
-                "POR",
-                "S00",
-                "S99",
-                "TMP",
-                "TPR"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Drake"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37815,
-            "text": "Flying",
-            "toughness": "2",
-            "type": "Creature — Drake",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "1621870d-94c2-49be-8a0d-9b610847941b"
-        },
-        {
-            "artist": "Christopher Rush",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "Don't be fooled by their looks. Think of them as little knives with wings.",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}",
-            "multiverseId": 25492,
-            "name": "Bog Imp",
-            "number": "22",
-            "originalText": "Flying",
-            "originalType": "Creature - Imp",
-            "power": "1",
-            "printings": [
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "DRK",
-                "ITP",
-                "POR",
-                "REN",
-                "RQS",
-                "S00",
-                "S99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Imp"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37766,
-            "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)",
-            "toughness": "1",
-            "type": "Creature — Imp",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "73097e81-e92d-4ee4-90df-1cd815134e7c"
-        },
-        {
-            "artist": "DiTerlizzi",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "A rhino's bargain —Femeref expression meaning \"a situation with no choices\"",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{B}",
-            "multiverseId": 25477,
-            "name": "Coercion",
-            "number": "23",
-            "originalText": "Look at target player's hand and choose a card from it. That player discards that card.",
-            "originalType": "Sorcery",
-            "printings": [
-                "6ED",
-                "8ED",
-                "9ED",
-                "BTD",
-                "P02",
-                "PTK",
-                "S00",
-                "S99",
-                "TMP",
-                "TPR",
-                "VIS"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37768,
-            "text": "Target opponent reveals their hand. You choose a card from it. That player discards that card.",
-            "type": "Sorcery",
-            "types": [
-                "Sorcery"
-            ],
-            "uuid": "edc8640c-ed44-44b6-a996-c16264270ec9"
-        },
-        {
-            "artist": "Ian Miller",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "\"The dead make good soldiers. They can't disobey orders, they never surrender, and they don't stop fighting when a random body part falls off.\" —Nevinyrral, Necromancer's Handbook",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}",
-            "multiverseId": 25507,
-            "name": "Drudge Skeletons",
-            "number": "24",
-            "originalText": "ooB Regenerate Drudge Skeletons.",
-            "originalType": "Creature - Skeleton",
-            "power": "1",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "CED",
-                "CEI",
-                "DDD",
-                "DPA",
-                "FBB",
-                "GVL",
-                "LEA",
-                "LEB",
-                "M10",
-                "PS11",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Skeleton"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37771,
-            "text": "{B}: Regenerate Drudge Skeletons. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
-            "toughness": "1",
-            "type": "Creature — Skeleton",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "6d05dda7-65b6-4b86-ad08-4fcfe1099198"
+            "uuid": "9d95f31b-b09d-52e7-973f-c3ba6351219b"
         },
         {
             "artist": "Heather Hudson",
@@ -1751,7 +801,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -1773,6 +822,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d17d9a95-5586-4d16-9700-215b9af63f6f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1782,311 +832,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d17d9a95-5586-4d16-9700-215b9af63f6f"
-        },
-        {
-            "artist": "Steve White",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"How can you claim the gods are merciless when they robbed the snake of its limbs to give the other creatures a sporting chance?\" —Hakim, Loreweaver",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}{B}",
-            "multiverseId": 25499,
-            "name": "Python",
-            "number": "26",
-            "originalType": "Creature - Snake",
-            "power": "3",
-            "printings": [
-                "6ED",
-                "POR",
-                "S00",
-                "VIS"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Snake"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37797,
-            "text": "",
-            "toughness": "2",
-            "type": "Creature — Snake",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "845b5abd-b3a8-498b-8a56-450b700a479c"
-        },
-        {
-            "artist": "Jesper Myrfors",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"They groaned, they stirred, they all uprose, Nor spake, nor moved their eyes; It had been strange, even in a dream, To have seen those dead men rise.\" —Samuel Coleridge, \"The Rime of the Ancient Mariner\"",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{B}",
-            "multiverseId": 25487,
-            "name": "Scathe Zombies",
-            "number": "27",
-            "originalType": "Creature - Zombie",
-            "power": "2",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "ITP",
-                "LEA",
-                "LEB",
-                "S00",
-                "S99",
-                "SUM"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Zombie"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37801,
-            "text": "",
-            "toughness": "2",
-            "type": "Creature — Zombie",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "8e38bb20-6457-47b6-9fe6-ed7d4f253776"
-        },
-        {
-            "artist": "Ron Spencer",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}",
-            "multiverseId": 25504,
-            "name": "Terror",
-            "number": "28",
-            "originalText": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
-            "originalType": "Instant",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "ATH",
-                "BRB",
-                "BTD",
-                "CED",
-                "CEI",
-                "DPA",
-                "FBB",
-                "FNM",
-                "ITP",
-                "LEA",
-                "LEB",
-                "ME4",
-                "MRD",
-                "P05",
-                "PRM",
-                "PS11",
-                "RQS",
-                "S00",
-                "SUM",
-                "TD0"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37808,
-            "text": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "af264177-dd13-42e5-9e2f-0f59a37bd5f8"
-        },
-        {
-            "artist": "Justin Hampton",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 5.0,
-            "flavorText": "\"The spirit of the flame is the spirit of change.\" —Lovisa Coldeyes, Balduvian chieftain",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{4}{R}",
-            "multiverseId": 25514,
-            "name": "Flame Spirit",
-            "number": "29",
-            "originalText": "ooR Flame Spirit gets +1/+0 until end of turn.",
-            "originalType": "Creature - Spirit",
-            "power": "2",
-            "printings": [
-                "5ED",
-                "6ED",
-                "ICE",
-                "ME2",
-                "S00"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Elemental",
-                "Spirit"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37774,
-            "text": "{R}: Flame Spirit gets +1/+0 until end of turn.",
-            "toughness": "3",
-            "type": "Creature — Elemental Spirit",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "a18a8353-08f9-469e-8872-a6f6d3e00b9e"
-        },
-        {
-            "artist": "Pete Venters",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"When you're a goblin, you don't have to step forward to be a hero—everyone else just has to step back\" —Biggum Flodrot, goblin veteran",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{R}",
-            "multiverseId": 25486,
-            "name": "Goblin Hero",
-            "number": "30",
-            "originalType": "Creature - Goblin",
-            "power": "2",
-            "printings": [
-                "5ED",
-                "6ED",
-                "ATH",
-                "DRK",
-                "S00",
-                "S99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Goblin"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37779,
-            "text": "",
-            "toughness": "2",
-            "type": "Creature — Goblin",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "18925838-1ddc-4bdf-937c-1227600ef343"
+            "uuid": "cd7f0d42-2f25-5cf2-9602-786e79b38501"
         },
         {
             "artist": "Brian Snõddy",
@@ -2126,7 +872,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2171,6 +916,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "340b71f4-4245-4b22-a550-c0226e2710ee",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2180,7 +926,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "340b71f4-4245-4b22-a550-c0226e2710ee"
+            "uuid": "4090c2d1-537b-5b2d-b746-adb3d7fb9160"
         },
         {
             "artist": "Pete Venters",
@@ -2219,7 +965,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2251,19 +996,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "58b7a22b-f354-4f42-9354-d149bb9b3645",
             "starter": true,
             "subtypes": [
                 "Goblin"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37788,
-            "text": "",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "58b7a22b-f354-4f42-9354-d149bb9b3645"
+            "uuid": "ac87bc26-e85d-5b85-b9ce-14a6ba251978"
         },
         {
             "artist": "Jeff Miracola",
@@ -2300,7 +1045,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2321,6 +1065,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c0a6848f-7cb3-4ab0-a14a-e7fb62562861",
             "starter": true,
             "subtypes": [
                 "Ogre",
@@ -2328,222 +1073,12 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37793,
-            "text": "",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "c0a6848f-7cb3-4ab0-a14a-e7fb62562861"
-        },
-        {
-            "artist": "Dan Frazier",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 4.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{3}{R}",
-            "multiverseId": 25540,
-            "name": "Orcish Oriflamme",
-            "number": "34",
-            "originalText": "Attacking creatures you control get +1/+0.",
-            "originalType": "Enchantment",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "CED",
-                "CEI",
-                "EMA",
-                "FBB",
-                "ITP",
-                "LEA",
-                "LEB",
-                "RQS",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "uncommon",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37794,
-            "text": "Attacking creatures you control get +1/+0.",
-            "type": "Enchantment",
-            "types": [
-                "Enchantment"
-            ],
-            "uuid": "2f9094c3-d336-4edb-b065-c5fbb3aac0af"
-        },
-        {
-            "artist": "Randy Gallegos",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 1.0,
-            "flavorText": "Lightning tethers souls to the world. —Kor saying",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{R}",
-            "multiverseId": 25501,
-            "name": "Shock",
-            "number": "35",
-            "originalText": "Shock deals 2 damage to target creature or player.",
-            "originalType": "Instant",
-            "printings": [
-                "10E",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "AER",
-                "BBD",
-                "BTD",
-                "DDN",
-                "DPA",
-                "FNM",
-                "M12",
-                "M14",
-                "M19",
-                "ONS",
-                "PRM",
-                "PS11",
-                "PSAL",
-                "S00",
-                "STH",
-                "WC98",
-                "WC99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37803,
-            "text": "Shock deals 2 damage to any target.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "9cc6ec92-4840-44bc-ae72-b92fc88bd237"
-        },
-        {
-            "artist": "John Matson",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 3.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{R}",
-            "multiverseId": 25497,
-            "name": "Stone Rain",
-            "number": "36",
-            "originalText": "Destroy target land.",
-            "originalType": "Sorcery",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "CED",
-                "CEI",
-                "CHK",
-                "FBB",
-                "FNM",
-                "ICE",
-                "LEA",
-                "LEB",
-                "MIR",
-                "MMQ",
-                "P02",
-                "POR",
-                "PRM",
-                "PTK",
-                "S00",
-                "S99",
-                "SUM",
-                "TMP",
-                "WC00",
-                "WC99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37806,
-            "text": "Destroy target land.",
-            "type": "Sorcery",
-            "types": [
-                "Sorcery"
-            ],
-            "uuid": "e7e0c9e9-63b6-4fe7-972d-d4d6a2ad34c1"
+            "uuid": "fa2d4a7e-f850-509c-894d-84ed88d34c76"
         },
         {
             "artist": "Eric Peterson",
@@ -2582,7 +1117,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2605,19 +1139,19 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c8b2875c-cb64-43da-bbf6-1c31dc25ed2f",
             "starter": true,
             "subtypes": [
                 "Orgg"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37810,
-            "text": "",
             "toughness": "6",
             "type": "Creature — Orgg",
             "types": [
                 "Creature"
             ],
-            "uuid": "c8b2875c-cb64-43da-bbf6-1c31dc25ed2f"
+            "uuid": "a3261a5f-0a2e-50e4-aaab-7a1daa9c4d4f"
         },
         {
             "artist": "Mike Kimble",
@@ -2656,7 +1190,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -2682,204 +1215,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "3741510d-a210-432c-a95b-a147689df995",
             "starter": true,
             "subtypes": [
                 "Boar"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37772,
-            "text": "",
             "toughness": "4",
             "type": "Creature — Boar",
             "types": [
                 "Creature"
             ],
-            "uuid": "3741510d-a210-432c-a95b-a147689df995"
-        },
-        {
-            "artist": "DiTerlizzi",
-            "borderColor": "white",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [
-                "G"
-            ],
-            "convertedManaCost": 1.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{G}",
-            "multiverseId": 25502,
-            "name": "Giant Growth",
-            "number": "39",
-            "originalText": "Target creature gets +3/+3 until end of turn.",
-            "originalType": "Instant",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "A25",
-                "ATH",
-                "BBD",
-                "BRB",
-                "BTD",
-                "CED",
-                "CEI",
-                "DD1",
-                "DDD",
-                "DKM",
-                "DPA",
-                "E02",
-                "EVG",
-                "FBB",
-                "FNM",
-                "GVL",
-                "ICE",
-                "LEA",
-                "LEB",
-                "M10",
-                "M11",
-                "M14",
-                "ME2",
-                "ME3",
-                "ME4",
-                "P06",
-                "PJJT",
-                "PRM",
-                "PS11",
-                "PSUS",
-                "RTR",
-                "S00",
-                "SUM",
-                "WC97",
-                "WC99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37777,
-            "text": "Target creature gets +3/+3 until end of turn.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "fdcc9d4d-0d4b-4a11-8555-95ef7db5cade"
-        },
-        {
-            "artist": "Anson Maddocks",
-            "borderColor": "white",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [
-                "G"
-            ],
-            "convertedManaCost": 1.0,
-            "flavorText": "One bone broken for every twig snapped underfoot. —Llanowar penalty for trespassing",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{G}",
-            "multiverseId": 25508,
-            "name": "Llanowar Elves",
-            "number": "40",
-            "originalText": "ocT: Add oG to your mana pool.",
-            "originalType": "Creature - Elf",
-            "power": "1",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "9ED",
-                "ATH",
-                "BRB",
-                "BTD",
-                "C14",
-                "CED",
-                "CEI",
-                "CMA",
-                "DD1",
-                "DOM",
-                "EMA",
-                "EVG",
-                "FBB",
-                "FNM",
-                "GNT",
-                "LEA",
-                "LEB",
-                "M10",
-                "M11",
-                "M12",
-                "M19",
-                "PDOM",
-                "PG07",
-                "PRM",
-                "PTC",
-                "S00",
-                "SUM",
-                "WC00",
-                "WC01",
-                "WC02",
-                "WC99"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Elf",
-                "Druid"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37786,
-            "text": "{T}: Add {G}.",
-            "toughness": "1",
-            "type": "Creature — Elf Druid",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "b32e5578-2c36-4ec1-8ced-b65369648229"
+            "uuid": "24e890c0-21e8-5d54-86d4-4fb4aa5d38bd"
         },
         {
             "artist": "Una Fricker",
@@ -2919,7 +1267,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2947,6 +1294,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "81e077e5-2600-4ab4-b1ca-5714cc834331",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2956,7 +1304,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "81e077e5-2600-4ab4-b1ca-5714cc834331"
+            "uuid": "72f9fd20-ad68-5204-808f-2457ec07df87"
         },
         {
             "artist": "Terese Nielsen",
@@ -2993,7 +1341,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3015,6 +1362,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "49d0acb1-bc07-42d5-a327-1617f0ed2c60",
             "starter": true,
             "subtypes": [
                 "Faerie"
@@ -3027,7 +1375,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "49d0acb1-bc07-42d5-a327-1617f0ed2c60"
+            "uuid": "cd8f5e2a-086e-5d2c-80ac-67d7437d7d3c"
         },
         {
             "artist": "Mark Zug",
@@ -3066,7 +1414,6 @@
             "frameVersion": "1997",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3104,6 +1451,7 @@
                     "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
                 }
             ],
+            "scryfallId": "5d5f3f57-410f-4ee2-b93c-f5051a068828",
             "starter": true,
             "subtypes": [
                 "Rhino",
@@ -3117,7 +1465,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5d5f3f57-410f-4ee2-b93c-f5051a068828"
+            "uuid": "fb4fa25f-d45c-5dc9-b8da-b801ca48b162"
         },
         {
             "artist": "Keith Parkinson",
@@ -3134,7 +1482,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3168,19 +1515,19 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ad4e8b4f-d9a8-49a7-84f6-3613b03780b0",
             "starter": true,
             "subtypes": [
                 "Wurm"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37805,
-            "text": "",
             "toughness": "4",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad4e8b4f-d9a8-49a7-84f6-3613b03780b0"
+            "uuid": "8ba76afb-8817-574a-bcc7-ff07186b1fc7"
         },
         {
             "artist": "DiTerlizzi",
@@ -3215,7 +1562,6 @@
             "frameVersion": "1997",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "commander": "Legal",
@@ -3235,1285 +1581,31 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c063a072-0cd4-45fb-ac68-96e359bf3ef5",
             "starter": true,
             "subtypes": [
                 "Elf"
             ],
             "supertypes": [],
             "tcgplayerProductId": 37814,
-            "text": "",
             "toughness": "1",
             "type": "Creature — Elf",
             "types": [
                 "Creature"
             ],
-            "uuid": "c063a072-0cd4-45fb-ac68-96e359bf3ef5"
-        },
-        {
-            "artist": "Jesper Myrfors",
-            "borderColor": "white",
-            "colorIdentity": [],
-            "colors": [],
-            "convertedManaCost": 6.0,
-            "flavorText": "\"The foot stone is connected to the ankle stone, the ankle stone is connected to the leg stone . . . .\" —\"Song of the Artificer\"",
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{6}",
-            "multiverseId": 25528,
-            "name": "Obsianus Golem",
-            "number": "46",
-            "originalType": "Artifact Creature - Golem",
-            "power": "4",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "6ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "LEA",
-                "LEB",
-                "ME4",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "uncommon",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Golem"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 37792,
-            "text": "",
-            "toughness": "6",
-            "type": "Artifact Creature — Golem",
-            "types": [
-                "Artifact",
-                "Creature"
-            ],
-            "uuid": "903f9960-bbcc-4ca7-b93f-ce25301f7029"
-        },
-        {
-            "artist": "Christopher Rush",
-            "borderColor": "white",
-            "colorIdentity": [],
-            "colors": [],
-            "convertedManaCost": 4.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{4}",
-            "multiverseId": 25529,
-            "name": "Rod of Ruin",
-            "number": "47",
-            "originalText": "o3, ocT: Rod of Ruin deals 1 damage to target creature or player.",
-            "originalType": "Artifact",
-            "printings": [
-                "10E",
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "8ED",
-                "9ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "ITP",
-                "LEA",
-                "LEB",
-                "M10",
-                "M14",
-                "RQS",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "uncommon",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37798,
-            "text": "{3}, {T}: Rod of Ruin deals 1 damage to any target.",
-            "type": "Artifact",
-            "types": [
-                "Artifact"
-            ],
-            "uuid": "5bd99e3f-b56d-4834-aec2-0be122b3da10"
-        },
-        {
-            "artist": "Andrew Robinson",
-            "borderColor": "white",
-            "colorIdentity": [],
-            "colors": [],
-            "convertedManaCost": 1.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}",
-            "multiverseId": 25543,
-            "name": "Soul Net",
-            "number": "48",
-            "originalText": "Whenever a creature is put into a graveyard from play, you may pay o1. If you do, you gain 1 life.",
-            "originalType": "Artifact",
-            "printings": [
-                "2ED",
-                "3ED",
-                "4ED",
-                "5ED",
-                "6ED",
-                "7ED",
-                "CED",
-                "CEI",
-                "FBB",
-                "LEA",
-                "LEB",
-                "S00",
-                "SUM"
-            ],
-            "rarity": "uncommon",
-            "rulings": [
-                {
-                    "date": "2004-10-04",
-                    "text": "If animated so it is a creature, it can be triggered off its own destruction."
-                }
-            ],
-            "starter": true,
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 37804,
-            "text": "Whenever a creature dies, you may pay {1}. If you do, you gain 1 life.",
-            "type": "Artifact",
-            "types": [
-                "Artifact"
-            ],
-            "uuid": "125c2944-796f-4e0e-b94c-d1ccf41a7ba1"
-        },
-        {
-            "artist": "John Avon",
-            "borderColor": "white",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25482,
-            "name": "Forest",
-            "number": "49",
-            "originalText": "G",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDL",
-                "DDM",
-                "DDO",
-                "DDP",
-                "DDR",
-                "DDS",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "EVG",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "GVL",
-                "HOU",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Forest"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {G}.)",
-            "type": "Basic Land — Forest",
-            "types": [
-                "Land"
-            ],
-            "uuid": "f976e1a6-1e14-4759-82cd-f905ba08fff0",
-            "variations": [
-                "500f369e-1e0b-48ba-ae02-bcbc2b4ac16a"
-            ]
-        },
-        {
-            "artist": "John Avon",
-            "borderColor": "white",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25483,
-            "name": "Forest",
-            "number": "50",
-            "originalText": "G",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDL",
-                "DDM",
-                "DDO",
-                "DDP",
-                "DDR",
-                "DDS",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "EVG",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "GVL",
-                "HOU",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Forest"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {G}.)",
-            "type": "Basic Land — Forest",
-            "types": [
-                "Land"
-            ],
-            "uuid": "500f369e-1e0b-48ba-ae02-bcbc2b4ac16a",
-            "variations": [
-                "f976e1a6-1e14-4759-82cd-f905ba08fff0"
-            ]
-        },
-        {
-            "artist": "Douglas Shuler",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25451,
-            "name": "Island",
-            "number": "51",
-            "originalText": "U",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDI",
-                "DDJ",
-                "DDM",
-                "DDN",
-                "DDO",
-                "DDQ",
-                "DDS",
-                "DDT",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "J14",
-                "JVC",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Island"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {U}.)",
-            "type": "Basic Land — Island",
-            "types": [
-                "Land"
-            ],
-            "uuid": "5df80c50-04ea-4dc8-aeed-bdf0649f7539",
-            "variations": [
-                "aa5f57be-c4fc-4ec1-8d3b-068dd1481d80"
-            ]
-        },
-        {
-            "artist": "Eric Peterson",
-            "borderColor": "white",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25452,
-            "name": "Island",
-            "number": "52",
-            "originalText": "U",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDI",
-                "DDJ",
-                "DDM",
-                "DDN",
-                "DDO",
-                "DDQ",
-                "DDS",
-                "DDT",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "J14",
-                "JVC",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Island"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {U}.)",
-            "type": "Basic Land — Island",
-            "types": [
-                "Land"
-            ],
-            "uuid": "aa5f57be-c4fc-4ec1-8d3b-068dd1481d80",
-            "variations": [
-                "5df80c50-04ea-4dc8-aeed-bdf0649f7539"
-            ]
-        },
-        {
-            "artist": "John Avon",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25480,
-            "name": "Mountain",
-            "number": "53",
-            "originalText": "R",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDK",
-                "DDL",
-                "DDN",
-                "DDP",
-                "DDS",
-                "DDT",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "EVG",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "J14",
-                "JVC",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Mountain"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {R}.)",
-            "type": "Basic Land — Mountain",
-            "types": [
-                "Land"
-            ],
-            "uuid": "35968b11-183e-431d-a520-69c8d4ddf314",
-            "variations": [
-                "23a91f77-fa57-4bd3-9cad-efe0ddabc0d1"
-            ]
-        },
-        {
-            "artist": "Brian Durfee",
-            "borderColor": "white",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25481,
-            "name": "Mountain",
-            "number": "54",
-            "originalText": "R",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDK",
-                "DDL",
-                "DDN",
-                "DDP",
-                "DDS",
-                "DDT",
-                "DDU",
-                "DOM",
-                "DTK",
-                "E01",
-                "EVG",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "J14",
-                "JVC",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Mountain"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {R}.)",
-            "type": "Basic Land — Mountain",
-            "types": [
-                "Land"
-            ],
-            "uuid": "23a91f77-fa57-4bd3-9cad-efe0ddabc0d1",
-            "variations": [
-                "35968b11-183e-431d-a520-69c8d4ddf314"
-            ]
-        },
-        {
-            "artist": "Douglas Shuler",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25453,
-            "name": "Plains",
-            "number": "55",
-            "originalText": "W",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDI",
-                "DDK",
-                "DDL",
-                "DDN",
-                "DDO",
-                "DDP",
-                "DDQ",
-                "DOM",
-                "DTK",
-                "DVD",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "ISD",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "MD1",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PDGM",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Plains"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {W}.)",
-            "type": "Basic Land — Plains",
-            "types": [
-                "Land"
-            ],
-            "uuid": "0db5b7c0-2c8e-44a0-8d5b-227cf6ad8fd5",
-            "variations": [
-                "b4c79135-59a2-4b6a-a4f5-a734ec964b33"
-            ]
-        },
-        {
-            "artist": "Fred Fields",
-            "borderColor": "white",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25454,
-            "name": "Plains",
-            "number": "56",
-            "originalText": "W",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "AVR",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDI",
-                "DDK",
-                "DDL",
-                "DDN",
-                "DDO",
-                "DDP",
-                "DDQ",
-                "DOM",
-                "DTK",
-                "DVD",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GS1",
-                "HOU",
-                "ISD",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "MD1",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PDGM",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Plains"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {W}.)",
-            "type": "Basic Land — Plains",
-            "types": [
-                "Land"
-            ],
-            "uuid": "b4c79135-59a2-4b6a-a4f5-a734ec964b33",
-            "variations": [
-                "0db5b7c0-2c8e-44a0-8d5b-227cf6ad8fd5"
-            ]
-        },
-        {
-            "artist": "Dan Frazier",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25478,
-            "name": "Swamp",
-            "number": "57",
-            "originalText": "B",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDK",
-                "DDM",
-                "DDN",
-                "DDP",
-                "DDQ",
-                "DDR",
-                "DOM",
-                "DTK",
-                "DVD",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GVL",
-                "HOU",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "MD1",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Swamp"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {B}.)",
-            "type": "Basic Land — Swamp",
-            "types": [
-                "Land"
-            ],
-            "uuid": "3663b57c-8aff-42f0-9d7e-61431a75b2ed",
-            "variations": [
-                "0747bf10-0b92-4785-b4f8-33f21384d680"
-            ]
-        },
-        {
-            "artist": "Douglas Shuler",
-            "borderColor": "white",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [],
-            "convertedManaCost": 0.0,
-            "foreignData": [],
-            "frameVersion": "1997",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "isReserved": false,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "brawl": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "frontier": "Legal",
-                "future": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "standard": "Legal",
-                "vintage": "Legal"
-            },
-            "multiverseId": 25479,
-            "name": "Swamp",
-            "number": "58",
-            "originalText": "B",
-            "originalType": "Land",
-            "printings": [
-                "AKH",
-                "BBD",
-                "BFZ",
-                "C13",
-                "C14",
-                "C15",
-                "C16",
-                "C17",
-                "C18",
-                "CM2",
-                "CMA",
-                "DDJ",
-                "DDK",
-                "DDM",
-                "DDN",
-                "DDP",
-                "DDQ",
-                "DDR",
-                "DOM",
-                "DTK",
-                "DVD",
-                "E01",
-                "FRF",
-                "GK1",
-                "GNT",
-                "GRN",
-                "GVL",
-                "HOU",
-                "J14",
-                "KLD",
-                "KTK",
-                "M13",
-                "M14",
-                "M15",
-                "M19",
-                "MD1",
-                "ORI",
-                "PC2",
-                "PCA",
-                "PF19",
-                "PGP17",
-                "PRM",
-                "PRWK",
-                "PSS2",
-                "PSS3",
-                "RIX",
-                "RTR",
-                "SOI",
-                "THS",
-                "TPR",
-                "UST",
-                "XLN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "starter": true,
-            "subtypes": [
-                "Swamp"
-            ],
-            "supertypes": [
-                "Basic"
-            ],
-            "text": "({T}: Add {B}.)",
-            "type": "Basic Land — Swamp",
-            "types": [
-                "Land"
-            ],
-            "uuid": "0747bf10-0b92-4785-b4f8-33f21384d680",
-            "variations": [
-                "3663b57c-8aff-42f0-9d7e-61431a75b2ed"
-            ]
+            "uuid": "1e3eae40-c420-5c37-abfe-829154145616"
         }
     ],
     "code": "s00",
     "meta": {
-        "date": "2018-12-07",
-        "version": "4.1.3"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Starter 2000",
     "releaseDate": "2000-04-01",
     "tcgplayerGroupId": 106,
     "tokens": [],
-    "totalSetSize": 58,
+    "totalSetSize": 21,
     "type": "starter"
 }

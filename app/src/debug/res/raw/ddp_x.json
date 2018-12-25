@@ -23,7 +23,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -36,10 +35,7 @@
             "manaCost": "{5}{G}{G}",
             "multiverseId": 401643,
             "name": "Avenger of Zendikar",
-            "names": [
-                "Avenger of Zendikar",
-                "Plant"
-            ],
+            "names": [],
             "number": "1",
             "originalText": "When Avenger of Zendikar enters the battlefield, put a 0/1 green Plant creature token onto the battlefield for each land you control.\nLandfall — Whenever a land enters the battlefield under your control, you may put a +1/+1 counter on each Plant creature you control.",
             "originalType": "Creature — Elemental",
@@ -62,6 +58,7 @@
                     "text": "When a land enters the battlefield under your control, each landfall ability of the permanents you control will trigger. You can put them on the stack in any order. The last ability you put on the stack will be the first one that resolves."
                 }
             ],
+            "scryfallId": "6a971200-0d89-45e2-8c1e-fb087642f7dc",
             "starter": true,
             "subtypes": [
                 "Elemental"
@@ -74,7 +71,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6a971200-0d89-45e2-8c1e-fb087642f7dc"
+            "uuid": "3732c4c4-c906-58c1-a7e7-237d02a3fd83"
         },
         {
             "artist": "Ryan Pancoast",
@@ -100,7 +97,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -125,6 +121,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "b7269cf5-6777-4ba4-98fb-6c28b2b9cbb6",
             "starter": true,
             "subtypes": [
                 "Hound"
@@ -137,7 +134,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b7269cf5-6777-4ba4-98fb-6c28b2b9cbb6"
+            "uuid": "d7ee6c45-4836-5811-ba86-489892020527"
         },
         {
             "artist": "Goran Josic",
@@ -161,7 +158,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "leveler",
             "legalities": {
                 "1v1": "Legal",
@@ -208,6 +204,7 @@
                     "text": "A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly."
                 }
             ],
+            "scryfallId": "817602f9-0844-4ba2-bd7c-380fcd0c15ff",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -221,7 +218,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "817602f9-0844-4ba2-bd7c-380fcd0c15ff"
+            "uuid": "ce921f33-e33b-5cc2-99f2-987d11a66253"
         },
         {
             "artist": "Steven Belledin",
@@ -245,7 +242,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "leveler",
             "legalities": {
                 "1v1": "Legal",
@@ -291,6 +287,7 @@
                     "text": "A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly."
                 }
             ],
+            "scryfallId": "20bc9c3c-0c20-4ea6-a182-b7f3a75f5982",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -304,7 +301,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "20bc9c3c-0c20-4ea6-a182-b7f3a75f5982"
+            "uuid": "4eb9e5d3-950d-5933-a6f6-a29fba8be293"
         },
         {
             "artist": "Matt Cavotta",
@@ -328,7 +325,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "leveler",
             "legalities": {
                 "1v1": "Legal",
@@ -375,6 +371,7 @@
                     "text": "A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly."
                 }
             ],
+            "scryfallId": "9a1c3f32-9add-455d-bb7f-b31c430c6590",
             "starter": true,
             "subtypes": [
                 "Kor",
@@ -388,7 +385,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9a1c3f32-9add-455d-bb7f-b31c430c6590"
+            "uuid": "45b59c89-ea2c-566e-a48a-cca85b9214af"
         },
         {
             "artist": "Izzy",
@@ -414,7 +411,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -439,6 +435,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "05c4a9c4-20d5-457d-9127-c27b8768255a",
             "starter": true,
             "subtypes": [
                 "Griffin"
@@ -451,7 +448,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "05c4a9c4-20d5-457d-9127-c27b8768255a"
+            "uuid": "ea446207-93b2-56d1-b597-2197450f4a64"
         },
         {
             "artist": "Mike Bierek",
@@ -477,7 +474,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -520,6 +516,7 @@
                     "text": "If the targeted creature is an illegal target by the time Oust resolves, the spell doesn’t resolve. No one gains life."
                 }
             ],
+            "scryfallId": "fd915d09-5ecf-45b6-90ae-970a2c7de475",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -529,7 +526,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "fd915d09-5ecf-45b6-90ae-970a2c7de475"
+            "uuid": "0661cb89-dd19-53c2-a3ee-27554f4da97c"
         },
         {
             "artist": "Scott Chou",
@@ -555,7 +552,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -580,22 +576,23 @@
             "rarity": "common",
             "rulings": [
                 {
-                    "date": "2010-06-15",
+                    "date": "2018-12-07",
                     "text": "You may target zero, one, or two creatures. The creatures don’t need to be untapped."
                 },
                 {
-                    "date": "2010-06-15",
-                    "text": "If you target zero creatures, Repel the Darkness can’t be countered for having no legal targets. When it resolves, all that happens is that you draw a card."
+                    "date": "2018-12-07",
+                    "text": "If you target zero creatures, all that happens is you draw a card."
                 },
                 {
-                    "date": "2010-06-15",
+                    "date": "2018-12-07",
                     "text": "If you target one creature and that target is illegal as Repel the Darkness resolves, the spell doesn’t resolve. You don’t draw a card."
                 },
                 {
-                    "date": "2010-06-15",
-                    "text": "If you target two creatures and they’re both illegal as Repel the Darkness resolves, the spell doesn’t resolve; you don’t draw a card. If just one is illegal, the spell does resolve; the remaining legal target becomes tapped (if it’s untapped at that time) and you draw a card."
+                    "date": "2018-12-07",
+                    "text": "If you target two creatures and they’re both illegal as Repel the Darkness resolves, the spell doesn’t resolve; you don’t draw a card. If just one target is illegal, the spell does resolve; the remaining legal target becomes tapped (if it’s untapped at that time) and you draw a card."
                 }
             ],
+            "scryfallId": "297fe585-54a6-4910-b848-2a1d2d10c7a6",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -605,7 +602,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "297fe585-54a6-4910-b848-2a1d2d10c7a6"
+            "uuid": "fcfbdfb5-e339-5e0c-a2e5-93b8b1be4a30"
         },
         {
             "artist": "Clint Cearley",
@@ -629,7 +626,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -679,6 +675,7 @@
                     "text": "Awaken doesn’t give the land you control a color. As most lands are colorless, in most cases the resulting land creature will also be colorless."
                 }
             ],
+            "scryfallId": "ca6e9658-684e-44fd-9c72-c5c3faa9fb1f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -688,7 +685,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ca6e9658-684e-44fd-9c72-c5c3faa9fb1f"
+            "uuid": "73363e66-550c-5a0d-b35c-13ce671dcb76"
         },
         {
             "artist": "Karl Kopinski",
@@ -712,7 +709,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "leveler",
             "legalities": {
                 "1v1": "Legal",
@@ -757,6 +753,7 @@
                     "text": "A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly."
                 }
             ],
+            "scryfallId": "9499b38f-5030-4348-a0ff-9002b0e46f2a",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -770,7 +767,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9499b38f-5030-4348-a0ff-9002b0e46f2a"
+            "uuid": "d6cdca26-295d-5600-8547-011a4bd6007e"
         },
         {
             "artist": "Jesper Ejsing",
@@ -796,7 +793,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -827,6 +823,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "0b45e122-85fa-4c11-b5b4-5d3fedb1680e",
             "starter": true,
             "subtypes": [
                 "Basilisk"
@@ -839,7 +836,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0b45e122-85fa-4c11-b5b4-5d3fedb1680e"
+            "uuid": "37ff732b-a763-58a3-8be3-7cb922dea22a"
         },
         {
             "artist": "Wayne Reynolds",
@@ -865,7 +862,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -889,6 +885,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2f70f45f-aad0-47d5-9ed1-d5b1d591f775",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -902,7 +899,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2f70f45f-aad0-47d5-9ed1-d5b1d591f775"
+            "uuid": "48508479-5c53-5f11-9ae1-1bb7bb09f435"
         },
         {
             "artist": "Svetlin Velinov",
@@ -928,7 +925,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -953,6 +949,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b93b6f18-87f1-4b7c-bfdd-1b2a6384b00d",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -967,7 +964,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b93b6f18-87f1-4b7c-bfdd-1b2a6384b00d"
+            "uuid": "5bd758ea-146d-5378-a0f6-17e3b8e92325"
         },
         {
             "artist": "Ryan Pancoast",
@@ -993,7 +990,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1030,6 +1026,7 @@
                     "text": "When a land enters the battlefield under your control, each landfall ability of the permanents you control will trigger. You can put them on the stack in any order. The last ability you put on the stack will be the first one that resolves."
                 }
             ],
+            "scryfallId": "06dda49d-25a2-4fa3-80f2-0d784e1ad30f",
             "starter": true,
             "subtypes": [
                 "Antelope"
@@ -1042,7 +1039,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "06dda49d-25a2-4fa3-80f2-0d784e1ad30f"
+            "uuid": "a47159db-1d5b-52cb-ad34-43b4f0fd23a6"
         },
         {
             "artist": "Chris Rahn",
@@ -1068,7 +1065,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1112,6 +1108,7 @@
                     "text": "The effect of this spell’s landfall ability replaces its normal effect. If you had a land enter the battlefield under your control this turn, only the landfall-based effect happens."
                 }
             ],
+            "scryfallId": "821e9cb9-f78e-4d11-9c36-42e8b84b49cd",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1121,7 +1118,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "821e9cb9-f78e-4d11-9c36-42e8b84b49cd"
+            "uuid": "5a64d937-6523-5546-9b0d-73d95169b652"
         },
         {
             "artist": "Izzy",
@@ -1147,7 +1144,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1192,6 +1188,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "2d7bcecb-9e7c-4f05-bdb5-9a0380ec2810",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1201,7 +1198,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "2d7bcecb-9e7c-4f05-bdb5-9a0380ec2810"
+            "uuid": "484aa170-768a-5a50-b8e5-3e2e4ffb094a"
         },
         {
             "artist": "Volkan Baga",
@@ -1227,7 +1224,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1257,6 +1253,7 @@
                     "text": "The ability affects only Allies you control at the time the ability resolves."
                 }
             ],
+            "scryfallId": "b903472f-bd9b-4d7e-9820-34b7dd601ecb",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -1271,7 +1268,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b903472f-bd9b-4d7e-9820-34b7dd601ecb"
+            "uuid": "ba6b11d7-da11-5d62-ae7a-36c49de6224b"
         },
         {
             "artist": "Jason Chan",
@@ -1295,7 +1292,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1329,6 +1325,7 @@
                     "text": "When a land enters the battlefield under your control, each landfall ability of the permanents you control will trigger. You can put them on the stack in any order. The last ability you put on the stack will be the first one that resolves."
                 }
             ],
+            "scryfallId": "db7bca99-4e53-48bf-8b58-39f27cd41314",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1338,7 +1335,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "db7bca99-4e53-48bf-8b58-39f27cd41314"
+            "uuid": "5159017e-934e-540e-8f04-18fa5d238d22"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1364,7 +1361,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1391,6 +1387,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c7d46f1f-d35b-4b7b-a2db-38791014d16e",
             "starter": true,
             "subtypes": [
                 "Giant",
@@ -1404,7 +1401,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c7d46f1f-d35b-4b7b-a2db-38791014d16e"
+            "uuid": "4c515f82-95e3-5c0e-a489-d5e70cad164e"
         },
         {
             "artist": "Magali Villeneuve",
@@ -1428,7 +1425,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1462,6 +1458,7 @@
                     "text": "Primal Command won’t be put into your graveyard until after it’s finished resolving, which means it won’t be shuffled into your library as part of its own effect if you target yourself with its third mode."
                 }
             ],
+            "scryfallId": "87d2ad86-5d74-4507-8faa-fc6124fd5a7f",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1471,7 +1468,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "87d2ad86-5d74-4507-8faa-fc6124fd5a7f"
+            "uuid": "3176f9c6-a667-560d-82ae-fc28b11dbb46"
         },
         {
             "artist": "Kieran Yanner",
@@ -1495,7 +1492,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1533,6 +1529,7 @@
                     "text": "If the ability has an additional or replacement effect that depends on the land having a certain basic land type, the ability will check that land’s type as the ability resolves. If, at that time, the land that entered the battlefield is no longer on the battlefield, use its types when it left the battlefield to determine what happens."
                 }
             ],
+            "scryfallId": "4d3a089f-2049-406f-aa7e-2fdcbc59a826",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -1542,7 +1539,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4d3a089f-2049-406f-aa7e-2fdcbc59a826"
+            "uuid": "7d5e61a6-6648-5467-87d7-5e1c5d1cee5a"
         },
         {
             "artist": "Zoltan Boros & Gabor Szikszai",
@@ -1568,7 +1565,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1600,6 +1596,7 @@
                     "text": "Scute Mob’s ability has an “intervening ‘if’ clause.” That means (1) the ability won’t trigger at all unless you control five or more lands as your upkeep starts, and (2) the ability will do nothing if you control fewer than five lands by the time it resolves."
                 }
             ],
+            "scryfallId": "da8a6917-0d66-4a1b-b5ef-a2a5faf63c00",
             "starter": true,
             "subtypes": [
                 "Insect"
@@ -1612,7 +1609,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "da8a6917-0d66-4a1b-b5ef-a2a5faf63c00"
+            "uuid": "e5769d08-6141-544e-a224-a38a0a9047eb"
         },
         {
             "artist": "Chris Rahn",
@@ -1636,7 +1633,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1669,6 +1665,7 @@
                     "text": "You target a creature when the ability triggers. You decide whether to have Tajuru Archer deal damage to that creature as the ability resolves."
                 }
             ],
+            "scryfallId": "557b2178-2778-4596-9c50-28212616c56c",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -1683,7 +1680,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "557b2178-2778-4596-9c50-28212616c56c"
+            "uuid": "0971d257-b174-5c3c-aeab-a12433a5f0ab"
         },
         {
             "artist": "Jesper Ejsing",
@@ -1709,7 +1706,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1757,6 +1753,7 @@
                     "text": "If the ability has an additional or replacement effect that depends on the land having a certain basic land type, the ability will check that land’s type as the ability resolves. If, at that time, the land that entered the battlefield is no longer on the battlefield, use its types when it left the battlefield to determine what happens."
                 }
             ],
+            "scryfallId": "9d53ca35-f585-4d19-87fe-c2e27652f0b4",
             "starter": true,
             "subtypes": [
                 "Beast"
@@ -1769,7 +1766,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9d53ca35-f585-4d19-87fe-c2e27652f0b4"
+            "uuid": "b6581255-48a1-59eb-9e57-4f004b54d05d"
         },
         {
             "artist": "Goran Josic",
@@ -1793,7 +1790,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1847,6 +1843,7 @@
                     "text": "If Turntimber Basilisk’s landfall ability triggers multiple times during the same turn, you can have multiple creatures block it that turn if able."
                 }
             ],
+            "scryfallId": "a1c82f0c-70ff-4f8b-a8c8-2b5313d9f0ec",
             "starter": true,
             "subtypes": [
                 "Basilisk"
@@ -1859,7 +1856,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a1c82f0c-70ff-4f8b-a8c8-2b5313d9f0ec"
+            "uuid": "2457925a-ac22-58eb-bc2b-8d96d43edcf7"
         },
         {
             "artist": "Erica Yang",
@@ -1885,7 +1882,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1912,6 +1908,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ede96507-a325-4866-976b-51a824fadc5e",
             "starter": true,
             "subtypes": [
                 "Elf",
@@ -1925,7 +1922,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ede96507-a325-4866-976b-51a824fadc5e"
+            "uuid": "b12471be-d1b2-5a32-9eef-585c29f794dc"
         },
         {
             "artist": "Josu Hernaiz",
@@ -1951,7 +1948,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -1994,6 +1990,7 @@
                     "text": "Vigilance matters only as attackers are declared. Giving a creature vigilance after that point won’t untap it, even if it’s attacking."
                 }
             ],
+            "scryfallId": "577d6061-c6b9-43e6-9832-6a00f3eb734e",
             "starter": true,
             "subtypes": [
                 "Human",
@@ -2008,7 +2005,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "577d6061-c6b9-43e6-9832-6a00f3eb734e"
+            "uuid": "3c1770ba-d2ea-51f8-b688-f165f46c70b0"
         },
         {
             "artist": "Vincent Proce",
@@ -2028,7 +2025,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2052,6 +2048,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2087a2bb-7448-44c8-a075-0da6a5cdc418",
             "starter": true,
             "subtypes": [
                 "Equipment"
@@ -2063,7 +2060,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "2087a2bb-7448-44c8-a075-0da6a5cdc418"
+            "uuid": "6088c393-58ad-5611-8c8e-a76828dc6244"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -2085,7 +2082,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2127,6 +2123,7 @@
                     "text": "You choose whether to pay {2} as the ability resolves. You may pay {2} only once per resolution."
                 }
             ],
+            "scryfallId": "8e5b04a0-8b0a-4b7c-92aa-6ad701851604",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2136,7 +2133,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "8e5b04a0-8b0a-4b7c-92aa-6ad701851604"
+            "uuid": "d7586602-6297-5b7f-b1aa-61d78ae75aa8"
         },
         {
             "artist": "Christopher Moeller",
@@ -2157,7 +2154,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2181,6 +2177,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "35155ed9-35f4-4b20-8885-c72b8372fa1d",
             "starter": true,
             "subtypes": [
                 "Cat",
@@ -2188,14 +2185,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 104229,
-            "text": "",
             "toughness": "2",
             "type": "Artifact Creature — Cat Ally",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "35155ed9-35f4-4b20-8885-c72b8372fa1d"
+            "uuid": "f7e04df5-d562-5ee6-a5e2-bf7cffe51581"
         },
         {
             "artist": "Steven Belledin",
@@ -2217,7 +2213,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2272,6 +2267,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6d4b4f13-2ef0-4653-ad76-f95a7feacfd3",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2281,7 +2277,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "6d4b4f13-2ef0-4653-ad76-f95a7feacfd3"
+            "uuid": "69531903-f749-54a1-85dd-8098e73d4826"
         },
         {
             "artist": "Philip Straub",
@@ -2304,7 +2300,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2330,6 +2325,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "c48e19dd-f1b0-4aab-8620-42c0247a2b3a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2339,7 +2335,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c48e19dd-f1b0-4aab-8620-42c0247a2b3a"
+            "uuid": "1e42c18f-07c7-548d-864c-00125ad54c3c"
         },
         {
             "artist": "Eric Deschamps",
@@ -2362,7 +2358,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2395,6 +2390,7 @@
                     "text": "When a land becomes a creature, that doesn’t count as having a creature enter the battlefield. The permanent was already on the battlefield; it only changed its types. Abilities that trigger whenever a creature enters the battlefield won’t trigger."
                 }
             ],
+            "scryfallId": "a87acdd9-e203-4131-b55e-dc5dd7926710",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2404,7 +2400,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "a87acdd9-e203-4131-b55e-dc5dd7926710"
+            "uuid": "d9b71ba3-0ec1-550c-9c4a-50e6986f38e7"
         },
         {
             "artist": "Rob Alexander",
@@ -2426,7 +2422,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2449,6 +2444,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "d0c5c07b-df81-4941-ae7e-2d38e317059d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -2458,7 +2454,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "d0c5c07b-df81-4941-ae7e-2d38e317059d"
+            "uuid": "9f99b9e0-d3a7-5192-8bd3-d60f1fbd72b8"
         },
         {
             "artist": "John Avon",
@@ -2472,7 +2468,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2523,7 +2518,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2539,6 +2533,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2552,6 +2547,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "f9706bb7-4fcb-4561-981d-aef34e23756b",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2564,10 +2560,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f9706bb7-4fcb-4561-981d-aef34e23756b",
+            "uuid": "dff66e54-f2a8-5078-9932-d90475452ad5",
             "variations": [
-                "b7de212e-93d3-430d-b4b8-242b7b526eda",
-                "c577a2c0-88e3-49da-9586-6148f19e5c27"
+                "2369afda-fb7d-5290-b3a3-51da354d0617",
+                "7ca9b2c9-5a40-5e8d-822b-e26273983f34"
             ]
         },
         {
@@ -2582,7 +2578,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2633,7 +2628,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2649,6 +2643,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2662,6 +2657,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b7de212e-93d3-430d-b4b8-242b7b526eda",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2674,10 +2670,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "b7de212e-93d3-430d-b4b8-242b7b526eda",
+            "uuid": "2369afda-fb7d-5290-b3a3-51da354d0617",
             "variations": [
-                "f9706bb7-4fcb-4561-981d-aef34e23756b",
-                "c577a2c0-88e3-49da-9586-6148f19e5c27"
+                "dff66e54-f2a8-5078-9932-d90475452ad5",
+                "7ca9b2c9-5a40-5e8d-822b-e26273983f34"
             ]
         },
         {
@@ -2692,7 +2688,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2743,7 +2738,6 @@
                 "GRN",
                 "GS1",
                 "HOU",
-                "ISD",
                 "J14",
                 "KLD",
                 "KTK",
@@ -2759,6 +2753,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2772,6 +2767,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "c577a2c0-88e3-49da-9586-6148f19e5c27",
             "starter": true,
             "subtypes": [
                 "Plains"
@@ -2784,10 +2780,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c577a2c0-88e3-49da-9586-6148f19e5c27",
+            "uuid": "7ca9b2c9-5a40-5e8d-822b-e26273983f34",
             "variations": [
-                "f9706bb7-4fcb-4561-981d-aef34e23756b",
-                "b7de212e-93d3-430d-b4b8-242b7b526eda"
+                "dff66e54-f2a8-5078-9932-d90475452ad5",
+                "2369afda-fb7d-5290-b3a3-51da354d0617"
             ]
         },
         {
@@ -2802,7 +2798,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2857,7 +2852,6 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
@@ -2866,6 +2860,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2879,6 +2874,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "47c223fa-8173-4da2-abb0-753ffb4fc51c",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -2891,10 +2887,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "47c223fa-8173-4da2-abb0-753ffb4fc51c",
+            "uuid": "79479640-4df0-5cae-aee8-eff590b2534a",
             "variations": [
-                "1a181800-f5ef-4019-b93d-35d8f1dbf953",
-                "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec"
+                "2a01f3cf-cf5b-5c2b-8ce2-0772d496f1d4",
+                "3436bb1f-590e-556b-a8ac-3b77e30ca5d7"
             ]
         },
         {
@@ -2909,7 +2905,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -2964,7 +2959,6 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
@@ -2973,6 +2967,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -2986,6 +2981,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "1a181800-f5ef-4019-b93d-35d8f1dbf953",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -2998,10 +2994,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "1a181800-f5ef-4019-b93d-35d8f1dbf953",
+            "uuid": "2a01f3cf-cf5b-5c2b-8ce2-0772d496f1d4",
             "variations": [
-                "47c223fa-8173-4da2-abb0-753ffb4fc51c",
-                "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec"
+                "79479640-4df0-5cae-aee8-eff590b2534a",
+                "3436bb1f-590e-556b-a8ac-3b77e30ca5d7"
             ]
         },
         {
@@ -3016,7 +3012,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3071,7 +3066,6 @@
                 "J14",
                 "KLD",
                 "KTK",
-                "M13",
                 "M14",
                 "M15",
                 "M19",
@@ -3080,6 +3074,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -3093,6 +3088,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec",
             "starter": true,
             "subtypes": [
                 "Forest"
@@ -3105,10 +3101,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "6cb33c43-4f6e-4052-91f0-ca9bf8db5fec",
+            "uuid": "3436bb1f-590e-556b-a8ac-3b77e30ca5d7",
             "variations": [
-                "47c223fa-8173-4da2-abb0-753ffb4fc51c",
-                "1a181800-f5ef-4019-b93d-35d8f1dbf953"
+                "79479640-4df0-5cae-aee8-eff590b2534a",
+                "2a01f3cf-cf5b-5c2b-8ce2-0772d496f1d4"
             ]
         },
         {
@@ -3131,7 +3127,6 @@
             "frameVersion": "2015",
             "hasFoil": true,
             "hasNonFoil": false,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3166,6 +3161,7 @@
                     "text": "Cards that are face down in exile have no characteristics. Such cards can’t be put onto the battlefield with Oblivion Sower’s ability."
                 }
             ],
+            "scryfallId": "9f3a5dea-0422-49f8-a35b-757ea500a52d",
             "starter": true,
             "subtypes": [
                 "Eldrazi"
@@ -3178,7 +3174,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "9f3a5dea-0422-49f8-a35b-757ea500a52d"
+            "uuid": "d50c88c8-1527-5b10-aff2-1f39faccbb76"
         },
         {
             "artist": "Jason Felix",
@@ -3198,7 +3194,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3238,6 +3233,7 @@
                     "text": "If a creature with annihilator is attacking a planeswalker, and the defending player chooses to sacrifice that planeswalker, the attacking creature continues to attack. It may be blocked. If it isn’t blocked, it simply won’t deal combat damage to anything."
                 }
             ],
+            "scryfallId": "c861b386-20e4-42ae-b4db-392217c4f6d1",
             "starter": true,
             "subtypes": [
                 "Eldrazi"
@@ -3250,7 +3246,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c861b386-20e4-42ae-b4db-392217c4f6d1"
+            "uuid": "e369da06-16c4-585c-923a-b6faf6223a60"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -3272,7 +3268,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3328,6 +3323,7 @@
                     "text": "If the sacrificed permanent that caused the second ability to trigger somehow leaves the graveyard before the ability resolves (possibly because it was returned to the battlefield by the ability of another It That Betrays), the ability simply won’t do anything when it resolves."
                 }
             ],
+            "scryfallId": "5b64cfc0-dace-4f54-b2b1-c92d8cb64c35",
             "starter": true,
             "subtypes": [
                 "Eldrazi"
@@ -3340,7 +3336,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5b64cfc0-dace-4f54-b2b1-c92d8cb64c35"
+            "uuid": "000dac23-1053-56df-882a-298e198c3c97"
         },
         {
             "artist": "Todd Lockwood",
@@ -3362,7 +3358,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3397,10 +3392,11 @@
                     "text": "If a creature with annihilator is attacking a planeswalker, and the defending player chooses to sacrifice that planeswalker, the attacking creature continues to attack. It may be blocked. If it isn’t blocked, it simply won’t deal combat damage to anything."
                 },
                 {
-                    "date": "2010-06-15",
-                    "text": "If, during your declare attackers step, Ulamog’s Crusher is tapped, is affected by a spell or ability that says it can’t attack, or is affected by “summoning sickness,” then it doesn’t attack. If there’s a cost associated with having Ulamog’s Crusher attack, you aren’t forced to pay that cost, so it doesn’t have to attack in that case either."
+                    "date": "2018-12-07",
+                    "text": "If Ulamog’s Crusher can’t attack for any reason (such as becoming tapped or having just entered the battlefield), then it doesn’t attack. If there’s a cost associated with having it attack, its controller isn’t forced to pay that cost, so it doesn’t have to attack in that case either."
                 }
             ],
+            "scryfallId": "c391c62f-d219-4b6d-ab49-2f8975f880c6",
             "starter": true,
             "subtypes": [
                 "Eldrazi"
@@ -3413,7 +3409,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c391c62f-d219-4b6d-ab49-2f8975f880c6"
+            "uuid": "619e6950-035f-562b-852f-aa39626dd963"
         },
         {
             "artist": "Svetlin Velinov",
@@ -3439,7 +3435,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3464,6 +3459,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "94ebd19f-c3ec-41de-bde0-3118b34b76a4",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -3477,7 +3473,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "94ebd19f-c3ec-41de-bde0-3118b34b76a4"
+            "uuid": "8de36558-7005-50ef-9064-c8d7f3abfef3"
         },
         {
             "artist": "Steve Argyle",
@@ -3503,7 +3499,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3541,6 +3536,7 @@
                     "text": "If you sacrifice an attacking or blocking creature during the declare blockers step, it won’t deal combat damage. If you wait until the combat damage step, but the creature you wish to sacrifice is dealt lethal damage, it’ll be destroyed before you get a chance to sacrifice it."
                 }
             ],
+            "scryfallId": "ee7354fe-fb76-4196-a69b-0916af73bf45",
             "starter": true,
             "subtypes": [
                 "Vampire"
@@ -3553,7 +3549,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ee7354fe-fb76-4196-a69b-0916af73bf45"
+            "uuid": "e28687a2-cf79-5743-895e-4231c0ebc6f1"
         },
         {
             "artist": "Jason Chan",
@@ -3579,7 +3575,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3626,6 +3621,7 @@
                     "text": "If you and an opponent each control a Butcher of Malakir and a creature is put into a graveyard, a chain reaction happens. First the ability of one player’s Butcher will trigger, causing each opponent to sacrifice a creature. That sacrifice causes the ability of the other player’s Butcher to trigger, and so on."
                 }
             ],
+            "scryfallId": "1c428841-6ac7-4ca6-a3ff-2541a1444893",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -3639,7 +3635,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1c428841-6ac7-4ca6-a3ff-2541a1444893"
+            "uuid": "2db68ff6-afe3-5f37-8679-68ff7d104516"
         },
         {
             "artist": "Dave Kendall",
@@ -3665,7 +3661,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3693,6 +3688,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a8f1b92b-d546-4ab6-8628-51e8cb366519",
             "starter": true,
             "subtypes": [
                 "Imp"
@@ -3705,7 +3701,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a8f1b92b-d546-4ab6-8628-51e8cb366519"
+            "uuid": "a0b9791d-389f-5d42-8e54-b59c4228b75c"
         },
         {
             "artist": "Richard Wright",
@@ -3731,7 +3727,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3755,6 +3750,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "c94dcaed-55da-41f4-a61f-2a79ef6c1459",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -3764,7 +3760,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "c94dcaed-55da-41f4-a61f-2a79ef6c1459"
+            "uuid": "c2c31903-ca00-5694-9d45-05cc45466c7e"
         },
         {
             "artist": "Kekai Kotaki",
@@ -3788,7 +3784,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3801,10 +3796,7 @@
             "manaCost": "{3}{B}{B}",
             "multiverseId": 401692,
             "name": "Corpsehatch",
-            "names": [
-                "Corpsehatch",
-                "Eldrazi Spawn"
-            ],
+            "names": [],
             "number": "50",
             "originalText": "Destroy target nonblack creature. Put two 0/1 colorless Eldrazi Spawn creature tokens onto the battlefield. They have \"Sacrifice this creature: Add {1} to your mana pool.\"",
             "originalType": "Sorcery",
@@ -3814,6 +3806,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0f8f9dc0-67c3-4ded-bf95-02452d4ee635",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -3823,7 +3816,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0f8f9dc0-67c3-4ded-bf95-02452d4ee635"
+            "uuid": "5f9fb393-5314-50f9-a387-2c41af57bf90"
         },
         {
             "artist": "James Zapata",
@@ -3842,10 +3835,10 @@
                     "type": "クリーチャー — エルドラージ・ドローン"
                 }
             ],
+            "frameEffect": "devoid",
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3904,6 +3897,7 @@
                     "text": "If the player has no cards in their library when the ingest ability resolves, nothing happens. That player won’t lose the game (until they have to draw a card from an empty library)."
                 }
             ],
+            "scryfallId": "d9f48118-243b-4780-98a3-389f59e1b5b0",
             "starter": true,
             "subtypes": [
                 "Eldrazi",
@@ -3917,7 +3911,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d9f48118-243b-4780-98a3-389f59e1b5b0"
+            "uuid": "ea1ed42d-da84-5cb2-9728-4a55d3cfce98"
         },
         {
             "artist": "Jason Felix",
@@ -3941,7 +3935,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -3966,6 +3959,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "b2ce0a6f-4990-41ae-a37d-b89da2b9e4de",
             "starter": true,
             "subtypes": [
                 "Insect"
@@ -3978,7 +3972,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b2ce0a6f-4990-41ae-a37d-b89da2b9e4de"
+            "uuid": "7d650f5c-de8a-5de2-8cf3-c1486085531e"
         },
         {
             "artist": "Igor Kieryluk",
@@ -4004,7 +3998,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4028,6 +4021,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ba9153ce-2acd-4170-a2ab-c8b660614152",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4037,7 +4031,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "ba9153ce-2acd-4170-a2ab-c8b660614152"
+            "uuid": "8b1e7de2-205f-5fce-a05d-2cdf2c794190"
         },
         {
             "artist": "Scott Chou",
@@ -4061,7 +4055,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4084,6 +4077,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "9861ea61-d635-4f1c-b5eb-d608e12713ec",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4093,7 +4087,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9861ea61-d635-4f1c-b5eb-d608e12713ec"
+            "uuid": "46b58879-f859-55d8-91d7-00dd29df2cd0"
         },
         {
             "artist": "Daarken",
@@ -4117,7 +4111,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4130,10 +4123,7 @@
             "manaCost": "{1}{B}{B}",
             "multiverseId": 401697,
             "name": "Pawn of Ulamog",
-            "names": [
-                "Pawn of Ulamog",
-                "Eldrazi Spawn"
-            ],
+            "names": [],
             "number": "55",
             "originalText": "Whenever Pawn of Ulamog or another nontoken creature you control dies, you may put a 0/1 colorless Eldrazi Spawn creature token onto the battlefield. It has \"Sacrifice this creature: Add {1} to your mana pool.\"",
             "originalType": "Creature — Vampire Shaman",
@@ -4154,6 +4144,7 @@
                     "text": "If you control more than one Pawn of Ulamog and a nontoken creature you control is put into a graveyard, each of those Pawns’ abilities will trigger. You may put up to that many Eldrazi Spawn tokens onto the battlefield."
                 }
             ],
+            "scryfallId": "937d2120-09c6-4898-8024-b9d45b8d00e5",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -4167,7 +4158,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "937d2120-09c6-4898-8024-b9d45b8d00e5"
+            "uuid": "45e1f431-a6cf-5970-afbb-7581fba9fc2b"
         },
         {
             "artist": "Lars Grant-West",
@@ -4193,7 +4184,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4242,6 +4232,7 @@
                     "text": "Scry appears on some spells and abilities with one or more targets. If all of the spell or ability’s targets are illegal when it tries to resolve, it won’t resolve and none of its effects will happen. You won’t scry."
                 }
             ],
+            "scryfallId": "0975e578-cd4e-43fa-800c-c38e6cd1248a",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4251,7 +4242,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0975e578-cd4e-43fa-800c-c38e6cd1248a"
+            "uuid": "5973bcf2-5de3-540f-8f55-2189b07e160c"
         },
         {
             "artist": "Karl Kopinski",
@@ -4277,7 +4268,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4317,6 +4307,7 @@
                     "text": "If a creature is copying something else, its converted mana cost is the converted mana cost of whatever it’s copying."
                 }
             ],
+            "scryfallId": "cf605c8e-e59f-4f49-bb55-1824e7eadec0",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4326,7 +4317,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "cf605c8e-e59f-4f49-bb55-1824e7eadec0"
+            "uuid": "d69bfb54-35dd-5ea5-a4c6-cdc46022a722"
         },
         {
             "artist": "Jason Chan",
@@ -4350,7 +4341,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4383,6 +4373,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "93933cd6-dfc9-4901-be1c-2bf05c1785ec",
             "starter": true,
             "subtypes": [
                 "Vampire",
@@ -4396,7 +4387,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "93933cd6-dfc9-4901-be1c-2bf05c1785ec"
+            "uuid": "0895cecb-fba0-5f02-8213-35b8ddff8a9a"
         },
         {
             "artist": "Jaime Jones",
@@ -4422,7 +4413,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4437,10 +4427,7 @@
             "manaCost": "{4}{R}",
             "multiverseId": 401701,
             "name": "Emrakul's Hatcher",
-            "names": [
-                "Emrakul's Hatcher",
-                "Eldrazi Spawn"
-            ],
+            "names": [],
             "number": "59",
             "originalText": "When Emrakul's Hatcher enters the battlefield, put three 0/1 colorless Eldrazi Spawn creature tokens onto the battlefield. They have \"Sacrifice this creature: Add {1} to your mana pool.\"",
             "originalType": "Creature — Eldrazi Drone",
@@ -4451,6 +4438,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "35fab29d-1bcc-4ba0-90bf-427d95bf6699",
             "starter": true,
             "subtypes": [
                 "Eldrazi",
@@ -4464,7 +4452,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "35fab29d-1bcc-4ba0-90bf-427d95bf6699"
+            "uuid": "0c22a690-fdd3-597e-919e-f6aefb8b121f"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -4490,7 +4478,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4517,6 +4504,7 @@
                     "text": "You divide the damage as you cast Forked Bolt, not as it resolves. Each target must be assigned at least 1 damage. (In other words, as you cast Forked Bolt, you choose whether to have it deal 2 damage to a single target, or deal 1 damage to each of two targets.)"
                 }
             ],
+            "scryfallId": "364ed745-0dff-477a-a2c5-987639936337",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4526,7 +4514,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "364ed745-0dff-477a-a2c5-987639936337"
+            "uuid": "8f7fafaa-deed-56d4-adf3-51a9e7f544c8"
         },
         {
             "artist": "Anthony Francisco",
@@ -4552,7 +4540,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4566,10 +4553,7 @@
             "manaCost": "{5}{R}",
             "multiverseId": 401703,
             "name": "Hellion Eruption",
-            "names": [
-                "Hellion Eruption",
-                "Hellion"
-            ],
+            "names": [],
             "number": "61",
             "originalText": "Sacrifice all creatures you control, then put that many 4/4 red Hellion creature tokens onto the battlefield.",
             "originalType": "Sorcery",
@@ -4581,6 +4565,7 @@
             ],
             "rarity": "rare",
             "rulings": [],
+            "scryfallId": "31770e58-51f2-4942-b86c-cb1f089ad74e",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4590,7 +4575,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "31770e58-51f2-4942-b86c-cb1f089ad74e"
+            "uuid": "ed0dbb51-6a3b-56ab-9220-5c1e7741bc96"
         },
         {
             "artist": "Karl Kopinski",
@@ -4616,7 +4601,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4642,10 +4626,11 @@
             "rarity": "rare",
             "rulings": [
                 {
-                    "date": "2010-06-15",
-                    "text": "You may sacrifice Magmaw to pay its own activation cost. If you do, Magmaw will still deal 1 damage to the targeted permanent or player (unless, for some reason, you targeted Magmaw itself, in which case the ability won’t resolve for having no legal targets)."
+                    "date": "2018-12-07",
+                    "text": "You can sacrifice Magmaw to pay the cost for its own ability. It still deals 1 damage to the target."
                 }
             ],
+            "scryfallId": "3f170d96-5070-41ed-abf3-e3bddceb9d0e",
             "starter": true,
             "subtypes": [
                 "Elemental"
@@ -4658,7 +4643,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3f170d96-5070-41ed-abf3-e3bddceb9d0e"
+            "uuid": "63793dc4-ca7f-535a-abcd-b2a1810c17dc"
         },
         {
             "artist": "Andrew Robinson",
@@ -4684,7 +4669,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4708,6 +4692,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "229dec8c-ec73-4bab-8c37-517cb4a01988",
             "starter": true,
             "subtypes": [
                 "Goblin",
@@ -4721,7 +4706,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "229dec8c-ec73-4bab-8c37-517cb4a01988"
+            "uuid": "197cdbf7-3478-5c69-a933-53a2dabf48a1"
         },
         {
             "artist": "James Zapata",
@@ -4743,10 +4728,10 @@
                     "type": "クリーチャー — エルドラージ・ドローン"
                 }
             ],
+            "frameEffect": "devoid",
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4791,6 +4776,7 @@
                     "text": "If a card loses devoid, it will still be colorless. This is because effects that change an object’s color (like the one created by devoid) are considered before the object loses devoid."
                 }
             ],
+            "scryfallId": "195b867e-41ca-48af-bbd2-5e2c97411752",
             "starter": true,
             "subtypes": [
                 "Eldrazi",
@@ -4804,7 +4790,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "195b867e-41ca-48af-bbd2-5e2c97411752"
+            "uuid": "5d6f0e92-41ce-5cea-8a67-247e3d00d5bb"
         },
         {
             "artist": "Adam Rex",
@@ -4826,7 +4812,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4860,6 +4845,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "0eebe138-f638-4e8a-820e-ecdada7cc586",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4869,7 +4855,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "0eebe138-f638-4e8a-820e-ecdada7cc586"
+            "uuid": "25c222de-f6ad-558f-a066-57fc831ad305"
         },
         {
             "artist": "Mike Bierek",
@@ -4891,7 +4877,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4923,6 +4908,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "e9820223-77b9-42e5-94e3-bb131bbffc28",
             "starter": true,
             "subtypes": [
                 "Construct"
@@ -4936,7 +4922,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e9820223-77b9-42e5-94e3-bb131bbffc28"
+            "uuid": "c521145f-4002-5abf-ad2e-2879880a799b"
         },
         {
             "artist": "Fred Fields",
@@ -4959,7 +4945,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -4986,6 +4971,7 @@
             ],
             "rarity": "uncommon",
             "rulings": [],
+            "scryfallId": "2a110d58-3576-48cb-a446-8351e0f33a16",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -4995,7 +4981,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2a110d58-3576-48cb-a446-8351e0f33a16"
+            "uuid": "cb56c7a5-e1ae-51b9-aabc-29592b06ebef"
         },
         {
             "artist": "James Paick",
@@ -5017,7 +5003,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5044,6 +5029,7 @@
                     "text": "The mana generated by the last ability can’t be spent to activate abilities of Eldrazi sources that aren’t on the battlefield."
                 }
             ],
+            "scryfallId": "c42049e2-fe4e-4fe9-9599-faf1af50b97d",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -5053,7 +5039,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c42049e2-fe4e-4fe9-9599-faf1af50b97d"
+            "uuid": "098809a9-1794-5856-9688-b0a093576255"
         },
         {
             "artist": "Jeff Miracola",
@@ -5073,7 +5059,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5101,6 +5086,7 @@
                     "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
                 }
             ],
+            "scryfallId": "869a0c02-2a67-4847-ae38-21752159adf9",
             "starter": true,
             "subtypes": [],
             "supertypes": [],
@@ -5110,7 +5096,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "869a0c02-2a67-4847-ae38-21752159adf9"
+            "uuid": "c7c52e87-8c7a-5f33-8e32-e08a74f5813a"
         },
         {
             "artist": "Véronique Meignaud",
@@ -5124,7 +5110,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5188,6 +5173,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5201,6 +5187,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -5213,10 +5200,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
+            "uuid": "417d2af4-515d-50df-a3b9-45d9fc35918b",
             "variations": [
-                "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456",
-                "2fe8fd6b-f6b0-442a-950e-65144a019b74"
+                "1dfc49db-fb3f-57c8-87e1-0d7092582e7a",
+                "4dafd5ac-5d20-5b84-be2d-cc74920ffa3c"
             ]
         },
         {
@@ -5231,7 +5218,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5295,6 +5281,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5308,6 +5295,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -5320,10 +5308,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456",
+            "uuid": "1dfc49db-fb3f-57c8-87e1-0d7092582e7a",
             "variations": [
-                "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
-                "2fe8fd6b-f6b0-442a-950e-65144a019b74"
+                "417d2af4-515d-50df-a3b9-45d9fc35918b",
+                "4dafd5ac-5d20-5b84-be2d-cc74920ffa3c"
             ]
         },
         {
@@ -5338,7 +5326,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5402,6 +5389,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5415,6 +5403,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "2fe8fd6b-f6b0-442a-950e-65144a019b74",
             "starter": true,
             "subtypes": [
                 "Swamp"
@@ -5427,10 +5416,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2fe8fd6b-f6b0-442a-950e-65144a019b74",
+            "uuid": "4dafd5ac-5d20-5b84-be2d-cc74920ffa3c",
             "variations": [
-                "ab891f92-bd3c-4ef7-bfe2-855fb01f583e",
-                "a9bb8c7b-88f3-4ce5-8b07-8f78aa5eb456"
+                "417d2af4-515d-50df-a3b9-45d9fc35918b",
+                "1dfc49db-fb3f-57c8-87e1-0d7092582e7a"
             ]
         },
         {
@@ -5445,7 +5434,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5468,7 +5456,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -5511,6 +5498,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5524,6 +5512,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -5536,10 +5525,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
+            "uuid": "746f366c-88b6-5ab9-8b8a-e0b0d4bba864",
             "variations": [
-                "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf",
-                "ad25a56c-607b-4896-a34a-aeb2712b2a08"
+                "17bba06e-c8bd-5f0d-b1cb-02e4b2553d31",
+                "f9fbbc60-948a-52f0-89bd-162536fc0247"
             ]
         },
         {
@@ -5554,7 +5543,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5577,7 +5565,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -5620,6 +5607,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5633,6 +5621,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -5645,10 +5634,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf",
+            "uuid": "17bba06e-c8bd-5f0d-b1cb-02e4b2553d31",
             "variations": [
-                "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
-                "ad25a56c-607b-4896-a34a-aeb2712b2a08"
+                "746f366c-88b6-5ab9-8b8a-e0b0d4bba864",
+                "f9fbbc60-948a-52f0-89bd-162536fc0247"
             ]
         },
         {
@@ -5663,7 +5652,6 @@
             "frameVersion": "2015",
             "hasFoil": false,
             "hasNonFoil": true,
-            "isReserved": false,
             "layout": "normal",
             "legalities": {
                 "1v1": "Legal",
@@ -5686,7 +5674,6 @@
             "originalType": "Basic Land — Mountain",
             "printings": [
                 "AKH",
-                "AVR",
                 "BBD",
                 "BFZ",
                 "C13",
@@ -5729,6 +5716,7 @@
                 "PF19",
                 "PGP17",
                 "PRM",
+                "PRW2",
                 "PRWK",
                 "PSS2",
                 "PSS3",
@@ -5742,6 +5730,7 @@
             ],
             "rarity": "common",
             "rulings": [],
+            "scryfallId": "ad25a56c-607b-4896-a34a-aeb2712b2a08",
             "starter": true,
             "subtypes": [
                 "Mountain"
@@ -5754,17 +5743,17 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ad25a56c-607b-4896-a34a-aeb2712b2a08",
+            "uuid": "f9fbbc60-948a-52f0-89bd-162536fc0247",
             "variations": [
-                "fd16edd0-4d4e-4db6-9da9-4bb5994fa047",
-                "46ae8b67-6239-47fa-b5d0-9c9454fbdcdf"
+                "746f366c-88b6-5ab9-8b8a-e0b0d4bba864",
+                "17bba06e-c8bd-5f0d-b1cb-02e4b2553d31"
             ]
         }
     ],
     "code": "ddp",
     "meta": {
-        "date": "2018-12-07",
-        "version": "4.1.3"
+        "date": "2018-12-18",
+        "version": "4.2.0"
     },
     "mtgoCode": null,
     "name": "Duel Decks: Zendikar vs. Eldrazi",
@@ -5784,10 +5773,11 @@
                 "Pawn of Ulamog",
                 "Emrakul's Hatcher"
             ],
+            "scryfallId": "3616dc24-69fb-4cd1-b14b-526e91612361",
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "uuid": "3616dc24-69fb-4cd1-b14b-526e91612361"
+            "uuid": "99da0887-31a0-5ea9-aed7-371a49c33d0f"
         },
         {
             "artist": "Véronique Meignaud",
@@ -5802,10 +5792,11 @@
                 "Pawn of Ulamog",
                 "Emrakul's Hatcher"
             ],
+            "scryfallId": "7787eae2-7dfb-44ab-8e92-56fdfc0bb39e",
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "uuid": "7787eae2-7dfb-44ab-8e92-56fdfc0bb39e"
+            "uuid": "f7bf9012-f77f-5d39-9f03-e0b70f1dd20f"
         },
         {
             "artist": "Mark Tedin",
@@ -5820,10 +5811,11 @@
                 "Pawn of Ulamog",
                 "Emrakul's Hatcher"
             ],
+            "scryfallId": "f4703aeb-4255-461f-9d46-443143a8ca3b",
             "text": "Sacrifice this creature: Add {C}.",
             "toughness": "1",
             "type": "Token Creature — Eldrazi Spawn",
-            "uuid": "f4703aeb-4255-461f-9d46-443143a8ca3b"
+            "uuid": "6b6bd2fc-ccdf-50e7-99ad-e64c64abbe36"
         },
         {
             "artist": "Anthony Francisco",
@@ -5840,10 +5832,10 @@
             "reverseRelated": [
                 "Hellion Eruption"
             ],
-            "text": "",
+            "scryfallId": "da59fb40-b218-452f-b161-3bde15e30c74",
             "toughness": "4",
             "type": "Token Creature — Hellion",
-            "uuid": "da59fb40-b218-452f-b161-3bde15e30c74"
+            "uuid": "6e037582-d560-530e-b285-23a5619cf58e"
         },
         {
             "artist": "Daren Bader",
@@ -5860,10 +5852,10 @@
             "reverseRelated": [
                 "Avenger of Zendikar"
             ],
-            "text": "",
+            "scryfallId": "d365bf32-74a3-436b-b1cc-1a7d3254257a",
             "toughness": "1",
             "type": "Token Creature — Plant",
-            "uuid": "d365bf32-74a3-436b-b1cc-1a7d3254257a"
+            "uuid": "c2667162-4c7b-5c3c-8ef2-85e8465cc99c"
         }
     ],
     "totalSetSize": 80,
