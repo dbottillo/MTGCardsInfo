@@ -21,6 +21,8 @@ class CardsHelperTest {
 
     lateinit var underTest: CardsHelper
 
+    private val random = Random()
+
     @Before
     fun setUp() {
         underTest = CardsHelper()
@@ -219,7 +221,8 @@ class CardsHelperTest {
         isMulticolor: Boolean = false
     ): MTGCard {
         val card = MTGCard()
-        card.uuid = Random().nextInt().toString()
+        card.uuid = random.nextInt().toString()
+        card.scryfallId = random.nextInt().toString()
         card.setCardName("$name $number")
         card.manaCost = cost
         card.rarity = rarity

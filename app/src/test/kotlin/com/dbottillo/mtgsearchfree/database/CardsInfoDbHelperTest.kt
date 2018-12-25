@@ -269,6 +269,19 @@ class CardsInfoDbHelperTest {
         assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun), `is`(true))
     }
 
+    @Test
+    fun test_db_upgrade_from_version9_to_version10_does_not_generate_error() {
+        val db = cardsInfoDbHelper.writableDatabase
+        downgradeDb(db, 9)
+        var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun), `is`(false))
+        cardsInfoDbHelper.onUpgrade(db, 9, 10)
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun), `is`(true))
+    }
+
     private fun assertTableExist(db: SQLiteDatabase, table: String, exist: Boolean) {
         var isExist = false
         val cursor = db.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '$table'", null)
@@ -349,6 +362,11 @@ class CardsInfoDbHelperTest {
         }
         if (version == 8) {
             db.execSQL(CardDataSource.generateCreateTable(8))
+            db.execSQL(PlayerDataSource.generateCreateTable())
+            db.execSQL(FavouritesDataSource.generateCreateTable())
+        }
+        if (version == 9) {
+            db.execSQL(CardDataSource.generateCreateTable(9))
             db.execSQL(PlayerDataSource.generateCreateTable())
             db.execSQL(FavouritesDataSource.generateCreateTable())
         }

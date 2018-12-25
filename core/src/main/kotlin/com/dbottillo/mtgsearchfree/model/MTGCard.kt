@@ -7,6 +7,8 @@ import com.dbottillo.mtgsearchfree.core.R
 data class MTGCard(
     var id: Int = 0,
     var uuid: String = "",
+    var scryfallId: String = "",
+    var tcgplayerProductId: Int = 0,
     var name: String = "",
     var type: String = "",
     val types: MutableList<String> = mutableListOf(),
@@ -102,13 +104,10 @@ data class MTGCard(
             Rarity.MYTHIC -> R.color.mythic
         }
 
-    val gathererImage
-        get() = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
-
     val scryfallImage
-        get() = if (uuid.isNotEmpty()) {
-            "https://api.scryfall.com/cards/$uuid?format=image"
-        } else gathererImage
+        get() = if (scryfallId.isNotEmpty() && isNormal) {
+            "https://api.scryfall.com/cards/$scryfallId?format=image"
+        } else "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
 
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(context,
@@ -146,10 +145,15 @@ data class MTGCard(
     val isDoubleFaced: Boolean
         get() = layout.equals("double-faced", ignoreCase = true)
 
+    val isTransform: Boolean
+        get() = layout.equals("transform", ignoreCase = true)
+
+    val isNormal: Boolean
+        get() = layout.equals("normal", ignoreCase = true)
+
     override fun equals(other: Any?): Boolean {
         return when (other) {
             !is MTGCard -> false
-            multiVerseId > 0 && multiVerseId == other.multiVerseId -> true
             else -> uuid == other.uuid
         }
     }

@@ -75,6 +75,10 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     val card = MTGCard()
 
     card.uuid = jsonObject.getString("uuid")
+    card.scryfallId = jsonObject.getString("scryfallId")
+    if (jsonObject.has("tcgplayerProductId")) {
+        card.tcgplayerProductId = jsonObject.getInt("tcgplayerProductId")
+    }
     card.setCardName(jsonObject.getString("name"))
     card.type = jsonObject.getString("type")
     card.belongsTo(set)

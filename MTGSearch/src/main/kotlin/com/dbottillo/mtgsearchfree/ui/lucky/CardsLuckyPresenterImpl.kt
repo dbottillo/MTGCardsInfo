@@ -19,8 +19,8 @@ class CardsLuckyPresenterImpl(
 
     lateinit var view: CardsLuckyView
 
-    private var luckyCards = mutableListOf<MTGCard>()
-    private var currentCard: MTGCard? = null
+    var luckyCards = mutableListOf<MTGCard>()
+    var currentCard: MTGCard? = null
     private var favs: MutableList<Int>? = mutableListOf()
 
     private var disposable: CompositeDisposable = CompositeDisposable()

@@ -65,7 +65,9 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         LEGALITIES("legalities", "TEXT"),
         ORIGINAL_TEXT("originalText", "TEXT"),
         COLORS_IDENTITY("colorIdentity", "TEXT"),
-        UUID("uuid", "TEXT")
+        UUID("uuid", "TEXT"),
+        SCRYFALLID("scryfallId", "TEXT"),
+        TCG_PLAYER_PRODUCT_ID("tcgplayerProductId", "INTEGER")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -162,7 +164,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             values.put(COLUMNS.LEGALITIES.noun, legalitiesJ.toString())
         }
         values.put(COLUMNS.UUID.noun, card.uuid)
-
+        values.put(COLUMNS.SCRYFALLID.noun, card.scryfallId)
+        values.put(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, card.tcgplayerProductId)
         return values
     }
 
@@ -332,6 +335,14 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             card.uuid = cursor.getString(cursor.getColumnIndex(COLUMNS.UUID.noun)) ?: ""
         }
 
+        if (cursor.getColumnIndex(COLUMNS.SCRYFALLID.noun) != -1) {
+            card.scryfallId = cursor.getString(cursor.getColumnIndex(COLUMNS.SCRYFALLID.noun)) ?: ""
+        }
+
+        if (cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun) != -1) {
+            card.tcgplayerProductId = cursor.getInt(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun))
+        }
+
         return card
     }
 
@@ -402,12 +413,20 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 TABLE + " ADD COLUMN " +
                 COLUMNS.UUID.noun + " " + COLUMNS.UUID.type)
 
+        internal val SQL_ADD_COLUMN_SCRYFALLID = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.SCRYFALLID.noun + " " + COLUMNS.SCRYFALLID.type)
+
+        internal val SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_ID = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.TCG_PLAYER_PRODUCT_ID.noun + " " + COLUMNS.TCG_PLAYER_PRODUCT_ID.type)
+
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.UUID) {
+                if (column != COLUMNS.TCG_PLAYER_PRODUCT_ID) {
                     builder.append(',')
                 }
             }
@@ -421,7 +440,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 version < SEVEN -> COLUMNS.NUMBER
                 version < EIGTH -> COLUMNS.ORIGINAL_TEXT
                 version < NINE -> COLUMNS.COLORS_IDENTITY
-                else -> COLUMNS.ORIGINAL_TEXT
+                version < TEN -> COLUMNS.UUID
+                else -> COLUMNS.TCG_PLAYER_PRODUCT_ID
             }
         }
 
@@ -431,22 +451,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             val lastColumn = getLastColumn(version)
             for (column in COLUMNS.values()) {
-                var addColumn = true
-                if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
-                    addColumn = false
-                } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
-                    addColumn = false
-                } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES ||
-                                column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST ||
-                                column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
-                                column == COLUMNS.LEGALITIES) || column == COLUMNS.ORIGINAL_TEXT && version <= 6) {
-                    addColumn = false
-                } else if (column == COLUMNS.COLORS_IDENTITY && version <= SEVEN) {
-                    addColumn = false
-                } else if (column == COLUMNS.UUID && version <= NINE) {
-                    addColumn = false
-                }
-                if (addColumn) {
+                if (shouldAddColumn(column, version)) {
                     builder.append(column.noun).append(' ').append(column.type)
                     if (column != lastColumn) {
                         builder.append(',')
@@ -454,6 +459,28 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 }
             }
             return builder.append(')').toString()
+        }
+
+        private fun shouldAddColumn(column: COLUMNS, version: Int): Boolean {
+            var addColumn = true
+            if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {
+                addColumn = false
+            } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
+                addColumn = false
+            } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES ||
+                            column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST ||
+                            column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
+                            column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) && version <= 6) {
+                addColumn = false
+            } else if (column == COLUMNS.COLORS_IDENTITY && version <= SEVEN) {
+                addColumn = false
+            } else if (column == COLUMNS.UUID && version <= EIGTH) {
+                addColumn = false
+            } else if ((column == COLUMNS.SCRYFALLID || column == COLUMNS.TCG_PLAYER_PRODUCT_ID) &&
+                    version <= NINE) {
+                addColumn = false
+            }
+            return addColumn
         }
     }
 }
@@ -484,3 +511,4 @@ private const val THREE = 3
 private const val SEVEN = 7
 private const val EIGTH = 8
 private const val NINE = 9
+private const val TEN = 10

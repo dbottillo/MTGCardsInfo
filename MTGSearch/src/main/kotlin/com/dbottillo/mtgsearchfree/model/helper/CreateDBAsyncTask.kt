@@ -283,6 +283,12 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             if (jsonObject.has("uuid")) {
                 values.put(CardDataSource.COLUMNS.UUID.noun, jsonObject.getString("uuid"))
             }
+            if (jsonObject.has("scryfallId")) {
+                values.put(CardDataSource.COLUMNS.SCRYFALLID.noun, jsonObject.getString("scryfallId"))
+            }
+            if (jsonObject.has("tcgplayerProductId")) {
+                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, jsonObject.getInt("tcgplayerProductId"))
+            }
             values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
             return values
         }

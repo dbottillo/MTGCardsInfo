@@ -56,7 +56,7 @@ class CardDataSourceIntegrationTest {
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT)"))
+        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)"))
         assertThat(CardDataSource.generateCreateTable(1), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"))
         assertThat(CardDataSource.generateCreateTable(2), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"))
         assertThat(CardDataSource.generateCreateTable(3), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"))
@@ -131,6 +131,8 @@ class CardDataSourceIntegrationTest {
             assertThat(cardFromDb.legalities[i].legality, `is`(card.legalities[i].legality))
         }
         assertThat(cardFromDb.uuid, `is`(card.uuid))
+        assertThat(cardFromDb.scryfallId, `is`(card.scryfallId))
+        assertThat(cardFromDb.tcgplayerProductId, `is`(card.tcgplayerProductId))
         cursor.close()
     }
 
@@ -154,7 +156,9 @@ class CardDataSourceIntegrationTest {
 
         assertThat(card.id, `is`(2))
         assertThat(card.multiVerseId, `is`(1001))
+        assertThat(card.tcgplayerProductId, `is`(129859))
         assertThat(card.uuid, `is`("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe"))
+        assertThat(card.scryfallId, `is`("05e2a5e6-3aaa-4096-bdd0-fcc1afe5a36c"))
         assertThat(card.name, `is`("name"))
         assertThat(card.type, `is`("type"))
         assertThat(card.types, `is`(listOf("Artifact", "Creature")))
@@ -224,6 +228,8 @@ class CardDataSourceIntegrationTest {
         val contentValues = underTest.createContentValue(card)
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.UUID.noun), `is`(card.uuid))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SCRYFALLID.noun), `is`(card.scryfallId))
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun), `is`(card.tcgplayerProductId))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.noun), `is`(card.name))
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.noun), `is`(card.type))
 
@@ -396,5 +402,11 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.UUID.noun)).thenReturn(32)
         whenever(cursor.getString(32)).thenReturn("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe")
+
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SCRYFALLID.noun)).thenReturn(33)
+        whenever(cursor.getString(33)).thenReturn("05e2a5e6-3aaa-4096-bdd0-fcc1afe5a36c")
+
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)).thenReturn(34)
+        whenever(cursor.getInt(34)).thenReturn(129859)
     }
 }
