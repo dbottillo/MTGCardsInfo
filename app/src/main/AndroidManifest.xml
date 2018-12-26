@@ -24,6 +24,19 @@
                 android:resource="@xml/provider_paths"/>
         </provider>
 
+        <receiver
+            android:name="com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider"
+            android:icon="@drawable/ic_launcher"
+            android:label="Lucky Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/lucky_widget_info"/>
+        </receiver>
+
     </application>
 
 </manifest>

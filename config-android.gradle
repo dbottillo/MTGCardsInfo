@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 101
-        versionName "3.6.0"
+        versionCode 106
+        versionName "3.6.1"
     }
 
     buildTypes {
@@ -39,7 +39,7 @@ android {
         xmlReport false
         checkAllWarnings true
         checkReleaseBuilds false
-        lintConfig file("config/lint/lint.xml")
+        lintConfig file("$rootDir/config/lint/lint.xml")
         ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
     }
 }

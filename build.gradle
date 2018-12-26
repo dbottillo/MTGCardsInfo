@@ -21,7 +21,7 @@ buildscript {
     }
 }
 
-plugins{
+plugins {
     id "io.gitlab.arturbosch.detekt" version "1.0.0-RC10"
 }
 
@@ -35,7 +35,7 @@ allprojects {
         jcenter()
     }
 
-    dependencies { apply from:"$rootProject.rootDir/dependencies-groups.gradle" }
+    dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }
 }
 
 task clean(type: Delete) {
@@ -126,20 +126,5 @@ task pmd(type: Pmd) {
         html.enabled = true
     }
 }
-
-task quality
-quality.dependsOn 'checkstyle', 'pmd', 'detekt'
-//quality.dependsOn 'checkstyle', 'lintRelease', 'pmd', 'findbugs'
-
-task testPreRelease
-//testPreRelease.dependsOn 'testReleaseUnitTest', 'connectedAndroidTest'
-testPreRelease.dependsOn 'testReleaseUnitTest'
-
-task release
-release.dependsOn 'assembleRelease', 'quality', 'testPreRelease'
-
-task devTest
-//devTest.dependsOn 'testDebugUnitTest', 'connectedAndroidTest'
-devTest.dependsOn 'testDebugUnitTest'
 
 apply from: 'githooks.gradle'

@@ -17,7 +17,10 @@
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
     </style>
 
-    <style name="MTGSearchTheme" parent="MTGBasicTheme"/>
+    <style name="MTGSearchTheme" parent="@style/MTGBasicTheme">
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>

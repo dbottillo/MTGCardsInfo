@@ -112,6 +112,20 @@ class CardsHelperTest {
     }
 
     @Test
+    fun `filter cards should order cards with unnumbered cards`() {
+        val cardFilter = CardFilter()
+        cardFilter.sortSetNumber = true
+        val zyx = generateCard(name = "ZYX", number = "").also { it.set = MTGSet(1, "AAA", "setA") }
+        val abc = generateCard(name = "ABC", number = "1").also { it.set = MTGSet(1, "AAA", "setA") }
+        val cards = listOf(zyx, abc)
+
+        val result = underTest.filterAndSortSet(cardFilter, cards)
+
+        assertThat(result[0], `is`(zyx))
+        assertThat(result[1], `is`(abc))
+    }
+
+    @Test
     fun `filter cards should order cards across sets by set-number`() {
         val cardFilter = CardFilter()
         cardFilter.sortSetNumber = true

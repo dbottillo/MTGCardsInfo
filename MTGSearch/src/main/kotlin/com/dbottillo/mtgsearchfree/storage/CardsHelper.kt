@@ -39,7 +39,7 @@ private fun List<MTGCard>.filterWith(filter: CardFilter): List<MTGCard> {
 private fun List<MTGCard>.sortSingleSet(sortSetNumber: Boolean): List<MTGCard> {
     val regex = Regex("[^\\d.]")
     if (sortSetNumber) {
-        return this.sortedBy { regex.replace(it.number, "").toInt() }
+        return this.sortedBy { regex.replace(it.number, "").ifEmpty { "0" }.toInt() }
     }
     return this.sortedBy { it.name }
 }
@@ -50,7 +50,7 @@ private fun List<MTGCard>.sortMultipleSetsBy(sortSetNumber: Boolean): List<MTGCa
         val cards = mutableListOf<MTGCard>()
         val setMap = this.groupBy { it.set }.toSortedMap(compareBy { it?.id })
         setMap.forEach { mapEntry ->
-            cards.addAll(mapEntry.value.sortedBy { regex.replace(it.number, "").toInt() })
+            cards.addAll(mapEntry.value.sortedBy { regex.replace(it.number, "").ifEmpty { "0" }.toInt() })
         }
         return cards
     }

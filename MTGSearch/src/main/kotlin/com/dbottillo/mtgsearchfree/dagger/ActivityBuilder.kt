@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
+import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNotePresenter
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
@@ -62,6 +63,10 @@ abstract class ActivityBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [(SetPickerActivityModule::class)])
     abstract fun contributeSetPickerActivityInjector(): SetPickerActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun contributeAboutActivityInjector(): AboutActivity
 }
 
 @Module

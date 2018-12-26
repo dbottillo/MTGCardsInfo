@@ -256,7 +256,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             card.layout = cursor.getString(cursor.getColumnIndex(COLUMNS.LAYOUT.noun))
         }
         if (cursor.getColumnIndex(COLUMNS.NUMBER.noun) != -1) {
-            card.number = cursor.getString(cursor.getColumnIndex(COLUMNS.NUMBER.noun))
+            card.number = cursor.getString(cursor.getColumnIndex(COLUMNS.NUMBER.noun)) ?: ""
         }
 
         if (cursor.getColumnIndex(COLUMNS.NAMES.noun) != -1) {
@@ -299,7 +299,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             val colorsIdentity = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun))
             if (colorsIdentity != null) {
                 val colors = gson.fromJson<List<String>>(colorsIdentity, type)
-                if (colors.isNotEmpty()) {
+                if (colors?.isNotEmpty() == true) {
                     card.colorsIdentity = colors.map { it.mapColor() }
                 }
             }

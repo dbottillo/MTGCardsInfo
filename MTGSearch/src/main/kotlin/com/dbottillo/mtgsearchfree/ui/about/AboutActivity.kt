@@ -20,6 +20,7 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
 import com.dbottillo.mtgsearchfree.util.bind
 import com.dbottillo.mtgsearchfree.util.toHtml
+import dagger.android.AndroidInjection
 import java.util.Calendar
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
@@ -35,6 +36,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(bundle: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(bundle)
 
         setContentView(R.layout.activity_about)

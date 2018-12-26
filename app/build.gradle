@@ -73,6 +73,7 @@ dependencies {
     implementation project(":core")
 
     core()
+    network()
     ui()
     monitoring()
     debug()

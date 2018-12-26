@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import java.util.HashSet
 
 /**
- * Helper for access the use database that contains:
+ * Helper for access the user database that contains:
  * - cards (that are in decks and favourites)
  * - decks
  * - favourites
