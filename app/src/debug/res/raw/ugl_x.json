@@ -1,0 +1,3977 @@
+{
+    "baseSetSize": 88,
+    "boosterV3": [
+        "rare",
+        "uncommon",
+        "uncommon",
+        "common",
+        "common",
+        "common",
+        "common",
+        "common",
+        "common",
+        "land"
+    ],
+    "cards": [
+        {
+            "artist": "Kaja Foglio",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{W}",
+            "multiverseId": 9741,
+            "name": "Charm School",
+            "number": "1",
+            "originalText": "When Charm School comes into play, choose a color and balance Charm School on your head.\nPrevent all damage to you of the chosen color.\nIf Charm School falls off your head, sacrifice Charm School.",
+            "originalType": "Enchant Player",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "93b690ef-9fcb-42be-bbee-6aad516534a5",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 837,
+            "text": "As Charm School enters the battlefield, choose a color and balance Charm School on your head.\nPrevent all damage that would be dealt to you by sources of the chosen color.\nWhen Charm School falls off your head, sacrifice Charm School.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "5d614aa6-2a45-57bc-9981-ca1d83696f47"
+        },
+        {
+            "artist": "Randy Elliott",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "The meat, on the other hand, has frequent visitors.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{W}{W}",
+            "multiverseId": 9773,
+            "name": "The Cheese Stands Alone",
+            "number": "2",
+            "originalText": "If you control no cards in play other than The Cheese Stands Alone and have no cards in your hand, you win the game.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "d01a114f-3349-4a62-bfad-0dc33b78a53f",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 909,
+            "text": "When you control no permanents other than The Cheese Stands Alone and have no cards in hand, you win the game.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "2f155a5f-7b29-521f-99df-b81f72f2c0aa"
+        },
+        {
+            "artist": "D. Alexander Gregory",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "In a duel and taking a lickin' . . .",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{W}",
+            "multiverseId": 5726,
+            "name": "Double Dip",
+            "number": "3",
+            "originalText": "Choose another player. Gain 5 life now and an additional 5 life at the beginning of the next game with that player.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "ebbdbd92-ec36-4fe9-b75d-13f55574db5e",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 850,
+            "text": "Choose another player. You gain 5 life. At the beginning of the first upkeep in your next game with that player, you gain 5 life.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "68ba8db1-7ee7-5507-b77d-46645439d5a9"
+        },
+        {
+            "artist": "Melissa A. Benson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "Gimme five! (Or whatever you got.)",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}",
+            "multiverseId": 9743,
+            "name": "Get a Life",
+            "number": "4",
+            "originalText": "Target player and each of his or her teammates exchange life totals.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "2757b582-d995-45f9-9482-0792b0f0784d",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 860,
+            "text": "Target player and each of that player's teammates exchange life totals.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "d7249354-fafd-59a5-9731-140b565f5f22"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}{W}",
+            "multiverseId": 9774,
+            "name": "I'm Rubber, You're Glue",
+            "number": "5",
+            "originalText": "Speak only in rhyming sentences. If you do not, sacrifice I'm Rubber, You're Glue.\nSay \"I'm rubber, you're glue. Everything bounces off me and sticks to you\": Target spell or ability, which targets only you, targets another player of your choice instead. (The new target must be legal.)",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "5979237f-ff41-4e87-b2e4-d09b81eca2dc",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 874,
+            "text": "When you speak in non-rhyming sentences, sacrifice I'm Rubber, You're Glue.\nSay \"I'm rubber, you're glue. Everything bounces off me and sticks to you\": Change the target of target spell or ability that targets only you.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "689e6ab9-2fdd-5d29-af44-d136366845cf"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "That's what it's all about.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}{W}",
+            "multiverseId": 9742,
+            "name": "Knight of the Hokey Pokey",
+            "number": "6",
+            "originalText": "First strike\no1oW, Do the Hokey Pokey (Stand up, wiggle your butt, raise your hands above your head, and shake them wildly as you rotate 360 degrees): Prevent all damage to Knight of the Hokey Pokey from any one source.",
+            "originalType": "Summon - Knight",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "bd53daa7-9130-4187-9e53-1075c6ab67d0",
+            "subtypes": [
+                "Knight"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 879,
+            "text": "First strike\n{1}{W}, Do the Hokey Pokey: Prevent all damage a source of your choice would deal to Knight of the Hokey Pokey this turn. (To do the Hokey Pokey, put your right foot in. Put your right foot out. Put your right foot in. Shake it all about. Repeat this process for your left foot, right arm, left arm, and whole self.)",
+            "toughness": "2",
+            "type": "Creature — Knight",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "8b131840-be4c-54c9-82bd-a75ecb2a02d8"
+        },
+        {
+            "artist": "Daniel Gelon",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Plucking the chicken —Elvish expression meaning \"flinging the monkey\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{W}",
+            "multiverseId": 9760,
+            "name": "Lexivore",
+            "number": "7",
+            "originalText": "If Lexivore damages any player, destroy target card in play, other than Lexivore, with the most lines of text in its text box. (If more than one card has the most lines of text, you choose which of those cards to destroy.)",
+            "originalType": "Summon - Beast",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "b39db7a3-028e-4c01-8ff9-64d2a1397379",
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 882,
+            "text": "Whenever Lexivore deals damage to a player, destroy target permanent other than Lexivore with the most lines of text in its text box. (If two or more cards are tied, target any one of them.)",
+            "toughness": "3",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "bd370d5c-8f2e-5981-aea2-db79dfe5f2fa"
+        },
+        {
+            "artist": "Mark Rosewater",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 7.0,
+            "flavorText": "Few understand the DCI's rigorous decision-making process.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{5}{W}{W}",
+            "multiverseId": 9771,
+            "name": "Look at Me, I'm the DCI",
+            "number": "8",
+            "originalText": "Ban one card, other than a basic land, for the remainder of the match. (For the remainder of the match, each player removes from the game all copies of that card in play or in any graveyard, hand, library, or sideboard.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "14fb0d87-b086-4546-8f7f-786cb0b7b2f5",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 883,
+            "text": "Ban a card other than a basic land card for the rest of the match. (All cards with that name in any zone or sideboard are removed from the match.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "9ed6d750-a954-525c-a094-0dcb50f8d71d"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"Lo lord of layers proudly comb-crested Hero to hens father to feathers Crowing sun-caller weaver of wattle Elder to eggs.\" —Rooster Saga",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}{W}",
+            "multiverseId": 5725,
+            "name": "Mesa Chicken",
+            "number": "9",
+            "originalText": "Stand up, Flap your arms, Cluck like a chicken: Mesa Chicken gains flying until end of turn.",
+            "originalType": "Summon - Chicken",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "cfd1edbc-ea37-42c4-8fb9-deac011372b5",
+            "subtypes": [
+                "Chicken"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 884,
+            "text": "Stand up, Flap your arms, Cluck like a chicken: Mesa Chicken gains flying until end of turn.",
+            "toughness": "2",
+            "type": "Creature — Chicken",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a69b277b-7025-5385-9c4e-2eb1add1bfa3"
+        },
+        {
+            "artist": "Matthew D. Wilson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Even war can be civil.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{W}",
+            "multiverseId": 9745,
+            "name": "Miss Demeanor",
+            "number": "10",
+            "originalText": "Flying, first strike\nDuring each other player's turn, compliment that player on his or her game play or sacrifice Miss Demeanor.",
+            "originalType": "Summon - Lady of Proper Etiquette",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "747ff5d4-69cd-447e-a18d-edcf583d0539",
+            "subtypes": [
+                "Lady",
+                "of",
+                "Proper",
+                "Etiquette"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 887,
+            "text": "Flying, first strike\nAt the beginning of each other player's upkeep, you may compliment that player on their game play. If you don't, sacrifice Miss Demeanor.",
+            "toughness": "1",
+            "type": "Creature — Lady of Proper Etiquette",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a33d8f2b-6552-5cff-ab68-d87e51d138da"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "If yo . . . ted.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}{W}{W}{W}",
+            "multiverseId": 9772,
+            "name": "Once More with Feeling",
+            "number": "11",
+            "originalText": "Remove Once More with Feeling from the game as well as all cards in play and in all graveyards. Each player shuffles his or her hand into her or his library, then draws seven cards. Each player's life total is set to 10.\nDCI ruling: This card is restricted. (You cannot play with more than one in a deck.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "ba42881b-9275-4b54-a17f-dec87d21a270",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 889,
+            "text": "Exile all permanents and all cards from all graveyards. Each player shuffles their hand into their library, then draws seven cards. Each player's life total becomes 10. Exile Once More with Feeling.\nDCI ruling — A deck can have only one card named Once More with Feeling.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "2596433d-d9be-51a7-ae29-8076df505977"
+        },
+        {
+            "artist": "D. Alexander Gregory",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Spring in Dominaria means pastels\" —Excerpt from Mage's Home Journal",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}",
+            "multiverseId": 9744,
+            "name": "Prismatic Wardrobe",
+            "number": "12",
+            "originalText": "Destroy target card that does not share a color with clothing worn by its controller. You cannot choose an artifact or land card.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "79624ebe-7110-486d-82ff-b64c662dc6de",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 895,
+            "text": "Destroy target nonartifact, nonland permanent that doesn't share a color with clothing worn by its controller.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "aedc9b3f-fbaa-5a7e-a065-603af8d8bcc0"
+        },
+        {
+            "artist": "Matthew D. Wilson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{W}",
+            "multiverseId": 5755,
+            "name": "Sex Appeal",
+            "number": "13",
+            "originalText": "Prevent up to 3 damage total to any number of creatures and/or players. If there are more players in the room of the opposite sex, prevent up to 3 additional damage total to any number of creatures and/or players.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "97cfc18c-ed01-4016-86a2-162d7bc1bf33",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 900,
+            "text": "Prevent the next 3 damage that would be dealt this turn to any number of targets, divided as you choose. If there are more people in the room of a different gender than you are as you cast this spell, prevent the next 6 damage this way instead.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "84a50a2b-6f7b-50f7-8bcb-376880c5b718"
+        },
+        {
+            "artist": "Mark Zug",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{U}{U}",
+            "multiverseId": 9778,
+            "name": "Bureaucracy",
+            "number": "14",
+            "originalText": "Pursuant to subsection 3.1(4) of Richard's Rules of Order, during the upkeep of each participant in this game of the Magic: The Gathering® trading card game (hereafter known as \"PLAYER\"), that PLAYER performs all actions in the sequence of previously added actions (hereafter known as \"ACTION QUEUE\"), in the order those actions were added, then adds another action to the end of the ACTION QUEUE. All actions must be simple physical or verbal actions that a player can perform while sitting in a chair, without jeopardizing the health and security of said PLAYER.\nIf any PLAYER does not perform all the prescribed actions in the correct order, sacrifice Bureaucracy and said PLAYER discards his or her complement of cards in hand (hereafter known as \"HAND\").",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "43417d07-725e-4c3d-99d2-bbbfbdeee770",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 832,
+            "text": "Pursuant to subsection 3.1(4) of Richard's Rules of Order, at the beginning of the upkeep of each participant in this game of the Magic: The Gathering® trading card game (hereafter known as \"PLAYER\"), that PLAYER performs all actions in the sequence of previously added actions (hereafter known as \"ACTION QUEUE\"), in the order those actions were added, then adds another action to the end of the ACTION QUEUE. All actions must be simple physical or verbal actions that a player can perform while sitting in a chair, without jeopardizing the health and security of said PLAYER.\nWhen any PLAYER does not perform all the prescribed actions in the correct order, sacrifice Bureaucracy and said PLAYER discards their complement of cards in hand (hereafter known as \"HAND\").",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "2d591c9b-235d-5efe-a1a5-fcd3ee7eae49"
+        },
+        {
+            "artist": "Matthew D. Wilson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "Editor's note: There were no suitable flavor text submissions for this card.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{U}",
+            "multiverseId": 9747,
+            "name": "Censorship",
+            "number": "15",
+            "originalText": "When Censorship comes into play, choose a CENSORED word.\nWhenever any CENSORED player says the chosen CENSORED word, Censorship deals 2 CENSORED damage to him or her.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "e24d4fba-cf12-4ad3-bca3-6824dbc639af",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 835,
+            "text": "As Censorship enters the battlefield, choose a word.\nWhenever a player says the chosen word, Censorship deals 2 damage to that player.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "489ae7d3-d7f1-5033-aa9a-f07d2a9c7167"
+        },
+        {
+            "artist": "David A. Cherry",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{U}",
+            "multiverseId": 9746,
+            "name": "Checks and Balances",
+            "number": "16",
+            "originalText": "Whenever any spell is played, counter that spell if each player, other than the caster and his or her teammates, agrees to choose and discard a card. Those players must discard those cards after agreeing.\nChecks and Balances may be played only in a game with three or more players.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "cc70457a-34dc-48a1-8643-4a78c1e6f2d3",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 838,
+            "text": "Cast this spell only if there are three or more players in the game.\nWhenever a player casts a spell, each of that player's opponents may discard a card. If they do, counter that spell.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "5fafec80-d08e-5619-98b2-af1c530c1c7a"
+        },
+        {
+            "artist": "Mark Zug",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "During the Chicken Revolution, the king managed to keep his head while the others—well, just ran around.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{1}{U}{U}",
+            "multiverseId": 9749,
+            "name": "Chicken à la King",
+            "number": "17",
+            "originalText": "Whenever a 6 is rolled on a six-sided die, put a +1/+1 counter on each Chicken in play. (You may roll dice only when a card instructs you to.)\nTap a Chicken you control: Roll a six-sided die.",
+            "originalType": "Summon - Chicken",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "3fcefcab-8988-47e8-89bb-9b76f14c9d8b",
+            "subtypes": [
+                "Chicken"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 839,
+            "text": "Whenever a 6 is rolled on a six-sided die, put a +1/+1 counter on each Chicken. (You may roll dice only when instructed to.)\nTap an untapped Chicken you control: Roll a six-sided die.",
+            "toughness": "2",
+            "type": "Creature — Chicken",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "1e51794d-c2fc-5d4e-8233-679c8134081c"
+        },
+        {
+            "artist": "Randy Elliott",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Sorry we shelled your village—here's some gold.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{U}",
+            "multiverseId": 5763,
+            "name": "Clambassadors",
+            "number": "18",
+            "originalText": "If Clambassadors damages any player, choose an artifact, creature, or land you control. That player gains control of that artifact, creature, or land.",
+            "originalType": "Summon - Clamfolk",
+            "power": "4",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "349ba052-10f7-4612-91b7-a1528c188ec3",
+            "subtypes": [
+                "Clamfolk"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 843,
+            "text": "Whenever Clambassadors deals damage to a player, choose an artifact, creature, or land you control. That player gains control of that permanent.",
+            "toughness": "4",
+            "type": "Creature — Clamfolk",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "f5c1ea1f-d87a-53c4-8cb7-519f685de072"
+        },
+        {
+            "artist": "Randy Elliott",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "The Clams down in Clamville All scootered and skittled— \"The three is no more\" The Clam fiddler fiddled.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{U}",
+            "multiverseId": 5770,
+            "name": "Clam-I-Am",
+            "number": "19",
+            "originalText": "Whenever you roll a 3 on a six-sided die, you may reroll that die.",
+            "originalType": "Summon - Clamfolk",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "b57e1b62-df2b-48dc-9cb1-d86c9d3ab986",
+            "subtypes": [
+                "Clamfolk"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 842,
+            "text": "If you roll a 3 on a six-sided die, you may reroll that die.",
+            "toughness": "2",
+            "type": "Creature — Clamfolk",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "6abed86a-68fe-55bb-96d0-ae2dadd4ccef"
+        },
+        {
+            "artist": "Randy Elliott",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Duke, Duke, Duke, Duke of Pearl . . . .\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{1}{U}{U}",
+            "multiverseId": 5824,
+            "name": "Clam Session",
+            "number": "20",
+            "originalText": "When Clam Session comes into play, choose a word.\nDuring your upkeep, sing at least six words of a song, one of which must be the chosen word, or sacrifice Clam Session. You cannot repeat a song.",
+            "originalType": "Summon - Clamfolk",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "1c2953cd-1b7e-41aa-959f-fb7ba2964bfb",
+            "subtypes": [
+                "Clamfolk"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 841,
+            "text": "As Clam Session enters the battlefield, choose a word.\nAt the beginning of your upkeep, you may sing at least six words of a song, at least one of which is the chosen word. If you don't, sacrifice Clam Session. You can't repeat a song.",
+            "toughness": "5",
+            "type": "Creature — Clamfolk",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d237706c-2919-50b3-a992-9c4d12da86c3"
+        },
+        {
+            "artist": "Mike Raabe",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"You didn't say the Magic word.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{U}{U}",
+            "multiverseId": 9748,
+            "name": "Common Courtesy",
+            "number": "21",
+            "originalText": "Counter any spell unless its caster asks your permission to play that spell. If you refuse permission, Sacrifice Common Courtesy and counter the spell.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "9ad6b646-a2b2-4817-856c-580a5953d87e",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 845,
+            "text": "Whenever a player casts a spell without asking your permission while casting it, counter that spell.\nWhen a player asks you permission to cast a spell and you refuse, counter that spell and sacrifice Common Courtesy.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "cdb15cac-1147-52ba-83ed-de0049083c04"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Don't worry about it. It happens to every mage sooner or later.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{U}",
+            "multiverseId": 5800,
+            "name": "Denied!",
+            "number": "22",
+            "originalText": "Play Denied only as any opponent casts target spell. Name a card, then look at all cards in that player's hand. If the named card is in the player's hand, counter target spell.",
+            "originalType": "Interrupt",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "1285c125-e145-4565-a029-352ac6adf688",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 847,
+            "text": "Choose a card name, then target spell's controller reveals their hand. If a card with the chosen name is revealed this way, counter that spell.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "ce75d982-b875-50c9-b24b-79b6e80a9b7b"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"But next time we meet, . . .\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{U}{U}",
+            "multiverseId": 9894,
+            "name": "Double Take",
+            "number": "23",
+            "originalText": "Choose another player. Draw two cards now and draw an additional two cards at the beginning of the next game with that player.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "71941f1f-b41e-4ec9-a7c6-61eccaa47b0e",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 852,
+            "text": "Choose another player. You draw two cards. At the beginning of the first upkeep in your next game with that player, you draw two cards.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "af5c3750-77c4-5505-a283-734f62db59e9"
+        },
+        {
+            "artist": "Mark Poole",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"I feel like chicken tonight\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{U}",
+            "multiverseId": 5822,
+            "name": "Fowl Play",
+            "number": "24",
+            "originalText": "Enchanted creature loses all abilities and is a 1/1 creature that counts as a Chicken.",
+            "originalType": "Enchant Creature",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "2303a4e0-b8eb-4e8b-bc62-507eee52e7bc",
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 856,
+            "text": "Enchant creature\nEnchanted creature is a Chicken with base power and toughness 1/1 and loses all abilities.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "007cc9f4-c756-5a31-9b09-89a3aa0c05ed"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{U}",
+            "multiverseId": 9775,
+            "name": "Free-for-All",
+            "number": "25",
+            "originalText": "When Free-for-All comes into play, set aside all creatures in play, face down.\nDuring each player's upkeep, that player chooses a creature card at random from those set aside in this way and puts that creature into play under his or her control.\nIf Free-for-All leaves play, put each creature still set aside this way into its owner's graveyard.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "630efac8-3033-4c2d-9127-b3b2f78bb136",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 857,
+            "text": "When Free-for-All enters the battlefield, exile all creatures face down.\nAt the beginning of each player's upkeep, that player chooses a card exiled with Free-for-All at random and puts it onto the battlefield.\nWhen Free-for-All leaves the battlefield, put all cards exiled with it into their owners' graveyards.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "9251e4bf-a9ac-5dac-8b4b-52e7ea431b92"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{U}",
+            "multiverseId": 9777,
+            "name": "Psychic Network",
+            "number": "26",
+            "originalText": "Each player reveals the top card of his or her library to all other players by continuously holding it against his or her forehead. This does not allow a player to look at his or her own card. (That card still counts as the top card of your library. Whenever you draw a card, draw that one and replace it with the next card of your library.)",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "60dfba09-9e75-4fb9-a163-40e3149f7785",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 896,
+            "text": "Each player plays with the top card of their library held against their forehead, revealed to each other player.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "70f7c8a5-69a7-551b-81d2-59cc0c1f7761"
+        },
+        {
+            "artist": "Kaja Foglio",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{U}{U}",
+            "multiverseId": 9776,
+            "name": "Sorry",
+            "number": "27",
+            "originalText": "Before playing any spell, if a copy of that spell card is in any graveyard, the spell's caster may say \"Sorry.\" If he or she does not, any other player may counter the spell by saying \"Sorry\" as it is cast.\nIf any player says \"Sorry\" at any other time, Sorry deals 2 damage to that player.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "14606012-d57b-4fe7-908b-b5cfc272994b",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 901,
+            "text": "Before any player casts a spell with the same name as a card in any graveyard, that player may say \"sorry.\" If they don't, any other player may say \"sorry\" as the spell is being cast. When another player says \"sorry\" this way, counter the spell.\nWhenever a player says \"sorry\" at any other time, Sorry deals 2 damage to that player.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "2368d13b-d277-5ced-9d63-20e928b5db5b"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 15.0,
+            "flavorText": "\"It was big. Really, really big. No, bigger No, more. Look, we're talking krakens and",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}",
+            "multiverseId": 9780,
+            "name": "B.F.M. (Big Furry Monster)",
+            "number": "28",
+            "originalText": "You must play both B.F.M. cards to put\nleaves play, sacrifice the other.\nB.F.M. can be blocked only by three or",
+            "originalType": "Summon - The Biggest, Baddest, Nastiest,",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "a9f9c279-e382-4feb-9575-196e7cf5d7dc",
+            "subtypes": [
+                "The",
+                "Biggest,",
+                "Baddest,",
+                "Nastiest,"
+            ],
+            "supertypes": [],
+            "text": "You must cast both B.F.M. cards to put\nleaves the battlefield, sacrifice the other.\nB.F.M. can't be blocked except by three or",
+            "type": "Creature — The Biggest, Baddest, Nastiest,",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "4f5f89ce-dfbe-5ebd-bf53-1beec7d361e6"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 15.0,
+            "flavorText": "than that. Even bigger. Keep going. More. dreadnoughts for jewelry. It was big!\" —Arna Kennerüd, skyknight",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}{B}",
+            "multiverseId": 9844,
+            "name": "B.F.M. (Big Furry Monster) (b)",
+            "number": "29",
+            "originalText": "You must play both B.F.M. cards to put\nleaves play, sacrifice the other.\nB.F.M. can be blocked only by three or",
+            "originalType": "Summon - The Biggest, Baddest, Nastiest,",
+            "power": "99",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "d15c6375-2e4e-47f7-88e1-d90794e7f724",
+            "subtypes": [],
+            "supertypes": [],
+            "text": "B.F.M. onto the battlefield. If one B.F.M. card\nmore creatures.",
+            "toughness": "99",
+            "type": "Scariest Creature You’ll Ever See",
+            "types": [
+                "Scariest",
+                "Creature",
+                "You’ll",
+                "Ever",
+                "See"
+            ],
+            "uuid": "b657a449-592a-59d4-b3e4-6a76286e2c8b"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"I'm back from the Dead,\" the zombie moaned. \"And they were far out, man.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{B}",
+            "multiverseId": 5839,
+            "name": "Deadhead",
+            "number": "30",
+            "originalText": "Put Deadhead into play. Use this ability only if any opponent loses contact with his or her hand of cards and only if Deadhead is in your graveyard.",
+            "originalType": "Summon - Zombie",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "cdb3998e-b4a1-4dd1-8e12-24579ec8938b",
+            "subtypes": [
+                "Zombie"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 846,
+            "text": "{0}: Return Deadhead from your graveyard to the battlefield. Activate this ability only if an opponent isn't touching their hand (of cards).",
+            "toughness": "3",
+            "type": "Creature — Zombie",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "aea34155-fbf9-56f9-976c-4a545cb8f05d"
+        },
+        {
+            "artist": "Jeff Laubenstein",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"You're in for a nasty butt-kickin'.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{B}{B}",
+            "multiverseId": 5846,
+            "name": "Double Cross",
+            "number": "31",
+            "originalText": "Choose another player. Look at that player's hand and choose one of those cards other than a basic land. He or she discards that card. At the beginning of the next game with the player, look at the player's hand and choose one of those cards other than a basic land. He or she discards that card.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "e8f90e34-3736-42ed-aade-e31247b3472d",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 848,
+            "text": "Choose another player. Look at that player's hand and choose a card other than a basic land card from it. They discard that card. At the beginning of the first upkeep in your next game with that player, look at that player's hand and choose a card other than a basic land card from it. They discard that card.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "7d612ca6-0a8c-5bbd-83e4-8e3cfc8c4597"
+        },
+        {
+            "artist": "Jeff Laubenstein",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"That was fun Now me.\" —Gwendlyn Di Corci",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{B}{B}",
+            "multiverseId": 9751,
+            "name": "Handcuffs",
+            "number": "32",
+            "originalText": "Target player keeps both hands in contact with each other. If he or she does not, sacrifice Handcuffs and that player sacrifices three cards in play.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "08ae92f5-4219-4194-b152-c2b2653aef3f",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 868,
+            "text": "As Handcuffs enters the battlefield, choose a player.\nWhen the chosen player's hands aren't touching each other, sacrifice Handcuffs and that player sacrifices three permanents.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "6e4c1256-43e6-5ecc-b821-f6cfbc75cd3c"
+        },
+        {
+            "artist": "Ron Spencer",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 9.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{6}{B}{B}{B}",
+            "multiverseId": 9779,
+            "name": "Infernal Spawn of Evil",
+            "number": "33",
+            "originalText": "Flying, first strike\no1oB, Reveal Infernal Spawn of Evil from your hand, Say \"It's coming\": Infernal Spawn of Evil deals 1 damage to target opponent. Use this ability only during your upkeep and only once each upkeep.",
+            "originalType": "Summon - Demon Beast",
+            "power": "7",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "99711b5b-3cb2-4d57-ac9a-f43cc86a7ca9",
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 872,
+            "text": "Flying, first strike\n{1}{B}, Reveal Infernal Spawn of Evil from your hand, Say \"It's coming\": Infernal Spawn of Evil deals 1 damage to target opponent or planeswalker. Activate this ability only during your upkeep and only once each turn.",
+            "toughness": "7",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "e725778c-d2ba-57f2-9fbc-d2d5e4eb43bc"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{B}",
+            "multiverseId": 9750,
+            "name": "Jumbo Imp",
+            "number": "34",
+            "originalText": "Flying\nWhen you play Jumbo Imp, roll a six-sided die. Jumbo Imp comes into play with a number of +1/+1 counters on it equal to the die roll.\nDuring your upkeep, roll a six-sided die and put on Jumbo Imp a number of +1/+1 counters equal to the die roll.\nAt the end of your turn, roll a six-sided die and remove from Jumbo Imp a number of +1/+1 counters equal to the die roll.",
+            "originalType": "Summon - Imp",
+            "power": "0",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "a135b61b-eb8c-44d7-8227-bd268c3ca463",
+            "subtypes": [
+                "Imp"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 878,
+            "text": "Flying\nAs Jumbo Imp enters the battlefield, roll a six-sided die. Jumbo Imp enters the battlefield with a number of +1/+1 counters on it equal to the result.\nAt the beginning of your upkeep, roll a six-sided die and put a number of +1/+1 counters on Jumbo Imp equal to the result.\nAt the beginning of your end step, roll a six-sided die and remove a number of +1/+1 counters from Jumbo Imp equal to the result.",
+            "toughness": "0",
+            "type": "Creature — Imp",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "460300ad-d297-5674-8306-9964060cecb6"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Lucy, you've got some spleenin' to do.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{B}",
+            "multiverseId": 9752,
+            "name": "Organ Harvest",
+            "number": "35",
+            "originalText": "You and your teammates may sacrifice any number of creatures. For each creature sacrificed in this way, add oBoB to your mana pool.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "05213eec-322f-4bc7-b607-217290447f40",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 890,
+            "text": "Your team may sacrifice any number of creatures. For each creature sacrificed this way, you add {B}{B}.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "edb36478-1526-5851-b204-99c6c2fd64a7"
+        },
+        {
+            "artist": "Edward P. Beard, Jr.",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "Have you ever noticed how some flavor text has no relevance whatsoever to the card it's on?",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{B}",
+            "multiverseId": 9781,
+            "name": "Ow",
+            "number": "36",
+            "originalText": "Whenever any creature damages a player, for each Ow card in play, that player says \"Ow\" once or Ow deals 1 damage to him or her.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "dd26c2a6-7b08-4de6-afbf-e34d321995ab",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 891,
+            "text": "Whenever a creature deals damage to a player, that player may say \"Ow\" once for each permanent named Ow. If the player doesn't, Ow deals 1 damage to them.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "9aacba56-e238-5200-bbe7-6b997f0952f9"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Farmer Brown never ate eggs again.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{B}",
+            "multiverseId": 5864,
+            "name": "Poultrygeist",
+            "number": "37",
+            "originalText": "Flying\nWhenever a creature is put into any graveyard from play, you may roll a six-sided die. On a 1, sacrifice Poultrygeist. Otherwise, put a +1/+1 counter on Poultrygeist.",
+            "originalType": "Summon - Chicken",
+            "power": "1",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "c6bec883-a2e0-49a5-8cdd-2755c0963a2d",
+            "subtypes": [
+                "Chicken"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 894,
+            "text": "Flying\nWhenever a creature dies, you may roll a six-sided die. If you roll a 1, sacrifice Poultrygeist. Otherwise, put a +1/+1 counter on Poultrygeist.",
+            "toughness": "1",
+            "type": "Creature — Chicken",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "aca908f6-0a75-5935-b503-b167029f4cf9"
+        },
+        {
+            "artist": "Adam Rex",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Not the graveyard shift again\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{B}",
+            "multiverseId": 10717,
+            "name": "Temp of the Damned",
+            "number": "38",
+            "originalText": "When you play Temp of the Damned, roll a six-sided die. Temp of the Damned comes into play with a number of funk counters on it equal to the die roll.\nDuring your upkeep, remove a funk counter from Temp of the Damned or sacrifice Temp of the Damned.",
+            "originalType": "Summon - Zombie",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "b7105d13-798e-472b-bb00-d419886e9cc7",
+            "subtypes": [
+                "Zombie"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 908,
+            "text": "As Temp of the Damned enters the battlefield, roll a six-sided die. Temp of the Damned enters the battlefield with a number of funk counters on it equal to the result.\nAt the beginning of your upkeep, remove a funk counter from Temp of the Damned. If you can't, sacrifice it.",
+            "toughness": "3",
+            "type": "Creature — Zombie",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "4a91dac7-9b88-5015-bc1f-85444dc88310"
+        },
+        {
+            "artist": "Mark Tedin",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{B}",
+            "multiverseId": 9753,
+            "name": "Volrath's Motion Sensor",
+            "number": "39",
+            "originalText": "When Volrath's Motion Sensor comes into play, choose target hand controlled by an opponent. Enchanted player balances Volrath's Motion Sensor on the back of that hand.\nIf Volrath's Motion Sensor falls off the hand, sacrifice Volrath's Motion Sensor and that player loses 3 life.",
+            "originalType": "Enchant Player",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "b2b915b6-4436-4007-a014-415694117c7e",
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 914,
+            "text": "Enchant player\nAs Volrath's Motion Sensor enters the battlefield, choose one of enchanted player's hands. That player balances Volrath's Motion Sensor on the back of that hand.\nWhen Volrath's Motion Sensor falls off the chosen hand, sacrifice Volrath's Motion Sensor and enchanted player loses 3 life.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "72aea4e7-87d8-507d-a731-a034f972911f"
+        },
+        {
+            "artist": "Richard Kane Ferguson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{R}",
+            "multiverseId": 9783,
+            "name": "Burning Cinder Fury of Crimson Chaos Fire",
+            "number": "40",
+            "originalText": "Whenever any player taps a card, that player gives control of that card to an opponent at end of turn.\nIf a player does not tap any nonland cards during his or her turn, Burning Cinder Fury of Crimson Chaos Fire deals 3 damage to that player at end of turn.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "17ed4800-dc0f-4681-9ae6-74bd0018e8dc",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 833,
+            "text": "Whenever any player taps a permanent, that player choose one of their opponents. The chosen player gains control of that permanent at the beginning of the next end step.\nAt the beginning of each player's end step, if that player didn't tap any nonland permanents that turn, Burning Cinder Fury of Crimson Chaos Fire deals 3 damage to that player.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "3364ce23-abf3-579c-a1b1-d113f5b9bece"
+        },
+        {
+            "artist": "Christopher Rush",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"That's a lotta nuggets.\" —Jaya Ballard, task mage",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{1}{R}",
+            "multiverseId": 9667,
+            "name": "Chicken Egg",
+            "number": "41",
+            "originalText": "During your upkeep, roll a six-sided die. On a 6, sacrifice Chicken Egg and put a Giant Chicken token into play. Treat this token as a 4/4 red creature that counts as a Chicken.",
+            "originalType": "Summon - Egg",
+            "power": "0",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "640ac565-331b-47e2-b2af-a8a94a96488a",
+            "subtypes": [
+                "Egg"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 840,
+            "text": "At the beginning of your upkeep, roll a six-sided die. If you roll a 6, sacrifice Chicken Egg and create a 4/4 red Giant Chicken creature token.",
+            "toughness": "1",
+            "type": "Creature — Egg",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "96959904-861e-528c-a2d5-d80f1bf1e42d"
+        },
+        {
+            "artist": "Edward P. Beard, Jr.",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"I'm facing defeat, . . .\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{R}",
+            "multiverseId": 8812,
+            "name": "Double Deal",
+            "number": "42",
+            "originalText": "Choose another player. Double Deal deals 3 damage to that player now and deals an additional 3 damage to the player at the beginning of the next game with the player.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "ed8b3def-30ee-4dd2-9a25-ecf7d5663f96",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 849,
+            "text": "Choose another player. Double Deal deals 3 damage to that player. At the beginning of the first upkeep in your next game with that player, Double Deal deals 3 damage to the player.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "463e6ab2-a261-5d80-bed0-b567a0343b09"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"Glok loved bets He'd sit in the bar all night an' laugh an' laugh. Hey—he still owes me.\" —Squee, goblin casino hand",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{R}",
+            "multiverseId": 9665,
+            "name": "Goblin Bookie",
+            "number": "43",
+            "originalText": "oR, ocT: Reflip any coin or reroll any die.",
+            "originalType": "Summon - Goblin",
+            "power": "1",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "dc880e76-1e92-4af1-b89f-b5a2b60b86f0",
+            "subtypes": [
+                "Goblin"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 863,
+            "text": "{R}, {T}: Reflip any coin or reroll any die. (Activate this ability only any time it makes sense.)",
+            "toughness": "1",
+            "type": "Creature — Goblin",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "0173d6f8-ce0a-558b-9f28-13305bf13705"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Flog was out of his league—this game wasn't up his alley, but the team couldn't spare him if he split.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{R}",
+            "multiverseId": 9666,
+            "name": "Goblin Bowling Team",
+            "number": "44",
+            "originalText": "Whenever Goblin Bowling Team damages any creature or player, roll a six-sided die. Goblin Bowling Team deals to that creature or player additional damage equal to the die roll.",
+            "originalType": "Summon - Goblins",
+            "power": "1",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "00325992-ec1c-469a-8df0-ffb9a197d221",
+            "subtypes": [
+                "Goblin"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 864,
+            "text": "If Goblin Bowling Team would deal damage to a permanent or player, it deals that much damage plus the result of a six-sided die roll to that permanent or player instead.",
+            "toughness": "1",
+            "type": "Creature — Goblin",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "fb3c1599-4841-57fb-bab7-3455af0193b2"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{R}",
+            "multiverseId": 9755,
+            "name": "Goblin Tutor",
+            "number": "45",
+            "originalText": "Roll a six-sided die for Goblin Tutor. On a 1, Goblin Tutor has no effect. Otherwise, search your library for the indicated card, reveal that card to all players, and put it into your hand. Shuffle your library afterwards.\n2 Any Goblin Tutor\n3 Any enchantment\n4 Any artifact\n5 Any creature\n6 Any sorcery, instant, or interrupt",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "23bc822d-a028-4162-bf23-6ff4b9f43688",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 865,
+            "text": "Roll a six-sided die. If you roll a 1, Goblin Tutor has no effect. Otherwise, search your library for the indicated card, reveal it, put it into your hand, then shuffle your library.\n2 — A card named Goblin Tutor\n3 — An enchantment card\n4 — An artifact card\n5 — A creature card\n6 — An instant or sorcery card",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "1b264536-c84a-5345-8d22-b5adde379390"
+        },
+        {
+            "artist": "Kaja Foglio",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Nothing comes between me and my Didgeridoos™.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{R}",
+            "multiverseId": 8904,
+            "name": "Hurloon Wrangler",
+            "number": "46",
+            "originalText": "Denimwalk (If defending player is wearing any clothing made of denim, this creature is unblockable.)",
+            "originalType": "Summon - Minotaur",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "d957abcb-ba56-42b4-9316-f30ac821ecf9",
+            "subtypes": [
+                "Minotaur"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 870,
+            "text": "Denimwalk (This creature can't be blocked as long as defending player is wearing denim.)",
+            "toughness": "2",
+            "type": "Creature — Minotaur",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a435971f-7ad5-5f17-b212-c211e812c5d4"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{R}{R}",
+            "multiverseId": 9782,
+            "name": "Jalum Grifter",
+            "number": "47",
+            "originalText": "o1oR, ocT: Put Jalum Grifter and two lands you control face down in front of target opponent after revealing each card to him or her. Then, rearrange the order of the three cards as often as you wish, keeping them on the table at all times. That opponent then chooses one of those cards. If a land is chosen, destroy target card in play. Otherwise, sacrifice Jalum Grifter.",
+            "originalType": "Summon - Legend",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "9b5d0ead-7798-49a2-8106-418db1d4fd69",
+            "subtypes": [
+                "Devil"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 876,
+            "text": "{1}{R}, {T}: Shuffle Jalum Grifter and two lands you control face down. Target opponent chooses one of those cards. Turn the cards face up. If they chose Jalum Grifter, sacrifice it. Otherwise, destroy target permanent.",
+            "toughness": "5",
+            "type": "Legendary Creature — Devil",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "4f04c3d0-4a71-576a-b9f3-ac52aaa9381a"
+        },
+        {
+            "artist": "Ron Spencer",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"I got your milk right here!\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{R}",
+            "multiverseId": 9758,
+            "name": "Krazy Kow",
+            "number": "48",
+            "originalText": "During your upkeep, roll a six-sided die. On a 1, sacrifice Krazy Kow and it deals 3 damage to each creature and player.",
+            "originalType": "Summon - Cow",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "e978fdf7-2243-49d0-b265-a3287f19b17d",
+            "subtypes": [
+                "Cow"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 880,
+            "text": "At the beginning of your upkeep, roll a six-sided die. If you a roll a 1, sacrifice Krazy Kow and it deals 3 damage to each creature and each player.",
+            "toughness": "3",
+            "type": "Creature — Cow",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d8aa6e8b-3919-5ac8-adb7-9ee89d46ae66"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{R}",
+            "multiverseId": 9785,
+            "name": "Landfill",
+            "number": "49",
+            "originalText": "Choose a land type. Remove from play all lands of that type that you control. Drop those cards, one at a time, onto the playing area from a height of at least one foot. Destroy each card in play that is completely covered by those cards. Then return to play, tapped, all lands dropped in this way.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "3ef5452d-b5cb-4772-a5ac-1b4c976e03a5",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 881,
+            "text": "Choose a land type. Exile all lands you control of that type. Drop those cards, one at a time, onto the playing area from a height of at least one foot. Destroy each permanent completely covered by those cards. Then return the cards you dropped to the battlefield tapped.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "cedd4284-272b-571a-8a0b-5f12b9216d69"
+        },
+        {
+            "artist": "David A. Cherry",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{R}",
+            "multiverseId": 9756,
+            "name": "Ricochet",
+            "number": "50",
+            "originalText": "Whenever any spell targets a single player, each player rolls a six-sided die. That spell is redirected to the player or players with the lowest die roll. If two or more players tie for the lowest die roll, they reroll until there is no tie.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "ea993e57-b72f-48f8-9132-0693f2e78ce4",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 897,
+            "text": "Whenever a player casts a spell that targets a single player, each player rolls a six-sided die. Change the target of that spell to the player with the lowest result. Reroll to break ties, if necessary.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "fda4f3ef-d632-53e9-ac59-cd19c5ed818e"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{R}",
+            "multiverseId": 9754,
+            "name": "Spark Fiend",
+            "number": "51",
+            "originalText": "When Spark Fiend comes into play, roll two six-sided dice. On a total of 2, 3, or 12, sacrifice Spark Fiend. On a total of 7 or 11, do not roll dice for Spark Fiend during any of your following upkeep phases. If you roll any other total, note it.\nDuring your upkeep, roll two six-sided dice. On a total of 7, sacrifice Spark Fiend. If you roll the noted total, do not roll dice for Spark Fiend during any of your following upkeep phases. On any other roll, there is no effect.",
+            "originalType": "Summon - Beast",
+            "power": "5",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "ea73a7ef-e9da-4d5b-aa4d-a953cbacd6c2",
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 902,
+            "text": "When Spark Fiend enters the battlefield, roll two six-sided dice. If you rolled 2, 3, or 12, sacrifice Spark Fiend. If you rolled 7 or 11, don't roll dice for Spark Fiend during any of your following upkeeps. If you rolled any other total, note that total.\nAt the beginning of your upkeep, roll two six-sided dice. If you rolled 7, sacrifice Spark Fiend. If you roll the noted total, don't roll dice for Spark Fiend during any of your following upkeeps. Otherwise, do nothing.",
+            "toughness": "6",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "3584bb5a-d2a2-57c6-86b9-1f65fc3dfb22"
+        },
+        {
+            "artist": "Daniel Gelon",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{1}{R}",
+            "multiverseId": 9784,
+            "name": "Strategy, Schmategy",
+            "number": "52",
+            "originalText": "Roll a six-sided die for Strategy, Schmategy. On a 1, Strategy, Schmategy has no effect. Otherwise, it has one of the following effects.\n2 Destroy all artifacts.\n3 Destroy all lands.\n4 Strategy, Schmategy deals 3 damage to each creature and player.\n5 Each player discards his or her hand and draws seven cards.\n6 Roll the die two more times.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "a2996a63-9fb6-4455-906d-13f917a8bb29",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 905,
+            "text": "Roll a six-sided die. Strategy, Schmategy has the indicated effect.\n1 — Do nothing.\n2 — Destroy all artifacts.\n3 — Destroy all lands.\n4 — Strategy, Schmategy deals 3 damage to each creature and each player.\n5 — Each player discards their hand and draws seven cards.\n6 — Repeat this process two more times.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "7751784c-f244-5d2c-bfc9-57de372b024d"
+        },
+        {
+            "artist": "Melissa A. Benson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "The number printed on the card is no longer in service. For help, go to wizards.custhelp.com or find us on Twitter @Wizards_Help.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{X}{Y}{Z}{R}{R}",
+            "multiverseId": 9757,
+            "name": "The Ultimate Nightmare of Wizards of the Coast® Customer Service",
+            "number": "53",
+            "originalText": "The Ultimate Nightmare of Wizards of the Coast® Customer Service deals X damage to each of Y target creatures and Z target players.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2017-01-11",
+                    "text": "This card recieved errata for its flavor text on Gatherer: http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=9757"
+                }
+            ],
+            "scryfallId": "616abc97-4276-4e96-bbe8-e47ba7cac075",
+            "subtypes": [],
+            "supertypes": [],
+            "text": "The Ultimate Nightmare of Wizards of the Coast® Customer Service deals X damage to each of Y target creatures and Z target players or planeswalkers.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "96253e68-2a30-5f45-b0e5-4fc459d0211f"
+        },
+        {
+            "artist": "Douglas Shuler",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": ". . . that exciting . . . about . . .",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{5}{G}",
+            "multiverseId": 9762,
+            "name": "Cardboard Carapace",
+            "number": "54",
+            "originalText": "For each other Cardboard Carapace card you have with you, enchanted creature gets +1/+1.\nErrata: This does not count any Cardboard Carapace cards in play that you control or in your graveyard, hand, or library.",
+            "originalType": "Enchant Creature",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "059fc73f-7a00-4014-9e92-75765798cf2d",
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 834,
+            "text": "Enchant creature\nFor each other card named Cardboard Carapace you have with you outside the game, enchanted creature gets +1/+1.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "6eb7f3e4-5c4a-5ddb-8f9a-6f46aa344aaa"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "The wizard exclaimed, \"I'm no chicken . . . .\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{G}{G}",
+            "multiverseId": 9895,
+            "name": "Double Play",
+            "number": "55",
+            "originalText": "Choose another player. Search your library for a basic land and put that land into play. At the beginning of the next game with that player, search your library for an additional basic land and put that land into play. In both cases, shuffle your library afterwards.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "e35c66e0-0ca8-447f-b8d9-b03ce7ffaf7f",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 851,
+            "text": "Choose another player. Search your library for a basic land card, put it onto the battlefield, then shuffle your library. At the beginning of the first upkeep in your next game with that player, search your library for a basic land card, put it onto the battlefield, then shuffle your library.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "318a85bb-ce52-5ff5-8296-efe68774021b"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Uh-hunh.\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{G}",
+            "multiverseId": 9669,
+            "name": "Elvish Impersonators",
+            "number": "56",
+            "originalText": "When you play Elvish Impersonators, roll two six-sided dice one after the other. Elvish Impersonators comes into play with power equal to the first die roll and toughness equal to the second.",
+            "originalType": "Summon - Elves",
+            "power": "*",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "922663f0-f444-4364-a706-eb6b91ac36ef",
+            "subtypes": [
+                "Elves"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 853,
+            "text": "As Elvish Impersonators enters the battlefield, roll a six-sided die twice. Its base power becomes the first result and its base toughness becomes the second result.",
+            "toughness": "*",
+            "type": "Creature — Elves",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "db4df4c1-3395-5940-a7dc-b4cf0c634210"
+        },
+        {
+            "artist": "Anthony S. Waters",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "And their bleating was like a wet salmon slapped upon the land—slap slap slap",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{X}{G}{G}",
+            "multiverseId": 9759,
+            "name": "Flock of Rabid Sheep",
+            "names": [],
+            "number": "57",
+            "originalText": "Flip X coins; an opponent calls heads or tails. For each flip you win, put a Rabid Sheep token into play. Treat these tokens as 2/2 green creatures that count as Sheep.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "1ce65cbd-e2cf-4fbf-8424-287cd87c97f1",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 854,
+            "text": "Flip X coins. For each flip you win, create a 2/2 green Sheep creature token named Rabid Sheep.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "d3c87ae6-08ce-55c2-a262-55c978f10268"
+        },
+        {
+            "artist": "Mike Raabe",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}{G}",
+            "multiverseId": 9675,
+            "name": "Free-Range Chicken",
+            "number": "58",
+            "originalText": "o1oG: Roll two six-sided dice. If both die rolls are the same, Free-Range Chicken gets +X/+X until end of turn, where X is the number rolled on each die. Otherwise, if the total rolled is equal to any other total you have rolled this turn for Free-Range Chicken, sacrifice it. (For example, if you roll two 3s, Free-Range Chicken gets +3/+3. If you roll a total of 6 for Free-Range Chicken later in that turn, sacrifice it.)",
+            "originalType": "Summon - Chicken",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "e59e6414-62ac-427e-8e37-690ed401b4dd",
+            "subtypes": [
+                "Chicken"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 858,
+            "text": "{1}{G}: Roll two six-sided dice. If both results are the same, Free-Range Chicken gets +X/+X until end of turn, where X is that result. If the total of those results is equal to any other total you have rolled this turn for Free-Range Chicken, sacrifice it. (For example, if you roll two 3s, Free-Range Chicken gets +3/+3. If you roll a total of 6 for Free-Range Chicken later that turn, sacrifice it.)",
+            "toughness": "3",
+            "type": "Creature — Chicken",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "6369a5ae-5ee2-5239-a6b4-1d42ee72369e"
+        },
+        {
+            "artist": "Doug Chaffee",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}",
+            "multiverseId": 9761,
+            "name": "Gerrymandering",
+            "number": "59",
+            "originalText": "Remove all lands from play and shuffle them together. Randomly deal to each player one land card for each land he or she had before. Each player puts those lands into play under his or her control, untapped.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "aea8ab0f-6898-4312-9989-915d6357515f",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 859,
+            "text": "Exile all lands. Give each player a number of those cards chosen at random equal to the number of those cards the player controlled. Each player returns those cards to the battlefield under their control.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "cf638198-b4b9-5424-858b-d30ff5056b25"
+        },
+        {
+            "artist": "Mike Raabe",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{G}",
+            "multiverseId": 9668,
+            "name": "Ghazbán Ogress",
+            "number": "60",
+            "originalText": "When Ghazbán Ogress comes into play, the player who has won the most Magic games that day gains control of it. If more than one player has won the same number of games, you retain control of Ghazbán Ogress.",
+            "originalType": "Summon - Ogre",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "17c18690-cf8c-4006-a981-6258d18ba538",
+            "subtypes": [
+                "Ogre"
+            ],
+            "supertypes": [],
+            "text": "When Ghazbán Ogress enters the battlefield, if one player has won more Magic games that day than any other player, that player gains control of Ghazbán Ogress.",
+            "toughness": "2",
+            "type": "Creature — Ogre",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ee77a627-0cab-5214-b3bf-17520fe3c6f6"
+        },
+        {
+            "artist": "Jeff Laubenstein",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "MORE TO LOVE: Friendly, nature-loving, Bunyonesque SEM seeks SEF looking for a huge commitment. . . . seeks atog prince",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{1}{G}",
+            "multiverseId": 9671,
+            "name": "Growth Spurt",
+            "number": "61",
+            "originalText": "Roll a six-sided die. Target creature gets +X/+X until end of turn, where X is equal to the die roll.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "2905accf-ea94-48fa-8dbe-b4a7dd57a277",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 866,
+            "text": "Roll a six-sided die. Target creature gets +X/+X until end of turn, where X is the result.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "ca2910b5-735f-5332-ad93-294730989118"
+        },
+        {
+            "artist": "DiTerlizzi",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Now I lay me down to sleep What are you starin' at?\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}",
+            "multiverseId": 9670,
+            "name": "Gus",
+            "number": "62",
+            "originalText": "Gus comes into play with one +1/+1 counter on it for each game you have lost to your opponent since you last won a Magic game against him or her.",
+            "originalType": "Summon - Gus",
+            "power": "2",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "d9b05428-d9f3-42ec-bef4-286f1ad06901",
+            "subtypes": [
+                "Gus"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 867,
+            "text": "Gus enters the battlefield with a +1/+1 counter on it for each Magic game you have lost to one of your opponents since you last won a game against them.",
+            "toughness": "2",
+            "type": "Creature — Gus",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "afed03f9-180e-5aa9-977e-68048f2ae316"
+        },
+        {
+            "artist": "Randy Gallegos",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Mooo.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}",
+            "multiverseId": 9843,
+            "name": "Hungry Hungry Heifer",
+            "number": "63",
+            "originalText": "During your upkeep, remove a counter from any card you control or sacrifice Hungry Hungry Heifer.",
+            "originalType": "Summon - Cow",
+            "power": "3",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "3a17ecb8-cf64-420a-9038-609bfdb4c669",
+            "subtypes": [
+                "Cow"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 869,
+            "text": "At the beginning of your upkeep, you may remove a counter from a permanent you control. If you don't, sacrifice Hungry Hungry Heifer.",
+            "toughness": "3",
+            "type": "Creature — Cow",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "0eb66dba-47cc-5523-a146-63741d1fddf9"
+        },
+        {
+            "artist": "Quinton Hoover",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 8.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{G}{G}{G}{G}",
+            "multiverseId": 9788,
+            "name": "Incoming!",
+            "number": "64",
+            "originalText": "Each player searches his or her library for any number of artifacts, creatures, enchantments, and lands and puts those cards into play. Each player shuffles his or her library afterwards.",
+            "originalType": "Sorcery",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "573cf5e6-35ee-4eb6-990a-524ba7335797",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 871,
+            "text": "Each player searches their library for any number of artifact, creature, enchantment, and/or land cards, puts them onto the battlefield, then shuffles their library.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "f7792788-7e30-5608-8c70-af755cc1294e"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}{G}{G}",
+            "multiverseId": 9787,
+            "name": "Mine, Mine, Mine!",
+            "number": "65",
+            "originalText": "When Mine, Mine, Mine comes into play, each player puts his or her library into his or her hand.\nEach player skips his or her discard phase and does not lose as a result of being unable to draw a card.\nEach player cannot play more than one spell each turn.\nIf Mine, Mine, Mine leaves play, each player shuffles his or her hand and graveyard into his or her library.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "a91f28e0-867a-4713-955d-582201af63ae",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 885,
+            "text": "When Mine, Mine, Mine enters the battlefield, each player puts their library into their hand.\nPlayers have no maximum hand size and don't lose the game for drawing from an empty library.\nEach player can't cast more than one spell each turn.\nWhen Mine, Mine, Mine leaves the battlefield, each player shuffles their hand and graveyard into their library.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "0a048551-e8ab-5946-bd46-5bc9a8296033"
+        },
+        {
+            "artist": "Ron Spencer",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"And the ignorant shall fall to the squirrels.\" —Chip 2:54",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}",
+            "multiverseId": 9789,
+            "name": "Squirrel Farm",
+            "names": [],
+            "number": "66",
+            "originalText": "o1oG: Choose a card in your hand. Covering the artist's name, reveal the card to target player. If that player cannot name the artist, reveal the artist's name and put a Squirrel token into play. Treat this token as a 1/1 green creature.",
+            "originalType": "Enchantment",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "987ddd67-305a-4c95-9f1a-17eeeb058aaa",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 904,
+            "text": "{1}{G}: Reveal a card in your hand, covering the artist credit. Target opponent guesses the artist. If they guess wrong, create a 1/1 green Squirrel creature token.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "0b736b3d-e459-5aa0-8de8-a7b9363a2e99"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Due to some late-night partying, the chicken missed the group photo.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}",
+            "multiverseId": 9763,
+            "name": "Team Spirit",
+            "number": "67",
+            "originalText": "All creatures controlled by target player and his or her teammates get +1/+1 until end of turn.",
+            "originalType": "Instant",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "b8369211-e7e1-45e1-a142-274f4236e230",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 907,
+            "text": "Creatures target player's team controls get +1/+1 until end of turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "a5021a1c-ebe0-57d6-bc71-e316047b2302"
+        },
+        {
+            "artist": "Edward P. Beard, Jr.",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Just wait till I get my Leviathan . . . .\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 9786,
+            "name": "Timmy, Power Gamer",
+            "number": "68",
+            "originalText": "o4: Put a creature into play from your hand.",
+            "originalType": "Summon - Legend",
+            "power": "1",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "e43ce658-12be-4eb2-b679-0aefea348de2",
+            "subtypes": [
+                "Human",
+                "Gamer"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 911,
+            "text": "{4}: You may put a creature card from your hand onto the battlefield.",
+            "toughness": "1",
+            "type": "Legendary Creature — Human Gamer",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "5adab381-78e7-5b1c-a07d-b4ae53a29e75"
+        },
+        {
+            "artist": "Edward P. Beard, Jr.",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "flavorText": "Limited time offer. Void where prohibited. Limit one per purchase. Valid only in participating duels. This coupon is nontransferable and invalid if shattered, crumbled, detonated, pillaged, or otherwise disenchanted. Cash value less than 1/20 of a cent. Offer not valid in Quebec, Rhode Island, or where prohibited by law or the DCI.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{0}",
+            "multiverseId": 9769,
+            "name": "Ashnod's Coupon",
+            "number": "69",
+            "originalText": "ocT, Sacrifice Ashnod's Coupon: Target player gets you target drink.\nErrata: You pay any costs for the drink.",
+            "originalType": "Artifact",
+            "printings": [
+                "PAL04",
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "d420010f-5389-4aa2-a5f8-d9631249679a",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 827,
+            "text": "{T}, Sacrifice Ashnod's Coupon: Target player gets you target drink. You pay any costs for the drink.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "57eb31cb-6f0f-5074-94aa-db5a1de91468"
+        },
+        {
+            "artist": "Christopher Rush",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{0}",
+            "multiverseId": 9764,
+            "name": "Blacker Lotus",
+            "number": "70",
+            "originalText": "ocT: Tear Blacker Lotus into pieces. Add four mana of any one color to your mana pool. Play this ability as a mana source. Remove the pieces from the game afterwards.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "4c85d097-e87b-41ee-93c6-0e54ec41b174",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 830,
+            "text": "{T}: Tear Blacker Lotus into pieces. Add four mana of any one color. Remove the pieces from the game.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "794487ec-f2ae-5671-a482-972423a4e95d"
+        },
+        {
+            "artist": "Melissa A. Benson",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "Every page holds a month, every date a numeral.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 9730,
+            "name": "Bronze Calendar",
+            "number": "71",
+            "originalText": "Your spells cost o1 less to play as long as you speak in a voice other than your normal voice.\nIf you speak in your normal voice, sacrifice Bronze Calendar.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "21943fe2-3eeb-441a-a3ae-99866c6e76bd",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 831,
+            "text": "Spells you cast cost {1} less to cast.\nYou must speak in a voice other than your normal voice.\nWhen you speak in your normal voice, sacrifice Bronze Calendar.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "8ce069ca-6d56-5c09-89ff-bcb556b2a845"
+        },
+        {
+            "artist": "Mark Tedin",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "And you thought that was just an urban legend.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 5712,
+            "name": "Chaos Confetti",
+            "number": "72",
+            "originalText": "o4, ocT: Tear Chaos Confetti into pieces. Throw the pieces onto the playing area from a distance of at least five feet. Destroy each card in play that a piece touches. Remove the pieces from the game afterwards.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "a5cee00a-5ab5-43c3-8017-db20d37e69c4",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 836,
+            "text": "{4}, {T}: Tear Chaos Confetti into pieces. Throw the pieces onto the battlefield from a distance of at least five feet. Destroy each permanent that a piece touches. Remove the pieces from the game.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "d38766be-0a55-5181-889a-fdf12e843766"
+        },
+        {
+            "artist": "D. Alexander Gregory",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{3}",
+            "multiverseId": 9766,
+            "name": "Clay Pigeon",
+            "number": "73",
+            "originalText": "Flying\no1, Throw Clay Pigeon into the air at least two feet above your head while seated, Attempt to catch it with one hand: If you catch Clay Pigeon, prevent all damage to you from any one source and return Clay Pigeon to play, tapped. Otherwise, sacrifice it.",
+            "originalType": "Artifact Creature",
+            "power": "1",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "4dfacc30-0acc-4b2d-bc7b-6ff72afc1077",
+            "subtypes": [
+                "Bird"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 844,
+            "text": "Flying\n{1}, Throw Clay Pigeon into the air at least two feet above your head while seated: If you catch Clay Pigeon with one hand, prevent all damage a source of your choice would deal to you this turn and tap Clay Pigeon. Otherwise, sacrifice it.",
+            "toughness": "1",
+            "type": "Artifact Creature — Bird",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "46cc83e8-3c33-56be-adb3-00acba210435"
+        },
+        {
+            "artist": "Randy Gallegos",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "Only a villain would unleash a giant fan on anyone",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 9767,
+            "name": "Giant Fan",
+            "number": "74",
+            "originalText": "o2, ocT: Move target counter from one card to another. If the second card's rules text refers to any type of counters, the moved counter becomes one of those counters. Otherwise, it becomes a +1/+1 counter.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "1cdb8678-3c0c-4ee3-aeff-52a4db4e09c4",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 862,
+            "text": "{2}, {T}: Move a counter from one permanent onto another. If the second permanent refers to any kind of counter, the moved counter becomes one of those counters. Otherwise, it becomes a +1/+1 counter.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "36673747-1ee2-5eb2-b8e5-5da057120a44"
+        },
+        {
+            "artist": "Dan Frazier",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{0}",
+            "multiverseId": 9729,
+            "name": "Jack-in-the-Mox",
+            "number": "75",
+            "originalText": "ocT: Roll a six-sided die for Jack-in-the-Mox. On a 1, sacrifice Jack-in-the-Mox and lose 5 life. Otherwise, Jack-in-the-Mox has one of the following effects. Treat this ability as a mana source.\n2 Add oW to your mana pool.\n3 Add oU to your mana pool.\n4 Add oB to your mana pool.\n5 Add oR to your mana pool.\n6 Add oG to your mana pool.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "1834ac92-8b4e-4442-a834-acd580e1ef99",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 875,
+            "text": "{T}: Roll a six-sided die. This ability has the indicated effect.\n1 — Sacrifice Jack-in-the-Mox and you lose 5 life.\n2 — Add {W}.\n3 — Add {U}.\n4 — Add {B}.\n5 — Add {R}.\n6 — Add {G}.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "989a12fe-af70-5884-bbbe-76dd80940c88"
+        },
+        {
+            "artist": "Dan Frazier",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"¡Yo quiero Kormus Bell\"",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{2}",
+            "multiverseId": 9739,
+            "name": "Jester's Sombrero",
+            "number": "76",
+            "originalText": "o2, ocT, Sacrifice Jester's Sombrero: Look through target player's sideboard and remove any three of those cards from it for the remainder of the match.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "6e68f012-307f-4ffb-909e-1284fb39e64f",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 877,
+            "text": "{2}, {T}, Sacrifice Jester's Sombrero: Look at target player's sideboard, choose three cards from it, and remove those cards from the match.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "6f816c34-2781-5356-8e28-5dbf83f3f86d"
+        },
+        {
+            "artist": "Kaja Foglio",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 7.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{7}",
+            "multiverseId": 9765,
+            "name": "Mirror Mirror",
+            "number": "77",
+            "originalText": "Mirror Mirror comes into play tapped.\no7, ocT, Sacrifice Mirror Mirror: At end of turn, exchange life totals with target player and exchange all cards in play that you control, and all cards in your hand, library, and graveyard, with that player until end of game.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "2abf208d-5fe6-4030-a19d-7505832dab3b",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 886,
+            "text": "Mirror Mirror enters the battlefield tapped.\n{7}, {T}, Sacrifice Mirror Mirror: Choose target player. At the beginning of the next end step, exchange life totals with that player, exchange control of all permanents you and that player control, and exchange cards in your hands, cards in your libraries, and cards in your graveyards.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "d28e3a8c-5401-5a28-abaf-413dc1a03add"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "The tiger is always quick to fold.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 5705,
+            "name": "Paper Tiger",
+            "names": [],
+            "number": "78",
+            "originalText": "Rock Lobsters cannot attack or block.",
+            "originalType": "Artifact Creature",
+            "power": "4",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "6d1cb9ab-512e-4bb1-8d77-37a0b2d3e7f8",
+            "subtypes": [
+                "Cat"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 892,
+            "text": "Creatures named Rock Lobster can't attack or block.",
+            "toughness": "3",
+            "type": "Artifact Creature — Cat",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "c62c6084-2ae0-54ff-98bf-e044eec6a666"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "Many take the lobster for granite.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 5648,
+            "name": "Rock Lobster",
+            "names": [],
+            "number": "79",
+            "originalText": "Scissors Lizards cannot attack or block.",
+            "originalType": "Artifact Creature",
+            "power": "4",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "5ba96c2a-9ccf-4b28-8af5-f8c221fc6823",
+            "subtypes": [
+                "Lobster"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 898,
+            "text": "Creatures named Scissors Lizard can't attack or block.",
+            "toughness": "3",
+            "type": "Artifact Creature — Lobster",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "e282c341-7825-5a01-b6f9-2abefd9b172c"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "Nothing beats the lizard's shear power.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 5698,
+            "name": "Scissors Lizard",
+            "names": [],
+            "number": "80",
+            "originalText": "Paper Tigers cannot attack or block.",
+            "originalType": "Artifact Creature",
+            "power": "4",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "c7b3502d-5519-4254-b946-226edc3bd7e4",
+            "subtypes": [
+                "Lizard"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 899,
+            "text": "Creatures named Paper Tiger can't attack or block.",
+            "toughness": "3",
+            "type": "Artifact Creature — Lizard",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "e2010932-dcb9-5f9f-983d-49236ea6a59b"
+        },
+        {
+            "artist": "Melissa A. Benson",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "flavorText": "At last Urza's powers were focused through the incredible artifact. \"Who wants pancakes?\" he asked.",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{4}",
+            "multiverseId": 9740,
+            "name": "Spatula of the Ages",
+            "number": "81",
+            "originalText": "o4, ocT, Sacrifice Spatula of the Ages: Put into play from your hand any card from an Unglued supplement.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "777d1435-bde3-46f7-a35d-2a663e05fb97",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 903,
+            "text": "{4}, {T}, Sacrifice Spatula of the Ages: You may put a silver-bordered permanent card from your hand onto the battlefield.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "31b6e8a8-5540-59e2-9e88-741410cdc961"
+        },
+        {
+            "artist": "David A. Cherry",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{0}",
+            "multiverseId": 9770,
+            "name": "Urza's Contact Lenses",
+            "number": "82",
+            "originalText": "Urza's Contact Lenses comes into play tapped and does not untap during its controller's untap phase.\nAll players play with their hands face up.\nClap your hands twice: Tap or untap Urza's Contact Lenses.",
+            "originalType": "Artifact",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "f386c088-fa37-4134-96bb-9fb784719101",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 912,
+            "text": "Urza's Contact Lenses enters the battlefield tapped.\nUrza's Contact Lenses doesn't untap during your untap step.\nAs long as Urza's Contact Lenses is untapped, all players play with their hands revealed.\nClap your hands twice: You may tap or untap Urza's Contact Lenses.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "1b9ef0d4-e921-53e6-967d-623a52694737"
+        },
+        {
+            "artist": "Claymore J. Flapdoodle",
+            "borderColor": "silver",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {},
+            "manaCost": "{6}",
+            "multiverseId": 9731,
+            "name": "Urza's Science Fair Project",
+            "number": "83",
+            "originalText": "o2: Roll a six-sided die for Urza's Science Fair Project.\n1 It gets -2/-2 until end of turn.\n2 It deals no combat damage this turn.\n3 Attacking does not cause it to tap this turn.\n4 It gains first strike until end of turn.\n5 It gains flying until end of turn.\n6 It gets +2/+2 until end of turn.",
+            "originalType": "Artifact Creature",
+            "power": "4",
+            "printings": [
+                "UGL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "8bfe56d0-c15f-4a68-a0b8-911e13b1bc9a",
+            "subtypes": [
+                "Construct"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 913,
+            "text": "{2}: Roll a six-sided die. Urza's Science Fair Project gets the indicated result.\n1 — It gets -2/-2 until end of turn.\n2 — Prevent all combat damage it would deal this turn.\n3 — It gains vigilance until end of turn.\n4 — It gains first strike until end of turn.\n5 — It gains flying until end of turn.\n6 — It gets +2/+2 until end of turn.",
+            "toughness": "4",
+            "type": "Artifact Creature — Construct",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "efbab38a-6d61-5a36-8777-7926594ad06a"
+        },
+        {
+            "artist": "Christopher Rush",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 9680,
+            "name": "Plains",
+            "number": "84",
+            "originalText": "W",
+            "originalType": "Land",
+            "printings": [
+                "AKH",
+                "AVR",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDI",
+                "DDK",
+                "DDL",
+                "DDN",
+                "DDO",
+                "DDP",
+                "DDQ",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PDGM",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "cb382733-ff3d-43e2-9b1e-efa2f7c28173",
+            "subtypes": [
+                "Plains"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {W}.)",
+            "type": "Basic Land — Plains",
+            "types": [
+                "Land"
+            ],
+            "uuid": "07546fc7-8477-522d-bd8d-a7eaa4f8f6ff"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 9677,
+            "name": "Island",
+            "number": "85",
+            "originalText": "U",
+            "originalType": "Land",
+            "printings": [
+                "AKH",
+                "AVR",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDI",
+                "DDJ",
+                "DDM",
+                "DDN",
+                "DDO",
+                "DDQ",
+                "DDS",
+                "DDT",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "JVC",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "547f89f2-30a0-493a-914e-6251d2574099",
+            "subtypes": [
+                "Island"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {U}.)",
+            "type": "Basic Land — Island",
+            "types": [
+                "Land"
+            ],
+            "uuid": "f32af21a-a19c-533d-9db0-cadb981902ed"
+        },
+        {
+            "artist": "Mark Zug",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 9676,
+            "name": "Swamp",
+            "number": "86",
+            "originalText": "B",
+            "originalType": "Land",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "69384f97-3333-4aa7-bc4f-928ba49a2c80",
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "03867403-198b-5d2f-bb7d-ae82ff095abd"
+        },
+        {
+            "artist": "Tom Wänerstrand",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 9707,
+            "name": "Mountain",
+            "number": "87",
+            "originalText": "R",
+            "originalType": "Land",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDL",
+                "DDN",
+                "DDP",
+                "DDS",
+                "DDT",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "HOU",
+                "J14",
+                "JVC",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "8e3c2e1a-181e-4275-ad09-51c9de039d32",
+            "subtypes": [
+                "Mountain"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {R}.)",
+            "type": "Basic Land — Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "14e2ce02-efb2-561e-bf6e-52efa4cac306"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 9683,
+            "name": "Forest",
+            "number": "88",
+            "originalText": "G",
+            "originalType": "Land",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "b3ed8a17-ce32-4100-8ffc-fb8af1c35142",
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "1c92bd26-4a3e-5ac3-96e6-26c688ad2d63"
+        }
+    ],
+    "code": "ugl",
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": null,
+    "name": "Unglued",
+    "releaseDate": "1998-08-11",
+    "tcgplayerGroupId": 113,
+    "tokens": [
+        {
+            "artist": "Mark Zug",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "name": "Pegasus",
+            "number": "1",
+            "power": "1",
+            "reverseRelated": [],
+            "scryfallId": "bc944579-b6d8-40f7-8c46-146513960d61",
+            "text": "Flying",
+            "toughness": "1",
+            "type": "Token Creature — Pegasus",
+            "uuid": "0e61279a-7bc0-58b9-9109-29517eb991a1"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "name": "Soldier",
+            "number": "2",
+            "power": "1",
+            "reverseRelated": [],
+            "scryfallId": "b159b57d-bc52-4cef-ac7a-e364e40c3d03",
+            "toughness": "1",
+            "type": "Token Creature — Soldier",
+            "uuid": "c1e99d8d-435b-54e3-aa63-d98d7a02945c"
+        },
+        {
+            "artist": "Christopher Rush",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "name": "Zombie",
+            "number": "3",
+            "power": "2",
+            "reverseRelated": [],
+            "scryfallId": "8e7b5995-ee8b-40d1-b157-8df96c02cc5b",
+            "toughness": "2",
+            "type": "Token Creature — Zombie",
+            "uuid": "7d3cd510-b11c-5f46-ae20-6ad3be5d851e"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "name": "Goblin",
+            "number": "4",
+            "power": "1",
+            "reverseRelated": [],
+            "scryfallId": "fbd728ed-d5dc-44b3-9159-6c86cab3be0c",
+            "toughness": "1",
+            "type": "Token Creature — Goblin",
+            "uuid": "6d585c67-4cbd-56c9-b525-d079ab37ec9b"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Sheep",
+            "number": "5",
+            "power": "2",
+            "reverseRelated": [
+                "Flock of Rabid Sheep"
+            ],
+            "scryfallId": "281d2c14-2343-44c9-a589-7f4da37978a2",
+            "toughness": "2",
+            "type": "Token Creature — Sheep",
+            "uuid": "ace2661d-d9a5-598f-aaf1-768872fc4a43"
+        },
+        {
+            "artist": "Ron Spencer",
+            "borderColor": "silver",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Squirrel",
+            "number": "6",
+            "power": "1",
+            "reverseRelated": [
+                "Squirrel Farm"
+            ],
+            "scryfallId": "abf24a09-0a54-4e1d-a515-ed5ae99294be",
+            "toughness": "1",
+            "type": "Token Creature — Squirrel",
+            "uuid": "2f2bf483-2a04-50de-8c84-204683f86c4f"
+        }
+    ],
+    "totalSetSize": 88,
+    "type": "funny"
+}

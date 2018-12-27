@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist timestamp="1545156791812"></Blacklist>
+  <Whitelist timestamp="1545752613608">
+    <ID>MaxLineLength:MTGApp.kt$MTGApp$val channel = NotificationChannel(Constants.NOTIFICATION_CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT).apply { description = "MTG Cards Notifications" enableLights(true) lightColor = Color.BLUE enableVibration(true) }</ID>
+    <ID>MaxLineLength:MTGApp.kt$MTGApp$val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
+  </Whitelist>
+</SmellBaseline>

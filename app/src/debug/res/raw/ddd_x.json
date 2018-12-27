@@ -1,0 +1,4369 @@
+{
+    "baseSetSize": 0,
+    "cards": [
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "3",
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 201347,
+            "name": "Garruk Wildspeaker",
+            "names": [],
+            "number": "1",
+            "originalText": "+1: Untap two target lands.\n-1: Put a 3/3 green Beast creature token onto the battlefield.\n-4: Creatures you control get +3/+3 and gain trample until end of turn.",
+            "originalType": "Planeswalker — Garruk",
+            "printings": [
+                "CMD",
+                "DDD",
+                "GVL",
+                "LRW",
+                "M10",
+                "M11",
+                "PDTP",
+                "PRM"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "The first ability can target any two lands. They don’t have to be tapped."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "The third ability affects only creatures you control at the time it resolves. It won’t affect creatures that come under your control later in the turn."
+                }
+            ],
+            "scryfallId": "45dedbf8-2a36-415d-bed5-65a3329c5ea9",
+            "starter": true,
+            "subtypes": [
+                "Garruk"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 37661,
+            "text": "+1: Untap two target lands.\n−1: Create a 3/3 green Beast creature token.\n−4: Creatures you control get +3/+3 and gain trample until end of turn.",
+            "type": "Legendary Planeswalker — Garruk",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "7e1dc16e-fa23-57de-9748-b41c4b877866"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "multiverseId": 201836,
+            "name": "Basking Rootwalla",
+            "number": "2",
+            "originalText": "{1}{G}: Basking Rootwalla gets +2/+2 until end of turn. Activate this ability only once each turn.\nMadness {0} (If you discard this card, you may cast it for its madness cost instead of putting it into your graveyard.)",
+            "originalType": "Creature — Lizard",
+            "power": "1",
+            "printings": [
+                "DDD",
+                "F07",
+                "GVL",
+                "PRM",
+                "TOR",
+                "UMA",
+                "VMA",
+                "WC03"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2006-02-01",
+                    "text": "If this card’s ability is activated by one player, then another player takes control of it on the same turn, the second player can’t activate its ability that turn."
+                }
+            ],
+            "scryfallId": "dc1d4035-da49-449f-9cc2-a35b95ecef96",
+            "starter": true,
+            "subtypes": [
+                "Lizard"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37648,
+            "text": "{1}{G}: Basking Rootwalla gets +2/+2 until end of turn. Activate this ability only once each turn.\nMadness {0} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+            "toughness": "1",
+            "type": "Creature — Lizard",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "f6a2e752-b74f-5b0b-8253-0e9d3b66089c"
+        },
+        {
+            "artist": "Paolo Parente",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 201781,
+            "name": "Albino Troll",
+            "number": "3",
+            "originalText": "Echo {1}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\n{1}{G}: Regenerate Albino Troll.",
+            "originalType": "Creature — Troll",
+            "power": "3",
+            "printings": [
+                "DDD",
+                "F02",
+                "GVL",
+                "PRM",
+                "USG",
+                "WC99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "3f04b6f8-ce92-4f8d-ac05-e2b17c3b1f8a",
+            "starter": true,
+            "subtypes": [
+                "Troll"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37646,
+            "text": "Echo {1}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\n{1}{G}: Regenerate Albino Troll.",
+            "toughness": "3",
+            "type": "Creature — Troll",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "6a65abb4-b4d3-5351-bcfc-9a2ef4ea49c1"
+        },
+        {
+            "artist": "DiTerlizzi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Nature twists knots stronger than any rope.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 201845,
+            "name": "Vine Trellis",
+            "number": "4",
+            "originalText": "Defender\n{T}: Add {G} to your mana pool.",
+            "originalType": "Creature — Plant Wall",
+            "power": "0",
+            "printings": [
+                "8ED",
+                "DDD",
+                "GVL",
+                "MMQ"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "0b4e2b39-9c1d-4bbd-95c7-c0c5b6d434bd",
+            "starter": true,
+            "subtypes": [
+                "Plant",
+                "Wall"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37700,
+            "text": "Defender (This creature can't attack.)\n{T}: Add {G}.",
+            "toughness": "4",
+            "type": "Creature — Plant Wall",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "bda23deb-7929-56ee-a4c4-a2f13869a78c"
+        },
+        {
+            "artist": "Anthony S. Waters",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "It teaches you to play dead.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 201826,
+            "name": "Wild Mongrel",
+            "number": "5",
+            "originalText": "Discard a card: Wild Mongrel gets +1/+1 and becomes the color of your choice until end of turn.",
+            "originalType": "Creature — Hound",
+            "power": "2",
+            "printings": [
+                "DDD",
+                "F06",
+                "GVL",
+                "ODY",
+                "PRM",
+                "TD0",
+                "UMA",
+                "VMA",
+                "WC02",
+                "WC03"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "5a80d20f-3e86-47bc-a657-944355db0f73",
+            "starter": true,
+            "subtypes": [
+                "Hound"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37702,
+            "text": "Discard a card: Wild Mongrel gets +1/+1 and becomes the color of your choice until end of turn.",
+            "toughness": "2",
+            "type": "Creature — Hound",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "cef7c0f9-deeb-551b-9de7-6043787d9d37"
+        },
+        {
+            "artist": "DiTerlizzi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"She is truly Wirewood's child now.\" —Elvish refugee",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}",
+            "multiverseId": 201830,
+            "name": "Wirewood Savage",
+            "number": "6",
+            "originalText": "Whenever a Beast enters the battlefield, you may draw a card.",
+            "originalType": "Creature — Elf",
+            "power": "2",
+            "printings": [
+                "DDD",
+                "GVL",
+                "ONS"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "c066535f-a6d1-4189-b54b-8f096516d990",
+            "starter": true,
+            "subtypes": [
+                "Elf"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37704,
+            "text": "Whenever a Beast enters the battlefield, you may draw a card.",
+            "toughness": "2",
+            "type": "Creature — Elf",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ff814b88-b8c0-598d-b987-efff24a7ac04"
+        },
+        {
+            "artist": "Nils Hamm",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 201831,
+            "name": "Blastoderm",
+            "number": "7",
+            "originalText": "Shroud (This creature can't be the target of spells or abilities.)\nFading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+            "originalType": "Creature — Beast",
+            "power": "5",
+            "printings": [
+                "DDD",
+                "F05",
+                "GVL",
+                "NEM",
+                "PRM",
+                "VMA",
+                "WC00",
+                "WC01"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "1354ca60-7183-47ae-ba7b-0871311cba66",
+            "starter": true,
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37651,
+            "text": "Shroud (This creature can't be the target of spells or abilities.)\nFading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+            "toughness": "5",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "e1c6a19d-f3ed-562b-9e36-07f2a47043e8"
+        },
+        {
+            "artist": "Arnie Swekel",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"All we know about the Krosan Forest we have learned from those few who made it out alive.\" —Elvish refugee",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 201882,
+            "name": "Ravenous Baloth",
+            "number": "8",
+            "originalText": "Sacrifice a Beast: You gain 4 life.",
+            "originalType": "Creature — Beast",
+            "power": "4",
+            "printings": [
+                "C13",
+                "DDD",
+                "G07",
+                "GVL",
+                "ONS",
+                "PRM"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "c87f3600-f043-477d-8d34-40807185996f",
+            "starter": true,
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37683,
+            "text": "Sacrifice a Beast: You gain 4 life.",
+            "toughness": "4",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "b58ce269-4bca-5fda-8506-89f866fb8522"
+        },
+        {
+            "artist": "Randy Gallegos",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "The most violent and destructive storms in Femeref occur on cloudless days.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 201881,
+            "name": "Stampeding Wildebeests",
+            "number": "9",
+            "originalText": "Trample\nAt the beginning of your upkeep, return a green creature you control to its owner's hand.",
+            "originalType": "Creature — Antelope Beast",
+            "power": "5",
+            "printings": [
+                "10E",
+                "DDD",
+                "GVL",
+                "VIS"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "The ability that returns a creature doesn’t target anything. You can return a creature with shroud or protection from green, for example. You don’t decide which creature to return until the ability resolves. If you control no other green creatures, you must return Stampeding Wildebeests itself."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "You choose a creature and return it all during resolution of the triggered ability. This means that if you have two Wildebeests, there is no way to end up returning only one creature."
+                }
+            ],
+            "scryfallId": "d0aa06df-9ecd-48cb-bbb9-1ad8477d5c59",
+            "starter": true,
+            "subtypes": [
+                "Antelope",
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37692,
+            "text": "Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nAt the beginning of your upkeep, return a green creature you control to its owner's hand.",
+            "toughness": "4",
+            "type": "Creature — Antelope Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "cddb06c9-438b-5f6c-9521-d45f9bd00f3c"
+        },
+        {
+            "artist": "Carl Critchlow",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "An indrik's howl has destructive power much subtler than that of its crushing foot.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}",
+            "multiverseId": 201834,
+            "name": "Indrik Stomphowler",
+            "number": "10",
+            "originalText": "When Indrik Stomphowler enters the battlefield, destroy target artifact or enchantment.",
+            "originalType": "Creature — Beast",
+            "power": "4",
+            "printings": [
+                "C15",
+                "CMA",
+                "DDD",
+                "DIS",
+                "GVL",
+                "PSAL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "8886df8d-70fb-4203-9f47-2dd5565a297b",
+            "starter": true,
+            "subtypes": [
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37670,
+            "text": "When Indrik Stomphowler enters the battlefield, destroy target artifact or enchantment.",
+            "toughness": "4",
+            "type": "Creature — Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "2a7a15fe-4abe-5195-985f-73087176b6fd"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 7.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{5}{G}{G}",
+            "multiverseId": 201829,
+            "name": "Krosan Tusker",
+            "number": "11",
+            "originalText": "Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.)\nWhen you cycle Krosan Tusker, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle your library.",
+            "originalType": "Creature — Boar Beast",
+            "power": "6",
+            "printings": [
+                "A25",
+                "ARC",
+                "C13",
+                "CMD",
+                "DDD",
+                "DDL",
+                "DDU",
+                "F03",
+                "GVL",
+                "ONS",
+                "PRM",
+                "TD0",
+                "VMA"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "When you cycle this card, first the cycling ability goes on the stack, then the triggered ability goes on the stack on top of it. The triggered ability will resolve before you draw a card from the cycling ability."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "The cycling ability and the triggered ability are separate. If the triggered ability doesn’t resolve (due to being countered with Stifle, for example, or if all its targets have become illegal), the cycling ability will still resolve and you’ll draw a card."
+                }
+            ],
+            "scryfallId": "f90c331a-970b-4e88-a9b8-2adeba22d267",
+            "starter": true,
+            "subtypes": [
+                "Boar",
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37673,
+            "text": "Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.)\nWhen you cycle Krosan Tusker, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle your library. (Do this before you draw.)",
+            "toughness": "5",
+            "type": "Creature — Boar Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "bf80014e-d26f-5fc8-b325-560fda48c398"
+        },
+        {
+            "artist": "Justin Sweet",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 7.0,
+            "flavorText": "Beneath the Tangle, the wurm tunnels stretch . . . wide as a stone's throw, long as forever, deep as you dare.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}{G}{G}",
+            "multiverseId": 201835,
+            "name": "Plated Slagwurm",
+            "number": "12",
+            "originalText": "Plated Slagwurm can't be the target of spells or abilities your opponents control.",
+            "originalType": "Creature — Wurm",
+            "power": "8",
+            "printings": [
+                "DDD",
+                "GVL",
+                "MRD"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "4520ed6d-725e-4aa5-be2d-2d8506a44d9f",
+            "starter": true,
+            "subtypes": [
+                "Wurm"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37680,
+            "text": "Hexproof (This creature can't be the target of spells or abilities your opponents control.)",
+            "toughness": "8",
+            "type": "Creature — Wurm",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "55522b6d-8d69-5b79-8572-a1f679b935eb"
+        },
+        {
+            "artist": "Arnie Swekel",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "multiverseId": 201792,
+            "name": "Genju of the Cedars",
+            "number": "13",
+            "originalText": "Enchant Forest\n{2}: Enchanted Forest becomes a 4/4 green Spirit creature until end of turn. It's still a land.\nWhen enchanted Forest is put into a graveyard, you may return Genju of the Cedars from your graveyard to your hand.",
+            "originalType": "Enchantment — Aura",
+            "printings": [
+                "BOK",
+                "DDD",
+                "GVL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-08-01",
+                    "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
+                }
+            ],
+            "scryfallId": "ff477469-d74e-41ac-9f91-deeec12da2b3",
+            "starter": true,
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37662,
+            "text": "Enchant Forest\n{2}: Enchanted Forest becomes a 4/4 green Spirit creature until end of turn. It's still a land.\nWhen enchanted Forest is put into a graveyard, you may return Genju of the Cedars from your graveyard to your hand.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "b71ff73f-18f8-5c61-a642-fc48d0c16bba"
+        },
+        {
+            "artist": "Matt Cavotta",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "multiverseId": 201839,
+            "name": "Giant Growth",
+            "number": "14",
+            "originalText": "Target creature gets +3/+3 until end of turn.",
+            "originalType": "Instant",
+            "printings": [
+                "10E",
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "9ED",
+                "A25",
+                "ATH",
+                "BBD",
+                "BRB",
+                "BTD",
+                "CED",
+                "CEI",
+                "DD1",
+                "DDD",
+                "DKM",
+                "DPA",
+                "E02",
+                "EVG",
+                "FBB",
+                "FNM",
+                "GVL",
+                "ICE",
+                "LEA",
+                "LEB",
+                "M10",
+                "M11",
+                "M14",
+                "ME2",
+                "ME3",
+                "ME4",
+                "P06",
+                "PJJT",
+                "PRM",
+                "PS11",
+                "PSUS",
+                "RTR",
+                "SUM",
+                "WC97",
+                "WC99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "5f5f8c40-db25-4f1e-82d6-3db555617119",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37665,
+            "text": "Target creature gets +3/+3 until end of turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "fc7101ab-f9ca-51d0-9a42-13c9019ab1ec"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "Hatred outlives the hateful.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "multiverseId": 201838,
+            "name": "Rancor",
+            "number": "15",
+            "originalText": "Enchant creature\nEnchanted creature gets +2/+0 and has trample.\nWhen Rancor is put into a graveyard from the battlefield, return Rancor to its owner's hand.",
+            "originalType": "Enchantment — Aura",
+            "printings": [
+                "A25",
+                "ARC",
+                "DDD",
+                "E02",
+                "EMA",
+                "F05",
+                "GVL",
+                "M13",
+                "PC2",
+                "PCA",
+                "PRM",
+                "PZ1",
+                "ULG",
+                "WC99"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2018-03-16",
+                    "text": "If the creature this Aura would enchant is an illegal target by the time Rancor tries to resolve, the Aura spell doesn’t resolve. It won’t enter the battlefield, so it won’t be put into a graveyard from the battlefield and its ability won’t trigger."
+                }
+            ],
+            "scryfallId": "a13768a2-caa3-4489-b1e2-ba5f0e104931",
+            "starter": true,
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37682,
+            "text": "Enchant creature\nEnchanted creature gets +2/+0 and has trample.\nWhen Rancor is put into a graveyard from the battlefield, return Rancor to its owner's hand.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "7adf35b6-b20b-5e5b-8392-2d296fbe4ac2"
+        },
+        {
+            "artist": "Jesper Ejsing",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Bulgo paused, puzzled. What was that rustling sound, and why did he feel so stiff? And how could his feet be so thirsty?",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 201837,
+            "name": "Lignify",
+            "number": "16",
+            "originalText": "Enchant creature\nEnchanted creature is a 0/4 Treefolk with no abilities.",
+            "originalType": "Tribal Enchantment — Treefolk Aura",
+            "printings": [
+                "DDD",
+                "GVL",
+                "LRW"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2007-10-01",
+                    "text": "Lignify overwrites previous effects that changed the enchanted creature’s creature types. Any such effects that apply after Lignify enters the battlefield will work normally."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "Lignify causes the enchanted creature to lose all abilities it had at the time it became enchanted. Any abilities granted to the creature after Lignify entered the battlefield will work normally."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "Lignify overwrites characteristic-defining abilities that specify the enchanted creature’s power or toughness (such as the one Dauntless Dourbark has) or that specify its creature types (such as changeling does)."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "If the enchanted creature has a characteristic-defining ability that specifies its color, that ability will still have its effect because it’s applied before the creature loses the ability."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "If Lignify leaves the battlefield, the creature goes back to being what it was before. Any effects that applied while the Lignify was on the battlefield, such as Giant Growth or Lace with Moonglove, will continue to apply."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "If a previous effect switched the creature’s power and toughness, that effect still applies (though it will apply to the creature’s new power and toughness)."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "Lignify will overwrite static abilities that come from the creature itself (such as the one on Verduran Enchantress) because Lignify causes the creature to lose that ability before it gets a chance to apply."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Lignify will overwrite any previous effects that set the enchanted creature’s power or toughness (such as Serendib Sorcerer does). Any such effects that apply after Lignify entered the battlefield will work normally."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Lignify will not overwrite effects such as those from Glorious Anthem, counters, or Giant Growth that change the enchanted creature’s power or toughness without setting it to a specific value. Apply such effects after applying Lignify."
+                }
+            ],
+            "scryfallId": "c2b4650a-29d0-41c2-ab3b-d685692680d5",
+            "starter": true,
+            "subtypes": [
+                "Treefolk",
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37674,
+            "text": "Enchant creature\nEnchanted creature is a Treefolk with base power and toughness 0/4 and loses all abilities.",
+            "type": "Tribal Enchantment — Treefolk Aura",
+            "types": [
+                "Tribal",
+                "Enchantment"
+            ],
+            "uuid": "57520358-007a-5eda-ab21-429c9551c4c7"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Nature's secrets can be read on every tree, every branch, every leaf.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 201840,
+            "name": "Nature's Lore",
+            "number": "17",
+            "originalText": "Search your library for a Forest card and put that card onto the battlefield. Then shuffle your library.",
+            "originalType": "Sorcery",
+            "printings": [
+                "5ED",
+                "DDD",
+                "GVL",
+                "ICE",
+                "ME1",
+                "P02",
+                "POR",
+                "S99",
+                "VMA"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
+                },
+                {
+                    "date": "2008-08-01",
+                    "text": "You can find any card with the land type Forest, including Snow-covered Forest or non-Basic lands like Tropical Island, Murmuring Bosk, or Stomping Ground. You can even find a card that is a land in addition to other types, such as Dryad Arbor."
+                }
+            ],
+            "scryfallId": "430ab1e8-0fb9-48ed-8a49-b151b660de6a",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37677,
+            "text": "Search your library for a Forest card and put that card onto the battlefield. Then shuffle your library.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "99754318-2a48-5cd9-8df2-508577a31ebb"
+        },
+        {
+            "artist": "Jim Nelson",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Nature's strength outlives the strong.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}",
+            "multiverseId": 201832,
+            "name": "Elephant Guide",
+            "names": [],
+            "number": "18",
+            "originalText": "Enchant creature\nEnchanted creature gets +3/+3.\nWhen enchanted creature is put into a graveyard, put a 3/3 green Elephant creature token onto the battlefield.",
+            "originalType": "Enchantment — Aura",
+            "printings": [
+                "CNS",
+                "DDD",
+                "EMA",
+                "GVL",
+                "JUD",
+                "VMA"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2016-06-08",
+                    "text": "If Elephant Guide enchants an opponent’s creature, you get the Elephant when that creature dies."
+                }
+            ],
+            "scryfallId": "9bce4776-e630-403a-8222-08d893bfe6d3",
+            "starter": true,
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37656,
+            "text": "Enchant creature\nEnchanted creature gets +3/+3.\nWhen enchanted creature dies, create a 3/3 green Elephant creature token.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "954b213e-d10f-50a0-b746-256f6ed296fc"
+        },
+        {
+            "artist": "Dan Frazier",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Banned",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}",
+            "multiverseId": 202261,
+            "name": "Invigorate",
+            "number": "19",
+            "originalText": "If you control a Forest, rather than pay Invigorate's mana cost, you may have an opponent gain 3 life.\nTarget creature gets +4/+4 until end of turn.",
+            "originalType": "Instant",
+            "printings": [
+                "A25",
+                "CMD",
+                "DDD",
+                "EMA",
+                "GVL",
+                "MMQ",
+                "PZ1"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2016-06-08",
+                    "text": "If another effect causes Invigorate to cost more, you must pay that additional cost even if you pay its alternative cost."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "If an effect says that an opponent can’t gain life, you can’t have that player gain life to pay Invigorate’s alternative cost. If an effect instead replaces life gain, such as that of Sulfuric Vortex, you may choose to pay the cost even though the cost’s action is replaced with nothing."
+                }
+            ],
+            "scryfallId": "65736b5f-1222-41a4-a2ae-3dacb4936664",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37671,
+            "text": "If you control a Forest, rather than pay this spell's mana cost, you may have an opponent gain 3 life.\nTarget creature gets +4/+4 until end of turn.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "539c88f6-9754-5dbb-a31b-9b80fa47ba7d"
+        },
+        {
+            "artist": "John Avon",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}",
+            "multiverseId": 202280,
+            "name": "Serrated Arrows",
+            "number": "20",
+            "originalText": "Serrated Arrows enters the battlefield with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on Serrated Arrows, sacrifice it.\n{T}, Remove an arrowhead counter from Serrated Arrows: Put a -1/-1 counter on target creature.",
+            "originalType": "Artifact",
+            "printings": [
+                "ATH",
+                "DDD",
+                "F08",
+                "GVL",
+                "HML",
+                "PRM",
+                "PTC",
+                "TSB",
+                "WC97"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-08-01",
+                    "text": "The upkeep trigger checks the number of counters at the start of upkeep, and only goes on the stack if there are no arrowhead counters at that time. It will check again on resolution, and will do nothing if you’ve somehow manage to get a new arrowhead counter on the Arrows."
+                }
+            ],
+            "scryfallId": "aceb40f9-79e6-44cf-9dae-360b17351bbd",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37687,
+            "text": "Serrated Arrows enters the battlefield with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on Serrated Arrows, sacrifice it.\n{T}, Remove an arrowhead counter from Serrated Arrows: Put a -1/-1 counter on target creature.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "3596b636-4bfc-5b61-bc13-73910d7df8d1"
+        },
+        {
+            "artist": "Paul Lee",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Words lie. People lie. The land tells the truth.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}",
+            "multiverseId": 201817,
+            "name": "Harmonize",
+            "number": "21",
+            "originalText": "Draw three cards.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ARC",
+                "C13",
+                "C17",
+                "CMD",
+                "DD1",
+                "DDD",
+                "DDS",
+                "EMA",
+                "EVG",
+                "GVL",
+                "MM3",
+                "P08",
+                "PLC",
+                "PRM",
+                "PZ1",
+                "TD0"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2007-02-01",
+                    "text": "This is the timeshifted version of Concentrate."
+                }
+            ],
+            "scryfallId": "5c64db7b-9d60-45ce-9df2-17c8f8fd9938",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37666,
+            "text": "Draw three cards.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "18b2346c-9235-566a-ad03-def9c2caef11"
+        },
+        {
+            "artist": "Ittoku",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}",
+            "multiverseId": 202281,
+            "name": "Rude Awakening",
+            "number": "22",
+            "originalText": "Choose one — Untap all lands you control; or until end of turn, lands you control become 2/2 creatures that are still lands.\nEntwine {2}{G} (Choose both if you pay the entwine cost.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "5DN",
+                "DDD",
+                "GVL",
+                "MMA",
+                "WC04"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2008-08-01",
+                    "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
+                },
+                {
+                    "date": "2013-06-07",
+                    "text": "Lands that enter the battlefield or otehrwise come under your control after Rude Awakening resolves won’t be affected."
+                }
+            ],
+            "scryfallId": "10fb2533-24e5-4489-b583-e787a90815b5",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37686,
+            "text": "Choose one —\n• Untap all lands you control.\n• Until end of turn, lands you control become 2/2 creatures that are still lands.\nEntwine {2}{G} (Choose both if you pay the entwine cost.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "834497dc-ac9b-5b85-9ec5-0dcc97afae0a"
+        },
+        {
+            "artist": "Ciruelo",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}{G}",
+            "multiverseId": 201824,
+            "name": "Beast Attack",
+            "names": [],
+            "number": "23",
+            "originalText": "Put a 4/4 green Beast creature token onto the battlefield.\nFlashback {2}{G}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+            "originalType": "Instant",
+            "printings": [
+                "DDD",
+                "DDS",
+                "GVL",
+                "ODY"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "b57bb8a9-3cba-4814-9073-e6f672ed5e4f",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37650,
+            "text": "Create a 4/4 green Beast creature token.\nFlashback {2}{G}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "92ea4afe-50f7-5761-8347-0c9f6f8c2d04"
+        },
+        {
+            "artist": "Carl Critchlow",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "Nature doesn't walk.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{G}{G}",
+            "multiverseId": 201779,
+            "name": "Overrun",
+            "number": "24",
+            "originalText": "Creatures you control get +3/+3 and gain trample until end of turn.",
+            "originalType": "Sorcery",
+            "printings": [
+                "10E",
+                "ATH",
+                "C14",
+                "C15",
+                "CMA",
+                "CN2",
+                "DDD",
+                "DPA",
+                "GVL",
+                "M10",
+                "M12",
+                "ODY",
+                "PC2",
+                "PCA",
+                "PS11",
+                "TMP",
+                "TPR",
+                "WC99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "Overrun affects only creatures you control at the time it resolves. It won’t affect creatures that come under your control later in the turn."
+                }
+            ],
+            "scryfallId": "f9a92c49-bdf1-466d-9a6c-65633efb1050",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37678,
+            "text": "Creatures you control get +3/+3 and gain trample until end of turn.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "0d641b43-9da4-5450-b332-fe91b22fb807"
+        },
+        {
+            "artist": "Rob Alexander",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"We don't like interlopers and thieves cluttering our skies.\" —Dionus, elvish archdruid",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{G}",
+            "multiverseId": 201780,
+            "name": "Windstorm",
+            "number": "25",
+            "originalText": "Windstorm deals X damage to each creature with flying.",
+            "originalType": "Instant",
+            "printings": [
+                "DDD",
+                "GVL",
+                "KTK",
+                "M10",
+                "M14"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "a61100e8-bf46-472d-93e1-488ea4b65ae5",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37703,
+            "text": "Windstorm deals X damage to each creature with flying.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "c1d00f10-619c-53a5-9f97-32fc595c1bfe"
+        },
+        {
+            "artist": "Stephen Daniele",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 201784,
+            "name": "Slippery Karst",
+            "number": "26",
+            "originalText": "Slippery Karst enters the battlefield tapped.\n{T}: Add {G} to your mana pool.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+            "originalType": "Land",
+            "printings": [
+                "ATH",
+                "BRB",
+                "BTD",
+                "C13",
+                "C14",
+                "C15",
+                "CMA",
+                "DDD",
+                "GVL",
+                "USG"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                }
+            ],
+            "scryfallId": "ac81d1fa-1b2d-496f-b78a-60c41ab64954",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37690,
+            "text": "Slippery Karst enters the battlefield tapped.\n{T}: Add {G}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6202e5c4-ad53-5e90-9e98-cbf96cff16a7"
+        },
+        {
+            "artist": "Rob Alexander",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 202279,
+            "name": "Treetop Village",
+            "number": "27",
+            "originalText": "Treetop Village enters the battlefield tapped.\n{T}: Add {G} to your mana pool.\n{1}{G}: Treetop Village becomes a 3/3 green Ape creature with trample until end of turn. It's still a land.",
+            "originalType": "Land",
+            "printings": [
+                "10E",
+                "DDD",
+                "DDG",
+                "DDR",
+                "DDU",
+                "F04",
+                "GVL",
+                "PRM",
+                "PSUM",
+                "ULG",
+                "WC99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-08-01",
+                    "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
+                }
+            ],
+            "scryfallId": "f39744c1-3b64-4312-8577-7c40afaf2702",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37695,
+            "text": "Treetop Village enters the battlefield tapped.\n{T}: Add {G}.\n{1}{G}: Treetop Village becomes a 3/3 green Ape creature with trample until end of turn. It's still a land. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "00da63db-566c-5e38-947f-6eaee33d7ff8"
+        },
+        {
+            "artist": "Rob Alexander",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204966,
+            "name": "Forest",
+            "number": "28",
+            "originalText": "G",
+            "originalType": "Basic Land — Forest",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "53f45c42-b2c7-4464-b708-d11c654a9ce7",
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "e18612cf-7a96-5e33-805a-309d7778ff8f",
+            "variations": [
+                "c2fcf9f2-a5d8-543b-aaef-5127de020eb8",
+                "db3f4db5-847d-5085-a09a-6e3d7f04e376",
+                "51064f59-dab0-5a71-9f20-49cff464db12"
+            ]
+        },
+        {
+            "artist": "Glen Angus",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204965,
+            "name": "Forest",
+            "number": "29",
+            "originalText": "G",
+            "originalType": "Basic Land — Forest",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "5d206442-eb93-4dc8-ae59-5b72777c961e",
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c2fcf9f2-a5d8-543b-aaef-5127de020eb8",
+            "variations": [
+                "e18612cf-7a96-5e33-805a-309d7778ff8f",
+                "db3f4db5-847d-5085-a09a-6e3d7f04e376",
+                "51064f59-dab0-5a71-9f20-49cff464db12"
+            ]
+        },
+        {
+            "artist": "Steven Belledin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204967,
+            "name": "Forest",
+            "number": "30",
+            "originalText": "G",
+            "originalType": "Basic Land — Forest",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "f373e6a7-319a-481b-8bf3-5f4e5d229456",
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "db3f4db5-847d-5085-a09a-6e3d7f04e376",
+            "variations": [
+                "e18612cf-7a96-5e33-805a-309d7778ff8f",
+                "c2fcf9f2-a5d8-543b-aaef-5127de020eb8",
+                "51064f59-dab0-5a71-9f20-49cff464db12"
+            ]
+        },
+        {
+            "artist": "Jim Nelson",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204964,
+            "name": "Forest",
+            "number": "31",
+            "originalText": "G",
+            "originalType": "Basic Land — Forest",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDL",
+                "DDM",
+                "DDO",
+                "DDP",
+                "DDR",
+                "DDS",
+                "DDU",
+                "DOM",
+                "DTK",
+                "E01",
+                "EVG",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GS1",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M14",
+                "M15",
+                "M19",
+                "ORI",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "35e8b186-ea04-4895-b5b2-f02e9c848c97",
+            "starter": true,
+            "subtypes": [
+                "Forest"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {G}.)",
+            "type": "Basic Land — Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "51064f59-dab0-5a71-9f20-49cff464db12",
+            "variations": [
+                "e18612cf-7a96-5e33-805a-309d7778ff8f",
+                "c2fcf9f2-a5d8-543b-aaef-5127de020eb8",
+                "db3f4db5-847d-5085-a09a-6e3d7f04e376"
+            ]
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "5",
+            "manaCost": "{3}{B}{B}",
+            "multiverseId": 201348,
+            "name": "Liliana Vess",
+            "number": "32",
+            "originalText": "+1: Target player discards a card.\n-2: Search your library for a card, then shuffle your library and put that card on top of it.\n-8: Put all creature cards in all graveyards onto the battlefield under your control.",
+            "originalType": "Planeswalker — Liliana",
+            "printings": [
+                "DDD",
+                "GVL",
+                "LRW",
+                "M10",
+                "M11",
+                "M15",
+                "PDP10",
+                "PS14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "A “creature card” is any card with the type creature, even if it has other types such as artifact, enchantment, or land. Older cards of type summon are also creature cards."
+                }
+            ],
+            "scryfallId": "0a05ead0-5e82-4af9-9c7e-78a6de425673",
+            "starter": true,
+            "subtypes": [
+                "Liliana"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 37675,
+            "text": "+1: Target player discards a card.\n−2: Search your library for a card, then shuffle your library and put that card on top of it.\n−8: Put all creature cards from all graveyards onto the battlefield under your control.",
+            "type": "Legendary Planeswalker — Liliana",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "868df7fc-ca35-5cd0-b1d1-8018674cc972"
+        },
+        {
+            "artist": "Dominick Domingo",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "\"The bones of allies grant wisdom. The bones of enemies grant strength. The bones of dragons grant life eternal.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}",
+            "multiverseId": 202143,
+            "name": "Deathgreeter",
+            "number": "33",
+            "originalText": "Whenever another creature is put into a graveyard from the battlefield, you may gain 1 life.",
+            "originalType": "Creature — Human Shaman",
+            "power": "1",
+            "printings": [
+                "ALA",
+                "DDD",
+                "GVL"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "9dce12e4-4cb0-491d-8eae-d0c589f21a6e",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Shaman"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37653,
+            "text": "Whenever another creature dies, you may gain 1 life.",
+            "toughness": "1",
+            "type": "Creature — Human Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ed260890-492f-51c2-9022-832db288ba53"
+        },
+        {
+            "artist": "Hideaki Takamura",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}",
+            "multiverseId": 202274,
+            "name": "Ghost-Lit Stalker",
+            "number": "34",
+            "originalText": "{4}{B}, {T}: Target player discards two cards. Activate this ability only any time you could cast a sorcery.\nChannel — {5}{B}{B}, Discard Ghost-Lit Stalker: Target player discards four cards. Activate this ability only any time you could cast a sorcery.",
+            "originalType": "Creature — Spirit",
+            "power": "1",
+            "printings": [
+                "DDD",
+                "GVL",
+                "SOK"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "148f6863-e15c-4c51-9479-33fbf944031e",
+            "starter": true,
+            "subtypes": [
+                "Spirit"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37664,
+            "text": "{4}{B}, {T}: Target player discards two cards. Activate this ability only any time you could cast a sorcery.\nChannel — {5}{B}{B}, Discard Ghost-Lit Stalker: Target player discards four cards. Activate this ability only any time you could cast a sorcery.",
+            "toughness": "1",
+            "type": "Creature — Spirit",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "12af95d0-7388-5d88-9505-c1157b28e8b0"
+        },
+        {
+            "artist": "Chippy",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}",
+            "multiverseId": 202276,
+            "name": "Vampire Bats",
+            "number": "35",
+            "originalText": "Flying\n{B}: Vampire Bats gets +1/+0 until end of turn. Activate this ability no more than twice each turn.",
+            "originalType": "Creature — Bat",
+            "power": "0",
+            "printings": [
+                "10E",
+                "4ED",
+                "5ED",
+                "DDD",
+                "GVL",
+                "ITP",
+                "LEG",
+                "REN",
+                "RQS"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "4ca3cfc8-6df2-44cc-8210-03a0f2d45aab",
+            "starter": true,
+            "subtypes": [
+                "Bat"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37698,
+            "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\n{B}: Vampire Bats gets +1/+0 until end of turn. Activate this ability no more than twice each turn.",
+            "toughness": "1",
+            "type": "Creature — Bat",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "0b69df21-91c5-5591-b28f-e2e60f3cba27"
+        },
+        {
+            "artist": "Daarken",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"The dead make good soldiers. They can't disobey orders, never surrender, and don't stop fighting when a random body part falls off.\" —Nevinyrral, Necromancer's Handbook",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}",
+            "multiverseId": 202275,
+            "name": "Drudge Skeletons",
+            "number": "36",
+            "originalText": "{B}: Regenerate Drudge Skeletons.",
+            "originalType": "Creature — Skeleton",
+            "power": "1",
+            "printings": [
+                "10E",
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "9ED",
+                "CED",
+                "CEI",
+                "DDD",
+                "DPA",
+                "FBB",
+                "GVL",
+                "LEA",
+                "LEB",
+                "M10",
+                "PS11",
+                "SUM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "82caa4d5-ef9f-4903-98a7-134c984da663",
+            "starter": true,
+            "subtypes": [
+                "Skeleton"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37654,
+            "text": "{B}: Regenerate Drudge Skeletons. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
+            "toughness": "1",
+            "type": "Creature — Skeleton",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "0974a76b-c2fe-5d0b-b262-d05152353fa0"
+        },
+        {
+            "artist": "Carl Critchlow",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Nothing is sacred to rats. Everything is simply another meal.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}",
+            "multiverseId": 201791,
+            "name": "Ravenous Rats",
+            "number": "37",
+            "originalText": "When Ravenous Rats enters the battlefield, target opponent discards a card.",
+            "originalType": "Creature — Rat",
+            "power": "1",
+            "printings": [
+                "10E",
+                "8ED",
+                "9ED",
+                "DDD",
+                "DDJ",
+                "DPA",
+                "GVL",
+                "INV",
+                "M13",
+                "P02",
+                "PS11",
+                "S99",
+                "UDS",
+                "WC99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "9c55d72c-61fa-48b5-bd96-9a952c05067b",
+            "starter": true,
+            "subtypes": [
+                "Rat"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37684,
+            "text": "When Ravenous Rats enters the battlefield, target opponent discards a card.",
+            "toughness": "1",
+            "type": "Creature — Rat",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d0c98d9c-6e3a-513f-b9b9-5725cca84397"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Grixis is a world where the only things found in abundance are death and decay. Corpses, whole or in part, are the standard currency among necromancers and demons.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 202144,
+            "name": "Fleshbag Marauder",
+            "number": "38",
+            "originalText": "When Fleshbag Marauder enters the battlefield, each player sacrifices a creature.",
+            "originalType": "Creature — Zombie Warrior",
+            "power": "3",
+            "printings": [
+                "ALA",
+                "CM2",
+                "CMD",
+                "CN2",
+                "DDD",
+                "DDN",
+                "GNT",
+                "GVL",
+                "ORI"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "When the ability resolves, you may sacrifice Fleshbag Marauder itself. If you control no other creatures, you’ll have to sacrifice Fleshbag Marauder."
+                },
+                {
+                    "date": "2015-06-22",
+                    "text": "As Fleshbag Marauder’s ability resolves, first you choose a creature to sacrifice, then each other player in turn order chooses a creature to sacrifice, then all those creatures are sacrificed simultaneously."
+                }
+            ],
+            "scryfallId": "f9220bde-ff88-4080-b657-3aca494e1d12",
+            "starter": true,
+            "subtypes": [
+                "Zombie",
+                "Warrior"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37659,
+            "text": "When Fleshbag Marauder enters the battlefield, each player sacrifices a creature.",
+            "toughness": "1",
+            "type": "Creature — Zombie Warrior",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "3cc081f8-6185-5c37-9cb7-c50806d92485"
+        },
+        {
+            "artist": "Mark Tedin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "It takes no prisoners, but it keeps the choicest bits for Phyrexia.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 201790,
+            "name": "Phyrexian Rager",
+            "number": "39",
+            "originalText": "When Phyrexian Rager enters the battlefield, you draw a card and you lose 1 life.",
+            "originalType": "Creature — Horror",
+            "power": "2",
+            "printings": [
+                "10E",
+                "APC",
+                "C15",
+                "CMA",
+                "DDD",
+                "EMA",
+                "GVL",
+                "IMA",
+                "MBS",
+                "PMEI"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "7aede682-c5a1-486e-ae61-017f99aed5b0",
+            "starter": true,
+            "subtypes": [
+                "Horror"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37679,
+            "text": "When Phyrexian Rager enters the battlefield, you draw a card and you lose 1 life.",
+            "toughness": "2",
+            "type": "Creature — Horror",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "8b3aa2ad-0f4f-5966-a8ae-3a9d0e336b9c"
+        },
+        {
+            "artist": "Greg Staples",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"I have become a gourmet of sorts. Each soul has its own distinctive flavor. The art is in inviting the right company to the feast.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 202146,
+            "name": "Urborg Syphon-Mage",
+            "number": "40",
+            "originalText": "{2}{B}, {T}, Discard a card: Each other player loses 2 life. You gain life equal to the life lost this way.",
+            "originalType": "Creature — Human Spellshaper",
+            "power": "2",
+            "printings": [
+                "ARC",
+                "DDD",
+                "GVL",
+                "TSP"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "331732da-6003-4801-8a97-29a19986b8da",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Spellshaper"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37697,
+            "text": "{2}{B}, {T}, Discard a card: Each other player loses 2 life. You gain life equal to the life lost this way.",
+            "toughness": "2",
+            "type": "Creature — Human Spellshaper",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a096d046-d2f5-52d0-87c8-12772885e47f"
+        },
+        {
+            "artist": "Jaime Jones",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Graveyards are sacrilege! A waste of perfectly good bones.\" —Keren-Dur, necromancer lord",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 202277,
+            "name": "Wall of Bone",
+            "number": "41",
+            "originalText": "Defender\n{B}: Regenerate Wall of Bone.",
+            "originalType": "Creature — Skeleton Wall",
+            "power": "1",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "7ED",
+                "CED",
+                "CEI",
+                "DDD",
+                "FBB",
+                "GVL",
+                "ITP",
+                "LEA",
+                "LEB",
+                "M10",
+                "RQS",
+                "SUM"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "621904de-6c25-421b-8c14-de5278e4d216",
+            "starter": true,
+            "subtypes": [
+                "Skeleton",
+                "Wall"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37701,
+            "text": "Defender (This creature can't attack.)\n{B}: Regenerate Wall of Bone. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
+            "toughness": "4",
+            "type": "Creature — Skeleton Wall",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "1d6baff1-0144-5cd0-bd9e-743316306f2f"
+        },
+        {
+            "artist": "rk post",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "The line between dream and death is gauzy and fragile. She leads those too near it from one side to the other.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}{B}",
+            "multiverseId": 201822,
+            "name": "Faerie Macabre",
+            "number": "42",
+            "originalText": "Flying\nDiscard Faerie Macabre: Exile up to two target cards from graveyards.",
+            "originalType": "Creature — Faerie Rogue",
+            "power": "2",
+            "printings": [
+                "DDD",
+                "GVL",
+                "MMA",
+                "SHM"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-05-01",
+                    "text": "Faerie Macabre’s second ability can be activated only while it’s in your hand. You can do this any time you could cast an instant."
+                },
+                {
+                    "date": "2008-05-01",
+                    "text": "The targeted cards may be in the same graveyard or in different graveyards."
+                }
+            ],
+            "scryfallId": "33629770-e1fb-4e0d-9b4c-411d2a7953ae",
+            "starter": true,
+            "subtypes": [
+                "Faerie",
+                "Rogue"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37658,
+            "text": "Flying\nDiscard Faerie Macabre: Exile up to two target cards from graveyards.",
+            "toughness": "2",
+            "type": "Creature — Faerie Rogue",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ef68e849-acb6-5efa-b76f-31cc4842434e"
+        },
+        {
+            "artist": "Andrew Robinson",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Villagers cloaked the town in magical silence, but their ears still bled.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}{B}",
+            "multiverseId": 202148,
+            "name": "Howling Banshee",
+            "number": "43",
+            "originalText": "Flying\nWhen Howling Banshee enters the battlefield, each player loses 3 life.",
+            "originalType": "Creature — Spirit",
+            "power": "3",
+            "printings": [
+                "DDD",
+                "GVL",
+                "M10",
+                "M11"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "9fa0e1f2-9c17-4041-b898-89ccabccb5d8",
+            "starter": true,
+            "subtypes": [
+                "Spirit"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37668,
+            "text": "Flying\nWhen Howling Banshee enters the battlefield, each player loses 3 life.",
+            "toughness": "3",
+            "type": "Creature — Spirit",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "5594d321-34f2-51e3-8b28-e17f7e8e5196"
+        },
+        {
+            "artist": "Robert Bliss",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Her cold wail echoes in the alleys and under-eaves, finding the unfortunate and turning their blood to ice.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}{B}",
+            "multiverseId": 201796,
+            "name": "Keening Banshee",
+            "number": "44",
+            "originalText": "Flying\nWhen Keening Banshee enters the battlefield, target creature gets -2/-2 until end of turn.",
+            "originalType": "Creature — Spirit",
+            "power": "2",
+            "printings": [
+                "DDD",
+                "GVL",
+                "PSAL",
+                "RAV"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "bccbd872-eec8-4978-acaf-fa5c3ac33861",
+            "starter": true,
+            "subtypes": [
+                "Spirit"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37672,
+            "text": "Flying\nWhen Keening Banshee enters the battlefield, target creature gets -2/-2 until end of turn.",
+            "toughness": "2",
+            "type": "Creature — Spirit",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d22551c5-c4c9-5dcb-8b74-67d028d35c4b"
+        },
+        {
+            "artist": "Daren Bader",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{5}{B}",
+            "multiverseId": 201813,
+            "name": "Twisted Abomination",
+            "number": "45",
+            "originalText": "{B}: Regenerate Twisted Abomination.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, and put it into your hand. Then shuffle your library.)",
+            "originalType": "Creature — Zombie Mutant",
+            "power": "5",
+            "printings": [
+                "A25",
+                "ARC",
+                "CNS",
+                "DDD",
+                "EMA",
+                "GVL",
+                "PD3",
+                "SCG",
+                "TD0",
+                "TSB"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2016-06-08",
+                    "text": "Unlike the normal cycling ability, Swampcycling doesn’t allow you to draw a card. Instead, it lets you search your library for a Swamp card. After you find a Swamp card in your library, you reveal it, put it into your hand, then shuffle your library."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "Swampcycling is a form of cycling. Any ability that triggers on a card being cycled also triggers on Swampcycling this card. Any ability that stops a cycling ability from being activated also stops Swampcycling from being activated."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "Swampcycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with Swampcycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "You can choose to find any card with the Swamp land type, including nonbasic lands. You can also choose not to find a card, even if there is a Swamp card in your library."
+                }
+            ],
+            "scryfallId": "63c8acb3-67da-43b1-9e4e-895779bff678",
+            "starter": true,
+            "subtypes": [
+                "Zombie",
+                "Mutant"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37696,
+            "text": "{B}: Regenerate Twisted Abomination.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle your library.)",
+            "toughness": "3",
+            "type": "Creature — Zombie Mutant",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "b49dc3bf-6441-5f8d-b4c5-8da37b53b292"
+        },
+        {
+            "artist": "Wayne Reynolds",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{B}{B}",
+            "multiverseId": 201809,
+            "name": "Skeletal Vampire",
+            "number": "46",
+            "originalText": "Flying\nWhen Skeletal Vampire enters the battlefield, put two 1/1 black Bat creature tokens onto the battlefield.\n{3}{B}{B}, Sacrifice a Bat: Put two 1/1 black Bat creature tokens with flying onto the battlefield.\nSacrifice a Bat: Regenerate Skeletal Vampire.",
+            "originalType": "Creature — Vampire Skeleton",
+            "power": "3",
+            "printings": [
+                "C17",
+                "DDD",
+                "GPT",
+                "GVL",
+                "MMA"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2006-02-01",
+                    "text": "You may pay the cost of Skeletal Vampire’s activated abilities by sacrificing any Bat, not just a Bat token it created."
+                }
+            ],
+            "scryfallId": "7cb8d6b0-13c1-4b04-9a92-1b87f2b7c1ea",
+            "starter": true,
+            "subtypes": [
+                "Vampire",
+                "Skeleton"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37689,
+            "text": "Flying\nWhen Skeletal Vampire enters the battlefield, create two 1/1 black Bat creature tokens with flying.\n{3}{B}{B}, Sacrifice a Bat: Create two 1/1 black Bat creature tokens with flying.\nSacrifice a Bat: Regenerate Skeletal Vampire.",
+            "toughness": "3",
+            "type": "Creature — Vampire Skeleton",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "542a6b73-64f1-56b6-9a9e-2494fab15c82"
+        },
+        {
+            "artist": "Tsutomu Kawade",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}",
+            "multiverseId": 201793,
+            "name": "Genju of the Fens",
+            "number": "47",
+            "originalText": "Enchant Swamp\n{2}: Until end of turn, enchanted Swamp becomes a 2/2 black Spirit creature with \"{B}: This creature gets +1/+1 until end of turn.\" It's still a land.\nWhen enchanted Swamp is put into a graveyard, you may return Genju of the Fens from your graveyard to your hand.",
+            "originalType": "Enchantment — Aura",
+            "printings": [
+                "BOK",
+                "DDD",
+                "GVL"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2008-08-01",
+                    "text": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Activating the ability that turns it into a creature while it’s already a creature will override any effects that set its power and/or toughness to a specific number. However, any effect that raises or lowers power and/or toughness (such as the effect created by Giant Growth, Glorious Anthem, or a +1/+1 counter) will continue to apply."
+                }
+            ],
+            "scryfallId": "3d41c71a-5024-4433-986e-c82473952606",
+            "starter": true,
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37663,
+            "text": "Enchant Swamp\n{2}: Until end of turn, enchanted Swamp becomes a 2/2 black Spirit creature with \"{B}: This creature gets +1/+1 until end of turn.\" It's still a land.\nWhen enchanted Swamp is put into a graveyard, you may return Genju of the Fens from your graveyard to your hand.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "7c6bb48b-e273-520f-b3e1-b2f08f621d80"
+        },
+        {
+            "artist": "Gary Leach",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 2.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}",
+            "multiverseId": 201820,
+            "name": "Bad Moon",
+            "number": "48",
+            "originalText": "Black creatures get +1/+1.",
+            "originalType": "Enchantment",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "C14",
+                "CED",
+                "CEI",
+                "DDD",
+                "FBB",
+                "GVL",
+                "LEA",
+                "LEB",
+                "SUM",
+                "TSB"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "9e74f6e6-bcb1-4c4a-bfdc-7262be98249e",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37647,
+            "text": "Black creatures get +1/+1.",
+            "type": "Enchantment",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "ceff5734-d78d-579d-b63d-6c02a0f3729b"
+        },
+        {
+            "artist": "Howard Lyon",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"You know I accept only one currency here, and yet you have sought me out. Why now do you hesitate?\" —Xathrid demon",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}{B}",
+            "multiverseId": 201801,
+            "name": "Sign in Blood",
+            "number": "49",
+            "originalText": "Target player draws two cards and loses 2 life.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ARC",
+                "C14",
+                "CM2",
+                "CMD",
+                "DDD",
+                "GVL",
+                "M10",
+                "M11",
+                "M13",
+                "M15",
+                "MM2",
+                "P10",
+                "PRM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "572e9d19-263b-4c6c-a7f0-143d3d5a4bc5",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37688,
+            "text": "Target player draws two cards and loses 2 life.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "9218bd0c-86f7-5ee4-8869-372f63f37bd8"
+        },
+        {
+            "artist": "Massimilano Frezzato",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Only the most ravenous soul feeds on the health of the weak.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{B}{B}",
+            "multiverseId": 202262,
+            "name": "Vicious Hunger",
+            "number": "50",
+            "originalText": "Vicious Hunger deals 2 damage to target creature and you gain 2 life.",
+            "originalType": "Sorcery",
+            "printings": [
+                "8ED",
+                "DDD",
+                "GVL",
+                "NEM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "461e6a49-df94-40ec-ba7a-c71918977356",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37699,
+            "text": "Vicious Hunger deals 2 damage to target creature and you gain 2 life.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "aeb8f5da-f764-574e-bac1-375aae64fe62"
+        },
+        {
+            "artist": "Zoltan Boros & Gabor Szikszai",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 202145,
+            "name": "Ichor Slick",
+            "number": "51",
+            "originalText": "Target creature gets -3/-3 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)\nMadness {3}{B} (If you discard this card, you may cast it for its madness cost instead of putting it into your graveyard.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "DDD",
+                "FUT",
+                "GVL"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2007-05-01",
+                    "text": "If you cycle Ichor Slick, you may cast it for its madness cost. You choose whether or not to cast it with madness before you draw a card from the cycling effect."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                }
+            ],
+            "scryfallId": "8529f0b0-0451-480e-82bb-df48fb9910cc",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37669,
+            "text": "Target creature gets -3/-3 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)\nMadness {3}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "244a134e-2154-5d36-9d5b-543004e12828"
+        },
+        {
+            "artist": "Zoltan Boros & Gabor Szikszai",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"A little dark magic won't stop me. The worse the curse, the better the prize.\" —Radavi, Joraga relic hunter, last words",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{B}{B}",
+            "multiverseId": 202147,
+            "name": "Hideous End",
+            "number": "52",
+            "originalText": "Destroy target nonblack creature. Its controller loses 2 life.",
+            "originalType": "Instant",
+            "printings": [
+                "DDD",
+                "DDE",
+                "DDR",
+                "GVL",
+                "HOP",
+                "ZEN"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "If the targeted creature is an illegal target by the time Hideous End resolves, the entire spell doesn’t resolve. No one loses life."
+                }
+            ],
+            "scryfallId": "457373ae-69a4-4c3c-a8ea-d3a6b7996ba8",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37667,
+            "text": "Destroy target nonblack creature. Its controller loses 2 life.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "0261bc06-49ca-5fa5-9348-d5f7c45840ad"
+        },
+        {
+            "artist": "Steve Argyle",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"The bigger they are, the faster they rot.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}",
+            "multiverseId": 201794,
+            "name": "Snuff Out",
+            "number": "53",
+            "originalText": "If you control a Swamp, you may pay 4 life rather than pay Snuff Out's mana cost.\nDestroy target nonblack creature. It can't be regenerated.",
+            "originalType": "Instant",
+            "printings": [
+                "DDD",
+                "GVL",
+                "MMQ"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "db8b3560-4940-40cc-9797-f909dcb1519b",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37691,
+            "text": "If you control a Swamp, you may pay 4 life rather than pay this spell's mana cost.\nDestroy target nonblack creature. It can't be regenerated.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "c0b9e512-164c-5903-81e9-1e93c07b9476"
+        },
+        {
+            "artist": "Vance Kovacs",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Darkness doesn't always send its minions to do its dirty work.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}",
+            "multiverseId": 201812,
+            "name": "Tendrils of Corruption",
+            "number": "54",
+            "originalText": "Tendrils of Corruption deals X damage to target creature and you gain X life, where X is the number of Swamps you control.",
+            "originalType": "Instant",
+            "printings": [
+                "C14",
+                "DDD",
+                "DDE",
+                "DDR",
+                "GVL",
+                "M10",
+                "TSP"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "The amount of life you gain is equal to the number of Swamps you control, not the amount of damage Tendrils of Corruption deals (in case some of it is prevented)."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "If the targeted creature is an illegal target by the time Tendrils of Corruption would resolve, the entire spell doesn’t resolve. You won’t gain any life."
+                }
+            ],
+            "scryfallId": "6464207b-5887-41d3-a58c-a622531ab8be",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37694,
+            "text": "Tendrils of Corruption deals X damage to target creature and you gain X life, where X is the number of Swamps you control.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "338cf6fd-a00b-5dbd-8e05-776d19178c46"
+        },
+        {
+            "artist": "Zoltan Boros & Gabor Szikszai",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Liliana developed a fondness for the moment when roaring becomes squealing.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}{B}",
+            "multiverseId": 201819,
+            "name": "Mutilate",
+            "number": "55",
+            "originalText": "All creatures get -1/-1 until end of turn for each Swamp you control.",
+            "originalType": "Sorcery",
+            "printings": [
+                "C14",
+                "DDD",
+                "GVL",
+                "M13",
+                "TOR"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2012-07-01",
+                    "text": "The effect is based on the number of Swamps you control when Mutilate resolves. Only creatures on the battlefield at that time will be affected. The effect won’t change later in the turn, even if the number of Swamps you control changes."
+                }
+            ],
+            "scryfallId": "d9cbdabf-18e3-4c0c-b37b-097aaa650066",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37676,
+            "text": "All creatures get -1/-1 until end of turn for each Swamp you control.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "8b578a3c-dca4-54d3-8b11-c48afbbb79f7"
+        },
+        {
+            "artist": "Vance Kovacs",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"Death is no excuse for disobedience.\" —Liliana Vess",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{B}",
+            "multiverseId": 201800,
+            "name": "Rise from the Grave",
+            "number": "56",
+            "originalText": "Put target creature card in a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ANA",
+                "C15",
+                "CM2",
+                "CMA",
+                "CMD",
+                "DDD",
+                "EMN",
+                "GVL",
+                "M10",
+                "M11",
+                "M13",
+                "M19",
+                "PRM",
+                "PWP09"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2018-07-13",
+                    "text": "Rise from the Grave doesn’t overwrite any previous colors or types. Rather, it adds another color and another subtype."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "If the creature is normally colorless, it will simply become black. It can’t be both black and colorless."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "A later effect that changes the affected creature’s colors will overwrite that part of Rise from the Grave’s effect; the creature will be only the new color. The same is true about an effect that changes the affected creature’s types or subtypes."
+                }
+            ],
+            "scryfallId": "dcd502af-7e79-459b-89ab-7d1c753e768b",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37685,
+            "text": "Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "c8126eb1-6fe9-5a15-9e4c-f1f930dbad72"
+        },
+        {
+            "artist": "Dave Allsop",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "There are things beneath the murk for whom the bog is a stew, a thin broth in need of meat.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{5}{B}",
+            "multiverseId": 201821,
+            "name": "Corrupt",
+            "number": "57",
+            "originalText": "Corrupt deals damage equal to the number of Swamps you control to target creature or player. You gain life equal to the damage dealt this way.",
+            "originalType": "Sorcery",
+            "printings": [
+                "7ED",
+                "DDC",
+                "DDD",
+                "DVD",
+                "GVL",
+                "M11",
+                "M14",
+                "P08",
+                "PI13",
+                "PRM",
+                "SHM",
+                "USG"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "The swamps are counted on resolution."
+                },
+                {
+                    "date": "2010-08-15",
+                    "text": "The life you gain is equal to the damage dealt by Corrupt, not necessarily to the number of Swamps you control (if some or all of the damage is prevented, for example)."
+                },
+                {
+                    "date": "2010-08-15",
+                    "text": "The amount of damage dealt to a creature is not bounded by its toughness, and the amount of damage dealt to a player is not bounded by that player’s life total. For example, if Corrupt deals 6 damage to a 2/2 creature, you’ll gain 6 life."
+                },
+                {
+                    "date": "2013-07-01",
+                    "text": "Corrupt counts any land you control with the subtype Swamp, not just ones named Swamp."
+                }
+            ],
+            "scryfallId": "91355d59-3445-4fb4-82c5-25610714c271",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37652,
+            "text": "Corrupt deals damage to any target equal to the number of Swamps you control. You gain life equal to the damage dealt this way.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "9cb81eb4-71d0-5127-91fb-6da4a928bfff"
+        },
+        {
+            "artist": "Zoltan Boros & Gabor Szikszai",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{B}{B}",
+            "multiverseId": 201816,
+            "name": "Enslave",
+            "number": "58",
+            "originalText": "Enchant creature\nYou control enchanted creature.\nAt the beginning of your upkeep, enchanted creature deals 1 damage to its owner.",
+            "originalType": "Enchantment — Aura",
+            "printings": [
+                "DDD",
+                "GVL",
+                "NPH",
+                "PLC"
+            ],
+            "rarity": "uncommon",
+            "rulings": [
+                {
+                    "date": "2007-02-01",
+                    "text": "The owner of a card is the player who started the game with that card in their deck. If the card didn’t start the game in a deck, its owner is the player who brought the card into the game, via Living Wish or a similar effect."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "A token’s owner is the player under whose control it entered the battlefield."
+                }
+            ],
+            "scryfallId": "cbaa647f-5799-4255-82c2-06ac4c159a21",
+            "starter": true,
+            "subtypes": [
+                "Aura"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37657,
+            "text": "Enchant creature\nYou control enchanted creature.\nAt the beginning of your upkeep, enchanted creature deals 1 damage to its owner.",
+            "type": "Enchantment — Aura",
+            "types": [
+                "Enchantment"
+            ],
+            "uuid": "effc7fb2-e051-51da-84bd-34eefcaf2a97"
+        },
+        {
+            "artist": "Stephen Daniele",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 201782,
+            "name": "Polluted Mire",
+            "number": "59",
+            "originalText": "Polluted Mire enters the battlefield tapped.\n{T}: Add {B} to your mana pool.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+            "originalType": "Land",
+            "printings": [
+                "ATH",
+                "BRB",
+                "BTD",
+                "C14",
+                "C15",
+                "CMA",
+                "DDD",
+                "GVL",
+                "PD3",
+                "USG"
+            ],
+            "rarity": "common",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                }
+            ],
+            "scryfallId": "9edb2ad9-f27a-42cc-a095-303ae10968cf",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37681,
+            "text": "Polluted Mire enters the battlefield tapped.\n{T}: Add {B}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "b1645677-290c-5124-9e16-1f4d7272a5a4"
+        },
+        {
+            "artist": "Stephan Martiniere",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204970,
+            "name": "Swamp",
+            "number": "60",
+            "originalText": "B",
+            "originalType": "Basic Land — Swamp",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "2333076d-db67-405a-9e76-27edfc591e02",
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c6c4a5b6-b5ea-5dc3-af7c-0b37a284216e",
+            "variations": [
+                "cb37c986-ed3d-5214-a4a4-29375c811082",
+                "7b8d2254-4f9e-570e-b5a9-054087c38904",
+                "bc7058fd-8fad-5181-bc61-36d664b95705"
+            ]
+        },
+        {
+            "artist": "Christopher Moeller",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204969,
+            "name": "Swamp",
+            "number": "61",
+            "originalText": "B",
+            "originalType": "Basic Land — Swamp",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "3ff995d3-e322-422c-9385-4d93152dc7c8",
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "cb37c986-ed3d-5214-a4a4-29375c811082",
+            "variations": [
+                "c6c4a5b6-b5ea-5dc3-af7c-0b37a284216e",
+                "7b8d2254-4f9e-570e-b5a9-054087c38904",
+                "bc7058fd-8fad-5181-bc61-36d664b95705"
+            ]
+        },
+        {
+            "artist": "Anthony S. Waters",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204968,
+            "name": "Swamp",
+            "number": "62",
+            "originalText": "B",
+            "originalType": "Basic Land — Swamp",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "2d29e1c2-7afc-45d0-a1cf-78998dc416f7",
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "7b8d2254-4f9e-570e-b5a9-054087c38904",
+            "variations": [
+                "c6c4a5b6-b5ea-5dc3-af7c-0b37a284216e",
+                "cb37c986-ed3d-5214-a4a4-29375c811082",
+                "bc7058fd-8fad-5181-bc61-36d664b95705"
+            ]
+        },
+        {
+            "artist": "Richard Wright",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 204971,
+            "name": "Swamp",
+            "number": "63",
+            "originalText": "B",
+            "originalType": "Basic Land — Swamp",
+            "printings": [
+                "AKH",
+                "BBD",
+                "BFZ",
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C17",
+                "C18",
+                "CM2",
+                "CMA",
+                "DDJ",
+                "DDK",
+                "DDM",
+                "DDN",
+                "DDP",
+                "DDQ",
+                "DDR",
+                "DOM",
+                "DTK",
+                "DVD",
+                "E01",
+                "FRF",
+                "GK1",
+                "GNT",
+                "GRN",
+                "GVL",
+                "HOU",
+                "J14",
+                "KLD",
+                "KTK",
+                "M13",
+                "M14",
+                "M15",
+                "M19",
+                "MD1",
+                "ORI",
+                "PC2",
+                "PCA",
+                "PF19",
+                "PGP17",
+                "PRM",
+                "PRW2",
+                "PRWK",
+                "PSS2",
+                "PSS3",
+                "RIX",
+                "RTR",
+                "SOI",
+                "THS",
+                "TPR",
+                "UST",
+                "XLN"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "34b5fe23-e909-422b-b5a9-74907739ca95",
+            "starter": true,
+            "subtypes": [
+                "Swamp"
+            ],
+            "supertypes": [
+                "Basic"
+            ],
+            "text": "({T}: Add {B}.)",
+            "type": "Basic Land — Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "bc7058fd-8fad-5181-bc61-36d664b95705",
+            "variations": [
+                "c6c4a5b6-b5ea-5dc3-af7c-0b37a284216e",
+                "cb37c986-ed3d-5214-a4a4-29375c811082",
+                "7b8d2254-4f9e-570e-b5a9-054087c38904"
+            ]
+        }
+    ],
+    "code": "ddd",
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": "ddd",
+    "name": "Duel Decks: Garruk vs. Liliana",
+    "releaseDate": "2009-10-30",
+    "tcgplayerGroupId": 34,
+    "tokens": [
+        {
+            "artist": "John Donahue",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Beast",
+            "number": "1",
+            "power": "3",
+            "reverseRelated": [
+                "Garruk Wildspeaker"
+            ],
+            "scryfallId": "d98c546e-2933-4833-b47b-084db56fb5d6",
+            "toughness": "3",
+            "type": "Token Creature — Beast",
+            "uuid": "7bb41344-fc99-5e52-b17a-9d6d0ea59c7f"
+        },
+        {
+            "artist": "Steve Prescott",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Beast",
+            "number": "2",
+            "power": "4",
+            "reverseRelated": [
+                "Beast Attack"
+            ],
+            "scryfallId": "6fd6877b-b4f1-4953-b9a4-c97d0ae7d673",
+            "toughness": "4",
+            "type": "Token Creature — Beast",
+            "uuid": "f40d73f1-1774-59cb-8991-7c763fa60a6b"
+        },
+        {
+            "artist": "Arnie Swekel",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "name": "Elephant",
+            "number": "3",
+            "power": "3",
+            "reverseRelated": [
+                "Elephant Guide"
+            ],
+            "scryfallId": "e357b329-b624-4c9a-bacf-d4744745860a",
+            "toughness": "3",
+            "type": "Token Creature — Elephant",
+            "uuid": "d8f8d6c0-160e-59f5-baad-df28e761e07b"
+        }
+    ],
+    "totalSetSize": 63,
+    "type": "duel_deck"
+}

@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.sets
 import android.annotation.SuppressLint
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 
 class SetPickerPresenterImpl(
     private val setsInteractor: SetsInteractor,

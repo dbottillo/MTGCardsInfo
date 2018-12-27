@@ -4,7 +4,7 @@ import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable

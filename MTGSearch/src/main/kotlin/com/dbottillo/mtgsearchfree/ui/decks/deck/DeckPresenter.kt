@@ -23,39 +23,39 @@ class DeckPresenter @Inject constructor(
     }
 
     fun loadDeck() {
-        disposable.add(interactor.loadDeck(deck).subscribe({
+        disposable.add(interactor.loadDeck(deck).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun addCardToDeck(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.addCard(deck, card, quantity).subscribe({
+        disposable.add(interactor.addCard(deck, card, quantity).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun removeCardFromDeck(card: MTGCard) {
-        disposable.add(interactor.removeCard(deck, card).subscribe({
+        disposable.add(interactor.removeCard(deck, card).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun removeAllCardFromDeck(card: MTGCard) {
-        disposable.add(interactor.removeAllCard(deck, card).subscribe({
+        disposable.add(interactor.removeAllCard(deck, card).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun moveCardFromSideBoard(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.moveCardFromSideboard(deck, card, quantity).subscribe({
+        disposable.add(interactor.moveCardFromSideboard(deck, card, quantity).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun moveCardToSideBoard(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.moveCardToSideboard(deck, card, quantity).subscribe({
+        disposable.add(interactor.moveCardToSideboard(deck, card, quantity).subscribe {
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        }))
+        })
     }
 
     fun onDestroyView() {

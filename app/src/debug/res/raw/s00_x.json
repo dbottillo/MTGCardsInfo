@@ -1,0 +1,1611 @@
+{
+    "baseSetSize": 0,
+    "cards": [
+        {
+            "artist": "Mark Zug",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Only the warrior who can admit mortal weakness will be bolstered by immortal strength.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Himmlischer Segen",
+                    "text": "Eine Kreatur deiner Wahl erhält +3/+3 und Flugfähigkeit bis zum Ende des Zuges.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Bendición angélica"
+                },
+                {
+                    "language": "French",
+                    "name": "Bénédiction angélique"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Benedizione Angelica"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Bêncão Angelical"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{W}",
+            "multiverseId": 25456,
+            "name": "Angelic Blessing",
+            "number": "1",
+            "originalText": "Target creature gets +3/+3 and gains flying until end of turn.",
+            "originalType": "Sorcery",
+            "printings": [
+                "10E",
+                "9ED",
+                "EXO",
+                "P02",
+                "POR",
+                "PS11",
+                "S00",
+                "S99",
+                "TPR"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "71319f0f-da30-4ffc-8892-3d0d98c0d515",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37765,
+            "text": "Target creature gets +3/+3 and gains flying until end of turn. (It can't be blocked except by creatures with flying or reach.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "8e3eafed-f50d-5b10-86c5-560294c13638"
+        },
+        {
+            "artist": "DiTerlizzi",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Lebenshauch",
+                    "text": "Bringe eine Kreaturenkarte Deiner Wahl aus Deinem Friedhof direkt ins Spiel.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Aliento vital"
+                },
+                {
+                    "language": "French",
+                    "name": "Souffle de vie"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Alito di Vita"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Sopro de Vida"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{W}",
+            "multiverseId": 25447,
+            "name": "Breath of Life",
+            "number": "3",
+            "originalText": "Return target creature card from your graveyard to play.",
+            "originalType": "Sorcery",
+            "printings": [
+                "7ED",
+                "P02",
+                "POR",
+                "S00",
+                "S99",
+                "VMA"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "d67530a4-2aa7-4907-9e89-a6a3d92134e6",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37767,
+            "text": "Return target creature card from your graveyard to the battlefield.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "4226476c-e4a0-54c7-ad3a-3bd44a15659d"
+        },
+        {
+            "artist": "Scott M. Fischer",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "The enthusiasm of the young, sharpened by the discipline of a soldier.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Eifriger Kadett",
+                    "type": "Kreatur — Soldat"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Cadete ansioso"
+                },
+                {
+                    "language": "French",
+                    "name": "Cadet impatient"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Cadetto Entusiasta"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Cadete Impetuoso"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{W}",
+            "multiverseId": 25455,
+            "name": "Eager Cadet",
+            "number": "5",
+            "originalType": "Creature - Soldier",
+            "power": "1",
+            "printings": [
+                "7ED",
+                "8ED",
+                "9ED",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "3261b8bd-b802-408e-bac6-c860db18cf8b",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Soldier"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37773,
+            "toughness": "1",
+            "type": "Creature — Human Soldier",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d054bd15-ca86-5a8a-96a9-578c0a732cf8"
+        },
+        {
+            "artist": "Dan Frazier",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\". . . Before honor is humility.\" —The Bible, Proverbs 15:33",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Fahrender Ritter",
+                    "type": "Kreatur — Ritter"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Caballero andante"
+                },
+                {
+                    "language": "French",
+                    "name": "Chevalier errant"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Cavaliere Ramingo"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Cavaleiro Errante"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{W}",
+            "multiverseId": 25450,
+            "name": "Knight Errant",
+            "number": "7",
+            "originalType": "Creature - Knight",
+            "power": "2",
+            "printings": [
+                "7ED",
+                "POR",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "8f856279-48a2-45b5-97ac-89c3f481a3df",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Knight"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37784,
+            "toughness": "2",
+            "type": "Creature — Human Knight",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "b3eb6e5b-820f-5fe3-a673-19356aa16cb1"
+        },
+        {
+            "artist": "Carl Critchlow",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Hunter by instinct, weapon by training.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Königsfalke",
+                    "text": "Fliegend",
+                    "type": "Kreatur — Vogel"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{W}",
+            "multiverseId": 25459,
+            "name": "Royal Falcon",
+            "number": "8",
+            "originalText": "Flying",
+            "originalType": "Creature - Bird",
+            "power": "1",
+            "printings": [
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "10dfc217-ae94-4ff0-bf30-7131f97aa3c9",
+            "starter": true,
+            "subtypes": [
+                "Bird"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37799,
+            "text": "Flying",
+            "toughness": "1",
+            "type": "Creature — Bird",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "d2a5cb89-ad0c-5166-9ec0-b5ebe37ad803"
+        },
+        {
+            "artist": "Jeff Miracola",
+            "borderColor": "white",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Two little goblins, out in the sun. Down came a griffin, and then there was one.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Wildgreif",
+                    "text": "Fliegend",
+                    "type": "Kreatur — Greif"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French",
+                    "name": "Griffon sauvage"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Grifone Selvaggio"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{W}",
+            "multiverseId": 25449,
+            "name": "Wild Griffin",
+            "number": "11",
+            "originalText": "Flying",
+            "originalType": "Creature - Griffin",
+            "power": "2",
+            "printings": [
+                "10E",
+                "CN2",
+                "M11",
+                "ME4",
+                "P02",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "59e36202-2c96-4318-9d33-c04122e49bbc",
+            "starter": true,
+            "subtypes": [
+                "Griffin"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37813,
+            "text": "Flying",
+            "toughness": "2",
+            "type": "Creature — Griffin",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "02f6f433-ad25-5d5b-85e9-a35d169320d4"
+        },
+        {
+            "artist": "John Matson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "At the sight of the thing the calamari vendor's eyes went wide, but from fear or avarice none could tell.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Riesenoktopus",
+                    "type": "Kreatur — Oktopus"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Pulpo gigante"
+                },
+                {
+                    "language": "French",
+                    "name": "Pieuvre géante"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Piovra Gigante"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Polvo Gigante"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{U}",
+            "multiverseId": 25457,
+            "name": "Giant Octopus",
+            "number": "14",
+            "originalType": "Creature - Octopus",
+            "power": "3",
+            "printings": [
+                "7ED",
+                "8ED",
+                "9ED",
+                "POR",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "853b7e48-7903-4250-91b9-db4440b3a8e6",
+            "starter": true,
+            "subtypes": [
+                "Octopus"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37778,
+            "toughness": "3",
+            "type": "Creature — Octopus",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "693813f1-c467-53d0-b115-92a9cf5cf4f8"
+        },
+        {
+            "artist": "Anthony S. Waters",
+            "borderColor": "white",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Where air meets water, fish meets talon.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Seeadler",
+                    "text": "Fliegend",
+                    "type": "Kreatur — Vogel"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{U}",
+            "multiverseId": 25460,
+            "name": "Sea Eagle",
+            "number": "18",
+            "originalText": "Flying",
+            "originalType": "Creature - Bird",
+            "power": "1",
+            "printings": [
+                "8ED",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "9ca4a4e5-ca4f-4a4f-849c-019440d654b4",
+            "starter": true,
+            "subtypes": [
+                "Bird"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37802,
+            "text": "Flying",
+            "toughness": "1",
+            "type": "Creature — Bird",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "cff655e5-716a-5e21-a390-db5e36812230"
+        },
+        {
+            "artist": "Alan Rabinowitz",
+            "borderColor": "white",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "Like the tide, time both ebbs and flows.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Zeitebbe",
+                    "text": "Lege eine Kreatur Deiner Wahl oben auf die Bibliothek ihres Besitzers zurück.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "La compensación del tiempo"
+                },
+                {
+                    "language": "French",
+                    "name": "Temps du jusant"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Riflusso Temporale"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Refluxo do Tempo"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{U}",
+            "multiverseId": 25462,
+            "name": "Time Ebb",
+            "number": "19",
+            "originalText": "Put target creature on top of its owner's library.",
+            "originalType": "Sorcery",
+            "printings": [
+                "9ED",
+                "M14",
+                "P02",
+                "POR",
+                "S00",
+                "S99",
+                "TMP",
+                "TPR"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "8904494d-ef95-40d7-a0e0-a49215a72652",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37809,
+            "text": "Put target creature on top of its owner's library.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "a8174d85-dd48-5637-8a88-f3017177f32f"
+        },
+        {
+            "artist": "Eric Peterson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 7.0,
+            "flavorText": "Its swamp cousin may be meaner, but the vizzerdrix is much bigger.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Vizzerdrix",
+                    "type": "Kreatur — Bestie"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Vizzerdix"
+                },
+                {
+                    "language": "French",
+                    "name": "Vizzerdrix"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Vizzerdrix"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Vizzerdrix"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{6}{U}",
+            "multiverseId": 25463,
+            "name": "Vizzerdrix",
+            "number": "20",
+            "originalType": "Creature - Beast",
+            "power": "6",
+            "printings": [
+                "7ED",
+                "8ED",
+                "9ED",
+                "S00",
+                "S99"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "4dfb5269-a5de-4b42-aa1c-a946bfd027a0",
+            "starter": true,
+            "subtypes": [
+                "Rabbit",
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37812,
+            "toughness": "6",
+            "type": "Creature — Rabbit Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "9d95f31b-b09d-52e7-973f-c3ba6351219b"
+        },
+        {
+            "artist": "Heather Hudson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "The touch of death is never gentle.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Todbringende Hand",
+                    "text": "Zerstöre eine nichtschwarze Kreatur Deiner Wahl.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French",
+                    "name": "Main de mort"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 25490,
+            "name": "Hand of Death",
+            "number": "25",
+            "originalText": "Destroy target nonblack creature.",
+            "originalType": "Sorcery",
+            "printings": [
+                "P02",
+                "POR",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "d17d9a95-5586-4d16-9700-215b9af63f6f",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37780,
+            "text": "Destroy target nonblack creature.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "cd7f0d42-2f25-5cf2-9602-786e79b38501"
+        },
+        {
+            "artist": "Brian Snõddy",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "Meant to cut through the body and burn straight to the soul.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Lavaaxt",
+                    "text": "Die Lavaaxt fügt einem Gegner Deiner Wahl 5 Schadenspunkte zu.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Hacha de lava"
+                },
+                {
+                    "language": "French",
+                    "name": "Hache de lave"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Ascia di Lava"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Machado de Lava"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{R}",
+            "multiverseId": 25488,
+            "name": "Lava Axe",
+            "number": "31",
+            "originalText": "Lava Axe deals 5 damage to target opponent.",
+            "originalType": "Sorcery",
+            "printings": [
+                "10E",
+                "7ED",
+                "8ED",
+                "9ED",
+                "BTD",
+                "M10",
+                "M11",
+                "M12",
+                "M14",
+                "M15",
+                "M19",
+                "P02",
+                "PG08",
+                "POR",
+                "PRM",
+                "PS11",
+                "S00",
+                "S99",
+                "ULG"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "340b71f4-4245-4b22-a550-c0226e2710ee",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37785,
+            "text": "Lava Axe deals 5 damage to target player or planeswalker.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "4090c2d1-537b-5b2d-b746-adb3d7fb9160"
+        },
+        {
+            "artist": "Pete Venters",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "Just because they have a club doesn't mean they're organized.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Mons' plündernde Goblins",
+                    "type": "Kreatur — Goblin"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Trasgos de Mons"
+                },
+                {
+                    "language": "French",
+                    "name": "Pillards gobelins de Mons"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Goblin Predatori di Mons"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Goblins Salteadores do Mons"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{R}",
+            "multiverseId": 25491,
+            "name": "Mons's Goblin Raiders",
+            "number": "32",
+            "originalType": "Creature - Goblin",
+            "power": "1",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "CED",
+                "CEI",
+                "FBB",
+                "ITP",
+                "LEA",
+                "LEB",
+                "RQS",
+                "S00",
+                "S99",
+                "SUM"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "58b7a22b-f354-4f42-9354-d149bb9b3645",
+            "starter": true,
+            "subtypes": [
+                "Goblin"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37788,
+            "toughness": "1",
+            "type": "Creature — Goblin",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ac87bc26-e85d-5b85-b9ce-14a6ba251978"
+        },
+        {
+            "artist": "Jeff Miracola",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Assault and battery included.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Ogerkrieger",
+                    "type": "Kreatur — Oger"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Guerrero ogro"
+                },
+                {
+                    "language": "French",
+                    "name": "Guerrier ogre"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{R}",
+            "multiverseId": 25476,
+            "name": "Ogre Warrior",
+            "number": "33",
+            "originalType": "Creature - Ogre",
+            "power": "3",
+            "printings": [
+                "P02",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "c0a6848f-7cb3-4ab0-a14a-e7fb62562861",
+            "starter": true,
+            "subtypes": [
+                "Ogre",
+                "Warrior"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37793,
+            "toughness": "3",
+            "type": "Creature — Ogre Warrior",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "fa2d4a7e-f850-509c-894d-84ed88d34c76"
+        },
+        {
+            "artist": "Eric Peterson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 7.0,
+            "flavorText": "All orggs know how to kill; training teaches them what to kill.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Trainierter Orgg",
+                    "type": "Kreatur — Bestie"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Orgg adiestrado"
+                },
+                {
+                    "language": "French",
+                    "name": "Orgg dressé"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Orgg Addestrato"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Orgg Treinado"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{6}{R}",
+            "multiverseId": 25494,
+            "name": "Trained Orgg",
+            "number": "37",
+            "originalType": "Creature - Beast",
+            "power": "6",
+            "printings": [
+                "7ED",
+                "S00",
+                "S99"
+            ],
+            "rarity": "rare",
+            "rulings": [],
+            "scryfallId": "c8b2875c-cb64-43da-bbf6-1c31dc25ed2f",
+            "starter": true,
+            "subtypes": [
+                "Orgg"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37810,
+            "toughness": "6",
+            "type": "Creature — Orgg",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a3261a5f-0a2e-50e4-aaab-7a1daa9c4d4f"
+        },
+        {
+            "artist": "Mike Kimble",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"And the unclean spirits went out, and entered the swine: and the herd ran violently . . . .\" —The Bible, Mark 5:13",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Düsterwaldkeiler",
+                    "type": "Kreatur — Wildschwein"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Jabalíes del Bosque de Durk"
+                },
+                {
+                    "language": "French",
+                    "name": "Sangliers de Boissambre"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Cinghiali di Durkwood"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Javalis de Durkwood"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}",
+            "multiverseId": 25493,
+            "name": "Durkwood Boars",
+            "number": "38",
+            "originalType": "Creature - Boar",
+            "power": "4",
+            "printings": [
+                "4ED",
+                "5ED",
+                "ITP",
+                "LEG",
+                "REN",
+                "RQS",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "3741510d-a210-432c-a95b-a147689df995",
+            "starter": true,
+            "subtypes": [
+                "Boar"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37772,
+            "toughness": "4",
+            "type": "Creature — Boar",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "24e890c0-21e8-5d54-86d4-4fb4aa5d38bd"
+        },
+        {
+            "artist": "Una Fricker",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "The nightstalkers' little game of tease-the-squirrel suddenly took an unexpected turn.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Unheimliches Wachstum",
+                    "text": "Eine Kreatur Deiner Wahl erhält +4/+4 bis zum Ende des Zuges.",
+                    "type": "Hexerei"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Crecimiento monstruoso"
+                },
+                {
+                    "language": "French",
+                    "name": "Croissance démesurée"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Crescita Mostruosa"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Crescimento Monstruoso"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 25475,
+            "name": "Monstrous Growth",
+            "number": "41",
+            "originalText": "Target creature gets +4/+4 until end of turn.",
+            "originalType": "Sorcery",
+            "printings": [
+                "7ED",
+                "8ED",
+                "P02",
+                "POR",
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "81e077e5-2600-4ab4-b1ca-5714cc834331",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 37789,
+            "text": "Target creature gets +4/+4 until end of turn.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "72f9fd20-ad68-5204-808f-2457ec07df87"
+        },
+        {
+            "artist": "Terese Nielsen",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "\"I am that merry wanderer of the night.\" —William Shakespeare, A Midsummer Night's Dream",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Mondfee",
+                    "text": "Fliegend",
+                    "type": "Kreatur — Feenwesen"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French",
+                    "name": "Farfadet lunaire"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}",
+            "multiverseId": 25485,
+            "name": "Moon Sprite",
+            "number": "42",
+            "originalText": "Flying",
+            "originalType": "Creature - Faerie",
+            "power": "1",
+            "printings": [
+                "POR",
+                "S00",
+                "S99"
+            ],
+            "rarity": "uncommon",
+            "rulings": [],
+            "scryfallId": "49d0acb1-bc07-42d5-a327-1617f0ed2c60",
+            "starter": true,
+            "subtypes": [
+                "Faerie"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37790,
+            "text": "Flying",
+            "toughness": "1",
+            "type": "Creature — Faerie",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "cd8f5e2a-086e-5d2c-80ac-67d7437d7d3c"
+        },
+        {
+            "artist": "Mark Zug",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Rhox",
+                    "text": "Du kannst Rhox Kampfschaden dem verteidigenden Spieler zufügen lassen, als ob er nicht geblockt worden wäre.<br><br>{2}{G}: Regeneriere Rhox.",
+                    "type": "Kreatur — Bestie"
+                },
+                {
+                    "language": "Spanish",
+                    "name": "Rhox"
+                },
+                {
+                    "language": "French",
+                    "name": "Rhox"
+                },
+                {
+                    "language": "Italian",
+                    "name": "Rhox"
+                },
+                {
+                    "language": "Portuguese (Brazil)",
+                    "name": "Rhox"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}{G}",
+            "name": "Rhox",
+            "number": "43",
+            "power": "5",
+            "printings": [
+                "10E",
+                "8ED",
+                "NEM",
+                "PRM",
+                "PSAL",
+                "S00"
+            ],
+            "rarity": "rare",
+            "rulings": [
+                {
+                    "date": "2018-04-27",
+                    "text": "You can decide to assign damage to the defending player or planeswalker even if the blocking creature has protection from green or damage preventing effects on it."
+                },
+                {
+                    "date": "2018-04-27",
+                    "text": "When assigning combat damage, you choose whether you want to assign all damage to blocking creatures, or if you want to assign all of it to the player or planeswalker this creature is attacking. You can’t split the damage assignment between them."
+                },
+                {
+                    "date": "2018-04-27",
+                    "text": "If blocked by a creature with banding, the defending player decides whether or not the damage is assigned “as though it weren’t blocked”."
+                }
+            ],
+            "scryfallId": "5d5f3f57-410f-4ee2-b93c-f5051a068828",
+            "starter": true,
+            "subtypes": [
+                "Rhino",
+                "Beast"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 21705,
+            "text": "You may have Rhox assign its combat damage as though it weren't blocked.\n{2}{G}: Regenerate Rhox. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
+            "toughness": "5",
+            "type": "Creature — Rhino Beast",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "fb4fa25f-d45c-5dc9-b8da-b801ca48b162"
+        },
+        {
+            "artist": "Keith Parkinson",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "\"As it moved, the wurm's spines gathered up bits of flowstone, which took the shapes of dead villagers' heads. Each head spoke a single sound, but if taken together, they said, 'Alas for the living.'\" —Dal myth of the wurm",
+            "foreignData": [],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "pauper": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{G}",
+            "multiverseId": 25496,
+            "name": "Spined Wurm",
+            "number": "44",
+            "originalType": "Creature - Wurm",
+            "power": "5",
+            "printings": [
+                "10E",
+                "7ED",
+                "8ED",
+                "9ED",
+                "DPA",
+                "M11",
+                "PMEI",
+                "POR",
+                "PS11",
+                "S00",
+                "STH",
+                "TPR"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "ad4e8b4f-d9a8-49a7-84f6-3613b03780b0",
+            "starter": true,
+            "subtypes": [
+                "Wurm"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37805,
+            "toughness": "4",
+            "type": "Creature — Wurm",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "8ba76afb-8817-574a-bcc7-ff07186b1fc7"
+        },
+        {
+            "artist": "DiTerlizzi",
+            "borderColor": "white",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 1.0,
+            "flavorText": "The forest lives in the elf as the elf lives in the forest.",
+            "foreignData": [
+                {
+                    "language": "German",
+                    "name": "Weidenelf",
+                    "type": "Kreatur — Elf"
+                },
+                {
+                    "language": "Spanish"
+                },
+                {
+                    "language": "French"
+                },
+                {
+                    "language": "Italian"
+                },
+                {
+                    "language": "Portuguese (Brazil)"
+                }
+            ],
+            "frameVersion": "1997",
+            "hasFoil": false,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{G}",
+            "multiverseId": 25484,
+            "name": "Willow Elf",
+            "number": "45",
+            "originalType": "Creature - Elf",
+            "power": "1",
+            "printings": [
+                "S00",
+                "S99"
+            ],
+            "rarity": "common",
+            "rulings": [],
+            "scryfallId": "c063a072-0cd4-45fb-ac68-96e359bf3ef5",
+            "starter": true,
+            "subtypes": [
+                "Elf"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 37814,
+            "toughness": "1",
+            "type": "Creature — Elf",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "1e3eae40-c420-5c37-abfe-829154145616"
+        }
+    ],
+    "code": "s00",
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": null,
+    "name": "Starter 2000",
+    "releaseDate": "2000-04-01",
+    "tcgplayerGroupId": 106,
+    "tokens": [],
+    "totalSetSize": 21,
+    "type": "starter"
+}

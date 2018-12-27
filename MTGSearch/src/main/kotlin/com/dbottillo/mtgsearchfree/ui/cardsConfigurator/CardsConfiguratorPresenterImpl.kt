@@ -33,7 +33,7 @@ class CardsConfiguratorPresenterImpl(private val cardFilterInteractor: CardFilte
                 CardFilter.TYPE.UNCOMMON -> filter.uncommon = on
                 CardFilter.TYPE.RARE -> filter.rare = on
                 CardFilter.TYPE.MYTHIC -> filter.mythic = on
-                CardFilter.TYPE.SORT_WUBGR -> filter.sortWUBGR = on
+                CardFilter.TYPE.SORT_SET_NUMBER -> filter.sortSetNumber = on
             }
             cardFilterInteractor.sync(filter)
             view.loadFilter(filter = filter, refresh = true)

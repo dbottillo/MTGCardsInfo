@@ -59,6 +59,6 @@
         android:layout_marginRight="@dimen/base_margin"
         android:textColor="@drawable/toggle_text_color"
         android:textOff="@string/sort_az"
-        android:textOn="@string/sort_color"/>
+        android:textOn="@string/sort_set_number"/>
 
 </merge>

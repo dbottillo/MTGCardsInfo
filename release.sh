@@ -1,7 +1,6 @@
 #!/bin/bash
 
-./gradlew clean --no-daemon
-./gradlew release --no-daemon
-cp -r MTGSearch/build/outputs/apk/release/MTGSearch-release.apk ~/Google\ Drive/MTGCardsInfo/MTGSearch.apk
-cp -r MTGSearch/build/outputs/apk/release/MTGSearch-release.apk MTGSearch/release/MTGSearch-release.apk
+./gradlew clean assembleRelease checkstyle pmd lint detekt testReleaseUnitTest --no-daemon
+cp -r app/build/outputs/apk/release/app-release.apk ~/Google\ Drive/MTGCardsInfo/MTGSearch.apk
+cp -r app/build/outputs/apk/release/app-release.apk MTGSearch/release/MTGSearch-release.apk
 

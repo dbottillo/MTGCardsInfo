@@ -71,7 +71,7 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         if (instance != null) {
 
             mViewGroup = view.findViewById(scrollviewID)
-            instance.setupToolbar(view)
+            instance.setupToolbar(view, R.id.toolbar, R.id.toolbar_title)
             maximumScroll = heightToolbar + view.context.dpToPx(OFFSET_MAXIMUM_SCROLL)
             setupTitleAnimation(instance, view.context)
 

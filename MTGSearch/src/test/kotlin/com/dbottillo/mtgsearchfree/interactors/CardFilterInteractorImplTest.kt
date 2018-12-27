@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.CardFilter
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferencesImpl
+import com.dbottillo.mtgsearchfree.storage.CardsPreferencesImpl
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions

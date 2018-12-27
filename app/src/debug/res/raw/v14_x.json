@@ -1,0 +1,964 @@
+{
+    "baseSetSize": 0,
+    "cards": [
+        {
+            "artist": "Chris Rahn",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "A bloody dawn broke over a scabbed and tortured world.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{W}",
+            "multiverseId": 386284,
+            "name": "Armageddon",
+            "number": "1",
+            "originalText": "Destroy all lands.",
+            "originalType": "Sorcery",
+            "printings": [
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "A25",
+                "ATH",
+                "CED",
+                "CEI",
+                "FBB",
+                "G04",
+                "LEA",
+                "LEB",
+                "ME1",
+                "ME4",
+                "MP2",
+                "P02",
+                "POR",
+                "PRM",
+                "PTC",
+                "S99",
+                "SUM",
+                "V14",
+                "VMA",
+                "WC00",
+                "WC98"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "63e00d79-cc6c-41ad-ab2c-0a6596e0e5b7",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 91637,
+            "text": "Destroy all lands.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "e1272b24-c075-52a7-9f7f-53916fbd644a"
+        },
+        {
+            "artist": "Yang Hong",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{R}{R}",
+            "multiverseId": 386285,
+            "name": "Burning of Xinye",
+            "number": "2",
+            "originalText": "You destroy four lands you control, then target opponent destroys four lands he or she controls. Then Burning of Xinye deals 4 damage to each creature.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ME3",
+                "PTK",
+                "V14",
+                "VMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "Burning of Xinye targets only an opponent. If that player is an illegal target by the time Burning of Xinye resolves, the entire spell doesn’t resolve."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "The lands that will be destroyed aren’t chosen until Burning of Xinye resolves."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "A land with a regeneration shield on it will regenerate from Burning of Xinye’s destruction effect. However, the spell or ability that creates that shield must be cast or activated before Burning of Xinye starts to resolve."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "In a multiplayer game, only lands controlled by two players (you and the targeted opponent) are destroyed. However, Burning of Xinye will deal 4 damage to each creature, even those controlled by other players."
+                },
+                {
+                    "date": "2013-07-01",
+                    "text": "As Burning of Xinye resolves, first you destroy four lands you control (all at the same time), then the targeted opponent destroys four lands they control (all at the same time). That player chooses which of their lands to destroy. Neither of you can choose to destroy a land with indestructible."
+                }
+            ],
+            "scryfallId": "edb86d0d-e6cf-4988-a03e-26d52d78d929",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92296,
+            "text": "You destroy four lands you control, then target opponent destroys four lands they control. Then Burning of Xinye deals 4 damage to each creature.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "3a8d8358-700e-572d-9421-d36929d7b15c"
+        },
+        {
+            "artist": "Eric Deschamps",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "\"Keep with you only this much: your mount, your blade, and your wits. The rest you can find, build, or take.\" —Horse clans' wisdom",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{W}{W}",
+            "multiverseId": 386286,
+            "name": "Cataclysm",
+            "number": "3",
+            "originalText": "Each player chooses from among the permanents he or she controls an artifact, a creature, an enchantment, and a land, then sacrifices the rest.",
+            "originalType": "Sorcery",
+            "printings": [
+                "EXO",
+                "TPR",
+                "V14",
+                "WC98"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "If you control a permanent with more than one type, you can choose that same permanent for more than one of the choices if you want to. This makes it possible to select an artifact creature as both your artifact and creature, and then select a land and thereby keep only two cards."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "If you control a permanent with more than one type, you can choose that permanent to be the representative of either type. This makes it possible to have more than one creature (or other permanent type) on the battlefield. For example, if you select a creature for your creature and an artifact creature for your artifact, you get to keep both of these creatures."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "The permanents to save are chosen on resolution. You do not choose them when casting the spell."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "The current player makes their choices before the other player. After both players make choices, all the sacrifices are done simultaneously."
+                },
+                {
+                    "date": "2014-02-01",
+                    "text": "Each permanent not chosen by a player will be sacrificed. If a permanent has none of the listed types (for example, a Planeswalker with no other types), it can’t be chosen."
+                }
+            ],
+            "scryfallId": "3ed0d87b-1ce8-452b-9558-fa1923407f16",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 91638,
+            "text": "Each player chooses from among the permanents they control an artifact, a creature, an enchantment, and a land, then sacrifices the rest.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "327a1013-6074-5f59-929c-e7de57876f6d"
+        },
+        {
+            "artist": "Steve Argyle",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+            ],
+            "colors": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "The progeny of the Maelstrom shows no allegiance—and no mercy—to any of the five shards.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{W}{U}{B}{R}{G}",
+            "multiverseId": 386287,
+            "name": "Child of Alara",
+            "number": "4",
+            "originalText": "Trample\nWhen Child of Alara dies, destroy all nonland permanents. They can't be regenerated.",
+            "originalType": "Legendary Creature — Avatar",
+            "power": "6",
+            "printings": [
+                "CON",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "8d2542e7-70b0-4feb-831d-fa610d8f33c7",
+            "starter": true,
+            "subtypes": [
+                "Avatar"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 92297,
+            "text": "Trample\nWhen Child of Alara dies, destroy all nonland permanents. They can't be regenerated.",
+            "toughness": "6",
+            "type": "Legendary Creature — Avatar",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "006453e5-9561-5c2a-8ab8-197f510797ea"
+        },
+        {
+            "artist": "John Avon",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 10.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{8}{R}{R}",
+            "multiverseId": 386288,
+            "name": "Decree of Annihilation",
+            "number": "5",
+            "originalText": "Exile all artifacts, creatures, and lands from the battlefield, all cards from all graveyards, and all cards from all hands.\nCycling {5}{R}{R} ({5}{R}{R}, Discard this card: Draw a card.)\nWhen you cycle Decree of Annihilation, destroy all lands.",
+            "originalType": "Sorcery",
+            "printings": [
+                "SCG",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "Cycling is an activated ability. Effects that interact with activated abilities (such as Stifle or Rings of Brighthearth) will interact with cycling. Effects that interact with spells (such as Remove Soul or Faerie Tauntings) will not."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "When you cycle this card, first the cycling ability goes on the stack, then the triggered ability goes on the stack on top of it. The triggered ability will resolve before you draw a card from the cycling ability."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "The cycling ability and the triggered ability are separate. If the triggered ability doesn’t resolve (due to being countered with Stifle, for example, or if all its targets have become illegal), the cycling ability will still resolve and you’ll draw a card."
+                }
+            ],
+            "scryfallId": "1fe36d82-e59e-41f1-ab71-90c7336a28ff",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92298,
+            "text": "Exile all artifacts, creatures, and lands from the battlefield, all cards from all graveyards, and all cards from all hands.\nCycling {5}{R}{R} ({5}{R}{R}, Discard this card: Draw a card.)\nWhen you cycle Decree of Annihilation, destroy all lands.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "69b8426f-3a2d-55e0-871f-a303d07294f7"
+        },
+        {
+            "artist": "Raymond Swanland",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [
+                "G",
+                "R"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R/G}",
+            "multiverseId": 386289,
+            "name": "Firespout",
+            "number": "6",
+            "originalText": "Firespout deals 3 damage to each creature without flying if {R} was spent to cast Firespout and 3 damage to each creature with flying if {G} was spent to cast it. (Do both if {R}{G} was spent.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "CMD",
+                "PZ1",
+                "SHM",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2016-06-08",
+                    "text": "This spell cares about what mana was spent to pay its total cost, not just what mana was spent to pay the hybrid mana symbol in its cost."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "This spell checks on resolution to see if any mana of the appropriate colors were spent to pay its cost. It doesn’t matter how much mana of that color was spent; the effect isn’t multiplied."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "If this spell is copied, the copy will not have had any colors of mana paid for it, no matter what colors were spent on the original spell."
+                }
+            ],
+            "scryfallId": "8fecd098-bbf2-44f1-b9f1-7b93ea660880",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92300,
+            "text": "Firespout deals 3 damage to each creature without flying if {R} was spent to cast Firespout and 3 damage to each creature with flying if {G} was spent to cast it. (Do both if {R}{G} was spent.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "bb07ea71-0e09-5bd6-ab07-f331751ceb3d"
+        },
+        {
+            "artist": "Michael Sutfin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [
+                "G",
+                "W"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "Elvish dawnhands test a relic's worthiness before collecting it for the safehold. If it can't stand up to a stiff breeze, it's left behind.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G/W}{G/W}{G/W}",
+            "multiverseId": 386290,
+            "name": "Fracturing Gust",
+            "number": "7",
+            "originalText": "Destroy all artifacts and enchantments. You gain 2 life for each permanent destroyed this way.",
+            "originalType": "Instant",
+            "printings": [
+                "SHM",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2013-07-01",
+                    "text": "If an artifact or enchantment remains on the battlefield because it was regenerated or has indestructible, you won’t gain life for it."
+                }
+            ],
+            "scryfallId": "cf9d6522-567d-4357-a5de-25eaf8e9cac3",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92301,
+            "text": "Destroy all artifacts and enchantments. You gain 2 life for each permanent destroyed this way.",
+            "type": "Instant",
+            "types": [
+                "Instant"
+            ],
+            "uuid": "6641c75d-0fc5-53bb-ad91-428c948bae3a"
+        },
+        {
+            "artist": "Mark Winters",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}{B}",
+            "multiverseId": 386291,
+            "name": "Living Death",
+            "number": "8",
+            "originalText": "Each player exiles all creature cards from his or her graveyard, then sacrifices all creatures he or she controls, then puts all cards he or she exiled this way onto the battlefield.",
+            "originalType": "Sorcery",
+            "printings": [
+                "A25",
+                "BRB",
+                "CM2",
+                "CMD",
+                "DDE",
+                "G03",
+                "PRM",
+                "TMP",
+                "TPR",
+                "V14",
+                "VMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-03-16",
+                    "text": "As Living Death resolves, all players exile their creature cards from graveyards at the same time. Then all players sacrifice all creatures they control at the same time. Then all players put all creatures they exiled onto the battlefield at the same time."
+                },
+                {
+                    "date": "2018-03-16",
+                    "text": "Only cards exiled by Living Death’s first instruction are put onto the battlefield. If a replacement effect (such as that of Leyline of the Void) causes any of the sacrificed creatures to be exiled instead of put into a graveyard, those cards aren’t returned to the battlefield."
+                }
+            ],
+            "scryfallId": "c91aca0c-677f-4ad3-9c32-049cd5d49a54",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 91639,
+            "text": "Each player exiles all creature cards from their graveyard, then sacrifices all creatures they control, then puts all cards they exiled this way onto the battlefield.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "30909036-7448-5586-9e5b-80fc4bfc47d9"
+        },
+        {
+            "artist": "Greg Staples",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 2.0,
+            "flavorText": "Their war forgotten, the nations of Bant stood united in the face of a common threat.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{W}{W}",
+            "multiverseId": 386292,
+            "name": "Martial Coup",
+            "number": "9",
+            "originalText": "Put X 1/1 white Soldier creature tokens onto the battlefield. If X is 5 or more, destroy all other creatures.",
+            "originalType": "Sorcery",
+            "printings": [
+                "C14",
+                "C18",
+                "CON",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-02-01",
+                    "text": "Martial Coup checks the number you chose for X, not the amount of mana you actually spent."
+                },
+                {
+                    "date": "2009-02-01",
+                    "text": "You do what the spell says in order. If X is 5 or more, you’ll put the Soldier tokens onto the battlefield, then you’ll destroy all other creatures."
+                },
+                {
+                    "date": "2009-02-01",
+                    "text": "No one can cast spells or activate abilities between the time the Soldier tokens are put onto the battlefield and the time all other creatures are destroyed. For example, you can’t sacrifice one of those Soldier tokens to regenerate a Skeletal Kathari."
+                }
+            ],
+            "scryfallId": "50845867-20a7-433c-b97e-081276bc739f",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92299,
+            "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all other creatures.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "9b96b8ff-0903-5414-b62d-98f1ec433123"
+        },
+        {
+            "artist": "Yang Hong",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{R}",
+            "multiverseId": 386293,
+            "name": "Rolling Earthquake",
+            "number": "10",
+            "originalText": "Rolling Earthquake deals X damage to each creature without horsemanship and each player.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ME3",
+                "PTK",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "d1392e68-fe1e-400f-9412-9ae11079b08c",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 91640,
+            "text": "Rolling Earthquake deals X damage to each creature without horsemanship and each player.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "810fa2ff-f2be-5eda-ba1f-b197f53e3061"
+        },
+        {
+            "artist": "Daniel Ljunggren",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}",
+            "multiverseId": 386294,
+            "name": "Smokestack",
+            "number": "11",
+            "originalText": "At the beginning of your upkeep, you may put a soot counter on Smokestack.\nAt the beginning of each player's upkeep, that player sacrifices a permanent for each soot counter on Smokestack.",
+            "originalType": "Artifact",
+            "printings": [
+                "USG",
+                "V14",
+                "VMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "If a player does not have enough permanents, they sacrifice all the ones they have."
+                },
+                {
+                    "date": "2004-10-04",
+                    "text": "Adding a counter is optional. If you forget to add one during your upkeep, you cannot back up and add one later."
+                }
+            ],
+            "scryfallId": "ec94adb9-277a-4237-b8ca-ad2f52a1d832",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92302,
+            "text": "At the beginning of your upkeep, you may put a soot counter on Smokestack.\nAt the beginning of each player's upkeep, that player sacrifices a permanent for each soot counter on Smokestack.",
+            "type": "Artifact",
+            "types": [
+                "Artifact"
+            ],
+            "uuid": "5cafa429-3bad-5c8b-9513-2a4b8372fd60"
+        },
+        {
+            "artist": "James Paick",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameEffect": "miracle",
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{W}{W}",
+            "multiverseId": 386295,
+            "name": "Terminus",
+            "number": "12",
+            "originalText": "Put all creatures on the bottom of their owners' libraries.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+            "originalType": "Sorcery",
+            "printings": [
+                "AVR",
+                "C18",
+                "MM3",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2017-03-14",
+                    "text": "Each player chooses the order that creatures they own are put onto the bottom of their library. This order isn’t revealed to other players."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "You still draw the card, whether you use the miracle ability or not. Any ability that triggers whenever you draw a card, for example, will trigger. If you don’t cast the card using its miracle ability, it will remain in your hand."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "It’s important to reveal a card with miracle before it is mixed with the other cards in your hand."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "You can reveal and cast a card with miracle on any turn, not just your own, if it’s the first card you’ve drawn that turn."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "Multiple card draws are always treated as a sequence of individual card draws. For example, if you haven’t drawn any cards yet during a turn and cast a spell that instructs you to draw three cards, you’ll draw them one at a time. Only the first card drawn this way may be revealed and cast using its miracle ability."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "If an effect puts a card into your hand without using the word “draw,” the card wasn’t drawn."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "You don’t have to reveal a drawn card with miracle if you don’t wish to cast it at that time."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "You can cast a card for its miracle cost only as the miracle triggered ability resolves. If you don’t want to cast it at that time (or you can’t cast it, perhaps because there are no legal targets available), you won’t be able to cast it later for the miracle cost."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "You cast the card with miracle during the resolution of the triggered ability. Ignore any timing rules based on the card’s type."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "Miracle is an alternative cost to cast the spell with miracle. It can’t be combined with other alternative costs, such as casting a spell “without paying its mana cost.”"
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "To determine the total cost of a spell, start with the mana cost or alternative cost (such as a miracle cost) you’re paying, add any cost increases, then apply any cost reductions. The converted mana cost of the spell remains unchanged, no matter what the total cost to cast it was."
+                },
+                {
+                    "date": "2018-07-13",
+                    "text": "If the card with miracle leaves your hand before the triggered ability resolves, you won’t be able to cast it using its miracle ability."
+                }
+            ],
+            "scryfallId": "dda84c94-bc11-4af6-9fa0-a5af5c8c1d30",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92303,
+            "text": "Put all creatures on the bottom of their owners' libraries.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "6902709c-8e02-5626-989e-8e494d2e902e"
+        },
+        {
+            "artist": "Kev Walker",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "The calm comes after the storm.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Banned",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{U}{U}",
+            "multiverseId": 386296,
+            "name": "Upheaval",
+            "number": "13",
+            "originalText": "Return all permanents to their owners' hands.",
+            "originalType": "Sorcery",
+            "printings": [
+                "ODY",
+                "V14",
+                "VMA",
+                "WC02"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "7c353e83-4b63-4bc6-b029-273d2eca1f75",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92304,
+            "text": "Return all permanents to their owners' hands.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "4d4cb3e0-bc34-5c4a-8309-cce44e436549"
+        },
+        {
+            "artist": "Mike Dringenberg",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "All must fall, and those who stand highest fall hardest.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}",
+            "multiverseId": 386297,
+            "name": "Virtue's Ruin",
+            "number": "14",
+            "originalText": "Destroy all white creatures.",
+            "originalType": "Sorcery",
+            "printings": [
+                "POR",
+                "V14"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "6fecf6d4-faa8-4d55-97a8-e05eca1d384f",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 92305,
+            "text": "Destroy all white creatures.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "d3eacb98-6e48-505f-b7b2-c7ef255aa312"
+        },
+        {
+            "artist": "Willian Murai",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod.",
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{W}{W}",
+            "multiverseId": 386298,
+            "name": "Wrath of God",
+            "number": "15",
+            "originalText": "Destroy all creatures. They can't be regenerated.",
+            "originalType": "Sorcery",
+            "printings": [
+                "10E",
+                "2ED",
+                "3ED",
+                "4ED",
+                "5ED",
+                "6ED",
+                "7ED",
+                "8ED",
+                "9ED",
+                "BRB",
+                "C13",
+                "CED",
+                "CEI",
+                "EMA",
+                "FBB",
+                "LEA",
+                "LEB",
+                "MP2",
+                "P07",
+                "POR",
+                "PRM",
+                "PTC",
+                "PZ1",
+                "SUM",
+                "V14",
+                "WC00",
+                "WC03",
+                "WC04"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "98890cd7-ebd5-4fea-814e-4f612abfe3a5",
+            "starter": true,
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 91641,
+            "text": "Destroy all creatures. They can't be regenerated.",
+            "type": "Sorcery",
+            "types": [
+                "Sorcery"
+            ],
+            "uuid": "2c82bb26-80c8-5d49-bacb-319c6d5febbf"
+        }
+    ],
+    "code": "v14",
+    "isFoilOnly": true,
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": "v14",
+    "name": "From the Vault: Annihilation",
+    "releaseDate": "2014-08-22",
+    "tcgplayerGroupId": 1475,
+    "tokens": [],
+    "totalSetSize": 15,
+    "type": "from_the_vault"
+}

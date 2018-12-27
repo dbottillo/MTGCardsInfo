@@ -5,9 +5,9 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.CardsStorage
-import com.dbottillo.mtgsearchfree.model.storage.DecksStorage
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.CardsStorage
+import com.dbottillo.mtgsearchfree.storage.DecksStorage
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Completable
 import io.reactivex.Single

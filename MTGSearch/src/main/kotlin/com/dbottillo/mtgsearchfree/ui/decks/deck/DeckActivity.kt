@@ -48,7 +48,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         super.onCreate(bundle)
         setContentView(R.layout.activity_deck)
 
-        setupToolbar()
+        setupToolbar(R.id.toolbar)
 
         val deck = intent.getParcelableExtra("deck") as Deck
         title = if (deck.name.isEmpty()) getString(R.string.deck_title) else deck.name

@@ -33,7 +33,7 @@
                     android:layout_marginRight="@dimen/padding_card_image"
                     android:layout_marginTop="@dimen/margin_top_card_image"
                     android:contentDescription="@string/cd_card_image"
-                    android:scaleType="fitXY"/>
+                    android:scaleType="center"/>
 
                 <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
                     android:id="@+id/image_card_loader"
@@ -48,6 +48,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:gravity="center_horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible"
                     android:orientation="vertical">
 
                     <TextView
@@ -58,6 +60,7 @@
                     <Button
                         android:id="@+id/image_card_retry_btn"
                         style="@style/BtnGeneric"
+                        android:padding="@dimen/base_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

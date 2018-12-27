@@ -12,7 +12,7 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.Player
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -53,7 +53,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lifeCounterList = view.findViewById<RecyclerView>(R.id.life_counter_list)
+        lifeCounterList = view.findViewById(R.id.life_counter_list)
         view.findViewById<View>(R.id.action_reset).setOnClickListener { reset() }
         view.findViewById<View>(R.id.action_dice).setOnClickListener { launchDice() }
         view.findViewById<View>(R.id.add_new_deck).setOnClickListener { addPlayer() }
@@ -123,7 +123,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     override fun onEditPlayer(player: Player) {
         LOG.d()
-        dialogUtil.showEditPlayer(player) {
+        dialogUtil.showEditPlayer(R.layout.dialog_edit_deck, R.id.edit_text, player) {
             player.name = it
             lifeCounterPresenter.editPlayer(player)
             TrackingManager.trackEditPlayer()

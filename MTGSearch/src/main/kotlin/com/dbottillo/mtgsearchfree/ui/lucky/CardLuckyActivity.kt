@@ -38,7 +38,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
         findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
-        setupToolbar()
+        setupToolbar(R.id.toolbar)
         toolbar.elevation = 0f
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
@@ -48,6 +48,11 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         presenter.init(this, bundle, intent)
         cardView.init(cardsPresenter)
         cardView.setOnClickListener { presenter.showNextCard() }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
     }
 
     override fun onNewIntent(intent: Intent?) {

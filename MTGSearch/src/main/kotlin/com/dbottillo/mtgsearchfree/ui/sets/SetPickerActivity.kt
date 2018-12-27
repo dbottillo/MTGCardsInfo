@@ -36,7 +36,7 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
         super.onCreate(bundle)
         setContentView(R.layout.activity_set_picker)
 
-        setupToolbar()
+        setupToolbar(R.id.toolbar)
 
         list.setHasFixedSize(true)
         list.layoutManager = LinearLayoutManager(this)

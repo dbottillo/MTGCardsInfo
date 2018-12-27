@@ -1,0 +1,2291 @@
+{
+    "baseSetSize": 45,
+    "block": "Battle for Zendikar",
+    "cards": [
+        {
+            "artist": "Titus Lunter",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405105,
+            "name": "Prairie Stream",
+            "number": "1",
+            "originalText": "Prairie Stream enters the battlefield tapped unless you control two or more basic lands.",
+            "originalType": "Land — Plains Island",
+            "printings": [
+                "BFZ",
+                "EXP",
+                "PBFZ",
+                "PSS1"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2015-08-25",
+                    "text": "Even though these lands have basic land types, they are not basic lands because “basic” doesn’t appear on their type line. Notably, controlling two or more of them won’t allow others to enter the battlefield untapped."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "However, because these cards have basic land types, effects that specify a basic land type without also specifying that the land be basic can affect them. For example, a spell or ability that reads “Destroy target Forest” can target Canopy Vista, while one that reads “Destroy target basic Forest” cannot."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "If one of these lands enters the battlefield at the same time as any number of basic lands, those other lands are not counted when determining if this land enters the battlefield tapped or untapped."
+                }
+            ],
+            "scryfallId": "c6bc665f-fb17-43e1-b93b-6a7b168759eb",
+            "subtypes": [
+                "Plains",
+                "Island"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104377,
+            "text": "({T}: Add {W} or {U}.)\nPrairie Stream enters the battlefield tapped unless you control two or more basic lands.",
+            "type": "Land — Plains Island",
+            "types": [
+                "Land"
+            ],
+            "uuid": "f63950f7-75eb-5a31-8f8a-72efe6b8ca6a"
+        },
+        {
+            "artist": "Titus Lunter",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405111,
+            "name": "Sunken Hollow",
+            "number": "2",
+            "originalText": "Sunken Hollow enters the battlefield tapped unless you control two or more basic lands.",
+            "originalType": "Land — Island Swamp",
+            "printings": [
+                "BFZ",
+                "EXP",
+                "PBFZ",
+                "PSS1"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2015-08-25",
+                    "text": "Even though these lands have basic land types, they are not basic lands because “basic” doesn’t appear on their type line. Notably, controlling two or more of them won’t allow others to enter the battlefield untapped."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "However, because these cards have basic land types, effects that specify a basic land type without also specifying that the land be basic can affect them. For example, a spell or ability that reads “Destroy target Forest” can target Canopy Vista, while one that reads “Destroy target basic Forest” cannot."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "If one of these lands enters the battlefield at the same time as any number of basic lands, those other lands are not counted when determining if this land enters the battlefield tapped or untapped."
+                }
+            ],
+            "scryfallId": "6d93da43-cc05-4542-b4cb-d27ebcb79012",
+            "subtypes": [
+                "Island",
+                "Swamp"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104373,
+            "text": "({T}: Add {U} or {B}.)\nSunken Hollow enters the battlefield tapped unless you control two or more basic lands.",
+            "type": "Land — Island Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "2f2a1eea-1c75-57d0-9127-82c8f69a991a"
+        },
+        {
+            "artist": "Titus Lunter",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405108,
+            "name": "Smoldering Marsh",
+            "number": "3",
+            "originalText": "Smoldering Marsh enters the battlefield tapped unless you control two or more basic lands.",
+            "originalType": "Land — Swamp Mountain",
+            "printings": [
+                "BFZ",
+                "EXP",
+                "PBFZ",
+                "PSS1"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2015-08-25",
+                    "text": "Even though these lands have basic land types, they are not basic lands because “basic” doesn’t appear on their type line. Notably, controlling two or more of them won’t allow others to enter the battlefield untapped."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "However, because these cards have basic land types, effects that specify a basic land type without also specifying that the land be basic can affect them. For example, a spell or ability that reads “Destroy target Forest” can target Canopy Vista, while one that reads “Destroy target basic Forest” cannot."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "If one of these lands enters the battlefield at the same time as any number of basic lands, those other lands are not counted when determining if this land enters the battlefield tapped or untapped."
+                }
+            ],
+            "scryfallId": "2c9814b3-d4fe-4823-b310-ab284dc9b9be",
+            "subtypes": [
+                "Swamp",
+                "Mountain"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104374,
+            "text": "({T}: Add {B} or {R}.)\nSmoldering Marsh enters the battlefield tapped unless you control two or more basic lands.",
+            "type": "Land — Swamp Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "4480b5e6-a3ab-5933-8080-6e29ae3d255f"
+        },
+        {
+            "artist": "Titus Lunter",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405097,
+            "name": "Cinder Glade",
+            "number": "4",
+            "originalText": "Cinder Glade enters the battlefield tapped unless you control two or more basic lands.",
+            "originalType": "Land — Mountain Forest",
+            "printings": [
+                "BFZ",
+                "EXP",
+                "PBFZ",
+                "PSS1"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2015-08-25",
+                    "text": "Even though these lands have basic land types, they are not basic lands because “basic” doesn’t appear on their type line. Notably, controlling two or more of them won’t allow others to enter the battlefield untapped."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "However, because these cards have basic land types, effects that specify a basic land type without also specifying that the land be basic can affect them. For example, a spell or ability that reads “Destroy target Forest” can target Canopy Vista, while one that reads “Destroy target basic Forest” cannot."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "If one of these lands enters the battlefield at the same time as any number of basic lands, those other lands are not counted when determining if this land enters the battlefield tapped or untapped."
+                }
+            ],
+            "scryfallId": "1b5d2e9c-dd93-49ae-9a03-77c13c5ec298",
+            "subtypes": [
+                "Mountain",
+                "Forest"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104375,
+            "text": "({T}: Add {R} or {G}.)\nCinder Glade enters the battlefield tapped unless you control two or more basic lands.",
+            "type": "Land — Mountain Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "422069be-9674-51c9-a1b1-bb190c913f45"
+        },
+        {
+            "artist": "Titus Lunter",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405096,
+            "name": "Canopy Vista",
+            "number": "5",
+            "originalText": "Canopy Vista enters the battlefield tapped unless you control two or more basic lands.",
+            "originalType": "Land — Forest Plains",
+            "printings": [
+                "BFZ",
+                "EXP",
+                "PBFZ",
+                "PSS1"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2015-08-25",
+                    "text": "Even though these lands have basic land types, they are not basic lands because “basic” doesn’t appear on their type line. Notably, controlling two or more of them won’t allow others to enter the battlefield untapped."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "However, because these cards have basic land types, effects that specify a basic land type without also specifying that the land be basic can affect them. For example, a spell or ability that reads “Destroy target Forest” can target Canopy Vista, while one that reads “Destroy target basic Forest” cannot."
+                },
+                {
+                    "date": "2015-08-25",
+                    "text": "If one of these lands enters the battlefield at the same time as any number of basic lands, those other lands are not counted when determining if this land enters the battlefield tapped or untapped."
+                }
+            ],
+            "scryfallId": "3125bf61-f1b8-4b97-96bc-2d2a3a32adbd",
+            "subtypes": [
+                "Forest",
+                "Plains"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104376,
+            "text": "({T}: Add {G} or {W}.)\nCanopy Vista enters the battlefield tapped unless you control two or more basic lands.",
+            "type": "Land — Forest Plains",
+            "types": [
+                "Land"
+            ],
+            "uuid": "faf92fe1-cf26-537d-856a-b1f4c75771f0"
+        },
+        {
+            "artist": "Min Yum",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405100,
+            "name": "Hallowed Fountain",
+            "number": "6",
+            "originalText": "As Hallowed Fountain enters the battlefield, you may pay 2 life. If you don't, Hallowed Fountain enters the battlefield tapped.",
+            "originalType": "Land — Plains Island",
+            "printings": [
+                "DIS",
+                "EXP",
+                "RTR"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "3eef85b2-3e5f-45e1-b669-ad152e55fa6d",
+            "subtypes": [
+                "Plains",
+                "Island"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104372,
+            "text": "({T}: Add {W} or {U}.)\nAs Hallowed Fountain enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Plains Island",
+            "types": [
+                "Land"
+            ],
+            "uuid": "e105d9f8-3213-5603-b6fc-431f5d3573e7"
+        },
+        {
+            "artist": "Min Yum",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405114,
+            "name": "Watery Grave",
+            "number": "7",
+            "originalText": "As Watery Grave enters the battlefield, you may pay 2 life. If you don't, Watery Grave enters the battlefield tapped.",
+            "originalType": "Land — Island Swamp",
+            "printings": [
+                "EXP",
+                "GRN",
+                "GTC",
+                "RAV"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "af6d2e24-9467-4aa6-8841-7716d051edf7",
+            "subtypes": [
+                "Island",
+                "Swamp"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 105557,
+            "text": "({T}: Add {U} or {B}.)\nAs Watery Grave enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Island Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "b5a5d6f5-1381-5540-ab13-c42ddfdb6f13"
+        },
+        {
+            "artist": "Min Yum",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405093,
+            "name": "Blood Crypt",
+            "number": "8",
+            "originalText": "As Blood Crypt enters the battlefield, you may pay 2 life. If you don't, Blood Crypt enters the battlefield tapped.",
+            "originalType": "Land — Swamp Mountain",
+            "printings": [
+                "DIS",
+                "EXP",
+                "RTR"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "399f4d04-65ee-478d-9184-d33bb355e726",
+            "subtypes": [
+                "Swamp",
+                "Mountain"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 105549,
+            "text": "({T}: Add {B} or {R}.)\nAs Blood Crypt enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Swamp Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "8b6c5d7c-fd8d-56ce-9582-dc1ca439aca5"
+        },
+        {
+            "artist": "Min Yum",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405110,
+            "name": "Stomping Ground",
+            "number": "9",
+            "originalText": "As Stomping Ground enters the battlefield, you may pay 2 life. If you don't, Stomping Ground enters the battlefield tapped.",
+            "originalType": "Land — Mountain Forest",
+            "printings": [
+                "EXP",
+                "GPT",
+                "GTC"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "4c5e0fa3-63db-4b1e-bc15-dcb0ae80db14",
+            "subtypes": [
+                "Mountain",
+                "Forest"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 105556,
+            "text": "({T}: Add {R} or {G}.)\nAs Stomping Ground enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Mountain Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "39b9550a-b0c9-57b4-866a-2dedef7425c5"
+        },
+        {
+            "artist": "Min Yum",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405112,
+            "name": "Temple Garden",
+            "number": "10",
+            "originalText": "As Temple Garden enters the battlefield, you may pay 2 life. If you don't, Temple Garden enters the battlefield tapped.",
+            "originalType": "Land — Forest Plains",
+            "printings": [
+                "EXP",
+                "GRN",
+                "RAV",
+                "RTR"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "b1c846f3-142d-43f0-aa9a-8fd5fbd5ada4",
+            "subtypes": [
+                "Forest",
+                "Plains"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104961,
+            "text": "({T}: Add {G} or {W}.)\nAs Temple Garden enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Forest Plains",
+            "types": [
+                "Land"
+            ],
+            "uuid": "8197b0bd-b7c2-593e-8320-40252a98a5fd"
+        },
+        {
+            "artist": "Noah Bradley",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405099,
+            "name": "Godless Shrine",
+            "number": "11",
+            "originalText": "As Godless Shrine enters the battlefield, you may pay 2 life. If you don't, Godless Shrine enters the battlefield tapped.",
+            "originalType": "Land — Plains Swamp",
+            "printings": [
+                "EXP",
+                "GPT",
+                "GTC"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "db192c30-d28a-431c-ba46-1e3d9d3da3f4",
+            "subtypes": [
+                "Plains",
+                "Swamp"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104741,
+            "text": "({T}: Add {W} or {B}.)\nAs Godless Shrine enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Plains Swamp",
+            "types": [
+                "Land"
+            ],
+            "uuid": "9e114a5a-4a7d-5153-b768-5db57fba8f7e"
+        },
+        {
+            "artist": "Noah Bradley",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405109,
+            "name": "Steam Vents",
+            "number": "12",
+            "originalText": "As Steam Vents enters the battlefield, you may pay 2 life. If you don't, Steam Vents enters the battlefield tapped.",
+            "originalType": "Land — Island Mountain",
+            "printings": [
+                "EXP",
+                "GPT",
+                "GRN",
+                "RTR"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "2349e6aa-5bbf-4250-a19a-321bd308ddcb",
+            "subtypes": [
+                "Island",
+                "Mountain"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104307,
+            "text": "({T}: Add {U} or {R}.)\nAs Steam Vents enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Island Mountain",
+            "types": [
+                "Land"
+            ],
+            "uuid": "ef33b8f4-faa9-5528-9152-1b78ed869496"
+        },
+        {
+            "artist": "Noah Bradley",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405103,
+            "name": "Overgrown Tomb",
+            "number": "13",
+            "originalText": "As Overgrown Tomb enters the battlefield, you may pay 2 life. If you don't, Overgrown Tomb enters the battlefield tapped.",
+            "originalType": "Land — Swamp Forest",
+            "printings": [
+                "EXP",
+                "GRN",
+                "RAV",
+                "RTR"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "b92ca85d-eede-4c7f-b491-f555da1c23eb",
+            "subtypes": [
+                "Swamp",
+                "Forest"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 105553,
+            "text": "({T}: Add {B} or {G}.)\nAs Overgrown Tomb enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Swamp Forest",
+            "types": [
+                "Land"
+            ],
+            "uuid": "128b295a-638c-5e31-9ede-5fa92b49705c"
+        },
+        {
+            "artist": "Noah Bradley",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405106,
+            "name": "Sacred Foundry",
+            "number": "14",
+            "originalText": "As Sacred Foundry enters the battlefield, you may pay 2 life. If you don't, Sacred Foundry enters the battlefield tapped.",
+            "originalType": "Land — Mountain Plains",
+            "printings": [
+                "EXP",
+                "GRN",
+                "GTC",
+                "RAV"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "33c519df-c6b1-4e32-92bc-8a67ae5cbaab",
+            "subtypes": [
+                "Mountain",
+                "Plains"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 104816,
+            "text": "({T}: Add {R} or {W}.)\nAs Sacred Foundry enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Mountain Plains",
+            "types": [
+                "Land"
+            ],
+            "uuid": "3780a207-2305-5884-88fe-084549df2523"
+        },
+        {
+            "artist": "Noah Bradley",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405095,
+            "name": "Breeding Pool",
+            "number": "15",
+            "originalText": "As Breeding Pool enters the battlefield, you may pay 2 life. If you don't, Breeding Pool enters the battlefield tapped.",
+            "originalType": "Land — Forest Island",
+            "printings": [
+                "DIS",
+                "EXP",
+                "GTC"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-10-05",
+                    "text": "Unlike most dual lands, this land has two basic land types. It’s not basic, so cards such as District Guide can’t find it, but it does have the appropriate land types for effects such as that of Drowned Catacomb (from the Ixalan set)."
+                },
+                {
+                    "date": "2018-10-05",
+                    "text": "If an effect puts this land onto the battlefield tapped, you may pay 2 life, but it still enters tapped."
+                }
+            ],
+            "scryfallId": "045d22eb-b291-4bbe-b468-32bdf8b6eba6",
+            "subtypes": [
+                "Forest",
+                "Island"
+            ],
+            "supertypes": [],
+            "tcgplayerProductId": 105551,
+            "text": "({T}: Add {G} or {U}.)\nAs Breeding Pool enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped.",
+            "type": "Land — Forest Island",
+            "types": [
+                "Land"
+            ],
+            "uuid": "b7dd8608-b043-5e78-94e4-b0e39797274f"
+        },
+        {
+            "artist": "Véronique Meignaud",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405098,
+            "name": "Flooded Strand",
+            "number": "16",
+            "originalText": "{T}, Pay 1 life, Sacrifice Flooded Strand: Search your library for a Plains or Island card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "G09",
+                "KTK",
+                "ONS",
+                "PNAT",
+                "PRM",
+                "WC03",
+                "WC04"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4ca2078c-61c6-4862-a720-2d92435d1140",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 104960,
+            "text": "{T}, Pay 1 life, Sacrifice Flooded Strand: Search your library for a Plains or Island card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "eeba7072-194e-5601-8842-331980b84e06"
+        },
+        {
+            "artist": "Véronique Meignaud",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405104,
+            "name": "Polluted Delta",
+            "number": "17",
+            "originalText": "{T}, Pay 1 life, Sacrifice Polluted Delta: Search your library for an Island or Swamp card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "G09",
+                "KTK",
+                "ONS",
+                "PRM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "cdfac4bf-ffba-43eb-a29c-45c64079e830",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105554,
+            "text": "{T}, Pay 1 life, Sacrifice Polluted Delta: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "5167c787-fcc2-5a08-9572-bf2af7293927"
+        },
+        {
+            "artist": "Véronique Meignaud",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405094,
+            "name": "Bloodstained Mire",
+            "number": "18",
+            "originalText": "{T}, Pay 1 life, Sacrifice Bloodstained Mire: Search your library for a Swamp or Mountain card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "G09",
+                "KTK",
+                "ONS",
+                "PRM",
+                "WC03"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "212f9fbc-ebb9-474a-b3c4-cbde8e69af77",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105550,
+            "text": "{T}, Pay 1 life, Sacrifice Bloodstained Mire: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6fa9d53f-1f9d-53c4-979c-0a78ca39bcc9"
+        },
+        {
+            "artist": "Véronique Meignaud",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405116,
+            "name": "Wooded Foothills",
+            "number": "19",
+            "originalText": "{T}, Pay 1 life, Sacrifice Wooded Foothills: Search your library for a Mountain or Forest card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "G09",
+                "KTK",
+                "ONS",
+                "PRM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "fa884399-0046-4203-9d45-0fba1bb44ef0",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105560,
+            "text": "{T}, Pay 1 life, Sacrifice Wooded Foothills: Search your library for a Mountain or Forest card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6c7dc155-b39b-5ccf-a950-db493794bba5"
+        },
+        {
+            "artist": "Véronique Meignaud",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405115,
+            "name": "Windswept Heath",
+            "number": "20",
+            "originalText": "{T}, Pay 1 life, Sacrifice Windswept Heath: Search your library for a Forest or Plains card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "G09",
+                "KTK",
+                "ONS",
+                "PRM",
+                "WC04"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4b5fc9ef-724d-4287-8ebc-ada2625e0dfb",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105559,
+            "text": "{T}, Pay 1 life, Sacrifice Windswept Heath: Search your library for a Forest or Plains card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c4e46dfb-e552-5657-a534-4d448fc06142"
+        },
+        {
+            "artist": "Ryan Yee",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405101,
+            "name": "Marsh Flats",
+            "number": "21",
+            "originalText": "{T}, Pay 1 life, Sacrifice Marsh Flats: Search your library for a Plains or Swamp card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MM3",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "ea61e27c-3f55-499a-af31-7c34b91be0f2",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105552,
+            "text": "{T}, Pay 1 life, Sacrifice Marsh Flats: Search your library for a Plains or Swamp card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "dafa00c1-bb95-50c9-a708-33859d1cbc64"
+        },
+        {
+            "artist": "Ryan Yee",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405107,
+            "name": "Scalding Tarn",
+            "number": "22",
+            "originalText": "{T}, Pay 1 life, Sacrifice Scalding Tarn: Search your library for an Island or Mountain card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MM3",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "5a985f59-2b4e-416d-8f11-46b9317199c5",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105555,
+            "text": "{T}, Pay 1 life, Sacrifice Scalding Tarn: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "b2c1242f-b69a-5802-9b0c-eebc443747f1"
+        },
+        {
+            "artist": "Ryan Yee",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405113,
+            "name": "Verdant Catacombs",
+            "number": "23",
+            "originalText": "{T}, Pay 1 life, Sacrifice Verdant Catacombs: Search your library for a Swamp or Forest card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MM3",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "2e37ee29-7e51-4577-8354-499cbb772af0",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105558,
+            "text": "{T}, Pay 1 life, Sacrifice Verdant Catacombs: Search your library for a Swamp or Forest card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6aee4950-b001-5fc9-9d69-b7724fb7aaed"
+        },
+        {
+            "artist": "Ryan Yee",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405092,
+            "name": "Arid Mesa",
+            "number": "24",
+            "originalText": "{T}, Pay 1 life, Sacrifice Arid Mesa: Search your library for a Mountain or Plains card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MM3",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "21a739c8-d7ca-4204-9398-c47fd1d68447",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 104306,
+            "text": "{T}, Pay 1 life, Sacrifice Arid Mesa: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "ae560122-a588-5b52-af49-3c805b7cbd09"
+        },
+        {
+            "artist": "Ryan Yee",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 405102,
+            "name": "Misty Rainforest",
+            "number": "25",
+            "originalText": "{T}, Pay 1 life, Sacrifice Misty Rainforest: Search your library for a Forest or Island card and put it onto the battlefield. Then shuffle your library.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MM3",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "1f47bd65-b37c-4b7e-a271-8d67e0c90deb",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 105018,
+            "text": "{T}, Pay 1 life, Sacrifice Misty Rainforest: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle your library.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "8cb9a82a-24ba-5d63-962e-265777950826"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409557,
+            "name": "Mystic Gate",
+            "number": "26",
+            "originalText": "{T}: Add {C} to your mana pool.\n{WU}, {T}: Add {W}{W}, {W}{U}, or {U}{U} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "SHM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "2a95a6b0-cd73-4754-a53a-26669bc1440b",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110734,
+            "text": "{T}: Add {C}.\n{W/U}, {T}: Add {W}{W}, {W}{U}, or {U}{U}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c4b038c6-26af-5785-8107-6e6267d56ee1"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409558,
+            "name": "Sunken Ruins",
+            "number": "27",
+            "originalText": "{T}: Add {C} to your mana pool.\n{UB}, {T}: Add {U}{U}, {U}{B}, or {B}{B} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "SHM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "89b2347b-ec4a-4878-aace-5ed392bf4070",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110737,
+            "text": "{T}: Add {C}.\n{U/B}, {T}: Add {U}{U}, {U}{B}, or {B}{B}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "ccd1bfe0-b76a-547c-8d78-857b68708558"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409559,
+            "name": "Graven Cairns",
+            "number": "28",
+            "originalText": "{T}: Add {C} to your mana pool.\n{BR}, {T}: Add {B}{B}, {B}{R}, or {R}{R} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "FUT",
+                "IMA",
+                "SHM"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2007-05-01",
+                    "text": "{B/R}, {T}” is the same as saying “{B}, {T} or {R}, {T}."
+                }
+            ],
+            "scryfallId": "a3028c5b-2f81-4aee-9455-ebb0bd81ccaa",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110729,
+            "text": "{T}: Add {C}.\n{B/R}, {T}: Add {B}{B}, {B}{R}, or {R}{R}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "d6643291-2d88-5929-8e2d-a2bc240f89c1"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409560,
+            "name": "Fire-Lit Thicket",
+            "number": "29",
+            "originalText": "{T}: Add {C} to your mana pool.\n{RG}, {T}: Add {R}{R}, {R}{G}, or {G}{G} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "PRM",
+                "SHM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "0139a6b8-e6d2-496a-9e38-16e1a08b5775",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110731,
+            "text": "{T}: Add {C}.\n{R/G}, {T}: Add {R}{R}, {R}{G}, or {G}{G}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "45e8858c-47b9-5b9a-84b1-7a4c64b2e16e"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409561,
+            "name": "Wooded Bastion",
+            "number": "30",
+            "originalText": "{T}: Add {C} to your mana pool.\n{RW}, {T}: Add {G}{G}, {G}{W}, or {W}{W} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "SHM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4927d717-b2c4-46c0-af2c-e507d0c85cdd",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110741,
+            "text": "{T}: Add {C}.\n{G/W}, {T}: Add {G}{G}, {G}{W}, or {W}{W}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "358a7d02-4455-51cf-b7dc-2bc5ba657b05"
+        },
+        {
+            "artist": "Christine Choi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409562,
+            "name": "Fetid Heath",
+            "number": "31",
+            "originalText": "{T}: Add {C} to your mana pool.\n{WB}, {T}: Add {W}{W}, {W}{B}, or {B}{B} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "A25",
+                "EVE",
+                "EXP"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "37ea1750-ea12-4c10-9306-3d1c9e951e3e",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110726,
+            "text": "{T}: Add {C}.\n{W/B}, {T}: Add {W}{W}, {W}{B}, or {B}{B}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "c5b878c2-f970-58d0-a004-7e1a917e4a84"
+        },
+        {
+            "artist": "Christine Choi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409563,
+            "name": "Cascade Bluffs",
+            "number": "32",
+            "originalText": "{T}: Add {C} to your mana pool.\n{UR}, {T}: Add {U}{U}, {U}{R}, or {R}{R} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "A25",
+                "EVE",
+                "EXP"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "5c3b2dd1-3a6a-4c25-a7b5-9ce0aa4db8fe",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110723,
+            "text": "{T}: Add {C}.\n{U/R}, {T}: Add {U}{U}, {U}{R}, or {R}{R}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "9e546f6c-5209-54a0-bc96-96c2bb931f87"
+        },
+        {
+            "artist": "Christine Choi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409564,
+            "name": "Twilight Mire",
+            "number": "33",
+            "originalText": "{T}: Add {C} to your mana pool.\n{BG}, {T}: Add {B}{B}, {B}{G}, or {G}{G} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "A25",
+                "EVE",
+                "EXP",
+                "PRM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "29024ee6-56dd-4bc2-b8c0-1620e1795e56",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110739,
+            "text": "{T}: Add {C}.\n{B/G}, {T}: Add {B}{B}, {B}{G}, or {G}{G}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6ca7a062-d3d3-5625-82c4-32a832132832"
+        },
+        {
+            "artist": "Christine Choi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409565,
+            "name": "Rugged Prairie",
+            "number": "34",
+            "originalText": "{T}: Add {C} to your mana pool.\n{GU}, {T}: Add {R}{R}, {R}{W}, or {W}{W} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "A25",
+                "EVE",
+                "EXP"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4441514d-d8e0-480f-ab82-b0064dfa7ac0",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110735,
+            "text": "{T}: Add {C}.\n{R/W}, {T}: Add {R}{R}, {R}{W}, or {W}{W}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "f69ae710-01ac-5ea4-8d6a-ad066507506c"
+        },
+        {
+            "artist": "Christine Choi",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "U"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409566,
+            "name": "Flooded Grove",
+            "number": "35",
+            "originalText": "{T}: Add {C} to your mana pool.\n{GW}, {T}: Add {G}{G}, {G}{U}, or {U}{U} to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "A25",
+                "EVE",
+                "EXP"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "063e3c8e-7d5d-4e38-bb9c-3d8f93c27369",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110727,
+            "text": "{T}: Add {C}.\n{G/U}, {T}: Add {G}{G}, {G}{U}, or {U}{U}.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "e63df410-3060-5d60-a227-1e0c9a2a816a"
+        },
+        {
+            "artist": "Howard Lyon",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409567,
+            "name": "Ancient Tomb",
+            "number": "36",
+            "originalText": "{T}: Add {C}{C} to your mana pool. Ancient Tomb deals 2 damage to you.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "PUMA",
+                "TMP",
+                "UMA",
+                "V12",
+                "VMA",
+                "WC99"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "f77d5b90-5ea1-403e-ab85-3040e1da933b",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110722,
+            "text": "{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "056d14f0-ae06-5e0d-af57-43153a16d59c"
+        },
+        {
+            "artist": "Florian de Gesincourt",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409568,
+            "name": "Dust Bowl",
+            "number": "37",
+            "originalText": "{T}: Add {C} to your mana pool.\n{3}, {T}, Sacrifice a land: Destroy target nonbasic land.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "MMQ",
+                "WC00"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "b6890de0-37d2-4c0a-8871-778394bfeceb",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110724,
+            "text": "{T}: Add {C}.\n{3}, {T}, Sacrifice a land: Destroy target nonbasic land.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "0abfeb75-8c4d-546d-85c1-1f7f3712db26"
+        },
+        {
+            "artist": "James Paick",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Banned",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409569,
+            "name": "Eye of Ugin",
+            "number": "38",
+            "originalText": "Colorless Eldrazi spells you cast cost {2} less to cast.\n{7}, {T}: Search your library for a colorless creature card, reveal it, and put it into your hand. Then shuffle your library.",
+            "originalType": "Legendary Land",
+            "printings": [
+                "EXP",
+                "MM2",
+                "WWK"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2010-03-01",
+                    "text": "Eye of Ugin doesn’t have a mana ability."
+                },
+                {
+                    "date": "2010-03-01",
+                    "text": "Eye of Ugin’s second ability lets you find any colorless creature card in your deck, such as an artifact creature card that has no colored mana symbols in its mana cost, or a creature card that’s become colorless due to Mycosynth Lattice."
+                },
+                {
+                    "date": "2013-04-15",
+                    "text": "Mistform Ultimus and creatures with changeling are Eldrazi. If they become colorless, possibly due to Mycosynth Lattice, Eye of Ugin would reduce the cost to cast them by {2}."
+                }
+            ],
+            "scryfallId": "a49e324f-8727-4ab5-aa76-c3c3c8725602",
+            "subtypes": [],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 110725,
+            "text": "Colorless Eldrazi spells you cast cost {2} less to cast.\n{7}, {T}: Search your library for a colorless creature card, reveal it, and put it into your hand. Then shuffle your library.",
+            "type": "Legendary Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "556a8a2e-463c-5fbe-b941-20d505614a04"
+        },
+        {
+            "artist": "Jesper Ejsing",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409570,
+            "name": "Forbidden Orchard",
+            "number": "39",
+            "originalText": "{T}: Add one mana of any color to your mana pool.\nWhenever you tap Forbidden Orchard for mana, target opponent puts a 1/1 colorless Spirit creature token onto the battlefield.",
+            "originalType": "Land",
+            "printings": [
+                "C16",
+                "CHK",
+                "EXP",
+                "PRM",
+                "V12"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "c13bea32-5dac-4338-b570-bed58109273d",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110728,
+            "text": "{T}: Add one mana of any color.\nWhenever you tap Forbidden Orchard for mana, target opponent creates a 1/1 colorless Spirit creature token.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "94e9104f-8c16-5fe8-9a39-9aa57e88e718"
+        },
+        {
+            "artist": "Florian de Gesincourt",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409571,
+            "name": "Horizon Canopy",
+            "number": "40",
+            "originalText": "{T}, Pay 1 life: Add {G} or {W} to your mana pool.\n{1}, {T}, Sacrifice Horizon Canopy: Draw a card.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "FUT",
+                "IMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "5d6244ec-8cb1-4d80-a33a-9ddf9e29ff65",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110730,
+            "text": "{T}, Pay 1 life: Add {G} or {W}.\n{1}, {T}, Sacrifice Horizon Canopy: Draw a card.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "0b9695df-ddc4-5418-9db4-a226b3479d94"
+        },
+        {
+            "artist": "Jonas De Ro",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409572,
+            "name": "Kor Haven",
+            "number": "41",
+            "originalText": "{T}: Add {C} to your mana pool.\n{1}{W}, {T}: Prevent all combat damage that would be dealt by target attacking creature this turn.",
+            "originalType": "Legendary Land",
+            "printings": [
+                "EXP",
+                "NEM"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "2519b6a3-d074-4e9b-a57a-559fae5a8531",
+            "subtypes": [],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 110732,
+            "text": "{T}: Add {C}.\n{1}{W}, {T}: Prevent all combat damage that would be dealt by target attacking creature this turn.",
+            "type": "Legendary Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "6de75824-6bf2-52be-b063-9b57c517bb9e"
+        },
+        {
+            "artist": "Howard Lyon",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409573,
+            "name": "Mana Confluence",
+            "number": "42",
+            "originalText": "{T}, Pay 1 life: Add one mana of any color to your mana pool.",
+            "originalType": "Land",
+            "printings": [
+                "EXP",
+                "JOU"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4eafa4f8-3b9b-4e20-97bf-8f547e970752",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110733,
+            "text": "{T}, Pay 1 life: Add one mana of any color.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "90bf2be2-1bc2-5112-9327-fa080eb35c07"
+        },
+        {
+            "artist": "Howard Lyon",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Banned",
+                "commander": "Legal",
+                "duel": "Banned",
+                "legacy": "Banned",
+                "vintage": "Restricted"
+            },
+            "multiverseId": 409574,
+            "name": "Strip Mine",
+            "number": "43",
+            "originalText": "{T}: Add {C} to your mana pool.\n{T}, Sacrifice Strip Mine: Destroy target land.",
+            "originalType": "Land",
+            "printings": [
+                "4ED",
+                "ATH",
+                "ATQ",
+                "EXP",
+                "ME4",
+                "PTC",
+                "REN",
+                "RIN",
+                "V09",
+                "VMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "1b8de79d-5efe-4e21-8614-786689fcad58",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110736,
+            "text": "{T}: Add {C}.\n{T}, Sacrifice Strip Mine: Destroy target land.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "2977d738-2cd1-5300-982d-d216c7bd1053"
+        },
+        {
+            "artist": "Raymond Swanland",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409575,
+            "name": "Tectonic Edge",
+            "number": "44",
+            "originalText": "{T}: Add {C} to your mana pool.\n{1}, {T}, Sacrifice Tectonic Edge: Destroy target nonbasic land. Activate this ability only if an opponent controls four or more lands.",
+            "originalType": "Land",
+            "printings": [
+                "C14",
+                "EXP",
+                "F12",
+                "PRM",
+                "WWK"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2010-03-01",
+                    "text": "Tectonic Edge’s second ability checks how many lands an opponent controls only at the time you activate the ability."
+                },
+                {
+                    "date": "2010-03-01",
+                    "text": "Assuming you can activate Tectonic Edge’s second ability, you can target any nonbasic land with it (not just one controlled by an opponent that controls four or more lands)."
+                }
+            ],
+            "scryfallId": "7c079aa9-e633-4ad0-87c1-79c0421c03dc",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110738,
+            "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice Tectonic Edge: Destroy target nonbasic land. Activate this ability only if an opponent controls four or more lands.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "cfd35603-e00b-58ec-bf6c-c48bb299360e"
+        },
+        {
+            "artist": "William Wu",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 0.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "multiverseId": 409576,
+            "name": "Wasteland",
+            "number": "45",
+            "originalText": "{T}: Add {C} to your mana pool.\n{T}, Sacrifice Wasteland: Destroy target nonbasic land.",
+            "originalType": "Land",
+            "printings": [
+                "EMA",
+                "EXP",
+                "G10",
+                "J15",
+                "MPR",
+                "OLGC",
+                "PR2",
+                "PRM",
+                "TMP",
+                "TPR",
+                "WC98",
+                "WC99"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "d053a27e-da2c-4b8a-9b33-ce369c491dc1",
+            "subtypes": [],
+            "supertypes": [],
+            "tcgplayerProductId": 110740,
+            "text": "{T}: Add {C}.\n{T}, Sacrifice Wasteland: Destroy target nonbasic land.",
+            "type": "Land",
+            "types": [
+                "Land"
+            ],
+            "uuid": "436f2aba-66b2-5b91-8a75-ec75d7c30fd7"
+        }
+    ],
+    "code": "exp",
+    "isFoilOnly": true,
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": "exp",
+    "name": "Zendikar Expeditions",
+    "releaseDate": "2015-10-02",
+    "tcgplayerGroupId": 1649,
+    "tokens": [],
+    "totalSetSize": 45,
+    "type": "masterpiece"
+}

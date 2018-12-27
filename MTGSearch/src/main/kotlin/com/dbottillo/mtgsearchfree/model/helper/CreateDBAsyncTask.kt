@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.model.database.CardDataSource
-import com.dbottillo.mtgsearchfree.model.database.CreateDatabaseHelper
-import com.dbottillo.mtgsearchfree.model.database.SetDataSource
+import com.dbottillo.mtgsearchfree.database.CardDataSource
+import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper
+import com.dbottillo.mtgsearchfree.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import org.json.JSONArray
@@ -166,7 +166,7 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
             values.put(CardDataSource.COLUMNS.SET_NAME.noun, set.name)
             values.put(CardDataSource.COLUMNS.SET_CODE.noun, set.code)
 
-            val multicolor: Int
+            var multicolor = 0
             var land = 0
             val artifact: Int = if (jsonObject.getString("type").contains("Artifact")) {
                 1
@@ -185,14 +185,6 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                     }
                 }
                 values.put(CardDataSource.COLUMNS.COLORS.noun, colors.toString())
-
-                multicolor = if (colorsJ.length() > 1) {
-                    1
-                } else {
-                    0
-                }
-            } else {
-                multicolor = 0
             }
 
             if (jsonObject.has("types")) {
@@ -241,7 +233,6 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 cmc = BigDecimal.valueOf(jsonObject.getDouble("convertedManaCost")).toFloat()
             }
             values.put(CardDataSource.COLUMNS.CMC.noun, cmc.toInt())
-            values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
             values.put(CardDataSource.COLUMNS.LAND.noun, land)
             values.put(CardDataSource.COLUMNS.ARTIFACT.noun, artifact)
 
@@ -283,11 +274,22 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                 values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun, jsonObject.getString("originalText"))
             }
             if (jsonObject.has("colorIdentity")) {
+                val colorsIdentityJ = jsonObject.getJSONArray("colorIdentity")
                 values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, jsonObject.getString("colorIdentity"))
+                if (colorsIdentityJ.length() > 1) {
+                    multicolor = 1
+                }
             }
             if (jsonObject.has("uuid")) {
                 values.put(CardDataSource.COLUMNS.UUID.noun, jsonObject.getString("uuid"))
             }
+            if (jsonObject.has("scryfallId")) {
+                values.put(CardDataSource.COLUMNS.SCRYFALLID.noun, jsonObject.getString("scryfallId"))
+            }
+            if (jsonObject.has("tcgplayerProductId")) {
+                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, jsonObject.getInt("tcgplayerProductId"))
+            }
+            values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
             return values
         }
     }

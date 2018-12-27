@@ -9,10 +9,10 @@ import android.view.View
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.model.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
-import com.dbottillo.mtgsearchfree.model.storage.GeneralData
+import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.ui.about.AboutActivity
 import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
@@ -41,6 +41,8 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
         toolbar.inflateMenu(R.menu.main_more)
         if (BuildConfig.DEBUG) {
             toolbar.inflateMenu(R.menu.main_debug)
+        }
+        if (generalData.isDebugEnabled()) {
             toolbar.inflateMenu(R.menu.main_user_debug)
         }
         toolbar.setOnMenuItemClickListener(this)

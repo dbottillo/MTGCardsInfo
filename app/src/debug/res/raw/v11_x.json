@@ -1,0 +1,1025 @@
+{
+    "baseSetSize": 0,
+    "cards": [
+        {
+            "artist": "Gao Jianzhang",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}{B}",
+            "multiverseId": 244670,
+            "name": "Cao Cao, Lord of Wei",
+            "number": "1",
+            "originalText": "{T}: Target opponent discards two cards. Activate this ability only during your turn, before attackers are declared.",
+            "originalType": "Legendary Creature — Human Soldier",
+            "power": "3",
+            "printings": [
+                "PTK",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2013-09-20",
+                    "text": "If a turn has multiple combat phases, the ability can only be activated before the beginning of the declare attackers step of the first combat phase in that turn."
+                }
+            ],
+            "scryfallId": "e29fefaf-0e3b-47a5-8fa3-c3053506f662",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Soldier"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48158,
+            "text": "{T}: Target opponent discards two cards. Activate this ability only during your turn, before attackers are declared.",
+            "toughness": "3",
+            "type": "Legendary Creature — Human Soldier",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "b485f3c3-8717-593e-bc1b-b4014e23e313"
+        },
+        {
+            "artist": "Ray Lago",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [
+                "G",
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Her leadership forged the Weatherlight's finest crew.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}{W}",
+            "multiverseId": 244665,
+            "name": "Captain Sisay",
+            "number": "2",
+            "originalText": "{T}: Search your library for a legendary card, reveal that card, and put it into your hand. Then shuffle your library.",
+            "originalType": "Legendary Creature — Human Soldier",
+            "power": "2",
+            "printings": [
+                "INV",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2004-10-04",
+                    "text": "Because the “search” requires you to find a card with certain characteristics, you don’t have to find the card if you don’t want to."
+                }
+            ],
+            "scryfallId": "59e31568-e630-45c1-8c65-f757acd307e2",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Soldier"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48153,
+            "text": "{T}: Search your library for a legendary card, reveal that card, and put it into your hand. Then shuffle your library.",
+            "toughness": "2",
+            "type": "Legendary Creature — Human Soldier",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "7b242d11-28ef-513a-baf3-6562c16ef5d3"
+        },
+        {
+            "artist": "Mark Zug",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G",
+                "W"
+            ],
+            "colors": [
+                "B",
+                "G",
+                "W"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "\"Each year that passes rings you inwardly with memory and might. Wield your heart, and the world will tremble.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{W}{B}{G}",
+            "multiverseId": 244674,
+            "name": "Doran, the Siege Tower",
+            "number": "3",
+            "originalText": "Each creature assigns combat damage equal to its toughness rather than its power.",
+            "originalType": "Legendary Creature — Treefolk Shaman",
+            "power": "0",
+            "printings": [
+                "J17",
+                "LRW",
+                "PCMP",
+                "PRM",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2007-10-01",
+                    "text": "Doran’s ability means, for example, that a 2/3 creature will assign 3 damage in combat instead of 2."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "Doran’s ability doesn’t actually change creatures’ power; it changes only the value of the combat damage they assign. All other rules and effects that check power or toughness use the real values."
+                },
+                {
+                    "date": "2007-10-01",
+                    "text": "This effect is mandatory and affects all creatures."
+                }
+            ],
+            "scryfallId": "b484e4be-3b13-42d7-8dd3-bc40835410ab",
+            "starter": true,
+            "subtypes": [
+                "Treefolk",
+                "Shaman"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48150,
+            "text": "Each creature assigns combat damage equal to its toughness rather than its power.",
+            "toughness": "5",
+            "type": "Legendary Creature — Treefolk Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "a847920a-226a-521a-b438-c061f4e926e3"
+        },
+        {
+            "artist": "Steven Belledin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{R}{R}{R}",
+            "multiverseId": 244666,
+            "name": "Kiki-Jiki, Mirror Breaker",
+            "number": "4",
+            "originalText": "Haste\n{T}: Put a token that's a copy of target nonlegendary creature you control onto the battlefield. That token has haste. Sacrifice it at the beginning of the next end step.",
+            "originalType": "Legendary Creature — Goblin Shaman",
+            "power": "2",
+            "printings": [
+                "CHK",
+                "IMA",
+                "MM2",
+                "MMA",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2017-11-17",
+                    "text": "The token copies exactly what was printed on the creature and nothing else (unless that creature was copying something else or was a token; see below). It doesn’t copy whether that creature was tapped or untapped, whether it had any counters on it or Auras and/or Equipment attached to it, or any non-copy effects that changed its power, toughness, types, color, and so on."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If the copied creature had {X} in its mana cost, X is 0."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If the copied creature was copying something else, the tokens enter the battlefield as whatever that creature was copying."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If the copied creature is a token, the tokens created by Kiki-Jiki’s ability copies the original characteristics of that token as stated by the effect that put it onto the battlefield."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "Any enters-the-battlefield abilities of the copied creature will trigger when the tokens enter the battlefield. Any “As [this creature] enters the battlefield” or “[This creature] enters the battlefield with” abilities of the copied creature will also work."
+                }
+            ],
+            "scryfallId": "d771a73c-f9e8-4fe0-993f-124c3c66ac6b",
+            "starter": true,
+            "subtypes": [
+                "Goblin",
+                "Shaman"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48151,
+            "text": "Haste\n{T}: Create a token that's a copy of target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step.",
+            "toughness": "2",
+            "type": "Legendary Creature — Goblin Shaman",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ad64daa6-1cb7-5779-97b3-f942edc3c921"
+        },
+        {
+            "artist": "Steve Argyle",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G",
+                "R"
+            ],
+            "colors": [
+                "B",
+                "G",
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "Each of his twenty-two braids is bound with bone and leather from a foe.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{B}{R}{G}",
+            "multiverseId": 244672,
+            "name": "Kresh the Bloodbraided",
+            "number": "5",
+            "originalText": "Whenever another creature dies, you may put X +1/+1 counters on Kresh the Bloodbraided, where X is that creature's power.",
+            "originalType": "Legendary Creature — Human Warrior",
+            "power": "3",
+            "printings": [
+                "ALA",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "X is equal to the power of the creature as it last existed on the battlefield."
+                }
+            ],
+            "scryfallId": "bd35667d-ac93-4d04-a45f-59a74b6d0925",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Warrior"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48148,
+            "text": "Whenever another creature dies, you may put X +1/+1 counters on Kresh the Bloodbraided, where X is that creature's power.",
+            "toughness": "3",
+            "type": "Legendary Creature — Human Warrior",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "dc6d8bd8-9a39-5495-baa2-169f029da3e0"
+        },
+        {
+            "artist": "Steven Belledin",
+            "borderColor": "black",
+            "colorIdentity": [
+                "W"
+            ],
+            "colors": [
+                "W"
+            ],
+            "convertedManaCost": 1.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{X}{W}",
+            "multiverseId": 259296,
+            "name": "Mikaeus, the Lunarch",
+            "number": "6",
+            "originalText": "Mikaeus, the Lunarch enters the battlefield with X +1/+1 counters on it.\n{T}: Put a +1/+1 counter on Mikaeus.\n{T}, Remove a +1/+1 counter from Mikaeus: Put a +1/+1 counter on each other creature you control.",
+            "originalType": "Legendary Creature — Human Cleric",
+            "power": "0",
+            "printings": [
+                "ISD",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "77976ca8-7c7a-469c-a99a-808de1b8bf71",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Cleric"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48161,
+            "text": "Mikaeus, the Lunarch enters the battlefield with X +1/+1 counters on it.\n{T}: Put a +1/+1 counter on Mikaeus.\n{T}, Remove a +1/+1 counter from Mikaeus: Put a +1/+1 counter on each other creature you control.",
+            "toughness": "0",
+            "type": "Legendary Creature — Human Cleric",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "09b0a267-3b37-53e9-a78b-e4159b65e0a2"
+        },
+        {
+            "artist": "Mike Bierek",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G"
+            ],
+            "colors": [
+                "G"
+            ],
+            "convertedManaCost": 3.0,
+            "flavorText": "It gathers against the coming storm.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{G}",
+            "multiverseId": 259295,
+            "name": "Omnath, Locus of Mana",
+            "number": "7",
+            "originalText": "Green mana doesn't empty from your mana pool as steps and phases end.\nOmnath, Locus of Mana gets +1/+1 for each green mana in your mana pool.",
+            "originalType": "Legendary Creature — Elemental",
+            "power": "1",
+            "printings": [
+                "V11",
+                "WWK"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2010-03-01",
+                    "text": "You can keep green mana in your mana pool indefinitely while Omnath is on the battlefield. That means if you add a green mana to your mana pool during one step or phase, you can spend it during a later step or phase, or even a later turn. Other types of mana will continue to empty from your mana pool as each step and phase ends."
+                },
+                {
+                    "date": "2010-03-01",
+                    "text": "If a green mana you add to your mana pool has certain restrictions or riders associated with it (for example, if it was produced by Ancient Ziggurat), they’ll apply to that mana no matter when you spend it."
+                },
+                {
+                    "date": "2010-03-01",
+                    "text": "Once Omnath leaves the battlefield, you have until the end of the current step or phase to spend whatever green mana is in your mana pool before it too empties as normal. There is no penalty associated with this other than the loss of the mana."
+                }
+            ],
+            "scryfallId": "54544da6-a24f-4351-aebc-a026c6414f64",
+            "starter": true,
+            "subtypes": [
+                "Elemental"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48154,
+            "text": "You don't lose unspent green mana as steps and phases end.\nOmnath, Locus of Mana gets +1/+1 for each unspent green mana you have.",
+            "toughness": "1",
+            "type": "Legendary Creature — Elemental",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "fe349250-c394-5a9f-bd2e-9f7f29135647"
+        },
+        {
+            "artist": "Adam Rex",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "U"
+            ],
+            "colors": [
+                "B",
+                "U"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{U/B}{U/B}{U/B}",
+            "multiverseId": 244668,
+            "name": "Oona, Queen of the Fae",
+            "number": "8",
+            "originalText": "Flying\n{X}{UB}: Choose a color. Target opponent exiles the top X cards of his or her library. For each card of the chosen color exiled this way, put a 1/1 blue and black Faerie Rogue creature token with flying onto the battlefield.",
+            "originalType": "Legendary Creature — Faerie Wizard",
+            "power": "5",
+            "printings": [
+                "MMA",
+                "SHM",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2008-05-01",
+                    "text": "You target the opponent when you activate Oona’s ability. You don’t choose the color until the ability resolves."
+                },
+                {
+                    "date": "2008-05-01",
+                    "text": "The tokens enter the battlefield under your control."
+                }
+            ],
+            "scryfallId": "d0cbcbfa-927a-413e-96c5-ae785a68507e",
+            "starter": true,
+            "subtypes": [
+                "Faerie",
+                "Wizard"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48155,
+            "text": "Flying\n{X}{U/B}: Choose a color. Target opponent exiles the top X cards of their library. For each card of the chosen color exiled this way, create a 1/1 blue and black Faerie Rogue creature token with flying.",
+            "toughness": "5",
+            "type": "Legendary Creature — Faerie Wizard",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "cb49096c-8a77-50e3-9af3-079da358b1c8"
+        },
+        {
+            "artist": "Mike Bierek",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+            ],
+            "colors": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+            ],
+            "convertedManaCost": 10.0,
+            "flavorText": "The Soul of the World has returned.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{W}{W}{U}{U}{B}{B}{R}{R}{G}{G}",
+            "multiverseId": 244675,
+            "name": "Progenitus",
+            "number": "9",
+            "originalText": "Protection from everything\nIf Progenitus would be put into a graveyard from anywhere, reveal Progenitus and shuffle it into its owner's library instead.",
+            "originalType": "Legendary Creature — Hydra Avatar",
+            "power": "10",
+            "printings": [
+                "CON",
+                "MMA",
+                "PGPX",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-02-01",
+                    "text": "“Protection from everything” means the following: Progenitus can’t be blocked, Progenitus can’t be enchanted or equipped, Progenitus can’t be the target of spells or abilities, and all damage that would be dealt to Progenitus is prevented."
+                },
+                {
+                    "date": "2009-02-01",
+                    "text": "Progenitus can still be affected by effects that don’t target it or deal damage to it (such as Day of Judgment)."
+                }
+            ],
+            "scryfallId": "8bbd3493-1466-4d58-b004-00627ceb4a04",
+            "starter": true,
+            "subtypes": [
+                "Hydra",
+                "Avatar"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48149,
+            "text": "Protection from everything\nIf Progenitus would be put into a graveyard from anywhere, reveal Progenitus and shuffle it into its owner's library instead.",
+            "toughness": "10",
+            "type": "Legendary Creature — Hydra Avatar",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "7694c890-5b4a-5595-83ce-994f3818fb59"
+        },
+        {
+            "artist": "Wayne Reynolds",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "U",
+                "W"
+            ],
+            "colors": [
+                "G",
+                "U",
+                "W"
+            ],
+            "convertedManaCost": 4.0,
+            "flavorText": "Many sigils, one purpose.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{1}{G}{W}{U}",
+            "multiverseId": 244669,
+            "name": "Rafiq of the Many",
+            "number": "10",
+            "originalText": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\nWhenever a creature you control attacks alone, it gains double strike until end of turn.",
+            "originalType": "Legendary Creature — Human Knight",
+            "power": "3",
+            "printings": [
+                "ALA",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2008-10-01",
+                    "text": "If you declare exactly one creature as an attacker, each exalted ability on each permanent you control (including, perhaps, the attacking creature itself) will trigger. The bonuses are given to the attacking creature, not to the permanent with exalted. Ultimately, the attacking creature will wind up with +1/+1 for each of your exalted abilities."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "If you attack with multiple creatures, but then all but one are removed from combat, your exalted abilities won’t trigger."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Some effects put creatures onto the battlefield attacking. Since those creatures were never declared as attackers, they’re ignored by exalted abilities. They won’t cause exalted abilities to trigger. If any exalted abilities have already triggered (because exactly one creature was declared as an attacker), those abilities will resolve as normal even though there may now be multiple attackers."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Exalted abilities will resolve before blockers are declared."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "Exalted bonuses last until end of turn. If an effect creates an additional combat phase during your turn, a creature that attacked alone during the first combat phase will still have its exalted bonuses in that new phase. If a creature attacks alone during the second combat phase, all your exalted abilities will trigger again."
+                },
+                {
+                    "date": "2008-10-01",
+                    "text": "In a Two-Headed Giant game, a creature “attacks alone” if it’s the only creature declared as an attacker by your entire team. If you control that attacking creature, your exalted abilities will trigger but your teammate’s exalted abilities won’t."
+                }
+            ],
+            "scryfallId": "bd1206d4-ce7d-4504-addc-8182a586087e",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Knight"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48156,
+            "text": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\nWhenever a creature you control attacks alone, it gains double strike until end of turn.",
+            "toughness": "3",
+            "type": "Legendary Creature — Human Knight",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "5674cce7-bf37-516a-aedb-0225fd9ac78e"
+        },
+        {
+            "artist": "Todd Lockwood",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "U",
+                "W"
+            ],
+            "colors": [
+                "B",
+                "U",
+                "W"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "To gain audience with the hegemon, one must bring a riddle she has not heard.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{W}{U}{B}",
+            "multiverseId": 244664,
+            "name": "Sharuum the Hegemon",
+            "number": "11",
+            "originalText": "Flying\nWhen Sharuum the Hegemon enters the battlefield, you may return target artifact card from your graveyard to the battlefield.",
+            "originalType": "Legendary Artifact Creature — Sphinx",
+            "power": "5",
+            "printings": [
+                "ALA",
+                "C13",
+                "C16",
+                "OC13",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "fc058637-a1bc-43a8-bf57-684a8ac49739",
+            "starter": true,
+            "subtypes": [
+                "Sphinx"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48157,
+            "text": "Flying\nWhen Sharuum the Hegemon enters the battlefield, you may return target artifact card from your graveyard to the battlefield.",
+            "toughness": "5",
+            "type": "Legendary Artifact Creature — Sphinx",
+            "types": [
+                "Artifact",
+                "Creature"
+            ],
+            "uuid": "c2527bfa-b157-5e93-a96f-7bd4897ce4ac"
+        },
+        {
+            "artist": "Xu Xiaoming",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "\"One score and four he reigned, the Southland king: / A dragon coiled, a tiger poised below the mighty Yangtze.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{4}{U}{U}",
+            "multiverseId": 244663,
+            "name": "Sun Quan, Lord of Wu",
+            "number": "12",
+            "originalText": "Creatures you control have horsemanship. (They can't be blocked except by creatures with horsemanship.)",
+            "originalType": "Legendary Creature — Human Soldier",
+            "power": "4",
+            "printings": [
+                "ME3",
+                "PTK",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "Sun Quan’s ability affects Sun Quan itself."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Despite the similarities between horsemanship and flying, horsemanship doesn’t interact with flying or reach."
+                }
+            ],
+            "scryfallId": "b4e9ec34-4bf6-46da-b2c4-acedb1b19210",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Soldier"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48152,
+            "text": "Creatures you control have horsemanship. (They can't be blocked except by creatures with horsemanship.)",
+            "toughness": "4",
+            "type": "Legendary Creature — Human Soldier",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "adcc7869-1694-529d-ad78-14fa58279fc5"
+        },
+        {
+            "artist": "Volkan Baga",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 5.0,
+            "flavorText": "To save this plane, he must forsake all others.",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{2}{U}{U}{U}",
+            "multiverseId": 244667,
+            "name": "Teferi, Mage of Zhalfir",
+            "number": "13",
+            "originalText": "Flash\nCreature cards you own that aren't on the battlefield have flash.\nEach opponent can cast spells only any time he or she could cast a sorcery.",
+            "originalType": "Legendary Creature — Human Wizard",
+            "power": "3",
+            "printings": [
+                "IMA",
+                "TSP",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2007-05-01",
+                    "text": "If you have Teferi on the battlefield and there’s a Split Second spell on the stack (such as Sudden Death), you can’t Suspend creatures until after the Split Second spell resolves."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "Teferi’s last ability means that in order for an opponent to cast a spell, it must be that opponent’s turn, during a main phase, and the stack must be empty. This is true even if the player doesn’t have a sorcery they are able to cast, or if a rule or effect allows a sorcery to be cast at another time."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If you have Teferi on the battlefield, you may exile creature cards in your hand with suspend any time you could cast an instant."
+                },
+                {
+                    "date": "2017-11-17",
+                    "text": "If a spell or ability lets an opponent cast a card as part of its effect (such as suspend and rebound do), that opponent can’t cast that card since the currently resolving ability is still on the stack. This is true even if that card is an instant."
+                }
+            ],
+            "scryfallId": "f0acc553-e289-478a-95ad-d238604508b9",
+            "starter": true,
+            "subtypes": [
+                "Human",
+                "Wizard"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48147,
+            "text": "Flash (You may cast this spell any time you could cast an instant.)\nCreature cards you own that aren't on the battlefield have flash.\nEach opponent can cast spells only any time they could cast a sorcery.",
+            "toughness": "4",
+            "type": "Legendary Creature — Human Wizard",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "ecca42fb-a9a6-506b-bfe0-30e8905baa8a"
+        },
+        {
+            "artist": "Aleksi Briclot",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 11.0,
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{11}",
+            "multiverseId": 261321,
+            "name": "Ulamog, the Infinite Gyre",
+            "number": "14",
+            "originalText": "When you cast Ulamog, the Infinite Gyre, destroy target permanent.\nAnnihilator 4 (Whenever this creature attacks, defending player sacrifices four permanents.)\nUlamog is indestructible.\nWhen Ulamog is put into a graveyard from anywhere, its owner shuffles his or her graveyard into his or her library.",
+            "originalType": "Legendary Creature — Eldrazi",
+            "power": "10",
+            "printings": [
+                "MM2",
+                "PUMA",
+                "ROE",
+                "UMA",
+                "V11"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2010-06-15",
+                    "text": "Annihilator abilities trigger and resolve during the declare attackers step. The defending player chooses and sacrifices the required number of permanents before they declare blockers. Any creatures sacrificed this way won’t be able to block."
+                },
+                {
+                    "date": "2010-06-15",
+                    "text": "If a creature with annihilator is attacking a planeswalker, and the defending player chooses to sacrifice that planeswalker, the attacking creature continues to attack. It may be blocked. If it isn’t blocked, it simply won’t deal combat damage to anything."
+                },
+                {
+                    "date": "2013-07-01",
+                    "text": "Lethal damage and effects that say “destroy” won’t cause a creature with indestructible to be put into the graveyard. However, a creature with indestructible can be put into the graveyard for a number of reasons. The most likely reasons are if it’s sacrificed, if it’s legendary and another legendary creature with the same name is controlled by the same player, or if its toughness is 0 or less."
+                },
+                {
+                    "date": "2018-12-07",
+                    "text": "Ulamog’s ability triggers as you cast it, and that ability resolves before the spell itself. It resolves even if that spell is countered."
+                }
+            ],
+            "scryfallId": "0645f487-efe5-4764-b361-85e07bb5ccca",
+            "starter": true,
+            "subtypes": [
+                "Eldrazi"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48159,
+            "text": "When you cast this spell, destroy target permanent.\nIndestructible\nAnnihilator 4 (Whenever this creature attacks, defending player sacrifices four permanents.)\nWhen Ulamog, the Infinite Gyre is put into a graveyard from anywhere, its owner shuffles their graveyard into their library.",
+            "toughness": "10",
+            "type": "Legendary Creature — Eldrazi",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "dcf98ca8-98c4-5dbb-b77c-a021270bd7b4"
+        },
+        {
+            "artist": "Brad Rigney",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "flavorText": "\"My eyes are my strongest feature.\"",
+            "foreignData": [],
+            "frameVersion": "2003",
+            "hasFoil": true,
+            "hasNonFoil": false,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "penny": "Legal",
+                "vintage": "Legal"
+            },
+            "manaCost": "{3}{B}{B}{B}",
+            "multiverseId": 244677,
+            "name": "Visara the Dreadful",
+            "number": "15",
+            "originalText": "Flying\n{T}: Destroy target creature. It can't be regenerated.",
+            "originalType": "Legendary Creature — Gorgon",
+            "power": "5",
+            "printings": [
+                "EMA",
+                "ONS",
+                "V11",
+                "VMA",
+                "WC03"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "48833be5-67a6-40dd-a894-f3665cbbb62a",
+            "starter": true,
+            "subtypes": [
+                "Gorgon"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "tcgplayerProductId": 48160,
+            "text": "Flying\n{T}: Destroy target creature. It can't be regenerated.",
+            "toughness": "5",
+            "type": "Legendary Creature — Gorgon",
+            "types": [
+                "Creature"
+            ],
+            "uuid": "9c54a032-6792-598e-b8d8-f011f5f795fe"
+        }
+    ],
+    "code": "v11",
+    "isFoilOnly": true,
+    "meta": {
+        "date": "2018-12-18",
+        "version": "4.2.0"
+    },
+    "mtgoCode": "v11",
+    "name": "From the Vault: Legends",
+    "releaseDate": "2011-08-26",
+    "tcgplayerGroupId": 49,
+    "tokens": [],
+    "totalSetSize": 15,
+    "type": "from_the_vault"
+}

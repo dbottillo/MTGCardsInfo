@@ -47,7 +47,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     var card: MTGCard? = null
     internal var price: TCGPrice? = null
 
-    lateinit var cardPresenter: CardPresenter
+    private lateinit var cardPresenter: CardPresenter
 
     @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
 
@@ -121,9 +121,12 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             boldTitledEntry(resources.getString(R.string.card_detail_type), card.type)
             boldTitledEntry(resources.getString(R.string.card_detail_pt), "${card.power} / ${card.toughness}")
             boldTitledEntry(resources.getString(R.string.card_detail_mana), if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - ")
+            boldTitledEntry(resources.getString(R.string.card_detail_rarity), resources.getString(card.displayRarity))
             append(card.text).newLine(2)
             card.set?.let { boldTitledEntry(resources.getString(R.string.card_detail_set), it.name) }
-            boldTitledEntry(resources.getString(R.string.card_detail_original_text), card.originalText)
+            if (card.originalText != card.text) {
+                boldTitledEntry(resources.getString(R.string.card_detail_original_text), card.originalText)
+            }
             if (card.rulings.isNotEmpty()) {
                 addBold(resources.getString(R.string.card_detail_rulings))
                 append(":").newLine()
@@ -178,7 +181,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
     private fun loadImage() {
         LOG.d()
-        card?.loadInto(cardLoader, cardImage)
+        card?.loadInto(cardLoader, cardImage, retry)
     }
 
     private val isNetworkAvailable: Boolean

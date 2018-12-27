@@ -8,7 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.getBitmap
@@ -54,7 +54,7 @@ abstract class CommonCardsActivity : BasicActivity() {
             }
             R.id.action_share -> {
                 currentCard?.also {
-                    TrackingManager.trackShareCard(it)
+                    TrackingManager.trackShareCard(it.name)
                     val i = Intent(Intent.ACTION_SEND)
                     i.type = "text/plain"
                     i.putExtra(Intent.EXTRA_SUBJECT, it.name)
