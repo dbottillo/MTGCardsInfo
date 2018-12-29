@@ -122,14 +122,14 @@ class CardsStorageImplTest {
 
     @Test
     fun `should search cards and return them sorted`() {
-        whenever(cardsHelper.filterAndSortMultipleSets(filter, searchCards)).thenReturn(searchCardsFiltered)
+        whenever(cardsHelper.sortMultipleSets(filter, searchCards)).thenReturn(searchCardsFiltered)
 
         val cards = underTest.doSearch(searchParams)
 
         assertThat(cards.list, `is`(searchCardsFiltered))
         assertNull(cards.filter)
         assertFalse(cards.isDeck)
-        verify(cardsHelper).filterAndSortMultipleSets(filter, searchCards)
+        verify(cardsHelper).sortMultipleSets(filter, searchCards)
         verify(mtgCardDataSource).searchCards(searchParams)
         verify(cardsPreferences).load()
         verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)

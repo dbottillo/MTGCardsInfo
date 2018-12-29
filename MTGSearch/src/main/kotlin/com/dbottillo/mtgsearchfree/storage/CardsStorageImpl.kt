@@ -61,7 +61,7 @@ open class CardsStorageImpl(
         logger.d("do search $searchParams")
         val cards = mtgCardDataSource.searchCards(searchParams)
         val filter = cardsPreferences.load()
-        return CardsCollection(cardsHelper.filterAndSortMultipleSets(filter, cards), null)
+        return CardsCollection(cardsHelper.sortMultipleSets(filter, cards), null)
     }
 
     override fun loadCard(multiverseId: Int): MTGCard {

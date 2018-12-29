@@ -9,6 +9,10 @@ class CardsHelper {
         return list.filterWith(filter).sortMultipleSetsBy(filter.sortSetNumber)
     }
 
+    fun sortMultipleSets(filter: CardFilter, list: List<MTGCard>): List<MTGCard> {
+        return list.sortMultipleSetsBy(filter.sortSetNumber)
+    }
+
     fun filterAndSortSet(filter: CardFilter, list: List<MTGCard>): List<MTGCard> {
         return list.filterWith(filter).sortSingleSet(filter.sortSetNumber)
     }
