@@ -46,7 +46,13 @@ class DeckFragment : BasicFragment(), DeckView {
 
         deckAdapter.cardListener = object : OnDeckCardListener {
             override fun onCardSelected(card: MTGCard) {
-                startActivity(view.context.startCardsActivity(presenter.deck, deckAdapter.getCards().indexOf(card)))
+                startActivity(view.context.startCardsActivity(presenter.deck, deckAdapter.getCards().indexOfFirst {
+                    if (it.uuid.isNotEmpty() && card.uuid.isNotEmpty()) {
+                        it.uuid == card.uuid
+                    } else {
+                        it.multiVerseId == card.multiVerseId
+                    }
+                }))
             }
 
             override fun onOptionSelected(menuItem: MenuItem, card: MTGCard) {

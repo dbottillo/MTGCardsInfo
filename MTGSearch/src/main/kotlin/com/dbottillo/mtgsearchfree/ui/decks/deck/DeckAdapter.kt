@@ -26,10 +26,10 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         var pos = 0
         sections.forEach { section ->
             if (section.cards.isNotEmpty()) {
-                sectionsMap.put(pos, section.title)
+                sectionsMap[pos] = section.title
                 pos++
                 section.cards.forEach { card ->
-                    cardsMap.put(pos, card)
+                    cardsMap[pos] = card
                     pos++
                 }
             }
@@ -47,9 +47,6 @@ class DeckAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             return
         }
         (holder as DeckCardViewHolder).bind(cardsMap.getValue(position), cardListener)
-        /*holder.row.setOnClickListener {
-            onSectionClicked(articlesMap.getValue(position))
-        }*/
     }
 
     override fun getItemCount(): Int = sectionsMap.size + cardsMap.size
