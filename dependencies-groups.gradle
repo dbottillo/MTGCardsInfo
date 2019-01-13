@@ -5,8 +5,7 @@ def Group(Closure closure) {
 
 ext {
     core = Group {
-        implementation deps.google.support.support
-        implementation deps.google.support.appcompat
+        implementation deps.google.androidx.appcompat
         implementation deps.kotlin.core
         implementation deps.kotlin.reflect
         implementation deps.dagger.core
@@ -19,10 +18,10 @@ ext {
         implementation deps.gson
     }
     ui = Group {
-        implementation deps.google.support.cardview
-        implementation deps.google.support.recyclerview
-        implementation deps.google.support.design
-        implementation deps.google.support.constraintLayout
+        implementation deps.google.androidx.cardview
+        implementation deps.google.androidx.recyclerview
+        implementation deps.google.androidx.design
+        implementation deps.google.androidx.constraintLayout
     }
     monitoring = Group {
         implementation deps.google.firebase.core

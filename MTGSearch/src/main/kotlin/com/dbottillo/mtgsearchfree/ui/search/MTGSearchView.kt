@@ -2,9 +2,9 @@ package com.dbottillo.mtgsearchfree.ui.search
 
 import android.content.Context
 import android.graphics.PorterDuff
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.AppCompatCheckBox
-import android.support.v7.widget.AppCompatEditText
+import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.AppCompatCheckBox
+import androidx.appcompat.widget.AppCompatEditText
 import android.util.AttributeSet
 import android.widget.ArrayAdapter
 import android.widget.RelativeLayout

@@ -2,9 +2,9 @@ package com.dbottillo.mtgsearchfree.ui.cards
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.PopupMenu
-import android.support.v7.widget.RecyclerView
+import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.PopupMenu
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView

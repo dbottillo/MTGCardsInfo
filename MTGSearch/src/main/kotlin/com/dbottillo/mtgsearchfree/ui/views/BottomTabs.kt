@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.views
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout

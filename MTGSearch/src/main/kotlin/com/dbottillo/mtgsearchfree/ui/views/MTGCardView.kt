@@ -9,7 +9,7 @@ import android.graphics.Point
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.content.LocalBroadcastManager
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.LayoutInflater

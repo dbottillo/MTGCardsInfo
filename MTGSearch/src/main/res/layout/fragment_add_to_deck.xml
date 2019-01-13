@@ -23,7 +23,7 @@
         android:layout_marginTop="5dp"
         android:background="@color/color_primary" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_name_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:theme="@style/EditTextPrimary"
         android:visibility="gone">
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/new_deck_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:inputType="textPersonName|textCapWords"
             android:textColor="@color/color_primary"
             android:theme="@style/EditTextPrimary" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
         android:id="@+id/choose_deck"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_quantity_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         android:theme="@style/EditTextPrimary"
         android:visibility="gone">
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/new_deck_quantity"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -63,14 +63,14 @@
             android:inputType="number"
             android:textColor="@color/color_primary"
             android:theme="@style/EditTextPrimary" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
         android:id="@+id/choose_quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <android.support.v7.widget.AppCompatCheckBox
+    <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/add_to_deck_sideboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

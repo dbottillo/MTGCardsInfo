@@ -1,8 +1,8 @@
 package com.dbottillo.mtgsearchfree.ui.decks.deck
 
 import android.graphics.drawable.GradientDrawable
-import android.support.v7.widget.PopupMenu
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.widget.PopupMenu
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View

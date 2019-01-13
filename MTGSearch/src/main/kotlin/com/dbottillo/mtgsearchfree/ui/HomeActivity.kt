@@ -4,7 +4,7 @@ import android.animation.ValueAnimator
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import android.widget.FrameLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.Constants

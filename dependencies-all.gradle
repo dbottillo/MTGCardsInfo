@@ -4,24 +4,23 @@ ext.deps = [
                 'reflect': "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin"
         ],
         'google': [
-                'support': [
-                        'support': "com.android.support:support-v4:$versions.support",
-                        'appcompat': "com.android.support:appcompat-v7:$versions.support",
-                        'cardview': "com.android.support:cardview-v7:$versions.support",
-                        'recyclerview': "com.android.support:recyclerview-v7:$versions.support",
-                        'design': "com.android.support:design:$versions.support",
-                        'constraintLayout': "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+                'androidx': [
+                        'appcompat': "androidx.appcompat:appcompat:$versions.androidx",
+                        'cardview': "androidx.cardview:cardview:$versions.androidx",
+                        'recyclerview': "androidx.recyclerview:recyclerview:$versions.androidx",
+                        'design': "com.google.android.material:material:$versions.material",
+                        'constraintLayout': "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
                 ],
                 'firebase': [
                         'core': "com.google.firebase:firebase-core:$versions.firebase",
                         'crashlytics': "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics@aar"
                 ],
                 'testSupport': [
-                        'runner': "com.android.support.test:runner:$versions.support_runner"
+                        'runner': "androidx.test:runner:$versions.support_runner"
                 ],
                 'espresso': [
-                        'core': "com.android.support.test.espresso:espresso-core:$versions.espresso",
-                        'contrib': "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+                        'core': "androidx.test.espresso:espresso-core:$versions.espresso",
+                        'contrib': "androidx.test.espresso:espresso-contrib:$versions.espresso"
                 ],
         ],
         'glide': [

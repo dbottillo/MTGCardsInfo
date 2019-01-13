@@ -4,10 +4,11 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
-import android.support.v7.widget.Toolbar
+import androidx.fragment.app.DialogFragment
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 
@@ -29,7 +30,7 @@ abstract class BasicFragment : DialogFragment() {
         this.dbActivity = context as BasicActivity
         isPortrait = resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
         if (heightToolbar <= 0) {
-            val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))
+            val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(R.attr.actionBarSize))
             heightToolbar = styledAttributes.getDimension(0, 0f).toInt()
             styledAttributes.recycle()
         }

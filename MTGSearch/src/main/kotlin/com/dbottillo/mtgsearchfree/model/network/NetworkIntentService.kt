@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.model.network
 import android.app.IntentService
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.content.LocalBroadcastManager
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.TCGPrice

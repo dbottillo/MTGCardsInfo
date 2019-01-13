@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.HomeActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/mtg_toolbar.Transparent"
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             tools:text="Toolbar Title"
             tools:textColor="@color/color_primary"/>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"

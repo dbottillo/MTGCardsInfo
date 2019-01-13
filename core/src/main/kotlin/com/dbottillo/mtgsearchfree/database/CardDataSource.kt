@@ -3,7 +3,7 @@ package com.dbottillo.mtgsearchfree.database
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Legality

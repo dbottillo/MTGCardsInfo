@@ -6,7 +6,7 @@
                 android:background="@color/white"
                 android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/mtg_toolbar.Transparent"
         android:layout_width="match_parent"
@@ -49,15 +49,15 @@
             tools:tint="@color/color_primary"
             android:visibility="visible"/>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
     
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/life_counter_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_new_deck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

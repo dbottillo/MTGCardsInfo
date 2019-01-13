@@ -12,11 +12,11 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Build.VERSION_CODES
 import android.os.StrictMode
-import android.support.annotation.RequiresApi
-import android.support.v4.app.Fragment
-import android.support.v4.app.NotificationCompat
-import android.support.v4.app.TaskStackBuilder
-import android.support.v4.content.ContextCompat
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import androidx.core.app.NotificationCompat
+import androidx.core.app.TaskStackBuilder
+import androidx.core.content.ContextCompat
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule

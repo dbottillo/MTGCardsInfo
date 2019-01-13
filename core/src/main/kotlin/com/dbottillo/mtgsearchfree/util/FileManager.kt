@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.net.Uri
-import android.support.v4.content.FileProvider.getUriForFile
+import androidx.core.content.FileProvider.getUriForFile
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import java.io.BufferedReader

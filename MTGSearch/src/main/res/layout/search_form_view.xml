@@ -20,7 +20,7 @@
         android:textColor="@color/white"
         android:textSize="12sp"/>
 
-    <android.support.v7.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
         android:maxLines="1"
@@ -38,7 +38,7 @@
         android:textColor="@color/white"
         android:textSize="12sp"/>
 
-    <android.support.v7.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_types"
         backgroundTint="@color/white"
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
         android:textColor="@color/white"
         android:textSize="12sp"/>
 
-    <android.support.v7.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_text"
         backgroundTint="@color/white"
         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             tools:visibility="visible"/>
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_cmc"
             style="@style/MTG.EditText"
             android:layout_width="0dp"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             tools:visibility="gone"/>
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_power"
             style="@style/MTG.EditText"
             android:layout_width="0dp"
@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             tools:visibility="gone"/>
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_tough"
             style="@style/MTG.EditText"
             android:layout_width="0dp"
@@ -202,7 +202,7 @@
         android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_w"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -210,7 +210,7 @@
             android:text="@string/white"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_u"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_b"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -236,7 +236,7 @@
             android:text="@string/black"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_r"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -254,7 +254,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_g"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
             android:text="@string/green"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_l"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -280,7 +280,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_nm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -288,7 +288,7 @@
             android:text="@string/no_multi"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_m"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -306,7 +306,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_mno"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -342,7 +342,7 @@
         android:layout_marginTop="6dp"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_common"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -350,7 +350,7 @@
             android:text="@string/search_common"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_uncommon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -368,7 +368,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_rare"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -376,7 +376,7 @@
             android:text="@string/search_rare"
             android:textColor="@color/white"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_mythic"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

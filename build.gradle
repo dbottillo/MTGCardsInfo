@@ -2,7 +2,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "https://maven.google.com" }
         maven { url 'https://maven.fabric.io/public' }
         jcenter()
@@ -12,12 +11,13 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
+        classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.google.gms:google-services:4.2.0'
-        classpath 'io.fabric.tools:gradle:1.26.1'
+        classpath 'io.fabric.tools:gradle:1.27.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.20.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.16.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.17.0"
     }
 }
 

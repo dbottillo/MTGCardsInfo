@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.storage
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardFilter

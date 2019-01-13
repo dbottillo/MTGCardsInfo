@@ -4,7 +4,7 @@
     android:background="@color/white"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/mtg_toolbar.Transparent"
         android:layout_width="match_parent"

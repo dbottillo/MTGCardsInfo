@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         layout="@layout/mtg_toolbar"/>
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/deck_cards_tab_layout"
         style="@style/CardsTabLayout"
         android:background="@color/color_primary"
@@ -19,7 +19,7 @@
         android:layout_below="@+id/toolbar"
         app:tabMode="fixed"/>
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/deck_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

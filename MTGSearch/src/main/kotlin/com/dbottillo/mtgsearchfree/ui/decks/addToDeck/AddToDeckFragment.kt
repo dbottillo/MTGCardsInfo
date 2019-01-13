@@ -3,9 +3,9 @@ package com.dbottillo.mtgsearchfree.ui.decks.addToDeck
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.support.design.widget.TextInputLayout
-import android.support.v4.app.DialogFragment
-import android.support.v4.app.FragmentActivity
+import com.google.android.material.textfield.TextInputLayout
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentActivity
 import android.text.InputFilter
 import android.text.Spanned
 import android.view.LayoutInflater

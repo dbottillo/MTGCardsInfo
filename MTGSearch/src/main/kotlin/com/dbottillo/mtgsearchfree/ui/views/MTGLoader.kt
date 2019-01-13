@@ -6,8 +6,8 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.os.Handler
 import android.os.Message
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.animation.FastOutLinearInInterpolator
+import androidx.core.content.ContextCompat
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import android.util.AttributeSet
 import android.view.View
 import com.dbottillo.mtgsearchfree.R
