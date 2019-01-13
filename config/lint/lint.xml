@@ -24,6 +24,9 @@
         <ignore regexp="ga_trackingId"/>
         <ignore regexp="global-tracker.xml"/>
     </issue>
+    <issue id="MissingRegistered">
+        <ignore path="src/main/AndroidManifest.xml"/>
+    </issue>
     <issue id="LogConditional">
         <ignore regexp="SQLiteAssetHelper.java"/>
     </issue>
