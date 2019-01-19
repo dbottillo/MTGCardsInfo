@@ -74,12 +74,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37765,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cabb9067f64c02de",
             "text": "Target creature gets +3/+3 and gains flying until end of turn. (It can't be blocked except by creatures with flying or reach.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8e3eafed-f50d-5b10-86c5-560294c13638"
+            "uuid": "139d4595-25eb-5a5d-baf0-c52514d5926a"
         },
         {
             "artist": "DiTerlizzi",
@@ -148,12 +149,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37767,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/42a76e34eff310b2",
             "text": "Return target creature card from your graveyard to the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4226476c-e4a0-54c7-ad3a-3bd44a15659d"
+            "uuid": "78269b03-b10d-5558-9512-c03596b56677"
         },
         {
             "artist": "Scott M. Fischer",
@@ -226,12 +228,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37773,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6ae0e3f2427eccd",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "d054bd15-ca86-5a8a-96a9-578c0a732cf8"
+            "uuid": "6e87e6cd-f1f5-545c-b01f-3655e70a29f8"
         },
         {
             "artist": "Dan Frazier",
@@ -302,12 +305,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37784,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/de38374ddd427574",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "b3eb6e5b-820f-5fe3-a673-19356aa16cb1"
+            "uuid": "33a7724d-8678-59ae-84b3-c2220a2d2ff0"
         },
         {
             "artist": "Carl Critchlow",
@@ -326,18 +330,6 @@
                     "name": "Königsfalke",
                     "text": "Fliegend",
                     "type": "Kreatur — Vogel"
-                },
-                {
-                    "language": "Spanish"
-                },
-                {
-                    "language": "French"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -370,13 +362,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37799,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0b6681350c6df444",
             "text": "Flying",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "d2a5cb89-ad0c-5166-9ec0-b5ebe37ad803"
+            "uuid": "a7681789-c2c9-52c9-975a-d4531682141b"
         },
         {
             "artist": "Jeff Miracola",
@@ -397,18 +390,12 @@
                     "type": "Kreatur — Greif"
                 },
                 {
-                    "language": "Spanish"
-                },
-                {
                     "language": "French",
                     "name": "Griffon sauvage"
                 },
                 {
                     "language": "Italian",
                     "name": "Grifone Selvaggio"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -450,13 +437,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37813,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/72d0280284d8a06c",
             "text": "Flying",
             "toughness": "2",
             "type": "Creature — Griffin",
             "types": [
                 "Creature"
             ],
-            "uuid": "02f6f433-ad25-5d5b-85e9-a35d169320d4"
+            "uuid": "9d659ba7-08dd-5c5f-8470-07c9bd423dac"
         },
         {
             "artist": "John Matson",
@@ -529,12 +517,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37778,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/63cb20d6f5e6991e",
             "toughness": "3",
             "type": "Creature — Octopus",
             "types": [
                 "Creature"
             ],
-            "uuid": "693813f1-c467-53d0-b115-92a9cf5cf4f8"
+            "uuid": "0e3ffa98-65bd-5845-9793-07c4fb736af2"
         },
         {
             "artist": "Anthony S. Waters",
@@ -553,18 +542,6 @@
                     "name": "Seeadler",
                     "text": "Fliegend",
                     "type": "Kreatur — Vogel"
-                },
-                {
-                    "language": "Spanish"
-                },
-                {
-                    "language": "French"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -602,13 +579,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37802,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c8c3f424c88e10c7",
             "text": "Flying",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "cff655e5-716a-5e21-a390-db5e36812230"
+            "uuid": "3fc7e276-d487-54d2-b782-3e076296f8cd"
         },
         {
             "artist": "Alan Rabinowitz",
@@ -682,12 +660,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37809,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c2d1d0d4839c3d5",
             "text": "Put target creature on top of its owner's library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a8174d85-dd48-5637-8a88-f3017177f32f"
+            "uuid": "3fb67e44-38fc-5853-ba26-60d398b11c73"
         },
         {
             "artist": "Eric Peterson",
@@ -759,12 +738,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37812,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5947688d08bc6d29",
             "toughness": "6",
             "type": "Creature — Rabbit Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "9d95f31b-b09d-52e7-973f-c3ba6351219b"
+            "uuid": "35ef8e30-5995-51ee-8b8e-1357f40c0820"
         },
         {
             "artist": "Heather Hudson",
@@ -785,17 +765,8 @@
                     "type": "Hexerei"
                 },
                 {
-                    "language": "Spanish"
-                },
-                {
                     "language": "French",
                     "name": "Main de mort"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -827,12 +798,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37780,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a091029ffadf5a65",
             "text": "Destroy target nonblack creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cd7f0d42-2f25-5cf2-9602-786e79b38501"
+            "uuid": "9df9860c-da8d-5cd6-b4ab-3f1d838083bf"
         },
         {
             "artist": "Brian Snõddy",
@@ -921,12 +893,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37785,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a4f9f5d1af069704",
             "text": "Lava Axe deals 5 damage to target player or planeswalker.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4090c2d1-537b-5b2d-b746-adb3d7fb9160"
+            "uuid": "4fbd2f10-a080-5ad3-99fd-8c10bc896bda"
         },
         {
             "artist": "Pete Venters",
@@ -1003,12 +976,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37788,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c73b0b4097a8c829",
             "toughness": "1",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "ac87bc26-e85d-5b85-b9ce-14a6ba251978"
+            "uuid": "f1c6b3d2-d053-5950-b772-945ea24493ab"
         },
         {
             "artist": "Jeff Miracola",
@@ -1034,12 +1008,6 @@
                 {
                     "language": "French",
                     "name": "Guerrier ogre"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -1073,12 +1041,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37793,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4bcef964642718db",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "fa2d4a7e-f850-509c-894d-84ed88d34c76"
+            "uuid": "92c9a4f1-d0c9-5415-ab25-530e261a8198"
         },
         {
             "artist": "Eric Peterson",
@@ -1146,12 +1115,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37810,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a6d33d44faeb1756",
             "toughness": "6",
             "type": "Creature — Orgg",
             "types": [
                 "Creature"
             ],
-            "uuid": "a3261a5f-0a2e-50e4-aaab-7a1daa9c4d4f"
+            "uuid": "f851e23c-eeb6-51ab-b433-94c3e688b03d"
         },
         {
             "artist": "Mike Kimble",
@@ -1222,12 +1192,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37772,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b1556d17271c28c1",
             "toughness": "4",
             "type": "Creature — Boar",
             "types": [
                 "Creature"
             ],
-            "uuid": "24e890c0-21e8-5d54-86d4-4fb4aa5d38bd"
+            "uuid": "6b8bf012-3401-5a37-86ad-366d8fded0d3"
         },
         {
             "artist": "Una Fricker",
@@ -1299,12 +1270,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 37789,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d53ca6382859ef87",
             "text": "Target creature gets +4/+4 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "72f9fd20-ad68-5204-808f-2457ec07df87"
+            "uuid": "a7adc7d1-1192-56d1-bb85-e911a0ab803e"
         },
         {
             "artist": "Terese Nielsen",
@@ -1325,17 +1297,8 @@
                     "type": "Kreatur — Feenwesen"
                 },
                 {
-                    "language": "Spanish"
-                },
-                {
                     "language": "French",
                     "name": "Farfadet lunaire"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -1369,13 +1332,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37790,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/32cc23d9f87f75c0",
             "text": "Flying",
             "toughness": "1",
             "type": "Creature — Faerie",
             "types": [
                 "Creature"
             ],
-            "uuid": "cd8f5e2a-086e-5d2c-80ac-67d7437d7d3c"
+            "uuid": "4eb0f889-bf48-5af9-bcd1-d23472a28219"
         },
         {
             "artist": "Mark Zug",
@@ -1459,13 +1423,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 21705,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/47b70527145268f5",
             "text": "You may have Rhox assign its combat damage as though it weren't blocked.\n{2}{G}: Regenerate Rhox. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
             "toughness": "5",
             "type": "Creature — Rhino Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "fb4fa25f-d45c-5dc9-b8da-b801ca48b162"
+            "uuid": "b16006e2-d275-551e-af42-62ce3be0b5c5"
         },
         {
             "artist": "Keith Parkinson",
@@ -1522,12 +1487,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37805,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a9502bc2eb6aa415",
             "toughness": "4",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "8ba76afb-8817-574a-bcc7-ff07186b1fc7"
+            "uuid": "d791c7e8-5e33-553d-ac1e-5dca9ee81d40"
         },
         {
             "artist": "DiTerlizzi",
@@ -1545,18 +1511,6 @@
                     "language": "German",
                     "name": "Weidenelf",
                     "type": "Kreatur — Elf"
-                },
-                {
-                    "language": "Spanish"
-                },
-                {
-                    "language": "French"
-                },
-                {
-                    "language": "Italian"
-                },
-                {
-                    "language": "Portuguese (Brazil)"
                 }
             ],
             "frameVersion": "1997",
@@ -1588,20 +1542,21 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 37814,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9aecda4cfecc235e",
             "toughness": "1",
             "type": "Creature — Elf",
             "types": [
                 "Creature"
             ],
-            "uuid": "1e3eae40-c420-5c37-abfe-829154145616"
+            "uuid": "1c85eef5-ef7d-5f83-b7fc-0cf186f520ba"
         }
     ],
-    "code": "s00",
+    "code": "S00",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Starter 2000",
     "releaseDate": "2000-04-01",
     "tcgplayerGroupId": 106,

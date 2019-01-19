@@ -139,13 +139,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36425,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6d24fce8fbbdb285",
             "text": "{T}: Prevent the next 1 damage that would be dealt to any target this turn.\n{T}: Prevent the next 2 damage that would be dealt to target artifact creature this turn.",
             "toughness": "1",
             "type": "Creature — Cat Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "9c4a0633-a6dc-5887-8465-8a3e9c05a2c1",
+            "uuid": "23b402d9-3ee3-5861-8cff-6bba2a868426",
             "watermark": "mirran"
         },
         {
@@ -275,12 +276,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36426,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26b100f1fef7ea36",
             "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f9f34a34-a91b-5297-a165-471d22a3084b",
+            "uuid": "f1d4101c-a059-51e5-b9b6-b7f1cf25f066",
             "watermark": "mirran"
         },
         {
@@ -405,13 +407,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36393,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5f0435162edcfbb6",
             "text": "Metalcraft — Auriok Edgewright has double strike as long as you control three or more artifacts.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a8a54497-fed9-566f-8706-f7908def9053",
+            "uuid": "f0ce7ba8-6a56-5893-b3d6-711dfd1c8ade",
             "watermark": "mirran"
         },
         {
@@ -541,13 +544,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36427,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8346c223da180656",
             "text": "Metalcraft — As long as you control three or more artifacts, Auriok Sunchaser gets +2/+2 and has flying.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f86df7e-6b31-5280-9e07-feaf7807ae63",
+            "uuid": "0791dc5b-84c0-5e21-832a-82d0dc4bc89a",
             "watermark": "mirran"
         },
         {
@@ -668,12 +672,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36428,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a2cf5a55a2426fc5",
             "text": "Target player sacrifices an attacking creature.\nMetalcraft — That player sacrifices two attacking creatures instead if you control three or more artifacts.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d5cea0d3-46af-50e2-9bf7-d36b5894a0fb",
+            "uuid": "0f3701cf-6b48-59f4-9df5-838bd7fbde63",
             "watermark": "mirran"
         },
         {
@@ -789,12 +794,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36229,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7e9b8a245ea95a3c",
             "text": "+2: You gain 1 life for each creature you control.\n−2: Create three 1/1 white Soldier creature tokens.\n−5: Destroy all other permanents except for lands and tokens.",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "02355b7b-5f2e-5d09-a4df-1464818eb0e7"
+            "uuid": "0d08b2f9-f64d-500f-a5db-134e924cfc4b"
         },
         {
             "artist": "Nic Klein",
@@ -923,12 +929,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36429,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f723be9c1e71ca3b",
             "text": "Choose two target creatures. Tap those creatures, then unattach all Equipment from them.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c4fb71dc-db4c-579d-83e3-8b7eb51cc707",
+            "uuid": "723382f2-b895-5d7e-a6fc-8f44deb255a5",
             "watermark": "mirran"
         },
         {
@@ -1049,13 +1056,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36430,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12db18b5dbd31200",
             "text": "Metalcraft — Ghalma's Warden gets +2/+2 as long as you control three or more artifacts.",
             "toughness": "4",
             "type": "Creature — Elephant Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "08c11d6e-93db-5c5b-b6fe-44fa1df45ce7",
+            "uuid": "c593d042-67f8-58ab-8b9d-27edca627f3a",
             "watermark": "mirran"
         },
         {
@@ -1184,13 +1192,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36431,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/08748fbf3f34d3e1",
             "text": "Vigilance\nWhen Glimmerpoint Stag enters the battlefield, exile another target permanent. Return that card to the battlefield under its owner's control at the beginning of the next end step.",
             "toughness": "3",
             "type": "Creature — Elk",
             "types": [
                 "Creature"
             ],
-            "uuid": "5efda3b0-7723-5c2e-a09e-039bcc03d69d",
+            "uuid": "fba2847f-4c0c-5c76-b4e1-da00531ae8da",
             "watermark": "mirran"
         },
         {
@@ -1318,13 +1327,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36362,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9f3d7fc50c3f98a5",
             "text": "Flying\nWhen Glint Hawk enters the battlefield, sacrifice it unless you return an artifact you control to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "06a7f552-d076-5b0c-a32b-105cd14b2881",
+            "uuid": "5397b9d8-cd4a-5c0f-8205-7a5485902087",
             "watermark": "mirran"
         },
         {
@@ -1444,13 +1454,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36348,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c129b58e4cbee0da",
             "text": "Flying\nMetalcraft — Artifacts you control have shroud as long as you control three or more artifacts. (An artifact with shroud can't be the target of spells or abilities.)",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "b307c99f-86dd-5fca-b7b4-a30dcb65b4e6",
+            "uuid": "8f3b0982-02e6-54a7-8666-551e4065534a",
             "watermark": "mirran"
         },
         {
@@ -1580,13 +1591,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36347,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/77ab0c42703fc3f2",
             "text": "At the beginning of your upkeep, create a 2/2 white Cat creature token for each Equipment attached to Kemba, Kha Regent.",
             "toughness": "4",
             "type": "Legendary Creature — Cat Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "de498696-67ac-5d79-a48d-fb5c88c18667",
+            "uuid": "ebaf01e1-bf3d-5039-9df1-1cc5a9142fc1",
             "watermark": "mirran"
         },
         {
@@ -1708,13 +1720,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36235,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/85edae05d7d32aed",
             "text": "Flying\nWhen Kemba's Skyguard enters the battlefield, you gain 2 life.",
             "toughness": "2",
             "type": "Creature — Cat Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f3bddb8-90db-5617-8f69-44b03d9dfdb8",
+            "uuid": "002fdfc0-75b0-523a-aac8-8153aea8302d",
             "watermark": "mirran"
         },
         {
@@ -1875,13 +1888,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36344,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb1e8ea96e49606a",
             "text": "Players can't search libraries. Any player may pay {2} for that player to ignore this effect until end of turn.",
             "toughness": "2",
             "type": "Creature — Cat Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "97b73c98-9645-5fd2-8038-6ff3d18cd1d2",
+            "uuid": "ffdfea66-da53-5030-9893-99ae755cc50a",
             "watermark": "mirran"
         },
         {
@@ -1991,12 +2005,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36432,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/21ede81f260cbf47",
             "toughness": "5",
             "type": "Creature — Elephant Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "5b32fb8c-264c-5078-9f84-6d3121a199fe",
+            "uuid": "32d01fb5-5403-5260-864f-ef4447a750ca",
             "watermark": "mirran"
         },
         {
@@ -2118,13 +2133,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36364,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d2f3a4b2673fa26d",
             "text": "Whenever you cast an artifact spell, you may pay {1}. If you do, create a 1/1 colorless Myr artifact creature token.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "46e867a2-b92b-5772-973c-452f97882327",
+            "uuid": "cfd4789d-a75b-595b-a5f8-f77d7593c065",
             "watermark": "mirran"
         },
         {
@@ -2253,13 +2269,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36433,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25b288b809ac3e51",
             "text": "Flying\nWhen Razor Hippogriff enters the battlefield, return target artifact card from your graveyard to your hand. You gain life equal to that card's converted mana cost.",
             "toughness": "3",
             "type": "Creature — Hippogriff",
             "types": [
                 "Creature"
             ],
-            "uuid": "3ef94f3c-aeda-5358-ae38-31bd659378a3",
+            "uuid": "1cc41999-dfac-532e-b1be-84e4b4ce37bd",
             "watermark": "mirran"
         },
         {
@@ -2378,12 +2395,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36434,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5b40bd72b2d58181",
             "text": "Exile target artifact or enchantment.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b5c2fae5-ff2a-5207-ba0d-06335d6f2953",
+            "uuid": "b72dfe77-850d-569a-9a98-d3aeb3d6b41f",
             "watermark": "mirran"
         },
         {
@@ -2504,13 +2522,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36435,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7943f3fac8632c34",
             "text": "{W}, Sacrifice Salvage Scout: Return target artifact card from your graveyard to your hand.",
             "toughness": "1",
             "type": "Creature — Human Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "143681d0-cadf-5daf-920e-2903c022fd82",
+            "uuid": "4b2b2107-2ccd-5372-80fd-532693db3bb6",
             "watermark": "mirran"
         },
         {
@@ -2632,12 +2651,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36436,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a2620463e666e417",
             "text": "Target creature gets +1/+1 and gains first strike until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e6a98e31-9eb6-5eb8-bd14-61ac2bb201b9",
+            "uuid": "04c87a16-1625-5060-bbe7-87a2a597e62c",
             "watermark": "mirran"
         },
         {
@@ -2760,12 +2780,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36437,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dabd08ed1d7c8446",
             "text": "Prevent all damage one or two target creatures would deal this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "de9ccfc0-5307-506d-9fb3-dcbeaa30f075",
+            "uuid": "31706d8f-2872-5d29-9c89-08f7aff0d7d8",
             "watermark": "mirran"
         },
         {
@@ -2892,13 +2913,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36360,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1537ec4d275f6bd9",
             "text": "Flying\nWhen Sunblast Angel enters the battlefield, destroy all tapped creatures.",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "39974f5e-d09f-5669-8294-f3d7b566cb83",
+            "uuid": "1b993891-74ea-5efc-ae27-00ad1781fbe3",
             "watermark": "mirran"
         },
         {
@@ -3026,13 +3048,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36438,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4fc3198ff750cf9d",
             "text": "As long as Sunspear Shikari is equipped, it has first strike and lifelink.",
             "toughness": "2",
             "type": "Creature — Cat Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "d107ae90-53bc-5a66-ba01-7a9b84196dfc",
+            "uuid": "8c3d1e26-c98b-569d-aa2d-2c3cf91ad597",
             "watermark": "mirran"
         },
         {
@@ -3150,12 +3173,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36247,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c0f2339cef17034",
             "text": "Artifact creatures you control get +2/+2.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "389aebd8-6f5a-539f-b7fb-0aaeac942608",
+            "uuid": "6865f0fe-a9cd-5bd1-bf61-c97da97d6419",
             "watermark": "mirran"
         },
         {
@@ -3272,12 +3296,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36350,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d22df8304e685af0",
             "text": "Creatures you control have double strike and lifelink.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "aa82ebb3-097b-543c-a74a-b89b0b6a58d2",
+            "uuid": "b2affb51-fa7e-59c0-b993-ee8433f2445e",
             "watermark": "mirran"
         },
         {
@@ -3398,12 +3423,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36439,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c4383a5458964cd4",
             "text": "Whenever a creature you control dies, you may pay {X}. If you do, you gain X life.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "413c5bc9-daba-5b58-9dac-1bbe2e5708eb",
+            "uuid": "a9697e8a-857e-51d0-bc6b-f6d8afb69014",
             "watermark": "mirran"
         },
         {
@@ -3519,12 +3545,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36440,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0c5d662ce4496f35",
             "text": "You gain 5 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5163ddcf-dd48-5b8b-81d6-77edb740d59f",
+            "uuid": "3af59f4d-39aa-5c55-85b3-3bb5a77bc1c6",
             "watermark": "mirran"
         },
         {
@@ -3658,13 +3685,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36441,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0e5990a79d590503",
             "text": "Flying\nMetalcraft — {U}: Exile Argent Sphinx. Return it to the battlefield under your control at the beginning of the next end step. Activate this ability only if you control three or more artifacts.",
             "toughness": "3",
             "type": "Creature — Sphinx",
             "types": [
                 "Creature"
             ],
-            "uuid": "03b2272d-7c31-5395-9b56-76346cd5f967",
+            "uuid": "ddc4f132-85df-57a4-a586-0069d9c1e55c",
             "watermark": "mirran"
         },
         {
@@ -3789,12 +3817,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36442,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/50546b971b6fe8a5",
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nEnchanted creature doesn't untap during its controller's untap step.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d715347c-50a5-53f9-afca-73eb8c476fad",
+            "uuid": "5c371984-6c69-54e0-ad29-2c1a32622b77",
             "watermark": "mirran"
         },
         {
@@ -3912,13 +3941,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36376,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fd7ce398556755cf",
             "text": "Flying\nWhen Darkslick Drake dies, draw a card.",
             "toughness": "4",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "552347da-3f2b-5f51-acc4-7748dffa9769",
+            "uuid": "39eb9e5c-65d8-5adc-a55f-dcf678b19f28",
             "watermark": "phyrexian"
         },
         {
@@ -4044,12 +4074,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36405,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa01f9f6b0d2303b",
             "text": "Return target nonland permanent to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "598b02c4-b571-55ca-aa9d-3f806897fae9",
+            "uuid": "2bbbe9b5-60b6-5f33-b282-c53a016ca2fa",
             "watermark": "mirran"
         },
         {
@@ -4170,12 +4201,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36357,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf2b7a3dbee2e129",
             "text": "Whenever a permanent deals damage to you, return it to its owner's hand.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5dc3e9ee-dcf6-58fb-8131-a92e01f294cc",
+            "uuid": "d2288aad-09d1-5b47-af1f-2b4bfbbd6f3a",
             "watermark": "mirran"
         },
         {
@@ -4298,13 +4330,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36310,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb8351bbda130102",
             "text": "Other blue creatures you control get +1/+1.\n{U}: Target artifact creature becomes blue until end of turn.\nTap an untapped blue creature you control: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
             "toughness": "3",
             "type": "Creature — Vedalken Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "9022911f-15a9-51d6-a404-320980677fe7",
+            "uuid": "7502b728-2218-5799-b78f-a296bb3df98b",
             "watermark": "mirran"
         },
         {
@@ -4420,12 +4453,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36443,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5144bdbe72b324b1",
             "text": "Counter target artifact spell.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9f81e5a8-0734-50ad-9a28-eba2e3ab8e75",
+            "uuid": "6c3712f9-2314-5b43-a01c-4e56e4b91c5a",
             "watermark": "mirran"
         },
         {
@@ -4567,12 +4601,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36444,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e9e6343a32a03094",
             "text": "Whenever you cast a spell, proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "847fedf1-4078-597c-8b27-1c59466008e7",
+            "uuid": "cbd7340c-7014-54da-9a51-2fb383b91c05",
             "watermark": "phyrexian"
         },
         {
@@ -4697,13 +4732,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36406,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/16537e02b6acbd0f",
             "text": "Flying\nMetalcraft — When Lumengrid Drake enters the battlefield, if you control three or more artifacts, return target creature to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "1115995b-811a-5c88-96ba-7a4ef8b8fc7f",
+            "uuid": "4c36f49e-8d2e-5262-a8aa-501cb4d9ccb9",
             "watermark": "mirran"
         },
         {
@@ -4825,13 +4861,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36445,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dff6b1f5f04b7aad",
             "text": "Neurok Invisimancer can't be blocked.\nWhen Neurok Invisimancer enters the battlefield, target creature can't be blocked this turn.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "86c6af06-f63a-52ed-8252-a6ed0d86a730",
+            "uuid": "704e2461-dffe-5754-9d35-e7d9b7df6aec",
             "watermark": "mirran"
         },
         {
@@ -4942,12 +4979,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36446,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/283e8a36f2145ccb",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "e75635f4-3f9a-5995-a55f-210b265227ff",
+            "uuid": "3bca8613-bd5c-5da2-a459-81b7493aad63",
             "watermark": "mirran"
         },
         {
@@ -5102,13 +5140,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36252,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f4b2400dd41f18e9",
             "text": "You may have Quicksilver Gargantuan enter the battlefield as a copy of any creature on the battlefield, except it's 7/7.",
             "toughness": "7",
             "type": "Creature — Shapeshifter",
             "types": [
                 "Creature"
             ],
-            "uuid": "224d16f2-0717-5d5a-9227-629507f1ccb6",
+            "uuid": "a6f2959a-d50a-5159-8272-c6866aed1857",
             "watermark": "mirran"
         },
         {
@@ -5229,13 +5268,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36385,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/287fe90b3d1ca7f4",
             "text": "Whenever you cast an artifact spell, you may draw a card. If you do, discard a card.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "679130e7-e1a7-5c70-ae1b-52b461799760",
+            "uuid": "76315699-cc4e-5139-9ca3-3b2db5e4b052",
             "watermark": "mirran"
         },
         {
@@ -5360,13 +5400,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36447,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c4954ccf6b47c69a",
             "text": "Scrapdiver Serpent can't be blocked as long as defending player controls an artifact.",
             "toughness": "5",
             "type": "Creature — Serpent",
             "types": [
                 "Creature"
             ],
-            "uuid": "678b7726-38f3-5195-956d-fc782aebaba2",
+            "uuid": "a89bec6c-e2d2-5058-a04e-2d572cb5bb83",
             "watermark": "mirran"
         },
         {
@@ -5486,13 +5527,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36448,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c14ed1ae54105a24",
             "text": "Flying\nMetalcraft — Whenever Screeching Silcaw deals combat damage to a player, if you control three or more artifacts, that player puts the top four cards of their library into their graveyard.",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "0b091323-1b18-516e-b756-4eaa4e273b85",
+            "uuid": "1272d125-150c-5ff8-824b-2503bcb785ec",
             "watermark": "mirran"
         },
         {
@@ -5615,12 +5657,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36363,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c094c63cae052ac",
             "text": "The controller of target artifact sacrifices it, then reveals cards from the top of their library until they reveal an artifact card. That player puts that card onto the battlefield, then shuffles all other cards revealed this way into their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "79fece9c-cfdb-5256-bdd6-be724fbde05f",
+            "uuid": "07520110-0c67-53df-b5fc-55fca68013b5",
             "watermark": "mirran"
         },
         {
@@ -5740,13 +5783,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36449,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/572e691f44179c2a",
             "text": "Flying\nWhen Sky-Eel School enters the battlefield, draw a card, then discard a card.",
             "toughness": "3",
             "type": "Creature — Fish",
             "types": [
                 "Creature"
             ],
-            "uuid": "38806110-5bfa-50c6-856c-1113930cf38e",
+            "uuid": "141ed7b6-28fe-566a-ad39-bcb8da976616",
             "watermark": "mirran"
         },
         {
@@ -5889,12 +5933,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36244,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4833b5290d11bab8",
             "text": "Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "56c4b0ee-ab51-5d5b-b8f8-428f73429797",
+            "uuid": "20c0d124-c3fa-57fc-9031-4fba0301a6b9",
             "watermark": "phyrexian"
         },
         {
@@ -6022,12 +6067,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36358,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cb3d8e0818d3b047",
             "text": "Metalcraft — This spell costs {1} less to cast if you control three or more artifacts.\nCounter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "85655859-6550-5d11-85d9-bcae5090bd16",
+            "uuid": "eb8ee108-5731-55cb-b7cf-2ac17dfdfe17",
             "watermark": "mirran"
         },
         {
@@ -6162,13 +6208,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36248,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/69362ba5f9fb12da",
             "text": "Flying\nWhenever Thrummingbird deals combat damage to a player, proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
             "toughness": "1",
             "type": "Creature — Bird Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "fe5519b1-a83e-516c-9e85-4618427027c1",
+            "uuid": "4445b726-22c3-59bb-8c52-6f4d96d84563",
             "watermark": "phyrexian"
         },
         {
@@ -6288,13 +6335,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36311,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf1d32f0f9a3c286",
             "text": "When Trinket Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 1 or less, reveal that card, and put it into your hand. If you do, shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "9a6cbcd4-e3a6-50d0-88db-2c63ae5aff07",
+            "uuid": "f6dfa689-8ab0-5ee2-b8d3-b7766267b982",
             "watermark": "mirran"
         },
         {
@@ -6418,12 +6466,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36450,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dfb37c5aa424b5ec",
             "text": "Counter target spell that targets a permanent you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "69b68161-7618-5c6f-be52-ee7d6edfaa1b",
+            "uuid": "e26303a7-78a9-5db0-8562-3a36f0fb53ee",
             "watermark": "mirran"
         },
         {
@@ -6549,12 +6598,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36451,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1c533f81c42a258",
             "text": "Switch target creature's power and toughness until end of turn.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "8931f1aa-d54d-5c6e-88bb-8f63b3ace462",
+            "uuid": "43550270-0d09-52d2-91f2-ebdea507c595",
             "watermark": "mirran"
         },
         {
@@ -6680,12 +6730,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36452,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6f7fbb11adc90c04",
             "text": "Target creature gains flying until end of turn. Untap it.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b6ebe825-e38f-5fc0-a062-b99ba9d7c0fc",
+            "uuid": "1be18dc6-8da6-5e1f-b9af-dc7154bac791",
             "watermark": "mirran"
         },
         {
@@ -6807,13 +6858,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36407,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/40b8f55e1d994738",
             "text": "Metalcraft — {T}: Tap target artifact, creature, or land. Activate this ability only if you control three or more artifacts.",
             "toughness": "1",
             "type": "Creature — Vedalken Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "a280e6ca-da67-5409-945b-7acd61441f5d",
+            "uuid": "369cd041-b666-5a4e-807e-d195a1d472c5",
             "watermark": "mirran"
         },
         {
@@ -6944,12 +6996,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36359,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/de8eaaf8b7861325",
             "text": "Enchant permanent\nWhen Volition Reins enters the battlefield, if enchanted permanent is tapped, untap it.\nYou control enchanted permanent.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "268cbf6d-e726-5a63-84ae-76c7a9cc1f30",
+            "uuid": "705e0ddd-a24b-54ae-acc1-e05c2838141a",
             "watermark": "mirran"
         },
         {
@@ -7095,13 +7148,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36453,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e92ab0407e892484",
             "text": "Haste\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "1",
             "type": "Creature — Goblin Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "27914d42-affa-53ed-ba76-8970611794b6",
+            "uuid": "22d03dba-be37-5784-8eae-bc5ca150919c",
             "watermark": "phyrexian"
         },
         {
@@ -7222,13 +7276,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36454,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/06f35b097a70d165",
             "text": "Metalcraft — When Bleak Coven Vampires enters the battlefield, if you control three or more artifacts, target player loses 4 life and you gain 4 life.",
             "toughness": "3",
             "type": "Creature — Vampire Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "f004568b-8396-558a-8518-781d357c9d10",
+            "uuid": "7e1cb3e2-340a-52b3-9a49-60379dd1b966",
             "watermark": "mirran"
         },
         {
@@ -7349,13 +7404,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36455,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1b97250c45509d4",
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)\nWhen Blistergrub dies, each opponent loses 2 life.",
             "toughness": "2",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "03b26287-31d5-56fe-8a30-38c8c1df248c",
+            "uuid": "6422d790-4174-5ff8-9833-689e9ce3c2ba",
             "watermark": "phyrexian"
         },
         {
@@ -7479,13 +7535,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36394,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c00d323bec0753e",
             "text": "Flying\nCarnifex Demon enters the battlefield with two -1/-1 counters on it.\n{B}, Remove a -1/-1 counter from Carnifex Demon: Put a -1/-1 counter on each other creature.",
             "toughness": "6",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "b06effb2-44e9-5899-9b5c-06f613d3e9fa",
+            "uuid": "d709f15f-ebc0-5c43-b0c4-76f8739d55d2",
             "watermark": "phyrexian"
         },
         {
@@ -7630,13 +7687,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36456,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/660b70428ea8bb07",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "3af500c6-1b29-5cbb-8703-88955bb6d0c2",
+            "uuid": "2ad43912-ab07-51d0-9951-746e48410f38",
             "watermark": "phyrexian"
         },
         {
@@ -7760,13 +7818,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36457,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4f4b9a618adea1f3",
             "text": "{B}, Sacrifice a creature: Regenerate Corrupted Harvester.",
             "toughness": "3",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "2d1a13d0-88fe-5203-a2b6-9816f08b9d81",
+            "uuid": "31bd2e85-0b92-5450-8cae-9b96b7dc24e0",
             "watermark": "phyrexian"
         },
         {
@@ -7892,13 +7951,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36458,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b9d1cc891b74f290",
             "text": "Sacrifice a creature: Dross Hopper gains flying until end of turn.",
             "toughness": "1",
             "type": "Creature — Insect Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "bf4c2af3-381f-57eb-aa3d-6d89c64aaa4c",
+            "uuid": "e7434c38-4210-5b97-9cc4-a391224324ee",
             "watermark": "phyrexian"
         },
         {
@@ -8018,12 +8078,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36342,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ad7c6d9977f2d695",
             "text": "Each opponent loses X life. You gain life equal to the life lost this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2cb21786-439b-5f28-b7a3-c41b51c542c5",
+            "uuid": "9fbd51eb-f0a8-58fc-8ea8-dc67d8a16f7d",
             "watermark": "mirran"
         },
         {
@@ -8154,12 +8215,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36459,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c564f3382889ba53",
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nDestroy target creature. Its controller loses life equal to the number of creatures that died this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4310dcc5-bf59-598f-81e4-4a7ddc7ffe5d",
+            "uuid": "4073672c-68f3-5197-abaf-279a1a192226",
             "watermark": "phyrexian"
         },
         {
@@ -8285,13 +8347,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36460,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5f02f55e711fa93d",
             "text": "Sacrifice Fume Spitter: Put a -1/-1 counter on target creature.",
             "toughness": "1",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "04167751-555b-5cf0-83aa-7299f915f67b",
+            "uuid": "611415a0-1cba-52c7-abaf-d77be8b7d9bf",
             "watermark": "phyrexian"
         },
         {
@@ -8418,13 +8481,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36309,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7ce15b023a5e57d1",
             "text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\n{X}{B}: Put target artifact or creature card with converted mana cost X from an opponent's graveyard onto the battlefield under your control tapped. Then that player puts the top X cards of their library into their graveyard.",
             "toughness": "5",
             "type": "Legendary Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "a95459e7-0b02-5471-87ad-ea2f46c964d4",
+            "uuid": "531c5c62-ce51-53f1-b07e-dd872d46745f",
             "watermark": "phyrexian"
         },
         {
@@ -8543,12 +8607,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36461,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/507b70a522b3d456",
             "text": "Target creature gets -4/-4 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f6cd25f9-7d70-59c6-a6ff-c11fa6de81bc",
+            "uuid": "2de6736f-5f70-5ca5-9eac-a4de3c32103b",
             "watermark": "mirran"
         },
         {
@@ -8690,13 +8755,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36387,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4ad88217606cbd93",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nOther creatures you control with infect get +1/+1.\nWhenever you cast a creature spell with infect, target player gets a poison counter.",
             "toughness": "2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "19570cc5-b734-5369-a123-27e7d6752b8f",
+            "uuid": "f5f32241-affc-5492-9428-01711dfa5594",
             "watermark": "phyrexian"
         },
         {
@@ -8834,13 +8900,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36233,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/20adbf217bfe9cbf",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhen Ichor Rats enters the battlefield, each player gets a poison counter.",
             "toughness": "1",
             "type": "Creature — Rat",
             "types": [
                 "Creature"
             ],
-            "uuid": "7b5acc45-fa2d-5f37-b136-4df30c89d321",
+            "uuid": "0a86b38e-2024-5b44-9dbb-50a9270f9e06",
             "watermark": "phyrexian"
         },
         {
@@ -8958,12 +9025,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36462,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2e30b7a37b02fba0",
             "text": "Put a -1/-1 counter on target creature.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9b7b43c0-5231-55bd-8e28-c595bd2e49ed",
+            "uuid": "60652a38-5381-568c-9b40-7053908138fe",
             "watermark": "phyrexian"
         },
         {
@@ -9086,12 +9154,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 35751,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e353f43de546db78",
             "text": "Choose a nonland card name. Search target player's graveyard, hand, and library for any number of cards with that name and exile them. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2a159d0e-a5d8-5f7b-87c4-dfc3fa17746d",
+            "uuid": "ef997c42-1d19-5494-b5f9-a088c6d1d590",
             "watermark": "mirran"
         },
         {
@@ -9202,12 +9271,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36423,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c3f928139b232805",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "ba48db62-6162-5624-b9e6-f7cb188105c5",
+            "uuid": "82b8e905-13a2-5829-8906-8c2236284dc8",
             "watermark": "mirran"
         },
         {
@@ -9328,13 +9398,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36408,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8c5c7d36ab0e8de3",
             "text": "Flying\nWhen Necrogen Scudder enters the battlefield, you lose 3 life.",
             "toughness": "3",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "b1a17152-e7ca-5340-b151-8b711148063f",
+            "uuid": "23e8c19b-06f4-50c9-865a-1595785a1c44",
             "watermark": "phyrexian"
         },
         {
@@ -9466,13 +9537,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36409,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8393d9878d020e9c",
             "text": "As long as Necrotic Ooze is on the battlefield, it has all activated abilities of all creature cards in all graveyards.",
             "toughness": "3",
             "type": "Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "1943464e-bcb4-5303-a1dd-7cf039d3fcc1",
+            "uuid": "7e479d51-8144-5e69-b5a9-88a9dcafe915",
             "watermark": "mirran"
         },
         {
@@ -9593,12 +9665,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36379,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e2cb6b60887ae96d",
             "text": "Whenever an opponent casts a spell, that player loses 5 life unless they discard a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "48946071-e643-5be2-8129-bb1e2703180b",
+            "uuid": "6503a362-d1f2-5046-a1ed-cd3b2b8265e6",
             "watermark": "mirran"
         },
         {
@@ -9718,13 +9791,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36339,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f26a871d9738af7c",
             "text": "Whenever you cast an artifact spell, you may have target creature get +2/+0 and gain deathtouch until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "88b6d347-1e2c-5066-97eb-68f28b4e56db",
+            "uuid": "7ae5338f-5b2c-5466-8369-5a51810e9c2a",
             "watermark": "mirran"
         },
         {
@@ -9872,13 +9946,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36241,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5bf7bfbf838cbed3",
             "text": "Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "1",
             "type": "Creature — Insect Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "46955f74-c4b7-5db6-8806-02ba12741fba",
+            "uuid": "7bd68455-8e63-575c-a528-4208c050b101",
             "watermark": "phyrexian"
         },
         {
@@ -10000,12 +10075,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36463,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8a6aea01bd599444",
             "text": "Target player discards a card. If a land card is discarded this way, return Psychic Miasma to its owner's hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f95e965f-fea4-50ba-b003-f49c5bd46b8f",
+            "uuid": "78e9611f-3a16-577e-bfe2-95f913b2149f",
             "watermark": "mirran"
         },
         {
@@ -10141,12 +10217,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36464,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5dc459c71f4739c3",
             "text": "Enchant artifact\nWhenever enchanted artifact becomes tapped, its controller gets a poison counter.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "43aaf246-ebb9-5396-8a50-0e220cf26d82",
+            "uuid": "3380c9a5-e1b3-573a-b549-ef481674edf0",
             "watermark": "phyrexian"
         },
         {
@@ -10271,13 +10348,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36351,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/828a330870d65a5e",
             "text": "When Skinrender enters the battlefield, put three -1/-1 counters on target creature.",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "99d12582-cccf-5e8d-a8f6-bc31eb6fe7ce",
+            "uuid": "9e6cb448-309f-5ca6-b080-6441451987c3",
             "watermark": "phyrexian"
         },
         {
@@ -10413,13 +10491,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36243,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a537d6b305f75224",
             "text": "Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{B}: Skithiryx, the Blight Dragon gains haste until end of turn.\n{B}{B}: Regenerate Skithiryx.",
             "toughness": "4",
             "type": "Legendary Creature — Dragon Skeleton",
             "types": [
                 "Creature"
             ],
-            "uuid": "019ea6cf-077c-51b3-86b0-50b65bc41c14",
+            "uuid": "4b233ee3-24af-5f13-a47b-5bc9f7d7959a",
             "watermark": "phyrexian"
         },
         {
@@ -10561,12 +10640,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36465,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/184b135649f5e43f",
             "text": "Target creature gets +1/+0 and gains infect until end of turn. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cfa7a268-92be-5c7f-9884-15827221aa3b",
+            "uuid": "03c9a0e9-1f4a-543a-ad58-319473999c1a",
             "watermark": "phyrexian"
         },
         {
@@ -10684,12 +10764,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36466,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc066f981e7ca7be",
             "text": "Arc Trail deals 2 damage to any target and 1 damage to another target.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "515a75ef-174e-554e-ad05-9b2585b03468",
+            "uuid": "0cefa6bf-384c-5c0c-876d-cc6ffb2061be",
             "watermark": "mirran"
         },
         {
@@ -10805,12 +10886,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36467,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0e10880ca13857a4",
             "text": "Target creature gains double strike until end of turn. (It deals both first-strike and regular combat damage.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a63dddfa-579f-523b-a3b9-7380b5805bdf",
+            "uuid": "4565ad76-20f5-5019-ba12-82a046f55c17",
             "watermark": "mirran"
         },
         {
@@ -10931,13 +11013,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36468,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/85393414f86dd7bf",
             "text": "{T}, Sacrifice an artifact: Barrage Ogre deals 2 damage to any target.",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "84562c02-cfaa-5cdf-8ca6-91c5c6328806",
+            "uuid": "dd53855d-d55a-5dc0-8ea7-ee992086d45c",
             "watermark": "mirran"
         },
         {
@@ -11053,13 +11136,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36469,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4938dd6ed1259537",
             "text": "Metalcraft — When Blade-Tribe Berserkers enters the battlefield, if you control three or more artifacts, Blade-Tribe Berserkers gets +3/+3 and gains haste until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "b3c65b3b-11e8-57ea-af25-8aef1d89a338",
+            "uuid": "c70e68c6-4af9-54be-9da1-fb65787e7149",
             "watermark": "mirran"
         },
         {
@@ -11186,13 +11270,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36410,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa55943bc6fc8801",
             "text": "{T}: Bloodshot Trainee deals 4 damage to target creature. Activate this ability only if Bloodshot Trainee's power is 4 or greater.",
             "toughness": "3",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "581e7b6a-d744-566b-af53-a07c3fb1e835",
+            "uuid": "f98672e8-f1b2-57f5-a2c1-0ee3a6848563",
             "watermark": "mirran"
         },
         {
@@ -11323,12 +11408,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36470,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/87cbc5fec22bf604",
             "text": "Target opponent reveals the top card of their library. Cerebral Eruption deals damage equal to the revealed card's converted mana cost to that player and each creature that player controls. If a land card is revealed this way, return Cerebral Eruption to its owner's hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a438ac69-714d-5718-81b0-def29fa6cfdc",
+            "uuid": "625a7d2e-2c7f-5c22-b4b2-e2938bbb31e9",
             "watermark": "mirran"
         },
         {
@@ -11448,13 +11534,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36356,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/418b4f1bb2bfad32",
             "text": "Whenever you cast an artifact spell, you may pay {1}. If you do, Embersmith deals 1 damage to any target.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "aaac888b-056e-558f-aac2-4974eeea0102",
+            "uuid": "2575d98d-3e0a-5bcb-bdb2-a5c81bcd7800",
             "watermark": "mirran"
         },
         {
@@ -11574,13 +11661,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36471,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45097ebae103c8c4",
             "text": "{R}, Sacrifice an artifact: Ferrovore gets +3/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "e255bdc5-dc89-5e0e-be2d-202a137ff061",
+            "uuid": "404842f1-6ca5-5e5c-a3cf-3431d7645159",
             "watermark": "mirran"
         },
         {
@@ -11705,13 +11793,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36472,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/122558b398773e7a",
             "text": "Haste\nFlameborn Hellion attacks each combat if able.",
             "toughness": "4",
             "type": "Creature — Hellion",
             "types": [
                 "Creature"
             ],
-            "uuid": "c1514f89-cfbe-5563-96f3-35f09082fbc1",
+            "uuid": "6efeda31-0621-5a11-bb61-65426d7291f1",
             "watermark": "mirran"
         },
         {
@@ -11842,12 +11931,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36473,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fbb695a71f0cc231",
             "text": "Whenever you sacrifice another permanent, you may pay {2}. If you do, Furnace Celebration deals 2 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9384f0bf-27cf-5c38-ab19-998ee8326936",
+            "uuid": "005807fd-75c8-515c-923e-06ff725b0fe2",
             "watermark": "mirran"
         },
         {
@@ -11964,12 +12054,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36340,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b7cf3a1d818e3c68",
             "text": "Galvanic Blast deals 2 damage to any target.\nMetalcraft — Galvanic Blast deals 4 damage to that permanent or player instead if you control three or more artifacts.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c3563eb4-86e0-50a9-b48f-b1eeaa1be063",
+            "uuid": "98a6217e-0a24-5f19-b444-8ae5f6465f2b",
             "watermark": "mirran"
         },
         {
@@ -12095,13 +12186,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36231,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/756e167bdb64f9c2",
             "text": "Trample\nGoblin Gaveleer gets +2/+0 for each Equipment attached to it.",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "3fb38a21-b12c-50dc-92b0-c6735a6083f1",
+            "uuid": "822d6c2f-50fb-5ba3-af40-57dcd077db73",
             "watermark": "mirran"
         },
         {
@@ -12235,13 +12327,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36474,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/29e8d31dd97b1ceb",
             "text": "Flying\n{3}{R}: Destroy target artifact. Hoard-Smelter Dragon gets +X/+0 until end of turn, where X is that artifact's converted mana cost.",
             "toughness": "5",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "18890f8f-fdb3-5683-8657-19cf2fd75cc2",
+            "uuid": "c341ec62-4048-5e44-9d2b-b3d91bc4f6cf",
             "watermark": "mirran"
         },
         {
@@ -12373,12 +12466,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36315,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0d8a1cb19d6961a4",
             "text": "+1: Untap target Mountain. It becomes a 4/4 red Elemental creature until end of turn. It's still a land.\n−2: Add {R} for each Mountain you control.\n−5: You get an emblem with \"Mountains you control have '{T}: This land deals 1 damage to any target.'\"",
             "type": "Legendary Planeswalker — Koth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "40f67b90-1583-51ae-ac3a-8f153d08d31b"
+            "uuid": "319779f9-ebe2-53ae-b3c9-1816d2b3a988"
         },
         {
             "artist": "Mike Bierek",
@@ -12492,13 +12586,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36377,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/32b899e85c20b1c2",
             "text": "Flying, haste\nMetalcraft — {4}: Return Kuldotha Phoenix from your graveyard to the battlefield. Activate this ability only during your upkeep and only if you control three or more artifacts.",
             "toughness": "4",
             "type": "Creature — Phoenix",
             "types": [
                 "Creature"
             ],
-            "uuid": "48f7f0e0-ee79-59f1-a7ef-ace42db68d8f",
+            "uuid": "a036515b-18fa-5e31-8976-b4633e8ae816",
             "watermark": "mirran"
         },
         {
@@ -12615,12 +12710,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36475,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6a9fbf4a5e2479fa",
             "text": "As an additional cost to cast this spell, sacrifice an artifact.\nCreate three 1/1 red Goblin creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ea4dac98-59bf-5940-8b1b-64c7d60e97cb",
+            "uuid": "a4ed871e-77c3-51da-a9b6-3a13cdcaf51b",
             "watermark": "mirran"
         },
         {
@@ -12742,12 +12838,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36476,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8cd05c632e6a14aa",
             "text": "Destroy target land. Melt Terrain deals 2 damage to that land's controller.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e9be5479-427b-5167-9f99-03931918e524",
+            "uuid": "23d38458-5501-587e-816f-64c494d045d0",
             "watermark": "mirran"
         },
         {
@@ -12862,12 +12959,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36411,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f57b028249fe1f84",
             "text": "Each player shuffles the cards from their hand into their library, then draws that many cards.\nMetalcraft — If you control three or more artifacts, Molten Psyche deals damage to each opponent equal to the number of cards that player has drawn this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c5fd65d2-5e38-55d2-a97c-90edf54c2f26",
+            "uuid": "48a7ace2-1071-5706-8d4d-39739400ab93",
             "watermark": "mirran"
         },
         {
@@ -13004,13 +13102,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36477,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/62ca415a26028203",
             "text": "Whenever Ogre Geargrabber attacks, gain control of target Equipment an opponent controls until end of turn. Attach it to Ogre Geargrabber. When you lose control of that Equipment, unattach it.",
             "toughness": "4",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "e7d1e060-8ef9-5a2e-8fa1-560a1e339655",
+            "uuid": "b5569d7e-7dcc-551a-b706-b42b9c69bd1e",
             "watermark": "mirran"
         },
         {
@@ -13131,13 +13230,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36478,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/af0e90e0da8ca9b8",
             "text": "Sacrifice an artifact: Oxidda Daredevil gains haste until end of turn.",
             "toughness": "1",
             "type": "Creature — Goblin Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "f1a4776a-6f28-5e76-8c73-e87491bd0322",
+            "uuid": "21676daa-1f44-5ffb-80da-468399df6016",
             "watermark": "mirran"
         },
         {
@@ -13261,13 +13361,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36384,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ad6ff9847cb60900",
             "text": "When Oxidda Scrapmelter enters the battlefield, destroy target artifact.",
             "toughness": "3",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "94ea1548-1635-59b1-8365-785c4e458f26",
+            "uuid": "95579a81-f759-5d9b-bbfc-782264ef5a1a",
             "watermark": "mirran"
         },
         {
@@ -13377,12 +13478,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36412,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/47a186fc0dcbc5e2",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "395bd948-da3d-5608-baed-c4ddb2d37ad2",
+            "uuid": "33ce74ac-7953-54b8-9906-b51b58a6f99a",
             "watermark": "mirran"
         },
         {
@@ -13531,12 +13633,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36413,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0579116f6a334b83",
             "text": "Destroy target artifact.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "13d31e16-5b55-5661-a5e0-a17b4e244837",
+            "uuid": "5c5d4e3e-a880-5d44-a170-534f316e757d",
             "watermark": "mirran"
         },
         {
@@ -13662,13 +13765,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36479,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8af5b2483740e0a6",
             "text": "{1}{R}{R}: Spikeshot Elder deals damage equal to its power to any target.",
             "toughness": "1",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "1dbfc953-87c9-5fab-85ce-5198ef2d13c5",
+            "uuid": "9c20d520-b51c-5261-97cb-44dcfb31471b",
             "watermark": "mirran"
         },
         {
@@ -13796,13 +13900,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36388,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7c843b8b7acd4b5c",
             "text": "Whenever a land enters the battlefield under an opponent's control, if that player had another land enter the battlefield under their control this turn, Tunnel Ignus deals 3 damage to that player.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "e85bb068-af12-5786-b766-c9d35c4b3811",
+            "uuid": "ea09eec8-4ab3-5d92-a818-800ca7b4c511",
             "watermark": "mirran"
         },
         {
@@ -13929,12 +14034,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36480,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8aa83c8a7617c324",
             "text": "Turn to Slag deals 5 damage to target creature. Destroy all Equipment attached to that creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ada0fb9b-4eae-578b-8b63-ef3cf8008c3b",
+            "uuid": "deca1f78-bc32-5598-b118-484f45b4d63c",
             "watermark": "mirran"
         },
         {
@@ -14055,13 +14161,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36481,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0a2275f3bc3c5a53",
             "text": "When Vulshok Heartstoker enters the battlefield, target creature gets +2/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f42c1f9-e585-59c6-9726-9f3c6ea0e5ac",
+            "uuid": "d36a629a-c015-5c1b-8cd9-45b9bf08105a",
             "watermark": "mirran"
         },
         {
@@ -14180,13 +14287,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36482,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/70a0437a3ac92eac",
             "text": "Reach\nWhen Acid Web Spider enters the battlefield, you may destroy target Equipment.",
             "toughness": "5",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "c511b39f-cddb-5be9-be10-4b256c7fa460",
+            "uuid": "e509ba2b-b9fc-53b4-a11a-9e8066c80665",
             "watermark": "mirran"
         },
         {
@@ -14297,12 +14405,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36483,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b8c4f8662b9a0e46",
             "toughness": "5",
             "type": "Creature — Dinosaur Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "7b935277-95e7-5598-ac4e-620a5098cd29",
+            "uuid": "afc6a8e3-1e30-54dd-b8a6-e8f3c793e9c8",
             "watermark": "mirran"
         },
         {
@@ -14422,12 +14531,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36395,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/59308f46455a81d9",
             "text": "Creatures you control have hexproof. (They can't be the targets of spells or abilities your opponents control.)\n{1}{G}: Regenerate target creature.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f707c88d-d4ee-5527-83cc-ff25d0e00581",
+            "uuid": "752edc42-537a-5fa0-8039-bbd126514954",
             "watermark": "mirran"
         },
         {
@@ -14536,13 +14646,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36484,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/72397020427d380c",
             "text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nOther green creatures you control have intimidate.",
             "toughness": "4",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "5072a094-39c4-5780-8b3e-67a07125dcd3",
+            "uuid": "f7e15185-eb69-5809-83f2-6d1e8dc32166",
             "watermark": "mirran"
         },
         {
@@ -14686,13 +14797,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36396,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a17c7a1b7abe9d34",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{1}{G}: Regenerate Blight Mamba.",
             "toughness": "1",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "3b50c9eb-c995-5472-8300-ba5a70e1b4b2",
+            "uuid": "080f1372-0ac5-512b-892b-c358fb8f6b3f",
             "watermark": "phyrexian"
         },
         {
@@ -14814,12 +14926,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36485,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dbb324021dcd70e5",
             "text": "You gain 1 life for each creature on the battlefield. Prevent all combat damage that would be dealt this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7843ed0f-6f0d-5929-9c47-266e84a29b83",
+            "uuid": "bb76f4f3-6cf2-5c6d-9907-e61df6cd7e05",
             "watermark": "mirran"
         },
         {
@@ -14939,13 +15052,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36224,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/472bd131ac41a379",
             "text": "Metalcraft — Carapace Forger gets +2/+2 as long as you control three or more artifacts.",
             "toughness": "2",
             "type": "Creature — Elf Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "b481ae7c-b9ae-5d5c-b2ea-f4830b52c857",
+            "uuid": "cac5bcc4-0206-5568-9942-2125525a5e36",
             "watermark": "mirran"
         },
         {
@@ -15087,12 +15201,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36486,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b8afcd9f6a3e3ec",
             "text": "Create two 1/1 green Insect creature tokens with infect. (They deal damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3f96861a-5f4a-50a0-87fe-7ecaf4def2d0",
+            "uuid": "c88e69d9-15fe-5501-bc66-456b3b69a02f",
             "watermark": "phyrexian"
         },
         {
@@ -15224,13 +15339,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36487,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/99ff5b91a44f05c7",
             "text": "Whenever Copperhorn Scout attacks, untap each other creature you control.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "a10d5296-a9d0-5180-a6f5-d8de9aa3b1ed",
+            "uuid": "16e0ea14-fd73-514c-90d2-5eaffb2b4ed5",
             "watermark": "mirran"
         },
         {
@@ -15375,13 +15491,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36414,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/301c7d25d0c73b5f",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "3",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "e4c2c6c6-6c0b-5724-8768-55f45fa4cfa3",
+            "uuid": "4b908a5f-da06-50dd-895b-34ae247bd2d1",
             "watermark": "phyrexian"
         },
         {
@@ -15520,13 +15637,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36355,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/922e6e8a8361ae57",
             "text": "Whenever Engulfing Slagwurm blocks or becomes blocked by a creature, destroy that creature. You gain life equal to that creature's toughness.",
             "toughness": "7",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "121bd498-ec40-5881-a8c0-de3e7349a574",
+            "uuid": "bdc749b3-97ea-5c08-b90c-e9a404ec1ac4",
             "watermark": "mirran"
         },
         {
@@ -15659,13 +15777,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36397,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e33e210a1514136",
             "text": "{G}: Regenerate another target Elf.\n{2}{G}{G}{G}: Elf creatures you control get +3/+3 and gain trample until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "0fb3829c-9c21-5fee-9425-ad2f50201e64",
+            "uuid": "f7859db7-6641-5305-a23b-c611833ddb8f",
             "watermark": "mirran"
         },
         {
@@ -15782,13 +15901,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36488,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed3033c78bdfac15",
             "text": "Reach (This creature can block creatures with flying.)\nWhenever Ezuri's Archers blocks a creature with flying, Ezuri's Archers gets +3/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Elf Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "bf7813ab-2ea3-5de7-8cc2-c74b272bc330",
+            "uuid": "836a31bf-aef6-5042-96c3-613c62e7e50d",
             "watermark": "mirran"
         },
         {
@@ -15908,13 +16028,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36230,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e4b3b1d27a50a62f",
             "text": "Metalcraft — As long as you control three or more artifacts, Ezuri's Brigade gets +4/+4 and has trample.",
             "toughness": "4",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "439e35bd-c0e2-5d71-a851-1226696bea9b",
+            "uuid": "d03b4bc9-9f5d-54d8-b72e-f52380b3fec7",
             "watermark": "mirran"
         },
         {
@@ -16045,12 +16166,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36403,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b5ff3fe8aac3e1af",
             "text": "Reveal the top X cards of your library. You may put any number of permanent cards with converted mana cost X or less from among them onto the battlefield. Then put all cards revealed this way that weren't put onto the battlefield into your graveyard.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2b688922-a93c-5026-9aa1-9f6e6c71ec9b",
+            "uuid": "a841a979-de4c-50f2-b4cb-dddc935e1104",
             "watermark": "mirran"
         },
         {
@@ -16171,13 +16293,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36338,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/36b2a8f28703dc93",
             "text": "Trample\nWhenever Liege of the Tangle deals combat damage to a player, you may choose any number of target lands you control and put an awakening counter on each of them. Each of those lands is an 8/8 green Elemental creature for as long as it has an awakening counter on it. They're still lands.",
             "toughness": "8",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "0427fa53-f599-5dea-a774-00aceedbc228",
+            "uuid": "454ea3ca-3a74-5aa4-b13d-0b2d44ec87b0",
             "watermark": "mirran"
         },
         {
@@ -16297,13 +16420,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36489,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a067eeaca45a7c4d",
             "text": "Whenever you cast an artifact spell, you may pay {1}. If you do, you gain 3 life.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "a94a9475-4588-5f7c-a1b6-47995c67a630",
+            "uuid": "8f5051d2-c67f-536f-a315-c5ba588acf19",
             "watermark": "mirran"
         },
         {
@@ -16428,13 +16552,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36490,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9ef8224e4d215f01",
             "text": "Trample\nWhenever an artifact is put into a graveyard from the battlefield, Molder Beast gets +2/+0 until end of turn.",
             "toughness": "3",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "81f92f57-44d7-5442-9a00-413cc76f2a3b",
+            "uuid": "02666b15-ce23-5874-bc60-7a37bff40fd0",
             "watermark": "mirran"
         },
         {
@@ -16568,13 +16693,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36392,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/29307127ed48733d",
             "text": "Trample, haste\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nAt the beginning of the end step, sacrifice Putrefax.",
             "toughness": "3",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "050de9d7-74b4-5a34-8ba6-b73a4f0d14af",
+            "uuid": "288b8b4d-f892-5305-97b0-1d8479668c34",
             "watermark": "phyrexian"
         },
         {
@@ -16701,12 +16827,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36361,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9f5cf88bd779f6a3",
             "text": "Destroy target artifact or enchantment.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "8dcf1169-458e-54b1-a4cc-85f7cf9a3bbe",
+            "uuid": "45c08906-2940-578c-83bb-1f00d2e3da92",
             "watermark": "mirran"
         },
         {
@@ -16866,13 +16993,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36491,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c106002191dcf7d7",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{G}: Target creature blocks Tangle Angler this turn if able.",
             "toughness": "5",
             "type": "Creature — Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "03f0cd55-2cf1-5149-a30e-4724393d5edd",
+            "uuid": "f6a986d6-a671-5eff-99d7-5662f5eccc2c",
             "watermark": "phyrexian"
         },
         {
@@ -16994,12 +17122,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36492,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5052ed060c2fcc31",
             "text": "Target creature gains protection from artifacts until end of turn.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "8ba68529-87ae-5526-b033-2937cb32bbfe",
+            "uuid": "0024c546-c88a-51d6-8e4f-e658c7f4e0df",
             "watermark": "mirran"
         },
         {
@@ -17149,13 +17278,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36493,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1ce331b2e44e5c98",
             "text": "Protection from artifacts\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "1",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "850b4a63-d8eb-5b3c-b1df-e3669ce4dbd8",
+            "uuid": "88024706-c4b9-5201-8309-ab98bc1e34e0",
             "watermark": "phyrexian"
         },
         {
@@ -17272,12 +17402,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36494,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/04c8d7b0b9f47ad4",
             "text": "Target creature gets +X/+X until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3485746f-3ae8-5f39-80d2-6156d21d6879",
+            "uuid": "c6251b57-2994-5fb4-b3e3-94409628a504",
             "watermark": "mirran"
         },
         {
@@ -17398,12 +17529,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36495,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e698416142b7dc8b",
             "text": "Whenever an artifact is put into an opponent's graveyard from the battlefield, you may draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8d32d58d-3cf6-5e37-9a2b-7db144b39c0d",
+            "uuid": "40ddf91d-02d5-5a85-b38c-1bfe933f64e1",
             "watermark": "mirran"
         },
         {
@@ -17525,12 +17657,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36496,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a81064940b3de6cd",
             "text": "Target creature you control deals damage equal to its power to target creature with flying.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f6bda418-c60f-5476-87ba-0dd1e743cbda",
+            "uuid": "0a653ba9-be4c-5916-847c-dc8a71de26ca",
             "watermark": "mirran"
         },
         {
@@ -17647,12 +17780,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36497,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bdf259f36fad829e",
             "text": "Target creature gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it. If its toughness is 0 or less, it's still put into its owner's graveyard.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0e1ff54a-14bd-5847-9d67-aa9ef8748627",
+            "uuid": "cfe03e97-00c6-5181-ab55-1647515b48dc",
             "watermark": "mirran"
         },
         {
@@ -17798,12 +17932,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36250,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4bc263e37eb18add",
             "text": "+2: Exile target permanent you own. Return it to the battlefield under your control at the beginning of the next end step.\n−1: Creatures can't be blocked this turn.\n−8: You get an emblem with \"Whenever you cast a spell, exile target permanent.\"",
             "type": "Legendary Planeswalker — Venser",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "85ef1db1-08f1-547d-be35-8274172ca2d0"
+            "uuid": "3ac7cf17-6ed4-5bda-b107-d43c364cbdc3"
         },
         {
             "artist": "Alan Pollack",
@@ -17918,12 +18053,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36498,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90a1c76ed7a09016",
             "text": "Equipped creature gets +0/+3 and has vigilance. (Attacking doesn't cause it to tap.)\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "40436d83-fe8c-5206-8095-0641273c0587",
+            "uuid": "e5c0fbd4-3ab1-5da4-a02d-f37778553967",
             "watermark": "mirran"
         },
         {
@@ -18048,12 +18184,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36378,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/43611424ff60503b",
             "text": "Equipped creature gets +6/+6.\nWhenever equipped creature attacks, destroy target permanent.\nEquip {6}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "02251d13-1fa9-5880-b4b5-9cf62a8d39b9",
+            "uuid": "1627ab56-b7e7-55f8-b934-f40a2b2e7750",
             "watermark": "mirran"
         },
         {
@@ -18180,6 +18317,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36499,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a11c29df5b86a0e",
             "text": "{W}, Sacrifice Auriok Replica: Prevent all damage a source of your choice would deal to you this turn.",
             "toughness": "2",
             "type": "Artifact Creature — Cleric",
@@ -18187,7 +18325,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "6e3cf0b2-a4dc-5097-9352-f263abb2ec7e",
+            "uuid": "6e41b810-bc84-5733-aa1c-3a814fe1b4a9",
             "watermark": "mirran"
         },
         {
@@ -18301,12 +18439,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36500,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/943e72214d8b004b",
             "text": "Equipped creature gets +4/-1.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2a8c5ae7-20c0-580c-bc44-8c5e4f407936",
+            "uuid": "59d5f3a5-1956-5afd-b193-492071612614",
             "watermark": "mirran"
         },
         {
@@ -18421,12 +18560,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36501,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f53ef59344d8cd49",
             "text": "Equipped creature has flying and first strike.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "486ed380-8ce6-5711-8f03-0a1c1ad5cd4f",
+            "uuid": "a42e6211-2ed9-53a8-9219-4dd96057c860",
             "watermark": "mirran"
         },
         {
@@ -18546,12 +18686,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36308,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/348454d45d458abb",
             "text": "Chimeric Mass enters the battlefield with X charge counters on it.\n{1}: Until end of turn, Chimeric Mass becomes a Construct artifact creature with \"This creature's power and toughness are each equal to the number of charge counters on it.\"",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a668e40b-6aae-541f-86f0-57a1d1105530",
+            "uuid": "cb4afef6-a85f-587e-87ff-382f21c0d8f6",
             "watermark": "mirran"
         },
         {
@@ -18667,6 +18808,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36422,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0c47c79cab79b09b",
             "text": "Metalcraft — Chrome Steed gets +2/+2 as long as you control three or more artifacts.",
             "toughness": "2",
             "type": "Artifact Creature — Horse",
@@ -18674,7 +18816,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0a9eae91-8dd6-52de-96b7-62b819994369",
+            "uuid": "232c935e-c9cb-5e16-87b4-34b37dbe6c84",
             "watermark": "mirran"
         },
         {
@@ -18796,6 +18938,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36225,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/abfb1a9a2f570390",
             "text": "Imprint — When Clone Shell enters the battlefield, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library in any order.\nWhen Clone Shell dies, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control.",
             "toughness": "2",
             "type": "Artifact Creature — Shapeshifter",
@@ -18803,7 +18946,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b20d9eb5-382d-58c1-9735-0bd5c855fd8f",
+            "uuid": "aa49d3b9-7f2d-5329-b7be-91abbce2bfb9",
             "watermark": "mirran"
         },
         {
@@ -18933,12 +19076,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36226,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45a4d485a93d08fe",
             "text": "When Contagion Clasp enters the battlefield, put a -1/-1 counter on target creature.\n{4}, {T}: Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3c09ddd1-e990-570e-bc4b-eb2b1579c5c6",
+            "uuid": "efc7c5b9-4589-5f10-b648-04aa27daaaa8",
             "watermark": "phyrexian"
         },
         {
@@ -19069,12 +19213,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36312,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab71ea3e686ccda0",
             "text": "When Contagion Engine enters the battlefield, put a -1/-1 counter on each creature target player controls.\n{4}, {T}: Proliferate, then proliferate again. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there. Then do it again.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8a91d6ea-421b-51d2-b6b6-442c4e4256f2",
+            "uuid": "d5fa0f9a-d8a4-5272-94bb-b394fc5a99ff",
             "watermark": "phyrexian"
         },
         {
@@ -19194,6 +19339,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36227,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1d9c8669ca300ff0",
             "text": "{T}: Add {G}.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -19201,7 +19347,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "350f9d30-5223-5bea-b654-a4c579325ba8",
+            "uuid": "268dbb3b-4656-5ba4-b7ed-424f44b4f259",
             "watermark": "mirran"
         },
         {
@@ -19332,6 +19478,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36502,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44fa3d8adc518f1f",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhen Corpse Cur enters the battlefield, you may return target creature card with infect from your graveyard to your hand.",
             "toughness": "2",
             "type": "Artifact Creature — Hound",
@@ -19339,7 +19486,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "19f3c0fc-88fd-56ff-8e32-69c43a2aca09",
+            "uuid": "4eb88546-be03-55d0-81f1-ca6b9afa7062",
             "watermark": "phyrexian"
         },
         {
@@ -19458,12 +19605,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36415,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95d3d4e33b096d50",
             "text": "{T}, Sacrifice a creature: Put a charge counter on Culling Dais.\n{1}, Sacrifice Culling Dais: Draw a card for each charge counter on Culling Dais.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "96b9ad6b-86a1-57c8-9242-79306afc7c40",
+            "uuid": "f419c1ef-0a2e-5d5e-b62f-bd673166a98c",
             "watermark": "phyrexian"
         },
         {
@@ -19589,12 +19737,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36228,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/50ddda71af42d66a",
             "text": "Indestructible (Effects that say \"destroy\" don't destroy this artifact.)\nEquipped creature gets +2/+0.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8d6af82c-51b2-5dbd-9213-419e80b33814",
+            "uuid": "0b4db8f0-884b-594c-a262-f444fc98844a",
             "watermark": "mirran"
         },
         {
@@ -19728,6 +19877,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36383,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/768b8ee4d3939497",
             "text": "Indestructible\nDarksteel Juggernaut's power and toughness are each equal to the number of artifacts you control.\nDarksteel Juggernaut attacks each combat if able.",
             "toughness": "*",
             "type": "Artifact Creature — Juggernaut",
@@ -19735,7 +19885,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d22a1574-3122-5b8f-9aa3-2f65bcd797f7",
+            "uuid": "37f43c0b-3fb1-524f-9c68-ea3615d46a7f",
             "watermark": "mirran"
         },
         {
@@ -19840,6 +19990,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36424,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b056667e08c31862",
             "text": "Indestructible (Damage and effects that say \"destroy\" don't destroy this creature. If its toughness is 0 or less, it's still put into its owner's graveyard.)",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -19847,7 +19998,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a4a5aaf5-de68-5377-92c6-054d73c375ac",
+            "uuid": "44450181-7f2a-56c7-a1a7-1fba537aae75",
             "watermark": "mirran"
         },
         {
@@ -19953,6 +20104,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36352,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf88c4809c07ecb1",
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nVigilance\nIndestructible (Damage and effects that say \"destroy\" don't destroy this creature. If its toughness is 0 or less, it's still put into its owner's graveyard.)",
             "toughness": "3",
             "type": "Artifact Creature — Golem",
@@ -19960,7 +20112,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "aa6d8eda-1702-59ce-be27-e8e55bed6281",
+            "uuid": "8a984748-5a1c-5ce7-ad03-e0b7e5f7d8a3",
             "watermark": "mirran"
         },
         {
@@ -20084,12 +20236,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36503,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a3a27b6aa2ee4780",
             "text": "Equipped creature can block an additional creature each combat.\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "73f17493-f1f5-5375-a1a9-9ba62cca7cd6",
+            "uuid": "2ce1361b-7ab6-599d-a7c3-050d64481fec",
             "watermark": "mirran"
         },
         {
@@ -20209,6 +20362,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36349,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/eb92708a47d31e28",
             "text": "Metalcraft — Etched Champion has protection from all colors as long as you control three or more artifacts.",
             "toughness": "2",
             "type": "Artifact Creature — Soldier",
@@ -20216,7 +20370,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8504e4db-cef8-5cb9-b817-1bd463047809",
+            "uuid": "c89d9744-c376-511e-8f24-e4192bafa0e2",
             "watermark": "mirran"
         },
         {
@@ -20326,12 +20480,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36416,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7645e6d257e866a0",
             "text": "{T}, Sacrifice Flight Spellbomb: Target creature gains flying until end of turn.\nWhen Flight Spellbomb is put into a graveyard from the battlefield, you may pay {U}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7455092d-384c-507d-a66c-265a6b51f933",
+            "uuid": "4485512f-c4b9-50e3-8143-018b9e00619a",
             "watermark": "mirran"
         },
         {
@@ -20458,12 +20613,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36504,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f9529ca12e37afb4",
             "text": "Whenever another artifact enters the battlefield under your control, you may have Glint Hawk Idol become a 2/2 Bird artifact creature with flying until end of turn.\n{W}: Glint Hawk Idol becomes a 2/2 Bird artifact creature with flying until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "53caa2f3-83a3-514d-b388-c20dc508908c",
+            "uuid": "59e61469-92e6-5b09-9e9a-222ab008c879",
             "watermark": "mirran"
         },
         {
@@ -20584,6 +20740,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36232,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d104ae78bfcb573d",
             "text": "{T}: Add {W}.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -20591,7 +20748,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8604ea0d-ff90-5475-8aaa-216c1b398289",
+            "uuid": "0537acc4-71cd-5e93-bc53-6c4c4c74f6fd",
             "watermark": "mirran"
         },
         {
@@ -20699,12 +20856,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36505,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/db8c4a763fa49794",
             "text": "At the beginning of your upkeep, you may put a charge counter on Golden Urn.\n{T}, Sacrifice Golden Urn: You gain life equal to the number of charge counters on Golden Urn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b11976f3-4d64-5a81-a404-810c06318897",
+            "uuid": "fcd85a4b-bd1f-5675-badf-d2af61a52c33",
             "watermark": "mirran"
         },
         {
@@ -20828,6 +20986,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36506,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6091dbd07e902b85",
             "text": "{2}: Target artifact creature gets +1/+1 until end of turn.\n{2}: Target artifact creature gains your choice of flying, trample, or haste until end of turn.",
             "toughness": "3",
             "type": "Artifact Creature — Golem",
@@ -20835,7 +20994,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "ffab0170-9289-5e35-9185-8379bbc25ed5",
+            "uuid": "e74fc053-87d1-5483-bf20-c20fd311a964",
             "watermark": "mirran"
         },
         {
@@ -20944,12 +21103,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36507,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a125dee1c03b6161",
             "text": "Whenever you cast an artifact spell, you may put a charge counter on Golem Foundry.\nRemove three charge counters from Golem Foundry: Create a 3/3 colorless Golem artifact creature token.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c710390f-3b47-548d-87fe-23d140a69293",
+            "uuid": "c9a645d1-3ca6-57cd-ada6-0fb133dffbcf",
             "watermark": "mirran"
         },
         {
@@ -21072,12 +21232,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36398,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/70085ef6357fa785",
             "text": "Whenever a player casts an artifact spell, you may gain 1 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ac79c495-d398-57cb-8171-cce5fd5c5f25",
+            "uuid": "32b9083a-162b-5018-8308-0afc76df2bf7",
             "watermark": "mirran"
         },
         {
@@ -21215,12 +21376,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36417,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/57f9200a892efa0a",
             "text": "Equipped creature gets +2/+2 and has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever Grafted Exoskeleton becomes unattached from a permanent, sacrifice that permanent.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9a69c6e6-53d0-571d-a7ba-9655eb89ba5e",
+            "uuid": "bdfd4a7c-271a-55d0-8ad8-66d6d5b0bff1",
             "watermark": "phyrexian"
         },
         {
@@ -21339,12 +21501,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36380,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/55df81d41e5fc784",
             "text": "{T}: Put a charge counter on Grindclock.\n{T}: Target player puts the top X cards of their library into their graveyard, where X is the number of charge counters on Grindclock.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "014fbbae-842a-5377-afd7-fc21a75c3297",
+            "uuid": "ea6d2bfe-8787-5ccb-816d-367eab8999f2",
             "watermark": "mirran"
         },
         {
@@ -21458,12 +21621,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36508,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d0068cc135677d63",
             "text": "Equipped creature doesn't untap during its controller's untap step.\nEquipped creature has \"{T}: This creature deals 2 damage to any target.\"\nEquip {4}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cb3f05c9-0a24-55fd-909b-91a1d9e3bc90",
+            "uuid": "47e76c02-ed81-502d-8e94-fc177497c272",
             "watermark": "mirran"
         },
         {
@@ -21573,12 +21737,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36509,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/389d0e8a88291c18",
             "text": "{2}, {T}, Sacrifice Horizon Spellbomb: Search your library for a basic land card, reveal it, and put it into your hand. Then shuffle your library.\nWhen Horizon Spellbomb is put into a graveyard from the battlefield, you may pay {G}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "910339c1-7119-5100-9907-0c60f205d623",
+            "uuid": "2afa1b6e-7bfa-504f-a61f-2375bfe93eab",
             "watermark": "mirran"
         },
         {
@@ -21712,6 +21877,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36353,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0cb0ff22c24564f5",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever Ichorclaw Myr becomes blocked, it gets +2/+2 until end of turn.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -21719,7 +21885,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "6a5246a2-9322-57a3-afdb-d3216df6979f",
+            "uuid": "15974f6c-6cbf-5e0b-86cd-103fcb61bf8d",
             "watermark": "phyrexian"
         },
         {
@@ -21838,12 +22004,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36510,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e4a4a8f404685ae8",
             "text": "Whenever equipped creature becomes blocked by a creature, you may draw two cards.\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "17c4baf6-2b25-56d7-9189-db8aea82405e",
+            "uuid": "cb6447cb-60fa-5cae-9296-e3c0d2d1a280",
             "watermark": "mirran"
         },
         {
@@ -21963,6 +22130,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36234,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95c10a939dbf59e1",
             "text": "{T}: Add {R}.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -21970,7 +22138,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d90469a4-a46d-5c9f-97ae-19f48f9c98c9",
+            "uuid": "d5e7800d-25e1-5e6b-b38e-2298f9f0b08e",
             "watermark": "mirran"
         },
         {
@@ -22090,6 +22258,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36316,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e0b5235e1aa3763c",
             "text": "{T}, Sacrifice three artifacts: Search your library for an artifact card and put it onto the battlefield. Then shuffle your library.",
             "toughness": "5",
             "type": "Artifact Creature — Construct",
@@ -22097,7 +22266,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0d8eacb2-efb0-5633-9b37-36d7fb0f55e4",
+            "uuid": "343f825f-737a-5b76-a3b0-138b264d38ef",
             "watermark": "mirran"
         },
         {
@@ -22217,6 +22386,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36236,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3df6f3da962b8190",
             "text": "{T}: Add {B}.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -22224,7 +22394,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "514a2f9d-584d-5a82-9273-89adb9bb852a",
+            "uuid": "58b37b96-c7c1-5f69-bf27-5e75445e97e1",
             "watermark": "mirran"
         },
         {
@@ -22347,12 +22517,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36511,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c50792e73f91f670",
             "text": "{T}: Target permanent becomes an artifact in addition to its other types until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "261a2aad-5b59-54e3-9647-7ee04bacad5c",
+            "uuid": "e889bbb8-6e90-55dc-be1a-31d6b3ee7e23",
             "watermark": "mirran"
         },
         {
@@ -22464,12 +22635,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36512,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5083b6c278d4d12e",
             "text": "Equipped creature gets +2/+0 and has \"Whenever this creature becomes the target of a spell, this creature deals 2 damage to any target.\"\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7dd2e20e-50ec-5a23-bd44-21ac5023bf97",
+            "uuid": "23c4b6e5-1e08-559b-abb6-db8b7c78fcab",
             "watermark": "mirran"
         },
         {
@@ -22580,12 +22752,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36513,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ba38f7137754d68c",
             "text": "{T}: Put a charge counter on Lux Cannon.\n{T}, Remove three charge counters from Lux Cannon: Destroy target permanent.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "418cf072-a978-5b7e-b762-aa0795523d56",
+            "uuid": "0573caf1-b10c-5603-8b18-002c2444a647",
             "watermark": "mirran"
         },
         {
@@ -22692,13 +22865,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36237,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/77287508d90ed057",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "4a7f7a7e-ab6f-5b67-b705-8f240763c44f",
+            "uuid": "c4c0b7e5-7e8c-5d94-bcaa-de463a0af414",
             "watermark": "mirran"
         },
         {
@@ -22857,12 +23031,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36514,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/623a1880364455fc",
             "text": "Imprint — Whenever a nontoken creature dies, you may exile that card. If you do, return each other card exiled with Mimic Vat to its owner's graveyard.\n{3}, {T}: Create a token that's a copy of a card exiled with Mimic Vat. It gains haste. Exile it at the beginning of the next end step.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b33dac06-26a3-51d0-85ad-938d76655478",
+            "uuid": "8c3aa4fa-428c-5c92-adae-19b28dc3c838",
             "watermark": "mirran"
         },
         {
@@ -23037,12 +23212,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36515,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/857f6dc034d47e7f",
             "text": "{4}, {T}, Sacrifice Mindslaver: You control target player during that player's next turn. (You see all cards that player could see and make all decisions for the player.)",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ea57cd43-97a2-5560-87a7-eea7142517ad",
+            "uuid": "d66a9b6d-da70-5b8e-bcfa-fc8c3c18e70e",
             "watermark": "mirran"
         },
         {
@@ -23146,6 +23322,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36341,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a26eb230f8eee57",
             "text": "At the beginning of your upkeep, sacrifice Molten-Tail Masticore unless you discard a card.\n{4}, Exile a creature card from your graveyard: Molten-Tail Masticore deals 4 damage to any target.\n{2}: Regenerate Molten-Tail Masticore.",
             "toughness": "4",
             "type": "Artifact Creature — Masticore",
@@ -23153,7 +23330,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "54700543-de18-53a6-9490-04ad1658f8f4",
+            "uuid": "b5040f83-7cee-59c2-ad51-b6068ff9abe5",
             "watermark": "mirran"
         },
         {
@@ -23271,6 +23448,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36516,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e11804a1237f431b",
             "text": "{1}{B}, Sacrifice Moriok Replica: You draw two cards and you lose 2 life.",
             "toughness": "2",
             "type": "Artifact Creature — Warrior",
@@ -23278,7 +23456,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "bae23910-90c4-5975-a17f-9f1bd1ee1462",
+            "uuid": "f44fc811-44c1-5074-a420-a1083ba0c97d",
             "watermark": "mirran"
         },
         {
@@ -23393,12 +23571,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 36238,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/392169e32a3cdffc",
             "text": "Metalcraft — {T}: Add one mana of any color. Activate this ability only if you control three or more artifacts.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cc19892a-f254-5e7d-b946-e9fde88b00cf",
+            "uuid": "2bdb1d79-eb51-56e6-965c-fddef727d458",
             "watermark": "mirran"
         },
         {
@@ -23523,6 +23702,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36343,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/370fc9da0f60c6d9",
             "text": "When Myr Battlesphere enters the battlefield, create four 1/1 colorless Myr artifact creature tokens.\nWhenever Myr Battlesphere attacks, you may tap X untapped Myr you control. If you do, Myr Battlesphere gets +X/+0 until end of turn and deals X damage to the player or planeswalker it's attacking.",
             "toughness": "7",
             "type": "Artifact Creature — Myr Construct",
@@ -23530,7 +23710,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9511504f-8d4f-5705-a986-aa0f02f745d3",
+            "uuid": "c09af89a-13a5-5d70-b549-17c896494408",
             "watermark": "mirran"
         },
         {
@@ -23645,6 +23825,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36313,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ded02584a2e906e7",
             "text": "Other Myr creatures you control get +1/+1.\n{1}, {T}: Untap each other Myr you control.",
             "toughness": "2",
             "type": "Artifact Creature — Myr",
@@ -23652,7 +23833,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "536306a2-1e80-59d1-9eb3-bda7bb6c9725",
+            "uuid": "9954829b-cba7-5a61-a8f7-b6a01ccdd0d2",
             "watermark": "mirran"
         },
         {
@@ -23784,6 +23965,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36418,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d2a43dab220b77e7",
             "text": "{3}, {T}: Create a token that's a copy of Myr Propagator.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -23791,7 +23973,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b8419563-7859-504f-9876-7f64cc9f9f7d",
+            "uuid": "24490bbd-f37a-56f2-bf48-69ef2352a251",
             "watermark": "mirran"
         },
         {
@@ -23915,12 +24097,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36365,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dd612ce714b9eb0d",
             "text": "{T}: Add {C}{C}. Spend this mana only to cast Myr spells or activate abilities of Myr.\n{3}, {T}: Return target Myr card from your graveyard to your hand.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b648b644-1ed6-5066-9d44-1cbb025e736d",
+            "uuid": "add69fa8-b155-5321-b259-c54903d78eea",
             "watermark": "mirran"
         },
         {
@@ -24032,12 +24215,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36419,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9cdf1b12ccda1a4f",
             "text": "Necrogen Censer enters the battlefield with two charge counters on it.\n{T}, Remove a charge counter from Necrogen Censer: Target player loses 2 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "650bc85b-55c8-5099-99ca-2b6f06426996",
+            "uuid": "4a05c4ab-1c42-56f0-871b-8ad26cea69dd",
             "watermark": "mirran"
         },
         {
@@ -24167,6 +24351,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36420,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f1835f819769e08c",
             "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhen Necropede dies, you may put a -1/-1 counter on target creature.",
             "toughness": "1",
             "type": "Artifact Creature — Insect",
@@ -24174,7 +24359,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e3191ee5-68be-5643-96d5-4abaf4d2b38b",
+            "uuid": "054e1fd1-cd1b-5726-a213-986af2ac8c7a",
             "watermark": "phyrexian"
         },
         {
@@ -24297,6 +24482,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36517,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/845d8e0badd9b3c1",
             "text": "{1}{U}, Sacrifice Neurok Replica: Return target creature to its owner's hand.",
             "toughness": "4",
             "type": "Artifact Creature — Wizard",
@@ -24304,7 +24490,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f5d534c0-76ea-5b80-992f-29699b7aa021",
+            "uuid": "cffa6c28-262d-5507-907f-9d3fc576a759",
             "watermark": "mirran"
         },
         {
@@ -24416,12 +24602,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36518,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/40c994622d87eb82",
             "text": "{T}, Sacrifice Nihil Spellbomb: Exile all cards from target player's graveyard.\nWhen Nihil Spellbomb is put into a graveyard from the battlefield, you may pay {B}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2e75e748-7152-56fd-a3d0-5fe0be17a1e7",
+            "uuid": "957f2e45-d112-5b15-a328-c56141ca5396",
             "watermark": "mirran"
         },
         {
@@ -24558,12 +24745,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36519,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2528efae9eefabf9",
             "text": "Equipped creature gets +2/+2, has intimidate, and is a black Zombie. (A creature with intimidate can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nWhenever a nontoken creature is put into your graveyard from the battlefield, you may pay {4}. If you do, return that card to the battlefield and attach Nim Deathmantle to it.\nEquip {4}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bd939a62-cd04-50b8-93cb-ba632137e0ed",
+            "uuid": "46a31ea1-dacf-50f7-a787-04ff2a749726",
             "watermark": "mirran"
         },
         {
@@ -24669,12 +24857,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36239,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/da9ec4e22f60a9de",
             "text": "{1}, {T}, Sacrifice Origin Spellbomb: Create a 1/1 colorless Myr artifact creature token.\nWhen Origin Spellbomb is put into a graveyard from the battlefield, you may pay {W}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ac6e87fb-7c00-5748-a1ef-78fdb4dde0f6",
+            "uuid": "45271608-aa32-5372-8341-5b1d4dcfb41f",
             "watermark": "mirran"
         },
         {
@@ -24791,6 +24980,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36240,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/437f671904b43a16",
             "text": "{T}: Add {C}{C}.",
             "toughness": "2",
             "type": "Artifact Creature — Myr",
@@ -24798,7 +24988,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "4eee1fd3-8146-541f-95c0-62df72a2be98",
+            "uuid": "2db76eb3-bf3b-598a-8359-6a8d9a4596c9",
             "watermark": "mirran"
         },
         {
@@ -24905,12 +25095,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36520,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/13b0be25f452f4d9",
             "text": "{T}, Sacrifice Panic Spellbomb: Target creature can't block this turn.\nWhen Panic Spellbomb is put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8efdd3c6-39cd-5386-88cf-275f15e90c7d",
+            "uuid": "7f3a3be1-1611-568d-9b51-e1773ad61167",
             "watermark": "mirran"
         },
         {
@@ -25032,6 +25223,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36521,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6bc68e78633856e7",
             "text": "When Perilous Myr dies, it deals 2 damage to any target.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -25039,7 +25231,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d63628ff-72a1-5fd1-ab1c-413588d9bc22",
+            "uuid": "c1ca494b-6d82-5634-9a50-92e202bb0fdf",
             "watermark": "phyrexian"
         },
         {
@@ -25196,6 +25388,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36314,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa4421f3b040dee0",
             "text": "Your life total can't change. (You can't gain or lose life. You can't pay any amount of life except 0.)",
             "toughness": "8",
             "type": "Artifact Creature — Golem",
@@ -25203,7 +25396,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "04ad46ab-d568-5271-b083-f7735ca9912b",
+            "uuid": "abc219e5-c3c6-53e7-8c1b-1b9617fabc95",
             "watermark": "mirran"
         },
         {
@@ -25343,6 +25536,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36381,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/991d979c59931a19",
             "text": "When Precursor Golem enters the battlefield, create two 3/3 colorless Golem artifact creature tokens.\nWhenever a player casts an instant or sorcery spell that targets only a single Golem, that player copies that spell for each other Golem that spell could target. Each copy targets a different one of those Golems.",
             "toughness": "3",
             "type": "Artifact Creature — Golem",
@@ -25350,7 +25544,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "998601cb-5fc4-55ce-be5a-fb1133c96300",
+            "uuid": "8bdecf65-ef01-5693-94bc-5021ac86105c",
             "watermark": "mirran"
         },
         {
@@ -25474,12 +25668,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36346,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2d5c82457846653",
             "text": "Imprint — When Prototype Portal enters the battlefield, you may exile an artifact card from your hand.\n{X}, {T}: Create a token that's a copy of the exiled card. X is the converted mana cost of that card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "50881477-5fcc-5dba-be3e-5cfbab6d9072",
+            "uuid": "9a87a435-6971-5757-98f2-8a5921c8aca6",
             "watermark": "mirran"
         },
         {
@@ -25616,12 +25811,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36382,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a4034d1a9491811",
             "text": "{T}: Put a charge counter on Ratchet Bomb.\n{T}, Sacrifice Ratchet Bomb: Destroy each nonland permanent with converted mana cost equal to the number of charge counters on Ratchet Bomb.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "805252d9-98df-5829-9955-27388bb8de1e",
+            "uuid": "eb675382-228f-563b-a3b4-afef316c45d4",
             "watermark": "mirran"
         },
         {
@@ -25727,13 +25923,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36421,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/837ae9576711d5b8",
             "toughness": "4",
             "type": "Artifact Creature — Construct",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "44ae03ea-2696-56ac-90ec-e70f00bb700c",
+            "uuid": "2d102bf2-19a8-5c16-affb-f9e27b2b746d",
             "watermark": "mirran"
         },
         {
@@ -25858,6 +26055,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36522,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0987ef33d16376f1",
             "text": "You may choose not to untap Rust Tick during your untap step.\n{1}, {T}: Tap target artifact. It doesn't untap during its controller's untap step for as long as Rust Tick remains tapped.",
             "toughness": "3",
             "type": "Artifact Creature — Insect",
@@ -25865,7 +26063,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d3b86699-c6d4-57d1-9a6d-370c2e867c41",
+            "uuid": "1f20528c-9b3e-52ba-8dd5-1aa50e2e088b",
             "watermark": "mirran"
         },
         {
@@ -25988,12 +26186,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36317,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/baef5dcb1af1304e",
             "text": "Metalcraft — Rusted Relic is a 5/5 Golem artifact creature as long as you control three or more artifacts.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "08c58812-0d5d-51d3-adad-1e22ea9c6965",
+            "uuid": "acde4fec-bb77-5348-b17a-0fe73dd18e5a",
             "watermark": "mirran"
         },
         {
@@ -26111,6 +26310,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36523,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5fc03e43f24e3386",
             "text": "{R}: Saberclaw Golem gains first strike until end of turn.",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -26118,7 +26318,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e0de2b0c-a6b0-5438-8d9b-a8fdd35d6e7a",
+            "uuid": "f4b7e9e2-f5b9-5bcc-8c01-9b47fadee15b",
             "watermark": "mirran"
         },
         {
@@ -26255,12 +26455,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36391,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/22f1af88a1faffcf",
             "text": "Imprint — When Semblance Anvil enters the battlefield, you may exile a nonland card from your hand.\nSpells you cast that share a card type with the exiled card cost {2} less to cast.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "14e8216c-93e0-5373-b49f-3f35d2d1ea2c",
+            "uuid": "4647abd9-1a38-595b-b7c0-31d9e0b588f8",
             "watermark": "mirran"
         },
         {
@@ -26382,6 +26583,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36242,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/041fd9afa2f6369a",
             "text": "{T}: Add {U}.",
             "toughness": "1",
             "type": "Artifact Creature — Myr",
@@ -26389,7 +26591,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "13539968-0fa0-5ca6-b134-3d595199b686",
+            "uuid": "646a7785-78b8-5849-97ff-b92f578008fb",
             "watermark": "mirran"
         },
         {
@@ -26510,6 +26712,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36524,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6f21ec723dd82aa7",
             "text": "Metalcraft — Snapsail Glider has flying as long as you control three or more artifacts.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -26517,7 +26720,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "2944f362-0fe3-5a31-a71e-253408fa6db0",
+            "uuid": "b9c5e67e-f207-519f-aa99-0514616bc1f3",
             "watermark": "mirran"
         },
         {
@@ -26635,6 +26838,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36525,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/337c7a4f75bfc96b",
             "text": "{U}: Untap Soliton.",
             "toughness": "4",
             "type": "Artifact Creature — Construct",
@@ -26642,7 +26846,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "48462157-22d7-50bc-87a9-c94d67afd4fd",
+            "uuid": "8b5cf720-82f0-5355-bca5-3ff67033f30d",
             "watermark": "mirran"
         },
         {
@@ -26789,6 +26993,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79547fea780498e0",
             "text": "Flying\n{2}: Steel Hellkite gets +1/+0 until end of turn.\n{X}: Destroy each nonland permanent with converted mana cost X whose controller was dealt combat damage by Steel Hellkite this turn. Activate this ability only once each turn.",
             "toughness": "5",
             "type": "Artifact Creature — Dragon",
@@ -26796,7 +27001,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "baf9d959-6931-5ab4-96c5-dfa664b6e6a0",
+            "uuid": "f6f27ac0-07ba-500c-b556-8445e8c122c4",
             "watermark": "mirran"
         },
         {
@@ -26906,12 +27111,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36526,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12cf99dca8f7858a",
             "text": "Imprint — When Strata Scythe enters the battlefield, search your library for a land card, exile it, then shuffle your library.\nEquipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card.\nEquip {3}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e69187c5-3010-5148-8e7d-e989f63961cd",
+            "uuid": "66dc0157-eaac-5aee-b9fc-3b0588fcfb9a",
             "watermark": "mirran"
         },
         {
@@ -27037,12 +27243,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36527,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/10502b17946900ec",
             "text": "Equipped creature gets +1/+1 and has haste.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "37358975-be63-5bf6-a705-2d3e1aed0081",
+            "uuid": "348bcf6d-d3f8-55c9-9226-e19cc5e105a2",
             "watermark": "mirran"
         },
         {
@@ -27153,12 +27360,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36246,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/810d946056a037cf",
             "text": "Equipped creature gets +2/+2 and has protection from green and from blue.\nWhenever equipped creature deals combat damage to a player, you create a 2/2 green Wolf creature token and that player puts the top ten cards of their library into their graveyard.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "66c96f25-f54a-550c-8d14-8dffce72bb73",
+            "uuid": "ddc84e91-68fe-560f-b8db-74e968a9c5f1",
             "watermark": "mirran"
         },
         {
@@ -27277,12 +27485,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36528,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f8cd2d3be0403d9c",
             "text": "Equipped creature gets +1/+0.\nWhenever equipped creature dies, you gain 3 life.\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d91453d5-5947-5efc-ad37-1ca6b575f352",
+            "uuid": "2a6899fc-0c49-55e0-a245-e1ff85206185",
             "watermark": "mirran"
         },
         {
@@ -27405,6 +27614,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36253,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/39d71e8f3f0f6117",
             "text": "{G}, Sacrifice Sylvok Replica: Destroy target artifact or enchantment.",
             "toughness": "3",
             "type": "Artifact Creature — Shaman",
@@ -27412,7 +27622,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f8cfcd28-7481-517f-b938-8b9e30f09068",
+            "uuid": "3beab70a-9746-5510-acba-7e5df3882cce",
             "watermark": "mirran"
         },
         {
@@ -27548,12 +27758,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36345,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/743517910941228a",
             "text": "{T}, Sacrifice an artifact: Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "34036c85-4174-5568-b5f5-6f1592b15b9f",
+            "uuid": "e3c3778f-3a3d-5224-b667-70d6eaba4532",
             "watermark": "phyrexian"
         },
         {
@@ -27665,12 +27876,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36386,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9afd3eea7a55a0d9",
             "text": "{8}, {T}: Tower of Calamities deals 12 damage to target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5c4dd484-779f-5bd5-9c6a-b91361ed72fa",
+            "uuid": "7519fb73-1f97-50ce-862e-723f7e36057f",
             "watermark": "mirran"
         },
         {
@@ -27774,12 +27986,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36529,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/43badab9381f314a",
             "text": "Trigon of Corruption enters the battlefield with three charge counters on it.\n{B}{B}, {T}: Put a charge counter on Trigon of Corruption.\n{2}, {T}, Remove a charge counter from Trigon of Corruption: Put a -1/-1 counter on target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "983ecb27-85ed-5440-909d-512a992f0e66",
+            "uuid": "68d345b7-ba8f-592d-9a17-37dc91332b89",
             "watermark": "phyrexian"
         },
         {
@@ -27909,12 +28122,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36354,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f153f50b17ec0575",
             "text": "Trigon of Infestation enters the battlefield with three charge counters on it.\n{G}{G}, {T}: Put a charge counter on Trigon of Infestation.\n{2}, {T}, Remove a charge counter from Trigon of Infestation: Create a 1/1 green Insect creature token with infect.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e18d457f-06f9-53a5-ae98-cc9ac5c833f4",
+            "uuid": "482392bc-5b08-5a66-a5a8-771f25d5f240",
             "watermark": "phyrexian"
         },
         {
@@ -28018,12 +28232,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36530,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/31a636fce6f05b0f",
             "text": "Trigon of Mending enters the battlefield with three charge counters on it.\n{W}{W}, {T}: Put a charge counter on Trigon of Mending.\n{2}, {T}, Remove a charge counter from Trigon of Mending: Target player gains 3 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "acbc2b85-2669-5d2b-b753-a88a5261e4c1",
+            "uuid": "63a7c96b-130b-57b8-bd7c-10eb2c9ef289",
             "watermark": "mirran"
         },
         {
@@ -28127,12 +28342,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36404,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9c810c9839717a2a",
             "text": "Trigon of Rage enters the battlefield with three charge counters on it.\n{R}{R}, {T}: Put a charge counter on Trigon of Rage.\n{2}, {T}, Remove a charge counter from Trigon of Rage: Target creature gets +3/+0 until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2f0025fe-f44e-592a-8a1b-f90a22de9aee",
+            "uuid": "533cd09f-3a04-5f96-944f-0350a0207935",
             "watermark": "mirran"
         },
         {
@@ -28236,12 +28452,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36531,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ccddff2aea22660d",
             "text": "Trigon of Thought enters the battlefield with three charge counters on it.\n{U}{U}, {T}: Put a charge counter on Trigon of Thought.\n{2}, {T}, Remove a charge counter from Trigon of Thought: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "576b7b59-81f8-5cee-aac5-b77410adece2",
+            "uuid": "02176757-faa1-560f-9971-e6c028133a18",
             "watermark": "mirran"
         },
         {
@@ -28355,12 +28572,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36249,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/51c0b1f48adba11c",
             "text": "Tumble Magnet enters the battlefield with three charge counters on it.\n{T}, Remove a charge counter from Tumble Magnet: Tap target artifact or creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a62cc6f7-faf7-5f77-9117-ee6710198a33",
+            "uuid": "910c8990-4f99-5a99-ae61-ecf68f778b10",
             "watermark": "mirran"
         },
         {
@@ -28503,6 +28721,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36532,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab3a010b25da7bdf",
             "text": "{B}: Vector Asp gains infect until end of turn. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
             "toughness": "1",
             "type": "Artifact Creature — Snake",
@@ -28510,7 +28729,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0df2bbc6-c346-547b-819c-4d7028b02b65",
+            "uuid": "e70ff57c-5f29-59a0-9dcf-75cab5c6aa7c",
             "watermark": "phyrexian"
         },
         {
@@ -28628,12 +28847,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36390,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c451c346e5cc9011",
             "text": "You have no maximum hand size.\nAt the beginning of your upkeep, you gain 1 life for each card in your hand.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bb8b84d7-16a0-551e-a516-65ed6121e364",
+            "uuid": "25d60c67-60df-5683-b880-efa3104beab9",
             "watermark": "mirran"
         },
         {
@@ -28750,6 +28970,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36533,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/74cbc30f91c74c42",
             "text": "{1}{R}, Sacrifice Vulshok Replica: Vulshok Replica deals 3 damage to target player or planeswalker.",
             "toughness": "1",
             "type": "Artifact Creature — Berserker",
@@ -28757,7 +28978,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0c5a78a1-0092-5c92-8ef5-ddb7c6bc8b5f",
+            "uuid": "cfdcf354-1276-52e2-838c-54a413651840",
             "watermark": "mirran"
         },
         {
@@ -28875,6 +29096,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36534,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9ce7430da7a669e1",
             "text": "Defender\n{G}: Wall of Tanglecord gains reach until end of turn. (It can block creatures with flying.)",
             "toughness": "6",
             "type": "Artifact Creature — Wall",
@@ -28882,7 +29104,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a13d8a8e-1dc2-5956-a46c-23f68867252f",
+            "uuid": "1b8bdccc-535c-5195-98ae-059acb02cd09",
             "watermark": "mirran"
         },
         {
@@ -29001,6 +29223,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36251,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cfa44b5762b146bf",
             "text": "Deathtouch, lifelink\nWhen Wurmcoil Engine dies, create a 3/3 colorless Wurm artifact creature token with deathtouch and a 3/3 colorless Wurm artifact creature token with lifelink.",
             "toughness": "6",
             "type": "Artifact Creature — Wurm",
@@ -29008,7 +29231,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8d15c342-d14e-54ad-aee4-af011beea285",
+            "uuid": "7d12e1bb-786b-5275-8ca2-8825e327917e",
             "watermark": "phyrexian"
         },
         {
@@ -29130,12 +29353,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36399,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/faf5a17d486028ba",
             "text": "Blackcleave Cliffs enters the battlefield tapped unless you control two or fewer other lands.\n{T}: Add {B} or {R}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "2997e19e-608c-5f20-9d26-4f0e18e9f234",
+            "uuid": "fe67bf3b-accd-58a3-bb50-db04b1e0508c",
             "watermark": "mirran"
         },
         {
@@ -29257,12 +29481,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36400,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d36aa23136a2b969",
             "text": "Copperline Gorge enters the battlefield tapped unless you control two or fewer other lands.\n{T}: Add {R} or {G}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "11705534-294f-5d1a-bceb-db955438cca3",
+            "uuid": "01773e78-d3f9-5666-bb3e-4701dc392d76",
             "watermark": "mirran"
         },
         {
@@ -29384,12 +29609,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36401,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95222fd8dcd28326",
             "text": "Darkslick Shores enters the battlefield tapped unless you control two or fewer other lands.\n{T}: Add {U} or {B}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "948e970a-e792-50eb-b11d-8a0aed69a4f4",
+            "uuid": "3462d066-7f59-5bdf-af36-4c5f24e6c741",
             "watermark": "mirran"
         },
         {
@@ -29507,12 +29733,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 36535,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/21a131debce92c54",
             "text": "When Glimmerpost enters the battlefield, you gain 1 life for each Locus on the battlefield.\n{T}: Add {C}.",
             "type": "Land — Locus",
             "types": [
                 "Land"
             ],
-            "uuid": "890ff3b3-4fae-5764-aefa-d6cc9ccb722a",
+            "uuid": "4c352d37-35e8-5cfc-8abe-fdadb3a851dc",
             "watermark": "mirran"
         },
         {
@@ -29634,12 +29861,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36402,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ec0c090e8f5d3e94",
             "text": "Razorverge Thicket enters the battlefield tapped unless you control two or fewer other lands.\n{T}: Add {G} or {W}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "6a60c4c9-112a-54d5-a3fb-b29b93d842bb",
+            "uuid": "b7a8aded-ab61-56b2-b042-669fffc47139",
             "watermark": "mirran"
         },
         {
@@ -29761,12 +29989,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 36389,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/54a39fd6dcf49f9c",
             "text": "Seachrome Coast enters the battlefield tapped unless you control two or fewer other lands.\n{T}: Add {W} or {U}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "48a3934a-46db-5a09-b488-96e98ed1e2e2",
+            "uuid": "06928c53-d5c0-59c0-bbb3-3d01d7d3bb91",
             "watermark": "mirran"
         },
         {
@@ -29850,6 +30079,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -29872,11 +30102,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0f58379d-5f61-5142-89e4-dde486bfb2bb",
+            "uuid": "2062cac8-2efd-5eba-ab74-078c2d3dc1cc",
             "variations": [
-                "0e425778-f39a-51db-a221-86fab4caba6c",
-                "49fd1a5d-cfd3-5bfa-a81c-69043ae798d3",
-                "879d4d15-c479-523b-82b2-5d37459539fa"
+                "cc68e0ff-459b-5a4d-8a52-8159f49725ea",
+                "db91796c-c4dd-57f6-9d97-bff194921704",
+                "b2981811-537b-5dc3-8406-dc00621ac5d9"
             ]
         },
         {
@@ -29960,6 +30190,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -29982,11 +30213,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0e425778-f39a-51db-a221-86fab4caba6c",
+            "uuid": "cc68e0ff-459b-5a4d-8a52-8159f49725ea",
             "variations": [
-                "0f58379d-5f61-5142-89e4-dde486bfb2bb",
-                "49fd1a5d-cfd3-5bfa-a81c-69043ae798d3",
-                "879d4d15-c479-523b-82b2-5d37459539fa"
+                "2062cac8-2efd-5eba-ab74-078c2d3dc1cc",
+                "db91796c-c4dd-57f6-9d97-bff194921704",
+                "b2981811-537b-5dc3-8406-dc00621ac5d9"
             ]
         },
         {
@@ -30070,6 +30301,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30092,11 +30324,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "49fd1a5d-cfd3-5bfa-a81c-69043ae798d3",
+            "uuid": "db91796c-c4dd-57f6-9d97-bff194921704",
             "variations": [
-                "0f58379d-5f61-5142-89e4-dde486bfb2bb",
-                "0e425778-f39a-51db-a221-86fab4caba6c",
-                "879d4d15-c479-523b-82b2-5d37459539fa"
+                "2062cac8-2efd-5eba-ab74-078c2d3dc1cc",
+                "cc68e0ff-459b-5a4d-8a52-8159f49725ea",
+                "b2981811-537b-5dc3-8406-dc00621ac5d9"
             ]
         },
         {
@@ -30180,6 +30412,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30202,11 +30435,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "879d4d15-c479-523b-82b2-5d37459539fa",
+            "uuid": "b2981811-537b-5dc3-8406-dc00621ac5d9",
             "variations": [
-                "0f58379d-5f61-5142-89e4-dde486bfb2bb",
-                "0e425778-f39a-51db-a221-86fab4caba6c",
-                "49fd1a5d-cfd3-5bfa-a81c-69043ae798d3"
+                "2062cac8-2efd-5eba-ab74-078c2d3dc1cc",
+                "cc68e0ff-459b-5a4d-8a52-8159f49725ea",
+                "db91796c-c4dd-57f6-9d97-bff194921704"
             ]
         },
         {
@@ -30254,7 +30487,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -30290,6 +30522,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30312,11 +30545,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "bd6518f9-4ff2-54f9-941f-62eaf2a44b72",
+            "uuid": "2480352d-edc5-50a5-80cb-60ab505c33d2",
             "variations": [
-                "d871b7c8-5a6f-5f2f-8a09-8687ac5c29a7",
-                "3e6b8c92-24d9-5493-8bcd-dedd9361d904",
-                "e7fdd725-f854-5280-976c-2f1da5f73c6b"
+                "9458bc2e-161e-5010-a849-384d0e5ed4ff",
+                "dcb3bd2a-d661-5b7f-bfa2-11f49610b970",
+                "f321bf9f-d7e4-53ff-84c4-960cd36b59fd"
             ]
         },
         {
@@ -30364,7 +30597,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -30400,6 +30632,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30422,11 +30655,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "d871b7c8-5a6f-5f2f-8a09-8687ac5c29a7",
+            "uuid": "9458bc2e-161e-5010-a849-384d0e5ed4ff",
             "variations": [
-                "bd6518f9-4ff2-54f9-941f-62eaf2a44b72",
-                "3e6b8c92-24d9-5493-8bcd-dedd9361d904",
-                "e7fdd725-f854-5280-976c-2f1da5f73c6b"
+                "2480352d-edc5-50a5-80cb-60ab505c33d2",
+                "dcb3bd2a-d661-5b7f-bfa2-11f49610b970",
+                "f321bf9f-d7e4-53ff-84c4-960cd36b59fd"
             ]
         },
         {
@@ -30474,7 +30707,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -30510,6 +30742,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30532,11 +30765,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3e6b8c92-24d9-5493-8bcd-dedd9361d904",
+            "uuid": "dcb3bd2a-d661-5b7f-bfa2-11f49610b970",
             "variations": [
-                "bd6518f9-4ff2-54f9-941f-62eaf2a44b72",
-                "d871b7c8-5a6f-5f2f-8a09-8687ac5c29a7",
-                "e7fdd725-f854-5280-976c-2f1da5f73c6b"
+                "2480352d-edc5-50a5-80cb-60ab505c33d2",
+                "9458bc2e-161e-5010-a849-384d0e5ed4ff",
+                "f321bf9f-d7e4-53ff-84c4-960cd36b59fd"
             ]
         },
         {
@@ -30584,7 +30817,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -30620,6 +30852,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30642,11 +30875,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e7fdd725-f854-5280-976c-2f1da5f73c6b",
+            "uuid": "f321bf9f-d7e4-53ff-84c4-960cd36b59fd",
             "variations": [
-                "bd6518f9-4ff2-54f9-941f-62eaf2a44b72",
-                "d871b7c8-5a6f-5f2f-8a09-8687ac5c29a7",
-                "3e6b8c92-24d9-5493-8bcd-dedd9361d904"
+                "2480352d-edc5-50a5-80cb-60ab505c33d2",
+                "9458bc2e-161e-5010-a849-384d0e5ed4ff",
+                "dcb3bd2a-d661-5b7f-bfa2-11f49610b970"
             ]
         },
         {
@@ -30750,11 +30983,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "9bb6efa8-af27-5222-883c-208886763238",
+            "uuid": "cba39a85-30ca-5e22-9b96-d9dd5ce370fa",
             "variations": [
-                "4b6e3e71-63db-5458-8a4d-6d2df6e2a05d",
-                "0ee821a5-36e7-506b-8925-21bc88fb435f",
-                "c6f071eb-815a-5f98-a99b-73e87ebc25b9"
+                "acc1208d-f272-5d18-9cd5-95bf6155b8f1",
+                "beb3b41a-cbd0-540f-930d-a1fc98f142d7",
+                "abf7910f-d733-5da8-84f7-9cdffc5d21a6"
             ]
         },
         {
@@ -30858,11 +31091,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "4b6e3e71-63db-5458-8a4d-6d2df6e2a05d",
+            "uuid": "acc1208d-f272-5d18-9cd5-95bf6155b8f1",
             "variations": [
-                "9bb6efa8-af27-5222-883c-208886763238",
-                "0ee821a5-36e7-506b-8925-21bc88fb435f",
-                "c6f071eb-815a-5f98-a99b-73e87ebc25b9"
+                "cba39a85-30ca-5e22-9b96-d9dd5ce370fa",
+                "beb3b41a-cbd0-540f-930d-a1fc98f142d7",
+                "abf7910f-d733-5da8-84f7-9cdffc5d21a6"
             ]
         },
         {
@@ -30966,11 +31199,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "0ee821a5-36e7-506b-8925-21bc88fb435f",
+            "uuid": "beb3b41a-cbd0-540f-930d-a1fc98f142d7",
             "variations": [
-                "9bb6efa8-af27-5222-883c-208886763238",
-                "4b6e3e71-63db-5458-8a4d-6d2df6e2a05d",
-                "c6f071eb-815a-5f98-a99b-73e87ebc25b9"
+                "cba39a85-30ca-5e22-9b96-d9dd5ce370fa",
+                "acc1208d-f272-5d18-9cd5-95bf6155b8f1",
+                "abf7910f-d733-5da8-84f7-9cdffc5d21a6"
             ]
         },
         {
@@ -31074,11 +31307,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "c6f071eb-815a-5f98-a99b-73e87ebc25b9",
+            "uuid": "abf7910f-d733-5da8-84f7-9cdffc5d21a6",
             "variations": [
-                "9bb6efa8-af27-5222-883c-208886763238",
-                "4b6e3e71-63db-5458-8a4d-6d2df6e2a05d",
-                "0ee821a5-36e7-506b-8925-21bc88fb435f"
+                "cba39a85-30ca-5e22-9b96-d9dd5ce370fa",
+                "acc1208d-f272-5d18-9cd5-95bf6155b8f1",
+                "beb3b41a-cbd0-540f-930d-a1fc98f142d7"
             ]
         },
         {
@@ -31161,6 +31394,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31183,11 +31417,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2d90f917-1941-513c-b4ba-c15316398594",
+            "uuid": "7d07990b-0e81-5498-a119-080c5fa362bb",
             "variations": [
-                "e150aaf5-0f6f-57a9-998d-32a3b6cff080",
-                "7498277b-3cb1-53fb-8110-30ec4758695e",
-                "9a265cd1-f36a-5058-9415-5908df922ce1"
+                "5ff91c29-9da2-5af6-bc26-a6dc946c8f5c",
+                "bf929b66-e974-56da-ac92-6a77cb10ff11",
+                "84f2a55e-4cfd-5594-b4d4-385209953391"
             ]
         },
         {
@@ -31270,6 +31504,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31292,11 +31527,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "e150aaf5-0f6f-57a9-998d-32a3b6cff080",
+            "uuid": "5ff91c29-9da2-5af6-bc26-a6dc946c8f5c",
             "variations": [
-                "2d90f917-1941-513c-b4ba-c15316398594",
-                "7498277b-3cb1-53fb-8110-30ec4758695e",
-                "9a265cd1-f36a-5058-9415-5908df922ce1"
+                "7d07990b-0e81-5498-a119-080c5fa362bb",
+                "bf929b66-e974-56da-ac92-6a77cb10ff11",
+                "84f2a55e-4cfd-5594-b4d4-385209953391"
             ]
         },
         {
@@ -31379,6 +31614,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31401,11 +31637,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7498277b-3cb1-53fb-8110-30ec4758695e",
+            "uuid": "bf929b66-e974-56da-ac92-6a77cb10ff11",
             "variations": [
-                "2d90f917-1941-513c-b4ba-c15316398594",
-                "e150aaf5-0f6f-57a9-998d-32a3b6cff080",
-                "9a265cd1-f36a-5058-9415-5908df922ce1"
+                "7d07990b-0e81-5498-a119-080c5fa362bb",
+                "5ff91c29-9da2-5af6-bc26-a6dc946c8f5c",
+                "84f2a55e-4cfd-5594-b4d4-385209953391"
             ]
         },
         {
@@ -31488,6 +31724,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31510,11 +31747,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "9a265cd1-f36a-5058-9415-5908df922ce1",
+            "uuid": "84f2a55e-4cfd-5594-b4d4-385209953391",
             "variations": [
-                "2d90f917-1941-513c-b4ba-c15316398594",
-                "e150aaf5-0f6f-57a9-998d-32a3b6cff080",
-                "7498277b-3cb1-53fb-8110-30ec4758695e"
+                "7d07990b-0e81-5498-a119-080c5fa362bb",
+                "5ff91c29-9da2-5af6-bc26-a6dc946c8f5c",
+                "bf929b66-e974-56da-ac92-6a77cb10ff11"
             ]
         },
         {
@@ -31595,6 +31832,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31617,11 +31855,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f5d68547-d101-5052-aab5-8af82073aedc",
+            "uuid": "d5a52985-b3ed-5554-bf53-e114090f5a84",
             "variations": [
-                "2e98d00d-2a76-5920-a387-9f0f631bff08",
-                "7f71d3ea-5235-56cd-9237-772ad288df7f",
-                "94db6310-a94a-501e-b9b6-fab0194795fd"
+                "12bbb7e5-659e-5053-813d-dbe593b86ee5",
+                "bea4a6fe-e967-5a58-adce-212b9af14bb2",
+                "fe9ac397-a93b-5393-a1f7-c1c36f0efd70"
             ]
         },
         {
@@ -31702,6 +31940,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31724,11 +31963,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "2e98d00d-2a76-5920-a387-9f0f631bff08",
+            "uuid": "12bbb7e5-659e-5053-813d-dbe593b86ee5",
             "variations": [
-                "f5d68547-d101-5052-aab5-8af82073aedc",
-                "7f71d3ea-5235-56cd-9237-772ad288df7f",
-                "94db6310-a94a-501e-b9b6-fab0194795fd"
+                "d5a52985-b3ed-5554-bf53-e114090f5a84",
+                "bea4a6fe-e967-5a58-adce-212b9af14bb2",
+                "fe9ac397-a93b-5393-a1f7-c1c36f0efd70"
             ]
         },
         {
@@ -31809,6 +32048,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31831,11 +32071,11 @@
             "types": [
                 "Land"
             ],
-            "uuid": "7f71d3ea-5235-56cd-9237-772ad288df7f",
+            "uuid": "bea4a6fe-e967-5a58-adce-212b9af14bb2",
             "variations": [
-                "f5d68547-d101-5052-aab5-8af82073aedc",
-                "2e98d00d-2a76-5920-a387-9f0f631bff08",
-                "94db6310-a94a-501e-b9b6-fab0194795fd"
+                "d5a52985-b3ed-5554-bf53-e114090f5a84",
+                "12bbb7e5-659e-5053-813d-dbe593b86ee5",
+                "fe9ac397-a93b-5393-a1f7-c1c36f0efd70"
             ]
         },
         {
@@ -31916,6 +32156,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31938,20 +32179,20 @@
             "types": [
                 "Land"
             ],
-            "uuid": "94db6310-a94a-501e-b9b6-fab0194795fd",
+            "uuid": "fe9ac397-a93b-5393-a1f7-c1c36f0efd70",
             "variations": [
-                "f5d68547-d101-5052-aab5-8af82073aedc",
-                "2e98d00d-2a76-5920-a387-9f0f631bff08",
-                "7f71d3ea-5235-56cd-9237-772ad288df7f"
+                "d5a52985-b3ed-5554-bf53-e114090f5a84",
+                "12bbb7e5-659e-5053-813d-dbe593b86ee5",
+                "bea4a6fe-e967-5a58-adce-212b9af14bb2"
             ]
         }
     ],
-    "code": "som",
+    "code": "SOM",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "som",
+    "mtgoCode": "SOM",
     "name": "Scars of Mirrodin",
     "releaseDate": "2010-10-01",
     "tcgplayerGroupId": 100,
@@ -31975,7 +32216,7 @@
             "scryfallId": "5252ab51-43e8-4b24-9830-de0ad9b9d3dc",
             "toughness": "2",
             "type": "Token Creature — Cat",
-            "uuid": "dbe623f6-b7ed-5bf2-81ab-1b95399edf8c"
+            "uuid": "eb0cc824-0297-55aa-93fa-218c5009166a"
         },
         {
             "artist": "Goran Josic",
@@ -31996,7 +32237,7 @@
             "scryfallId": "7a563df7-7b9d-4692-ab1b-578be1887b62",
             "toughness": "1",
             "type": "Token Creature — Soldier",
-            "uuid": "b279e7bf-2a43-5e7c-bfac-314deed361de"
+            "uuid": "0bd797da-9cc4-5a9a-af4d-41cffa5188bf"
         },
         {
             "artist": "Goran Josic",
@@ -32017,7 +32258,7 @@
             "scryfallId": "b37f4fdb-1533-4c38-a654-f715fbef6abf",
             "toughness": "1",
             "type": "Token Creature — Goblin",
-            "uuid": "73c0c099-073d-5707-b397-448264d2ffa7"
+            "uuid": "86b6ca14-ff12-593e-b8d4-087f792a7fd3"
         },
         {
             "artist": "Adrian Smith",
@@ -32040,7 +32281,7 @@
             "text": "Infect",
             "toughness": "1",
             "type": "Token Creature — Insect",
-            "uuid": "35c63c14-4ce2-5e85-818b-07881097df29"
+            "uuid": "38e9f87c-fe63-50f6-b18c-05b3ff26ed9f"
         },
         {
             "artist": "Chris Rahn",
@@ -32060,7 +32301,7 @@
             "scryfallId": "5cde8b3e-c006-41fd-a926-8746c794e149",
             "toughness": "2",
             "type": "Token Creature — Wolf",
-            "uuid": "1c03124c-ac13-5b68-b586-4cbb6bff8959"
+            "uuid": "7ea02cf4-6985-5d07-8908-41f1595a450c"
         },
         {
             "artist": "Nic Klein",
@@ -32084,7 +32325,7 @@
             "scryfallId": "c705b843-ca62-47bb-95dd-f303c60088bb",
             "toughness": "3",
             "type": "Token Artifact Creature — Golem",
-            "uuid": "4e5f943a-f248-5ecb-a337-04ce1bfd001a"
+            "uuid": "dd3e62a8-67aa-5ced-9091-d5ea1a77cacd"
         },
         {
             "artist": "Ryan Pancoast",
@@ -32107,7 +32348,7 @@
             "scryfallId": "182308b3-86e0-46d8-9104-95576a3d3921",
             "toughness": "1",
             "type": "Token Artifact Creature — Myr",
-            "uuid": "ecc26883-02f9-5e29-92a1-e9203660ea2f"
+            "uuid": "a58ee40d-23ac-595a-82a3-bb6b08e9a7e7"
         },
         {
             "artist": "Raymond Swanland",
@@ -32124,7 +32365,7 @@
             "text": "Deathtouch",
             "toughness": "3",
             "type": "Token Artifact Creature — Wurm",
-            "uuid": "6c83df22-de56-5439-9a64-b5226d12b962"
+            "uuid": "85e9bdc3-b101-5c98-adee-823754922a6f"
         },
         {
             "artist": "Raymond Swanland",
@@ -32141,7 +32382,7 @@
             "text": "Lifelink",
             "toughness": "3",
             "type": "Token Artifact Creature — Wurm",
-            "uuid": "6bf6b9d3-b37f-574a-a74c-7e28fe41206b"
+            "uuid": "9653374d-1f98-5234-84f5-74742e6e1c0b"
         },
         {
             "borderColor": "black",
@@ -32153,7 +32394,7 @@
             "scryfallId": "856e308d-6268-4311-9667-c2f761db8f99",
             "text": "(A player with ten or more poison counters loses the game.)",
             "type": "Card",
-            "uuid": "b26f585e-0717-5375-92c3-a7d0cf5eb7b0"
+            "uuid": "243ea9ab-5a3a-5cff-ace3-64e9a618bb03"
         }
     ],
     "totalSetSize": 249,

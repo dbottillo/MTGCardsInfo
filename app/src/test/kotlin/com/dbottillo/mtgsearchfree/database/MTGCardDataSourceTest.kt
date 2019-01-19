@@ -161,7 +161,7 @@ class MTGCardDataSourceTest {
 
         val cards = underTest.searchCards(searchParams)
 
-        for (card in cards) {
+        for (card in cards.filter { it.layout == "normal" }) {
             assertThat(card.cmc, `is`(4))
             assertThat(card.manaCost, `is`("{2}{W}{U}"))
         }

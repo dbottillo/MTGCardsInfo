@@ -57,7 +57,6 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
                 createNotificationChannel()
             }
             Fabric.with(this, Crashlytics())
-            Crashlytics.setString("git_sha", BuildConfig.GIT_SHA)
             checkReleaseNote()
 
             if (BuildConfig.DEBUG) {

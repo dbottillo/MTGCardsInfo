@@ -55,12 +55,14 @@
             "scryfallId": "dbbf55bc-6bb3-458a-8cf0-1f603bb2acb3",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129560,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/70bc229b9f823924",
             "text": "Choose two —\n• Destroy all artifacts.\n• Destroy all enchantments.\n• Destroy all creatures with converted mana cost 3 or less.\n• Destroy all creatures with converted mana cost 4 or greater.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "73696537-43d9-56d1-837e-20390d92ddab"
+            "uuid": "13be6dc3-06a4-50be-86ef-75e669d623d7"
         },
         {
             "artist": "Jose Cabrera",
@@ -124,13 +126,15 @@
                 "Wizard"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129537,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9f2f99c03ccb954c",
             "text": "Flash\nFlying\nIf an opponent would search a library, that player searches the top four cards of that library instead.",
             "toughness": "1",
             "type": "Creature — Bird Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "25980770-235a-5163-bce8-494f58f91341"
+            "uuid": "41ab176f-2598-58bd-baa7-8f665608c2a7"
         },
         {
             "artist": "Igor Kieryluk",
@@ -196,13 +200,15 @@
                 "Cleric"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129561,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0a97a82b1209cb43",
             "text": "Flash\nIf a nontoken creature would enter the battlefield and it wasn't cast, exile it instead.",
             "toughness": "2",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "db061fe5-772c-5d0b-a5e8-36599d473247"
+            "uuid": "381d69b7-8392-5c30-80a6-92ef54ebc7c2"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -254,13 +260,15 @@
                 "Advisor"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129546,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c1a6de2d5e57211f",
             "text": "Sacrifice Loyal Retainers: Return target legendary creature card from your graveyard to the battlefield. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "6a7c5c84-b509-5652-9018-572be95cbbda"
+            "uuid": "a4e32872-402a-5bf3-bb34-06b94753a04c"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -317,13 +325,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 130052,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/01134941c400f54e",
             "text": "Double strike, indestructible\nOketra the True can't attack or block unless you control at least three other creatures.\n{3}{W}: Create a 1/1 white Warrior creature token with vigilance.",
             "toughness": "6",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "0d4feedd-730c-5716-a414-b7411d7ebfad"
+            "uuid": "331e72e8-b6e9-519a-be64-9203c922ce59"
         },
         {
             "artist": "Cliff Childs",
@@ -376,12 +386,14 @@
             "scryfallId": "d64f89e7-a91b-4c67-bc64-8b6f03820a4d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129551,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bfd5136fb263db92",
             "text": "If you control a creature, damage that would reduce your life total to less than 1 reduces it to 1 instead.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "81d61969-c525-5862-b838-e009faa75c60"
+            "uuid": "00d5fef6-20de-5e98-a2ac-df89ac3e2b10"
         },
         {
             "artist": "Titus Lunter",
@@ -447,12 +459,14 @@
             "scryfallId": "4351bf97-0b9e-44a5-bb7c-1098a683b18d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129552,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f45b62d07c3b07ac",
             "text": "Destroy all creatures. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9fa33e42-5382-5806-8c40-573ac56591b4"
+            "uuid": "36cdc943-0a90-547c-8658-a18ef89e47bb"
         },
         {
             "artist": "Lius Lasahido",
@@ -509,13 +523,15 @@
                 "Sphinx"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 129539,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f77e5b37bc469156",
             "text": "Flying\nWhenever an opponent draws a card, you may draw two cards.",
             "toughness": "6",
             "type": "Creature — Sphinx",
             "types": [
                 "Creature"
             ],
-            "uuid": "8aeafb6f-b053-52a9-abd2-a215282d28bf"
+            "uuid": "033920db-f1fa-5f4c-b305-1d95bfbdc859"
         },
         {
             "artist": "Joseph Meehan",
@@ -564,12 +580,14 @@
             "scryfallId": "3f4a8acd-1d49-4fa7-a88e-83cfe741de89",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129540,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7470ad489f638173",
             "text": "Whenever an opponent casts a spell, you may reveal the top card of your library. If you do, counter that spell if it has the same converted mana cost as the revealed card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "bec49438-1b02-5375-80f6-a9abbba17bc4"
+            "uuid": "1fb54007-de7b-5923-a3c8-800ea2a94fa5"
         },
         {
             "artist": "Chase Stone",
@@ -645,12 +663,14 @@
             "scryfallId": "3126d20f-1082-4ebc-b2fa-b12be3ba1bac",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129541,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/de9fd48d967513cc",
             "text": "Counter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b0e38e20-2244-570a-9932-4a5dbbbeb957"
+            "uuid": "c6ef7838-9213-579b-bb63-755a358c65e5"
         },
         {
             "artist": "Richard Wright",
@@ -704,12 +724,14 @@
             "scryfallId": "a2a384c1-a05f-4f00-bd77-f897d9819971",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129542,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2a816360efb9568",
             "text": "Choose two —\n• Counter target spell.\n• Return target permanent to its owner's hand.\n• Tap all creatures your opponents control.\n• Draw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "dafb2f91-3b77-5aed-b528-f0b10091a286"
+            "uuid": "2c9ec2de-162c-52b1-b47a-0bcda5f91dd1"
         },
         {
             "artist": "Richard Wright",
@@ -758,12 +780,14 @@
             "scryfallId": "a9b037f1-3298-4ba8-92a8-0843f6e497d7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129544,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb83acfc6c642379",
             "text": "You may return an Island you control to its owner's hand rather than pay this spell's mana cost.\nCounter target spell unless its controller pays {1}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "267b4ac5-2fe4-5b5d-9644-d235c2ec4696"
+            "uuid": "8e556ed5-11b7-579d-8681-146b4cf3a2e4"
         },
         {
             "artist": "Igor Kieryluk",
@@ -802,12 +826,14 @@
             "scryfallId": "0251408a-aa3c-45f6-8012-822355a6ec25",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129563,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6f2b8f111088db4d",
             "text": "Change the target of target spell with a single target unless that spell's controller pays {2}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9031c372-0459-5a62-82f5-1a4bfa8aa268"
+            "uuid": "af81d518-b154-5f0f-8234-fb1e0e4058a6"
         },
         {
             "artist": "Jaime Jones",
@@ -858,12 +884,14 @@
             "scryfallId": "026983a4-03ca-4812-b129-5ea523596942",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129545,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa9e8bccc6f12679",
             "text": "You may pay 1 life and exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3909239a-ee7a-5bd6-9316-9454839f74f5"
+            "uuid": "f45b1b23-faf2-5e17-a0c8-3c8e0ea63221"
         },
         {
             "artist": "Jose Cabrera",
@@ -919,13 +947,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129893,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1c58e3c813e3a800",
             "text": "Flying, indestructible\nKefnet the Mindful can't attack or block unless you have seven or more cards in hand.\n{3}{U}: Draw a card, then you may return a land you control to its owner's hand.",
             "toughness": "5",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "df72dc7a-b700-5e66-8e90-d287509f7463"
+            "uuid": "7577d3a6-84ea-5bab-b749-e27deb424078"
         },
         {
             "artist": "Titus Lunter",
@@ -975,12 +1005,14 @@
             "scryfallId": "3ab90299-547a-4538-a31c-f55afab10c50",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129549,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9adb3704705374e",
             "text": "Counter target spell.\nAt the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "01f14bab-11aa-5b3d-8317-9db9af400a93"
+            "uuid": "7f21fe8e-963f-5493-a519-c2d302fa719a"
         },
         {
             "artist": "Joseph Meehan",
@@ -1027,12 +1059,14 @@
             "scryfallId": "eef1f68a-b27c-4e81-9a3c-dccb86771bec",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129565,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5047f307c87c2f22",
             "text": "Counter target noncreature spell unless its controller pays {2}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2f399a5e-6d80-5d36-b28a-0f013db3e3a7"
+            "uuid": "2d1587bb-a16e-583c-8d3f-d3783fb2c021"
         },
         {
             "artist": "Cliff Childs",
@@ -1088,12 +1122,14 @@
             "scryfallId": "ea24228f-da16-46eb-9dcf-a377286b6168",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129566,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb32e76258954e23",
             "text": "Counter target activated or triggered ability. (Mana abilities can't be targeted.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5025d851-3219-54a8-b63a-d58baa7a135c"
+            "uuid": "00d481e3-51ae-5ddf-9564-63aad0d59a8c"
         },
         {
             "artist": "Jose Cabrera",
@@ -1133,12 +1169,14 @@
             "scryfallId": "948bcca4-6e7a-4884-82f8-21926db8bdd5",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129559,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dfbcc08db8d06d05",
             "text": "{B}, Sacrifice a creature: Destroy target nonblack creature.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "7b452845-d56f-5afa-9a5a-499de4fd8abb"
+            "uuid": "47b00aa2-f828-56ce-879a-bacbd621da12"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -1202,13 +1240,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 130066,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a627c071d2427fd4",
             "text": "Menace, indestructible\nBontu the Glorified can't attack or block unless a creature died under your control this turn.\n{1}{B}, Sacrifice another creature: Scry 1. Each opponent loses 1 life and you gain 1 life.",
             "toughness": "6",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "8564610e-82c3-5c85-ac96-21551bf58829"
+            "uuid": "07858104-9074-5102-ad0d-bb71c4fe1811"
         },
         {
             "artist": "Richard Wright",
@@ -1282,12 +1322,14 @@
             "scryfallId": "2bbcbe12-b615-47e6-8b6b-c59f92f16c3d",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129543,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/efed132774d30bd2",
             "text": "Add {B}{B}{B}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5c898e61-ec87-56c0-a5c1-700f6719191c"
+            "uuid": "a075a15f-4974-5420-bb50-0a88e835ab30"
         },
         {
             "artist": "Joseph Meehan",
@@ -1340,12 +1382,14 @@
             "scryfallId": "6b34a328-8d6a-4baf-99de-c8b050b23e10",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129562,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e78872ec705fe89",
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nSearch your library for a card and put that card into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7f2b2f8c-3cf5-535d-8116-690217b773fc"
+            "uuid": "3c528116-f976-5406-984f-04639ec4c218"
         },
         {
             "artist": "Eytan Zana",
@@ -1390,12 +1434,14 @@
             "scryfallId": "466d6254-4d5c-4f66-a018-eb4a3ec1881c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129564,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/725113fabce67c5c",
             "text": "Search your library for a card and put that card into your graveyard. Then shuffle your library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3573841d-41af-58fd-b2ad-80ee6e56ca2e"
+            "uuid": "10413440-62f2-5c4b-b631-907b0eab8c06"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1444,12 +1490,14 @@
             "scryfallId": "5dd68790-cd9a-4527-8e53-798822ee2c6c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129548,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/69694a4ee389712f",
             "text": "Target player discards X cards at random.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e735ece7-1bc9-5e68-8927-0bf1edc3cd2d"
+            "uuid": "2aaa4619-1cdf-57ab-9216-4042aa49be94"
         },
         {
             "artist": "Greg Opalinski",
@@ -1498,12 +1546,14 @@
             "scryfallId": "6bcaa16c-4841-4962-88ca-b17175189e5c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129558,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7df2662148c891a7",
             "text": "{3}{R}{R}: Untap all creatures you control. After this main phase, there is an additional combat phase followed by an additional main phase. Activate this ability only any time you could cast a sorcery.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "439c4908-8679-52da-b6ed-73f2f43d9adb"
+            "uuid": "d8c1c2eb-31fb-5a19-90b5-a9760eb1b565"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1578,12 +1628,14 @@
             "scryfallId": "14bd3d19-033e-41a7-8710-02b73ba0b4e4",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129538,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8b0c0635b187f9d1",
             "text": "Chain Lightning deals 3 damage to any target. Then that player or that permanent's controller may pay {R}{R}. If the player does, they may copy this spell and may choose a new target for that copy.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "88a05ef3-f26c-569c-8584-97473820b2db"
+            "uuid": "11b732a4-d60d-51ff-8da8-31d702da1da9"
         },
         {
             "artist": "Joseph Meehan",
@@ -1639,13 +1691,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 129729,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c16c2ab88607abf9",
             "text": "Indestructible, haste\nHazoret the Fervent can't attack or block unless you have one or fewer cards in hand.\n{2}{R}, Discard a card: Hazoret deals 2 damage to each opponent.",
             "toughness": "4",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "14cbbb5a-d2b2-5281-a567-2946bf15b662"
+            "uuid": "f98b5d0b-e2e3-5c71-91bd-cec632b02bd4"
         },
         {
             "artist": "Jack Wang",
@@ -1701,13 +1755,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 130058,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f8ba6c246550d58b",
             "text": "Deathtouch, indestructible\nRhonas the Indomitable can't attack or block unless you control another creature with power 4 or greater.\n{2}{G}: Another target creature gets +2/+0 and gains trample until end of turn.",
             "toughness": "5",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "90b4fe9d-15e7-56fb-8059-f9dcf5cd8369"
+            "uuid": "d8a77901-8b60-5f52-a95d-223b65f096f2"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1775,12 +1831,14 @@
             "scryfallId": "e2d85423-ebd8-4a6e-aedf-90e52f918764",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129547,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3b6238adcb303bdb",
             "text": "Destroy target nonland permanent and all other permanents with the same name as that permanent.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d26b45b7-55e1-5a01-ac9a-974661608655"
+            "uuid": "fffcb41c-285e-537e-b327-5d0316138012"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1826,12 +1884,14 @@
             "scryfallId": "97aeb745-5b98-4240-a1a8-861c06d616cc",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 129550,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b69cfe5e665f717",
             "text": "Destroy target permanent.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7752bf1b-3902-5d61-bd17-47700a626a7f"
+            "uuid": "8f2bb339-27d5-5852-9970-38de60795971"
         },
         {
             "artist": "Florian de Gesincourt",
@@ -1894,12 +1954,14 @@
             "scryfallId": "685dcf04-1453-4db5-b81b-9ef9a444ed71",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134897,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/695a6acb49d12128",
             "text": "Destroy all lands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bba5fbae-6318-5b91-a8f6-e2459fb8a87a"
+            "uuid": "0bada644-cf38-5a2e-a30a-a196c30a13ae"
         },
         {
             "artist": "Cliff Childs",
@@ -1944,12 +2006,14 @@
             "scryfallId": "122c819d-2b13-49af-92dc-af96d4de45de",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134901,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/83136fef63b2c038",
             "text": "Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.)\nReturn target permanent to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4e339a25-d6d6-5adf-aa66-9fc8956966f7"
+            "uuid": "375b26be-ba62-5863-b834-14394288fa83"
         },
         {
             "artist": "Richard Wright",
@@ -1993,12 +2057,14 @@
             "scryfallId": "14a9cc52-a45b-4cde-8aff-d672b35c3118",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134907,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2eac12308c702066",
             "text": "Buyback—Discard two cards. (You may discard two cards in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.)\nCounter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "542fb922-9a6e-5122-b5c5-ae9fcd5cc3b2"
+            "uuid": "77dfd1c6-0043-5477-90b3-af59f0e1e1a3"
         },
         {
             "artist": "Josh Hass",
@@ -2061,12 +2127,14 @@
             "scryfallId": "5b04f5e9-6728-45be-af2e-b2584cb67e1c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134910,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a32a988a1161ef2c",
             "text": "You may cast spells from your hand without paying their mana costs.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2a47dc35-3840-5290-80cf-2c637163b954"
+            "uuid": "44869251-759d-57cb-bb96-569e42a30fc7"
         },
         {
             "artist": "Svetlin Velinov",
@@ -2108,12 +2176,14 @@
             "scryfallId": "07574b6a-de37-42a4-8584-2e3f440315be",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134911,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4dc725a95bec746b",
             "text": "Tap an untapped creature you control: Tap target artifact, creature, or land.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "03fa0ade-aba5-567f-ad6d-1da195128507"
+            "uuid": "01f2b77d-d540-5f8c-92ef-62e1cc4ac052"
         },
         {
             "artist": "Titus Lunter",
@@ -2157,12 +2227,14 @@
             "scryfallId": "30053742-35e4-4ae0-a90e-d687a5f298d9",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134914,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f649bd3572eab22a",
             "text": "Return all lands to their owners' hands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b568508f-4e6d-5a7f-9bad-b1cd89ab766a"
+            "uuid": "2121c41a-c076-5869-8518-39c21c70e1c7"
         },
         {
             "artist": "Yongjae Choi",
@@ -2197,6 +2269,7 @@
                 "BOK",
                 "E02",
                 "MP2",
+                "PRM",
                 "SS1"
             ],
             "rarity": "mythic",
@@ -2219,12 +2292,14 @@
                 "Aura"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 134917,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6b6e8839114f279a",
             "text": "Enchant creature with converted mana cost 2 or less\nYou control enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b72a5c2f-9379-5652-8c16-483a79d7e178"
+            "uuid": "409a8b7f-e6c5-59a2-8d5b-40ed3fe33646"
         },
         {
             "artist": "Igor Kieryluk",
@@ -2281,13 +2356,15 @@
                 "Avatar"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 134898,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/06525a3a10e8f736",
             "text": "If there are ten or more creature cards total in all graveyards, this spell costs {6} less to cast.\nFear (This creature can't be blocked except by artifact creatures and/or black creatures.)\n{T}: Destroy target creature. It can't be regenerated.",
             "toughness": "5",
             "type": "Creature — Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "c4645634-133c-5079-9b17-0ca4cc185dd5"
+            "uuid": "1150919d-8cba-5b70-a442-99ef18b9a8d7"
         },
         {
             "artist": "Zack Stella",
@@ -2336,12 +2413,14 @@
             "scryfallId": "c916a119-9eee-440d-90ef-05ab35bf3fbe",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134903,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/140efc61fdaa0930",
             "text": "Destroy all creatures. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e8a8653f-1cb0-522f-9a55-f436f0dda9ea"
+            "uuid": "83a5fea9-5857-5f0f-96a2-971cf8c51037"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -2384,13 +2463,15 @@
                 "Angel"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 134904,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/01f792caffd9838b",
             "text": "Kicker {W}{W} (You may pay an additional {W}{W} as you cast this spell.)\nFlying\nWhen Desolation Angel enters the battlefield, destroy all lands you control. If it was kicked, destroy all lands instead.",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "90ee6a32-22c8-5fe0-a927-67f9a20c97e9"
+            "uuid": "b7bd6788-4a51-55d9-9c70-57c9f2eb1ee4"
         },
         {
             "artist": "Daarken",
@@ -2436,12 +2517,14 @@
             "scryfallId": "f6986173-56e2-41d8-9387-ab86721ed92e",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134905,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8691433c7e2d21a6",
             "text": "Target player sacrifices a creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1325121a-b8bd-561f-aa0c-789252befa09"
+            "uuid": "934a71ad-792d-5a7c-9a95-96b34f663fa8"
         },
         {
             "artist": "Jaime Jones",
@@ -2492,12 +2575,14 @@
             "scryfallId": "0e14c264-d2ce-414c-b2aa-4d3e1433d5a7",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134906,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/75a06f97384c8afe",
             "text": "Search your library and graveyard for five cards and exile the rest. Put the chosen cards on top of your library in any order. You lose half your life, rounded up.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "60ea1798-39a5-585e-b0e8-7e3240a0d011"
+            "uuid": "fb76488a-6b98-5840-a375-dcc65b768fa1"
         },
         {
             "artist": "Jonas De Ro",
@@ -2541,12 +2626,14 @@
             "scryfallId": "96af17e0-91fa-4b99-8313-9dabea8685ea",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134909,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8ec02a870a368696",
             "text": "Whenever a creature deals damage to you, destroy it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c9e394e9-a006-5580-aa40-f7595ee088cf"
+            "uuid": "713c8c52-deb4-549d-bbf2-f80919c10946"
         },
         {
             "artist": "Josh Hass",
@@ -2595,12 +2682,14 @@
             "scryfallId": "bc8475bd-bdd4-421c-ace7-c6262f7405ce",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134913,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/530e8bea9595575e",
             "text": "Destroy target nonblack creature.\nAt the beginning of your next upkeep, pay {2}{B}. If you don't, you lose the game.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6e64cbfe-69bf-5272-8d0c-0acf89c669ee"
+            "uuid": "ad5cf4b4-ae40-5712-a263-12d819659842"
         },
         {
             "artist": "James Ryman",
@@ -2651,12 +2740,14 @@
             "scryfallId": "ea5ec419-8392-4f1b-9557-5404ba632bf1",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134916,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c8bf4f2668650d7d",
             "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card. You lose 2 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "205ea3d4-8ed4-5796-acbd-16177a1ff206"
+            "uuid": "8da1982c-7e29-5c6e-b75b-d8427eef1e7b"
         },
         {
             "artist": "Christine Choi",
@@ -2719,12 +2810,14 @@
             "scryfallId": "547e80f7-7ec3-4c72-ad51-3245d429af3c",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134899,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bc4934b5cff97fd1",
             "text": "Nonbasic lands are Mountains.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2eca01e6-a88b-5bf2-85bc-52064e9cdbcb"
+            "uuid": "43760730-defb-59d5-96ed-06d0fddfea20"
         },
         {
             "artist": "Philip Straub",
@@ -2771,12 +2864,14 @@
             "scryfallId": "f84e0bcd-13f5-41c9-aa7b-06ef4cf8543a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134900,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c795eae2eccf8e04",
             "text": "Destroy all Islands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e99f04c7-5008-5b95-b071-ff70022e5c35"
+            "uuid": "31e7d25f-c43c-56fe-805f-f886d4ac5fcd"
         },
         {
             "artist": "Johann Bodin",
@@ -2822,12 +2917,14 @@
             "scryfallId": "9378ca0c-72b6-4020-8bb6-ea2b7581887a",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134912,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/56aa73704f7f3a9a",
             "text": "Destroy all artifacts. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0bf9981f-1d3e-58e3-9980-f5c1bda7a56b"
+            "uuid": "e9494b6c-dc77-506c-81be-1e79bb39ef6a"
         },
         {
             "artist": "Darek Zabrocki",
@@ -2892,12 +2989,14 @@
                 "Arcane"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 134918,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3f95fd49d03687db",
             "text": "You may put a creature card from your hand onto the battlefield. That creature gains haste. Sacrifice that creature at the beginning of the next end step.\nSplice onto Arcane {2}{R}{R} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "9badbb31-b4aa-525a-902a-6655c2c240f7"
+            "uuid": "f0456781-b3e0-51f0-89bf-14fea71f9fc2"
         },
         {
             "artist": "Florian de Gesincourt",
@@ -2939,12 +3038,14 @@
             "scryfallId": "f4b586d8-3b8a-46ed-b2c3-b257bbbaf882",
             "subtypes": [],
             "supertypes": [],
+            "tcgplayerProductId": 134902,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/becc0af73fb02b81",
             "text": "Islands don't untap during their controllers' untap steps.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "12e3d24d-f505-57e4-9851-f1f9bde6bd84"
+            "uuid": "b100927f-c5c4-5a44-a634-3d3f6db6fa4d"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -3007,13 +3108,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 134932,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23afaf485044b37d",
             "text": "Flying\nWhenever you draw a card, create a 1/1 blue and red Insect creature token with flying and haste.\n{2}{U}{R}: Draw a card, then discard a card.\nWhen The Locust God dies, return it to its owner's hand at the beginning of the next end step.",
             "toughness": "4",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "aedea05f-d45d-596d-a8c6-7756f41a9503"
+            "uuid": "0539efe6-75bb-54c1-9513-9eb4a42bace6"
         },
         {
             "artist": "Jason A. Engle",
@@ -3069,13 +3172,15 @@
                 "Elemental"
             ],
             "supertypes": [],
+            "tcgplayerProductId": 134908,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6805b7910f26eef9",
             "text": "Lord of Extinction's power and toughness are each equal to the number of cards in all graveyards.",
             "toughness": "*",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "e256e6f7-d595-5801-898f-7b3083163c65"
+            "uuid": "69416645-aaa1-557e-bfd9-44e365b822de"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -3157,13 +3262,15 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 137121,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6330a3f6cb640e21",
             "text": "At the beginning of your upkeep, each opponent loses X life and you scry X, where X is the number of Zombies you control.\n{2}{U}{B}: Exile target creature card from a graveyard. Create a token that's a copy of it, except it's a 4/4 black Zombie.\nWhen The Scarab God dies, return it to its owner's hand at the beginning of the next end step.",
             "toughness": "5",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "c39b74b1-f5e4-5f3c-95c6-67b859b117f5"
+            "uuid": "c18b938d-2d34-5edc-8626-50ed89d5c13c"
         },
         {
             "artist": "Grzegorz Rutkowski",
@@ -3229,25 +3336,27 @@
             "supertypes": [
                 "Legendary"
             ],
+            "tcgplayerProductId": 134915,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/605226909b9dbd24",
             "text": "Whenever a creature with a -1/-1 counter on it dies, draw a card.\n{1}{B}{R}: Put a -1/-1 counter on another target creature.\nWhen The Scorpion God dies, return it to its owner's hand at the beginning of the next end step.",
             "toughness": "5",
             "type": "Legendary Creature — God",
             "types": [
                 "Creature"
             ],
-            "uuid": "22c03212-41a8-560a-b409-0705e2d1be12"
+            "uuid": "4a727c12-2646-580c-8d2a-90d675c3326c"
         }
     ],
-    "code": "mp2",
+    "code": "MP2",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "ms3",
+    "mtgoCode": "MS3",
     "name": "Amonkhet Invocations",
     "releaseDate": "2017-04-28",
-    "tcgplayerGroupId": -1,
+    "tcgplayerGroupId": 1909,
     "tokens": [],
     "totalSetSize": 54,
     "type": "masterpiece"

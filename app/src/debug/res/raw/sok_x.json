@@ -122,12 +122,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12394,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2244c25f966e3897",
             "text": "Choose one —\n• Tap all Spirits.\n• Tap all non-Spirit creatures.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "60fa505d-860f-5183-9c7e-bdb1e09b5d31"
+            "uuid": "5204de60-0d1f-500b-9158-dd05ef316c8c"
         },
         {
             "artist": "Anthony S. Waters",
@@ -231,13 +232,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12398,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e92273e83ffcee2a",
             "text": "Flying\nBushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)",
             "toughness": "1",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "74e5e612-b9f0-5bab-81ca-00f49131a986"
+            "uuid": "a1c58f23-429d-5a28-bc1a-6ef76b2eb582"
         },
         {
             "artist": "Adam Rex",
@@ -348,13 +350,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12408,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/38a8bc85fe600c4f",
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, destroy all permanents with that spell's converted mana cost.",
             "toughness": "3",
             "type": "Legendary Creature — Kirin Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "1bb761f8-6a14-5495-8580-2094625141d8"
+            "uuid": "33642d8e-4fe3-5e4a-b7f0-7534ee7ab19b"
         },
         {
             "artist": "Dany Orizio",
@@ -446,12 +449,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12409,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89f6635a8eeb858e",
             "text": "Sweep — Return any number of Plains you control to their owner's hand. Creatures you control get +1/+1 until end of turn for each Plains returned this way.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "423ae502-bcd2-5f77-a321-dd77079331d3"
+            "uuid": "f272405c-3d66-5b5a-8821-7281cbc2dae6"
         },
         {
             "artist": "Daren Bader",
@@ -545,12 +549,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12412,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2befbf54c0aaad5f",
             "text": "Enchant creature\nEnchanted creature can't attack or block unless its controller pays {1} for each card in your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c61ffa88-05c3-577d-a74e-c33f87040ca1"
+            "uuid": "be2ab4a5-2362-5604-af10-b43f1bea597e"
         },
         {
             "artist": "Chippy",
@@ -666,12 +671,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12413,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c85af775e6fca2c3",
             "text": "Cast this spell only during combat after blockers are declared.\nTarget unblocked attacking creature becomes blocked. (This spell works on creatures that can't be blocked.)\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "8555467f-0bfa-5c59-80fc-eb650b01bcb8"
+            "uuid": "69abe816-0111-539e-a8c3-df9ea169bc5b"
         },
         {
             "artist": "Christopher Rush",
@@ -782,13 +788,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12420,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/047f61d312cc698a",
             "text": "As long as you have more cards in hand than each opponent, Descendant of Kiyomaro gets +1/+2 and has \"Whenever this creature deals combat damage, you gain 3 life.\"",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "62d6e8f3-f26e-53e5-9816-ca1f1c72ab5d"
+            "uuid": "cf6a29c7-3c5f-515d-b40f-0100491dc501"
         },
         {
             "artist": "Kev Walker",
@@ -890,13 +897,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12426,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ead0896f124927fd",
             "text": "Flying\nAt the beginning of your upkeep, return a white creature you control to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "4d51b70f-afe7-5360-a2c3-a9d069350a95"
+            "uuid": "d6030609-6701-59ab-93a5-774255a12883"
         },
         {
             "artist": "Daren Bader",
@@ -986,12 +994,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12429,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7954615b888c43f4",
             "text": "Search your library for an enchantment card and put it onto the battlefield. Then shuffle your library.\nEpic (For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0efb57c1-3b92-5807-ac50-25b10b56e84b"
+            "uuid": "4930c208-2f6b-5378-ad3c-a1bf147edc23"
         },
         {
             "artist": "Shishizaru",
@@ -1085,13 +1094,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12441,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a71a838b34385359",
             "text": "{W}, {T}: You gain 2 life.\nChannel — {1}{W}, Discard Ghost-Lit Redeemer: You gain 4 life.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "bd76ef7e-3a28-581b-ad29-8113d69b3adb"
+            "uuid": "3e3c1ec7-5b83-585c-8676-6ee36a936283"
         },
         {
             "artist": "Anthony S. Waters",
@@ -1197,12 +1207,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12447,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/317ab38a42b937fe",
             "text": "Hail of Arrows deals X damage divided as you choose among any number of target attacking creatures.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "23deb5b7-119e-5ab4-b1ce-76e3e2b7f6c2"
+            "uuid": "450f4169-1c6b-588d-b856-fbd7e7e54e08"
         },
         {
             "artist": "Kev Walker",
@@ -1305,13 +1316,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12449,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2ffed2d338c5d351",
             "text": "Protection from black\nBushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)",
             "toughness": "2",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "57061953-44af-523e-8cfb-203ff0202717"
+            "uuid": "5441442f-679b-5a10-b816-90a6e15ce8ea"
         },
         {
             "artist": "Brian Snõddy",
@@ -1414,13 +1426,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12459,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5ebd37c182b68147",
             "text": "Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.)",
             "toughness": "2",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "5c22b2d0-4575-53df-a776-af79509614cc"
+            "uuid": "d59ca145-475e-5726-8d37-4cbdedc12f70"
         },
         {
             "artist": "Matt Thompson",
@@ -1525,13 +1538,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12470,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5dd86732e175877b",
             "text": "All artifacts have \"At the beginning of your upkeep, sacrifice this artifact unless you pay {1}.\"",
             "toughness": "1",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d453be77-646c-529e-9c89-18ca4a660b9a"
+            "uuid": "b7e928b4-5b17-57d0-a6a6-4a4e72339920"
         },
         {
             "artist": "Heather Hudson",
@@ -1635,13 +1649,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12474,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c626e3822191711f",
             "text": "{T}: Prevent the next 3 damage that would be dealt to target creature this turn. Activate this ability only if you have more cards in hand than each opponent.",
             "toughness": "1",
             "type": "Creature — Fox Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "bac78d7b-f1e2-5203-a344-c5e99e1eed28"
+            "uuid": "e9ab6e01-4e84-51f6-bc2a-48a3b49a7156"
         },
         {
             "artist": "Carl Critchlow",
@@ -1737,13 +1752,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12475,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7d8614adad29514d",
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nWhen Kitsune Dawnblade enters the battlefield, you may tap target creature.",
             "toughness": "3",
             "type": "Creature — Fox Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "19dc716c-51c6-550d-a58b-ae09c6f169ba"
+            "uuid": "d5643a98-0cc5-5e23-add8-5e7e043292be"
         },
         {
             "artist": "Eric Polak",
@@ -1847,13 +1863,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12476,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3163986d22e48951",
             "text": "{1}{W}: Kitsune Loreweaver gets +0/+X until end of turn, where X is the number of cards in your hand.",
             "toughness": "1",
             "type": "Creature — Fox Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f9e2b51-84a1-5563-8c1a-9dfc78b2fcf5"
+            "uuid": "51f927b9-35da-5400-ab55-fde6c510686b"
         },
         {
             "artist": "Kev Walker",
@@ -1964,13 +1981,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12477,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a661cc44246a50c2",
             "text": "Kiyomaro, First to Stand's power and toughness are each equal to the number of cards in your hand.\nAs long as you have four or more cards in hand, Kiyomaro has vigilance.\nWhenever Kiyomaro deals damage, if you have seven or more cards in hand, you gain 7 life.",
             "toughness": "*",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "89e93dcf-cfdf-5dc6-9fb8-bd692901753e"
+            "uuid": "67eec850-a60c-532d-8192-555cbf3e38b0"
         },
         {
             "artist": "Christopher Moeller",
@@ -2087,13 +2105,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12487,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df716328478a5668",
             "text": "Whenever a source an opponent controls deals damage to you, that player sacrifices a permanent.",
             "toughness": "2",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "249faf0d-f7c9-51e7-8b6b-da14a33f0cc4"
+            "uuid": "3ce62912-1d10-5474-8720-25733a2f85e2"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -2196,13 +2215,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12493,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c660c4f5597b079a",
             "text": "Flying\n{W}: Moonwing Moth gets +0/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Insect",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc9814b7-cc69-50cf-826e-6f165c461a74"
+            "uuid": "3d9ad95a-c7b4-5f9e-9cc6-d0ffb7a9d93f"
         },
         {
             "artist": "Shishizaru",
@@ -2296,13 +2316,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12497,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b31f246100821b55",
             "text": "When Nikko-Onna enters the battlefield, destroy target enchantment.\nWhenever you cast a Spirit or Arcane spell, you may return Nikko-Onna to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e50f58a7-2e7e-5b78-895d-704f94394697"
+            "uuid": "73309291-8ce6-5af2-a2ee-9b5129c68018"
         },
         {
             "artist": "Ron Spencer",
@@ -2404,12 +2425,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12510,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11c12242cbdd26b9",
             "text": "Sweep — Return any number of Plains you control to their owner's hand. Target creature gets +1/+1 until end of turn for each Plains returned this way.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "2bfe4e07-7208-545d-b818-275b299c793b"
+            "uuid": "7e6b21af-6698-5efe-961c-ee128c369bec"
         },
         {
             "artist": "Christopher Moeller",
@@ -2508,12 +2530,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12511,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/637b9d18edaf628a",
             "text": "You gain 2 life for each card in your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ebd32c42-21bd-5a74-a915-e56800dfe329"
+            "uuid": "26dc93da-7f95-5ce3-a311-5af1b212ed4f"
         },
         {
             "artist": "Stephen Tappin",
@@ -2617,12 +2640,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12512,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa1f94262c4ad9e4",
             "text": "When a creature you control dies, sacrifice Promise of Bunrei. If you do, create four 1/1 colorless Spirit creature tokens.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5edc11cc-acf8-5356-b784-a87d3c5c6d20"
+            "uuid": "2f786daf-824e-5d7b-b225-c7be500b3cfb"
         },
         {
             "artist": "Randy Gallegos",
@@ -2732,12 +2756,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12514,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89646000c155c2e2",
             "text": "Whenever a spell or ability an opponent controls causes you to discard cards this turn, return those cards from your graveyard to your hand.\nWhen a spell or ability an opponent controls causes you to discard Pure Intentions, return Pure Intentions from your graveyard to your hand at the beginning of the next end step.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "710d21d8-92ac-52fd-ad95-d0bb3c5e256c"
+            "uuid": "ae77f701-9a0a-5510-9808-024de4f73ddb"
         },
         {
             "artist": "Ittoku",
@@ -2841,12 +2866,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12520,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/85862dbbb39a9508",
             "text": "Creatures with power 2 or less can't attack you.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8c626a56-d3eb-5d07-824c-bbfe258d0e8c"
+            "uuid": "35b82973-d9f5-5315-b1bf-dbfc38b65959"
         },
         {
             "artist": "Randy Gallegos",
@@ -2902,7 +2928,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3a856571-f5b2-5089-8e75-59013ad87002"
+            "uuid": "d0f6708a-ea7e-5f77-84a6-4f925c6a1b33"
         },
         {
             "artist": "Randy Gallegos",
@@ -2959,13 +2985,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12522,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a8cbd753576fefd6",
             "text": "When you have 30 or more life, flip Rune-Tail, Kitsune Ascendant.",
             "toughness": "2",
             "type": "Legendary Creature — Fox Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "f084006a-edb6-5e67-94c0-f9477f014dbe"
+            "uuid": "6579d4f1-e0f3-5f71-a18a-787fe2b0f9f8"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -3060,13 +3087,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12538,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/88a96b29114a618d",
             "text": "First strike\nChannel — {1}{W}, Discard Shinen of Stars' Light: Target creature gains first strike until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d5744719-2b5b-5f06-9024-b95b101bcefc"
+            "uuid": "ca1c5545-16d1-5527-b069-39a9e1a76479"
         },
         {
             "artist": "Pete Venters",
@@ -3177,12 +3205,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12547,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/abe0ce25a75723f5",
             "text": "Create a 1/1 colorless Spirit creature token.\nSplice onto Arcane {W} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "89454d83-33c5-5673-9c19-db8e2e76b52d"
+            "uuid": "de805058-2513-5660-b240-19a9e6548805"
         },
         {
             "artist": "Jeff Miracola",
@@ -3276,13 +3305,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12552,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26952de3d849c33f",
             "text": "Vigilance (Attacking doesn't cause this creature to tap.)\nSoulshift 4 (When this creature dies, you may return target Spirit card with converted mana cost 4 or less from your graveyard to your hand.)",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "85ec3579-3829-5cdc-8565-fcdfd9e2441e"
+            "uuid": "29d05769-8533-513a-ad08-b002aebdc19c"
         },
         {
             "artist": "Randy Gallegos",
@@ -3384,13 +3414,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12411,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf5a9a30b2d866f3",
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may have target player put the top X cards of their library into their graveyard, where X is that spell's converted mana cost.",
             "toughness": "4",
             "type": "Legendary Creature — Kirin Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "63b967e9-ff6b-54c9-a5ab-c8b1c2a59bcb"
+            "uuid": "776b888f-4473-553d-82d3-aed6aafecd09"
         },
         {
             "artist": "Jeff Miracola",
@@ -3492,12 +3523,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12414,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b4a83473514404f9",
             "text": "Return target enchanted permanent to its owner's hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "c939fede-05d6-5f80-883d-42fda54ad8f3"
+            "uuid": "d1d7edb1-5bcc-56d6-84e9-081b85f59318"
         },
         {
             "artist": "Brian Despain",
@@ -3601,13 +3633,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12422,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bcef63351f91b121",
             "text": "{1}{U}: Look at the top X cards of your library, where X is the number of cards in your hand, then put them back in any order.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "bca1fe54-e690-5b5d-8b16-887272ce72db"
+            "uuid": "d2d6c48c-76c3-52d4-9939-8eef9dfe74f8"
         },
         {
             "artist": "Mark Tedin",
@@ -3710,13 +3743,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12424,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2d770ba1649a634e",
             "text": "Whenever you cast a Spirit or Arcane spell, you may sacrifice Dreamcatcher. If you do, draw a card.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc7719b8-ba45-557d-aaf7-d2687739ee71"
+            "uuid": "03abc8a0-6200-5ec5-8714-fd9d44ee41db"
         },
         {
             "artist": "Matt Cavotta",
@@ -3788,7 +3822,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8d40b208-01b0-5a5a-9898-2f535f77b427"
+            "uuid": "c9131088-b5dd-59e3-b392-3464721dd106"
         },
         {
             "artist": "Matt Cavotta",
@@ -3861,13 +3895,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12430,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e60825c137067932",
             "text": "Flying\nWhenever the fourth spell of a turn is cast, flip Erayo, Soratami Ascendant.",
             "toughness": "1",
             "type": "Legendary Creature — Moonfolk Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "0122e60f-2353-59a8-943f-80a0ffb8e617"
+            "uuid": "ab8d0325-e94b-50b7-90dc-71b3d312cd95"
         },
         {
             "artist": "Shishizaru",
@@ -3958,12 +3993,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12431,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73e8b27cb30f5dad",
             "text": "Search target opponent's library for an artifact, creature, enchantment, or land card. Put that card onto the battlefield under your control. Then that player shuffles their library.\nEpic (For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability. You may choose a new target for the copy.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "588d0ae2-14c1-5450-9aa7-89681bf7b5c9"
+            "uuid": "b7b93b41-b10f-569a-8cbd-fe89a91c9a4f"
         },
         {
             "artist": "Matt Thompson",
@@ -4098,12 +4134,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12432,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f7683e19b1b04aef",
             "text": "(Nonexistent mana costs can't be paid.)\nDraw a card.\nSplice onto Arcane {1}{U} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "c6688449-fbdf-557d-ba67-ce5d98272cb9"
+            "uuid": "709f1bb0-b556-55ce-abf7-22f1cfe229b3"
         },
         {
             "artist": "Scott M. Fischer",
@@ -4210,12 +4247,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12437,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a17aa189be5c6548",
             "text": "Enchant creature\n{U}: Tap enchanted creature.\n{U}: Untap enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b19aef1c-ba90-5994-89d9-a402bc1a40f2"
+            "uuid": "12405e1a-235f-5e7b-a347-f3e8087a2ae9"
         },
         {
             "artist": "Kensuke Okabayashi",
@@ -4309,13 +4347,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12443,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c78d87f531ef7317",
             "text": "{3}{U}, {T}: Counter target spell unless its controller pays {2}.\nChannel — {3}{U}, Discard Ghost-Lit Warder: Counter target spell unless its controller pays {4}.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "0835937d-b4bb-5ddb-bf1d-92821995ca04"
+            "uuid": "602614eb-048b-52d4-93b6-361741bf8e2c"
         },
         {
             "artist": "Mark Tedin",
@@ -4421,12 +4460,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12453,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/65ebea0a3f76f2fc",
             "text": "Draw three cards. Discard three cards at the beginning of the next end step.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4fcf532b-60e5-5933-b58d-2bbebf635839"
+            "uuid": "39d52dc1-c494-505d-aa63-788a9164ff38"
         },
         {
             "artist": "Greg Staples",
@@ -4536,13 +4576,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12465,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/43a599e19e8e2c7b",
             "text": "When Kaho, Minamo Historian enters the battlefield, search your library for up to three instant cards and exile them. Then shuffle your library.\n{X}, {T}: You may cast a card with converted mana cost X exiled with Kaho without paying its mana cost.",
             "toughness": "2",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8ad23655-827b-572d-93bb-5214065bc5dd"
+            "uuid": "08cc92e1-3175-53a3-85a0-a3e17a942360"
         },
         {
             "artist": "Darrell Riche",
@@ -4651,13 +4692,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12467,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b867324a34260ee1",
             "text": "At the beginning of each player's draw step, that player draws an additional card.",
             "toughness": "3",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e74cc95-e3ac-57aa-9cae-99656a7eed78"
+            "uuid": "b63edcd6-8f8f-5799-8c76-d2e8d11c6c8c"
         },
         {
             "artist": "Kensuke Okabayashi",
@@ -4756,13 +4798,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12473,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d2959f3211abea7d",
             "text": "When Kiri-Onna enters the battlefield, return target creature to its owner's hand.\nWhenever you cast a Spirit or Arcane spell, you may return Kiri-Onna to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "5223666f-9e79-57fd-84c1-b3648c616362"
+            "uuid": "75bdb095-bb25-501f-b1aa-53b8399cef51"
         },
         {
             "artist": "Thomas Gianni",
@@ -4862,12 +4905,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12486,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/afa084e37c9a0d0c",
             "text": "All creatures get -X/-0, where X is the number of cards in your hand.",
             "type": "Legendary Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "eb70f17b-7689-5066-826a-127baf9c7297"
+            "uuid": "4ad0e4ad-c7d5-5a42-a683-e0d0ff36ffe0"
         },
         {
             "artist": "Paolo Parente",
@@ -4978,13 +5022,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12489,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3f78e63bae989eff",
             "text": "Defender\nYour maximum hand size is increased by one.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "2b0fcf22-ba70-5de6-b084-d5f770c51604"
+            "uuid": "6e26e603-b2d4-5604-8589-db5265902c17"
         },
         {
             "artist": "Dan Frazier",
@@ -5089,13 +5134,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12492,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/541dc74a2e65ca0a",
             "text": "Flying\n{2}, Return a land you control to its owner's hand: Target land becomes the basic land type of your choice until end of turn.",
             "toughness": "1",
             "type": "Creature — Moonfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "e9de124f-39da-57ef-abdc-cf7eb352ecf9"
+            "uuid": "6b728c8c-4560-5beb-b1f7-63f42d1ccb88"
         },
         {
             "artist": "Paolo Parente",
@@ -5198,12 +5244,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12494,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c55f794e7fc2258f",
             "text": "Reveal the top three cards of your library. An opponent chooses one of them. Put that card into your graveyard and the rest into your hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "9415d21c-4b2f-5654-bf03-df33ad3cfc1c"
+            "uuid": "22383bac-570d-5e0a-9ed6-d3433ecaf605"
         },
         {
             "artist": "Rebecca Guay",
@@ -5307,13 +5354,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12498,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ccb047e1ff9b7292",
             "text": "Flying\n{2}, Return a land you control to its owner's hand: Untap target land.",
             "toughness": "1",
             "type": "Creature — Moonfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b7179bfc-d070-5372-80e1-905f2d965436"
+            "uuid": "4b5ac8e1-7637-5a85-8c7a-2b652edbd557"
         },
         {
             "artist": "Rob Alexander",
@@ -5417,13 +5465,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12499,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/860a9ca6db8d521a",
             "text": "Flying\n{2}, Return a land you control to its owner's hand: Target creature gets -X/-0 until end of turn, where X is the number of cards in your hand.",
             "toughness": "3",
             "type": "Creature — Moonfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "c0580f43-9d37-5fe6-bd7f-cdbe12ae3f5b"
+            "uuid": "b3bf7c6c-657c-5f2f-9529-8acd76c8744a"
         },
         {
             "artist": "Pat Lee",
@@ -5523,12 +5572,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12505,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d8e189746ecc9386",
             "text": "Counter target spell unless its controller pays {1} for each card in your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "447c442d-0c1c-5967-9500-b00e5bce1040"
+            "uuid": "22bbca00-2084-5eb4-a639-dcc32946c47f"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -5628,12 +5678,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12506,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ec7e719b88fbb349",
             "text": "Counter target creature spell. Draw cards equal to that spell's converted mana cost.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "226fff28-4aed-5ae8-9047-a57aa592d06a"
+            "uuid": "e2a3e2c5-a496-5e29-bf93-abf4b00fc9c9"
         },
         {
             "artist": "Mark Brill",
@@ -5741,13 +5792,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12523,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/01bb1315f5b8bd71",
             "text": "When Rushing-Tide Zubera dies, if 4 or more damage was dealt to it this turn, draw three cards.",
             "toughness": "3",
             "type": "Creature — Zubera Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "1f2e0f14-205d-5744-aee5-626be464fe88"
+            "uuid": "f7ba3f3a-9f15-515d-8f3f-13a424aee325"
         },
         {
             "artist": "rk post",
@@ -5856,13 +5908,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12524,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/10d038b1695e6ba8",
             "text": "You may have Sakashima the Impostor enter the battlefield as a copy of any creature on the battlefield, except its name is Sakashima the Impostor, it's legendary in addition to its other types, and it has \"{2}{U}{U}: Return this creature to its owner's hand at the beginning of the next end step.\"",
             "toughness": "1",
             "type": "Legendary Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "14b18cdb-52ec-5d69-b98e-041193886cd8"
+            "uuid": "f6280ec1-ab19-52cc-9e22-d6959d40f568"
         },
         {
             "artist": "Ron Spencer",
@@ -5964,13 +6017,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12528,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3d778386277ebef9",
             "text": "As long as you have more cards in hand than each opponent, Secretkeeper gets +2/+2 and has flying.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "668691e6-90b0-50a8-9214-03ed5ad23080"
+            "uuid": "8a759223-dd66-5625-bca2-80516733c6e6"
         },
         {
             "artist": "Jim Nelson",
@@ -6098,13 +6152,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12532,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f49a4a1311cabaf1",
             "text": "Whenever Shape Stealer blocks or becomes blocked by a creature, change Shape Stealer's base power and toughness to that creature's power and toughness until end of turn.",
             "toughness": "1",
             "type": "Creature — Shapeshifter Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "608d7d64-653a-5c45-9333-84e710afbf1f"
+            "uuid": "617413f5-5def-5ebc-a530-c292f46008ab"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -6218,12 +6273,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12533,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d84bb10153445b7e",
             "text": "Exchange control of two target lands.\nSplice onto Arcane {3}{U} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "fb2cdf40-7900-5d2b-9008-90e148f20957"
+            "uuid": "a3ead8fb-1e89-573b-bb42-8c596c748bc2"
         },
         {
             "artist": "Scott M. Fischer",
@@ -6318,13 +6374,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12535,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/19c52b3336e86e56",
             "text": "Flying\nChannel — {U}, Discard Shinen of Flight's Wings: Target creature gains flying until end of turn.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d5c44485-6828-597b-97c9-b22e377b0453"
+            "uuid": "dff13d27-c433-5ae7-8a26-03609340c6b3"
         },
         {
             "artist": "Brian Despain",
@@ -6420,13 +6477,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12544,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/03eba3f969ad4d6d",
             "text": "Flying\nSoramaro, First to Dream's power and toughness are each equal to the number of cards in your hand.\n{4}, Return a land you control to its owner's hand: Draw a card.",
             "toughness": "*",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "88490109-541f-5332-be2b-4bf8ba0148f6"
+            "uuid": "92e2f090-e1b9-542b-821e-5749df36bf42"
         },
         {
             "artist": "Jim Nelson",
@@ -6534,13 +6592,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12553,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/176ba6ef47605461",
             "text": "Your maximum hand size is increased by two.\nAt the beginning of your upkeep, return a blue creature you control to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "27592e85-2081-53ab-9c08-4e8cd5d64015"
+            "uuid": "bc1872d7-73df-538f-b638-63ac8b887992"
         },
         {
             "artist": "Christopher Moeller",
@@ -6674,12 +6733,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12554,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e56fd4d103751c5d",
             "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "072fca45-5eef-50f1-be52-eca2753f51e8"
+            "uuid": "5fa174a6-e8b3-5b27-a730-c2030f59823a"
         },
         {
             "artist": "Ben Thompson",
@@ -6784,13 +6844,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12397,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8da3cc43df257fe7",
             "text": "Haste\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may sacrifice a Swamp. If you do, return Akuta, Born of Ash from your graveyard to the battlefield.",
             "toughness": "2",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "8e9fd388-2c08-5e0c-84ae-03ba6f82b1e8"
+            "uuid": "0cc61b87-bc78-5be2-b552-3392d8ace780"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -6900,12 +6961,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12410,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3028bc1d5b23477b",
             "text": "Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dbb968ea-8a33-5ba4-b25d-a87d50a886d1"
+            "uuid": "44dd4cc6-efa4-514a-9b0d-e5eeba693cfc"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -7011,12 +7073,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12415,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/84909c7ba11f1777",
             "text": "Return X target creature cards from your graveyard to your hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "72b7577d-d8f4-5b46-864d-7dda02516ace"
+            "uuid": "7911ceed-1b2e-5f78-b648-1b81bc51ba1c"
         },
         {
             "artist": "Scott M. Fischer",
@@ -7110,12 +7173,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12416,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33f31b6935c83c16",
             "text": "Target player loses 1 life and you gain 1 life.\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may return Death of a Thousand Stings from your graveyard to your hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "52e224a9-b871-57b9-8350-962673e487f2"
+            "uuid": "a2c0ca51-ce5d-5569-86a5-4a4ce72c47a3"
         },
         {
             "artist": "Puddnhead",
@@ -7210,13 +7274,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12417,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/40f1573a5d7a3090",
             "text": "Flying\n{2}: Deathknell Kami gets +1/+1 until end of turn. Sacrifice it at the beginning of the next end step.\nSoulshift 1 (When this creature dies, you may return target Spirit card with converted mana cost 1 or less from your graveyard to your hand.)",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "9acdc3cf-a832-5ca7-93cd-ac254b0bb6a2"
+            "uuid": "dc06ae4a-59c0-5aed-8ff7-48da55113171"
         },
         {
             "artist": "Daren Bader",
@@ -7319,13 +7384,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12418,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e6cf5065e007b66",
             "text": "As long as you have seven or more cards in hand, Deathmask Nezumi gets +2/+1 and has fear. (It can't be blocked except by artifact creatures and/or black creatures.)",
             "toughness": "2",
             "type": "Creature — Rat Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "8ee17aee-b4cb-5891-9f9d-a96bb740c3a5"
+            "uuid": "302492d7-e4fe-5514-a857-261ed968133e"
         },
         {
             "artist": "Pete Venters",
@@ -7416,12 +7482,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12433,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/424b10b7bd3ef3d0",
             "text": "Target player sacrifices a creature with converted mana cost 3 or less.\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may return Exile into Darkness from your graveyard to your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "39c87465-4842-5757-8a0c-9e47cdce4a2e"
+            "uuid": "203b738c-192f-5bd8-8e22-f715c1546818"
         },
         {
             "artist": "Chippy",
@@ -7521,12 +7588,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12436,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cc0d6bb611275cde",
             "text": "Return target creature card from your graveyard to the battlefield. Sacrifice that creature at the beginning of the next end step.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d3644fd5-30ad-568a-9a80-e3cbe84fa954"
+            "uuid": "449551ec-2f16-5583-a617-6f02ec0f7b2e"
         },
         {
             "artist": "Hideaki Takamura",
@@ -7622,13 +7690,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12442,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a18b5554df2ba7a2",
             "text": "{4}{B}, {T}: Target player discards two cards. Activate this ability only any time you could cast a sorcery.\nChannel — {5}{B}{B}, Discard Ghost-Lit Stalker: Target player discards four cards. Activate this ability only any time you could cast a sorcery.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad2e0b39-1f4d-51c4-9774-3987a026d280"
+            "uuid": "482cf408-691b-5347-906f-3d339d11aa7b"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -7737,13 +7806,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12445,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/60f7bb3300498947",
             "text": "Each opponent's maximum hand size is reduced by one.",
             "toughness": "1",
             "type": "Creature — Rat Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "5fc46f4b-2d96-5f42-931c-49877b1902c8"
+            "uuid": "628f2ce0-1e4c-585f-8bf2-87fe1b2389d2"
         },
         {
             "artist": "Kev Walker",
@@ -7846,13 +7916,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12448,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4ffa4fb7d1176010",
             "text": "Protection from white\nBushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)",
             "toughness": "2",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "19640651-58fb-5cc4-b621-d7efa309ab8c"
+            "uuid": "29284868-92fc-51ca-9ca9-89cdae9969cb"
         },
         {
             "artist": "Carl Critchlow",
@@ -7962,13 +8033,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12456,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a3c0ebdd3a4bef2d",
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, target player reveals their hand and discards all cards with that spell's converted mana cost.",
             "toughness": "3",
             "type": "Legendary Creature — Kirin Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "305034c2-6fb0-526b-b80c-9e0266e07c00"
+            "uuid": "d19af193-8b77-537a-8f9c-eccf4e25555b"
         },
         {
             "artist": "Adam Rex",
@@ -8070,13 +8142,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12463,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/61129c2b28ff3b01",
             "text": "Kagemaro, First to Suffer's power and toughness are each equal to the number of cards in your hand.\n{B}, Sacrifice Kagemaro: All creatures get -X/-X until end of turn, where X is the number of cards in your hand.",
             "toughness": "*",
             "type": "Legendary Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "de736ef7-88b8-56ea-9e47-0c65cd9e7432"
+            "uuid": "f30ddd65-073a-5645-96ad-0f89e91f401a"
         },
         {
             "artist": "Pat Lee",
@@ -8178,12 +8251,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12464,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ea2aac749f884f0f",
             "text": "Enchant creature\nEnchanted creature gets -X/-X, where X is the number of cards in your hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "83865bcc-e57f-5d8e-908d-5946032bde70"
+            "uuid": "3eed69ff-c896-55cf-a9de-e9afa2f8ac9e"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -8278,13 +8352,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12466,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c938a847bb0f4a9c",
             "text": "Soulshift 3 (When this creature dies, you may return target Spirit card with converted mana cost 3 or less from your graveyard to your hand.)",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "1474d704-544f-5e70-9d16-99c08424a9cb"
+            "uuid": "f4960e77-3176-5050-9b8f-a31c14620b98"
         },
         {
             "artist": "Ittoku",
@@ -8378,13 +8453,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12471,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bfd884b9971167d6",
             "text": "When Kemuri-Onna enters the battlefield, target player discards a card.\nWhenever you cast a Spirit or Arcane spell, you may return Kemuri-Onna to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "1a2c7b32-7177-5586-8695-4a123b626243"
+            "uuid": "03f8cde3-922f-5a11-9ab3-ecd9b285967c"
         },
         {
             "artist": "Pete Venters",
@@ -8483,12 +8559,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12472,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2ff0f435cc6b24fc",
             "text": "Target creature deals damage to itself equal to its power.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6ff1739d-2dff-5cf5-92a8-5b25b3b49593"
+            "uuid": "d6963f6a-0d15-5633-9f7e-8d5f000e5170"
         },
         {
             "artist": "Hideaki Takamura",
@@ -8553,7 +8630,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1dccf42b-ecd6-507c-86b2-c6627326d524"
+            "uuid": "fe42b807-fda4-537e-afa1-8ebf7677e53a"
         },
         {
             "artist": "Hideaki Takamura",
@@ -8619,13 +8696,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12478,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6b4b60b6619069d9",
             "text": "At the beginning of the end step, if three or more creatures died this turn, flip Kuon, Ogre Ascendant.",
             "toughness": "4",
             "type": "Legendary Creature — Ogre Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "372cb4c3-cd5b-5e2e-bd6b-f04977e4b9c1"
+            "uuid": "91234203-2626-5786-9762-71c01c385859"
         },
         {
             "artist": "Puddnhead",
@@ -8729,13 +8807,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12479,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12fa2bc705f34994",
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\n{1}{B}: Regenerate Kuro's Taken.",
             "toughness": "1",
             "type": "Creature — Rat Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c066556-0659-5942-b989-9e4540523247"
+            "uuid": "1e32d914-d33e-5e13-96e1-0fbf83048c9e"
         },
         {
             "artist": "Alan Pollack",
@@ -8843,13 +8922,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12480,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/253ed720e13b61f5",
             "text": "Each opponent's maximum hand size is reduced by two.",
             "toughness": "2",
             "type": "Creature — Rat Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "2c16bca9-c9bd-5e6e-82b8-ff3c25aad0b9"
+            "uuid": "374c17a9-9e1f-5f27-b0cd-5f06dfdfdbba"
         },
         {
             "artist": "Jim Murray",
@@ -8946,13 +9026,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12481,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/88b74a7e58a5cf0a",
             "text": "Maga, Traitor to Mortals enters the battlefield with X +1/+1 counters on it.\nWhen Maga enters the battlefield, target player loses life equal to the number of +1/+1 counters on it.",
             "toughness": "0",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "55b784e8-feb2-598d-896e-98c3cc148cc1"
+            "uuid": "7a482942-d7f4-53f5-a418-3d1f3024c989"
         },
         {
             "artist": "Daren Bader",
@@ -9048,12 +9129,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12485,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a56b9d31b61dfcac",
             "text": "At the beginning of your end step, sacrifice Measure of Wickedness and you lose 8 life.\nWhenever another card is put into your graveyard from anywhere, target opponent gains control of Measure of Wickedness.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "06e10413-9195-5242-8c48-2d93686a06f1"
+            "uuid": "c5b38683-f74a-5dc4-b076-635e4f441f87"
         },
         {
             "artist": "Thomas Gianni",
@@ -9144,12 +9226,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12495,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4d88abec4a8a8dbf",
             "text": "Search target player's library for X cards, where X is the number of cards in your hand, and exile them. Then that player shuffles their library.\nEpic (For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability. You may choose a new target for the copy.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b1ff3eb8-a5ab-5f49-9186-25002422038c"
+            "uuid": "293f0f11-149b-59ef-ac7d-5785bbb37cef"
         },
         {
             "artist": "Jim Nelson",
@@ -9248,12 +9331,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12503,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44b3b570af863210",
             "text": "Discard your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2f2246cf-6a99-5bcc-9a4b-823fbb789d7e"
+            "uuid": "02029ce2-7a22-59f8-8e27-6d82a1aa3398"
         },
         {
             "artist": "Matt Cavotta",
@@ -9352,12 +9436,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12507,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/644fa664b5a5fe09",
             "text": "Each player may bid life. You start the bidding with a bid of any number. In turn order, each player may top the high bid. The bidding ends if the high bid stands. The high bidder loses life equal to the high bid and draws four cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8564b6c9-a3aa-5092-9e77-ddce421c6666"
+            "uuid": "278df46e-a132-59df-8127-c63aa246bebd"
         },
         {
             "artist": "Eric Polak",
@@ -9453,13 +9538,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12516,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/56decbd12cae6012",
             "text": "When Raving Oni-Slave enters the battlefield or leaves the battlefield, you lose 3 life if you don't control a Demon.",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "e0966bf3-34fb-58c0-883b-4a6d99b43e62"
+            "uuid": "6f7a56a9-cc28-598d-a21a-db9f39af4f94"
         },
         {
             "artist": "Carl Critchlow",
@@ -9563,13 +9649,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12517,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f322e4565300ded",
             "text": "Black creatures can't block.",
             "toughness": "5",
             "type": "Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "823722d9-d3fd-5975-bb85-fcd2a162ece2"
+            "uuid": "47d16c89-0bcb-5a7c-9065-87f7b0e4c5f6"
         },
         {
             "artist": "Darrell Riche",
@@ -9664,13 +9751,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12534,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8ab038008d4398cf",
             "text": "Shinen of Fear's Chill can't block.\nChannel — {1}{B}, Discard Shinen of Fear's Chill: Target creature can't block this turn.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "033df9e0-8edc-5da0-8293-0dbaf31f1c88"
+            "uuid": "8e7a70be-41f1-57c1-9e0d-7703a04c09b0"
         },
         {
             "artist": "Pat Lee",
@@ -9764,12 +9852,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12539,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b163e13faf602604",
             "text": "Sweep — Return any number of Swamps you control to their owner's hand. Target player discards a card for each Swamp returned this way.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "133c8afe-b588-5969-b359-89e2ac8fed38"
+            "uuid": "d85207eb-4eb4-5eb3-98ec-fbbb529a1ecf"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -9872,13 +9961,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12540,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/58a7d409a1cfe01f",
             "text": "At the beginning of your upkeep, return a black creature you control to its owner's hand.\n{1}{B}: Regenerate Skull Collector.",
             "toughness": "3",
             "type": "Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "6a442370-9b61-58f0-b5f0-4c7f59433068"
+            "uuid": "b081ec5d-1a7e-5c02-9dcc-5863e68bfd75"
         },
         {
             "artist": "Paolo Parente",
@@ -9982,13 +10072,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12393,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/035bdde78a6a7ec7",
             "text": "Adamaro, First to Desire's power and toughness are each equal to the number of cards in the hand of the opponent with the most cards in hand.",
             "toughness": "*",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "aeb4d720-21a5-5877-87c9-e4b25bcd495c"
+            "uuid": "481438d1-4b3e-5c85-98ff-e7cc993c1752"
         },
         {
             "artist": "Alan Pollack",
@@ -10092,13 +10183,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12395,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6737e261513f61ab",
             "text": "{T}: Target creature gains haste until end of turn.",
             "toughness": "2",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab26e084-841c-5f32-a1c0-de4e9ce93b3a"
+            "uuid": "e9762188-c330-54c4-9625-4b3fa1c9b0d9"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -10202,13 +10294,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12396,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23270485c395dbc8",
             "text": "As long as you have seven or more cards in hand, Akki Underling gets +2/+1 and has first strike.",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "c4b1c0ca-c647-5665-80b2-4010ce9b4394"
+            "uuid": "21fb4a06-681c-565b-b694-a86a25498da6"
         },
         {
             "artist": "Greg Staples",
@@ -10307,12 +10400,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12402,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/41c999d507df6b99",
             "text": "Sweep — Return any number of Mountains you control to their owner's hand. Barrel Down Sokenzan deals damage to target creature equal to twice the number of Mountains returned this way.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "d5d91657-3f4c-5e1e-bf34-658e008f1bc0"
+            "uuid": "b314fbb8-89c2-5e3c-acfb-5cc5a2c2a809"
         },
         {
             "artist": "Anthony S. Waters",
@@ -10412,13 +10506,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12406,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94d7eec57ab8cae1",
             "text": "When Burning-Eye Zubera dies, if 4 or more damage was dealt to it this turn, Burning-Eye Zubera deals 3 damage to any target.",
             "toughness": "3",
             "type": "Creature — Zubera Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "a2c63bb5-ecb3-50bc-a14d-e2ff9ff7f183"
+            "uuid": "a1b31d04-648b-57fa-87cc-af3479dedf15"
         },
         {
             "artist": "Keith Garletts",
@@ -10518,12 +10613,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12407,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/70e759ac2b469665",
             "text": "{R}: Target creature gets +1/+0 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "81091055-3335-510e-a0b4-aadece6948af"
+            "uuid": "b067d452-d509-529a-bbcc-77b33afad076"
         },
         {
             "artist": "Chippy",
@@ -10623,12 +10719,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12434,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f735b8e8460c6641",
             "text": "Create three 3/1 red Elemental creature tokens with haste. Exile them at the beginning of the next end step.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2260b2cb-2da2-58cb-9bbf-9b135c9f3ed7"
+            "uuid": "7cc7595a-8f00-51fa-8ba5-e5139adf2718"
         },
         {
             "artist": "Paolo Parente",
@@ -10729,12 +10826,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12438,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/84054bc40b7127a9",
             "text": "Gaze of Adamaro deals damage to target player equal to the number of cards in that player's hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "64d5350d-35c2-55e3-af7f-c134d57da09e"
+            "uuid": "679edf53-751d-51bb-a3cd-4233eb759d35"
         },
         {
             "artist": "Ittoku",
@@ -10830,13 +10928,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12440,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc612ab00291dc9e",
             "text": "{2}{R}, {T}: Ghost-Lit Raider deals 2 damage to target creature.\nChannel — {3}{R}, Discard Ghost-Lit Raider: It deals 4 damage to target creature.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "659dfd87-b069-5bb9-b7ce-efd852c6b89d"
+            "uuid": "14a70bb6-918b-538a-a858-4188fef044fa"
         },
         {
             "artist": "Ron Spencer",
@@ -10939,13 +11038,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12444,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12a0ed7f1c86f1b2",
             "text": "Haste\nAt the beginning of the end step, return Glitterfang to its owner's hand.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "1e3ab7e2-01c0-5ded-a192-a3962085cb11"
+            "uuid": "83adfb5b-ffdf-5c97-9a49-1c1a6763d731"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -11048,13 +11148,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12446,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e63a0d451289c841",
             "text": "{R}: Godo's Irregulars deals 1 damage to target creature blocking it.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "7eaf0cd5-7e7f-5f30-a7e7-15344ffb5c66"
+            "uuid": "eed9008e-d256-52dc-957b-0343d1cc6e30"
         },
         {
             "artist": "Jeff Miracola",
@@ -11157,12 +11258,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12451,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ee38e7799140fe2e",
             "text": "If target player has exactly 10 life, Hidetsugu's Second Rite deals 10 damage to that player.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a6dda1b0-c1d9-51bb-9d84-a63a331fa8d3"
+            "uuid": "4f658eba-5996-536f-af34-cdfbbf8afa76"
         },
         {
             "artist": "Kev Walker",
@@ -11218,7 +11320,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2c3cb869-e906-538f-b022-f908a8e78be8"
+            "uuid": "beadf0bf-9e5d-512e-8992-6d00369ee592"
         },
         {
             "artist": "Kev Walker",
@@ -11275,13 +11377,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12452,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cfec66a95bc7994f",
             "text": "Homura, Human Ascendant can't block.\nWhen Homura dies, return it to the battlefield flipped.",
             "toughness": "4",
             "type": "Legendary Creature — Human Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "12c941af-7139-5050-ad75-61d57a88d083"
+            "uuid": "dcf1fea2-bc96-50f8-8d02-73f5628ed261"
         },
         {
             "artist": "Darrell Riche",
@@ -11377,13 +11480,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12454,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2d529971f97f4516",
             "text": "Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.)\n{2}{R}, Sacrifice a Samurai: Samurai creatures you control gain double strike until end of turn.",
             "toughness": "3",
             "type": "Legendary Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "d67ec1fa-c989-50d5-87f9-f498b67fab88"
+            "uuid": "7917dbe2-5edb-564c-8cfe-b010e837d98e"
         },
         {
             "artist": "Christopher Moeller",
@@ -11482,12 +11586,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12458,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e4fab55e051cf7e9",
             "text": "Add {R} for each card in your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ca934281-ca29-59f4-8fb7-ba4d48bcff01"
+            "uuid": "a018d9fd-4694-5aac-81ce-4824f11055cb"
         },
         {
             "artist": "Paolo Parente",
@@ -11598,12 +11703,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12460,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a7521b7b08a98bc6",
             "text": "Target creature attacks this turn if able.\nSplice onto Arcane {R} (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.)",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "82367df7-9e71-5dc8-81ca-1392ba3528fc"
+            "uuid": "cf86466a-b421-571c-814e-38eafb23b16e"
         },
         {
             "artist": "Adam Rex",
@@ -11699,13 +11805,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12462,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/06b8f54c97830634",
             "text": "{X}{R}, {T}: Jiwari, the Earth Aflame deals X damage to target creature without flying.\nChannel — {X}{R}{R}{R}, Discard Jiwari: Jiwari deals X damage to each creature without flying.",
             "toughness": "3",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "07801b8f-31de-5fac-8755-1a2c5c9d658f"
+            "uuid": "873b7e54-eda4-59ba-b1cf-d1480db3ccec"
         },
         {
             "artist": "Mark Tedin",
@@ -11811,13 +11918,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12504,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/58129455d17a904e",
             "text": "Haste\nAt the beginning of your upkeep, return a red creature you control to its owner's hand.",
             "toughness": "5",
             "type": "Creature — Demon Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "be8b10a6-a3dc-5820-97be-32d6b1984937"
+            "uuid": "30fd2c2a-85dc-52a8-a0c9-18cc04ae6e11"
         },
         {
             "artist": "Pat Lee",
@@ -11919,12 +12027,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12508,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bfac4f010cec6625",
             "text": "Creatures you control get +2/+0 until end of turn.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "0eb28da1-ab91-586d-b13c-6f50a7a0453a"
+            "uuid": "8e5324c2-ae85-5513-bec5-9406c6a1f957"
         },
         {
             "artist": "Paolo Parente",
@@ -12015,12 +12124,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12515,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e0a0fba7f737bed",
             "text": "Exile the top card of your library. Exile the top card of your library. Exile the top card of your library. If the last card exiled isn't a land card, repeat this process. Create a 1/1 red Warrior creature token for each nonland card exiled this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "122d7ce6-86b4-5498-8673-ad291a7ea76c"
+            "uuid": "2f822f74-07c9-5321-85c3-4cf41a656828"
         },
         {
             "artist": "Paolo Parente",
@@ -12124,13 +12234,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12521,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ef1d71643fa87d1f",
             "text": "Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.)",
             "toughness": "3",
             "type": "Creature — Human Samurai",
             "types": [
                 "Creature"
             ],
-            "uuid": "1979b151-9adb-510f-b744-f174c2eea60f"
+            "uuid": "5e92c8a4-70dd-56c0-b026-b03a7dff2d5d"
         },
         {
             "artist": "Dan Frazier",
@@ -12226,13 +12337,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12536,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3b49f43126bcee19",
             "text": "Haste\nChannel — {R}, Discard Shinen of Fury's Fire: Target creature gains haste until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "f57ca698-129b-5c3b-b6ab-030f7e9baa98"
+            "uuid": "246f98cd-40df-5857-8f5f-ee036a5f56a0"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -12342,13 +12454,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12541,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/27a827d1bd879e7e",
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may gain control of target creature with that spell's converted mana cost until end of turn.",
             "toughness": "3",
             "type": "Legendary Creature — Kirin Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "2d784467-b17f-59bb-ba1f-418ae5b04917"
+            "uuid": "abf223b4-2138-59d3-8eee-d468c1631c6e"
         },
         {
             "artist": "Alan Pollack",
@@ -12449,13 +12562,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12542,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a31df0d090249612",
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\nAt the beginning of your upkeep, if a player has more cards in hand than each other player, the player who has the most cards in hand gains control of Sokenzan Renegade.",
             "toughness": "3",
             "type": "Creature — Ogre Samurai Mercenary",
             "types": [
                 "Creature"
             ],
-            "uuid": "6508fffc-2826-58e1-9db0-2c18c34e6145"
+            "uuid": "f6131283-6e93-575a-a868-b74870a87ce8"
         },
         {
             "artist": "Carl Critchlow",
@@ -12552,13 +12666,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12543,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/83405d2547c393a3",
             "text": "Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.)\n{1}{R}: Sokenzan Spellblade gets +X/+0 until end of turn, where X is the number of cards in your hand.",
             "toughness": "3",
             "type": "Creature — Ogre Samurai Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "0ee0c388-d072-5cb3-94cf-cc9d08a9ded1"
+            "uuid": "819f4e89-9e92-5bf6-883f-455feb6b9b87"
         },
         {
             "artist": "Chippy",
@@ -12660,12 +12775,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12546,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/16ff58cc7e1b4252",
             "text": "Spiraling Embers deals damage to any target equal to the number of cards in your hand.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "56256e54-12e5-5ed6-8157-947ea46df23a"
+            "uuid": "1a3a859a-c20f-5ec1-b866-496f7f6460d2"
         },
         {
             "artist": "Jeff Miracola",
@@ -12766,12 +12882,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12549,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/55f117190cf14fd7",
             "text": "Destroy target artifact or land.",
             "type": "Sorcery — Arcane",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e63038fa-f397-5eb7-a4db-7ed806d5f061"
+            "uuid": "fdbc9b44-eea1-5f63-ab11-db00fcc71baa"
         },
         {
             "artist": "John Avon",
@@ -12870,12 +12987,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12550,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f194bd90b49fbd43",
             "text": "Each player sacrifices a land for each card in your hand.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b736827f-b49b-54fc-8da9-0795e0be2806"
+            "uuid": "69037f64-c307-59d3-8e3c-39898cd7341f"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -12971,12 +13089,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12555,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa60a77daf100881",
             "text": "Exile cards from the top of your library until you exile a nonland card. Undying Flames deals damage to any target equal to that card's converted mana cost.\nEpic (For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability. You may choose a new target for the copy.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "81cb5a02-575b-5d7b-9509-f1566fe1a2e1"
+            "uuid": "90b0bee9-9332-524c-8be1-7e612feeb4bb"
         },
         {
             "artist": "Hideaki Takamura",
@@ -13071,13 +13190,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12557,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca2ebe2c096fab13",
             "text": "When Yuki-Onna enters the battlefield, destroy target artifact.\nWhenever you cast a Spirit or Arcane spell, you may return Yuki-Onna to its owner's hand.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "abbf1a73-c9c2-5ff1-9bb1-eb4b8d59c700"
+            "uuid": "476b71a6-1ea3-54a2-94b9-c7d7a65eede1"
         },
         {
             "artist": "Kev Walker",
@@ -13173,13 +13293,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12399,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/00285f35fca209e3",
             "text": "{X}{G}, {T}: Arashi, the Sky Asunder deals X damage to target creature with flying.\nChannel — {X}{G}{G}, Discard Arashi: Arashi deals X damage to each creature with flying.",
             "toughness": "5",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e0f4431b-32f1-510b-8fa9-2f37cc487d1f"
+            "uuid": "31ef0c8b-fe38-55ce-b6c5-70ec6d0dadd9"
         },
         {
             "artist": "rk post",
@@ -13288,13 +13409,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12401,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/75aa8c109baec6d0",
             "text": "Legendary landwalk (This creature can't be blocked as long as defending player controls a legendary land.)",
             "toughness": "3",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e00d16be-e54b-5267-af11-244050be8d03"
+            "uuid": "ba27c9fb-c471-551d-8582-71313eb5fe31"
         },
         {
             "artist": "Shishizaru",
@@ -13404,13 +13526,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12404,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/125354fb3655fc24",
             "text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may gain life equal to that spell's converted mana cost.",
             "toughness": "4",
             "type": "Legendary Creature — Kirin Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "d7e8940d-d36d-5a3f-a97d-ba433a463813"
+            "uuid": "27a1e643-44bc-5117-82ce-c7a7fe800394"
         },
         {
             "artist": "Brian Despain",
@@ -13512,13 +13635,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12405,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/db7fee9bb2dfeb88",
             "text": "Whenever you cast a Spirit or Arcane spell, put a +1/+1 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "185bb42e-d0eb-5e57-8851-06b895d9c7f1"
+            "uuid": "ba2c9fa9-d730-5589-bb32-6228a3b9e39e"
         },
         {
             "artist": "Luca Zontini",
@@ -13622,12 +13746,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12419,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/99c607c318b2851e",
             "text": "Creatures with flying can block only creatures with flying.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e8877180-427c-5df0-9a89-02ca28ec6b0e"
+            "uuid": "5e7cbd43-babb-567f-90fe-27ec9316bb26"
         },
         {
             "artist": "Rob Alexander",
@@ -13734,13 +13859,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12421,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5e92efec323f500a",
             "text": "At the beginning of your upkeep, put a +1/+1 counter on Descendant of Masumaro for each card in your hand, then remove a +1/+1 counter from Descendant of Masumaro for each card in target opponent's hand.",
             "toughness": "1",
             "type": "Creature — Human Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "6921c054-f561-5f2b-bb6c-b22569b53d91"
+            "uuid": "3a4726bd-d92f-5472-b338-723096cef2d0"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -13839,12 +13965,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12423,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f35b618e1cc9f818",
             "text": "You gain 6 life.\nDraw a card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bb7fb498-7b7b-5ed6-b94b-4d92b57f030b"
+            "uuid": "a6d1b317-9952-55af-8ff7-54be7be44697"
         },
         {
             "artist": "Alan Pollack",
@@ -13939,13 +14066,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12427,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ee8bd2e38fa57e22",
             "text": "Whenever you cast a Spirit or Arcane spell, reveal the top three cards of your library. Put all land cards revealed this way into your hand and the rest on the bottom of your library in any order.\nSoulshift 2 (When this creature dies, you may return target Spirit card with converted mana cost 2 or less from your graveyard to your hand.)",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "568042dd-d455-51fc-9e17-27731976233b"
+            "uuid": "68cc3add-262d-5d0c-bff6-91abe07a8daa"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -14036,12 +14164,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12428,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/edad1a10a004adf9",
             "text": "Create a 1/1 green Snake creature token for each card in your hand.\nEpic (For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8fc6575a-0ccf-5419-9f84-a0841556945c"
+            "uuid": "3401e563-8540-5702-82cd-7d7c7b01ad3a"
         },
         {
             "artist": "Rebecca Guay",
@@ -14144,13 +14273,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12435,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/61304c99d645456f",
             "text": "Whenever you cast a Spirit or Arcane spell, regenerate Fiddlehead Kami.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "717f7d9c-77d0-5b30-8f83-6202ef8ddc96"
+            "uuid": "086f2e93-0678-52ff-82f2-c1847c21f09a"
         },
         {
             "artist": "Tsutomu Kawade",
@@ -14244,13 +14374,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12439,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1c50287b342629cb",
             "text": "{2}{G}, {T}: Target creature gets +2/+2 until end of turn.\nChannel — {3}{G}, Discard Ghost-Lit Nourisher: Target creature gets +4/+4 until end of turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "0da3442d-e682-5f1b-95c6-45a6b80b4b2a"
+            "uuid": "823ae695-12a9-5f6a-a2b2-a9de8943cc91"
         },
         {
             "artist": "Rebecca Guay",
@@ -14344,13 +14475,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12450,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/17bcef2b83e98410",
             "text": "When Haru-Onna enters the battlefield, draw a card.\nWhenever you cast a Spirit or Arcane spell, you may return Haru-Onna to its owner's hand.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "519d2d45-a437-504b-bb36-f413ac78f175"
+            "uuid": "5622aecb-70de-5305-900d-86ccc857f2aa"
         },
         {
             "artist": "Stephen Tappin",
@@ -14452,12 +14584,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12457,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/99e3cb59c22df0d1",
             "text": "Target creature gets +X/+X until end of turn, where X is the number of cards in your hand.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "1dc020e6-fbf9-58d7-b1fa-f5af500c4bdf"
+            "uuid": "7a9b083b-9679-5020-bab4-dacd2d4b96e2"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -14551,13 +14684,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12468,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/019c913613f63a0c",
             "text": "At the beginning of your upkeep, sacrifice Kami of the Tended Garden unless you pay {G}.\nSoulshift 3 (When this creature dies, you may return target Spirit card with converted mana cost 3 or less from your graveyard to your hand.)",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "52669926-a433-507f-a5de-41c0343a5763"
+            "uuid": "72304f67-d8e3-564f-a2a7-df62fc8ed903"
         },
         {
             "artist": "Ben Thompson",
@@ -14652,13 +14786,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12469,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2dbef67328b9f57d",
             "text": "Legendary Snakes you control have shroud. (They can't be the targets of spells or abilities.)\nWhenever Kashi-Tribe Elite deals combat damage to a creature, tap that creature and it doesn't untap during its controller's next untap step.",
             "toughness": "3",
             "type": "Creature — Snake Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "50c5c53f-a07e-5de6-aceb-9be1c0634d15"
+            "uuid": "169e1b11-77eb-5399-b918-513f051e65e3"
         },
         {
             "artist": "Adam Rex",
@@ -14762,13 +14897,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12483,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c7ce3fdac3c9753c",
             "text": "Masumaro, First to Live's power and toughness are each equal to twice the number of cards in your hand.",
             "toughness": "*",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "153ce41e-01f6-5f5c-8271-a17b43df9891"
+            "uuid": "1e86cb39-724f-53c7-8585-1e4df6926980"
         },
         {
             "artist": "Heather Hudson",
@@ -14865,13 +15001,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12484,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d6ee5b55230c1c6d",
             "text": "Whenever Matsu-Tribe Birdstalker deals combat damage to a creature, tap that creature and it doesn't untap during its controller's next untap step.\n{G}: Matsu-Tribe Birdstalker gains reach until end of turn. (It can block creatures with flying.)",
             "toughness": "2",
             "type": "Creature — Snake Warrior Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "a663997d-75e5-5311-b06a-0b8b1bb73f7a"
+            "uuid": "d7e9cea2-ef9e-5b6b-b53d-333ecc606810"
         },
         {
             "artist": "Jeremy Jarvis",
@@ -14970,12 +15107,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12491,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ccb2a502fb9fe88d",
             "text": "Return Molting Skin to its owner's hand: Regenerate target creature.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1b027c51-21dc-5e24-8c8d-67e716c54f49"
+            "uuid": "cf15f5c7-6721-5499-9ad8-55408eacf319"
         },
         {
             "artist": "Jim Nelson",
@@ -15070,13 +15208,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12496,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/18331ebc79671d43",
             "text": "Soulshift 5 (When this creature dies, you may return target Spirit card with converted mana cost 5 or less from your graveyard to your hand.)",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "921bff55-ee88-59d9-891e-8a8a324a280b"
+            "uuid": "8e878d0a-d6c6-5d1e-a1b8-eb0a3d54ebb4"
         },
         {
             "artist": "Heather Hudson",
@@ -15182,13 +15321,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12501,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bdd9d74e8696901b",
             "text": "As long as you have more cards in hand than each opponent, Okina Nightwatch gets +3/+3.",
             "toughness": "3",
             "type": "Creature — Human Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "1fd30741-3afa-54c4-b840-1f461fc167f1"
+            "uuid": "d7d78dfe-ef25-575f-950c-14bf014c9218"
         },
         {
             "artist": "Matt Thompson",
@@ -15289,13 +15429,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12513,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/972d1e28328faff1",
             "text": "Soulshift 7 (When this creature dies, you may return target Spirit card with converted mana cost 7 or less from your graveyard to your hand.)",
             "toughness": "1",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "73fefb20-98ca-57ca-90ba-c3bf565c9b6d"
+            "uuid": "55a7dd13-3b53-5a98-962d-b8b437266af3"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -15408,13 +15549,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12518,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3ef839149657d12a",
             "text": "Whenever you cast a legendary spell, draw a card.",
             "toughness": "2",
             "type": "Legendary Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "746d742b-bd4e-5f04-891c-4ff62ce6819f"
+            "uuid": "c16e5c5e-3a92-5dd1-bd59-2635b8e26220"
         },
         {
             "artist": "Dan Frazier",
@@ -15508,12 +15650,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12519,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/27df849c9f8041e1",
             "text": "Destroy target artifact or enchantment if its converted mana cost is less than or equal to the number of cards in your hand.\nDraw a card.",
             "type": "Instant — Arcane",
             "types": [
                 "Instant"
             ],
-            "uuid": "0044aef5-598a-58b8-b9d6-28a2ee540327"
+            "uuid": "f9ec40a2-eaff-5928-9fae-e5bb0d4e3800"
         },
         {
             "artist": "Darrell Riche",
@@ -15617,13 +15760,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12525,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3bb008c7701209b1",
             "text": "{T}: You may put a land card from your hand onto the battlefield.",
             "toughness": "1",
             "type": "Creature — Snake Shaman Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "c2b892a0-b293-502d-a40a-d355c8340694"
+            "uuid": "c02179ba-4c28-5396-a936-b9e6ff8a193e"
         },
         {
             "artist": "Christopher Moeller",
@@ -15708,7 +15852,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "08f3692d-efe9-516d-b9c9-8eebbcafeded"
+            "uuid": "81695c9c-d831-59b0-a9cc-a09a5e95a679"
         },
         {
             "artist": "Christopher Moeller",
@@ -15794,13 +15938,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12526,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94fffa87a0dae8b0",
             "text": "Reveal your hand: If you have seven or more land cards in your hand, flip Sasaya, Orochi Ascendant.",
             "toughness": "3",
             "type": "Legendary Creature — Snake Monk",
             "types": [
                 "Creature"
             ],
-            "uuid": "fbc80005-7ce1-5061-bf35-adf815471ac5"
+            "uuid": "6f03b113-8df0-5b02-a4a4-88ca063c9917"
         },
         {
             "artist": "Anthony S. Waters",
@@ -15899,12 +16044,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12529,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0fed38e1777b86ba",
             "text": "Whenever a land enters the battlefield, its controller creates a 1/1 green Snake creature token.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "27c73904-313c-5ae2-8e8c-6a997cba1576"
+            "uuid": "59600fc6-47a0-5ed0-a32e-523145d4d9d6"
         },
         {
             "artist": "Eric Polak",
@@ -16007,12 +16153,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12530,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cbdaeb7a14b2adc7",
             "text": "Search your library for up to three basic land cards, reveal them, and put them into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "426aa5ca-3fe5-5c5e-a272-b75b83d8a814"
+            "uuid": "95f7540d-fa52-56ed-beaa-378c06cca14e"
         },
         {
             "artist": "Kev Walker",
@@ -16125,13 +16272,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12531,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f0a71f665f90d70a",
             "text": "Sekki, Seasons' Guide enters the battlefield with eight +1/+1 counters on it.\nIf damage would be dealt to Sekki, prevent that damage, remove that many +1/+1 counters from Sekki, and create that many 1/1 colorless Spirit creature tokens.\nSacrifice eight Spirits: Return Sekki from your graveyard to the battlefield.",
             "toughness": "0",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "57788cd4-8426-5100-b263-69602fcfa51a"
+            "uuid": "35d44ee6-1171-5e9c-91d8-fa469b03ad9e"
         },
         {
             "artist": "Matt Cavotta",
@@ -16227,13 +16375,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12537,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb8f425135d38f1e",
             "text": "All creatures able to block Shinen of Life's Roar do so.\nChannel — {2}{G}{G}, Discard Shinen of Life's Roar: All creatures able to block target creature this turn do so.",
             "toughness": "2",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "de55e1ff-7422-56cc-9b34-c5b73f4a716d"
+            "uuid": "d2d0fa1a-719c-55a4-88e1-fadee6fa9aca"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -16336,13 +16485,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12548,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/02d38aa7b5a2bf5e",
             "text": "Trample\nAt the beginning of your upkeep, return a green creature you control to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Antelope Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "7cf649c1-2bbb-53aa-a6e3-4590d5b6d95f"
+            "uuid": "e2a4a895-cc34-5c20-8b87-dd5b9f78705c"
         },
         {
             "artist": "Stephen Tappin",
@@ -16465,13 +16615,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12455,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/09f901429d17bdc2",
             "text": "When Iname as One enters the battlefield, if you cast it from your hand, you may search your library for a Spirit permanent card, put it onto the battlefield, then shuffle your library.\nWhen Iname as One dies, you may exile it. If you do, return target Spirit permanent card from your graveyard to the battlefield.",
             "toughness": "8",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc0777cd-08cf-5634-a51c-1c51b1f331f1"
+            "uuid": "50779029-5ea8-5171-ac46-4de8fee7e84d"
         },
         {
             "artist": "Dan Frazier",
@@ -16570,12 +16721,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12400,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ff21b44ef5765a55",
             "text": "As Ashes of the Fallen enters the battlefield, choose a creature type.\nEach creature card in your graveyard has the chosen creature type in addition to its other types.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "87b09497-2f11-52e3-9c10-0d80df53cc0f"
+            "uuid": "edd5a1ce-05f9-5fdc-a5dd-f6be23e21e9f"
         },
         {
             "artist": "Keith Garletts",
@@ -16683,12 +16835,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12403,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9744e9b73c0e307b",
             "text": "At the beginning of each player's upkeep, that player returns a permanent they control to its owner's hand unless they pay 2 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "30cd1267-f6c9-587c-8e5c-a76c2a24ffd0"
+            "uuid": "3679726c-902e-5701-b24a-08ee42f77525"
         },
         {
             "artist": "Tim Hildebrandt",
@@ -16782,12 +16935,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12425,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/970ea8191c9c8d14",
             "text": "At the beginning of each opponent's upkeep, if that player has seven or more cards in hand, Ebony Owl Netsuke deals 4 damage to that player.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9d3b39a5-d53e-51ad-8364-b9ac0cf35c96"
+            "uuid": "c2bb61cf-bd08-596e-849f-f96d4fea0777"
         },
         {
             "artist": "Greg Hildebrandt",
@@ -16882,12 +17036,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12461,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb88a557f9013fef",
             "text": "At the beginning of your upkeep, if you have seven or more cards in hand, you gain 4 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "05ce9147-5c84-533c-87fa-4a059f6c6836"
+            "uuid": "f0aba909-0f0b-5a31-bdf0-67b7f71c673b"
         },
         {
             "artist": "Thomas Gianni",
@@ -16975,12 +17130,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12482,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/492a92727bfe1107",
             "text": "Equipped creature gets +1/+2 and has \"{T}: Destroy target Equipment.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f46b789f-6bce-54ed-b40c-c060f5e99963"
+            "uuid": "3cd33012-5ccc-5e38-891a-669c53f396fc"
         },
         {
             "artist": "Brian Snõddy",
@@ -17073,12 +17229,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 12502,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e92b026fad930ee0",
             "text": "O-Naginata can be attached only to a creature with power 3 or greater.\nEquipped creature gets +3/+0 and has trample.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "55d1992e-5401-517d-8b7e-df07931a0a83"
+            "uuid": "60ecc6dc-ed73-53f1-90cc-26ca33d166b6"
         },
         {
             "artist": "Pete Venters",
@@ -17189,12 +17346,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12509,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/36e9bae8ed048434",
             "text": "As Pithing Needle enters the battlefield, choose a card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8e6d08ff-1f16-5691-b1bf-e01abf3e7274"
+            "uuid": "3ed634fb-9a05-532c-aed2-35891cf0a2da"
         },
         {
             "artist": "Dany Orizio",
@@ -17289,12 +17447,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12527,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c19135d75ef1670f",
             "text": "{2}, {T}: Draw a card if you have seven or more cards in hand.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "333b7b9b-4cc5-5602-994d-7c5bc773c68f"
+            "uuid": "07d785ac-32a7-53c1-80d9-7deb7cf1fa52"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -17381,12 +17540,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12545,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d5f3ddb249fa3d2c",
             "text": "{2}: Target creature you control gains flying until end of turn.\n{2}: Prevent all combat damage that would be dealt to and dealt by target creature you control this turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "48687624-b0af-558f-bf5b-d48f7f7a8c2c"
+            "uuid": "1625d425-c3d3-54a1-9ee1-8ffff4146a6a"
         },
         {
             "artist": "Luca Zontini",
@@ -17481,12 +17641,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 12556,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e71eb83170065e8",
             "text": "{4}: Target creature gets +X/+0 until end of turn, where X is its power. Sacrifice Wine of Blood and Iron at the beginning of the next end step.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e502cd40-7c27-5079-871a-7fefc3607e6f"
+            "uuid": "d838753c-3e5f-5cae-8323-11ce03fc7f06"
         },
         {
             "artist": "John Avon",
@@ -17582,12 +17743,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12488,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0b397a1076234fc2",
             "text": "{T}: Add {C}.\n{2}, {T}: Each player draws a card.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "cb84ed77-82b6-553b-a391-e9c084aca946"
+            "uuid": "b519a4a1-3804-55b7-8d84-883355c47dc1"
         },
         {
             "artist": "Rob Alexander",
@@ -17675,12 +17837,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12490,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9f08978573afbcea",
             "text": "{T}: Add {C}.\n{3}, {T}, Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "d5cef374-73f9-54ea-8ecf-96b455e7bb33"
+            "uuid": "25da95a9-660a-568b-abb2-4324016c40ce"
         },
         {
             "artist": "Rob Alexander",
@@ -17777,12 +17940,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12500,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f9bd7f602b256f32",
             "text": "{T}: Add {U}.\n{1}: Return Oboro, Palace in the Clouds to its owner's hand.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ac1f703d-2da5-57a0-adff-92196ce5399b"
+            "uuid": "c4116c16-dc64-515c-8ed3-d63415c87974"
         },
         {
             "artist": "Alex Horley-Orlandelli",
@@ -17876,20 +18040,21 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 12551,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9721a688c72f468d",
             "text": "{T}: Add {B}. Tomb of Urami deals 1 damage to you if you don't control an Ogre.\n{2}{B}{B}, {T}, Sacrifice all lands you control: Create a legendary 5/5 black Demon Spirit creature token with flying named Urami.",
             "type": "Legendary Land",
             "types": [
                 "Land"
             ],
-            "uuid": "841938b1-64d1-5df2-88ec-4bacb7e537e0"
+            "uuid": "4aded8ff-7993-56a5-a924-e4666c0fd9cf"
         }
     ],
-    "code": "sok",
+    "code": "SOK",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "sok",
+    "mtgoCode": "SOK",
     "name": "Saviors of Kamigawa",
     "releaseDate": "2005-06-03",
     "tcgplayerGroupId": 99,

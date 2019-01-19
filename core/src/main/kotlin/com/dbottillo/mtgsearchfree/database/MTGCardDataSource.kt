@@ -14,12 +14,14 @@ class MTGCardDataSource(
     private val cardDataSource: CardDataSource
 ) {
 
+    @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        GUILDS_OF_RAVNICA(2, "Guilds of Ravnica"),
-        CORE_19(4, "Core Set 2019"),
-        DOMINARIA(9, "Dominaria"),
-        RIVALS_OF_IXALAN(11, "Rivals of Ixalan"),
-        IXALAN(16, "Ixalan");
+        RAVNICA_ALLEGIANCE(1, "Ravnica Allegiance"),
+        GUILDS_OF_RAVNICA(3, "Guilds of Ravnica"),
+        CORE_19(5, "Core Set 2019"),
+        DOMINARIA(10, "Dominaria"),
+        RIVALS_OF_IXALAN(12, "Rivals of Ixalan"),
+        IXALAN(17, "Ixalan");
 
         companion object {
 

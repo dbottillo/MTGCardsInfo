@@ -77,10 +77,6 @@
                     "type": "생물 — 사냥개"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369908
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370169,
                     "name": "Мастиф Боросов",
@@ -147,13 +143,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67957,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f834982af8935444",
             "text": "Battalion — Whenever Boros Mastiff and at least two other creatures attack, Boros Mastiff gains lifelink until end of turn. (Damage dealt by a creature with lifelink also causes its controller to gain that much life.)",
             "toughness": "2",
             "type": "Creature — Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3140b79-0b62-5cf9-aebe-61eb79141e01",
+            "uuid": "da5961e0-9062-5b2a-bfe5-004e0f0c6bae",
             "watermark": "boros"
         },
         {
@@ -215,10 +212,6 @@
                     "name": "하즈다 올가미 부대",
                     "text": "하즈다 올가미 부대가 공격할 때마다, 당신은 {W}을 지불할 수 있다. 그렇게 한다면, 상대가 조종하는 생물 한 개를 목표로 정한다. 그 생물을 탭한다.",
                     "type": "생물 — 인간 병사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369917
                 },
                 {
                     "flavorText": "Они присматривали за условно осужденными, записывались в армию, охотились на преступников — одним словом, охраняли свой район, чего бы это ни стоило.",
@@ -283,13 +276,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67958,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7d65021b96bb9e65",
             "text": "Whenever Haazda Snare Squad attacks, you may pay {W}. If you do, tap target creature an opponent controls.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "7aed9eda-278d-5982-9ca6-0917c1370ce8"
+            "uuid": "02a4b1cd-2e04-55ea-8265-2f8ecd457d24"
         },
         {
             "artist": "Kev Walker",
@@ -350,10 +344,6 @@
                     "name": "리에브 칙령",
                     "text": "상대가 조종하는 생물을 최대 두 개 까지 목표로 정한다. 그 생물들을 억류한다. (당신의 다음 턴이 될 때까지 그 생물들은 공격하거나 방어할 수 없으며, 그 생물들의 활성화능력은 활성화될 수 없다.)",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369944
                 },
                 {
                     "flavorText": "У Азориусов столько законов и указов — что бы ты ни делал, ты обязательно нарушаешь какой-нибудь из них.",
@@ -434,12 +424,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67959,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b95de0b61a2f5f0c",
             "text": "Detain up to two target creatures your opponents control. (Until your next turn, those creatures can't attack or block and their activated abilities can't be activated.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "baa4e268-1275-52b8-84cc-2536d9173ac5",
+            "uuid": "e38b032c-6ceb-5d45-a190-50138da67d35",
             "watermark": "azorius"
         },
         {
@@ -503,10 +494,6 @@
                     "type": "생물 — 정령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369976
-                },
-                {
                     "flavorText": "Путь через лабиринт известен уже тысячи лет, но только тем, кто не может о нем рассказать.",
                     "language": "Russian",
                     "multiverseId": 370108,
@@ -563,13 +550,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67938,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ba7c3ba1b5dcd85f",
             "text": "Vigilance\nMulticolored creatures you control have vigilance.",
             "toughness": "6",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "ddaa974d-aae1-5ea8-9702-4f6b6ab5d36b"
+            "uuid": "6fafbb45-d295-50d8-bef9-5559ebd03d27"
         },
         {
             "artist": "Daarken",
@@ -630,10 +618,6 @@
                     "name": "길드를 부정하다",
                     "text": "각 플레이어는 다색 지속물 한 개를 희생한다.",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370022
                 },
                 {
                     "flavorText": "«Десятки жертв во имя мира. И это ты называешь компромиссом?»— Гидеон Джура, обращаясь к Аурелии",
@@ -697,12 +681,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67888,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23f2edfc3bee6146",
             "text": "Each player sacrifices a multicolored permanent.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2f659494-61a8-50d3-b993-f1aae7adb29e"
+            "uuid": "cfd71894-faad-5b0b-9b90-af88f6b653bf"
         },
         {
             "artist": "Slawomir Maniak",
@@ -763,10 +748,6 @@
                     "name": "시위 진압",
                     "text": "당신은 상대가 조종하는 생물 한 개당 생명 1점을 얻는다. 이번 턴에 당신이 입게 되는 모든 피해를 방지한다.",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369904
                 },
                 {
                     "flavorText": "«Жителям Равники нужен порядок. Если порядка нет, мы его восстановим».— Исперия",
@@ -831,12 +812,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67960,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/07be65dee0807879",
             "text": "You gain 1 life for each creature your opponents control. Prevent all damage that would be dealt to you this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4e759e39-f1de-5ae2-9cdc-c99fb2999dff"
+            "uuid": "ac31c6b3-5c5c-534a-aea3-932b01078ee8"
         },
         {
             "artist": "Willian Murai",
@@ -890,10 +872,6 @@
                     "name": "비투 가지의 후계자",
                     "text": "비투 가지의 후계자가 당신의 손에서 발동되어 전장에 들어올 때, 비행 능력을 가진 1/1 백색 조류 토큰 한 개를 전장에 놓은 후 소집한다. (당신이 조종하는 어느 생물 토큰의 복사본인 토큰 한 개를 전장에 놓는다.)",
                     "type": "생물 — 정령"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369913
                 },
                 {
                     "language": "Russian",
@@ -978,13 +956,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67961,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/847179867984679a",
             "text": "When Scion of Vitu-Ghazi enters the battlefield, if you cast it from your hand, create a 1/1 white Bird creature token with flying, then populate. (Create a token that's a copy of a creature token you control.)",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "5303b5a3-96f3-5061-b02e-90e11e40cdcc",
+            "uuid": "f7abe39e-b602-5cca-8f7f-06710717a183",
             "watermark": "selesnya"
         },
         {
@@ -1048,10 +1027,6 @@
                     "type": "생물 — 조류"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369939
-                },
-                {
                     "flavorText": "«Иногда перед тем, как взлететь, она забывает разжать когти. У моего дома так крыши не осталось».— Экабан, разведчик Боросов",
                     "language": "Russian",
                     "multiverseId": 370162,
@@ -1107,13 +1082,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67962,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1f93af9e40f0e953",
             "text": "Flying, first strike",
             "toughness": "1",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "3a5abf18-788a-53f5-acf2-5574c0291812"
+            "uuid": "bddc522d-6a22-53e5-96b8-2f4ee61e8c1a"
         },
         {
             "artist": "Chippy",
@@ -1176,10 +1152,6 @@
                     "type": "생물 — 인간 병사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369953
-                },
-                {
                     "flavorText": "«Входите с должным уважением или не входите вовсе».",
                     "language": "Russian",
                     "multiverseId": 370060,
@@ -1238,13 +1210,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67889,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/61aef9df1a00e3f6",
             "text": "When Sunspire Gatekeepers enters the battlefield, if you control two or more Gates, create a 2/2 white Knight creature token with vigilance.",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5e09e919-c8ab-5058-a657-5d75d2bb35cb"
+            "uuid": "fb0ebd41-6a3a-5a4f-ac1c-4053669dc2cc"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -1305,10 +1278,6 @@
                     "name": "환영 깨우기",
                     "text": "소집한다. (당신이 조종하는 어느 생물 토큰의 복사본인 토큰 한 개를 전장에 놓는다.)",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369930
                 },
                 {
                     "flavorText": "«Перед вами — птица, дуб, вьючное животное. Передо мной — будущая армия».— Лалия, дриада Селезнии",
@@ -1390,12 +1359,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67948,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/174eafa36d510cd7",
             "text": "Populate. (Create a token that's a copy of a creature token you control.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9119fc70-ed0a-590f-bcf2-6a1c36f764d7",
+            "uuid": "633ff0de-85eb-5893-98b7-ed406a2dabc5",
             "watermark": "selesnya"
         },
         {
@@ -1450,10 +1420,6 @@
                     "name": "에테르 괴물",
                     "text": "{U}: 에테르 괴물을 추방한다. 다음 종료단 시작에, 에테르 괴물을 소유자의 조종하에 전장으로 되돌린다.\n{U}: 에테르 괴물은 이 턴에 방어될 수 없다.\n{1}: 에테르 괴물은 턴종료까지 +1/-1을 받는다.\n{1}: 에테르 괴물은 턴종료까지 -1/+1을 받는다.",
                     "type": "생물 — 변신괴물"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370001
                 },
                 {
                     "language": "Russian",
@@ -1516,13 +1482,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67952,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1bfbbaef21f3c72",
             "text": "{U}: Exile Aetherling. Return it to the battlefield under its owner's control at the beginning of the next end step.\n{U}: Aetherling can't be blocked this turn.\n{1}: Aetherling gets +1/-1 until end of turn.\n{1}: Aetherling gets -1/+1 until end of turn.",
             "toughness": "5",
             "type": "Creature — Shapeshifter",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3525325-e3f7-587a-91b6-a42f8e39666b"
+            "uuid": "1d34f29b-fe04-545d-9d11-c9be478648ab"
         },
         {
             "artist": "Daarken",
@@ -1576,10 +1543,6 @@
                     "name": "숨겨진 끈",
                     "text": "지속물 한 개를 목표로 정한다. 당신은 그 지속물을 탭하거나 언탭할 수 있다. 그 후 다른 지속물 한 개를 목표로 정한다. 당신은 그 지속물을 탭하거나 언탭할 수 있다.\n암호문 (그런 다음 당신은 이 주문 카드를 추방하고 당신이 조종하는 생물 한 개에 암호화할 수 있다. 그 생물이 플레이어에게 전투피해를 입힐 때마다, 그 생물의 조종자는 암호화한 카드의 복사본을 마나비용의 지불 없이 발동할 수 있다.)",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369962
                 },
                 {
                     "language": "Russian",
@@ -1677,12 +1640,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67963,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ae878d5b79b38731",
             "text": "You may tap or untap target permanent, then you may tap or untap another target permanent.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ad3fc191-5402-5513-b8bd-c64d83cded12",
+            "uuid": "7bcceff8-5233-5cf1-90d9-4079a340a7c0",
             "watermark": "dimir"
         },
         {
@@ -1746,10 +1710,6 @@
                     "type": "생물 — 정령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369910
-                },
-                {
                     "flavorText": "Переходы Скрытого Лабиринта простираются более чем в двух измерениях.",
                     "language": "Russian",
                     "multiverseId": 370056,
@@ -1806,13 +1766,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67939,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93bf4085bfe23911",
             "text": "Flying\nMulticolored creatures you control have flying.",
             "toughness": "5",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "f070cd64-26a7-5452-9374-2983323ed57e"
+            "uuid": "dedf265d-ee32-5671-bcd2-faf9fc2c7203"
         },
         {
             "artist": "Johann Bodin",
@@ -1875,10 +1836,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370009
-                },
-                {
                     "flavorText": "«Нет ничего более увлекательного, чем свести на нет все усилия соперника. Реакция Груулов особенно забавна».— Бори Андан, иззетский взрывоискатель",
                     "language": "Russian",
                     "multiverseId": 370078,
@@ -1932,12 +1889,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67964,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a634ed690dbfdb17",
             "text": "Counter target spell unless its controller pays {6}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "849193bc-7645-5f83-9c60-fd55f241c021"
+            "uuid": "907ce2c8-f896-5907-a5cc-cb98825d899c"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -2000,10 +1958,6 @@
                     "type": "생물 — 신령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370014
-                },
-                {
                     "flavorText": "«Нет ничего коварнее, чем нелепица, достаточно правдоподобная для того, чтобы в нее поверить».— Лазав",
                     "language": "Russian",
                     "multiverseId": 370124,
@@ -2060,13 +2014,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67965,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/448af9116312bec4",
             "text": "Defender",
             "toughness": "5",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "c2a22ed4-bd7b-5b1b-8fca-b99a3ccf9537"
+            "uuid": "946dcb06-06af-5ea3-883c-b5a3010a6ac7"
         },
         {
             "artist": "Seb McKinnon",
@@ -2129,10 +2084,6 @@
                     "type": "생물 — 베달켄 병사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369966
-                },
-                {
                     "flavorText": "Стражники охраняют памятные места и отдаленные уголки Равники, не ведая о том, какую роль они играют в лабиринте.",
                     "language": "Russian",
                     "multiverseId": 370044,
@@ -2190,13 +2141,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67890,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e2217d3e4e120c6a",
             "text": "When Opal Lake Gatekeepers enters the battlefield, if you control two or more Gates, you may draw a card.",
             "toughness": "4",
             "type": "Creature — Vedalken Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9c82e1bf-2a0a-5bda-9735-29ce108f751c"
+            "uuid": "8ab603aa-51d1-5c5d-8aad-cf14c5a18e20"
         },
         {
             "artist": "Karl Kopinski",
@@ -2250,10 +2202,6 @@
                     "name": "탐험가의 재앙",
                     "text": "공격력이 3 이하인 생물에게 부여\n탐험가의 재앙이 전장에 들어올 때, 부여된 생물을 탭한다.\n부여된 생물은 조종자의 언탭단에 언탭되지 않는다.",
                     "type": "부여마법 — 마법진"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369974
                 },
                 {
                     "language": "Russian",
@@ -2317,12 +2265,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67966,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26a37aef0607342a",
             "text": "Enchant creature with power 3 or less\nWhen Runner's Bane enters the battlefield, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1259e928-7848-59fe-9eb2-538411f35bf5"
+            "uuid": "c2fc55e6-5c52-52ac-a9fb-7f1920fd5706"
         },
         {
             "artist": "Clint Cearley",
@@ -2376,10 +2325,6 @@
                     "name": "성질 조작",
                     "text": "지속물 한 개를 목표로 정한다. 그 지속물의 능력을 읽고 거기 명시된 색 하나를 모두 다른 색으로 변경하거나 기본 대지 유형 한 개를 모두 다른 기본 대지 유형으로 변경한다.\n암호문 (그런 다음 당신은 이 주문 카드를 추방하고 당신이 조종하는 생물 한 개에 암호화할 수 있다. 그 생물이 플레이어에게 전투피해를 입힐 때마다, 그 생물의 조종자는 암호화한 카드의 복사본을 마나비용의 지불 없이 발동할 수 있다.)",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369958
                 },
                 {
                     "language": "Russian",
@@ -2500,12 +2445,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67967,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bcd76d54bb2fd545",
             "text": "Change the text of target permanent by replacing all instances of one color word with another or one basic land type with another until end of turn.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5c25563c-b3a3-5e31-acc4-8199cbf952e8",
+            "uuid": "617aaba8-8517-597b-90e2-540c1f1af86c",
             "watermark": "dimir"
         },
         {
@@ -2569,10 +2515,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369945
-                },
-                {
                     "flavorText": "Скрытый Лабиринт простирается по Равнике, соединяя между собой священные места всех десяти гильдий.",
                     "language": "Russian",
                     "multiverseId": 370086,
@@ -2626,12 +2568,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67940,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f5de34b4c9f68fbf",
             "text": "Look at the top four cards of your library. You may reveal up to two instant and/or sorcery cards from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1f764543-7e4e-5d43-8c69-706418b9ba78"
+            "uuid": "0ebd8892-ee0d-58c1-a01c-10b470ef7ae5"
         },
         {
             "artist": "John Severin Brassell",
@@ -2692,10 +2635,6 @@
                     "name": "바람의 드레이크",
                     "text": "비행",
                     "type": "생물 — 드레이크"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369977
                 },
                 {
                     "flavorText": "Городские дрейки догоняют своих жертв, оседлав ветер, заблудившийся в переулках.",
@@ -2767,13 +2706,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67968,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/60dd11d06e117b0a",
             "text": "Flying",
             "toughness": "2",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "a6b81c9f-84ec-5d13-a123-6d185d781388"
+            "uuid": "5984b11b-4ff9-5b16-9e63-9933bf7858fd"
         },
         {
             "artist": "Mike Bierek",
@@ -2830,10 +2770,6 @@
                     "type": "생물 — 인간 도적"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369990
-                },
-                {
                     "flavorText": "«Я занимаюсь поставкой. Это прибыльное дело. Гильдиям последнее время нужны всякие карты и реликвии. Зачем — представить себе не могу».",
                     "language": "Russian",
                     "multiverseId": 370105,
@@ -2887,12 +2823,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67969,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/785a6c9ac51d033d",
             "toughness": "3",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "2770d656-2865-5258-8835-0ae834ef1532"
+            "uuid": "fe343178-8080-5c46-9030-959ba8466404"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -2953,10 +2890,6 @@
                     "name": "피의 서기관",
                     "text": "당신의 손에 카드가 한 장도 없는 상태에서 카드 한 장을 뽑게 되면, 당신은 대신 카드 두 장을 뽑고 생명 1점을 잃는다.",
                     "type": "생물 — 좀비 마법사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369988
                 },
                 {
                     "flavorText": "Внимательно прочти и распишись. Кровью.",
@@ -3024,13 +2957,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67896,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6db3b93624f7dd5e",
             "text": "If you would draw a card while you have no cards in hand, instead draw two cards and lose 1 life.",
             "toughness": "1",
             "type": "Creature — Zombie Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "adced766-206b-5774-8d29-bd252db563f3"
+            "uuid": "bc8ea08e-7009-592c-bb95-a8857554252a"
         },
         {
             "artist": "Svetlin Velinov",
@@ -3093,10 +3027,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369969
-                },
-                {
                     "flavorText": "Варольц, исследователь лабиринта из гильдии Голгари, одержим жаждой боевой славы, а его жертвы утоляют голод других страждущих.",
                     "language": "Russian",
                     "multiverseId": 370104,
@@ -3149,12 +3079,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67970,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5711888a670d30d3",
             "text": "Exile all creature cards from target player's graveyard. You gain 3 life for each card exiled this way.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "51ee93e9-715f-5102-af2c-9df5e554ab2a"
+            "uuid": "996c625a-7786-5b36-8e2a-6e1ecd05ffb8"
         },
         {
             "artist": "Kev Walker",
@@ -3217,10 +3148,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369967
-                },
-                {
                     "flavorText": "Говорят, что самое страшное в подземном городе — ужасы и убийцы из гильдии Димиров, однако не меньше путников встречают там куда более прозаическую смерть.",
                     "language": "Russian",
                     "multiverseId": 370158,
@@ -3274,12 +3201,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67971,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4b95bb0c5f7d436f",
             "text": "Target creature gets -4/-2 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e055fc2c-9e13-5a99-bb99-7a70e3f573ad"
+            "uuid": "3bf3b31f-70bf-5b17-88f9-8b2403f02faf"
         },
         {
             "artist": "Winona Nelson",
@@ -3340,10 +3268,6 @@
                     "name": "고용된 고문기술자",
                     "text": "수비태세\n{3}{B}, {T}: 상대 한 명을 목표로 정한다. 그 상대는 생명 2점을 잃고 손에 있는 카드 한 장을 무작위로 공개한다.",
                     "type": "생물 — 인간 도적"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369892
                 },
                 {
                     "flavorText": "«Хорошо, когда работа тебе по душе. Занимаешься любимым делом, а тебе еще и платят!»",
@@ -3415,13 +3339,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67972,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b2b04820851053ff",
             "text": "Defender\n{3}{B}, {T}: Target opponent loses 2 life, then reveals a card at random from their hand.",
             "toughness": "3",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "48781bcb-b091-5de3-81ef-e041611f48eb"
+            "uuid": "76e01209-78b1-5ae8-86f8-4d10352ec6d0"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -3477,10 +3402,6 @@
                     "type": "생물 — 정령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369963
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370079,
                     "name": "Мерзость Лабиринта",
@@ -3534,13 +3455,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67941,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/923f9002a205a20d",
             "text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nMulticolored creatures you control have deathtouch.",
             "toughness": "5",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "5d47813b-ce2e-5eda-bb85-dc5b8452ceff"
+            "uuid": "166cf5eb-8f16-5423-a996-63e0d0ccb288"
         },
         {
             "artist": "Seb McKinnon",
@@ -3594,10 +3516,6 @@
                     "name": "부패의 제사장",
                     "text": "착취 (당신이 주문을 발동할 때마다 당신은 {W/B}를 지불할 수 있다. 그렇게 한다면, 각 상대는 생명 1점을 잃고 당신은 그만큼의 생명점을 얻는다.)\n당신이 조종하는 다른 생물들은 착취 능력을 가진다. (한 생물이 여러 개의 착취 능력을 가지고 있다면, 각 능력은 따로 격발된다.)",
                     "type": "생물 — 좀비 성직자"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369887
                 },
                 {
                     "language": "Russian",
@@ -3667,13 +3585,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67973,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/38e19dcb1cff9083",
             "text": "Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.)\nOther creatures you control have extort. (If a creature has multiple instances of extort, each triggers separately.)",
             "toughness": "7",
             "type": "Creature — Zombie Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "2cb9d2d3-fbee-5683-aa46-b5860543b060",
+            "uuid": "cb26b1f5-67bf-56db-b634-6447c96cbab7",
             "watermark": "orzhov"
         },
         {
@@ -3735,10 +3654,6 @@
                     "name": "락도스 드레이크",
                     "text": "비행\n속박해제 (당신은 이 생물로 하여금 +1/+1 카운터 한 개를 가지고 전장에 들어오도록 할 수 있다. 이 생물은 +1/+1 카운터를 가지고 있는 한 방어할 수 없다.)",
                     "type": "생물 — 드레이크"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370031
                 },
                 {
                     "flavorText": "Дебоширы-Ракдосы раскрашивают себе лица, чтобы они были похожи на окровавленные морды дрейков.",
@@ -3815,13 +3730,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67974,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1501dd365de9d74",
             "text": "Flying\nUnleash (You may have this creature enter the battlefield with a +1/+1 counter on it. It can't block as long as it has a +1/+1 counter on it.)",
             "toughness": "2",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "ac8987cf-c287-542b-a641-0882a8230cc1",
+            "uuid": "320a21c0-e0f0-5e41-975b-bee276a54efe",
             "watermark": "rakdos"
         },
         {
@@ -3885,10 +3801,6 @@
                     "type": "부여마법 — 마법진"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370008
-                },
-                {
                     "flavorText": "«Говоришь, ты что-то подхватил, прогуливаясь прохладным вечером? Нет, скорее это \"что-то\" подхватило тебя».— Мезим Магра, городская целительница",
                     "language": "Russian",
                     "multiverseId": 370055,
@@ -3944,12 +3856,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67975,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa77bc8f8b54e15b",
             "text": "Enchant creature\nWhenever enchanted creature attacks or blocks, its controller loses 2 life.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3741c7fd-2918-50b3-ad57-b902c4950a2a"
+            "uuid": "3474d79e-7c12-57e4-b0a2-42e1f18888f5"
         },
         {
             "artist": "Volkan Baga",
@@ -4012,10 +3925,6 @@
                     "type": "생물 — 좀비 병사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370015
-                },
-                {
                     "flavorText": "Есть много ворот, ведущих в подземный город. Гораздо меньше тех, через которые можно оттуда выйти.",
                     "language": "Russian",
                     "multiverseId": 370106,
@@ -4073,13 +3982,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67891,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44011a51f70a067c",
             "text": "When Ubul Sar Gatekeepers enters the battlefield, if you control two or more Gates, target creature an opponent controls gets -2/-2 until end of turn.",
             "toughness": "4",
             "type": "Creature — Zombie Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "15928fe2-0a48-504b-85d0-1519f66418f9"
+            "uuid": "7cd81420-5de9-5a3d-952a-bacac5a928c9"
         },
         {
             "artist": "Mathias Kollros",
@@ -4140,10 +4050,6 @@
                     "name": "길드에 대한 경외심",
                     "text": "단색 생물들은 이 턴에 방어할 수 없다.",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369925
                 },
                 {
                     "flavorText": "Когда гильдии ладят друг с другом, безгильдейные радуются наступившему миру. Когда не ладят – стараются спрятаться подальше.",
@@ -4207,12 +4113,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67976,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7034d434b4a3bbd3",
             "text": "Monocolored creatures can't block this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ae3ab4e4-f1cd-587c-b6a9-df52d886387e"
+            "uuid": "e188017b-9415-5c27-8692-780c313c18b0"
         },
         {
             "artist": "Karl Kopinski",
@@ -4275,10 +4182,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369997
-                },
-                {
                     "flavorText": "«Почему у стражников всегда такой удивленный вид, когда мы их бьем?» — спросил Рурик.«Наверное, они ждут взятки, а не драки», — ответил Тар.",
                     "language": "Russian",
                     "multiverseId": 370100,
@@ -4334,12 +4237,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67977,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5cb3c7dd1b71be3b",
             "text": "Destroy target creature with defender.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3374cee3-aa38-55e9-bd79-16018a45ead4"
+            "uuid": "45cd8ff5-7883-592e-8ff9-66cb313dd968"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -4402,10 +4306,6 @@
                     "type": "생물 — 정령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370021
-                },
-                {
                     "flavorText": "«Лабиринт словно восстал против нас, на каждом шагу противясь нашим усилиям отыскать верный путь».— Нив-Миззет",
                     "language": "Russian",
                     "multiverseId": 370095,
@@ -4462,13 +4362,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67942,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/979463e1fffb95f0",
             "text": "Haste\nMulticolored creatures you control have haste.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "9b5a79fc-42c1-571f-8204-960a75548cd2"
+            "uuid": "dc0ed311-2040-584c-959b-020706240ebd"
         },
         {
             "artist": "Jason Felix",
@@ -4522,10 +4423,6 @@
                     "name": "가능성 폭풍",
                     "text": "플레이어가 손에서 주문을 발동할 때마다, 그 플레이어는 그 주문을 추방한 다음 추방한 카드와 카드 유형을 하나라도 공유하는 카드가 나올 때까지 자신의 서고 맨 위 카드를 추방한다. 그 플레이어는 마지막에 나온 카드를 마나비용 없이 발동할 수 있다. 그런 다음 그 플레이어는 가능성 폭풍에 의해 추방당한 모든 카드를 자신의 서고 맨 밑에 무작위 순서로 넣는다.",
                     "type": "부여마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370035
                 },
                 {
                     "language": "Russian",
@@ -4601,12 +4498,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67915,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0432383a542de801",
             "text": "Whenever a player casts a spell from their hand, that player exiles it, then exiles cards from the top of their library until they exile a card that shares a card type with it. That player may cast that card without paying its mana cost. Then they put all cards exiled with Possibility Storm on the bottom of their library in a random order.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2e759a65-628b-5a51-8329-060c73303d2b"
+            "uuid": "eac3301d-6d10-5a53-9b3c-f2763e87f2af"
         },
         {
             "artist": "Slawomir Maniak",
@@ -4667,10 +4565,6 @@
                     "name": "적을 응징하라",
                     "text": "플레이어 한 명과 생물 한 개를 목표로 정한다. 적을 응징하라는 그 플레이어와 그 생물에게 각각 피해 3점씩을 입힌다.",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369936
                 },
                 {
                     "flavorText": "«В пламени нашего правосудия сгорит и хозяин, и его слуги».— Аурелия",
@@ -4735,12 +4629,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67978,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8129901fb47570ee",
             "text": "Punish the Enemy deals 3 damage to target player or planeswalker and 3 damage to target creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "adc3b6dd-c526-5afd-a0a0-dfe615cbe5b4"
+            "uuid": "55aee823-a5a0-5b2f-a8c6-a3d2947c7c3c"
         },
         {
             "artist": "Lucas Graciano",
@@ -4794,10 +4689,6 @@
                     "name": "화장꾼 주술사",
                     "text": "혈기 — {1}{R}, 화장꾼 주술사를 버린다: 공격생물 한 개를 목표로 정한다. 그 생물은 턴종료까지 +3/+1을 받는다.\n당신이 조종하는 한 개 이상의 생물이 플레이어에게 피해를 입힐 때마다, 화장꾼 주술사가 당신의 무덤에 있다면, 당신은 {3}을 지불할 수 있다. 그렇게 한다면, 화장꾼 주술사를 손으로 되돌린다.",
                     "type": "생물 — 고블린 주술사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369927
                 },
                 {
                     "language": "Russian",
@@ -4871,13 +4762,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67949,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79da143c545045b0",
             "text": "Bloodrush — {1}{R}, Discard Pyrewild Shaman: Target attacking creature gets +3/+1 until end of turn.\nWhenever one or more creatures you control deal combat damage to a player, if Pyrewild Shaman is in your graveyard, you may pay {3}. If you do, return Pyrewild Shaman to your hand.",
             "toughness": "1",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f5bc118-2bc8-54a3-8bb9-05d1b7b98f5a",
+            "uuid": "59fb7d67-b6a7-528e-bf69-db1bccd18709",
             "watermark": "gruul"
         },
         {
@@ -4941,10 +4833,6 @@
                     "type": "생물 — 고블린 광전사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369946
-                },
-                {
                     "flavorText": "Ему все равно, буянить из-за ущемления прав ремесленников или просто ввязаться в пьяную драку. У него просто с самого утра чешутся кулаки.",
                     "language": "Russian",
                     "multiverseId": 370117,
@@ -5002,13 +4890,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67979,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4c62c6376f905f6d",
             "text": "First strike\nRiot Piker attacks each combat if able.",
             "toughness": "1",
             "type": "Creature — Goblin Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "ce09c7c1-2c8d-5041-9da6-6fdf09f0c4c9"
+            "uuid": "88c09ab2-a6ac-5078-9634-6afad1f2968f"
         },
         {
             "artist": "Eric Velhagen",
@@ -5071,10 +4960,6 @@
                     "type": "생물 — 고양이"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369919
-                },
-                {
                     "flavorText": "«Мааки не покидают нас в тяжелые времена. Их и кормить не нужно — враги делают это за нас».— Недья, шаманка Груулов",
                     "language": "Russian",
                     "multiverseId": 370173,
@@ -5132,13 +5017,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67980,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11630b70235c9284",
             "text": "Bloodrush — {R}, Discard Rubblebelt Maaka: Target attacking creature gets +3/+3 until end of turn.",
             "toughness": "3",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "d1c17bb4-a6f2-53c4-8821-c1324fbca987",
+            "uuid": "2292cdfb-4f73-5429-b67f-8990a28541a6",
             "watermark": "gruul"
         },
         {
@@ -5195,10 +5081,6 @@
                     "type": "생물 — 인간 전사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369996
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370120,
                     "name": "Привратники Района Плавильщиков",
@@ -5253,13 +5135,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67892,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5ff691231dd66eb1",
             "text": "When Smelt-Ward Gatekeepers enters the battlefield, if you control two or more Gates, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.",
             "toughness": "4",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "817cb52e-cc06-56cb-8081-2b0517f87909"
+            "uuid": "5e302d6a-f0a7-5952-b349-1bf668ca1fae"
         },
         {
             "artist": "Jason Felix",
@@ -5313,10 +5196,6 @@
                     "name": "폭풍의 무기",
                     "text": "당신이 조종하는 생물 한 개를 목표로 정한다. 그 생물은 턴종료까지 +1/+0을 받고 선제공격 능력을 얻는다.\n과부하 {1}{R} (당신은 과부하 비용을 지불하여 이 주문을 발동할 수 있다. 그럴 경우, 이 주문은 \"당신이 조종하는 각 생물은 턴종료까지 +1/+0을 받고 선제공격 능력을 얻는다\"로 내용이 변한다.)",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369952
                 },
                 {
                     "language": "Russian",
@@ -5398,12 +5277,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67981,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e46b7ae818063144",
             "text": "Target creature you control gets +1/+0 and gains first strike until end of turn.\nOverload {1}{R} (You may cast this spell for its overload cost. If you do, change its text by replacing all instances of \"target\" with \"each.\")",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0149e902-0943-5e8e-81bc-421abcbf66b4",
+            "uuid": "b4f82dd0-db29-5227-8f17-78a2d862a824",
             "watermark": "izzet"
         },
         {
@@ -5458,10 +5338,6 @@
                     "name": "박치기 크라시스",
                     "text": "돌진\n진화 (당신이 조종하는 생물이 전장에 들어올 때마다, 그 생물의 공격력이 이 생물의 공격력보다 높거나 방어력이 이 생물의 방어력보다 높다면, 이 생물에 +1/+1 카운터 한 개를 올려놓는다.)",
                     "type": "생물 — 어류 야수"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369902
                 },
                 {
                     "language": "Russian",
@@ -5542,13 +5418,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67982,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/09e10f8e5652e5c9",
             "text": "Trample\nEvolve (Whenever a creature enters the battlefield under your control, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)",
             "toughness": "1",
             "type": "Creature — Fish Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "871ad5ce-feff-56e8-8d5b-80797e60ae74",
+            "uuid": "e28b4ee8-3433-5191-afd1-d8bde4142e24",
             "watermark": "simic"
         },
         {
@@ -5612,10 +5489,6 @@
                     "type": "생물 — 곤충 전사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369916
-                },
-                {
                     "flavorText": "В переходах подземного города скрываются напоминающие гигантских насекомых краулы. Многие из них служат Рою Голгари, другие же подчиняются собственной тайной иерархии каст.",
                     "language": "Russian",
                     "multiverseId": 370062,
@@ -5674,13 +5547,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67983,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/36c7e4734bc7e1a7",
             "text": "{5}{G}: Kraul Warrior gets +3/+3 until end of turn.",
             "toughness": "2",
             "type": "Creature — Insect Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8b9d219f-09f6-50f5-9334-3f6c73f2f4dc"
+            "uuid": "48cc167b-db2b-5c0a-9fcf-1254c9f33132"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -5743,10 +5617,6 @@
                     "type": "생물 — 정령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369921
-                },
-                {
                     "flavorText": "Оно появилось из лучей энергии и исчезло так же бесследно — если не считать оставшейся груды искореженных трупов.",
                     "language": "Russian",
                     "multiverseId": 370145,
@@ -5803,13 +5673,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67943,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26a61280cc904e6a",
             "text": "Trample\nMulticolored creatures you control have trample.",
             "toughness": "4",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "f41f17f0-0ed5-530f-b2d1-ca09c8d65f9a"
+            "uuid": "682195ca-c743-5c9a-b337-ae8952e3451b"
         },
         {
             "artist": "Karla Ortiz",
@@ -5872,10 +5743,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369968
-                },
-                {
                     "flavorText": "«Дар жизни должен быть безвозмездным. Ни на что меньшее мы не согласны».— Эрин, целитель Селезнии",
                     "language": "Russian",
                     "multiverseId": 370057,
@@ -5929,12 +5796,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67984,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/82f1301d014bb0a0",
             "text": "Regenerate target creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "05802701-2a62-52a7-82c2-3aa767da5d78"
+            "uuid": "bc940d7b-bf29-5498-ac39-f1f4fa9ab580"
         },
         {
             "artist": "Ryan Barger",
@@ -5995,10 +5863,6 @@
                     "name": "돌연변이의 먹이",
                     "text": "당신이 조종하는 생물 중 +1/+1 카운터가 올려진 생물과 상대가 조종하는 생물 한 개를 목표로 정한다. 그 생물들은 서로 싸운다. (각 생물은 서로에게 각자의 공격력만큼의 피해를 입힌다.)",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369947
                 },
                 {
                     "flavorText": "Каждый перекресток — место охоты, каждый прохожий — потенциальная жертва.",
@@ -6063,12 +5927,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67985,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45009ac7b2fbabae",
             "text": "Target creature you control with a +1/+1 counter on it fights target creature an opponent controls. (Each deals damage equal to its power to the other.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fc5a1cac-4f6a-5177-a434-abe7f79577b8"
+            "uuid": "5f649143-cc43-5c30-afe6-0f9a57c45028"
         },
         {
             "artist": "Izzy",
@@ -6131,10 +5996,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369923
-                },
-                {
                     "flavorText": "Во многих жилых башнях не разрешается держать фитогидр в качестве комнатных растений. Если их не кормить, они сами отправляются на поиски пропитания — после чего башня обычно требует капитального ремонта.",
                     "language": "Russian",
                     "multiverseId": 370191,
@@ -6187,12 +6048,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67986,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/178a4c608cdda20f",
             "text": "Target creature gets +5/+5 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "a94aeb84-5d6f-54e8-a89b-a273ab3a42a0"
+            "uuid": "1ee30921-880c-55d7-9ac2-e1cd65932739"
         },
         {
             "artist": "Howard Lyon",
@@ -6246,10 +6108,6 @@
                     "name": "배반자 크라시스",
                     "text": "진화 (당신이 조종하는 생물이 전장에 들어올 때마다, 그 생물의 공격력이 이 생물의 공격력보다 높거나 방어력이 이 생물의 방어력보다 높다면, 이 생물에 +1/+1 카운터 한 개를 올려놓는다.)\n배반자 크라시스가 진화할 때마다, 당신이 조종하는 다른 생물 중 +1/+1 카운터가 올려진 각 생물에 +1/+1 카운터 한 개를 올려놓는다.",
                     "type": "생물 — 야수 돌연변이"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369896
                 },
                 {
                     "language": "Russian",
@@ -6338,13 +6196,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67905,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9cdd43860685cdbc",
             "text": "Evolve (Whenever a creature enters the battlefield under your control, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)\nWhenever Renegade Krasis evolves, put a +1/+1 counter on each other creature you control with a +1/+1 counter on it.",
             "toughness": "2",
             "type": "Creature — Beast Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "dba76cf7-1464-5f09-ad6e-7c29902b324b",
+            "uuid": "6d15d405-5fd0-5837-9799-529fc5d3b4ad",
             "watermark": "simic"
         },
         {
@@ -6408,10 +6267,6 @@
                     "type": "생물 — 엘프 전사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369979
-                },
-                {
                     "flavorText": "На окраинах и пустырях Равники природа все еще пытается отвоевать свои позиции, а ее хранители, как и прежде, стоят на страже.",
                     "language": "Russian",
                     "multiverseId": 370141,
@@ -6469,13 +6324,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67893,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/39afc9c829da2543",
             "text": "When Saruli Gatekeepers enters the battlefield, if you control two or more Gates, you gain 7 life.",
             "toughness": "4",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "20fd453b-cd1e-59e7-b9fb-c8f90046f104"
+            "uuid": "1e6b81ef-1713-5606-81d7-d8803353ed82"
         },
         {
             "artist": "Dan Scott",
@@ -6538,10 +6394,6 @@
                     "type": "생물 — 곤충"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369972
-                },
-                {
                     "flavorText": "«Они охотятся на тех, кто шпионит на нашей территории. Поэтому мы на них не охотимся никогда».— Крошкар, шаман Груулов",
                     "language": "Russian",
                     "multiverseId": 370101,
@@ -6596,13 +6448,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67987,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/46311551ee00f7e7",
             "text": "Flash\nThis spell can't be countered.\nReach, protection from blue",
             "toughness": "2",
             "type": "Creature — Insect",
             "types": [
                 "Creature"
             ],
-            "uuid": "2d959f1b-bb62-59a2-af81-830ee925da13"
+            "uuid": "d6366d3e-3e8d-5dbd-95e6-a8dc875d1780"
         },
         {
             "artist": "Ryan Barger",
@@ -6656,10 +6509,6 @@
                     "name": "난동부리는 이끼견",
                     "text": "대공 (이 생물은 비행 능력을 가진 생물을 방어할 수 있다.)\n섭취 {4}{G}{G} ({4}{G}{G}, 당신의 무덤에서 이 카드를 추방한다: 생물 한 개를 목표로 정한다. 이 카드의 공격력만큼의 +1/+1 카운터를 그 생물에 올려놓는다. 당신이 집중마법을 발동할 수 있는 시기에만 섭취 능력을 활성화할 수 있다.)",
                     "type": "생물 — 식물 사냥개"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369899
                 },
                 {
                     "language": "Russian",
@@ -6721,13 +6570,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67988,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/330c7b29c88ac53f",
             "text": "Reach (This creature can block creatures with flying.)\nScavenge {4}{G}{G} ({4}{G}{G}, Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a sorcery.)",
             "toughness": "3",
             "type": "Creature — Plant Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc8da83f-e6d5-5cd4-89e5-0bab653f1542",
+            "uuid": "018db23d-6217-525a-a326-4dc3af96d9e1",
             "watermark": "golgari"
         },
         {
@@ -6793,10 +6643,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370026
-                },
-                {
                     "flavorText": "Сознание Мат'Селезнии не всегда распространяется мирным путем.",
                     "language": "Russian",
                     "multiverseId": 370136,
@@ -6852,12 +6698,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67881,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/71783c0486e5dee1",
             "text": "Create a 5/5 green Wurm creature token with trample.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5eead856-edc3-5b7b-ae35-dd0f49203d7e",
+            "uuid": "7dd700c5-efc6-506c-8f85-1e2121111284",
             "watermark": "selesnya"
         },
         {
@@ -6917,10 +6764,6 @@
                     "type": "생물 — 엘프 기사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369932
-                },
-                {
                     "flavorText": "Волчьи наездники Селезнии обучаются своему искусству с раннего детства. Каждый наездник воспитывает волчонка, своего будущего скакуна, с его рождения и надеется когда-нибудь разделить с ним высшую честь — караул на Большой Площади.",
                     "language": "Russian",
                     "multiverseId": 370150,
@@ -6974,12 +6817,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67993,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/655b2cb29ad05da7",
             "toughness": "6",
             "type": "Creature — Elf Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "c57824a2-f4e4-507e-aa36-d31e682f583a",
+            "uuid": "54bf273f-5df8-5823-ba45-191c1778dd7d",
             "watermark": "selesnya"
         },
         {
@@ -7045,10 +6889,6 @@
                     "type": "생물 — 베달켄 마법사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370033
-                },
-                {
                     "flavorText": "Рунное письмо мага-законника — воплощенный акт правления, закон, начертанный прямо на воздухе.",
                     "language": "Russian",
                     "multiverseId": 370163,
@@ -7106,13 +6946,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67994,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d567d688306422f1",
             "text": "Flying\nHexproof (This creature can't be the target of spells or abilities your opponents control.)",
             "toughness": "2",
             "type": "Creature — Vedalken Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1ec9478-2fda-5f05-83dd-c9e18023d426",
+            "uuid": "3184aa15-e0a5-50b1-8fe4-033c48fda6c0",
             "watermark": "azorius"
         },
         {
@@ -7176,10 +7017,6 @@
                     "name": "벌레로 변하는 마도사",
                     "text": "{G}{U}: 벌레로 변하는 마도사는 턴종료까지 +2/+2를 받고 비행 능력을 얻는다. 이 능력은 한 턴에 한 번씩만 활성화할 수 있다.",
                     "type": "생물 — 인간 곤충 마법사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369942
                 },
                 {
                     "flavorText": "«Когда Симики говорят \"Возьми свою судьбу в свои руки\", речь идет не только о выборе профессии».— Ворел из Клады Оболочки",
@@ -7249,13 +7086,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67995,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a29ba22ceea2fdae",
             "text": "{G}{U}: Beetleform Mage gets +2/+2 and gains flying until end of turn. Activate this ability only once each turn.",
             "toughness": "2",
             "type": "Creature — Human Insect Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "c285c57b-7316-56b6-8346-42347940cb29",
+            "uuid": "7b245091-866e-5da7-90d2-c185028393fc",
             "watermark": "simic"
         },
         {
@@ -7321,10 +7159,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369950
-                },
-                {
                     "flavorText": "Когда Рал Зарек устраивает мозговой штурм, раздаются удары грома и сверкает молния.",
                     "language": "Russian",
                     "multiverseId": 370049,
@@ -7387,12 +7221,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67953,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a9d08a99e1e9b711",
             "text": "Choose any target. Draw three cards, then discard a card. Blast of Genius deals damage equal to the discarded card's converted mana cost to that permanent or player.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9dada50d-c748-5067-8c2a-373b75cd6278",
+            "uuid": "7f800e19-1bdc-51c5-807e-4ba2590933bb",
             "watermark": "izzet"
         },
         {
@@ -7456,10 +7291,6 @@
                     "name": "불길 특공대",
                     "text": "당신이 조종하는 순간마법이나 집중마법 주문이 피해를 입힐 때마다, 신속 능력을 가졌으며 적색이고 백색인 1/1 병사 생물 토큰 두 개를 전장에 놓는다.",
                     "type": "생물 — 미노타우로스 병사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370019
                 },
                 {
                     "flavorText": "Настоящий коммандос Боросов вызывает подкрепление только для того, чтобы те навели порядок после сражения.",
@@ -7528,13 +7359,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67996,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1a0ce11b1c2d19a",
             "text": "Whenever an instant or sorcery spell you control deals damage, create two 1/1 red and white Soldier creature tokens with haste.",
             "toughness": "3",
             "type": "Creature — Minotaur Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f466e5b-9b31-5811-99dc-96968f3c68e9",
+            "uuid": "91185a6d-2373-5093-b6c6-88b5e5f34cb1",
             "watermark": "boros"
         },
         {
@@ -7591,10 +7423,6 @@
                     "name": "비즈코파 혈공작",
                     "text": "생명연결, 백색 및 흑색으로부터 보호\n당신의 생명이 30점 이상이고 상대의 생명이 10점 이하인 한, 비즈코파 혈공작은 비행 능력을 가지며 +6/+6을 얻는다.",
                     "type": "생물 — 흡혈귀"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369886
                 },
                 {
                     "language": "Russian",
@@ -7655,13 +7483,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67933,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6ff0f305037c6f05",
             "text": "Lifelink, protection from white and from black\nAs long as you have 30 or more life and an opponent has 10 or less life, Blood Baron of Vizkopa gets +6/+6 and has flying.",
             "toughness": "4",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "8cbe487e-8a91-5cf3-8233-d22ff34bdb28",
+            "uuid": "e1b464ca-df3e-5090-ab44-4abaae051ef3",
             "watermark": "orzhov"
         },
         {
@@ -7725,10 +7554,6 @@
                     "name": "보로스 전투 조성자",
                     "text": "각 전투의 시작에, 생물을 최대 한 개 까지 목표로 정한다. 그 생물은 가능하면 이 전투에서 공격하거나 방어해야 한다. 그후 다시 생물을 최대 한 개 까지 목표로 정한다. 그 생물은 이 전투에서 공격하거나 방어할 수 없다.",
                     "type": "생물 — 미노타우로스 병사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370025
                 },
                 {
                     "flavorText": "Предводители направляют умы своих союзников. Но лишь настоящий виртуоз способен направлять умы врагов.",
@@ -7808,13 +7633,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67997,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c0131660d8acbfea",
             "text": "At the beginning of each combat, up to one target creature attacks or blocks this combat if able and up to one target creature can't attack or block this combat.",
             "toughness": "5",
             "type": "Creature — Minotaur Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "3970621d-d729-5e65-8eff-e0d20fbd2b6b",
+            "uuid": "fbae1ab1-d0bb-5a5a-b765-15d706d5d0e0",
             "watermark": "boros"
         },
         {
@@ -7880,10 +7706,6 @@
                     "type": "부여마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369940
-                },
-                {
                     "flavorText": "Одни считают мир местом, полным чудес и откровений. Другие считают его огромной тарелкой, полной еды.",
                     "language": "Russian",
                     "multiverseId": 370167,
@@ -7943,12 +7765,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67906,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ffb3e014ccda7b4b",
             "text": "Whenever a creature you control with a +1/+1 counter on it deals combat damage to a player, you may draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "284ed6e0-f616-5d1d-a58c-dd4570daa260",
+            "uuid": "4517cf6a-fabe-56c3-b199-92e3e7cfccfc",
             "watermark": "simic"
         },
         {
@@ -8014,10 +7837,6 @@
                     "type": "생물 — 조류"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369989
-                },
-                {
                     "flavorText": "Защищая свой дом, они сражаются яростнее любой армии призывников.",
                     "language": "Russian",
                     "multiverseId": 370190,
@@ -8074,13 +7893,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67998,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95ffda9eae0a3b76",
             "text": "Whenever another creature enters the battlefield under your control, Bronzebeak Moa gets +3/+3 until end of turn.",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "e2b4d029-8c27-5ea1-83ac-162813aac99a",
+            "uuid": "88ec7966-24c6-507f-a38b-ee6b70fcb927",
             "watermark": "selesnya"
         },
         {
@@ -8144,10 +7964,6 @@
                     "name": "살육의 검투사",
                     "text": "생물이 방어할 때마다, 그 생물의 조종자는 생명 1점을 잃는다.\n{1}{B}{R}: 살육의 검투사를 재생한다.",
                     "type": "생물 — 해골 전사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369900
                 },
                 {
                     "flavorText": "Его представление — далеко не самое кровавое и отвратительное из всех, проходящих в Рикс-Маади.",
@@ -8217,13 +8033,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67999,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6a106ccad74075e9",
             "text": "Whenever a creature blocks, that creature's controller loses 1 life.\n{1}{B}{R}: Regenerate Carnage Gladiator.",
             "toughness": "2",
             "type": "Creature — Skeleton Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "a77f6d60-e00a-5e34-8468-95ea03b2d82c",
+            "uuid": "5babf540-ef39-5521-9c17-d3adf86169e3",
             "watermark": "rakdos"
         },
         {
@@ -8280,10 +8097,6 @@
                     "name": "절대 평의회",
                     "text": "절대 평의회가 전장에 들어면서, 생물이나 대지가 아닌 카드의 이름을 말한다.\n당신의 상대들은 그 이름을 가진 카드를 발동할 수 없다.\n당신이 그 이름을 가진 카드를 발동할 때 비용이 {2}만큼 줄어든다.",
                     "type": "생물 — 인간 참모"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369931
                 },
                 {
                     "language": "Russian",
@@ -8363,13 +8176,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67907,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/511626d4c3ffbcc2",
             "text": "As Council of the Absolute enters the battlefield, choose a noncreature, nonland card name.\nYour opponents can't cast spells with the chosen name.\nSpells with the chosen name you cast cost {2} less to cast.",
             "toughness": "4",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1aaabb2-591c-5e76-baec-3c06fe680f59",
+            "uuid": "d426d7eb-70bc-52a5-ae2e-4b2f71d39ca0",
             "watermark": "azorius"
         },
         {
@@ -8426,10 +8240,6 @@
                     "name": "죽은다리 구호",
                     "text": "죽은다리 구호가 전장에 들어올 때, 당신의 서고 맨 위의 카드 열 장을 당신의 무덤에 넣는다.\n당신의 유지단 시작에, 당신의 무덤에서 카드 한 장을 무작위로 고른다. 그 카드가 생물 카드라면 그 카드를 전장에 놓는다. 그렇지 않다면 그 카드를 당신의 손으로 가져간다.",
                     "type": "부여마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369955
                 },
                 {
                     "language": "Russian",
@@ -8494,12 +8304,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67934,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/553e4791b5a4d4ad",
             "text": "When Deadbridge Chant enters the battlefield, put the top ten cards of your library into your graveyard.\nAt the beginning of your upkeep, choose a card at random in your graveyard. If it's a creature card, put it onto the battlefield. Otherwise, put it into your hand.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ad87521b-52ce-55f8-b902-0cc6ec019f75",
+            "uuid": "9d22d4a7-01fb-55df-a748-b098766d39c2",
             "watermark": "golgari"
         },
         {
@@ -8565,10 +8376,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369884
-                },
-                {
                     "flavorText": "Самые жестокие из сборщиков долгов на услужении Орзовов запоминают должников на вкус.",
                     "language": "Russian",
                     "multiverseId": 370097,
@@ -8620,12 +8427,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68000,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/765aa1a943a5aa1d",
             "text": "Each opponent loses two times X life. You gain life equal to the life lost this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "68bacbe4-2454-57f8-8c41-84cd047e9059",
+            "uuid": "93e92287-9a57-5870-bcb1-4e0f060fedf2",
             "watermark": "orzhov"
         },
         {
@@ -8691,10 +8499,6 @@
                     "type": "생물 — 인간 마법사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369971
-                },
-                {
                     "flavorText": "«В жизни каждого должен быть день, проведенный в суде».",
                     "language": "Russian",
                     "multiverseId": 370083,
@@ -8753,13 +8557,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67886,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/08325f2cbe52fe29",
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nWhen Deputy of Acquittals enters the battlefield, you may return another target creature you control to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "933ca45b-6d58-59b5-90a1-bf4876276def",
+            "uuid": "a5922497-2f6a-594c-989f-a63d5a4b1043",
             "watermark": "azorius"
         },
         {
@@ -8816,10 +8621,6 @@
                     "name": "용변이",
                     "text": "당신이 조종하는 생물 한 개를 목표로 정한다. 그 생물은 턴종료까지 청색이며 적색인 4/4 용이 되며, 모든 능력을 잃고 비행 능력을 얻는다.\n과부하 {3}{U}{U}{R}{R} (당신은 과부하 비용을 지불하여 이 주문을 발동할 수 있다. 그럴 경우, 이 주문은 \"당신이 조종하는 각 생물은 턴종료까지 청색이며 적색인 4/4 용이 되며, 모든 능력을 잃고 비행 능력을 얻는다\"로 내용이 변한다.)",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369883
                 },
                 {
                     "language": "Russian",
@@ -8924,12 +8725,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67954,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ded2f0b2282cffda",
             "text": "Until end of turn, target creature you control becomes a blue and red Dragon with base power and toughness 4/4, loses all abilities, and gains flying.\nOverload {3}{U}{U}{R}{R} (You may cast this spell for its overload cost. If you do, change its text by replacing all instances of \"target\" with \"each.\")",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2703ed2a-9c8b-55a8-91f4-a23143b68028",
+            "uuid": "58e640b9-7fb2-516f-898b-004f92d2c089",
             "watermark": "izzet"
         },
         {
@@ -8995,10 +8797,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370006
-                },
-                {
                     "flavorText": "Первая задача, которая стоит перед начинающим гнилостным фермером, — это соорудить пару рабочих ходуль.",
                     "language": "Russian",
                     "multiverseId": 370059,
@@ -9058,12 +8856,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68001,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/280f444fb9a0cdc0",
             "text": "Choose target creature. Put the top four cards of your library into your graveyard, then that creature gets -1/-1 until end of turn for each land card in your graveyard.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0ea13489-d826-5237-8710-08043ed3cf5c",
+            "uuid": "19153286-32cf-5ba3-b6b0-7ca6d28fdce1",
             "watermark": "golgari"
         },
         {
@@ -9127,10 +8926,6 @@
                     "name": "에마라 탄드리스",
                     "text": "당신이 조종하는 생물 토큰들이 입으려고 하는 모든 피해를 방지한다.",
                     "type": "전설적 생물 — 엘프 주술사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369924
                 },
                 {
                     "flavorText": "Когда Селезнии потребовался защитник, выбор пал на Эммару — ведь она всегда ставила интересы соратников выше своих собственных.",
@@ -9200,13 +8995,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67950,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e437c0820f7a9d1d",
             "text": "Prevent all damage that would be dealt to creature tokens you control.",
             "toughness": "7",
             "type": "Legendary Creature — Elf Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "52cc0e57-4bb7-54e6-a039-61488649fc1f",
+            "uuid": "beddbed5-8d27-5fa9-834d-040e58c9b7d5",
             "watermark": "selesnya"
         },
         {
@@ -9263,10 +9059,6 @@
                     "name": "락도스 혈마녀 엑사바",
                     "text": "선제공격, 신속\n속박해제 (당신은 이 생물로 하여금 +1/+1 카운터 한 개를 가지고 전장에 들어오도록 할 수 있다. 이 생물은 +1/+1 카운터를 가지고 있는 한 방어할 수 없다.)\n당신이 조종하는 다른 생물 중 +1/+1 카운터를 가진 각 생물은 신속 능력을 가진다.",
                     "type": "전설적 생물 — 인간 성직자"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369941
                 },
                 {
                     "language": "Russian",
@@ -9341,13 +9133,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67894,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0986063565fdf2d5",
             "text": "First strike, haste\nUnleash (You may have this creature enter the battlefield with a +1/+1 counter on it. It can't block as long as it has a +1/+1 counter on it.)\nEach other creature you control with a +1/+1 counter on it has haste.",
             "toughness": "3",
             "type": "Legendary Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab7d0e63-bfd7-5fdb-86b9-d2b60c031294",
+            "uuid": "490900b8-a7af-5a24-a58a-fb4cecda03e2",
             "watermark": "rakdos"
         },
         {
@@ -9411,10 +9204,6 @@
                     "name": "야성의 정령숭배자",
                     "text": "{3}: 야성의 정령숭배자는 턴종료까지 +X/+0을 받는다. X는 야성의 정령숭배자의 공격력이다.",
                     "type": "생물 — 고블린 주술사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369891
                 },
                 {
                     "flavorText": "«Направлять ярость зверя — еще не самое трудное. Самое трудное — объяснять, почему ты проснулся на груде помятых магов-законников, ничего при этом не помня».",
@@ -9483,13 +9272,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68002,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa8f20bda0c838ba",
             "text": "{3}: Feral Animist gets +X/+0 until end of turn, where X is its power.",
             "toughness": "1",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "94669ef3-eb1a-5c9f-babf-b97d984e6b74",
+            "uuid": "f599091d-2b09-5f38-a347-fd2f1146a833",
             "watermark": "gruul"
         },
         {
@@ -9553,10 +9343,6 @@
                     "name": "유동충전체",
                     "text": "비행\n당신이 순간마법이나 집중마법을 발동할 때마다, 당신은 턴종료까지 유동충전체의 공격력과 방어력을 뒤바꿀 수 있다.",
                     "type": "생물 — 위어드"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369984
                 },
                 {
                     "flavorText": "Одна часть миззия, две части элементальной энергии, одиннадцать частей опасности.",
@@ -9623,13 +9409,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68003,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb44ce941aa027fa",
             "text": "Flying\nWhenever you cast an instant or sorcery spell, you may switch Fluxcharger's power and toughness until end of turn.",
             "toughness": "5",
             "type": "Creature — Weird",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc3000d4-0be9-50b0-86da-809c561231af",
+            "uuid": "14283f9c-b5b1-53f2-af36-c48a7ff43505",
             "watermark": "izzet"
         },
         {
@@ -9695,10 +9482,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369920
-                },
-                {
                     "flavorText": "Утилизаторы из Роя Голгари не любят горгон: им не дает покоя мысль о том, что столько питательных веществ превращается в камень.",
                     "language": "Russian",
                     "multiverseId": 370082,
@@ -9762,12 +9545,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68004,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6da422dd01ea426f",
             "text": "Destroy each nonland permanent with converted mana cost X or less.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2f62902f-8f30-5465-8123-6ec020595a91",
+            "uuid": "5d90241e-65bf-532d-9c7e-347836e98992",
             "watermark": "golgari"
         },
         {
@@ -9833,10 +9617,6 @@
                     "type": "부여마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369888
-                },
-                {
                     "flavorText": "На каждого солдата война накладывает свой отпечаток — будь то тяжесть испытаний, кровопролитие или мимолетный отблеск славы.",
                     "language": "Russian",
                     "multiverseId": 370109,
@@ -9898,12 +9678,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68005,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7c4b24bc56f58096",
             "text": "Whenever a creature you control attacks, put a +1/+1 counter on it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0ab7e4e0-8e77-5ac3-944b-4e700c711bec",
+            "uuid": "6140a36b-aa0c-5cf8-abfb-bccb8a5dc741",
             "watermark": "boros"
         },
         {
@@ -9967,10 +9748,6 @@
                     "name": "고블린 시험비행사",
                     "text": "비행\n{T}: 생물과 플레이어 중 한 개의 목표를 무작위로 고른다. 고블린 시험비행사는 그 생물이나 플레이어에게 피해 2점을 입힌다.",
                     "type": "생물 — 고블린 마법사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370018
                 },
                 {
                     "flavorText": "«Все пробные модели и прототипы уничтожены. Необходимый масштаб разрушений достигнут. Заключение: конструкция безупречна».— Руководство Мелека",
@@ -10043,13 +9820,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67916,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d47ef96727dcebfa",
             "text": "Flying\n{T}: Goblin Test Pilot deals 2 damage to any target chosen at random.",
             "toughness": "2",
             "type": "Creature — Goblin Pilot Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d35cc5c-bd7f-583f-9d12-015add583693",
+            "uuid": "7cdf8176-45f1-545e-9677-b3ea3049dbb3",
             "watermark": "izzet"
         },
         {
@@ -10115,10 +9893,6 @@
                     "type": "부여마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369890
-                },
-                {
                     "flavorText": "«Мы — сердце дикой природы. Мы — огонь в глазах хищников и вой, вырывающийся из их глоток. Приди к нам, вступи в битву, для которой ты был рожден!»— Крошкар, шаман Груулов",
                     "language": "Russian",
                     "multiverseId": 370177,
@@ -10173,12 +9947,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68006,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bc149bd48d08aee3",
             "text": "Attacking creatures you control get +1/+0 and have menace.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6bb7d8c8-f34a-59d7-b0c5-4237828d0daa",
+            "uuid": "ad20ed1a-3363-5d24-85b5-756483b53d91",
             "watermark": "gruul"
         },
         {
@@ -10244,10 +10019,6 @@
                     "type": "생물 — 신령"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369956
-                },
-                {
                     "flavorText": "Духи умерших и давно забытых жителей Равники служат Димирам, умело направляющим их злобу на выбранных жертв.",
                     "language": "Russian",
                     "multiverseId": 370045,
@@ -10303,13 +10074,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68007,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/15481084109823f0",
             "text": "Creatures your opponents control get -1/-0.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "14a21eb7-947e-51e6-b130-990106645a56",
+            "uuid": "a2bfc878-2b43-52fe-b07b-1752bf29d1e6",
             "watermark": "dimir"
         },
         {
@@ -10375,10 +10147,6 @@
                     "type": "생물 — 스핑크스"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370024
-                },
-                {
                     "flavorText": "Немногим Азориусам доводилось когда-нибудь разговаривать со сфинксами, но нет таких, кто не ощутил бы на себе их влияние.",
                     "language": "Russian",
                     "multiverseId": 370187,
@@ -10435,13 +10203,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68008,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df4c691995f9855d",
             "text": "Flying, vigilance\nWhenever Jelenn Sphinx attacks, other attacking creatures get +1/+1 until end of turn.",
             "toughness": "5",
             "type": "Creature — Sphinx",
             "types": [
                 "Creature"
             ],
-            "uuid": "cb9f5c53-dc42-5ca1-a1f7-55fcf01c2459",
+            "uuid": "f7477cbf-dea3-59bd-9cd5-637f753b49e8",
             "watermark": "azorius"
         },
         {
@@ -10507,10 +10276,6 @@
                     "type": "생물 — 고르곤"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369935
-                },
-                {
                     "flavorText": "«Добро пожаловать в мою коллекцию».",
                     "language": "Russian",
                     "multiverseId": 370039,
@@ -10566,13 +10331,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67955,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c0bac4c9a59ed07e",
             "text": "Deathtouch\n{2}, Remove a +1/+1 counter from a creature you control: Target creature gets -1/-1 until end of turn.",
             "toughness": "5",
             "type": "Creature — Gorgon",
             "types": [
                 "Creature"
             ],
-            "uuid": "3dd8f620-f1bf-52c8-ad5b-5b371515bb55",
+            "uuid": "5f4de638-5298-5366-a33b-8a0fad1f539f",
             "watermark": "golgari"
         },
         {
@@ -10629,10 +10395,6 @@
                     "name": "크라시스 부화",
                     "text": "생물에게 부여\n부여된 생물은 공격하거나 방어할 수 없으며, 그 생물의 활성화능력은 활성화될 수 없다.\n{1}{G}{U}, 크라시스 부화를 소유자의 손으로 되돌린다: 부여된 생물에 +1/+1 카운터 두 개를 올려놓는다.",
                     "type": "부여마법 — 마법진"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369998
                 },
                 {
                     "language": "Russian",
@@ -10695,12 +10457,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68009,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/01a051099cc994df",
             "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.\n{1}{G}{U}, Return Krasis Incubation to its owner's hand: Put two +1/+1 counters on enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ee0d132b-8f58-5cd2-ba5b-c3641a322b90",
+            "uuid": "5fa3280b-9fe8-57a9-a1c6-94aee4f2ec10",
             "watermark": "simic"
         },
         {
@@ -10757,10 +10520,6 @@
                     "name": "10번 구역의 라비니아",
                     "text": "적색으로부터 보호\n10번 구역의 라비니아가 전장에 들어올 때, 당신의 상대들이 조종하는 대지가 아닌 지속물 중 전환마나비용이 4 이하인 각 지속물을 억류한다. (당신의 다음 턴이 될 때까지 그 지속물들은 공격하거나 방어할 수 없으며, 그 지속물들의 활성화능력은 활성화될 수 없다.)",
                     "type": "전설적 생물 — 인간 병사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369912
                 },
                 {
                     "language": "Russian",
@@ -10851,13 +10610,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67897,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b4095fe81890776d",
             "text": "Protection from red\nWhen Lavinia of the Tenth enters the battlefield, detain each nonland permanent your opponents control with converted mana cost 4 or less. (Until your next turn, those permanents can't attack or block and their activated abilities can't be activated.)",
             "toughness": "4",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c0f3686d-a952-5ba9-837c-2a71504879e2",
+            "uuid": "83ff98f5-4bcc-5d4e-b724-9c395bc6d77b",
             "watermark": "azorius"
         },
         {
@@ -10914,10 +10674,6 @@
                     "name": "보로스의 패기",
                     "text": "당신이 조종하는 적색 생물들은 +1/+0을 받는다.\n당신이 조종하는 백색 생물들은 +0/+1을 받는다.\n{R}{W}, 보로스의 패기를 추방한다: 당신이 조종하는 모든 생물을 추방한다. 다음 전투의 시작에, 이렇게 추방한 카드를 그 소유자의 조종하에 전장에 놓는다. 이렇게 전장에 들어온 생물은 턴종료까지 신속 능력을 얻는다.",
                     "type": "부여마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369897
                 },
                 {
                     "language": "Russian",
@@ -10977,12 +10733,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67932,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d992b97798e33288",
             "text": "Red creatures you control get +1/+0.\nWhite creatures you control get +0/+1.\n{R}{W}, Exile Legion's Initiative: Exile all creatures you control. At the beginning of the next combat, return those cards to the battlefield under their owner's control and those creatures gain haste until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1a5c91bc-0647-58f2-93ee-917bf0699d28",
+            "uuid": "a7e6f111-0c71-5cad-8be6-7a944eb098d0",
             "watermark": "boros"
         },
         {
@@ -11039,10 +10796,6 @@
                     "name": "잔혹한 진행자",
                     "text": "선제공격, 치명타\n잔혹한 진행자는 혼자서만 공격할 수 있다.\n잔혹한 진행자가 플레이어를 공격했고 방어되지 않을 때마다, 그 플레이어의 생명 총점은 1이 된다. 잔혹한 진행자는 그 전투에서 전투피해를 입히지 않는다.",
                     "type": "생물 — 악마"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369909
                 },
                 {
                     "language": "Russian",
@@ -11121,13 +10874,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67882,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c06600aedba593a0",
             "text": "First strike, deathtouch\nMaster of Cruelties can only attack alone.\nWhenever Master of Cruelties attacks a player and isn't blocked, that player's life total becomes 1. Master of Cruelties assigns no combat damage this combat.",
             "toughness": "4",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "213fff80-d820-5763-8003-f5c75bd4094b",
+            "uuid": "29b8ffb4-de6b-5334-9b3b-05a72b80b41f",
             "watermark": "rakdos"
         },
         {
@@ -11193,10 +10947,6 @@
                     "type": "생물 — 스럴"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369918
-                },
-                {
                     "flavorText": "Последователи добровольно приносят себя в жертву, надеясь таким образом укрыться от долгов перед гильдией. Но многих эти долги преследуют и в загробной жизни.",
                     "language": "Russian",
                     "multiverseId": 370053,
@@ -11252,13 +11002,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68010,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8dd0f2c818b86586",
             "text": "Sacrifice a creature: Creatures you control get +1/+1 until end of turn.",
             "toughness": "3",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "f7797bab-6a28-5c4a-9a15-1f1a4ae15146",
+            "uuid": "f7e4c900-a9b2-5fcc-b0f0-94b60da6ede2",
             "watermark": "orzhov"
         },
         {
@@ -11315,10 +11066,6 @@
                     "name": "이젯의 정수 멜렉",
                     "text": "당신의 서고 맨 위의 카드를 공개한 채로 게임을 진행한다.\n당신은 서고 맨 위 카드가 순간마법 또는 집중마법이라면 그 카드를 발동할 수 있다.\n당신이 서고에서 순간마법이나 집중마법을 발동할 때마다, 그 주문을 복사한다. 당신은 그 복사본의 목표를 새로 정할 수 있다.",
                     "type": "전설적 생물 — 위어드 마법사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370010
                 },
                 {
                     "language": "Russian",
@@ -11424,13 +11171,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67887,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4b2e2f664022d3ee",
             "text": "Play with the top card of your library revealed.\nYou may cast the top card of your library if it's an instant or sorcery card.\nWhenever you cast an instant or sorcery spell from your library, copy it. You may choose new targets for the copy.",
             "toughness": "4",
             "type": "Legendary Creature — Weird Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "e915b2cf-ea4f-5ebf-a941-f51c8a3295d0",
+            "uuid": "5fbe8b8b-d644-5d91-8f50-8c4173f2aa82",
             "watermark": "izzet"
         },
         {
@@ -11487,10 +11235,6 @@
                     "name": "정신의 탐식자 미르코 보스크",
                     "text": "비행\n정신의 탐식자 미르코 보스크가 플레이어에게 전투피해를 입힐 때마다, 그 플레이어는 대지 카드 네 장을 공개할 때까지 자신의 서고 맨 위에서부터 카드를 공개한 다음 공개된 카드들을 자신의 무덤에 넣는다.",
                     "type": "전설적 생물 — 흡혈귀"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369999
                 },
                 {
                     "language": "Russian",
@@ -11553,13 +11297,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67908,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33bc3d620f7e0a18",
             "text": "Flying\nWhenever Mirko Vosk, Mind Drinker deals combat damage to a player, that player reveals cards from the top of their library until they reveal four land cards, then puts those cards into their graveyard.",
             "toughness": "4",
             "type": "Legendary Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "9ac256fc-2e57-5840-a1b3-b917843f3c01",
+            "uuid": "96a2713b-b3ea-5886-86cf-4b39afa7137d",
             "watermark": "dimir"
         },
         {
@@ -11625,10 +11370,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370011
-                },
-                {
                     "flavorText": "«Пропустите его. Он есть в списках».— Олрич, хозяин клуба Ракдосов",
                     "language": "Russian",
                     "multiverseId": 370071,
@@ -11691,12 +11432,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68011,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/eeeb2f0407ad01d6",
             "text": "Return target creature card from your graveyard to your hand. Morgue Burst deals damage to any target equal to the power of the card returned this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "75864662-35e4-5648-b73f-b90fbe9bd006",
+            "uuid": "83daf110-ce81-5457-97de-5cbecb96aaa3",
             "watermark": "rakdos"
         },
         {
@@ -11753,10 +11495,6 @@
                     "name": "니빅스 키클롭스",
                     "text": "수비태세\n당신이 순간마법이나 집중마법을 발동할 때마다, 니빅스 키클롭스는 턴종료까지 +3/+0을 받으며 이 턴에 수비태세 능력이 없는 것처럼 공격할 수 있다.",
                     "type": "생물 — 키클롭스"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369903
                 },
                 {
                     "language": "Russian",
@@ -11817,13 +11555,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67935,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c1574f75f134cb3",
             "text": "Defender\nWhenever you cast an instant or sorcery spell, Nivix Cyclops gets +3/+0 until end of turn and can attack this turn as though it didn't have defender.",
             "toughness": "4",
             "type": "Creature — Cyclops",
             "types": [
                 "Creature"
             ],
-            "uuid": "f1ed4f22-564f-525c-8b98-8fb9a1f0a981",
+            "uuid": "e6d891ff-64ff-58a3-a4a9-7e7f2c9a045e",
             "watermark": "izzet"
         },
         {
@@ -11880,10 +11619,6 @@
                     "name": "영감의 도둑",
                     "text": "섬광\n상대가 자신의 각 뽑기단에서 처음으로 뽑는 카드 이외에 카드를 뽑으려고 하면 그 상대는 카드를 뽑지 않고 대신 당신이 카드 한 장을 뽑는다.",
                     "type": "생물 — 인간 도적"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369987
                 },
                 {
                     "language": "Russian",
@@ -11952,13 +11687,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67944,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0c4949c957882333",
             "text": "Flash\nIf an opponent would draw a card except the first one they draw in each of their draw steps, instead that player skips that draw and you draw a card.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "87aadac6-5748-59f7-9f33-e532005087f5",
+            "uuid": "c82d2d3b-bb02-5037-b2a2-91132a32e92e",
             "watermark": "dimir"
         },
         {
@@ -12024,10 +11760,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369960
-                },
-                {
                     "flavorText": "«Обзедат воскресил тебя к жизни с определенной целью. Не растрачивай их дар по пустякам».— Тейса Карлов, Посланница Орзовов",
                     "language": "Russian",
                     "multiverseId": 370183,
@@ -12089,12 +11821,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67909,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/66087d161560d5e6",
             "text": "Return target permanent card from your graveyard to the battlefield.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0e737636-3014-5524-b949-2ae1e22e3e5f",
+            "uuid": "4e487e3f-feb4-5d5f-bb08-16c433f1c50a",
             "watermark": "orzhov"
         },
         {
@@ -12160,10 +11893,6 @@
                     "type": "집중마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369991
-                },
-                {
                     "flavorText": "Чтобы не оставить никаких шансов другим гильдиям, Мирко Воск истреблял всех, кто знал что-либо о лабиринте.",
                     "language": "Russian",
                     "multiverseId": 370130,
@@ -12223,12 +11952,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68012,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4d6d44c84c7295b7",
             "text": "Target player puts the top two cards of their library into their graveyard. Draw two cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6f37ace6-7235-5acb-9b62-3a5078932e44",
+            "uuid": "6598fd29-681c-52b8-9498-07bca2ca217f",
             "watermark": "dimir"
         },
         {
@@ -12294,10 +12024,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369914
-                },
-                {
                     "flavorText": "«Все служит какой-нибудь цели. Даже ты».— Ворел из Клады Оболочки",
                     "language": "Russian",
                     "multiverseId": 370094,
@@ -12360,12 +12086,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68013,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1832fd2faebf059",
             "text": "Counter target spell. At the beginning of your next precombat main phase, add X mana in any combination of colors, where X is that spell's converted mana cost.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d9862f61-f05a-5fdb-b785-6368ae21a005",
+            "uuid": "7a5ac424-1d57-5c0f-9729-4ff6d9b21a5f",
             "watermark": "simic"
         },
         {
@@ -12422,10 +12149,6 @@
                     "name": "태초의 흉내꾼",
                     "text": "당신은 태초의 흉내꾼이 전장에 있는 생물의 복사본으로 전장에 들어오게 할 수 있다. 그렇게 한다면, 태초의 흉내꾼은 \"당신의 유지단 시작에, 이 생물이 토큰이 아니라면, 이 생물의 복사본 토큰 한 개를 전장에 놓는다.\"라는 능력을 가진다.",
                     "type": "생물 — 변신괴물"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369965
                 },
                 {
                     "language": "Russian",
@@ -12513,13 +12236,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67917,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cd6cafdfcc39eb8c",
             "text": "You may have Progenitor Mimic enter the battlefield as a copy of any creature on the battlefield, except it has \"At the beginning of your upkeep, if this creature isn't a token, create a token that's a copy of this creature.\"",
             "toughness": "0",
             "type": "Creature — Shapeshifter",
             "types": [
                 "Creature"
             ],
-            "uuid": "e5313d20-4a13-5396-ad4e-c867802831dd",
+            "uuid": "d8871e3a-afcc-55f6-ae9b-a24d3de0c377",
             "watermark": "simic"
         },
         {
@@ -12583,10 +12307,6 @@
                     "name": "썩히기",
                     "text": "마법물체 한 개나 생물 한 개를 목표로 정한다. 그 지속물을 파괴한다. 그 지속물은 재생될 수 없다.",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369951
                 },
                 {
                     "flavorText": "«Все мы дряхлеем, все мы стоим на грани умирания. Стоит пропустить один вдох — и начнем разлагаться».— Севрайя, шаманка Голгари",
@@ -12659,12 +12379,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67910,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f561ce044ea9f8a1",
             "text": "Destroy target artifact or creature. It can't be regenerated.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2f846257-16ab-52ef-9c98-ec6a33903bcd",
+            "uuid": "b5bf2c03-4826-5952-9e07-ee02674bfe3d",
             "watermark": "golgari"
         },
         {
@@ -12723,10 +12444,6 @@
                     "type": "플레인즈워커 — - 랄"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369934
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370164,
                     "name": "Рал Зарек",
@@ -12780,12 +12497,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67875,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/48756ce519b4b1b5",
             "text": "+1: Tap target permanent, then untap another target permanent.\n−2: Ral Zarek deals 3 damage to any target.\n−7: Flip five coins. Take an extra turn after this one for each coin that comes up heads.",
             "type": "Legendary Planeswalker — Ral",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "e3d3001b-6b6d-5f51-9b5a-c24de061ab05"
+            "uuid": "a202a509-84a6-545a-b446-fdd3a27a4a02"
         },
         {
             "artist": "Steven Belledin",
@@ -12841,10 +12559,6 @@
                     "name": "지능 수확",
                     "text": "상대 한 명을 목표로 정한다. 그 플레이어는 자신의 손을 공개한다. 당신은 그중에서 대지가 아닌 카드를 최대 X장까지 골라 추방한다. 이렇게 추방된 카드 한 장 마다 그 플레이어의 무덤, 손 및 서고를 뒤져 그 카드와 이름이 같은 카드를 원하는 만큼 찾아 추방한다. 그러고 나서 그 플레이어는 자신의 서고를 섞는다.",
                     "type": "집중마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369906
                 },
                 {
                     "language": "Russian",
@@ -12908,12 +12622,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68014,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cc63b1aa3d3c8e2c",
             "text": "Target opponent reveals their hand. You choose up to X nonland cards from it and exile them. For each card exiled this way, search that player's graveyard, hand, and library for any number of cards with the same name as that card and exile them. Then that player shuffles their library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "02aca42e-b575-5ee8-a49f-d46d9c00cfca",
+            "uuid": "98aef6e2-6f31-5b09-93ef-8b10c7207495",
             "watermark": "dimir"
         },
         {
@@ -12977,10 +12692,6 @@
                     "name": "침묵의 형벌",
                     "text": "주문 한 개를 목표로 정한다. 그 주문을 무효화한다. 그 주문의 조종자는 이 턴에 주문을 발동할 수 없다.",
                     "type": "순간마법"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370029
                 },
                 {
                     "flavorText": "«Мы конфисковали ваши заклинания в качестве вещественных доказательств. Когда мы закончим расследование, вы можете подать прошение об их возврате».",
@@ -13057,12 +12768,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67883,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9aa818a184dd5386",
             "text": "Counter target spell. Its controller can't cast spells this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a93fe25a-dafb-5a6c-9c0d-d07827f6b3bc",
+            "uuid": "0c78896c-34bd-5c38-81cb-4d17d101dd2c",
             "watermark": "azorius"
         },
         {
@@ -13128,10 +12840,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369949
-                },
-                {
                     "flavorText": "«Ну вот, появились Азориусы... а было так весело».— Вырезательница",
                     "language": "Russian",
                     "multiverseId": 370050,
@@ -13193,12 +12901,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 68015,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0d924277a6d1b1bd",
             "text": "Return each creature that dealt damage this turn to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1722ec3c-70d2-5b15-9bc8-2875961dc541",
+            "uuid": "90bf8fe9-d233-5298-b650-2b746c82cf08",
             "watermark": "azorius"
         },
         {
@@ -13255,10 +12964,6 @@
                     "name": "부패농장의 해골",
                     "text": "부패농장의 해골은 방어할 수 없다.\n{2}{B}{G}, 당신의 서고 맨 위에 있는 카드 네 장을 무덤에 넣는다: 부패농장의 해골을 당신의 무덤에서 전장으로 되돌린다. 당신이 집중마법을 발동할 수 있는 시기에만 이 능력을 활성화할 수 있다.",
                     "type": "생물 — 식물 해골"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369881
                 },
                 {
                     "language": "Russian",
@@ -13327,13 +13032,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67911,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a4777fa69a36ae86",
             "text": "Rot Farm Skeleton can't block.\n{2}{B}{G}, Put the top four cards of your library into your graveyard: Return Rot Farm Skeleton from your graveyard to the battlefield. Activate this ability only any time you could cast a sorcery.",
             "toughness": "1",
             "type": "Creature — Plant Skeleton",
             "types": [
                 "Creature"
             ],
-            "uuid": "6abdd843-2d79-5c05-9f3d-54f32da6173c",
+            "uuid": "9bb5c3df-b212-5a16-bc3f-e61880001c6c",
             "watermark": "golgari"
         },
         {
@@ -13390,10 +13096,6 @@
                     "name": "굴복하지 않는 루릭 타르",
                     "text": "경계, 대공\n굴복하지 않는 루릭 타르는 가능하면 매 턴마다 공격한다.\n플레이어가 생물이 아닌 주문을 발동할 때마다, 루릭 타르는 그 플레이어에게 피해 6점을 입힌다.",
                     "type": "전설적 생물 — 오우거 전사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369959
                 },
                 {
                     "language": "Russian",
@@ -13464,13 +13166,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67792,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e8e742a49eab7448",
             "text": "Vigilance, reach\nRuric Thar, the Unbowed attacks each combat if able.\nWhenever a player casts a noncreature spell, Ruric Thar deals 6 damage to that player.",
             "toughness": "6",
             "type": "Legendary Creature — Ogre Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "9c4da3fe-3958-51d3-b625-50a01bca2d1c",
+            "uuid": "d496b07c-e1e9-5e49-93bf-ba3ac5020476",
             "watermark": "gruul"
         },
         {
@@ -13529,10 +13232,6 @@
                     "type": "생물 — 히드라"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369922
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370170,
                     "name": "Дикорожденная Гидра",
@@ -13586,13 +13285,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67936,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0279541a0ade30c8",
             "text": "Double strike\nSavageborn Hydra enters the battlefield with X +1/+1 counters on it.\n{1}{R/G}: Put a +1/+1 counter on Savageborn Hydra. Activate this ability only any time you could cast a sorcery.",
             "toughness": "0",
             "type": "Creature — Hydra",
             "types": [
                 "Creature"
             ],
-            "uuid": "799b35d4-2b5f-5e4f-9536-4839343fafeb",
+            "uuid": "79445e3f-78f8-5aac-8c55-4bdab4861b02",
             "watermark": "gruul"
         },
         {
@@ -13656,10 +13356,6 @@
                     "name": "딱지 부족 거인",
                     "text": "딱지 부족 거인이 전장에 들어올 때, 상대가 조종하는 생물 한 개를 무작위로 목표로 정한다. 딱지 부족 거인은 그 생물과 싸운다.",
                     "type": "생물 — 거인 전사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369994
                 },
                 {
                     "flavorText": "Для Груулов главное в драке — это накал гнева. Направленность этого гнева стоит в списке приоритетов примерно на девяностом месте.",
@@ -13735,13 +13431,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68016,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a76a1027916ca79b",
             "text": "When Scab-Clan Giant enters the battlefield, it fights target creature an opponent controls chosen at random.",
             "toughness": "5",
             "type": "Creature — Giant Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "6e9137c5-4f8d-5a71-a778-22ea1cdbef69",
+            "uuid": "64f11c7e-3071-556f-ba06-67c67b9352eb",
             "watermark": "gruul"
         },
         {
@@ -13807,10 +13504,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370028
-                },
-                {
                     "flavorText": "Публика быстро поняла: это был не фокус, внутри были совсем не конфеты, а наряды, надетые на представление, придется выбросить.",
                     "language": "Russian",
                     "multiverseId": 370184,
@@ -13872,12 +13565,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67912,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6725eb74fce5cd6",
             "text": "Until end of turn, creatures you control gain \"When this creature dies, it deals 2 damage to target creature an opponent controls.\"",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5cc52c1e-6868-52ee-81dc-88a2e19cd891",
+            "uuid": "8f246191-bfde-5b31-bcb5-ea1770b7bbc3",
             "watermark": "rakdos"
         },
         {
@@ -13941,10 +13635,6 @@
                     "name": "죄악 수집가",
                     "text": "죄악 수집가가 전장에 들어올 때, 상대 한 명을 목표로 정한다. 그 상대는 자신의 손을 공개한다. 당신은 그 중에서 순간마법이나 집중마법 카드 한 장을 골라 추방한다.",
                     "type": "생물 — 인간 성직자"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369895
                 },
                 {
                     "flavorText": "«Наверное, очень тяжело жить с таким камнем на сердце. Позволь мне облегчить эту ношу».",
@@ -14011,13 +13701,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67884,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/493ca956b6ee632a",
             "text": "When Sin Collector enters the battlefield, target opponent reveals their hand. You choose an instant or sorcery card from it and exile that card.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "a08577be-a025-50b0-9fce-8b699d18c7f6",
+            "uuid": "51558e2c-8330-555a-876f-79b2248adccb",
             "watermark": "orzhov"
         },
         {
@@ -14083,10 +13774,6 @@
                     "type": "생물 — 악마"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369893
-                },
-                {
                     "flavorText": "Его жертвы быстро теряют рассудок. Интересно отметить, что это и есть первый шаг для вступления в Культ Ракдоса.",
                     "language": "Russian",
                     "multiverseId": 370161,
@@ -14141,13 +13828,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67898,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/358fc19c358a3037",
             "text": "At the beginning of each end step, each player discards their hand.",
             "toughness": "4",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "7588a4b6-06eb-5e25-a46c-9e35e9ee23dc",
+            "uuid": "20ce6e8a-59f3-5853-ab73-0ea49a0b97f6",
             "watermark": "rakdos"
         },
         {
@@ -14213,10 +13901,6 @@
                     "type": "생물 — 개구리 야수"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370002
-                },
-                {
                     "flavorText": "«Мы вывели угрекоршунов, чтобы истребить кальмаромух, а затем осокрабов, чтобы справиться с нашествием угрекоршунов. И что нам теперь делать с расплодившимися осокрабами?»— Гулистан, биомант Симиков",
                     "language": "Russian",
                     "multiverseId": 370076,
@@ -14273,13 +13957,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68017,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3735f6030f838c32",
             "text": "At the beginning of your upkeep, return a creature you control to its owner's hand.",
             "toughness": "6",
             "type": "Creature — Frog Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "70d45bf3-00e7-596d-aee2-b2fc2d1796e8",
+            "uuid": "3c999026-7892-5440-85ee-b0f16ea522e6",
             "watermark": "simic"
         },
         {
@@ -14345,10 +14030,6 @@
                     "type": "생물 — 고블린 전사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369937
-                },
-                {
                     "flavorText": "Для Ракдосов «самоубийственная затея» и «блестящее представление» означают примерно одно и то же.",
                     "language": "Russian",
                     "multiverseId": 370119,
@@ -14407,13 +14088,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68018,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37d79c30eba36cdc",
             "text": "Haste",
             "toughness": "1",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "f66a56d6-a560-5216-a254-bf7cc5db582b",
+            "uuid": "5361fc87-7821-5bf0-bcc9-7ffc2379abba",
             "watermark": "rakdos"
         },
         {
@@ -14477,10 +14159,6 @@
                     "name": "보로스의 검 타직",
                     "text": "보로스의 검 타직은 파괴될 수 없다.\n부대전 — 보로스의 검 타직과 두 개 이상의 다른 생물이 공격할 때마다, 보로스의 검 타직은 턴종료까지 +5/+5를 받는다.",
                     "type": "전설적 생물 — 인간 병사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370013
                 },
                 {
                     "flavorText": "«Я иду по лабиринту один, но в бою вся мощь Легиона — за мной».",
@@ -14554,13 +14232,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67918,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/220f2953f4743060",
             "text": "Indestructible\nBattalion — Whenever Tajic, Blade of the Legion and at least two other creatures attack, Tajic gets +5/+5 until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "bc3d89f8-8f11-5920-bce8-a946fdf7db8b",
+            "uuid": "fc1dd888-b46b-56d7-bf33-3343acbf6a49",
             "watermark": "boros"
         },
         {
@@ -14617,10 +14296,6 @@
                     "name": "유령의 전령 테이사",
                     "text": "경계, 생물로부터 보호\n생물이 당신에게 전투피해를 입힐 때마다, 그 생물을 파괴한다. 비행 능력을 가지고 백색이며 흑색인 1/1 신령 생물 토큰 한 개를 전장에 놓는다.",
                     "type": "전설적 생물 — 인간 참모"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369905
                 },
                 {
                     "language": "Russian",
@@ -14697,13 +14372,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67895,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/813135768479ec77",
             "text": "Vigilance, protection from creatures\nWhenever a creature deals combat damage to you, destroy that creature. Create a 1/1 white and black Spirit creature token with flying.",
             "toughness": "4",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "51846804-a262-5f60-b442-f0e5ae06eef5",
+            "uuid": "0ca12cbd-86c6-5784-a9af-899702acc68b",
             "watermark": "orzhov"
         },
         {
@@ -14760,10 +14436,6 @@
                     "name": "십일조 섭취자",
                     "text": "생명연결 (이 생물이 피해를 입히면, 당신은 그 피해만큼의 생명점을 얻는다.)\n착취 (당신이 주문을 발동할 때마다 당신은 {W/B}를 지불할 수 있다. 그렇게 한다면, 각 상대는 생명 1점을 잃고 당신은 그만큼의 생명점을 얻는다.)",
                     "type": "생물 — 흡혈귀"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369885
                 },
                 {
                     "language": "Russian",
@@ -14832,13 +14504,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68019,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c49e6f740320e9b7",
             "text": "Lifelink (Damage dealt by this creature also causes you to gain that much life.)\nExtort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.)",
             "toughness": "1",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "464278f7-90c5-540b-b809-961e115865f9",
+            "uuid": "8e4d33a7-e18f-5a37-8580-111f052a9ae1",
             "watermark": "orzhov"
         },
         {
@@ -14897,10 +14570,6 @@
                     "type": "생물 — 엘프 주술사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369926
-                },
-                {
                     "language": "Russian",
                     "multiverseId": 370122,
                     "name": "Вызывательница Тростани",
@@ -14957,13 +14626,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67899,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ffc08047ba9dbf3b",
             "text": "When Trostani's Summoner enters the battlefield, create a 2/2 white Knight creature token with vigilance, a 3/3 green Centaur creature token, and a 4/4 green Rhino creature token with trample.",
             "toughness": "1",
             "type": "Creature — Elf Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "e1002ab7-508b-5908-ad0b-248aa651f701",
+            "uuid": "da2bce24-1504-5bdb-a79a-e4511eadf62e",
             "watermark": "selesnya"
         },
         {
@@ -15029,10 +14699,6 @@
                     "type": "부여마법 — 마법진"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369957
-                },
-                {
                     "flavorText": "Влияние Тростани в Равнике росло, наполняя Конклав Селезнии жизненной силой — к неудовольствию других гильдий.",
                     "language": "Russian",
                     "multiverseId": 370179,
@@ -15095,12 +14761,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67956,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94899327ec5af224",
             "text": "Enchant creature\nEnchanted creature gets +2/+2 and has trample and lifelink. (Damage dealt by a creature with lifelink also causes its controller to gain that much life.)",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "52f88184-7b90-5ffa-9773-462ef550d4a0",
+            "uuid": "45757bcc-661d-5aba-8bac-1e55763280d7",
             "watermark": "selesnya"
         },
         {
@@ -15157,10 +14824,6 @@
                     "name": "흉터 투성이 바롤즈",
                     "text": "당신의 무덤에 있는 각 생물 카드는 섭취 능력을 가진다. 섭취 비용은 해당 카드의 마나 비용과 같다. (당신의 무덤에서 생물 카드 한 장을 추방하고 마나 비용을 지불한다: 생물 한 개를 목표로 정한다. 그 생물에 추방한 생물 카드의 공격력만큼의 +1/+1 카운터를 올려놓는다. 당신이 집중마법을 발동할 수 있는 시기에만 섭취 능력을 활성화할 수 있다.)\n다른 생물을 희생한다: 흉터 투성이 바롤즈를 재생한다.",
                     "type": "전설적 생물 — 트롤 전사"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370023
                 },
                 {
                     "language": "Russian",
@@ -15242,13 +14905,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67900,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/41e28d27b9e2c880",
             "text": "Each creature card in your graveyard has scavenge. The scavenge cost is equal to its mana cost. (Exile a creature card from your graveyard and pay its mana cost: Put a number of +1/+1 counters equal to that card's power on target creature. Scavenge only as a sorcery.)\nSacrifice another creature: Regenerate Varolz, the Scar-Striped.",
             "toughness": "2",
             "type": "Legendary Creature — Troll Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "308ac6a2-5a52-5ac3-ae17-b79fda639a35",
+            "uuid": "3c677d26-6ae1-5adb-83bd-148938d0ce49",
             "watermark": "golgari"
         },
         {
@@ -15314,10 +14978,6 @@
                     "type": "생물 — 비아시노 병사"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370000
-                },
-                {
                     "flavorText": "«Стальные доспехи не сковывают их движений. Лишь придают самоуверенности».— Тажик, Клинок Легиона",
                     "language": "Russian",
                     "multiverseId": 370099,
@@ -15375,13 +15035,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67945,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2abb8b549f6ca4e",
             "text": "Haste\nWhen Viashino Firstblade enters the battlefield, it gets +2/+2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Viashino Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "a40685af-494e-5570-8a4f-c8745cee6153",
+            "uuid": "fd2c87be-be98-55e6-b5f1-d791f352119b",
             "watermark": "boros"
         },
         {
@@ -15438,10 +15099,6 @@
                     "name": "부흥의 목소리",
                     "text": "상대가 당신의 턴에 주문을 발동하거나 부흥의 목소리가 죽을 때, 녹색이며 백색인 정령 생물 토큰 한 개를 전장에 놓는다. 그 생물 토큰은 \"이 생물의 공격력과 방어력은 각각 당신이 조종하는 생물의 수와 같다\"라는 능력을 가진다.",
                     "type": "생물 — 정령"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370005
                 },
                 {
                     "language": "Russian",
@@ -15510,13 +15167,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67913,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/efba050ef3a7928b",
             "text": "Whenever an opponent casts a spell during your turn or when Voice of Resurgence dies, create a green and white Elemental creature token with \"This creature's power and toughness are each equal to the number of creatures you control.\"",
             "toughness": "2",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "c4564b67-d1ee-55e6-afbc-f10e0dd3ac09",
+            "uuid": "842fb20d-043d-56e1-b7dd-ea98439fa2cc",
             "watermark": "selesnya"
         },
         {
@@ -15580,10 +15238,6 @@
                     "name": "헐 클레이드의 보렐",
                     "text": "{G}{U}, {T}: 마법물체, 생물 또는 대지 한 개를 목표로 정한다. 그 지속물에 올려진 카운터 종류마다 그 종류의 카운터를 하나씩 더 올려놓는다.",
                     "type": "전설적 생물 — 인간 인어"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370012
                 },
                 {
                     "flavorText": "«Когда-то я швырял камни и питался кусками мяса, обожженными на костре. Посмотри, кем я стал теперь. Разве возможности Симиков не безграничны?»",
@@ -15651,13 +15305,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67885,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf63a0095a67bf05",
             "text": "{G}{U}, {T}: Double the number of each kind of counter on target artifact, creature, or land.",
             "toughness": "4",
             "type": "Legendary Creature — Human Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "920fffc3-213a-58a6-ac3d-ec82f0bd7883",
+            "uuid": "d293abf7-b209-5cb8-84af-e9fc4a06f56d",
             "watermark": "simic"
         },
         {
@@ -15723,10 +15378,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370016
-                },
-                {
                     "flavorText": "«У нас нет времени вправлять врагам мозги. Лучше сразу их вышибить».— Аурелия",
                     "language": "Russian",
                     "multiverseId": 370121,
@@ -15787,12 +15438,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67951,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/35e9a4f9af9709fa",
             "text": "Warleader's Helix deals 4 damage to any target and you gain 4 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "45fd5834-b070-50da-81d4-df347838cb2a",
+            "uuid": "2bd47253-c954-5c1a-9bbd-b49e81620594",
             "watermark": "boros"
         },
         {
@@ -15858,10 +15510,6 @@
                     "type": "순간마법"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370027
-                },
-                {
                     "flavorText": "Груулы стремятся получить необычайную силу. Димиры же предлагают им жестокую шутку.",
                     "language": "Russian",
                     "multiverseId": 370174,
@@ -15924,12 +15572,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67937,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c31a3709aefe97da",
             "text": "Target creature gets +X/-X until end of turn, where X is the number of cards in your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0a69e6b7-6f78-5b28-9c70-d02b81c4efb6",
+            "uuid": "ec0dac98-8b4f-5e0b-bdd6-328400d0d403",
             "watermark": "dimir"
         },
         {
@@ -15995,10 +15644,6 @@
                     "type": "생물 — 곤충"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370007
-                },
-                {
                     "flavorText": "«Мы кое-чему научились у Симиков. К несчастью для них».— Нефара, агент Димиров",
                     "language": "Russian",
                     "multiverseId": 370123,
@@ -16054,13 +15699,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68020,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bdc799860499a5cf",
             "text": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)\nProtection from green",
             "toughness": "1",
             "type": "Creature — Insect",
             "types": [
                 "Creature"
             ],
-            "uuid": "cf7c6038-3a30-5aa4-b621-25358dc3f62b",
+            "uuid": "6f96b8cb-f13f-5b44-8b96-9040c994205a",
             "watermark": "dimir"
         },
         {
@@ -16126,10 +15772,6 @@
                     "type": "생물 — 야수"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369929
-                },
-                {
                     "flavorText": "Многим жителям Равники кажется, что природа — это ухоженные рощицы и гнилостные фермы, на которых трудятся эльфы. Они никогда не бывали в дебрях, где обитают Груулы.",
                     "language": "Russian",
                     "multiverseId": 370065,
@@ -16185,13 +15827,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67901,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bbded0fff37b611d",
             "text": "Whenever a player taps a land for mana, that player adds one mana of any type that land produced.",
             "toughness": "5",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "a5446def-2882-56d1-b864-7d37b01deb52",
+            "uuid": "11ebf647-3ae4-5d99-b80c-e74c37284fc9",
             "watermark": "gruul"
         },
         {
@@ -16255,10 +15898,6 @@
                     "name": "주르-타아 드루이드",
                     "text": "{T}: {G}를 당신의 마나풀에 담는다.\n당신이 마나를 얻기 위해서 주르-타아 드루이드를 탭할 때마다, 주르-타아 드루이드는 각 상대에게 피해 1점을 입힌다.",
                     "type": "생물 — 인간 드루이드"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369898
                 },
                 {
                     "flavorText": "«Лишь экзальтированные умы полагают, что магия должна быть чиста и не должна требовать жертв».",
@@ -16333,13 +15972,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 68021,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df7d55c1e671f531",
             "text": "{T}: Add {G}.\nWhenever you tap Zhur-Taa Druid for mana, it deals 1 damage to each opponent.",
             "toughness": "1",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "1cd78330-a9fb-5f62-a578-8bc787a04aaa",
+            "uuid": "d7fd7bde-8aaa-5b10-97d5-28a62b755b45",
             "watermark": "gruul"
         },
         {
@@ -16441,7 +16081,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9b710eb6-7b4a-5b2f-9339-dcdade791c4c",
+            "uuid": "3ccf8516-92cf-50d6-96f0-1fc868a85c9c",
             "watermark": "selesnya"
         },
         {
@@ -16543,7 +16183,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8e0f402f-d5ca-57a4-bb68-6bfe73f2c540",
+            "uuid": "799e7b01-0a2f-5de0-8178-4ca6665743cc",
             "watermark": "selesnya"
         },
         {
@@ -16645,7 +16285,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1e423b60-739b-5a18-9f16-12af8fe3851f",
+            "uuid": "2c86a559-67d0-5378-aefb-a9769238b7dd",
             "watermark": "gruul"
         },
         {
@@ -16747,7 +16387,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c2fabf23-e1e7-52ef-8c9c-54d119d5de4f",
+            "uuid": "dd4fd2f2-1637-550f-ad82-066a6b0b20d9",
             "watermark": "gruul"
         },
         {
@@ -16850,7 +16490,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "307845e0-aafa-5bb8-9133-a683bfe80c9f",
+            "uuid": "39261395-ca1c-53bf-bf54-2dc3f633fe91",
             "watermark": "azorius"
         },
         {
@@ -16953,7 +16593,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d0e9b04d-272e-54e0-a296-62ae599a337d",
+            "uuid": "221def21-8167-5d43-81ca-ed731a44b243",
             "watermark": "simic"
         },
         {
@@ -17054,7 +16694,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7c803909-fe83-58cc-8100-19491a1f5c8b",
+            "uuid": "e9fd829c-7613-5ca3-bed4-9944ce67b5ea",
             "watermark": "rakdos"
         },
         {
@@ -17155,7 +16795,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "57721238-aefc-56d9-aa1d-370a5cd92434",
+            "uuid": "9586cd20-d2e1-5294-9891-c7b8d2589f50",
             "watermark": "dimir"
         },
         {
@@ -17267,7 +16907,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4ad0a7c8-dcf5-5f76-853b-718da8408a93",
+            "uuid": "19d1ee34-5105-54ef-a88b-367eb885e43a",
             "watermark": "boros"
         },
         {
@@ -17379,7 +17019,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "26b42b64-cc96-54fc-8ad4-ee2a6e81ae48",
+            "uuid": "a1c1142b-486a-5c3a-87f6-6aa6efafa011",
             "watermark": "izzet"
         },
         {
@@ -17473,7 +17113,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d33b53a7-2057-5bbf-906f-874d4960d207",
+            "uuid": "c887e932-d4a3-5db5-bbe0-84fc42a0ee8b",
             "watermark": "golgari"
         },
         {
@@ -17567,7 +17207,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "75723a77-292d-5d19-b1ba-4c018d89eb97",
+            "uuid": "1984a8ce-9220-5b50-99bb-ff0e7ee32d0c",
             "watermark": "golgari"
         },
         {
@@ -17664,7 +17304,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "2a505cb8-def6-530e-8b03-411679e9464e",
+            "uuid": "41f88e7b-72c7-518b-83f4-a373aa57521e",
             "watermark": "dimir"
         },
         {
@@ -17761,7 +17401,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "77b5fd6a-fd96-5681-8b01-c5b490844044",
+            "uuid": "1c752bca-3056-5eb3-807c-7e241d62f2dc",
             "watermark": "dimir"
         },
         {
@@ -17877,7 +17517,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8f75cdf6-e938-5f75-9517-b289bfa1394d",
+            "uuid": "45e3d7c2-6e58-5c96-bf66-af95a3997199",
             "watermark": "gruul"
         },
         {
@@ -17993,7 +17633,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "277fa4c2-0d8e-5852-92c5-b5646fa35105",
+            "uuid": "10679975-34e0-56bf-b4c5-f99f9dabc1e9",
             "watermark": "golgari"
         },
         {
@@ -18095,7 +17735,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b879366a-fa4f-50cd-b654-924fc27ff683",
+            "uuid": "b0b42b68-8609-563d-991d-a7ca771c0599",
             "watermark": "simic"
         },
         {
@@ -18197,7 +17837,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "81d343e9-7ccc-5c00-bdd6-aefc849f5bec",
+            "uuid": "c519323d-dac0-57e2-9251-0e19a66f5dc0",
             "watermark": "simic"
         },
         {
@@ -18291,7 +17931,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "461a6427-bdfa-5dea-aa68-1c251b8e05f2",
+            "uuid": "c57df524-4b34-5dd7-9622-ed69efc41e26",
             "watermark": "orzhov"
         },
         {
@@ -18385,7 +18025,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "e55a373f-e01c-5529-b506-de69a60f02f5",
+            "uuid": "154bc6d9-333b-5141-afd7-86c8c5e52c54",
             "watermark": "orzhov"
         },
         {
@@ -18478,7 +18118,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "de0346af-d229-50a3-a964-157772b34a89",
+            "uuid": "b1b98c6d-2c17-5fce-a70d-574c2c11b693",
             "watermark": "azorius"
         },
         {
@@ -18571,7 +18211,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "de37510a-bc64-50f5-b165-5f5ced6b7fc5",
+            "uuid": "49dd1dc9-2c93-53f9-b5ae-30fa714bfb2d",
             "watermark": "azorius"
         },
         {
@@ -18679,7 +18319,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "803358cc-f52e-5e66-8e84-2271511f5062",
+            "uuid": "43afcbcd-5f70-5474-ac63-af09d41a9c37",
             "watermark": "orzhov"
         },
         {
@@ -18787,7 +18427,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "0bf58100-954c-5f00-8c2a-a20ecf089fa5",
+            "uuid": "314ea990-d0ac-5ebf-addd-8dac2928b567",
             "watermark": "selesnya"
         },
         {
@@ -18885,7 +18525,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e58d735f-4ac0-5d44-95d3-02e69e419f47",
+            "uuid": "0e12211c-bef2-561a-8906-fb5b11f165e4",
             "watermark": "rakdos"
         },
         {
@@ -18983,7 +18623,7 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cd100375-c14a-51c2-bda9-6cc9b5266766",
+            "uuid": "32dab00e-ce50-5bbd-babe-b1210debc941",
             "watermark": "rakdos"
         },
         {
@@ -19098,7 +18738,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "abc73e69-f693-50ec-95c1-25bb6768a425",
+            "uuid": "163d8238-cc95-540c-a982-917b2728d9f3",
             "watermark": "izzet"
         },
         {
@@ -19213,7 +18853,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "c05690c9-61ac-5ec4-b9e7-1a7f6747f6e1",
+            "uuid": "7ff7c4ff-3479-5fa6-86ca-94e8361a6d61",
             "watermark": "izzet"
         },
         {
@@ -19306,7 +18946,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "4f295c0c-efbd-5913-a8b4-821fcfe723eb",
+            "uuid": "51a6a105-8651-5f94-8f96-f98b7f71c2c5",
             "watermark": "boros"
         },
         {
@@ -19399,7 +19039,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "ee8e9aa7-8b56-54fc-a1d6-2dede95c99b0",
+            "uuid": "19245d24-8390-5910-9fe9-a12efcca754a",
             "watermark": "boros"
         },
         {
@@ -19462,10 +19102,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369894
-                },
-                {
                     "flavorText": "Его три стороны олицетворяют колонну Совы — судей и арбитров, колонну Джеленов — писцов и краснословов, и колонну Лиевов — законников и блюстителей порядка.",
                     "language": "Russian",
                     "multiverseId": 370114,
@@ -19519,12 +19155,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67921,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e7089fa7d8dff24b",
             "text": "{T}: Add {W} or {U}.\n{W}{U}, {T}, Sacrifice Azorius Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "68718105-e5a7-5c4f-9caa-f1fe89cbf1ca",
+            "uuid": "cf577b50-aea1-5b34-868b-bc6bc3e60e22",
             "watermark": "azorius"
         },
         {
@@ -19587,10 +19224,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369882
-                },
-                {
                     "flavorText": "«В случае пожара, предательства, массовых беспорядков, политической нестабильности или крушения мировой цивилизации разбить стекло».— Надпись на ключе-камне",
                     "language": "Russian",
                     "multiverseId": 370098,
@@ -19646,12 +19279,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67922,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a215a51315740f3b",
             "text": "{T}: Add {R} or {W}.\n{R}{W}, {T}, Sacrifice Boros Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7d01f004-a768-5c0e-bc70-c11c9b708807",
+            "uuid": "53aa5720-c1b9-52ef-9791-9e2b63d72f03",
             "watermark": "boros"
         },
         {
@@ -19714,10 +19348,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369907
-                },
-                {
                     "flavorText": "В прохладном сумраке подземного города он ждет своего часа, храня позабытые тайны для тех, кто не побоится к нему прикоснуться.",
                     "language": "Russian",
                     "multiverseId": 370151,
@@ -19770,12 +19400,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67923,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3d59b9857a7d67af",
             "text": "{T}: Add {U} or {B}.\n{U}{B}, {T}, Sacrifice Dimir Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "eb3144e8-b998-5359-aa64-c8cb2bea9c93",
+            "uuid": "197bff08-8cdf-51c0-a25c-b19580393414",
             "watermark": "dimir"
         },
         {
@@ -19838,10 +19469,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369983
-                },
-                {
                     "flavorText": "Плесень Голгари впитывает шепот, поэтому Джарад и его верховные канцлеры используют ее для сбора информации.",
                     "language": "Russian",
                     "multiverseId": 370091,
@@ -19895,12 +19522,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67924,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dda3355924aa84da",
             "text": "{T}: Add {B} or {G}.\n{B}{G}, {T}, Sacrifice Golgari Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2349b6aa-91b2-59c0-b9e3-a350f1cf10c2",
+            "uuid": "33337d3c-60e5-523e-9f49-915efb95d55b",
             "watermark": "golgari"
         },
         {
@@ -19963,10 +19591,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370020
-                },
-                {
                     "flavorText": "В чаще леса, где когда-то раздавались песнопения шаманов, под грудами камней и зарослями лоз все еще можно отыскать груульские символы.",
                     "language": "Russian",
                     "multiverseId": 370168,
@@ -20020,12 +19644,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67925,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8bfbe227cddf8d9e",
             "text": "{T}: Add {R} or {G}.\n{R}{G}, {T}, Sacrifice Gruul Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "68844bf0-73c2-5a30-b83c-f387c5c59822",
+            "uuid": "ed8603aa-64b7-5670-a87d-6961ca51ff90",
             "watermark": "gruul"
         },
         {
@@ -20088,10 +19713,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369901
-                },
-                {
                     "flavorText": "В нем заключена загадка, которую нельзя разгадать. Но если ваш ответ будет достаточно оригинален, вы получите приглашение вступить в гильдию.",
                     "language": "Russian",
                     "multiverseId": 370096,
@@ -20145,12 +19766,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67926,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/221e135d794e5126",
             "text": "{T}: Add {U} or {R}.\n{U}{R}, {T}, Sacrifice Izzet Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "93a28a0c-f9a7-5dab-90e2-b82d7a0a5a2b",
+            "uuid": "201d94bd-b07b-53c2-aef9-cc3954469697",
             "watermark": "izzet"
         },
         {
@@ -20213,10 +19835,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369938
-                },
-                {
                     "flavorText": "Он символизирует власть и богатство — высшие ценности гильдии Орзовов.",
                     "language": "Russian",
                     "multiverseId": 370041,
@@ -20271,12 +19889,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67927,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e094efd5ac869e9a",
             "text": "{T}: Add {W} or {B}.\n{W}{B}, {T}, Sacrifice Orzhov Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "15c87729-b100-5e34-a3d3-af1c7eaa749c",
+            "uuid": "45051e11-5e22-5196-a72b-73994d6dcad8",
             "watermark": "orzhov"
         },
         {
@@ -20288,7 +19907,7 @@
             ],
             "colors": [],
             "convertedManaCost": 3.0,
-            "flavorText": "\"Burn. Bleed. Enjoy.\" —Cluestone inscription",
+            "flavorText": "\"Burn. Bleed. Enjoy.\"\n—Cluestone inscription",
             "foreignData": [
                 {
                     "flavorText": "„Brenne. Blute. Frohlocke.\" —Inschrift auf dem Rätselstein",
@@ -20337,10 +19956,6 @@
                     "name": "락도스 단서석",
                     "text": "{T}: {B} 또는 {R}를 당신의 마나풀에 담는다.\n{B}{R}, {T}, 락도스 단서석을 희생한다: 카드 한 장을 뽑는다.",
                     "type": "마법물체"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369986
                 },
                 {
                     "flavorText": "«Жги. Режь. Наслаждайся».— Надпись на ключе-камне",
@@ -20396,12 +20011,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67928,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dec380425ea47eed",
             "text": "{T}: Add {B} or {R}.\n{B}{R}, {T}, Sacrifice Rakdos Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "21b91b7f-4ebe-59ee-aa7f-f9b257a1238c",
+            "uuid": "daae0d36-cd72-5749-8538-c353a9369a7b",
             "watermark": "rakdos"
         },
         {
@@ -20464,10 +20080,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369880
-                },
-                {
                     "flavorText": "«Разбей его, если тебе так хочется. Утрата одной реликвии — ничтожная цена по сравнению с сокровищем, которое она в себе таит».— Саниэл, Мудрец Лесов",
                     "language": "Russian",
                     "multiverseId": 370189,
@@ -20521,12 +20133,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67929,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7ab94fcc80000bfa",
             "text": "{T}: Add {G} or {W}.\n{G}{W}, {T}, Sacrifice Selesnya Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2fa71dc8-e9ed-5b36-9d2b-f28e4fd2f012",
+            "uuid": "8e185811-b6f6-5241-aab0-7e1f1f0d24c8",
             "watermark": "selesnya"
         },
         {
@@ -20589,10 +20202,6 @@
                     "type": "마법물체"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369981
-                },
-                {
                     "flavorText": "Немногие решаются шутить с хрупкими, покрытыми замысловатыми знаками реликвиями Симиков. Кто знает, что за чудища вырвутся на волю, если такая разобьется?",
                     "language": "Russian",
                     "multiverseId": 370188,
@@ -20646,12 +20255,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67930,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e2ba98bd5d16870f",
             "text": "{T}: Add {G} or {U}.\n{G}{U}, {T}, Sacrifice Simic Cluestone: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4212add0-9258-5030-b2ba-8b415e353645",
+            "uuid": "18ea4425-4e0b-5b0f-94a2-ef1971e93d68",
             "watermark": "simic"
         },
         {
@@ -20714,10 +20324,6 @@
                     "type": "대지 — 관문"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369980
-                },
-                {
                     "flavorText": "Знак Азориусов неизменно взирает с высоты, словно огромное око, напоминая пришедшим о бдительности Исперии и ее законников.",
                     "language": "Russian",
                     "multiverseId": 370152,
@@ -20750,6 +20356,7 @@
                 "1v1": "Legal",
                 "commander": "Legal",
                 "duel": "Legal",
+                "future": "Legal",
                 "legacy": "Legal",
                 "modern": "Legal",
                 "pauper": "Legal",
@@ -20767,6 +20374,7 @@
                 "CMA",
                 "DGM",
                 "MM3",
+                "RNA",
                 "RTR"
             ],
             "rarity": "common",
@@ -20786,12 +20394,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67781,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89b2ef0904207c02",
             "text": "Azorius Guildgate enters the battlefield tapped.\n{T}: Add {W} or {U}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "ef1c549a-e509-5bcf-aef9-2bb092def561",
+            "uuid": "476a1063-8b0e-5e95-a447-9e7365c2a8d4",
             "watermark": "azorius"
         },
         {
@@ -20852,10 +20461,6 @@
                     "name": "보로스 길드관문",
                     "text": "보로스 길드관문은 탭된 채로 전장에 들어온다.\n{T}: {R} 또는 {W}를 당신의 마나풀에 담는다.",
                     "type": "대지 — 관문"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369985
                 },
                 {
                     "flavorText": "Они обещают защиту тем, кто в ней нуждается, и служат предостережением всякому, кто посягнет на законы Равники.",
@@ -20924,12 +20529,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67782,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f4a39f819378c90",
             "text": "Boros Guildgate enters the battlefield tapped.\n{T}: Add {R} or {W}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "a2eac79d-e211-5485-9b11-176e6646b68b",
+            "uuid": "5f020dcb-8dc8-5ca5-8cd8-c4cf60ff8dc8",
             "watermark": "boros"
         },
         {
@@ -20990,10 +20596,6 @@
                     "name": "디미르 길드관문",
                     "text": "디미르 길드관문은 탭된 채로 전장에 들어온다.\n{T}: {U} 또는 {B}를 당신의 마나풀에 담는다.",
                     "type": "대지 — 관문"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369961
                 },
                 {
                     "flavorText": "В холодных коридорах подземного города байки и вымыслы растекаются из Мантии Сумрака, словно пятно грязи.",
@@ -21059,12 +20661,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67783,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1d30ba210c5e2482",
             "text": "Dimir Guildgate enters the battlefield tapped.\n{T}: Add {U} or {B}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "61759cd3-44f5-5a99-87f2-4b54e0e9aeef",
+            "uuid": "3c644629-8752-528b-b3fd-83bc461e52d2",
             "watermark": "dimir"
         },
         {
@@ -21125,10 +20728,6 @@
                     "name": "골가리 길드관문",
                     "text": "골가리 길드관문은 탭된 채로 전장에 들어온다.\n{T}: {B} 또는 {G}를 당신의 마나풀에 담는다.",
                     "type": "대지 — 관문"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370004
                 },
                 {
                     "flavorText": "Рой по крупице создал эти врата из забытых руин и наполнил их новым смыслом.",
@@ -21196,12 +20795,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67784,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cd2f380187377a9d",
             "text": "Golgari Guildgate enters the battlefield tapped.\n{T}: Add {B} or {G}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "2d02f068-acac-5e98-9bf4-6890b108b975",
+            "uuid": "e63f1bb8-b457-5fcc-bee1-5746c7827708",
             "watermark": "golgari"
         },
         {
@@ -21264,10 +20864,6 @@
                     "type": "대지 — 관문"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369928
-                },
-                {
                     "flavorText": "Почерневшие развалины вокруг врат – это следы былых сборищ Кланов, которые неизменно перерастали в кровавые стычки.",
                     "language": "Russian",
                     "multiverseId": 370070,
@@ -21300,6 +20896,7 @@
                 "1v1": "Legal",
                 "commander": "Legal",
                 "duel": "Legal",
+                "future": "Legal",
                 "legacy": "Legal",
                 "modern": "Legal",
                 "pauper": "Legal",
@@ -21315,7 +20912,8 @@
                 "C13",
                 "DGM",
                 "GTC",
-                "MM3"
+                "MM3",
+                "RNA"
             ],
             "rarity": "common",
             "rulings": [
@@ -21334,12 +20932,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67785,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d44c208e0768b61f",
             "text": "Gruul Guildgate enters the battlefield tapped.\n{T}: Add {R} or {G}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "0bdf6676-32df-51d9-93c3-5342fcb4991e",
+            "uuid": "617e837d-a4fb-58b2-85e0-1f90c562b86d",
             "watermark": "gruul"
         },
         {
@@ -21400,10 +20999,6 @@
                     "name": "이젯 길드관문",
                     "text": "이젯 길드관문은 탭된 채로 전장에 들어온다.\n{T}: {U} 또는 {R}를 당신의 마나풀에 담는다.",
                     "type": "대지 — 관문"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 370034
                 },
                 {
                     "flavorText": "За их пределами находится венец деяний Иззетов – выдающийся эксперимент, который взял под свое руководство сам дракон Нив-Миззет.",
@@ -21470,12 +21065,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67786,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/20c3aeb977c83681",
             "text": "Izzet Guildgate enters the battlefield tapped.\n{T}: Add {U} or {R}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "79bd9703-ac1b-504a-8ae2-8a04698dad9c",
+            "uuid": "403bc7f9-4bdf-580d-852f-cbf6d0b52546",
             "watermark": "izzet"
         },
         {
@@ -21526,10 +21122,6 @@
                     "name": "미로의 끝",
                     "text": "미로의 끝은 탭된 채로 전장에 들어온다.\n{T}: {1}을 당신의 마나풀에 담는다.\n{3}, {T}, 미로의 끝을 소유자의 손으로 되돌린다: 당신의 서고에서 관문 카드 한 장을 찾은 다음 전장에 놓는다. 그러고 나서 당신의 서고를 섞는다. 당신이 이름이 다른 관문을 열 개 이상 조종한다면 게임에서 승리한다.",
                     "type": "대지"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369943
                 },
                 {
                     "language": "Russian",
@@ -21598,12 +21190,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67791,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/74ee14cef50a0763",
             "text": "Maze's End enters the battlefield tapped.\n{T}: Add {C}.\n{3}, {T}, Return Maze's End to its owner's hand: Search your library for a Gate card, put it onto the battlefield, then shuffle your library. If you control ten or more Gates with different names, you win the game.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "01a368cb-f2c9-56ae-86da-3324c9c6a827"
+            "uuid": "67f5347c-871b-5ae5-ba20-e1fcd5bf0525"
         },
         {
             "artist": "John Avon",
@@ -21665,10 +21258,6 @@
                     "type": "대지 — 관문"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369948
-                },
-                {
                     "flavorText": "«Мы не собираемся прятать наши богатства по углам. Это гильдия Орзовов, и таково наше вознаграждение за величие».— Тейса Карлов, Посланница Орзовов",
                     "language": "Russian",
                     "multiverseId": 370111,
@@ -21701,6 +21290,7 @@
                 "1v1": "Legal",
                 "commander": "Legal",
                 "duel": "Legal",
+                "future": "Legal",
                 "legacy": "Legal",
                 "modern": "Legal",
                 "pauper": "Legal",
@@ -21719,7 +21309,8 @@
                 "C18",
                 "DGM",
                 "GTC",
-                "MM3"
+                "MM3",
+                "RNA"
             ],
             "rarity": "common",
             "rulings": [
@@ -21738,12 +21329,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67787,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89a100accd963359",
             "text": "Orzhov Guildgate enters the battlefield tapped.\n{T}: Add {W} or {B}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "c7378ce5-c12e-5b5c-aaff-a94d0c97e6d9",
+            "uuid": "bc1701be-df4c-5009-aa30-234cdbba094c",
             "watermark": "orzhov"
         },
         {
@@ -21806,10 +21398,6 @@
                     "type": "대지 — 관문"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369964
-                },
-                {
                     "flavorText": "Проходя через врата Ракдосов, исследователи лабиринта расстаются с угрызениями совести и большими кусками кожи.",
                     "language": "Russian",
                     "multiverseId": 370113,
@@ -21842,6 +21430,7 @@
                 "1v1": "Legal",
                 "commander": "Legal",
                 "duel": "Legal",
+                "future": "Legal",
                 "legacy": "Legal",
                 "modern": "Legal",
                 "pauper": "Legal",
@@ -21858,6 +21447,7 @@
                 "C17",
                 "DGM",
                 "MM3",
+                "RNA",
                 "RTR"
             ],
             "rarity": "common",
@@ -21877,12 +21467,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67788,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b93859647412bd67",
             "text": "Rakdos Guildgate enters the battlefield tapped.\n{T}: Add {B} or {R}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "ff57c5ac-89e6-5a95-ab61-f3b846e0895b",
+            "uuid": "6267cebb-a0e7-5346-b59c-904965b13d9d",
             "watermark": "rakdos"
         },
         {
@@ -21943,10 +21534,6 @@
                     "name": "셀레스냐 길드관문",
                     "text": "셀레스냐 길드관문은 탭된 채로 전장에 들어온다.\n{T}: {G} 또는 {W}를 당신의 마나풀에 담는다.",
                     "type": "대지 — 관문"
-                },
-                {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369970
                 },
                 {
                     "flavorText": "Селезния рада принять в свое лоно всех, чтобы исцелить раны города. Цена же – преданность гильдии и беззаветная вера в Тростани.",
@@ -22013,12 +21600,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67789,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76cf2af0cab376e0",
             "text": "Selesnya Guildgate enters the battlefield tapped.\n{T}: Add {G} or {W}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "d5bfe08b-dc10-5608-ae9c-184905112211",
+            "uuid": "c1158500-44c7-5f02-922b-64676695e140",
             "watermark": "selesnya"
         },
         {
@@ -22081,10 +21669,6 @@
                     "type": "대지 — 관문"
                 },
                 {
-                    "language": "Portuguese (Brazil)",
-                    "multiverseId": 369915
-                },
-                {
                     "flavorText": "Биоманты из гильдии Симиков не заботятся об охране врат. Их вездесущие творения успешно отпугивают нарушителей границ.",
                     "language": "Russian",
                     "multiverseId": 370129,
@@ -22117,6 +21701,7 @@
                 "1v1": "Legal",
                 "commander": "Legal",
                 "duel": "Legal",
+                "future": "Legal",
                 "legacy": "Legal",
                 "modern": "Legal",
                 "pauper": "Legal",
@@ -22134,7 +21719,8 @@
                 "CMA",
                 "DGM",
                 "GTC",
-                "MM3"
+                "MM3",
+                "RNA"
             ],
             "rarity": "common",
             "rulings": [
@@ -22153,21 +21739,22 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67790,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/97de1d8d63313e4c",
             "text": "Simic Guildgate enters the battlefield tapped.\n{T}: Add {G} or {U}.",
             "type": "Land — Gate",
             "types": [
                 "Land"
             ],
-            "uuid": "01afc599-1e4c-5872-966c-fbbe6b6d249d",
+            "uuid": "1296a00d-6432-53be-b333-f46b11b88fbe",
             "watermark": "simic"
         }
     ],
-    "code": "dgm",
+    "code": "DGM",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "dgm",
+    "mtgoCode": "DGM",
     "name": "Dragon's Maze",
     "releaseDate": "2013-05-03",
     "tcgplayerGroupId": 570,
@@ -22193,7 +21780,7 @@
             "text": "This creature's power and toughness are each equal to the number of creatures you control.",
             "toughness": "*",
             "type": "Token Creature — Elemental",
-            "uuid": "402b3b22-5211-577c-bb49-96852d5ca263",
+            "uuid": "7aff41ce-5a33-50df-b2d1-ab1508d591b2",
             "watermark": "selesnya"
         }
     ],

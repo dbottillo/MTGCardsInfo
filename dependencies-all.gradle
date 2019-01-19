@@ -5,7 +5,8 @@ ext.deps = [
         ],
         'google': [
                 'androidx': [
-                        'appcompat': "androidx.appcompat:appcompat:$versions.androidx",
+                        'appcompat': "androidx.appcompat:appcompat:$versions.androidx_compat",
+                        'core': "androidx.core:core:$versions.androidx",
                         'cardview': "androidx.cardview:cardview:$versions.androidx",
                         'recyclerview': "androidx.recyclerview:recyclerview:$versions.androidx",
                         'design': "com.google.android.material:material:$versions.material",

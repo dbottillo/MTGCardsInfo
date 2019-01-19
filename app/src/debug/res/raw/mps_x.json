@@ -68,6 +68,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122844,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7a5a1801277c0ba4",
             "text": "Vigilance\nWhen Cataclysmic Gearhulk enters the battlefield, each player chooses an artifact, a creature, an enchantment, and a planeswalker from among the nonland permanents they control, then sacrifices the rest.",
             "toughness": "5",
             "type": "Artifact Creature — Construct",
@@ -75,7 +76,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "76e3f3ec-235a-596c-8493-fe8f4022669e"
+            "uuid": "beecbd83-28bf-5ed2-a120-b2f58138ff0a"
         },
         {
             "artist": "Jakub Kasper",
@@ -134,6 +135,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122868,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ebe87a453565b7ca",
             "text": "Flash\nWhen Torrential Gearhulk enters the battlefield, you may cast target instant card from your graveyard without paying its mana cost. If that card would be put into your graveyard this turn, exile it instead.",
             "toughness": "6",
             "type": "Artifact Creature — Construct",
@@ -141,7 +143,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "37989d4d-eed3-5f7c-9c15-cc926d166b91"
+            "uuid": "d4c02f67-22b9-5210-ab16-03ef79255897"
         },
         {
             "artist": "Vincent Proce",
@@ -196,6 +198,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122856,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9b5740606031b316",
             "text": "Menace\nWhen Noxious Gearhulk enters the battlefield, you may destroy another target creature. If a creature is destroyed this way, you gain life equal to its toughness.",
             "toughness": "4",
             "type": "Artifact Creature — Construct",
@@ -203,7 +206,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e4bb7099-5262-56a2-a487-4953f683c90b"
+            "uuid": "85207d52-4d34-5f2f-b36c-b53714dcd399"
         },
         {
             "artist": "Greg Opalinski",
@@ -262,6 +265,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122849,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d93a43049213ea9d",
             "text": "First strike\nWhen Combustible Gearhulk enters the battlefield, target opponent may have you draw three cards. If the player doesn't, put the top three cards of your library into your graveyard, then Combustible Gearhulk deals damage to that player equal to the total converted mana cost of those cards.",
             "toughness": "6",
             "type": "Artifact Creature — Construct",
@@ -269,7 +273,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1bade2a7-01da-5710-b319-b70545509baa"
+            "uuid": "27d27473-ff30-58f8-91bb-0ed7ce0f78bb"
         },
         {
             "artist": "Zack Stella",
@@ -328,6 +332,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122772,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7dcce616aedec1bd",
             "text": "Trample\nWhen Verdurous Gearhulk enters the battlefield, distribute four +1/+1 counters among any number of target creatures you control.",
             "toughness": "4",
             "type": "Artifact Creature — Construct",
@@ -335,7 +340,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "fe77e8a0-f9ee-5571-8515-21959722e675"
+            "uuid": "b669076c-83f8-549e-aad6-6750c8a147fd"
         },
         {
             "artist": "Raoul Vitale",
@@ -385,12 +390,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122843,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f7c886c55896dc7b",
             "text": "At the beginning of your upkeep, you may put a charge counter on Aether Vial.\n{T}: You may put a creature card with converted mana cost equal to the number of charge counters on Aether Vial from your hand onto the battlefield.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3e69505a-2dd1-529c-96dc-eb19a32b5fa9"
+            "uuid": "70e078ec-abab-5a30-bd98-1929e94ec56a"
         },
         {
             "artist": "Lindsey Look",
@@ -434,12 +440,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122845,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/75a7a86a00a7321c",
             "text": "Equipped creature gets +2/+2.\nAs long as equipped creature is legendary, it has hexproof. (It can't be the target of spells or abilities your opponents control.)\nEquip {1}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "65ce36dd-9da1-5c4f-9102-4888c818fc33"
+            "uuid": "448bc086-326c-5af7-931c-778457893d2a"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -489,12 +496,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122846,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a665a2dce806cfd",
             "text": "Lands you control have \"{T}: Add one mana of any color.\"\n{T}: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "572ae88a-d1cc-5c64-ba4f-8a251417bf88"
+            "uuid": "7b44d2bf-d6eb-5d3a-8c24-b366cebe66ff"
         },
         {
             "artist": "Kieran Yanner",
@@ -544,12 +552,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122847,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12f5cffe4356ab0b",
             "text": "Imprint — When Chrome Mox enters the battlefield, you may exile a nonartifact, nonland card from your hand.\n{T}: Add one mana of any of the exiled card's colors.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d8052885-469c-592d-a99d-ae26845b0b0a"
+            "uuid": "f062af4b-0f14-5938-9813-bd4b246dba75"
         },
         {
             "artist": "Noah Bradley",
@@ -587,12 +596,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122848,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc1549f7cfb0b7a5",
             "text": "Whenever a nonartifact permanent enters the battlefield under your control, you may return another permanent you control that shares a permanent type with it to its owner's hand.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f9a41079-4184-5b45-b44e-d9f31e2013e0"
+            "uuid": "0a76f4ce-7cf6-595a-9abf-d4a5d06ba157"
         },
         {
             "artist": "Chris Rahn",
@@ -648,12 +658,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122850,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6ff53288f10c34c9",
             "text": "You may play land cards from your graveyard.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "6079d0f2-acb2-5c67-8e9b-d23d64ad5715"
+            "uuid": "e1fb1579-5678-5282-b1a6-f4f894364c0e"
         },
         {
             "artist": "John Severin Brassell",
@@ -690,12 +701,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122769,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8e591bac030e9fd7",
             "text": "As Gauntlet of Power enters the battlefield, choose a color.\nCreatures of the chosen color get +1/+1.\nWhenever a basic land is tapped for mana of the chosen color, its controller adds an additional one mana of that color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "34598157-af1b-5471-84d3-85e507ecd0b9"
+            "uuid": "06cdc5a9-95f9-5547-8d42-352390940992"
         },
         {
             "artist": "Adam Paquette",
@@ -746,6 +758,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122770,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8423825a6b0020ac",
             "text": "Hangarback Walker enters the battlefield with X +1/+1 counters on it.\nWhen Hangarback Walker dies, create a 1/1 colorless Thopter artifact creature token with flying for each +1/+1 counter on Hangarback Walker.\n{1}, {T}: Put a +1/+1 counter on Hangarback Walker.",
             "toughness": "0",
             "type": "Artifact Creature — Construct",
@@ -753,7 +766,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "cc32ce4b-981f-5f8c-bf23-fafbd7ddbdfb"
+            "uuid": "63731ac8-8c2b-5197-aa3f-3270d432f9c6"
         },
         {
             "artist": "Slawomir Maniak",
@@ -811,12 +824,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122851,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4a268756a6964068",
             "text": "Equipped creature has haste and shroud. (It can't be the target of spells or abilities.)\nEquip {0}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a9f5bf44-94ac-58bc-9eac-b940bfd00a2c"
+            "uuid": "36e91aa8-6012-5d93-bf80-bb8704a1e972"
         },
         {
             "artist": "Slawomir Maniak",
@@ -856,12 +870,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122852,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/502ee499948759d2",
             "text": "{T}, Sacrifice Lotus Petal: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ac90dfe2-92eb-59ff-b376-b17f0bde3e65"
+            "uuid": "440de1ee-fd8e-550f-9494-4fbd2797c82b"
         },
         {
             "artist": "Volkan Baga",
@@ -908,12 +923,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122771,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8f754de02406bb93",
             "text": "At the beginning of your upkeep, flip a coin. If you lose the flip, Mana Crypt deals 3 damage to you.\n{T}: Add {C}{C}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5546d140-4fd0-5aae-99ab-3463615628b0"
+            "uuid": "e5d9ad47-df72-5723-8f60-f7e83df2132c"
         },
         {
             "artist": "Kirsten Zirngibl",
@@ -963,12 +979,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122853,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6e32622191e34ad0",
             "text": "Mana Vault doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {4}. If you do, untap Mana Vault.\nAt the beginning of your draw step, if Mana Vault is tapped, it deals 1 damage to you.\n{T}: Add {C}{C}{C}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4a12eae1-9c83-5f3e-871d-0ee716b66e1b"
+            "uuid": "1eecb122-7fb1-5905-87de-cf08f5ad8717"
         },
         {
             "artist": "David Gaillet",
@@ -1010,12 +1027,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122854,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cb96f48b98e9f37f",
             "text": "Whenever an opponent draws a card, you may pay {1}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9e21575f-dbf3-52e3-b35e-79f7e0be4fa6"
+            "uuid": "f1ca14c9-b08b-501b-a809-d9a9a43554e0"
         },
         {
             "artist": "Chris Rahn",
@@ -1056,12 +1074,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 122855,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8dc1683473d7767a",
             "text": "Metalcraft — {T}: Add one mana of any color. Activate this ability only if you control three or more artifacts.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4cbef1df-b0fb-5fcd-9681-ad499dfb056d"
+            "uuid": "c528bc09-cca9-5c53-8cd8-d1b8be00b27b"
         },
         {
             "artist": "Magali Villeneuve",
@@ -1127,6 +1146,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122857,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b7c6fb1376a4cfc6",
             "text": "As Painter's Servant enters the battlefield, choose a color.\nAll cards that aren't on the battlefield, spells, and permanents are the chosen color in addition to their other colors.",
             "toughness": "3",
             "type": "Artifact Creature — Scarecrow",
@@ -1134,7 +1154,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d48d8daf-6a8e-55c9-be0b-96345d0862bc"
+            "uuid": "ae490716-d4f0-5370-a46b-069793853b99"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -1177,12 +1197,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122858,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2ee5811e5b7cb818",
             "text": "Whenever you activate an ability, if it isn't a mana ability, you may pay {2}. If you do, copy that ability. You may choose new targets for the copy.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d16181e1-f8ec-54e6-a9bf-5e8449579d0f"
+            "uuid": "a882b36b-369e-5405-9d13-f4be9385a3ca"
         },
         {
             "artist": "Jason A. Engle",
@@ -1227,12 +1248,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122859,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1042ac6fc6233e47",
             "text": "{1}, {T}: Exile any number of cards from your hand face down. Put that many cards from the top of your library into your hand. Then look at the exiled cards and put them on top of your library in any order.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5b2f8513-d38d-53eb-bc28-f3339fa98cf6"
+            "uuid": "16cddc42-e259-5720-9778-66a44f7b630b"
         },
         {
             "artist": "Magali Villeneuve",
@@ -1293,12 +1315,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122860,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1d81183f5a74d778",
             "text": "You may have Sculpting Steel enter the battlefield as a copy of any artifact on the battlefield.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4cc7b80f-8894-5a31-8eef-9ee1e6f95e9f"
+            "uuid": "d8958571-7ea3-5b1b-baf4-b90e296839e6"
         },
         {
             "artist": "Volkan Baga",
@@ -1357,12 +1380,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122862,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a7581970123e6099",
             "text": "{T}: Add {C}{C}.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "083bfd8b-50fc-53c6-835b-efd30bddc710"
+            "uuid": "57f0439c-c049-5d62-8ce9-840f8398f197"
         },
         {
             "artist": "Daarken",
@@ -1409,6 +1433,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122861,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9c523c911f2b1720",
             "text": "When Solemn Simulacrum enters the battlefield, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle your library.\nWhen Solemn Simulacrum dies, you may draw a card.",
             "toughness": "2",
             "type": "Artifact Creature — Golem",
@@ -1416,7 +1441,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "918babb4-76ad-5907-9b00-6565a9dde0aa"
+            "uuid": "2a42eb0b-4d52-5673-b7d0-95a20b62032d"
         },
         {
             "artist": "Tommy Arnold",
@@ -1460,12 +1485,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 122863,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/74dd21b75716ca0b",
             "text": "As long as Static Orb is untapped, players can't untap more than two permanents during their untap steps.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9641c5a5-572a-52f0-a20b-4d0815a7feda"
+            "uuid": "17fdabf2-77d3-5f8d-bcf1-e008fbfda776"
         },
         {
             "artist": "Adam Paquette",
@@ -1512,6 +1538,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122864,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9d0c520e1454a1c4",
             "text": "{T}: Put a +1/+1 counter on each artifact creature you control.",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -1519,7 +1546,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "ddc397e8-7122-5d6a-8ef9-169e02d191db"
+            "uuid": "29f723bb-107a-5868-bccc-08c671cb4063"
         },
         {
             "artist": "Steven Belledin",
@@ -1567,12 +1594,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122865,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8eee08f5b5a15301",
             "text": "Equipped creature gets +2/+2 and has protection from black and from green.\nWhenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "35a175cd-36c3-5c5e-982e-989c2d06c2cb"
+            "uuid": "e970eda4-a859-533c-9982-10bd7f4fe0bd"
         },
         {
             "artist": "Volkan Baga",
@@ -1619,12 +1647,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122866,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/696170d75e88112c",
             "text": "Equipped creature gets +2/+2 and has protection from red and from blue.\nWhenever equipped creature deals combat damage to a player, Sword of Fire and Ice deals 2 damage to any target and you draw a card.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "31dd67bd-6bb9-54b0-b2ce-57b61ff6376f"
+            "uuid": "2378da33-5ed7-5b12-b623-4b0b2fc7a75b"
         },
         {
             "artist": "Matt Stewart",
@@ -1670,12 +1699,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 122867,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/469f569701a0c8d1",
             "text": "Equipped creature gets +2/+2 and has protection from white and from black.\nWhenever equipped creature deals combat damage to a player, you gain 3 life and you may return up to one target creature card from your graveyard to your hand.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e6463af3-74a1-5251-afe9-ee0a1ddd4e6e"
+            "uuid": "fa27fb84-88ec-5975-a251-d381c3444fca"
         },
         {
             "artist": "Daarken",
@@ -1723,6 +1753,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126279,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3fbf490e686b0ff0",
             "text": "Sacrifice an artifact: Put a +1/+1 counter on Arcbound Ravager.\nModular 1 (This enters the battlefield with a +1/+1 counter on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
             "toughness": "0",
             "type": "Artifact Creature — Beast",
@@ -1730,7 +1761,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "00d7cbef-d423-5602-9435-7ef3eb1c2bc6"
+            "uuid": "15181a5c-ec4b-56fb-82de-6d4707f2ec2b"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1786,12 +1817,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126280,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b77dc3ffbf9d0125",
             "text": "As Black Vise enters the battlefield, choose an opponent.\nAt the beginning of the chosen player's upkeep, Black Vise deals X damage to that player, where X is the number of cards in their hand minus 4.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d044bd22-fc06-5191-893b-f73e523fd0cf"
+            "uuid": "322deee0-376a-5125-a7ff-c094be987433"
         },
         {
             "artist": "Kieran Yanner",
@@ -1848,12 +1880,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126281,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d1bb4644caf0ed1a",
             "text": "Chalice of the Void enters the battlefield with X charge counters on it.\nWhenever a player casts a spell with converted mana cost equal to the number of charge counters on Chalice of the Void, counter that spell.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5332fb7a-9b6b-5ab2-9a30-a3ddf3d228e9"
+            "uuid": "2525369e-65be-57b1-a50a-2e2f21b47235"
         },
         {
             "artist": "Jonas De Ro",
@@ -1903,12 +1936,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126282,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2d5b6222841ec294",
             "text": "Each spell costs {3} more to cast except during its controller's turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c19daef2-3df1-5269-8ad2-8776eb820d83"
+            "uuid": "2a0be84b-eb66-5be2-bffa-aeaf4bea714a"
         },
         {
             "artist": "Slawomir Maniak",
@@ -1976,6 +2010,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126283,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1ab3b34e1aa9db61",
             "text": "Imprint — When Duplicant enters the battlefield, you may exile target nontoken creature.\nAs long as a card exiled with Duplicant is a creature card, Duplicant has the power, toughness, and creature types of the last creature card exiled with Duplicant. It's still a Shapeshifter.",
             "toughness": "4",
             "type": "Artifact Creature — Shapeshifter",
@@ -1983,7 +2018,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "75545859-e08b-52b2-ab1d-0f75f1623550"
+            "uuid": "d74747df-e7e7-5c16-a7f0-2ad03c20221e"
         },
         {
             "artist": "James Paick",
@@ -2040,12 +2075,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126284,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa18b2ddec00b73b",
             "text": "Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)\n{2}, Sacrifice Engineered Explosives: Destroy each nonland permanent with converted mana cost equal to the number of charge counters on Engineered Explosives.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7d0cc27e-dd07-5e1d-8bec-a400d2438ef7"
+            "uuid": "1da411a6-27bd-5011-bbc4-dde532d74ef3"
         },
         {
             "artist": "Florian de Gesincourt",
@@ -2091,12 +2127,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126285,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3320e4c42ec0557d",
             "text": "Creatures with power greater than the number of cards in your hand can't attack.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "dd210dac-eb8b-5393-9100-800b9d619bfb"
+            "uuid": "aba60b7d-6243-5027-a34a-7ad06ab25a8b"
         },
         {
             "artist": "Noah Bradley",
@@ -2133,12 +2170,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126286,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8d6e014e8ee0386f",
             "text": "Imprint — When Extraplanar Lens enters the battlefield, you may exile target land you control.\nWhenever a land with the same name as the exiled card is tapped for mana, its controller adds one mana of any type that land produced.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "89b28356-a830-5b12-85fb-99f18d390689"
+            "uuid": "b245c9f5-1403-5def-a129-d66723d5d254"
         },
         {
             "artist": "Johann Bodin",
@@ -2187,12 +2225,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126287,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a90b95b5729463d4",
             "text": "{3}, {T}: Target player puts the top two cards of their library into their graveyard. If both cards share a color, repeat this process.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "19a38de3-74f5-54eb-a1c9-c8b8549cd5da"
+            "uuid": "8767f724-2224-5a13-aebd-8ec9916670ad"
         },
         {
             "artist": "Steve Argyle",
@@ -2243,12 +2282,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126288,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6807717baf41228f",
             "text": "Creatures with power 3 or greater don't untap during their controllers' untap steps.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "90ec7efd-e09e-5add-9b08-d40c985de700"
+            "uuid": "2e186478-ce56-502c-b060-467a59c4d9cd"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -2288,12 +2328,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126289,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/796a3d07f475df6e",
             "text": "{4}, {T}: Put a fate counter on target permanent.\n{5}, {T}, Sacrifice Oblivion Stone: Destroy each nonland permanent without a fate counter on it, then remove all fate counters from all permanents.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "304428fa-cabe-5496-bdc8-08cddc557a15"
+            "uuid": "74059359-a714-5afe-a7c6-024d5967d568"
         },
         {
             "artist": "Howard Lyon",
@@ -2351,6 +2392,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126290,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c1b6eb2a0013e044",
             "text": "Flying",
             "toughness": "2",
             "type": "Artifact Creature — Thopter",
@@ -2358,7 +2400,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d962a7d4-897b-5b0e-bd60-72222aa1bb51"
+            "uuid": "aaf42795-f6c9-5ccb-a1fe-9d9ed7dbc26c"
         },
         {
             "artist": "Vincent Proce",
@@ -2405,12 +2447,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126306,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b2e4d7123b5c192",
             "text": "Whenever you cast a spell, untap all nonland permanents you control.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0d6c065d-04a1-5f6c-8fa6-6b58dbdefd70"
+            "uuid": "c9d3b1d2-75bc-55d8-9077-8605d0b6f1e0"
         },
         {
             "artist": "Joseph Meehan",
@@ -2471,12 +2514,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126292,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/51f825bdb849d087",
             "text": "As Pithing Needle enters the battlefield, choose a card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fe87268a-c983-5b2c-80e4-e71e30f80d7f"
+            "uuid": "646d9d26-d26d-5d9a-90ca-8c8df6225dcc"
         },
         {
             "artist": "Raymond Swanland",
@@ -2523,12 +2567,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126307,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/415737277afd401a",
             "text": "{8}, {T}: Search your library for a permanent card, put it onto the battlefield, then shuffle your library.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c458441b-55f6-53e9-95ad-a3f0edbf1480"
+            "uuid": "e30949ac-e22f-5aab-8f19-b99b0eb12745"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -2596,6 +2641,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126291,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1e5fb1ce394b17bf",
             "text": "Flying\nYou can't lose the game and your opponents can't win the game.",
             "toughness": "4",
             "type": "Artifact Creature — Angel",
@@ -2603,7 +2649,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "2285aac2-130a-5f74-ace1-804a6a13315f"
+            "uuid": "e738295d-e760-5ba1-83fa-edbff8b720ba"
         },
         {
             "artist": "Richard Wright",
@@ -2647,12 +2693,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126293,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3ad43df3ae384ec9",
             "text": "Spells cost {1} more to cast.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7111c650-0b34-5328-9f3d-e5f0aacc28bd"
+            "uuid": "941a7567-36de-5a35-aef9-3385db008be7"
         },
         {
             "artist": "Zezhou Chen",
@@ -2689,12 +2736,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126294,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/567644a20ee65594",
             "text": "{1}: Untap Staff of Domination.\n{2}, {T}: You gain 1 life.\n{3}, {T}: Untap target creature.\n{4}, {T}: Tap target creature.\n{5}, {T}: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bea21429-6b4d-5fe2-b313-19c968dbfbd5"
+            "uuid": "a762f31f-e5af-581e-9dec-35aa9c0253d7"
         },
         {
             "artist": "Lius Lasahido",
@@ -2755,6 +2803,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126295,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/af8e0d483dc9daa2",
             "text": "When Sundering Titan enters the battlefield or leaves the battlefield, choose a land of each basic land type, then destroy those lands.",
             "toughness": "10",
             "type": "Artifact Creature — Golem",
@@ -2762,7 +2811,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8941120f-af09-5b82-8183-4bcde4f5cd32"
+            "uuid": "efae3dac-b628-5569-bf58-adc472ca189d"
         },
         {
             "artist": "Mark Zug",
@@ -2807,12 +2856,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126296,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/db7ca1fa67dbee67",
             "text": "Equipped creature gets +2/+2 and has protection from green and from blue.\nWhenever equipped creature deals combat damage to a player, you create a 2/2 green Wolf creature token and that player puts the top ten cards of their library into their graveyard.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b27c7c27-c93d-5790-afe6-7fb529cc867a"
+            "uuid": "ab2e811b-75e1-5fe0-a21e-125fc1eef68a"
         },
         {
             "artist": "Filip Burburan",
@@ -2856,12 +2906,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126297,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dda1ab2d702437a9",
             "text": "Equipped creature gets +2/+2 and has protection from red and from white.\nWhenever equipped creature deals combat damage to a player, Sword of War and Peace deals damage to that player equal to the number of cards in their hand and you gain 1 life for each card in your hand.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f8432fa5-f7a9-5d59-882a-bd9fbda10903"
+            "uuid": "16aa456c-336f-5b09-bbca-17ef01e5ba9c"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -2921,12 +2972,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126298,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6fae7bd7d2a8ae2",
             "text": "As long as Trinisphere is untapped, each spell that would cost less than three mana to cast costs three mana to cast. (Additional mana in the cost may be paid with any color of mana or colorless mana. For example, a spell that would cost {1}{B} to cast costs {2}{B} to cast instead.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c05f041a-141d-5c0e-8bff-9d1eecdbe8d3"
+            "uuid": "be72c7f6-515d-5500-a221-c1cad1bfefcb"
         },
         {
             "artist": "Svetlin Velinov",
@@ -2977,12 +3029,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126299,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3615cdda1e8b7170",
             "text": "You may choose not to untap Vedalken Shackles during your untap step.\n{2}, {T}: Gain control of target creature with power less than or equal to the number of Islands you control for as long as Vedalken Shackles remains tapped.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "12494dc3-994d-5c1f-9167-122d6ba10b5c"
+            "uuid": "02b9217a-33e8-5211-bbea-f53a974928ab"
         },
         {
             "artist": "Aleksi Briclot",
@@ -3035,6 +3088,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126300,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e5438552758d5232",
             "text": "Deathtouch, lifelink\nWhen Wurmcoil Engine dies, create a 3/3 colorless Wurm artifact creature token with deathtouch and a 3/3 colorless Wurm artifact creature token with lifelink.",
             "toughness": "6",
             "type": "Artifact Creature — Wurm",
@@ -3042,16 +3096,16 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "ff5d5746-fa68-53c6-a192-1e9f443f8698"
+            "uuid": "bd86a601-b568-5acd-9dfa-62510a0a0331"
         }
     ],
-    "code": "mps",
+    "code": "MPS",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "ms2",
+    "mtgoCode": "MS2",
     "name": "Kaladesh Inventions",
     "releaseDate": "2016-09-30",
     "tcgplayerGroupId": 1837,

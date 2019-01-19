@@ -72,13 +72,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 82739,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d863fd4c1414e62f",
             "text": "Whenever another creature enters the battlefield, you gain 1 life.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "cfe1de90-048e-5592-8f1a-7ef817ebe6b4"
+            "uuid": "592a8137-624b-5978-8ae3-c9be7d7efd9e"
         },
         {
             "artist": "rk post",
@@ -133,6 +134,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 82740,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a19d60eae0bbf7c4",
             "text": "When Tidehollow Sculler enters the battlefield, target opponent reveals their hand and you choose a nonland card from it. Exile that card.\nWhen Tidehollow Sculler leaves the battlefield, return the exiled card to its owner's hand.",
             "toughness": "2",
             "type": "Artifact Creature — Zombie",
@@ -140,7 +142,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1b80867b-6ccc-54dc-bc99-5836d6403e47"
+            "uuid": "8d1eb489-ef4f-5a17-902f-62e4474e2226"
         },
         {
             "artist": "Todd Lockwood",
@@ -201,12 +203,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82745,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6d9ef5c79949c9b",
             "text": "Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle their library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d3ced025-fa97-5506-973d-0e7cb59484ee"
+            "uuid": "fd932e24-e60f-510e-8cce-1ce7f8bb9995"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -256,12 +259,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82742,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/99e8fee802176cda",
             "text": "Target player reveals their hand. You choose a nonland card from it with converted mana cost 3 or less. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "57157c43-2a62-5ced-a5db-59a2705cc70f"
+            "uuid": "aa1a3119-0885-57d7-ae8a-eb6708bae0aa"
         },
         {
             "artist": "Igor Kieryluk",
@@ -301,12 +305,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82747,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c3105ee99c37997",
             "text": "At the beginning of your upkeep or whenever you cast a white spell, put a charge counter on Shrine of Loyal Legions.\n{3}, {T}, Sacrifice Shrine of Loyal Legions: Create a 1/1 colorless Myr artifact creature token for each charge counter on Shrine of Loyal Legions.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "388d0dfa-b4c7-534a-b881-e51d931bfc4c"
+            "uuid": "a737048f-f4f6-55af-8b50-d3fbd17ce26f"
         },
         {
             "artist": "Greg Staples",
@@ -354,12 +359,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82741,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/abafcb1fb8de060f",
             "text": "White creatures you control get +1/+1.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1a4de88d-2d19-5a7c-a3a0-c3f9af557592"
+            "uuid": "6ca2b67f-2c7f-5a3a-b0e4-5747e49bcdd2"
         },
         {
             "artist": "Clint Cearley",
@@ -405,12 +411,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82743,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b19632ec823fd0d9",
             "text": "Creature tokens you control get +1/+1 and have vigilance.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d0f6f157-4abd-53a8-8298-d8d555a15c8c"
+            "uuid": "4e13bc89-b69b-559a-b5de-02e615bcdfb6"
         },
         {
             "artist": "John Matson",
@@ -462,12 +469,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82746,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f3f0cd529236e6b",
             "text": "Create two 1/1 white Soldier creature tokens.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "862fd103-0b53-52e5-a51d-e7ef2f75d511"
+            "uuid": "a87db07b-327b-52bd-91f7-ca51d92d485c"
         },
         {
             "artist": "Christopher Moeller",
@@ -515,12 +523,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82750,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/edb3986f3179ff39",
             "text": "Until end of turn, creatures you control get +1/+1 and creatures your opponents control get -1/-1.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "17db8c79-3b17-5d5b-b71b-ad6328f578c9"
+            "uuid": "8780bf9e-a1cb-5369-b054-7d860d9dc27e"
         },
         {
             "artist": "Chris Rahn",
@@ -569,12 +578,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 82749,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/36c39fa8cff0bc74",
             "text": "Equipped creature gets +2/+2 and has protection from black and from green.\nWhenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4d6e9642-d72c-575b-85ec-334501f03420"
+            "uuid": "5d1847f2-201f-5050-896f-4a14a44247be"
         },
         {
             "artist": "Bud Cook",
@@ -623,12 +633,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82744,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/65e2d0e1e77c615b",
             "text": "Create two 1/1 white Spirit creature tokens with flying.\nFlashback {1}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "150a5afb-7c02-5139-91de-0a37235dc0df"
+            "uuid": "623cc2ca-c3fe-5e9d-8ebd-b526e9934b69"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -692,12 +703,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82748,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cc121a036ff19a7c",
             "text": "Create three 1/1 white Spirit creature tokens with flying.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "382fee05-9f46-54c0-91b7-08cd86cea535"
+            "uuid": "5cbce23c-2e15-52a8-aebe-4603051a7a58"
         },
         {
             "artist": "Volkan Baga",
@@ -757,12 +769,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 82751,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8db4f27a144d12ed",
             "text": "+1: Create a 1/1 white Soldier creature token.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n−8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "ae4339bc-551c-5b27-b501-d585746c004e"
+            "uuid": "d49d2c1d-0cc2-58ff-8468-8cbe3991a601"
         },
         {
             "artist": "Jim Nelson",
@@ -817,12 +830,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82732,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/976bc77e304c0bdc",
             "text": "{T}: Add {C}.\n{T}: Add {W} or {B}. Caves of Koilos deals 1 damage to you.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "aea4f622-718c-5785-9da5-5818f7668047"
+            "uuid": "da77764f-91ec-596b-bb65-7e5c6037d246"
         },
         {
             "artist": "Jung Park",
@@ -890,12 +904,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82733,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89f63ec5e293a9cb",
             "text": "Whenever City of Brass becomes tapped, it deals 1 damage to you.\n{T}: Add one mana of any color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "03ee2b0a-e49e-5652-8105-bffe47ba7254"
+            "uuid": "92e222bd-57f5-5a71-aacd-23d2fa8fc544"
         },
         {
             "artist": "Cliff Childs",
@@ -942,12 +957,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82734,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4fa67cbf28d7e84f",
             "text": "Isolated Chapel enters the battlefield tapped unless you control a Plains or a Swamp.\n{T}: Add {W} or {B}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "7a2f4e7b-630a-57f3-bda0-8132cc9d9aa9"
+            "uuid": "7c42fe37-52ab-5a77-ae4f-86ecd26bb5c1"
         },
         {
             "artist": "John Avon",
@@ -997,12 +1013,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82737,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0bbb8ddfccbba3e3",
             "text": "{T}: Add {C}.\n{2}{W}{B}, {T}: Creatures you control gain deathtouch and lifelink until end of turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "0592fe2e-4243-56e8-b7b0-43fb32199e0a"
+            "uuid": "ca071bf1-fb90-5612-8dd3-b04fc24cf950"
         },
         {
             "artist": "Omar Rayyan",
@@ -1048,12 +1065,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82738,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ef23be909351f93c",
             "text": "Hideaway (This land enters the battlefield tapped. When it does, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library.)\n{T}: Add {W}.\n{W}, {T}: You may play the exiled card without paying its mana cost if you attacked with three or more creatures this turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "9db0f4f9-3c9e-5b29-bc84-a46a64bbbdde"
+            "uuid": "1afb7a53-d8cc-5463-a2eb-4a649fa093e0"
         },
         {
             "artist": "Adam Paquette",
@@ -1136,6 +1154,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -1155,12 +1174,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 82735,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95dec5c17f0ecc70",
             "text": "({T}: Add {W}.)",
             "type": "Basic Land — Plains",
             "types": [
                 "Land"
             ],
-            "uuid": "b0fbdb91-37d9-50a9-a1b9-b38e4c0fbab9"
+            "uuid": "ed694a78-e6c0-53d8-afcc-759f8dd1db68"
         },
         {
             "artist": "Adam Paquette",
@@ -1260,12 +1280,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 82736,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf2bacbe4cc21329",
             "text": "({T}: Add {B}.)",
             "type": "Basic Land — Swamp",
             "types": [
                 "Land"
             ],
-            "uuid": "4eed53a2-05a3-5ffe-a6f6-ba886f8251b1"
+            "uuid": "91c3b6d2-a138-5156-9903-520a48ea6c38"
         },
         {
             "artist": "Jean-Sébastien Rossbach",
@@ -1318,12 +1339,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82757,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d98acb3d5fa23a54",
             "text": "{T}: Target player exiles a card from their graveyard.\n{1}, Exile Relic of Progenitus: Exile all cards from all graveyards. Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b0eadf6d-7497-5131-ba29-a0e0f52dde82"
+            "uuid": "690b12f9-7a55-5452-9ca9-e663d881508a"
         },
         {
             "artist": "Chuck Lukacs",
@@ -1384,13 +1406,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 82752,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e5f396410a0de695",
             "text": "Protection from red\nSacrifice Burrenton Forge-Tender: Prevent all damage a red source of your choice would deal this turn.",
             "toughness": "1",
             "type": "Creature — Kithkin Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "892e9ae5-77ac-57f5-9c3a-fe87aa2dcfd7"
+            "uuid": "e9466c9f-58b1-5646-ad00-1b16c3871e6f"
         },
         {
             "artist": "Steven Belledin",
@@ -1458,12 +1481,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82754,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33247efd975c54bc",
             "text": "Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e220434a-f91f-5eb0-bd93-c44a96a6ca1c"
+            "uuid": "d4b88938-aaf5-5d22-b16a-33e3265800b0"
         },
         {
             "artist": "Matt Thompson",
@@ -1512,13 +1536,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 82756,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7f260b0ecf752f68",
             "text": "All artifacts have \"At the beginning of your upkeep, sacrifice this artifact unless you pay {1}.\"",
             "toughness": "1",
             "type": "Legendary Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "148f694f-3106-5d81-a515-78107a576603"
+            "uuid": "0438f5fb-4083-5550-8a48-3b9283498525"
         },
         {
             "artist": "Terese Nielsen",
@@ -1585,12 +1610,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82753,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/84bb49258e23430d",
             "text": "({B/P} can be paid with either {B} or 2 life.)\nTarget creature gets -5/-5 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b3ce6c4c-7417-5f3d-8fbb-68d5aec6c723"
+            "uuid": "9683060f-3e0d-5dc2-b8f1-bf3497ac21ab"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -1647,20 +1673,21 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 82755,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a4f9756003d2d552",
             "text": "{T}: Add {C}.\n{T}, Sacrifice Ghost Quarter: Destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle their library.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "133bc7a6-1779-55c6-a26a-84f689c6d5f4"
+            "uuid": "7fd916de-9faa-5492-a292-ae0185fc963e"
         }
     ],
-    "code": "md1",
+    "code": "MD1",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Modern Event Deck 2014",
     "releaseDate": "2014-05-30",
     "tcgplayerGroupId": 1346,
@@ -1684,7 +1711,7 @@
             "scryfallId": "05e8f775-02bd-46dc-a618-07a9a127fa69",
             "toughness": "1",
             "type": "Token Creature — Soldier",
-            "uuid": "0eed1fe5-afe6-5e6f-9b8a-3fc6c92f74d7"
+            "uuid": "b69b9965-1fd5-543b-8a41-268210a95038"
         },
         {
             "artist": "Kev Walker",
@@ -1706,7 +1733,7 @@
             "text": "Flying",
             "toughness": "1",
             "type": "Token Creature — Spirit",
-            "uuid": "14921c59-d4a2-506e-be33-097ac3b9c264"
+            "uuid": "de24faeb-b621-5713-ba5a-c6bd302d5231"
         },
         {
             "artist": "Matt Stewart",
@@ -1722,7 +1749,7 @@
             "scryfallId": "dfe197cf-6f36-424e-a544-cbe7a56f8a32",
             "toughness": "1",
             "type": "Token Artifact Creature — Myr",
-            "uuid": "dac772c9-557e-5139-b773-ba7c73c54be7"
+            "uuid": "e550e7b6-b67f-5534-b606-7bcd32f551c6"
         },
         {
             "artist": "Volkan Baga",
@@ -1737,7 +1764,7 @@
             "scryfallId": "8360fc12-57c0-4701-8e19-0878ed5abb4f",
             "text": "Artifacts, creatures, enchantments, and lands you control have indestructible.",
             "type": "Emblem — Elspeth",
-            "uuid": "a474450c-d91e-5bf7-8dbf-325a07293476"
+            "uuid": "0192173d-ab24-58a4-a8f2-09a2bf589b5d"
         }
     ],
     "totalSetSize": 26,

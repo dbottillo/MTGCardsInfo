@@ -141,12 +141,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126445,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2ad9d1faca981f3b",
             "text": "Enchant creature or Vehicle\nAs long as enchanted permanent is a Vehicle, it's a creature in addition to its other types.\nEnchanted creature gets +2/+2 and has flying.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "72a8a863-c09e-565b-9931-9a8ba4f1b9e4"
+            "uuid": "f4a5dd6d-5a51-524a-8b77-f3e04a677f53"
         },
         {
             "artist": "E. M. Gist",
@@ -274,13 +275,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126341,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b3a308e067271eb3",
             "text": "Flying\nVehicles you control have flying.",
             "toughness": "1",
             "type": "Creature — Human Pilot",
             "types": [
                 "Creature"
             ],
-            "uuid": "4ee4734f-3d37-55d3-8b85-c295b63e33d7"
+            "uuid": "ee63106a-d330-5869-b2af-7a3f22a2786f"
         },
         {
             "artist": "Sidharth Chaturvedi",
@@ -428,13 +430,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126448,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5296282b8933d99d",
             "text": "Vigilance\nWhen Aether Inspector enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Aether Inspector attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "3",
             "type": "Creature — Dwarf Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "06893552-1ed5-5c5e-ac41-a4884ab62819"
+            "uuid": "61e5efc5-19d7-5525-8d3d-adfe1af31db3"
         },
         {
             "artist": "Winona Nelson",
@@ -592,13 +595,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126342,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/30c35f995ab1fca3",
             "text": "Whenever Aethergeode Miner attacks, you get {E}{E} (two energy counters).\nPay {E}{E}: Exile Aethergeode Miner, then return it to the battlefield under its owner's control.",
             "toughness": "1",
             "type": "Creature — Dwarf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "dcc938ca-c027-5689-86b0-751f4dcf91ba"
+            "uuid": "857979ff-e86d-5513-b0b8-7b5fd3de90ef"
         },
         {
             "artist": "Greg Opalinski",
@@ -747,13 +751,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126453,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f1bc7d0dfffc6762",
             "text": "Flying\nRevolt — When Airdrop Aeronauts enters the battlefield, if a permanent you controlled left the battlefield this turn, you gain 5 life.",
             "toughness": "3",
             "type": "Creature — Dwarf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "6720b648-b598-59b2-a500-dc4f4e41a779"
+            "uuid": "24e2a3f9-e888-5694-811b-eabd89570121"
         },
         {
             "artist": "Scott Murphy",
@@ -878,12 +883,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126454,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/783a2ad6a1c57fba",
             "text": "Choose one —\n• Target creature you control gets +1/+2 until end of turn.\n• Return target creature you control to its owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d21051eb-baf4-59d0-bb36-e532245c894f"
+            "uuid": "13eb91b3-c522-575a-b2b9-8cceb4defac9"
         },
         {
             "artist": "Jakub Kasper",
@@ -1012,13 +1018,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126456,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3501d10b6bd869fc",
             "text": "Audacious Infiltrator can't be blocked by artifact creatures.",
             "toughness": "1",
             "type": "Creature — Dwarf Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc774996-cd4c-531c-8c46-c9633f24f5f4"
+            "uuid": "b49eb074-f05b-50e8-9d73-59c35076bc7f"
         },
         {
             "artist": "Matt Stewart",
@@ -1136,12 +1143,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126459,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76039a6633512565",
             "toughness": "2",
             "type": "Creature — Dwarf Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "5f69945b-9bac-5d9e-a861-3628d7749b7a"
+            "uuid": "f8aed228-6004-555c-b8cd-fb2800c71c07"
         },
         {
             "artist": "John Severin Brassell",
@@ -1287,12 +1295,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126427,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e8281f8b866b3609",
             "text": "Revolt — At the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a unity counter on Call for Unity.\nCreatures you control get +1/+1 for each unity counter on Call for Unity.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d62ed21a-0239-5f32-abc8-4c7927ee3176"
+            "uuid": "3752b67e-5629-5249-a8c8-75c42ea6c9e8"
         },
         {
             "artist": "Kieran Yanner",
@@ -1428,12 +1437,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126462,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/29b6588716595d2a",
             "text": "Enchant creature\nEnchanted creature can't attack or block.\nWhen a Vehicle you control attacks, exile enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "daf0db22-2368-5b81-b3c4-85e787c56fc9"
+            "uuid": "403403d4-f060-5979-9d69-1a0afd0d3ab1"
         },
         {
             "artist": "Jonas De Ro",
@@ -1583,12 +1593,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126016,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f0580bb481b780a2",
             "text": "When Consulate Crackdown enters the battlefield, exile all artifacts your opponents control until Consulate Crackdown leaves the battlefield.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "52380476-d8ca-50c4-b972-650de089f569",
+            "uuid": "6115ae0e-635f-5aaa-b4d1-e9e3c810963a",
             "watermark": "planeswalker"
         },
         {
@@ -1728,12 +1739,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126465,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3669a6a000ec4de1",
             "text": "Enchant creature\nEnchanted creature gets +1/+3.\n{W}: Return Conviction to its owner's hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "488634ed-6253-5fe8-9482-19032559e65c"
+            "uuid": "51ac1df1-5828-59b5-b574-fc52691dfee5"
         },
         {
             "artist": "Dan Scott",
@@ -1884,13 +1896,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126343,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c693514ada2dfbab",
             "text": "Revolt — When Countless Gears Renegade enters the battlefield, if a permanent you controlled left the battlefield this turn, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "2",
             "type": "Creature — Dwarf Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "6fa7a347-ebd4-5fcd-9367-1818e1b36f83"
+            "uuid": "cce1fe40-7796-5c83-9a96-1ea89849717d"
         },
         {
             "artist": "Sidharth Chaturvedi",
@@ -2027,13 +2040,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126471,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d4a978462623f7fb",
             "text": "Flying\nWhen Dawnfeather Eagle enters the battlefield, creatures you control get +1/+1 and gain vigilance until end of turn.",
             "toughness": "3",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "131db5e9-f70f-5625-bdc4-62b4f938d17f"
+            "uuid": "172281a9-6fe1-5993-93f0-bcf411e208e4"
         },
         {
             "artist": "Ryan Pancoast",
@@ -2182,13 +2196,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126472,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a0a99e24f058c94d",
             "text": "Revolt — When Deadeye Harpooner enters the battlefield, if a permanent you controlled left the battlefield this turn, destroy target tapped creature an opponent controls.",
             "toughness": "2",
             "type": "Creature — Dwarf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "881bb444-40d1-576e-ae80-eeea8ef2df96"
+            "uuid": "06d3780d-b98b-5bcc-b625-b5fe8579a1eb"
         },
         {
             "artist": "Josh Hass",
@@ -2338,12 +2353,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126320,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f6cbe31a19cd1da",
             "text": "Destroy target artifact or enchantment.\nRevolt — If a permanent you controlled left the battlefield this turn, you gain 3 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d31754a2-971c-587c-bacd-9c968c5f14a8"
+            "uuid": "0e56b256-b294-54dd-b4cc-0e5b6973607b"
         },
         {
             "artist": "Izzy",
@@ -2476,12 +2492,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126474,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b5742c984a7310fd",
             "text": "Deft Dismissal deals 3 damage divided as you choose among one, two, or three target attacking or blocking creatures.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b981a9f9-1eaa-55c0-bbdd-a0ddd3f6976b"
+            "uuid": "f508601e-0cf9-5131-979e-34db2b577311"
         },
         {
             "artist": "Brad Rigney",
@@ -2642,13 +2659,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126425,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93cab665910cb405",
             "text": "Flying\nIf you would lose the game, instead exile Exquisite Archangel and your life total becomes equal to your starting life total.",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "f2baa422-1699-5fe6-822f-19de4553e9f1"
+            "uuid": "847dbc79-4996-5031-89cd-0769326cff79"
         },
         {
             "artist": "Jakub Kasper",
@@ -2785,13 +2803,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126480,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f265a1e8aaa85207",
             "text": "When Felidar Guardian enters the battlefield, you may exile another target permanent you control, then return that card to the battlefield under its owner's control.",
             "toughness": "4",
             "type": "Creature — Cat Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "57549cae-3a96-58eb-a7f3-2f7cae9a2667"
+            "uuid": "461b7d76-d053-506a-bc75-6e3b32ba790f"
         },
         {
             "artist": "Zezhou Chen",
@@ -2919,13 +2938,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126485,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2c621fd655a067a8",
             "text": "Flying",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "208c7e87-84fb-50b4-9d65-078ccbdd9b28"
+            "uuid": "dab3f51c-7df3-59be-bb93-8c980115bf2f"
         },
         {
             "artist": "David Palumbo",
@@ -3058,13 +3078,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126523,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73e34db5296fb4f4",
             "text": "{W}, Sacrifice Restoration Specialist: Return up to one target artifact card and up to one target enchantment card from your graveyard to your hand.",
             "toughness": "1",
             "type": "Creature — Dwarf Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "9790bab9-e4cf-592f-9e9f-ab74a81069e5"
+            "uuid": "d17cb921-6f67-5437-b7f0-d18a07900d37"
         },
         {
             "artist": "Eric Deschamps",
@@ -3214,13 +3235,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126439,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6cf5acaf434ce26e",
             "text": "Double strike\nRevolt — At the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a +1/+1 counter on Solemn Recruit.",
             "toughness": "2",
             "type": "Creature — Dwarf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc3ad45d-303f-5c61-943f-b9e21903102e"
+            "uuid": "f81bdf7e-28d4-5c9f-9bc8-f4a84f6fee78"
         },
         {
             "artist": "Chris Rahn",
@@ -3355,13 +3377,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126326,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/09482abe3526384a",
             "text": "Whenever you cast an Aura, Equipment, or Vehicle spell, draw a card.",
             "toughness": "2",
             "type": "Legendary Creature — Dwarf Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "319f9b44-c0ed-58d4-8bc9-1e715cd2b950"
+            "uuid": "9a767770-b05d-5bfb-a1ea-beb0e56352f5"
         },
         {
             "artist": "Kieran Yanner",
@@ -3516,12 +3539,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126327,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d7b446ed79d56968",
             "text": "Create three 1/1 colorless Servo artifact creature tokens.\nYou may cast a card with converted mana cost 3 or less from your hand without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bfe2533e-d404-59ae-a563-3e2ea43705c1"
+            "uuid": "4a2f916a-de4c-5a1e-8796-657e821fe499"
         },
         {
             "artist": "Kieran Yanner",
@@ -3665,12 +3689,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126532,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d942c63433b5f808",
             "text": "When Thopter Arrest enters the battlefield, exile target artifact or creature an opponent controls until Thopter Arrest leaves the battlefield.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "df2bbfea-3044-5d5b-8447-2024a7e34ec7"
+            "uuid": "07d298bf-ee54-5d29-afb1-48606b5ab018"
         },
         {
             "artist": "James Ryman",
@@ -3818,13 +3843,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126450,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4a26149f70c2a9a4",
             "text": "Flying\nWhen Aether Swooper enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Aether Swooper attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "2",
             "type": "Creature — Vedalken Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "b1ba968c-f559-5ae5-a4ef-02b81dd7334e"
+            "uuid": "7a6f0849-b056-5022-beb1-8dc52ce49e08"
         },
         {
             "artist": "Steven Belledin",
@@ -3977,13 +4003,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126426,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/743fdece0ffe07a8",
             "text": "Flying\nWhen Aethertide Whale enters the battlefield, you get {E}{E}{E}{E}{E}{E} (six energy counters).\nPay {E}{E}{E}{E}: Return Aethertide Whale to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Whale",
             "types": [
                 "Creature"
             ],
-            "uuid": "13a22da2-5929-5c6f-8602-5e9ef01f9451"
+            "uuid": "00d4cb9a-313b-5361-a35b-5a1155d62b74"
         },
         {
             "artist": "Wesley Burt",
@@ -4126,13 +4153,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126405,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37f9423ffee4d872",
             "text": "Instant and sorcery spells you cast cost {1} less to cast.\nWhenever a spell or ability you control counters a spell, you may draw a card. If you do, discard a card.",
             "toughness": "3",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "58997770-2a8c-5843-8eeb-84b6dbfdcd82"
+            "uuid": "cfc9bcc6-3ebf-573f-89d0-738f03f946b7"
         },
         {
             "artist": "Todd Lockwood",
@@ -4294,12 +4322,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126540,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8969356ffcede53c",
             "text": "Return up to three target artifacts and/or creatures to their owners' hands.\nYou may cast a card with converted mana cost 4 or less from your hand without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "038367db-a320-532c-8b92-387c3abb4343"
+            "uuid": "81db816a-9c5c-5950-bf39-fbfdbfc719b2"
         },
         {
             "artist": "Tony Foti",
@@ -4461,13 +4490,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126460,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c8d9c0e498604991",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nHexproof (This creature can't be the target of spells or abilities your opponents control.)",
             "toughness": "4",
             "type": "Creature — Vedalken Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "2c4d302e-c31a-5601-aa79-3a9e1b7538a7"
+            "uuid": "d044ca99-8398-5528-a449-2eaccaa12dbf"
         },
         {
             "artist": "Min Yum",
@@ -4616,12 +4646,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126406,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d98c6e2bbdd23147",
             "text": "Counter target spell, activated ability, or triggered ability. (Mana abilities can't be targeted.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2e38cf5a-0846-5d2a-87e6-7d0b38d9ab93",
+            "uuid": "682bec10-742d-5a80-b7fc-37fcefb9ddb2",
             "watermark": "planeswalker"
         },
         {
@@ -4751,13 +4782,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126476,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/460c4b69f6eb4531",
             "text": "When Dispersal Technician enters the battlefield, you may return target artifact to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Vedalken Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "839078e4-b3f0-56d0-acf0-e83a7087d4fd"
+            "uuid": "a585531d-d7a8-5eb7-a2fc-51b7862934a7"
         },
         {
             "artist": "Jonas De Ro",
@@ -4887,12 +4919,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126477,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0aacd31cb18b8e24",
             "text": "Whenever you cast an artifact spell, create a 1/1 colorless Thopter artifact creature token with flying.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "43450054-be77-5e4f-9006-9cef9119e83a"
+            "uuid": "092bdab1-5e0a-55b3-9b2b-9e47a5e26fe2"
         },
         {
             "artist": "Lake Hurwitz",
@@ -5020,13 +5053,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126543,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5f096acc4fe42bd4",
             "text": "Flying\nHinterland Drake can't block artifact creatures.",
             "toughness": "3",
             "type": "Creature — Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "02dad7b8-60b3-5258-b24e-39a371c01bb4"
+            "uuid": "a5e1b17c-a575-59d5-958b-2525e8398c63"
         },
         {
             "artist": "Sidharth Chaturvedi",
@@ -5158,12 +5192,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126491,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2d4606f9af6d5228",
             "text": "Enchant artifact or creature\nEnchanted permanent doesn't untap during its controller's untap step.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "11f1ed7f-4248-5b98-b237-e4dd57b1aff9"
+            "uuid": "3d5571f9-9448-52c5-a21a-176b39c049bd"
         },
         {
             "artist": "Svetlin Velinov",
@@ -5308,12 +5343,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126492,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7cb5f76925e0d4e8",
             "text": "Exile up to two target creatures you control, then return those cards to the battlefield under their owner's control.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0bcfad73-77d9-5a6f-b9a9-36d1835e1cca"
+            "uuid": "79ff61be-76dd-5dd1-aff4-20be089f3f77"
         },
         {
             "artist": "Vincent Proce",
@@ -5443,12 +5479,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126499,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf1b8165dd25988b",
             "text": "Return target nonland permanent to its owner's hand.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "15538cec-2ee9-5a82-8aef-340de0215983"
+            "uuid": "686c1e72-3d53-5806-a0ac-b983b05984ad"
         },
         {
             "artist": "Adam Paquette",
@@ -5619,12 +5656,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126349,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f2e0863e0f428a46",
             "text": "Enchant artifact you control\nAt the beginning of your upkeep, create a token that's a copy of enchanted artifact. Then if you control eight or more artifacts with the same name as one another, you win the game.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "609ad3d4-13d8-5eea-a815-057cecb37987"
+            "uuid": "a14fbb28-6331-5591-8066-290c9ea93f9d"
         },
         {
             "artist": "Eric Deschamps",
@@ -5781,12 +5819,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126433,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5e1269cf99b4b600",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nCounter target spell unless its controller pays {3}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d7b96428-f127-5a36-bcd3-869b6d82ca3f"
+            "uuid": "a1505fa8-a541-55f8-8df9-c6b2ef632488"
         },
         {
             "artist": "Zack Stella",
@@ -5936,12 +5975,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126511,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d560b617be1dcd94",
             "text": "Counter target noncreature spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "09c6eddd-3e54-5079-9594-1431119cb4ea"
+            "uuid": "53678226-4a52-52a7-995c-1b2ca0aab158"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -6087,13 +6127,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126171,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2964b445087db17",
             "text": "When Quicksmith Spy enters the battlefield, target artifact you control gains \"{T}: Draw a card\" for as long as you control Quicksmith Spy.",
             "toughness": "3",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "fb44a5fa-31d7-5da7-9165-05491f35ee2a"
+            "uuid": "e1d1fbfc-56fe-5e89-a934-312f96623729"
         },
         {
             "artist": "Chase Stone",
@@ -6253,12 +6294,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126361,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5055adec798630f1",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nDraw three cards.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "16d924c3-cdbb-5793-ace4-05ea3e60773f"
+            "uuid": "56dedfe1-5f9a-5582-9ea1-66d50c310be7"
         },
         {
             "artist": "Tony Foti",
@@ -6390,13 +6432,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126525,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/14fc507ec38f4e3f",
             "text": "Whenever Salvage Scuttler attacks, return an artifact you control to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Crab",
             "types": [
                 "Creature"
             ],
-            "uuid": "7d22267b-e23d-5c3a-8a85-091062619bc6"
+            "uuid": "52f38472-244b-50a2-9afa-f507a216760c"
         },
         {
             "artist": "Lake Hurwitz",
@@ -6553,13 +6596,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126529,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/daa0de3959ebb71c",
             "text": "Flash (You may cast this spell any time you could cast an instant.)\nWhenever Shielded Aether Thief blocks, you get {E} (an energy counter).\n{T}, Pay {E}{E}{E}: Draw a card.",
             "toughness": "4",
             "type": "Creature — Vedalken Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "c3415f20-81bb-598f-8b1f-09a8478fbb38"
+            "uuid": "eedc5ebf-cb9d-5873-bfa1-c8ae4a82b68f"
         },
         {
             "artist": "Mike Bierek",
@@ -6712,13 +6756,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126324,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/16a5d4b85971bb42",
             "text": "When Shipwreck Moray enters the battlefield, you get {E}{E}{E}{E} (four energy counters).\nPay {E}: Shipwreck Moray gets +2/-2 until end of turn.",
             "toughness": "5",
             "type": "Creature — Fish",
             "types": [
                 "Creature"
             ],
-            "uuid": "8a66bdd3-9a52-58ad-b26b-72e7ef4dbe32"
+            "uuid": "f3524251-4c64-5d38-9d0d-19279b062b2e"
         },
         {
             "artist": "Slawomir Maniak",
@@ -6859,13 +6904,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126438,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90c70c301a8ef44b",
             "text": "Flying\nWhenever Skyship Plunderer deals combat damage to a player, for each kind of counter on target permanent or player, give that permanent or player another counter of that kind.",
             "toughness": "1",
             "type": "Creature — Human Pirate",
             "types": [
                 "Creature"
             ],
-            "uuid": "1dbed76d-c5ea-5c70-80eb-949eadd65760"
+            "uuid": "d7d4b7d1-782d-59d0-90e9-f864cde4c8cd"
         },
         {
             "artist": "David Palumbo",
@@ -6995,12 +7041,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126531,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b111faceb2a13ce",
             "text": "Tap target creature. It doesn't untap during its controller's next untap step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a5b8f946-0d92-5607-a7f9-7891d54d04f0"
+            "uuid": "9ac7ec4c-8188-5707-84ff-e3f129c8d850"
         },
         {
             "artist": "Anna Steinbauer",
@@ -7136,13 +7183,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 125849,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e53954f79cadd27",
             "text": "When Trophy Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 3, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b5f140ee-8a36-5876-ac49-4b8b7851fd8e"
+            "uuid": "863e7853-aa38-5f96-8274-98c3740198dd"
         },
         {
             "artist": "Christine Choi",
@@ -7292,12 +7340,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126329,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cdb2792ea7970a92",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nSearch your library for an artifact card with converted mana cost X or less, put it onto the battlefield, then shuffle your library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "f5dd67ce-6b99-5b89-9f7f-b4eb8bd252ed"
+            "uuid": "2a9d9cb3-c811-56c8-90b6-5634c3a25277"
         },
         {
             "artist": "Shreya Shetty",
@@ -7458,13 +7507,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126538,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2c0578fa3ac0dcb6",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying",
             "toughness": "3",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "7667cffa-f0a0-5bf6-8229-37c84bbe96a4"
+            "uuid": "fc426a00-22cc-5051-a3c7-25d8da6f0b2b"
         },
         {
             "artist": "Yongjae Choi",
@@ -7612,13 +7662,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126449,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f7d9c492d86c9deb",
             "text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nWhen Aether Poisoner enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Aether Poisoner attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "43bd4022-312f-5f50-972e-5d12e07bc357"
+            "uuid": "296393f0-665e-584b-96ea-1fec2094bd37"
         },
         {
             "artist": "Efflam Mercier",
@@ -7747,13 +7798,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126455,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/152865f696948d8c",
             "text": "Menace",
             "toughness": "3",
             "type": "Creature — Aetherborn Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "1d3f20a0-46d1-5498-b1f6-3ed201873072"
+            "uuid": "9bbad5ec-bd17-5425-80f0-efb8c62bcc24"
         },
         {
             "artist": "Chris Rallis",
@@ -7923,12 +7975,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126461,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fd51ce2b9bc2cb7d",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nTarget creature gets -X/-X until end of turn. You gain X life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "01b9b7ae-27e2-564a-b53b-e181db2774f6",
+            "uuid": "ffe10941-348f-5e99-81ce-e8812d78c744",
             "watermark": "planeswalker"
         },
         {
@@ -8059,12 +8112,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126467,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/546a8c4e6f28fb31",
             "text": "Target creature gets -2/-2 until end of turn. Scry 1. (Look at the top card of your library. You may put that card on the bottom of your library.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fc4ad50b-2dd7-51ca-bca3-85075cb60a89"
+            "uuid": "e00dfed0-4dab-576d-a89c-dcb49172fe82"
         },
         {
             "artist": "Svetlin Velinov",
@@ -8189,12 +8243,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126469,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4545cd3e463787fd",
             "text": "Destroy target creature or Vehicle.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "86f61b8f-593c-5615-adec-5e39346a5ac7"
+            "uuid": "2d775c42-3ec0-572a-93b8-727c6f23d23d"
         },
         {
             "artist": "Volkan Baga",
@@ -8332,13 +8387,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126473,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4096939ab813b3bc",
             "text": "Sacrifice an artifact or creature: Put a +1/+1 counter on Defiant Salvager. Activate this ability only any time you could cast a sorcery.",
             "toughness": "2",
             "type": "Creature — Aetherborn Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1101b46-f912-546a-b2e8-d758c5e12bd4"
+            "uuid": "22e7474d-ccc8-5d85-b12a-12f5018c2f1d"
         },
         {
             "artist": "Eric Deschamps",
@@ -8477,12 +8533,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126331,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/691889b77684073d",
             "text": "Destroy target creature if it has converted mana cost 2 or less.\nRevolt — Destroy that creature if it has converted mana cost 4 or less instead if a permanent you controlled left the battlefield this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fbb9f6c3-74c2-5353-8689-1a22e0607d45"
+            "uuid": "ef07e2df-64fa-5e15-b7ab-a36a00402c81"
         },
         {
             "artist": "Sidharth Chaturvedi",
@@ -8643,13 +8700,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126481,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ff25eb9b281d13a9",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFen Hauler can't be blocked by artifact creatures.",
             "toughness": "5",
             "type": "Creature — Insect",
             "types": [
                 "Creature"
             ],
-            "uuid": "6e639e87-599a-5ae2-98d7-1afebaa23738"
+            "uuid": "9668ce09-9c6e-50ad-b930-3b5e4ee44a55"
         },
         {
             "artist": "Christopher Moeller",
@@ -8789,13 +8847,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126483,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3e4f4465a585e8d4",
             "text": "Flying\nWhen Foundry Hornet enters the battlefield, if you control a creature with a +1/+1 counter on it, creatures your opponents control get -1/-1 until end of turn.",
             "toughness": "3",
             "type": "Creature — Insect",
             "types": [
                 "Creature"
             ],
-            "uuid": "c5910f87-0f97-55be-a85f-2a27f5a62191"
+            "uuid": "5e2ce929-3ef7-5497-9792-4fdc0eb745ec"
         },
         {
             "artist": "John Silva",
@@ -8929,13 +8988,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126484,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f1cb34a997df2d2a",
             "text": "When Fourth Bridge Prowler enters the battlefield, you may have target creature get -1/-1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "c7d9c7e2-6a1d-5752-9f7a-aeb432f18f4c"
+            "uuid": "c2622287-7577-5f32-8225-d3e103ac05a3"
         },
         {
             "artist": "Ryan Yee",
@@ -9062,13 +9122,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126428,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4cbd42ece32b961f",
             "text": "Deathtouch, lifelink",
             "toughness": "3",
             "type": "Creature — Aetherborn Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a3ca2a0-4d86-5f82-9be6-85c15b162626"
+            "uuid": "b58b0c75-3677-5788-a83f-c09a3a0c7322"
         },
         {
             "artist": "Greg Opalinski",
@@ -9218,13 +9279,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126346,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c6da25c0313fcd5",
             "text": "Menace\nWhenever Glint-Sleeve Siphoner enters the battlefield or attacks, you get {E} (an energy counter).\nAt the beginning of your upkeep, you may pay {E}{E}. If you do, you draw a card and you lose 1 life.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "0454eb89-8cb6-5bb7-bd01-a9c0d85d4440"
+            "uuid": "20953ec2-2e25-5d38-8bee-dc64477c6356"
         },
         {
             "artist": "Daarken",
@@ -9385,12 +9447,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126486,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0fea2984e556d2f7",
             "text": "Whenever you lose life for the first time each turn, you get {E}. (You get an energy counter. Damage causes loss of life.)\nPay {E}{E}, Sacrifice Gonti's Machinations: Each opponent loses 3 life. You gain life equal to the life lost this way.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "caed5ab4-22dd-5009-928b-f370d50e5d7e"
+            "uuid": "29ca9ddb-954a-54e3-bdf1-d8851512fcf5"
         },
         {
             "artist": "Vincent Proce",
@@ -9539,13 +9602,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126487,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f027adef5c00d81a",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying\nAt the beginning of your end step, each opponent discards a card.\n{1}{B}, Sacrifice an artifact: Target creature gets -2/-2 until end of turn.",
             "toughness": "5",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "179481a0-e80a-59eb-a21b-b8258c03dce6"
+            "uuid": "a880a482-4b39-5238-b3b7-f7c6d6e08e7c"
         },
         {
             "artist": "Eric Deschamps",
@@ -9686,13 +9750,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126494,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5fa3d9de66f03ea8",
             "text": "When Ironclad Revolutionary enters the battlefield, you may sacrifice an artifact. If you do, put two +1/+1 counters on Ironclad Revolutionary and each opponent loses 2 life.",
             "toughness": "4",
             "type": "Creature — Aetherborn Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "26359040-2e57-5d4e-91d8-dbdb0b3cee1c"
+            "uuid": "8fcfbef6-7376-5a0a-9eef-945107967174"
         },
         {
             "artist": "Lius Lasahido",
@@ -9823,13 +9888,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126506,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e09b140ede413845",
             "text": "Other Aetherborn you control get +1/+1.\nWhenever Midnight Entourage or another Aetherborn you control dies, you draw a card and you lose 1 life.",
             "toughness": "3",
             "type": "Creature — Aetherborn Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "9a84ef7c-178d-5166-8bad-ebfdea3e272e"
+            "uuid": "321de780-46ba-5cb3-991a-6a3ffb17c1ef"
         },
         {
             "artist": "Tyler Jacobson",
@@ -9975,13 +10041,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126322,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa82a0919ddf6e69",
             "text": "Flying\nRevolt — Night Market Aeronaut enters the battlefield with a +1/+1 counter on it if a permanent you controlled left the battlefield this turn.",
             "toughness": "2",
             "type": "Creature — Aetherborn Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8b7db2c4-d1ff-5d4f-b4e3-d5d6f86ce434"
+            "uuid": "c4e053f6-389b-5ccf-a71d-0eefd0bdb8a1"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -10114,12 +10181,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126514,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79f03c784a6005b0",
             "text": "Each opponent sacrifices an artifact creature and a nonartifact creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6b6f6f02-04fd-5d73-8619-fa3d6ef31a48"
+            "uuid": "9ffa3b70-7730-53dd-9a98-61fbea2fa58d"
         },
         {
             "artist": "Ryan Yee",
@@ -10254,12 +10322,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126520,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/803ca982d6461e29",
             "text": "Target permanent gains indestructible until end of turn. Create a 1/1 colorless Servo artifact creature token. (Effects that say \"destroy\" don't destroy a permanent with indestructible, and if it's a creature, it can't be destroyed by damage.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "44a88a22-79ba-5d06-9ab2-7a7924945771"
+            "uuid": "31c0bdbe-019b-50f3-98ea-486810a7fb8d"
         },
         {
             "artist": "Titus Lunter",
@@ -10393,12 +10462,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126522,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/991d85fec65f6f2a",
             "text": "Return target creature card from your graveyard to your hand. If you control an artifact, draw a card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "763806db-c342-59a2-b4e6-e6f1eb5527fb"
+            "uuid": "e67ef785-041d-5003-baba-1c901713d61d"
         },
         {
             "artist": "Tommy Arnold",
@@ -10523,12 +10593,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126421,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c4dc481719c6f885",
             "text": "Exile target nonland card from your graveyard. Search your library for any number of cards with the same name as that card, reveal them, and put them into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3d8638b2-bee4-575b-a67b-22be1c1286f6"
+            "uuid": "a3523430-eb83-5e51-9364-9316ac2031f2"
         },
         {
             "artist": "Dan Scott",
@@ -10683,13 +10754,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126530,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/85f08737868a3aee",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhenever a nontoken artifact you control is put into a graveyard from the battlefield, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "2",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "c1581907-1c93-5d6b-97aa-94421584c0d7"
+            "uuid": "46cb980e-5e90-5419-ba38-28a6c1c23650"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -10838,13 +10910,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126442,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c28db939eb3e5b45",
             "text": "Revolt — When Vengeful Rebel enters the battlefield, if a permanent you controlled left the battlefield this turn, target creature an opponent controls gets -3/-3 until end of turn.",
             "toughness": "2",
             "type": "Creature — Aetherborn Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "c435f259-01d2-5b6e-968d-0b492f7a86b5"
+            "uuid": "3cce2095-49e5-5443-b99f-c04fc810ea96"
         },
         {
             "artist": "Lius Lasahido",
@@ -10979,13 +11052,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126374,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/91dcf97643ac1369",
             "text": "Haste\nWhenever a creature an opponent controls dies, put a +1/+1 counter on Yahenni, Undying Partisan.\nSacrifice another creature: Yahenni gains indestructible until end of turn.",
             "toughness": "2",
             "type": "Legendary Creature — Aetherborn Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "4de358a5-0bba-5848-bd41-cc1a8a085f85"
+            "uuid": "7a9a9c46-5ee7-562c-8bd3-762e7edb5a40"
         },
         {
             "artist": "Daarken",
@@ -11143,12 +11217,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 125848,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5e9b3c2808b9ee49",
             "text": "All creatures get -3/-3 until end of turn.\nYou may cast a card with converted mana cost 3 or less from your hand without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "acae6f12-1352-59b9-bd48-edc7cc0eebdf"
+            "uuid": "74bc18eb-a942-51b6-b6b0-2e4fbd3cc7f3"
         },
         {
             "artist": "Jason Rainville",
@@ -11296,13 +11371,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126446,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf78e8d69fd839b4",
             "text": "First strike\nWhen Aether Chaser enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Aether Chaser attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "1",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "d4a80ead-b26c-544a-99a3-859b3207298c"
+            "uuid": "990ad94c-9eb8-5760-b244-b8bcad088eb1"
         },
         {
             "artist": "Clint Cearley",
@@ -11432,12 +11508,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126463,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f1017d852ddc7464",
             "text": "Chandra's Revolution deals 4 damage to target creature. Tap target land. That land doesn't untap during its controller's next untap step.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ed5b68b6-b108-5bc3-93c5-2b5c26e897c4"
+            "uuid": "e34ce0b3-ee7a-5269-b8c9-a03db46009b1"
         },
         {
             "artist": "Titus Lunter",
@@ -11571,12 +11648,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126475,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b8071df47b872911",
             "text": "Choose one —\n• Destroy target artifact.\n• Creatures without flying can't block this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c665b93c-e036-5060-8eb3-3944e026d38d"
+            "uuid": "d8fbd276-4922-525a-9cd7-187a7d9c883e"
         },
         {
             "artist": "Joseph Meehan",
@@ -11710,13 +11788,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126478,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1789e05a1bde88fe",
             "text": "{T}, Sacrifice an artifact: Embraal Gear-Smasher deals 2 damage to each opponent.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "b9a77157-908d-5256-8761-e8a4345e4f73"
+            "uuid": "ab54a3ad-a012-5cf9-a6c1-3f6e1a18acd9"
         },
         {
             "artist": "Anthony Palumbo",
@@ -11876,13 +11955,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126479,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e17377e8815cf6a0",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nTrample, haste",
             "toughness": "4",
             "type": "Creature — Giant",
             "types": [
                 "Creature"
             ],
-            "uuid": "e2f64961-90ec-5b48-8f9a-2bfd616c7ca3"
+            "uuid": "3f264da1-77c2-5931-bc23-b09aae98abe4"
         },
         {
             "artist": "Volkan Baga",
@@ -12043,13 +12123,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126344,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7ffc93f0f6388042",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying\n{1}{R}: Freejam Regent gets +2/+0 until end of turn.",
             "toughness": "4",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "da58d18a-f5ba-5d8d-b086-1695a5b44b74"
+            "uuid": "71b93f85-9080-5fcc-919a-0d0c9f38c51c"
         },
         {
             "artist": "Winona Nelson",
@@ -12183,13 +12264,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126541,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1bd3ba78c0f2d1a5",
             "text": "Frontline Rebel attacks each combat if able.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "d8d2cd43-fc30-5a1d-8cb0-f3fa03cc5382"
+            "uuid": "5bbd59a5-be3a-5bfb-99aa-15bb16bde9db"
         },
         {
             "artist": "Slawomir Maniak",
@@ -12310,12 +12392,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126542,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f46585e046d1798",
             "text": "Enchant artifact\nAt the beginning of your end step, Gremlin Infestation deals 2 damage to enchanted artifact's controller.\nWhen enchanted artifact is put into a graveyard, create a 2/2 red Gremlin creature token.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "99baa60e-74ab-5479-8dea-744b8ec3d7d8"
+            "uuid": "4e2bae1c-8709-5f01-82ce-4b0e928d1f56"
         },
         {
             "artist": "Izzy",
@@ -12444,12 +12527,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126348,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/58fb191ff45a85f4",
             "text": "Hungry Flames deals 3 damage to target creature and 2 damage to target player or planeswalker.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2b3398a3-ff88-59c9-89ee-7d5db4a01cbc"
+            "uuid": "acfcb3d7-6068-5059-aa82-5da36ebe7907"
         },
         {
             "artist": "Deruchenko Alexander",
@@ -12583,12 +12667,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126431,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93a1ca2c108f0db8",
             "text": "Destroy X target artifacts and/or creatures. For each permanent destroyed this way, its controller reveals cards from the top of their library until an artifact or creature card is revealed and exiles that card. Those players put the exiled cards onto the battlefield, then shuffle their libraries.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "534ec3f1-7284-5c7a-ba6b-cd626fc819f5"
+            "uuid": "51341c58-4839-502d-bed8-13c3dcba98e7"
         },
         {
             "artist": "Craig J Spearing",
@@ -12717,12 +12802,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126493,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9a5e57d8ba667d0",
             "text": "Choose one —\n• Target creature gets +4/+0 and gains trample until end of turn.\n• Two target creatures each get +2/+0 and gain trample until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e1ba8a85-276d-5f53-89ad-fddd3c042a05"
+            "uuid": "1f1a45f8-8272-5c20-a766-0d3c0d4ec642"
         },
         {
             "artist": "Brad Rigney",
@@ -12866,13 +12952,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126496,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/61d8fc8783a6bdaf",
             "text": "First strike, menace\nWhenever Kari Zev, Skyship Raider attacks, create a legendary 2/1 red Monkey creature token named Ragavan that's tapped and attacking. Exile that token at end of combat.",
             "toughness": "3",
             "type": "Legendary Creature — Human Pirate",
             "types": [
                 "Creature"
             ],
-            "uuid": "ffbc1700-ede9-58c8-840e-aae4687a6342"
+            "uuid": "9d9e5731-f3e7-5e3b-a82b-6ab371a87e95"
         },
         {
             "artist": "Jason Rainville",
@@ -13033,12 +13120,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126497,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25537058782ef384",
             "text": "Gain control of target creature or Vehicle until end of turn. Untap it. It gains haste until end of turn.\nYou may cast a card with converted mana cost 2 or less from your hand without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5698c1d1-070e-5f0b-9e10-1ec8214cd904"
+            "uuid": "0f379d8b-e6a7-50bf-b679-046a2640ca8d"
         },
         {
             "artist": "Christopher Burdett",
@@ -13155,12 +13243,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126498,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9795c783d85a581c",
             "toughness": "4",
             "type": "Creature — Lizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "5db27b9a-f4fe-5e9d-8068-7603ed82fa35"
+            "uuid": "51b71993-a0d8-51d1-83cb-7d36eb58f092"
         },
         {
             "artist": "Raymond Swanland",
@@ -13322,13 +13411,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126432,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9ecbcd3925736ab4",
             "text": "Double strike, haste\nWhenever Lightning Runner attacks, you get {E}{E} (two energy counters), then you may pay {E}{E}{E}{E}{E}{E}{E}{E}. If you pay, untap all creatures you control, and after this phase, there is an additional combat phase.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "2282a798-8fe6-5f9f-bd19-09102320c44d"
+            "uuid": "d3eda713-31b8-592b-939b-3201cea1ef0f"
         },
         {
             "artist": "Clint Cearley",
@@ -13474,12 +13564,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126323,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c3316a1f47d827d0",
             "text": "Whenever a nontoken artifact is put into your graveyard from the battlefield, return that card to your hand unless target opponent has Pia's Revolution deal 3 damage to them.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5bdfbb50-b3fb-5841-976c-dfde1f9990e4",
+            "uuid": "c097f95e-e4db-5e04-bbe2-93e4c2441ef1",
             "watermark": "planeswalker"
         },
         {
@@ -13605,12 +13696,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126515,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3dcf5c2ecd2f4c7f",
             "text": "Target creature gets +1/+0 and gains first strike until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "1025332a-c1b4-5b03-94aa-1aae496181c9"
+            "uuid": "2c294486-4ca3-53f4-812d-3f12db3d8b50"
         },
         {
             "artist": "Kieran Yanner",
@@ -13757,13 +13849,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 125851,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d5392717ea95c878",
             "text": "When Quicksmith Rebel enters the battlefield, target artifact you control gains \"{T}: This artifact deals 2 damage to any target\" for as long as you control Quicksmith Rebel.",
             "toughness": "2",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "ca36a7a6-faf7-501d-b13e-409084a2bb2a"
+            "uuid": "645cc953-9c63-53bf-a3ab-fcaf08781df4"
         },
         {
             "artist": "Mathias Kollros",
@@ -13890,13 +13983,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126518,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7bd14fa7c3cf101f",
             "text": "Sacrifice an artifact: Ravenous Intruder gets +2/+2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Gremlin",
             "types": [
                 "Creature"
             ],
-            "uuid": "ed851ce0-8b02-5652-902b-7ca5d82ea2cc"
+            "uuid": "f57c58dc-dc6f-5231-ae06-6b92b09a48cb"
         },
         {
             "artist": "Viktor Titov",
@@ -14033,13 +14127,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126519,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5217fb660b613b97",
             "text": "First strike\nWhenever Reckless Racer becomes tapped, you may discard a card. If you do, draw a card.",
             "toughness": "3",
             "type": "Creature — Human Pilot",
             "types": [
                 "Creature"
             ],
-            "uuid": "e4b89c47-8dfd-5e28-834f-a5fff88e19e6"
+            "uuid": "af8cfab0-3ab9-58fb-8ea6-5bec1ce64479"
         },
         {
             "artist": "Izzy",
@@ -14178,12 +14273,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126417,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/50b3d33e63405f5f",
             "text": "Destroy X target artifacts. Create X 2/2 red Gremlin creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6516c4ee-4e8b-5007-85b7-c141a29f8d86"
+            "uuid": "7d3cc217-eb32-5ad5-90f0-260c0ddf1389"
         },
         {
             "artist": "Magali Villeneuve",
@@ -14329,13 +14425,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126526,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5856a51b3597913f",
             "text": "Double strike (This creature deals both first-strike and regular combat damage.)\nWhen Scrapper Champion enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Scrapper Champion attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.",
             "toughness": "2",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "31d962a4-c6a2-5641-8255-74803e974ad9"
+            "uuid": "9066f307-6230-5d58-8e7e-85f7cc700b5d"
         },
         {
             "artist": "Jason Rainville",
@@ -14482,12 +14579,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126437,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e6c8d5d38727c6a",
             "text": "Shock deals 2 damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d19b8881-3e2b-57e7-b44d-ab6b9420f7ef"
+            "uuid": "4a08e5f4-873f-5d3b-9e79-6a385515505d"
         },
         {
             "artist": "Sung Choi",
@@ -14618,12 +14716,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126365,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bc555111fc2d0c3e",
             "text": "Enchant creature or Vehicle\nAs long as enchanted permanent is a Vehicle, it's a creature in addition to its other types.\nEnchanted creature gets +3/+0 and has first strike.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "8d3d1255-eb14-5b4e-b33c-6916a4ad6720"
+            "uuid": "10a1388c-eb2a-56e6-83bd-25d64eac58b6"
         },
         {
             "artist": "Zack Stella",
@@ -14785,13 +14884,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126328,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9709758345e7aa13",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nMenace",
             "toughness": "3",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "3cfd1e0f-48f2-59be-9fed-1197de50434b"
+            "uuid": "09efc90e-cdbb-568c-b0f0-9c68dd5ff29c"
         },
         {
             "artist": "Jason Rainville",
@@ -14925,12 +15025,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126539,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7f4c0e23fa99f45e",
             "text": "Gain control of target creature with power 4 or less until end of turn. Untap that creature. It gains haste until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f0b19a28-7686-5a6c-b197-138aa401a38b"
+            "uuid": "e3e5d412-9039-59b6-baf5-cae41b04be6c"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -15079,13 +15180,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126447,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/778bd4caa8113886",
             "text": "When Aether Herder enters the battlefield, you get {E}{E} (two energy counters).\nWhenever Aether Herder attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
             "toughness": "3",
             "type": "Creature — Elf Artificer Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "f5d6c928-e220-5847-89d7-62bfaf585761"
+            "uuid": "1b84e8ac-5ecc-52ba-af13-de6b64c6fb8f"
         },
         {
             "artist": "Winona Nelson",
@@ -15231,13 +15333,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126452,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6e4b251a683d4556",
             "text": "Trample\nWhen Aetherstream Leopard enters the battlefield, you get {E} (an energy counter).\nWhenever Aetherstream Leopard attacks, you may pay {E}. If you do, it gets +2/+0 until end of turn.",
             "toughness": "3",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "70984430-f9cd-5ee5-9eca-df9b3ab3b210"
+            "uuid": "9201852c-92ed-5f1f-8a3b-96f9c951bba6"
         },
         {
             "artist": "Svetlin Velinov",
@@ -15398,13 +15501,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126345,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4437226e1b678c30",
             "text": "Trample\nWhenever Aetherwind Basker enters the battlefield or attacks, you get {E} (an energy counter) for each creature you control.\nPay {E}: Aetherwind Basker gets +1/+1 until end of turn.",
             "toughness": "7",
             "type": "Creature — Lizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "aa9d28b1-83eb-5a72-a018-bd720e8eada6"
+            "uuid": "affaea58-8266-5264-9fc7-07c2de07c3f8"
         },
         {
             "artist": "Viktor Titov",
@@ -15551,12 +15655,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126404,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bd96c6628f8dd4a7",
             "text": "Revolt — At the beginning of your end step, if a permanent you controlled left the battlefield this turn, reveal the top card of your library. If it's a permanent card, you may put it onto the battlefield. Otherwise, you may put it on the bottom of your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "05076b9c-424a-53b6-8f74-e7f7cfc0c1ba"
+            "uuid": "cd5ca0c7-1dfb-5e5f-ade3-317e4502d76f"
         },
         {
             "artist": "Magali Villeneuve",
@@ -15689,13 +15794,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126407,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2708289b8f6dc988",
             "text": "{T}: Add {G}.",
             "toughness": "3",
             "type": "Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "25fc1e62-e303-5d64-8c97-af0097e1e810"
+            "uuid": "b4dede35-9816-51cc-8f61-4fd4ed0a92f4"
         },
         {
             "artist": "Filip Burburan",
@@ -15855,13 +15961,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126347,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a89d536e5e156d77",
             "text": "When Greenbelt Rampager enters the battlefield, pay {E}{E} (two energy counters). If you can't, return Greenbelt Rampager to its owner's hand and you get {E}.",
             "toughness": "4",
             "type": "Creature — Elephant",
             "types": [
                 "Creature"
             ],
-            "uuid": "7aa33d63-0e81-5aec-8c8c-74b9554355e9"
+            "uuid": "71321e1d-94da-5a87-a6a8-5d5d571256e5"
         },
         {
             "artist": "Todd Lockwood",
@@ -16007,13 +16114,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126318,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26231f2167b406fb",
             "text": "Revolt — Greenwheel Liberator enters the battlefield with two +1/+1 counters on it if a permanent you controlled left the battlefield this turn.",
             "toughness": "1",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "2ad3438b-8898-5d27-beda-eaaea190111d"
+            "uuid": "f490ec4a-9537-5972-b36d-9a3c13b338e4"
         },
         {
             "artist": "James Ryman",
@@ -16142,12 +16250,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126488,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f76b0ba5d3bdc6ad",
             "text": "Permanents you control gain hexproof and indestructible until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "72992682-51ef-51f3-990e-e7f655913a18"
+            "uuid": "dfff8c3b-b723-54a7-a53c-8dfcfc668417"
         },
         {
             "artist": "Bastien L. Deharme",
@@ -16296,13 +16405,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126489,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5feb816d6235121c",
             "text": "Revolt — When Hidden Herbalists enters the battlefield, if a permanent you controlled left the battlefield this turn, add {G}{G}.",
             "toughness": "2",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "e02076ae-16dd-5ad2-84e6-ec9f5c2fea73"
+            "uuid": "d4ae9b10-d767-5e86-91ab-4ecd323142fe"
         },
         {
             "artist": "Anna Steinbauer",
@@ -16456,12 +16566,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126490,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9638dc6bcf4a9a2d",
             "text": "Target creature gets +3/+3 until end of turn. You get {E}{E} (two energy counters).",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "002acfb2-5351-5cb6-b438-fa9783637339"
+            "uuid": "0d7737c8-7382-5498-8185-9fc7fdf1bf0e"
         },
         {
             "artist": "Raoul Vitale",
@@ -16602,12 +16713,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126500,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ba3e43e0d485aaf2",
             "text": "Put X +1/+1 counters on target artifact you control. If it isn't a creature or Vehicle, it becomes a 0/0 Construct artifact creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "edead7d1-1840-58eb-924b-43a1f295ca83"
+            "uuid": "06c75bb2-dbaa-5e9f-97f2-69d047fd87dd"
         },
         {
             "artist": "Svetlin Velinov",
@@ -16753,13 +16865,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126501,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6f2234112ce0b9b9",
             "text": "Trample\nRevolt — Lifecraft Cavalry enters the battlefield with two +1/+1 counters on it if a permanent you controlled left the battlefield this turn.",
             "toughness": "4",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "8994040d-1c54-5a91-9120-1546c96da531"
+            "uuid": "8b95ae8e-cbf2-5db2-933a-f9fc0608c748"
         },
         {
             "artist": "Winona Nelson",
@@ -16900,12 +17013,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126503,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/abcef9da487868f7",
             "text": "Put a +1/+1 counter on target creature, then put a +1/+1 counter on each creature you control with a +1/+1 counter on it.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "444f58a5-dd50-573d-a7db-d5e19adb9062"
+            "uuid": "10ace74e-87ed-5b8e-9d99-2d5449a8e84f"
         },
         {
             "artist": "Scott Murphy",
@@ -17035,13 +17149,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126504,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/966ae273919d0843",
             "text": "Trample\nWhen Maulfist Revolutionary enters the battlefield or dies, for each kind of counter on target permanent or player, give that permanent or player another counter of that kind.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "b54b8ef4-024f-512b-9037-26f866c2e150"
+            "uuid": "363413ca-6fd4-5aab-bf60-704b0c6818e3"
         },
         {
             "artist": "Slawomir Maniak",
@@ -17182,12 +17297,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126508,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dca87dec7c3cae21",
             "text": "Monstrous Onslaught deals X damage divided as you choose among any number of target creatures, where X is the greatest power among creatures you control as you cast this spell.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4195031b-4d87-5ff9-9839-cc1e6c75ee2b"
+            "uuid": "7614c3fd-3616-50d3-824a-61087aa75ccb"
         },
         {
             "artist": "Greg Opalinski",
@@ -17331,13 +17447,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126509,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9d941cd014e29cf9",
             "text": "Deathtouch\nRevolt — Narnam Renegade enters the battlefield with a +1/+1 counter on it if a permanent you controlled left the battlefield this turn.",
             "toughness": "2",
             "type": "Creature — Elf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "aad12602-1058-5eff-8f26-a35ec5d8e4c8"
+            "uuid": "8b6345a6-27a3-5114-9a8e-8f522610994e"
         },
         {
             "artist": "Eytan Zana",
@@ -17462,12 +17579,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126510,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/18e24ecae9590f52",
             "text": "Put target artifact on the bottom of its owner's library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "de6d9393-e744-5c6a-921e-3b2d7f4abc0c"
+            "uuid": "967b5627-b012-5ab1-9e43-8e380538a28c"
         },
         {
             "artist": "Howard Lyon",
@@ -17632,13 +17750,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126513,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b643371c0721686",
             "text": "When Peema Aether-Seer enters the battlefield, you get an amount of {E} (energy counters) equal to the greatest power among creatures you control.\nPay {E}{E}{E}: Target creature blocks this turn if able.",
             "toughness": "2",
             "type": "Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c551079-3545-554c-a297-d9abe381125a"
+            "uuid": "cf2a95a2-4d88-52df-87e4-a2438f36edce"
         },
         {
             "artist": "Ryan Pancoast",
@@ -17779,12 +17898,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126516,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8bfaa1e5b2ecbec5",
             "text": "Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f4b55e37-5358-57a2-98c8-8e9ec8a6132b"
+            "uuid": "9cb6682d-5471-5307-8dc1-af71f27ab386"
         },
         {
             "artist": "Winona Nelson",
@@ -17911,13 +18031,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126524,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8e98dc263a871c86",
             "text": "When Ridgescale Tusker enters the battlefield, put a +1/+1 counter on each other creature you control.",
             "toughness": "5",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "28fda2ce-e8f5-5d69-8c64-06ef1083a19d"
+            "uuid": "43100b51-b91f-5c14-ab24-4086cdbf7856"
         },
         {
             "artist": "Todd Lockwood",
@@ -18060,13 +18181,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126363,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9ff0bd9e07e59349",
             "text": "When Rishkar, Peema Renegade enters the battlefield, put a +1/+1 counter on each of up to two target creatures.\nEach creature you control with a counter on it has \"{T}: Add {G}.\"",
             "toughness": "2",
             "type": "Legendary Creature — Elf Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "356c5c40-d392-5235-aff2-14a20d6d9dec"
+            "uuid": "c4bfb1e5-91dd-5786-b6ca-e039ca9ba3e8"
         },
         {
             "artist": "Magali Villeneuve",
@@ -18232,12 +18354,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126419,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/541c1b3676200554",
             "text": "Draw cards equal to the greatest power among creatures you control.\nYou may cast a card with converted mana cost 5 or less from your hand without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "dd006cd3-5fe3-5fe5-af68-daa6d96adda7"
+            "uuid": "c66ebc30-84b9-559f-9d9b-7a970d24437a"
         },
         {
             "artist": "Shreya Shetty",
@@ -18375,13 +18498,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126527,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/134fd4e99e6382e0",
             "text": "Scrounging Bandar enters the battlefield with two +1/+1 counters on it.\nAt the beginning of your upkeep, you may move any number of +1/+1 counters from Scrounging Bandar onto another target creature.",
             "toughness": "0",
             "type": "Creature — Cat Monkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "cabaa4de-15f5-53e9-a17f-ac603233a6ff"
+            "uuid": "8d5efe23-01ab-55ca-8b06-c2433badd89a"
         },
         {
             "artist": "Magali Villeneuve",
@@ -18531,13 +18655,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126325,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6cfb0824500d5a0c",
             "text": "Reach (This creature can block creatures with flying.)\nRevolt — When Silkweaver Elite enters the battlefield, if a permanent you controlled left the battlefield this turn, draw a card.",
             "toughness": "2",
             "type": "Creature — Elf Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "67e8c38a-59a7-52fd-882f-73408b8cb9af"
+            "uuid": "bd8d2a5b-103e-54ea-aa20-7812dff3095a"
         },
         {
             "artist": "Ryan Pancoast",
@@ -18664,12 +18789,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126533,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5379d5bd297b184e",
             "text": "Enchant land\nEnchanted land has \"{T}: Add one mana of any color.\"\nSacrifice Unbridled Growth: Draw a card.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f2f8cf3e-0c60-5c52-9c5a-2c0ed2669e6e"
+            "uuid": "0ae555aa-907a-52cc-a179-99a68a90cddf"
         },
         {
             "artist": "Kieran Yanner",
@@ -18798,12 +18924,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 125801,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/47183366cd69232e",
             "text": "+2: Reveal the top three cards of your library. Put all nonland permanent cards revealed this way into your hand and the rest on the bottom of your library in any order.\n−2: Exile target creature. Its controller gains life equal to its power.\n−9: Put five +1/+1 counters on each creature you control and five loyalty counters on each other planeswalker you control.",
             "type": "Legendary Planeswalker — Ajani",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "833acfc1-eba8-5b92-b66b-ef4c467801c9"
+            "uuid": "9f53475a-1998-50ea-abd2-7a2e36782a9f"
         },
         {
             "artist": "Chase Stone",
@@ -18950,12 +19077,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126470,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/621b599d0c6ffaaa",
             "text": "Each opponent sacrifices a creature or planeswalker, then discards a card. You return a creature or planeswalker card from your graveyard to your hand, then draw a card.\nWhen you cast a Bolas planeswalker spell, exile Dark Intimations from your graveyard. That planeswalker enters the battlefield with an additional loyalty counter on it.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5928e0a1-0e36-5f5e-bc85-f23d8ed1b382",
+            "uuid": "d12e56c2-3d50-5a0f-bb50-9091a7e900e0",
             "watermark": "planeswalker"
         },
         {
@@ -19093,12 +19221,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126429,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2d5be6bb2a8517fd",
             "text": "Revolt — At the beginning of your end step, if a permanent you controlled left the battlefield this turn, create a 1/1 colorless Servo artifact creature token.\n{1}, Sacrifice a creature: Scry 1.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e1291562-1958-5d52-9476-c6b18a1a8840"
+            "uuid": "f9eebd90-1a24-5575-a3ba-4099f891f0fd"
         },
         {
             "artist": "Zack Stella",
@@ -19253,13 +19382,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126505,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44e1f4bb6b187321",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhen Maverick Thopterist enters the battlefield, create two 1/1 colorless Thopter artifact creature tokens with flying.",
             "toughness": "2",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "b9397d80-2345-5141-9903-581aeadb6c5d"
+            "uuid": "1f5786b1-38e7-5b75-ac10-e84a093284bb"
         },
         {
             "artist": "Wesley Burt",
@@ -19388,12 +19518,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126033,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/672645267b8f63b6",
             "text": "When Oath of Ajani enters the battlefield, put a +1/+1 counter on each creature you control.\nPlaneswalker spells you cast cost {1} less to cast.",
             "type": "Legendary Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b1344413-d390-534f-9d1a-e4153248d5de"
+            "uuid": "bdecf47f-dc08-5c2b-8642-0c3aae5b7664"
         },
         {
             "artist": "Winona Nelson",
@@ -19526,13 +19657,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126434,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f5413972167860f9",
             "text": "Outland Boar can't be blocked by creatures with power 2 or less.",
             "toughness": "4",
             "type": "Creature — Boar",
             "types": [
                 "Creature"
             ],
-            "uuid": "e7961b26-46f0-53f0-b74b-66af0e11116c"
+            "uuid": "6980708c-93ad-5d5c-9908-0f07f1a3cd44"
         },
         {
             "artist": "Kieran Yanner",
@@ -19705,13 +19837,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126418,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/738f0cca98ded7c7",
             "text": "Revolt — When Renegade Rallier enters the battlefield, if a permanent you controlled left the battlefield this turn, return target permanent card with converted mana cost 2 or less from your graveyard to the battlefield.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f010364-4210-5d16-a35f-adfdb6a50240"
+            "uuid": "c6c41607-c775-523d-8287-6e9aef8b6d79"
         },
         {
             "artist": "Darek Zabrocki",
@@ -19850,13 +19983,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126436,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11e05083b5f4d097",
             "text": "Whenever Renegade Wheelsmith becomes tapped, target creature can't block this turn.",
             "toughness": "2",
             "type": "Creature — Dwarf Pilot",
             "types": [
                 "Creature"
             ],
-            "uuid": "30b4f242-7346-5ec7-8074-1d3027803796"
+            "uuid": "318c31d7-acf6-5f9d-8977-1d345baa374b"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -20011,13 +20145,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126420,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/515273eab42af035",
             "text": "When Rogue Refiner enters the battlefield, draw a card and you get {E}{E} (two energy counters).",
             "toughness": "2",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "2ebbac83-8d80-5b1f-b35e-ceb2da52d103"
+            "uuid": "ff4336cb-b3eb-5943-9026-f56c18862637"
         },
         {
             "artist": "Dan Scott",
@@ -20152,13 +20287,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126440,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/239561064ab98b27",
             "text": "Flying\nWhen Spire Patrol enters the battlefield, tap target creature an opponent controls. That creature doesn't untap during its controller's next untap step.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "0829e507-3edf-53a8-9816-0d9c918bc23b"
+            "uuid": "f8e6654e-7d82-5748-8a45-0915ffec6ca5"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -20304,12 +20440,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126206,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7376bb89a110173c",
             "text": "+1: Create a colorless artifact token named Etherium Cell with \"{T}, Sacrifice this artifact: Add one mana of any color.\"\n−2: Target creature gets +X/-X until end of turn, where X is the number of artifacts you control.\n−7: You get an emblem with \"At the beginning of combat on your turn, target artifact you control becomes an artifact creature with base power and toughness 5/5.\"",
             "type": "Legendary Planeswalker — Tezzeret",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "f95013b9-b726-5817-b2fc-a39e7f326705"
+            "uuid": "7d68debb-fb07-5edc-982a-ac686adea674"
         },
         {
             "artist": "Chris Rallis",
@@ -20447,12 +20584,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126423,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d7e1ef4ef2aec047",
             "text": "Enchant artifact\nEnchanted artifact is a creature with base power and toughness 5/5 in addition to its other types.\nWhen enchanted artifact is put into a graveyard, return that card to its owner's hand.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "67ab12a2-1fec-5917-a25f-0c98c7381cd7"
+            "uuid": "43976715-3b81-599c-8c28-ab964db64867"
         },
         {
             "artist": "Sara Winters",
@@ -20582,13 +20720,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126444,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/be53d61ec6b5d9bb",
             "text": "At the beginning of combat on your turn, target artifact creature you control gets +2/+0 until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Artificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "882069e5-a15c-57a8-9f23-73db1a12fbe7"
+            "uuid": "19835f7a-bbe0-5401-a0cd-de4ee4c22aee"
         },
         {
             "artist": "Izzy",
@@ -20730,13 +20869,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126369,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8b42c131d779d8ef",
             "text": "If one or more counters would be put on an artifact or creature you control, that many plus one of each of those kinds of counters are put on that permanent instead.\nIf you would get one or more counters, you get that many plus one of each of those kinds of counters instead.",
             "toughness": "3",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "96761e8b-7a47-5069-ae1a-5f02903237a7"
+            "uuid": "44228f68-a04a-539b-9c51-9ca771c2a80f"
         },
         {
             "artist": "Kieran Yanner",
@@ -20862,6 +21002,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126339,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ea2d2d2452ae349a",
             "text": "{4}{W}: Return another target creature you control to its owner's hand.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -20869,7 +21010,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "dd153084-e529-5e6f-85ab-c37bca1ed60e"
+            "uuid": "0da96a55-1b41-5a42-8528-88c0a024aed0"
         },
         {
             "artist": "Christine Choi",
@@ -21058,13 +21199,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126451,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/847c29ff89a0d240",
             "text": "Flying\nWhen Aethersphere Harvester enters the battlefield, you get {E}{E} (two energy counters).\nPay {E}: Aethersphere Harvester gains lifelink until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "5",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "aed7ba38-f530-5a95-8d38-eccdd56df0c5"
+            "uuid": "dcf28027-2341-556d-a129-58d646b6d0cf"
         },
         {
             "artist": "Jason Rainville",
@@ -21190,6 +21332,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126457,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d19cb5e0085b9705",
             "text": "{1}{B}: Augmenting Automaton gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -21197,7 +21340,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "34ff0c7e-1e98-52ac-966d-40c7553eab47"
+            "uuid": "bf73806a-00c0-5c8f-9784-967713bb4cc9"
         },
         {
             "artist": "Karl Kopinski",
@@ -21357,6 +21500,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126458,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6fe8b52446e6684",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nBarricade Breaker attacks each combat if able.",
             "toughness": "5",
             "type": "Artifact Creature — Juggernaut",
@@ -21364,7 +21508,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "97a5c5eb-dae6-50b3-81cc-0d6c92ee9e97"
+            "uuid": "62a764ae-c182-5fbf-a413-ea61c6479320"
         },
         {
             "artist": "Joseph Meehan",
@@ -21508,6 +21652,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126424,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/af4280dca7eaef98",
             "text": "{7}: Create a token that's a copy of target artifact. That token gains haste. Exile it at the beginning of the next end step.",
             "toughness": "3",
             "type": "Artifact Creature — Assembly-Worker",
@@ -21515,7 +21660,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e2f9840b-a6bb-56c5-94d3-9fb514909ead"
+            "uuid": "aac4ae57-71cb-5c93-b2f1-c0cb78304a1f"
         },
         {
             "artist": "Cliff Childs",
@@ -21687,13 +21832,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126319,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a93cad86040077d5",
             "text": "Crew 6 (Tap any number of creatures you control with total power 6 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "11",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3967776a-61fb-5996-95c4-943bde77c02d"
+            "uuid": "a3bade77-7221-5ccb-978a-4d29e4ed5585"
         },
         {
             "artist": "Eric Deschamps",
@@ -21839,12 +21985,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126464,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3f249de356a562f0",
             "text": "{T}: You get {E} (an energy counter).\n{T}, Pay {E}{E}{E}: Consulate Turret deals 2 damage to target player or planeswalker.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8f60c6eb-4689-5ff6-80b2-77cccfcb05ae"
+            "uuid": "4d8eb970-69ca-529c-a2bb-fca8882fe0b1"
         },
         {
             "artist": "Johannes Voss",
@@ -21983,6 +22130,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126466,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/afb6f1f2de5edf50",
             "text": "Whenever you activate an ability of an artifact or creature that isn't a mana ability, Crackdown Construct gets +1/+1 until end of turn.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -21990,7 +22138,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0bdab165-8363-54eb-9047-df1c1986517b"
+            "uuid": "be1f0db8-73f7-5cdb-bdb9-5ff7ad945323"
         },
         {
             "artist": "Titus Lunter",
@@ -22167,13 +22315,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126468,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b89f1fd8c6703a23",
             "text": "At end of combat, if Daredevil Dragster attacked or blocked this combat, put a velocity counter on it. Then if it has two or more velocity counters on it, sacrifice it and draw two cards.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "4",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3947905f-8f0d-5fce-897b-41fe4bedd18f"
+            "uuid": "9a039e12-e07d-5d56-b9be-5ad5dca7bd38"
         },
         {
             "artist": "James Paick",
@@ -22298,6 +22447,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126482,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b1ad0e2806c57ef9",
             "text": "When Filigree Crawler dies, create a 1/1 colorless Thopter artifact creature token with flying.",
             "toughness": "2",
             "type": "Artifact Creature — Insect",
@@ -22305,7 +22455,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1960a313-a2b9-5633-8b1a-8c8b8669642b"
+            "uuid": "3d17ad4f-4236-520e-b8a6-469e0b145a21"
         },
         {
             "artist": "Karl Kopinski",
@@ -22462,6 +22612,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126321,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45bc742902ea27e2",
             "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)",
             "toughness": "3",
             "type": "Artifact Creature — Assembly-Worker",
@@ -22469,7 +22620,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "363d5dbb-7ca7-567e-8730-1ef09462bb8b"
+            "uuid": "67337227-0d42-5a52-ae3f-f3a598e8de95"
         },
         {
             "artist": "Vincent Proce",
@@ -22617,12 +22768,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126330,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6debfcffc6c8a420",
             "text": "Whenever Gonti's Aether Heart or another artifact enters the battlefield under your control, you get {E}{E} (two energy counters).\nPay {E}{E}{E}{E}{E}{E}{E}{E}, Exile Gonti's Aether Heart: Take an extra turn after this one.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bf46c02e-0c98-5b6c-a3c1-9b0030d78b0f"
+            "uuid": "738e6694-828f-5813-bc54-cf088f27cdad"
         },
         {
             "artist": "Jaime Jones",
@@ -22789,13 +22941,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 125847,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c3de3ad0974bd2cb",
             "text": "Flying, vigilance\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)\nYou may remove a loyalty counter from a planeswalker you control rather than pay Heart of Kiran's crew cost.",
             "toughness": "4",
             "type": "Legendary Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c07902da-aa57-5723-9966-13a08d61a926"
+            "uuid": "8b8b17bc-bea8-5e0f-8cbe-222d8c703e15"
         },
         {
             "artist": "Lius Lasahido",
@@ -22941,6 +23094,7 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126430,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/170545315ec26dea",
             "text": "Flying\nSacrifice Hope of Ghirapur: Until your next turn, target player who was dealt combat damage by Hope of Ghirapur this turn can't cast noncreature spells.",
             "toughness": "1",
             "type": "Legendary Artifact Creature — Thopter",
@@ -22948,7 +23102,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "cb61da02-410b-5c5a-b1df-76a43c51c480"
+            "uuid": "283555d4-2ccb-5488-b9e5-6d9770c7e78e"
         },
         {
             "artist": "Efflam Mercier",
@@ -23080,12 +23234,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126408,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/18801cbf3ad29cbc",
             "text": "{R}, Sacrifice Implement of Combustion: It deals 1 damage to target player or planeswalker.\nWhen Implement of Combustion is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fcacb236-8849-53bb-b157-c8b28ae38dd0"
+            "uuid": "c6d4c969-b73f-5d81-9355-eaef659b2d77"
         },
         {
             "artist": "Darek Zabrocki",
@@ -23217,12 +23372,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126409,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab2455d5fd5115db",
             "text": "{U}, Sacrifice Implement of Examination: Draw a card.\nWhen Implement of Examination is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4ce22b37-7782-52f8-8755-374f79cc6c17"
+            "uuid": "4ecb1b04-af7e-5f4a-80fb-0070dd4fe4fd"
         },
         {
             "artist": "Jason Kang",
@@ -23343,12 +23499,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126410,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb19ac04d6a72169",
             "text": "{G}, Sacrifice Implement of Ferocity: Put a +1/+1 counter on target creature. Activate this ability only any time you could cast a sorcery.\nWhen Implement of Ferocity is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c81c19b5-97d3-5c7e-98a0-b2dadd1dcfe7"
+            "uuid": "ade85a7b-151c-5d88-84ad-886f730966d7"
         },
         {
             "artist": "Kieran Yanner",
@@ -23480,12 +23637,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126411,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ddb91218bf1fc2e5",
             "text": "{W}, Sacrifice Implement of Improvement: You gain 2 life.\nWhen Implement of Improvement is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c87eb741-4659-5320-87d0-c4c4f8872428"
+            "uuid": "c9fe1c78-95f1-5bb5-bfe4-633e1d9092d8"
         },
         {
             "artist": "Titus Lunter",
@@ -23606,12 +23764,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126412,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e1547ac6546ccb46",
             "text": "{B}, Sacrifice Implement of Malice: Target player discards a card. Activate this ability only any time you could cast a sorcery.\nWhen Implement of Malice is put into a graveyard from the battlefield, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "41156261-e531-56d6-ba0e-f7617d1f2653"
+            "uuid": "4212fa0e-0b97-5f26-83f2-85972616fdce"
         },
         {
             "artist": "Kirsten Zirngibl",
@@ -23776,12 +23935,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126413,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed8de896f7a3ee14",
             "text": "Nonartifact spells you cast have improvise. (Your artifacts can help cast those spells. Each artifact you tap after you're done activating mana abilities pays for {1}.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "aed01a36-d78e-5c01-b703-adf790c19a1c"
+            "uuid": "4f23b34e-79a0-5e64-a92d-33016b664513"
         },
         {
             "artist": "Jason A. Engle",
@@ -23954,13 +24114,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126495,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44afdf80038ef990",
             "text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "6",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "149695de-1bb3-546e-87de-e31eb6e722c4"
+            "uuid": "ac471785-ff78-59f0-9956-eae6b771c3f7"
         },
         {
             "artist": "Izzy",
@@ -24095,12 +24256,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126502,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25e3b48eb4c4ed28",
             "text": "At the beginning of your upkeep, scry 1.\nWhenever you cast a creature spell, you may pay {G}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c891ba6a-2401-5ef2-bb05-c6f3d36a5ddd"
+            "uuid": "539b60c2-c005-5efc-a2db-61aa7c9ef792"
         },
         {
             "artist": "Christine Choi",
@@ -24239,6 +24401,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126414,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b60990a92b814b18",
             "text": "{3}{U}, {T}, Tap X untapped artifacts you control: Look at the top X cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -24246,7 +24409,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "88c3d674-57d3-5eed-aedc-40e01c2a11be"
+            "uuid": "60969288-882e-5127-ab6c-8accad688e89"
         },
         {
             "artist": "Zack Stella",
@@ -24375,6 +24538,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126350,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1eb4605abed6dab6",
             "text": "As Metallic Mimic enters the battlefield, choose a creature type.\nMetallic Mimic is the chosen type in addition to its other types.\nEach other creature you control of the chosen type enters the battlefield with an additional +1/+1 counter on it.",
             "toughness": "1",
             "type": "Artifact Creature — Shapeshifter",
@@ -24382,7 +24546,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c801a98d-dc1c-5355-b414-54d8579e0bef"
+            "uuid": "5b00da30-b944-5bd4-b16b-064401395589"
         },
         {
             "artist": "Cliff Childs",
@@ -24552,13 +24716,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126507,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0d945aa589253009",
             "text": "Whenever Mobile Garrison attacks, untap another target artifact or creature you control.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "4",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "66b7fedd-16db-552f-a154-f5161984ff74"
+            "uuid": "97a02ed5-224e-5634-a566-9a8a83764e37"
         },
         {
             "artist": "Steve Argyle",
@@ -24683,6 +24848,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126512,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/06ba7cbfea6f3680",
             "text": "Night Market Guard can block an additional creature each combat.",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -24690,7 +24856,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "16b2781e-9082-549c-bb9b-69501c11cde1"
+            "uuid": "aa86b6b1-ebf8-5208-b652-32fd45d85fc8"
         },
         {
             "artist": "Mathias Kollros",
@@ -24829,6 +24995,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126415,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/950713fc325b10f7",
             "text": "Flying",
             "toughness": "2",
             "type": "Artifact Creature — Thopter",
@@ -24836,7 +25003,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c9bb7302-e494-54a8-89a3-aa1169b1059a"
+            "uuid": "dfbaa626-de84-5b7f-ab96-33d38853b053"
         },
         {
             "artist": "Joseph Meehan",
@@ -24969,12 +25136,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126416,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6f044b220f162ed7",
             "text": "{2}, {T}: Tap target artifact or creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0ffa9131-2924-5781-b9a6-664d8cbdc253"
+            "uuid": "13ad4182-a17c-590b-b05e-85d6bf457fa9"
         },
         {
             "artist": "Christine Choi",
@@ -25102,12 +25270,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126435,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7f44c18cf9a2aee7",
             "text": "Whenever you cast a spell, untap all nonland permanents you control.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "87862385-5056-5314-804f-eb2a42dcfeee"
+            "uuid": "fe7b24bf-1fcf-57b0-b363-5450722b8a1f"
         },
         {
             "artist": "Vincent Proce",
@@ -25281,13 +25450,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126353,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b187c4db4adee272",
             "text": "{1}{W}: Another target Vehicle you control becomes an artifact creature until end of turn.\nCrew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "6",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d5ba1d2b-ac13-5669-a441-0c186b982c7a"
+            "uuid": "309e44ac-26b9-5b4c-8564-0987fecba4f2"
         },
         {
             "artist": "Chase Stone",
@@ -25415,12 +25585,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 126356,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/04507de836e0b775",
             "text": "{8}, {T}: Search your library for a permanent card, put it onto the battlefield, then shuffle your library.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "2285db48-418a-5bf8-b737-e5d9a2f7c8cd"
+            "uuid": "4407a065-ec64-5a6f-9853-5881c8d8f455"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -25533,13 +25704,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126517,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/46633348385dd18a",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "f31d01ea-c355-583d-a717-bf3eecf75789"
+            "uuid": "fbbbb501-ca81-5e94-b7b8-1dc6a892b41f"
         },
         {
             "artist": "Lake Hurwitz",
@@ -25659,12 +25831,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126357,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/582138645718945b",
             "text": "Renegade Map enters the battlefield tapped.\n{T}, Sacrifice Renegade Map: Search your library for a basic land card, reveal it, put it into your hand, then shuffle your library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ecc5c03e-13db-5cc4-9b93-789db93764fd"
+            "uuid": "bc6e79ea-d3f5-5731-9401-daa2605a0e03"
         },
         {
             "artist": "Johann Bodin",
@@ -25813,6 +25986,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126521,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/31d85d6a158b0368",
             "text": "When Reservoir Walker enters the battlefield, you gain 3 life and get {E}{E}{E} (three energy counters).",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -25820,7 +25994,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "42fbaa82-210e-5d60-a014-94a2db882ff4"
+            "uuid": "2c14caa9-f680-59ea-b26c-784aae69ba06"
         },
         {
             "artist": "Daarken",
@@ -25950,6 +26124,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 125850,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c92f8758ec09a31",
             "text": "Whenever Scrap Trawler or another artifact you control is put into a graveyard from the battlefield, return to your hand target artifact card in your graveyard with lesser converted mana cost.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -25957,7 +26132,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "193703ad-0403-5b1e-bb26-5fe5847dd886"
+            "uuid": "ae5aad9c-010b-55f2-b6cd-493c7c195b28"
         },
         {
             "artist": "Titus Lunter",
@@ -26083,12 +26258,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126528,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f8b9495339723100",
             "text": "When Servo Schematic enters the battlefield or is put into a graveyard from the battlefield, create a 1/1 colorless Servo artifact creature token.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8cf2a672-2158-5b75-9c91-e1d2eb5c8ab6"
+            "uuid": "dba44cfb-cfbb-5eeb-80f4-4ed10b82789b"
         },
         {
             "artist": "James Paick",
@@ -26218,6 +26394,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126441,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca6ceae0a56353d5",
             "text": "When Treasure Keeper dies, reveal cards from the top of your library until you reveal a nonland card with converted mana cost 3 or less. You may cast that card without paying its mana cost. Put all revealed cards not cast this way on the bottom of your library in a random order.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -26225,7 +26402,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "9e021ea5-1675-5987-b82a-94dd506fbe4f"
+            "uuid": "618c8566-733c-5f15-a9d3-d55753ce4375"
         },
         {
             "artist": "Christopher Moeller",
@@ -26346,12 +26523,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126534,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca3f7c3248f2bbc3",
             "text": "{7}, {T}, Sacrifice Universal Solvent: Destroy target permanent.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ac289b48-df82-5422-be8c-e27ca52f1459"
+            "uuid": "65e48695-9a96-5d12-8473-a05fea710894"
         },
         {
             "artist": "James Ryman",
@@ -26527,13 +26705,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126367,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9011e7a647a72bc2",
             "text": "Trample\nWhenever Untethered Express attacks, put a +1/+1 counter on it.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
             "toughness": "4",
             "type": "Artifact — Vehicle",
             "types": [
                 "Artifact"
             ],
-            "uuid": "befa8501-b5ab-5bfc-b53c-2e406e62e1aa"
+            "uuid": "6adbccdb-3a89-5ce6-ba3d-9580a4333b95"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -26659,6 +26838,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126535,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf36d36811cdc83c",
             "text": "{3}{G}: Put a +1/+1 counter on Verdant Automaton.",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -26666,7 +26846,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "993569a1-1003-5f2b-a3c3-0ee1c5c5168f"
+            "uuid": "d1eff685-132d-526e-aa4f-dc44a2d672cc"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -26788,6 +26968,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126443,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/52d8f5ae35510a3a",
             "text": "Walking Ballista enters the battlefield with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on Walking Ballista.\nRemove a +1/+1 counter from Walking Ballista: It deals 1 damage to any target.",
             "toughness": "0",
             "type": "Artifact Creature — Construct",
@@ -26795,7 +26976,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "13a6c22a-101a-56b3-8bfd-924a235b41b7"
+            "uuid": "3fbb18f1-d303-5443-bf08-a957e9bcfb91"
         },
         {
             "artist": "Eric Deschamps",
@@ -26926,6 +27107,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126536,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2a9c00fc80c5e522",
             "text": "{2}{U}: Scry 1. (Look at the top card of your library. You may put that card on the bottom of your library.)",
             "toughness": "2",
             "type": "Artifact Creature — Construct",
@@ -26933,7 +27115,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "7f77508a-7da2-5613-8e20-6086b96e5647"
+            "uuid": "2d7bb277-8626-5daf-b5bd-b6ab7a11c9ae"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -27065,6 +27247,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126537,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b493308476dba801",
             "text": "{3}{R}: Welder Automaton deals 1 damage to each opponent.",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -27072,7 +27255,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "116e4efe-e213-53ef-ab24-8401c059e0bd"
+            "uuid": "65cbe78f-a896-5700-a702-4e2cfb07eb9c"
         },
         {
             "artist": "John Avon",
@@ -27191,12 +27374,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126422,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/405d35856a0fa3e7",
             "text": "{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color. Activate this ability only if you control an artifact.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "23155416-91ad-5cf7-8db1-f8e9cb56ae7a"
+            "uuid": "2d090596-7b19-5958-a452-decd6e9aa119"
         },
         {
             "artist": "Anna Steinbauer",
@@ -27326,12 +27510,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 125845,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/88b3027d5195eb04",
             "text": "+2: Put two +1/+1 counters on up to one target creature.\n+1: Reveal cards from the top of your library until you reveal a creature card. Put that card into your hand and the rest on the bottom of your library in a random order.\n−11: Put X +1/+1 counters on target creature, where X is your life total. That creature gains trample until end of turn.",
             "type": "Legendary Planeswalker — Ajani",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "b21b55ad-e919-529a-bf33-03fa1954e5ca"
+            "uuid": "6ea38795-bc80-5d1c-b800-a63f73e41f2d"
         },
         {
             "artist": "Chris Rahn",
@@ -27456,12 +27641,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126546,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e800ffbaeff81748",
             "text": "Put a +1/+1 counter on each creature you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "960d3cce-e378-5355-aca3-014531115ba6"
+            "uuid": "1bd6c052-de48-54a5-af72-e18e63f0fefe"
         },
         {
             "artist": "James Ryman",
@@ -27589,13 +27775,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126545,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e7babea6e18d1092",
             "text": "Trample\nAt the beginning of combat on your turn, if you control an Ajani planeswalker, put a +1/+1 counter on Ajani's Comrade.",
             "toughness": "2",
             "type": "Creature — Elf Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9ab7e3f8-1385-5fed-93cd-5d480bc5e6d8"
+            "uuid": "9fe9cc9d-db03-526b-b476-cad5620db6a1"
         },
         {
             "artist": "Terese Nielsen",
@@ -27720,12 +27907,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126544,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1e4b40ed167b67cf",
             "text": "When Ajani's Aid enters the battlefield, you may search your library and/or graveyard for a card named Ajani, Valiant Protector, reveal it, and put it into your hand. If you search your library this way, shuffle it.\nSacrifice Ajani's Aid: Prevent all combat damage a creature of your choice would deal this turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1f1e4486-895c-59ff-a07b-cb36d90dbdfe"
+            "uuid": "50121ba4-0c16-5611-8514-50b385bcfe88"
         },
         {
             "artist": "Sam Burley",
@@ -27857,12 +28045,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126551,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f42624bcb22bdf28",
             "text": "Tranquil Expanse enters the battlefield tapped.\n{T}: Add {G} or {W}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "aa5c66cb-5400-5097-8d75-0acc87bd9cc3"
+            "uuid": "0236a735-466e-59ba-86f8-b2e669589f5f"
         },
         {
             "artist": "Tyler Jacobson",
@@ -27992,12 +28181,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 125846,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/afec29a947a594f9",
             "text": "+1: Reveal cards from the top of your library until you reveal an artifact card. Put that card into your hand and the rest on the bottom of your library in a random order.\n−3: Target opponent loses life equal to the number of artifacts you control.\n−8: Gain control of all artifacts and creatures target opponent controls.",
             "type": "Legendary Planeswalker — Tezzeret",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "a3d87804-ff26-57a4-bcca-acbd9d8027bd"
+            "uuid": "ff4deba4-d175-56bf-a3dd-ee541af82877"
         },
         {
             "artist": "Tyler Jacobson",
@@ -28129,12 +28319,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126549,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1ab993a0f7840e59",
             "text": "Destroy target creature. You may search your library and/or graveyard for a card named Tezzeret, Master of Metal, reveal it, and put it into your hand. If you search your library this way, shuffle it.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e921956d-6616-5c0c-b5fd-df0ebe871b13"
+            "uuid": "2be00cee-2481-5777-8bd6-2172b5312a99"
         },
         {
             "artist": "Raoul Vitale",
@@ -28259,12 +28450,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126547,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/81a5a226ee6e56f7",
             "text": "When Pendulum of Patterns enters the battlefield, you gain 3 life.\n{5}, {T}, Sacrifice Pendulum of Patterns: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a6c31f93-dd46-5df7-93fa-b4c2eb16e7ca"
+            "uuid": "13643467-48e0-5dfd-8219-dd6c616584ff"
         },
         {
             "artist": "Craig J Spearing",
@@ -28387,6 +28579,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 126550,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8849c08b48c91cf7",
             "text": "{T}: Target opponent loses 1 life. If you control a Tezzeret planeswalker, that player loses 3 life instead.",
             "toughness": "3",
             "type": "Artifact Creature — Golem",
@@ -28394,7 +28587,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b0c0da57-b444-5c96-b1cd-a0ac27a280d2"
+            "uuid": "4f40667e-6a5a-552e-aee4-aeb12485ef02"
         },
         {
             "artist": "Christine Choi",
@@ -28525,20 +28718,21 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 126548,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/42d058528b2f1f43",
             "text": "Submerged Boneyard enters the battlefield tapped.\n{T}: Add {U} or {B}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "93d8ce9a-1f4e-556c-b1de-a5858040aba5"
+            "uuid": "b6b0fd35-15ff-5a0a-8af5-ca33d8cad457"
         }
     ],
-    "code": "aer",
+    "code": "AER",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "aer",
+    "mtgoCode": "AER",
     "name": "Aether Revolt",
     "releaseDate": "2017-01-20",
     "tcgplayerGroupId": 1857,
@@ -28562,7 +28756,7 @@
             "scryfallId": "c6071fed-39c1-4f3b-a821-1611aedd8054",
             "toughness": "2",
             "type": "Token Creature — Gremlin",
-            "uuid": "8bdabbb0-97d7-5827-8b72-c2f40f38f411"
+            "uuid": "bd9b20db-f958-588b-aede-0306eff9566a"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -28582,7 +28776,7 @@
             "scryfallId": "1ebc91a9-23e0-4ca1-bc6d-e710ad2efb31",
             "toughness": "1",
             "type": "Token Legendary Creature — Monkey",
-            "uuid": "a91d71da-924b-5e85-b468-ac032f011e0f"
+            "uuid": "d32e4274-2377-5092-acbc-ad57d9fcaea0"
         },
         {
             "artist": "Craig J Spearing",
@@ -28597,7 +28791,7 @@
             "scryfallId": "9616ca53-ea6a-4fc1-8e01-94e0fb47e5ed",
             "text": "{T}, Sacrifice this artifact: Add one mana of any color.",
             "type": "Token Artifact",
-            "uuid": "2c372e03-4bfe-5a19-9220-8ff77290b4fd"
+            "uuid": "aec54cae-081e-5a50-a62e-ca50f38052ae"
         },
         {
             "artist": "Ryan Alexander Lee",
@@ -28612,7 +28806,7 @@
             "scryfallId": "5f136537-1ebe-4018-b406-44ef32ceef04",
             "text": "At the beginning of combat on your turn, target artifact you control becomes an artifact creature with base power and toughness 5/5.",
             "type": "Emblem — Tezzeret",
-            "uuid": "d849c161-6bb0-51ee-830d-0aa0da3c10ee"
+            "uuid": "4fef6126-12f9-54ca-82a1-21048639a818"
         }
     ],
     "totalSetSize": 194,

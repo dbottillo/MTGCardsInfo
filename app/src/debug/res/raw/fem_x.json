@@ -69,11 +69,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c2768dca-0c03-5dba-b230-1eda896f2958",
+            "uuid": "0e6baec3-4b4b-5dd8-8dd5-7ab80b31f8a1",
             "variations": [
-                "162db922-916b-55d7-ba7d-4e0ae05ca659",
-                "072f0494-29d3-5363-b5ac-f9ac4fd533b0",
-                "50cf8828-c344-5d87-8a45-c67a392c709a"
+                "9a2afad8-f6e1-5c09-ae22-78618d8f24b8",
+                "c11052c4-88ef-5f9d-a1e8-f60f8dbf7fe8",
+                "38f6a57a-8274-5bac-a2ff-31a2afc9944d"
             ]
         },
         {
@@ -128,11 +128,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "162db922-916b-55d7-ba7d-4e0ae05ca659",
+            "uuid": "9a2afad8-f6e1-5c09-ae22-78618d8f24b8",
             "variations": [
-                "c2768dca-0c03-5dba-b230-1eda896f2958",
-                "072f0494-29d3-5363-b5ac-f9ac4fd533b0",
-                "50cf8828-c344-5d87-8a45-c67a392c709a"
+                "0e6baec3-4b4b-5dd8-8dd5-7ab80b31f8a1",
+                "c11052c4-88ef-5f9d-a1e8-f60f8dbf7fe8",
+                "38f6a57a-8274-5bac-a2ff-31a2afc9944d"
             ]
         },
         {
@@ -187,11 +187,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "072f0494-29d3-5363-b5ac-f9ac4fd533b0",
+            "uuid": "c11052c4-88ef-5f9d-a1e8-f60f8dbf7fe8",
             "variations": [
-                "c2768dca-0c03-5dba-b230-1eda896f2958",
-                "162db922-916b-55d7-ba7d-4e0ae05ca659",
-                "50cf8828-c344-5d87-8a45-c67a392c709a"
+                "0e6baec3-4b4b-5dd8-8dd5-7ab80b31f8a1",
+                "9a2afad8-f6e1-5c09-ae22-78618d8f24b8",
+                "38f6a57a-8274-5bac-a2ff-31a2afc9944d"
             ]
         },
         {
@@ -246,11 +246,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "50cf8828-c344-5d87-8a45-c67a392c709a",
+            "uuid": "38f6a57a-8274-5bac-a2ff-31a2afc9944d",
             "variations": [
-                "c2768dca-0c03-5dba-b230-1eda896f2958",
-                "162db922-916b-55d7-ba7d-4e0ae05ca659",
-                "072f0494-29d3-5363-b5ac-f9ac4fd533b0"
+                "0e6baec3-4b4b-5dd8-8dd5-7ab80b31f8a1",
+                "9a2afad8-f6e1-5c09-ae22-78618d8f24b8",
+                "c11052c4-88ef-5f9d-a1e8-f60f8dbf7fe8"
             ]
         },
         {
@@ -318,12 +318,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3645,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/62fe739825059f30",
             "text": "Enchant creature\nWhenever enchanted creature attacks and isn't blocked, its controller may have it deal damage equal to its power plus 2 to another target creature. If that player does, the attacking creature assigns no combat damage this turn.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c568b223-69cb-5860-a307-a94d96da2a88"
+            "uuid": "6e726501-b09c-5730-9b85-1b07bfc715b2"
         },
         {
             "artist": "Melissa A. Benson",
@@ -385,16 +386,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3646,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/283f3aceea5cb2cb",
             "text": "Whenever Farrel's Zealot attacks and isn't blocked, you may have it deal 3 damage to target creature. If you do, Farrel's Zealot assigns no combat damage this turn.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "1baaef03-bfd7-5ba4-af9d-39160fb3a158",
+            "uuid": "210de569-e5b0-5a99-b3d0-bf87d8bf5617",
             "variations": [
-                "18066eb9-42f7-5883-8857-e106b9bec7da",
-                "dbfeb032-f11d-5234-9b6c-03a7e4260384"
+                "dcfc0c01-ba6a-5ac7-bb9e-ca8e36cb29ee",
+                "7295ef81-79aa-59a8-a6f5-f912993fd78d"
             ]
         },
         {
@@ -457,16 +459,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3646,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/283f3aceea5cb2cb",
             "text": "Whenever Farrel's Zealot attacks and isn't blocked, you may have it deal 3 damage to target creature. If you do, Farrel's Zealot assigns no combat damage this turn.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "18066eb9-42f7-5883-8857-e106b9bec7da",
+            "uuid": "dcfc0c01-ba6a-5ac7-bb9e-ca8e36cb29ee",
             "variations": [
-                "1baaef03-bfd7-5ba4-af9d-39160fb3a158",
-                "dbfeb032-f11d-5234-9b6c-03a7e4260384"
+                "210de569-e5b0-5a99-b3d0-bf87d8bf5617",
+                "7295ef81-79aa-59a8-a6f5-f912993fd78d"
             ]
         },
         {
@@ -529,16 +532,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3646,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/283f3aceea5cb2cb",
             "text": "Whenever Farrel's Zealot attacks and isn't blocked, you may have it deal 3 damage to target creature. If you do, Farrel's Zealot assigns no combat damage this turn.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "dbfeb032-f11d-5234-9b6c-03a7e4260384",
+            "uuid": "7295ef81-79aa-59a8-a6f5-f912993fd78d",
             "variations": [
-                "1baaef03-bfd7-5ba4-af9d-39160fb3a158",
-                "18066eb9-42f7-5883-8857-e106b9bec7da"
+                "210de569-e5b0-5a99-b3d0-bf87d8bf5617",
+                "dcfc0c01-ba6a-5ac7-bb9e-ca8e36cb29ee"
             ]
         },
         {
@@ -582,13 +586,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3644,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/487e4a2ed2f8e9b2",
             "text": "{1}: Add {W}. If this ability has been activated four or more times this turn, sacrifice Farrelite Priest at the beginning of the next end step.",
             "toughness": "3",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "0e771c1f-6a8a-5f20-86b7-b554c5de7b31"
+            "uuid": "72ccce11-4483-55db-b83d-1775644de665"
         },
         {
             "artist": "Melissa A. Benson",
@@ -640,13 +645,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3664,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/09a0dcb0bb26cd0c",
             "text": "{T}, Tap three untapped white creatures you control: Destroy target creature.",
             "toughness": "6",
             "type": "Creature — Avatar",
             "types": [
                 "Creature"
             ],
-            "uuid": "d8fbc0e6-da0a-51db-ae6d-22a2f5fd75ba"
+            "uuid": "dc88c776-32f8-5649-b4dc-94c53e35daec"
         },
         {
             "artist": "Mark Poole",
@@ -694,12 +700,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3666,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25e16cbd45433fc6",
             "text": "Sacrifice a white creature: For each attacking red creature, prevent all combat damage that would be dealt by that creature this turn unless its controller pays {2}{R}.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "723ba4bd-ed56-533a-ad91-8cf86828481d"
+            "uuid": "76c59bba-e353-5cb7-a522-65aa7dbb0d9e"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -759,17 +766,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3684,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/360acfeb7e54baf5",
             "text": "{1}: Icatian Infantry gains first strike until end of turn.\n{1}: Icatian Infantry gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "82c4636d-d35c-58fa-93f7-fb77663acbf4",
+            "uuid": "cd4e4533-e757-5af9-86c8-81be4063def9",
             "variations": [
-                "437d5665-50e8-52e6-99cf-ca3ad0b07bea",
-                "7495c331-28ad-5de0-b77d-ee1d3c31cd46",
-                "9c254654-ed99-54b6-a29b-2bed9fd0f464"
+                "9f7e5f98-ab2e-59f5-b68d-55fba991e652",
+                "d2d62171-d6ef-5d39-bd8f-e0432611bb23",
+                "a0c2403d-f076-5d7e-8b94-c14bf5a99e34"
             ]
         },
         {
@@ -830,17 +838,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3684,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/360acfeb7e54baf5",
             "text": "{1}: Icatian Infantry gains first strike until end of turn.\n{1}: Icatian Infantry gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "437d5665-50e8-52e6-99cf-ca3ad0b07bea",
+            "uuid": "9f7e5f98-ab2e-59f5-b68d-55fba991e652",
             "variations": [
-                "82c4636d-d35c-58fa-93f7-fb77663acbf4",
-                "7495c331-28ad-5de0-b77d-ee1d3c31cd46",
-                "9c254654-ed99-54b6-a29b-2bed9fd0f464"
+                "cd4e4533-e757-5af9-86c8-81be4063def9",
+                "d2d62171-d6ef-5d39-bd8f-e0432611bb23",
+                "a0c2403d-f076-5d7e-8b94-c14bf5a99e34"
             ]
         },
         {
@@ -901,17 +910,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3684,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/360acfeb7e54baf5",
             "text": "{1}: Icatian Infantry gains first strike until end of turn.\n{1}: Icatian Infantry gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "7495c331-28ad-5de0-b77d-ee1d3c31cd46",
+            "uuid": "d2d62171-d6ef-5d39-bd8f-e0432611bb23",
             "variations": [
-                "82c4636d-d35c-58fa-93f7-fb77663acbf4",
-                "437d5665-50e8-52e6-99cf-ca3ad0b07bea",
-                "9c254654-ed99-54b6-a29b-2bed9fd0f464"
+                "cd4e4533-e757-5af9-86c8-81be4063def9",
+                "9f7e5f98-ab2e-59f5-b68d-55fba991e652",
+                "a0c2403d-f076-5d7e-8b94-c14bf5a99e34"
             ]
         },
         {
@@ -972,17 +982,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3684,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/360acfeb7e54baf5",
             "text": "{1}: Icatian Infantry gains first strike until end of turn.\n{1}: Icatian Infantry gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9c254654-ed99-54b6-a29b-2bed9fd0f464",
+            "uuid": "a0c2403d-f076-5d7e-8b94-c14bf5a99e34",
             "variations": [
-                "82c4636d-d35c-58fa-93f7-fb77663acbf4",
-                "437d5665-50e8-52e6-99cf-ca3ad0b07bea",
-                "7495c331-28ad-5de0-b77d-ee1d3c31cd46"
+                "cd4e4533-e757-5af9-86c8-81be4063def9",
+                "9f7e5f98-ab2e-59f5-b68d-55fba991e652",
+                "d2d62171-d6ef-5d39-bd8f-e0432611bb23"
             ]
         },
         {
@@ -1039,10 +1050,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ed769f08-de07-59ee-a033-494171a541fa",
+            "uuid": "7b94a954-3413-524d-9029-08bde93f2f16",
             "variations": [
-                "f4193cac-e936-55ce-a292-43f43c34f964",
-                "2b974ab7-8a6d-5dd4-aa52-667e9d7e7b9a"
+                "ddcf21d1-d5e6-545c-8a80-cefa9a57f945",
+                "006bc1ff-f8d8-5204-b0b1-92e8df583829"
             ]
         },
         {
@@ -1099,10 +1110,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f4193cac-e936-55ce-a292-43f43c34f964",
+            "uuid": "ddcf21d1-d5e6-545c-8a80-cefa9a57f945",
             "variations": [
-                "ed769f08-de07-59ee-a033-494171a541fa",
-                "2b974ab7-8a6d-5dd4-aa52-667e9d7e7b9a"
+                "7b94a954-3413-524d-9029-08bde93f2f16",
+                "006bc1ff-f8d8-5204-b0b1-92e8df583829"
             ]
         },
         {
@@ -1159,10 +1170,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2b974ab7-8a6d-5dd4-aa52-667e9d7e7b9a",
+            "uuid": "006bc1ff-f8d8-5204-b0b1-92e8df583829",
             "variations": [
-                "ed769f08-de07-59ee-a033-494171a541fa",
-                "f4193cac-e936-55ce-a292-43f43c34f964"
+                "7b94a954-3413-524d-9029-08bde93f2f16",
+                "ddcf21d1-d5e6-545c-8a80-cefa9a57f945"
             ]
         },
         {
@@ -1211,13 +1222,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3691,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4978f72a379aaa53",
             "text": "{1}{W}: Target Soldier creature gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "2a4b05e9-faff-5798-85bd-669b12b27b2d"
+            "uuid": "836e1d1d-c75a-58bd-b903-ca0391cb14af"
         },
         {
             "artist": "Drew Tucker",
@@ -1258,16 +1270,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3692,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0670783b46c5906c",
             "text": "Icatian Moneychanger enters the battlefield with three credit counters on it.\nWhen Icatian Moneychanger enters the battlefield, it deals 3 damage to you.\nAt the beginning of your upkeep, put a credit counter on Icatian Moneychanger.\nSacrifice Icatian Moneychanger: You gain 1 life for each credit counter on Icatian Moneychanger. Activate this ability only during your upkeep.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "28c8899e-dff9-5c45-93c5-d39092546fb8",
+            "uuid": "d657841e-c4b8-5723-9acb-59bf9a198d66",
             "variations": [
-                "293d401c-d627-5f29-b4e5-c249c29d6f21",
-                "cc1ae631-4650-5e0f-9d71-82e64b33f369"
+                "386231da-574e-59ab-b706-10b2d1d28381",
+                "53390226-0841-5b58-afcd-a318209d5841"
             ]
         },
         {
@@ -1309,16 +1322,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3692,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0670783b46c5906c",
             "text": "Icatian Moneychanger enters the battlefield with three credit counters on it.\nWhen Icatian Moneychanger enters the battlefield, it deals 3 damage to you.\nAt the beginning of your upkeep, put a credit counter on Icatian Moneychanger.\nSacrifice Icatian Moneychanger: You gain 1 life for each credit counter on Icatian Moneychanger. Activate this ability only during your upkeep.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "293d401c-d627-5f29-b4e5-c249c29d6f21",
+            "uuid": "386231da-574e-59ab-b706-10b2d1d28381",
             "variations": [
-                "28c8899e-dff9-5c45-93c5-d39092546fb8",
-                "cc1ae631-4650-5e0f-9d71-82e64b33f369"
+                "d657841e-c4b8-5723-9acb-59bf9a198d66",
+                "53390226-0841-5b58-afcd-a318209d5841"
             ]
         },
         {
@@ -1360,16 +1374,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3692,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0670783b46c5906c",
             "text": "Icatian Moneychanger enters the battlefield with three credit counters on it.\nWhen Icatian Moneychanger enters the battlefield, it deals 3 damage to you.\nAt the beginning of your upkeep, put a credit counter on Icatian Moneychanger.\nSacrifice Icatian Moneychanger: You gain 1 life for each credit counter on Icatian Moneychanger. Activate this ability only during your upkeep.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc1ae631-4650-5e0f-9d71-82e64b33f369",
+            "uuid": "53390226-0841-5b58-afcd-a318209d5841",
             "variations": [
-                "28c8899e-dff9-5c45-93c5-d39092546fb8",
-                "293d401c-d627-5f29-b4e5-c249c29d6f21"
+                "d657841e-c4b8-5723-9acb-59bf9a198d66",
+                "386231da-574e-59ab-b706-10b2d1d28381"
             ]
         },
         {
@@ -1434,13 +1449,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3695,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c31b2667fffcb27",
             "text": "Banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "4",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "b67069de-e85a-5b66-bea3-65bb10b08c40"
+            "uuid": "9a2376f5-3868-5f59-969e-3d9b9fbb3e9b"
         },
         {
             "artist": "Drew Tucker",
@@ -1489,13 +1505,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3696,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0175a63483d6f94f",
             "text": "{1}{W}{W}: Target creature gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "e13351eb-1cdf-5993-aae8-a345e99a3ba0"
+            "uuid": "8a9b41e5-1210-5f8d-bdc9-248cf85f2e79"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -1549,11 +1566,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d0f7dc83-2794-590d-b949-eb741e1ac47e",
+            "uuid": "79115077-b053-5120-a564-bb7c05492f5d",
             "variations": [
-                "f6f09b77-85db-59b2-922a-550e9a8b9d78",
-                "1c97d282-907b-5dd9-9c24-914273c6655d",
-                "c91f884f-62b5-5015-b391-987fe270955f"
+                "4ddd53f2-ed0f-5969-bbc3-18a82f011b43",
+                "fc839dcd-6814-5e4f-84bc-d912e8349f6a",
+                "72643522-dc56-5939-9e88-3712945b6fbb"
             ]
         },
         {
@@ -1608,11 +1625,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f6f09b77-85db-59b2-922a-550e9a8b9d78",
+            "uuid": "4ddd53f2-ed0f-5969-bbc3-18a82f011b43",
             "variations": [
-                "d0f7dc83-2794-590d-b949-eb741e1ac47e",
-                "1c97d282-907b-5dd9-9c24-914273c6655d",
-                "c91f884f-62b5-5015-b391-987fe270955f"
+                "79115077-b053-5120-a564-bb7c05492f5d",
+                "fc839dcd-6814-5e4f-84bc-d912e8349f6a",
+                "72643522-dc56-5939-9e88-3712945b6fbb"
             ]
         },
         {
@@ -1667,11 +1684,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1c97d282-907b-5dd9-9c24-914273c6655d",
+            "uuid": "fc839dcd-6814-5e4f-84bc-d912e8349f6a",
             "variations": [
-                "d0f7dc83-2794-590d-b949-eb741e1ac47e",
-                "f6f09b77-85db-59b2-922a-550e9a8b9d78",
-                "c91f884f-62b5-5015-b391-987fe270955f"
+                "79115077-b053-5120-a564-bb7c05492f5d",
+                "4ddd53f2-ed0f-5969-bbc3-18a82f011b43",
+                "72643522-dc56-5939-9e88-3712945b6fbb"
             ]
         },
         {
@@ -1726,11 +1743,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c91f884f-62b5-5015-b391-987fe270955f",
+            "uuid": "72643522-dc56-5939-9e88-3712945b6fbb",
             "variations": [
-                "d0f7dc83-2794-590d-b949-eb741e1ac47e",
-                "f6f09b77-85db-59b2-922a-550e9a8b9d78",
-                "1c97d282-907b-5dd9-9c24-914273c6655d"
+                "79115077-b053-5120-a564-bb7c05492f5d",
+                "4ddd53f2-ed0f-5969-bbc3-18a82f011b43",
+                "fc839dcd-6814-5e4f-84bc-d912e8349f6a"
             ]
         },
         {
@@ -1792,13 +1809,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3701,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/21872bbd9f73229a",
             "text": "First strike; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)\nWhenever Icatian Skirmishers attacks, all creatures banded with it gain first strike until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "65fe0640-a360-56ec-8d57-b402088abac5"
+            "uuid": "e495cf8d-db2e-5635-81f7-ca3b1d5e6bd5"
         },
         {
             "artist": "Tom Wänerstrand",
@@ -1843,12 +1861,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3703,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8fbd1be8db88aa70",
             "text": "Create four 1/1 white Citizen creature tokens.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bafbe5d9-a0b9-5ec4-b801-32ae41d98bdc"
+            "uuid": "a1017b34-3aa5-513c-a53b-0670005aaf79"
         },
         {
             "artist": "Bryon Wackwitz",
@@ -1896,16 +1915,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18248,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9851e850e7061d54",
             "text": "Protection from black\n{W}: Order of Leitbur gains first strike until end of turn.\n{W}{W}: Order of Leitbur gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "72ced182-fcd2-5c59-af94-c24e86e83471",
+            "uuid": "3f22e7a5-bbbf-5a08-bed9-875893bed15d",
             "variations": [
-                "7a2be18f-1802-50d1-9f69-e9894896e775",
-                "89b76581-ef39-5877-b728-ee550a76deb7"
+                "bca7c113-8d98-5147-9c1c-c6a2bdd09198",
+                "890ce611-fb70-57a7-ba78-d6acb47b713b"
             ]
         },
         {
@@ -1954,16 +1974,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18248,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9851e850e7061d54",
             "text": "Protection from black\n{W}: Order of Leitbur gains first strike until end of turn.\n{W}{W}: Order of Leitbur gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "7a2be18f-1802-50d1-9f69-e9894896e775",
+            "uuid": "bca7c113-8d98-5147-9c1c-c6a2bdd09198",
             "variations": [
-                "72ced182-fcd2-5c59-af94-c24e86e83471",
-                "89b76581-ef39-5877-b728-ee550a76deb7"
+                "3f22e7a5-bbbf-5a08-bed9-875893bed15d",
+                "890ce611-fb70-57a7-ba78-d6acb47b713b"
             ]
         },
         {
@@ -2012,16 +2033,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18248,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9851e850e7061d54",
             "text": "Protection from black\n{W}: Order of Leitbur gains first strike until end of turn.\n{W}{W}: Order of Leitbur gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "89b76581-ef39-5877-b728-ee550a76deb7",
+            "uuid": "890ce611-fb70-57a7-ba78-d6acb47b713b",
             "variations": [
-                "72ced182-fcd2-5c59-af94-c24e86e83471",
-                "7a2be18f-1802-50d1-9f69-e9894896e775"
+                "3f22e7a5-bbbf-5a08-bed9-875893bed15d",
+                "bca7c113-8d98-5147-9c1c-c6a2bdd09198"
             ]
         },
         {
@@ -2066,13 +2088,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3617,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2e27bb07e506e982",
             "text": "Trample\nAt the beginning of your upkeep, sacrifice Deep Spawn unless you put the top two cards of your library into your graveyard.\n{U}: Deep Spawn gains shroud until end of turn and doesn't untap during your next untap step. Tap Deep Spawn. (A creature with shroud can't be the target of spells or abilities.)",
             "toughness": "6",
             "type": "Creature — Homarid",
             "types": [
                 "Creature"
             ],
-            "uuid": "72842533-c396-518b-b6a9-28eae2d24230"
+            "uuid": "52ab23e9-1e2c-5b8a-81fa-3dbbdc650c0e"
         },
         {
             "artist": "Drew Tucker",
@@ -2124,15 +2147,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3667,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc0acc74b0ae025e",
             "text": "Until end of turn, whenever a player taps an Island for mana, that player adds an additional {U}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a151748e-b5ff-58be-a53a-18074636b357",
+            "uuid": "24d08b42-8613-559a-84b1-4ef21771b27f",
             "variations": [
-                "c300db95-d295-5421-abcc-c413ad26ac90",
-                "03841781-1b2a-5319-b11f-b231d1b6edfb"
+                "e5d991e8-9d64-5c96-ac4d-9ef8b84414c1",
+                "cb1c0b00-b86e-5736-ae4a-54acbc8d46ff"
             ]
         },
         {
@@ -2185,15 +2209,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3667,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc0acc74b0ae025e",
             "text": "Until end of turn, whenever a player taps an Island for mana, that player adds an additional {U}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c300db95-d295-5421-abcc-c413ad26ac90",
+            "uuid": "e5d991e8-9d64-5c96-ac4d-9ef8b84414c1",
             "variations": [
-                "a151748e-b5ff-58be-a53a-18074636b357",
-                "03841781-1b2a-5319-b11f-b231d1b6edfb"
+                "24d08b42-8613-559a-84b1-4ef21771b27f",
+                "cb1c0b00-b86e-5736-ae4a-54acbc8d46ff"
             ]
         },
         {
@@ -2246,15 +2271,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3667,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc0acc74b0ae025e",
             "text": "Until end of turn, whenever a player taps an Island for mana, that player adds an additional {U}.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "03841781-1b2a-5319-b11f-b231d1b6edfb",
+            "uuid": "cb1c0b00-b86e-5736-ae4a-54acbc8d46ff",
             "variations": [
-                "a151748e-b5ff-58be-a53a-18074636b357",
-                "c300db95-d295-5421-abcc-c413ad26ac90"
+                "24d08b42-8613-559a-84b1-4ef21771b27f",
+                "e5d991e8-9d64-5c96-ac4d-9ef8b84414c1"
             ]
         },
         {
@@ -2296,17 +2322,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3671,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ac2151d8aa26b578",
             "text": "Homarid enters the battlefield with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on Homarid.\nAs long as there is exactly one tide counter on Homarid, it gets -1/-1.\nAs long as there are exactly three tide counters on Homarid, it gets +1/+1.\nWhenever there are four or more tide counters on Homarid, remove all tide counters from it.",
             "toughness": "2",
             "type": "Creature — Homarid",
             "types": [
                 "Creature"
             ],
-            "uuid": "570bd822-be59-5d5c-9bf0-e9babbb2f47f",
+            "uuid": "5ecdf209-ef38-50ce-aeb3-75e88cf61154",
             "variations": [
-                "dbb48235-267c-51a7-8a20-088b5f10f7b5",
-                "c09a9c7f-624d-59ba-bdef-43636aa56b8e",
-                "fc1eb697-4b26-5279-96a1-5be84877868d"
+                "e943e89c-9201-59ae-934b-395245fa4639",
+                "673a7622-fdf7-5225-a3cc-ca2f611e9033",
+                "97f3629a-f458-57c5-99d1-647fe3a4e867"
             ]
         },
         {
@@ -2348,17 +2375,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3671,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ac2151d8aa26b578",
             "text": "Homarid enters the battlefield with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on Homarid.\nAs long as there is exactly one tide counter on Homarid, it gets -1/-1.\nAs long as there are exactly three tide counters on Homarid, it gets +1/+1.\nWhenever there are four or more tide counters on Homarid, remove all tide counters from it.",
             "toughness": "2",
             "type": "Creature — Homarid",
             "types": [
                 "Creature"
             ],
-            "uuid": "dbb48235-267c-51a7-8a20-088b5f10f7b5",
+            "uuid": "e943e89c-9201-59ae-934b-395245fa4639",
             "variations": [
-                "570bd822-be59-5d5c-9bf0-e9babbb2f47f",
-                "c09a9c7f-624d-59ba-bdef-43636aa56b8e",
-                "fc1eb697-4b26-5279-96a1-5be84877868d"
+                "5ecdf209-ef38-50ce-aeb3-75e88cf61154",
+                "673a7622-fdf7-5225-a3cc-ca2f611e9033",
+                "97f3629a-f458-57c5-99d1-647fe3a4e867"
             ]
         },
         {
@@ -2400,17 +2428,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3671,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ac2151d8aa26b578",
             "text": "Homarid enters the battlefield with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on Homarid.\nAs long as there is exactly one tide counter on Homarid, it gets -1/-1.\nAs long as there are exactly three tide counters on Homarid, it gets +1/+1.\nWhenever there are four or more tide counters on Homarid, remove all tide counters from it.",
             "toughness": "2",
             "type": "Creature — Homarid",
             "types": [
                 "Creature"
             ],
-            "uuid": "c09a9c7f-624d-59ba-bdef-43636aa56b8e",
+            "uuid": "673a7622-fdf7-5225-a3cc-ca2f611e9033",
             "variations": [
-                "570bd822-be59-5d5c-9bf0-e9babbb2f47f",
-                "dbb48235-267c-51a7-8a20-088b5f10f7b5",
-                "fc1eb697-4b26-5279-96a1-5be84877868d"
+                "5ecdf209-ef38-50ce-aeb3-75e88cf61154",
+                "e943e89c-9201-59ae-934b-395245fa4639",
+                "97f3629a-f458-57c5-99d1-647fe3a4e867"
             ]
         },
         {
@@ -2452,17 +2481,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3671,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ac2151d8aa26b578",
             "text": "Homarid enters the battlefield with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on Homarid.\nAs long as there is exactly one tide counter on Homarid, it gets -1/-1.\nAs long as there are exactly three tide counters on Homarid, it gets +1/+1.\nWhenever there are four or more tide counters on Homarid, remove all tide counters from it.",
             "toughness": "2",
             "type": "Creature — Homarid",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc1eb697-4b26-5279-96a1-5be84877868d",
+            "uuid": "97f3629a-f458-57c5-99d1-647fe3a4e867",
             "variations": [
-                "570bd822-be59-5d5c-9bf0-e9babbb2f47f",
-                "dbb48235-267c-51a7-8a20-088b5f10f7b5",
-                "c09a9c7f-624d-59ba-bdef-43636aa56b8e"
+                "5ecdf209-ef38-50ce-aeb3-75e88cf61154",
+                "e943e89c-9201-59ae-934b-395245fa4639",
+                "673a7622-fdf7-5225-a3cc-ca2f611e9033"
             ]
         },
         {
@@ -2507,13 +2537,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3675,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7bf0aff635f42125",
             "text": "{U}: Tap target green creature.",
             "toughness": "1",
             "type": "Creature — Homarid Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "cac627cb-f8e8-5243-b4f6-e069cb2948ef"
+            "uuid": "49467eca-9b4c-5573-8a40-63094303774e"
         },
         {
             "artist": "Douglas Shuler",
@@ -2554,12 +2585,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3676,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e9627bf1367d542b",
             "text": "{1}{U}{U}, Sacrifice a blue creature: Create X 1/1 blue Camarid creature tokens, where X is the sacrificed creature's converted mana cost.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a4f43b98-5824-5ed5-be8f-10e10aae4099"
+            "uuid": "58afc39f-a55d-551f-ad09-06971f57f5ff"
         },
         {
             "artist": "Daniel Gelon",
@@ -2616,10 +2648,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "763e854a-2558-5b47-96a1-3e26559e4e9b",
+            "uuid": "4f81eb0a-b10f-5968-914f-8a45ef7d84fb",
             "variations": [
-                "3ac6512f-46aa-543c-83db-019d7afe9289",
-                "4d2ec1c5-6649-5558-b3c6-413e0d5713cb"
+                "34693ee9-df06-50c1-83ca-f53bd64b6d93",
+                "ee3ceed9-7e16-5cf3-8361-79fb993e4df7"
             ]
         },
         {
@@ -2677,10 +2709,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3ac6512f-46aa-543c-83db-019d7afe9289",
+            "uuid": "34693ee9-df06-50c1-83ca-f53bd64b6d93",
             "variations": [
-                "763e854a-2558-5b47-96a1-3e26559e4e9b",
-                "4d2ec1c5-6649-5558-b3c6-413e0d5713cb"
+                "4f81eb0a-b10f-5968-914f-8a45ef7d84fb",
+                "ee3ceed9-7e16-5cf3-8361-79fb993e4df7"
             ]
         },
         {
@@ -2738,10 +2770,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4d2ec1c5-6649-5558-b3c6-413e0d5713cb",
+            "uuid": "ee3ceed9-7e16-5cf3-8361-79fb993e4df7",
             "variations": [
-                "763e854a-2558-5b47-96a1-3e26559e4e9b",
-                "3ac6512f-46aa-543c-83db-019d7afe9289"
+                "4f81eb0a-b10f-5968-914f-8a45ef7d84fb",
+                "34693ee9-df06-50c1-83ca-f53bd64b6d93"
             ]
         },
         {
@@ -2791,16 +2823,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3708,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aaf68675c4bea560",
             "text": "Enchant creature\nMerseine enters the battlefield with three net counters on it.\nEnchanted creature doesn't untap during its controller's untap step if Merseine has a net counter on it.\nPay enchanted creature's mana cost: Remove a net counter from Merseine. Only the controller of the enchanted creature may activate this ability.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0ebec32b-58de-5225-bef0-526653b95c09",
+            "uuid": "f80c74ab-df88-54c2-8495-e0cc3ec223d0",
             "variations": [
-                "2c781fa7-2be0-59b8-8c97-4c1b001c6db4",
-                "f647133f-326b-5d04-bd94-48f1b28fb057",
-                "5e114b82-c86a-5fa8-a5ab-d7fe1dc9c753"
+                "33467cc0-6d14-5b2d-a0ee-a5d9aaac23a9",
+                "8a1aead3-6530-5e6e-95cb-5b6b225003e7",
+                "0ab33719-5e0b-58d6-8f71-d03cbe8d505d"
             ]
         },
         {
@@ -2850,16 +2883,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3708,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aaf68675c4bea560",
             "text": "Enchant creature\nMerseine enters the battlefield with three net counters on it.\nEnchanted creature doesn't untap during its controller's untap step if Merseine has a net counter on it.\nPay enchanted creature's mana cost: Remove a net counter from Merseine. Only the controller of the enchanted creature may activate this ability.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2c781fa7-2be0-59b8-8c97-4c1b001c6db4",
+            "uuid": "33467cc0-6d14-5b2d-a0ee-a5d9aaac23a9",
             "variations": [
-                "0ebec32b-58de-5225-bef0-526653b95c09",
-                "f647133f-326b-5d04-bd94-48f1b28fb057",
-                "5e114b82-c86a-5fa8-a5ab-d7fe1dc9c753"
+                "f80c74ab-df88-54c2-8495-e0cc3ec223d0",
+                "8a1aead3-6530-5e6e-95cb-5b6b225003e7",
+                "0ab33719-5e0b-58d6-8f71-d03cbe8d505d"
             ]
         },
         {
@@ -2909,16 +2943,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3708,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aaf68675c4bea560",
             "text": "Enchant creature\nMerseine enters the battlefield with three net counters on it.\nEnchanted creature doesn't untap during its controller's untap step if Merseine has a net counter on it.\nPay enchanted creature's mana cost: Remove a net counter from Merseine. Only the controller of the enchanted creature may activate this ability.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f647133f-326b-5d04-bd94-48f1b28fb057",
+            "uuid": "8a1aead3-6530-5e6e-95cb-5b6b225003e7",
             "variations": [
-                "0ebec32b-58de-5225-bef0-526653b95c09",
-                "2c781fa7-2be0-59b8-8c97-4c1b001c6db4",
-                "5e114b82-c86a-5fa8-a5ab-d7fe1dc9c753"
+                "f80c74ab-df88-54c2-8495-e0cc3ec223d0",
+                "33467cc0-6d14-5b2d-a0ee-a5d9aaac23a9",
+                "0ab33719-5e0b-58d6-8f71-d03cbe8d505d"
             ]
         },
         {
@@ -2968,16 +3003,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3708,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aaf68675c4bea560",
             "text": "Enchant creature\nMerseine enters the battlefield with three net counters on it.\nEnchanted creature doesn't untap during its controller's untap step if Merseine has a net counter on it.\nPay enchanted creature's mana cost: Remove a net counter from Merseine. Only the controller of the enchanted creature may activate this ability.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5e114b82-c86a-5fa8-a5ab-d7fe1dc9c753",
+            "uuid": "0ab33719-5e0b-58d6-8f71-d03cbe8d505d",
             "variations": [
-                "0ebec32b-58de-5225-bef0-526653b95c09",
-                "2c781fa7-2be0-59b8-8c97-4c1b001c6db4",
-                "f647133f-326b-5d04-bd94-48f1b28fb057"
+                "f80c74ab-df88-54c2-8495-e0cc3ec223d0",
+                "33467cc0-6d14-5b2d-a0ee-a5d9aaac23a9",
+                "8a1aead3-6530-5e6e-95cb-5b6b225003e7"
             ]
         },
         {
@@ -3025,13 +3061,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3739,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df8e9474900ccac9",
             "text": "{U}: River Merfolk gains mountainwalk until end of turn. (It can't be blocked as long as defending player controls a Mountain.)",
             "toughness": "1",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "a5997197-d527-5d61-8444-93459df598dc"
+            "uuid": "aa5d72dd-fc58-56af-b780-5fe1efffd6e7"
         },
         {
             "artist": "Amy Weber",
@@ -3089,13 +3126,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3742,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f72b71f2cf7221d1",
             "text": "When you control no Islands, sacrifice Seasinger.\nYou may choose not to untap Seasinger during your untap step.\n{T}: Gain control of target creature whose controller controls an Island for as long as you control Seasinger and Seasinger remains tapped.",
             "toughness": "1",
             "type": "Creature — Merfolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "a1213c28-2d0f-5215-b68d-0f3e660b64d9"
+            "uuid": "4190a9be-a418-581c-b2fa-c2f78acdc827"
         },
         {
             "artist": "Ron Spencer",
@@ -3147,13 +3185,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3749,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/60025bddd666bade",
             "text": "{U}{U}, {T}: Target creature gains shroud until end of turn. Activate this ability only during your upkeep. (It can't be the target of spells or abilities.)",
             "toughness": "1",
             "type": "Creature — Merfolk Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "1072980e-df18-55a6-be98-6f8917ee17bc"
+            "uuid": "290da1f4-61de-5d6e-a265-0178fad6bc65"
         },
         {
             "artist": "Rob Alexander",
@@ -3204,15 +3243,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3767,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6938d183432da8ae",
             "text": "{U}{U}: For each attacking creature without flying, its controller may pay {1}. If that player doesn't, creatures you control blocking that creature gain first strike until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "fe0c8c7f-8438-528f-b171-f7de0f9e4fce",
+            "uuid": "240e929c-7fa2-5eb5-8eb6-92917d6c8ceb",
             "variations": [
-                "572d09be-79c2-54cf-8e64-23973c3dcb4c",
-                "dd47569f-255c-5f50-a131-68397553732e"
+                "cf141302-0cf5-513f-b523-4b9a3fee3eb4",
+                "cfd14adc-0b33-5263-839c-d19d484e70d4"
             ]
         },
         {
@@ -3264,15 +3304,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3767,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6938d183432da8ae",
             "text": "{U}{U}: For each attacking creature without flying, its controller may pay {1}. If that player doesn't, creatures you control blocking that creature gain first strike until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "572d09be-79c2-54cf-8e64-23973c3dcb4c",
+            "uuid": "cf141302-0cf5-513f-b523-4b9a3fee3eb4",
             "variations": [
-                "fe0c8c7f-8438-528f-b171-f7de0f9e4fce",
-                "dd47569f-255c-5f50-a131-68397553732e"
+                "240e929c-7fa2-5eb5-8eb6-92917d6c8ceb",
+                "cfd14adc-0b33-5263-839c-d19d484e70d4"
             ]
         },
         {
@@ -3324,15 +3365,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3767,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6938d183432da8ae",
             "text": "{U}{U}: For each attacking creature without flying, its controller may pay {1}. If that player doesn't, creatures you control blocking that creature gain first strike until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "dd47569f-255c-5f50-a131-68397553732e",
+            "uuid": "cfd14adc-0b33-5263-839c-d19d484e70d4",
             "variations": [
-                "fe0c8c7f-8438-528f-b171-f7de0f9e4fce",
-                "572d09be-79c2-54cf-8e64-23973c3dcb4c"
+                "240e929c-7fa2-5eb5-8eb6-92917d6c8ceb",
+                "cf141302-0cf5-513f-b523-4b9a3fee3eb4"
             ]
         },
         {
@@ -3376,12 +3418,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3770,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8bd05bcba665530f",
             "text": "Cast this spell only if no permanents named Tidal Influence are on the battlefield.\nTidal Influence enters the battlefield with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on Tidal Influence.\nAs long as there is exactly one tide counter on Tidal Influence, all blue creatures get -2/-0.\nAs long as there are exactly three tide counters on Tidal Influence, all blue creatures get +2/+0.\nWhenever there are four or more tide counters on Tidal Influence, remove all tide counters from it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "aae1e4bc-ab5c-52f6-84ce-3421a6def058"
+            "uuid": "e949f0d3-7fc2-51e3-bbef-35e8d88aa410"
         },
         {
             "artist": "Susan Van Camp",
@@ -3428,13 +3471,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3773,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3ca74779bdf0f0ba",
             "text": "First strike\nVodalian Knights can't attack unless defending player controls an Island.\nWhen you control no Islands, sacrifice Vodalian Knights.\n{U}: Vodalian Knights gains flying until end of turn.",
             "toughness": "2",
             "type": "Creature — Merfolk Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "e4dff4e3-8320-5f4f-bbff-2afa63a11fdf"
+            "uuid": "970e73e3-42f3-5fb9-abea-acb2dc0b8812"
         },
         {
             "artist": "Susan Van Camp",
@@ -3477,16 +3521,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3774,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45d823d25b097fa8",
             "text": "{U}, {T}: Counter target spell unless its controller pays {1}.",
             "toughness": "1",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "a524b36b-7352-533f-9280-3aabd53b5880",
+            "uuid": "359fc155-9177-59a5-99e4-574181358b55",
             "variations": [
-                "f8bd65a1-7b17-5603-8b2d-5018d99074c1",
-                "ab47ca34-9e24-55d5-94fc-706b8c446f21"
+                "63c99922-30fa-5864-9555-0a50e955f04a",
+                "cbdf5feb-54e4-5400-8a7c-b0ebd6aeb92d"
             ]
         },
         {
@@ -3530,16 +3575,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3774,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45d823d25b097fa8",
             "text": "{U}, {T}: Counter target spell unless its controller pays {1}.",
             "toughness": "1",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "f8bd65a1-7b17-5603-8b2d-5018d99074c1",
+            "uuid": "63c99922-30fa-5864-9555-0a50e955f04a",
             "variations": [
-                "a524b36b-7352-533f-9280-3aabd53b5880",
-                "ab47ca34-9e24-55d5-94fc-706b8c446f21"
+                "359fc155-9177-59a5-99e4-574181358b55",
+                "cbdf5feb-54e4-5400-8a7c-b0ebd6aeb92d"
             ]
         },
         {
@@ -3583,16 +3629,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3774,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45d823d25b097fa8",
             "text": "{U}, {T}: Counter target spell unless its controller pays {1}.",
             "toughness": "1",
             "type": "Creature — Merfolk Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab47ca34-9e24-55d5-94fc-706b8c446f21",
+            "uuid": "cbdf5feb-54e4-5400-8a7c-b0ebd6aeb92d",
             "variations": [
-                "a524b36b-7352-533f-9280-3aabd53b5880",
-                "f8bd65a1-7b17-5603-8b2d-5018d99074c1"
+                "359fc155-9177-59a5-99e4-574181358b55",
+                "63c99922-30fa-5864-9555-0a50e955f04a"
             ]
         },
         {
@@ -3641,11 +3688,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "69b37110-374e-5f43-8862-6c2c5bcd4052",
+            "uuid": "fff039ae-d8a0-5bb0-97d4-68f4c517d461",
             "variations": [
-                "a02108af-cec1-5d09-ac59-a8d9b6479fb4",
-                "0b1eabd9-4e6a-54ac-9dd5-14d59e622d57",
-                "c4a995ab-9611-5ecd-a862-f7e4d96dea31"
+                "7b16543c-067f-5170-a7d5-7f646274f205",
+                "119afc0f-c57a-5b92-824f-09043d761b27",
+                "1665c98a-1793-56c9-ba77-4e532e70f6f4"
             ]
         },
         {
@@ -3694,11 +3741,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a02108af-cec1-5d09-ac59-a8d9b6479fb4",
+            "uuid": "7b16543c-067f-5170-a7d5-7f646274f205",
             "variations": [
-                "69b37110-374e-5f43-8862-6c2c5bcd4052",
-                "0b1eabd9-4e6a-54ac-9dd5-14d59e622d57",
-                "c4a995ab-9611-5ecd-a862-f7e4d96dea31"
+                "fff039ae-d8a0-5bb0-97d4-68f4c517d461",
+                "119afc0f-c57a-5b92-824f-09043d761b27",
+                "1665c98a-1793-56c9-ba77-4e532e70f6f4"
             ]
         },
         {
@@ -3747,11 +3794,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0b1eabd9-4e6a-54ac-9dd5-14d59e622d57",
+            "uuid": "119afc0f-c57a-5b92-824f-09043d761b27",
             "variations": [
-                "69b37110-374e-5f43-8862-6c2c5bcd4052",
-                "a02108af-cec1-5d09-ac59-a8d9b6479fb4",
-                "c4a995ab-9611-5ecd-a862-f7e4d96dea31"
+                "fff039ae-d8a0-5bb0-97d4-68f4c517d461",
+                "7b16543c-067f-5170-a7d5-7f646274f205",
+                "1665c98a-1793-56c9-ba77-4e532e70f6f4"
             ]
         },
         {
@@ -3800,11 +3847,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "c4a995ab-9611-5ecd-a862-f7e4d96dea31",
+            "uuid": "1665c98a-1793-56c9-ba77-4e532e70f6f4",
             "variations": [
-                "69b37110-374e-5f43-8862-6c2c5bcd4052",
-                "a02108af-cec1-5d09-ac59-a8d9b6479fb4",
-                "0b1eabd9-4e6a-54ac-9dd5-14d59e622d57"
+                "fff039ae-d8a0-5bb0-97d4-68f4c517d461",
+                "7b16543c-067f-5170-a7d5-7f646274f205",
+                "119afc0f-c57a-5b92-824f-09043d761b27"
             ]
         },
         {
@@ -3852,13 +3899,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3781,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f8ef9d7bbd2a612",
             "text": "Defender (This creature can't attack.)\nTap an untapped Merfolk you control: Vodalian War Machine can attack this turn as though it didn't have defender.\nTap an untapped Merfolk you control: Vodalian War Machine gets +2/+1 until end of turn.\nWhen Vodalian War Machine dies, destroy all Merfolk tapped this turn to pay for its abilities.",
             "toughness": "4",
             "type": "Creature — Wall",
             "types": [
                 "Creature"
             ],
-            "uuid": "0d689903-b8b6-5ca0-b1f3-95731a78434c"
+            "uuid": "490b8020-8979-597c-8e6f-27a6e1caeb2a"
         },
         {
             "artist": "Pete Venters",
@@ -3904,17 +3952,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3597,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bef1552cfd69363c",
             "text": "{T}, Sacrifice Armor Thrull: Put a +1/+2 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "52032931-2974-55ea-b0a3-9f7105714d87",
+            "uuid": "cc7fb541-6adc-569e-8c21-faa63d60deec",
             "variations": [
-                "df6a9159-5b4f-5b08-8f8c-52357d5f0eb1",
-                "b91f3099-8c1c-5c03-a318-6cffee6bf9cd",
-                "22755888-f071-5563-a704-1e4568171191"
+                "39c719fa-9543-58f5-83a5-cf34cc6e4627",
+                "2df3a61e-5d70-569b-90c6-26af7ab02cd2",
+                "7af8303d-32e5-5a22-9d26-d9c6a880a954"
             ]
         },
         {
@@ -3961,17 +4010,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3597,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bef1552cfd69363c",
             "text": "{T}, Sacrifice Armor Thrull: Put a +1/+2 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "df6a9159-5b4f-5b08-8f8c-52357d5f0eb1",
+            "uuid": "39c719fa-9543-58f5-83a5-cf34cc6e4627",
             "variations": [
-                "52032931-2974-55ea-b0a3-9f7105714d87",
-                "b91f3099-8c1c-5c03-a318-6cffee6bf9cd",
-                "22755888-f071-5563-a704-1e4568171191"
+                "cc7fb541-6adc-569e-8c21-faa63d60deec",
+                "2df3a61e-5d70-569b-90c6-26af7ab02cd2",
+                "7af8303d-32e5-5a22-9d26-d9c6a880a954"
             ]
         },
         {
@@ -4018,17 +4068,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3597,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bef1552cfd69363c",
             "text": "{T}, Sacrifice Armor Thrull: Put a +1/+2 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "b91f3099-8c1c-5c03-a318-6cffee6bf9cd",
+            "uuid": "2df3a61e-5d70-569b-90c6-26af7ab02cd2",
             "variations": [
-                "52032931-2974-55ea-b0a3-9f7105714d87",
-                "df6a9159-5b4f-5b08-8f8c-52357d5f0eb1",
-                "22755888-f071-5563-a704-1e4568171191"
+                "cc7fb541-6adc-569e-8c21-faa63d60deec",
+                "39c719fa-9543-58f5-83a5-cf34cc6e4627",
+                "7af8303d-32e5-5a22-9d26-d9c6a880a954"
             ]
         },
         {
@@ -4075,17 +4126,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3597,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bef1552cfd69363c",
             "text": "{T}, Sacrifice Armor Thrull: Put a +1/+2 counter on target creature.",
             "toughness": "3",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "22755888-f071-5563-a704-1e4568171191",
+            "uuid": "7af8303d-32e5-5a22-9d26-d9c6a880a954",
             "variations": [
-                "52032931-2974-55ea-b0a3-9f7105714d87",
-                "df6a9159-5b4f-5b08-8f8c-52357d5f0eb1",
-                "b91f3099-8c1c-5c03-a318-6cffee6bf9cd"
+                "cc7fb541-6adc-569e-8c21-faa63d60deec",
+                "39c719fa-9543-58f5-83a5-cf34cc6e4627",
+                "2df3a61e-5d70-569b-90c6-26af7ab02cd2"
             ]
         },
         {
@@ -4131,17 +4183,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3602,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5021b003164daeb6",
             "text": "{T}, Sacrifice Basal Thrull: Add {B}{B}.",
             "toughness": "2",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "abf7648f-c657-5379-b777-00dd456b6dc2",
+            "uuid": "14e04678-e06a-5136-ad17-c7ea7b7d3777",
             "variations": [
-                "1b044f81-fc1b-5174-b2e0-c0eb083cae29",
-                "494ffc99-2bc0-5eed-abab-d00f32e28f75",
-                "4b4d669f-5ace-5280-bc66-b95c28786a51"
+                "9795a31e-91dd-56ee-8c9f-f1dc7c59268d",
+                "8ccfccce-10ba-522b-8ecd-f3bd7d13f468",
+                "a59d3a72-26de-5331-b644-fa6f8bab4d17"
             ]
         },
         {
@@ -4187,17 +4240,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3602,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5021b003164daeb6",
             "text": "{T}, Sacrifice Basal Thrull: Add {B}{B}.",
             "toughness": "2",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "1b044f81-fc1b-5174-b2e0-c0eb083cae29",
+            "uuid": "9795a31e-91dd-56ee-8c9f-f1dc7c59268d",
             "variations": [
-                "abf7648f-c657-5379-b777-00dd456b6dc2",
-                "494ffc99-2bc0-5eed-abab-d00f32e28f75",
-                "4b4d669f-5ace-5280-bc66-b95c28786a51"
+                "14e04678-e06a-5136-ad17-c7ea7b7d3777",
+                "8ccfccce-10ba-522b-8ecd-f3bd7d13f468",
+                "a59d3a72-26de-5331-b644-fa6f8bab4d17"
             ]
         },
         {
@@ -4243,17 +4297,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3602,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5021b003164daeb6",
             "text": "{T}, Sacrifice Basal Thrull: Add {B}{B}.",
             "toughness": "2",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "494ffc99-2bc0-5eed-abab-d00f32e28f75",
+            "uuid": "8ccfccce-10ba-522b-8ecd-f3bd7d13f468",
             "variations": [
-                "abf7648f-c657-5379-b777-00dd456b6dc2",
-                "1b044f81-fc1b-5174-b2e0-c0eb083cae29",
-                "4b4d669f-5ace-5280-bc66-b95c28786a51"
+                "14e04678-e06a-5136-ad17-c7ea7b7d3777",
+                "9795a31e-91dd-56ee-8c9f-f1dc7c59268d",
+                "a59d3a72-26de-5331-b644-fa6f8bab4d17"
             ]
         },
         {
@@ -4299,17 +4354,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3602,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5021b003164daeb6",
             "text": "{T}, Sacrifice Basal Thrull: Add {B}{B}.",
             "toughness": "2",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "4b4d669f-5ace-5280-bc66-b95c28786a51",
+            "uuid": "a59d3a72-26de-5331-b644-fa6f8bab4d17",
             "variations": [
-                "abf7648f-c657-5379-b777-00dd456b6dc2",
-                "1b044f81-fc1b-5174-b2e0-c0eb083cae29",
-                "494ffc99-2bc0-5eed-abab-d00f32e28f75"
+                "14e04678-e06a-5136-ad17-c7ea7b7d3777",
+                "9795a31e-91dd-56ee-8c9f-f1dc7c59268d",
+                "8ccfccce-10ba-522b-8ecd-f3bd7d13f468"
             ]
         },
         {
@@ -4360,12 +4416,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3611,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73e91e1664210c0b",
             "text": "At the beginning of your upkeep, sacrifice Breeding Pit unless you pay {B}{B}.\nAt the beginning of your end step, create a 0/1 black Thrull creature token.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "690958eb-bf09-5537-8e72-14fd1784fbcf"
+            "uuid": "a9e54b21-6f31-558d-a146-b62b2fea1b1e"
         },
         {
             "artist": "Anson Maddocks",
@@ -4412,13 +4469,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3620,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c9666ca719574009",
             "text": "Black spells you cast cost {B} more to cast.",
             "toughness": "4",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "5d3f14db-7616-5a93-a0f7-e5b4bb27d464"
+            "uuid": "873cf7e6-6a22-5716-8ecf-4865ac025b68"
         },
         {
             "artist": "Randy Asplund-Faith",
@@ -4464,13 +4522,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3630,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc893e6af0316b06",
             "text": "First strike, trample\nAt the beginning of your upkeep, put a -2/-2 counter on Ebon Praetor.\nSacrifice a creature: Remove a -2/-2 counter from Ebon Praetor. If the sacrificed creature was a Thrull, put a +1/+0 counter on Ebon Praetor. Activate this ability only during your upkeep and only once each turn.",
             "toughness": "5",
             "type": "Creature — Avatar Praetor",
             "types": [
                 "Creature"
             ],
-            "uuid": "4cace6e7-fdec-5c3b-8a8b-1d864d5546cd"
+            "uuid": "495da971-5d88-5b14-b32d-e64161a3d548"
         },
         {
             "artist": "Susan Van Camp",
@@ -4521,11 +4580,11 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6ff28a38-535b-5072-a741-977b33a6fed8",
+            "uuid": "b057c0d5-bd73-5b8d-b544-e773ce95770a",
             "variations": [
-                "20152fdd-87b3-5ba4-adf8-8ef475841f16",
-                "39439a1b-b252-5459-8287-cb5b6a0d775d",
-                "9a3da19c-2d25-5330-95a8-e085772dbbbb"
+                "84df4078-fbdf-5b13-be11-718acdcf0f39",
+                "dc9ca812-5e11-5c62-bf12-04c9c895e11a",
+                "9f6c6df1-42c0-5d7d-a015-fd1cd74298f9"
             ]
         },
         {
@@ -4577,11 +4636,11 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "20152fdd-87b3-5ba4-adf8-8ef475841f16",
+            "uuid": "84df4078-fbdf-5b13-be11-718acdcf0f39",
             "variations": [
-                "6ff28a38-535b-5072-a741-977b33a6fed8",
-                "39439a1b-b252-5459-8287-cb5b6a0d775d",
-                "9a3da19c-2d25-5330-95a8-e085772dbbbb"
+                "b057c0d5-bd73-5b8d-b544-e773ce95770a",
+                "dc9ca812-5e11-5c62-bf12-04c9c895e11a",
+                "9f6c6df1-42c0-5d7d-a015-fd1cd74298f9"
             ]
         },
         {
@@ -4633,11 +4692,11 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "39439a1b-b252-5459-8287-cb5b6a0d775d",
+            "uuid": "dc9ca812-5e11-5c62-bf12-04c9c895e11a",
             "variations": [
-                "6ff28a38-535b-5072-a741-977b33a6fed8",
-                "20152fdd-87b3-5ba4-adf8-8ef475841f16",
-                "9a3da19c-2d25-5330-95a8-e085772dbbbb"
+                "b057c0d5-bd73-5b8d-b544-e773ce95770a",
+                "84df4078-fbdf-5b13-be11-718acdcf0f39",
+                "9f6c6df1-42c0-5d7d-a015-fd1cd74298f9"
             ]
         },
         {
@@ -4689,11 +4748,11 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9a3da19c-2d25-5330-95a8-e085772dbbbb",
+            "uuid": "9f6c6df1-42c0-5d7d-a015-fd1cd74298f9",
             "variations": [
-                "6ff28a38-535b-5072-a741-977b33a6fed8",
-                "20152fdd-87b3-5ba4-adf8-8ef475841f16",
-                "39439a1b-b252-5459-8287-cb5b6a0d775d"
+                "b057c0d5-bd73-5b8d-b544-e773ce95770a",
+                "84df4078-fbdf-5b13-be11-718acdcf0f39",
+                "dc9ca812-5e11-5c62-bf12-04c9c895e11a"
             ]
         },
         {
@@ -4747,10 +4806,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2875ae26-fbbe-5491-aa24-f06c02fe19ad",
+            "uuid": "219099a1-dbb9-5f66-bf03-2e654aa51351",
             "variations": [
-                "13dee209-bf12-5c21-b25e-409ba7a0166a",
-                "f117c524-b357-5c6a-8de1-37d9c1d8af68"
+                "34cf766a-4990-5f32-9705-6d52fef8013c",
+                "7e8b5777-15a5-5624-969d-6fd63247bee9"
             ]
         },
         {
@@ -4804,10 +4863,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "13dee209-bf12-5c21-b25e-409ba7a0166a",
+            "uuid": "34cf766a-4990-5f32-9705-6d52fef8013c",
             "variations": [
-                "2875ae26-fbbe-5491-aa24-f06c02fe19ad",
-                "f117c524-b357-5c6a-8de1-37d9c1d8af68"
+                "219099a1-dbb9-5f66-bf03-2e654aa51351",
+                "7e8b5777-15a5-5624-969d-6fd63247bee9"
             ]
         },
         {
@@ -4861,10 +4920,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f117c524-b357-5c6a-8de1-37d9c1d8af68",
+            "uuid": "7e8b5777-15a5-5624-969d-6fd63247bee9",
             "variations": [
-                "2875ae26-fbbe-5491-aa24-f06c02fe19ad",
-                "13dee209-bf12-5c21-b25e-409ba7a0166a"
+                "219099a1-dbb9-5f66-bf03-2e654aa51351",
+                "34cf766a-4990-5f32-9705-6d52fef8013c"
             ]
         },
         {
@@ -4925,10 +4984,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e5cc9131-c2da-5e9d-9e14-c70eefd31bc9",
+            "uuid": "89c2b6f1-3bf4-535c-b365-266c0baecd49",
             "variations": [
-                "07e37de7-7bca-5d90-b60b-743dafa90ecd",
-                "3c980e10-fbfa-5548-9bab-b8613c1cf200"
+                "b825f551-d0ce-5eca-80a0-c44a0c2da1db",
+                "6f13c657-8796-5277-aa4c-99e880620c89"
             ]
         },
         {
@@ -4989,10 +5048,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "07e37de7-7bca-5d90-b60b-743dafa90ecd",
+            "uuid": "b825f551-d0ce-5eca-80a0-c44a0c2da1db",
             "variations": [
-                "e5cc9131-c2da-5e9d-9e14-c70eefd31bc9",
-                "3c980e10-fbfa-5548-9bab-b8613c1cf200"
+                "89c2b6f1-3bf4-535c-b365-266c0baecd49",
+                "6f13c657-8796-5277-aa4c-99e880620c89"
             ]
         },
         {
@@ -5053,10 +5112,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3c980e10-fbfa-5548-9bab-b8613c1cf200",
+            "uuid": "6f13c657-8796-5277-aa4c-99e880620c89",
             "variations": [
-                "e5cc9131-c2da-5e9d-9e14-c70eefd31bc9",
-                "07e37de7-7bca-5d90-b60b-743dafa90ecd"
+                "89c2b6f1-3bf4-535c-b365-266c0baecd49",
+                "b825f551-d0ce-5eca-80a0-c44a0c2da1db"
             ]
         },
         {
@@ -5113,10 +5172,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "5f1a134a-5624-523a-995f-ab9370a9a410",
+            "uuid": "68213f05-cd94-5ad6-a980-cf9653c357ae",
             "variations": [
-                "d910f1e2-7bba-56e5-9cb3-b774a79584fc",
-                "4720cad8-21a8-531c-8c1e-ce22796d3d22"
+                "7f45438d-9293-56f9-b364-80cf0d377271",
+                "a5a8fb2d-e818-5a13-9abe-e4060a7b5ea3"
             ]
         },
         {
@@ -5173,10 +5232,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "d910f1e2-7bba-56e5-9cb3-b774a79584fc",
+            "uuid": "7f45438d-9293-56f9-b364-80cf0d377271",
             "variations": [
-                "5f1a134a-5624-523a-995f-ab9370a9a410",
-                "4720cad8-21a8-531c-8c1e-ce22796d3d22"
+                "68213f05-cd94-5ad6-a980-cf9653c357ae",
+                "a5a8fb2d-e818-5a13-9abe-e4060a7b5ea3"
             ]
         },
         {
@@ -5233,10 +5292,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4720cad8-21a8-531c-8c1e-ce22796d3d22",
+            "uuid": "a5a8fb2d-e818-5a13-9abe-e4060a7b5ea3",
             "variations": [
-                "5f1a134a-5624-523a-995f-ab9370a9a410",
-                "d910f1e2-7bba-56e5-9cb3-b774a79584fc"
+                "68213f05-cd94-5ad6-a980-cf9653c357ae",
+                "7f45438d-9293-56f9-b364-80cf0d377271"
             ]
         },
         {
@@ -5284,16 +5343,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3732,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1db2269b74d1467a",
             "text": "Protection from white\n{B}: Order of the Ebon Hand gains first strike until end of turn.\n{B}{B}: Order of the Ebon Hand gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "d9734b38-8354-5521-8834-3cfcec88bf47",
+            "uuid": "70fab7f5-28a0-5437-9aba-b59c3a053c17",
             "variations": [
-                "e3ffb264-0083-50a9-9ae8-ad21d6113d5c",
-                "a591d433-4872-5f63-8216-ec3df9fc0193"
+                "fc45e7dc-879c-5108-b476-65b4582db8b6",
+                "47473ec3-c5f2-51ab-a0e3-39ae61a44564"
             ]
         },
         {
@@ -5341,16 +5401,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3732,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1db2269b74d1467a",
             "text": "Protection from white\n{B}: Order of the Ebon Hand gains first strike until end of turn.\n{B}{B}: Order of the Ebon Hand gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3ffb264-0083-50a9-9ae8-ad21d6113d5c",
+            "uuid": "fc45e7dc-879c-5108-b476-65b4582db8b6",
             "variations": [
-                "d9734b38-8354-5521-8834-3cfcec88bf47",
-                "a591d433-4872-5f63-8216-ec3df9fc0193"
+                "70fab7f5-28a0-5437-9aba-b59c3a053c17",
+                "47473ec3-c5f2-51ab-a0e3-39ae61a44564"
             ]
         },
         {
@@ -5398,16 +5459,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3732,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1db2269b74d1467a",
             "text": "Protection from white\n{B}: Order of the Ebon Hand gains first strike until end of turn.\n{B}{B}: Order of the Ebon Hand gets +1/+0 until end of turn.",
             "toughness": "1",
             "type": "Creature — Cleric Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "a591d433-4872-5f63-8216-ec3df9fc0193",
+            "uuid": "47473ec3-c5f2-51ab-a0e3-39ae61a44564",
             "variations": [
-                "d9734b38-8354-5521-8834-3cfcec88bf47",
-                "e3ffb264-0083-50a9-9ae8-ad21d6113d5c"
+                "70fab7f5-28a0-5437-9aba-b59c3a053c17",
+                "fc45e7dc-879c-5108-b476-65b4582db8b6"
             ]
         },
         {
@@ -5458,12 +5520,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3743,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c94b98f609241fd9",
             "text": "As an additional cost to cast this spell, exile a creature you control.\nReturn target creature card from your graveyard to the battlefield. Put a +2/+2 counter on that creature if the exiled creature was a Thrull.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8114beb2-b603-583f-abe7-3bf73dc396b0"
+            "uuid": "32bdf1ca-68ce-5008-8102-fa772446edcd"
         },
         {
             "artist": "Daniel Gelon",
@@ -5522,13 +5585,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3764,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca7aa52051ff3da0",
             "text": "Thrull creatures get +1/+1.\n{T}: Gain control of target Thrull for as long as you control Thrull Champion.",
             "toughness": "2",
             "type": "Creature — Thrull",
             "types": [
                 "Creature"
             ],
-            "uuid": "cd5b49df-254a-5569-80ce-beea1ea20d7c"
+            "uuid": "73625e0b-8165-509b-83a2-3efa405a1192"
         },
         {
             "artist": "Ron Spencer",
@@ -5579,12 +5643,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3765,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/66414f7e5ee5fb42",
             "text": "Enchant creature\nEnchanted creature gets +1/+1.\nSacrifice Thrull Retainer: Regenerate enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ecf04696-464a-563a-af27-9ac3a6ad4e70"
+            "uuid": "f43b1a5d-17f0-50f5-b432-10c05c697174"
         },
         {
             "artist": "Anson Maddocks",
@@ -5632,13 +5697,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3766,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed514b59abaa8dfd",
             "text": "{1}{B}: Counter target black spell unless that spell's controller pays {B} or {3}.",
             "toughness": "1",
             "type": "Creature — Thrull Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "eb2f47bf-353c-56bd-9f13-fbb617b64a83"
+            "uuid": "9020b7c7-e659-53b7-af84-d4e41a3d357a"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -5681,12 +5747,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3771,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89c6d52042f5a614",
             "text": "At the beginning of your upkeep, sacrifice Tourach's Chant unless you pay {B}.\nWhenever a player puts a Forest onto the battlefield, Tourach's Chant deals 3 damage to that player unless they put a -1/-1 counter on a creature they control.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "db46e734-444d-52aa-8511-9f7446d5a0b9"
+            "uuid": "8736a7bc-1715-5625-b1c6-f5bb8f605350"
         },
         {
             "artist": "Sandra Everingham",
@@ -5727,12 +5794,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3772,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/31a7410194e66979",
             "text": "Enchant land you control\nSacrifice a Thrull: Put three time counters on Tourach's Gate.\nAt the beginning of your upkeep, remove a time counter from Tourach's Gate. If there are no time counters on Tourach's Gate, sacrifice it.\nTap enchanted land: Attacking creatures you control get +2/-1 until end of turn. Activate this ability only if enchanted land is untapped.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9bce4548-109f-5cfd-a0ed-2358051ab2a3"
+            "uuid": "cc5bdaae-dfb7-56e9-809c-d865ce92b6a5"
         },
         {
             "artist": "Rob Alexander",
@@ -5784,11 +5852,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0b04e66b-3d7a-5b9e-83e7-facbf8dfe562",
+            "uuid": "c20ae06e-59bf-5122-a015-d07850643ad6",
             "variations": [
-                "b80208c1-30ba-5dc6-8ec1-d0d2ddd33862",
-                "4bcd27cc-af60-52cf-8249-e7dc97412063",
-                "1d087342-f684-5ec2-8e1a-f21784cf2d04"
+                "287f7bb8-646b-54b5-8328-8d36252f3418",
+                "8faca5db-a399-5f42-835d-9dee5e781da6",
+                "9d22c7d5-1c8c-555e-a9ef-698a0daf3943"
             ]
         },
         {
@@ -5841,11 +5909,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "b80208c1-30ba-5dc6-8ec1-d0d2ddd33862",
+            "uuid": "287f7bb8-646b-54b5-8328-8d36252f3418",
             "variations": [
-                "0b04e66b-3d7a-5b9e-83e7-facbf8dfe562",
-                "4bcd27cc-af60-52cf-8249-e7dc97412063",
-                "1d087342-f684-5ec2-8e1a-f21784cf2d04"
+                "c20ae06e-59bf-5122-a015-d07850643ad6",
+                "8faca5db-a399-5f42-835d-9dee5e781da6",
+                "9d22c7d5-1c8c-555e-a9ef-698a0daf3943"
             ]
         },
         {
@@ -5898,11 +5966,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4bcd27cc-af60-52cf-8249-e7dc97412063",
+            "uuid": "8faca5db-a399-5f42-835d-9dee5e781da6",
             "variations": [
-                "0b04e66b-3d7a-5b9e-83e7-facbf8dfe562",
-                "b80208c1-30ba-5dc6-8ec1-d0d2ddd33862",
-                "1d087342-f684-5ec2-8e1a-f21784cf2d04"
+                "c20ae06e-59bf-5122-a015-d07850643ad6",
+                "287f7bb8-646b-54b5-8328-8d36252f3418",
+                "9d22c7d5-1c8c-555e-a9ef-698a0daf3943"
             ]
         },
         {
@@ -5955,11 +6023,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "1d087342-f684-5ec2-8e1a-f21784cf2d04",
+            "uuid": "9d22c7d5-1c8c-555e-a9ef-698a0daf3943",
             "variations": [
-                "0b04e66b-3d7a-5b9e-83e7-facbf8dfe562",
-                "b80208c1-30ba-5dc6-8ec1-d0d2ddd33862",
-                "4bcd27cc-af60-52cf-8249-e7dc97412063"
+                "c20ae06e-59bf-5122-a015-d07850643ad6",
+                "287f7bb8-646b-54b5-8328-8d36252f3418",
+                "8faca5db-a399-5f42-835d-9dee5e781da6"
             ]
         },
         {
@@ -6003,13 +6071,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3622,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4989b0404949f854",
             "text": "{R}, {T}, Discard a card: Put a +0/+1 counter or a +1/+0 counter on target creature.",
             "toughness": "2",
             "type": "Creature — Dwarf",
             "types": [
                 "Creature"
             ],
-            "uuid": "ee1749a6-e43b-5b10-8015-811e6eaa39fc"
+            "uuid": "4e1d5289-2f01-5b40-805a-14df528f940f"
         },
         {
             "artist": "Jeff A. Menges",
@@ -6065,12 +6134,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3623,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/462c4f578d53de69",
             "text": "Dwarven Catapult deals X damage divided evenly, rounded down, among all creatures target opponent controls.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6aa04720-4fc9-546f-a7bb-c4fce7aac2c3"
+            "uuid": "b7089c52-1a00-5d07-b007-9a5c6fe413fc"
         },
         {
             "artist": "Jeff A. Menges",
@@ -6113,13 +6183,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3625,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3b9b21ac4770d6a1",
             "text": "{1}{R}: Target Dwarf creature gets +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Dwarf Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "75f9df3b-e3c6-5a43-97db-47f7a1a5bbd8"
+            "uuid": "21d54dbe-8e10-5eb3-a815-54e6983ecb54"
         },
         {
             "artist": "Rob Alexander",
@@ -6172,10 +6243,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "4ff74fa9-a452-580e-bbfc-ca798cd734a7",
+            "uuid": "3eeca504-42b0-585f-a419-88edfc62fddb",
             "variations": [
-                "2a3197ce-430a-512e-a72b-f6bbbc82c904",
-                "508a9a6d-18bf-5cb3-b77c-fcd8ac53f637"
+                "8990ec2b-3431-5a1f-ab5b-2c89cff91c5a",
+                "53e07737-e389-5170-84ab-ff5177469b75"
             ]
         },
         {
@@ -6229,10 +6300,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "2a3197ce-430a-512e-a72b-f6bbbc82c904",
+            "uuid": "8990ec2b-3431-5a1f-ab5b-2c89cff91c5a",
             "variations": [
-                "4ff74fa9-a452-580e-bbfc-ca798cd734a7",
-                "508a9a6d-18bf-5cb3-b77c-fcd8ac53f637"
+                "3eeca504-42b0-585f-a419-88edfc62fddb",
+                "53e07737-e389-5170-84ab-ff5177469b75"
             ]
         },
         {
@@ -6286,10 +6357,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "508a9a6d-18bf-5cb3-b77c-fcd8ac53f637",
+            "uuid": "53e07737-e389-5170-84ab-ff5177469b75",
             "variations": [
-                "4ff74fa9-a452-580e-bbfc-ca798cd734a7",
-                "2a3197ce-430a-512e-a72b-f6bbbc82c904"
+                "3eeca504-42b0-585f-a419-88edfc62fddb",
+                "8990ec2b-3431-5a1f-ab5b-2c89cff91c5a"
             ]
         },
         {
@@ -6345,16 +6416,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3651,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0ab77c56eece2d24",
             "text": "Sacrifice a Goblin: Regenerate target creature.",
             "toughness": "2",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "d69fd5af-39a1-56ce-9f1e-4d8d9f0129e0",
+            "uuid": "2eb72ee4-9dd3-56ea-9c30-a2592b125678",
             "variations": [
-                "52dc54c0-756a-54e2-8dc3-6fdbf205b405",
-                "a877a9ee-ca9a-5eda-b87a-0aec31d4189d"
+                "cbc5966a-038f-5670-b868-e451d57247c4",
+                "b47ad0ed-2a22-5cd4-901b-5b6965ecbfa5"
             ]
         },
         {
@@ -6410,16 +6482,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3651,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0ab77c56eece2d24",
             "text": "Sacrifice a Goblin: Regenerate target creature.",
             "toughness": "2",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "52dc54c0-756a-54e2-8dc3-6fdbf205b405",
+            "uuid": "cbc5966a-038f-5670-b868-e451d57247c4",
             "variations": [
-                "d69fd5af-39a1-56ce-9f1e-4d8d9f0129e0",
-                "a877a9ee-ca9a-5eda-b87a-0aec31d4189d"
+                "2eb72ee4-9dd3-56ea-9c30-a2592b125678",
+                "b47ad0ed-2a22-5cd4-901b-5b6965ecbfa5"
             ]
         },
         {
@@ -6475,16 +6548,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3651,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0ab77c56eece2d24",
             "text": "Sacrifice a Goblin: Regenerate target creature.",
             "toughness": "2",
             "type": "Creature — Goblin Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "a877a9ee-ca9a-5eda-b87a-0aec31d4189d",
+            "uuid": "b47ad0ed-2a22-5cd4-901b-5b6965ecbfa5",
             "variations": [
-                "d69fd5af-39a1-56ce-9f1e-4d8d9f0129e0",
-                "52dc54c0-756a-54e2-8dc3-6fdbf205b405"
+                "2eb72ee4-9dd3-56ea-9c30-a2592b125678",
+                "cbc5966a-038f-5670-b868-e451d57247c4"
             ]
         },
         {
@@ -6528,13 +6602,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3654,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bda2e18e9c4f23df",
             "text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\nAt the beginning of each combat, unless you pay {R}, whenever Goblin Flotilla blocks or becomes blocked by a creature this combat, that creature gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Goblin",
             "types": [
                 "Creature"
             ],
-            "uuid": "bfab2132-5ace-5c17-adf3-1d31efaf4efc"
+            "uuid": "39a98e24-8229-51cc-a60d-eea59657404b"
         },
         {
             "artist": "Ron Spencer",
@@ -6597,10 +6672,10 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "240b645d-cbaf-51a9-be9a-89ce48c5f838",
+            "uuid": "774729c1-937f-5e9a-89d0-fa311fe8988e",
             "variations": [
-                "5fdf495b-175b-5809-8a26-a4a4669a7571",
-                "e1f94a07-863b-5b0a-aa2e-f1b16318fe63"
+                "5d4a3eda-e255-5921-a964-ba075422edcd",
+                "f4341cf8-c525-5d2c-9d87-0944bf488f07"
             ]
         },
         {
@@ -6664,10 +6739,10 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5fdf495b-175b-5809-8a26-a4a4669a7571",
+            "uuid": "5d4a3eda-e255-5921-a964-ba075422edcd",
             "variations": [
-                "240b645d-cbaf-51a9-be9a-89ce48c5f838",
-                "e1f94a07-863b-5b0a-aa2e-f1b16318fe63"
+                "774729c1-937f-5e9a-89d0-fa311fe8988e",
+                "f4341cf8-c525-5d2c-9d87-0944bf488f07"
             ]
         },
         {
@@ -6731,10 +6806,10 @@
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e1f94a07-863b-5b0a-aa2e-f1b16318fe63",
+            "uuid": "f4341cf8-c525-5d2c-9d87-0944bf488f07",
             "variations": [
-                "240b645d-cbaf-51a9-be9a-89ce48c5f838",
-                "5fdf495b-175b-5809-8a26-a4a4669a7571"
+                "774729c1-937f-5e9a-89d0-fa311fe8988e",
+                "5d4a3eda-e255-5921-a964-ba075422edcd"
             ]
         },
         {
@@ -6773,12 +6848,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3658,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/34835db382b8c78f",
             "text": "{R}: Target creature you control with toughness 2 or less gains flying until end of turn. Flip a coin at the beginning of the next end step. If you lose the flip, sacrifice that creature.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5059a6f9-ad36-5510-8070-b5df749bf954"
+            "uuid": "ac327eb0-721c-53bd-ad9c-f449953bd374"
         },
         {
             "artist": "Dan Frazier",
@@ -6835,11 +6911,11 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5f2d39c2-d5fc-566b-892b-f14bd3a54fea",
+            "uuid": "bb6867ea-66cc-51b1-a77e-c182e4a0cf79",
             "variations": [
-                "35e28a76-fc99-5e92-8c11-decbb5c02e82",
-                "54881e2a-a948-5495-bbb8-e46b1c52f3b3",
-                "141613df-82f4-51f8-b3db-166ab3321884"
+                "2fd5c2de-e92a-585b-8ae4-6f10ffbd528a",
+                "bf93fc82-70f1-5230-990a-3aa3cb13f887",
+                "9985845a-bc7c-5754-91a4-b53aa5304665"
             ]
         },
         {
@@ -6897,11 +6973,11 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "35e28a76-fc99-5e92-8c11-decbb5c02e82",
+            "uuid": "2fd5c2de-e92a-585b-8ae4-6f10ffbd528a",
             "variations": [
-                "5f2d39c2-d5fc-566b-892b-f14bd3a54fea",
-                "54881e2a-a948-5495-bbb8-e46b1c52f3b3",
-                "141613df-82f4-51f8-b3db-166ab3321884"
+                "bb6867ea-66cc-51b1-a77e-c182e4a0cf79",
+                "bf93fc82-70f1-5230-990a-3aa3cb13f887",
+                "9985845a-bc7c-5754-91a4-b53aa5304665"
             ]
         },
         {
@@ -6959,11 +7035,11 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "54881e2a-a948-5495-bbb8-e46b1c52f3b3",
+            "uuid": "bf93fc82-70f1-5230-990a-3aa3cb13f887",
             "variations": [
-                "5f2d39c2-d5fc-566b-892b-f14bd3a54fea",
-                "35e28a76-fc99-5e92-8c11-decbb5c02e82",
-                "141613df-82f4-51f8-b3db-166ab3321884"
+                "bb6867ea-66cc-51b1-a77e-c182e4a0cf79",
+                "2fd5c2de-e92a-585b-8ae4-6f10ffbd528a",
+                "9985845a-bc7c-5754-91a4-b53aa5304665"
             ]
         },
         {
@@ -7021,11 +7097,11 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "141613df-82f4-51f8-b3db-166ab3321884",
+            "uuid": "9985845a-bc7c-5754-91a4-b53aa5304665",
             "variations": [
-                "5f2d39c2-d5fc-566b-892b-f14bd3a54fea",
-                "35e28a76-fc99-5e92-8c11-decbb5c02e82",
-                "54881e2a-a948-5495-bbb8-e46b1c52f3b3"
+                "bb6867ea-66cc-51b1-a77e-c182e4a0cf79",
+                "2fd5c2de-e92a-585b-8ae4-6f10ffbd528a",
+                "bf93fc82-70f1-5230-990a-3aa3cb13f887"
             ]
         },
         {
@@ -7075,12 +7151,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3663,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90b8243fdbf5e03d",
             "text": "{2}{R}, Sacrifice two Goblins: Create three 1/1 red Goblin creature tokens.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a4b05671-2742-5953-ad27-9ff1bef3cbd5"
+            "uuid": "3062b084-67e3-5568-83d3-12ffc1a8f51b"
         },
         {
             "artist": "Mark Tedin",
@@ -7132,13 +7209,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3721,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/afc1690a33125866",
             "text": "{1}: Flip a coin. If you win the flip, target Orc creature gets +2/+0 until end of turn. If you lose the flip, it gets -0/-2 until end of turn.",
             "toughness": "1",
             "type": "Creature — Orc Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "3ef295d1-751a-5124-8136-508147620d62"
+            "uuid": "e512d8d2-e0aa-5d76-a8e5-6dbf505b0b21"
         },
         {
             "artist": "Susan Van Camp",
@@ -7190,10 +7268,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ebc759ae-894c-5b18-92c0-5a33227f4849",
+            "uuid": "9a1e9dad-4440-5a0c-bf6a-302e20fc1e11",
             "variations": [
-                "a6721e6f-b4be-5a1e-a78e-dd755e52e151",
-                "438597ae-9616-5312-9f2f-5ca213148b05"
+                "76e933f3-4521-5531-afc6-a31e20a48e30",
+                "562ae8a0-7710-51e8-bef3-43c5ebff1df0"
             ]
         },
         {
@@ -7246,10 +7324,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a6721e6f-b4be-5a1e-a78e-dd755e52e151",
+            "uuid": "76e933f3-4521-5531-afc6-a31e20a48e30",
             "variations": [
-                "ebc759ae-894c-5b18-92c0-5a33227f4849",
-                "438597ae-9616-5312-9f2f-5ca213148b05"
+                "9a1e9dad-4440-5a0c-bf6a-302e20fc1e11",
+                "562ae8a0-7710-51e8-bef3-43c5ebff1df0"
             ]
         },
         {
@@ -7302,10 +7380,10 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "438597ae-9616-5312-9f2f-5ca213148b05",
+            "uuid": "562ae8a0-7710-51e8-bef3-43c5ebff1df0",
             "variations": [
-                "ebc759ae-894c-5b18-92c0-5a33227f4849",
-                "a6721e6f-b4be-5a1e-a78e-dd755e52e151"
+                "9a1e9dad-4440-5a0c-bf6a-302e20fc1e11",
+                "76e933f3-4521-5531-afc6-a31e20a48e30"
             ]
         },
         {
@@ -7352,17 +7430,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93c48cb7fe78f618",
             "text": "Orcish Veteran can't block white creatures with power 2 or greater.\n{R}: Orcish Veteran gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Orc",
             "types": [
                 "Creature"
             ],
-            "uuid": "8a957168-6917-5f5a-bc2c-05556247ae87",
+            "uuid": "da1dfde0-c082-531d-b73a-95243a93888f",
             "variations": [
-                "0088ac92-59a9-5732-a021-2f6aa2521f13",
-                "5f58c929-0155-53ed-959a-c337efc826f7",
-                "b949d2d4-5443-56bf-8b95-b61c312cb61a"
+                "53489328-3ccf-5f1f-8ba9-cc04e351577f",
+                "e351c1c9-62ad-5a89-ad1c-5caf85dbe5db",
+                "48191a07-4aec-517d-bbfd-57d1b31c3e60"
             ]
         },
         {
@@ -7409,17 +7488,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93c48cb7fe78f618",
             "text": "Orcish Veteran can't block white creatures with power 2 or greater.\n{R}: Orcish Veteran gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Orc",
             "types": [
                 "Creature"
             ],
-            "uuid": "0088ac92-59a9-5732-a021-2f6aa2521f13",
+            "uuid": "53489328-3ccf-5f1f-8ba9-cc04e351577f",
             "variations": [
-                "8a957168-6917-5f5a-bc2c-05556247ae87",
-                "5f58c929-0155-53ed-959a-c337efc826f7",
-                "b949d2d4-5443-56bf-8b95-b61c312cb61a"
+                "da1dfde0-c082-531d-b73a-95243a93888f",
+                "e351c1c9-62ad-5a89-ad1c-5caf85dbe5db",
+                "48191a07-4aec-517d-bbfd-57d1b31c3e60"
             ]
         },
         {
@@ -7466,17 +7546,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93c48cb7fe78f618",
             "text": "Orcish Veteran can't block white creatures with power 2 or greater.\n{R}: Orcish Veteran gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Orc",
             "types": [
                 "Creature"
             ],
-            "uuid": "5f58c929-0155-53ed-959a-c337efc826f7",
+            "uuid": "e351c1c9-62ad-5a89-ad1c-5caf85dbe5db",
             "variations": [
-                "8a957168-6917-5f5a-bc2c-05556247ae87",
-                "0088ac92-59a9-5732-a021-2f6aa2521f13",
-                "b949d2d4-5443-56bf-8b95-b61c312cb61a"
+                "da1dfde0-c082-531d-b73a-95243a93888f",
+                "53489328-3ccf-5f1f-8ba9-cc04e351577f",
+                "48191a07-4aec-517d-bbfd-57d1b31c3e60"
             ]
         },
         {
@@ -7523,17 +7604,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 18245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93c48cb7fe78f618",
             "text": "Orcish Veteran can't block white creatures with power 2 or greater.\n{R}: Orcish Veteran gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Orc",
             "types": [
                 "Creature"
             ],
-            "uuid": "b949d2d4-5443-56bf-8b95-b61c312cb61a",
+            "uuid": "48191a07-4aec-517d-bbfd-57d1b31c3e60",
             "variations": [
-                "8a957168-6917-5f5a-bc2c-05556247ae87",
-                "0088ac92-59a9-5732-a021-2f6aa2521f13",
-                "5f58c929-0155-53ed-959a-c337efc826f7"
+                "da1dfde0-c082-531d-b73a-95243a93888f",
+                "53489328-3ccf-5f1f-8ba9-cc04e351577f",
+                "e351c1c9-62ad-5a89-ad1c-5caf85dbe5db"
             ]
         },
         {
@@ -7587,13 +7669,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3735,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf6f8c91b5f482ba",
             "text": "Trample\nOrgg can't attack if defending player controls an untapped creature with power 3 or greater.\nOrgg can't block creatures with power 3 or greater.",
             "toughness": "6",
             "type": "Creature — Orgg",
             "types": [
                 "Creature"
             ],
-            "uuid": "6acff1a0-5414-58f2-9e7f-a926a2118e0b"
+            "uuid": "48025226-96c5-5e53-8cf5-3b38b705c7ea"
         },
         {
             "artist": "Quinton Hoover",
@@ -7644,12 +7727,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3736,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0c9e88b28d11dc49",
             "text": "Raiding Party can't be the target of white spells or abilities from white sources.\nSacrifice an Orc: Each player may tap any number of untapped white creatures they control. For each creature tapped this way, that player chooses up to two Plains. Then destroy all Plains that weren't chosen this way by any player.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "33079927-e074-5777-8b39-d160c2051ecb"
+            "uuid": "b367804a-f028-5769-8915-9bcf482e3bbc"
         },
         {
             "artist": "Pete Venters",
@@ -7688,16 +7772,17 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3632,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37df889efd442031",
             "text": "{1}{G}: Target blocking creature gets +0/+1 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "10fac182-6a9a-5c3b-9c1a-739fabe43dc7",
+            "uuid": "05ba0581-73aa-5db9-b483-873436892fa3",
             "variations": [
-                "119ca6d1-1718-5cab-a197-6531378779b1",
-                "9fe6b063-3ead-58a9-b941-ab049ecb1f2d",
-                "f06f865a-7177-580b-b953-be0d3153940e"
+                "f1907b24-4d34-54d1-a267-8fcf0fb26c46",
+                "67b63ffc-acbe-54c9-9317-c7456d11c746",
+                "1d6812e9-55ac-5b83-9d65-dd92ec41fecd"
             ]
         },
         {
@@ -7737,16 +7822,17 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3632,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37df889efd442031",
             "text": "{1}{G}: Target blocking creature gets +0/+1 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "119ca6d1-1718-5cab-a197-6531378779b1",
+            "uuid": "f1907b24-4d34-54d1-a267-8fcf0fb26c46",
             "variations": [
-                "10fac182-6a9a-5c3b-9c1a-739fabe43dc7",
-                "9fe6b063-3ead-58a9-b941-ab049ecb1f2d",
-                "f06f865a-7177-580b-b953-be0d3153940e"
+                "05ba0581-73aa-5db9-b483-873436892fa3",
+                "67b63ffc-acbe-54c9-9317-c7456d11c746",
+                "1d6812e9-55ac-5b83-9d65-dd92ec41fecd"
             ]
         },
         {
@@ -7786,16 +7872,17 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3632,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37df889efd442031",
             "text": "{1}{G}: Target blocking creature gets +0/+1 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9fe6b063-3ead-58a9-b941-ab049ecb1f2d",
+            "uuid": "67b63ffc-acbe-54c9-9317-c7456d11c746",
             "variations": [
-                "10fac182-6a9a-5c3b-9c1a-739fabe43dc7",
-                "119ca6d1-1718-5cab-a197-6531378779b1",
-                "f06f865a-7177-580b-b953-be0d3153940e"
+                "05ba0581-73aa-5db9-b483-873436892fa3",
+                "f1907b24-4d34-54d1-a267-8fcf0fb26c46",
+                "1d6812e9-55ac-5b83-9d65-dd92ec41fecd"
             ]
         },
         {
@@ -7835,16 +7922,17 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3632,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/37df889efd442031",
             "text": "{1}{G}: Target blocking creature gets +0/+1 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f06f865a-7177-580b-b953-be0d3153940e",
+            "uuid": "1d6812e9-55ac-5b83-9d65-dd92ec41fecd",
             "variations": [
-                "10fac182-6a9a-5c3b-9c1a-739fabe43dc7",
-                "119ca6d1-1718-5cab-a197-6531378779b1",
-                "9fe6b063-3ead-58a9-b941-ab049ecb1f2d"
+                "05ba0581-73aa-5db9-b483-873436892fa3",
+                "f1907b24-4d34-54d1-a267-8fcf0fb26c46",
+                "67b63ffc-acbe-54c9-9317-c7456d11c746"
             ]
         },
         {
@@ -7889,13 +7977,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3637,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/831e6bd92db10f33",
             "text": "At the beginning of your upkeep, put a spore counter on Elvish Farmer.\nRemove three spore counters from Elvish Farmer: Create a 1/1 green Saproling creature token.\nSacrifice a Saproling: You gain 2 life.",
             "toughness": "2",
             "type": "Creature — Elf",
             "types": [
                 "Creature"
             ],
-            "uuid": "f54ad29a-7303-5e96-b55e-fb745f3a91a9"
+            "uuid": "e1d7d3eb-861f-5b17-a4be-610fb9697bb6"
         },
         {
             "artist": "Mark Poole",
@@ -7955,16 +8044,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3638,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/026916bfa9ab8dbe",
             "text": "{1}{G}, {T}: Target creature doesn't untap during its controller's next untap step.",
             "toughness": "1",
             "type": "Creature — Elf Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "66f3a002-9cc2-54d0-98ba-646cfe778f8d",
+            "uuid": "e0f02358-d8e7-5641-b156-07fd4fb3d5c0",
             "variations": [
-                "53aa4c84-d8ca-5c1e-9610-398cd063f2bc",
-                "fd749b8c-778f-5bf9-9233-d633bfa8a0b0"
+                "e3945429-1742-507e-be77-c0c98b180a04",
+                "4905e402-b9ba-56b4-861c-5e4c287f5151"
             ]
         },
         {
@@ -8025,16 +8115,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3638,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/026916bfa9ab8dbe",
             "text": "{1}{G}, {T}: Target creature doesn't untap during its controller's next untap step.",
             "toughness": "1",
             "type": "Creature — Elf Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "53aa4c84-d8ca-5c1e-9610-398cd063f2bc",
+            "uuid": "e3945429-1742-507e-be77-c0c98b180a04",
             "variations": [
-                "66f3a002-9cc2-54d0-98ba-646cfe778f8d",
-                "fd749b8c-778f-5bf9-9233-d633bfa8a0b0"
+                "e0f02358-d8e7-5641-b156-07fd4fb3d5c0",
+                "4905e402-b9ba-56b4-861c-5e4c287f5151"
             ]
         },
         {
@@ -8095,16 +8186,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3638,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/026916bfa9ab8dbe",
             "text": "{1}{G}, {T}: Target creature doesn't untap during its controller's next untap step.",
             "toughness": "1",
             "type": "Creature — Elf Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "fd749b8c-778f-5bf9-9233-d633bfa8a0b0",
+            "uuid": "4905e402-b9ba-56b4-861c-5e4c287f5151",
             "variations": [
-                "66f3a002-9cc2-54d0-98ba-646cfe778f8d",
-                "53aa4c84-d8ca-5c1e-9610-398cd063f2bc"
+                "e0f02358-d8e7-5641-b156-07fd4fb3d5c0",
+                "e3945429-1742-507e-be77-c0c98b180a04"
             ]
         },
         {
@@ -8148,16 +8240,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3641,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d41fcbf17a8ad37c",
             "text": "{G}, {T}: Untap target attacking creature you control. Prevent all combat damage that would be dealt to and dealt by it this turn.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "cd0e3306-b221-5c41-b891-e61ec2758592",
+            "uuid": "8d0738ea-8f48-5882-a3da-1e30516db9a3",
             "variations": [
-                "e4c6cce8-4b4f-57da-a63e-102ba8242213",
-                "7978d6b5-d5a5-52e7-bbe8-41305bb044e4"
+                "f6ee42a7-eebf-526e-a98e-a1d9f1dafd2a",
+                "59735335-4098-59df-92f2-0add3db178f1"
             ]
         },
         {
@@ -8201,16 +8294,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3641,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d41fcbf17a8ad37c",
             "text": "{G}, {T}: Untap target attacking creature you control. Prevent all combat damage that would be dealt to and dealt by it this turn.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "e4c6cce8-4b4f-57da-a63e-102ba8242213",
+            "uuid": "f6ee42a7-eebf-526e-a98e-a1d9f1dafd2a",
             "variations": [
-                "cd0e3306-b221-5c41-b891-e61ec2758592",
-                "7978d6b5-d5a5-52e7-bbe8-41305bb044e4"
+                "8d0738ea-8f48-5882-a3da-1e30516db9a3",
+                "59735335-4098-59df-92f2-0add3db178f1"
             ]
         },
         {
@@ -8254,16 +8348,17 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3641,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d41fcbf17a8ad37c",
             "text": "{G}, {T}: Untap target attacking creature you control. Prevent all combat damage that would be dealt to and dealt by it this turn.",
             "toughness": "1",
             "type": "Creature — Elf Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "7978d6b5-d5a5-52e7-bbe8-41305bb044e4",
+            "uuid": "59735335-4098-59df-92f2-0add3db178f1",
             "variations": [
-                "cd0e3306-b221-5c41-b891-e61ec2758592",
-                "e4c6cce8-4b4f-57da-a63e-102ba8242213"
+                "8d0738ea-8f48-5882-a3da-1e30516db9a3",
+                "f6ee42a7-eebf-526e-a98e-a1d9f1dafd2a"
             ]
         },
         {
@@ -8310,13 +8405,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3649,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc4aa707636ec734",
             "text": "At the beginning of your upkeep, put a spore counter on Feral Thallid.\nRemove three spore counters from Feral Thallid: Regenerate Feral Thallid.",
             "toughness": "3",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "94b3caaa-22f9-5fa0-95bf-7cfebdb10adc"
+            "uuid": "a005178b-bd2a-5d49-b9a1-8162c602295a"
         },
         {
             "artist": "Daniel Gelon",
@@ -8358,12 +8454,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3650,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ae705b6c2f40c666",
             "text": "{G}{G}: Put a spore counter on target Fungus.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "f24d41d6-a9c1-53d1-abf8-aa058ebb7fc1"
+            "uuid": "bb15a331-ccfd-5716-a328-458965ef053e"
         },
         {
             "artist": "Sandra Everingham",
@@ -8415,10 +8512,10 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c698123a-0a50-55e6-b22b-c6fc5b3d0197",
+            "uuid": "33a0aa39-3b58-50b3-8b2d-66c60def9a65",
             "variations": [
-                "063b8f47-528f-5b27-9f70-59418c71b314",
-                "b2612c27-69f9-52c7-82dc-7a2ca026b02d"
+                "4c268cae-357a-550f-b11f-df5f19f9842d",
+                "44f16d24-de56-572c-ae86-32fba7a20f54"
             ]
         },
         {
@@ -8471,10 +8568,10 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "063b8f47-528f-5b27-9f70-59418c71b314",
+            "uuid": "4c268cae-357a-550f-b11f-df5f19f9842d",
             "variations": [
-                "c698123a-0a50-55e6-b22b-c6fc5b3d0197",
-                "b2612c27-69f9-52c7-82dc-7a2ca026b02d"
+                "33a0aa39-3b58-50b3-8b2d-66c60def9a65",
+                "44f16d24-de56-572c-ae86-32fba7a20f54"
             ]
         },
         {
@@ -8527,10 +8624,10 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b2612c27-69f9-52c7-82dc-7a2ca026b02d",
+            "uuid": "44f16d24-de56-572c-ae86-32fba7a20f54",
             "variations": [
-                "c698123a-0a50-55e6-b22b-c6fc5b3d0197",
-                "063b8f47-528f-5b27-9f70-59418c71b314"
+                "33a0aa39-3b58-50b3-8b2d-66c60def9a65",
+                "4c268cae-357a-550f-b11f-df5f19f9842d"
             ]
         },
         {
@@ -8585,15 +8682,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3745,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/295c4d1595596d39",
             "text": "Tap all blocking creatures. Prevent all combat damage that would be dealt this turn. Each attacking creature and each blocking creature doesn't untap during its controller's next untap step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a6558897-a696-51d5-ba00-8a52b0215c6f",
+            "uuid": "1843b7c6-ed62-501e-9f04-3f667a0ac348",
             "variations": [
-                "9dfd6da8-f16d-52a2-bb3f-563a0753f508",
-                "06a33cb2-07d3-5733-a401-474d65a79291"
+                "eded043f-abc7-52de-ac88-9b838d9f7d13",
+                "52f7af59-08b6-5994-87bf-21e12a1ce961"
             ]
         },
         {
@@ -8648,15 +8746,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3745,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/295c4d1595596d39",
             "text": "Tap all blocking creatures. Prevent all combat damage that would be dealt this turn. Each attacking creature and each blocking creature doesn't untap during its controller's next untap step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9dfd6da8-f16d-52a2-bb3f-563a0753f508",
+            "uuid": "eded043f-abc7-52de-ac88-9b838d9f7d13",
             "variations": [
-                "a6558897-a696-51d5-ba00-8a52b0215c6f",
-                "06a33cb2-07d3-5733-a401-474d65a79291"
+                "1843b7c6-ed62-501e-9f04-3f667a0ac348",
+                "52f7af59-08b6-5994-87bf-21e12a1ce961"
             ]
         },
         {
@@ -8711,15 +8810,16 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3745,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/295c4d1595596d39",
             "text": "Tap all blocking creatures. Prevent all combat damage that would be dealt this turn. Each attacking creature and each blocking creature doesn't untap during its controller's next untap step.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "06a33cb2-07d3-5733-a401-474d65a79291",
+            "uuid": "52f7af59-08b6-5994-87bf-21e12a1ce961",
             "variations": [
-                "a6558897-a696-51d5-ba00-8a52b0215c6f",
-                "9dfd6da8-f16d-52a2-bb3f-563a0753f508"
+                "1843b7c6-ed62-501e-9f04-3f667a0ac348",
+                "eded043f-abc7-52de-ac88-9b838d9f7d13"
             ]
         },
         {
@@ -8764,13 +8864,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3748,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8d7c658f9476ff2c",
             "text": "At the beginning of your upkeep, put a spore counter on Spore Flower.\nRemove three spore counters from Spore Flower: Prevent all combat damage that would be dealt this turn.",
             "toughness": "1",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c5457a4-f5fd-501a-8bd1-9993a4530a72"
+            "uuid": "b0710680-2b1b-567b-8e8c-5d217efcad81"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -8823,11 +8924,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "fb9e33d8-1ae5-5410-9aab-753df3e6903b",
+            "uuid": "c120788e-394c-51a5-939b-71e07fa6a98d",
             "variations": [
-                "7b3a5fe2-988f-506b-9e3b-115a8faa1180",
-                "e5cb12f9-c1be-5134-afc0-9f7232fe4e2c",
-                "40af4177-fa6a-5c4c-9498-0599d7d2f084"
+                "26fbc4b2-d8ce-531b-9c21-e4a0b261e6ba",
+                "9bd3918a-c09c-51b2-b91e-d68e98755583",
+                "925724ac-2dd7-529d-8327-8c1123a27e7d"
             ]
         },
         {
@@ -8881,11 +8982,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "7b3a5fe2-988f-506b-9e3b-115a8faa1180",
+            "uuid": "26fbc4b2-d8ce-531b-9c21-e4a0b261e6ba",
             "variations": [
-                "fb9e33d8-1ae5-5410-9aab-753df3e6903b",
-                "e5cb12f9-c1be-5134-afc0-9f7232fe4e2c",
-                "40af4177-fa6a-5c4c-9498-0599d7d2f084"
+                "c120788e-394c-51a5-939b-71e07fa6a98d",
+                "9bd3918a-c09c-51b2-b91e-d68e98755583",
+                "925724ac-2dd7-529d-8327-8c1123a27e7d"
             ]
         },
         {
@@ -8939,11 +9040,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "e5cb12f9-c1be-5134-afc0-9f7232fe4e2c",
+            "uuid": "9bd3918a-c09c-51b2-b91e-d68e98755583",
             "variations": [
-                "fb9e33d8-1ae5-5410-9aab-753df3e6903b",
-                "7b3a5fe2-988f-506b-9e3b-115a8faa1180",
-                "40af4177-fa6a-5c4c-9498-0599d7d2f084"
+                "c120788e-394c-51a5-939b-71e07fa6a98d",
+                "26fbc4b2-d8ce-531b-9c21-e4a0b261e6ba",
+                "925724ac-2dd7-529d-8327-8c1123a27e7d"
             ]
         },
         {
@@ -8997,11 +9098,11 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "40af4177-fa6a-5c4c-9498-0599d7d2f084",
+            "uuid": "925724ac-2dd7-529d-8327-8c1123a27e7d",
             "variations": [
-                "fb9e33d8-1ae5-5410-9aab-753df3e6903b",
-                "7b3a5fe2-988f-506b-9e3b-115a8faa1180",
-                "e5cb12f9-c1be-5134-afc0-9f7232fe4e2c"
+                "c120788e-394c-51a5-939b-71e07fa6a98d",
+                "26fbc4b2-d8ce-531b-9c21-e4a0b261e6ba",
+                "9bd3918a-c09c-51b2-b91e-d68e98755583"
             ]
         },
         {
@@ -9047,13 +9148,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3755,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0c38972c44d62331",
             "text": "At the beginning of your upkeep, put a spore counter on Thallid Devourer.\nRemove three spore counters from Thallid Devourer: Create a 1/1 green Saproling creature token.\nSacrifice a Saproling: Thallid Devourer gets +1/+2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3ff030a-44bc-5724-bee0-1b35ae20bf8a"
+            "uuid": "06c34742-8928-5d93-866f-1d4593ba0e1a"
         },
         {
             "artist": "Melissa A. Benson",
@@ -9100,12 +9202,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3758,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8c41f91584580db5",
             "text": "At the beginning of your upkeep, sacrifice Thelon's Chant unless you pay {G}.\nWhenever a player puts a Swamp onto the battlefield, Thelon's Chant deals 3 damage to that player unless the player puts a -1/-1 counter on a creature they control.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "259c23f3-d7e7-526f-9764-5b33d28e6182"
+            "uuid": "3281cdb7-f0e5-50d0-8a9a-f8a782661c4c"
         },
         {
             "artist": "Pete Venters",
@@ -9145,12 +9248,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3759,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/89e2768c8763bd30",
             "text": "Blue creatures don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player may choose any number of tapped blue creatures they control and pay {U} for each creature chosen this way. If the player does, untap those creatures.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "12498d59-af2d-5a4f-a887-34eefdfd29d0"
+            "uuid": "1f4f6709-c9bd-52de-98a4-be8928f7a724"
         },
         {
             "artist": "Margaret Organ-Kean",
@@ -9218,13 +9322,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3756,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e9cfd9f31e4566c2",
             "text": "{1}{G}, {T}, Sacrifice a creature: Forests you control become 2/3 creatures until end of turn. They're still lands.",
             "toughness": "1",
             "type": "Creature — Human Cleric Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "9df34987-a5ff-5343-8c67-b5c8cdc6b51e"
+            "uuid": "1c476e8f-21c9-575e-aa61-c6ed1c3d8606"
         },
         {
             "artist": "Bryon Wackwitz",
@@ -9274,13 +9379,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3757,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7328f9713cf2421a",
             "text": "{T}, Sacrifice a green creature: Target land becomes a Forest. (This effect lasts indefinitely.)",
             "toughness": "2",
             "type": "Creature — Insect Monk Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "ba45a8b5-83b0-5e75-835c-5a6505dfa2b4"
+            "uuid": "de30c306-5e05-59f5-9c13-199c532b4329"
         },
         {
             "artist": "Daniel Gelon",
@@ -9326,17 +9432,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3760,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/432d5fe6d67c6687",
             "text": "At the beginning of your upkeep, put a spore counter on Thorn Thallid.\nRemove three spore counters from Thorn Thallid: Thorn Thallid deals 1 damage to any target.",
             "toughness": "2",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "c26e4686-137a-5b68-b753-95fcba334734",
+            "uuid": "e9d73c7c-cc34-5cb9-935a-fdd95524e7d9",
             "variations": [
-                "af9b3daf-35d8-5349-85ff-32e5d809ec95",
-                "63d6a828-2bd2-521f-bccd-d706e9f7ccff",
-                "68032825-cd19-545a-b5c3-5d2e3e58d442"
+                "86eff1d8-faf4-5308-b30e-798a8604d6f7",
+                "9939b8de-fb11-508c-8eba-7dfd45b25a3b",
+                "587ed91e-ba00-5082-8fa9-94d93e2b9f37"
             ]
         },
         {
@@ -9383,17 +9490,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3760,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/432d5fe6d67c6687",
             "text": "At the beginning of your upkeep, put a spore counter on Thorn Thallid.\nRemove three spore counters from Thorn Thallid: Thorn Thallid deals 1 damage to any target.",
             "toughness": "2",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "af9b3daf-35d8-5349-85ff-32e5d809ec95",
+            "uuid": "86eff1d8-faf4-5308-b30e-798a8604d6f7",
             "variations": [
-                "c26e4686-137a-5b68-b753-95fcba334734",
-                "63d6a828-2bd2-521f-bccd-d706e9f7ccff",
-                "68032825-cd19-545a-b5c3-5d2e3e58d442"
+                "e9d73c7c-cc34-5cb9-935a-fdd95524e7d9",
+                "9939b8de-fb11-508c-8eba-7dfd45b25a3b",
+                "587ed91e-ba00-5082-8fa9-94d93e2b9f37"
             ]
         },
         {
@@ -9440,17 +9548,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3760,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/432d5fe6d67c6687",
             "text": "At the beginning of your upkeep, put a spore counter on Thorn Thallid.\nRemove three spore counters from Thorn Thallid: Thorn Thallid deals 1 damage to any target.",
             "toughness": "2",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "63d6a828-2bd2-521f-bccd-d706e9f7ccff",
+            "uuid": "9939b8de-fb11-508c-8eba-7dfd45b25a3b",
             "variations": [
-                "c26e4686-137a-5b68-b753-95fcba334734",
-                "af9b3daf-35d8-5349-85ff-32e5d809ec95",
-                "68032825-cd19-545a-b5c3-5d2e3e58d442"
+                "e9d73c7c-cc34-5cb9-935a-fdd95524e7d9",
+                "86eff1d8-faf4-5308-b30e-798a8604d6f7",
+                "587ed91e-ba00-5082-8fa9-94d93e2b9f37"
             ]
         },
         {
@@ -9497,17 +9606,18 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3760,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/432d5fe6d67c6687",
             "text": "At the beginning of your upkeep, put a spore counter on Thorn Thallid.\nRemove three spore counters from Thorn Thallid: Thorn Thallid deals 1 damage to any target.",
             "toughness": "2",
             "type": "Creature — Fungus",
             "types": [
                 "Creature"
             ],
-            "uuid": "68032825-cd19-545a-b5c3-5d2e3e58d442",
+            "uuid": "587ed91e-ba00-5082-8fa9-94d93e2b9f37",
             "variations": [
-                "c26e4686-137a-5b68-b753-95fcba334734",
-                "af9b3daf-35d8-5349-85ff-32e5d809ec95",
-                "63d6a828-2bd2-521f-bccd-d706e9f7ccff"
+                "e9d73c7c-cc34-5cb9-935a-fdd95524e7d9",
+                "86eff1d8-faf4-5308-b30e-798a8604d6f7",
+                "9939b8de-fb11-508c-8eba-7dfd45b25a3b"
             ]
         },
         {
@@ -9549,12 +9659,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3596,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b5518d4f3fea8800",
             "text": "{1}, {T}, Sacrifice Aeolipile: It deals 2 damage to any target.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "268c07f9-7e59-5dc8-b948-bc5c1e4c8c67"
+            "uuid": "41ef34b5-f73e-5d8a-9584-a870db314098"
         },
         {
             "artist": "Margaret Organ-Kean",
@@ -9590,12 +9701,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3601,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1d8090bacab301ca",
             "text": "{1}, {T}, Sacrifice Balm of Restoration: Choose one —\n• You gain 2 life.\n• Prevent the next 2 damage that would be dealt to any target this turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e70630e5-3906-51a4-9714-b67b0fd5a5fd"
+            "uuid": "dc4d6956-dfaf-5e41-9540-a1082efd7e58"
         },
         {
             "artist": "Phil Foglio",
@@ -9636,12 +9748,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3616,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/10acb87b3040f4e1",
             "text": "{1}, {T}, Sacrifice Conch Horn: Draw two cards, then put a card from your hand on top of your library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "36799880-cddc-5e5c-a058-d3149bf72ca2"
+            "uuid": "6548a81b-1f7d-57bf-a819-17339df11ec3"
         },
         {
             "artist": "Mark Tedin",
@@ -9689,12 +9802,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3618,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9931f287c490c562",
             "text": "{T}, Sacrifice Delif's Cone: This turn, when target creature you control attacks and isn't blocked, you may gain life equal to its power. If you do, it assigns no combat damage this turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e9645341-9ea8-5c7c-8e38-593efd64c4a7"
+            "uuid": "77a13583-1e26-5d0d-9552-bd7cad6bf6d7"
         },
         {
             "artist": "Mark Tedin",
@@ -9742,12 +9856,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3619,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d6d6981499b6b17b",
             "text": "{2}, {T}: This turn, when target creature you control attacks and isn't blocked, it assigns no combat damage this turn and you put a cube counter on Delif's Cube.\n{2}, Remove a cube counter from Delif's Cube: Regenerate target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a13d532d-f972-5b68-af0b-30032239fff5"
+            "uuid": "5994a03c-7d49-56f8-a05f-0c296e56273d"
         },
         {
             "artist": "Edward P. Beard, Jr.",
@@ -9788,12 +9903,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3621,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9468c114afc20220",
             "text": "{2}, {T}, Discard a card at random: Regenerate target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9529721c-6306-5f37-b57f-ecc58fc22710"
+            "uuid": "e5cd8652-5250-5ba1-abd4-8e6dafd6fbd0"
         },
         {
             "artist": "Kaja Foglio",
@@ -9833,12 +9949,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3636,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3cb25825a619415e",
             "text": "{1}, {T}, Sacrifice Elven Lyre: Target creature gets +2/+2 until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a45e64b6-b5b4-5636-93df-96a561d5ad04"
+            "uuid": "0740f0df-4b2a-57f0-80ca-a1b61698897d"
         },
         {
             "artist": "Margaret Organ-Kean",
@@ -9874,12 +9991,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3704,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f12c70c1cdb1ce6b",
             "text": "{1}, {T}, Sacrifice Implements of Sacrifice: Add two mana of any one color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fc416a41-5897-5963-9268-55c0f1b2a786"
+            "uuid": "e18d60ce-0205-5e44-bc70-385a1399fda6"
         },
         {
             "artist": "Douglas Shuler",
@@ -9919,12 +10037,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3738,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/35041ec21b0be43f",
             "text": "{5}, {T}: Discard a card at random, then draw two cards.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9aa14a2d-61b8-52ae-af54-a93f2ecc9d0f"
+            "uuid": "d1ad4257-3063-5c42-8a75-c05cdcc31ce3"
         },
         {
             "artist": "Scott Kirschner",
@@ -9960,12 +10079,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3744,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a08c5cfffde5bb7d",
             "text": "You may choose not to untap Spirit Shield during your untap step.\n{2}, {T}: Target creature gets +0/+2 for as long as Spirit Shield remains tapped.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "419d408a-9134-5bf5-9d7c-6bbe2f7bf7dd"
+            "uuid": "fb325a50-76c1-5640-8f6e-a1e72779d7bd"
         },
         {
             "artist": "Scott Kirschner",
@@ -10001,12 +10121,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3782,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/408a880c854efce7",
             "text": "You may choose not to untap Zelyon Sword during your untap step.\n{3}, {T}: Target creature gets +2/+0 for as long as Zelyon Sword remains tapped.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "699b02c5-a430-5e61-aa78-0c4b78e37579"
+            "uuid": "f1a2474e-0a07-57ad-9c97-0c6c9c1764b1"
         },
         {
             "artist": "Pat Morrissey",
@@ -10063,12 +10184,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3606,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9c1554894e18144",
             "text": "Bottomless Vault enters the battlefield tapped.\nYou may choose not to untap Bottomless Vault during your untap step.\nAt the beginning of your upkeep, if Bottomless Vault is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from Bottomless Vault: Add {B} for each storage counter removed this way.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "37e22355-bf32-55b8-bda8-e44843550c9d"
+            "uuid": "7959c7de-1408-5c7b-8ef4-49b99133a6f2"
         },
         {
             "artist": "Pat Morrissey",
@@ -10125,12 +10247,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3624,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d4458781cf4f969f",
             "text": "Dwarven Hold enters the battlefield tapped.\nYou may choose not to untap Dwarven Hold during your untap step.\nAt the beginning of your upkeep, if Dwarven Hold is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from Dwarven Hold: Add {R} for each storage counter removed this way.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "222b49f8-17e4-5787-866b-28b08857aa7b"
+            "uuid": "4996c7a4-a47f-5d9f-a35d-2cad212102b9"
         },
         {
             "artist": "Mark Poole",
@@ -10172,12 +10295,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3626,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b52b378cbef9d95e",
             "text": "Dwarven Ruins enters the battlefield tapped.\n{T}: Add {R}.\n{T}, Sacrifice Dwarven Ruins: Add {R}{R}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "28a3ffcc-760d-53ef-943c-d4d3d9572eb8"
+            "uuid": "23bad628-9a7e-504e-a0f3-fe1ebc1bec52"
         },
         {
             "artist": "Mark Poole",
@@ -10219,12 +10343,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3631,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c83f8ce24dcd4c2b",
             "text": "Ebon Stronghold enters the battlefield tapped.\n{T}: Add {B}.\n{T}, Sacrifice Ebon Stronghold: Add {B}{B}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "82c84e13-b2c9-5724-bf95-0a0a5bea4403"
+            "uuid": "fa07c6ca-4265-5efd-b959-4c3d98cfa43d"
         },
         {
             "artist": "Mark Poole",
@@ -10267,12 +10392,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3665,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8259110dd5b2c906",
             "text": "Havenwood Battleground enters the battlefield tapped.\n{T}: Add {G}.\n{T}, Sacrifice Havenwood Battleground: Add {G}{G}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e0a9091f-6877-584a-b534-de0d585ade5a"
+            "uuid": "e4ed9302-3f1b-5160-9c10-d4bf236d1376"
         },
         {
             "artist": "Pat Morrissey",
@@ -10329,12 +10455,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3670,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9385aabddf6b3fe6",
             "text": "Hollow Trees enters the battlefield tapped.\nYou may choose not to untap Hollow Trees during your untap step.\nAt the beginning of your upkeep, if Hollow Trees is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from Hollow Trees: Add {G} for each storage counter removed this way.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ba546a6f-ca9c-5893-a6a8-a85ea46171a8"
+            "uuid": "54a877f3-f67e-5573-a23f-999a4fea207a"
         },
         {
             "artist": "Pat Morrissey",
@@ -10391,12 +10518,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3702,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/998c225a0b7bc4a5",
             "text": "Icatian Store enters the battlefield tapped.\nYou may choose not to untap Icatian Store during your untap step.\nAt the beginning of your upkeep, if Icatian Store is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from Icatian Store: Add {W} for each storage counter removed this way.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "32d8c189-4d77-53fd-be58-99aedaa53633"
+            "uuid": "2f4c06f0-afa5-5ee0-9a55-13d3928d99c3"
         },
         {
             "artist": "Kaja Foglio",
@@ -10458,12 +10586,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3737,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f021014960c5f61b",
             "text": "{T}: Add one mana of any color. An opponent gains control of Rainbow Vale at the beginning of the next end step.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "08e556be-b062-5967-8f03-088bc09cc30f"
+            "uuid": "a49b7765-9287-5374-b6de-cbc005613c69"
         },
         {
             "artist": "Mark Poole",
@@ -10504,12 +10633,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3740,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/30e2fdaa7748f8af",
             "text": "Ruins of Trokair enters the battlefield tapped.\n{T}: Add {W}.\n{T}, Sacrifice Ruins of Trokair: Add {W}{W}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "5caa5bc3-669d-59a3-b095-61fb5dbefc76"
+            "uuid": "7242449e-894a-58c2-9760-76ddede94ea7"
         },
         {
             "artist": "Pat Morrissey",
@@ -10566,12 +10696,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3741,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/66d0af18b66f5630",
             "text": "Sand Silos enters the battlefield tapped.\nYou may choose not to untap Sand Silos during your untap step.\nAt the beginning of your upkeep, if Sand Silos is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from Sand Silos: Add {U} for each storage counter removed this way.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "14a76aaf-d393-5f0d-a366-35a364e95934"
+            "uuid": "6626b2f8-1e8c-5fdf-8530-3449f60e4330"
         },
         {
             "artist": "Mark Poole",
@@ -10612,20 +10743,21 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3750,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c5d2467e828528e3",
             "text": "Svyelunite Temple enters the battlefield tapped.\n{T}: Add {U}.\n{T}, Sacrifice Svyelunite Temple: Add {U}{U}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "df5e4621-e790-529e-bc48-a567f91887f4"
+            "uuid": "c3e3f162-c675-53db-8bb2-41fe6ea8f0f9"
         }
     ],
-    "code": "fem",
+    "code": "FEM",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Fallen Empires",
     "releaseDate": "1994-11-01",
     "tcgplayerGroupId": 41,
