@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply from: '../config-android.gradle'
+
+def tcgPropertiesFile = rootProject.file("tcgplayer.properties")
+def tcgProperties = new Properties()
+if (tcgPropertiesFile.exists()) {
+    tcgProperties.load(new FileInputStream(tcgPropertiesFile))
+} else {
+    tcgProperties['CLIENT_ID'] = ""
+    tcgProperties['CLIENT_SECRET'] = ""
+}
+
+android {
+    buildTypes {
+        debug {
+            buildConfigField 'String', 'TCG_CLIENT_ID', "\"${tcgProperties.get('CLIENT_ID')}\""
+            buildConfigField 'String', 'TCG_CLIENT_SECRET', "\"${tcgProperties.get('CLIENT_SECRET')}\""
+        }
+
+        release {
+            buildConfigField 'String', 'TCG_CLIENT_ID', "\"${tcgProperties.get('CLIENT_ID')}\""
+            buildConfigField 'String', 'TCG_CLIENT_SECRET', "\"${tcgProperties.get('CLIENT_SECRET')}\""
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        test.resources.srcDirs += ['src/test/resources']
+    }
+}
+
+dependencies {
+    api project(":core")
+
+    core()
+    monitoring()
+    network()
+
+    test()
+}

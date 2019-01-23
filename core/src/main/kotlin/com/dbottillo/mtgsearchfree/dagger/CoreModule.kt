@@ -3,10 +3,10 @@ package com.dbottillo.mtgsearchfree.dagger
 import android.app.Application
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
-import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.FileUtil

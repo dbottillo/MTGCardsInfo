@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1545752619712">
+  <Whitelist timestamp="1548519352295">
     <ID>ComplexCondition:NetworkIntentService.kt$NetworkIntentService$res != null &amp;&amp; (res.lowprice == null || res.lowprice!!.equals("0", ignoreCase = true)) &amp;&amp; setName != null &amp;&amp; setName.isNotEmpty()</ID>
     <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
@@ -82,61 +82,6 @@
     <ID>MagicNumber:SetPickerActivity.kt$SetPickerActivity.Divider$16</ID>
     <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
     <ID>MagicNumber:UIUtil.kt$0.8</ID>
-    <ID>MaxLineLength:ActivityBuilder.kt$com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt</ID>
-    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
-    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, quantityChoose)</ID>
-    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment.InputFilterMinMax$override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence?</ID>
-    <ID>MaxLineLength:AddToDeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment.kt</ID>
-    <ID>MaxLineLength:BaseHomeFragment.kt$com.dbottillo.mtgsearchfree.ui.BaseHomeFragment.kt</ID>
-    <ID>MaxLineLength:CardMigratorService.kt$CardMigratorService$val mtgCardDataSource = MTGCardDataSource(MTGDatabaseHelper(applicationContext).readableDatabase, cardDataSource)</ID>
-    <ID>MaxLineLength:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
-    <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$val v = inflater.inflate(if (configuration.isGrid) R.layout.grid_item_card else R.layout.row_card, parent, false)</ID>
-    <ID>MaxLineLength:CardsAdapter.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt</ID>
-    <ID>MaxLineLength:CardsConfiguratorFragment.kt$CardsConfiguratorFragment : BottomSheetDialogFragmentCardsConfiguratorViewOnFilterPickerListener</ID>
-    <ID>MaxLineLength:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl : CardsConfiguratorPresenter</ID>
-    <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
-    <ID>MaxLineLength:CardsStorageImpl.kt$com.dbottillo.mtgsearchfree.storage.CardsStorageImpl.kt</ID>
-    <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask : AsyncTask</ID>
-    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDeckDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource): DeckDataSource</ID>
-    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage</ID>
-    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideFavouritesDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource): FavouritesDataSource</ID>
-    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;TabLayout&gt;(R.id.deck_cards_tab_layout) }</ID>
-    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;ViewPager&gt;(R.id.deck_view_pager) }</ID>
-    <ID>MaxLineLength:DeckAdapter.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckAdapter.kt</ID>
-    <ID>MaxLineLength:DeckFragment.kt$com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment.kt</ID>
-    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView : LinearLayoutOnClickListener</ID>
-    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
-    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter : Adapter</ID>
-    <ID>MaxLineLength:LifeCounterAdapter.kt$com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterAdapter.kt</ID>
-    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) } ?: manager.getAppWidgetIds(cn)</ID>
-    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
-    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
-    <ID>MaxLineLength:MTGCardView.kt$MTGCardView : RelativeLayoutCardView</ID>
-    <ID>MaxLineLength:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
-    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$fun loadCards(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
-    <ID>MaxLineLength:MTGCardsView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt</ID>
-    <ID>MaxLineLength:MTGGAppGlideModule.kt$com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView : RelativeLayout</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_common) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val multiNoOthers: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_mno) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_mythic) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val noMulti: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_nm) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_power) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_tough) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_types) }</ID>
-    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_uncommon) }</ID>
-    <ID>MaxLineLength:NetworkIntentService.kt$com.dbottillo.mtgsearchfree.model.network.NetworkIntentService.kt</ID>
-    <ID>MaxLineLength:PlayersStorageImpl.kt$PlayersStorageImpl$private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")</ID>
-    <ID>MaxLineLength:ReleaseNoteActivity.kt$ReleaseNoteActivity$private val releaseNoteList: RecyclerView by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;RecyclerView&gt;(R.id.release_note_list) }</ID>
-    <ID>MaxLineLength:SavedFragment.kt$com.dbottillo.mtgsearchfree.ui.saved.SavedFragment.kt</ID>
-    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (amount &lt; 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
-    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (scrollView.scrollY &lt; 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
-    <ID>MaxLineLength:SearchActivity.kt$com.dbottillo.mtgsearchfree.ui.search.SearchActivity.kt</ID>
-    <ID>MaxLineLength:SetsAdapter.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsAdapter.kt</ID>
-    <ID>MaxLineLength:SetsFragment.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragment.kt</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
-    <ID>MaxLineLength:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
     <ID>NestedBlockDepth:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
     <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$private val DEFAULT_DURATION = 200</ID>
     <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$val `val` = valueAnimator.animatedValue as Int</ID>

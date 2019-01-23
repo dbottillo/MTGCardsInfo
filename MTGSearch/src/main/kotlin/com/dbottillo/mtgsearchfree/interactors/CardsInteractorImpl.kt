@@ -6,6 +6,8 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.TCGPrice
+import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
@@ -16,7 +18,8 @@ class CardsInteractorImpl(
     private val storage: CardsStorage,
     private val fileManager: FileManager,
     private val schedulerProvider: SchedulerProvider,
-    private val logger: Logger
+    private val logger: Logger,
+    private val cardRepository: CardRepository
 ) : CardsInteractor {
 
     init {
@@ -75,14 +78,14 @@ class CardsInteractorImpl(
     }
 
     override fun loadCard(multiverseId: Int): Observable<MTGCard> {
-        logger.d("loading card with multiverse id: " + multiverseId)
+        logger.d("loading card with multiverse id: $multiverseId")
         return Observable.fromCallable { storage.loadCard(multiverseId) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun loadCardById(id: Int): Single<MTGCard> {
-        logger.d("loading card with id: " + id)
+        logger.d("loading card with id: $id")
         return Single.fromCallable { storage.loadCardById(id) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
@@ -100,6 +103,12 @@ class CardsInteractorImpl(
         return Single.defer<Uri> {
             Single.just(fileManager.saveBitmapToFile(bitmap))
         }.subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+    }
+
+    override fun fetchPrice(card: MTGCard): Single<TCGPrice> {
+        return cardRepository.fetchPrice(card)
+                .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 }

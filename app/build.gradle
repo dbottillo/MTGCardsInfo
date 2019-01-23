@@ -69,11 +69,10 @@ android {
 }
 
 dependencies {
-    implementation project(':MTGSearch')
-    implementation project(":core")
+    api project(':MTGSearch')
 
     core()
-    network()
+    image()
     ui()
     monitoring()
     debug()

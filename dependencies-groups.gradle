@@ -28,10 +28,17 @@ ext {
         implementation deps.google.firebase.core
         implementation (deps.google.firebase.crashlytics) { transitive = true }
     }
-    network = Group {
+    image = Group {
         implementation deps.glide.core
         implementation deps.glide.okhttp
         kapt deps.glide.compiler
+    }
+    network = Group {
+        implementation deps.okhttp.core
+        implementation deps.okhttp.logging
+        implementation deps.retrofit.core
+        implementation deps.retrofit.gson
+        implementation deps.retrofit.rxjava
     }
     debug = Group {
         debugImplementation deps.leakCanary

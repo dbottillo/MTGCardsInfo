@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1545752616249">
+  <Whitelist timestamp="1548519348716">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
@@ -22,30 +22,9 @@
     <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
     <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.CORE_19$4</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.DOMINARIA$9</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.IXALAN$16</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource.STANDARD.RIVALS_OF_IXALAN$11</ID>
     <ID>MagicNumber:PermissionUtil.kt$PermissionUtil$23</ID>
     <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
     <ID>MagicNumber:TCGPrice.kt$TCGPrice$5</ID>
-    <ID>MaxLineLength:BasicFragment.kt$BasicFragment$val styledAttributes = dbActivity.theme.obtainStyledAttributes(intArrayOf(android.support.v7.appcompat.R.attr.actionBarSize))</ID>
-    <ID>MaxLineLength:CoreModule.kt$CoreModule$@Provides @Singleton fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$com.dbottillo.mtgsearchfree.database.DeckDataSource.kt</ID>
-    <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
-    <ID>MaxLineLength:FileUtil.kt$val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")</ID>
-    <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val query = ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + "=?")</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$val sel = Arrays.copyOf&lt;String, Any&gt;(output.selection.toTypedArray(), output.selection.size, Array&lt;String&gt;::class.java)</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt</ID>
-    <ID>MaxLineLength:QueryComposer.kt$com.dbottillo.mtgsearchfree.database.QueryComposer.kt</ID>
-    <ID>MaxLineLength:SQLiteAssetHelper.kt$com.dbottillo.mtgsearchfree.sqliteasset.SQLiteAssetHelper.kt</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>

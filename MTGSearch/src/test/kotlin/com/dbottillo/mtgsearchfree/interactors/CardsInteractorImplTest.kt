@@ -6,6 +6,8 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.TCGPrice
+import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
@@ -13,6 +15,7 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
+import io.reactivex.Single
 import io.reactivex.observers.TestObserver
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
@@ -22,8 +25,6 @@ import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 
 class CardsInteractorImplTest {
-
-    private val MULTIVERSE_ID = 180607
 
     @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
@@ -40,6 +41,7 @@ class CardsInteractorImplTest {
     @Mock lateinit var searchCardsCollection: CardsCollection
     @Mock lateinit var schedulerProvider: SchedulerProvider
     @Mock lateinit var fileManager: FileManager
+    @Mock lateinit var cardRepository: CardRepository
 
     private val favCards = listOf(MTGCard(3), MTGCard(4))
 
@@ -47,7 +49,7 @@ class CardsInteractorImplTest {
     fun setup() {
         whenever(schedulerProvider.io()).thenReturn(Schedulers.trampoline())
         whenever(schedulerProvider.ui()).thenReturn(Schedulers.trampoline())
-        underTest = CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger)
+        underTest = CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger, cardRepository)
     }
 
     @Test
@@ -62,7 +64,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).getLuckyCards(2)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -77,7 +79,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).getFavourites()
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -87,7 +89,7 @@ class CardsInteractorImplTest {
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verify(cardsStorage).saveAsFavourite(card)
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -97,7 +99,7 @@ class CardsInteractorImplTest {
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verify(cardsStorage).removeFromFavourite(card)
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -112,7 +114,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).load(set)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -128,7 +130,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).loadIdFav()
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -143,7 +145,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).doSearch(searchParams)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -158,7 +160,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).loadCard(MULTIVERSE_ID)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -173,7 +175,7 @@ class CardsInteractorImplTest {
         verify(cardsStorage).loadCardById(5)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
@@ -188,11 +190,11 @@ class CardsInteractorImplTest {
         verify(cardsStorage).loadOtherSide(card)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 
     @Test
-    fun `get artwork uri should defer to fie loader`() {
+    fun `get artwork uri should defer to file loader`() {
         val bitmap = mock<Bitmap>()
         val uri = mock<Uri>()
         whenever(fileManager.saveBitmapToFile(bitmap)).thenReturn(uri)
@@ -205,6 +207,24 @@ class CardsInteractorImplTest {
         verify(fileManager).saveBitmapToFile(bitmap)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider, fileManager)
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository, fileManager)
+    }
+
+    @Test
+    fun `should fetch price from repository`() {
+        val price = mock<TCGPrice>()
+        whenever(cardRepository.fetchPrice(card)).thenReturn(Single.just(price))
+        val testSubscriber = TestObserver<TCGPrice>()
+
+        underTest.fetchPrice(card).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(price)
+        verify(cardRepository).fetchPrice(card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
 }
+
+private const val MULTIVERSE_ID = 180607
