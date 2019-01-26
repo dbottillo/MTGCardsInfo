@@ -9,6 +9,7 @@ data class MTGCard(
     var uuid: String = "",
     var scryfallId: String = "",
     var tcgplayerProductId: Int = 0,
+    var tcgplayerPurchaseUrl: String = "",
     var name: String = "",
     var type: String = "",
     val types: MutableList<String> = mutableListOf(),

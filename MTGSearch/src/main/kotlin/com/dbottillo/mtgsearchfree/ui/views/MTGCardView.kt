@@ -1,8 +1,10 @@
 package com.dbottillo.mtgsearchfree.ui.views
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Point
+import android.net.Uri
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -159,12 +161,9 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
     private fun openPrice() {
         LOG.d()
-        /*price?.let {
-            if (!it.isAnError) {
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(it.link))
-                context.startActivity(browserIntent)
-            }
-        }*/
+        card?.tcgplayerPurchaseUrl?.takeIf { it.isNotEmpty() }?.let {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it)))
+        }
     }
 
     fun toggleImage(showImage: Boolean) {

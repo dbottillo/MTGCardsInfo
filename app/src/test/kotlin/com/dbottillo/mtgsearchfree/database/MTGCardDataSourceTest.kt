@@ -36,10 +36,10 @@ import java.util.Locale
 @RunWith(RobolectricTestRunner::class)
 class MTGCardDataSourceTest {
 
-    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
-    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
-    lateinit var underTest: MTGCardDataSource
-    lateinit var kaladesh: MTGSet
+    private lateinit var mtgDatabaseHelper: MTGDatabaseHelper
+    private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    private lateinit var underTest: MTGCardDataSource
+    private lateinit var kaladesh: MTGSet
 
     @Before
     fun setup() {
